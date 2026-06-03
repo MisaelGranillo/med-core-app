@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-zinc-50 text-zinc-900 font-sans;
+    min-height: 100dvh;
+  }
+
+  #root {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white border border-zinc-200/60 rounded-2xl shadow-card;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl font-medium text-sm
+           transition-all duration-200 active:scale-[0.98] active:-translate-y-px;
+  }
+
+  .section-number {
+    @apply inline-flex items-center justify-center w-6 h-6 rounded-full
+           text-xs font-bold text-white flex-shrink-0;
+  }
+
+  .table-base {
+    @apply w-full text-sm border-collapse;
+  }
+
+  .table-base th {
+    @apply text-left font-semibold text-zinc-600 text-xs uppercase tracking-wider
+           pb-2 border-b border-zinc-200 px-3;
+  }
+
+  .table-base td {
+    @apply py-2.5 px-3 text-zinc-700 border-b border-zinc-100 align-top;
+  }
+
+  .table-base tr:last-child td {
+    @apply border-b-0;
+  }
+
+  .table-base tr:hover td {
+    @apply bg-zinc-50/80;
+  }
+
+  .formula-box {
+    @apply font-mono text-sm bg-zinc-900 text-emerald-400 px-4 py-3 rounded-xl
+           border border-zinc-800 overflow-x-auto;
+  }
+
+  .key-point-item {
+    @apply flex items-start gap-2.5 text-sm text-zinc-700 leading-relaxed;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium
+           text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100
+           transition-all duration-150;
+  }
+
+  .nav-link.active {
+    @apply text-zinc-900 bg-zinc-100;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-fade-up-delay-1 { animation-delay: 100ms; }
+  .animate-fade-up-delay-2 { animation-delay: 200ms; }
+  .animate-fade-up-delay-3 { animation-delay: 300ms; }
+  .animate-fade-up-delay-4 { animation-delay: 400ms; }
+  .animate-fade-up-delay-5 { animation-delay: 500ms; }
+  .animate-fade-up-delay-6 { animation-delay: 600ms; }
+  .animate-fade-up-delay-7 { animation-delay: 700ms; }
+}
