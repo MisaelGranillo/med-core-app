@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 900">
+  <!-- Trapecio (gran músculo posterior, forma de rombo) -->
+  <path d="M170 186 Q200 176 230 186 L295 202 Q258 196 200 192 Q142 196 105 202 Z" fill="rgba(192,57,43,0.7)" stroke="rgba(160,40,28,0.85)" stroke-width="1.5"/>
+  <path d="M105 202 Q80 222 75 260 Q80 290 95 308 Q132 264 145 240 L170 186 Z" fill="rgba(192,57,43,0.65)" stroke="rgba(160,40,28,0.85)" stroke-width="1.5"/>
+  <path d="M295 202 Q320 222 325 260 Q320 290 305 308 Q268 264 255 240 L230 186 Z" fill="rgba(192,57,43,0.65)" stroke="rgba(160,40,28,0.85)" stroke-width="1.5"/>
+  <path d="M95 308 Q105 370 120 398 Q160 380 200 375 Q240 380 280 398 Q295 370 305 308 L200 350 Z" fill="rgba(192,57,43,0.55)" stroke="rgba(160,40,28,0.8)" stroke-width="1.5"/>
+  <!-- Deltoides posterior izquierdo -->
+  <path d="M104 200 Q84 215 80 236 Q85 254 98 264 Q108 244 117 222 Z" fill="rgba(192,57,43,0.80)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5"/>
+  <!-- Deltoides posterior derecho -->
+  <path d="M296 200 Q316 215 320 236 Q315 254 302 264 Q292 244 283 222 Z" fill="rgba(192,57,43,0.80)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5"/>
+  <!-- Infraespinoso izquierdo (en escápula) -->
+  <path d="M104 228 Q94 268 100 295 Q115 290 130 278 Q140 258 138 232 Z" fill="rgba(155,38,28,0.65)" stroke="rgba(140,30,20,0.8)" stroke-width="1.5"/>
+  <!-- Infraespinoso derecho -->
+  <path d="M296 228 Q306 268 300 295 Q285 290 270 278 Q260 258 262 232 Z" fill="rgba(155,38,28,0.65)" stroke="rgba(140,30,20,0.8)" stroke-width="1.5"/>
+  <!-- Dorsal ancho izquierdo -->
+  <path d="M100 295 Q68 355 65 420 Q72 455 95 488 Q115 476 130 455 Q125 395 128 340 Q115 320 100 295 Z" fill="rgba(192,57,43,0.62)" stroke="rgba(160,40,28,0.8)" stroke-width="1.5"/>
+  <!-- Dorsal ancho derecho -->
+  <path d="M300 295 Q332 355 335 420 Q328 455 305 488 Q285 476 270 455 Q275 395 272 340 Q285 320 300 295 Z" fill="rgba(192,57,43,0.62)" stroke="rgba(160,40,28,0.8)" stroke-width="1.5"/>
+  <!-- Erector espinal (columna) izquierdo -->
+  <rect x="174" y="210" width="14" height="250" rx="6" fill="rgba(162,45,32,0.55)" stroke="rgba(140,35,25,0.7)" stroke-width="1"/>
+  <!-- Erector espinal (columna) derecho -->
+  <rect x="212" y="210" width="14" height="250" rx="6" fill="rgba(162,45,32,0.55)" stroke="rgba(140,35,25,0.7)" stroke-width="1"/>
+  <!-- Tríceps izquierdo (cara posterior del brazo) -->
+  <rect x="86" y="210" width="24" height="145" rx="12" fill="rgba(192,57,43,0.78)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5" transform="rotate(8 98 210)"/>
+  <!-- Tríceps derecho -->
+  <rect x="290" y="210" width="24" height="145" rx="12" fill="rgba(192,57,43,0.78)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5" transform="rotate(-8 302 210)"/>
+  <!-- Glúteo mayor izquierdo -->
+  <path d="M140 535 Q118 538 110 560 Q108 595 118 620 Q135 630 158 625 Q170 604 168 575 Q162 548 140 535 Z" fill="rgba(192,57,43,0.82)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5"/>
+  <!-- Glúteo mayor derecho -->
+  <path d="M260 535 Q282 538 290 560 Q292 595 282 620 Q265 630 242 625 Q230 604 232 575 Q238 548 260 535 Z" fill="rgba(192,57,43,0.82)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5"/>
+  <!-- Glúteo mediano visible izquierdo -->
+  <path d="M118 492 Q108 510 110 535 Q124 538 140 535 Q150 518 148 496 Z" fill="rgba(162,45,32,0.65)" stroke="rgba(140,35,25,0.8)" stroke-width="1.5"/>
+  <!-- Glúteo mediano derecho -->
+  <path d="M282 492 Q292 510 290 535 Q276 538 260 535 Q250 518 252 496 Z" fill="rgba(162,45,32,0.65)" stroke="rgba(140,35,25,0.8)" stroke-width="1.5"/>
+  <!-- Isquiotibiales izquierdos -->
+  <rect x="126" y="632" width="58" height="68" rx="24" fill="rgba(192,57,43,0.74)" stroke="rgba(160,40,28,0.88)" stroke-width="1.5"/>
+  <!-- Línea de separación bíceps femoral / semimembranoso -->
+  <line x1="155" y1="636" x2="152" y2="698" stroke="rgba(140,35,25,0.45)" stroke-width="1"/>
+  <!-- Isquiotibiales derechos -->
+  <rect x="216" y="632" width="58" height="68" rx="24" fill="rgba(192,57,43,0.74)" stroke="rgba(160,40,28,0.88)" stroke-width="1.5"/>
+  <line x1="245" y1="636" x2="248" y2="698" stroke="rgba(140,35,25,0.45)" stroke-width="1"/>
+  <!-- Gastrocnemio izquierdo (cabezas medial y lateral) -->
+  <path d="M130 700 Q136 718 138 748 Q145 770 156 778 Q162 764 162 740 Q162 715 158 700 Z" fill="rgba(192,57,43,0.80)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5"/>
+  <path d="M158 700 Q165 715 168 740 Q170 765 178 778 Q184 764 183 740 Q180 715 175 700 Z" fill="rgba(192,57,43,0.75)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5"/>
+  <!-- Gastrocnemio derecho -->
+  <path d="M242 700 Q247 715 244 740 Q242 765 238 778 Q232 764 230 740 Q228 715 230 700 Z" fill="rgba(192,57,43,0.80)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5"/>
+  <path d="M222 700 Q218 715 222 740 Q224 765 222 778 Q216 764 216 740 Q218 715 222 700 Z" fill="rgba(192,57,43,0.75)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5"/>
+  <!-- Sóleo izquierdo (debajo del gastrocnemio, se asoma) -->
+  <rect x="132" y="778" width="42" height="68" rx="18" fill="rgba(162,40,28,0.65)" stroke="rgba(140,35,25,0.8)" stroke-width="1.5"/>
+  <!-- Sóleo derecho -->
+  <rect x="226" y="778" width="42" height="68" rx="18" fill="rgba(162,40,28,0.65)" stroke="rgba(140,35,25,0.8)" stroke-width="1.5"/>
+  <!-- Tendón de Aquiles izquierdo -->
+  <rect x="150" y="840" width="14" height="32" rx="6" fill="rgba(140,95,60,0.8)" stroke="rgba(120,75,45,0.9)" stroke-width="1.5"/>
+  <!-- Tendón de Aquiles derecho -->
+  <rect x="236" y="840" width="14" height="32" rx="6" fill="rgba(140,95,60,0.8)" stroke="rgba(120,75,45,0.9)" stroke-width="1.5"/>
+</svg>

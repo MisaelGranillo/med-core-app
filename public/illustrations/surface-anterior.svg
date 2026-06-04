@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 900">
+  <!-- Cabeza -->
+  <ellipse cx="200" cy="73" rx="65" ry="68" fill="#f5c5a3" stroke="#d4935e" stroke-width="2"/>
+  <!-- Orejas -->
+  <ellipse cx="134" cy="72" rx="10" ry="18" fill="#f5c5a3" stroke="#d4935e" stroke-width="1.5"/>
+  <ellipse cx="266" cy="72" rx="10" ry="18" fill="#f5c5a3" stroke="#d4935e" stroke-width="1.5"/>
+  <!-- Cuello -->
+  <path d="M172 138 Q200 148 228 138 L230 186 L170 186 Z" fill="#f5c5a3" stroke="#d4935e" stroke-width="2"/>
+  <!-- Torso -->
+  <path d="M170 186 C150 186 122 190 105 202 C80 215 63 238 58 272 C52 310 55 355 63 395 C72 432 86 462 100 490 C114 516 130 530 140 535 L260 535 C270 530 286 516 300 490 C314 462 328 432 337 395 C345 355 348 310 342 272 C337 238 320 215 295 202 C278 190 250 186 230 186 Z" fill="#f5c5a3" stroke="#d4935e" stroke-width="2.5"/>
+  <!-- Brazo superior izquierdo -->
+  <rect x="86" y="198" width="36" height="142" rx="18" transform="rotate(8 104 198)" fill="#f5c5a3" stroke="#d4935e" stroke-width="2"/>
+  <!-- Antebrazo izquierdo -->
+  <rect x="68" y="342" width="30" height="128" rx="15" transform="rotate(5 83 342)" fill="#f5c5a3" stroke="#d4935e" stroke-width="2"/>
+  <!-- Mano izquierda -->
+  <ellipse cx="72" cy="482" rx="20" ry="28" fill="#f5c5a3" stroke="#d4935e" stroke-width="1.5"/>
+  <!-- Brazo superior derecho -->
+  <rect x="278" y="198" width="36" height="142" rx="18" transform="rotate(-8 296 198)" fill="#f5c5a3" stroke="#d4935e" stroke-width="2"/>
+  <!-- Antebrazo derecho -->
+  <rect x="302" y="342" width="30" height="128" rx="15" transform="rotate(-5 317 342)" fill="#f5c5a3" stroke="#d4935e" stroke-width="2"/>
+  <!-- Mano derecha -->
+  <ellipse cx="328" cy="482" rx="20" ry="28" fill="#f5c5a3" stroke="#d4935e" stroke-width="1.5"/>
+  <!-- Muslo izquierdo -->
+  <rect x="122" y="530" width="68" height="175" rx="32" fill="#f5c5a3" stroke="#d4935e" stroke-width="2"/>
+  <!-- Pierna inferior izquierda -->
+  <rect x="130" y="700" width="54" height="162" rx="25" fill="#f5c5a3" stroke="#d4935e" stroke-width="2"/>
+  <!-- Pie izquierdo -->
+  <ellipse cx="157" cy="877" rx="44" ry="20" fill="#f5c5a3" stroke="#d4935e" stroke-width="2"/>
+  <!-- Muslo derecho -->
+  <rect x="210" y="530" width="68" height="175" rx="32" fill="#f5c5a3" stroke="#d4935e" stroke-width="2"/>
+  <!-- Pierna inferior derecha -->
+  <rect x="216" y="700" width="54" height="162" rx="25" fill="#f5c5a3" stroke="#d4935e" stroke-width="2"/>
+  <!-- Pie derecho -->
+  <ellipse cx="243" cy="877" rx="44" ry="20" fill="#f5c5a3" stroke="#d4935e" stroke-width="2"/>
+  <!-- Detalles faciales -->
+  <ellipse cx="183" cy="68" rx="7" ry="9" fill="rgba(0,0,0,0.08)"/>
+  <ellipse cx="217" cy="68" rx="7" ry="9" fill="rgba(0,0,0,0.08)"/>
+  <path d="M188 95 Q200 106 212 95" fill="none" stroke="rgba(0,0,0,0.15)" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Línea de clavícula superficie -->
+  <path d="M175 190 Q160 186 132 196" fill="none" stroke="rgba(180,120,80,0.3)" stroke-width="1"/>
+  <path d="M225 190 Q240 186 268 196" fill="none" stroke="rgba(180,120,80,0.3)" stroke-width="1"/>
+  <!-- Ombligo -->
+  <ellipse cx="200" cy="395" rx="5" ry="6" fill="rgba(0,0,0,0.12)"/>
+</svg>

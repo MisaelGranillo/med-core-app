@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 900">
+  <!-- Cráneo (vista posterior) -->
+  <ellipse cx="200" cy="70" rx="57" ry="60" fill="#e8dcc8" stroke="#b8a070" stroke-width="2"/>
+  <!-- Protuberancia occipital externa -->
+  <ellipse cx="200" cy="118" rx="22" ry="10" fill="#d4b890" stroke="#b8a070" stroke-width="1.5"/>
+  <!-- Sutura lambdoidea (en V) -->
+  <path d="M148 62 Q200 95 252 62" fill="none" stroke="#b8a070" stroke-width="1" stroke-dasharray="3,3"/>
+  <!-- Vértebras cervicales (posteriores) -->
+  <rect x="186" y="144" width="28" height="46" rx="5" fill="#e8dcc8" stroke="#b8a070" stroke-width="1.5"/>
+  <!-- Apófisis espinosas cervicales -->
+  <rect x="196" y="146" width="8" height="10" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <rect x="196" y="158" width="8" height="10" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <rect x="196" y="170" width="8" height="10" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <!-- Escápulas -->
+  <!-- Escápula izquierda (en la espalda izquierda) -->
+  <path d="M104 202 Q98 240 100 280 Q110 295 132 298 Q148 280 152 255 Q150 225 140 205 Z" fill="#e8dcc8" stroke="#b8a070" stroke-width="2"/>
+  <!-- Borde medial de la escápula izquierda -->
+  <line x1="100" y1="205" x2="100" y2="280" stroke="#b8a070" stroke-width="1.5"/>
+  <!-- Acromion izquierdo -->
+  <path d="M104 202 Q114 195 128 198" fill="none" stroke="#b8a070" stroke-width="5" stroke-linecap="round"/>
+  <!-- Espina escapular izquierda -->
+  <path d="M100 220 Q118 212 138 215" fill="none" stroke="#d4b890" stroke-width="5" stroke-linecap="round"/>
+  <!-- Escápula derecha (espejo) -->
+  <path d="M296 202 Q302 240 300 280 Q290 295 268 298 Q252 280 248 255 Q250 225 260 205 Z" fill="#e8dcc8" stroke="#b8a070" stroke-width="2"/>
+  <line x1="300" y1="205" x2="300" y2="280" stroke="#b8a070" stroke-width="1.5"/>
+  <path d="M296 202 Q286 195 272 198" fill="none" stroke="#b8a070" stroke-width="5" stroke-linecap="round"/>
+  <path d="M300 220 Q282 212 262 215" fill="none" stroke="#d4b890" stroke-width="5" stroke-linecap="round"/>
+  <!-- Columna torácica (prominente desde atrás) -->
+  <rect x="188" y="194" width="24" height="206" rx="6" fill="#e8dcc8" stroke="#b8a070" stroke-width="1.5"/>
+  <!-- Apófisis espinosas torácicas (prominentes) -->
+  <rect x="196" y="196" width="8" height="12" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <rect x="196" y="212" width="8" height="12" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <rect x="196" y="228" width="8" height="12" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <rect x="196" y="244" width="8" height="12" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <rect x="196" y="260" width="8" height="12" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <rect x="196" y="276" width="8" height="12" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <rect x="196" y="292" width="8" height="12" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <rect x="196" y="308" width="8" height="12" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <rect x="196" y="324" width="8" height="12" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <rect x="196" y="340" width="8" height="12" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <rect x="196" y="356" width="8" height="12" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <!-- Costillas (parcialmente visibles desde atrás) -->
+  <path d="M188 208 Q162 204 135 210" fill="none" stroke="#d4b890" stroke-width="4" stroke-linecap="round"/>
+  <path d="M188 225 Q162 220 135 228" fill="none" stroke="#d4b890" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M188 242 Q162 237 136 246" fill="none" stroke="#d4b890" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M188 259 Q162 254 138 264" fill="none" stroke="#d4b890" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M188 276 Q163 271 142 282" fill="none" stroke="#d4b890" stroke-width="3" stroke-linecap="round"/>
+  <path d="M212 208 Q238 204 265 210" fill="none" stroke="#d4b890" stroke-width="4" stroke-linecap="round"/>
+  <path d="M212 225 Q238 220 265 228" fill="none" stroke="#d4b890" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M212 242 Q238 237 264 246" fill="none" stroke="#d4b890" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M212 259 Q238 254 262 264" fill="none" stroke="#d4b890" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M212 276 Q237 271 258 282" fill="none" stroke="#d4b890" stroke-width="3" stroke-linecap="round"/>
+  <!-- Columna lumbar -->
+  <rect x="186" y="400" width="28" height="86" rx="7" fill="#e8dcc8" stroke="#b8a070" stroke-width="1.5"/>
+  <rect x="196" y="402" width="8" height="14" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <rect x="196" y="420" width="8" height="14" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <rect x="196" y="438" width="8" height="14" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <rect x="196" y="456" width="8" height="14" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <rect x="196" y="474" width="8" height="12" rx="2" fill="#d4b890" stroke="#b8a070" stroke-width="1"/>
+  <!-- Sacro y cóccix -->
+  <path d="M186 486 Q200 478 214 486 L218 528 Q200 536 182 528 Z" fill="#e8dcc8" stroke="#b8a070" stroke-width="2"/>
+  <!-- Cóccix -->
+  <path d="M192 528 Q200 540 208 528 L206 545 Q200 550 194 545 Z" fill="#d4b890" stroke="#b8a070" stroke-width="1.5"/>
+  <!-- Pelvis posterior (crestas ilíacas e isquiones) -->
+  <path d="M108 460 Q145 442 186 450 Q200 446 214 450 Q255 442 292 460" fill="none" stroke="#d4b890" stroke-width="8" stroke-linecap="round"/>
+  <path d="M108 460 Q118 500 135 530" fill="none" stroke="#d4b890" stroke-width="7" stroke-linecap="round"/>
+  <path d="M292 460 Q282 500 265 530" fill="none" stroke="#d4b890" stroke-width="7" stroke-linecap="round"/>
+  <!-- Tuberosidad isquiática izquierda -->
+  <ellipse cx="148" cy="520" rx="18" ry="12" fill="#e8dcc8" stroke="#b8a070" stroke-width="2"/>
+  <ellipse cx="252" cy="520" rx="18" ry="12" fill="#e8dcc8" stroke="#b8a070" stroke-width="2"/>
+  <!-- Húmero posterior izquierdo -->
+  <rect x="88" y="204" width="22" height="138" rx="11" fill="#e8dcc8" stroke="#b8a070" stroke-width="2" transform="rotate(8 99 204)"/>
+  <!-- Olécranon (punta del codo) izquierdo -->
+  <ellipse cx="77" cy="346" rx="12" ry="8" fill="#e8dcc8" stroke="#b8a070" stroke-width="2"/>
+  <!-- Húmero posterior derecho -->
+  <rect x="290" y="204" width="22" height="138" rx="11" fill="#e8dcc8" stroke="#b8a070" stroke-width="2" transform="rotate(-8 301 204)"/>
+  <!-- Olécranon derecho -->
+  <ellipse cx="323" cy="346" rx="12" ry="8" fill="#e8dcc8" stroke="#b8a070" stroke-width="2"/>
+  <!-- Radio/Cúbito posteriores izquierdo -->
+  <rect x="68" y="350" width="14" height="124" rx="7" fill="#e8dcc8" stroke="#b8a070" stroke-width="1.5" transform="rotate(5 75 350)"/>
+  <rect x="84" y="350" width="12" height="120" rx="6" fill="#e8dcc8" stroke="#b8a070" stroke-width="1.5" transform="rotate(4 90 350)"/>
+  <!-- Radio/Cúbito derechos -->
+  <rect x="318" y="350" width="14" height="124" rx="7" fill="#e8dcc8" stroke="#b8a070" stroke-width="1.5" transform="rotate(-5 325 350)"/>
+  <rect x="304" y="350" width="12" height="120" rx="6" fill="#e8dcc8" stroke="#b8a070" stroke-width="1.5" transform="rotate(-4 310 350)"/>
+  <!-- Fémur posterior izquierdo -->
+  <rect x="140" y="530" width="32" height="172" rx="16" fill="#e8dcc8" stroke="#b8a070" stroke-width="2"/>
+  <!-- Fémur posterior derecho -->
+  <rect x="228" y="530" width="32" height="172" rx="16" fill="#e8dcc8" stroke="#b8a070" stroke-width="2"/>
+  <!-- Tibia/Peroné posteriores izquierdo -->
+  <rect x="140" y="716" width="24" height="152" rx="10" fill="#e8dcc8" stroke="#b8a070" stroke-width="2"/>
+  <rect x="166" y="720" width="12" height="145" rx="6" fill="#e8dcc8" stroke="#b8a070" stroke-width="1.5"/>
+  <!-- Tibia/Peroné derechos -->
+  <rect x="236" y="716" width="24" height="152" rx="10" fill="#e8dcc8" stroke="#b8a070" stroke-width="2"/>
+  <rect x="222" y="720" width="12" height="145" rx="6" fill="#e8dcc8" stroke="#b8a070" stroke-width="1.5"/>
+  <!-- Calcáneo izquierdo (prominente desde atrás) -->
+  <ellipse cx="156" cy="876" rx="26" ry="18" fill="#e8dcc8" stroke="#b8a070" stroke-width="2"/>
+  <!-- Calcáneo derecho -->
+  <ellipse cx="244" cy="876" rx="26" ry="18" fill="#e8dcc8" stroke="#b8a070" stroke-width="2"/>
+</svg>

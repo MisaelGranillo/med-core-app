@@ -20,6 +20,8 @@ export interface Hotspot {
   cy: number
   rx: number
   ry: number
+  /** Si true, se renderiza también un hotspot espejado en cx = 400 - cx */
+  bilateral: boolean
   descripcion: string
   funciones: string[]
   medlex_sistema: string
@@ -39,6 +41,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior', 'posterior'],
     shape: 'ellipse',
     cx: 200, cy: 73, rx: 66, ry: 68,
+ bilateral: false,
     descripcion:
       'Estructura ósea que conforma la cabeza y protege el encéfalo. ' +
       'Compuesto por 8 huesos craneales (frontal, parietales, temporales, occipital, esfenoides y etmoides) ' +
@@ -59,6 +62,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior', 'posterior'],
     shape: 'ellipse',
     cx: 200, cy: 318, rx: 20, ry: 142,
+ bilateral: false,
     descripcion:
       'Eje central del esqueleto axial compuesto por 33 vértebras en 5 regiones: ' +
       'cervical (7), torácica (12), lumbar (5), sacra (5 fusionadas) y coccígea (4 fusionadas). ' +
@@ -80,6 +84,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 153, cy: 196, rx: 52, ry: 14,
+ bilateral: true,
     descripcion:
       'Hueso largo en forma de "S" itálica que conecta el esternón con la escápula. ' +
       'Forma la parte anterior de la cintura escapular y es el único hueso que articula el ' +
@@ -100,6 +105,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 200, cy: 272, rx: 16, ry: 68,
+ bilateral: false,
     descripcion:
       'Hueso plano en la línea media anterior del tórax. Consta de tres partes: ' +
       'manubrio (superior), cuerpo (medio) y apéndice xifoides (inferior). ' +
@@ -120,6 +126,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 200, cy: 272, rx: 94, ry: 75,
+ bilateral: false,
     descripcion:
       'Conjunto de 12 pares de costillas, el esternón y las 12 vértebras torácicas. ' +
       'Costillas 1-7 son "verdaderas" (articulan directamente con el esternón); ' +
@@ -140,6 +147,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 96, cy: 293, rx: 22, ry: 78,
+ bilateral: true,
     descripcion:
       'Hueso largo del brazo y el más largo del miembro superior. ' +
       'Articula proximalmente con la escápula en la articulación glenohumeral (hombro), ' +
@@ -160,6 +168,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 78, cy: 415, rx: 20, ry: 66,
+ bilateral: true,
     descripcion:
       'Dos huesos paralelos del antebrazo. El radio rota sobre el cúbito ' +
       'permitiendo la pronación y supinación. El cúbito forma la prominencia del codo ' +
@@ -180,6 +189,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 200, cy: 463, rx: 92, ry: 45,
+ bilateral: false,
     descripcion:
       'Anillo óseo formado por los dos coxales, el sacro y el cóccix. ' +
       'Conecta el esqueleto axial con los miembros inferiores y contiene y protege ' +
@@ -200,6 +210,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 156, cy: 575, rx: 30, ry: 98,
+ bilateral: true,
     descripcion:
       'El hueso más largo, más robusto y más pesado del cuerpo humano. ' +
       'Articula con el acetábulo del coxal (cadera) y con la tibia y la rótula (rodilla). ' +
@@ -220,6 +231,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 156, cy: 752, rx: 25, ry: 76,
+ bilateral: true,
     descripcion:
       'Dos huesos de la pierna. La tibia es el principal hueso de carga (medial y gruesa); ' +
       'el peroné es lateral y delgado. Articulan con el fémur arriba y con los tarsos abajo, ' +
@@ -244,6 +256,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior', 'posterior'],
     shape: 'ellipse',
     cx: 200, cy: 198, rx: 97, ry: 28,
+ bilateral: false,
     descripcion:
       'Músculo superficial de gran tamaño que cubre la región posterior del cuello ' +
       'y el tórax superior. Tiene tres porciones (superior, media, inferior) visibles ' +
@@ -265,6 +278,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 96, cy: 220, rx: 30, ry: 38,
+ bilateral: true,
     descripcion:
       'Músculo triangular que cubre completamente la articulación del hombro. ' +
       'Tiene tres porciones (anterior, media y posterior) que permiten movimientos ' +
@@ -285,6 +299,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 158, cy: 253, rx: 52, ry: 50,
+ bilateral: true,
     descripcion:
       'Músculo ancho y potente de la región anterior del tórax. Tiene dos cabezas: ' +
       'clavicular (superior) y esternocostal (inferior). Se inserta en la cresta del ' +
@@ -305,6 +320,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 91, cy: 298, rx: 22, ry: 72,
+ bilateral: true,
     descripcion:
       'Músculo biarticular de la cara anterior del brazo con dos cabezas de origen ' +
       '(larga y corta). Principal flexor del codo y supinador del antebrazo. ' +
@@ -325,6 +341,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 200, cy: 372, rx: 40, ry: 78,
+ bilateral: false,
     descripcion:
       'Músculo largo y plano en la línea media anterior del abdomen. ' +
       'Dividido por 3-4 intersecciones tendinosas y la línea alba en el centro, ' +
@@ -345,6 +362,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 155, cy: 572, rx: 38, ry: 96,
+ bilateral: true,
     descripcion:
       'El músculo más voluminoso del cuerpo. Compuesto por 4 cabezas en la cara ' +
       'anterior del muslo: recto femoral, vasto lateral, vasto medial y vasto intermedio. ' +
@@ -365,6 +383,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 155, cy: 746, rx: 25, ry: 58,
+ bilateral: true,
     descripcion:
       'Músculo más superficial de la pantorrilla, con dos cabezas (medial y lateral). ' +
       'Biarticular: cruza rodilla y tobillo. Forma junto con el sóleo el tendón de Aquiles, ' +
@@ -385,6 +404,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 148, cy: 756, rx: 17, ry: 55,
+ bilateral: true,
     descripcion:
       'Músculo palpable en la cara anterior de la pierna, entre la tibia y el peroné. ' +
       'Es el principal dorsiflexor del pie y forma el compartimento anterior de la pierna. ' +
@@ -405,6 +425,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['posterior'],
     shape: 'ellipse',
     cx: 200, cy: 468, rx: 90, ry: 48,
+ bilateral: true,
     descripcion:
       'El músculo más voluminoso del cuerpo, forma la prominencia de la nalga. ' +
       'Principal extensor y rotador lateral de la articulación coxofemoral. ' +
@@ -425,6 +446,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['posterior'],
     shape: 'ellipse',
     cx: 148, cy: 322, rx: 38, ry: 78,
+ bilateral: true,
     descripcion:
       'Músculo plano de gran extensión que cubre la mayor parte de la espalda ' +
       'inferior y media. Se origina en las vértebras torácicas inferiores, lumbares, ' +
@@ -449,6 +471,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 200, cy: 65, rx: 57, ry: 60,
+ bilateral: false,
     descripcion:
       'Órgano central del sistema nervioso que ocupa la mayor parte del cráneo. ' +
       'Pesa ~1,400 g, contiene ~86 mil millones de neuronas y consume el 20% del O₂ ' +
@@ -470,6 +493,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 177, cy: 272, rx: 35, ry: 38,
+ bilateral: false,
     descripcion:
       'Órgano central del sistema cardiovascular situado en el mediastino medio, ' +
       'desplazado hacia la izquierda (levoposición). Pesa 250-350 g y tiene 4 cámaras: ' +
@@ -491,6 +515,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 200, cy: 258, rx: 86, ry: 68,
+ bilateral: false,
     descripcion:
       'Pulmón derecho (3 lóbulos) y pulmón izquierdo (2 lóbulos). ' +
       'Contienen ~300 millones de alvéolos con 70-140 m² de superficie de intercambio gaseoso. ' +
@@ -512,6 +537,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 228, cy: 368, rx: 58, ry: 42,
+ bilateral: false,
     descripcion:
       'El órgano sólido más grande del cuerpo (~1,500 g), ubicado en el hipocondrio ' +
       'derecho. Recibe sangre de la arteria hepática (30%, O₂) y la vena porta ' +
@@ -533,6 +559,7 @@ export const hotspots: Hotspot[] = [
     vistas: ['anterior'],
     shape: 'ellipse',
     cx: 200, cy: 400, rx: 68, ry: 32,
+ bilateral: false,
     descripcion:
       'Dos órganos retroperitoneales en forma de judía. Cada riñón contiene ~1 millón ' +
       'de nefronas. Filtran ~180 L de plasma al día, excretando 1-2 L como orina final. ' +

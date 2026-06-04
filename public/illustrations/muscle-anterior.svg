@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 900">
+  <!-- Trapecio (porciones superiores, visibles de frente) -->
+  <path d="M170 186 Q200 176 230 186 Q265 190 298 204 Q248 196 200 193 Q152 196 102 204 Z" fill="rgba(192,57,43,0.7)" stroke="rgba(160,40,28,0.85)" stroke-width="1.5"/>
+  <!-- Esternocleidomastoideo izquierdo -->
+  <path d="M183 138 Q174 155 170 186" fill="none" stroke="rgba(160,40,28,0.6)" stroke-width="5" stroke-linecap="round"/>
+  <!-- Esternocleidomastoideo derecho -->
+  <path d="M217 138 Q226 155 230 186" fill="none" stroke="rgba(160,40,28,0.6)" stroke-width="5" stroke-linecap="round"/>
+  <!-- Deltoides izquierdo -->
+  <path d="M102 200 Q82 214 78 234 Q83 252 97 262 Q108 242 116 222 Z" fill="rgba(192,57,43,0.82)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5"/>
+  <!-- Deltoides derecho -->
+  <path d="M298 200 Q318 214 322 234 Q317 252 303 262 Q292 242 284 222 Z" fill="rgba(192,57,43,0.82)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5"/>
+  <!-- Pectoral mayor izquierdo -->
+  <path d="M168 206 Q126 218 110 244 Q106 268 118 280 Q140 270 162 257 Q170 240 168 206 Z" fill="rgba(192,57,43,0.76)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5"/>
+  <!-- Pectoral mayor derecho -->
+  <path d="M232 206 Q274 218 290 244 Q294 268 282 280 Q260 270 238 257 Q230 240 232 206 Z" fill="rgba(192,57,43,0.76)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5"/>
+  <!-- Serrato anterior izquierdo -->
+  <path d="M108 268 L114 284 L108 298 L104 284 Z" fill="rgba(192,57,43,0.6)"/>
+  <path d="M108 298 L113 316 L107 330 L104 314 Z" fill="rgba(192,57,43,0.55)"/>
+  <!-- Serrato anterior derecho -->
+  <path d="M292 268 L286 284 L292 298 L296 284 Z" fill="rgba(192,57,43,0.6)"/>
+  <path d="M292 298 L287 316 L293 330 L296 314 Z" fill="rgba(192,57,43,0.55)"/>
+  <!-- Bíceps izquierdo -->
+  <rect x="87" y="232" width="24" height="140" rx="12" fill="rgba(192,57,43,0.82)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5" transform="rotate(8 99 232)"/>
+  <!-- Braquiorradial izquierdo -->
+  <rect x="78" y="366" width="20" height="80" rx="9" fill="rgba(192,57,43,0.65)" transform="rotate(5 88 366)"/>
+  <!-- Bíceps derecho -->
+  <rect x="289" y="232" width="24" height="140" rx="12" fill="rgba(192,57,43,0.82)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5" transform="rotate(-8 301 232)"/>
+  <!-- Braquiorradial derecho -->
+  <rect x="302" y="366" width="20" height="80" rx="9" fill="rgba(192,57,43,0.65)" transform="rotate(-5 312 366)"/>
+  <!-- Recto abdominal con intersecciones tendinosas -->
+  <rect x="178" y="288" width="44" height="145" rx="8" fill="rgba(192,57,43,0.70)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5"/>
+  <line x1="178" y1="320" x2="222" y2="320" stroke="rgba(140,35,25,0.65)" stroke-width="1.5"/>
+  <line x1="178" y1="354" x2="222" y2="354" stroke="rgba(140,35,25,0.65)" stroke-width="1.5"/>
+  <line x1="178" y1="388" x2="222" y2="388" stroke="rgba(140,35,25,0.65)" stroke-width="1.5"/>
+  <!-- Línea alba -->
+  <line x1="200" y1="288" x2="200" y2="433" stroke="rgba(140,35,25,0.5)" stroke-width="1"/>
+  <!-- Oblicuo externo izquierdo -->
+  <path d="M138 286 Q122 335 128 395 Q137 398 147 388 Q148 340 158 298 Z" fill="rgba(192,57,43,0.62)" stroke="rgba(160,40,28,0.75)" stroke-width="1.5"/>
+  <!-- Oblicuo externo derecho -->
+  <path d="M262 286 Q278 335 272 395 Q263 398 253 388 Q252 340 242 298 Z" fill="rgba(192,57,43,0.62)" stroke="rgba(160,40,28,0.75)" stroke-width="1.5"/>
+  <!-- Cuádriceps izquierdo (4 cabezas) -->
+  <rect x="124" y="532" width="62" height="172" rx="28" fill="rgba(192,57,43,0.76)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5"/>
+  <line x1="146" y1="536" x2="142" y2="700" stroke="rgba(140,35,25,0.4)" stroke-width="1"/>
+  <line x1="160" y1="533" x2="157" y2="703" stroke="rgba(140,35,25,0.4)" stroke-width="1"/>
+  <line x1="174" y1="536" x2="171" y2="700" stroke="rgba(140,35,25,0.4)" stroke-width="1"/>
+  <!-- Cuádriceps derecho -->
+  <rect x="214" y="532" width="62" height="172" rx="28" fill="rgba(192,57,43,0.76)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5"/>
+  <line x1="236" y1="536" x2="232" y2="700" stroke="rgba(140,35,25,0.4)" stroke-width="1"/>
+  <line x1="250" y1="533" x2="247" y2="703" stroke="rgba(140,35,25,0.4)" stroke-width="1"/>
+  <line x1="264" y1="536" x2="261" y2="700" stroke="rgba(140,35,25,0.4)" stroke-width="1"/>
+  <!-- Tibial anterior izquierdo -->
+  <rect x="134" y="706" width="22" height="148" rx="10" fill="rgba(192,57,43,0.72)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5"/>
+  <!-- Tibial anterior derecho -->
+  <rect x="244" y="706" width="22" height="148" rx="10" fill="rgba(192,57,43,0.72)" stroke="rgba(160,40,28,0.9)" stroke-width="1.5"/>
+  <!-- Gastrocnemio visible (cara medial) izquierdo -->
+  <rect x="150" y="706" width="18" height="148" rx="9" fill="rgba(155,35,20,0.65)" stroke="rgba(140,30,18,0.8)" stroke-width="1.5"/>
+  <!-- Gastrocnemio derecho -->
+  <rect x="232" y="706" width="18" height="148" rx="9" fill="rgba(155,35,20,0.65)" stroke="rgba(140,30,18,0.8)" stroke-width="1.5"/>
+  <!-- Tensor de la fascia lata izquierdo -->
+  <path d="M122 535 Q114 560 115 595 Q120 600 128 595 Q128 560 128 535 Z" fill="rgba(160,40,28,0.55)"/>
+  <!-- Tensor de la fascia lata derecho -->
+  <path d="M278 535 Q286 560 285 595 Q280 600 272 595 Q272 560 272 535 Z" fill="rgba(160,40,28,0.55)"/>
+</svg>

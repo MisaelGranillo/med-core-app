@@ -1,451 +1,151 @@
 /*
- * AnatomyViewer2D.tsx — Visor anatómico 2D interactivo
+ * AnatomyViewer2D.tsx — Visor Anatómico 2D Interactivo (v2)
  *
- * SVG inline, sin WebGL, sin dependencias de Three.js.
- * ViewBox: "0 0 400 900" — coordenadas calibradas con anatomyHotspots.ts
+ * Arquitectura:
+ *   - Imágenes SVG externas en /public/illustrations/ como capas apiladas
+ *   - Overlay SVG con hotspots interactivos encima
+ *   - React state (sin manipulación directa del DOM)
+ *   - useNavigate para cross-link a /terminologia
+ *   - Hotspots bilaterales: render espejado en cx = 400 - cx
  *
- * Capas:
- *   skin     → silueta y superficie corporal (#f5c5a3)
- *   muscle   → grupos musculares principales (#c0392b)
- *   skeleton → estructuras óseas (#e8dcc8)
- *
- * El overlay de hotspots es una capa SVG transparente encima de todas.
+ * Correcciones respecto al prototipo HTML:
+ *   ✓ Sin referencia global a `event` (bug del prototipo)
+ *   ✓ Sin alert() — navegación real con React Router
+ *   ✓ Sin emoji — iconos Phosphor
+ *   ✓ Espejado solo en hotspots con bilateral:true (no en estructuras centro)
+ *   ✓ Estado gestionado con useState, no con DOM
+ *   ✓ resetView sin .click() programático
+ *   ✓ Download: SVG combinado correcto usando XMLSerializer
+ *   ✓ Selección de hotspot espejado: mismo id que el principal
  */
 
-import { useState, useCallback, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useRef, useCallback, useId } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
-  X, ArrowLeft, Eye, EyeSlash, ArrowCounterClockwise,
-  Bone, Lightning, Heartbeat, BookOpenText, ArrowRight,
-  ArrowsOut, Camera,
+  Eye, EyeSlash, X, ArrowLeft, ArrowCounterClockwise,
+  ArrowsOut, Camera, BookOpenText, ArrowRight,
 } from '@phosphor-icons/react'
 import { hotspots, hotspotById, HOTSPOT_SYSTEM_LABELS, type Hotspot } from '../data/anatomyHotspots'
 
 // ──────────────────────────────────────────────────────────────
-// Tipos y constantes
+// Tipos y configuración de capas
 // ──────────────────────────────────────────────────────────────
 
-type LayerKey = 'skin' | 'muscle' | 'skeleton'
+type LayerKey = 'skeleton' | 'muscle' | 'surface'
 type View = 'anterior' | 'posterior'
 
-interface LayerState {
-  visible: boolean
-  opacity: number
-}
-
+interface LayerState { visible: boolean; opacity: number }
 type LayersState = Record<LayerKey, LayerState>
 
 const DEFAULT_LAYERS: LayersState = {
-  skin:     { visible: true, opacity: 1 },
-  muscle:   { visible: true, opacity: 1 },
   skeleton: { visible: true, opacity: 1 },
+  muscle:   { visible: true, opacity: 1 },
+  surface:  { visible: true, opacity: 1 },
 }
 
 const XRAY_LAYERS: LayersState = {
-  skin:     { visible: true, opacity: 0.18 },
-  muscle:   { visible: true, opacity: 0.35 },
-  skeleton: { visible: true, opacity: 1 },
+  skeleton: { visible: true, opacity: 1.0 },
+  muscle:   { visible: true, opacity: 0.40 },
+  surface:  { visible: true, opacity: 0.15 },
 }
 
-const LAYER_META: Array<{ id: LayerKey; label: string; color: string }> = [
-  { id: 'skin',     label: 'Piel / Superficie', color: '#f5c5a3' },
-  { id: 'muscle',   label: 'Sistema Muscular',  color: '#c0392b' },
-  { id: 'skeleton', label: 'Sistema Óseo',      color: '#e8dcc8' },
+const LAYER_META: Array<{ key: LayerKey; label: string; dot: string }> = [
+  { key: 'skeleton', label: 'Sistema Óseo',      dot: '#e8dcc8' },
+  { key: 'muscle',   label: 'Sistema Muscular',   dot: '#c0392b' },
+  { key: 'surface',  label: 'Piel / Superficie',  dot: '#f5c5a3' },
 ]
 
-const SYSTEM_ICON: Record<string, React.ReactNode> = {
-  esqueletico: <Bone weight="fill" className="w-3.5 h-3.5" />,
-  muscular:    <Lightning weight="fill" className="w-3.5 h-3.5" />,
-  organos:     <Heartbeat weight="fill" className="w-3.5 h-3.5" />,
+// URL de cada capa según la vista
+const LAYER_URLS: Record<View, Record<LayerKey, string>> = {
+  anterior: {
+    skeleton: '/illustrations/skeleton-anterior.svg',
+    muscle:   '/illustrations/muscle-anterior.svg',
+    surface:  '/illustrations/surface-anterior.svg',
+  },
+  posterior: {
+    skeleton: '/illustrations/skeleton-posterior.svg',
+    muscle:   '/illustrations/muscle-posterior.svg',
+    surface:  '/illustrations/surface-posterior.svg',
+  },
 }
 
-const SYSTEM_COLORS: Record<string, { accent: string; bg: string; border: string; badge: string }> = {
-  esqueletico: { accent: '#e8dcc8', bg: 'rgba(232,220,200,0.12)', border: 'rgba(232,220,200,0.3)', badge: 'rgba(232,220,200,0.2)' },
-  muscular:    { accent: '#e05555', bg: 'rgba(192,57,43,0.12)',  border: 'rgba(192,57,43,0.3)',  badge: 'rgba(192,57,43,0.2)'  },
-  organos:     { accent: '#c77dff', bg: 'rgba(142,68,173,0.12)', border: 'rgba(142,68,173,0.3)', badge: 'rgba(142,68,173,0.2)' },
+// Colores de badge/acento por sistema
+const SISTEMA_STYLE: Record<string, { accent: string; bg: string; border: string }> = {
+  esqueletico: { accent: '#e8dcc8', bg: 'rgba(232,220,200,0.12)', border: 'rgba(232,220,200,0.3)' },
+  muscular:    { accent: '#e05555', bg: 'rgba(192,57,43,0.12)',   border: 'rgba(192,57,43,0.3)'   },
+  organos:     { accent: '#c77dff', bg: 'rgba(142,68,173,0.12)',  border: 'rgba(142,68,173,0.3)'  },
 }
 
 const MEDLEX_MAP: Record<string, string> = {
-  craneo:            'nervioso',
-  'columna-vertebral': 'nervioso',
-  clavicula:         'musculoesqueletico',
-  esternon:          'musculoesqueletico',
-  costillas:         'respiratorio',
-  humero:            'musculoesqueletico',
-  'radio-cubito':    'musculoesqueletico',
-  pelvis:            'musculoesqueletico',
-  femur:             'musculoesqueletico',
-  tibia:             'musculoesqueletico',
-  trapecio:          'musculoesqueletico',
-  deltoides:         'musculoesqueletico',
-  pectoral:          'musculoesqueletico',
-  biceps:            'musculoesqueletico',
-  'recto-abdominal': 'musculoesqueletico',
-  cuadriceps:        'musculoesqueletico',
-  gastrocnemio:      'musculoesqueletico',
-  'tibial-anterior': 'musculoesqueletico',
-  gluteo:            'musculoesqueletico',
-  'dorsal-ancho':    'musculoesqueletico',
-  cerebro:           'nervioso',
-  corazon:           'cardiovascular',
-  pulmones:          'respiratorio',
-  higado:            'digestivo',
-  rinones:           'urinario',
+  craneo: 'nervioso', 'columna-vertebral': 'nervioso',
+  clavicula: 'musculoesqueletico', esternon: 'musculoesqueletico',
+  costillas: 'respiratorio', humero: 'musculoesqueletico',
+  'radio-cubito': 'musculoesqueletico', pelvis: 'musculoesqueletico',
+  femur: 'musculoesqueletico', tibia: 'musculoesqueletico',
+  trapecio: 'musculoesqueletico', deltoides: 'musculoesqueletico',
+  pectoral: 'musculoesqueletico', biceps: 'musculoesqueletico',
+  'recto-abdominal': 'musculoesqueletico', cuadriceps: 'musculoesqueletico',
+  gastrocnemio: 'musculoesqueletico', 'tibial-anterior': 'musculoesqueletico',
+  gluteo: 'musculoesqueletico', 'dorsal-ancho': 'musculoesqueletico',
+  cerebro: 'nervioso', corazon: 'cardiovascular',
+  pulmones: 'respiratorio', higado: 'digestivo', rinones: 'urinario',
 }
 
 // ──────────────────────────────────────────────────────────────
-// CAPA PIEL / SUPERFICIE  (ViewBox 0 0 400 900)
+// Panel de información anatómica
 // ──────────────────────────────────────────────────────────────
-function SkinLayer() {
-  const fill = '#f5c5a3'
-  const stroke = '#d4935e'
-  const sw = '2'
-  return (
-    <g>
-      {/* Cabeza */}
-      <ellipse cx="200" cy="73" rx="65" ry="68" fill={fill} stroke={stroke} strokeWidth={sw} />
-      {/* Orejas */}
-      <ellipse cx="134" cy="72" rx="10" ry="18" fill={fill} stroke={stroke} strokeWidth="1.5" />
-      <ellipse cx="266" cy="72" rx="10" ry="18" fill={fill} stroke={stroke} strokeWidth="1.5" />
-      {/* Cuello */}
-      <path d="M172 138 Q200 148 228 138 L230 186 L170 186 Z" fill={fill} stroke={stroke} strokeWidth={sw} />
-      {/* Torso */}
-      <path
-        d="M170 186 C150 186 122 190 105 202 C80 215 63 238 58 272 C52 310 55 355 63 395
-           C72 432 86 462 100 490 C114 516 130 530 140 535
-           L260 535
-           C270 530 286 516 300 490 C314 462 328 432 337 395
-           C345 355 348 310 342 272 C337 238 320 215 295 202
-           C278 190 250 186 230 186 Z"
-        fill={fill} stroke={stroke} strokeWidth={sw}
-      />
-      {/* Brazo superior izquierdo */}
-      <rect x="86" y="198" width="36" height="142" rx="18"
-        transform="rotate(8 104 198)" fill={fill} stroke={stroke} strokeWidth={sw} />
-      {/* Antebrazo izquierdo */}
-      <rect x="68" y="342" width="30" height="128" rx="15"
-        transform="rotate(5 83 342)" fill={fill} stroke={stroke} strokeWidth={sw} />
-      {/* Mano izquierda */}
-      <ellipse cx="72" cy="482" rx="20" ry="28" fill={fill} stroke={stroke} strokeWidth="1.5" />
-      {/* Brazo superior derecho */}
-      <rect x="278" y="198" width="36" height="142" rx="18"
-        transform="rotate(-8 296 198)" fill={fill} stroke={stroke} strokeWidth={sw} />
-      {/* Antebrazo derecho */}
-      <rect x="302" y="342" width="30" height="128" rx="15"
-        transform="rotate(-5 317 342)" fill={fill} stroke={stroke} strokeWidth={sw} />
-      {/* Mano derecha */}
-      <ellipse cx="328" cy="482" rx="20" ry="28" fill={fill} stroke={stroke} strokeWidth="1.5" />
-      {/* Muslo izquierdo */}
-      <rect x="122" y="530" width="68" height="175" rx="32" fill={fill} stroke={stroke} strokeWidth={sw} />
-      {/* Pierna inferior izquierda */}
-      <rect x="130" y="700" width="54" height="162" rx="25" fill={fill} stroke={stroke} strokeWidth={sw} />
-      {/* Pie izquierdo */}
-      <ellipse cx="157" cy="877" rx="44" ry="20" fill={fill} stroke={stroke} strokeWidth={sw} />
-      {/* Muslo derecho */}
-      <rect x="210" y="530" width="68" height="175" rx="32" fill={fill} stroke={stroke} strokeWidth={sw} />
-      {/* Pierna inferior derecha */}
-      <rect x="216" y="700" width="54" height="162" rx="25" fill={fill} stroke={stroke} strokeWidth={sw} />
-      {/* Pie derecho */}
-      <ellipse cx="243" cy="877" rx="44" ry="20" fill={fill} stroke={stroke} strokeWidth={sw} />
-      {/* Detalles faciales mínimos */}
-      <ellipse cx="183" cy="68" rx="7" ry="9" fill="rgba(0,0,0,0.08)" />
-      <ellipse cx="217" cy="68" rx="7" ry="9" fill="rgba(0,0,0,0.08)" />
-      <path d="M188 95 Q200 106 212 95" fill="none" stroke="rgba(0,0,0,0.15)" strokeWidth="1.5" strokeLinecap="round" />
-    </g>
-  )
-}
 
-// ──────────────────────────────────────────────────────────────
-// CAPA MUSCULAR
-// ──────────────────────────────────────────────────────────────
-function MuscleLayer() {
-  const m  = (opacity = 0.82) => `rgba(192,57,43,${opacity})`
-  const ms = (opacity = 0.9)  => `rgba(160,40,28,${opacity})`
-  return (
-    <g>
-      {/* Trapecio (porciones superiores, visibles de frente) */}
-      <path
-        d="M170 186 Q200 176 230 186 Q265 190 298 204 Q248 196 200 193 Q152 196 102 204 Z"
-        fill={m(0.7)} stroke={ms(0.85)} strokeWidth="1.5"
-      />
-      {/* Deltoides izquierdo */}
-      <path d="M102 200 Q82 214 78 234 Q83 252 97 262 Q108 242 116 222 Z"
-        fill={m()} stroke={ms()} strokeWidth="1.5" />
-      {/* Deltoides derecho */}
-      <path d="M298 200 Q318 214 322 234 Q317 252 303 262 Q292 242 284 222 Z"
-        fill={m()} stroke={ms()} strokeWidth="1.5" />
-      {/* Pectoral mayor izquierdo */}
-      <path d="M168 206 Q126 218 110 244 Q106 268 118 280 Q140 270 162 257 Q170 240 168 206 Z"
-        fill={m(0.76)} stroke={ms()} strokeWidth="1.5" />
-      {/* Pectoral mayor derecho */}
-      <path d="M232 206 Q274 218 290 244 Q294 268 282 280 Q260 270 238 257 Q230 240 232 206 Z"
-        fill={m(0.76)} stroke={ms()} strokeWidth="1.5" />
-      {/* Serrato anterior izquierdo */}
-      <path d="M108 268 L112 284 L108 298 L105 282 Z" fill={m(0.6)} />
-      <path d="M108 298 L112 316 L108 330 L105 314 Z" fill={m(0.55)} />
-      {/* Serrato anterior derecho */}
-      <path d="M292 268 L288 284 L292 298 L295 282 Z" fill={m(0.6)} />
-      <path d="M292 298 L288 316 L292 330 L295 314 Z" fill={m(0.55)} />
-      {/* Bíceps braquial izquierdo */}
-      <rect x="87" y="232" width="24" height="140" rx="12"
-        fill={m()} stroke={ms()} strokeWidth="1.5" transform="rotate(8 99 232)" />
-      {/* Braquial anterior izquierdo (debajo del bíceps) */}
-      <rect x="87" y="338" width="22" height="52" rx="10"
-        fill={m(0.65)} transform="rotate(8 98 338)" />
-      {/* Bíceps derecho */}
-      <rect x="289" y="232" width="24" height="140" rx="12"
-        fill={m()} stroke={ms()} strokeWidth="1.5" transform="rotate(-8 301 232)" />
-      <rect x="291" y="338" width="22" height="52" rx="10"
-        fill={m(0.65)} transform="rotate(-8 302 338)" />
-      {/* Recto abdominal + intersecciones tendinosas */}
-      <rect x="178" y="288" width="44" height="145" rx="8"
-        fill={m(0.70)} stroke={ms()} strokeWidth="1.5" />
-      <line x1="178" y1="320" x2="222" y2="320" stroke={ms(0.65)} strokeWidth="1.5" />
-      <line x1="178" y1="354" x2="222" y2="354" stroke={ms(0.65)} strokeWidth="1.5" />
-      <line x1="178" y1="388" x2="222" y2="388" stroke={ms(0.65)} strokeWidth="1.5" />
-      {/* Línea alba (centro) */}
-      <line x1="200" y1="288" x2="200" y2="433" stroke={ms(0.5)} strokeWidth="1" />
-      {/* Oblicuo externo izquierdo */}
-      <path d="M138 286 Q122 335 128 395 Q137 398 147 388 Q148 340 158 298 Z"
-        fill={m(0.62)} stroke={ms(0.75)} strokeWidth="1.5" />
-      {/* Oblicuo externo derecho */}
-      <path d="M262 286 Q278 335 272 395 Q263 398 253 388 Q252 340 242 298 Z"
-        fill={m(0.62)} stroke={ms(0.75)} strokeWidth="1.5" />
-      {/* Cuádriceps izquierdo (con separación de 4 cabezas) */}
-      <rect x="124" y="532" width="62" height="172" rx="28"
-        fill={m(0.76)} stroke={ms()} strokeWidth="1.5" />
-      <line x1="146" y1="536" x2="142" y2="700" stroke={ms(0.4)} strokeWidth="1" />
-      <line x1="160" y1="533" x2="157" y2="703" stroke={ms(0.4)} strokeWidth="1" />
-      <line x1="174" y1="536" x2="171" y2="700" stroke={ms(0.4)} strokeWidth="1" />
-      {/* Cuádriceps derecho */}
-      <rect x="214" y="532" width="62" height="172" rx="28"
-        fill={m(0.76)} stroke={ms()} strokeWidth="1.5" />
-      <line x1="236" y1="536" x2="232" y2="700" stroke={ms(0.4)} strokeWidth="1" />
-      <line x1="250" y1="533" x2="247" y2="703" stroke={ms(0.4)} strokeWidth="1" />
-      <line x1="264" y1="536" x2="261" y2="700" stroke={ms(0.4)} strokeWidth="1" />
-      {/* Tibial anterior izquierdo */}
-      <rect x="134" y="706" width="22" height="148" rx="10"
-        fill={m(0.72)} stroke={ms()} strokeWidth="1.5" />
-      {/* Tibial anterior derecho */}
-      <rect x="244" y="706" width="22" height="148" rx="10"
-        fill={m(0.72)} stroke={ms()} strokeWidth="1.5" />
-      {/* Gastrocnemio izquierdo (visible desde frente en porción distal) */}
-      <rect x="150" y="706" width="20" height="148" rx="10"
-        fill="rgba(155,35,20,0.65)" stroke={ms(0.75)} strokeWidth="1.5" />
-      {/* Gastrocnemio derecho */}
-      <rect x="230" y="706" width="20" height="148" rx="10"
-        fill="rgba(155,35,20,0.65)" stroke={ms(0.75)} strokeWidth="1.5" />
-    </g>
-  )
-}
-
-// ──────────────────────────────────────────────────────────────
-// CAPA ESQUELÉTICA
-// ──────────────────────────────────────────────────────────────
-function SkeletonLayer() {
-  const bf = '#e8dcc8'   // bone fill
-  const bs = '#b8a070'   // bone stroke
-  const bc = '#d4b890'   // lighter bone for smaller structures
-  return (
-    <g>
-      {/* Cráneo */}
-      <ellipse cx="200" cy="70" rx="57" ry="60" fill={bf} stroke={bs} strokeWidth="2" />
-      {/* Calvaria (sutura sagital) */}
-      <line x1="200" y1="15" x2="200" y2="70" stroke={bs} strokeWidth="1" strokeDasharray="3,3" />
-      {/* Mandíbula */}
-      <path d="M153 118 Q200 148 247 118" fill="none" stroke={bs} strokeWidth="3" strokeLinecap="round" />
-      {/* Órbitas */}
-      <ellipse cx="183" cy="68" rx="12" ry="10" fill="rgba(0,0,0,0.12)" stroke={bs} strokeWidth="1" />
-      <ellipse cx="217" cy="68" rx="12" ry="10" fill="rgba(0,0,0,0.12)" stroke={bs} strokeWidth="1" />
-      {/* Vértebras cervicales (cuello) */}
-      <rect x="188" y="144" width="24" height="44" rx="5" fill={bf} stroke={bs} strokeWidth="1.5" />
-      <line x1="188" y1="158" x2="212" y2="158" stroke={bs} strokeWidth="0.8" />
-      <line x1="188" y1="172" x2="212" y2="172" stroke={bs} strokeWidth="0.8" />
-      {/* Clavícula izquierda */}
-      <path d="M186 196 Q150 188 112 200" fill="none" stroke={bc} strokeWidth="6" strokeLinecap="round" />
-      {/* Clavícula derecha */}
-      <path d="M214 196 Q250 188 288 200" fill="none" stroke={bc} strokeWidth="6" strokeLinecap="round" />
-      {/* Esternón (manubrio + cuerpo + apéndice) */}
-      <rect x="190" y="196" width="20" height="132" rx="7" fill={bf} stroke={bs} strokeWidth="1.5" />
-      {/* Articulación condroesternal (líneas) */}
-      <line x1="190" y1="218" x2="210" y2="218" stroke={bs} strokeWidth="0.8" />
-      <line x1="190" y1="236" x2="210" y2="236" stroke={bs} strokeWidth="0.8" />
-      <line x1="190" y1="254" x2="210" y2="254" stroke={bs} strokeWidth="0.8" />
-      {/* Columna torácica (detrás del esternón) */}
-      <rect x="190" y="192" width="20" height="200" rx="5" fill={bf} stroke={bs} strokeWidth="1.5" />
-      {/* Segmentos vertebrales */}
-      {[212, 228, 244, 260, 276, 292, 308, 324, 340, 356, 372].map((y, i) => (
-        <line key={i} x1="190" y1={y} x2="210" y2={y} stroke={bs} strokeWidth="0.7" />
-      ))}
-      {/* Columna lumbar */}
-      <rect x="190" y="392" width="20" height="82" rx="5" fill={bf} stroke={bs} strokeWidth="1.5" />
-      <line x1="190" y1="410" x2="210" y2="410" stroke={bs} strokeWidth="0.8" />
-      <line x1="190" y1="428" x2="210" y2="428" stroke={bs} strokeWidth="0.8" />
-      <line x1="190" y1="446" x2="210" y2="446" stroke={bs} strokeWidth="0.8" />
-      {/* Costillas izquierdas (5 pares visibles anteriores) */}
-      {[210, 228, 246, 264, 282].map((y, i) => (
-        <path key={`ribL${i}`}
-          d={`M188 ${y} Q${155 - i * 2} ${y - 3} ${118 - i * 2} ${y + 15}`}
-          fill="none" stroke={bc} strokeWidth="4" strokeLinecap="round" />
-      ))}
-      {/* Costillas derechas (espejo) */}
-      {[210, 228, 246, 264, 282].map((y, i) => (
-        <path key={`ribR${i}`}
-          d={`M212 ${y} Q${245 + i * 2} ${y - 3} ${282 + i * 2} ${y + 15}`}
-          fill="none" stroke={bc} strokeWidth="4" strokeLinecap="round" />
-      ))}
-      {/* Sacro */}
-      <path d="M188 474 Q200 468 212 474 L215 510 Q200 516 185 510 Z"
-        fill={bf} stroke={bs} strokeWidth="1.5" />
-      {/* Pelvis (crestas ilíacas) */}
-      <path d="M108 455 Q145 438 188 446 Q200 442 212 446 Q255 438 292 455"
-        fill="none" stroke={bc} strokeWidth="8" strokeLinecap="round" />
-      {/* Líneas ilíacas inferiores */}
-      <path d="M108 455 Q134 490 156 522" fill="none" stroke={bc} strokeWidth="7" strokeLinecap="round" />
-      <path d="M292 455 Q266 490 244 522" fill="none" stroke={bc} strokeWidth="7" strokeLinecap="round" />
-      {/* Cabeza del fémur izquierdo */}
-      <ellipse cx="156" cy="526" rx="18" ry="18" fill={bf} stroke={bs} strokeWidth="2" />
-      {/* Cabeza del fémur derecho */}
-      <ellipse cx="244" cy="526" rx="18" ry="18" fill={bf} stroke={bs} strokeWidth="2" />
-      {/* Húmero izquierdo */}
-      <rect x="88" y="202" width="22" height="138" rx="11"
-        fill={bf} stroke={bs} strokeWidth="2" transform="rotate(8 99 202)" />
-      {/* Húmero derecho */}
-      <rect x="290" y="202" width="22" height="138" rx="11"
-        fill={bf} stroke={bs} strokeWidth="2" transform="rotate(-8 301 202)" />
-      {/* Radio izquierdo */}
-      <rect x="72" y="346" width="14" height="126" rx="7"
-        fill={bf} stroke={bs} strokeWidth="1.5" transform="rotate(5 79 346)" />
-      {/* Cúbito izquierdo */}
-      <rect x="88" y="344" width="12" height="122" rx="6"
-        fill={bf} stroke={bs} strokeWidth="1.5" transform="rotate(4 94 344)" />
-      {/* Radio derecho */}
-      <rect x="314" y="346" width="14" height="126" rx="7"
-        fill={bf} stroke={bs} strokeWidth="1.5" transform="rotate(-5 321 346)" />
-      {/* Cúbito derecho */}
-      <rect x="300" y="344" width="12" height="122" rx="6"
-        fill={bf} stroke={bs} strokeWidth="1.5" transform="rotate(-4 306 344)" />
-      {/* Fémur izquierdo */}
-      <rect x="140" y="528" width="32" height="174" rx="16" fill={bf} stroke={bs} strokeWidth="2" />
-      {/* Fémur derecho */}
-      <rect x="228" y="528" width="32" height="174" rx="16" fill={bf} stroke={bs} strokeWidth="2" />
-      {/* Rótula izquierda */}
-      <ellipse cx="156" cy="702" rx="14" ry="14" fill={bf} stroke={bs} strokeWidth="2" />
-      {/* Rótula derecha */}
-      <ellipse cx="244" cy="702" rx="14" ry="14" fill={bf} stroke={bs} strokeWidth="2" />
-      {/* Tibia izquierda */}
-      <rect x="142" y="716" width="24" height="152" rx="10" fill={bf} stroke={bs} strokeWidth="2" />
-      {/* Peroné izquierdo */}
-      <rect x="168" y="720" width="12" height="145" rx="6" fill={bf} stroke={bs} strokeWidth="1.5" />
-      {/* Tibia derecha */}
-      <rect x="234" y="716" width="24" height="152" rx="10" fill={bf} stroke={bs} strokeWidth="2" />
-      {/* Peroné derecho */}
-      <rect x="220" y="720" width="12" height="145" rx="6" fill={bf} stroke={bs} strokeWidth="1.5" />
-      {/* Tarsos (tobillo izquierdo) */}
-      <ellipse cx="157" cy="876" rx="26" ry="16" fill={bf} stroke={bs} strokeWidth="1.5" />
-      {/* Tarsos (tobillo derecho) */}
-      <ellipse cx="243" cy="876" rx="26" ry="16" fill={bf} stroke={bs} strokeWidth="1.5" />
-    </g>
-  )
-}
-
-// ──────────────────────────────────────────────────────────────
-// Overlay de hotspots (capa transparente encima)
-// ──────────────────────────────────────────────────────────────
-interface HotspotOverlayProps {
-  visible: Hotspot[]
-  selectedId: string | null
-  hoveredId: string | null
-  onSelect: (id: string) => void
-  onHover: (id: string | null) => void
-}
-
-function HotspotOverlay({ visible, selectedId, hoveredId, onSelect, onHover }: HotspotOverlayProps) {
-  return (
-    <g>
-      {visible.map(h => {
-        const isSelected = selectedId === h.id
-        const isHovered  = hoveredId  === h.id
-        return (
-          <ellipse
-            key={h.id}
-            cx={h.cx} cy={h.cy} rx={h.rx} ry={h.ry}
-            fill={isSelected
-              ? 'rgba(79,195,247,0.28)'
-              : isHovered
-                ? 'rgba(255,255,255,0.18)'
-                : 'transparent'}
-            stroke={isSelected ? '#4fc3f7' : isHovered ? 'rgba(255,255,255,0.5)' : 'transparent'}
-            strokeWidth={isSelected ? 2 : 1.5}
-            style={{ cursor: 'pointer', transition: 'fill 0.15s, stroke 0.15s' }}
-            onClick={() => onSelect(h.id)}
-            onMouseEnter={() => onHover(h.id)}
-            onMouseLeave={() => onHover(null)}
-          />
-        )
-      })}
-    </g>
-  )
-}
-
-// ──────────────────────────────────────────────────────────────
-// Panel de información
-// ──────────────────────────────────────────────────────────────
 const panelDesktop = {
   hidden:  { x: '100%', opacity: 0 },
-  visible: { x: 0, opacity: 1, transition: { type: 'spring', stiffness: 280, damping: 28 } },
-  exit:    { x: '100%', opacity: 0, transition: { duration: 0.22 } },
+  visible: { x: 0, opacity: 1, transition: { type: 'spring', stiffness: 300, damping: 30 } },
+  exit:    { x: '100%', opacity: 0, transition: { duration: 0.2, ease: 'easeIn' } },
 }
 const panelMobile = {
   hidden:  { y: '100%', opacity: 0 },
-  visible: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 280, damping: 28 } },
-  exit:    { y: '100%', opacity: 0, transition: { duration: 0.22 } },
+  visible: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 300, damping: 30 } },
+  exit:    { y: '100%', opacity: 0, transition: { duration: 0.2, ease: 'easeIn' } },
 }
 
-function InfoPanelContent({ hotspot, onClose }: { hotspot: Hotspot; onClose: () => void }) {
-  const sc    = SYSTEM_COLORS[hotspot.sistema]
-  const icon  = SYSTEM_ICON[hotspot.sistema]
-  const label = HOTSPOT_SYSTEM_LABELS[hotspot.sistema]
-  const medlexSistema = MEDLEX_MAP[hotspot.id]
+const glassBorder = '1px solid rgba(255,255,255,0.08)'
+const glassFont   = 'IBM Plex Mono, monospace'
 
-  const panelStyle: React.CSSProperties = {
-    background:    'rgba(15,15,20,0.92)',
-    borderLeft:    '1px solid rgba(255,255,255,0.08)',
-    fontFamily:    'IBM Plex Mono, monospace',
-  }
+interface InfoPanelProps { hotspot: Hotspot | null; onClose: () => void }
+
+function InfoPanelContent({ hotspot, onClose }: { hotspot: Hotspot; onClose: () => void }) {
+  const navigate = useNavigate()
+  const sc = SISTEMA_STYLE[hotspot.sistema]
+  const medlexSistema = MEDLEX_MAP[hotspot.id]
+  const label = HOTSPOT_SYSTEM_LABELS[hotspot.sistema]
 
   return (
-    <div className="flex flex-col h-full" style={panelStyle}>
+    <>
       {/* Encabezado */}
-      <div className="px-5 py-4 flex-shrink-0" style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+      <div className="flex-shrink-0 px-6 pt-5 pb-4"
+        style={{ borderBottom: glassBorder, fontFamily: glassFont }}>
         <div className="flex items-start justify-between gap-3">
           <div>
-            <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full mb-2"
-              style={{ background: sc.badge, color: sc.accent, border: `1px solid ${sc.border}` }}>
-              {icon}
+            <span className="inline-block text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded mb-2"
+              style={{ background: sc.bg, color: sc.accent, border: `1px solid ${sc.border}` }}>
               {label}
             </span>
-            <h2 className="text-base font-bold leading-tight" style={{ color: '#e0e0e0' }}>
+            <h2 className="text-xl font-bold leading-tight" style={{ color: '#e0e0e0' }}>
               {hotspot.nombre_es}
             </h2>
-            <p className="text-xs italic mt-0.5" style={{ color: '#666' }}>
+            <p className="text-[13px] italic mt-1" style={{ color: '#666' }}>
               {hotspot.nombre_lat}
             </p>
           </div>
-          <button
-            onClick={onClose}
-            className="flex-shrink-0 w-8 h-8 rounded-xl flex items-center justify-center transition-all"
-            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', color: '#888' }}
-          >
+          <button onClick={onClose}
+            className="w-8 h-8 flex items-center justify-center rounded transition-colors flex-shrink-0"
+            style={{ background: 'rgba(255,255,255,0.05)', border: glassBorder, color: '#888' }}>
             <X weight="bold" className="w-4 h-4" />
           </button>
         </div>
       </div>
 
-      {/* Cuerpo */}
-      <div className="overflow-y-auto flex-1 px-5 py-5 space-y-5">
-        {/* Descripción */}
+      {/* Cuerpo scrollable */}
+      <div className="flex-1 overflow-y-auto px-6 py-5 space-y-5" style={{ fontFamily: glassFont }}>
         <div>
           <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: sc.accent }}>
             Descripción
@@ -455,60 +155,56 @@ function InfoPanelContent({ hotspot, onClose }: { hotspot: Hotspot; onClose: () 
           </p>
         </div>
 
-        {/* Funciones */}
-        <div>
+        <div style={{ borderTop: glassBorder, paddingTop: 16 }}>
           <p className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: sc.accent }}>
             Funciones clave
           </p>
           <ul className="space-y-2.5">
             {hotspot.funciones.map((fn, i) => (
-              <li key={i} className="flex items-start gap-2.5 text-sm" style={{ color: '#b8b8b8' }}>
-                <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[7px]"
+              <li key={i} className="flex items-start gap-2.5 text-sm" style={{ color: '#b0b0b0' }}>
+                <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2"
                   style={{ background: sc.accent }} />
-                <span className="leading-relaxed">{fn}</span>
+                {fn}
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Cross-link a terminología */}
+        {/* Cross-link MedLex */}
         {medlexSistema && (
-          <Link
-            to={`/terminologia?sistema=${medlexSistema}`}
-            onClick={onClose}
-            className="flex items-center gap-3 p-3 rounded-2xl transition-all group"
-            style={{
-              background: 'rgba(79,195,247,0.07)',
-              border: '1px solid rgba(79,195,247,0.2)',
-            }}
+          <button
+            onClick={() => { onClose(); navigate(`/terminologia?sistema=${medlexSistema}`) }}
+            className="w-full flex items-center gap-3 p-3 rounded transition-all group text-left"
+            style={{ background: 'rgba(79,195,247,0.07)', border: '1px solid rgba(79,195,247,0.22)' }}
           >
             <BookOpenText weight="fill" className="w-5 h-5 flex-shrink-0" style={{ color: '#4fc3f7' }} />
-            <div className="flex-1">
-              <p className="text-xs font-bold" style={{ color: '#4fc3f7' }}>Ver terminología relacionada</p>
-              <p className="text-[10px] mt-0.5" style={{ color: '#4fc3f7', opacity: 0.7 }}>
+            <div className="flex-1 min-w-0">
+              <p className="text-xs font-bold" style={{ color: '#4fc3f7', fontFamily: glassFont }}>
+                Ver terminología relacionada
+              </p>
+              <p className="text-[10px] mt-0.5 opacity-70" style={{ color: '#4fc3f7', fontFamily: glassFont }}>
                 Prefijos, sufijos y raíces · MedLex
               </p>
             </div>
-            <ArrowRight weight="bold" className="w-4 h-4 flex-shrink-0" style={{ color: '#4fc3f7', opacity: 0.6 }} />
-          </Link>
+            <ArrowRight weight="bold" className="w-4 h-4 flex-shrink-0 opacity-60 group-hover:opacity-100 transition-opacity"
+              style={{ color: '#4fc3f7' }} />
+          </button>
         )}
       </div>
-    </div>
+    </>
   )
 }
 
-function InfoPanel({ hotspot, onClose }: { hotspot: Hotspot | null; onClose: () => void }) {
+function InfoPanel({ hotspot, onClose }: InfoPanelProps) {
   return (
     <>
-      {/* Desktop */}
+      {/* Desktop sidebar */}
       <AnimatePresence>
         {hotspot && (
-          <motion.aside
-            key="desktop-panel"
-            variants={panelDesktop}
-            initial="hidden" animate="visible" exit="exit"
+          <motion.aside key="desktop-panel"
+            variants={panelDesktop} initial="hidden" animate="visible" exit="exit"
             className="hidden md:flex flex-col w-80 flex-shrink-0 h-full overflow-hidden"
-          >
+            style={{ background: 'rgba(15,15,20,0.95)', borderLeft: glassBorder }}>
             <InfoPanelContent hotspot={hotspot} onClose={onClose} />
           </motion.aside>
         )}
@@ -518,26 +214,21 @@ function InfoPanel({ hotspot, onClose }: { hotspot: Hotspot | null; onClose: () 
       <AnimatePresence>
         {hotspot && (
           <>
-            <motion.div
-              key="mobile-overlay"
+            <motion.div key="overlay"
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               className="fixed inset-0 z-40 md:hidden"
-              style={{ background: 'rgba(0,0,0,0.5)' }}
-              onClick={onClose}
-            />
-            <motion.div
-              key="mobile-panel"
-              variants={panelMobile}
-              initial="hidden" animate="visible" exit="exit"
-              className="fixed bottom-0 left-0 right-0 z-50 md:hidden flex flex-col"
+              style={{ background: 'rgba(0,0,0,0.55)' }}
+              onClick={onClose} />
+            <motion.div key="mobile-panel"
+              variants={panelMobile} initial="hidden" animate="visible" exit="exit"
+              className="fixed bottom-0 left-0 right-0 z-50 md:hidden flex flex-col overflow-hidden"
               style={{
                 maxHeight: '62dvh',
                 background: 'rgba(13,13,20,0.97)',
-                borderTop: '1px solid rgba(255,255,255,0.1)',
+                borderTop: glassBorder,
                 borderRadius: '20px 20px 0 0',
-              }}
-            >
+              }}>
               <div className="flex justify-center pt-3 pb-1 flex-shrink-0">
                 <div className="w-10 h-1 rounded-full" style={{ background: 'rgba(255,255,255,0.2)' }} />
               </div>
@@ -551,299 +242,404 @@ function InfoPanel({ hotspot, onClose }: { hotspot: Hotspot | null; onClose: () 
 }
 
 // ──────────────────────────────────────────────────────────────
-// Componente principal exportado
+// Overlay de hotspots sobre el SVG
 // ──────────────────────────────────────────────────────────────
-interface AnatomyViewer2DProps {
-  initialSystemFilter?: string
+
+interface HotspotOverlayProps {
+  hotspots: Hotspot[]
+  selectedId: string | null
+  hoveredId: string | null
+  onSelect: (id: string) => void
+  onHover: (id: string | null) => void
 }
 
-export function AnatomyViewer2D({ initialSystemFilter }: AnatomyViewer2DProps) {
-  const [layers,     setLayers]     = useState<LayersState>(DEFAULT_LAYERS)
+function HotspotOverlay({ hotspots, selectedId, hoveredId, onSelect, onHover }: HotspotOverlayProps) {
+  return (
+    <svg
+      viewBox="0 0 400 900"
+      className="absolute inset-0 w-full h-full"
+      style={{ display: 'block', zIndex: 10 }}
+    >
+      {hotspots.flatMap(h => {
+        const isSelected = selectedId === h.id
+        const isHovered  = hoveredId === h.id
+
+        const fill = isSelected
+          ? 'rgba(79,195,247,0.28)'
+          : isHovered
+            ? 'rgba(255,255,255,0.18)'
+            : 'transparent'
+        const stroke = isSelected ? '#4fc3f7' : isHovered ? 'rgba(255,255,255,0.5)' : 'transparent'
+        const sw = isSelected ? '2' : '1.5'
+        const cursor = 'pointer'
+
+        const props = { fill, stroke, strokeWidth: sw, style: { cursor, transition: 'fill 0.15s, stroke 0.15s' } }
+
+        const primary = (
+          <ellipse key={h.id}
+            cx={h.cx} cy={h.cy} rx={h.rx} ry={h.ry}
+            {...props}
+            onClick={() => onSelect(h.id)}
+            onMouseEnter={() => onHover(h.id)}
+            onMouseLeave={() => onHover(null)}
+          />
+        )
+
+        // Hotspot espejado para estructuras bilaterales (cx espejo = 400 - cx)
+        const mirror = h.bilateral ? (
+          <ellipse key={`${h.id}-mirror`}
+            cx={400 - h.cx} cy={h.cy} rx={h.rx} ry={h.ry}
+            {...props}
+            onClick={() => onSelect(h.id)}
+            onMouseEnter={() => onHover(h.id)}
+            onMouseLeave={() => onHover(null)}
+          />
+        ) : null
+
+        return mirror ? [primary, mirror] : [primary]
+      })}
+    </svg>
+  )
+}
+
+// ──────────────────────────────────────────────────────────────
+// Componente principal exportado
+// ──────────────────────────────────────────────────────────────
+
+export function AnatomyViewer2D() {
   const [view,       setView]       = useState<View>('anterior')
+  const [layers,     setLayers]     = useState<LayersState>(DEFAULT_LAYERS)
+  const [xray,       setXray]       = useState(false)
+  const [allVisible, setAllVisible] = useState(true)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [hoveredId,  setHoveredId]  = useState<string | null>(null)
-  const [xray,       setXray]       = useState(false)
-  const svgRef = useRef<SVGSVGElement>(null)
+
+  const stageRef = useRef<HTMLDivElement>(null)
 
   const selectedHotspot = selectedId ? (hotspotById[selectedId] ?? null) : null
-
-  // Hotspots visibles según vista activa
   const visibleHotspots = hotspots.filter(h => h.vistas.includes(view))
 
-  const handleLayerToggle = useCallback((key: LayerKey) => {
-    setLayers(prev => ({ ...prev, [key]: { ...prev[key], visible: !prev[key].visible } }))
-  }, [])
+  // ── Handlers ──────────────────────────────────────────────
 
-  const handleOpacity = useCallback((key: LayerKey, val: number) => {
-    setLayers(prev => ({ ...prev, [key]: { ...prev[key], opacity: val } }))
-  }, [])
-
-  const handleReset = useCallback(() => {
-    setLayers(DEFAULT_LAYERS)
-    setXray(false)
+  const handleViewChange = useCallback((v: View) => {
+    setView(v)
     setSelectedId(null)
   }, [])
 
-  const handleXray = useCallback(() => {
-    setXray(x => {
-      const next = !x
-      setLayers(next ? XRAY_LAYERS : DEFAULT_LAYERS)
-      return next
-    })
+  const toggleLayer = useCallback((key: LayerKey) => {
+    setLayers(prev => ({
+      ...prev,
+      [key]: { ...prev[key], visible: !prev[key].visible },
+    }))
   }, [])
 
-  const handleScreenshot = useCallback(() => {
-    const svg = svgRef.current
-    if (!svg) return
-    const xml   = new XMLSerializer().serializeToString(svg)
-    const blob  = new Blob([xml], { type: 'image/svg+xml' })
-    const url   = URL.createObjectURL(blob)
-    const a     = document.createElement('a')
-    a.href      = url
-    a.download  = `medcore-anatomia-${Date.now()}.svg`
+  const changeOpacity = useCallback((key: LayerKey, val: number) => {
+    setLayers(prev => ({
+      ...prev,
+      [key]: { ...prev[key], opacity: val },
+    }))
+  }, [])
+
+  const handleXray = useCallback(() => {
+    const next = !xray
+    setXray(next)
+    setLayers(next ? XRAY_LAYERS : DEFAULT_LAYERS)
+  }, [xray])
+
+  const handleToggleAll = useCallback(() => {
+    const next = !allVisible
+    setAllVisible(next)
+    setLayers({
+      skeleton: { visible: next, opacity: 1 },
+      muscle:   { visible: next, opacity: 1 },
+      surface:  { visible: next, opacity: 1 },
+    })
+    if (next) setXray(false)
+  }, [allVisible])
+
+  const handleReset = useCallback(() => {
+    setLayers(DEFAULT_LAYERS)
+    setView('anterior')
+    setSelectedId(null)
+    setXray(false)
+    setAllVisible(true)
+  }, [])
+
+  const handleSelect = useCallback((id: string) => {
+    setSelectedId(prev => (prev === id ? null : id))
+  }, [])
+
+  const handleClosePanel = useCallback(() => {
+    setSelectedId(null)
+  }, [])
+
+  const handleDownload = useCallback(() => {
+    const urls = LAYER_URLS[view]
+    const layerImgs = (Object.keys(layers) as LayerKey[])
+      .filter(k => layers[k].visible)
+      .map(k => `<image href="${urls[k]}" x="0" y="0" width="400" height="900" opacity="${layers[k].opacity}" preserveAspectRatio="xMidYMid meet"/>`)
+      .join('\n')
+
+    const svg = [
+      `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"`,
+      `     viewBox="0 0 400 900" width="800" height="1800" style="background:#0d0d0d">`,
+      layerImgs,
+      `</svg>`,
+    ].join('\n')
+
+    const blob = new Blob([svg], { type: 'image/svg+xml;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const a = Object.assign(document.createElement('a'), { href: url, download: `medcore-anatomia-${Date.now()}.svg` })
     a.click()
     URL.revokeObjectURL(url)
-  }, [])
+  }, [view, layers])
 
-  const glassBg: React.CSSProperties = {
-    background: 'rgba(15,15,20,0.88)',
-    backdropFilter: 'blur(14px)',
-    WebkitBackdropFilter: 'blur(14px)',
-    border: '1px solid rgba(255,255,255,0.07)',
-    fontFamily: 'IBM Plex Mono, monospace',
+  // ── Estilos compartidos ───────────────────────────────────
+
+  const panel: React.CSSProperties = {
+    background: 'rgba(15,15,20,0.92)',
+    borderRight: glassBorder,
+    fontFamily: glassFont,
   }
 
-  const btnBase: React.CSSProperties = {
-    ...glassBg,
-    color: '#aaa',
+  const toolBtn: React.CSSProperties = {
+    background: 'transparent',
+    border: glassBorder,
+    color: '#c0c0c0',
     padding: '7px 14px',
-    borderRadius: 10,
+    borderRadius: 4,
+    fontFamily: glassFont,
     fontSize: 11,
-    fontWeight: 600,
     cursor: 'pointer',
-    display: 'flex',
-    alignItems: 'center',
-    gap: 6,
-    transition: 'all 0.15s',
     whiteSpace: 'nowrap' as const,
+    transition: 'background 0.15s, color 0.15s',
   }
+
+  const viewBtnStyle = (active: boolean): React.CSSProperties => ({
+    ...toolBtn,
+    background: active ? 'rgba(255,255,255,0.1)' : 'transparent',
+    color: active ? '#e0e0e0' : '#666',
+    border: active ? '1px solid rgba(255,255,255,0.15)' : glassBorder,
+  })
+
+  // ── Render ────────────────────────────────────────────────
 
   return (
-    <div className="flex flex-col" style={{ background: '#0d0d0d', height: '100%' }}>
+    <div className="flex flex-col" style={{ height: '100%', background: '#0d0d0d', overflow: 'hidden' }}>
 
-      {/* ── Barra superior ───────────────────────────────────── */}
-      <div className="flex items-center gap-3 px-4 py-2.5 flex-shrink-0 overflow-x-auto"
-        style={{ ...glassBg, borderBottom: '1px solid rgba(255,255,255,0.06)', borderRadius: 0, backdropFilter: 'blur(12px)' }}>
-        <Link to="/" className="flex items-center gap-1.5 transition-colors flex-shrink-0"
-          style={{ color: '#888', fontSize: 13 }}>
+      {/* Barra superior */}
+      <div className="flex items-center gap-3 px-5 py-2.5 flex-shrink-0"
+        style={{ background: 'rgba(15,15,20,0.9)', borderBottom: glassBorder, backdropFilter: 'blur(12px)' }}>
+        <a href="/"
+          className="flex items-center gap-1.5 no-underline transition-opacity hover:opacity-70 flex-shrink-0"
+          style={{ color: '#666', fontFamily: glassFont, fontSize: 12 }}>
           <ArrowLeft weight="bold" className="w-4 h-4" />
           <span className="hidden sm:inline">MedCore</span>
-        </Link>
-        <span style={{ color: '#333', fontSize: 12 }}>/</span>
-        <span style={{ color: '#4fc3f7', fontSize: 12, fontWeight: 600 }}>Anatomía 2D</span>
-
+        </a>
+        <span style={{ color: '#2a2a2a', fontSize: 12 }}>/</span>
+        <span style={{ color: '#4fc3f7', fontSize: 12, fontWeight: 600, fontFamily: glassFont }}>
+          Anatomía Humana
+        </span>
         <div className="flex-1" />
-
         {/* Vista anterior / posterior */}
-        <div className="flex items-center gap-1 flex-shrink-0">
+        <div className="flex gap-1 p-1 rounded flex-shrink-0" style={{ background: 'rgba(255,255,255,0.04)', border: glassBorder }}>
           {(['anterior', 'posterior'] as View[]).map(v => (
-            <button key={v} onClick={() => { setView(v); setSelectedId(null) }}
-              style={{
-                ...btnBase,
-                color: view === v ? '#4fc3f7' : '#666',
-                background: view === v ? 'rgba(79,195,247,0.12)' : 'rgba(255,255,255,0.04)',
-                border: view === v ? '1px solid rgba(79,195,247,0.3)' : '1px solid rgba(255,255,255,0.06)',
-              }}>
+            <button key={v} onClick={() => handleViewChange(v)} style={viewBtnStyle(view === v)}>
               {v.charAt(0).toUpperCase() + v.slice(1)}
             </button>
           ))}
         </div>
       </div>
 
-      {/* ── Área principal ───────────────────────────────────── */}
+      {/* Área principal */}
       <div className="flex flex-1 overflow-hidden">
 
-        {/* ── Panel de capas (izquierda) ──────────────────── */}
-        <div className="hidden md:flex flex-col gap-3 p-4 w-[188px] flex-shrink-0 overflow-y-auto"
-          style={{ ...glassBg, borderRight: '1px solid rgba(255,255,255,0.06)', borderRadius: 0 }}>
+        {/* Panel de capas — desktop */}
+        <aside className="hidden md:flex flex-col gap-3 p-5 w-56 flex-shrink-0 overflow-y-auto" style={panel}>
+          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: '#444' }}>Capas</p>
 
-          <p className="text-[9px] font-bold uppercase tracking-widest mb-1" style={{ color: '#555' }}>
-            Capas
-          </p>
-
-          {LAYER_META.map(layer => {
-            const state = layers[layer.id]
-            const isTransparent = state.opacity < 0.4
+          {LAYER_META.map(({ key, label, dot }) => {
+            const state = layers[key]
             return (
-              <div key={layer.id} className="space-y-2">
-                <button
-                  onClick={() => handleLayerToggle(layer.id)}
-                  className="flex items-center gap-2 w-full transition-all"
+              <div key={key} className="space-y-2">
+                <div className="flex items-center gap-2 p-2.5 rounded transition-colors"
                   style={{
-                    padding: '7px 10px',
-                    borderRadius: 10,
-                    background: state.visible ? 'rgba(255,255,255,0.06)' : 'transparent',
-                    border: state.visible
-                      ? `1px solid rgba(${layer.id === 'skin' ? '245,197,163' : layer.id === 'muscle' ? '192,57,43' : '232,220,200'},0.35)`
-                      : '1px solid rgba(255,255,255,0.06)',
-                    color: state.visible ? '#ddd' : '#444',
-                  }}
-                >
-                  {state.visible
-                    ? <Eye weight="fill" className="w-3.5 h-3.5 flex-shrink-0" style={{ color: layer.color }} />
-                    : <EyeSlash weight="regular" className="w-3.5 h-3.5 flex-shrink-0" />}
-                  <span className="text-[11px] font-semibold flex-1 text-left">{layer.label}</span>
-                  {isTransparent && (
-                    <span className="text-[9px]" style={{ color: '#555' }}>trans.</span>
-                  )}
-                </button>
-
+                    border: state.visible ? `1px solid ${dot}55` : glassBorder,
+                    background: state.visible ? `${dot}10` : 'transparent',
+                  }}>
+                  <button onClick={() => toggleLayer(key)}
+                    className="flex-shrink-0 transition-colors"
+                    style={{ background: 'none', border: 'none', color: state.visible ? dot : '#444', cursor: 'pointer' }}>
+                    {state.visible
+                      ? <Eye weight="fill" className="w-4 h-4" />
+                      : <EyeSlash weight="regular" className="w-4 h-4" />}
+                  </button>
+                  <span className="text-xs font-semibold flex-1" style={{ color: state.visible ? '#d0d0d0' : '#444', fontFamily: glassFont }}>
+                    {label}
+                  </span>
+                </div>
                 {state.visible && (
-                  <input
-                    type="range" min={0.1} max={1} step={0.05}
-                    value={state.opacity}
-                    onChange={e => handleOpacity(layer.id, Number(e.target.value))}
+                  <input type="range" min={0.05} max={1} step={0.05} value={state.opacity}
+                    onChange={e => changeOpacity(key, Number(e.target.value))}
                     className="w-full h-1 rounded-full appearance-none cursor-pointer"
-                    style={{ accentColor: layer.color }}
-                  />
+                    style={{ accentColor: dot }} />
                 )}
               </div>
             )
           })}
 
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 8, marginTop: 4 }}>
-            <p className="text-[9px] font-bold uppercase tracking-widest mb-2" style={{ color: '#555' }}>
-              Partes ({visibleHotspots.length})
-            </p>
-            <div className="space-y-0.5">
-              {visibleHotspots.map(h => (
-                <button
-                  key={h.id}
-                  onClick={() => setSelectedId(h.id === selectedId ? null : h.id)}
-                  className="w-full text-left text-[10px] px-2 py-1 rounded-lg transition-all"
-                  style={{
-                    color: selectedId === h.id ? '#4fc3f7' : '#666',
-                    background: selectedId === h.id ? 'rgba(79,195,247,0.1)' : 'transparent',
-                  }}
-                >
-                  {h.nombre_es}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
+          {/* Separador */}
+          <div style={{ borderTop: glassBorder, paddingTop: 8 }} />
 
-        {/* ── Canvas SVG ──────────────────────────────────── */}
-        <div className="flex-1 relative overflow-hidden flex items-center justify-center"
-          onClick={(e) => {
-            if ((e.target as SVGElement).tagName !== 'ellipse') setSelectedId(null)
+          {/* Lista de estructuras */}
+          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: '#444' }}>
+            Estructuras ({visibleHotspots.length})
+          </p>
+          <div className="space-y-px">
+            {visibleHotspots.map(h => (
+              <button key={h.id}
+                onClick={() => handleSelect(h.id)}
+                className="w-full text-left text-[11px] px-2 py-1.5 rounded transition-all"
+                style={{
+                  fontFamily: glassFont,
+                  color: selectedId === h.id ? '#4fc3f7' : '#555',
+                  background: selectedId === h.id ? 'rgba(79,195,247,0.1)' : 'transparent',
+                }}>
+                {h.nombre_es}
+              </button>
+            ))}
+          </div>
+        </aside>
+
+        {/* Canvas central */}
+        <div className="flex-1 flex items-center justify-center p-6 relative overflow-hidden"
+          onClick={e => {
+            if ((e.target as Element).tagName !== 'ellipse') setSelectedId(null)
           }}>
 
-          <svg
-            ref={svgRef}
-            viewBox="0 0 400 900"
-            className="h-full"
+          {/* Escenario de anatomía */}
+          <div ref={stageRef}
+            className="relative"
             style={{
-              maxHeight: '100%',
-              maxWidth: '100%',
-              width: 'auto',
+              height: '85dvh', aspectRatio: '400 / 900', maxHeight: '85dvh',
               filter: 'drop-shadow(0 4px 32px rgba(0,0,0,0.7))',
-              userSelect: 'none',
-            }}
-          >
-            {/* Capa piel */}
-            <g opacity={layers.skin.opacity}
-              style={{ display: layers.skin.visible ? undefined : 'none', transition: 'opacity 0.3s' }}>
-              <SkinLayer />
-            </g>
-            {/* Capa muscular */}
-            <g opacity={layers.muscle.opacity}
-              style={{ display: layers.muscle.visible ? undefined : 'none', transition: 'opacity 0.3s' }}>
-              <MuscleLayer />
-            </g>
-            {/* Capa esquelética */}
-            <g opacity={layers.skeleton.opacity}
-              style={{ display: layers.skeleton.visible ? undefined : 'none', transition: 'opacity 0.3s' }}>
-              <SkeletonLayer />
-            </g>
-            {/* Overlay de hotspots */}
+            }}>
+
+            {/* Capas SVG (img tags) — apiladas en absoluto */}
+            {/* Orden: skeleton abajo, muscle encima, surface encima de todo */}
+            {(['skeleton', 'muscle', 'surface'] as LayerKey[]).map(key => (
+              <img
+                key={key}
+                src={LAYER_URLS[view][key]}
+                alt={`${key} ${view}`}
+                className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+                style={{
+                  opacity: layers[key].visible ? layers[key].opacity : 0,
+                  transition: 'opacity 0.3s ease',
+                }}
+              />
+            ))}
+
+            {/* Overlay interactivo (hotspots) */}
             <HotspotOverlay
-              visible={visibleHotspots}
+              hotspots={visibleHotspots}
               selectedId={selectedId}
               hoveredId={hoveredId}
-              onSelect={id => setSelectedId(prev => prev === id ? null : id)}
+              onSelect={handleSelect}
               onHover={setHoveredId}
             />
-          </svg>
-
-          {/* Etiqueta de vista posterior placeholder */}
-          {view === 'posterior' && (
-            <div className="absolute top-4 left-1/2 -translate-x-1/2 text-[11px] px-3 py-1.5 rounded-full"
-              style={{ ...glassBg, color: '#4fc3f7' }}>
-              Vista posterior — girar 180°
-            </div>
-          )}
+          </div>
 
           {/* Tooltip de hover */}
           <AnimatePresence>
-            {hoveredId && !selectedId && (
-              <motion.div
-                key="tooltip"
-                initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
-                transition={{ duration: 0.12 }}
-                className="absolute bottom-20 left-1/2 -translate-x-1/2 pointer-events-none px-3 py-1.5 rounded-xl text-[11px]"
-                style={{ ...glassBg, color: '#e0e0e0', zIndex: 10 }}
-              >
-                <span className="font-bold">{hotspotById[hoveredId]?.nombre_es}</span>
-                <span className="ml-2 italic" style={{ color: '#666' }}>{hotspotById[hoveredId]?.nombre_lat}</span>
-              </motion.div>
-            )}
+            {hoveredId && !selectedId && (() => {
+              const h = hotspotById[hoveredId]
+              return h ? (
+                <motion.div key="tip"
+                  initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+                  transition={{ duration: 0.12 }}
+                  className="absolute bottom-24 left-1/2 -translate-x-1/2 pointer-events-none px-3 py-1.5 rounded text-xs"
+                  style={{ background: 'rgba(15,15,20,0.92)', border: glassBorder, fontFamily: glassFont, color: '#e0e0e0', zIndex: 20 }}>
+                  <span className="font-bold">{h.nombre_es}</span>
+                  <span className="ml-2 italic" style={{ color: '#555' }}>{h.nombre_lat}</span>
+                </motion.div>
+              ) : null
+            })()}
           </AnimatePresence>
 
-          {/* Barra de controles inferior */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2 rounded-2xl"
-            style={{ ...glassBg, zIndex: 10 }}>
-            <button onClick={handleReset} style={btnBase} title="Restablecer vista">
-              <ArrowCounterClockwise weight="bold" className="w-4 h-4" />
-              <span className="hidden sm:inline">Restablecer</span>
+          {/* Toolbar flotante inferior */}
+          <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 p-1.5 rounded"
+            style={{ background: 'rgba(15,15,20,0.9)', border: glassBorder, backdropFilter: 'blur(12px)', zIndex: 20 }}>
+
+            <button onClick={handleReset} style={toolBtn} title="Restaurar vista">
+              <ArrowCounterClockwise weight="bold" className="inline w-3.5 h-3.5 mr-1" />
+              <span className="hidden sm:inline">Restaurar</span>
             </button>
-            <button onClick={handleXray} title="Modo Rx"
-              style={{ ...btnBase, color: xray ? '#4fc3f7' : '#aaa',
-                background: xray ? 'rgba(79,195,247,0.12)' : 'rgba(255,255,255,0.04)',
-                border: xray ? '1px solid rgba(79,195,247,0.3)' : '1px solid rgba(255,255,255,0.07)',
-              }}>
-              <span className="text-[10px]">Rx</span>
-              <span className="hidden sm:inline" style={{ fontSize: 10 }}>X-Ray</span>
+
+            <button onClick={handleToggleAll}
+              style={{ ...toolBtn, color: allVisible ? '#c0c0c0' : '#4fc3f7' }}
+              title="Alternar todas las capas">
+              <span className="hidden sm:inline">{allVisible ? 'Ocultar todo' : 'Mostrar todo'}</span>
+              <span className="sm:hidden">{allVisible ? 'Ocultar' : 'Ver'}</span>
             </button>
-            <button onClick={() => document.documentElement.requestFullscreen?.()}
-              style={btnBase} title="Pantalla completa">
-              <ArrowsOut weight="bold" className="w-4 h-4" />
+
+            <button onClick={handleXray}
+              style={{
+                ...toolBtn,
+                color: xray ? '#4fc3f7' : '#888',
+                background: xray ? 'rgba(79,195,247,0.1)' : 'transparent',
+                border: xray ? '1px solid rgba(79,195,247,0.3)' : glassBorder,
+              }} title="Modo X-Ray">
+              Rx
             </button>
-            <button onClick={handleScreenshot} style={btnBase} title="Capturar SVG">
-              <Camera weight="bold" className="w-4 h-4" />
+
+            <button
+              onClick={() => document.documentElement.requestFullscreen?.().catch(() => {})}
+              style={toolBtn} title="Pantalla completa">
+              <ArrowsOut weight="bold" className="w-3.5 h-3.5" />
+            </button>
+
+            <button onClick={handleDownload} style={toolBtn} title="Descargar SVG">
+              <Camera weight="bold" className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>
 
         {/* Panel de información */}
-        <InfoPanel hotspot={selectedHotspot} onClose={() => setSelectedId(null)} />
+        <InfoPanel hotspot={selectedHotspot} onClose={handleClosePanel} />
       </div>
 
-      {/* Mobile: lista de partes (barra inferior desplazable) */}
+      {/* Mobile: chips de estructuras */}
       <div className="md:hidden flex-shrink-0 overflow-x-auto"
-        style={{ ...glassBg, borderTop: '1px solid rgba(255,255,255,0.06)', borderRadius: 0 }}>
-        <div className="flex gap-1.5 px-4 py-2">
-          {visibleHotspots.map(h => (
-            <button
-              key={h.id}
-              onClick={() => setSelectedId(h.id === selectedId ? null : h.id)}
-              className="flex-shrink-0 text-[10px] font-semibold px-2.5 py-1 rounded-full transition-all"
+        style={{ background: 'rgba(15,15,20,0.9)', borderTop: glassBorder }}>
+        <div className="flex gap-1.5 px-4 py-2 min-w-max">
+          {/* Layer toggles rápidos */}
+          {LAYER_META.map(({ key, label, dot }) => (
+            <button key={key} onClick={() => toggleLayer(key)}
+              className="flex items-center gap-1.5 flex-shrink-0 text-[10px] font-bold px-2.5 py-1 rounded transition-all"
               style={{
-                background: selectedId === h.id ? 'rgba(79,195,247,0.18)' : 'rgba(255,255,255,0.06)',
-                border: selectedId === h.id ? '1px solid rgba(79,195,247,0.4)' : '1px solid rgba(255,255,255,0.08)',
-                color: selectedId === h.id ? '#4fc3f7' : '#888',
-              }}
-            >
+                fontFamily: glassFont,
+                background: layers[key].visible ? `${dot}20` : 'rgba(255,255,255,0.04)',
+                border: layers[key].visible ? `1px solid ${dot}55` : glassBorder,
+                color: layers[key].visible ? dot : '#444',
+              }}>
+              {layers[key].visible
+                ? <Eye weight="fill" className="w-3 h-3" />
+                : <EyeSlash weight="regular" className="w-3 h-3" />}
+              {label.split(' ')[1] ?? label.split(' ')[0]}
+            </button>
+          ))}
+          <div style={{ borderLeft: glassBorder, margin: '2px 4px' }} />
+          {/* Chips de estructuras */}
+          {visibleHotspots.map(h => (
+            <button key={h.id} onClick={() => handleSelect(h.id)}
+              className="flex-shrink-0 text-[10px] font-semibold px-2.5 py-1 rounded transition-all"
+              style={{
+                fontFamily: glassFont,
+                background: selectedId === h.id ? 'rgba(79,195,247,0.18)' : 'rgba(255,255,255,0.05)',
+                border: selectedId === h.id ? '1px solid rgba(79,195,247,0.4)' : glassBorder,
+                color: selectedId === h.id ? '#4fc3f7' : '#666',
+              }}>
               {h.nombre_es}
             </button>
           ))}
