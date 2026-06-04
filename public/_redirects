@@ -1,1 +1,6 @@
-/* /index.html 200
+# Redirect /modulos → /lmgc (LMGC plan de estudios)
+/lmgc        /modulos     302
+/lmgc/*      /modulos/:splat  302
+
+# SPA fallback — todas las rutas no encontradas sirven index.html
+/*   /index.html   200

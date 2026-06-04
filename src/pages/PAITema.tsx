@@ -1,0 +1,204 @@
+/* Página de tema PAI — ruta /pai/:slug/:temaId */
+
+import { useParams, Link } from 'react-router-dom'
+import {
+  ArrowLeft, Star, Brain, WarningCircle, BookOpenText,
+  ArrowSquareOut, ArrowRight,
+} from '@phosphor-icons/react'
+import { paiBySlug } from '../data/pai'
+import { usePaiTema, usePaiContent } from '../hooks/usePaiContent'
+import { PaiBlocks } from '../components/PaiBlocks'
+
+export function PAITema() {
+  const { slug, temaId } = useParams<{ slug: string; temaId: string }>()
+  const mod = slug ? paiBySlug[slug] : undefined
+  const { tema, loading } = usePaiTema(slug ?? '', temaId ?? '')
+  const { temas: allTemas } = usePaiContent(slug ?? '')
+
+  // Navega al tema anterior/siguiente
+  const idx = allTemas.findIndex(t => t.id === temaId)
+  const prevTema = idx > 0 ? allTemas[idx - 1] : null
+  const nextTema = idx < allTemas.length - 1 ? allTemas[idx + 1] : null
+
+  if (!mod) return <div className="p-8 text-zinc-400">Módulo no encontrado.</div>
+
+  if (loading) return (
+    <div className="flex-1 flex items-center justify-center">
+      <div className="w-10 h-10 rounded-full border-4 border-zinc-200 border-t-teal-500 animate-spin" />
+    </div>
+  )
+
+  if (!tema) return (
+    <div className="p-8 text-center">
+      <p className="text-zinc-400 text-sm">Tema no encontrado.</p>
+      <Link to={`/pai/${slug}`} className="mt-4 inline-block text-teal-600 text-sm hover:underline">
+        ← Volver al módulo
+      </Link>
+    </div>
+  )
+
+  return (
+    <main className="flex-1 bg-zinc-50">
+      {/* Header */}
+      <div className="bg-white border-b border-zinc-100 sticky top-14 z-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-3">
+          <Link to={`/pai/${slug}`}
+            className="flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-800 transition-colors flex-shrink-0">
+            <ArrowLeft weight="bold" className="w-4 h-4" />
+            <span className="hidden sm:block">{mod.nombre.replace('MÓDULO — ', '')}</span>
+          </Link>
+          <span className="text-zinc-300 text-xs hidden sm:block">/</span>
+          <span className="text-sm font-semibold text-zinc-700 truncate hidden sm:block">{tema.titulo}</span>
+        </div>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-8">
+
+          {/* Contenido principal */}
+          <div className="space-y-8 min-w-0">
+            {/* Título */}
+            <div>
+              {tema.generadoPorIA && (
+                <div className="flex items-center gap-2 mb-3 text-xs text-zinc-400 bg-zinc-100 rounded-xl px-3 py-2 w-fit">
+                  <span>✨</span>
+                  <span className="font-semibold">Generado por IA</span>
+                  <span>· Basado en programa oficial del PAI</span>
+                </div>
+              )}
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-3xl">{tema.icono}</span>
+                <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">
+                  Tema {tema.orden} · {mod.nombre.replace('MÓDULO — ', '')}
+                </span>
+              </div>
+              <h1 className="text-2xl md:text-3xl font-extrabold text-zinc-900 tracking-tight leading-tight mb-3">
+                {tema.titulo}
+              </h1>
+              <p className="text-zinc-500 text-base leading-relaxed border-l-4 border-teal-200 pl-4">
+                {tema.resumen}
+              </p>
+            </div>
+
+            {/* Bloques de contenido */}
+            <div className="card p-6 md:p-8">
+              <PaiBlocks bloques={tema.bloques} />
+            </div>
+
+            {/* 🧠 Mnemotecnia */}
+            {tema.mnemotecnia.items.length > 0 && (
+              <div className="bg-indigo-50 border border-indigo-200 rounded-2xl p-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <Brain weight="fill" className="w-5 h-5 text-indigo-600" />
+                  <h2 className="font-bold text-indigo-900">Mnemotecnia</h2>
+                </div>
+                <div className="space-y-3">
+                  {tema.mnemotecnia.items.map((item, i) => (
+                    <div key={i} className="flex items-start gap-2.5 text-sm text-indigo-800">
+                      <span className="font-bold text-indigo-400 flex-shrink-0 mt-0.5">#{i + 1}</span>
+                      <span className="leading-relaxed font-mono text-xs bg-indigo-100/60 rounded-lg px-3 py-2 w-full">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* ⭐ Puntos clave para examen */}
+            {tema.puntosClave.length > 0 && (
+              <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <Star weight="fill" className="w-5 h-5 text-amber-500" />
+                  <h2 className="font-bold text-amber-900">Puntos clave para el examen</h2>
+                </div>
+                <ul className="space-y-2.5">
+                  {tema.puntosClave.map((punto, i) => (
+                    <li key={i} className="flex items-start gap-2.5 text-sm text-amber-800">
+                      <span className="w-5 h-5 rounded-full bg-amber-200 text-amber-700 text-[10px] font-bold
+                                       flex items-center justify-center flex-shrink-0 mt-0.5">
+                        {i + 1}
+                      </span>
+                      <span className="leading-relaxed">{punto}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* ⚠️ Error frecuente */}
+            {tema.errorFrecuente && (
+              <div className="bg-red-50 border border-red-200 rounded-2xl p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <WarningCircle weight="fill" className="w-5 h-5 text-red-500" />
+                  <h2 className="font-bold text-red-900">Error frecuente</h2>
+                </div>
+                <p className="text-sm text-red-700 leading-relaxed">{tema.errorFrecuente}</p>
+              </div>
+            )}
+
+            {/* Enlace UNISA */}
+            <a
+              href={mod.unisa_url}
+              target="_blank" rel="noopener noreferrer"
+              className="flex items-center gap-3 p-4 card hover:shadow-card-hover transition-all group"
+            >
+              <BookOpenText weight="fill" className="w-5 h-5 text-zinc-400 flex-shrink-0" />
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-semibold text-zinc-700">Ver en plataforma UNISA</p>
+                <p className="text-xs text-zinc-400 truncate">{mod.unisa_url}</p>
+              </div>
+              <ArrowSquareOut className="w-4 h-4 text-zinc-400 group-hover:text-zinc-600 flex-shrink-0" />
+            </a>
+
+            {/* Navegación anterior / siguiente */}
+            <div className="grid grid-cols-2 gap-3 pt-2">
+              {prevTema ? (
+                <Link to={`/pai/${slug}/${prevTema.id}`}
+                  className="card p-4 hover:shadow-card-hover transition-all group text-left">
+                  <p className="text-[10px] text-zinc-400 uppercase font-bold tracking-wider mb-1">← Anterior</p>
+                  <p className="text-sm font-semibold text-zinc-700 leading-tight line-clamp-2">{prevTema.titulo}</p>
+                </Link>
+              ) : <div />}
+              {nextTema ? (
+                <Link to={`/pai/${slug}/${nextTema.id}`}
+                  className="card p-4 hover:shadow-card-hover transition-all group text-right">
+                  <p className="text-[10px] text-zinc-400 uppercase font-bold tracking-wider mb-1">Siguiente →</p>
+                  <p className="text-sm font-semibold text-zinc-700 leading-tight line-clamp-2">{nextTema.titulo}</p>
+                </Link>
+              ) : <div />}
+            </div>
+          </div>
+
+          {/* Sidebar — índice de temas */}
+          <aside className="hidden lg:block">
+            <div className="card p-4 sticky top-28">
+              <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-3 px-2">
+                Temas del módulo
+              </p>
+              <nav className="space-y-0.5">
+                {allTemas.map(t => (
+                  <Link
+                    key={t.id}
+                    to={`/pai/${slug}/${t.id}`}
+                    className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium transition-all
+                      ${t.id === temaId
+                        ? 'bg-teal-50 text-teal-700 border border-teal-200'
+                        : 'text-zinc-500 hover:bg-zinc-50 hover:text-zinc-800'
+                      }`}
+                  >
+                    <span className="flex-shrink-0">{t.icono}</span>
+                    <span className="leading-snug line-clamp-2">{t.titulo}</span>
+                    {t.id === temaId && (
+                      <ArrowRight weight="bold" className="w-3 h-3 text-teal-500 flex-shrink-0 ml-auto" />
+                    )}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+  )
+}

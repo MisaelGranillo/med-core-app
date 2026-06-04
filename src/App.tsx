@@ -10,6 +10,9 @@ import { Anatomy3D } from './pages/Anatomy3D'
 import { Terminologia } from './pages/Terminologia'
 import { Modulos } from './pages/Modulos'
 import { ModuloDetail } from './pages/ModuloDetail'
+import { PAI } from './pages/PAI'
+import { PAIModulo } from './pages/PAIModulo'
+import { PAITema } from './pages/PAITema'
 
 // Error boundary — muestra el error en pantalla en vez de página en blanco
 class ErrorBoundary extends React.Component<
@@ -61,8 +64,13 @@ export default function App() {
             <Route path="/progress" element={<Progress />} />
             <Route path="/anatomia-3d" element={<Anatomy3D />} />
             <Route path="/terminologia" element={<Terminologia />} />
+            {/* LMGC módulos (plan de estudios) */}
             <Route path="/modulos" element={<Modulos />} />
             <Route path="/modulos/:id" element={<ModuloDetail />} />
+            {/* PAI — Programa de Apoyo al Ingreso */}
+            <Route path="/pai" element={<PAI />} />
+            <Route path="/pai/:slug" element={<PAIModulo />} />
+            <Route path="/pai/:slug/:temaId" element={<PAITema />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </div>
