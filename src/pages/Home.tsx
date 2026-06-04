@@ -1,319 +1,380 @@
-import { useState, lazy, Suspense } from 'react'
-import { Link } from 'react-router-dom'
+/* Home.tsx — MedCore Study Dashboard
+ * Personal study dashboard for LMGC, Universidad de la Salud, CDMX.
+ * Structured around three questions: ¿Dónde estoy? ¿Qué estudiar? ¿Cómo accedo?
+ */
+
+import { useState, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import {
-  ArrowRight, Trophy, BookOpen, Lightning,
-  Heartbeat, MathOperations, BookOpenText, Cube,
-} from '@phosphor-icons/react'
-import { topics } from '../data/topics'
-import { modules } from '../data/modules'
-import { questions } from '../data/quizzes'
-import { TOPIC_COLORS } from '../data/colors'
-import { useProgress } from '../store/useProgress'
-import { ProgressRing } from '../components/ProgressRing'
-const HeroCanvas = lazy(() =>
-  import('../components/HeroCanvas').then((m) => ({ default: m.HeroCanvas }))
-)
+import { ArrowRight, X } from '@phosphor-icons/react'
+import { paiModulos } from '../data/pai'
+import { lmgcModules } from '../data/lmgc-modules'
 
-const COLOR_RING: Record<string, string> = {
-  digestivo: '#f59e0b', urinario: '#0ea5e9', reproductor: '#f43f5e',
-  circulatorio: '#ef4444', respiratorio: '#14b8a6', locomotor: '#f97316', nervioso: '#8b5cf6',
-  aritmetica: '#6366f1', algebra: '#3b82f6', probabilidad: '#a855f7',
-  estadDesc: '#06b6d4', estadInf: '#d946ef',
-  comunicacion: '#84cc16', lectoescritura: '#22c55e', gramatica: '#10b981',
-  redaccion: '#eab308', lenguaje: '#ec4899',
+// ── Design tokens ──────────────────────────────────────────
+const T = {
+  bg:         '#0d0d0d',
+  panel:      'rgba(15,15,20,0.88)',
+  border:     'rgba(255,255,255,0.08)',
+  borderHover:'#4fc3f7',
+  accent:     '#4fc3f7',
+  textPrimary:'#e0e0e0',
+  textSecond: '#888888',
+  mono:       '"IBM Plex Mono", monospace',
 }
 
-const MODULE_ICONS: Record<string, React.ReactNode> = {
-  anatomia: <Heartbeat weight="fill" className="w-4 h-4" />,
-  matematicas: <MathOperations weight="bold" className="w-4 h-4" />,
-  lectura: <BookOpenText weight="fill" className="w-4 h-4" />,
+const panel: React.CSSProperties = {
+  background:     T.panel,
+  border:         `1px solid ${T.border}`,
+  borderRadius:   4,
+  backdropFilter: 'blur(12px)',
+  WebkitBackdropFilter: 'blur(12px)',
 }
 
-const MODULE_COLORS: Record<string, { tab: string; active: string; bg: string; border: string; text: string }> = {
-  anatomia: {
-    tab: 'hover:text-red-600 hover:bg-red-50',
-    active: 'bg-red-600 text-white',
-    bg: 'bg-red-50',
-    border: 'border-red-200',
-    text: 'text-red-700',
-  },
-  matematicas: {
-    tab: 'hover:text-indigo-600 hover:bg-indigo-50',
-    active: 'bg-indigo-600 text-white',
-    bg: 'bg-indigo-50',
-    border: 'border-indigo-200',
-    text: 'text-indigo-700',
-  },
-  lectura: {
-    tab: 'hover:text-green-700 hover:bg-green-50',
-    active: 'bg-green-600 text-white',
-    bg: 'bg-green-50',
-    border: 'border-green-200',
-    text: 'text-green-700',
-  },
+// ── Computed stats ─────────────────────────────────────────
+const paiDisponibles  = paiModulos.filter(m => m.status === 'disponible').length
+const paiTotal        = paiModulos.length
+const lmgcYear2       = lmgcModules.filter(m => m.año === 2 && m.tipo === 'modular')
+const lmgcDisponibles = lmgcYear2.filter(m => m.status === 'disponible').length
+
+// ── Quick-access tiles ─────────────────────────────────────
+const TILES = [
+  { id: 'pai',       icon: '🧬', label: 'PAI',         desc: `${paiTotal} módulos · Programa de ingreso`,       route: '/pai'         },
+  { id: 'lmgc',      icon: '🏥', label: 'LMGC',        desc: '37 módulos · Licenciatura',                      route: '/modulos'      },
+  { id: 'anatomia',  icon: '🫀', label: 'Anatomía 2D',  desc: 'Visor interactivo · 25 estructuras',             route: '/anatomia-3d'  },
+  { id: 'termino',   icon: '📖', label: 'Terminología', desc: 'MedLex · Términos grecolatinos',                 route: '/terminologia' },
+  { id: 'quiz',      icon: '📝', label: 'Quiz',         desc: 'Exámenes de práctica · PAI + LMGC',              route: '/progress'    },
+  { id: 'wiki',      icon: '🔬', label: 'Wiki Médico',  desc: 'Complementos clínicos · Casos', route: null, soon: true },
+]
+
+// ── PAI status badge ───────────────────────────────────────
+const statusLabel: Record<string, string> = {
+  'disponible':      'DISPONIBLE',
+  'en-construccion': 'EN CONSTRUCCIÓN',
+  'bloqueado':       'BLOQUEADO',
+}
+const statusColor: Record<string, string> = {
+  'disponible':      T.accent,
+  'en-construccion': '#f59e0b',
+  'bloqueado':       '#555',
 }
 
-export function Home() {
-  const [activeModule, setActiveModule] = useState<string>('all')
-  const { getSectionsRead, getBestScore } = useProgress()
-
-  const totalSections = topics.reduce((acc, t) => acc + t.sections.length, 0)
-  const totalRead = topics.reduce((acc, t) => acc + getSectionsRead(t.id).length, 0)
-  const globalPct = totalSections > 0 ? Math.round((totalRead / totalSections) * 100) : 0
-
-  const filteredTopics =
-    activeModule === 'all'
-      ? topics
-      : topics.filter((t) => {
-          const mod = modules.find((m) => m.id === activeModule)
-          return mod?.topicIds.includes(t.id)
-        })
-
+// ── Toast ─────────────────────────────────────────────────
+function Toast({ msg, onClose }: { msg: string; onClose: () => void }) {
+  useEffect(() => {
+    const t = setTimeout(onClose, 3000)
+    return () => clearTimeout(t)
+  }, [onClose])
   return (
-    <main className="flex-1">
-      {/* Hero */}
-      <section className="bg-white border-b border-zinc-100 relative overflow-hidden">
-        {/* Three.js background — lazy-loaded, isolated from Framer Motion tree */}
-        <Suspense fallback={null}>
-          <HeroCanvas />
-        </Suspense>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-
-          <div>
-            <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 text-teal-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
-              <Lightning weight="fill" className="w-3.5 h-3.5" />
-              LMGC · Universidad de la Salud CDMX
-            </div>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-zinc-900 tracking-tighter leading-none mb-1">
-              Med<span className="text-teal-600">Core</span>
-            </h1>
-            <p className="text-zinc-400 text-sm font-semibold tracking-wide mb-4 uppercase">
-              Plataforma de Estudio Médico
-            </p>
-            <p className="text-zinc-500 text-base leading-relaxed max-w-[52ch] mb-8">
-              Anatomía 3D interactiva, terminología MedLex, plan de estudios LMGC, quizzes y seguimiento de progreso. Todo en un lugar.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                to={`/topic/${topics[0].id}`}
-                className="btn-primary bg-zinc-900 hover:bg-zinc-700 text-white px-5 py-2.5"
-              >
-                Empezar a estudiar
-                <ArrowRight weight="bold" className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/anatomia-3d"
-                className="btn-primary bg-teal-600 hover:bg-teal-700 text-white px-5 py-2.5 border border-teal-500"
-              >
-                <Cube weight="fill" className="w-4 h-4" />
-                Ver modelo 3D
-              </Link>
-              <Link
-                to="/progress"
-                className="btn-primary bg-zinc-100 hover:bg-zinc-200 text-zinc-700 px-5 py-2.5"
-              >
-                Ver progreso
-              </Link>
-            </div>
-          </div>
-
-          {/* Stat cards */}
-          <div className="grid grid-cols-3 gap-3">
-            <StatCard value={globalPct} label="Completado" sub={`${totalRead}/${totalSections} secciones`} ring />
-            <StatCard value={topics.length} label="Temas" sub="en 3 módulos" />
-            <StatCard value={questions.length} label="Preguntas" sub="de quiz" />
-          </div>
-        </div>
-      </section>
-
-      {/* Module tabs */}
-      <div className="bg-white border-b border-zinc-200 sticky top-14 z-30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex gap-1 overflow-x-auto scrollbar-hide py-2">
-            <TabButton
-              active={activeModule === 'all'}
-              onClick={() => setActiveModule('all')}
-              label="Todos"
-              count={topics.length}
-            />
-            {modules.map((mod) => {
-              const mc = MODULE_COLORS[mod.id]
-              return (
-                <button
-                  key={mod.id}
-                  onClick={() => setActiveModule(mod.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold
-                               whitespace-nowrap transition-all duration-150 flex-shrink-0
-                               ${activeModule === mod.id ? mc.active : `text-zinc-500 ${mc.tab}`}`}
-                >
-                  {MODULE_ICONS[mod.id]}
-                  <span>{mod.title}</span>
-                  <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full
-                    ${activeModule === mod.id ? 'bg-white/20 text-white' : 'bg-zinc-100 text-zinc-500'}`}>
-                    {mod.topicIds.length}
-                  </span>
-                </button>
-              )
-            })}
-          </div>
-        </div>
-      </div>
-
-      {/* Module info banner (when a module is selected) */}
-      <AnimatePresence mode="wait">
-        {activeModule !== 'all' && (
-          <motion.div
-            key={activeModule}
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            {modules.filter((m) => m.id === activeModule).map((mod) => {
-              const mc = MODULE_COLORS[mod.id]
-              return (
-                <div key={mod.id} className={`${mc.bg} border-b ${mc.border}`}>
-                  <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center gap-3">
-                    <span className="text-2xl">{mod.emoji}</span>
-                    <div>
-                      <span className={`text-xs font-bold uppercase tracking-wider ${mc.text}`}>{mod.badge}</span>
-                      <p className="text-sm text-zinc-600 leading-snug">{mod.subtitle}</p>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Topic grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-        <div className="flex items-baseline justify-between mb-5">
-          <h2 className="text-lg font-bold text-zinc-900 tracking-tight">
-            {activeModule === 'all'
-              ? `Todos los temas`
-              : modules.find((m) => m.id === activeModule)?.title}
-          </h2>
-          <span className="text-sm text-zinc-400">{filteredTopics.length} temas</span>
-        </div>
-
-        <motion.div
-          key={activeModule}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.25 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
-        >
-          {filteredTopics.map((topic, i) => {
-            const colors = TOPIC_COLORS[topic.colorKey]
-            const read = getSectionsRead(topic.id).length
-            const total = topic.sections.length
-            const pct = Math.round((read / total) * 100)
-            const bestScore = getBestScore(topic.id)
-            const qCount = questions.filter((q) => q.topicId === topic.id).length
-            const mod = modules.find((m) => m.topicIds.includes(topic.id))
-
-            return (
-              <motion.div
-                key={topic.id}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05, duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <Link
-                  to={`/topic/${topic.id}`}
-                  className="group block card p-5 hover:shadow-card-hover transition-all duration-200 hover:-translate-y-0.5"
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className={`w-12 h-12 rounded-2xl ${colors.headerBg} flex items-center justify-center text-2xl shadow-sm`}>
-                      {topic.emoji}
-                    </div>
-                    <ProgressRing
-                      value={pct}
-                      size={44}
-                      strokeWidth={4}
-                      color={COLOR_RING[topic.colorKey]}
-                    />
-                  </div>
-
-                  {mod && (
-                    <span className={`text-[10px] font-bold uppercase tracking-wider ${MODULE_COLORS[mod.id].text} block mb-1`}>
-                      {mod.badge}
-                    </span>
-                  )}
-                  <h3 className="font-bold text-zinc-900 text-sm leading-snug mb-1 group-hover:text-zinc-700 transition-colors">
-                    {topic.title}
-                  </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed mb-4 line-clamp-2">
-                    {topic.subtitle}
-                  </p>
-
-                  <div className="flex items-center justify-between border-t border-zinc-100 pt-3">
-                    <div className="flex items-center gap-3 text-xs text-zinc-400">
-                      <span className="flex items-center gap-1">
-                        <BookOpen weight="fill" className="w-3.5 h-3.5" />
-                        {total} secciones
-                      </span>
-                      {bestScore !== null && (
-                        <span className={`flex items-center gap-1 ${colors.text} font-semibold`}>
-                          <Trophy weight="fill" className="w-3.5 h-3.5" />
-                          {bestScore}%
-                        </span>
-                      )}
-                    </div>
-                    <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full ${colors.badge}`}>
-                      {qCount} Qs
-                    </span>
-                  </div>
-                </Link>
-              </motion.div>
-            )
-          })}
-        </motion.div>
-      </section>
-    </main>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 20 }}
+      style={{ ...panel, position: 'fixed', bottom: 24, left: '50%', transform: 'translateX(-50%)',
+        padding: '12px 20px', zIndex: 100, color: T.textPrimary, fontFamily: T.mono,
+        fontSize: 13, display: 'flex', alignItems: 'center', gap: 12, minWidth: 260 }}
+    >
+      <span>{msg}</span>
+      <button onClick={onClose} style={{ color: T.textSecond, background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
+        <X weight="bold" size={14} />
+      </button>
+    </motion.div>
   )
 }
 
-function StatCard({
-  value, label, sub, ring,
-}: {
-  value: number; label: string; sub: string; ring?: boolean
-}) {
+// ── Main dashboard component ──────────────────────────────
+export function Home() {
+  const navigate = useNavigate()
+  const [toast, setToast] = useState<string | null>(null)
+
   return (
-    <div className="card p-4 flex flex-col items-center text-center gap-2">
-      {ring ? (
-        <ProgressRing value={value} size={52} strokeWidth={5} />
-      ) : (
-        <span className="text-2xl font-extrabold text-zinc-900">{value}</span>
-      )}
-      <div>
-        <p className="text-xs font-bold text-zinc-700">{label}</p>
-        <p className="text-[11px] text-zinc-400">{sub}</p>
+    <div style={{ background: T.bg, minHeight: '100dvh', fontFamily: T.mono, color: T.textPrimary }}>
+
+      {/* B2 — Context strip */}
+      <div style={{
+        background: 'rgba(79,195,247,0.04)',
+        borderBottom: `1px solid ${T.border}`,
+        padding: '8px 24px',
+        fontSize: 11, letterSpacing: '0.8px', textTransform: 'uppercase', color: T.textSecond,
+        display: 'flex', flexWrap: 'wrap', gap: '6px 16px', alignItems: 'center',
+      }}>
+        <span>Universidad de la Salud · CDMX</span>
+        <span style={{ color: T.border }}>|</span>
+        <span>Licenciatura en Medicina General y Comunitaria</span>
+        <span style={{ color: T.border }}>|</span>
+        <span style={{ color: T.accent }}>PAI — Programa de Apoyo al Ingreso · 2026</span>
       </div>
+
+      {/* Main container */}
+      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 24px 64px' }}>
+
+        {/* B3 — Program status card */}
+        <section style={{ ...panel, padding: '24px 28px', marginBottom: 28 }}>
+          <p style={{ fontSize: 10, letterSpacing: '1px', textTransform: 'uppercase', color: T.textSecond, marginBottom: 16 }}>
+            Estado actual
+          </p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 18, flexWrap: 'wrap' }}>
+            <span style={{ fontSize: 13, fontWeight: 700, color: T.accent }}>PAI</span>
+            <div style={{ flex: 1, minWidth: 120, height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2 }}>
+              <div style={{ height: '100%', width: `${(paiDisponibles / paiTotal) * 100}%`,
+                background: T.accent, borderRadius: 2, transition: 'width 0.6s ease' }} />
+            </div>
+            <span style={{ fontSize: 13, fontWeight: 700, color: T.textSecond }}>LMGC</span>
+            <span style={{ fontSize: 11, color: T.textSecond, marginLeft: 4 }}>Año 1 → Año 6</span>
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 32px' }}>
+            <span style={{ fontSize: 12, color: T.textSecond }}>
+              PAI:{' '}
+              <strong style={{ color: T.textPrimary }}>{paiDisponibles} de {paiTotal} módulos disponibles</strong>
+            </span>
+            <span style={{ fontSize: 12, color: T.textSecond }}>
+              LMGC:{' '}
+              <strong style={{ color: T.textPrimary }}>Año 2 · {lmgcDisponibles} sistemas corporales disponibles</strong>
+            </span>
+          </div>
+        </section>
+
+        {/* B4 — Quick access grid */}
+        <section style={{ marginBottom: 40 }}>
+          <p style={{ fontSize: 10, letterSpacing: '1px', textTransform: 'uppercase', color: T.textSecond, marginBottom: 14 }}>
+            Acceso rápido
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}
+               className="quick-grid">
+            {TILES.map(tile => (
+              <Tile
+                key={tile.id}
+                tile={tile}
+                onSoon={() => setToast('🔬 Wiki Médico — Próximamente. Módulo en construcción.')}
+                navigate={navigate}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* B5 — PAI modules strip */}
+        <section style={{ marginBottom: 40 }}>
+          <p style={{ fontSize: 10, letterSpacing: '1px', textTransform: 'uppercase', color: T.textSecond, marginBottom: 14 }}>
+            PAI — Módulos
+          </p>
+          <div className="h-strip" style={{ display: 'flex', gap: 10, overflowX: 'auto',
+            paddingBottom: 4, scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            {paiModulos.map(mod => {
+              const available = mod.status === 'disponible'
+              const card = (
+                <div style={{
+                  ...panel,
+                  minWidth: 220, flexShrink: 0, padding: '14px 16px',
+                  opacity: available ? 1 : 0.4,
+                  cursor: available ? 'pointer' : 'default',
+                  transition: 'border-color 0.2s, background 0.2s',
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
+                    <span style={{ fontSize: 18 }}>{mod.icono}</span>
+                    <p style={{ fontSize: 11, fontWeight: 700, color: T.textPrimary, lineHeight: 1.3,
+                      overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1 }}>
+                      {mod.nombre.replace('MÓDULO — ', '')}
+                    </p>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <span style={{ fontSize: 10, color: T.textSecond }}>
+                      {mod.temas !== null ? `${mod.temas} temas` : '—'}
+                    </span>
+                    <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: '0.5px',
+                      color: statusColor[mod.status] }}>
+                      {statusLabel[mod.status]}
+                    </span>
+                  </div>
+                </div>
+              )
+              return available ? (
+                <Link key={mod.slug} to={`/pai/${mod.slug}`}
+                  style={{ textDecoration: 'none' }}
+                  className="strip-card">
+                  {card}
+                </Link>
+              ) : (
+                <div key={mod.slug}>{card}</div>
+              )
+            })}
+          </div>
+        </section>
+
+        {/* B6 — Tools row */}
+        <section style={{ marginBottom: 40 }}>
+          <p style={{ fontSize: 10, letterSpacing: '1px', textTransform: 'uppercase', color: T.textSecond, marginBottom: 14 }}>
+            Herramientas
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}
+               className="tools-grid">
+            {([
+              { icon: '🫀', label: 'Anatomía 2D', desc: 'Visor interactivo · Capas: piel, músculo, esquelético · Vista anterior/posterior', cta: 'Abrir visor', route: '/anatomia-3d' },
+              { icon: '📖', label: 'Terminología · MedLex', desc: '70+ términos grecolatinos · Filtros por sistema corporal · Quiz de práctica', cta: 'Abrir terminología', route: '/terminologia' },
+            ] as const).map(tool => (
+              <Link key={tool.route} to={tool.route}
+                style={{ textDecoration: 'none' }}
+                className="tool-card">
+                <div style={{
+                  ...panel,
+                  padding: '20px 24px',
+                  borderLeft: `3px solid ${T.accent}`,
+                  height: '100%',
+                }}>
+                  <p style={{ fontSize: 9, letterSpacing: '1px', textTransform: 'uppercase',
+                    color: T.accent, marginBottom: 10, fontWeight: 700 }}>Herramienta</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
+                    <span style={{ fontSize: 24 }}>{tool.icon}</span>
+                    <p style={{ fontSize: 14, fontWeight: 700, color: T.textPrimary }}>{tool.label}</p>
+                  </div>
+                  <p style={{ fontSize: 11, color: T.textSecond, lineHeight: 1.6, marginBottom: 16 }}>
+                    {tool.desc}
+                  </p>
+                  <span style={{ fontSize: 11, color: T.accent, display: 'flex', alignItems: 'center', gap: 6 }}>
+                    {tool.cta} <ArrowRight weight="bold" size={12} />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* B7 — LMGC Year 2 strip */}
+        <section style={{ marginBottom: 48 }}>
+          <p style={{ fontSize: 10, letterSpacing: '1px', textTransform: 'uppercase', color: T.textSecond, marginBottom: 14 }}>
+            LMGC — Año 2 · Sistemas Corporales
+          </p>
+          <div style={{ display: 'flex', gap: 10, overflowX: 'auto',
+            paddingBottom: 4, scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            {lmgcYear2.map(mod => {
+              const available = mod.status === 'disponible'
+              const card = (
+                <div style={{
+                  ...panel,
+                  minWidth: 200, flexShrink: 0, padding: '14px 16px',
+                  opacity: available ? 1 : 0.4,
+                  cursor: available ? 'pointer' : 'default',
+                  transition: 'border-color 0.2s',
+                }}>
+                  <p style={{ fontSize: 11, fontWeight: 700, color: T.textPrimary, marginBottom: 6, lineHeight: 1.3 }}>
+                    {mod.nombre}
+                  </p>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <span style={{ fontSize: 10, color: T.textSecond }}>
+                      {mod.semanas ? `${mod.semanas} sem · ` : ''}{mod.creditos} créditos
+                    </span>
+                    <span style={{ fontSize: 9, color: statusColor[mod.status], fontWeight: 700 }}>
+                      {statusLabel[mod.status]}
+                    </span>
+                  </div>
+                </div>
+              )
+              return available ? (
+                <Link key={mod.id} to={`/modulos/${mod.id}`}
+                  style={{ textDecoration: 'none' }} className="strip-card">
+                  {card}
+                </Link>
+              ) : (
+                <div key={mod.id}>{card}</div>
+              )
+            })}
+            {/* Trailing "Ver plan completo" card */}
+            <Link to="/modulos" style={{ textDecoration: 'none' }}>
+              <div style={{
+                ...panel,
+                minWidth: 160, flexShrink: 0, padding: '14px 16px',
+                display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 6,
+                cursor: 'pointer', height: '100%',
+              }} className="strip-card">
+                <p style={{ fontSize: 11, color: T.accent, textAlign: 'center', lineHeight: 1.4 }}>
+                  Ver plan<br />completo
+                </p>
+                <ArrowRight weight="bold" size={14} color={T.accent} />
+              </div>
+            </Link>
+          </div>
+        </section>
+
+        {/* B8 — Footer */}
+        <footer style={{ textAlign: 'center', fontSize: 10, color: T.textSecond,
+          borderTop: `1px solid ${T.border}`, paddingTop: 24, lineHeight: 1.8 }}>
+          <p>MedCore · Universidad de la Salud CDMX · LMGC</p>
+          <p>Terminología: MedLex (CC BY-SA 4.0) · Modelo anatómico: Z-Anatomy (CC BY-SA 4.0)</p>
+        </footer>
+      </div>
+
+      {/* Toast */}
+      <AnimatePresence>
+        {toast && <Toast msg={toast} onClose={() => setToast(null)} />}
+      </AnimatePresence>
+
+      {/* Inline responsive CSS */}
+      <style>{`
+        .quick-grid { grid-template-columns: repeat(3, 1fr) !important; }
+        .tools-grid { grid-template-columns: 1fr 1fr !important; }
+        .strip-card:hover > div {
+          border-color: ${T.accent} !important;
+          background: rgba(79,195,247,0.04) !important;
+        }
+        .tool-card:hover > div { background: rgba(79,195,247,0.06) !important; }
+        @media (max-width: 640px) {
+          .quick-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .tools-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 400px) {
+          .quick-grid { grid-template-columns: 1fr 1fr !important; }
+        }
+        .h-strip::-webkit-scrollbar { display: none; }
+      `}</style>
     </div>
   )
 }
 
-function TabButton({
-  active, onClick, label, count,
+// ── Tile component ─────────────────────────────────────────
+function Tile({
+  tile, onSoon, navigate
 }: {
-  active: boolean; onClick: () => void; label: string; count: number
+  tile: typeof TILES[0]
+  onSoon: () => void
+  navigate: ReturnType<typeof useNavigate>
 }) {
+  const [hovered, setHovered] = useState(false)
+
+  const handleClick = () => {
+    if (tile.soon) { onSoon(); return }
+    if (tile.route) navigate(tile.route)
+  }
+
   return (
-    <button
-      onClick={onClick}
-      className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold
-                   whitespace-nowrap transition-all duration-150 flex-shrink-0
-                   ${active ? 'bg-zinc-900 text-white' : 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100'}`}
+    <motion.div
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+      onClick={handleClick}
+      style={{
+        background: hovered && !tile.soon ? 'rgba(79,195,247,0.04)' : T.panel,
+        border: `1px solid ${hovered && !tile.soon ? T.accent : T.border}`,
+        borderRadius: 4,
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        padding: '20px 20px',
+        cursor: tile.soon ? 'default' : 'pointer',
+        transition: 'border-color 0.2s, background 0.2s',
+        position: 'relative',
+        opacity: tile.soon ? 0.6 : 1,
+      } as React.CSSProperties}
     >
-      {label}
-      <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full
-        ${active ? 'bg-white/20 text-white' : 'bg-zinc-100 text-zinc-500'}`}>
-        {count}
-      </span>
-    </button>
+      {tile.soon && (
+        <span style={{
+          position: 'absolute', top: 10, right: 10,
+          fontSize: 8, fontWeight: 700, letterSpacing: '0.5px', textTransform: 'uppercase',
+          background: 'rgba(245,158,11,0.15)', color: '#f59e0b',
+          border: '1px solid rgba(245,158,11,0.3)', borderRadius: 3,
+          padding: '2px 6px',
+        }}>Próximamente</span>
+      )}
+      <div style={{ fontSize: 28, marginBottom: 12 }}>{tile.icon}</div>
+      <p style={{ fontSize: 13, fontWeight: 700, color: T.textPrimary, marginBottom: 6 }}>
+        {tile.label}
+      </p>
+      <p style={{ fontSize: 11, color: T.textSecond, lineHeight: 1.5 }}>
+        {tile.desc}
+      </p>
+    </motion.div>
   )
 }
