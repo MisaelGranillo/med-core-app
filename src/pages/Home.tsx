@@ -76,7 +76,7 @@ export function Home() {
       <section className="bg-white border-b border-zinc-100 relative overflow-hidden">
         {/* Three.js background — lazy-loaded, isolated from Framer Motion tree */}
         <Suspense fallback={null}>
-          <HeroCanvas className="opacity-40" />
+          <HeroCanvas />
         </Suspense>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 

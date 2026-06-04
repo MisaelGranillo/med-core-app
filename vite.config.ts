@@ -7,13 +7,11 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-react':  ['react', 'react-dom', 'react-router-dom'],
           'vendor-motion': ['framer-motion'],
-          'vendor-three': ['three'],
-          'vendor-r3f': ['@react-three/fiber', '@react-three/drei', '@react-three/postprocessing'],
         },
       },
     },
-    chunkSizeWarningLimit: 700,
+    chunkSizeWarningLimit: 500,
   },
 })
