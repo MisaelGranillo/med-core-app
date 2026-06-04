@@ -24,6 +24,8 @@ export interface PaiModulo {
   relacionado_visor: boolean  // si muestra link al visor anatómico
   unisa_url: string           // URL a la sección en plataforma UNISA
   descripcion: string         // Descripción breve para la card
+  cardBg: string              // Background color for home page card
+  cardColor: string           // Text/accent color for home page card
 }
 
 export const paiModulos: PaiModulo[] = [
@@ -37,6 +39,7 @@ export const paiModulos: PaiModulo[] = [
     relacionado_visor: false,
     unisa_url: 'https://app.unisa.cdmx.gob.mx/unisapai/course/view.php?id=3&section=2',
     descripcion: 'Competencias del egresado LMGC, modelo educativo modular y ABP, determinación social de la salud, APS-I y derecho constitucional a la salud.',
+    cardBg: '#dbeafe', cardColor: '#1e3a8a',
   },
   {
     orden: 2,
@@ -48,6 +51,7 @@ export const paiModulos: PaiModulo[] = [
     relacionado_visor: false,
     unisa_url: 'https://app.unisa.cdmx.gob.mx/unisapai/course/view.php?id=3&section=3',
     descripcion: 'Definición OMS de salud, determinantes sociales, epidemiología básica en México, niveles de prevención y Normas Oficiales Mexicanas relevantes.',
+    cardBg: '#d1fae5', cardColor: '#064e3b',
   },
   {
     orden: 3,
@@ -59,6 +63,7 @@ export const paiModulos: PaiModulo[] = [
     relacionado_visor: false,
     unisa_url: 'https://app.unisa.cdmx.gob.mx/unisapai/course/view.php?id=3&section=4',
     descripcion: 'Introducción a la bioquímica, estructura celular y organelos, membrana celular, el agua, proteínas y enzimas, bioenergética y macromoléculas.',
+    cardBg: '#fef3c7', cardColor: '#78350f',
   },
   {
     orden: 4,
@@ -70,6 +75,7 @@ export const paiModulos: PaiModulo[] = [
     relacionado_visor: true,
     unisa_url: 'https://app.unisa.cdmx.gob.mx/unisapai/course/view.php?id=3&section=5',
     descripcion: 'Sistema locomotor, nervioso, respiratorio, digestivo, urinario, reproductor y circulatorio. Incluye visor anatómico interactivo.',
+    cardBg: '#ede9fe', cardColor: '#3730a3',
   },
   {
     orden: 5,
@@ -81,6 +87,7 @@ export const paiModulos: PaiModulo[] = [
     relacionado_visor: false,
     unisa_url: 'https://app.unisa.cdmx.gob.mx/unisapai/course/view.php?id=3&section=6',
     descripcion: 'Comunicación y lenguaje, lectoescritura, gramática, redacción y usos del lenguaje hablado y escrito en las ciencias de la salud.',
+    cardBg: '#fce7f3', cardColor: '#831843',
   },
   {
     orden: 6,
@@ -92,6 +99,7 @@ export const paiModulos: PaiModulo[] = [
     relacionado_visor: false,
     unisa_url: 'https://app.unisa.cdmx.gob.mx/unisapai/course/view.php?id=3&section=7',
     descripcion: 'Vocabulario médico básico, instrucciones y etiquetas de medicamentos, formularios de consulta y comprensión de abstracts científicos.',
+    cardBg: '#dcfce7', cardColor: '#14532d',
   },
   {
     orden: 7,
@@ -103,6 +111,7 @@ export const paiModulos: PaiModulo[] = [
     relacionado_visor: false,
     unisa_url: 'https://app.unisa.cdmx.gob.mx/unisapai/course/view.php?id=3&section=8',
     descripcion: 'Aritmética, álgebra, probabilidad, estadística descriptiva e inferencial aplicadas a las ciencias de la salud.',
+    cardBg: '#ffedd5', cardColor: '#7c2d12',
   },
   {
     orden: 8,
@@ -114,6 +123,7 @@ export const paiModulos: PaiModulo[] = [
     relacionado_visor: false,
     unisa_url: 'https://app.unisa.cdmx.gob.mx/unisapai/course/view.php?id=3&section=9',
     descripcion: 'De la información al conocimiento, herramientas digitales y terminología médica, método científico y enfoques de investigación.',
+    cardBg: '#cffafe', cardColor: '#164e63',
   },
   {
     orden: 9,
@@ -125,6 +135,7 @@ export const paiModulos: PaiModulo[] = [
     relacionado_visor: false,
     unisa_url: 'https://app.unisa.cdmx.gob.mx/unisapai/course/view.php?id=3&section=10',
     descripcion: 'Diversidad sexual, derechos sexuales y reproductivos, prevención de la violencia, masculinidades y lenguaje inclusivo no sexista.',
+    cardBg: '#f3e8ff', cardColor: '#581c87',
   },
 ]
 

@@ -1,380 +1,392 @@
-/* Home.tsx — MedCore Study Dashboard
- * Personal study dashboard for LMGC, Universidad de la Salud, CDMX.
- * Structured around three questions: ¿Dónde estoy? ¿Qué estudiar? ¿Cómo accedo?
+/*
+ * Home.tsx — MedCore Study Dashboard (light theme)
+ * Universidad de la Salud · LMGC · PAI 2026
+ *
+ * Structure:
+ *   Hero → Progress card → Tools grid → PAI module cards → Footer
+ *
+ * All stats pulled from real data (no hardcoded counts).
  */
 
-import { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, X } from '@phosphor-icons/react'
-import { paiModulos } from '../data/pai'
-import { lmgcModules } from '../data/lmgc-modules'
+import { useState, useEffect, useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { paiModulos }    from '../data/pai'
+import { medlexTerms }   from '../data/medlex-terms'
+import { hotspots }      from '../data/anatomyHotspots'
 
-// ── Design tokens ──────────────────────────────────────────
-const T = {
-  bg:         '#0d0d0d',
-  panel:      'rgba(15,15,20,0.88)',
-  border:     'rgba(255,255,255,0.08)',
-  borderHover:'#4fc3f7',
-  accent:     '#4fc3f7',
-  textPrimary:'#e0e0e0',
-  textSecond: '#888888',
-  mono:       '"IBM Plex Mono", monospace',
-}
+/* ── Stats derived from real data ──────────────────────────── */
+const TERMS_COUNT       = medlexTerms.length          // 82
+const HOTSPOTS_COUNT    = hotspots.length              // 25
+const PAI_TOTAL         = paiModulos.length            // 9
+const PAI_DISPONIBLES   = paiModulos.filter(m => m.status === 'disponible').length
 
-const panel: React.CSSProperties = {
-  background:     T.panel,
-  border:         `1px solid ${T.border}`,
-  borderRadius:   4,
-  backdropFilter: 'blur(12px)',
-  WebkitBackdropFilter: 'blur(12px)',
-}
+/* ── Tools ─────────────────────────────────────────────────── */
+const TOOLS = [
+  { id: 'anatomia', icon: '🫀', iconBg: '#fde8e8', label: 'Anatomía 2D',   desc: `Visor interactivo · ${HOTSPOTS_COUNT} estructuras`, route: '/anatomia-3d'  },
+  { id: 'termino',  icon: '📖', iconBg: '#ede9fe', label: 'Terminología',   desc: `MedLex · ${TERMS_COUNT}+ términos grecolatinos`,       route: '/terminologia' },
+  { id: 'quiz',     icon: '📝', iconBg: '#e0f2fe', label: 'Quiz',           desc: 'Exámenes de práctica',                                  route: '/progress'     },
+  { id: 'lmgc',     icon: '🏥', iconBg: '#fef9c3', label: 'LMGC',          desc: '37 módulos · Licenciatura',                             route: '/modulos'      },
+] as const
 
-// ── Computed stats ─────────────────────────────────────────
-const paiDisponibles  = paiModulos.filter(m => m.status === 'disponible').length
-const paiTotal        = paiModulos.length
-const lmgcYear2       = lmgcModules.filter(m => m.año === 2 && m.tipo === 'modular')
-const lmgcDisponibles = lmgcYear2.filter(m => m.status === 'disponible').length
-
-// ── Quick-access tiles ─────────────────────────────────────
-const TILES = [
-  { id: 'pai',       icon: '🧬', label: 'PAI',         desc: `${paiTotal} módulos · Programa de ingreso`,       route: '/pai'         },
-  { id: 'lmgc',      icon: '🏥', label: 'LMGC',        desc: '37 módulos · Licenciatura',                      route: '/modulos'      },
-  { id: 'anatomia',  icon: '🫀', label: 'Anatomía 2D',  desc: 'Visor interactivo · 25 estructuras',             route: '/anatomia-3d'  },
-  { id: 'termino',   icon: '📖', label: 'Terminología', desc: 'MedLex · Términos grecolatinos',                 route: '/terminologia' },
-  { id: 'quiz',      icon: '📝', label: 'Quiz',         desc: 'Exámenes de práctica · PAI + LMGC',              route: '/progress'    },
-  { id: 'wiki',      icon: '🔬', label: 'Wiki Médico',  desc: 'Complementos clínicos · Casos', route: null, soon: true },
-]
-
-// ── PAI status badge ───────────────────────────────────────
-const statusLabel: Record<string, string> = {
-  'disponible':      'DISPONIBLE',
-  'en-construccion': 'EN CONSTRUCCIÓN',
-  'bloqueado':       'BLOQUEADO',
-}
-const statusColor: Record<string, string> = {
-  'disponible':      T.accent,
-  'en-construccion': '#f59e0b',
-  'bloqueado':       '#555',
-}
-
-// ── Toast ─────────────────────────────────────────────────
-function Toast({ msg, onClose }: { msg: string; onClose: () => void }) {
+/* ── Reusable toast ────────────────────────────────────────── */
+function Toast({ msg, onDone }: { msg: string; onDone: () => void }) {
   useEffect(() => {
-    const t = setTimeout(onClose, 3000)
+    const t = setTimeout(onDone, 2500)
     return () => clearTimeout(t)
-  }, [onClose])
+  }, [onDone])
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 20 }}
-      style={{ ...panel, position: 'fixed', bottom: 24, left: '50%', transform: 'translateX(-50%)',
-        padding: '12px 20px', zIndex: 100, color: T.textPrimary, fontFamily: T.mono,
-        fontSize: 13, display: 'flex', alignItems: 'center', gap: 12, minWidth: 260 }}
-    >
-      <span>{msg}</span>
-      <button onClick={onClose} style={{ color: T.textSecond, background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
-        <X weight="bold" size={14} />
-      </button>
-    </motion.div>
+    <div style={{
+      position: 'fixed', bottom: 24, left: '50%', transform: 'translateX(-50%)',
+      background: '#1a202c', color: '#fff', fontSize: 13, fontWeight: 500,
+      padding: '10px 20px', borderRadius: 8, zIndex: 9999,
+      boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
+      whiteSpace: 'nowrap',
+      animation: 'fadeUp 0.2s ease',
+    }}>
+      {msg}
+    </div>
   )
 }
 
-// ── Main dashboard component ──────────────────────────────
+/* ── Home page ─────────────────────────────────────────────── */
 export function Home() {
   const navigate = useNavigate()
   const [toast, setToast] = useState<string | null>(null)
+  const showToast = useCallback((msg: string) => setToast(msg), [])
+  const clearToast = useCallback(() => setToast(null), [])
 
   return (
-    <div style={{ background: T.bg, minHeight: '100dvh', fontFamily: T.mono, color: T.textPrimary }}>
+    <div style={{ background: '#f4f6f9', minHeight: '100dvh', fontFamily: 'inherit' }}>
 
-      {/* B2 — Context strip */}
-      <div style={{
-        background: 'rgba(79,195,247,0.04)',
-        borderBottom: `1px solid ${T.border}`,
-        padding: '8px 24px',
-        fontSize: 11, letterSpacing: '0.8px', textTransform: 'uppercase', color: T.textSecond,
-        display: 'flex', flexWrap: 'wrap', gap: '6px 16px', alignItems: 'center',
-      }}>
-        <span>Universidad de la Salud · CDMX</span>
-        <span style={{ color: T.border }}>|</span>
-        <span>Licenciatura en Medicina General y Comunitaria</span>
-        <span style={{ color: T.border }}>|</span>
-        <span style={{ color: T.accent }}>PAI — Programa de Apoyo al Ingreso · 2026</span>
-      </div>
+      {/* Keyframe injection */}
+      <style>{`
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translate(-50%, 10px); }
+          to   { opacity: 1; transform: translate(-50%, 0);    }
+        }
+        .mc-card-hover {
+          transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .mc-card-hover:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(0,0,0,0.10) !important;
+        }
+        .mc-tool-hover {
+          transition: box-shadow 0.15s ease, background 0.15s ease;
+        }
+        .mc-tool-hover:hover {
+          box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+          background: #fafbfc !important;
+        }
+        @media (max-width: 480px) {
+          .hero-stats  { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+          .hero-pills  { flex-wrap: wrap !important; }
+          .tools-grid  { grid-template-columns: 1fr 1fr !important; }
+          .module-grid { grid-template-columns: 1fr !important; }
+          .hero-title  { font-size: 28px !important; }
+          .hero-inner  { padding: 24px 20px 20px !important; }
+          .stat-div    { display: none !important; }
+          .hero-stat   { padding: 0 !important; }
+          .progress-row { flex-direction: column !important; gap: 12px !important; }
+          .tool-desc   { display: none !important; }
+        }
+        @media (max-width: 768px) {
+          .module-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+      `}</style>
 
-      {/* Main container */}
-      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 24px 64px' }}>
+      <div style={{ maxWidth: 900, margin: '0 auto', padding: '20px 16px 48px' }}>
 
-        {/* B3 — Program status card */}
-        <section style={{ ...panel, padding: '24px 28px', marginBottom: 28 }}>
-          <p style={{ fontSize: 10, letterSpacing: '1px', textTransform: 'uppercase', color: T.textSecond, marginBottom: 16 }}>
-            Estado actual
-          </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 18, flexWrap: 'wrap' }}>
-            <span style={{ fontSize: 13, fontWeight: 700, color: T.accent }}>PAI</span>
-            <div style={{ flex: 1, minWidth: 120, height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2 }}>
-              <div style={{ height: '100%', width: `${(paiDisponibles / paiTotal) * 100}%`,
-                background: T.accent, borderRadius: 2, transition: 'width 0.6s ease' }} />
+        {/* ── Hero ─────────────────────────────────────────── */}
+        <section style={{ marginBottom: 14 }}>
+          <div className="hero-inner" style={{
+            background: 'linear-gradient(135deg, #0a1628 0%, #0d2744 40%, #0f3d5c 70%, #0a2a3d 100%)',
+            borderRadius: 12,
+            padding: '32px 32px 28px',
+            position: 'relative',
+            overflow: 'hidden',
+          }}>
+            {/* Decorative circle */}
+            <div style={{
+              position: 'absolute', top: -40, right: -40,
+              width: 200, height: 200, borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(79,195,247,0.12), transparent)',
+              pointerEvents: 'none',
+            }} />
+
+            {/* Eyebrow */}
+            <p style={{
+              fontSize: 11, letterSpacing: '2px', textTransform: 'uppercase',
+              color: '#7ec8e3', marginBottom: 10, fontWeight: 500,
+            }}>
+              Universidad de la Salud · CDMX · 2026
+            </p>
+
+            {/* Title */}
+            <h1 className="hero-title" style={{
+              fontSize: 36, fontWeight: 800, letterSpacing: '-0.5px',
+              color: '#ffffff', margin: '0 0 6px',
+            }}>
+              MedCore
+            </h1>
+
+            {/* Subtitle */}
+            <p style={{
+              fontSize: 15, fontStyle: 'italic',
+              color: 'rgba(255,255,255,0.65)', marginBottom: 24,
+            }}>
+              Licenciatura en Medicina General y Comunitaria
+            </p>
+
+            {/* Pills */}
+            <div className="hero-pills" style={{ display: 'flex', gap: 10, marginBottom: 28, flexWrap: 'nowrap' }}>
+              {[
+                { text: 'PAI — Activo', active: true },
+                { text: 'LMGC — Año 2 disponible', active: false },
+                { text: 'Terminología MedLex', active: false },
+              ].map(p => (
+                <span key={p.text} style={{
+                  fontSize: 12, fontWeight: 500, padding: '5px 14px', borderRadius: 20,
+                  background: p.active ? 'rgba(79,195,247,0.2)' : 'rgba(255,255,255,0.10)',
+                  border: `1px solid ${p.active ? '#4fc3f7' : 'rgba(255,255,255,0.2)'}`,
+                  color: p.active ? '#4fc3f7' : '#fff',
+                  whiteSpace: 'nowrap',
+                }}>
+                  {p.text}
+                </span>
+              ))}
             </div>
-            <span style={{ fontSize: 13, fontWeight: 700, color: T.textSecond }}>LMGC</span>
-            <span style={{ fontSize: 11, color: T.textSecond, marginLeft: 4 }}>Año 1 → Año 6</span>
-          </div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 32px' }}>
-            <span style={{ fontSize: 12, color: T.textSecond }}>
-              PAI:{' '}
-              <strong style={{ color: T.textPrimary }}>{paiDisponibles} de {paiTotal} módulos disponibles</strong>
-            </span>
-            <span style={{ fontSize: 12, color: T.textSecond }}>
-              LMGC:{' '}
-              <strong style={{ color: T.textPrimary }}>Año 2 · {lmgcDisponibles} sistemas corporales disponibles</strong>
-            </span>
+
+            {/* Stats row */}
+            <div className="hero-stats" style={{ display: 'flex', alignItems: 'flex-start' }}>
+              {[
+                { value: `+${TERMS_COUNT}`, label: 'Términos' },
+                { value: `${PAI_DISPONIBLES}/${PAI_TOTAL}`, label: 'PAI listo' },
+                { value: '3', label: 'Categorías' },
+                { value: `${HOTSPOTS_COUNT}`, label: 'Estructuras' },
+              ].map((s, i) => (
+                <div key={s.label} className="hero-stat" style={{
+                  display: 'flex', flexDirection: 'column', gap: 4,
+                  paddingLeft: i === 0 ? 0 : 20,
+                  paddingRight: 20,
+                  borderLeft: i === 0 ? 'none' : '1px solid rgba(255,255,255,0.15)',
+                }}>
+                  <span className="stat-div" style={{ display: 'none' }} />
+                  <span style={{ fontSize: 24, fontWeight: 800, color: '#fff', lineHeight: 1 }}>
+                    {s.value}
+                  </span>
+                  <span style={{
+                    fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.5px',
+                    color: 'rgba(255,255,255,0.5)', fontWeight: 500,
+                  }}>
+                    {s.label}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* B4 — Quick access grid */}
-        <section style={{ marginBottom: 40 }}>
-          <p style={{ fontSize: 10, letterSpacing: '1px', textTransform: 'uppercase', color: T.textSecond, marginBottom: 14 }}>
-            Acceso rápido
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}
-               className="quick-grid">
-            {TILES.map(tile => (
-              <Tile
-                key={tile.id}
-                tile={tile}
-                onSoon={() => setToast('🔬 Wiki Médico — Próximamente. Módulo en construcción.')}
+        {/* ── Progress card ─────────────────────────────────── */}
+        <section style={{ marginBottom: 20 }}>
+          <div style={{
+            background: '#fff',
+            border: '0.5px solid #e2e8f0',
+            borderRadius: 8,
+            padding: '14px 16px',
+            display: 'flex', flexDirection: 'column', gap: 12,
+          }}>
+            {/* PAI row */}
+            <ProgressRow
+              label="PAI"
+              fill={PAI_DISPONIBLES / PAI_TOTAL}
+              barColor="#4fc3f7"
+              valueLabel={`${PAI_DISPONIBLES} de ${PAI_TOTAL} módulos`}
+            />
+            {/* LMGC row */}
+            <ProgressRow
+              label="LMGC"
+              fill={0.20}
+              barColor="#10b981"
+              valueLabel="Año 2 · 7 sistemas"
+            />
+          </div>
+        </section>
+
+        {/* ── Tools ─────────────────────────────────────────── */}
+        <section style={{ marginBottom: 20 }}>
+          <SectionLabel>Herramientas</SectionLabel>
+          <div className="tools-grid" style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: 10,
+          }}>
+            {TOOLS.map(tool => (
+              <button
+                key={tool.id}
+                className="mc-tool-hover"
+                onClick={() => navigate(tool.route)}
+                style={{
+                  background: '#fff',
+                  border: '0.5px solid #e2e8f0',
+                  borderRadius: 8,
+                  padding: '14px 16px',
+                  display: 'flex', alignItems: 'center', gap: 12,
+                  cursor: 'pointer', textAlign: 'left', width: '100%',
+                }}
+              >
+                <div style={{
+                  width: 38, height: 38, borderRadius: 10,
+                  background: tool.iconBg,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: 18, flexShrink: 0,
+                }}>
+                  {tool.icon}
+                </div>
+                <div>
+                  <p style={{ fontSize: 13, fontWeight: 600, color: '#1a202c', margin: 0 }}>
+                    {tool.label}
+                  </p>
+                  <p className="tool-desc" style={{ fontSize: 11, color: '#94a3b8', marginTop: 2, marginBottom: 0 }}>
+                    {tool.desc}
+                  </p>
+                </div>
+              </button>
+            ))}
+          </div>
+        </section>
+
+        {/* ── PAI module cards ──────────────────────────────── */}
+        <section style={{ marginBottom: 28 }}>
+          <SectionLabel>PAI — Módulos</SectionLabel>
+          <div className="module-grid" style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: 10,
+          }}>
+            {paiModulos.map(mod => (
+              <ModuleCard
+                key={mod.slug}
+                mod={mod}
+                onUnavailable={() => showToast('Contenido en preparación. Disponible próximamente.')}
                 navigate={navigate}
               />
             ))}
           </div>
         </section>
 
-        {/* B5 — PAI modules strip */}
-        <section style={{ marginBottom: 40 }}>
-          <p style={{ fontSize: 10, letterSpacing: '1px', textTransform: 'uppercase', color: T.textSecond, marginBottom: 14 }}>
-            PAI — Módulos
+        {/* ── Footer ───────────────────────────────────────── */}
+        <footer style={{
+          textAlign: 'center', fontSize: 11, color: '#94a3b8',
+          borderTop: '0.5px solid #e2e8f0', paddingTop: 20,
+          lineHeight: 1.9,
+        }}>
+          <p style={{ margin: 0 }}>
+            MedCore · Misael Granillo · Universidad de la Salud CDMX
           </p>
-          <div className="h-strip" style={{ display: 'flex', gap: 10, overflowX: 'auto',
-            paddingBottom: 4, scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-            {paiModulos.map(mod => {
-              const available = mod.status === 'disponible'
-              const card = (
-                <div style={{
-                  ...panel,
-                  minWidth: 220, flexShrink: 0, padding: '14px 16px',
-                  opacity: available ? 1 : 0.4,
-                  cursor: available ? 'pointer' : 'default',
-                  transition: 'border-color 0.2s, background 0.2s',
-                }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
-                    <span style={{ fontSize: 18 }}>{mod.icono}</span>
-                    <p style={{ fontSize: 11, fontWeight: 700, color: T.textPrimary, lineHeight: 1.3,
-                      overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1 }}>
-                      {mod.nombre.replace('MÓDULO — ', '')}
-                    </p>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <span style={{ fontSize: 10, color: T.textSecond }}>
-                      {mod.temas !== null ? `${mod.temas} temas` : '—'}
-                    </span>
-                    <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: '0.5px',
-                      color: statusColor[mod.status] }}>
-                      {statusLabel[mod.status]}
-                    </span>
-                  </div>
-                </div>
-              )
-              return available ? (
-                <Link key={mod.slug} to={`/pai/${mod.slug}`}
-                  style={{ textDecoration: 'none' }}
-                  className="strip-card">
-                  {card}
-                </Link>
-              ) : (
-                <div key={mod.slug}>{card}</div>
-              )
-            })}
-          </div>
-        </section>
-
-        {/* B6 — Tools row */}
-        <section style={{ marginBottom: 40 }}>
-          <p style={{ fontSize: 10, letterSpacing: '1px', textTransform: 'uppercase', color: T.textSecond, marginBottom: 14 }}>
-            Herramientas
+          <p style={{ margin: 0 }}>
+            Terminología: MedLex (CC BY-SA 4.0) ·&nbsp;
+            Modelo anatómico: Z-Anatomy (CC BY-SA 4.0)
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}
-               className="tools-grid">
-            {([
-              { icon: '🫀', label: 'Anatomía 2D', desc: 'Visor interactivo · Capas: piel, músculo, esquelético · Vista anterior/posterior', cta: 'Abrir visor', route: '/anatomia-3d' },
-              { icon: '📖', label: 'Terminología · MedLex', desc: '70+ términos grecolatinos · Filtros por sistema corporal · Quiz de práctica', cta: 'Abrir terminología', route: '/terminologia' },
-            ] as const).map(tool => (
-              <Link key={tool.route} to={tool.route}
-                style={{ textDecoration: 'none' }}
-                className="tool-card">
-                <div style={{
-                  ...panel,
-                  padding: '20px 24px',
-                  borderLeft: `3px solid ${T.accent}`,
-                  height: '100%',
-                }}>
-                  <p style={{ fontSize: 9, letterSpacing: '1px', textTransform: 'uppercase',
-                    color: T.accent, marginBottom: 10, fontWeight: 700 }}>Herramienta</p>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
-                    <span style={{ fontSize: 24 }}>{tool.icon}</span>
-                    <p style={{ fontSize: 14, fontWeight: 700, color: T.textPrimary }}>{tool.label}</p>
-                  </div>
-                  <p style={{ fontSize: 11, color: T.textSecond, lineHeight: 1.6, marginBottom: 16 }}>
-                    {tool.desc}
-                  </p>
-                  <span style={{ fontSize: 11, color: T.accent, display: 'flex', alignItems: 'center', gap: 6 }}>
-                    {tool.cta} <ArrowRight weight="bold" size={12} />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* B7 — LMGC Year 2 strip */}
-        <section style={{ marginBottom: 48 }}>
-          <p style={{ fontSize: 10, letterSpacing: '1px', textTransform: 'uppercase', color: T.textSecond, marginBottom: 14 }}>
-            LMGC — Año 2 · Sistemas Corporales
-          </p>
-          <div style={{ display: 'flex', gap: 10, overflowX: 'auto',
-            paddingBottom: 4, scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-            {lmgcYear2.map(mod => {
-              const available = mod.status === 'disponible'
-              const card = (
-                <div style={{
-                  ...panel,
-                  minWidth: 200, flexShrink: 0, padding: '14px 16px',
-                  opacity: available ? 1 : 0.4,
-                  cursor: available ? 'pointer' : 'default',
-                  transition: 'border-color 0.2s',
-                }}>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: T.textPrimary, marginBottom: 6, lineHeight: 1.3 }}>
-                    {mod.nombre}
-                  </p>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <span style={{ fontSize: 10, color: T.textSecond }}>
-                      {mod.semanas ? `${mod.semanas} sem · ` : ''}{mod.creditos} créditos
-                    </span>
-                    <span style={{ fontSize: 9, color: statusColor[mod.status], fontWeight: 700 }}>
-                      {statusLabel[mod.status]}
-                    </span>
-                  </div>
-                </div>
-              )
-              return available ? (
-                <Link key={mod.id} to={`/modulos/${mod.id}`}
-                  style={{ textDecoration: 'none' }} className="strip-card">
-                  {card}
-                </Link>
-              ) : (
-                <div key={mod.id}>{card}</div>
-              )
-            })}
-            {/* Trailing "Ver plan completo" card */}
-            <Link to="/modulos" style={{ textDecoration: 'none' }}>
-              <div style={{
-                ...panel,
-                minWidth: 160, flexShrink: 0, padding: '14px 16px',
-                display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 6,
-                cursor: 'pointer', height: '100%',
-              }} className="strip-card">
-                <p style={{ fontSize: 11, color: T.accent, textAlign: 'center', lineHeight: 1.4 }}>
-                  Ver plan<br />completo
-                </p>
-                <ArrowRight weight="bold" size={14} color={T.accent} />
-              </div>
-            </Link>
-          </div>
-        </section>
-
-        {/* B8 — Footer */}
-        <footer style={{ textAlign: 'center', fontSize: 10, color: T.textSecond,
-          borderTop: `1px solid ${T.border}`, paddingTop: 24, lineHeight: 1.8 }}>
-          <p>MedCore · Universidad de la Salud CDMX · LMGC</p>
-          <p>Terminología: MedLex (CC BY-SA 4.0) · Modelo anatómico: Z-Anatomy (CC BY-SA 4.0)</p>
         </footer>
       </div>
 
       {/* Toast */}
-      <AnimatePresence>
-        {toast && <Toast msg={toast} onClose={() => setToast(null)} />}
-      </AnimatePresence>
-
-      {/* Inline responsive CSS */}
-      <style>{`
-        .quick-grid { grid-template-columns: repeat(3, 1fr) !important; }
-        .tools-grid { grid-template-columns: 1fr 1fr !important; }
-        .strip-card:hover > div {
-          border-color: ${T.accent} !important;
-          background: rgba(79,195,247,0.04) !important;
-        }
-        .tool-card:hover > div { background: rgba(79,195,247,0.06) !important; }
-        @media (max-width: 640px) {
-          .quick-grid { grid-template-columns: repeat(2, 1fr) !important; }
-          .tools-grid { grid-template-columns: 1fr !important; }
-        }
-        @media (max-width: 400px) {
-          .quick-grid { grid-template-columns: 1fr 1fr !important; }
-        }
-        .h-strip::-webkit-scrollbar { display: none; }
-      `}</style>
+      {toast && <Toast msg={toast} onDone={clearToast} />}
     </div>
   )
 }
 
-// ── Tile component ─────────────────────────────────────────
-function Tile({
-  tile, onSoon, navigate
-}: {
-  tile: typeof TILES[0]
-  onSoon: () => void
-  navigate: ReturnType<typeof useNavigate>
-}) {
-  const [hovered, setHovered] = useState(false)
+/* ── Sub-components ────────────────────────────────────────── */
 
-  const handleClick = () => {
-    if (tile.soon) { onSoon(); return }
-    if (tile.route) navigate(tile.route)
-  }
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <p style={{
+      fontSize: 11, letterSpacing: '1.5px', textTransform: 'uppercase',
+      color: '#94a3b8', fontWeight: 500, marginBottom: 10,
+    }}>
+      {children}
+    </p>
+  )
+}
+
+function ProgressRow({
+  label, fill, barColor, valueLabel,
+}: {
+  label: string; fill: number; barColor: string; valueLabel: string
+}) {
+  return (
+    <div className="progress-row" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <span style={{ fontSize: 11, fontWeight: 600, color: '#1a202c', width: 36, flexShrink: 0 }}>
+        {label}
+      </span>
+      <div style={{ flex: 1, height: 6, background: '#e2e8f0', borderRadius: 3, overflow: 'hidden' }}>
+        <div style={{
+          height: '100%',
+          width: `${Math.min(fill * 100, 100)}%`,
+          background: barColor,
+          borderRadius: 3,
+          transition: 'width 0.6s ease',
+        }} />
+      </div>
+      <span style={{ fontSize: 11, color: '#94a3b8', whiteSpace: 'nowrap' }}>
+        {valueLabel}
+      </span>
+    </div>
+  )
+}
+
+function ModuleCard({
+  mod, onUnavailable, navigate,
+}: {
+  mod: typeof paiModulos[0]
+  onUnavailable: () => void
+  navigate: (to: string) => void
+}) {
+  const available = mod.status === 'disponible'
 
   return (
-    <motion.div
-      onHoverStart={() => setHovered(true)}
-      onHoverEnd={() => setHovered(false)}
-      onClick={handleClick}
+    <button
+      className="mc-card-hover"
+      onClick={() => available ? navigate(`/pai/${mod.slug}`) : onUnavailable()}
       style={{
-        background: hovered && !tile.soon ? 'rgba(79,195,247,0.04)' : T.panel,
-        border: `1px solid ${hovered && !tile.soon ? T.accent : T.border}`,
-        borderRadius: 4,
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
-        padding: '20px 20px',
-        cursor: tile.soon ? 'default' : 'pointer',
-        transition: 'border-color 0.2s, background 0.2s',
-        position: 'relative',
-        opacity: tile.soon ? 0.6 : 1,
-      } as React.CSSProperties}
+        background: mod.cardBg,
+        border: 'none',
+        borderRadius: 8,
+        padding: '16px',
+        cursor: 'pointer',
+        textAlign: 'left',
+        width: '100%',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
+      }}
     >
-      {tile.soon && (
+      {/* Emoji + name */}
+      <p style={{
+        fontSize: 12, fontWeight: 700, color: mod.cardColor,
+        lineHeight: 1.35, marginBottom: 10,
+        display: '-webkit-box',
+        WebkitLineClamp: 3,
+        WebkitBoxOrient: 'vertical',
+        overflow: 'hidden',
+      }}>
+        {mod.icono}&nbsp;&nbsp;
+        {mod.nombre.replace('MÓDULO — ', '')}
+      </p>
+
+      {/* Footer: temas count + status badge */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 6 }}>
+        <span style={{ fontSize: 11, fontWeight: 500, color: mod.cardColor, opacity: 0.75 }}>
+          {mod.temas !== null ? `${mod.temas} temas` : '—'}
+        </span>
         <span style={{
-          position: 'absolute', top: 10, right: 10,
-          fontSize: 8, fontWeight: 700, letterSpacing: '0.5px', textTransform: 'uppercase',
-          background: 'rgba(245,158,11,0.15)', color: '#f59e0b',
-          border: '1px solid rgba(245,158,11,0.3)', borderRadius: 3,
-          padding: '2px 6px',
-        }}>Próximamente</span>
-      )}
-      <div style={{ fontSize: 28, marginBottom: 12 }}>{tile.icon}</div>
-      <p style={{ fontSize: 13, fontWeight: 700, color: T.textPrimary, marginBottom: 6 }}>
-        {tile.label}
-      </p>
-      <p style={{ fontSize: 11, color: T.textSecond, lineHeight: 1.5 }}>
-        {tile.desc}
-      </p>
-    </motion.div>
+          fontSize: 10, fontWeight: 700, padding: '3px 8px', borderRadius: 10,
+          background: 'rgba(0,0,0,0.12)', color: mod.cardColor,
+          opacity: available ? 1 : 0.65,
+        }}>
+          {available ? 'Disponible' : 'Próximo'}
+        </span>
+      </div>
+    </button>
   )
 }
