@@ -425,7 +425,7 @@ export function AnatomyViewer2D() {
   // ── Render ────────────────────────────────────────────────
 
   return (
-    <div className="flex flex-col" style={{ height: '100%', background: '#0d0d0d', overflow: 'hidden' }}>
+    <div className="flex flex-col" style={{ height: '100%', background: 'var(--c-stage)', overflow: 'hidden' }}>
 
       {/* Barra superior */}
       <div className="flex items-center gap-3 px-5 py-2.5 flex-shrink-0"

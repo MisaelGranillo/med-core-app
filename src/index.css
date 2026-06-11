@@ -1,3 +1,5 @@
+@import './styles/tokens.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,7 +16,11 @@
   }
 
   body {
-    @apply bg-zinc-50 text-zinc-900 font-sans;
+    background: var(--c-bg);
+    color: var(--c-text);
+    font-family: var(--font-sans);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
     min-height: 100dvh;
   }
 
@@ -23,62 +29,192 @@
     display: flex;
     flex-direction: column;
   }
+
+  h1, h2, h3, h4 {
+    color: var(--c-ink);
+    font-family: var(--font-sans);
+    letter-spacing: var(--ls-snug);
+  }
+
+  /* Visible focus state for every interactive element (a11y) */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--c-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
 }
 
 @layer components {
+  /* ── Surfaces ──────────────────────────────────────────────────────── */
   .card {
-    @apply bg-white border border-zinc-200/60 rounded-2xl shadow-card;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
   }
 
+  .card-interactive {
+    transition: transform var(--t-lift), box-shadow var(--t-lift);
+  }
+  .card-interactive:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  /* ── Buttons ───────────────────────────────────────────────────────── */
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl font-medium text-sm
-           transition-all duration-200 active:scale-[0.98] active:-translate-y-px;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: var(--fs-small);
+    background: var(--c-primary);
+    color: var(--c-primary-fg);
+    transition: background var(--t-fast), transform var(--t-fast);
+  }
+  .btn-primary:hover { background: var(--c-primary-hover); }
+  .btn-primary:active { transform: translateY(1px) scale(0.99); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: var(--fs-small);
+    color: var(--c-text);
+    border: 1px solid var(--c-border);
+    background: var(--c-surface);
+    transition: border-color var(--t-fast), background var(--t-fast);
+  }
+  .btn-ghost:hover { border-color: var(--c-border-strong); background: var(--c-surface-2); }
+
+  /* ── Mono label / eyebrow / badge ──────────────────────────────────── */
+  .label-mono {
+    font-family: var(--font-mono);
+    font-size: var(--fs-label);
+    font-weight: 500;
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    color: var(--c-muted);
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--fs-label);
+    font-weight: 500;
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 3px 9px;
+    border-radius: var(--radius-full);
+    background: var(--c-surface-2);
+    color: var(--c-muted);
+    border: 1px solid var(--c-border);
   }
 
   .section-number {
-    @apply inline-flex items-center justify-center w-6 h-6 rounded-full
-           text-xs font-bold text-white flex-shrink-0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: var(--radius-full);
+    font-size: var(--fs-label);
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
   }
 
-  .table-base {
-    @apply w-full text-sm border-collapse;
+  /* ── Callout (4 semantic variants): left rail + tint + glyph ───────── */
+  .callout {
+    display: flex;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--c-border);
+    border-left: 3px solid var(--c-muted);
+    background: var(--c-surface-2);
+    font-size: var(--fs-small);
+    line-height: var(--lh-relaxed);
   }
+  .callout-info     { border-left-color: var(--c-info);    background: var(--c-info-tint);    color: var(--c-info-ink); }
+  .callout-note     { border-left-color: var(--c-warning); background: var(--c-warning-tint); color: var(--c-warning-ink); }
+  .callout-critical { border-left-color: var(--c-error);   background: var(--c-error-tint);   color: var(--c-error-ink); }
+  .callout-mnemo    { border-left-color: var(--c-primary); background: var(--c-primary-tint); color: var(--c-primary-800); }
+  .callout-title { font-weight: 700; margin-bottom: var(--space-1); }
 
+  /* ── Tables ────────────────────────────────────────────────────────── */
+  .table-base { width: 100%; font-size: var(--fs-small); border-collapse: collapse; }
   .table-base th {
-    @apply text-left font-semibold text-zinc-600 text-xs uppercase tracking-wider
-           pb-2 border-b border-zinc-200 px-3;
+    text-align: left;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    color: var(--c-muted);
+    font-size: 11px;
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    padding: var(--space-2) var(--space-3);
+    background: var(--c-surface-2);
+    border-bottom: 1px solid var(--c-border);
   }
-
   .table-base td {
-    @apply py-2.5 px-3 text-zinc-700 border-b border-zinc-100 align-top;
+    padding: var(--space-2) var(--space-3);
+    color: var(--c-text);
+    border-bottom: 1px solid var(--c-border);
+    vertical-align: top;
   }
-
-  .table-base tr:last-child td {
-    @apply border-b-0;
-  }
-
-  .table-base tr:hover td {
-    @apply bg-zinc-50/80;
-  }
+  .table-base tr:last-child td { border-bottom: 0; }
+  .table-base tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--c-surface-2) 50%, transparent); }
 
   .formula-box {
-    @apply font-mono text-sm bg-zinc-900 text-emerald-400 px-4 py-3 rounded-xl
-           border border-zinc-800 overflow-x-auto;
+    font-family: var(--font-mono);
+    font-size: var(--fs-small);
+    background: var(--c-navy-900);
+    color: var(--c-primary-300);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
   }
 
   .key-point-item {
-    @apply flex items-start gap-2.5 text-sm text-zinc-700 leading-relaxed;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: var(--fs-small);
+    color: var(--c-text);
+    line-height: var(--lh-relaxed);
   }
 
+  /* ── Nav links ─────────────────────────────────────────────────────── */
   .nav-link {
-    @apply flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium
-           text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100
-           transition-all duration-150;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    font-size: var(--fs-small);
+    font-weight: 500;
+    color: var(--c-muted);
+    transition: color var(--t-fast), background var(--t-fast);
   }
-
-  .nav-link.active {
-    @apply text-zinc-900 bg-zinc-100;
-  }
+  .nav-link:hover { color: var(--c-ink); background: var(--c-surface-2); }
+  .nav-link.active { color: var(--c-primary-fg); background: var(--c-navy-900); }
 }
 
 @layer utilities {

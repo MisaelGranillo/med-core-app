@@ -1,11 +1,10 @@
 /*
- * Home.tsx — MedCore Study Dashboard (light theme)
+ * Home.tsx — MedCore Study Dashboard
  * Universidad de la Salud · LMGC · PAI 2026
  *
- * Structure:
- *   Hero → Progress card → Tools grid → PAI module cards → Footer
- *
- * All stats pulled from real data (no hardcoded counts).
+ * Rebuilt on the design-token system (src/styles/tokens.css).
+ * Structure: Hero → Progress → Tools → PAI modules → Footer.
+ * Inline styles only for values that come from data (module colors).
  */
 
 import { useState, useEffect, useCallback } from 'react'
@@ -15,20 +14,20 @@ import { medlexTerms }   from '../data/medlex-terms'
 import { hotspots }      from '../data/anatomyHotspots'
 
 /* ── Stats derived from real data ──────────────────────────── */
-const TERMS_COUNT       = medlexTerms.length          // 82
-const HOTSPOTS_COUNT    = hotspots.length              // 25
-const PAI_TOTAL         = paiModulos.length            // 9
-const PAI_DISPONIBLES   = paiModulos.filter(m => m.status === 'disponible').length
+const TERMS_COUNT     = medlexTerms.length
+const HOTSPOTS_COUNT  = hotspots.length
+const PAI_TOTAL       = paiModulos.length
+const PAI_DISPONIBLES = paiModulos.filter(m => m.status === 'disponible').length
 
 /* ── Tools ─────────────────────────────────────────────────── */
 const TOOLS = [
-  { id: 'anatomia', icon: '🫀', iconBg: '#fde8e8', label: 'Anatomía 2D',   desc: `Visor interactivo · ${HOTSPOTS_COUNT} estructuras`, route: '/anatomia-3d'  },
-  { id: 'termino',  icon: '📖', iconBg: '#ede9fe', label: 'Terminología',   desc: `MedLex · ${TERMS_COUNT}+ términos grecolatinos`,       route: '/terminologia' },
-  { id: 'quiz',     icon: '📝', iconBg: '#e0f2fe', label: 'Quiz',           desc: 'Exámenes de práctica',                                  route: '/progress'     },
-  { id: 'lmgc',     icon: '🏥', iconBg: '#fef9c3', label: 'LMGC',          desc: '37 módulos · Licenciatura',                             route: '/modulos'      },
+  { id: 'anatomia', icon: '🫀', label: 'Anatomía 2D',  desc: `Visor · ${HOTSPOTS_COUNT} estructuras`, route: '/anatomia-3d'  },
+  { id: 'termino',  icon: '📖', label: 'Terminología', desc: `MedLex · ${TERMS_COUNT}+ términos`,      route: '/terminologia' },
+  { id: 'quiz',     icon: '📝', label: 'Quiz',         desc: 'Exámenes de práctica',                   route: '/progress'     },
+  { id: 'lmgc',     icon: '🏥', label: 'LMGC',         desc: '37 módulos · Licenciatura',              route: '/modulos'      },
 ] as const
 
-/* ── Reusable toast ────────────────────────────────────────── */
+/* ── Toast ─────────────────────────────────────────────────── */
 function Toast({ msg, onDone }: { msg: string; onDone: () => void }) {
   useEffect(() => {
     const t = setTimeout(onDone, 2500)
@@ -36,14 +35,11 @@ function Toast({ msg, onDone }: { msg: string; onDone: () => void }) {
   }, [onDone])
 
   return (
-    <div style={{
-      position: 'fixed', bottom: 24, left: '50%', transform: 'translateX(-50%)',
-      background: '#1a202c', color: '#fff', fontSize: 13, fontWeight: 500,
-      padding: '10px 20px', borderRadius: 8, zIndex: 9999,
-      boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
-      whiteSpace: 'nowrap',
-      animation: 'fadeUp 0.2s ease',
-    }}>
+    <div
+      role="status"
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[9999] bg-navy-900 text-white
+                 text-sm font-medium px-5 py-2.5 rounded-md shadow-pop whitespace-nowrap animate-fade-up"
+    >
       {msg}
     </div>
   )
@@ -57,129 +53,63 @@ export function Home() {
   const clearToast = useCallback(() => setToast(null), [])
 
   return (
-    <div style={{ background: '#f4f6f9', minHeight: '100dvh', fontFamily: 'inherit' }}>
-
-      {/* Keyframe injection */}
-      <style>{`
-        @keyframes fadeUp {
-          from { opacity: 0; transform: translate(-50%, 10px); }
-          to   { opacity: 1; transform: translate(-50%, 0);    }
-        }
-        .mc-card-hover {
-          transition: transform 0.15s ease, box-shadow 0.15s ease;
-        }
-        .mc-card-hover:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(0,0,0,0.10) !important;
-        }
-        .mc-tool-hover {
-          transition: box-shadow 0.15s ease, background 0.15s ease;
-        }
-        .mc-tool-hover:hover {
-          box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-          background: #fafbfc !important;
-        }
-        @media (max-width: 480px) {
-          .hero-stats  { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
-          .hero-pills  { flex-wrap: wrap !important; }
-          .tools-grid  { grid-template-columns: 1fr 1fr !important; }
-          .module-grid { grid-template-columns: 1fr !important; }
-          .hero-title  { font-size: 28px !important; }
-          .hero-inner  { padding: 24px 20px 20px !important; }
-          .stat-div    { display: none !important; }
-          .hero-stat   { padding: 0 !important; }
-          .progress-row { flex-direction: column !important; gap: 12px !important; }
-          .tool-desc   { display: none !important; }
-        }
-        @media (max-width: 768px) {
-          .module-grid { grid-template-columns: repeat(2, 1fr) !important; }
-        }
-      `}</style>
-
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: '20px 16px 48px' }}>
+    <div className="flex-1 bg-app">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-5 pb-12">
 
         {/* ── Hero ─────────────────────────────────────────── */}
-        <section style={{ marginBottom: 14 }}>
-          <div className="hero-inner" style={{
-            background: 'linear-gradient(135deg, #0a1628 0%, #0d2744 40%, #0f3d5c 70%, #0a2a3d 100%)',
-            borderRadius: 12,
-            padding: '32px 32px 28px',
-            position: 'relative',
-            overflow: 'hidden',
-          }}>
-            {/* Decorative circle */}
-            <div style={{
-              position: 'absolute', top: -40, right: -40,
-              width: 200, height: 200, borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(79,195,247,0.12), transparent)',
-              pointerEvents: 'none',
-            }} />
+        <section className="mb-4">
+          <div className="relative overflow-hidden rounded-lg bg-hero-gradient px-6 py-7 sm:px-8 sm:py-8">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -top-10 -right-10 w-52 h-52 rounded-full"
+              style={{ background: 'radial-gradient(circle, rgba(94,234,212,0.14), transparent 70%)' }}
+            />
 
-            {/* Eyebrow */}
-            <p style={{
-              fontSize: 11, letterSpacing: '2px', textTransform: 'uppercase',
-              color: '#7ec8e3', marginBottom: 10, fontWeight: 500,
-            }}>
+            <p className="eyebrow mb-2.5" style={{ color: '#7ec8e3' }}>
               Universidad de la Salud · CDMX · 2026
             </p>
 
-            {/* Title */}
-            <h1 className="hero-title" style={{
-              fontSize: 36, fontWeight: 800, letterSpacing: '-0.5px',
-              color: '#ffffff', margin: '0 0 6px',
-            }}>
+            <h1 className="text-[2rem] sm:text-[2.25rem] font-bold tracking-tight text-white leading-none mb-1.5">
               MedCore
             </h1>
 
-            {/* Subtitle */}
-            <p style={{
-              fontSize: 15, fontStyle: 'italic',
-              color: 'rgba(255,255,255,0.65)', marginBottom: 24,
-            }}>
+            <p className="text-[15px] italic text-white/65 mb-6">
               Licenciatura en Medicina General y Comunitaria
             </p>
 
-            {/* Pills */}
-            <div className="hero-pills" style={{ display: 'flex', gap: 10, marginBottom: 28, flexWrap: 'nowrap' }}>
+            <div className="flex flex-wrap gap-2.5 mb-7">
               {[
                 { text: 'PAI — Activo', active: true },
                 { text: 'LMGC — Año 2 disponible', active: false },
                 { text: 'Terminología MedLex', active: false },
               ].map(p => (
-                <span key={p.text} style={{
-                  fontSize: 12, fontWeight: 500, padding: '5px 14px', borderRadius: 20,
-                  background: p.active ? 'rgba(79,195,247,0.2)' : 'rgba(255,255,255,0.10)',
-                  border: `1px solid ${p.active ? '#4fc3f7' : 'rgba(255,255,255,0.2)'}`,
-                  color: p.active ? '#4fc3f7' : '#fff',
-                  whiteSpace: 'nowrap',
-                }}>
+                <span
+                  key={p.text}
+                  className="text-xs font-medium px-3.5 py-1.5 rounded-full border whitespace-nowrap"
+                  style={
+                    p.active
+                      ? { background: 'rgba(94,234,212,0.18)', borderColor: '#5eead4', color: '#5eead4' }
+                      : { background: 'rgba(255,255,255,0.08)', borderColor: 'rgba(255,255,255,0.2)', color: '#fff' }
+                  }
+                >
                   {p.text}
                 </span>
               ))}
             </div>
 
-            {/* Stats row */}
-            <div className="hero-stats" style={{ display: 'flex', alignItems: 'flex-start' }}>
+            <div className="grid grid-cols-4 gap-px">
               {[
                 { value: `+${TERMS_COUNT}`, label: 'Términos' },
                 { value: `${PAI_DISPONIBLES}/${PAI_TOTAL}`, label: 'PAI listo' },
                 { value: '3', label: 'Categorías' },
                 { value: `${HOTSPOTS_COUNT}`, label: 'Estructuras' },
               ].map((s, i) => (
-                <div key={s.label} className="hero-stat" style={{
-                  display: 'flex', flexDirection: 'column', gap: 4,
-                  paddingLeft: i === 0 ? 0 : 20,
-                  paddingRight: 20,
-                  borderLeft: i === 0 ? 'none' : '1px solid rgba(255,255,255,0.15)',
-                }}>
-                  <span className="stat-div" style={{ display: 'none' }} />
-                  <span style={{ fontSize: 24, fontWeight: 800, color: '#fff', lineHeight: 1 }}>
-                    {s.value}
-                  </span>
-                  <span style={{
-                    fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.5px',
-                    color: 'rgba(255,255,255,0.5)', fontWeight: 500,
-                  }}>
+                <div
+                  key={s.label}
+                  className={`flex flex-col gap-1 pr-5 ${i === 0 ? '' : 'pl-5 border-l border-white/15'}`}
+                >
+                  <span className="text-2xl font-bold text-white leading-none font-mono">{s.value}</span>
+                  <span className="eyebrow text-[10px]" style={{ color: 'rgba(255,255,255,0.5)' }}>
                     {s.label}
                   </span>
                 </div>
@@ -188,83 +118,38 @@ export function Home() {
           </div>
         </section>
 
-        {/* ── Progress card ─────────────────────────────────── */}
-        <section style={{ marginBottom: 20 }}>
-          <div style={{
-            background: '#fff',
-            border: '0.5px solid #e2e8f0',
-            borderRadius: 8,
-            padding: '14px 16px',
-            display: 'flex', flexDirection: 'column', gap: 12,
-          }}>
-            {/* PAI row */}
-            <ProgressRow
-              label="PAI"
-              fill={PAI_DISPONIBLES / PAI_TOTAL}
-              barColor="#4fc3f7"
-              valueLabel={`${PAI_DISPONIBLES} de ${PAI_TOTAL} módulos`}
-            />
-            {/* LMGC row */}
-            <ProgressRow
-              label="LMGC"
-              fill={0.20}
-              barColor="#10b981"
-              valueLabel="Año 2 · 7 sistemas"
-            />
+        {/* ── Progress ──────────────────────────────────────── */}
+        <section className="mb-6">
+          <div className="card p-4 flex flex-col gap-3">
+            <ProgressRow label="PAI"  fill={PAI_DISPONIBLES / PAI_TOTAL} barColor="var(--c-info)"    valueLabel={`${PAI_DISPONIBLES} de ${PAI_TOTAL} módulos`} />
+            <ProgressRow label="LMGC" fill={0.20}                        barColor="var(--c-success)" valueLabel="Año 2 · 7 sistemas" />
           </div>
         </section>
 
         {/* ── Tools ─────────────────────────────────────────── */}
-        <section style={{ marginBottom: 20 }}>
-          <SectionLabel>Herramientas</SectionLabel>
-          <div className="tools-grid" style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: 10,
-          }}>
+        <section className="mb-6">
+          <p className="label-mono mb-2.5">Herramientas</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
             {TOOLS.map(tool => (
               <button
                 key={tool.id}
-                className="mc-tool-hover"
                 onClick={() => navigate(tool.route)}
-                style={{
-                  background: '#fff',
-                  border: '0.5px solid #e2e8f0',
-                  borderRadius: 8,
-                  padding: '14px 16px',
-                  display: 'flex', alignItems: 'center', gap: 12,
-                  cursor: 'pointer', textAlign: 'left', width: '100%',
-                }}
+                className="card card-interactive p-4 flex items-center gap-3 text-left w-full"
               >
-                <div style={{
-                  width: 38, height: 38, borderRadius: 10,
-                  background: tool.iconBg,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: 18, flexShrink: 0,
-                }}>
-                  {tool.icon}
-                </div>
-                <div>
-                  <p style={{ fontSize: 13, fontWeight: 600, color: '#1a202c', margin: 0 }}>
-                    {tool.label}
-                  </p>
-                  <p className="tool-desc" style={{ fontSize: 11, color: '#94a3b8', marginTop: 2, marginBottom: 0 }}>
-                    {tool.desc}
-                  </p>
-                </div>
+                <span className="text-xl flex-shrink-0" aria-hidden>{tool.icon}</span>
+                <span className="min-w-0">
+                  <span className="block text-[13px] font-semibold text-ink">{tool.label}</span>
+                  <span className="block text-xs text-faint mt-0.5 truncate">{tool.desc}</span>
+                </span>
               </button>
             ))}
           </div>
         </section>
 
-        {/* ── PAI module cards ──────────────────────────────── */}
-        <section style={{ marginBottom: 28 }}>
-          <SectionLabel>PAI — Módulos</SectionLabel>
-          <div className="module-grid" style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: 10,
-          }}>
+        {/* ── PAI modules ───────────────────────────────────── */}
+        <section className="mb-7">
+          <p className="label-mono mb-2.5">PAI — Módulos</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2.5">
             {paiModulos.map(mod => (
               <ModuleCard
                 key={mod.slug}
@@ -276,23 +161,13 @@ export function Home() {
           </div>
         </section>
 
-        {/* ── Footer ───────────────────────────────────────── */}
-        <footer style={{
-          textAlign: 'center', fontSize: 11, color: '#94a3b8',
-          borderTop: '0.5px solid #e2e8f0', paddingTop: 20,
-          lineHeight: 1.9,
-        }}>
-          <p style={{ margin: 0 }}>
-            MedCore · Misael Granillo · Universidad de la Salud CDMX
-          </p>
-          <p style={{ margin: 0 }}>
-            Terminología: MedLex (CC BY-SA 4.0) ·&nbsp;
-            Modelo anatómico: Z-Anatomy (CC BY-SA 4.0)
-          </p>
+        {/* ── Footer ────────────────────────────────────────── */}
+        <footer className="text-center text-xs text-faint border-t border-line pt-5 leading-loose">
+          <p className="m-0">MedCore · Misael Granillo · Universidad de la Salud CDMX</p>
+          <p className="m-0">Terminología: MedLex (CC BY-SA 4.0) · Modelo anatómico: Z-Anatomy (CC BY-SA 4.0)</p>
         </footer>
       </div>
 
-      {/* Toast */}
       {toast && <Toast msg={toast} onDone={clearToast} />}
     </div>
   )
@@ -300,39 +175,21 @@ export function Home() {
 
 /* ── Sub-components ────────────────────────────────────────── */
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <p style={{
-      fontSize: 11, letterSpacing: '1.5px', textTransform: 'uppercase',
-      color: '#94a3b8', fontWeight: 500, marginBottom: 10,
-    }}>
-      {children}
-    </p>
-  )
-}
-
 function ProgressRow({
   label, fill, barColor, valueLabel,
 }: {
   label: string; fill: number; barColor: string; valueLabel: string
 }) {
   return (
-    <div className="progress-row" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-      <span style={{ fontSize: 11, fontWeight: 600, color: '#1a202c', width: 36, flexShrink: 0 }}>
-        {label}
-      </span>
-      <div style={{ flex: 1, height: 6, background: '#e2e8f0', borderRadius: 3, overflow: 'hidden' }}>
-        <div style={{
-          height: '100%',
-          width: `${Math.min(fill * 100, 100)}%`,
-          background: barColor,
-          borderRadius: 3,
-          transition: 'width 0.6s ease',
-        }} />
+    <div className="flex items-center gap-3">
+      <span className="text-xs font-semibold text-ink w-9 flex-shrink-0">{label}</span>
+      <div className="flex-1 h-1.5 rounded-full bg-line overflow-hidden">
+        <div
+          className="h-full rounded-full"
+          style={{ width: `${Math.min(fill * 100, 100)}%`, background: barColor, transition: 'width var(--t-fill)' }}
+        />
       </div>
-      <span style={{ fontSize: 11, color: '#94a3b8', whiteSpace: 'nowrap' }}>
-        {valueLabel}
-      </span>
+      <span className="text-xs text-faint whitespace-nowrap">{valueLabel}</span>
     </div>
   )
 }
@@ -348,42 +205,22 @@ function ModuleCard({
 
   return (
     <button
-      className="mc-card-hover"
-      onClick={() => available ? navigate(`/pai/${mod.slug}`) : onUnavailable()}
-      style={{
-        background: mod.cardBg,
-        border: 'none',
-        borderRadius: 8,
-        padding: '16px',
-        cursor: 'pointer',
-        textAlign: 'left',
-        width: '100%',
-        boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
-      }}
+      onClick={() => (available ? navigate(`/pai/${mod.slug}`) : onUnavailable())}
+      className="card-interactive rounded-lg p-4 text-left w-full shadow-sm"
+      style={{ background: mod.cardBg, border: 'none' }}
     >
-      {/* Emoji + name */}
-      <p style={{
-        fontSize: 12, fontWeight: 700, color: mod.cardColor,
-        lineHeight: 1.35, marginBottom: 10,
-        display: '-webkit-box',
-        WebkitLineClamp: 3,
-        WebkitBoxOrient: 'vertical',
-        overflow: 'hidden',
-      }}>
-        {mod.icono}&nbsp;&nbsp;
-        {mod.nombre.replace('MÓDULO — ', '')}
+      <p className="text-xs font-bold leading-snug mb-2.5 line-clamp-3" style={{ color: mod.cardColor }}>
+        {mod.icono}&nbsp;&nbsp;{mod.nombre.replace('MÓDULO — ', '')}
       </p>
 
-      {/* Footer: temas count + status badge */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 6 }}>
-        <span style={{ fontSize: 11, fontWeight: 500, color: mod.cardColor, opacity: 0.75 }}>
+      <div className="flex items-center justify-between gap-1.5">
+        <span className="text-[11px] font-medium" style={{ color: mod.cardColor, opacity: 0.75 }}>
           {mod.temas !== null ? `${mod.temas} temas` : '—'}
         </span>
-        <span style={{
-          fontSize: 10, fontWeight: 700, padding: '3px 8px', borderRadius: 10,
-          background: 'rgba(0,0,0,0.12)', color: mod.cardColor,
-          opacity: available ? 1 : 0.65,
-        }}>
+        <span
+          className="text-[10px] font-bold px-2 py-0.5 rounded-full font-mono"
+          style={{ background: 'rgba(0,0,0,0.10)', color: mod.cardColor, opacity: available ? 1 : 0.65 }}
+        >
           {available ? 'Disponible' : 'Próximo'}
         </span>
       </div>

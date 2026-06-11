@@ -1,18 +1,35 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Navbar } from './components/Navbar'
-import { Home } from './pages/Home'
-import { Topic } from './pages/Topic'
-import { Quiz } from './pages/Quiz'
-import { Search } from './pages/Search'
-import { Progress } from './pages/Progress'
-import { Anatomy3D } from './pages/Anatomy3D'
-import { Terminologia } from './pages/Terminologia'
-import { Modulos } from './pages/Modulos'
-import { ModuloDetail } from './pages/ModuloDetail'
-import { PAI } from './pages/PAI'
-import { PAIModulo } from './pages/PAIModulo'
-import { PAITema } from './pages/PAITema'
+
+/* Routes are lazy-loaded so each page + its heavy data (topics, quizzes,
+ * anatomy meshes) only ships when navigated to — keeps the initial bundle
+ * small for a fast first paint. */
+const named = <T extends Record<string, React.ComponentType<unknown>>>(
+  loader: () => Promise<T>, key: keyof T,
+) => lazy(() => loader().then(m => ({ default: m[key] })))
+
+const Home         = named(() => import('./pages/Home'),          'Home')
+const Topic        = named(() => import('./pages/Topic'),         'Topic')
+const Quiz         = named(() => import('./pages/Quiz'),          'Quiz')
+const Search       = named(() => import('./pages/Search'),        'Search')
+const Progress     = named(() => import('./pages/Progress'),      'Progress')
+const Anatomy3D    = named(() => import('./pages/Anatomy3D'),     'Anatomy3D')
+const Terminologia = named(() => import('./pages/Terminologia'),  'Terminologia')
+const Modulos      = named(() => import('./pages/Modulos'),       'Modulos')
+const ModuloDetail = named(() => import('./pages/ModuloDetail'),  'ModuloDetail')
+const PAI          = named(() => import('./pages/PAI'),           'PAI')
+const PAIModulo    = named(() => import('./pages/PAIModulo'),     'PAIModulo')
+const PAITema      = named(() => import('./pages/PAITema'),       'PAITema')
+
+/* Suspense fallback while a route chunk loads */
+function RouteFallback() {
+  return (
+    <div className="flex-1 flex items-center justify-center py-24">
+      <div className="w-9 h-9 rounded-full border-4 border-line border-t-primary animate-spin" />
+    </div>
+  )
+}
 
 // Error boundary — muestra el error en pantalla en vez de página en blanco
 class ErrorBoundary extends React.Component<
@@ -56,23 +73,25 @@ export default function App() {
         {/* pb-16 md:pb-0 deja espacio para la barra de navegación inferior en móvil */}
         <div className="flex flex-col min-h-[100dvh] pb-16 md:pb-0">
           <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/topic/:id" element={<Topic />} />
-            <Route path="/quiz/:id" element={<Quiz />} />
-            <Route path="/search" element={<Search />} />
-            <Route path="/progress" element={<Progress />} />
-            <Route path="/anatomia-3d" element={<Anatomy3D />} />
-            <Route path="/terminologia" element={<Terminologia />} />
-            {/* LMGC módulos (plan de estudios) */}
-            <Route path="/modulos" element={<Modulos />} />
-            <Route path="/modulos/:id" element={<ModuloDetail />} />
-            {/* PAI — Programa de Apoyo al Ingreso */}
-            <Route path="/pai" element={<PAI />} />
-            <Route path="/pai/:slug" element={<PAIModulo />} />
-            <Route path="/pai/:slug/:temaId" element={<PAITema />} />
-            <Route path="*" element={<Home />} />
-          </Routes>
+          <Suspense fallback={<RouteFallback />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/topic/:id" element={<Topic />} />
+              <Route path="/quiz/:id" element={<Quiz />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/progress" element={<Progress />} />
+              <Route path="/anatomia-3d" element={<Anatomy3D />} />
+              <Route path="/terminologia" element={<Terminologia />} />
+              {/* LMGC módulos (plan de estudios) */}
+              <Route path="/modulos" element={<Modulos />} />
+              <Route path="/modulos/:id" element={<ModuloDetail />} />
+              {/* PAI — Programa de Apoyo al Ingreso */}
+              <Route path="/pai" element={<PAI />} />
+              <Route path="/pai/:slug" element={<PAIModulo />} />
+              <Route path="/pai/:slug/:temaId" element={<PAITema />} />
+              <Route path="*" element={<Home />} />
+            </Routes>
+          </Suspense>
         </div>
       </BrowserRouter>
     </ErrorBoundary>

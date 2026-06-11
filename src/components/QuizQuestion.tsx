@@ -37,10 +37,10 @@ export function QuizQuestion({
   }
 
   const stateStyles: Record<string, string> = {
-    idle: 'border-zinc-200 bg-white hover:border-zinc-300 hover:bg-zinc-50 text-zinc-700',
-    correct: 'border-emerald-400 bg-emerald-50 text-emerald-800',
-    wrong: 'border-red-400 bg-red-50 text-red-800',
-    selected: 'border-zinc-400 bg-zinc-100',
+    idle: 'border-line bg-surface hover:border-line-strong hover:bg-surface-2 text-body',
+    correct: 'border-success bg-success-tint text-success-ink',
+    wrong: 'border-error bg-error-tint text-error-ink',
+    selected: 'border-line-strong bg-surface-2',
   }
 
   return (
@@ -92,9 +92,9 @@ export function QuizQuestion({
             >
               <span
                 className={`w-6 h-6 rounded-full border-2 flex items-center justify-center flex-shrink-0 text-xs font-bold transition-all duration-200
-                  ${state === 'correct' ? 'border-emerald-400 bg-emerald-400 text-white' : ''}
-                  ${state === 'wrong' ? 'border-red-400 bg-red-400 text-white' : ''}
-                  ${state === 'idle' ? 'border-zinc-300 text-zinc-400' : ''}
+                  ${state === 'correct' ? 'border-success bg-success text-white' : ''}
+                  ${state === 'wrong' ? 'border-error bg-error text-white' : ''}
+                  ${state === 'idle' ? 'border-line-strong text-faint' : ''}
                 `}
               >
                 {state === 'correct' ? (
@@ -117,10 +117,10 @@ export function QuizQuestion({
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className={`rounded-xl px-4 py-3.5 text-sm leading-relaxed ${
+          className={`rounded-md px-4 py-3.5 text-sm leading-relaxed border ${
             selected === question.correctIndex
-              ? 'bg-emerald-50 border border-emerald-200 text-emerald-800'
-              : 'bg-amber-50 border border-amber-200 text-amber-800'
+              ? 'bg-success-tint border-success/30 text-success-ink'
+              : 'bg-warning-tint border-warning/30 text-warning-ink'
           }`}
         >
           <span className="font-bold block mb-1">

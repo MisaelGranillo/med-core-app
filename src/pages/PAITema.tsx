@@ -87,16 +87,16 @@ export function PAITema() {
 
             {/* 🧠 Mnemotecnia */}
             {tema.mnemotecnia.items.length > 0 && (
-              <div className="bg-indigo-50 border border-indigo-200 rounded-2xl p-6">
+              <div className="rounded-lg border border-line border-l-[3px] border-l-primary bg-primary-tint p-6">
                 <div className="flex items-center gap-2 mb-4">
-                  <Brain weight="fill" className="w-5 h-5 text-indigo-600" />
-                  <h2 className="font-bold text-indigo-900">Mnemotecnia</h2>
+                  <Brain weight="fill" className="w-5 h-5 text-primary" />
+                  <h2 className="font-bold text-primary-800">Mnemotecnia</h2>
                 </div>
                 <div className="space-y-3">
                   {tema.mnemotecnia.items.map((item, i) => (
-                    <div key={i} className="flex items-start gap-2.5 text-sm text-indigo-800">
-                      <span className="font-bold text-indigo-400 flex-shrink-0 mt-0.5">#{i + 1}</span>
-                      <span className="leading-relaxed font-mono text-xs bg-indigo-100/60 rounded-lg px-3 py-2 w-full">
+                    <div key={i} className="flex items-start gap-2.5 text-sm text-primary-800">
+                      <span className="font-bold text-primary-400 flex-shrink-0 mt-0.5">#{i + 1}</span>
+                      <span className="leading-relaxed font-mono text-xs bg-white/60 rounded-md px-3 py-2 w-full">
                         {item}
                       </span>
                     </div>
@@ -107,15 +107,15 @@ export function PAITema() {
 
             {/* ⭐ Puntos clave para examen */}
             {tema.puntosClave.length > 0 && (
-              <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6">
+              <div className="rounded-lg border border-line border-l-[3px] border-l-warning bg-warning-tint p-6">
                 <div className="flex items-center gap-2 mb-4">
-                  <Star weight="fill" className="w-5 h-5 text-amber-500" />
-                  <h2 className="font-bold text-amber-900">Puntos clave para el examen</h2>
+                  <Star weight="fill" className="w-5 h-5 text-warning" />
+                  <h2 className="font-bold text-warning-ink">Puntos clave para el examen</h2>
                 </div>
                 <ul className="space-y-2.5">
                   {tema.puntosClave.map((punto, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-sm text-amber-800">
-                      <span className="w-5 h-5 rounded-full bg-amber-200 text-amber-700 text-[10px] font-bold
+                    <li key={i} className="flex items-start gap-2.5 text-sm text-warning-ink">
+                      <span className="w-5 h-5 rounded-full bg-warning/20 text-warning-ink text-[10px] font-bold font-mono
                                        flex items-center justify-center flex-shrink-0 mt-0.5">
                         {i + 1}
                       </span>
@@ -128,12 +128,12 @@ export function PAITema() {
 
             {/* ⚠️ Error frecuente */}
             {tema.errorFrecuente && (
-              <div className="bg-red-50 border border-red-200 rounded-2xl p-6">
+              <div className="rounded-lg border border-line border-l-[3px] border-l-error bg-error-tint p-6">
                 <div className="flex items-center gap-2 mb-3">
-                  <WarningCircle weight="fill" className="w-5 h-5 text-red-500" />
-                  <h2 className="font-bold text-red-900">Error frecuente</h2>
+                  <WarningCircle weight="fill" className="w-5 h-5 text-error" />
+                  <h2 className="font-bold text-error-ink">Error frecuente</h2>
                 </div>
-                <p className="text-sm text-red-700 leading-relaxed">{tema.errorFrecuente}</p>
+                <p className="text-sm text-error-ink leading-relaxed">{tema.errorFrecuente}</p>
               </div>
             )}
 

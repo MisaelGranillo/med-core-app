@@ -16,10 +16,24 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <div id="root"></div>
+    <!-- App shell: paints instantly from static HTML (FCP/LCP) before the JS
+         bundle renders. React's createRoot().render() replaces it on mount.
+         Uses system fonts + inline styles so it needs no CSS/JS to appear. -->
+    <div id="root">
+      <div style="min-height:100dvh;background:#f5f7fa;font-family:system-ui,-apple-system,sans-serif">
+        <div style="height:56px;background:#fff;border-bottom:1px solid #e2e8f0"></div>
+        <div style="max-width:56rem;margin:0 auto;padding:20px 16px 48px">
+          <div style="border-radius:12px;padding:28px 24px;background:linear-gradient(135deg,#0a1628 0%,#0d2744 40%,#0f3d5c 70%,#0a2a3d 100%)">
+            <p style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#7ec8e3;margin:0 0 10px">Universidad de la Salud · CDMX · 2026</p>
+            <h1 style="font-size:36px;font-weight:700;letter-spacing:-.02em;color:#fff;margin:0 0 6px">MedCore</h1>
+            <p style="font-size:15px;font-style:italic;color:rgba(255,255,255,.65);margin:0">Licenciatura en Medicina General y Comunitaria</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

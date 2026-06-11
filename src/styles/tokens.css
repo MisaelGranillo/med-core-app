@@ -1,0 +1,154 @@
+/* ============================================================================
+ * tokens.css — MedCore Design System
+ * Single source of truth. Every color, space, size, radius, shadow lives here.
+ * Components reference these via Tailwind theme (tailwind.config.js) or var(--…).
+ * No magic numbers anywhere else.
+ *
+ * Theme: light, clinical navy + teal. Dark-ready (see prefers-color-scheme block).
+ * Type:  IBM Plex Sans (headings/body) + IBM Plex Mono (labels/data).
+ * ========================================================================== */
+
+:root {
+  /* ── Type families ─────────────────────────────────────────────────── */
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', ui-monospace, monospace;
+
+  /* ── Type scale (px → rem @16) ─────────────────────────────────────── */
+  --fs-h1: 2rem;        /* 32 — bumps to 2.25rem on desktop via utility   */
+  --fs-h1-lg: 2.25rem;  /* 36                                             */
+  --fs-h2: 1.5rem;      /* 24 */
+  --fs-h3: 1.25rem;     /* 20 */
+  --fs-h4: 1.0625rem;   /* 17 */
+  --fs-body: 0.9375rem; /* 15 */
+  --fs-small: 0.8125rem;/* 13 */
+  --fs-label: 0.75rem;  /* 12 — mono, uppercase */
+  --fs-caption: 0.75rem;/* 12 */
+
+  --lh-tight: 1.1;
+  --lh-heading: 1.25;
+  --lh-body: 1.6;
+  --lh-relaxed: 1.7;
+
+  --ls-tight: -0.02em;
+  --ls-snug: -0.01em;
+  --ls-wide: 0.08em;   /* mono labels */
+  --ls-wider: 0.12em;  /* eyebrows */
+
+  /* ── Spacing scale (4px base) ──────────────────────────────────────── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ── Radii ─────────────────────────────────────────────────────────── */
+  --radius-sm: 8px;
+  --radius-md: 12px;   /* buttons, inputs, nav, tables */
+  --radius-lg: 16px;   /* cards */
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* ── Neutrals (Slate) ──────────────────────────────────────────────── */
+  --c-ink: #0f172a;          /* headings                         */
+  --c-text: #334155;         /* body (≈10:1 on white)            */
+  --c-muted: #64748b;        /* secondary (≈5.9:1)               */
+  --c-faint: #94a3b8;        /* placeholder / decorative only    */
+  --c-border: #e2e8f0;
+  --c-border-strong: #cbd5e1;
+  --c-surface: #ffffff;
+  --c-surface-2: #f8fafc;    /* subtle panels, table header, zebra */
+  --c-bg: #f5f7fa;           /* app background                   */
+
+  /* ── Primary (teal) ────────────────────────────────────────────────── */
+  --c-primary: #0d9488;        /* fills            */
+  --c-primary-hover: #0f766e;
+  --c-primary-ink: #0f766e;    /* inline text/links (≥4.5:1)      */
+  --c-primary-tint: #f0fdfa;
+  --c-primary-fg: #ffffff;
+  --c-primary-50: #f0fdfa;
+  --c-primary-100: #ccfbf1;
+  --c-primary-200: #99f6e4;
+  --c-primary-300: #5eead4;
+  --c-primary-400: #2dd4bf;
+  --c-primary-500: #14b8a6;
+  --c-primary-600: #0d9488;
+  --c-primary-700: #0f766e;
+  --c-primary-800: #115e59;
+  --c-primary-900: #134e4a;
+
+  /* ── Navy (deep brand — hero, active chrome) ───────────────────────── */
+  --c-navy-900: #0a1628;
+  --c-navy-800: #0d2744;
+  --c-navy-700: #0f3d5c;
+  --c-navy-600: #0a2a3d;
+  --c-hero-gradient: linear-gradient(135deg, #0a1628 0%, #0d2744 40%, #0f3d5c 70%, #0a2a3d 100%);
+
+  /* ── Semantic ──────────────────────────────────────────────────────── */
+  --c-success: #059669;  --c-success-tint: #ecfdf5;  --c-success-ink: #065f46;
+  --c-warning: #d97706;  --c-warning-tint: #fffbeb;  --c-warning-ink: #92400e;
+  --c-error:   #dc2626;  --c-error-tint:   #fef2f2;  --c-error-ink:   #991b1b;
+  --c-info:    #0284c7;  --c-info-tint:    #f0f9ff;  --c-info-ink:    #075985;
+
+  /* ── Module color triples (tint / ink / accent) ───────────────────────
+   * Used on home card, module header, topic accent, progress.
+   * All ink-on-tint pairs pass 4.5:1.                                     */
+  --mod-1-tint: #dbeafe;  --mod-1-ink: #1e3a8a;  --mod-1-accent: #2563eb;
+  --mod-2-tint: #d1fae5;  --mod-2-ink: #065f46;  --mod-2-accent: #059669;
+  --mod-3-tint: #fef3c7;  --mod-3-ink: #92400e;  --mod-3-accent: #d97706;
+  --mod-4-tint: #ede9fe;  --mod-4-ink: #5b21b6;  --mod-4-accent: #7c3aed;
+  --mod-5-tint: #fce7f3;  --mod-5-ink: #9d174d;  --mod-5-accent: #db2777;
+  --mod-6-tint: #dcfce7;  --mod-6-ink: #166534;  --mod-6-accent: #16a34a;
+  --mod-7-tint: #ffedd5;  --mod-7-ink: #9a3412;  --mod-7-accent: #ea580c;
+  --mod-8-tint: #cffafe;  --mod-8-ink: #155e63;  --mod-8-accent: #0891b2;
+  --mod-9-tint: #f3e8ff;  --mod-9-ink: #6b21a8;  --mod-9-accent: #9333ea;
+
+  /* ── Shadows ───────────────────────────────────────────────────────── */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-card: 0 4px 24px -8px rgba(15, 23, 42, 0.08);
+  --shadow-card-hover: 0 8px 32px -8px rgba(15, 23, 42, 0.14);
+  --shadow-pop: 0 20px 40px -15px rgba(15, 23, 42, 0.18);
+
+  /* ── Motion ────────────────────────────────────────────────────────── */
+  --t-fast: 150ms ease;
+  --t-lift: 200ms ease;
+  --t-fill: 600ms ease;
+
+  /* ── Dark-stage surface (anatomy viewer chrome) ───────────────────── */
+  --c-stage: #0d0d0d;
+  --c-stage-panel: #161616;
+  --c-stage-border: #2a2a2a;
+  --c-stage-text: #e5e7eb;
+  --c-stage-muted: #9ca3af;
+}
+
+/* ============================================================================
+ * Dark mode — authored but dormant. Flip the comment to activate later.
+ * Components already read these tokens, so no component changes are needed.
+ * ========================================================================== */
+/*
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-ink: #f1f5f9;
+    --c-text: #cbd5e1;
+    --c-muted: #94a3b8;
+    --c-faint: #64748b;
+    --c-border: #1e293b;
+    --c-border-strong: #334155;
+    --c-surface: #111827;
+    --c-surface-2: #0f172a;
+    --c-bg: #0a0f1a;
+    --c-primary-ink: #2dd4bf;
+  }
+}
+*/
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --t-fast: 0ms;
+    --t-lift: 0ms;
+    --t-fill: 0ms;
+  }
+}
