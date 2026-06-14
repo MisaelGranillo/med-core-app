@@ -6,10 +6,12 @@ import {
   Lightning,
   BookOpen,
   CheckCircle,
+  ArrowsOut,
   X,
 } from '@phosphor-icons/react'
 import { atlasTopics } from '../data/atlas-topics'
 import { useAtlasStore } from '../store/atlasStore'
+import { ImageLightbox, DownloadPdfButton } from '../components/ImageLightbox'
 
 type StudyMode = 'view' | 'quiz' | 'recall' | null
 
@@ -34,6 +36,7 @@ export function AtlasTopic() {
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'info' } | null>(
     null
   )
+  const [lightboxOpen, setLightboxOpen] = useState(false)
 
   useEffect(() => {
     if (!topic) navigate('/atlas')
@@ -138,16 +141,26 @@ export function AtlasTopic() {
               </div>
             </div>
 
-            <div className="hidden md:block h-40 bg-white/10 rounded-lg overflow-hidden flex-shrink-0">
+            <button
+              type="button"
+              onClick={() => setLightboxOpen(true)}
+              className="hidden md:block h-40 bg-white/10 rounded-lg overflow-hidden flex-shrink-0 cursor-zoom-in group relative"
+            >
               <img
                 src={topic.imagePath}
                 alt={topic.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none'
                 }}
               />
-            </div>
+              <span className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-colors">
+                <ArrowsOut
+                  weight="bold"
+                  className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                />
+              </span>
+            </button>
           </div>
         </div>
       </div>
@@ -206,7 +219,12 @@ export function AtlasTopic() {
         ) : (
           <div className="mb-8">
             {mode === 'view' && (
-              <ViewMode topic={topic} onReview={handleMarkReviewed} onBack={() => setMode(null)} />
+              <ViewMode
+                topic={topic}
+                onReview={handleMarkReviewed}
+                onBack={() => setMode(null)}
+                onOpenImage={() => setLightboxOpen(true)}
+              />
             )}
             {mode === 'quiz' && (
               <QuizMode
@@ -221,7 +239,14 @@ export function AtlasTopic() {
               />
             )}
             {mode === 'recall' && (
-              <RecallMode topic={topic} onSubmit={handleRecallSubmit} onBack={() => setMode(null)} imageRevealed={imageRevealed} setImageRevealed={setImageRevealed} />
+              <RecallMode
+                topic={topic}
+                onSubmit={handleRecallSubmit}
+                onBack={() => setMode(null)}
+                imageRevealed={imageRevealed}
+                setImageRevealed={setImageRevealed}
+                onOpenImage={() => setLightboxOpen(true)}
+              />
             )}
           </div>
         )}
@@ -282,6 +307,15 @@ export function AtlasTopic() {
           </div>
         )}
       </div>
+
+      {lightboxOpen && (
+        <ImageLightbox
+          src={topic.imagePath}
+          title={topic.title}
+          filename={`${topic.id}.pdf`}
+          onClose={() => setLightboxOpen(false)}
+        />
+      )}
     </div>
   )
 }
@@ -290,10 +324,12 @@ function ViewMode({
   topic,
   onReview,
   onBack,
+  onOpenImage,
 }: {
   topic: (typeof atlasTopics)[0]
   onReview: () => void
   onBack: () => void
+  onOpenImage: () => void
 }) {
   return (
     <div className="space-y-4">
@@ -308,22 +344,54 @@ function ViewMode({
           </button>
         </div>
 
-        <div className="bg-gradient-to-br from-zinc-200 to-zinc-300 rounded-lg overflow-hidden h-96 flex items-center justify-center mb-6">
+        {/* Imagen completa, sin recorte. Click → visor a pantalla completa. */}
+        <button
+          type="button"
+          onClick={onOpenImage}
+          className="relative block w-full max-w-2xl mx-auto rounded-lg overflow-hidden border border-zinc-200 bg-zinc-50 mb-3 cursor-zoom-in group min-h-[8rem]"
+        >
+          <span className="absolute inset-0 flex items-center justify-center text-6xl text-zinc-300">
+            {topic.emoji}
+          </span>
           <img
             src={topic.imagePath}
-            alt={topic.title}
-            className="w-full h-full object-cover"
+            alt={`Infografía: ${topic.title}`}
+            className="relative w-full h-auto block"
             onError={(e) => {
               e.currentTarget.style.display = 'none'
             }}
           />
-          <span className="absolute inset-0 flex items-center justify-center text-6xl">{topic.emoji}</span>
-        </div>
-
-        <button onClick={onReview} className="btn-primary w-full bg-green-600 hover:bg-green-700">
-          <CheckCircle weight="fill" className="w-4 h-4" />
-          Marcar como Revisado
+          <span className="absolute top-2 right-2 inline-flex items-center gap-1 bg-black/55 text-white text-xs font-medium px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+            <ArrowsOut weight="bold" className="w-3.5 h-3.5" />
+            Ampliar
+          </span>
         </button>
+
+        <p className="text-xs text-zinc-400 text-center mb-5">
+          Toca la imagen para verla a tamaño completo
+        </p>
+
+        <div className="grid sm:grid-cols-3 gap-3">
+          <button
+            onClick={onOpenImage}
+            className="btn-ghost w-full flex items-center justify-center gap-2"
+          >
+            <ArrowsOut weight="bold" className="w-4 h-4" />
+            Pantalla completa
+          </button>
+          <DownloadPdfButton
+            src={topic.imagePath}
+            filename={`${topic.id}.pdf`}
+            className="btn-ghost w-full flex items-center justify-center gap-2 disabled:opacity-60"
+          />
+          <button
+            onClick={onReview}
+            className="btn-primary w-full bg-green-600 hover:bg-green-700 flex items-center justify-center gap-2"
+          >
+            <CheckCircle weight="fill" className="w-4 h-4" />
+            Marcar revisado
+          </button>
+        </div>
       </div>
     </div>
   )
@@ -476,12 +544,14 @@ function RecallMode({
   onBack,
   imageRevealed,
   setImageRevealed,
+  onOpenImage,
 }: {
   topic: (typeof atlasTopics)[0]
   onSubmit: () => void
   onBack: () => void
   imageRevealed: boolean
   setImageRevealed: (v: boolean) => void
+  onOpenImage: () => void
 }) {
   return (
     <div className="space-y-4">
@@ -518,16 +588,27 @@ function RecallMode({
         )}
 
         {imageRevealed && (
-          <div className="mt-4 bg-gradient-to-br from-zinc-200 to-zinc-300 rounded-lg overflow-hidden h-64 flex items-center justify-center">
+          <button
+            type="button"
+            onClick={onOpenImage}
+            className="relative mt-4 block w-full max-w-2xl mx-auto rounded-lg overflow-hidden border border-zinc-200 bg-zinc-50 cursor-zoom-in group min-h-[8rem]"
+          >
+            <span className="absolute inset-0 flex items-center justify-center text-6xl text-zinc-300">
+              {topic.emoji}
+            </span>
             <img
               src={topic.imagePath}
-              alt={topic.title}
-              className="w-full h-full object-cover"
+              alt={`Infografía: ${topic.title}`}
+              className="relative w-full h-auto block"
               onError={(e) => {
                 e.currentTarget.style.display = 'none'
               }}
             />
-          </div>
+            <span className="absolute top-2 right-2 inline-flex items-center gap-1 bg-black/55 text-white text-xs font-medium px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+              <ArrowsOut weight="bold" className="w-3.5 h-3.5" />
+              Ampliar
+            </span>
+          </button>
         )}
       </div>
     </div>

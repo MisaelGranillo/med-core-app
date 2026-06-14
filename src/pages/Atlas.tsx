@@ -123,7 +123,7 @@ function AtlasCard({
         <img
           src={topic.imagePath}
           alt={topic.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
           onError={(e) => {
             e.currentTarget.style.display = 'none'
           }}
