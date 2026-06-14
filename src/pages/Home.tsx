@@ -12,15 +12,18 @@ import { useNavigate } from 'react-router-dom'
 import { paiModulos }    from '../data/pai'
 import { medlexTerms }   from '../data/medlex-terms'
 import { hotspots }      from '../data/anatomyHotspots'
+import { atlasTopics }   from '../data/atlas-topics'
 
 /* ── Stats derived from real data ──────────────────────────── */
 const TERMS_COUNT     = medlexTerms.length
 const HOTSPOTS_COUNT  = hotspots.length
 const PAI_TOTAL       = paiModulos.length
 const PAI_DISPONIBLES = paiModulos.filter(m => m.status === 'disponible').length
+const ATLAS_COUNT     = atlasTopics.length
 
 /* ── Tools ─────────────────────────────────────────────────── */
 const TOOLS = [
+  { id: 'atlas',    icon: '🗺️',  label: 'Atlas Visual',  desc: `${ATLAS_COUNT} mapas · Estudio por imagen`, route: '/atlas'        },
   { id: 'anatomia', icon: '🫀', label: 'Anatomía 2D',  desc: `Visor · ${HOTSPOTS_COUNT} estructuras`, route: '/anatomia-3d'  },
   { id: 'termino',  icon: '📖', label: 'Terminología', desc: `MedLex · ${TERMS_COUNT}+ términos`,      route: '/terminologia' },
   { id: 'quiz',     icon: '📝', label: 'Quiz',         desc: 'Exámenes de práctica',                   route: '/progress'     },

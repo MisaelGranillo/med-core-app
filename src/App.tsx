@@ -21,6 +21,8 @@ const ModuloDetail = named(() => import('./pages/ModuloDetail'),  'ModuloDetail'
 const PAI          = named(() => import('./pages/PAI'),           'PAI')
 const PAIModulo    = named(() => import('./pages/PAIModulo'),     'PAIModulo')
 const PAITema      = named(() => import('./pages/PAITema'),       'PAITema')
+const Atlas        = named(() => import('./pages/Atlas'),         'Atlas')
+const AtlasTopic   = named(() => import('./pages/AtlasTopic'),    'AtlasTopic')
 
 /* Suspense fallback while a route chunk loads */
 function RouteFallback() {
@@ -89,6 +91,9 @@ export default function App() {
               <Route path="/pai" element={<PAI />} />
               <Route path="/pai/:slug" element={<PAIModulo />} />
               <Route path="/pai/:slug/:temaId" element={<PAITema />} />
+              {/* Atlas — Estudio Visual */}
+              <Route path="/atlas" element={<Atlas />} />
+              <Route path="/atlas/:id" element={<AtlasTopic />} />
               <Route path="*" element={<Home />} />
             </Routes>
           </Suspense>

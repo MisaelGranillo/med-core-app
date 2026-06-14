@@ -4,12 +4,13 @@ import { useState, useRef, useEffect } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import {
   MagnifyingGlass, X, House, BookOpen,
-  Cube, BookOpenText, ChartBar, GraduationCap, Brain,
+  Cube, BookOpenText, ChartBar, GraduationCap, Brain, Image,
 } from '@phosphor-icons/react'
 
 // ── Definición de ítems de navegación ─────────────────────
 const NAV_ITEMS = [
   { path: '/',            label: 'Inicio',       icon: House,          mobileIcon: House         },
+  { path: '/atlas',       label: 'Atlas',        icon: Image,          mobileIcon: Image         },
   { path: '/pai',         label: 'PAI',           icon: GraduationCap,  mobileIcon: GraduationCap },
   { path: '/anatomia-3d', label: 'Anatomía 3D',   icon: Cube,           mobileIcon: Cube          },
   { path: '/terminologia',label: 'Terminología',  icon: BookOpenText,   mobileIcon: BookOpenText  },
