@@ -271,9 +271,40 @@ export function AtlasTopic() {
           )}
         </div>
 
-        {/* Related Topics */}
+        {/* PAI Links */}
+        {topic.relatedPai && topic.relatedPai.length > 0 && (
+          <div className="mt-8 pt-8 border-t border-zinc-200">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg">📚</span>
+              <h3 className="font-bold text-zinc-900">Estudiar en PAI</h3>
+            </div>
+            <p className="text-sm text-zinc-500 mb-4">
+              Este tema tiene contenido completo con notas, tablas y mnemotecnia en el PAI.
+            </p>
+            <div className="grid md:grid-cols-2 gap-3">
+              {topic.relatedPai.map((link) => (
+                <Link
+                  key={`${link.modulo}-${link.temaId}`}
+                  to={`/pai/${link.modulo}/${link.temaId}`}
+                  className="card card-interactive p-4 hover:shadow-md transition-all flex items-center gap-3 border-l-4 border-l-blue-500"
+                >
+                  <div className="w-9 h-9 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
+                    <span className="text-base">🎓</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold text-zinc-900 text-sm truncate">{link.label}</p>
+                    <p className="text-xs text-zinc-500 capitalize">PAI · {link.modulo.replace(/-/g, ' ')}</p>
+                  </div>
+                  <ArrowLeft weight="bold" className="w-4 h-4 text-zinc-400 rotate-180 flex-shrink-0" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Related Atlas Topics */}
         {relatedTopics.length > 0 && (
-          <div className="mt-12 pt-8 border-t border-zinc-200">
+          <div className="mt-6 pt-6 border-t border-zinc-200">
             <h3 className="font-bold text-zinc-900 mb-4">Temas Relacionados</h3>
             <div className="grid md:grid-cols-2 gap-3">
               {relatedTopics.map((t) => (

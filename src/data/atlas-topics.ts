@@ -7,6 +7,12 @@ export interface AtlasQuestion {
   difficulty: 'easy' | 'medium' | 'hard'
 }
 
+export interface AtlasPaiLink {
+  modulo: string   // slug del módulo PAI, ej. 'bioquimica'
+  temaId: string   // id del tema PAI, ej. 'bio-1'
+  label: string    // label corto para mostrar en UI
+}
+
 export interface AtlasTopic {
   id: string
   title: string
@@ -17,6 +23,7 @@ export interface AtlasTopic {
   colorKey: string
   questions: AtlasQuestion[]
   relatedTopicIds?: string[]
+  relatedPai?: AtlasPaiLink[]
 }
 
 export const atlasTopics: AtlasTopic[] = [
@@ -29,6 +36,9 @@ export const atlasTopics: AtlasTopic[] = [
     imagePath: '/atlas/aparato-digestivo.png',
     colorKey: 'digestivo',
     relatedTopicIds: ['digestivo'],
+    relatedPai: [
+      { modulo: 'aparatos-y-sistemas', temaId: 'ap-4', label: 'Tema 4 — Aparato Digestivo' },
+    ],
     questions: [
       {
         id: 'ad-1',
@@ -80,6 +90,9 @@ export const atlasTopics: AtlasTopic[] = [
     emoji: '🫁',
     imagePath: '/atlas/aparato-respiratorio.png',
     colorKey: 'respiratorio',
+    relatedPai: [
+      { modulo: 'aparatos-y-sistemas', temaId: 'ap-3', label: 'Tema 3 — Aparato Respiratorio' },
+    ],
     questions: [
       {
         id: 'ar-1',
@@ -131,6 +144,9 @@ export const atlasTopics: AtlasTopic[] = [
     emoji: '🫘',
     imagePath: '/atlas/aparato-urinario.png',
     colorKey: 'urinario',
+    relatedPai: [
+      { modulo: 'aparatos-y-sistemas', temaId: 'ap-5', label: 'Tema 5 — Aparato Urinario' },
+    ],
     questions: [
       {
         id: 'au-1',
@@ -182,6 +198,9 @@ export const atlasTopics: AtlasTopic[] = [
     emoji: '🧬',
     imagePath: '/atlas/aparato-reproductor.png',
     colorKey: 'reproductor',
+    relatedPai: [
+      { modulo: 'aparatos-y-sistemas', temaId: 'ap-6', label: 'Tema 6 — Aparato Reproductor' },
+    ],
     questions: [
       {
         id: 'ar-1',
@@ -233,6 +252,9 @@ export const atlasTopics: AtlasTopic[] = [
     emoji: '🔬',
     imagePath: '/atlas/estructura-celula.png',
     colorKey: 'nervioso',
+    relatedPai: [
+      { modulo: 'bioquimica', temaId: 'bio-2', label: 'Tema 2 — Estructura Celular y Organelos' },
+    ],
     questions: [
       {
         id: 'ec-1',
@@ -284,6 +306,9 @@ export const atlasTopics: AtlasTopic[] = [
     emoji: '🧫',
     imagePath: '/atlas/membrana-celula.png',
     colorKey: 'circulatorio',
+    relatedPai: [
+      { modulo: 'bioquimica', temaId: 'bio-3', label: 'Tema 3 — Membrana Celular y Transporte' },
+    ],
     questions: [
       {
         id: 'mc-1',
@@ -335,6 +360,9 @@ export const atlasTopics: AtlasTopic[] = [
     emoji: '🧬',
     imagePath: '/atlas/macromoleculas-adn-arn.png',
     colorKey: 'probabilidad',
+    relatedPai: [
+      { modulo: 'bioquimica', temaId: 'bio-7', label: 'Tema 7 — Estructura y Replicación de Macromoléculas' },
+    ],
     questions: [
       {
         id: 'ma-1',
@@ -386,6 +414,9 @@ export const atlasTopics: AtlasTopic[] = [
     emoji: '⚗️',
     imagePath: '/atlas/introduccion-bioquimica.png',
     colorKey: 'estadDesc',
+    relatedPai: [
+      { modulo: 'bioquimica', temaId: 'bio-1', label: 'Tema 1 — Introducción a la Bioquímica' },
+    ],
     questions: [
       {
         id: 'ib-1',
@@ -437,6 +468,9 @@ export const atlasTopics: AtlasTopic[] = [
     emoji: '⚡',
     imagePath: '/atlas/bioenergetica.png',
     colorKey: 'estadInf',
+    relatedPai: [
+      { modulo: 'bioquimica', temaId: 'bio-6', label: 'Tema 6 — Bioenergética' },
+    ],
     questions: [
       {
         id: 'be-1',
@@ -488,6 +522,9 @@ export const atlasTopics: AtlasTopic[] = [
     emoji: '💧',
     imagePath: '/atlas/el-agua.png',
     colorKey: 'comunicacion',
+    relatedPai: [
+      { modulo: 'bioquimica', temaId: 'bio-4', label: 'Tema 4 — El Agua' },
+    ],
     questions: [
       {
         id: 'ag-1',
@@ -542,6 +579,9 @@ export const atlasTopics: AtlasTopic[] = [
     imagePath: '/atlas/sistema-cardiovascular.png',
     colorKey: 'circulatorio',
     relatedTopicIds: ['circulatorio'],
+    relatedPai: [
+      { modulo: 'aparatos-y-sistemas', temaId: 'ap-7', label: 'Tema 7 — Sistema Circulatorio' },
+    ],
     questions: [
       {
         id: 'cv-1',
@@ -595,6 +635,9 @@ export const atlasTopics: AtlasTopic[] = [
     emoji: '🧠',
     imagePath: '/atlas/sistema-nervioso.png',
     colorKey: 'nervioso',
+    relatedPai: [
+      { modulo: 'aparatos-y-sistemas', temaId: 'ap-2', label: 'Tema 2 — Sistema Nervioso' },
+    ],
     questions: [
       {
         id: 'sn-1',
@@ -648,6 +691,9 @@ export const atlasTopics: AtlasTopic[] = [
     emoji: '🦴',
     imagePath: '/atlas/sistema-locomotor.png',
     colorKey: 'locomotor',
+    relatedPai: [
+      { modulo: 'aparatos-y-sistemas', temaId: 'ap-1', label: 'Tema 1 — Sistema Locomotor' },
+    ],
     questions: [
       {
         id: 'sl-1',
@@ -701,6 +747,9 @@ export const atlasTopics: AtlasTopic[] = [
     emoji: '🔩',
     imagePath: '/atlas/proteinas-enzimas.png',
     colorKey: 'locomotor',
+    relatedPai: [
+      { modulo: 'bioquimica', temaId: 'bio-5', label: 'Tema 5 — Proteínas y Enzimas' },
+    ],
     questions: [
       {
         id: 'pe-1',
@@ -755,6 +804,10 @@ export const atlasTopics: AtlasTopic[] = [
     imagePath: '/atlas/referencia-rapida-celula-organelos.png',
     colorKey: 'celular',
     relatedTopicIds: ['estructura-celula', 'membrana-celular'],
+    relatedPai: [
+      { modulo: 'bioquimica', temaId: 'bio-2', label: 'Tema 2 — Estructura Celular y Organelos' },
+      { modulo: 'bioquimica', temaId: 'bio-3', label: 'Tema 3 — Membrana Celular y Transporte' },
+    ],
     questions: [
       {
         id: 'rr-1',

@@ -8,6 +8,7 @@ import {
 import { paiBySlug } from '../data/pai'
 import { usePaiTema, usePaiContent } from '../hooks/usePaiContent'
 import { PaiBlocks } from '../components/PaiBlocks'
+import { atlasTopics } from '../data/atlas-topics'
 
 export function PAITema() {
   const { slug, temaId } = useParams<{ slug: string; temaId: string }>()
@@ -19,6 +20,11 @@ export function PAITema() {
   const idx = allTemas.findIndex(t => t.id === temaId)
   const prevTema = idx > 0 ? allTemas[idx - 1] : null
   const nextTema = idx < allTemas.length - 1 ? allTemas[idx + 1] : null
+
+  // Infografías Atlas vinculadas a este tema PAI
+  const atlasLinks = atlasTopics.filter(at =>
+    at.relatedPai?.some(p => p.modulo === slug && p.temaId === temaId)
+  )
 
   if (!mod) return <div className="p-8 text-zinc-400">Módulo no encontrado.</div>
 
@@ -150,6 +156,35 @@ export function PAITema() {
               </div>
               <ArrowSquareOut className="w-4 h-4 text-zinc-400 group-hover:text-zinc-600 flex-shrink-0" />
             </a>
+
+            {/* Atlas — infografías vinculadas */}
+            {atlasLinks.length > 0 && (
+              <div className="rounded-lg border border-line bg-blue-50 p-5">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-base">🗺️</span>
+                  <p className="text-sm font-bold text-blue-900">Infografía en Atlas</p>
+                </div>
+                <p className="text-xs text-blue-700 mb-3">
+                  Este tema tiene una infografía visual con quiz y modo recall.
+                </p>
+                <div className="flex flex-col gap-2">
+                  {atlasLinks.map(at => (
+                    <Link
+                      key={at.id}
+                      to={`/atlas/${at.id}`}
+                      className="flex items-center gap-3 bg-white rounded-lg border border-blue-200 px-4 py-3 hover:shadow-sm transition-all"
+                    >
+                      <span className="text-xl flex-shrink-0">{at.emoji}</span>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-semibold text-zinc-900 truncate">{at.title}</p>
+                        <p className="text-xs text-zinc-500 truncate">{at.subtitle}</p>
+                      </div>
+                      <ArrowRight weight="bold" className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Navegación anterior / siguiente */}
             <div className="grid grid-cols-2 gap-3 pt-2">
