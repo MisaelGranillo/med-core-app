@@ -65,10 +65,10 @@ export function Home() {
             <div
               aria-hidden
               className="pointer-events-none absolute -top-10 -right-10 w-52 h-52 rounded-full"
-              style={{ background: 'radial-gradient(circle, rgba(94,234,212,0.14), transparent 70%)' }}
+              style={{ background: 'radial-gradient(circle, rgba(196,102,94,0.16), transparent 70%)' }}
             />
 
-            <p className="eyebrow mb-2.5" style={{ color: '#7ec8e3' }}>
+            <p className="eyebrow mb-2.5" style={{ color: 'var(--c-primary-300)' }}>
               Universidad de la Salud · CDMX · 2026
             </p>
 
@@ -91,7 +91,7 @@ export function Home() {
                   className="text-xs font-medium px-3.5 py-1.5 rounded-full border whitespace-nowrap"
                   style={
                     p.active
-                      ? { background: 'rgba(94,234,212,0.18)', borderColor: '#5eead4', color: '#5eead4' }
+                      ? { background: 'rgba(196,102,94,0.20)', borderColor: '#c4665e', color: '#dda6a0' }
                       : { background: 'rgba(255,255,255,0.08)', borderColor: 'rgba(255,255,255,0.2)', color: '#fff' }
                   }
                 >
@@ -100,7 +100,7 @@ export function Home() {
               ))}
             </div>
 
-            <div className="grid grid-cols-4 gap-px">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-2 gap-y-4">
               {[
                 { value: `+${TERMS_COUNT}`, label: 'Términos' },
                 { value: `${PAI_DISPONIBLES}/${PAI_TOTAL}`, label: 'PAI listo' },
@@ -109,7 +109,7 @@ export function Home() {
               ].map((s, i) => (
                 <div
                   key={s.label}
-                  className={`flex flex-col gap-1 pr-5 ${i === 0 ? '' : 'pl-5 border-l border-white/15'}`}
+                  className={`flex flex-col gap-1 sm:pr-5 ${i === 0 ? '' : 'sm:pl-5 sm:border-l sm:border-white/15'}`}
                 >
                   <span className="text-2xl font-bold text-white leading-none font-mono">{s.value}</span>
                   <span className="eyebrow text-[10px]" style={{ color: 'rgba(255,255,255,0.5)' }}>
@@ -124,7 +124,7 @@ export function Home() {
         {/* ── Progress ──────────────────────────────────────── */}
         <section className="mb-6">
           <div className="card p-4 flex flex-col gap-3">
-            <ProgressRow label="PAI"  fill={PAI_DISPONIBLES / PAI_TOTAL} barColor="var(--c-info)"    valueLabel={`${PAI_DISPONIBLES} de ${PAI_TOTAL} módulos`} />
+            <ProgressRow label="PAI"  fill={PAI_DISPONIBLES / PAI_TOTAL} barColor="var(--c-primary)" valueLabel={`${PAI_DISPONIBLES} de ${PAI_TOTAL} módulos`} />
             <ProgressRow label="LMGC" fill={0.20}                        barColor="var(--c-success)" valueLabel="Año 2 · 7 sistemas" />
           </div>
         </section>

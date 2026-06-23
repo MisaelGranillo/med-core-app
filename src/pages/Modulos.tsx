@@ -1,7 +1,7 @@
 /* Índice de Módulos LMGC — Ruta /modulos */
 
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Lock, Wrench, ArrowRight, Star, Cube, BookOpenText,
@@ -20,9 +20,11 @@ const AÑOS = [1, 2, 3, 4, 5, 6] as const
 // ModuleCard
 // ──────────────────────────────────────────────────────────────
 function ModuleCard({ mod }: { mod: LMGCModule }) {
+  const navigate = useNavigate()
   const s = STATUS_STYLES[mod.status]
   const isAvailable = mod.status === 'disponible'
   const isLocked    = mod.status === 'bloqueado'
+  const open = () => navigate(`/modulos/${mod.id}`)
 
   const card = (
     <motion.div
@@ -30,6 +32,10 @@ function ModuleCard({ mod }: { mod: LMGCModule }) {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25 }}
+      role={isAvailable ? 'link' : undefined}
+      tabIndex={isAvailable ? 0 : undefined}
+      onClick={isAvailable ? open : undefined}
+      onKeyDown={isAvailable ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open() } } : undefined}
       className={`card p-4 flex flex-col gap-3 transition-all duration-200
         ${isAvailable ? 'hover:shadow-card-hover hover:-translate-y-0.5 cursor-pointer' : ''}
         ${isLocked ? 'opacity-60' : ''}`}
@@ -79,10 +85,10 @@ function ModuleCard({ mod }: { mod: LMGCModule }) {
               <Link
                 to={`/anatomia-3d?sistema=${mod.sistema_corporal}`}
                 onClick={e => e.stopPropagation()}
-                className="w-6 h-6 rounded-lg bg-teal-50 border border-teal-200 flex items-center justify-center hover:bg-teal-100 transition-colors"
+                className="w-6 h-6 rounded-lg bg-primary-50 border border-primary-200 flex items-center justify-center hover:bg-primary-100 transition-colors"
                 title="Ver en visor 3D"
               >
-                <Cube weight="fill" className="w-3 h-3 text-teal-600" />
+                <Cube weight="fill" className="w-3 h-3 text-primary-600" />
               </Link>
             )}
             {mod.medlex_sistema && (
@@ -101,9 +107,6 @@ function ModuleCard({ mod }: { mod: LMGCModule }) {
     </motion.div>
   )
 
-  if (isAvailable) {
-    return <Link to={`/modulos/${mod.id}`}>{card}</Link>
-  }
   return card
 }
 
@@ -129,8 +132,8 @@ export function Modulos() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
-              <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200
-                              text-teal-700 text-xs font-bold uppercase tracking-widest px-3 py-1.5
+              <div className="inline-flex items-center gap-2 bg-primary-50 border border-primary-200
+                              text-primary-700 text-xs font-bold uppercase tracking-widest px-3 py-1.5
                               rounded-full mb-3">
                 LMGC · Universidad de la Salud
               </div>
@@ -145,7 +148,7 @@ export function Modulos() {
             <div className="flex gap-3 text-center flex-shrink-0">
               <div><p className="text-2xl font-extrabold text-zinc-900">37</p><p className="text-[11px] text-zinc-400">módulos</p></div>
               <div><p className="text-2xl font-extrabold text-zinc-900">262</p><p className="text-[11px] text-zinc-400">créditos</p></div>
-              <div><p className="text-2xl font-extrabold text-teal-600">{availableCount}</p><p className="text-[11px] text-zinc-400">disponibles</p></div>
+              <div><p className="text-2xl font-extrabold text-primary-600">{availableCount}</p><p className="text-[11px] text-zinc-400">disponibles</p></div>
             </div>
           </div>
         </div>
@@ -201,9 +204,9 @@ export function Modulos() {
       {/* ── Grid de módulos ──────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
         {!showPAI && activeAño === 2 && (
-          <div className="mb-4 p-3 rounded-2xl bg-teal-50 border border-teal-200 flex items-center gap-3">
-            <Star weight="fill" className="w-4 h-4 text-teal-600 flex-shrink-0" />
-            <p className="text-xs text-teal-800 font-medium">
+          <div className="mb-4 p-3 rounded-2xl bg-primary-50 border border-primary-200 flex items-center gap-3">
+            <Star weight="fill" className="w-4 h-4 text-primary-600 flex-shrink-0" />
+            <p className="text-xs text-primary-800 font-medium">
               Los módulos del <strong>Año 2</strong> están disponibles con contenido 3D, terminología médica y recursos de estudio.
             </p>
           </div>
@@ -228,7 +231,7 @@ export function Modulos() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-8">
         <div className="flex flex-wrap gap-4 text-xs text-zinc-400">
           <span className="flex items-center gap-1.5">
-            <Star weight="fill" className="w-3.5 h-3.5 text-teal-500" />
+            <Star weight="fill" className="w-3.5 h-3.5 text-primary-500" />
             Disponible — acceso completo con contenido de estudio
           </span>
           <span className="flex items-center gap-1.5">

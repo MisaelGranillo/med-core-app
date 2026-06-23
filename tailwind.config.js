@@ -1,20 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 
-/* Slate ramp — overrides Tailwind's `zinc` so all existing zinc-* utilities
- * across the codebase render as cool slate (the chosen clinical neutral)
+/* Warm neutral ramp — overrides Tailwind's `zinc` so every existing zinc-*
+ * utility across the codebase renders as warm paper/ink (the atlas neutral)
  * without editing 4,900 lines. tokens.css mirrors these values. */
-const slate = {
-  50:  '#f8fafc',
-  100: '#f1f5f9',
-  200: '#e2e8f0',
-  300: '#cbd5e1',
-  400: '#94a3b8',
-  500: '#64748b',
-  600: '#475569',
-  700: '#334155',
-  800: '#1e293b',
-  900: '#0f172a',
-  950: '#020617',
+const warm = {
+  50:  '#faf7f0',
+  100: '#f3eee3',
+  200: '#e6dfd1',
+  300: '#d4cab8',
+  400: '#9a9082',
+  500: '#6b6253',
+  600: '#544c3f',
+  700: '#3a342c',
+  800: '#2a241d',
+  900: '#1c1814',
+  950: '#0f0c08',
 }
 
 export default {
@@ -26,8 +26,8 @@ export default {
         mono: ['var(--font-mono)', 'monospace'],
       },
       colors: {
-        /* neutral migration: zinc → slate */
-        zinc: slate,
+        /* neutral migration: zinc → warm paper/ink */
+        zinc: warm,
 
         /* semantic token utilities (text-ink, bg-surface, border-line, …) */
         ink:   'var(--c-ink)',
@@ -61,11 +61,17 @@ export default {
           800: 'var(--c-primary-800)',
           900: 'var(--c-primary-900)',
         },
+        /* deep header surfaces (was navy hero → warm ink-stamp) */
         navy: {
-          600: 'var(--c-navy-600)',
-          700: 'var(--c-navy-700)',
-          800: 'var(--c-navy-800)',
-          900: 'var(--c-navy-900)',
+          600: 'var(--c-stamp-700)',
+          700: 'var(--c-stamp-700)',
+          800: 'var(--c-stamp-800)',
+          900: 'var(--c-stamp-900)',
+        },
+        stamp: {
+          700: 'var(--c-stamp-700)',
+          800: 'var(--c-stamp-800)',
+          900: 'var(--c-stamp-900)',
         },
         success: { DEFAULT: 'var(--c-success)', tint: 'var(--c-success-tint)', ink: 'var(--c-success-ink)' },
         warning: { DEFAULT: 'var(--c-warning)', tint: 'var(--c-warning-tint)', ink: 'var(--c-warning-ink)' },
@@ -92,7 +98,7 @@ export default {
         lg: 'var(--radius-lg)',
       },
       backgroundImage: {
-        'hero-gradient': 'var(--c-hero-gradient)',
+        'hero-gradient': 'var(--c-header-gradient)',
       },
       animation: {
         'fade-up': 'fadeUp 0.5s ease-out forwards',

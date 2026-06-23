@@ -104,7 +104,7 @@ function TermCard({ term }: { term: MedLexTerm }) {
         </span>
         <Link
           to={`/anatomia-3d?sistema=${term.sistema}`}
-          className="text-[10px] text-zinc-400 hover:text-teal-600 flex items-center gap-1 transition-colors"
+          className="text-[10px] text-zinc-400 hover:text-primary-600 flex items-center gap-1 transition-colors"
         >
           <Cube weight="fill" className="w-3 h-3" />
           Ver en 3D
@@ -152,8 +152,8 @@ function QuizEngine({ terms, onClose }: { terms: MedLexTerm[]; onClose: () => vo
     const label = pct >= 80 ? '¡Excelente!' : pct >= 60 ? '¡Buen trabajo!' : 'Sigue practicando'
     return (
       <div className="flex flex-col items-center justify-center gap-6 py-10 px-6 text-center">
-        <div className="w-20 h-20 rounded-full bg-teal-50 border-4 border-teal-200 flex items-center justify-center">
-          <Trophy weight="fill" className="w-9 h-9 text-teal-600" />
+        <div className="w-20 h-20 rounded-full bg-primary-50 border-4 border-primary-200 flex items-center justify-center">
+          <Trophy weight="fill" className="w-9 h-9 text-primary-600" />
         </div>
         <div>
           <p className="text-3xl font-extrabold text-zinc-900">{score}/{questions.length}</p>
@@ -168,7 +168,7 @@ function QuizEngine({ terms, onClose }: { terms: MedLexTerm[]; onClose: () => vo
           </button>
           <button
             onClick={() => window.location.reload()}
-            className="btn-primary bg-teal-600 hover:bg-teal-700 text-white px-5 py-2.5"
+            className="btn-primary bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5"
           >
             <ArrowCounterClockwise weight="bold" className="w-4 h-4" />
             Intentar de nuevo
@@ -185,13 +185,13 @@ function QuizEngine({ terms, onClose }: { terms: MedLexTerm[]; onClose: () => vo
         <span className="text-xs font-semibold text-zinc-500">
           Pregunta {current + 1} de {questions.length}
         </span>
-        <span className="text-xs font-semibold text-teal-600">
+        <span className="text-xs font-semibold text-primary-600">
           {score} correctas
         </span>
       </div>
       <div className="h-1.5 bg-zinc-200 rounded-full mb-6 overflow-hidden">
         <div
-          className="h-full bg-teal-500 rounded-full transition-all duration-500"
+          className="h-full bg-primary-500 rounded-full transition-all duration-500"
           style={{ width: `${((current) / questions.length) * 100}%` }}
         />
       </div>
@@ -219,7 +219,7 @@ function QuizEngine({ terms, onClose }: { terms: MedLexTerm[]; onClose: () => vo
             {q.options.map((opt, i) => {
               let style = 'bg-white border-zinc-200 hover:border-zinc-400 hover:bg-zinc-50 text-zinc-800'
               if (selected !== null) {
-                if (i === q.correctIndex) style = 'bg-teal-50 border-teal-400 text-teal-800'
+                if (i === q.correctIndex) style = 'bg-primary-50 border-primary-400 text-primary-800'
                 else if (i === selected && i !== q.correctIndex) style = 'bg-red-50 border-red-400 text-red-800'
                 else style = 'bg-white border-zinc-100 text-zinc-400'
               }
@@ -232,7 +232,7 @@ function QuizEngine({ terms, onClose }: { terms: MedLexTerm[]; onClose: () => vo
                               transition-all duration-150 flex items-center gap-3 ${style}`}
                 >
                   {selected !== null && i === q.correctIndex && (
-                    <CheckCircle weight="fill" className="w-4 h-4 text-teal-600 flex-shrink-0" />
+                    <CheckCircle weight="fill" className="w-4 h-4 text-primary-600 flex-shrink-0" />
                   )}
                   {selected !== null && i === selected && i !== q.correctIndex && (
                     <XCircle weight="fill" className="w-4 h-4 text-red-500 flex-shrink-0" />

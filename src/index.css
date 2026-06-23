@@ -18,7 +18,8 @@
   body {
     background: var(--c-bg);
     color: var(--c-text);
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
+    font-optical-sizing: auto;
     font-size: var(--fs-body);
     line-height: var(--lh-body);
     min-height: 100dvh;
@@ -32,8 +33,10 @@
 
   h1, h2, h3, h4 {
     color: var(--c-ink);
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
+    font-weight: 600;
     letter-spacing: var(--ls-snug);
+    line-height: var(--lh-heading);
   }
 
   /* Visible focus state for every interactive element (a11y) */
@@ -185,7 +188,7 @@
   .formula-box {
     font-family: var(--font-mono);
     font-size: var(--fs-small);
-    background: var(--c-navy-900);
+    background: var(--c-stamp-900);
     color: var(--c-primary-300);
     padding: var(--space-3) var(--space-4);
     border-radius: var(--radius-md);
@@ -214,7 +217,40 @@
     transition: color var(--t-fast), background var(--t-fast);
   }
   .nav-link:hover { color: var(--c-ink); background: var(--c-surface-2); }
-  .nav-link.active { color: var(--c-primary-fg); background: var(--c-navy-900); }
+  .nav-link.active { color: var(--c-primary-ink); background: var(--c-primary-tint); }
+
+  /* ── Atlas signature: catalog code ─────────────────────────────────────
+   * The mono index code that unifies every module / topic / term surface.
+   * e.g. PAI · M3 · T02   |   MEDLEX · GR · 014                            */
+  .catalog-code {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    color: var(--c-muted);
+    white-space: nowrap;
+  }
+
+  /* ── Atlas signature: chapter-opener section head ──────────────────────
+   * mono eyebrow + serif title + hairline rule beneath, like a plate head. */
+  .section-head { margin-bottom: var(--space-6); }
+  .section-head .eyebrow { display: block; margin-bottom: var(--space-2); color: var(--c-primary-ink); }
+  .section-head h2, .section-head h1 { margin: 0 0 var(--space-3); }
+  .section-head::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background: var(--c-border);
+    margin-top: var(--space-3);
+  }
+
+  /* hairline divider */
+  .rule { height: 1px; background: var(--c-border); border: 0; }
+  .rule-strong { height: 1px; background: var(--c-border-strong); border: 0; }
+
+  /* serif reading prose default for study content */
+  .prose { font-family: var(--font-serif); color: var(--c-text); line-height: var(--lh-relaxed); }
 }
 
 @layer utilities {

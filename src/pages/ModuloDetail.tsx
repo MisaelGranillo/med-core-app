@@ -121,8 +121,8 @@ export function ModuloDetail() {
                   className="card p-5 flex items-center gap-4 hover:shadow-card-hover
                              hover:-translate-y-0.5 transition-all duration-200 group"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-teal-100 flex items-center justify-center flex-shrink-0">
-                    <Cube weight="fill" className="w-6 h-6 text-teal-600" />
+                  <div className="w-12 h-12 rounded-2xl bg-primary-100 flex items-center justify-center flex-shrink-0">
+                    <Cube weight="fill" className="w-6 h-6 text-primary-600" />
                   </div>
                   <div className="flex-1">
                     <p className="font-bold text-zinc-900 text-sm mb-0.5">Visor 3D Anatómico</p>
@@ -130,7 +130,7 @@ export function ModuloDetail() {
                       Explora la anatomía del sistema {SISTEMA_LABELS[viewerFilter] ?? viewerFilter} en 3D interactivo.
                     </p>
                   </div>
-                  <ArrowLeft weight="bold" className="w-4 h-4 text-zinc-400 rotate-180 group-hover:text-teal-600 transition-colors" />
+                  <ArrowLeft weight="bold" className="w-4 h-4 text-zinc-400 rotate-180 group-hover:text-primary-600 transition-colors" />
                 </Link>
               </motion.div>
             )}

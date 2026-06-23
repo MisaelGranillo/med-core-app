@@ -69,7 +69,7 @@ export function PAIModulo() {
             )}
             {mod.relacionado_visor && (
               <Link to="/anatomia-3d"
-                className="flex items-center gap-1.5 text-sm text-teal-600 font-semibold hover:text-teal-800 transition-colors">
+                className="flex items-center gap-1.5 text-sm text-primary-600 font-semibold hover:text-primary-800 transition-colors">
                 <Cube weight="fill" className="w-4 h-4" />
                 Ver en Visor Anatómico
               </Link>
@@ -158,7 +158,7 @@ export function PAIModulo() {
                         </span>
                       </div>
                     </div>
-                    <h3 className="font-bold text-zinc-900 text-sm leading-snug mb-1.5 group-hover:text-teal-700 transition-colors">
+                    <h3 className="font-bold text-zinc-900 text-sm leading-snug mb-1.5 group-hover:text-primary-700 transition-colors">
                       {tema.titulo}
                     </h3>
                     <p className="text-xs text-zinc-400 leading-relaxed line-clamp-2 mb-3">
@@ -172,12 +172,12 @@ export function PAIModulo() {
                         </span>
                         {tema.mnemotecnia.items.length > 0 && (
                           <span className="flex items-center gap-1">
-                            <CheckCircle weight="fill" className="w-3 h-3 text-teal-400" />
+                            <CheckCircle weight="fill" className="w-3 h-3 text-primary-400" />
                             {tema.mnemotecnia.items.length} mnemotecnia{tema.mnemotecnia.items.length !== 1 ? 's' : ''}
                           </span>
                         )}
                       </div>
-                      <ArrowRight weight="bold" className="w-4 h-4 text-zinc-300 group-hover:text-teal-500 transition-colors" />
+                      <ArrowRight weight="bold" className="w-4 h-4 text-zinc-300 group-hover:text-primary-500 transition-colors" />
                     </div>
                   </Link>
                 </motion.div>

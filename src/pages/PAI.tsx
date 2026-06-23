@@ -9,7 +9,7 @@ import {
 import { paiModulos, UNISA_CURSO_URL, type PaiStatus } from '../data/pai'
 
 const STATUS_STYLES: Record<PaiStatus, { label: string; bg: string; text: string; dot: string }> = {
-  'disponible':      { label: 'Disponible',       bg: 'bg-teal-100',  text: 'text-teal-700',  dot: 'bg-teal-500' },
+  'disponible':      { label: 'Disponible',       bg: 'bg-primary-100',  text: 'text-primary-700',  dot: 'bg-primary-500' },
   'en-construccion': { label: 'En construcción',  bg: 'bg-amber-100', text: 'text-amber-700', dot: 'bg-amber-500' },
   'bloqueado':       { label: 'Bloqueado',         bg: 'bg-zinc-100',  text: 'text-zinc-500',  dot: 'bg-zinc-400' },
 }
@@ -24,7 +24,7 @@ export function PAI() {
       <section className="bg-white border-b border-zinc-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-14">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 text-teal-700
+            <div className="inline-flex items-center gap-2 bg-primary-50 border border-primary-200 text-primary-700
                             text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
               <Sparkle weight="fill" className="w-3.5 h-3.5" />
               PAI · Programa de Apoyo al Ingreso — LMGC, UNISA
@@ -39,7 +39,7 @@ export function PAI() {
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <div className="flex items-center gap-1.5 text-sm text-zinc-600">
-                <CheckCircle weight="fill" className="w-4 h-4 text-teal-500" />
+                <CheckCircle weight="fill" className="w-4 h-4 text-primary-500" />
                 <span><strong className="text-zinc-900">{disponibles}</strong> módulos disponibles</span>
               </div>
               <div className="flex items-center gap-1.5 text-sm text-zinc-600">
@@ -118,7 +118,7 @@ function ModuloCard({
       </p>
 
       {/* Nombre oficial */}
-      <h3 className="font-bold text-zinc-900 text-sm leading-snug mb-2 group-hover:text-teal-700 transition-colors">
+      <h3 className="font-bold text-zinc-900 text-sm leading-snug mb-2 group-hover:text-primary-700 transition-colors">
         {mod.nombre}
       </h3>
 
@@ -137,14 +137,14 @@ function ModuloCard({
             </span>
           )}
           {mod.relacionado_visor && (
-            <span className="flex items-center gap-1 text-teal-600 font-semibold">
+            <span className="flex items-center gap-1 text-primary-600 font-semibold">
               <Cube weight="fill" className="w-3.5 h-3.5" />
               Visor 3D
             </span>
           )}
         </div>
         {mod.status === 'disponible' && (
-          <ArrowRight weight="bold" className="w-4 h-4 text-zinc-300 group-hover:text-teal-500 transition-colors" />
+          <ArrowRight weight="bold" className="w-4 h-4 text-zinc-300 group-hover:text-primary-500 transition-colors" />
         )}
       </div>
     </div>

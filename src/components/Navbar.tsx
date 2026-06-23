@@ -49,16 +49,16 @@ export function Navbar() {
   return (
     <>
       {/* ── Top bar (desktop) ────────────────────────────── */}
-      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-sm border-b border-zinc-200/80">
+      <header className="sticky top-0 z-40 bg-surface/90 backdrop-blur-sm border-b border-zinc-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center gap-3">
 
           {/* Logo MedCore */}
           <Link to="/" className="flex items-center gap-2 flex-shrink-0 group mr-1">
-            <div className="w-8 h-8 bg-gradient-to-br from-teal-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-sm">
+            <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-700 rounded-md flex items-center justify-center shadow-sm">
               <Brain weight="fill" className="w-4 h-4 text-white" />
             </div>
-            <span className="font-extrabold text-zinc-900 tracking-tight hidden sm:block">
-              Med<span className="text-teal-600">Core</span>
+            <span className="font-bold text-zinc-900 tracking-tight hidden sm:block">
+              Med<span className="text-primary">Core</span>
             </span>
           </Link>
 
@@ -84,7 +84,7 @@ export function Navbar() {
           <form
             onSubmit={handleSearch}
             className={`flex-1 max-w-sm relative transition-all duration-200 ${
-              focused ? 'ring-2 ring-teal-400/50 rounded-xl' : ''
+              focused ? 'ring-2 ring-primary/40 rounded-xl' : ''
             }`}
           >
             <div className="relative flex items-center">
@@ -116,7 +116,7 @@ export function Navbar() {
 
       {/* ── Mobile bottom tab bar ───────────────────────── */}
       <nav className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white/95 backdrop-blur-sm border-t border-zinc-200">
-        <div className="grid grid-cols-5 h-16 max-w-lg mx-auto">
+        <div className="grid grid-cols-6 h-16 max-w-lg mx-auto">
           {NAV_ITEMS.map(({ path, label, mobileIcon: Icon }) => {
             const active = isActive(path)
             return (
@@ -124,14 +124,14 @@ export function Navbar() {
                 key={path}
                 to={path}
                 className={`flex flex-col items-center justify-center gap-0.5 transition-all duration-150
-                  ${active ? 'text-teal-600' : 'text-zinc-400 hover:text-zinc-600'}`}
+                  ${active ? 'text-primary' : 'text-zinc-400 hover:text-zinc-600'}`}
               >
                 <Icon weight={active ? 'fill' : 'regular'} className="w-5 h-5" />
-                <span className={`text-[9px] font-semibold leading-none ${active ? 'text-teal-600' : 'text-zinc-400'}`}>
+                <span className={`text-[9px] font-semibold leading-none ${active ? 'text-primary' : 'text-zinc-400'}`}>
                   {label}
                 </span>
                 {active && (
-                  <span className="absolute bottom-1 w-1 h-1 rounded-full bg-teal-500" />
+                  <span className="absolute bottom-1 w-1 h-1 rounded-full bg-primary" />
                 )}
               </Link>
             )

@@ -30,14 +30,14 @@ export function PAITema() {
 
   if (loading) return (
     <div className="flex-1 flex items-center justify-center">
-      <div className="w-10 h-10 rounded-full border-4 border-zinc-200 border-t-teal-500 animate-spin" />
+      <div className="w-10 h-10 rounded-full border-4 border-zinc-200 border-t-primary animate-spin" />
     </div>
   )
 
   if (!tema) return (
     <div className="p-8 text-center">
       <p className="text-zinc-400 text-sm">Tema no encontrado.</p>
-      <Link to={`/pai/${slug}`} className="mt-4 inline-block text-teal-600 text-sm hover:underline">
+      <Link to={`/pai/${slug}`} className="mt-4 inline-block text-primary-ink text-sm hover:underline">
         ← Volver al módulo
       </Link>
     </div>
@@ -81,7 +81,7 @@ export function PAITema() {
               <h1 className="text-2xl md:text-3xl font-extrabold text-zinc-900 tracking-tight leading-tight mb-3">
                 {tema.titulo}
               </h1>
-              <p className="text-zinc-500 text-base leading-relaxed border-l-4 border-teal-200 pl-4">
+              <p className="text-zinc-500 text-base leading-relaxed border-l-4 border-primary-200 pl-4">
                 {tema.resumen}
               </p>
             </div>
@@ -218,14 +218,14 @@ export function PAITema() {
                     to={`/pai/${slug}/${t.id}`}
                     className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium transition-all
                       ${t.id === temaId
-                        ? 'bg-teal-50 text-teal-700 border border-teal-200'
+                        ? 'bg-primary-100 text-primary-ink border border-primary-200'
                         : 'text-zinc-500 hover:bg-zinc-50 hover:text-zinc-800'
                       }`}
                   >
                     <span className="flex-shrink-0">{t.icono}</span>
                     <span className="leading-snug line-clamp-2">{t.titulo}</span>
                     {t.id === temaId && (
-                      <ArrowRight weight="bold" className="w-3 h-3 text-teal-500 flex-shrink-0 ml-auto" />
+                      <ArrowRight weight="bold" className="w-3 h-3 text-primary flex-shrink-0 ml-auto" />
                     )}
                   </Link>
                 ))}
