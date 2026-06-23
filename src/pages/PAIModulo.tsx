@@ -68,7 +68,7 @@ export function PAIModulo() {
               </span>
             )}
             {mod.relacionado_visor && (
-              <Link to="/anatomia-3d"
+              <Link to="/anatomia-3d?model=overview-skeleton"
                 className="flex items-center gap-1.5 text-sm text-primary-600 font-semibold hover:text-primary-800 transition-colors">
                 <Cube weight="fill" className="w-4 h-4" />
                 Ver en Visor Anatómico
