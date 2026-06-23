@@ -125,7 +125,7 @@ export function AtlasTopic() {
           <div className="grid md:grid-cols-2 gap-6 items-center">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-3xl">
+                <div className="w-12 h-12 rounded-2xl bg-surface/20 backdrop-blur-sm flex items-center justify-center text-3xl">
                   {topic.emoji}
                 </div>
                 <div>
@@ -144,7 +144,7 @@ export function AtlasTopic() {
             <button
               type="button"
               onClick={() => setLightboxOpen(true)}
-              className="hidden md:block h-40 bg-white/10 rounded-lg overflow-hidden flex-shrink-0 cursor-zoom-in group relative"
+              className="hidden md:block h-40 bg-surface/10 rounded-lg overflow-hidden flex-shrink-0 cursor-zoom-in group relative"
             >
               <img
                 src={topic.imagePath}
@@ -505,7 +505,7 @@ function QuizMode({
           const isSelected = i === state.selectedIndex
           const isCorrectOption = i === question.correctIndex
 
-          let bgClass = 'bg-white hover:bg-zinc-50 border-zinc-200'
+          let bgClass = 'bg-surface hover:bg-zinc-50 border-zinc-200'
           if (isAnswered) {
             if (isCorrectOption) {
               bgClass = 'bg-green-100 border-green-500'

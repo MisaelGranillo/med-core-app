@@ -156,7 +156,7 @@ function BlockRenderer({ block, colorKey }: { block: ContentBlock; colorKey: Top
               </thead>
               <tbody>
                 {block.data?.rows.map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-zinc-50/60'}>
+                  <tr key={i} className={i % 2 === 0 ? 'bg-surface' : 'bg-zinc-50/60'}>
                     {row.map((cell, j) => (
                       <td key={j}
                         className={`py-2.5 px-3 text-zinc-700 border-b border-zinc-100 align-top text-[13px]
@@ -233,7 +233,7 @@ function BlockRenderer({ block, colorKey }: { block: ContentBlock; colorKey: Top
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 relative">
             {/* VS divider on desktop */}
             <div className="hidden md:flex absolute inset-y-0 left-1/2 -translate-x-1/2 items-center justify-center z-10 pointer-events-none">
-              <span className="bg-white border border-zinc-200 text-zinc-400 text-[10px] font-bold px-1.5 py-0.5 rounded-full shadow-sm">
+              <span className="bg-surface border border-zinc-200 text-zinc-400 text-[10px] font-bold px-1.5 py-0.5 rounded-full shadow-sm">
                 VS
               </span>
             </div>

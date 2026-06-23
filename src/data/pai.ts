@@ -26,9 +26,10 @@ export interface PaiModulo {
   descripcion: string         // Descripción breve para la card
   cardBg: string              // Background color for home page card
   cardColor: string           // Text/accent color for home page card
+  cardAccent: string          // Left-border accent token (clinical blue system)
 }
 
-export const paiModulos: PaiModulo[] = [
+const _paiBase: Omit<PaiModulo, 'cardAccent'>[] = [
   {
     orden: 1,
     nombre: 'MÓDULO — PERFIL DE EGRESO DEL ESTUDIANTE',
@@ -138,6 +139,12 @@ export const paiModulos: PaiModulo[] = [
     cardBg: '#f3e8ff', cardColor: '#581c87',
   },
 ]
+
+// Inject the clinical-blue card accent (--card-m1 … --card-m9) by order.
+export const paiModulos: PaiModulo[] = _paiBase.map((m, i) => ({
+  ...m,
+  cardAccent: `var(--card-m${i + 1})`,
+}))
 
 // Lookup rápido por slug
 export const paiBySlug = Object.fromEntries(paiModulos.map(m => [m.slug, m]))

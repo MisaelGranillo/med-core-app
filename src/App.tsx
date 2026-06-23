@@ -80,11 +80,13 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/topic/:id" element={<Topic />} />
               <Route path="/quiz/:id" element={<Quiz />} />
+              <Route path="/quiz" element={<Progress />} />
               <Route path="/search" element={<Search />} />
               <Route path="/progress" element={<Progress />} />
               <Route path="/anatomia-3d" element={<Anatomy3D />} />
               <Route path="/terminologia" element={<Terminologia />} />
               {/* LMGC módulos (plan de estudios) */}
+              <Route path="/lmgc" element={<Modulos />} />
               <Route path="/modulos" element={<Modulos />} />
               <Route path="/modulos/:id" element={<ModuloDetail />} />
               {/* PAI — Programa de Apoyo al Ingreso */}

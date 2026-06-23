@@ -21,7 +21,7 @@ export function PAI() {
   return (
     <main className="flex-1 bg-zinc-50">
       {/* Header */}
-      <section className="bg-white border-b border-zinc-100">
+      <section className="bg-surface border-b border-zinc-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-14">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-primary-50 border border-primary-200 text-primary-700

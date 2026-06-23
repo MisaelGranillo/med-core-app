@@ -86,7 +86,7 @@ export function ImageLightbox({
         <div className="flex items-center gap-2">
           <button
             onClick={() => setRealSize((v) => !v)}
-            className="inline-flex items-center gap-1.5 text-white/90 hover:text-white bg-white/10 hover:bg-white/20 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors"
+            className="inline-flex items-center gap-1.5 text-white/90 hover:text-white bg-surface/10 hover:bg-surface/20 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors"
           >
             {realSize ? (
               <ArrowsIn weight="bold" className="w-4 h-4" />
@@ -105,7 +105,7 @@ export function ImageLightbox({
           <button
             onClick={onClose}
             aria-label="Cerrar"
-            className="inline-flex items-center justify-center text-white/90 hover:text-white bg-white/10 hover:bg-white/20 rounded-lg w-9 h-9 transition-colors"
+            className="inline-flex items-center justify-center text-white/90 hover:text-white bg-surface/10 hover:bg-surface/20 rounded-lg w-9 h-9 transition-colors"
           >
             <X weight="bold" className="w-5 h-5" />
           </button>

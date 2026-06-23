@@ -81,8 +81,8 @@ export function Topic() {
           <rect width="100%" height="100%" fill="url(#dots)" />
         </svg>
         {/* Large decorative circle (top-right) */}
-        <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-white/5 pointer-events-none" />
-        <div className="absolute -bottom-10 -right-4 w-40 h-40 rounded-full bg-white/5 pointer-events-none" />
+        <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-surface/5 pointer-events-none" />
+        <div className="absolute -bottom-10 -right-4 w-40 h-40 rounded-full bg-surface/5 pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-8">
           <div className="flex items-center gap-3 mb-5">
@@ -104,7 +104,7 @@ export function Topic() {
           <div className="flex flex-col md:flex-row md:items-end gap-6">
             <div className="flex-1">
               <div className="flex items-start gap-4 mb-3">
-                <div className="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center text-3xl flex-shrink-0 shadow-sm">
+                <div className="w-14 h-14 rounded-2xl bg-surface/15 backdrop-blur-sm border border-white/20 flex items-center justify-center text-3xl flex-shrink-0 shadow-sm">
                   {topic.emoji}
                 </div>
                 <div>
@@ -147,8 +147,8 @@ export function Topic() {
               />
               <Link
                 to={`/quiz/${topic.id}`}
-                className="flex items-center gap-2 bg-white text-zinc-900 font-bold text-sm
-                           px-5 py-2.5 rounded-xl shadow-sm hover:bg-white/90 transition-all
+                className="flex items-center gap-2 bg-surface text-zinc-900 font-bold text-sm
+                           px-5 py-2.5 rounded-xl shadow-sm hover:bg-surface/90 transition-all
                            active:scale-[0.98]"
               >
                 <Lightning weight="fill" className="w-4 h-4 text-amber-500" />
@@ -161,7 +161,7 @@ export function Topic() {
 
       {/* Key Terms strip */}
       {topic.sections.some(s => s.keyTerms && s.keyTerms.length > 0) && (
-        <div className="bg-white border-b border-zinc-100">
+        <div className="bg-surface border-b border-zinc-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex items-center gap-2 overflow-x-auto scrollbar-hide">
             <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 flex-shrink-0 mr-1">
               Conceptos
@@ -227,7 +227,7 @@ export function Topic() {
               className="absolute inset-0 bg-black/40 backdrop-blur-sm"
               onClick={() => setSidebarOpen(false)}
             />
-            <div className="absolute right-0 top-0 bottom-0 w-72 bg-white shadow-xl p-5 overflow-y-auto">
+            <div className="absolute right-0 top-0 bottom-0 w-72 bg-surface shadow-xl p-5 overflow-y-auto">
               <div className="flex items-center justify-between mb-5">
                 <p className="font-bold text-zinc-900">Secciones</p>
                 <button onClick={() => setSidebarOpen(false)}>
@@ -323,7 +323,7 @@ export function Topic() {
 
 function StatPill({ icon, label }: { icon: React.ReactNode; label: string }) {
   return (
-    <span className="inline-flex items-center gap-1.5 text-white/80 bg-white/10 border border-white/15 backdrop-blur-sm text-xs font-semibold px-2.5 py-1 rounded-full">
+    <span className="inline-flex items-center gap-1.5 text-white/80 bg-surface/10 border border-white/15 backdrop-blur-sm text-xs font-semibold px-2.5 py-1 rounded-full">
       {icon}
       {label}
     </span>

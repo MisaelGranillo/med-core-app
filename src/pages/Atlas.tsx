@@ -40,7 +40,7 @@ export function Atlas() {
       <div className="bg-hero-gradient text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 rounded-lg bg-white/15 backdrop-blur-sm flex items-center justify-center text-2xl">
+            <div className="w-12 h-12 rounded-lg bg-surface/15 backdrop-blur-sm flex items-center justify-center text-2xl">
               🗺️
             </div>
             <div>

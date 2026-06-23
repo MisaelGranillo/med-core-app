@@ -217,11 +217,11 @@ function QuizEngine({ terms, onClose }: { terms: MedLexTerm[]; onClose: () => vo
           {/* Opciones */}
           <div className="grid gap-2.5">
             {q.options.map((opt, i) => {
-              let style = 'bg-white border-zinc-200 hover:border-zinc-400 hover:bg-zinc-50 text-zinc-800'
+              let style = 'bg-surface border-zinc-200 hover:border-zinc-400 hover:bg-zinc-50 text-zinc-800'
               if (selected !== null) {
                 if (i === q.correctIndex) style = 'bg-primary-50 border-primary-400 text-primary-800'
                 else if (i === selected && i !== q.correctIndex) style = 'bg-red-50 border-red-400 text-red-800'
-                else style = 'bg-white border-zinc-100 text-zinc-400'
+                else style = 'bg-surface border-zinc-100 text-zinc-400'
               }
               return (
                 <button
@@ -290,7 +290,7 @@ export function Terminologia() {
     <main className="flex-1 pb-20 md:pb-0">
 
       {/* ── Encabezado ──────────────────────────────────────── */}
-      <section className="bg-white border-b border-zinc-100">
+      <section className="bg-surface border-b border-zinc-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
@@ -334,7 +334,7 @@ export function Terminologia() {
       </section>
 
       {/* ── Filtros ──────────────────────────────────────────── */}
-      <div className="bg-white border-b border-zinc-100 sticky top-14 z-20">
+      <div className="bg-surface border-b border-zinc-100 sticky top-14 z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 space-y-2.5">
           {/* Barra de búsqueda */}
           <div className="relative max-w-md">
@@ -345,7 +345,7 @@ export function Terminologia() {
               onChange={e => setQuery(e.target.value)}
               placeholder="Buscar término, significado o ejemplo..."
               className="w-full bg-zinc-100 pl-9 pr-9 py-2 rounded-xl text-sm outline-none
-                         focus:ring-2 focus:ring-indigo-300 focus:bg-white transition-all"
+                         focus:ring-2 focus:ring-indigo-300 focus:bg-surface transition-all"
             />
             {query && (
               <button
@@ -365,7 +365,7 @@ export function Terminologia() {
                 key={t}
                 onClick={() => setFilterTipo(t)}
                 className={`text-xs font-semibold px-3 py-1 rounded-full border transition-all duration-150
-                  ${filterTipo === t ? 'bg-zinc-900 text-white border-zinc-900' : 'bg-white text-zinc-600 border-zinc-200 hover:border-zinc-400'}`}
+                  ${filterTipo === t ? 'bg-zinc-900 text-white border-zinc-900' : 'bg-surface text-zinc-600 border-zinc-200 hover:border-zinc-400'}`}
               >
                 {t === 'todos' ? 'Todos los tipos' : TIPO_LABELS[t]}
               </button>
@@ -379,7 +379,7 @@ export function Terminologia() {
                 key={o}
                 onClick={() => setFilterOrigen(o)}
                 className={`text-xs font-semibold px-3 py-1 rounded-full border transition-all duration-150
-                  ${filterOrigen === o ? 'bg-zinc-900 text-white border-zinc-900' : 'bg-white text-zinc-600 border-zinc-200 hover:border-zinc-400'}`}
+                  ${filterOrigen === o ? 'bg-zinc-900 text-white border-zinc-900' : 'bg-surface text-zinc-600 border-zinc-200 hover:border-zinc-400'}`}
               >
                 {o === 'todos' ? 'Griego + Latino' : o.charAt(0).toUpperCase() + o.slice(1)}
               </button>
@@ -391,7 +391,7 @@ export function Terminologia() {
             <select
               value={filterSistema}
               onChange={e => setFilterSistema(e.target.value)}
-              className="text-xs font-semibold px-3 py-1 rounded-full border border-zinc-200 bg-white
+              className="text-xs font-semibold px-3 py-1 rounded-full border border-zinc-200 bg-surface
                          text-zinc-600 outline-none focus:border-zinc-400 cursor-pointer"
             >
               {sistemas.map(s => (
@@ -489,7 +489,7 @@ export function Terminologia() {
               transition={{ type: 'spring', stiffness: 400, damping: 35 }}
               className="fixed inset-x-4 top-16 bottom-4 md:inset-auto md:left-1/2 md:-translate-x-1/2
                          md:top-12 md:w-full md:max-w-lg md:max-h-[85dvh]
-                         bg-white rounded-3xl shadow-2xl z-50 flex flex-col overflow-hidden"
+                         bg-surface rounded-3xl shadow-2xl z-50 flex flex-col overflow-hidden"
             >
               {/* Header del modal */}
               <div className="flex items-center justify-between px-5 py-4 border-b border-zinc-100 flex-shrink-0">

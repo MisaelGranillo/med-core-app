@@ -46,7 +46,7 @@ export function PAITema() {
   return (
     <main className="flex-1 bg-zinc-50">
       {/* Header */}
-      <div className="bg-white border-b border-zinc-100 sticky top-14 z-20">
+      <div className="bg-surface border-b border-zinc-100 sticky top-14 z-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-3">
           <Link to={`/pai/${slug}`}
             className="flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-800 transition-colors flex-shrink-0">
@@ -102,7 +102,7 @@ export function PAITema() {
                   {tema.mnemotecnia.items.map((item, i) => (
                     <div key={i} className="flex items-start gap-2.5 text-sm text-primary-800">
                       <span className="font-bold text-primary-400 flex-shrink-0 mt-0.5">#{i + 1}</span>
-                      <span className="leading-relaxed font-mono text-xs bg-white/60 rounded-md px-3 py-2 w-full">
+                      <span className="leading-relaxed font-mono text-xs bg-surface/60 rounded-md px-3 py-2 w-full">
                         {item}
                       </span>
                     </div>
@@ -172,7 +172,7 @@ export function PAITema() {
                     <Link
                       key={at.id}
                       to={`/atlas/${at.id}`}
-                      className="flex items-center gap-3 bg-white rounded-lg border border-blue-200 px-4 py-3 hover:shadow-sm transition-all"
+                      className="flex items-center gap-3 bg-surface rounded-lg border border-blue-200 px-4 py-3 hover:shadow-sm transition-all"
                     >
                       <span className="text-xl flex-shrink-0">{at.emoji}</span>
                       <div className="flex-1 min-w-0">

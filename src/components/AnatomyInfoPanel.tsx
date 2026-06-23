@@ -110,7 +110,7 @@ function PanelContent({ part, onClose }: { part: AnatomyPart; onClose: () => voi
           </div>
           <button
             onClick={onClose}
-            className="flex-shrink-0 w-8 h-8 rounded-xl bg-white/70 hover:bg-white border border-zinc-200 flex items-center justify-center transition-colors mt-0.5"
+            className="flex-shrink-0 w-8 h-8 rounded-xl bg-surface/70 hover:bg-surface border border-zinc-200 flex items-center justify-center transition-colors mt-0.5"
             aria-label="Cerrar panel"
           >
             <X weight="bold" className="w-4 h-4 text-zinc-500" />
@@ -189,7 +189,7 @@ export function AnatomyInfoPanel({ part, onClose }: AnatomyInfoPanelProps) {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="hidden md:flex flex-col w-80 flex-shrink-0 bg-white border-l border-zinc-200 h-full overflow-hidden"
+            className="hidden md:flex flex-col w-80 flex-shrink-0 bg-surface border-l border-zinc-200 h-full overflow-hidden"
           >
             <PanelContent part={part} onClose={onClose} />
           </motion.aside>
@@ -218,7 +218,7 @@ export function AnatomyInfoPanel({ part, onClose }: AnatomyInfoPanelProps) {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white rounded-t-3xl
+              className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-surface rounded-t-3xl
                          border-t border-zinc-200 shadow-2xl flex flex-col max-h-[65dvh]"
             >
               {/* Indicador de arrastre */}

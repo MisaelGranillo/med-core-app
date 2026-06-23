@@ -1,20 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 
-/* Warm neutral ramp — overrides Tailwind's `zinc` so every existing zinc-*
- * utility across the codebase renders as warm paper/ink (the atlas neutral)
- * without editing 4,900 lines. tokens.css mirrors these values. */
-const warm = {
-  50:  '#faf7f0',
-  100: '#f3eee3',
-  200: '#e6dfd1',
-  300: '#d4cab8',
-  400: '#9a9082',
-  500: '#6b6253',
-  600: '#544c3f',
-  700: '#3a342c',
-  800: '#2a241d',
-  900: '#1c1814',
-  950: '#0f0c08',
+/* Neutral ramp — overrides Tailwind's `zinc` so every existing zinc-* utility
+ * resolves to clinical-blue tokens that flip automatically in dark mode
+ * (no 4,900-line rewrite). All values are token vars defined in tokens.css. */
+const neutral = {
+  50:  'var(--color-surface-subtle)',
+  100: 'var(--color-surface-subtle)',
+  200: 'var(--color-border)',
+  300: 'var(--color-border-strong)',
+  400: 'var(--color-text-muted)',
+  500: 'var(--color-text-secondary)',
+  600: 'var(--color-text-secondary)',
+  700: 'var(--color-text-primary)',
+  800: 'var(--color-text-primary)',
+  900: 'var(--color-text-primary)',
+  950: 'var(--color-text-primary)',
 }
 
 export default {
@@ -22,12 +22,12 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-body)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-mono)', 'monospace'],
       },
       colors: {
-        /* neutral migration: zinc → warm paper/ink */
-        zinc: warm,
+        /* neutral migration: zinc → clinical-blue tokens (dark-adaptive) */
+        zinc: neutral,
 
         /* semantic token utilities (text-ink, bg-surface, border-line, …) */
         ink:   'var(--c-ink)',

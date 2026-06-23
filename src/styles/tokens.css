@@ -1,163 +1,203 @@
 /* ============================================================================
- * tokens.css — MedCore Design System · "Anatomical Atlas / Lab Notebook"
- * Single source of truth. Every color, type, space, radius, shadow lives here.
- * Tailwind (tailwind.config.js) consumes these; plain-CSS components read them
- * via var(--…). No magic numbers anywhere else.
+ * tokens.css — MedCore Clinical Blue Design System
+ * Single source of truth. Every color/space/radius/font is defined here.
+ * Components reference tokens only — no magic numbers.
  *
- * Concept: a personal study instrument, read for hours — set like a printed
- *   anatomical atlas, not a SaaS dashboard.
- * Shell:   warm paper + near-black ink.
- * Accent:  anatomical oxblood (NOT healthcare-teal), used sparingly.
- * Type:    Source Serif 4 (knowledge/reading) + IBM Plex Mono (interface/data).
- * Module:  9 mandated identity hexes, kept exactly, as colored index tabs.
- * Dark-ready: see prefers-color-scheme block (dormant).
+ * Light mode is the default. Dark mode is automatic via prefers-color-scheme
+ * (CSS only — no JS toggle, no localStorage). Every surface flips because
+ * components read the --color-* tokens (directly, via the --c-* bridge, or
+ * via the Tailwind `zinc` ramp which is remapped to these tokens).
  * ========================================================================== */
 
 :root {
-  /* ── Type families ─────────────────────────────────────────────────── */
-  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
-  --font-mono:  'IBM Plex Mono', 'SFMono-Regular', ui-monospace, monospace;
-  /* `--font-sans` kept as an alias so legacy font-sans usage maps to serif   */
-  --font-sans:  var(--font-serif);
+  /* ── Surfaces & text (light) ───────────────────────────────────────── */
+  --color-page-bg:        #EFF6FF;
+  --color-surface:        #FFFFFF;
+  --color-surface-subtle: #DBEAFE;
+  --color-border:         #DBEAFE;
+  --color-border-strong:  #93C5FD;
 
-  /* ── Type scale (px → rem @16) ─────────────────────────────────────── */
-  --fs-h1: 2rem;        /* 32 → 2.375rem desktop                          */
-  --fs-h1-lg: 2.375rem; /* 38                                             */
-  --fs-h2: 1.5rem;      /* 24 */
-  --fs-h3: 1.1875rem;   /* 19 */
-  --fs-h4: 1.0625rem;   /* 17 */
-  --fs-body: 1rem;      /* 16 — serif reads smaller; bump from 15 for prose */
-  --fs-small: 0.875rem; /* 14 */
-  --fs-label: 0.75rem;  /* 12 — mono, uppercase, tracked                  */
-  --fs-caption: 0.75rem;/* 12 */
+  --color-text-primary:   #1E3A5F;
+  --color-text-secondary: #64748B;
+  --color-text-muted:     #94A3B8;
 
-  --lh-tight: 1.12;
-  --lh-heading: 1.25;
-  --lh-body: 1.7;       /* generous for sustained reading                 */
-  --lh-relaxed: 1.8;
+  --color-hero-gradient:  linear-gradient(135deg, #1e4d8c 0%, #2563a8 35%, #1a7a9e 70%, #0e6b7c 100%);
 
-  --ls-tight: -0.015em;
-  --ls-snug: -0.008em;
-  --ls-wide: 0.1em;     /* mono labels / catalog codes                    */
-  --ls-wider: 0.18em;   /* eyebrows                                       */
+  --color-accent:         #2563A8;
+  --color-accent-light:   #DBEAFE;
+  --color-accent-text:    #1E4D8C;
 
-  /* ── Spacing scale (4px base) ──────────────────────────────────────── */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-6: 24px;
-  --space-8: 32px;
-  --space-12: 48px;
-  --space-16: 64px;
+  --color-progress-lmgc:  #1D9E75;
 
-  /* ── Radii — atlas-precise, not bubbly ─────────────────────────────── */
-  --radius-sm: 4px;
-  --radius-md: 8px;    /* buttons, inputs, nav, tables                    */
-  --radius-lg: 12px;   /* cards                                           */
-  --radius-xl: 16px;
-  --radius-full: 9999px;
+  --color-badge-ok-bg:    #DBEAFE;
+  --color-badge-ok-text:  #1E4D8C;
+  --color-badge-wip-bg:   #F1F5F9;
+  --color-badge-wip-text: #94A3B8;
 
-  /* ── Neutrals — warm paper & ink ───────────────────────────────────── */
-  --c-ink: #1c1814;          /* headings — warm near-black                */
-  --c-text: #3a342c;         /* body (≈10.5:1 on paper)                   */
-  --c-muted: #6b6253;        /* secondary (≈4.8:1 on paper)               */
-  --c-faint: #9a9082;        /* placeholder / decorative only             */
-  --c-border: #e6dfd1;       /* hairline rules                            */
-  --c-border-strong: #d4cab8;
-  --c-surface: #fffdf9;      /* cards — a touch brighter than paper       */
-  --c-surface-2: #f3eee3;    /* table header, zebra, sunken panels        */
-  --c-bg: #faf7f0;           /* paper — app background                    */
+  --color-tool-icon-bg:   #DBEAFE;
+  --color-tool-icon:      #1E4D8C;
 
-  /* ── Primary — anatomical oxblood ──────────────────────────────────── */
-  --c-primary: #8c2f2a;        /* fills                                   */
-  --c-primary-hover: #732420;
-  --c-primary-ink: #7a2722;    /* inline text/links (≈6.4:1 on paper)     */
-  --c-primary-tint: #f6ebe7;
-  --c-primary-fg: #fffdf9;
-  --c-primary-50:  #faf0ee;
-  --c-primary-100: #f6ebe7;
-  --c-primary-200: #ecceca;
-  --c-primary-300: #dda6a0;
-  --c-primary-400: #c4665e;
-  --c-primary-500: #a83f38;
-  --c-primary-600: #8c2f2a;
-  --c-primary-700: #732420;
-  --c-primary-800: #5c1d1a;
-  --c-primary-900: #401613;
+  /* ── Shared (both modes) ───────────────────────────────────────────── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-pill: 20px;
 
-  /* ── Ink-stamp (deep header surfaces — replaces navy hero) ─────────── */
-  --c-stamp-900: #1c1814;
-  --c-stamp-800: #2a241d;
-  --c-stamp-700: #3a342c;
-  /* a subtle warm gradient for the few deep surfaces that remain         */
-  --c-header-gradient: linear-gradient(135deg, #1c1814 0%, #2a241d 60%, #3a2e22 100%);
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
 
-  /* ── Semantic — tuned warm to sit on paper ─────────────────────────── */
-  --c-success: #3f6212;  --c-success-tint: #f0f6e6;  --c-success-ink: #365314;
-  --c-warning: #b45309;  --c-warning-tint: #fdf3e3;  --c-warning-ink: #7c2d12;
-  --c-error:   #b91c1c;  --c-error-tint:   #fbeae7;  --c-error-ink:   #7f1d1d;
-  --c-info:    #0e7490;  --c-info-tint:    #e8f4f7;  --c-info-ink:    #155e63;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', ui-monospace, monospace;
+  /* alias kept so any lingering var(--font-sans) resolves to Inter */
+  --font-sans: var(--font-body);
 
-  /* ── Module color triples (tint = mandated hex / ink / accent) ─────────
-   * Tints are the 9 fixed identity colors from the brief, unchanged.
-   * Ink + accent derived to pass 4.5:1 on their tint; cool tabs on paper.  */
-  --mod-1-tint: #dbeafe;  --mod-1-ink: #1e3a8a;  --mod-1-accent: #2563eb;
-  --mod-2-tint: #d1fae5;  --mod-2-ink: #065f46;  --mod-2-accent: #059669;
-  --mod-3-tint: #fef3c7;  --mod-3-ink: #92400e;  --mod-3-accent: #d97706;
-  --mod-4-tint: #ede9fe;  --mod-4-ink: #5b21b6;  --mod-4-accent: #7c3aed;
-  --mod-5-tint: #fce7f3;  --mod-5-ink: #9d174d;  --mod-5-accent: #db2777;
-  --mod-6-tint: #dcfce7;  --mod-6-ink: #166534;  --mod-6-accent: #16a34a;
-  --mod-7-tint: #ffedd5;  --mod-7-ink: #9a3412;  --mod-7-accent: #ea580c;
-  --mod-8-tint: #cffafe;  --mod-8-ink: #155e63;  --mod-8-accent: #0891b2;
-  --mod-9-tint: #f3e8ff;  --mod-9-ink: #6b21a8;  --mod-9-accent: #9333ea;
+  /* Type scale (used by index.css component layer) */
+  --fs-body:    0.9375rem; /* 15 */
+  --fs-small:   0.8125rem; /* 13 */
+  --fs-label:   0.75rem;   /* 12 — mono labels */
+  --fs-caption: 0.75rem;
+  --lh-tight:   1.15;
+  --lh-heading: 1.3;
+  --lh-body:    1.6;
+  --lh-relaxed: 1.7;
+  --ls-snug:   -0.01em;
+  --ls-tight:  -0.02em;
+  --ls-wide:    0.08em;
+  --ls-wider:   0.12em;
 
-  /* ── Shadows — minimal; rules do the work, not drop shadows ────────── */
-  --shadow-sm: 0 1px 2px rgba(28, 24, 20, 0.05);
-  --shadow-card: 0 2px 10px -4px rgba(28, 24, 20, 0.10);
-  --shadow-card-hover: 0 6px 22px -8px rgba(28, 24, 20, 0.18);
-  --shadow-pop: 0 20px 40px -16px rgba(28, 24, 20, 0.28);
+  --hero-pill-border-light:  rgba(255,255,255,0.2);
+  --hero-pill-bg-light:      rgba(255,255,255,0.1);
+  --hero-pill-active-bg:     rgba(255,255,255,0.2);
+  --hero-pill-active-border: rgba(255,255,255,0.5);
 
-  /* ── Motion ────────────────────────────────────────────────────────── */
+  /* Module card accent colors (left border — identical in both modes) */
+  --card-m1: #378ADD;
+  --card-m2: #1D9E75;
+  --card-m3: #BA7517;
+  --card-m4: #534AB7;
+  --card-m5: #D4537E;
+  --card-m6: #3B6D11;
+  --card-m7: #D85A30;
+  --card-m8: #185FA5;
+  --card-m9: #7F77DD;
+
+  /* Callout fixed palettes (Section D) */
+  --callout-nota-bg:     #FAEEDA;  --callout-nota-border:     #BA7517;  --callout-nota-text:     #633806;
+  --callout-critico-bg:  #FCEBEB;  --callout-critico-border:  #A32D2D;  --callout-critico-text:  #791F1F;
+
+  /* Semantic (success kept for quiz feedback) */
+  --color-success: #1D9E75;  --color-success-tint: #DBF3EA;  --color-success-text: #0F5C44;
+
+  /* ── Bridge: legacy --c-* names → clinical tokens ──────────────────────
+   * Lets pre-existing components keep their token utilities while adopting
+   * the new palette + dark mode (these resolve to --color-* at use site).  */
+  --c-bg:            var(--color-page-bg);
+  --c-surface:       var(--color-surface);
+  --c-surface-2:     var(--color-surface-subtle);
+  --c-border:        var(--color-border);
+  --c-border-strong: var(--color-border-strong);
+  --c-ink:           var(--color-text-primary);
+  --c-text:          var(--color-text-primary);
+  --c-muted:         var(--color-text-secondary);
+  --c-faint:         var(--color-text-muted);
+
+  --c-primary:       var(--color-accent);
+  --c-primary-hover: var(--color-accent-text);
+  --c-primary-ink:   var(--color-accent-text);
+  --c-primary-tint:  var(--color-accent-light);
+  --c-primary-fg:    #FFFFFF;
+  --c-primary-50:  var(--color-accent-light);
+  --c-primary-100: var(--color-accent-light);
+  --c-primary-200: var(--color-border-strong);
+  --c-primary-300: #93C5FD;
+  --c-primary-400: #60A5FA;
+  --c-primary-500: var(--color-accent);
+  --c-primary-600: var(--color-accent);
+  --c-primary-700: var(--color-accent-text);
+  --c-primary-800: var(--color-accent-text);
+  --c-primary-900: var(--color-accent-text);
+
+  --c-header-gradient: var(--color-hero-gradient);
+  --c-stamp-700: #1e4d8c;  --c-stamp-800: #0f3060;  --c-stamp-900: #0d2347;
+
+  --c-success: var(--color-success);  --c-success-tint: var(--color-success-tint);  --c-success-ink: var(--color-success-text);
+  --c-warning: var(--callout-nota-border);    --c-warning-tint: var(--callout-nota-bg);     --c-warning-ink: var(--callout-nota-text);
+  --c-error:   var(--callout-critico-border); --c-error-tint:   var(--callout-critico-bg);  --c-error-ink:   var(--callout-critico-text);
+  --c-info:    var(--color-accent);           --c-info-tint:    var(--color-accent-light);  --c-info-ink:    var(--color-accent-text);
+
+  /* Legacy module triples → clinical card accents (used by older components) */
+  --mod-1-tint: var(--color-surface-subtle); --mod-1-ink: var(--color-text-primary); --mod-1-accent: var(--card-m1);
+  --mod-2-tint: var(--color-surface-subtle); --mod-2-ink: var(--color-text-primary); --mod-2-accent: var(--card-m2);
+  --mod-3-tint: var(--color-surface-subtle); --mod-3-ink: var(--color-text-primary); --mod-3-accent: var(--card-m3);
+  --mod-4-tint: var(--color-surface-subtle); --mod-4-ink: var(--color-text-primary); --mod-4-accent: var(--card-m4);
+  --mod-5-tint: var(--color-surface-subtle); --mod-5-ink: var(--color-text-primary); --mod-5-accent: var(--card-m5);
+  --mod-6-tint: var(--color-surface-subtle); --mod-6-ink: var(--color-text-primary); --mod-6-accent: var(--card-m6);
+  --mod-7-tint: var(--color-surface-subtle); --mod-7-ink: var(--color-text-primary); --mod-7-accent: var(--card-m7);
+  --mod-8-tint: var(--color-surface-subtle); --mod-8-ink: var(--color-text-primary); --mod-8-accent: var(--card-m8);
+  --mod-9-tint: var(--color-surface-subtle); --mod-9-ink: var(--color-text-primary); --mod-9-accent: var(--card-m9);
+
+  /* Dark stage (anatomy iframe wrapper) */
+  --c-stage: #0A1628;
+  --c-stage-border: rgba(56,138,221,0.30);
+
+  /* Shadows */
+  --shadow-sm:         0 1px 2px rgba(15,31,61,0.06);
+  --shadow-card:       0 2px 10px -4px rgba(15,31,61,0.10);
+  --shadow-card-hover: 0 6px 22px -8px rgba(15,31,61,0.18);
+  --shadow-pop:        0 16px 40px -16px rgba(10,22,40,0.45);
+
+  /* Motion */
   --t-fast: 150ms ease;
   --t-lift: 200ms ease;
   --t-fill: 600ms ease;
-
-  /* ── Dark-stage surface (anatomy viewer chrome) ───────────────────── */
-  --c-stage: #0d0d0d;
-  --c-stage-panel: #161616;
-  --c-stage-border: #2a2a2a;
-  --c-stage-text: #e9e4da;
-  --c-stage-muted: #9a9082;
 }
 
 /* ============================================================================
- * Dark mode — authored but dormant. Components already read these tokens,
- * so activating only requires uncommenting this block.
+ * Dark mode — automatic. Only the base --color-* tokens are overridden;
+ * everything else (the --c-* bridge, Tailwind `zinc` ramp, components) reads
+ * through them, so all surfaces flip with no per-component changes.
  * ========================================================================== */
-/*
 @media (prefers-color-scheme: dark) {
   :root {
-    --c-ink: #f3ede2;
-    --c-text: #d8cfc0;
-    --c-muted: #a89e8d;
-    --c-faint: #6b6253;
-    --c-border: #2a241d;
-    --c-border-strong: #3a342c;
-    --c-surface: #1c1814;
-    --c-surface-2: #141009;
-    --c-bg: #0f0c08;
-    --c-primary: #c4665e;
-    --c-primary-ink: #dda6a0;
-    --c-primary-tint: #2a1815;
+    --color-page-bg:        #0A1628;
+    --color-surface:        #0F1F3D;
+    --color-surface-subtle: rgba(56,138,221,0.08);
+    --color-border:         rgba(56,138,221,0.15);
+    --color-border-strong:  rgba(56,138,221,0.30);
+
+    --color-text-primary:   #C8E0F8;
+    --color-text-secondary: #4A7FAA;
+    --color-text-muted:     #2D5A7A;
+
+    --color-hero-gradient:  linear-gradient(135deg, #0d2347 0%, #0f3060 35%, #0a3d5c 70%, #062e4a 100%);
+
+    --color-accent:         #378ADD;
+    --color-accent-light:   rgba(56,138,221,0.15);
+    --color-accent-text:    #60A5FA;
+
+    --color-progress-lmgc:  #1D9E75;
+
+    --color-badge-ok-bg:    rgba(56,138,221,0.2);
+    --color-badge-ok-text:  #60A5FA;
+    --color-badge-wip-bg:   rgba(255,255,255,0.05);
+    --color-badge-wip-text: #4A7FAA;
+
+    --color-tool-icon-bg:   rgba(56,138,221,0.15);
+    --color-tool-icon:      #60A5FA;
+
+    --color-success: #1D9E75;  --color-success-tint: rgba(29,158,117,0.15);  --color-success-text: #5FD3AC;
+
+    /* Primary scale tints that are hard-coded above need dark variants */
+    --c-primary-300: #2D5A7A;
+    --c-primary-400: #378ADD;
   }
 }
-*/
 
 @media (prefers-reduced-motion: reduce) {
-  :root {
-    --t-fast: 0ms;
-    --t-lift: 0ms;
-    --t-fill: 0ms;
-  }
+  :root { --t-fast: 0ms; --t-lift: 0ms; --t-fill: 0ms; }
 }

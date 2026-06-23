@@ -1,173 +1,192 @@
 /*
- * Home.tsx — MedCore Study Dashboard
- * Universidad de la Salud · LMGC · PAI 2026
- *
- * Rebuilt on the design-token system (src/styles/tokens.css).
- * Structure: Hero → Progress → Tools → PAI modules → Footer.
- * Inline styles only for values that come from data (module colors).
+ * Home.tsx — MedCore Study Dashboard · Clinical Blue design system
+ * Route: /  ·  All values from tokens.css. Stats from real data files.
+ * Light default; dark mode automatic via prefers-color-scheme (tokens flip).
  */
-
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { paiModulos }    from '../data/pai'
-import { medlexTerms }   from '../data/medlex-terms'
-import { hotspots }      from '../data/anatomyHotspots'
-import { atlasTopics }   from '../data/atlas-topics'
+import { Heart, BookOpen, PencilSimple, FirstAid } from '@phosphor-icons/react'
+import type { Icon } from '@phosphor-icons/react'
+import { paiModulos } from '../data/pai'
+import { medlexTerms } from '../data/medlex-terms'
+import { hotspots } from '../data/anatomyHotspots'
+import { lmgcModules } from '../data/lmgc-modules'
+import { Toast } from '../components/Toast'
 
-/* ── Stats derived from real data ──────────────────────────── */
+/* ── Stats from real data (Section E) ──────────────────────── */
 const TERMS_COUNT     = medlexTerms.length
 const HOTSPOTS_COUNT  = hotspots.length
 const PAI_TOTAL       = paiModulos.length
 const PAI_DISPONIBLES = paiModulos.filter(m => m.status === 'disponible').length
-const ATLAS_COUNT     = atlasTopics.length
+const LMGC_COUNT      = lmgcModules.length
 
-/* ── Tools ─────────────────────────────────────────────────── */
-const TOOLS = [
-  { id: 'atlas',    icon: '🗺️',  label: 'Atlas Visual',  desc: `${ATLAS_COUNT} mapas · Estudio por imagen`, route: '/atlas'        },
-  { id: 'anatomia', icon: '🫀', label: 'Anatomía 2D',  desc: `Visor · ${HOTSPOTS_COUNT} estructuras`, route: '/anatomia-3d'  },
-  { id: 'termino',  icon: '📖', label: 'Terminología', desc: `MedLex · ${TERMS_COUNT}+ términos`,      route: '/terminologia' },
-  { id: 'quiz',     icon: '📝', label: 'Quiz',         desc: 'Exámenes de práctica',                   route: '/progress'     },
-  { id: 'lmgc',     icon: '🏥', label: 'LMGC',         desc: '37 módulos · Licenciatura',              route: '/modulos'      },
-] as const
+const TOOLS: { name: string; desc: string; route: string; icon: Icon }[] = [
+  { name: 'Anatomía 3D',  desc: 'Visor Open 3D Model',     route: '/anatomia-3d',  icon: Heart },
+  { name: 'Terminología', desc: `MedLex · ${TERMS_COUNT} términos`, route: '/terminologia', icon: BookOpen },
+  { name: 'Quiz',         desc: 'Exámenes de práctica',    route: '/quiz',         icon: PencilSimple },
+  { name: 'LMGC',         desc: `${LMGC_COUNT} módulos`,    route: '/lmgc',         icon: FirstAid },
+]
 
-/* ── Toast ─────────────────────────────────────────────────── */
-function Toast({ msg, onDone }: { msg: string; onDone: () => void }) {
-  useEffect(() => {
-    const t = setTimeout(onDone, 2500)
-    return () => clearTimeout(t)
-  }, [onDone])
+const HERO_PILLS = [
+  { text: 'PAI — Activo', active: true },
+  { text: 'LMGC — Año 2', active: false },
+  { text: 'MedLex',       active: false },
+]
 
-  return (
-    <div
-      role="status"
-      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[9999] bg-navy-900 text-white
-                 text-sm font-medium px-5 py-2.5 rounded-md shadow-pop whitespace-nowrap animate-fade-up"
-    >
-      {msg}
-    </div>
-  )
-}
+const HERO_STATS = [
+  { value: `+${TERMS_COUNT}`,                 label: 'Términos' },
+  { value: `${PAI_DISPONIBLES}/${PAI_TOTAL}`, label: 'PAI' },
+  { value: `${HOTSPOTS_COUNT}`,               label: 'Estructuras' },
+  { value: `${LMGC_COUNT}`,                   label: 'Módulos' },
+]
 
-/* ── Home page ─────────────────────────────────────────────── */
 export function Home() {
   const navigate = useNavigate()
   const [toast, setToast] = useState<string | null>(null)
-  const showToast = useCallback((msg: string) => setToast(msg), [])
   const clearToast = useCallback(() => setToast(null), [])
 
   return (
-    <div className="flex-1 bg-app">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-5 pb-12">
+    <div style={{ background: 'var(--color-page-bg)', flex: 1 }}>
+      <style>{HOME_CSS}</style>
+
+      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '20px 24px 0' }}>
 
         {/* ── Hero ─────────────────────────────────────────── */}
-        <section className="mb-4">
-          <div className="relative overflow-hidden rounded-lg bg-hero-gradient px-6 py-7 sm:px-8 sm:py-8">
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -top-10 -right-10 w-52 h-52 rounded-full"
-              style={{ background: 'radial-gradient(circle, rgba(196,102,94,0.16), transparent 70%)' }}
-            />
+        <section
+          className="home-hero"
+          style={{
+            background: 'var(--color-hero-gradient)',
+            borderRadius: 'var(--radius-lg)',
+            padding: '28px 28px 24px',
+            marginBottom: 14,
+          }}
+        >
+          <p className="home-eyebrow" style={{
+            fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '2px',
+            textTransform: 'uppercase', color: '#93C5FD', marginBottom: 10,
+          }}>
+            Universidad de la Salud · 2026
+          </p>
 
-            <p className="eyebrow mb-2.5" style={{ color: 'var(--c-primary-300)' }}>
-              Universidad de la Salud · CDMX · 2026
-            </p>
+          <h1 className="home-title" style={{
+            fontFamily: 'var(--font-body)', fontSize: 30, fontWeight: 500,
+            letterSpacing: '-0.3px', color: '#FFFFFF', margin: 0,
+          }}>
+            MedCore
+          </h1>
 
-            <h1 className="text-[2rem] sm:text-[2.25rem] font-bold tracking-tight text-white leading-none mb-1.5">
-              MedCore
-            </h1>
+          <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)', margin: '4px 0 18px' }}>
+            Licenciatura en Medicina General
+          </p>
 
-            <p className="text-[15px] italic text-white/65 mb-6">
-              Licenciatura en Medicina General y Comunitaria
-            </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 22 }}>
+            {HERO_PILLS.map(p => (
+              <span key={p.text} style={{
+                fontSize: 11, padding: '4px 12px', borderRadius: 'var(--radius-pill)',
+                background: p.active ? 'var(--hero-pill-active-bg)' : 'var(--hero-pill-bg-light)',
+                border: `1px solid ${p.active ? 'var(--hero-pill-active-border)' : 'var(--hero-pill-border-light)'}`,
+                color: p.active ? '#FFFFFF' : '#E0F2FE',
+                whiteSpace: 'nowrap',
+              }}>
+                {p.text}
+              </span>
+            ))}
+          </div>
 
-            <div className="flex flex-wrap gap-2.5 mb-7">
-              {[
-                { text: 'PAI — Activo', active: true },
-                { text: 'LMGC — Año 2 disponible', active: false },
-                { text: 'Terminología MedLex', active: false },
-              ].map(p => (
-                <span
-                  key={p.text}
-                  className="text-xs font-medium px-3.5 py-1.5 rounded-full border whitespace-nowrap"
-                  style={
-                    p.active
-                      ? { background: 'rgba(196,102,94,0.20)', borderColor: '#c4665e', color: '#dda6a0' }
-                      : { background: 'rgba(255,255,255,0.08)', borderColor: 'rgba(255,255,255,0.2)', color: '#fff' }
-                  }
-                >
-                  {p.text}
-                </span>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-2 gap-y-4">
-              {[
-                { value: `+${TERMS_COUNT}`, label: 'Términos' },
-                { value: `${PAI_DISPONIBLES}/${PAI_TOTAL}`, label: 'PAI listo' },
-                { value: '3', label: 'Categorías' },
-                { value: `${HOTSPOTS_COUNT}`, label: 'Estructuras' },
-              ].map((s, i) => (
-                <div
-                  key={s.label}
-                  className={`flex flex-col gap-1 sm:pr-5 ${i === 0 ? '' : 'sm:pl-5 sm:border-l sm:border-white/15'}`}
-                >
-                  <span className="text-2xl font-bold text-white leading-none font-mono">{s.value}</span>
-                  <span className="eyebrow text-[10px]" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                    {s.label}
-                  </span>
-                </div>
-              ))}
-            </div>
+          <div className="home-hero-stats" style={{ display: 'flex' }}>
+            {HERO_STATS.map((s, i) => (
+              <div key={s.label} className="home-stat" style={{
+                display: 'flex', flexDirection: 'column', gap: 3,
+                paddingLeft: i === 0 ? 0 : 18, paddingRight: 18,
+                borderLeft: i === 0 ? 'none' : '1px solid rgba(255,255,255,0.15)',
+                alignSelf: 'stretch',
+              }}>
+                <span style={{ fontSize: 20, fontWeight: 500, color: '#FFFFFF', lineHeight: 1.1 }}>{s.value}</span>
+                <span style={{
+                  fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#93C5FD',
+                }}>{s.label}</span>
+              </div>
+            ))}
           </div>
         </section>
 
-        {/* ── Progress ──────────────────────────────────────── */}
-        <section className="mb-6">
-          <div className="card p-4 flex flex-col gap-3">
-            <ProgressRow label="PAI"  fill={PAI_DISPONIBLES / PAI_TOTAL} barColor="var(--c-primary)" valueLabel={`${PAI_DISPONIBLES} de ${PAI_TOTAL} módulos`} />
-            <ProgressRow label="LMGC" fill={0.20}                        barColor="var(--c-success)" valueLabel="Año 2 · 7 sistemas" />
-          </div>
+        {/* ── Progress card ─────────────────────────────────── */}
+        <section
+          className="home-progress"
+          style={{
+            background: 'var(--color-surface)',
+            border: '0.5px solid var(--color-border)',
+            borderRadius: 'var(--radius-md)',
+            padding: '13px 15px',
+            marginBottom: 14,
+            display: 'flex', flexDirection: 'column', gap: 10,
+          }}
+        >
+          <ProgressRow label="PAI"  fill={PAI_DISPONIBLES / PAI_TOTAL} color="var(--color-accent)"       value={`${PAI_DISPONIBLES} de ${PAI_TOTAL} módulos`} />
+          <ProgressRow label="LMGC" fill={0.20}                        color="var(--color-progress-lmgc)" value="Año 2 · 7 sistemas" />
         </section>
 
         {/* ── Tools ─────────────────────────────────────────── */}
-        <section className="mb-6">
-          <p className="label-mono mb-2.5">Herramientas</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
-            {TOOLS.map(tool => (
-              <button
-                key={tool.id}
-                onClick={() => navigate(tool.route)}
-                className="card card-interactive p-4 flex items-center gap-3 text-left w-full"
-              >
-                <span className="text-xl flex-shrink-0" aria-hidden>{tool.icon}</span>
-                <span className="min-w-0">
-                  <span className="block text-[13px] font-semibold text-ink">{tool.label}</span>
-                  <span className="block text-xs text-faint mt-0.5 truncate">{tool.desc}</span>
+        <SectionLabel>Herramientas</SectionLabel>
+        <div className="home-tools-grid">
+          {TOOLS.map(t => {
+            const Ic = t.icon
+            return (
+              <button key={t.name} className="home-tool" onClick={() => navigate(t.route)}>
+                <span className="home-tool-icon"><Ic weight="fill" size={18} /></span>
+                <span style={{ minWidth: 0 }}>
+                  <span style={{ display: 'block', fontSize: 12, fontWeight: 500, color: 'var(--color-text-primary)' }}>{t.name}</span>
+                  <span className="home-tool-desc" style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>{t.desc}</span>
                 </span>
               </button>
-            ))}
-          </div>
-        </section>
+            )
+          })}
+        </div>
 
-        {/* ── PAI modules ───────────────────────────────────── */}
-        <section className="mb-7">
-          <p className="label-mono mb-2.5">PAI — Módulos</p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2.5">
-            {paiModulos.map(mod => (
-              <ModuleCard
+        {/* ── PAI module cards ──────────────────────────────── */}
+        <SectionLabel>PAI · Módulos</SectionLabel>
+        <div className="home-module-grid">
+          {paiModulos.map(mod => {
+            const available = mod.status === 'disponible'
+            return (
+              <button
                 key={mod.slug}
-                mod={mod}
-                onUnavailable={() => showToast('Contenido en preparación. Disponible próximamente.')}
-                navigate={navigate}
-              />
-            ))}
-          </div>
-        </section>
+                className={`home-module${available ? ' is-available' : ''}`}
+                style={{ borderLeft: `3px solid ${mod.cardAccent}` }}
+                onClick={() => available
+                  ? navigate(`/pai/${mod.slug}`)
+                  : setToast('Contenido en preparación. Disponible próximamente.')}
+              >
+                <span style={{
+                  fontSize: 11, fontWeight: 500, lineHeight: 1.35,
+                  color: 'var(--color-text-primary)',
+                }}>
+                  {mod.icono}&nbsp; {mod.nombre.replace('MÓDULO — ', '')}
+                </span>
+                <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 10, gap: 6 }}>
+                  <span style={{ fontSize: 10, color: 'var(--color-text-secondary)' }}>
+                    {mod.temas !== null ? `${mod.temas} temas` : '—'}
+                  </span>
+                  <span style={{
+                    fontSize: 10, fontWeight: 500, padding: '2px 7px', borderRadius: 'var(--radius-sm)',
+                    background: available ? 'var(--color-badge-ok-bg)' : 'var(--color-badge-wip-bg)',
+                    color: available ? 'var(--color-badge-ok-text)' : 'var(--color-badge-wip-text)',
+                  }}>
+                    {available ? 'Disponible' : 'Próximo'}
+                  </span>
+                </span>
+              </button>
+            )
+          })}
+        </div>
 
         {/* ── Footer ────────────────────────────────────────── */}
-        <footer className="text-center text-xs text-faint border-t border-line pt-5 leading-loose">
-          <p className="m-0">MedCore · Misael Granillo · Universidad de la Salud CDMX</p>
-          <p className="m-0">Terminología: MedLex (CC BY-SA 4.0) · Modelo anatómico: Z-Anatomy (CC BY-SA 4.0)</p>
+        <footer style={{
+          fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--color-text-muted)',
+          textAlign: 'center', marginTop: 24, paddingBottom: 24, lineHeight: 1.8,
+        }}>
+          Misael Granillo · MedCore · Universidad de la Salud CDMX<br />
+          Terminología: MedLex (CC BY-SA 4.0) · Modelo anatómico: Open 3D Model (CC BY-SA 4.0)
         </footer>
       </div>
 
@@ -177,56 +196,73 @@ export function Home() {
 }
 
 /* ── Sub-components ────────────────────────────────────────── */
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <p style={{
+      fontFamily: 'var(--font-mono)', fontSize: 11, textTransform: 'uppercase',
+      letterSpacing: '1.2px', color: 'var(--color-text-secondary)', margin: '14px 0 9px',
+    }}>
+      {children}
+    </p>
+  )
+}
 
-function ProgressRow({
-  label, fill, barColor, valueLabel,
-}: {
-  label: string; fill: number; barColor: string; valueLabel: string
+function ProgressRow({ label, fill, color, value }: {
+  label: string; fill: number; color: string; value: string
 }) {
   return (
-    <div className="flex items-center gap-3">
-      <span className="text-xs font-semibold text-ink w-9 flex-shrink-0">{label}</span>
-      <div className="flex-1 h-1.5 rounded-full bg-line overflow-hidden">
-        <div
-          className="h-full rounded-full"
-          style={{ width: `${Math.min(fill * 100, 100)}%`, background: barColor, transition: 'width var(--t-fill)' }}
-        />
-      </div>
-      <span className="text-xs text-faint whitespace-nowrap">{valueLabel}</span>
+    <div className="home-progress-row" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <span style={{ fontSize: 11, fontWeight: 500, color: 'var(--color-text-primary)', width: 38, flexShrink: 0 }}>{label}</span>
+      <span style={{ flex: 1, height: 4, background: 'var(--color-surface-subtle)', borderRadius: 'var(--radius-pill)', overflow: 'hidden' }}>
+        <span style={{ display: 'block', height: '100%', width: `${Math.min(fill * 100, 100)}%`, background: color, borderRadius: 'var(--radius-pill)', transition: 'width var(--t-fill)' }} />
+      </span>
+      <span style={{ fontSize: 11, color: 'var(--color-text-secondary)', whiteSpace: 'nowrap' }}>{value}</span>
     </div>
   )
 }
 
-function ModuleCard({
-  mod, onUnavailable, navigate,
-}: {
-  mod: typeof paiModulos[0]
-  onUnavailable: () => void
-  navigate: (to: string) => void
-}) {
-  const available = mod.status === 'disponible'
+/* ── Scoped CSS (responsive + hover; tokens only) ──────────── */
+const HOME_CSS = `
+  .home-tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+  .home-module-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
 
-  return (
-    <button
-      onClick={() => (available ? navigate(`/pai/${mod.slug}`) : onUnavailable())}
-      className="card-interactive rounded-lg p-4 text-left w-full shadow-sm"
-      style={{ background: mod.cardBg, border: 'none' }}
-    >
-      <p className="text-xs font-bold leading-snug mb-2.5 line-clamp-3" style={{ color: mod.cardColor }}>
-        {mod.icono}&nbsp;&nbsp;{mod.nombre.replace('MÓDULO — ', '')}
-      </p>
+  .home-tool {
+    display: flex; align-items: center; gap: 10px; text-align: left; width: 100%;
+    background: var(--color-surface);
+    border: 0.5px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    padding: 11px 13px; cursor: pointer;
+    transition: border-color var(--t-fast), transform var(--t-fast);
+  }
+  .home-tool:hover { border-color: var(--color-border-strong); transform: translateY(-1px); }
+  .home-tool-icon {
+    width: 32px; height: 32px; border-radius: 7px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--color-tool-icon-bg); color: var(--color-tool-icon);
+  }
+  .home-tool-desc { display: block; }
 
-      <div className="flex items-center justify-between gap-1.5">
-        <span className="text-[11px] font-medium" style={{ color: mod.cardColor, opacity: 0.75 }}>
-          {mod.temas !== null ? `${mod.temas} temas` : '—'}
-        </span>
-        <span
-          className="text-[10px] font-bold px-2 py-0.5 rounded-full font-mono"
-          style={{ background: 'rgba(0,0,0,0.10)', color: mod.cardColor, opacity: available ? 1 : 0.65 }}
-        >
-          {available ? 'Disponible' : 'Próximo'}
-        </span>
-      </div>
-    </button>
-  )
-}
+  .home-module {
+    background: var(--color-surface);
+    border: 0.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 13px; cursor: pointer; text-align: left; width: 100%;
+    display: flex; flex-direction: column;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .home-module.is-available:hover { border-color: var(--color-border-strong); transform: translateY(-1px); }
+
+  @media (max-width: 768px) {
+    .home-module-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .home-module-grid { grid-template-columns: 1fr; }
+    .home-tool-desc { display: none; }
+    .home-hero { padding: 20px 18px !important; }
+    .home-title { font-size: 24px !important; }
+    .home-hero-stats { display: grid !important; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .home-stat { border-left: none !important; padding-left: 0 !important; }
+    .home-progress-row { flex-wrap: wrap; }
+  }
+`

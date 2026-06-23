@@ -99,7 +99,7 @@ export function Navbar() {
                 placeholder="Buscar conceptos, términos..."
                 className="w-full bg-zinc-100 border border-transparent rounded-xl pl-9 pr-16 py-2 text-sm
                            text-zinc-900 placeholder-zinc-400 outline-none
-                           focus:bg-white focus:border-zinc-300 transition-all duration-200"
+                           focus:bg-surface focus:border-zinc-300 transition-all duration-200"
               />
               {query && (
                 <button type="button" onClick={() => setQuery('')} className="absolute right-10 text-zinc-400 hover:text-zinc-600 p-1">
@@ -115,7 +115,7 @@ export function Navbar() {
       </header>
 
       {/* ── Mobile bottom tab bar ───────────────────────── */}
-      <nav className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white/95 backdrop-blur-sm border-t border-zinc-200">
+      <nav className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-surface/95 backdrop-blur-sm border-t border-zinc-200">
         <div className="grid grid-cols-6 h-16 max-w-lg mx-auto">
           {NAV_ITEMS.map(({ path, label, mobileIcon: Icon }) => {
             const active = isActive(path)

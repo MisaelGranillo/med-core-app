@@ -128,7 +128,7 @@ export function Modulos() {
     <main className="flex-1 pb-20 md:pb-0">
 
       {/* ── Hero ───────────────────────────────────────────── */}
-      <section className="bg-white border-b border-zinc-100">
+      <section className="bg-surface border-b border-zinc-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
@@ -167,7 +167,7 @@ export function Modulos() {
             className={`text-xs font-semibold px-3 py-1 rounded-full border transition-all flex-shrink-0
               ${showPAI
                 ? 'bg-amber-500 text-white border-amber-500'
-                : 'bg-white text-amber-700 border-amber-300 hover:bg-amber-100'}`}
+                : 'bg-surface text-amber-700 border-amber-300 hover:bg-amber-100'}`}
           >
             {showPAI ? 'Ver todos' : 'Ver solo PAI'}
           </button>
@@ -176,7 +176,7 @@ export function Modulos() {
 
       {/* ── Tabs por año ──────────────────────────────────── */}
       {!showPAI && (
-        <div className="bg-white border-b border-zinc-200 sticky top-14 z-20">
+        <div className="bg-surface border-b border-zinc-200 sticky top-14 z-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="flex gap-1 overflow-x-auto scrollbar-hide py-2">
               {AÑOS.map(a => (
@@ -191,7 +191,7 @@ export function Modulos() {
                 >
                   {AÑOS_DISPLAY[a]}
                   <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold
-                    ${activeAño === a ? 'bg-white/20 text-white' : 'bg-zinc-100 text-zinc-500'}`}>
+                    ${activeAño === a ? 'bg-surface/20 text-white' : 'bg-zinc-100 text-zinc-500'}`}>
                     {countByAño(a)}
                   </span>
                 </button>

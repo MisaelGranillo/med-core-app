@@ -38,7 +38,7 @@ export function PAIModulo() {
   return (
     <main className="flex-1 bg-zinc-50">
       {/* Header */}
-      <div className="bg-white border-b border-zinc-100">
+      <div className="bg-surface border-b border-zinc-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
           <Link to="/pai"
             className="inline-flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-800 mb-5 transition-colors">
