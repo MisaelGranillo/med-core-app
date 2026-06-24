@@ -1,18 +1,17 @@
 /* Visor Anatómico 3D — ruta /anatomia-3d
- * Option A: AnatomyTOOL's hosted Babylon viewer embedded in an iframe,
- * wrapped in MedCore chrome with a full model browser (region filters).
- * ?model={id} selects the model. Registry: src/data/anatomyModels.ts.
+ * Option B: self-hosted React Three Fiber viewer (client-side WebGL on
+ * Cloudflare Pages static hosting). GLBs in /public/models, registry in
+ * src/data/anatomyModels.ts. ?model={id} selects the model.
  * Models: Open 3D Model (CC BY-SA 4.0) — see attribution footer.
  */
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
-import { ArrowLeft, ArrowRight, ArrowSquareOut, BookOpenText, Cube } from '@phosphor-icons/react'
+import { ArrowLeft, ArrowRight, BookOpenText, Cube, CursorClick } from '@phosphor-icons/react'
 import {
   anatomyModels, anatomyRegions, anatomyModelById, availableModelCount,
   type AnatomyModel,
 } from '../data/anatomyModels'
-
-const VIEWER_BASE = 'https://caskanatomy.info/open3dviewer/'
+import { AnatomyModelViewer } from '../components/AnatomyModelViewer'
 
 function resolveModel(param: string | null): AnatomyModel {
   if (param) {
@@ -28,6 +27,10 @@ export function Anatomy3D() {
   const [params, setParams] = useSearchParams()
   const active = resolveModel(params.get('model'))
   const [region, setRegion] = useState<string>('all')
+  const [structure, setStructure] = useState<string | null>(null)
+
+  // Clear the selected structure whenever the model changes.
+  useEffect(() => setStructure(null), [active.id])
 
   const select = (id: string) => setParams({ model: id }, { replace: true })
   const shown = anatomyModels.filter(m => region === 'all' || m.region === region)
@@ -53,7 +56,6 @@ export function Anatomy3D() {
 
         {/* ── Model browser (left) ──────────────────────────── */}
         <aside className="min-w-0 flex flex-col gap-3">
-          {/* Region filter tabs */}
           <div className="flex gap-1.5 overflow-x-auto pb-1 scrollbar-hide">
             {anatomyRegions.map(r => (
               <button
@@ -71,7 +73,6 @@ export function Anatomy3D() {
 
           <p className="label-mono">{availableModelCount} modelos disponibles</p>
 
-          {/* Model cards */}
           <div className="flex flex-col gap-1.5 lg:max-h-[62vh] lg:overflow-y-auto pr-0.5">
             {shown.map(m => {
               const on = m.id === active.id
@@ -89,9 +90,7 @@ export function Anatomy3D() {
                 >
                   <span className="block text-sm font-medium text-ink leading-snug">{m.nombre}</span>
                   <span className="flex items-center justify-between gap-2 mt-0.5">
-                    <span className="catalog-code normal-case" style={{ textTransform: 'none' }}>
-                      {m.nombre_en}
-                    </span>
+                    <span className="catalog-code" style={{ textTransform: 'none' }}>{m.nombre_en}</span>
                     {disabled
                       ? <span className="text-[10px] text-faint flex-shrink-0">Próximo</span>
                       : <span className={`text-xs font-medium flex items-center gap-0.5 flex-shrink-0 ${on ? 'text-primary-ink' : 'text-muted'}`}>
@@ -107,15 +106,8 @@ export function Anatomy3D() {
         {/* ── Viewer (center) ───────────────────────────────── */}
         <div className="min-w-0 rounded-lg overflow-hidden border border-stage-border"
              style={{ background: 'var(--c-stage)' }}>
-          {active.viewerModel ? (
-            <iframe
-              key={active.id}
-              src={`${VIEWER_BASE}?model=${active.viewerModel}`}
-              title={`Visor Anatómico 3D — ${active.nombre}`}
-              allow="fullscreen; xr-spatial-tracking"
-              className="w-full block"
-              style={{ height: 'min(80vh, 760px)', border: 'none' }}
-            />
+          {active.status === 'available' ? (
+            <AnatomyModelViewer url={active.glb} onSelect={setStructure} />
           ) : (
             <div className="flex flex-col items-center justify-center text-center gap-2 px-6"
                  style={{ height: 'min(80vh, 760px)', color: 'var(--c-stage-text)' }}>
@@ -138,18 +130,23 @@ export function Anatomy3D() {
             <p className="catalog-code mb-3" style={{ textTransform: 'none' }}>{active.nombre_en}</p>
             <p className="text-sm text-body leading-relaxed mb-4">{active.description}</p>
 
+            {active.status === 'available' && (
+              <div className="rounded-md border border-line bg-surface-2 p-3 mb-4">
+                <p className="catalog-code mb-1">Estructura seleccionada</p>
+                {structure ? (
+                  <p className="text-sm font-medium text-primary-ink">{structure}</p>
+                ) : (
+                  <p className="text-xs text-muted flex items-center gap-1.5">
+                    <CursorClick className="w-3.5 h-3.5" /> Haz clic en una estructura del modelo
+                  </p>
+                )}
+              </div>
+            )}
+
             <Link to="/terminologia" className="btn-ghost w-full justify-center">
               <BookOpenText weight="fill" className="w-4 h-4" />
               Ver terminología relacionada
             </Link>
-
-            {active.viewerModel && (
-              <a href={`${VIEWER_BASE}?model=${active.viewerModel}`}
-                 target="_blank" rel="noopener noreferrer"
-                 className="mt-2 flex items-center justify-center gap-1.5 text-sm text-muted hover:text-primary-ink transition-colors">
-                Abrir en pantalla completa <ArrowSquareOut className="w-3.5 h-3.5" />
-              </a>
-            )}
           </div>
 
           <Link to="/pai/aparatos-y-sistemas"

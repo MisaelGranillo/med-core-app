@@ -265,6 +265,8 @@
     text-wrap: balance;
   }
 
+  @keyframes spin { to { transform: rotate(360deg); } }
+
   .animate-fade-up-delay-1 { animation-delay: 100ms; }
   .animate-fade-up-delay-2 { animation-delay: 200ms; }
   .animate-fade-up-delay-3 { animation-delay: 300ms; }
