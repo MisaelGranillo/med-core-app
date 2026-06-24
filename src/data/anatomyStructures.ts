@@ -141,11 +141,105 @@ function splitSide(name: string): [string, Side] {
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
 const sideSuffix = (s: Side) => s === 'right' ? ' · der.' : s === 'left' ? ' · izq.' : ''
 
-/** Translate a structure node name to a readable Spanish label. */
+/* Exact medical-Spanish names (key = lowercased, side-stripped English). */
+const PHRASES: Record<string, string> = {
+  // ── Skull ──
+  'frontal bone': 'Hueso frontal', 'parietal bone': 'Hueso parietal', 'parietal bones': 'Huesos parietales',
+  'occipital bone': 'Hueso occipital', 'temporal bone': 'Hueso temporal', 'temporal bones': 'Huesos temporales',
+  'sphenoid bone': 'Hueso esfenoides', 'ethmoid bone': 'Hueso etmoides', 'nasal bone': 'Hueso nasal',
+  'lacrimal bone': 'Hueso lagrimal', 'lacrimal bones': 'Huesos lagrimales',
+  'zygomatic bone': 'Hueso cigomático', 'zygomatic bones': 'Huesos cigomáticos',
+  'maxilla bone': 'Maxilar', 'maxilla': 'Maxilar', 'mandible bone': 'Mandíbula', 'mandible': 'Mandíbula',
+  'palatine bone': 'Hueso palatino', 'vomer': 'Vómer', 'hyoid': 'Hueso hioides', 'hyoid bone': 'Hueso hioides',
+  'inferior nasal concha bone': 'Cornete nasal inferior', 'inferior nasal concha bones': 'Cornetes nasales inferiores',
+  // ── Teeth ──
+  'upper medial incisor': 'Incisivo central superior', 'upper medial incisors': 'Incisivos centrales superiores',
+  'lower medial incisor': 'Incisivo central inferior', 'lower medial incisors': 'Incisivos centrales inferiores',
+  'upper lateral incisor': 'Incisivo lateral superior', 'upper lateral incisors': 'Incisivos laterales superiores',
+  'lower lateral incisor': 'Incisivo lateral inferior', 'lower lateral incisors': 'Incisivos laterales inferiores',
+  'upper canine': 'Canino superior', 'upper canines': 'Caninos superiores',
+  'lower canine': 'Canino inferior', 'lower canines': 'Caninos inferiores',
+  'upper first premolar': 'Primer premolar superior', 'upper first premolars': 'Primeros premolares superiores',
+  'lower first premolar': 'Primer premolar inferior', 'lower first premolars': 'Primeros premolares inferiores',
+  'upper second premolar': 'Segundo premolar superior', 'upper second premolars': 'Segundos premolares superiores',
+  'lower second premolar': 'Segundo premolar inferior', 'lower second premolars': 'Segundos premolares inferiores',
+  'upper first molar tooth': 'Primer molar superior', 'upper first molar teeth': 'Primeros molares superiores',
+  'lower first molar tooth': 'Primer molar inferior', 'lower first molar teeth': 'Primeros molares inferiores',
+  'upper second molar tooth': 'Segundo molar superior', 'upper second molar teeth': 'Segundos molares superiores',
+  'lower second molar tooth': 'Segundo molar inferior', 'lower second molar teeth': 'Segundos molares inferiores',
+  // ── Axial ──
+  'sacrum': 'Sacro', 'coccyx': 'Cóccix', 'sternum': 'Esternón',
+  'body of sternum': 'Cuerpo del esternón', 'manubrium of sternum': 'Manubrio del esternón',
+  // ── Upper limb / carpus ──
+  'clavicle': 'Clavícula', 'scapula': 'Escápula', 'humerus': 'Húmero', 'radius': 'Radio', 'ulna': 'Cúbito',
+  'scaphoid': 'Escafoides', 'lunate bone': 'Hueso semilunar', 'lunate': 'Hueso semilunar',
+  'triquetrum': 'Hueso piramidal', 'pisiform': 'Hueso pisiforme', 'trapezium': 'Hueso trapecio',
+  'trapezoid': 'Hueso trapezoide', 'capitate': 'Hueso grande', 'hamate': 'Hueso ganchoso',
+  // ── Lower limb / tarsus ──
+  'hip bone': 'Hueso coxal', 'femur': 'Fémur', 'patella': 'Rótula', 'tibia': 'Tibia', 'fibula': 'Peroné',
+  'talus': 'Astrágalo', 'calcaneus': 'Calcáneo', 'navicular bone': 'Hueso navicular', 'cuboid bone': 'Hueso cuboides',
+  'medial cuneiform bone': 'Cuña medial', 'intermediate cuneiform bone': 'Cuña intermedia', 'lateral cuneiform bone': 'Cuña lateral',
+  'sesamoid bones': 'Huesos sesamoideos', 'sesamoid bones of foot': 'Huesos sesamoideos del pie', 'sesamoid bones of hand': 'Huesos sesamoideos de la mano',
+  // ── Collective group nodes ──
+  'bones': 'Huesos', 'muscles': 'Músculos', 'nerves': 'Nervios', 'arteries': 'Arterias', 'veins': 'Venas',
+  'ligaments': 'Ligamentos', 'cartilages': 'Cartílagos', 'fascia': 'Fascia', 'bursae': 'Bolsas sinoviales', 'overlays': 'Capas',
+}
+
+const ORD: Record<string, string> = {
+  '1': 'primer', '2': 'segundo', '3': 'tercer', '4': 'cuarto', '5': 'quinto',
+  first: 'primer', second: 'segundo', third: 'tercer', fourth: 'cuarto', fifth: 'quinto',
+}
+const ordWord = (t: string) => {
+  const low = t.toLowerCase()
+  if (ORD[low]) return ORD[low]                       // first…fifth
+  return ORD[low.replace(/(st|nd|rd|th|d)$/, '')] ?? t // 1st, 2d, 3rd…
+}
+const POS: Record<string, string> = { distal: 'distal', middle: 'media', proximal: 'proximal' }
+
+/** Template matchers for systematic, numbered names. */
+function template(base: string): string | null {
+  let m: RegExpExecArray | null
+  if ((m = /^(cervical|thoracic|lumbar) vertebrae? \(([ctl]\d+)\)$/i.exec(base))) {
+    const t = { cervical: 'cervical', thoracic: 'torácica', lumbar: 'lumbar' }[m[1].toLowerCase()]
+    return `Vértebra ${t} (${m[2].toUpperCase()})`
+  }
+  if ((m = /^rib \((\d+)(?:st|nd|rd|th)\)$/i.exec(base))) return `${m[1]}.ª costilla`
+  if ((m = /^costal cart(?:ilage)? of (\d+)(?:st|nd|rd|th) rib$/i.exec(base))) return `Cartílago costal de la ${m[1]}.ª costilla`
+  if ((m = /^(\d+)(?:st|nd|rd|th) metacarpal bone$/i.exec(base))) return `${cap(ordWord(m[1]))} hueso metacarpiano`
+  if ((m = /^(first|second|third|fourth|fifth) metatarsal bone$/i.exec(base))) return `${cap(ordWord(m[1]))} hueso metatarsiano`
+  if ((m = /^(distal|middle|proximal) phalanx of (\S+) finger( of foot)?$/i.exec(base))) {
+    return `Falange ${POS[m[1].toLowerCase()]} del ${ordWord(m[2])} dedo${m[3] ? ' del pie' : ''}`
+  }
+  return null
+}
+
+/** Exact phrase or numbered template, else null. */
+function lookup(base: string): string | null {
+  return PHRASES[base.toLowerCase().replace(/\s+/g, ' ')] ?? template(base)
+}
+
+/** Translate a structure node name to its correct medical Spanish name. */
 export function toSpanish(name: string): string {
-  const [rawBase, side] = splitSide(name.replace(/_/g, ' ').trim())
-  const base = rawBase.replace(/_/g, ' ').trim()
+  // normalize: drop zero-width chars, trailing ".001"/dots, underscores
+  const norm = name.replace(/[​-‍]/g, '').replace(/\.\d+$/, '').replace(/_/g, ' ').replace(/\.+$/, '').trim()
+  const [rawBase, side] = splitSide(norm)
+  const base = rawBase.replace(/\.+$/, '').trim()
   if (!base) return name + sideSuffix(side)
+
+  const hit = lookup(base)
+  if (hit) return hit + sideSuffix(side)
+
+  // Retry: a side letter (r/l) may be glued after the word or ")" — strip it
+  // and re-match, but only accept a KNOWN result (keeps "Vómer", "Fémur" intact).
+  if (side === 'central') {
+    const last = base.slice(-1).toLowerCase()
+    if (last === 'r' || last === 'l') {
+      const retry = lookup(base.slice(0, -1).trim())
+      if (retry) return retry + sideSuffix(last === 'r' ? 'right' : 'left')
+    }
+  }
+
+  // token fallback: head-noun reorder ("Frontal bone" → "Hueso frontal")
   const toks = base.split(/\s+/)
   const words = toks.filter(t => !isParen(t))
   const parens = toks.filter(isParen)
