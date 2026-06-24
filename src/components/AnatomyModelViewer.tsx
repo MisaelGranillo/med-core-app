@@ -8,7 +8,7 @@ import { Suspense, useEffect, useMemo, useRef } from 'react'
 import { Canvas, type ThreeEvent } from '@react-three/fiber'
 import { OrbitControls, Bounds, useGLTF, Html } from '@react-three/drei'
 import * as THREE from 'three'
-import { sideOf, cleanName } from '../data/anatomyStructures'
+import { sideOf, toSpanish } from '../data/anatomyStructures'
 
 const HIGHLIGHT = new THREE.Color('#3B82F6')
 const LABEL_CAP = 60 // max in-scene labels at once (perf guard)
@@ -154,13 +154,13 @@ function Model({ url, hidden, showLabels, mirror, selected, onSelect, onStructur
       <primitive object={model} onClick={handleClick} />
       {mirrorObj && <primitive object={mirrorObj} />}
       {labels.map(l => (
-        <Html key={l.name} position={l.pos} center distanceFactor={1.6} style={{ pointerEvents: 'none' }} zIndexRange={[20, 0]}>
-          <span className="anat-label">{cleanName(l.name)}</span>
+        <Html key={l.name} position={l.pos} center style={{ pointerEvents: 'none' }} zIndexRange={[20, 0]}>
+          <span className="anat-label">{toSpanish(l.name)}</span>
         </Html>
       ))}
       {selectedLabel && (
-        <Html position={selectedLabel.pos} center distanceFactor={1.4} style={{ pointerEvents: 'none' }} zIndexRange={[40, 10]}>
-          <span className="anat-label anat-label-active">{cleanName(selectedLabel.name)}</span>
+        <Html position={selectedLabel.pos} center style={{ pointerEvents: 'none' }} zIndexRange={[40, 10]}>
+          <span className="anat-label anat-label-active">{toSpanish(selectedLabel.name)}</span>
         </Html>
       )}
     </>

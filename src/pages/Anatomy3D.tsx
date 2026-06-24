@@ -14,7 +14,7 @@ import {
   anatomyModels, anatomyRegions, anatomyModelById, availableModelCount,
   type AnatomyModel,
 } from '../data/anatomyModels'
-import { buildStructures } from '../data/anatomyStructures'
+import { buildStructures, toSpanish } from '../data/anatomyStructures'
 import { AnatomyModelViewer } from '../components/AnatomyModelViewer'
 
 function resolveModel(param: string | null): AnatomyModel {
@@ -163,7 +163,7 @@ export function Anatomy3D() {
               <div className="rounded-md border border-line bg-surface-2 p-3">
                 <p className="catalog-code mb-1">Estructura seleccionada</p>
                 {selected
-                  ? <p className="text-sm font-medium text-primary-ink break-words">{selected}</p>
+                  ? <p className="text-sm font-medium text-primary-ink break-words">{toSpanish(selected)}</p>
                   : <p className="text-xs text-muted flex items-center gap-1.5"><CursorClick className="w-3.5 h-3.5" /> Haz clic en una estructura</p>}
               </div>
             )}
@@ -226,7 +226,7 @@ export function Anatomy3D() {
                                   className={`text-left text-xs leading-snug truncate flex-1 transition-colors
                                     ${isSel ? 'text-primary-ink font-medium' : isHidden ? 'text-faint' : 'text-body hover:text-primary-ink'}`}
                                   title={it.name}>
-                                  {it.clean}{it.side !== 'central' ? <span className="text-faint"> · {it.side === 'right' ? 'der' : 'izq'}</span> : null}
+                                  {it.es}
                                 </button>
                               </li>
                             )
