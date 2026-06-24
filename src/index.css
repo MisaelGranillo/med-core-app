@@ -267,6 +267,27 @@
 
   @keyframes spin { to { transform: rotate(360deg); } }
 
+  /* In-scene anatomy labels (drei <Html>) */
+  .anat-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    line-height: 1.2;
+    white-space: nowrap;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    background: rgba(10, 22, 40, 0.82);
+    color: #C8E0F8;
+    border: 1px solid rgba(56, 138, 221, 0.4);
+    user-select: none;
+    transform: translateZ(0);
+  }
+  .anat-label-active {
+    background: var(--color-accent);
+    color: #fff;
+    border-color: #fff;
+    font-weight: 600;
+  }
+
   .animate-fade-up-delay-1 { animation-delay: 100ms; }
   .animate-fade-up-delay-2 { animation-delay: 200ms; }
   .animate-fade-up-delay-3 { animation-delay: 300ms; }
