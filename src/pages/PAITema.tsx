@@ -2,13 +2,14 @@
 
 import { useParams, Link } from 'react-router-dom'
 import {
-  ArrowLeft, Star, Brain, WarningCircle, BookOpenText,
+  ArrowLeft, Star, Brain, WarningCircle, BookOpenText, Cube,
   ArrowSquareOut, ArrowRight,
 } from '@phosphor-icons/react'
 import { paiBySlug } from '../data/pai'
 import { usePaiTema, usePaiContent } from '../hooks/usePaiContent'
 import { PaiBlocks } from '../components/PaiBlocks'
 import { atlasTopics } from '../data/atlas-topics'
+import { primaryModelForTema, temaModelSuggestions, anatomyModelById } from '../data/anatomyModels'
 
 export function PAITema() {
   const { slug, temaId } = useParams<{ slug: string; temaId: string }>()
@@ -142,6 +143,30 @@ export function PAITema() {
                 <p className="text-sm text-error-ink leading-relaxed">{tema.errorFrecuente}</p>
               </div>
             )}
+
+            {/* Visor Anatómico 3D — cross-link (solo Aparatos y Sistemas) */}
+            {slug === 'aparatos-y-sistemas' && temaId && (() => {
+              const primary = primaryModelForTema(temaId)
+              const pm = anatomyModelById[primary]
+              const secondaries = (temaModelSuggestions[temaId] ?? [])
+                .filter(id => id !== primary && anatomyModelById[id]?.status === 'available')
+                .map(id => anatomyModelById[id].nombre)
+              return (
+                <Link
+                  to={`/anatomia-3d?model=${primary}`}
+                  className="flex items-center gap-3 p-4 card hover:shadow-card-hover transition-all group"
+                >
+                  <Cube weight="fill" className="w-5 h-5 text-primary flex-shrink-0" />
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-semibold text-primary-ink">Ver en Visor Anatómico 3D</p>
+                    <p className="text-xs text-muted truncate">
+                      {pm?.nombre}{secondaries.length ? ` · también: ${secondaries.join(', ')}` : ''}
+                    </p>
+                  </div>
+                  <ArrowRight weight="bold" className="w-4 h-4 text-zinc-400 group-hover:text-primary flex-shrink-0" />
+                </Link>
+              )
+            })()}
 
             {/* Enlace UNISA */}
             <a

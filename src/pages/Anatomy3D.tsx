@@ -1,57 +1,41 @@
 /* Visor Anatómico 3D — ruta /anatomia-3d
- * Option A: embeds the AnatomyTOOL Open 3D Model viewer (GPL3) in an iframe,
- * wrapped in MedCore chrome. Reads ?model= to select the loaded model.
- * Model: Open 3D Model (CC BY-SA 4.0) — see attribution footer.
+ * Option A: AnatomyTOOL's hosted Babylon viewer embedded in an iframe,
+ * wrapped in MedCore chrome with a full model browser (region filters).
+ * ?model={id} selects the model. Registry: src/data/anatomyModels.ts.
+ * Models: Open 3D Model (CC BY-SA 4.0) — see attribution footer.
  */
+import { useState } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
-import { ArrowLeft, ArrowSquareOut, BookOpenText, Cube } from '@phosphor-icons/react'
+import { ArrowLeft, ArrowRight, ArrowSquareOut, BookOpenText, Cube } from '@phosphor-icons/react'
+import {
+  anatomyModels, anatomyRegions, anatomyModelById, availableModelCount,
+  type AnatomyModel,
+} from '../data/anatomyModels'
 
 const VIEWER_BASE = 'https://caskanatomy.info/open3dviewer/'
 
-type ModelId = 'overview-skeleton' | 'upper-limb' | 'lower-limb' | 'vertebrae'
-
-const MODELS: { id: ModelId; label: string; icon: string; desc: string; terminologia?: string }[] = [
-  {
-    id: 'overview-skeleton',
-    label: 'Esqueleto completo',
-    icon: '🦴',
-    desc: 'Vista general del esqueleto humano, con los huesos principales nombrados según la Terminologia Anatomica.',
-    terminologia: 'locomotor',
-  },
-  {
-    id: 'upper-limb',
-    label: 'Miembro superior',
-    icon: '💪',
-    desc: 'Cintura escapular y miembro superior: clavícula, escápula, húmero, radio, cúbito, carpo, metacarpo y falanges.',
-    terminologia: 'locomotor',
-  },
-  {
-    id: 'lower-limb',
-    label: 'Miembro inferior',
-    icon: '🦵',
-    desc: 'Cintura pélvica y miembro inferior: coxal, fémur, rótula, tibia, peroné, tarso, metatarso y falanges.',
-    terminologia: 'locomotor',
-  },
-  {
-    id: 'vertebrae',
-    label: 'Vértebras',
-    icon: '🧬',
-    desc: 'Columna vertebral: vértebras cervicales, torácicas y lumbares, sacro y cóccix, con sus accidentes óseos.',
-    terminologia: 'locomotor',
-  },
-]
+function resolveModel(param: string | null): AnatomyModel {
+  if (param) {
+    const byId = anatomyModelById[param]
+    if (byId) return byId
+    const byFolder = anatomyModels.find(m => m.viewerModel === param)
+    if (byFolder) return byFolder
+  }
+  return anatomyModelById['skeleton']
+}
 
 export function Anatomy3D() {
   const [params, setParams] = useSearchParams()
-  const raw = params.get('model') as ModelId | null
-  const active = MODELS.find(m => m.id === raw) ?? MODELS[0]
+  const active = resolveModel(params.get('model'))
+  const [region, setRegion] = useState<string>('all')
 
-  const select = (id: ModelId) => setParams({ model: id }, { replace: true })
+  const select = (id: string) => setParams({ model: id }, { replace: true })
+  const shown = anatomyModels.filter(m => region === 'all' || m.region === region)
 
   return (
     <div className="flex-1 flex flex-col bg-app min-w-0">
 
-      {/* ── Breadcrumb header ───────────────────────────────── */}
+      {/* ── Breadcrumb ──────────────────────────────────────── */}
       <div className="border-b border-line bg-surface">
         <div className="max-w-[1400px] mx-auto w-full px-4 sm:px-6 h-12 flex items-center gap-2 catalog-code">
           <Link to="/pai" className="hover:text-primary-ink transition-colors">PAI</Link>
@@ -64,73 +48,108 @@ export function Anatomy3D() {
         </div>
       </div>
 
-      {/* ── Layout: sidebar · viewer · info panel ───────────── */}
       <div className="max-w-[1400px] mx-auto w-full px-4 sm:px-6 py-4 grid gap-4
-                      grid-cols-1 lg:grid-cols-[180px_1fr_240px] flex-1">
+                      grid-cols-1 lg:grid-cols-[260px_1fr_240px] flex-1">
 
-        {/* Left — model selector */}
-        <aside className="min-w-0">
-          <p className="label-mono mb-2">Modelos</p>
-          <div className="flex lg:flex-col gap-1.5 overflow-x-auto lg:overflow-visible pb-1">
-            {MODELS.map(m => {
+        {/* ── Model browser (left) ──────────────────────────── */}
+        <aside className="min-w-0 flex flex-col gap-3">
+          {/* Region filter tabs */}
+          <div className="flex gap-1.5 overflow-x-auto pb-1 scrollbar-hide">
+            {anatomyRegions.map(r => (
+              <button
+                key={r.id}
+                onClick={() => setRegion(r.id)}
+                className={`px-2.5 py-1 rounded-md text-xs font-medium whitespace-nowrap flex-shrink-0 border transition-colors
+                  ${region === r.id
+                    ? 'bg-primary-tint border-primary-200 text-primary-ink'
+                    : 'bg-surface border-line text-muted hover:border-line-strong'}`}
+              >
+                {r.nombre}
+              </button>
+            ))}
+          </div>
+
+          <p className="label-mono">{availableModelCount} modelos disponibles</p>
+
+          {/* Model cards */}
+          <div className="flex flex-col gap-1.5 lg:max-h-[62vh] lg:overflow-y-auto pr-0.5">
+            {shown.map(m => {
               const on = m.id === active.id
+              const disabled = m.status !== 'available'
               return (
                 <button
                   key={m.id}
-                  onClick={() => select(m.id)}
+                  onClick={() => !disabled && select(m.id)}
+                  disabled={disabled}
                   aria-pressed={on}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium flex-shrink-0 text-left
-                    transition-colors border w-full
-                    ${on
-                      ? 'bg-primary-tint border-primary-200 text-primary-ink'
-                      : 'bg-surface border-line text-body hover:border-line-strong'}`}
+                  className={`text-left rounded-md border px-3 py-2 transition-colors
+                    ${on ? 'border-primary-200 bg-primary-tint'
+                         : 'border-line bg-surface hover:border-line-strong'}
+                    ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
                 >
-                  <span aria-hidden>{m.icon}</span>
-                  <span className="whitespace-nowrap lg:whitespace-normal">{m.label}</span>
+                  <span className="block text-sm font-medium text-ink leading-snug">{m.nombre}</span>
+                  <span className="flex items-center justify-between gap-2 mt-0.5">
+                    <span className="catalog-code normal-case" style={{ textTransform: 'none' }}>
+                      {m.nombre_en}
+                    </span>
+                    {disabled
+                      ? <span className="text-[10px] text-faint flex-shrink-0">Próximo</span>
+                      : <span className={`text-xs font-medium flex items-center gap-0.5 flex-shrink-0 ${on ? 'text-primary-ink' : 'text-muted'}`}>
+                          {on ? 'Activo' : 'Cargar'} <ArrowRight weight="bold" className="w-3 h-3" />
+                        </span>}
+                  </span>
                 </button>
               )
             })}
           </div>
         </aside>
 
-        {/* Center — the embedded viewer */}
+        {/* ── Viewer (center) ───────────────────────────────── */}
         <div className="min-w-0 rounded-lg overflow-hidden border border-stage-border"
              style={{ background: 'var(--c-stage)' }}>
-          <iframe
-            key={active.id}
-            src={`${VIEWER_BASE}?model=${active.id}`}
-            title="Visor Anatómico 3D — Open 3D Model"
-            allow="fullscreen; xr-spatial-tracking"
-            className="w-full block"
-            style={{ height: 'min(80vh, 760px)', border: 'none' }}
-          />
+          {active.viewerModel ? (
+            <iframe
+              key={active.id}
+              src={`${VIEWER_BASE}?model=${active.viewerModel}`}
+              title={`Visor Anatómico 3D — ${active.nombre}`}
+              allow="fullscreen; xr-spatial-tracking"
+              className="w-full block"
+              style={{ height: 'min(80vh, 760px)', border: 'none' }}
+            />
+          ) : (
+            <div className="flex flex-col items-center justify-center text-center gap-2 px-6"
+                 style={{ height: 'min(80vh, 760px)', color: 'var(--c-stage-text)' }}>
+              <Cube className="w-8 h-8 opacity-50" />
+              <p className="text-sm font-medium">{active.nombre}</p>
+              <p className="text-xs" style={{ color: 'var(--c-stage-muted)', maxWidth: 320 }}>
+                Este modelo aún no está disponible en la fuente Open 3D Model. Selecciona otro modelo del navegador.
+              </p>
+            </div>
+          )}
         </div>
 
-        {/* Right — info panel */}
+        {/* ── Info panel (right) ────────────────────────────── */}
         <aside className="min-w-0">
           <div className="card p-4">
-            <div className="flex items-center gap-2 mb-2">
+            <div className="flex items-center gap-2 mb-1">
               <Cube weight="fill" className="w-4 h-4 text-primary" />
-              <h2 className="text-base font-semibold text-ink m-0">{active.label}</h2>
+              <h1 className="text-base font-semibold text-ink m-0 leading-tight">{active.nombre}</h1>
             </div>
-            <p className="catalog-code mb-3">OPEN3D · {active.id}</p>
-            <p className="text-sm text-body leading-relaxed mb-4">{active.desc}</p>
+            <p className="catalog-code mb-3" style={{ textTransform: 'none' }}>{active.nombre_en}</p>
+            <p className="text-sm text-body leading-relaxed mb-4">{active.description}</p>
 
-            <Link
-              to={`/terminologia${active.terminologia ? `?sistema=${active.terminologia}` : ''}`}
-              className="btn-ghost w-full justify-center"
-            >
+            <Link to="/terminologia" className="btn-ghost w-full justify-center">
               <BookOpenText weight="fill" className="w-4 h-4" />
               Ver terminología relacionada
             </Link>
 
-            <a
-              href={`${VIEWER_BASE}?model=${active.id}`}
-              target="_blank" rel="noopener noreferrer"
-              className="mt-2 flex items-center justify-center gap-1.5 text-sm text-muted hover:text-primary-ink transition-colors"
-            >
-              Abrir en pantalla completa <ArrowSquareOut className="w-3.5 h-3.5" />
-            </a>
+            {active.viewerModel && (
+              <a href={`${VIEWER_BASE}?model=${active.viewerModel}`}
+                 target="_blank" rel="noopener noreferrer"
+                 className="mt-2 flex items-center justify-center gap-1.5 text-sm text-muted hover:text-primary-ink transition-colors">
+                Abrir en pantalla completa <ArrowSquareOut className="w-3.5 h-3.5" />
+              </a>
+            )}
           </div>
 
           <Link to="/pai/aparatos-y-sistemas"
@@ -140,12 +159,12 @@ export function Anatomy3D() {
         </aside>
       </div>
 
-      {/* ── Attribution footer (required by CC BY-SA 4.0) ───── */}
+      {/* ── Attribution footer (CC BY-SA 4.0) ───────────────── */}
       <footer className="border-t border-line bg-surface-2 mt-auto">
         <div className="max-w-[1400px] mx-auto w-full px-4 sm:px-6 py-4 text-xs text-muted leading-relaxed">
-          <span className="font-semibold text-body">Modelo anatómico 3D: Open 3D Model.</span>{' '}
-          Departamentos de Anatomía de las Universidades de Leiden, Utrecht, Maastricht, Leuven,
-          Amsterdam, Nijmegen y Gent. Licencia: Creative Commons CC&nbsp;BY-SA&nbsp;4.0.
+          <span className="font-semibold text-body">Modelos anatómicos: Open 3D Model (CC BY-SA 4.0).</span>{' '}
+          Texturas musculares: CC BY-NC-SA 4.0 (Claudia Krebs et al., University of British Columbia).
+          Departamentos de Anatomía: Leiden, Utrecht, Maastricht, Leuven, Amsterdam, Nijmegen y Gent.
           Basado en BodyParts3D y Z-Anatomy.
         </div>
       </footer>
