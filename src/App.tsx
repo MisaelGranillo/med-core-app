@@ -12,10 +12,12 @@ const named = <T extends Record<string, React.ComponentType<unknown>>>(
 const Home         = named(() => import('./pages/Home'),          'Home')
 const Topic        = named(() => import('./pages/Topic'),         'Topic')
 const Quiz         = named(() => import('./pages/Quiz'),          'Quiz')
+const QuizCatalog  = named(() => import('./pages/QuizCatalog'),   'QuizCatalog')
 const Search       = named(() => import('./pages/Search'),        'Search')
 const Progress     = named(() => import('./pages/Progress'),      'Progress')
-const Anatomy3D    = named(() => import('./pages/Anatomy3D'),     'Anatomy3D')
+const Anatomy      = named(() => import('./pages/Anatomy'),       'Anatomy')
 const Terminologia = named(() => import('./pages/Terminologia'),  'Terminologia')
+const NotFound     = named(() => import('./pages/NotFound'),      'NotFound')
 const Plan         = named(() => import('./pages/Plan'),          'Plan')
 const SubjectDetail= named(() => import('./pages/SubjectDetail'), 'SubjectDetail')
 const Estudio      = named(() => import('./pages/PAI'),           'PAI')
@@ -93,12 +95,16 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/topic/:id" element={<Topic />} />
+              <Route path="/quiz" element={<QuizCatalog />} />
               <Route path="/quiz/:id" element={<Quiz />} />
-              <Route path="/quiz" element={<Progress />} />
               <Route path="/search" element={<Search />} />
               <Route path="/progress" element={<Progress />} />
-              <Route path="/anatomia-3d" element={<Anatomy3D />} />
+              {/* Anatomía — sección núcleo: hub 2D + 3D */}
+              <Route path="/anatomia" element={<Anatomy />} />
+              <Route path="/anatomia-3d" element={<Anatomy />} />
+              {/* MedLex — terminología (deep-linkable) */}
               <Route path="/terminologia" element={<Terminologia />} />
+              <Route path="/terminologia/:termId" element={<Terminologia />} />
               {/* Plan de estudios (capa curricular enchufable) */}
               <Route path="/plan" element={<Plan />} />
               <Route path="/plan/:subjectId" element={<SubjectDetail />} />
@@ -115,7 +121,7 @@ export default function App() {
               {/* Atlas — Estudio Visual */}
               <Route path="/atlas" element={<Atlas />} />
               <Route path="/atlas/:id" element={<AtlasTopic />} />
-              <Route path="*" element={<Home />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </div>

@@ -1,7 +1,7 @@
 /* Terminología Médica · MedLex — Ruta /terminologia */
 
 import { useState, useMemo, useCallback } from 'react'
-import { useSearchParams, Link } from 'react-router-dom'
+import { useSearchParams, useParams, useNavigate, Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   MagnifyingGlass, Cube, X, CheckCircle, XCircle,
@@ -57,7 +57,7 @@ const ORIGEN_COLORS: Record<string, string> = {
 // ──────────────────────────────────────────────────────────────
 // TermCard — tarjeta individual de término
 // ──────────────────────────────────────────────────────────────
-function TermCard({ term }: { term: MedLexTerm }) {
+function TermCard({ term, onOpen }: { term: MedLexTerm; onOpen: (id: string) => void }) {
   const sc = SISTEMA_COLORS[term.sistema] ?? SISTEMA_COLORS.general
   return (
     <motion.div
@@ -66,7 +66,11 @@ function TermCard({ term }: { term: MedLexTerm }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.97 }}
       transition={{ duration: 0.2 }}
-      className="card p-4 hover:shadow-card-hover transition-shadow duration-200"
+      role="link"
+      tabIndex={0}
+      onClick={() => onOpen(term.id)}
+      onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen(term.id) } }}
+      className="card p-4 hover:shadow-card-hover transition-shadow duration-200 cursor-pointer"
     >
       {/* Header: término + tipo + origen */}
       <div className="flex items-start justify-between gap-2 mb-2">
@@ -104,6 +108,7 @@ function TermCard({ term }: { term: MedLexTerm }) {
         </span>
         <Link
           to={`/anatomia-3d?sistema=${term.sistema}`}
+          onClick={e => e.stopPropagation()}
           className="text-[10px] text-zinc-400 hover:text-primary-600 flex items-center gap-1 transition-colors"
         >
           <Cube weight="fill" className="w-3 h-3" />
@@ -256,7 +261,14 @@ function QuizEngine({ terms, onClose }: { terms: MedLexTerm[]; onClose: () => vo
 // ──────────────────────────────────────────────────────────────
 export function Terminologia() {
   const [searchParams] = useSearchParams()
+  const { termId } = useParams<{ termId: string }>()
+  const navigate = useNavigate()
   const initialSistema = searchParams.get('sistema') ?? 'todos'
+
+  // Término activo por enlace profundo (/terminologia/:termId)
+  const activeTerm = termId ? medlexTerms.find(t => t.id === termId) ?? null : null
+  const openTerm = useCallback((id: string) => navigate(`/terminologia/${id}`), [navigate])
+  const closeTerm = useCallback(() => navigate('/terminologia'), [navigate])
 
   const [query,        setQuery]        = useState('')
   const [filterTipo,   setFilterTipo]   = useState<string>('todos')
@@ -428,7 +440,7 @@ export function Terminologia() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             <AnimatePresence mode="popLayout">
               {filtered.map(term => (
-                <TermCard key={term.id} term={term} />
+                <TermCard key={term.id} term={term} onOpen={openTerm} />
               ))}
             </AnimatePresence>
           </div>
@@ -470,6 +482,65 @@ export function Terminologia() {
           </p>
         </div>
       </footer>
+
+      {/* ── Modal de detalle de término (enlace profundo) ────── */}
+      <AnimatePresence>
+        {activeTerm && (() => {
+          const sc = SISTEMA_COLORS[activeTerm.sistema] ?? SISTEMA_COLORS.general
+          return (
+            <>
+              <motion.div
+                initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50"
+                onClick={closeTerm}
+              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 35 }}
+                role="dialog" aria-modal="true"
+                className="fixed inset-x-4 top-24 md:inset-auto md:left-1/2 md:-translate-x-1/2 md:top-24
+                           md:w-full md:max-w-md bg-surface rounded-3xl shadow-2xl z-50 p-6"
+              >
+                <div className="flex items-start justify-between gap-3 mb-4">
+                  <div>
+                    <p className="font-mono font-bold text-2xl text-zinc-900 leading-none mb-2">{activeTerm.termino}</p>
+                    <div className="flex gap-1.5">
+                      <span className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md border ${TIPO_COLORS[activeTerm.tipo]}`}>
+                        {TIPO_LABELS[activeTerm.tipo]}
+                      </span>
+                      <span className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md border ${ORIGEN_COLORS[activeTerm.origen]}`}>
+                        {activeTerm.origen === 'griego' ? 'Griego' : 'Latino'}
+                      </span>
+                      <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded-md border ${sc.bg} ${sc.text} ${sc.border}`}>
+                        {SISTEMA_LABELS[activeTerm.sistema] ?? activeTerm.sistema}
+                      </span>
+                    </div>
+                  </div>
+                  <button onClick={closeTerm} className="text-zinc-400 hover:text-zinc-700 p-1 flex-shrink-0">
+                    <X weight="bold" className="w-5 h-5" />
+                  </button>
+                </div>
+                <p className="text-base font-semibold text-zinc-800 mb-4">{activeTerm.significado}</p>
+                <p className="text-[11px] font-bold uppercase tracking-widest text-zinc-400 mb-2">Ejemplos</p>
+                <div className="flex flex-wrap gap-1.5 mb-5">
+                  {activeTerm.ejemplos.map((ej, i) => (
+                    <span key={i} className="text-xs bg-zinc-100 text-zinc-600 px-2 py-1 rounded-full font-medium">{ej}</span>
+                  ))}
+                </div>
+                <Link
+                  to={`/anatomia-3d?sistema=${activeTerm.sistema}`}
+                  className="btn-primary bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2.5 w-full justify-center"
+                >
+                  <Cube weight="fill" className="w-4 h-4" />
+                  Ver sistema {SISTEMA_LABELS[activeTerm.sistema] ?? activeTerm.sistema} en 3D
+                </Link>
+              </motion.div>
+            </>
+          )
+        })()}
+      </AnimatePresence>
 
       {/* ── Modal de quiz ────────────────────────────────────── */}
       <AnimatePresence>

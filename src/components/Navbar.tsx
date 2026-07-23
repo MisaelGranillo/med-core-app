@@ -3,19 +3,26 @@
 import { useState, useRef, useEffect } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import {
-  MagnifyingGlass, X, House, BookOpen,
+  MagnifyingGlass, X, House, BookOpen, Lightning,
   Cube, BookOpenText, ChartBar, GraduationCap, Brain, Image,
 } from '@phosphor-icons/react'
 
-// ── Definición de ítems de navegación ─────────────────────
+/* Entradas de navegación permanentes. Las cuatro secciones núcleo (Anatomía,
+ * Atlas, MedLex, Quizzes) nunca están anidadas ni condicionadas a que haya un
+ * plan seleccionado. `mobile: true` marca las que aparecen en la barra inferior
+ * móvil. "Buscar" se cubre con el cuadro de búsqueda. */
 const NAV_ITEMS = [
-  { path: '/',            label: 'Inicio',       icon: House,          mobileIcon: House         },
-  { path: '/atlas',       label: 'Atlas',        icon: Image,          mobileIcon: Image         },
-  { path: '/estudio',     label: 'Estudio',       icon: GraduationCap,  mobileIcon: GraduationCap },
-  { path: '/anatomia-3d', label: 'Anatomía 3D',   icon: Cube,           mobileIcon: Cube          },
-  { path: '/terminologia',label: 'Terminología',  icon: BookOpenText,   mobileIcon: BookOpenText  },
-  { path: '/plan',        label: 'Plan',          icon: BookOpen,       mobileIcon: BookOpen      },
+  { path: '/',            label: 'Inicio',       icon: House,          mobile: true  },
+  { path: '/plan',        label: 'Plan',         icon: BookOpen,       mobile: true  },
+  { path: '/anatomia',    label: 'Anatomía',     icon: Cube,           mobile: true  },
+  { path: '/atlas',       label: 'Atlas',        icon: Image,          mobile: true  },
+  { path: '/terminologia',label: 'MedLex',       icon: BookOpenText,   mobile: true  },
+  { path: '/quiz',        label: 'Quizzes',      icon: Lightning,      mobile: true  },
+  { path: '/estudio',     label: 'Estudio',      icon: GraduationCap,  mobile: false },
+  { path: '/progress',    label: 'Progreso',     icon: ChartBar,       mobile: false },
 ] as const
+
+const MOBILE_ITEMS = NAV_ITEMS.filter(n => n.mobile)
 
 export function Navbar() {
   const [query,   setQuery]   = useState('')
@@ -117,7 +124,7 @@ export function Navbar() {
       {/* ── Mobile bottom tab bar ───────────────────────── */}
       <nav className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-surface/95 backdrop-blur-sm border-t border-zinc-200">
         <div className="grid grid-cols-6 h-16 max-w-lg mx-auto">
-          {NAV_ITEMS.map(({ path, label, mobileIcon: Icon }) => {
+          {MOBILE_ITEMS.map(({ path, label, icon: Icon }) => {
             const active = isActive(path)
             return (
               <Link
