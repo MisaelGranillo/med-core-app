@@ -38,3 +38,14 @@ export const findSubject = (subjectId: string) => {
   }
   return null
 }
+
+// Sistemas corporales que tienen visor 3D y terminología MedLex. Un tag de
+// materia que pertenezca a este conjunto genera enlaces cruzados a
+// /anatomia-3d?sistema= y /terminologia?sistema= en el detalle de materia.
+export const SISTEMAS_CORPORALES = [
+  'cardiovascular', 'nervioso', 'respiratorio', 'digestivo',
+  'urinario', 'endocrino', 'musculoesqueletico', 'tegumentario',
+] as const
+
+export const sistemasDeMateria = (tags?: string[]): string[] =>
+  (tags ?? []).filter(t => (SISTEMAS_CORPORALES as readonly string[]).includes(t))

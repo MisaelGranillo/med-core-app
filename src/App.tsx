@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom'
 import { Navbar } from './components/Navbar'
 
 /* Routes are lazy-loaded so each page + its heavy data (topics, quizzes,
@@ -16,13 +16,20 @@ const Search       = named(() => import('./pages/Search'),        'Search')
 const Progress     = named(() => import('./pages/Progress'),      'Progress')
 const Anatomy3D    = named(() => import('./pages/Anatomy3D'),     'Anatomy3D')
 const Terminologia = named(() => import('./pages/Terminologia'),  'Terminologia')
-const Modulos      = named(() => import('./pages/Modulos'),       'Modulos')
-const ModuloDetail = named(() => import('./pages/ModuloDetail'),  'ModuloDetail')
+const Plan         = named(() => import('./pages/Plan'),          'Plan')
+const SubjectDetail= named(() => import('./pages/SubjectDetail'), 'SubjectDetail')
 const PAI          = named(() => import('./pages/PAI'),           'PAI')
 const PAIModulo    = named(() => import('./pages/PAIModulo'),     'PAIModulo')
 const PAITema      = named(() => import('./pages/PAITema'),       'PAITema')
 const Atlas        = named(() => import('./pages/Atlas'),         'Atlas')
 const AtlasTopic   = named(() => import('./pages/AtlasTopic'),    'AtlasTopic')
+
+/* Redirige /modulos/:id (LMGC, id en mayúsculas) al nuevo /plan/:subjectId
+ * (id en minúsculas), preservando los enlaces antiguos. */
+function ModuloRedirect() {
+  const { id } = useParams<{ id: string }>()
+  return <Navigate to={`/plan/${(id ?? '').toLowerCase()}`} replace />
+}
 
 /* Suspense fallback while a route chunk loads */
 function RouteFallback() {
@@ -85,10 +92,13 @@ export default function App() {
               <Route path="/progress" element={<Progress />} />
               <Route path="/anatomia-3d" element={<Anatomy3D />} />
               <Route path="/terminologia" element={<Terminologia />} />
-              {/* LMGC módulos (plan de estudios) */}
-              <Route path="/lmgc" element={<Modulos />} />
-              <Route path="/modulos" element={<Modulos />} />
-              <Route path="/modulos/:id" element={<ModuloDetail />} />
+              {/* Plan de estudios (capa curricular enchufable) */}
+              <Route path="/plan" element={<Plan />} />
+              <Route path="/plan/:subjectId" element={<SubjectDetail />} />
+              {/* Redirecciones legacy → /plan (no romper enlaces existentes) */}
+              <Route path="/lmgc" element={<Navigate to="/plan" replace />} />
+              <Route path="/modulos" element={<Navigate to="/plan" replace />} />
+              <Route path="/modulos/:id" element={<ModuloRedirect />} />
               {/* PAI — Programa de Apoyo al Ingreso */}
               <Route path="/pai" element={<PAI />} />
               <Route path="/pai/:slug" element={<PAIModulo />} />

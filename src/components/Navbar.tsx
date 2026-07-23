@@ -14,7 +14,7 @@ const NAV_ITEMS = [
   { path: '/pai',         label: 'PAI',           icon: GraduationCap,  mobileIcon: GraduationCap },
   { path: '/anatomia-3d', label: 'Anatomía 3D',   icon: Cube,           mobileIcon: Cube          },
   { path: '/terminologia',label: 'Terminología',  icon: BookOpenText,   mobileIcon: BookOpenText  },
-  { path: '/modulos',     label: 'LMGC',          icon: BookOpen,       mobileIcon: BookOpen      },
+  { path: '/plan',        label: 'Plan',          icon: BookOpen,       mobileIcon: BookOpen      },
 ] as const
 
 export function Navbar() {
