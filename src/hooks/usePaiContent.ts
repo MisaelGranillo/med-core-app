@@ -10,8 +10,6 @@ const contentLoaders: Record<string, () => Promise<{ default?: PaiTema[]; [k: st
   'ingles-medico':       () => import('../data/pai-content/ingles').then(m => ({ ...m, default: m.inglesTemas })),
   'matematicas':         () => import('../data/pai-content/matematicas').then(m => ({ ...m, default: m.matematicasTemas })),
   'investigacion':       () => import('../data/pai-content/investigacion').then(m => ({ ...m, default: m.investigacionTemas })),
-  'diversidad':          () => import('../data/pai-content/diversidad').then(m => ({ ...m, default: m.diversidadTemas })),
-  'perfil-de-egreso':    () => import('../data/pai-content/perfil-de-egreso').then(m => ({ ...m, default: m.perfilTemas })),
   'salud-publica':       () => import('../data/pai-content/salud-publica').then(m => ({ ...m, default: m.saludPublicaTemas })),
 }
 

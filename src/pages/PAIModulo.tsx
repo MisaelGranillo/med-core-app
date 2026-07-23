@@ -1,16 +1,15 @@
-/* Página de módulo PAI — ruta /pai/:slug */
+/* Página de guía de estudio — ruta /estudio/:slug */
 
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
-  ArrowLeft, BookOpen, ArrowSquareOut, Cube, ArrowRight,
-  Star, CheckCircle, Clock, Brain,
+  ArrowLeft, BookOpen, Cube, ArrowRight,
+  Star, CheckCircle, Clock,
 } from '@phosphor-icons/react'
 import { paiBySlug, type PaiModulo } from '../data/pai'
 import { usePaiContent } from '../hooks/usePaiContent'
 
 const MODULO_COLORS: Record<string, { accent: string; badge: string; bg: string }> = {
-  'perfil-de-egreso':      { accent: 'text-indigo-600',  badge: 'bg-indigo-100 text-indigo-700',  bg: 'bg-indigo-50'  },
   'salud-publica':         { accent: 'text-cyan-600',    badge: 'bg-cyan-100 text-cyan-700',      bg: 'bg-cyan-50'    },
   'bioquimica':            { accent: 'text-violet-600',  badge: 'bg-violet-100 text-violet-700',  bg: 'bg-violet-50'  },
   'aparatos-y-sistemas':   { accent: 'text-red-600',     badge: 'bg-red-100 text-red-700',        bg: 'bg-red-50'     },
@@ -18,7 +17,6 @@ const MODULO_COLORS: Record<string, { accent: string; badge: string; bg: string 
   'ingles-medico':         { accent: 'text-blue-600',    badge: 'bg-blue-100 text-blue-700',      bg: 'bg-blue-50'    },
   'matematicas':           { accent: 'text-amber-600',   badge: 'bg-amber-100 text-amber-700',    bg: 'bg-amber-50'   },
   'investigacion':         { accent: 'text-zinc-700',    badge: 'bg-zinc-100 text-zinc-700',      bg: 'bg-zinc-50'    },
-  'diversidad':            { accent: 'text-pink-600',    badge: 'bg-pink-100 text-pink-700',      bg: 'bg-pink-50'    },
 }
 
 function getColor(slug: string) {
@@ -30,7 +28,7 @@ export function PAIModulo() {
   const mod: PaiModulo | undefined = slug ? paiBySlug[slug] : undefined
   const { temas, loading } = usePaiContent(slug ?? '')
 
-  if (!mod) return <Navigate to="/pai" replace />
+  if (!mod) return <Navigate to="/estudio" replace />
 
   const c = getColor(mod.slug)
   const isUnderConstruction = mod.status === 'en-construccion'
@@ -40,17 +38,17 @@ export function PAIModulo() {
       {/* Header */}
       <div className="bg-surface border-b border-zinc-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
-          <Link to="/pai"
+          <Link to="/estudio"
             className="inline-flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-800 mb-5 transition-colors">
             <ArrowLeft weight="bold" className="w-4 h-4" />
-            PAI
+            Estudio
           </Link>
 
           <div className="flex items-start gap-4">
             <span className="text-4xl flex-shrink-0">{mod.icono}</span>
             <div className="min-w-0">
               <p className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest mb-1">
-                Módulo {mod.orden} · PAI — LMGC · UNISA
+                Guía de estudio · {mod.uadObjetivo}
               </p>
               <h1 className="text-2xl md:text-3xl font-extrabold text-zinc-900 tracking-tight leading-tight mb-2">
                 {mod.nombre}
@@ -74,11 +72,6 @@ export function PAIModulo() {
                 Ver en Visor Anatómico
               </Link>
             )}
-            <a href={mod.unisa_url} target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-800 transition-colors">
-              <ArrowSquareOut className="w-3.5 h-3.5" />
-              Ver en UNISA
-            </a>
           </div>
         </div>
       </div>
@@ -92,32 +85,12 @@ export function PAIModulo() {
             <div>
               <p className="text-sm font-bold text-amber-800 mb-1">Contenido en construcción</p>
               <p className="text-sm text-amber-700 leading-relaxed">
-                Este módulo aún no tiene apuntes propios del estudiante.
-                El contenido mostrado es una guía general basada en el programa oficial del PAI.
-                Actualización pendiente con apuntes reales del curso.
+                Esta guía aún no tiene apuntes propios. El contenido mostrado es
+                una guía general; actualización pendiente con apuntes del curso.
               </p>
             </div>
           </div>
         )}
-
-        {/* Fuente oficial UNISA */}
-        <div className={`flex gap-3 ${c.bg} border ${c.badge.split(' ')[0].replace('bg', 'border')}/50 rounded-2xl p-5`}>
-          <Brain weight="fill" className={`w-5 h-5 flex-shrink-0 mt-0.5 ${c.accent}`} />
-          <div className="min-w-0">
-            <p className={`text-sm font-bold mb-0.5 ${c.accent}`}>Fuente oficial</p>
-            <p className="text-xs text-zinc-600 mb-2">
-              Este módulo corresponde al PAI de la Universidad de la Salud (UNISA), CDMX.
-            </p>
-            <a
-              href={mod.unisa_url}
-              target="_blank" rel="noopener noreferrer"
-              className={`inline-flex items-center gap-1.5 text-xs font-semibold ${c.accent} hover:underline`}
-            >
-              Ver material oficial en plataforma UNISA
-              <ArrowSquareOut className="w-3.5 h-3.5" />
-            </a>
-          </div>
-        </div>
 
         {/* Lista de temas */}
         {loading ? (
@@ -144,7 +117,7 @@ export function PAIModulo() {
                   transition={{ delay: i * 0.06, duration: 0.3 }}
                 >
                   <Link
-                    to={`/pai/${mod.slug}/${tema.id}`}
+                    to={`/estudio/${mod.slug}/${tema.id}`}
                     className="group card p-5 hover:shadow-card-hover transition-all duration-200 hover:-translate-y-0.5 block"
                   >
                     <div className="flex items-start justify-between gap-3 mb-3">

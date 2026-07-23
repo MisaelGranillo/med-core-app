@@ -1,9 +1,8 @@
-/* Página de tema PAI — ruta /pai/:slug/:temaId */
+/* Página de tema de estudio — ruta /estudio/:slug/:temaId */
 
 import { useParams, Link } from 'react-router-dom'
 import {
-  ArrowLeft, Star, Brain, WarningCircle, BookOpenText, Cube,
-  ArrowSquareOut, ArrowRight,
+  ArrowLeft, Star, Brain, WarningCircle, Cube, ArrowRight,
 } from '@phosphor-icons/react'
 import { paiBySlug } from '../data/pai'
 import { usePaiTema, usePaiContent } from '../hooks/usePaiContent'
@@ -38,7 +37,7 @@ export function PAITema() {
   if (!tema) return (
     <div className="p-8 text-center">
       <p className="text-zinc-400 text-sm">Tema no encontrado.</p>
-      <Link to={`/pai/${slug}`} className="mt-4 inline-block text-primary-ink text-sm hover:underline">
+      <Link to={`/estudio/${slug}`} className="mt-4 inline-block text-primary-ink text-sm hover:underline">
         ← Volver al módulo
       </Link>
     </div>
@@ -49,7 +48,7 @@ export function PAITema() {
       {/* Header */}
       <div className="bg-surface border-b border-zinc-100 sticky top-14 z-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-3">
-          <Link to={`/pai/${slug}`}
+          <Link to={`/estudio/${slug}`}
             className="flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-800 transition-colors flex-shrink-0">
             <ArrowLeft weight="bold" className="w-4 h-4" />
             <span className="hidden sm:block">{mod.nombre.replace('MÓDULO — ', '')}</span>
@@ -70,7 +69,6 @@ export function PAITema() {
                 <div className="flex items-center gap-2 mb-3 text-xs text-zinc-400 bg-zinc-100 rounded-xl px-3 py-2 w-fit">
                   <span>✨</span>
                   <span className="font-semibold">Generado por IA</span>
-                  <span>· Basado en programa oficial del PAI</span>
                 </div>
               )}
               <div className="flex items-center gap-3 mb-2">
@@ -168,20 +166,6 @@ export function PAITema() {
               )
             })()}
 
-            {/* Enlace UNISA */}
-            <a
-              href={mod.unisa_url}
-              target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-3 p-4 card hover:shadow-card-hover transition-all group"
-            >
-              <BookOpenText weight="fill" className="w-5 h-5 text-zinc-400 flex-shrink-0" />
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold text-zinc-700">Ver en plataforma UNISA</p>
-                <p className="text-xs text-zinc-400 truncate">{mod.unisa_url}</p>
-              </div>
-              <ArrowSquareOut className="w-4 h-4 text-zinc-400 group-hover:text-zinc-600 flex-shrink-0" />
-            </a>
-
             {/* Atlas — infografías vinculadas */}
             {atlasLinks.length > 0 && (
               <div className="rounded-lg border border-line bg-blue-50 p-5">
@@ -214,14 +198,14 @@ export function PAITema() {
             {/* Navegación anterior / siguiente */}
             <div className="grid grid-cols-2 gap-3 pt-2">
               {prevTema ? (
-                <Link to={`/pai/${slug}/${prevTema.id}`}
+                <Link to={`/estudio/${slug}/${prevTema.id}`}
                   className="card p-4 hover:shadow-card-hover transition-all group text-left">
                   <p className="text-[10px] text-zinc-400 uppercase font-bold tracking-wider mb-1">← Anterior</p>
                   <p className="text-sm font-semibold text-zinc-700 leading-tight line-clamp-2">{prevTema.titulo}</p>
                 </Link>
               ) : <div />}
               {nextTema ? (
-                <Link to={`/pai/${slug}/${nextTema.id}`}
+                <Link to={`/estudio/${slug}/${nextTema.id}`}
                   className="card p-4 hover:shadow-card-hover transition-all group text-right">
                   <p className="text-[10px] text-zinc-400 uppercase font-bold tracking-wider mb-1">Siguiente →</p>
                   <p className="text-sm font-semibold text-zinc-700 leading-tight line-clamp-2">{nextTema.titulo}</p>
@@ -240,7 +224,7 @@ export function PAITema() {
                 {allTemas.map(t => (
                   <Link
                     key={t.id}
-                    to={`/pai/${slug}/${t.id}`}
+                    to={`/estudio/${slug}/${t.id}`}
                     className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium transition-all
                       ${t.id === temaId
                         ? 'bg-primary-100 text-primary-ink border border-primary-200'

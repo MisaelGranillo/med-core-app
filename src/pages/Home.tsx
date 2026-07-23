@@ -154,7 +154,7 @@ export function Home() {
                 className={`home-module${available ? ' is-available' : ''}`}
                 style={{ borderLeft: `3px solid ${mod.cardAccent}` }}
                 onClick={() => available
-                  ? navigate(`/pai/${mod.slug}`)
+                  ? navigate(`/estudio/${mod.slug}`)
                   : setToast('Contenido en preparación. Disponible próximamente.')}
               >
                 <span style={{

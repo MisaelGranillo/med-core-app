@@ -18,9 +18,9 @@ const Anatomy3D    = named(() => import('./pages/Anatomy3D'),     'Anatomy3D')
 const Terminologia = named(() => import('./pages/Terminologia'),  'Terminologia')
 const Plan         = named(() => import('./pages/Plan'),          'Plan')
 const SubjectDetail= named(() => import('./pages/SubjectDetail'), 'SubjectDetail')
-const PAI          = named(() => import('./pages/PAI'),           'PAI')
-const PAIModulo    = named(() => import('./pages/PAIModulo'),     'PAIModulo')
-const PAITema      = named(() => import('./pages/PAITema'),       'PAITema')
+const Estudio      = named(() => import('./pages/PAI'),           'PAI')
+const EstudioModulo= named(() => import('./pages/PAIModulo'),     'PAIModulo')
+const EstudioTema  = named(() => import('./pages/PAITema'),       'PAITema')
 const Atlas        = named(() => import('./pages/Atlas'),         'Atlas')
 const AtlasTopic   = named(() => import('./pages/AtlasTopic'),    'AtlasTopic')
 
@@ -29,6 +29,13 @@ const AtlasTopic   = named(() => import('./pages/AtlasTopic'),    'AtlasTopic')
 function ModuloRedirect() {
   const { id } = useParams<{ id: string }>()
   return <Navigate to={`/plan/${(id ?? '').toLowerCase()}`} replace />
+}
+
+/* Redirige el antiguo espacio /pai/* al nuevo /estudio/*, preservando la
+ * ruta restante (slug y temaId). */
+function PaiRedirect() {
+  const { '*': rest } = useParams()
+  return <Navigate to={`/estudio${rest ? `/${rest}` : ''}`} replace />
 }
 
 /* Suspense fallback while a route chunk loads */
@@ -99,10 +106,12 @@ export default function App() {
               <Route path="/lmgc" element={<Navigate to="/plan" replace />} />
               <Route path="/modulos" element={<Navigate to="/plan" replace />} />
               <Route path="/modulos/:id" element={<ModuloRedirect />} />
-              {/* PAI — Programa de Apoyo al Ingreso */}
-              <Route path="/pai" element={<PAI />} />
-              <Route path="/pai/:slug" element={<PAIModulo />} />
-              <Route path="/pai/:slug/:temaId" element={<PAITema />} />
+              {/* Estudio — guías de estudio agnósticas a la escuela */}
+              <Route path="/estudio" element={<Estudio />} />
+              <Route path="/estudio/:slug" element={<EstudioModulo />} />
+              <Route path="/estudio/:slug/:temaId" element={<EstudioTema />} />
+              {/* Redirecciones legacy /pai/* → /estudio/* */}
+              <Route path="/pai/*" element={<PaiRedirect />} />
               {/* Atlas — Estudio Visual */}
               <Route path="/atlas" element={<Atlas />} />
               <Route path="/atlas/:id" element={<AtlasTopic />} />

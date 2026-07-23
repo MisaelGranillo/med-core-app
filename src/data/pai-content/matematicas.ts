@@ -1,93 +1,13 @@
 import type { PaiTema } from '../pai-types'
 
+/* Guía de Bioestadística — Probabilidad, Estadística Descriptiva e
+ * Inferencial. Cosechada del módulo PAI de Matemáticas; los temas de
+ * Aritmética y Álgebra se congelaron en el tag v1.0-unisa-lmgc.
+ * Orientada a la materia UAD “Epidemiología y Bioestadística” (3º). */
 export const matematicasTemas: PaiTema[] = [
   {
-    modulo: 'matematicas', id: 'mat-1', orden: 1,
-    titulo: 'Tema 1 — Aritmética',
-    icono: '➕',
-    resumen: 'Rama de las matemáticas cuyo objeto son los números y sus aplicaciones en la resolución de problemas mediante las operaciones elementales: adición, sustracción, multiplicación y división.',
-    bloques: [
-      { t: 'h2', c: 'Sistema Internacional de Unidades (SI)' },
-      { t: 'table', h: ['Prefijo', 'Símbolo', 'Factor'], r: [
-        ['tera', 'T', '10¹²'], ['giga', 'G', '10⁹'], ['mega', 'M', '10⁶'], ['kilo', 'k', '10³'],
-        ['hecto', 'h', '10²'], ['deca', 'da', '10¹'], ['(unidad)', '—', '10⁰'],
-        ['deci', 'd', '10⁻¹'], ['centi', 'c', '10⁻²'], ['mili', 'm', '10⁻³'],
-        ['micro', 'μ', '10⁻⁶'], ['nano', 'n', '10⁻⁹'], ['pico', 'p', '10⁻¹²'],
-      ]},
-      { t: 'note', c: 'Regla de conversión: de unidad mayor a menor → multiplicar. De unidad menor a mayor → dividir. Ejemplo: 16 kg → g = 16 × 10³ = 16,000 g.' },
-      { t: 'h2', c: 'Tipos de números' },
-      { t: 'table', h: ['Tipo', 'Símbolo', 'Descripción', 'Ejemplos'], r: [
-        ['Naturales', 'ℕ', 'Usados para contar', '1, 2, 3, 4...'],
-        ['Enteros', 'ℤ', 'Incluyen negativos y cero', '...-2, -1, 0, 1, 2...'],
-        ['Racionales', 'ℚ', 'Resultado de dividir dos enteros; fracciones', '½, ¾, 0.5'],
-        ['Irracionales', '—', 'No pueden expresarse como fracción', 'π, √2, e'],
-        ['Reales', 'ℝ', 'Incluyen todos los anteriores', 'Todos los anteriores'],
-      ]},
-      { t: 'h2', c: 'Ley de los signos' },
-      { t: 'table', h: ['Operación', 'Resultado'], r: [
-        ['(+) × (+)', '+'], ['(+) × (−)', '−'], ['(−) × (+)', '−'], ['(−) × (−)', '+'],
-      ]},
-      { t: 'h2', c: 'Regla de tres y Porcentaje' },
-      { t: 'formula', f: 'X = (valor₂ × valor₁) / valor base', d: 'Regla de tres directa — multiplicación cruzada.' },
-      { t: 'formula', f: 'x = (100 × parte) / total', d: 'Porcentaje. Ejemplo: ¿Qué porcentaje es 15 de 135? x = (100 × 15) / 135 = 11.11%' },
-    ],
-    mnemotecnia: {
-      items: [
-        'Prefijos SI de mayor a menor: "¡Kilómetros Hay Diariamente! ↓ deci centi mili μ nano pico" → Kilo(10³) · Hecto(10²) · Deca(10¹) · base · deci(10⁻¹) · centi(10⁻²) · mili(10⁻³)',
-        'Ley de signos: "Igual signo = positivo · Diferente signo = negativo"',
-        'Tipos de números: ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ (Naturales ⊂ Enteros ⊂ Racionales ⊂ Reales)',
-      ],
-    },
-    puntosClave: [
-      'Al pasar de unidad mayor a menor, se multiplica (se agrega un cero por cada posición).',
-      'Los números irracionales (π, √2, e) no pueden expresarse como fracción.',
-      'a⁰ = 1 siempre (excepto 0⁰, que es indeterminado). a × 0 = 0 siempre.',
-      'La potencia NO es conmutativa: 2³ ≠ 3². NO es distributiva para suma: (a+b)² ≠ a² + b².',
-    ],
-    errorFrecuente: 'Para ir de miligramos (mg) a gramos (g) debes DIVIDIR entre 1,000 (no multiplicar). Para ir de gramos a miligramos debes multiplicar por 1,000.',
-  },
-  {
-    modulo: 'matematicas', id: 'mat-2', orden: 2,
-    titulo: 'Tema 2 — Álgebra',
-    icono: '🔢',
-    resumen: 'Rama de la matemática que estudia los números de manera general y abstracta mediante expresiones algebraicas: combinaciones de números reales (constantes) y letras (variables).',
-    bloques: [
-      { t: 'h2', c: 'Tipos de expresiones algebraicas' },
-      { t: 'table', h: ['Tipo', 'Definición', 'Ejemplos'], r: [
-        ['Monomio', 'Una expresión con un solo término algebraico', '3x, x, 4xy'],
-        ['Binomio', 'Expresión con dos términos algebraicos', '4y + 5x, ab − zy'],
-        ['Trinomio', 'Expresión con tres términos algebraicos', '4y + 5x + 3xy'],
-        ['Polinomio', 'Expresión con cuatro o más términos algebraicos', '4y + 5x + 6zy + ab'],
-      ]},
-      { t: 'h2', c: 'Operaciones con expresiones algebraicas' },
-      { t: 'list', items: [
-        'SUMA: solo se suman términos con la misma variable y el mismo exponente. 4x + 5x = 9x.',
-        'MULTIPLICACIÓN: misma base → SUMAR exponentes. (x²)(x³) = x⁵.',
-        'DIVISIÓN: misma base → RESTAR exponentes. (x⁵)/(x³) = x².',
-        'POTENCIA: se MULTIPLICA el exponente por la potencia. (x⁴)⁴ = x¹⁶.',
-      ]},
-      { t: 'h2', c: 'Factorización de trinomios (ax² + bx + c, a = 1)' },
-      { t: 'note', c: 'Método: determinar factores de c cuya suma sea b. Ejemplo: x² + 7x + 12 → factores de 12 cuya suma = 7: 3 y 4 → (x + 3)(x + 4).' },
-      { t: 'h2', c: 'Fórmula cuadrática' },
-      { t: 'formula', f: 'x = [−b ± √(b² − 4ac)] / 2a', d: 'Para ax² + bx + c = 0. Discriminante: D > 0 → 2 soluciones reales · D = 0 → 1 solución · D < 0 → sin soluciones reales.' },
-    ],
-    mnemotecnia: {
-      items: [
-        'Tipos de expresiones: "Mono-Bi-Tri-Poli" (1-2-3-4+ términos)',
-        'Fórmula cuadrática: "Negativo b, más-menos raíz, de b cuadrado menos cuatro ac; todo sobre dos a"',
-        'Factorización de trinomio: busca dos números cuyo PRODUCTO = c y cuya SUMA = b',
-      ],
-    },
-    puntosClave: [
-      'Solo se pueden sumar términos semejantes (misma variable, mismo exponente).',
-      'Aplicar distribución antes de reducir: −2(x − 5) = −2x + 10. El signo negativo afecta TODOS los términos del paréntesis.',
-      'Discriminante b² − 4ac: > 0 → dos soluciones reales; = 0 → una solución; < 0 → sin soluciones reales.',
-    ],
-    errorFrecuente: 'En la fórmula cuadrática, dividir solo parte del numerador entre 2a. CORRECTO: [−b ± √(b²−4ac)] / 2a — toda la expresión sobre 2a.',
-  },
-  {
-    modulo: 'matematicas', id: 'mat-3', orden: 3,
-    titulo: 'Tema 3 — Probabilidad',
+    modulo: 'matematicas', id: 'mat-3', orden: 1,
+    titulo: 'Tema 1 — Probabilidad',
     icono: '🎲',
     resumen: 'La probabilidad es una medida numérica que representa la posibilidad de que ocurra un evento. Se expresa entre 0 (imposible) y 1 (certeza). La suma de todas las probabilidades del espacio muestral = 1.',
     bloques: [
@@ -125,8 +45,8 @@ export const matematicasTemas: PaiTema[] = [
     errorFrecuente: 'Aplicar la fórmula de adición simple cuando los eventos tienen intersección. Si los eventos pueden ocurrir simultáneamente, SIEMPRE se resta P(A∩B).',
   },
   {
-    modulo: 'matematicas', id: 'mat-4', orden: 4,
-    titulo: 'Tema 4 — Estadística Descriptiva',
+    modulo: 'matematicas', id: 'mat-4', orden: 2,
+    titulo: 'Tema 2 — Estadística Descriptiva',
     icono: '📊',
     resumen: 'La estadística descriptiva se limita a la descripción de un conjunto de datos SIN formular generalizaciones sobre la población. N = población, n = muestra. Parámetros: μ, σ. Estadísticos: x̄, s.',
     bloques: [
@@ -166,8 +86,8 @@ export const matematicasTemas: PaiTema[] = [
     errorFrecuente: 'Olvidar ordenar los datos antes de calcular la mediana. También: confundir varianza (s², unidades al cuadrado) con desviación estándar (s, unidades originales).',
   },
   {
-    modulo: 'matematicas', id: 'mat-5', orden: 5,
-    titulo: 'Tema 5 — Estadística Inferencial',
+    modulo: 'matematicas', id: 'mat-5', orden: 3,
+    titulo: 'Tema 3 — Estadística Inferencial',
     icono: '🔬',
     resumen: 'La estadística inferencial formula conclusiones sobre una POBLACIÓN basadas en una MUESTRA. Involucra pruebas de hipótesis, estimación de parámetros y formulación de predicciones.',
     bloques: [

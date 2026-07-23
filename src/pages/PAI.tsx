@@ -1,12 +1,12 @@
-/* Página de inicio PAI — ruta /pai */
+/* Página de inicio Estudio — ruta /estudio */
 
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
-  BookOpen, CheckCircle, Clock, ArrowRight, ArrowSquareOut,
+  BookOpen, CheckCircle, Clock, ArrowRight,
   Cube, Sparkle,
 } from '@phosphor-icons/react'
-import { paiModulos, UNISA_CURSO_URL, type PaiStatus } from '../data/pai'
+import { paiModulos, type PaiStatus } from '../data/pai'
 
 const STATUS_STYLES: Record<PaiStatus, { label: string; bg: string; text: string; dot: string }> = {
   'disponible':      { label: 'Disponible',       bg: 'bg-primary-100',  text: 'text-primary-700',  dot: 'bg-primary-500' },
@@ -27,33 +27,25 @@ export function PAI() {
             <div className="inline-flex items-center gap-2 bg-primary-50 border border-primary-200 text-primary-700
                             text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
               <Sparkle weight="fill" className="w-3.5 h-3.5" />
-              PAI · Programa de Apoyo al Ingreso — LMGC, UNISA
+              Estudio · Guías por tema
             </div>
             <h1 className="text-3xl md:text-4xl font-extrabold text-zinc-900 tracking-tighter leading-tight mb-3">
-              Módulos PAI
+              Guías de Estudio
             </h1>
             <p className="text-zinc-500 text-base leading-relaxed mb-6">
-              9 módulos del programa oficial de ingreso a la Licenciatura en Medicina
-              General y Comunitaria de la Universidad de la Salud, CDMX.
-              Apuntes organizados con mnemotecnias, tablas y puntos clave para examen.
+              Guías de estudio agnósticas a la escuela: bioquímica, aparatos y sistemas,
+              salud pública, inglés médico, bioestadística e investigación.
+              Apuntes organizados con mnemotecnias, tablas y puntos clave.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <div className="flex items-center gap-1.5 text-sm text-zinc-600">
                 <CheckCircle weight="fill" className="w-4 h-4 text-primary-500" />
-                <span><strong className="text-zinc-900">{disponibles}</strong> módulos disponibles</span>
+                <span><strong className="text-zinc-900">{disponibles}</strong> guías disponibles</span>
               </div>
               <div className="flex items-center gap-1.5 text-sm text-zinc-600">
                 <Clock weight="fill" className="w-4 h-4 text-amber-500" />
                 <span><strong className="text-zinc-900">{construccion}</strong> en construcción</span>
               </div>
-              <a
-                href={UNISA_CURSO_URL}
-                target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-800 transition-colors"
-              >
-                <ArrowSquareOut className="w-3.5 h-3.5" />
-                Ver en plataforma UNISA
-              </a>
             </div>
           </div>
         </div>
@@ -75,7 +67,7 @@ export function PAI() {
               >
                 {isAvailable ? (
                   <Link
-                    to={`/pai/${mod.slug}`}
+                    to={`/estudio/${mod.slug}`}
                     className="group block card p-6 hover:shadow-card-hover transition-all duration-200 hover:-translate-y-0.5 h-full"
                   >
                     <ModuloCard mod={mod} statusStyle={s} />
@@ -112,9 +104,9 @@ function ModuloCard({
         </span>
       </div>
 
-      {/* Número de orden (no en UI prominente, solo orientativo) */}
+      {/* Materia UAD orientativa */}
       <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-1">
-        Módulo {mod.orden} de 9
+        {mod.uadObjetivo}
       </p>
 
       {/* Nombre oficial */}

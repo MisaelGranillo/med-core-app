@@ -11,7 +11,7 @@ import {
 const NAV_ITEMS = [
   { path: '/',            label: 'Inicio',       icon: House,          mobileIcon: House         },
   { path: '/atlas',       label: 'Atlas',        icon: Image,          mobileIcon: Image         },
-  { path: '/pai',         label: 'PAI',           icon: GraduationCap,  mobileIcon: GraduationCap },
+  { path: '/estudio',     label: 'Estudio',       icon: GraduationCap,  mobileIcon: GraduationCap },
   { path: '/anatomia-3d', label: 'Anatomía 3D',   icon: Cube,           mobileIcon: Cube          },
   { path: '/terminologia',label: 'Terminología',  icon: BookOpenText,   mobileIcon: BookOpenText  },
   { path: '/plan',        label: 'Plan',          icon: BookOpen,       mobileIcon: BookOpen      },
