@@ -10,34 +10,38 @@ import type { Icon } from '@phosphor-icons/react'
 import { paiModulos } from '../data/pai'
 import { medlexTerms } from '../data/medlex-terms'
 import { hotspots } from '../data/anatomyHotspots'
-import { lmgcModules } from '../data/lmgc-modules'
+import { getActivePlan } from '../data/plans'
 import { Toast } from '../components/Toast'
 
-/* ── Stats from real data (Section E) ──────────────────────── */
+/* ── Stats from real data ──────────────────────────────────── */
 const TERMS_COUNT     = medlexTerms.length
 const HOTSPOTS_COUNT  = hotspots.length
-const PAI_TOTAL       = paiModulos.length
-const PAI_DISPONIBLES = paiModulos.filter(m => m.status === 'disponible').length
-const LMGC_COUNT      = lmgcModules.length
+const GUIAS_TOTAL     = paiModulos.length
+const GUIAS_DISPON    = paiModulos.filter(m => m.status === 'disponible').length
+
+// Hero derivado del plan activo (capa curricular enchufable). Las secciones
+// núcleo funcionan sin plan; el hero solo lo usa para etiquetar el plan activo.
+const ACTIVE_PLAN     = getActivePlan()
+const PLAN_MATERIAS   = ACTIVE_PLAN.periods.reduce((n, p) => n + p.subjects.length, 0)
 
 const TOOLS: { name: string; desc: string; route: string; icon: Icon }[] = [
-  { name: 'Anatomía 3D',  desc: 'Visor Open 3D Model',     route: '/anatomia-3d',  icon: Heart },
+  { name: 'Anatomía',     desc: 'Visor 2D + 3D',                  route: '/anatomia',     icon: Heart },
   { name: 'Terminología', desc: `MedLex · ${TERMS_COUNT} términos`, route: '/terminologia', icon: BookOpen },
-  { name: 'Quiz',         desc: 'Exámenes de práctica',    route: '/quiz',         icon: PencilSimple },
-  { name: 'LMGC',         desc: `${LMGC_COUNT} módulos`,    route: '/lmgc',         icon: FirstAid },
+  { name: 'Quizzes',      desc: 'Exámenes de práctica',            route: '/quiz',         icon: PencilSimple },
+  { name: 'Plan',         desc: `${ACTIVE_PLAN.schoolShort} · ${PLAN_MATERIAS} materias`, route: '/plan', icon: FirstAid },
 ]
 
 const HERO_PILLS = [
-  { text: 'PAI — Activo', active: true },
-  { text: 'LMGC — Año 2', active: false },
-  { text: 'MedLex',       active: false },
+  { text: `${ACTIVE_PLAN.schoolShort} · ${ACTIVE_PLAN.degree}`, active: true },
+  { text: 'Anatomía 2D/3D', active: false },
+  { text: 'MedLex',         active: false },
 ]
 
 const HERO_STATS = [
-  { value: `+${TERMS_COUNT}`,                 label: 'Términos' },
-  { value: `${PAI_DISPONIBLES}/${PAI_TOTAL}`, label: 'PAI' },
-  { value: `${HOTSPOTS_COUNT}`,               label: 'Estructuras' },
-  { value: `${LMGC_COUNT}`,                   label: 'Módulos' },
+  { value: `+${TERMS_COUNT}`,     label: 'Términos'    },
+  { value: `${HOTSPOTS_COUNT}`,   label: 'Estructuras' },
+  { value: `${GUIAS_DISPON}`,     label: 'Guías'       },
+  { value: `${PLAN_MATERIAS}`,    label: 'Materias'    },
 ]
 
 export function Home() {
@@ -65,7 +69,7 @@ export function Home() {
             fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '2px',
             textTransform: 'uppercase', color: '#93C5FD', marginBottom: 10,
           }}>
-            Universidad de la Salud · 2026
+            Plataforma de estudio médico
           </p>
 
           <h1 className="home-title" style={{
@@ -76,7 +80,7 @@ export function Home() {
           </h1>
 
           <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)', margin: '4px 0 18px' }}>
-            Licenciatura en Medicina General
+            Plan activo: {ACTIVE_PLAN.school} · {ACTIVE_PLAN.degree}
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 22 }}>
@@ -122,8 +126,8 @@ export function Home() {
             display: 'flex', flexDirection: 'column', gap: 10,
           }}
         >
-          <ProgressRow label="PAI"  fill={PAI_DISPONIBLES / PAI_TOTAL} color="var(--color-accent)"       value={`${PAI_DISPONIBLES} de ${PAI_TOTAL} módulos`} />
-          <ProgressRow label="LMGC" fill={0.20}                        color="var(--color-progress-lmgc)" value="Año 2 · 7 sistemas" />
+          <ProgressRow label="Estudio" fill={GUIAS_DISPON / GUIAS_TOTAL}      color="var(--color-accent)"       value={`${GUIAS_DISPON} de ${GUIAS_TOTAL} guías`} />
+          <ProgressRow label="Plan"    fill={1 / ACTIVE_PLAN.periods.length} color="var(--color-progress-lmgc)" value={`${ACTIVE_PLAN.schoolShort} · ${ACTIVE_PLAN.periods.length} ${ACTIVE_PLAN.periodLabel.toLowerCase()}s`} />
         </section>
 
         {/* ── Tools ─────────────────────────────────────────── */}
@@ -143,8 +147,8 @@ export function Home() {
           })}
         </div>
 
-        {/* ── PAI module cards ──────────────────────────────── */}
-        <SectionLabel>PAI · Módulos</SectionLabel>
+        {/* ── Guías de estudio ─────────────────────────────── */}
+        <SectionLabel>Estudio · Guías</SectionLabel>
         <div className="home-module-grid">
           {paiModulos.map(mod => {
             const available = mod.status === 'disponible'
@@ -185,7 +189,7 @@ export function Home() {
           fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--color-text-muted)',
           textAlign: 'center', marginTop: 24, paddingBottom: 24, lineHeight: 1.8,
         }}>
-          Misael Granillo · MedCore · Universidad de la Salud CDMX<br />
+          Misael Granillo · MedCore<br />
           Terminología: MedLex (CC BY-SA 4.0) · Modelo anatómico: Open 3D Model (CC BY-SA 4.0)
         </footer>
       </div>
