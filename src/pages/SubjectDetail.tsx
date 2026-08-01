@@ -10,6 +10,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
   ArrowLeft, Cube, BookOpenText, Lightning, BookOpen, Flask,
+  GraduationCap, Clock, Books, LinkSimple, ListChecks, Target,
 } from '@phosphor-icons/react'
 import { findSubject, sistemasDeMateria } from '../data/plans'
 import { medlexTerms, SISTEMA_LABELS, SISTEMA_COLORS } from '../data/medlex-terms'
@@ -26,6 +27,7 @@ export function SubjectDetail() {
   if (!found) return null
 
   const { plan, period, subject } = found
+  const content = subject.content
   const sistemas = sistemasDeMateria(subject.tags)
   const primarySistema = sistemas[0] ?? null
 
@@ -64,6 +66,11 @@ export function SubjectDetail() {
             <span className="text-[10px] font-bold uppercase tracking-wider text-white/60 border border-white/20 px-2.5 py-1 rounded-full">
               {plan.school}
             </span>
+            {subject.code && (
+              <span className="text-[10px] font-bold font-mono tracking-wider text-white/90 bg-white/10 px-2.5 py-1 rounded-full">
+                {subject.code}
+              </span>
+            )}
             {subject.hasLab && (
               <span className="flex items-center gap-1 text-[10px] font-bold bg-teal-400 text-teal-900 px-2.5 py-1 rounded-full">
                 <Flask weight="fill" className="w-3 h-3" /> Laboratorio
@@ -169,28 +176,182 @@ export function SubjectDetail() {
           </motion.section>
         )}
 
-        {/* Secciones placeholder */}
-        {[
-          { icon: <BookOpen weight="fill" className="w-5 h-5 text-zinc-400" />, title: 'Contenido teórico', msg: 'Notas y apuntes de la materia próximamente. El contenido se puede añadir en formato Markdown.' },
-          { icon: <Lightning weight="fill" className="w-5 h-5 text-zinc-400" />, title: 'Evaluación', msg: 'Quiz de autoevaluación de la materia. Próximamente disponible.' },
-        ].map((sec, i) => (
-          <motion.section
-            key={sec.title}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.25 + i * 0.05 }}
-            className="card p-6"
-          >
-            <div className="flex items-center gap-2 mb-3">
-              {sec.icon}
-              <h2 className="font-bold text-zinc-900">{sec.title}</h2>
-            </div>
-            <div className="rounded-xl bg-zinc-50 border-2 border-dashed border-zinc-200 p-6 text-center">
-              <p className="text-sm text-zinc-400">{sec.msg}</p>
-            </div>
-          </motion.section>
-        ))}
+        {content ? (
+          <>
+            {/* ── Ficha oficial ─────────────────────────────── */}
+            {(content.credits != null || content.teacherHours != null || content.area || content.modality) && (
+              <motion.section
+                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.22 }}
+                className="card p-6"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <GraduationCap weight="fill" className="w-5 h-5 text-primary-600" />
+                  <h2 className="font-bold text-zinc-900">Ficha oficial UAD</h2>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {content.credits != null && (
+                    <FichaStat label="Créditos" value={String(content.credits)} />
+                  )}
+                  {content.teacherHours != null && (
+                    <FichaStat label="Horas docente" value={String(content.teacherHours)} />
+                  )}
+                  {content.independentHours != null && (
+                    <FichaStat label="Horas indep." value={String(content.independentHours)} />
+                  )}
+                  {content.area && <FichaStat label="Área" value={content.area} />}
+                </div>
+                {content.modality && (
+                  <p className="mt-4 flex items-center gap-1.5 text-xs text-zinc-500">
+                    <Clock weight="fill" className="w-3.5 h-3.5" /> {content.modality}
+                  </p>
+                )}
+              </motion.section>
+            )}
+
+            {/* ── Descripción + competencia ─────────────────── */}
+            {(content.description || content.competencia) && (
+              <motion.section
+                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.26 }}
+                className="card p-6 space-y-4"
+              >
+                <div className="flex items-center gap-2">
+                  <BookOpen weight="fill" className="w-5 h-5 text-zinc-500" />
+                  <h2 className="font-bold text-zinc-900">Descripción</h2>
+                </div>
+                {content.description && (
+                  <p className="text-sm text-zinc-600 leading-relaxed">{content.description}</p>
+                )}
+                {content.competencia && (
+                  <div className="rounded-xl bg-primary-50 border border-primary-100 p-4">
+                    <p className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-primary-700 mb-1.5">
+                      <Target weight="fill" className="w-3.5 h-3.5" /> Unidad de competencia
+                    </p>
+                    <p className="text-sm text-primary-900/80 leading-relaxed">{content.competencia}</p>
+                  </div>
+                )}
+              </motion.section>
+            )}
+
+            {/* ── Temario / contenido temático ──────────────── */}
+            {content.temario && content.temario.length > 0 && (
+              <motion.section
+                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
+                className="card p-6"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <ListChecks weight="fill" className="w-5 h-5 text-indigo-600" />
+                  <h2 className="font-bold text-zinc-900">Contenido temático</h2>
+                </div>
+                <div className="space-y-4">
+                  {content.temario.map(unit => (
+                    <div key={unit.title} className="border-l-2 border-indigo-200 pl-4">
+                      <p className="font-semibold text-sm text-zinc-900">{unit.title}</p>
+                      {unit.items.length > 0 && (
+                        <ul className="mt-1.5 space-y-1">
+                          {unit.items.map(item => (
+                            <li key={item} className="text-xs text-zinc-500 flex gap-2">
+                              <span className="text-indigo-300 mt-0.5">·</span>
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </motion.section>
+            )}
+
+            {/* ── Bibliografía ──────────────────────────────── */}
+            {content.bibliografia && content.bibliografia.length > 0 && (
+              <motion.section
+                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.34 }}
+                className="card p-6"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <Books weight="fill" className="w-5 h-5 text-amber-600" />
+                  <h2 className="font-bold text-zinc-900">Bibliografía</h2>
+                </div>
+                <ul className="space-y-2.5">
+                  {content.bibliografia.map(ref => (
+                    <li key={`${ref.title}-${ref.author ?? ''}`} className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 text-sm">
+                      {ref.tipo && (
+                        <span className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${ref.tipo === 'básica' ? 'bg-amber-100 text-amber-700' : 'bg-zinc-100 text-zinc-500'}`}>
+                          {ref.tipo}
+                        </span>
+                      )}
+                      <span className="font-semibold text-zinc-800">{ref.title}</span>
+                      {ref.author && <span className="text-zinc-500 text-xs">· {ref.author}</span>}
+                      {(ref.editorial || ref.year) && (
+                        <span className="text-zinc-400 text-xs">
+                          {[ref.editorial, ref.year].filter(Boolean).join(', ')}
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </motion.section>
+            )}
+
+            {/* ── Recursos digitales ────────────────────────── */}
+            {content.recursos && content.recursos.length > 0 && (
+              <motion.section
+                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.38 }}
+                className="card p-6"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <LinkSimple weight="bold" className="w-5 h-5 text-teal-600" />
+                  <h2 className="font-bold text-zinc-900">Recursos digitales</h2>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {content.recursos.map(r => (
+                    <a
+                      key={r.url}
+                      href={r.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-semibold text-teal-700 bg-teal-50 border border-teal-100 px-3 py-1.5 rounded-full hover:bg-teal-100 transition-colors"
+                    >
+                      {r.label}
+                    </a>
+                  ))}
+                </div>
+              </motion.section>
+            )}
+          </>
+        ) : (
+          /* Secciones placeholder — materias sin ficha cargada aún */
+          [
+            { icon: <BookOpen weight="fill" className="w-5 h-5 text-zinc-400" />, title: 'Contenido teórico', msg: 'Ficha y temario oficiales de la materia próximamente.' },
+            { icon: <Lightning weight="fill" className="w-5 h-5 text-zinc-400" />, title: 'Evaluación', msg: 'Quiz de autoevaluación de la materia. Próximamente disponible.' },
+          ].map((sec, i) => (
+            <motion.section
+              key={sec.title}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.25 + i * 0.05 }}
+              className="card p-6"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                {sec.icon}
+                <h2 className="font-bold text-zinc-900">{sec.title}</h2>
+              </div>
+              <div className="rounded-xl bg-zinc-50 border-2 border-dashed border-zinc-200 p-6 text-center">
+                <p className="text-sm text-zinc-400">{sec.msg}</p>
+              </div>
+            </motion.section>
+          ))
+        )}
       </div>
+    </div>
+  )
+}
+
+function FichaStat({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-xl bg-zinc-50 border border-zinc-100 px-3 py-2.5">
+      <p className="text-[10px] font-bold uppercase tracking-wider text-zinc-400">{label}</p>
+      <p className="text-sm font-bold text-zinc-900 mt-0.5">{value}</p>
     </div>
   )
 }

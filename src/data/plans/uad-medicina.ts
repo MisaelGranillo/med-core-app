@@ -3,19 +3,25 @@
  * Modalidad Mixta-Virtual · RVOE Federal 20261019 · 14 periodos / 7 años
  *
  * ┌─ SOURCE NOTE ─────────────────────────────────────────────────────────┐
- * │ Las etiquetas y nombres se transcriben VERBATIM de la hoja oficial,     │
- * │ incluidas sus inconsistencias. No corregir en silencio:                 │
+ * │ Fuente autoritativa: "ANEXO 2 · MAPA CURRICULAR · LICENCIATURA EN       │
+ * │ MEDICINA GENERAL · MODALIDAD MIXTA" (documento oficial UAD).            │
+ * │ Las CLAVES (`code`) y los nombres se transcriben de ese mapa.           │
  * │                                                                         │
- * │  • El periodo 10 se rotula "Décimo Cuatrimestre"; todos los demás son   │
- * │    "Semestre". Se conserva tal cual.                                     │
- * │  • La numeración de Servicio Social está invertida en la fuente:        │
- * │    periodo 13 = "Servicio Social II", periodo 14 = "Servicio Social I". │
- * │  • La fuente contiene los errores tipográficos                          │
- * │    "Seciones Anatomoclinicas" (periodo 10) y "Terceavo" (periodo 13).   │
- * │    Se transcriben sin corregir.                                          │
+ * │ El mapa oficial CORRIGE la hoja preliminar usada antes, que traía       │
+ * │ erratas. Se alinearon con el documento oficial:                         │
+ * │  • periodo 10: "Décimo Semestre" (no "Cuatrimestre").                    │
+ * │  • "Sesiones Anatomoclínicas IV" (no "Seciones Anatomoclinicas").        │
+ * │  • periodo 13: "Treceavo Semestre" (no "Terceavo").                      │
+ * │  • "Traumatología", "Imagenología", "Ginecología", "Nosología"          │
+ * │    (el mapa oficial no les añade el sufijo "I" / "y Ortopedia").         │
+ * │  • Servicio Social: el mapa no numera los periodos 13/14.                │
  * │                                                                         │
- * │ Los `id` (slugs) son estables y NO deben cambiar aunque se corrija un   │
- * │ nombre; sirven como clave de enlace profundo.                           │
+ * │ Las claves del periodo 10 (PE010062…) se transcriben VERBATIM del mapa. │
+ * │ Los `id` (slugs) son estables y NO cambian aunque se corrija un nombre; │
+ * │ sirven como clave de enlace profundo.                                    │
+ * │                                                                         │
+ * │ Fichas y temario (`content`) de Anatomía I e Inglés Médico I tomados de │
+ * │ sus Programas Académicos oficiales UAD (Campus Virtual).                 │
  * └─────────────────────────────────────────────────────────────────────────┘
  */
 
@@ -35,128 +41,259 @@ export const uadMedicina: Plan = {
       index: 1,
       label: 'Primer Semestre',
       subjects: [
-        { id: 'anatomia-humana-diseccion-1', name: 'Anatomía Humana y Disección I', hasLab: true, tags: ['anatomia'] },
-        { id: 'bioquimica-1', name: 'Bioquímica I y su laboratorio', hasLab: true, tags: ['bioquimica'] },
-        { id: 'genetica-basica', name: 'Genética Básica' },
-        { id: 'embriologia-1', name: 'Embriología I', tags: ['anatomia'] },
-        { id: 'ingles-medico-1', name: 'Inglés Médico I', tags: ['ingles'] },
-        { id: 'histologia-1', name: 'Histología I y su Laboratorio', hasLab: true },
-        { id: 'medicina-humanistica', name: 'Medicina Humanística' },
+        {
+          id: 'anatomia-humana-diseccion-1',
+          name: 'Anatomía Humana y Disección I',
+          code: 'AN01001',
+          hasLab: true,
+          tags: ['anatomia'],
+          content: {
+            area: 'Ciencias Básicas',
+            credits: 13,
+            teacherHours: 128,
+            independentHours: 80,
+            modality: 'Virtual · Teórico-Práctico',
+            description:
+              'El alumno aprende la conformación del cuerpo humano mediante el estudio teórico-práctico, la integración de los órganos en aparatos y sistemas y sus relaciones entre sí. La disección en cadáver permite el conocimiento directo y la elaboración de correlaciones anatomo-clínicas y terapéuticas. Escenario educativo: plataformas de videoconferencia y Mesa Anatomage.',
+            competencia:
+              'El alumno reconoce, traslada y relaciona la estructura de cada uno de los huesos y músculos del cuerpo, en un ámbito de compromiso e interés cognitivo, para valorar la función y participar en la elaboración de diagnósticos y tratamientos de calidad.',
+            temario: [
+              {
+                title: '1. Conceptos generales de anatomía',
+                items: [
+                  'Métodos de estudio de la anatomía',
+                  'Terminología anatómica y médica',
+                ],
+              },
+              {
+                title: '2. Planos anatómicos del cuerpo humano',
+                items: [
+                  'Posición y planos anatómicos',
+                  'Términos de relación y comparación',
+                  'Términos de lateralidad y movimiento',
+                  'Variaciones anatómicas',
+                ],
+              },
+              {
+                title: '3. Osteología',
+                items: [
+                  'Desarrollo y crecimiento de los huesos; constitución del esqueleto',
+                  'Huesos de la cabeza: cráneo y cara; hueso hioides',
+                  'Columna vertebral: cervicales, dorsales, torácicas, sacras y coccígeas',
+                  'Esqueleto del tórax: esternón y costillas',
+                  'Esqueleto del miembro superior: hombro, brazo y mano',
+                  'Esqueleto del miembro inferior: pelvis, fémur, tibia, peroné y pie',
+                ],
+              },
+              {
+                title: '4. Artrología',
+                items: [
+                  'Tipos de articulaciones',
+                  'Articulaciones de la cabeza y la columna vertebral',
+                  'Articulaciones del tórax',
+                  'Articulaciones del miembro superior e inferior',
+                ],
+              },
+              {
+                title: '5. Miología',
+                items: [
+                  'Tipos de músculos, inserciones y anexos',
+                  'Músculos de la cabeza, cuello y región hioidea',
+                  'Músculos superficiales cervicales, dorsales y lumbares',
+                  'Músculos del tórax y diafragma',
+                  'Músculos del abdomen, región inguinal y pelvis',
+                  'Músculos del miembro superior e inferior',
+                ],
+              },
+            ],
+            bibliografia: [
+              { title: 'Anatomía con orientación clínica', author: 'Moore', editorial: 'Lippincott', year: '2015', tipo: 'básica' },
+              { title: 'Fundamentos de anatomía con orientación clínica', author: 'Moore', year: '2016', tipo: 'básica' },
+              { title: 'Serie RT Anatomía', author: 'Chung, Kyung Won', editorial: 'Lippincott', year: '2016', tipo: 'básica' },
+              { title: 'Anatomía Clínica', author: 'Pró, Eduardo', editorial: 'Médica Panamericana', year: '2014', tipo: 'básica' },
+              { title: 'Anatomía Humana', author: 'Quiroz Gutiérrez', editorial: 'Porrúa', year: '2003', tipo: 'complementaria' },
+              { title: 'Anatomía Humana', author: 'Latarjet · Ruiz', editorial: 'Médica Panamericana', year: '2009', tipo: 'complementaria' },
+              { title: 'Sobotta · Atlas de Anatomía Humana', author: 'Putz · Pabst', editorial: 'Médica Panamericana', year: '2009', tipo: 'complementaria' },
+              { title: 'Atlas de Anatomía Humana', author: 'Netter', editorial: 'Elsevier Masson', year: '2007', tipo: 'complementaria' },
+              { title: 'Anatomía clínica para estudiantes de medicina', author: 'Snell', editorial: 'McGraw Hill', year: '2002', tipo: 'complementaria' },
+            ],
+            recursos: [
+              { label: 'Acland Anatomy', url: 'https://www.aclandanatomy.com/' },
+              { label: 'Bates Visual Guide', url: 'https://batesvisualguide.com/' },
+              { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },
+              { label: '5-Minute Consult', url: 'https://5minuteconsult.com' },
+            ],
+          },
+        },
+        { id: 'bioquimica-1', name: 'Bioquímica I y su laboratorio', code: 'BQ01002', hasLab: true, tags: ['bioquimica'] },
+        { id: 'genetica-basica', name: 'Genética Básica', code: 'GB01003' },
+        { id: 'embriologia-1', name: 'Embriología I', code: 'EM01004', tags: ['anatomia'] },
+        {
+          id: 'ingles-medico-1',
+          name: 'Inglés Médico I',
+          code: 'IN01005',
+          tags: ['ingles'],
+          content: {
+            area: 'Ciencias Sociomédicas',
+            credits: 4,
+            teacherHours: 32,
+            independentHours: 32,
+            modality: 'Virtual',
+            description:
+              'Introduce al estudiante en el idioma inglés aplicado a la medicina mediante el estudio, aplicación y discusión de artículos médicos actuales vinculados a las asignaturas del plan, especialmente las que cursa. Escenario: videoconferencias y plataformas virtuales propias de la UAD. Seriación subsecuente: Inglés Médico II.',
+            competencia:
+              'Conoce la importancia del idioma inglés a partir del manejo de información médica en ese idioma y obtiene las bases para el estudio posterior de información médica en inglés, con una actitud de responsabilidad, respeto y empatía.',
+            temario: [
+              { title: 'I. Introducción al idioma inglés en medicina', items: [] },
+              {
+                title: 'II. Terminología griega y latina útil en el lenguaje médico',
+                items: ['Introducción', 'Reglas para la formación de plurales'],
+              },
+              {
+                title: 'III. Gramática práctica utilizada en medicina',
+                items: [
+                  'Tiempos verbales · verbos modales',
+                  'Estructuras condicionales · voz pasiva',
+                  'Estilo indirecto · preguntas · infinitivo / sufijo –ing',
+                  'Artículos · orden de palabras · proposiciones subordinadas',
+                  'Adjetivos · preposiciones',
+                ],
+              },
+              {
+                title: 'IV. Acrónimos y abreviaturas',
+                items: ['Oraciones comunes con abreviaturas', 'Listados de abreviaturas'],
+              },
+              { title: 'V. Errores frecuentes al hablar inglés en medicina', items: ['Denominaciones incorrectas y falsos cognados'] },
+              { title: 'VI. Bibliografía científica', items: [] },
+            ],
+            bibliografia: [
+              { title: 'Colección hemerográfica UAD-UD-UDS en plataforma OVID® (190 recursos)', year: '2017', tipo: 'básica' },
+            ],
+            recursos: [
+              { label: 'Acland Anatomy', url: 'https://www.aclandanatomy.com/' },
+              { label: 'Bates Visual Guide', url: 'https://batesvisualguide.com/' },
+              { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },
+              { label: '5-Minute Consult', url: 'https://5minuteconsult.com' },
+            ],
+          },
+        },
+        { id: 'histologia-1', name: 'Histología I y su Laboratorio', code: 'HS01006', hasLab: true },
+        { id: 'medicina-humanistica', name: 'Medicina Humanística', code: 'MH01007' },
       ],
     },
     {
       index: 2,
       label: 'Segundo Semestre',
       subjects: [
-        { id: 'anatomia-humana-diseccion-2', name: 'Anatomía humana y disección II', hasLab: true, tags: ['anatomia'] },
-        { id: 'bioquimica-2', name: 'Bioquímica II y su laboratorio', hasLab: true, tags: ['bioquimica'] },
-        { id: 'embriologia-2', name: 'Embriología II', tags: ['anatomia'] },
-        { id: 'histologia-2', name: 'Histología II y su laboratorio', hasLab: true },
-        { id: 'ingles-medico-2', name: 'Inglés Médico II', tags: ['ingles'] },
-        { id: 'neuroanatomia-1', name: 'Neuroanatomía I', tags: ['anatomia', 'nervioso'] },
-        { id: 'historia-filosofia-medicina', name: 'Historia y Filosofía de la Medicina' },
+        { id: 'anatomia-humana-diseccion-2', name: 'Anatomía Humana y Disección II', code: 'AN02008', hasLab: true, tags: ['anatomia'] },
+        { id: 'bioquimica-2', name: 'Bioquímica II y su laboratorio', code: 'BQ02009', hasLab: true, tags: ['bioquimica'] },
+        { id: 'embriologia-2', name: 'Embriología II', code: 'EM02010', tags: ['anatomia'] },
+        { id: 'histologia-2', name: 'Histología II y su laboratorio', code: 'HS02011', hasLab: true },
+        { id: 'ingles-medico-2', name: 'Inglés Médico II', code: 'IN02012', tags: ['ingles'] },
+        { id: 'neuroanatomia-1', name: 'Neuroanatomía I', code: 'NA02013', tags: ['anatomia', 'nervioso'] },
+        { id: 'historia-filosofia-medicina', name: 'Historia y Filosofía de la Medicina', code: 'HF02014' },
       ],
     },
     {
       index: 3,
       label: 'Tercer Semestre',
       subjects: [
-        { id: 'fisiologia-1', name: 'Fisiología I y su Laboratorio', hasLab: true, tags: ['fisiologia'] },
-        { id: 'epidemiologia-bioestadistica', name: 'Epidemiología y Bioestadística', tags: ['salud-publica', 'investigacion'] },
-        { id: 'microbiologia', name: 'Microbiología y su laboratorio', hasLab: true },
-        { id: 'neuroanatomia-2', name: 'Neuroanatomía II', tags: ['anatomia', 'nervioso'] },
-        { id: 'ingles-medico-3', name: 'Inglés Médico III', tags: ['ingles'] },
-        { id: 'informatica-aplicada-medicina', name: 'Informática aplicada a la Medicina' },
-        { id: 'farmacologia-1', name: 'Farmacología I' },
+        { id: 'fisiologia-1', name: 'Fisiología I y su Laboratorio', code: 'FI03015', hasLab: true, tags: ['fisiologia'] },
+        { id: 'epidemiologia-bioestadistica', name: 'Epidemiología y Bioestadística', code: 'EE03016', tags: ['salud-publica', 'investigacion'] },
+        { id: 'microbiologia', name: 'Microbiología y su laboratorio', code: 'MP03017', hasLab: true },
+        { id: 'neuroanatomia-2', name: 'Neuroanatomía II', code: 'NA03018', tags: ['anatomia', 'nervioso'] },
+        { id: 'ingles-medico-3', name: 'Inglés Médico III', code: 'IN03019', tags: ['ingles'] },
+        { id: 'informatica-aplicada-medicina', name: 'Informática aplicada a la Medicina', code: 'IA03020' },
+        { id: 'farmacologia-1', name: 'Farmacología I', code: 'FA03021' },
       ],
     },
     {
       index: 4,
       label: 'Cuarto Semestre',
       subjects: [
-        { id: 'fisiologia-2', name: 'Fisiología II y su laboratorio', hasLab: true, tags: ['fisiologia'] },
-        { id: 'salud-publica', name: 'Salud Pública', tags: ['salud-publica'] },
-        { id: 'parasitologia', name: 'Parasitología y su Laboratorio', hasLab: true },
-        { id: 'psicologia-medica', name: 'Psicología Médica' },
-        { id: 'aprendizaje-por-competencias', name: 'Aprendizaje por Competencias' },
-        { id: 'metodologia-investigacion', name: 'Metodología de la Investigación', tags: ['investigacion'] },
-        { id: 'farmacologia-2', name: 'Farmacología II' },
+        { id: 'fisiologia-2', name: 'Fisiología II y su laboratorio', code: 'FI04022', hasLab: true, tags: ['fisiologia'] },
+        { id: 'salud-publica', name: 'Salud Pública', code: 'SP04023', tags: ['salud-publica'] },
+        { id: 'parasitologia', name: 'Parasitología y su Laboratorio', code: 'PR04024', hasLab: true },
+        { id: 'psicologia-medica', name: 'Psicología Médica', code: 'PM04025' },
+        { id: 'aprendizaje-por-competencias', name: 'Aprendizaje por Competencias', code: 'AC04026' },
+        { id: 'metodologia-investigacion', name: 'Metodología de la Investigación', code: 'MI04027', tags: ['investigacion'] },
+        { id: 'farmacologia-2', name: 'Farmacología II', code: 'FA04028' },
       ],
     },
     {
       index: 5,
       label: 'Quinto Semestre',
       subjects: [
-        { id: 'introduccion-clinica-1', name: 'Introducción a la Clínica I' },
-        { id: 'patologia-1', name: 'Patologia I' },
-        { id: 'nosologia-1', name: 'Nosología I' },
-        { id: 'tecnicas-quirurgicas', name: 'Técnicas Quirúrgicas' },
-        { id: 'medicina-basada-evidencias', name: 'Medicina Basada en Evidencias', tags: ['investigacion'] },
-        { id: 'bioetica', name: 'Bioética' },
+        { id: 'introduccion-clinica-1', name: 'Introducción a la Clínica I', code: 'IC05029' },
+        { id: 'patologia-1', name: 'Patología I', code: 'PG05030' },
+        { id: 'nosologia-1', name: 'Nosología', code: 'NS05031' },
+        { id: 'tecnicas-quirurgicas', name: 'Técnicas Quirúrgicas', code: 'TQ05032' },
+        { id: 'medicina-basada-evidencias', name: 'Medicina Basada en Evidencias', code: 'ME05033', tags: ['investigacion'] },
+        { id: 'bioetica', name: 'Bioética', code: 'BO05034' },
       ],
     },
     {
       index: 6,
       label: 'Sexto Semestre',
       subjects: [
-        { id: 'introduccion-clinica-2', name: 'Introducción a la Clínica II' },
-        { id: 'patologia-2', name: 'Patología II' },
-        { id: 'infectologia', name: 'Infectología' },
-        { id: 'inmunologia', name: 'Inmunología' },
-        { id: 'aprendizaje-basado-problemas', name: 'Aprendizaje basado en problemas' },
-        { id: 'medicina-legal-trabajo', name: 'Medicina legal y del trabajo' },
+        { id: 'introduccion-clinica-2', name: 'Introducción a la Clínica II', code: 'IC06035' },
+        { id: 'patologia-2', name: 'Patología II', code: 'PG06036' },
+        { id: 'infectologia', name: 'Infectología', code: 'IF06037' },
+        { id: 'inmunologia', name: 'Inmunología', code: 'IN06038' },
+        { id: 'aprendizaje-basado-problemas', name: 'Aprendizaje basado en problemas', code: 'AP06039' },
+        { id: 'medicina-legal-trabajo', name: 'Medicina legal y del trabajo', code: 'ML06040' },
       ],
     },
     {
       index: 7,
       label: 'Séptimo Semestre',
       subjects: [
-        { id: 'psiquiatria', name: 'Psiquiatría' },
-        { id: 'neurologia', name: 'Neurología', tags: ['nervioso'] },
-        { id: 'cardiologia', name: 'Cardiología', tags: ['cardiovascular'] },
-        { id: 'gastroenterologia', name: 'Gastroenterología', tags: ['digestivo'] },
-        { id: 'sesiones-anatomoclinicas-1', name: 'Sesiones Anatomoclínicas I', tags: ['anatomia'] },
-        { id: 'nutricion-medica', name: 'Nutrición Médica' },
-        { id: 'urgencias-medico-quirurgicas', name: 'Urgencias Medico Quirúrgicas' },
+        { id: 'psiquiatria', name: 'Psiquiatría', code: 'PS07041' },
+        { id: 'neurologia', name: 'Neurología', code: 'NE07042', tags: ['nervioso'] },
+        { id: 'cardiologia', name: 'Cardiología', code: 'CA07043', tags: ['cardiovascular'] },
+        { id: 'gastroenterologia', name: 'Gastroenterología', code: 'GA07044', tags: ['digestivo'] },
+        { id: 'sesiones-anatomoclinicas-1', name: 'Sesiones Anatomoclínicas I', code: 'SA07045', tags: ['anatomia'] },
+        { id: 'nutricion-medica', name: 'Nutrición Médica', code: 'NM07046' },
+        { id: 'urgencias-medico-quirurgicas', name: 'Urgencias Médico Quirúrgicas', code: 'UM07047' },
       ],
     },
     {
       index: 8,
       label: 'Octavo Semestre',
       subjects: [
-        { id: 'cirugia-general', name: 'Cirugía General' },
-        { id: 'oftalmologia', name: 'Oftalmología' },
-        { id: 'otorrinolaringologia', name: 'Otorrinolaringología' },
-        { id: 'traumatologia-ortopedia', name: 'Traumatología y Ortopedia', tags: ['musculoesqueletico'] },
-        { id: 'sesiones-anatomoclinicas-2', name: 'Sesiones Anatomoclínicas II', tags: ['anatomia'] },
-        { id: 'imagenologia-1', name: 'Imagenología I' },
-        { id: 'medicina-fisica-rehabilitacion', name: 'Medicina Física y Rehabilitación' },
+        { id: 'cirugia-general', name: 'Cirugía General', code: 'CG08048' },
+        { id: 'oftalmologia', name: 'Oftalmología', code: 'OF08049' },
+        { id: 'otorrinolaringologia', name: 'Otorrinolaringología', code: 'OT08050' },
+        { id: 'traumatologia-ortopedia', name: 'Traumatología', code: 'TR08051', tags: ['musculoesqueletico'] },
+        { id: 'sesiones-anatomoclinicas-2', name: 'Sesiones Anatomoclínicas II', code: 'SA08052', tags: ['anatomia'] },
+        { id: 'imagenologia-1', name: 'Imagenología', code: 'IM08053' },
+        { id: 'medicina-fisica-rehabilitacion', name: 'Medicina Física y Rehabilitación', code: 'MF08054' },
       ],
     },
     {
       index: 9,
       label: 'Noveno Semestre',
       subjects: [
-        { id: 'ginecologia-1', name: 'Ginecología I' },
-        { id: 'obstetricia', name: 'Obstetricia' },
-        { id: 'endocrinologia', name: 'Endocrinología', tags: ['endocrino'] },
-        { id: 'dermatologia', name: 'Dermatología', tags: ['tegumentario'] },
-        { id: 'sesiones-anatomoclinicas-3', name: 'Sesiones Anatomoclínicas III', tags: ['anatomia'] },
-        { id: 'neumologia', name: 'Neumología', tags: ['respiratorio'] },
-        { id: 'oncologia-general', name: 'Oncología General' },
+        { id: 'ginecologia-1', name: 'Ginecología', code: 'GI09055' },
+        { id: 'obstetricia', name: 'Obstetricia', code: 'OB09056' },
+        { id: 'endocrinologia', name: 'Endocrinología', code: 'EN09057', tags: ['endocrino'] },
+        { id: 'dermatologia', name: 'Dermatología', code: 'DE09058', tags: ['tegumentario'] },
+        { id: 'sesiones-anatomoclinicas-3', name: 'Sesiones Anatomoclínicas III', code: 'SA09059', tags: ['anatomia'] },
+        { id: 'neumologia', name: 'Neumología', code: 'NE09060', tags: ['respiratorio'] },
+        { id: 'oncologia-general', name: 'Oncología General', code: 'OG09061' },
       ],
     },
     {
       index: 10,
-      label: 'Décimo Cuatrimestre', // SOURCE NOTE: rotulado "Cuatrimestre" en la fuente; los demás periodos son "Semestre".
+      label: 'Décimo Semestre', // SOURCE NOTE: el mapa oficial lo rotula "Semestre" (la hoja preliminar decía "Cuatrimestre").
       subjects: [
-        { id: 'pediatria-1', name: 'Pediatría I' },
-        { id: 'pediatria-2', name: 'Pediatría II' },
-        { id: 'medicina-familiar', name: 'Medicina Familiar' },
-        { id: 'nefrologia', name: 'Nefrología', tags: ['urinario'] },
-        { id: 'sesiones-anatomoclinicas-4', name: 'Seciones Anatomoclinicas IV', tags: ['anatomia'] }, // SOURCE NOTE: typo "Seciones Anatomoclinicas" en la fuente.
-        { id: 'geriatria', name: 'Geriatría' },
-        { id: 'medicina-critica', name: 'Medicina Crítica' },
+        { id: 'pediatria-1', name: 'Pediatría I', code: 'PE010062' },
+        { id: 'pediatria-2', name: 'Pediatría II', code: 'PE010063' },
+        { id: 'medicina-familiar', name: 'Medicina Familiar', code: 'MF010064' },
+        { id: 'nefrologia', name: 'Nefrología', code: 'NF010065', tags: ['urinario'] },
+        { id: 'sesiones-anatomoclinicas-4', name: 'Sesiones Anatomoclínicas IV', code: 'SA010066', tags: ['anatomia'] },
+        { id: 'geriatria', name: 'Geriatría', code: 'GR010067' },
+        { id: 'medicina-critica', name: 'Medicina Crítica', code: 'MC010068' },
       ],
     },
     {
@@ -175,16 +312,16 @@ export const uadMedicina: Plan = {
     },
     {
       index: 13,
-      label: 'Terceavo Semestre', // SOURCE NOTE: typo "Terceavo" en la fuente (por "Treceavo").
+      label: 'Treceavo Semestre', // SOURCE NOTE: corregido de "Terceavo" (errata de la hoja preliminar).
       subjects: [
-        { id: 'servicio-social-2', name: 'Servicio Social II' }, // SOURCE NOTE: numeración invertida en la fuente (periodo 13 = II).
+        { id: 'servicio-social-2', name: 'Servicio Social' }, // El mapa oficial no numera los periodos de Servicio Social.
       ],
     },
     {
       index: 14,
       label: 'Catorceavo Semestre',
       subjects: [
-        { id: 'servicio-social-1', name: 'Servicio Social I' }, // SOURCE NOTE: numeración invertida en la fuente (periodo 14 = I).
+        { id: 'servicio-social-1', name: 'Servicio Social' },
       ],
     },
   ],
