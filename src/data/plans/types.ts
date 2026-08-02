@@ -49,7 +49,14 @@ export type SubjectContent = {
   temario?: TemarioUnit[]    // contenido temático (programa completo)
   semanas?: SemanaContent[]  // plan semanal (contenido en curso, 4 sem/módulo)
   bibliografia?: BiblioRef[] // referencias bibliohemerográficas
+  materiales?: MaterialRef[] // lecturas y materiales (PDF en biblioteca privada)
   recursos?: RecursoLink[]   // recursos digitales para el alumno
+}
+
+export type MaterialRef = {
+  title: string
+  file: string   // nombre del archivo en la biblioteca (LIBRARY_BASE/<subjectId>/<file>)
+  kind?: string  // etiqueta corta: 'Libro' | 'Artículo' | 'Programa' | …
 }
 
 /*

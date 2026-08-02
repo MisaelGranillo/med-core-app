@@ -345,6 +345,40 @@ export function SubjectDetail() {
               </motion.section>
             )}
 
+            {/* ── Materiales y lecturas (PDF privados) ──────── */}
+            {content.materiales && content.materiales.length > 0 && (
+              <motion.section
+                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.36 }}
+                className="card p-6"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <Books weight="fill" className="w-5 h-5 text-rose-600" />
+                  <h2 className="font-bold text-zinc-900">Materiales y lecturas</h2>
+                </div>
+                <ul className="divide-y divide-zinc-100">
+                  {content.materiales.map(m => (
+                    <li key={m.file} className="flex items-center gap-3 py-2.5 first:pt-0 last:pb-0">
+                      {m.kind && (
+                        <span className="flex-shrink-0 text-[9px] font-bold uppercase tracking-wider text-zinc-500 bg-zinc-100 px-1.5 py-0.5 rounded w-20 text-center">
+                          {m.kind}
+                        </span>
+                      )}
+                      <span className="flex-1 text-sm text-zinc-800">{m.title}</span>
+                      <a
+                        href={`${LIBRARY_BASE}/${subject.id}/${encodeURIComponent(m.file)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-shrink-0 inline-flex items-center gap-1 text-[11px] font-semibold text-rose-700 bg-rose-50 border border-rose-100 px-2 py-1 rounded-full hover:bg-rose-100 transition-colors"
+                      >
+                        <FilePdf weight="fill" className="w-3 h-3" /> PDF
+                        <DownloadSimple weight="bold" className="w-3 h-3" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </motion.section>
+            )}
+
             {/* ── Recursos digitales ────────────────────────── */}
             {content.recursos && content.recursos.length > 0 && (
               <motion.section

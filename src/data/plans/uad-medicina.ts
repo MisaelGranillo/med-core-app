@@ -190,6 +190,20 @@ export const uadMedicina: Plan = {
             bibliografia: [
               { title: 'Colección hemerográfica UAD-UD-UDS en plataforma OVID® (190 recursos)', year: '2017', tipo: 'básica' },
             ],
+            materiales: [
+              { title: 'Medical Terminology — A Living Language (6.ª ed.)', file: 'Medical Terminology - A Living Language 6th ed.pdf', kind: 'Libro' },
+              { title: 'Check Your English Vocabulary for Medicine', file: 'Check Your English Vocabulary for Medicine.pdf', kind: 'Cuaderno' },
+              { title: 'The Language of Medicine', file: 'The Language of Medicine.pdf', kind: 'Referencia' },
+              { title: 'Medical Abbreviations (Studocu)', file: 'Medical Abbreviations (Studocu).pdf', kind: 'Referencia' },
+              { title: 'Useful Vocabulary for Medical Students and Practitioners', file: 'Useful Vocabulary for Medical Students and Practitioners.pdf', kind: 'Artículo' },
+              { title: 'English as an International Language of Medicine', file: 'English as an international language of medicine.pdf', kind: 'Artículo' },
+              { title: 'Importance of English for Medical Students', file: 'Importance of English for medical students.pdf', kind: 'Artículo' },
+              { title: 'Importancia del Inglés en las Ciencias de la Salud', file: 'Importancia del Inglés en las Ciencias de la Salud.pdf', kind: 'Artículo' },
+              { title: 'The Role of Medical English in Healthcare Education', file: 'The role of medical English in healthcare education.pdf', kind: 'Artículo' },
+              { title: 'Medical Record Keeping for Quality Patient Care', file: 'Medical record keeping for quality patient care.pdf', kind: 'Artículo' },
+              { title: 'Inglés Médico I — Programa académico', file: 'Inglés Médico I - Programa.pdf', kind: 'Programa' },
+              { title: 'Inglés Médico I — Planeación', file: 'Inglés Médico I - Planeación.pdf', kind: 'Planeación' },
+            ],
             recursos: [
               { label: 'Acland Anatomy', url: 'https://www.aclandanatomy.com/' },
               { label: 'Bates Visual Guide', url: 'https://batesvisualguide.com/' },
