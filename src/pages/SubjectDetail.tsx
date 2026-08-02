@@ -10,9 +10,10 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
   ArrowLeft, Cube, BookOpenText, Lightning, BookOpen, Flask,
-  GraduationCap, Clock, Books, LinkSimple, ListChecks, Target,
+  GraduationCap, Clock, Books, LinkSimple, ListChecks, Target, CalendarCheck,
+  FilePdf, DownloadSimple,
 } from '@phosphor-icons/react'
-import { findSubject, sistemasDeMateria } from '../data/plans'
+import { findSubject, sistemasDeMateria, LIBRARY_BASE } from '../data/plans'
 import { medlexTerms, SISTEMA_LABELS, SISTEMA_COLORS } from '../data/medlex-terms'
 
 export function SubjectDetail() {
@@ -232,6 +233,46 @@ export function SubjectDetail() {
               </motion.section>
             )}
 
+            {/* ── Plan semanal (contenido en curso) ─────────── */}
+            {content.semanas && content.semanas.length > 0 && (
+              <motion.section
+                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.28 }}
+                className="card p-6"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <CalendarCheck weight="fill" className="w-5 h-5 text-emerald-600" />
+                  <h2 className="font-bold text-zinc-900">Plan semanal</h2>
+                </div>
+                <div className="space-y-3">
+                  {content.semanas.map(sem => (
+                    <div key={sem.number} className="rounded-xl border border-emerald-100 bg-emerald-50/50 p-4">
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <span className="flex-shrink-0 text-[11px] font-bold text-white bg-emerald-600 px-2 py-0.5 rounded-full">
+                          Semana {sem.number}
+                        </span>
+                        <p className="font-semibold text-sm text-zinc-900">{sem.title}</p>
+                      </div>
+                      {sem.competencia && (
+                        <p className="text-xs text-zinc-600 leading-relaxed mt-2">
+                          <span className="font-semibold text-emerald-700">Competencia · </span>
+                          {sem.competencia}
+                        </p>
+                      )}
+                      {sem.temas && sem.temas.length > 0 && (
+                        <ul className="mt-2.5 flex flex-wrap gap-1.5">
+                          {sem.temas.map(tema => (
+                            <li key={tema} className="text-[11px] font-medium text-emerald-800 bg-white border border-emerald-100 px-2 py-0.5 rounded-full">
+                              {tema}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </motion.section>
+            )}
+
             {/* ── Temario / contenido temático ──────────────── */}
             {content.temario && content.temario.length > 0 && (
               <motion.section
@@ -286,6 +327,17 @@ export function SubjectDetail() {
                         <span className="text-zinc-400 text-xs">
                           {[ref.editorial, ref.year].filter(Boolean).join(', ')}
                         </span>
+                      )}
+                      {ref.file && (
+                        <a
+                          href={`${LIBRARY_BASE}/${subject.id}/${encodeURIComponent(ref.file)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-[11px] font-semibold text-rose-700 bg-rose-50 border border-rose-100 px-2 py-0.5 rounded-full hover:bg-rose-100 transition-colors"
+                        >
+                          <FilePdf weight="fill" className="w-3 h-3" /> PDF
+                          <DownloadSimple weight="bold" className="w-3 h-3" />
+                        </a>
                       )}
                     </li>
                   ))}

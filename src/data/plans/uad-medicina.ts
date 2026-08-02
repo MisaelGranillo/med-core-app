@@ -106,15 +106,28 @@ export const uadMedicina: Plan = {
                 ],
               },
             ],
+            semanas: [
+              {
+                number: 1,
+                title: 'Conceptos generales, planos anatómicos y Osteología I',
+                competencia:
+                  'Capacidad para obtener, analizar, organizar y evaluar críticamente la información acerca de las características morfofuncionales a nivel macroscópico de los huesos de la cabeza y de la columna vertebral en condiciones normales y patológicas.',
+                temas: [
+                  'Conceptos generales de anatomía',
+                  'Planos anatómicos del cuerpo humano',
+                  'Osteología I: huesos de la cabeza y columna vertebral',
+                ],
+              },
+            ],
             bibliografia: [
-              { title: 'Anatomía con orientación clínica', author: 'Moore', editorial: 'Lippincott', year: '2015', tipo: 'básica' },
+              { title: 'Anatomía con orientación clínica', author: 'Moore', editorial: 'Lippincott', year: '2015', tipo: 'básica', file: 'Moore Anatomía.pdf' },
               { title: 'Fundamentos de anatomía con orientación clínica', author: 'Moore', year: '2016', tipo: 'básica' },
-              { title: 'Serie RT Anatomía', author: 'Chung, Kyung Won', editorial: 'Lippincott', year: '2016', tipo: 'básica' },
+              { title: 'Serie RT Anatomía', author: 'Chung, Kyung Won', editorial: 'Lippincott', year: '2016', tipo: 'básica', file: 'Serie RT Anatomía.pdf' },
               { title: 'Anatomía Clínica', author: 'Pró, Eduardo', editorial: 'Médica Panamericana', year: '2014', tipo: 'básica' },
-              { title: 'Anatomía Humana', author: 'Quiroz Gutiérrez', editorial: 'Porrúa', year: '2003', tipo: 'complementaria' },
+              { title: 'Anatomía Humana', author: 'Quiroz Gutiérrez', editorial: 'Porrúa', year: '2003', tipo: 'complementaria', file: 'Tratado_de_Anatomia_Humana_de_Quiroz_Tom.pdf' },
               { title: 'Anatomía Humana', author: 'Latarjet · Ruiz', editorial: 'Médica Panamericana', year: '2009', tipo: 'complementaria' },
               { title: 'Sobotta · Atlas de Anatomía Humana', author: 'Putz · Pabst', editorial: 'Médica Panamericana', year: '2009', tipo: 'complementaria' },
-              { title: 'Atlas de Anatomía Humana', author: 'Netter', editorial: 'Elsevier Masson', year: '2007', tipo: 'complementaria' },
+              { title: 'Atlas de Anatomía Humana', author: 'Netter', editorial: 'Elsevier Masson', year: '2007', tipo: 'complementaria', file: 'Atlas de Anatomía Humana.pdf' },
               { title: 'Anatomía clínica para estudiantes de medicina', author: 'Snell', editorial: 'McGraw Hill', year: '2002', tipo: 'complementaria' },
             ],
             recursos: [
@@ -165,6 +178,14 @@ export const uadMedicina: Plan = {
               },
               { title: 'V. Errores frecuentes al hablar inglés en medicina', items: ['Denominaciones incorrectas y falsos cognados'] },
               { title: 'VI. Bibliografía científica', items: [] },
+            ],
+            semanas: [
+              {
+                number: 1,
+                title: 'Introducción al idioma inglés en medicina',
+                competencia:
+                  'Identifica y aplica las bases para el uso del idioma inglés en medicina.',
+              },
             ],
             bibliografia: [
               { title: 'Colección hemerográfica UAD-UD-UDS en plataforma OVID® (190 recursos)', year: '2017', tipo: 'básica' },

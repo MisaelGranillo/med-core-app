@@ -46,9 +46,21 @@ export type SubjectContent = {
   modality?: string         // 'Virtual · Teórico-Práctico'
   description?: string       // descripción de la asignatura
   competencia?: string       // unidad de competencia
-  temario?: TemarioUnit[]    // contenido temático
+  temario?: TemarioUnit[]    // contenido temático (programa completo)
+  semanas?: SemanaContent[]  // plan semanal (contenido en curso, 4 sem/módulo)
   bibliografia?: BiblioRef[] // referencias bibliohemerográficas
   recursos?: RecursoLink[]   // recursos digitales para el alumno
+}
+
+/*
+ * Contenido de una semana del módulo. El material UAD llega cada 4 semanas
+ * (1 módulo = 4 semanas); cada semana se añade aquí conforme se recibe.
+ */
+export type SemanaContent = {
+  number: number         // 1
+  title: string          // 'Conceptos generales, planos anatómicos y Osteología I'
+  competencia?: string   // competencia a desarrollar en la semana
+  temas?: string[]       // temas / subtemas de la semana
 }
 
 export type TemarioUnit = {
@@ -62,6 +74,7 @@ export type BiblioRef = {
   editorial?: string
   year?: string
   tipo?: 'básica' | 'complementaria'
+  file?: string // nombre del archivo en la biblioteca privada (LIBRARY_BASE/<subjectId>/<file>)
 }
 
 export type RecursoLink = {

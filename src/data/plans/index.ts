@@ -22,6 +22,15 @@ export const plans: Plan[] = [uadMedicina, unisaLmgc]
 
 export const activePlanId = 'uad-medicina'
 
+/*
+ * Biblioteca privada de materiales (PDFs) servida vía Cloudflare Tunnel desde
+ * server.local, protegida con Cloudflare Access (solo el propietario).
+ * Los archivos NO se alojan en Cloudflare Pages (cap de 25 MB) ni se
+ * distribuyen públicamente. Cambia esta base si mueves la biblioteca.
+ * URL final de un archivo: `${LIBRARY_BASE}/${subjectId}/${file}`.
+ */
+export const LIBRARY_BASE = 'https://library.medcore.icu'
+
 export const getPlan = (id: string): Plan | null =>
   plans.find(p => p.id === id) ?? null
 
