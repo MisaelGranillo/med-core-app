@@ -143,7 +143,37 @@ const raices: MedLexTerm[] = [
 ]
 
 // Dataset completo: 91 términos
-export const medlexTerms: MedLexTerm[] = [...prefijos, ...sufijos, ...raices]
+// ══════════════════════════════════════════════════
+// OSTEOLOGÍA CRANEOFACIAL — autoría MedCore (NO ENP UNAM)
+// ──────────────────────────────────────────────────
+// ATRIBUCIÓN: estos morfemas NO provienen del corpus de Paula Abramo Tostado
+// (ENP UNAM, CC BY-SA 4.0). Son de elaboración propia de MedCore para la
+// Semana 1 de Anatomía UAD. Se mantienen en un array separado y con ids `mc-`
+// para que la atribución del corpus original siga siendo verificable.
+// ('osteo-' ya existe en el corpus ENP; no se duplica aquí.)
+const medcoreOsteologia: MedLexTerm[] = [
+  { id: 'mc-craneo', termino: 'cráne(o)-, -cráneo', tipo: 'raiz', origen: 'griego', significado: 'Cráneo, cabeza', ejemplos: ['craneal', 'craneotomía', 'neurocráneo', 'craneosinostosis'], sistema: 'musculoesqueletico' },
+  { id: 'mc-condro', termino: 'condr(o)-', tipo: 'raiz', origen: 'griego', significado: 'Cartílago', ejemplos: ['condrocito', 'osteocondral', 'condrosarcoma', 'pericondrio'], sistema: 'musculoesqueletico' },
+  { id: 'mc-mielo', termino: 'miel(o)-', tipo: 'raiz', origen: 'griego', significado: 'Médula (ósea o espinal)', ejemplos: ['osteomielitis', 'mielitis', 'mielograma'], sistema: 'general' },
+  { id: 'mc-blasto', termino: '-blasto', tipo: 'sufijo', origen: 'griego', significado: 'Célula formadora, germen', ejemplos: ['osteoblasto', 'condroblasto', 'fibroblasto'], sistema: 'general' },
+  { id: 'mc-clasto', termino: '-clasto', tipo: 'sufijo', origen: 'griego', significado: 'Que rompe o destruye', ejemplos: ['osteoclasto'], sistema: 'general' },
+  { id: 'mc-epi', termino: 'epi-', tipo: 'prefijo', origen: 'griego', significado: 'Sobre, encima', ejemplos: ['epífisis', 'epicráneo', 'epidermis'], sistema: 'general' },
+  { id: 'mc-dia', termino: 'diá-', tipo: 'prefijo', origen: 'griego', significado: 'A través de, entre', ejemplos: ['diáfisis', 'diámetro', 'diartrosis'], sistema: 'general' },
+  { id: 'mc-meta', termino: 'meta-', tipo: 'prefijo', origen: 'griego', significado: 'Más allá, entre, cambio', ejemplos: ['metáfisis', 'metacarpo', 'metástasis'], sistema: 'general' },
+  { id: 'mc-apo', termino: 'apo-', tipo: 'prefijo', origen: 'griego', significado: 'Separación, a partir de', ejemplos: ['apófisis', 'aponeurosis', 'apocrino'], sistema: 'general' },
+  { id: 'mc-sutur', termino: 'sutur-', tipo: 'raiz', origen: 'latino', significado: 'Costura', ejemplos: ['sutura', 'sutura coronal', 'suturación'], sistema: 'musculoesqueletico' },
+  { id: 'mc-fontanel', termino: 'fontanel-', tipo: 'raiz', origen: 'latino', significado: 'Fuentecilla (espacio membranoso del cráneo)', ejemplos: ['fontanela', 'fontanela anterior (bregmática)'], sistema: 'musculoesqueletico' },
+  { id: 'mc-orbit', termino: 'orbit-', tipo: 'raiz', origen: 'latino', significado: 'Órbita, círculo', ejemplos: ['orbitario', 'supraorbitario', 'infraorbitario'], sistema: 'musculoesqueletico' },
+  { id: 'mc-naso', termino: 'nas(o)-', tipo: 'raiz', origen: 'latino', significado: 'Nariz', ejemplos: ['nasal', 'nasofaríngeo', 'lacrimonasal', 'paranasal'], sistema: 'musculoesqueletico' },
+  { id: 'mc-maxil', termino: 'maxil-', tipo: 'raiz', origen: 'latino', significado: 'Maxilar, quijada', ejemplos: ['maxilar', 'maxilofacial', 'submaxilar'], sistema: 'musculoesqueletico' },
+  { id: 'mc-cigo', termino: 'cig(o)-, zig(o)-', tipo: 'raiz', origen: 'griego', significado: 'Yugo, unión', ejemplos: ['cigomático', 'arco cigomático'], sistema: 'musculoesqueletico' },
+  { id: 'mc-mandibul', termino: 'mandíbul-', tipo: 'raiz', origen: 'latino', significado: 'Mandíbula (maxilar inferior)', ejemplos: ['mandíbula', 'mandibular', 'submandibular'], sistema: 'musculoesqueletico' },
+  { id: 'mc-pterig', termino: 'pterig-', tipo: 'raiz', origen: 'griego', significado: 'Ala', ejemplos: ['apófisis pterigoides', 'pterigoideo', 'conducto pterigoideo'], sistema: 'musculoesqueletico' },
+  { id: 'mc-etmo', termino: 'etm(o)-', tipo: 'raiz', origen: 'griego', significado: 'Criba, tamiz', ejemplos: ['etmoides', 'etmoidal', 'frontoetmoidal'], sistema: 'musculoesqueletico' },
+  { id: 'mc-esfen', termino: 'esfen(o)-', tipo: 'raiz', origen: 'griego', significado: 'Cuña', ejemplos: ['esfenoides', 'esfenoidal', 'esfenopalatino'], sistema: 'musculoesqueletico' },
+]
+
+export const medlexTerms: MedLexTerm[] = [...prefijos, ...sufijos, ...raices, ...medcoreOsteologia]
 
 // Estadísticas
 export const MEDLEX_STATS = {
