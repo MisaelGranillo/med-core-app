@@ -27,6 +27,45 @@ export interface AtlasTopic {
 }
 
 export const atlasTopics: AtlasTopic[] = [
+  // ── Anatomía UAD · Semana 1 (osteología de la cabeza) ──────────────────
+  {
+    id: 'huesos-craneo',
+    title: 'Huesos del Cráneo',
+    subtitle: 'Los 8 huesos del neurocráneo, diferenciados por color',
+    category: 'anatomia',
+    emoji: '💀',
+    imagePath: '/atlas/huesos-craneo.png',
+    colorKey: 'osteologia',
+    relatedTopicIds: ['huesos-cara-hioides'],
+    questions: [
+      { id: 'hcr-1', question: '¿Cuántos huesos forman el cráneo (neurocráneo)?', options: ['6', '8', '12', '14'], correctIndex: 1, explanation: '8 huesos: 2 pares (parietales, temporales) y 4 impares (frontal, esfenoides, occipital, etmoides). Los 14 son los de la cara.', difficulty: 'easy' },
+      { id: 'hcr-2', question: 'Los dos huesos PARES del cráneo son:', options: ['Frontal y occipital', 'Esfenoides y etmoides', 'Parietales y temporales', 'Parietales y frontal'], correctIndex: 2, explanation: 'Pares: parietales y temporales. Frontal, esfenoides, occipital y etmoides son impares.', difficulty: 'medium' },
+      { id: 'hcr-3', question: '¿En qué hueso (dorado en la lámina) se aloja la silla turca?', options: ['Etmoides', 'Esfenoides', 'Occipital', 'Frontal'], correctIndex: 1, explanation: 'La silla turca está en el cuerpo del esfenoides (dorado), en la fosa craneal media; aloja la hipófisis.', difficulty: 'medium' },
+      { id: 'hcr-4', question: 'El agujero occipital (ovalado, en la base) pertenece al hueso:', options: ['Occipital', 'Esfenoides', 'Temporal', 'Parietal'], correctIndex: 0, explanation: 'El agujero occipital (morado en la base) comunica la cavidad craneal con el conducto vertebral; a sus lados están los cóndilos.', difficulty: 'easy' },
+      { id: 'hcr-5', question: 'La lámina cribosa (fosa craneal anterior) es parte del hueso:', options: ['Frontal', 'Esfenoides', 'Etmoides', 'Vómer'], correctIndex: 2, explanation: 'La lámina cribosa es la lámina horizontal del etmoides (coral); sus agujeros olfatorios dan paso al I par craneal.', difficulty: 'medium' },
+      { id: 'hcr-6', question: 'El punto bregma corresponde al encuentro de las suturas:', options: ['Sagital y lambdoidea', 'Escamosa y coronal', 'Coronal y sagital', 'Lambdoidea y escamosa'], correctIndex: 2, explanation: 'Bregma = sutura coronal + sutura sagital (frontal + ambos parietales). Sagital + lambdoidea = lambda.', difficulty: 'medium' },
+      { id: 'hcr-7', question: 'De los 8 huesos, ¿cuál aparece en la lámina pero NO se desarrolló en la clase 2?', options: ['Etmoides', 'Temporal', 'Esfenoides', 'Occipital'], correctIndex: 1, explanation: 'El temporal (teal) se muestra para completar el cráneo pero su detalle llega en la clase 4: está marcado como pendiente en la clave de color.', difficulty: 'medium' },
+    ],
+  },
+  {
+    id: 'huesos-cara-hioides',
+    title: 'Huesos de la Cara',
+    subtitle: 'Macizo facial (viscerocráneo); mandíbula e hioides pendientes',
+    category: 'anatomia',
+    emoji: '🦴',
+    imagePath: '/atlas/huesos-cara-hioides.png',
+    colorKey: 'osteologia',
+    relatedTopicIds: ['huesos-craneo'],
+    questions: [
+      { id: 'hch-1', question: '¿Qué hueso (naranja) es la pieza central de la cara y forma el paladar?', options: ['Palatino', 'Maxilar superior', 'Malar', 'Vómer'], correctIndex: 1, explanation: 'El maxilar superior (naranja) forma el paladar, el suelo de la órbita y la pared de la fosa nasal, y aloja el seno maxilar.', difficulty: 'easy' },
+      { id: 'hch-2', question: 'El relieve del pómulo lo forma el hueso:', options: ['Nasal', 'Malar (cigomático)', 'Lagrimal', 'Palatino'], correctIndex: 1, explanation: 'El malar o cigomático (azul) forma el pómulo y, con la apófisis cigomática del temporal, el arco cigomático.', difficulty: 'medium' },
+      { id: 'hch-3', question: 'En el corte sagital, ¿qué hueso (coral) forma la porción posteroinferior del tabique nasal?', options: ['Cornete inferior', 'Palatino', 'Vómer', 'Nasal'], correctIndex: 2, explanation: 'El vómer (coral) forma la porción posteroinferior del tabique y su borde libre separa las coanas.', difficulty: 'medium' },
+      { id: 'hch-4', question: 'El tercio posterior del paladar óseo lo forma el hueso:', options: ['Maxilar superior', 'Vómer', 'Palatino', 'Cornete inferior'], correctIndex: 2, explanation: 'La lámina horizontal del palatino (oliva) forma el 1/3 posterior del paladar; los 2/3 anteriores son las apófisis palatinas del maxilar.', difficulty: 'medium' },
+      { id: 'hch-5', question: 'El "unguis" (morado) corresponde, en Terminología Anatómica, al hueso:', options: ['Nasal', 'Palatino', 'Cigomático', 'Lagrimal'], correctIndex: 3, explanation: 'Unguis = hueso lagrimal (TA), en la pared medial de la órbita; participa en el canal lacrimonasal.', difficulty: 'medium' },
+      { id: 'hch-6', question: 'El cornete inferior (dorado) es un hueso independiente; los cornetes superior y medio pertenecen al:', options: ['Maxilar', 'Etmoides', 'Palatino', 'Esfenoides'], correctIndex: 1, explanation: 'Los cornetes superior y medio son proyecciones del etmoides; solo el inferior es un hueso propio de la cara.', difficulty: 'medium' },
+      { id: 'hch-7', question: '¿Qué estructuras NO impartió la clase 3 pese al título de la lámina?', options: ['Vómer y palatino', 'Mandíbula e hioides', 'Maxilar y malar', 'Nasal y lagrimal'], correctIndex: 1, explanation: 'La clase 3 terminó en el lagrimal: la mandíbula y el hueso hioides quedan pendientes (clases 4–5), como indica la clave de color.', difficulty: 'medium' },
+    ],
+  },
   {
     id: 'aparato-digestivo',
     title: 'Aparato Digestivo',
