@@ -69,6 +69,8 @@ export type TopicColorKey =
   | 'gramatica'
   | 'redaccion'
   | 'lenguaje'
+  | 'anatomiaGeneral'
+  | 'osteologia'
 
 export interface Module {
   id: string

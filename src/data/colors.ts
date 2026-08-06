@@ -1,6 +1,35 @@
 import type { TopicColorKey, TopicColors } from '../types'
 
 export const TOPIC_COLORS: Record<TopicColorKey, TopicColors> = {
+  // ── Anatomía UAD ──────────────────────────────────────────────────────
+  // slate y stone son paletas Tailwind crudas (no remapeadas a modo oscuro
+  // como zinc). Verificadas en claro y oscuro contra el patrón de digestivo.
+  anatomiaGeneral: {
+    bg: 'bg-slate-50',
+    bgLight: 'bg-slate-50/60',
+    border: 'border-slate-200',
+    text: 'text-slate-700',
+    badge: 'bg-slate-100 text-slate-800',
+    button: 'bg-slate-600 hover:bg-slate-700 text-white',
+    dot: 'bg-slate-500',
+    ring: 'ring-slate-300',
+    gradientFrom: 'from-slate-500',
+    gradientTo: 'to-slate-700',
+    headerBg: 'bg-gradient-to-br from-slate-500 to-slate-700',
+  },
+  osteologia: {
+    bg: 'bg-stone-50',
+    bgLight: 'bg-stone-50/60',
+    border: 'border-stone-200',
+    text: 'text-stone-700',
+    badge: 'bg-stone-100 text-stone-800',
+    button: 'bg-stone-600 hover:bg-stone-700 text-white',
+    dot: 'bg-stone-500',
+    ring: 'ring-stone-300',
+    gradientFrom: 'from-stone-500',
+    gradientTo: 'to-stone-700',
+    headerBg: 'bg-gradient-to-br from-stone-500 to-stone-700',
+  },
   digestivo: {
     bg: 'bg-amber-50',
     bgLight: 'bg-amber-50/60',
