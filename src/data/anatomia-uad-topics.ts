@@ -485,24 +485,13 @@ export const anatomiaUadTopics: Topic[] = [
       {
         id: 'cra-7',
         number: 7,
-        title: 'Hueso temporal (constitución)',
-        keyTerms: ['Escama del temporal', 'Peñasco (porción petrosa)', 'Apófisis mastoides', 'Porción timpánica', 'Apófisis estiloides', 'Apófisis cigomática del temporal', 'Conducto auditivo interno'],
+        title: 'Hueso temporal — pendiente',
+        keyTerms: ['Temporal', 'Peñasco', 'Mastoides', 'Apófisis estiloides', 'Apófisis cigomática'],
         blocks: [
           {
             type: 'note',
-            title: 'Fuente',
-            content: 'El PDF 2 del profesor desglosa 5 de los huesos del cráneo pero NO incluye el temporal. Esta sección es de respaldo (Moore, Cap. 7) para completar los 8 huesos; verifica el nivel de detalle exigido con la diapositiva cuando el profesor lo imparta.',
-          },
-          {
-            type: 'list',
-            title: 'Porciones del temporal',
-            items: [
-              'Escama (porción escamosa): pared lateral del cráneo; de ella nace la apófisis cigomática del temporal, que forma con el malar el arco cigomático.',
-              'Porción petrosa (peñasco): aloja el oído interno y medio; contiene el conducto auditivo interno.',
-              'Apófisis mastoides: relieve posterior a la oreja; inserción del esternocleidomastoideo.',
-              'Porción timpánica: rodea el conducto auditivo externo.',
-              'Apófisis estiloides: inserción de músculos y ligamentos.',
-            ],
+            title: 'Pendiente — clase 4',
+            content: 'El temporal es el 2.º hueso par del cráneo (junto con los parietales), pero la clase 2 NO lo desarrolló: detalla solo 5 de los 6 huesos distintos. Su estudio (escama, peñasco/porción petrosa, mastoides, porción timpánica, apófisis estiloides y cigomática) llega en la clase 4. Se nombra aquí únicamente para completar el conteo de 8 huesos, no como tema impartido.',
           },
         ],
       },
@@ -550,7 +539,7 @@ export const anatomiaUadTopics: Topic[] = [
       'El vómer forma la porción posteroinferior del tabique nasal y separa las coanas.',
       'El palatino, en forma de L, completa por detrás el paladar óseo (porción horizontal) y la pared lateral de la fosa nasal (porción vertical).',
       'El unguis (lagrimal) forma parte del canal lacrimonasal por el que discurre el conducto nasolagrimal.',
-      'El hueso hioides no se articula con ningún otro hueso: queda suspendido por músculos y ligamentos a la altura de C3.',
+      'La clase 3 cubrió los huesos de la cara hasta el lagrimal; la mandíbula y el hueso hioides quedan pendientes (clases 4–5).',
     ],
     sections: [
       {
@@ -708,23 +697,13 @@ export const anatomiaUadTopics: Topic[] = [
       {
         id: 'cah-7',
         number: 7,
-        title: 'Hueso hioides',
-        keyTerms: ['Cuerpo del hioides', 'Astas mayores', 'Astas menores', 'C3', 'Músculos suprahioideos', 'Músculos infrahioideos'],
+        title: 'Mandíbula e hioides — pendientes',
+        keyTerms: ['Mandíbula', 'Hioides'],
         blocks: [
           {
             type: 'note',
-            title: 'Fuente',
-            content: 'El PDF 3 del profesor se titula "…y Hioides" pero termina en el Lagrimal: NO trae diapositiva del hioides. Esta sección es de respaldo (Moore + temario oficial) para no dejar el tema fuera; ajústala al detalle de la diapositiva cuando el profesor la imparta.',
-          },
-          {
-            type: 'definition',
-            title: 'Hueso hioides',
-            description: 'Hueso impar en forma de "U" o herradura, situado en la parte anterior del cuello a la altura de la vértebra C3, entre la mandíbula y la laringe. Consta de un cuerpo, dos astas mayores y dos astas menores.',
-          },
-          {
-            type: 'note',
-            title: 'Rasgo distintivo',
-            content: 'Es el único hueso que NO se articula directamente con ningún otro hueso: queda suspendido por músculos y ligamentos (suprahioideos e infrahioideos). Sirve de anclaje para la lengua y participa en la deglución y la fonación.',
+            title: 'Pendiente — clases 4–5',
+            content: 'Pese al título "Huesos de la Cara y Hioides", la clase 3 terminó en el lagrimal: NO impartió la mandíbula ni el hueso hioides. Ambos llegan en las clases 4 o 5 y se incorporarán entonces. Se dejan como hueco visible para no simular un temario cubierto que aún no lo está.',
           },
         ],
       },
