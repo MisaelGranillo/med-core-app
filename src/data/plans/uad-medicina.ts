@@ -106,6 +106,10 @@ export const uadMedicina: Plan = {
                 ],
               },
             ],
+            // SOURCE NOTE: temario transcrito VERBATIM del temario del PDF 1
+            // (diapositivas del Dr. Soto Pacheco). La columna vertebral figura en
+            // la Semana 1 por ser el temario oficial, aunque su Topic/reactivos se
+            // cargan en Fase 2 (jue-vie de la semana), no hoy.
             semanas: [
               {
                 number: 1,
@@ -113,9 +117,40 @@ export const uadMedicina: Plan = {
                 competencia:
                   'Capacidad para obtener, analizar, organizar y evaluar críticamente la información acerca de las características morfofuncionales a nivel macroscópico de los huesos de la cabeza y de la columna vertebral en condiciones normales y patológicas.',
                 temas: [
-                  'Conceptos generales de anatomía',
-                  'Planos anatómicos del cuerpo humano',
-                  'Osteología I: huesos de la cabeza y columna vertebral',
+                  'Conceptos generales de anatomía: métodos de estudio; terminología anatómica y médica',
+                  'Planos anatómicos: posición y planos; términos de relación, lateralidad y movimiento; variaciones anatómicas',
+                  'Osteología: desarrollo y crecimiento de los huesos; constitución general del esqueleto',
+                  'Huesos de la cabeza: cráneo, cara y hueso hioides',
+                  'Columna vertebral: vértebras cervicales, dorsales/torácicas, sacras y coccígeas',
+                ],
+              },
+              {
+                number: 2,
+                title: 'Osteología II: tórax y miembros',
+                temas: [
+                  'Esqueleto del tórax: esternón y costillas',
+                  'Esqueleto del miembro superior: hombro, brazo y mano',
+                  'Esqueleto del miembro inferior: pelvis, fémur, tibia y peroné, huesos del pie',
+                ],
+              },
+              {
+                number: 3,
+                title: 'Artrología y Miología I',
+                temas: [
+                  'Artrología: tipos de articulaciones; articulaciones de la cabeza, columna, tórax y miembros',
+                  'Miología: tipos de músculos, inserciones y anexos',
+                  'Músculos de la cabeza (cráneo, cara, nuca), cuello, región hioidea y prevertebral',
+                  'Músculos superficiales cervicales, dorsales y lumbares; músculos del tórax y diafragma',
+                ],
+              },
+              {
+                number: 4,
+                title: 'Miología II: abdomen, pelvis y miembros',
+                temas: [
+                  'Músculos del abdomen y región inguinal',
+                  'Músculos de la pelvis',
+                  'Músculos del miembro superior',
+                  'Músculos del miembro inferior',
                 ],
               },
             ],
@@ -129,6 +164,16 @@ export const uadMedicina: Plan = {
               { title: 'Sobotta · Atlas de Anatomía Humana', author: 'Putz · Pabst', editorial: 'Médica Panamericana', year: '2009', tipo: 'complementaria' },
               { title: 'Atlas de Anatomía Humana', author: 'Netter', editorial: 'Elsevier Masson', year: '2007', tipo: 'complementaria', file: 'Atlas de Anatomía Humana.pdf' },
               { title: 'Anatomía clínica para estudiantes de medicina', author: 'Snell', editorial: 'McGraw Hill', year: '2002', tipo: 'complementaria' },
+            ],
+            materiales: [
+              { title: 'Clase 1 — Generalidades de la Anatomía', file: 'Semana 1 - Clase 1 Generalidades.pdf', kind: 'Clase' },
+              { title: 'Clase 2 — Huesos de la Cabeza', file: 'Semana 1 - Clase 2 Huesos de la Cabeza.pdf', kind: 'Clase' },
+              { title: 'Clase 3 — Huesos de la Cara y Hioides', file: 'Semana 1 - Clase 3 Huesos de la Cara y Hioides.pdf', kind: 'Clase' },
+              { title: 'Manual de Anatomía I', file: 'MANUAL ANATOMIA I.pdf', kind: 'Manual' },
+              { title: 'Manual de Anatomía Humana y su Disección 1', file: 'MANUAL DE ANATOMIA HUMANA Y SU DISECCION 1.pdf', kind: 'Manual' },
+              { title: 'Programa Académico — Anatomía I', file: 'PROGRAMA ANATOMIA I.pdf', kind: 'Programa' },
+              { title: 'Secuencia Didáctica — Anatomía I', file: 'SEC DID ANATOMIA I.pdf', kind: 'Programa' },
+              { title: 'Formato UAD para entrega de trabajos', file: 'Formato UAD entrega de trabajos.pdf', kind: 'Formato' },
             ],
             recursos: [
               { label: 'Acland Anatomy', url: 'https://www.aclandanatomy.com/' },
