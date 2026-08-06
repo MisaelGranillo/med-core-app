@@ -1,5 +1,6 @@
 import type { Question } from '../types'
 import { newQuestions } from './new-quizzes'
+import { anatomiaUadQuestions } from './anatomia-uad-quizzes'
 
 const anatomyQuestions: Question[] = [
   // ─── APARATO DIGESTIVO ──────────────────────────────────────────────
@@ -555,4 +556,4 @@ const anatomyQuestions: Question[] = [
   },
 ]
 
-export const questions: Question[] = [...anatomyQuestions, ...newQuestions]
+export const questions: Question[] = [...anatomyQuestions, ...newQuestions, ...anatomiaUadQuestions]
