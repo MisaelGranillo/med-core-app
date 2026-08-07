@@ -4,10 +4,10 @@ export const modules: Module[] = [
   {
     id: 'anatomia-uad',
     badge: 'UAD · Anatomía Humana y Disección I',
-    title: 'Osteología — Cabeza',
-    subtitle: 'Semana 1: generalidades, planos anatómicos y huesos del cráneo, la cara e hioides.',
+    title: 'Osteología — Cabeza y Columna',
+    subtitle: 'Semana 1: generalidades, planos anatómicos, huesos del cráneo y la cara, y columna vertebral.',
     emoji: '💀',
-    topicIds: ['anatomia-generalidades', 'huesos-craneo', 'huesos-cara-hioides'],
+    topicIds: ['anatomia-generalidades', 'huesos-craneo', 'huesos-cara-hioides', 'columna-vertebral'],
   },
   {
     id: 'anatomia',

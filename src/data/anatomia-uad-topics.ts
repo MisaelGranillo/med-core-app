@@ -286,7 +286,7 @@ export const anatomiaUadTopics: Topic[] = [
   {
     id: 'huesos-craneo',
     title: 'Huesos del Cráneo',
-    subtitle: 'Los 8 huesos del neurocráneo: caras, bordes, accidentes y suturas',
+    subtitle: 'Los 8 huesos del neurocráneo: caras, bordes, accidentes, forámenes y puntos craneométricos',
     colorKey: 'osteologia',
     emoji: '💀',
     keyPoints: [
@@ -515,8 +515,105 @@ export const anatomiaUadTopics: Topic[] = [
             },
           },
           {
+            type: 'table',
+            title: 'Puntos craneométricos (Moore, tabla 8.2)',
+            data: {
+              headers: ['Punto', 'Etimología', 'Forma y localización'],
+              rows: [
+                ['Pterión', 'gr. ala', 'Unión del ala mayor del esfenoides, la porción escamosa del temporal y los huesos frontal y parietal; sobre el trayecto de la división anterior de la arteria meníngea media.'],
+                ['Lambda', 'gr. letra Λ', 'Unión de las suturas lambdoidea y sagital.'],
+                ['Bregma', 'gr. parte anterior de la cabeza', 'Unión de las suturas coronal y sagital.'],
+                ['Vértice (vértex)', 'lat. giro, espiral', 'Punto superior del neurocráneo, en la línea media, con el cráneo en el plano orbitomeatal de Frankfort.'],
+                ['Asterión', 'gr. estrellado', 'Unión de tres suturas: parietomastoidea, occipitomastoidea y lambdoidea.'],
+                ['Glabela', 'lat. liso, pelado', 'Prominencia lisa sobre los frontales, superior a la raíz de la nariz; parte más anterior de la frente.'],
+                ['Inión', 'gr. parte posterior de la cabeza', 'Punto más sobresaliente de la protuberancia occipital externa.'],
+                ['Nasión', 'lat. nariz', 'Punto donde se encuentran las suturas frontonasal e internasal.'],
+              ],
+            },
+          },
+          {
             type: 'note',
-            content: 'El pterion es un punto débil clínicamente importante: por dentro pasa la arteria meníngea media, y un golpe en esa zona puede provocar hematoma epidural.',
+            title: 'Discrepancia — asterión (diapositiva vs. Moore)',
+            content: 'La diapositiva del occipital define el asterión como "unión parietotemporal"; Moore lo define como la confluencia de TRES suturas (parietomastoidea, occipitomastoidea y lambdoidea). Describen el mismo punto, pero la del profesor es más laxa. El valor clínico del pterión —por su relación con la arteria meníngea media y el hematoma epidural— no aparece en las diapositivas y sí en Moore: es aporte del libro.',
+          },
+        ],
+      },
+      {
+        id: 'cra-9',
+        number: 9,
+        title: 'Forámenes de las fosas craneales',
+        keyTerms: ['Foramen magno', 'Foramen oval', 'Foramen redondo', 'Foramen espinoso', 'Conducto óptico', 'Fisura orbitaria superior', 'Foramen yugular', 'Foramen rasgado'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Contenido de las aperturas de la base del cráneo, por fosa (Moore, tabla 8.1). Es contenido de alto valor de examen: qué estructura pasa por cada agujero.',
+          },
+          {
+            type: 'table',
+            title: 'Fosa craneal anterior',
+            data: {
+              headers: ['Agujero / abertura', 'Contenido'],
+              rows: [
+                ['Foramen ciego (agujero ciego)', 'Vena emisaria nasal (en ~1 % de la población).'],
+                ['Forámenes cribosos de la lámina cribosa', 'Axones de las células olfatorias que forman los nervios olfatorios (NC I).'],
+                ['Forámenes etmoidales anterior y posterior', 'Vasos y nervios del mismo nombre.'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Fosa craneal media',
+            data: {
+              headers: ['Agujero / abertura', 'Contenido'],
+              rows: [
+                ['Conducto óptico (agujero óptico)', 'Nervio óptico (NC II) y arteria oftálmica.'],
+                ['Fisura orbitaria superior', 'Venas oftálmicas; nervio oftálmico (NC V₁); NC III, IV y VI; fibras simpáticas.'],
+                ['Foramen redondo (agujero redondo mayor)', 'Nervio maxilar (NC V₂).'],
+                ['Foramen oval (agujero oval)', 'Nervio mandibular (NC V₃) y arteria meníngea accesoria.'],
+                ['Foramen espinoso (agujero redondo menor)', 'Arteria y vena meníngeas medias, y ramo meníngeo del NC V₃.'],
+                ['Foramen rasgado', 'Nervio petroso profundo, algunas ramas de la arteria meníngea media y venas pequeñas.'],
+                ['Surco o hiato del nervio petroso mayor', 'Nervio petroso mayor y rama petrosa de la arteria meníngea media.'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Fosa craneal posterior',
+            data: {
+              headers: ['Agujero / abertura', 'Contenido'],
+              rows: [
+                ['Foramen magno (agujero occipital)', 'Médula oblongada y meninges; arterias vertebrales; NC XI; venas de la duramadre; arterias espinales anterior y posteriores.'],
+                ['Foramen yugular (agujero yugular)', 'NC IX, X y XI; bulbo superior de la vena yugular interna; senos petroso inferior y sigmoideo; ramas meníngeas de las arterias faríngea ascendente y occipital.'],
+                ['Conducto del nervio hipogloso', 'Nervio hipogloso (NC XII).'],
+                ['Conducto condíleo', 'Vena emisaria del seno sigmoideo hacia las venas vertebrales del cuello.'],
+                ['Foramen mastoideo', 'Vena emisaria mastoidea del seno sigmoideo y rama meníngea de la arteria occipital.'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Foramen rasgado',
+            content: 'La arteria carótida interna y sus plexos venoso y simpático atraviesan el área del foramen rasgado HORIZONTALMENTE, no verticalmente. El foramen existe como tal en el cráneo seco; en el individuo vivo está cerrado por cartílago.',
+          },
+          {
+            type: 'table',
+            title: 'Nomenclatura: clásica (diapositiva) ↔ internacional (Moore)',
+            data: {
+              headers: ['Clásica (examen)', 'Internacional (TA / Moore)'],
+              rows: [
+                ['Agujero Redondo Mayor', 'Foramen redondo'],
+                ['Agujero Oval', 'Foramen oval'],
+                ['Agujero Redondo Menor', 'Foramen espinoso'],
+                ['Agujero Occipital', 'Foramen magno'],
+                ['Agujero Óptico / Canal Óptico', 'Conducto óptico'],
+                ['Fisura Orbitaria Superior', 'Fisura orbitaria superior (mismo término)'],
+                ['Agujero Ciego', 'Foramen ciego'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Las dos filas más traicioneras: "Agujero Redondo Menor" NO es un "foramen redondo menor" sino el FORAMEN ESPINOSO; y el "Agujero Occipital" es el FORAMEN MAGNO. El nombre clásico y el internacional no se parecen.',
           },
         ],
       },
@@ -528,8 +625,8 @@ export const anatomiaUadTopics: Topic[] = [
   // ══════════════════════════════════════════════════════════════════════
   {
     id: 'huesos-cara-hioides',
-    title: 'Huesos de la Cara y Hioides',
-    subtitle: 'Viscerocráneo y hueso hioides: relieves, cavidades y articulaciones',
+    title: 'Huesos de la Cara',
+    subtitle: 'Viscerocráneo: relieves, cavidades y articulaciones',
     colorKey: 'osteologia',
     emoji: '🦴',
     keyPoints: [
@@ -704,6 +801,251 @@ export const anatomiaUadTopics: Topic[] = [
             type: 'note',
             title: 'Pendiente — clases 4–5',
             content: 'Pese al título "Huesos de la Cara y Hioides", la clase 3 terminó en el lagrimal: NO impartió la mandíbula ni el hueso hioides. Ambos llegan en las clases 4 o 5 y se incorporarán entonces. Se dejan como hueco visible para no simular un temario cubierto que aún no lo está.',
+          },
+        ],
+      },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════════════
+  // 4. COLUMNA VERTEBRAL (clase 4)
+  // ══════════════════════════════════════════════════════════════════════
+  {
+    id: 'columna-vertebral',
+    title: 'Columna Vertebral',
+    subtitle: 'Curvaturas, vértebra típica y caracteres de cada región: cervical, dorsal, lumbar, sacra y coccígea',
+    colorKey: 'osteologia',
+    emoji: '🦴',
+    keyPoints: [
+      '24 vértebras presacras móviles: 7 cervicales, 12 dorsales (torácicas) y 5 lumbares, más el sacro y el cóccix.',
+      'La columna representa ~2/5 de la altura total del cuerpo; el ángulo lumbosacro mide 130–160°.',
+      'Curvaturas PRIMARIAS (dorsal y sacra) están presentes desde la vida fetal; las SECUNDARIAS (cervical y lumbar) aparecen después del nacimiento.',
+      'La cifosis acentúa las curvaturas primarias y la lordosis las secundarias (ambas anteroposteriores); la escoliosis es una desviación lateral.',
+      'La vértebra típica tiene cuerpo, arco (2 pedículos + 2 láminas) y 7 apófisis (2 transversas, 1 espinosa y 4 articulares).',
+      'Los agujeros transversos son exclusivos de las cervicales; la apófisis odontoides (diente) es exclusiva del axis (C2).',
+      'El agujero vertebral es triangular en cervicales y lumbares, y circular en las dorsales.',
+      'El sacro son 5 vértebras fusionadas; el cóccix, 4.',
+    ],
+    sections: [
+      {
+        id: 'col-1',
+        number: 1,
+        title: 'Generalidades y curvaturas',
+        keyTerms: ['Vértebras presacras', 'Raquis', 'Ángulo lumbosacro', 'Curvatura primaria', 'Curvatura secundaria', 'Cifosis', 'Lordosis', 'Escoliosis'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La columna vertebral (raquis) está formada por 24 vértebras presacras móviles —7 cervicales, 12 dorsales (torácicas) y 5 lumbares—, más el sacro y el cóccix. Representa aproximadamente 2/5 de la altura total del cuerpo; el ángulo lumbosacro mide 130–160°.',
+          },
+          {
+            type: 'note',
+            title: 'Nomenclatura clásica ↔ TA',
+            content: 'Vértebras dorsales = vértebras torácicas (TA). Apófisis odontoides = diente del axis. Apófisis transversa lumbar = proceso costiforme (costal). El término principal en el examen es el clásico.',
+          },
+          {
+            type: 'comparison',
+            title: 'Curvaturas de la columna',
+            left: { title: 'Primarias', items: ['Cóncavas hacia adelante (cifóticas).', 'Dorsal (torácica) y sacra.', 'Presentes desde la vida fetal.'] },
+            right: { title: 'Secundarias', items: ['Cóncavas hacia atrás (lordóticas).', 'Cervical y lumbar.', 'Aparecen tras el nacimiento (sostener la cabeza, bipedestación).'] },
+          },
+          {
+            type: 'table',
+            title: 'Curvaturas patológicas',
+            data: {
+              headers: ['Desviación', 'Descripción'],
+              rows: [
+                ['Cifosis', 'Acentuación de las curvaturas primarias (anteroposterior).'],
+                ['Lordosis', 'Acentuación de las curvaturas secundarias (anteroposterior).'],
+                ['Escoliosis', 'Desviación lateral de la columna.'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'col-2',
+        number: 2,
+        title: 'Vértebra típica',
+        keyTerms: ['Cuerpo vertebral', 'Arco vertebral', 'Pedículos', 'Escotaduras', 'Láminas', 'Apófisis espinosa', 'Apófisis transversas', 'Apófisis articulares', 'Agujero vertebral', 'Agujero intervertebral'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Una vértebra típica consta de un cuerpo (anterior) y un arco vertebral (posterior). Entre ambos queda el agujero vertebral; la suma de los agujeros forma el conducto vertebral, que aloja la médula espinal.',
+          },
+          {
+            type: 'table',
+            title: 'Partes de la vértebra típica',
+            data: {
+              headers: ['Parte', 'Componentes'],
+              rows: [
+                ['Cuerpo', 'Porción anterior, cilíndrica; soporta el peso.'],
+                ['Arco vertebral', '2 pedículos (con escotaduras superior e inferior) + 2 láminas.'],
+                ['Apófisis (7)', '2 transversas, 1 espinosa, 2 articulares superiores y 2 articulares inferiores.'],
+                ['Aberturas', 'Agujero vertebral; agujero intervertebral (de conjunción) entre las escotaduras de dos vértebras contiguas, da paso al nervio espinal.'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'col-3',
+        number: 3,
+        title: 'Vértebras cervicales',
+        keyTerms: ['C3–C6 típicas', 'Agujero transverso', 'Apófisis espinosa bífida', 'Apófisis unciforme', 'Atlas (C1)', 'Axis (C2)', 'Apófisis odontoides', 'C7 prominente'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Cervical típica (C3–C6)',
+            data: {
+              headers: ['Rasgo', 'Característica'],
+              rows: [
+                ['Cuerpo', 'Pequeño y ancho (transversalmente).'],
+                ['Agujero vertebral', 'Grande y triangular.'],
+                ['Apófisis espinosa', 'Corta y bífida.'],
+                ['Apófisis transversas', 'Con agujero transverso (paso de la arteria vertebral); tubérculos anterior y posterior.'],
+                ['Otros', 'Apófisis unciformes (uncus) en los bordes laterales del cuerpo.'],
+              ],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'Vértebras atípicas: atlas vs. axis',
+            left: { title: 'Atlas (C1)', items: ['No tiene cuerpo ni apófisis espinosa.', 'Arco anterior (tubérculo anterior) y arco posterior (tubérculo posterior).', '2 masas laterales con carillas para el occipital y el axis.'] },
+            right: { title: 'Axis (C2)', items: ['Presenta la apófisis odontoides (diente), que representa el cuerpo del atlas.', 'Es el pivote sobre el que rota el atlas (gesto de "no").', 'Apófisis espinosa robusta.'] },
+          },
+          {
+            type: 'note',
+            content: 'C7 (vértebra prominente) es de transición: su apófisis espinosa es larga y NO bífida, palpable en la base del cuello.',
+          },
+        ],
+      },
+      {
+        id: 'col-4',
+        number: 4,
+        title: 'Vértebras dorsales (torácicas)',
+        keyTerms: ['D2–D8 típicas', 'Cuerpo reniforme', 'Carillas costales', 'Apófisis espinosa oblicua', 'D1', 'D11', 'D12 transición'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Dorsal típica (D2–D8)',
+            data: {
+              headers: ['Rasgo', 'Característica'],
+              rows: [
+                ['Cuerpo', 'Reniforme; con carillas (semicarillas) costales para la cabeza de la costilla.'],
+                ['Agujero vertebral', 'Pequeño y circular.'],
+                ['Apófisis espinosa', 'Larga y muy oblicua hacia abajo.'],
+                ['Apófisis transversas', 'Con carilla costal para el tubérculo de la costilla.'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Dorsales atípicas',
+            data: {
+              headers: ['Vértebra', 'Rasgo distintivo'],
+              rows: [
+                ['D1', 'Carilla costal superior completa; apófisis espinosa casi horizontal (recta).'],
+                ['D9', 'Solo semicarilla costal superior (medialuna superior).'],
+                ['D10', 'Semicarilla costal superior (medialuna superior).'],
+                ['D11', 'Carilla costal completa única; sin carillas costales en las apófisis transversas.'],
+                ['D12 (transición)', 'Carilla completa única; apófisis espinosa recta; tubérculos mamilar, accesorio y costal.'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'col-5',
+        number: 5,
+        title: 'Vértebras lumbares',
+        keyTerms: ['L1–L4 típicas', 'Cuerpo reniforme grande', 'Apófisis espinosa cuadrilátera', 'Apófisis costiforme', 'Tubérculo mamilar', 'Tubérculo accesorio', 'L5 transición'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Lumbar típica (L1–L4)',
+            data: {
+              headers: ['Rasgo', 'Característica'],
+              rows: [
+                ['Cuerpo', 'Grande y reniforme; soporta la mayor carga.'],
+                ['Agujero vertebral', 'Triangular.'],
+                ['Apófisis espinosa', 'Gruesa, cuadrilátera y horizontal.'],
+                ['Apófisis transversas', 'Largas y delgadas (apófisis costiformes/costales); tubérculos accesorio y mamilar.'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'L5 (transición) tiene el cuerpo más grueso por delante que por detrás —contribuye al ángulo lumbosacro— y apófisis transversas grandes y prominentes.',
+          },
+        ],
+      },
+      {
+        id: 'col-6',
+        number: 6,
+        title: 'Sacro',
+        keyTerms: ['5 vértebras fusionadas', 'Cara pélvica', 'Cara dorsal', 'Cresta sacra media', 'Agujeros sacros', 'Promontorio', 'Hiato sacro', 'Astas del sacro', 'Conducto sacro'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El sacro son 5 vértebras fusionadas, de forma triangular. Se describen 2 caras, una base, un vértice y 2 bordes laterales.',
+          },
+          {
+            type: 'table',
+            title: 'Elementos del sacro',
+            data: {
+              headers: ['Elemento', 'Detalle'],
+              rows: [
+                ['Cara anterior (pélvica)', 'Cóncava y lisa; 4 líneas transversales (fusión) y 4 pares de agujeros sacros anteriores.'],
+                ['Cara posterior (dorsal)', 'Convexa y rugosa; crestas sacras media, intermedia y lateral; astas del sacro; 4 pares de agujeros sacros posteriores; hiato sacro.'],
+                ['Bordes laterales', 'Superficie auricular (articula con el ilion) y tuberosidad sacra.'],
+                ['Base', 'Promontorio; carilla articular lumbosacra; conducto sacro; aletas (alas) sacras; 2 apófisis articulares superiores.'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Contenido del conducto sacro',
+            content: 'Conducto (saco) dural, cauda equina (raíces nerviosas lumbosacras) y filum terminale.',
+          },
+        ],
+      },
+      {
+        id: 'col-7',
+        number: 7,
+        title: 'Cóccix',
+        keyTerms: ['4 vértebras fusionadas', 'Astas del cóccix', 'Base', 'Vértice'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Cóccix',
+            description: 'Conjunto de 4 vértebras rudimentarias fusionadas (número variable). Presenta 2 caras, 2 bordes laterales, una base —que se articula con el vértice del sacro mediante las astas del cóccix— y un vértice.',
+          },
+        ],
+      },
+      {
+        id: 'col-8',
+        number: 8,
+        title: 'Comparativa región por región',
+        keyTerms: ['Cervical', 'Dorsal', 'Lumbar', 'Sacra', 'Coccígea', 'Número de piezas'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Caracteres por región (el formato en que se pregunta)',
+            data: {
+              headers: ['Rasgo', 'Cervical', 'Dorsal', 'Lumbar'],
+              rows: [
+                ['Nº de piezas', '7', '12', '5'],
+                ['Cuerpo', 'Pequeño, ancho', 'Reniforme, con carillas costales', 'Grande, reniforme'],
+                ['Agujero vertebral', 'Grande, triangular', 'Pequeño, circular', 'Triangular'],
+                ['Apófisis espinosa', 'Corta, bífida', 'Larga, oblicua', 'Gruesa, cuadrilátera'],
+                ['Apófisis transversas', 'Con agujero transverso', 'Con carilla costal', 'Largas (costiformes)'],
+                ['Rasgo exclusivo', 'Agujeros transversos; unciformes', 'Carillas costales', 'Tubérculos mamilar y accesorio'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'El sacro (5 vértebras) y el cóccix (4 vértebras) son huesos fusionados, no vértebras móviles. Esta tabla región-por-región es el formato en que casi siempre se pregunta la columna.',
           },
         ],
       },
