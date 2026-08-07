@@ -171,6 +171,19 @@ const medcoreOsteologia: MedLexTerm[] = [
   { id: 'mc-pterig', termino: 'pterig-', tipo: 'raiz', origen: 'griego', significado: 'Ala', ejemplos: ['apófisis pterigoides', 'pterigoideo', 'conducto pterigoideo'], sistema: 'musculoesqueletico' },
   { id: 'mc-etmo', termino: 'etm(o)-', tipo: 'raiz', origen: 'griego', significado: 'Criba, tamiz', ejemplos: ['etmoides', 'etmoidal', 'frontoetmoidal'], sistema: 'musculoesqueletico' },
   { id: 'mc-esfen', termino: 'esfen(o)-', tipo: 'raiz', origen: 'griego', significado: 'Cuña', ejemplos: ['esfenoides', 'esfenoidal', 'esfenopalatino'], sistema: 'musculoesqueletico' },
+  { id: 'mc-ion', termino: '-ión', tipo: 'sufijo', origen: 'griego', significado: 'Punto o lugar (en craneometría)', ejemplos: ['pterión', 'asterión', 'inión', 'nasión'], sistema: 'musculoesqueletico' },
+  // ── Columna vertebral (clase 4) ──
+  { id: 'mc-vertebr', termino: 'vertebr-', tipo: 'raiz', origen: 'latino', significado: 'Vértebra', ejemplos: ['vertebral', 'intervertebral', 'vertebroplastia'], sistema: 'musculoesqueletico' },
+  { id: 'mc-espondil', termino: 'espondil(o)-', tipo: 'raiz', origen: 'griego', significado: 'Vértebra', ejemplos: ['espondilitis', 'espondilosis', 'espondiloartrosis'], sistema: 'musculoesqueletico' },
+  { id: 'mc-raqui', termino: 'raqui-', tipo: 'raiz', origen: 'griego', significado: 'Columna vertebral, raquis', ejemplos: ['raquídeo', 'raquianestesia', 'raquis'], sistema: 'musculoesqueletico' },
+  { id: 'mc-sacr', termino: 'sacr(o)-', tipo: 'raiz', origen: 'latino', significado: 'Sacro', ejemplos: ['sacro', 'sacroilíaco', 'sacrococcígeo'], sistema: 'musculoesqueletico' },
+  { id: 'mc-cocci', termino: 'cocci-', tipo: 'raiz', origen: 'griego', significado: 'Cóccix (cuco)', ejemplos: ['coccígeo', 'coccigodinia', 'sacrococcígeo'], sistema: 'musculoesqueletico' },
+  { id: 'mc-disc', termino: 'disc(o)-', tipo: 'raiz', origen: 'griego', significado: 'Disco (intervertebral)', ejemplos: ['discal', 'discopatía', 'discectomía'], sistema: 'musculoesqueletico' },
+  { id: 'mc-lord', termino: 'lord-', tipo: 'raiz', origen: 'griego', significado: 'Curvado hacia atrás', ejemplos: ['lordosis', 'hiperlordosis'], sistema: 'musculoesqueletico' },
+  { id: 'mc-cif', termino: 'cif(o)-', tipo: 'raiz', origen: 'griego', significado: 'Encorvado, joroba', ejemplos: ['cifosis', 'cifoescoliosis'], sistema: 'musculoesqueletico' },
+  { id: 'mc-escoli', termino: 'escoli(o)-', tipo: 'raiz', origen: 'griego', significado: 'Torcido, curvo', ejemplos: ['escoliosis', 'escoliótico'], sistema: 'musculoesqueletico' },
+  { id: 'mc-listesis', termino: '-listesis', tipo: 'sufijo', origen: 'griego', significado: 'Deslizamiento', ejemplos: ['espondilolistesis', 'retrolistesis'], sistema: 'general' },
+  { id: 'mc-lisis', termino: '-lisis', tipo: 'sufijo', origen: 'griego', significado: 'Rotura, disolución, separación', ejemplos: ['espondilólisis', 'osteólisis', 'hemólisis'], sistema: 'general' },
 ]
 
 export const medlexTerms: MedLexTerm[] = [...prefijos, ...sufijos, ...raices, ...medcoreOsteologia]
