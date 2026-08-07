@@ -168,7 +168,8 @@ export const uadMedicina: Plan = {
             materiales: [
               { title: 'Clase 1 — Generalidades de la Anatomía', file: 'Semana 1 - Clase 1 Generalidades.pdf', kind: 'Clase' },
               { title: 'Clase 2 — Huesos de la Cabeza', file: 'Semana 1 - Clase 2 Huesos de la Cabeza.pdf', kind: 'Clase' },
-              { title: 'Clase 3 — Huesos de la Cara y Hioides', file: 'Semana 1 - Clase 3 Huesos de la Cara y Hioides.pdf', kind: 'Clase' },
+              { title: 'Clase 3 — Huesos de la Cara', file: 'Semana 1 - Clase 3 Huesos de la Cara.pdf', kind: 'Clase' },
+              { title: 'Clase 4 — Columna Vertebral', file: 'Semana 1 - Clase 4 Columna Vertebral.pdf', kind: 'Clase' },
               { title: 'Manual de Anatomía I', file: 'MANUAL ANATOMIA I.pdf', kind: 'Manual' },
               { title: 'Manual de Anatomía Humana y su Disección 1', file: 'MANUAL DE ANATOMIA HUMANA Y SU DISECCION 1.pdf', kind: 'Manual' },
               { title: 'Programa Académico — Anatomía I', file: 'PROGRAMA ANATOMIA I.pdf', kind: 'Programa' },
