@@ -36,7 +36,7 @@ export const atlasTopics: AtlasTopic[] = [
     emoji: '💀',
     imagePath: '/atlas/huesos-craneo.png',
     colorKey: 'osteologia',
-    relatedTopicIds: ['huesos-cara-hioides'],
+    relatedTopicIds: ['huesos-cara-hioides', 'columna-vertebral'],
     questions: [
       { id: 'hcr-1', question: '¿Cuántos huesos forman el cráneo (neurocráneo)?', options: ['6', '8', '12', '14'], correctIndex: 1, explanation: '8 huesos: 2 pares (parietales, temporales) y 4 impares (frontal, esfenoides, occipital, etmoides). Los 14 son los de la cara.', difficulty: 'easy' },
       { id: 'hcr-2', question: 'Los dos huesos PARES del cráneo son:', options: ['Frontal y occipital', 'Esfenoides y etmoides', 'Parietales y temporales', 'Parietales y frontal'], correctIndex: 2, explanation: 'Pares: parietales y temporales. Frontal, esfenoides, occipital y etmoides son impares.', difficulty: 'medium' },
@@ -55,7 +55,7 @@ export const atlasTopics: AtlasTopic[] = [
     emoji: '🦴',
     imagePath: '/atlas/huesos-cara-hioides.png',
     colorKey: 'osteologia',
-    relatedTopicIds: ['huesos-craneo'],
+    relatedTopicIds: ['huesos-craneo', 'columna-vertebral'],
     questions: [
       { id: 'hch-1', question: '¿Qué hueso (naranja) es la pieza central de la cara y forma el paladar?', options: ['Palatino', 'Maxilar superior', 'Malar', 'Vómer'], correctIndex: 1, explanation: 'El maxilar superior (naranja) forma el paladar, el suelo de la órbita y la pared de la fosa nasal, y aloja el seno maxilar.', difficulty: 'easy' },
       { id: 'hch-2', question: 'El relieve del pómulo lo forma el hueso:', options: ['Nasal', 'Malar (cigomático)', 'Lagrimal', 'Palatino'], correctIndex: 1, explanation: 'El malar o cigomático (azul) forma el pómulo y, con la apófisis cigomática del temporal, el arco cigomático.', difficulty: 'medium' },
@@ -64,6 +64,25 @@ export const atlasTopics: AtlasTopic[] = [
       { id: 'hch-5', question: 'El "unguis" (morado) corresponde, en Terminología Anatómica, al hueso:', options: ['Nasal', 'Palatino', 'Cigomático', 'Lagrimal'], correctIndex: 3, explanation: 'Unguis = hueso lagrimal (TA), en la pared medial de la órbita; participa en el canal lacrimonasal.', difficulty: 'medium' },
       { id: 'hch-6', question: 'El cornete inferior (dorado) es un hueso independiente; los cornetes superior y medio pertenecen al:', options: ['Maxilar', 'Etmoides', 'Palatino', 'Esfenoides'], correctIndex: 1, explanation: 'Los cornetes superior y medio son proyecciones del etmoides; solo el inferior es un hueso propio de la cara.', difficulty: 'medium' },
       { id: 'hch-7', question: '¿Qué estructuras NO impartió la clase 3 pese al título de la lámina?', options: ['Vómer y palatino', 'Mandíbula e hioides', 'Maxilar y malar', 'Nasal y lagrimal'], correctIndex: 1, explanation: 'La clase 3 terminó en el lagrimal: la mandíbula y el hueso hioides quedan pendientes (clases 4–5), como indica la clave de color.', difficulty: 'medium' },
+    ],
+  },
+  {
+    id: 'columna-vertebral',
+    title: 'Columna Vertebral',
+    subtitle: 'Curvaturas y caracteres de cada región, diferenciados por color',
+    category: 'anatomia',
+    emoji: '🦴',
+    imagePath: '/atlas/columna-vertebral.png',
+    colorKey: 'osteologia',
+    relatedTopicIds: ['huesos-craneo', 'huesos-cara-hioides'],
+    questions: [
+      { id: 'cvt-1', question: '¿Cuántas vértebras presacras móviles tiene la columna?', options: ['26', '24', '33', '12'], correctIndex: 1, explanation: '24 presacras: 7 cervicales, 12 dorsales y 5 lumbares. El sacro (5) y el cóccix (4) son fusionados.', difficulty: 'easy' },
+      { id: 'cvt-2', question: 'Las curvaturas PRIMARIAS de la columna son:', options: ['Cervical y lumbar', 'Dorsal y sacra', 'Cervical y dorsal', 'Lumbar y sacra'], correctIndex: 1, explanation: 'Primarias (presentes desde la vida fetal): dorsal y sacra. Secundarias (tras el nacimiento): cervical y lumbar.', difficulty: 'medium' },
+      { id: 'cvt-3', question: 'Los agujeros transversos son exclusivos de las vértebras:', options: ['Lumbares', 'Dorsales', 'Cervicales', 'Sacras'], correctIndex: 2, explanation: 'Solo las cervicales tienen agujeros transversos (paso de la arteria vertebral).', difficulty: 'medium' },
+      { id: 'cvt-4', question: 'La apófisis odontoides (diente) pertenece a:', options: ['El atlas (C1)', 'El axis (C2)', 'C7', 'D1'], correctIndex: 1, explanation: 'La odontoides es del axis (C2) y representa el cuerpo del atlas; el atlas (C1) carece de cuerpo y de espinosa.', difficulty: 'medium' },
+      { id: 'cvt-5', question: 'El agujero vertebral pequeño y circular caracteriza a las vértebras:', options: ['Cervicales', 'Dorsales', 'Lumbares', 'Sacras'], correctIndex: 1, explanation: 'Circular en las dorsales; grande y triangular en cervicales y lumbares.', difficulty: 'medium' },
+      { id: 'cvt-6', question: 'El sacro y el cóccix están formados, respectivamente, por:', options: ['4 y 5 vértebras', '5 y 4 vértebras', '5 y 5 vértebras', '3 y 4 vértebras'], correctIndex: 1, explanation: 'Sacro = 5 vértebras fusionadas; cóccix = 4 fusionadas.', difficulty: 'easy' },
+      { id: 'cvt-7', question: 'La apófisis espinosa gruesa y cuadrilátera es propia de las vértebras:', options: ['Cervicales', 'Dorsales', 'Lumbares', 'Coccígeas'], correctIndex: 2, explanation: 'Lumbar: espinosa cuadrilátera y horizontal. Cervical típica: bífida. Dorsal: larga y oblicua.', difficulty: 'hard' },
     ],
   },
   {
