@@ -10,6 +10,14 @@ export const modules: Module[] = [
     topicIds: ['anatomia-generalidades', 'huesos-craneo', 'huesos-cara-hioides', 'columna-vertebral'],
   },
   {
+    id: 'ingles-medico-uad',
+    badge: 'UAD · Inglés Médico I',
+    title: 'Inglés Médico',
+    subtitle: 'Semana 1: el expediente clínico en inglés, categorías gramaticales y verbos frasales.',
+    emoji: '🩺',
+    topicIds: ['ingles-medical-record', 'ingles-parts-of-speech', 'ingles-word-forms'],
+  },
+  {
     id: 'anatomia',
     badge: 'Módulo — Anatomía',
     title: 'Anatomía y Medicina',
