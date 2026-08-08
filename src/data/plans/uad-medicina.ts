@@ -194,6 +194,7 @@ export const uadMedicina: Plan = {
           name: 'Inglés Médico I',
           code: 'IN01005',
           tags: ['ingles'],
+          topicIds: ['ingles-medical-record', 'ingles-parts-of-speech', 'ingles-word-forms'],
           content: {
             area: 'Ciencias Sociomédicas',
             credits: 4,
@@ -233,12 +234,48 @@ export const uadMedicina: Plan = {
                 title: 'Introducción al idioma inglés en medicina',
                 competencia:
                   'Identifica y aplica las bases para el uso del idioma inglés en medicina.',
+                temas: [
+                  'The Medical Record: componentes del expediente clínico y su equivalencia en español',
+                  'Parts of Speech: las nueve categorías gramaticales con vocabulario médico',
+                  'Word Forms & Phrasal Verbs: derivación verbo↔sustantivo↔adjetivo y verbos frasales clínicos',
+                ],
+                topicIds: ['ingles-medical-record', 'ingles-parts-of-speech', 'ingles-word-forms'],
+              },
+              {
+                number: 2,
+                title: 'Terminología griega y latina útil en el lenguaje médico',
+                temas: [
+                  'Introducción a la terminología grecolatina en inglés médico',
+                  'Reglas para la formación de plurales (-a → -ae, -is → -es, -um → -a, -us → -i, …)',
+                ],
+              },
+              {
+                number: 3,
+                title: 'Gramática práctica utilizada en medicina',
+                temas: [
+                  'Tiempos verbales · verbos modales · estructuras condicionales · voz pasiva',
+                  'Estilo indirecto · preguntas · infinitivo / sufijo –ing',
+                  'Artículos · orden de palabras · proposiciones subordinadas · adjetivos · preposiciones',
+                ],
+              },
+              {
+                number: 4,
+                title: 'Acrónimos, errores frecuentes y bibliografía científica',
+                temas: [
+                  'IV. Acrónimos y abreviaturas médicas',
+                  'V. Errores frecuentes al hablar inglés en medicina (falsos cognados)',
+                  'VI. Bibliografía científica',
+                ],
               },
             ],
             bibliografia: [
               { title: 'Colección hemerográfica UAD-UD-UDS en plataforma OVID® (190 recursos)', year: '2017', tipo: 'básica' },
             ],
             materiales: [
+              { title: 'Clase 2 — The Medical Record', file: 'Semana 1 - Clase 2 The Medical Record.pdf', kind: 'Clase' },
+              { title: 'Clase 3 — Parts of Speech & Word Forms', file: 'Semana 1 - Clase 3 Parts of Speech.pdf', kind: 'Clase' },
+              { title: 'Proyecto Integrador Semana 1 — Why is English important…', file: 'Semana 1 - Proyecto Integrador.pdf', kind: 'Entrega' },
+              { title: 'Caso Clínico 1 — Shortness of Breath', file: 'Semana 1 - Caso Clinico 1 Shortness of Breath.pdf', kind: 'Caso clínico' },
               { title: 'Medical Terminology — A Living Language (6.ª ed.)', file: 'Medical Terminology - A Living Language 6th ed.pdf', kind: 'Libro' },
               { title: 'Check Your English Vocabulary for Medicine', file: 'Check Your English Vocabulary for Medicine.pdf', kind: 'Cuaderno' },
               { title: 'The Language of Medicine', file: 'The Language of Medicine.pdf', kind: 'Referencia' },
