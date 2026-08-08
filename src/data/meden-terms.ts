@@ -16,6 +16,9 @@ export type MedEnPos =
   | 'noun' | 'verb' | 'adjective' | 'adverb' | 'pronoun'
   | 'preposition' | 'conjunction' | 'interjection'
   | 'article' | 'phrasal-verb' | 'abbreviation'
+  // 'word-part' es morfema, no categoría gramatical: forzarlo a serlo
+  // corrompería los filtros de la página. Es el puente hacia MedLex.
+  | 'word-part'
 
 export interface MedEnTerm {
   id: string
@@ -41,6 +44,7 @@ export const POS_LABELS: Record<MedEnPos, string> = {
   article: 'Article',
   'phrasal-verb': 'Phrasal verb',
   abbreviation: 'Abbreviation',
+  'word-part': 'Word part',
 }
 
 export const CATEGORIA_LABELS: Record<string, string> = {
@@ -49,9 +53,12 @@ export const CATEGORIA_LABELS: Record<string, string> = {
   diagnostico: 'Diagnóstico',
   general: 'General',
   gramatica: 'Gramática',
+  terminologia: 'Terminología (word parts)',
+  abreviaturas: 'Abreviaturas',
+  'falsos-cognados': 'Falsos cognados',
 }
 
-export const medenTerms: MedEnTerm[] = [
+const semana1Terms: MedEnTerm[] = [
   // ─── Glosario médico de la clase (§4.2) ──────────────────────────────
   { id: 'meden-abnormal', term: 'abnormal', pos: 'adjective', es: 'anormal', categoria: 'general', semana: 1 },
   { id: 'meden-ache', term: 'ache', pos: 'noun', es: 'dolor (sordo y continuo)', forms: [{ pos: 'verb', word: 'to ache', es: 'doler' }], categoria: 'sintomas', semana: 1 },
@@ -146,9 +153,157 @@ export const medenTerms: MedEnTerm[] = [
   { id: 'meden-pv-take-off', term: 'take off', pos: 'phrasal-verb', es: 'quitarse (ropa)', categoria: 'gramatica', semana: 1, example: 'The doctor asked him to take off his shirt.' },
 ]
 
+// ══════════════════════════════════════════════════════════════════════
+// ADELANTO — Unidades II a VI (tomado de los libros de texto, aún no
+// impartido). Toda entrada lleva `semana` de su unidad y `nota` que empieza
+// por "Adelanto —". Los word parts son el puente hacia MedLex.
+// ══════════════════════════════════════════════════════════════════════
+
+const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+
+function buildTerms(
+  idPrefix: string,
+  rows: [term: string, es: string][],
+  base: { pos: MedEnPos; categoria: string; semana: number; notaBase: string },
+): MedEnTerm[] {
+  return rows.map(([term, es]) => ({
+    id: `meden-${idPrefix}-${slug(term)}`,
+    term,
+    pos: base.pos,
+    es,
+    categoria: base.categoria,
+    semana: base.semana,
+    nota: `Adelanto — ${base.notaBase}`,
+  }))
+}
+
+// Unidad II · Semana 2 — Medical Terminology, Apéndice I (libro 547, PDF 575).
+const prefixes: [string, string][] = [
+  ['a- / an-', 'sin, ausencia de'], ['ab-', 'lejos de'], ['ad-', 'hacia'],
+  ['ante-', 'antes'], ['anti-', 'contra'], ['auto-', 'propio, uno mismo'],
+  ['bi-', 'dos'], ['brady-', 'lento'], ['circum-', 'alrededor'],
+  ['contra-', 'contra, opuesto'], ['dia-', 'a través'], ['dys-', 'difícil, doloroso, anormal'],
+  ['ec- / ex-', 'fuera'], ['ecto-', 'fuera, externo'], ['endo-', 'dentro'],
+  ['epi-', 'sobre, encima'], ['eu-', 'normal, bueno'], ['extra-', 'fuera de'],
+  ['hemi-', 'mitad'], ['hyper-', 'excesivo, por encima'], ['hypo-', 'deficiente, por debajo'],
+  ['infra-', 'debajo'], ['inter-', 'entre'], ['intra-', 'dentro'],
+  ['macro-', 'grande'], ['mega-', 'grande'], ['micro-', 'pequeño'],
+  ['mono-', 'uno'], ['multi-', 'muchos'], ['neo-', 'nuevo'],
+  ['oligo-', 'escaso, poco'], ['pan-', 'todo'], ['para-', 'al lado de, cerca'],
+  ['per-', 'a través de'], ['peri-', 'alrededor'], ['poly-', 'muchos'],
+  ['post-', 'después'], ['pre-', 'antes'], ['pro-', 'antes, a favor'],
+  ['retro-', 'hacia atrás'], ['semi-', 'medio, parcial'], ['sub-', 'debajo'],
+  ['supra-', 'por encima'], ['syn- / sym-', 'junto, con'], ['tachy-', 'rápido'],
+  ['trans-', 'a través'], ['tri-', 'tres'], ['ultra-', 'más allá'], ['uni-', 'uno'],
+]
+
+// Unidad II · Semana 2 — Medical Terminology, Apéndice I (libro 547, PDF 575).
+const combiningForms: [string, string][] = [
+  ['abdomin/o', 'abdomen'], ['aden/o', 'glándula'], ['angi/o', 'vaso'],
+  ['arthr/o', 'articulación'], ['bronch/o', 'bronquio'], ['carcin/o', 'cáncer'],
+  ['cardi/o', 'corazón'], ['cephal/o', 'cabeza'], ['cerebr/o', 'cerebro'],
+  ['chol/e', 'bilis'], ['chondr/o', 'cartílago'], ['col/o', 'colon'],
+  ['cost/o', 'costilla'], ['crani/o', 'cráneo'], ['cyan/o', 'azul'],
+  ['cyst/o', 'vejiga, saco'], ['cyt/o', 'célula'], ['dent/o', 'diente'],
+  ['derm/o, dermat/o', 'piel'], ['encephal/o', 'encéfalo'], ['enter/o', 'intestino'],
+  ['erythr/o', 'rojo'], ['gastr/o', 'estómago'], ['gloss/o', 'lengua'],
+  ['gluc/o, glyc/o', 'azúcar, glucosa'], ['gynec/o', 'mujer'], ['hem/o, hemat/o', 'sangre'],
+  ['hepat/o', 'hígado'], ['hist/o', 'tejido'], ['hydr/o', 'agua'],
+  ['hyster/o', 'útero'], ['leuk/o', 'blanco'], ['lip/o', 'grasa'],
+  ['lymph/o', 'linfa'], ['mamm/o, mast/o', 'mama'], ['my/o', 'músculo'],
+  ['myel/o', 'médula'], ['nephr/o', 'riñón'], ['neur/o', 'nervio'],
+  ['ocul/o, ophthalm/o', 'ojo'], ['oste/o', 'hueso'], ['ot/o', 'oído'],
+  ['path/o', 'enfermedad'], ['pharyng/o', 'faringe'], ['phleb/o', 'vena'],
+  ['pneum/o, pulmon/o', 'pulmón'], ['proct/o', 'recto, ano'], ['psych/o', 'mente'],
+  ['py/o', 'pus'], ['ren/o', 'riñón'], ['rhin/o', 'nariz'],
+  ['splen/o', 'bazo'], ['thorac/o', 'tórax'], ['thromb/o', 'coágulo'],
+  ['trache/o', 'tráquea'], ['ur/o', 'orina'], ['vas/o', 'vaso, conducto'],
+]
+
+// Unidad II · Semana 2 — Medical Terminology, Apéndice I (libro 547, PDF 575).
+const suffixes: [string, string][] = [
+  ['-ac / -al / -ar / -ary', 'relativo a'], ['-algia', 'dolor'], ['-cele', 'hernia, protrusión'],
+  ['-centesis', 'punción para extraer líquido'], ['-cyte', 'célula'], ['-dynia', 'dolor'],
+  ['-ectasis', 'dilatación'], ['-ectomy', 'extirpación quirúrgica'], ['-emia', 'condición de la sangre'],
+  ['-genic', 'que produce, que origina'], ['-gram', 'registro, imagen'], ['-graphy', 'proceso de registrar'],
+  ['-ia', 'condición, estado'], ['-iasis', 'condición patológica'], ['-ic', 'relativo a'],
+  ['-ism', 'proceso, estado'], ['-itis', 'inflamación'], ['-logist', 'especialista en'],
+  ['-logy', 'estudio de'], ['-lysis', 'destrucción, separación'], ['-malacia', 'reblandecimiento'],
+  ['-megaly', 'agrandamiento'], ['-oma', 'tumor'], ['-osis', 'condición anormal'],
+  ['-pathy', 'enfermedad'], ['-penia', 'deficiencia'], ['-pexy', 'fijación quirúrgica'],
+  ['-phagia', 'deglución'], ['-phasia', 'habla'], ['-phobia', 'temor'],
+  ['-plasia', 'formación, desarrollo'], ['-plasty', 'reparación quirúrgica'], ['-plegia', 'parálisis'],
+  ['-pnea', 'respiración'], ['-ptosis', 'caída, prolapso'], ['-rrhage / -rrhagia', 'hemorragia'],
+  ['-rrhaphy', 'sutura'], ['-rrhea', 'flujo, secreción'], ['-sclerosis', 'endurecimiento'],
+  ['-scope', 'instrumento para examinar'], ['-scopy', 'examen visual'], ['-stasis', 'detención, estancamiento'],
+  ['-stomy', 'creación de una abertura'], ['-tomy', 'incisión'], ['-trophy', 'desarrollo, nutrición'],
+  ['-uria', 'condición de la orina'],
+]
+
+// Unidad IV · Semana 4 — Medical Terminology, Apéndice III (libro 560, PDF 588)
+// + Medical Abbreviations (Studocu, PDF 1–6). Distintas de las de Semana 1.
+const abbreviations: [string, string][] = [
+  ['Dx', 'diagnosis — diagnóstico'], ['Tx', 'treatment — tratamiento'], ['Hx', 'history — historia clínica'],
+  ['Sx', 'symptoms / surgery — síntomas / cirugía'], ['Rx', 'prescription — receta'], ['Fx', 'fracture — fractura'],
+  ['Dz', 'disease — enfermedad'], ['c/o', 'complains of — refiere, se queja de'], ['SOB', 'shortness of breath — disnea'],
+  ['NAD', 'no acute distress — sin datos de dificultad aguda'], ['WNL', 'within normal limits — dentro de límites normales'],
+  ['prn', 'as needed — según se necesite'], ['bid', 'twice a day — dos veces al día'], ['tid', 'three times a day — tres veces al día'],
+  ['qid', 'four times a day — cuatro veces al día'], ['po', 'by mouth — vía oral'], ['IV', 'intravenous — intravenoso'],
+  ['IM', 'intramuscular — intramuscular'], ['SubQ', 'subcutaneous — subcutáneo'], ['NPO', 'nothing by mouth — nada por vía oral'],
+  ['STAT', 'immediately — de inmediato'], ['BMP', 'basic metabolic panel — panel metabólico básico'],
+  ['CMP', 'comprehensive metabolic panel — panel metabólico completo'], ['ABG', 'arterial blood gas — gasometría arterial'],
+  ['UA', 'urinalysis — examen general de orina'], ['ESR', 'erythrocyte sedimentation rate — VSG'],
+  ['INR', 'international normalized ratio — razón normalizada internacional'], ['BP', 'blood pressure — presión arterial'],
+  ['HR', 'heart rate — frecuencia cardíaca'], ['RR', 'respiratory rate — frecuencia respiratoria'],
+  ['CXR', 'chest X-ray — radiografía de tórax'], ['ECG', 'electrocardiogram — electrocardiograma'],
+  ['MRI', 'magnetic resonance imaging — resonancia magnética'], ['US', 'ultrasound — ultrasonido'],
+  ['ABx', 'antibiotics — antibióticos'],
+]
+
+// Unidad III · Semana 3 — verbos frasales de síntomas (Pugh), distintos de los
+// 15 de la clase (Semana 1).
+const pughPhrasal: [string, string][] = [
+  ['come down with', 'contraer (una enfermedad)'], ['come round / come to', 'volver en sí, recobrar el conocimiento'],
+  ['throw up', 'vomitar'], ['block up', 'congestionarse, obstruirse (la nariz)'], ['swell up', 'hincharse'],
+  ['flare up', 'exacerbarse, brotar (un síntoma)'], ['break out', 'brotar (un sarpullido)'],
+  ['wear off', 'pasar el efecto (de un fármaco o la anestesia)'], ['build up', 'acumularse (líquido, placa)'],
+  ['clear up', 'curarse, despejarse (una infección)'], ['pass away', 'fallecer'],
+  ['waste away', 'consumirse, adelgazar por enfermedad'], ['dry up', 'secarse (una secreción)'],
+  ['seize up', 'agarrotarse (un músculo o articulación)'], ['come out in', 'salirle a uno (un sarpullido): come out in a rash'],
+]
+
+// Unidad V · Semana 4 — falsos cognados (workbook 26, PDF 33 + cuadros Word Watch).
+// El significado ERRÓNEO va en la `nota`, que empieza por "Adelanto —".
+const falseFriends: MedEnTerm[] = [
+  { id: 'meden-ff-intoxicated', term: 'intoxicated', pos: 'adjective', es: 'ebrio, bajo efectos de sustancias', categoria: 'falsos-cognados', semana: 4, nota: 'Adelanto — Falso cognado: NO significa "intoxicado" (poisoned). El más peligroso en una historia clínica.' },
+  { id: 'meden-ff-constipated', term: 'constipated', pos: 'adjective', es: 'estreñido', categoria: 'falsos-cognados', semana: 4, nota: 'Adelanto — Falso cognado: NO significa "constipado / resfriado" (to have a cold).' },
+  { id: 'meden-ff-embarrassed', term: 'embarrassed', pos: 'adjective', es: 'avergonzado', categoria: 'falsos-cognados', semana: 4, nota: 'Adelanto — Falso cognado: NO significa "embarazada" (pregnant).' },
+  { id: 'meden-ff-actually', term: 'actually', pos: 'adverb', es: 'en realidad, de hecho', categoria: 'falsos-cognados', semana: 4, nota: 'Adelanto — Falso cognado: NO significa "actualmente" (currently).' },
+  { id: 'meden-ff-eventually', term: 'eventually', pos: 'adverb', es: 'finalmente, con el tiempo', categoria: 'falsos-cognados', semana: 4, nota: 'Adelanto — Falso cognado: NO significa "eventualmente" (occasionally).' },
+  { id: 'meden-ff-assist', term: 'to assist', pos: 'verb', es: 'ayudar', categoria: 'falsos-cognados', semana: 4, nota: 'Adelanto — Falso cognado: NO significa "asistir a un lugar" (to attend).' },
+  { id: 'meden-ff-realize', term: 'to realize', pos: 'verb', es: 'darse cuenta', categoria: 'falsos-cognados', semana: 4, nota: 'Adelanto — Falso cognado: NO significa "realizar" (to carry out).' },
+  { id: 'meden-ff-discuss', term: 'to discuss', pos: 'verb', es: 'tratar, exponer', categoria: 'falsos-cognados', semana: 4, nota: 'Adelanto — Falso cognado: NO significa "discutir / reñir" (to argue).' },
+  { id: 'meden-ff-condition', term: 'condition', pos: 'noun', es: 'estado clínico, afección', categoria: 'falsos-cognados', semana: 4, nota: 'Adelanto — Falso cognado: NO significa "condición / requisito" (requirement).' },
+  { id: 'meden-ff-severe', term: 'severe', pos: 'adjective', es: 'grave, intenso', categoria: 'falsos-cognados', semana: 4, nota: 'Adelanto — Falso cognado: NO significa "severo de carácter" (strict).' },
+  { id: 'meden-ff-labor', term: 'labor', pos: 'noun', es: 'trabajo de parto', categoria: 'falsos-cognados', semana: 4, nota: 'Adelanto — Falso cognado: NO significa "labor / tarea" (task).' },
+  { id: 'meden-ff-disgrace', term: 'disgrace', pos: 'noun', es: 'deshonra', categoria: 'falsos-cognados', semana: 4, nota: 'Adelanto — Falso cognado: NO significa "desgracia" (misfortune).' },
+]
+
+const adelantoTerms: MedEnTerm[] = [
+  ...buildTerms('wp', prefixes, { pos: 'word-part', categoria: 'terminologia', semana: 2, notaBase: 'Unidad II. Prefijo grecolatino; el mismo fenómeno que cubre MedLex, visto desde el inglés.' }),
+  ...buildTerms('wp', combiningForms, { pos: 'word-part', categoria: 'terminologia', semana: 2, notaBase: 'Unidad II. Forma combinante (raíz + o); ver también MedLex.' }),
+  ...buildTerms('wp', suffixes, { pos: 'word-part', categoria: 'terminologia', semana: 2, notaBase: 'Unidad II. Sufijo grecolatino; ver también MedLex.' }),
+  ...buildTerms('abr', abbreviations, { pos: 'abbreviation', categoria: 'abreviaturas', semana: 4, notaBase: 'Unidad IV. Abreviatura médica.' }),
+  ...buildTerms('pv2', pughPhrasal, { pos: 'phrasal-verb', categoria: 'sintomas', semana: 3, notaBase: 'Unidad III. Verbo frasal de síntomas (Pugh).' }),
+  ...falseFriends,
+]
+
+export const medenTerms: MedEnTerm[] = [...semana1Terms, ...adelantoTerms]
+
 export const MEDEN_STATS = {
   total: medenTerms.length,
   historiaClinica: medenTerms.filter(t => t.categoria === 'historia-clinica').length,
   sintomas: medenTerms.filter(t => t.categoria === 'sintomas').length,
   gramatica: medenTerms.filter(t => t.categoria === 'gramatica').length,
+  wordParts: medenTerms.filter(t => t.pos === 'word-part').length,
 }

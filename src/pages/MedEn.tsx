@@ -41,6 +41,7 @@ const POS_COLORS: Record<string, string> = {
   article: 'bg-zinc-100 text-zinc-700 border-zinc-200',
   'phrasal-verb': 'bg-indigo-100 text-indigo-800 border-indigo-200',
   abbreviation: 'bg-fuchsia-100 text-fuchsia-800 border-fuchsia-200',
+  'word-part': 'bg-cyan-100 text-cyan-800 border-cyan-200',
 }
 
 interface QuizQuestion {
