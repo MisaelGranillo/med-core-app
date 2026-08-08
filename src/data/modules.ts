@@ -33,4 +33,16 @@ export const modules: Module[] = [
     emoji: '📊',
     topicIds: ['probabilidad', 'estadDesc', 'estadInf'],
   },
+  {
+    // Adelanto: contenido tomado del libro de texto, aún no impartido. Va al
+    // FINAL del índice a propósito: lo impartido tiene prioridad de orden.
+    id: 'ingles-medico-adelanto',
+    badge: 'UAD · Inglés Médico I — Adelanto',
+    title: 'Inglés Médico · Unidades II a VI',
+    subtitle: 'Contenido tomado del libro de texto, aún no impartido en clase. Unidades II a VI del programa.',
+    emoji: '📚',
+    topicIds: ['ingles-word-parts', 'ingles-plurals', 'ingles-verb-tenses',
+               'ingles-sentence-structure', 'ingles-abbreviations',
+               'ingles-false-friends', 'ingles-scientific-literature'],
+  },
 ]

@@ -817,4 +817,832 @@ export const inglesUadTopics: Topic[] = [
       },
     ],
   },
+
+  // ══════════════════════════════════════════════════════════════════════
+  // ADELANTO — Unidades II a VI (tomado de los libros de texto, aún no
+  // impartido). Cada tema abre con su bloque de nota de adelanto.
+  // Fuentes citadas con ambas numeraciones (libro y PDF).
+  // ══════════════════════════════════════════════════════════════════════
+
+  // ── Unidad II · Semana 2 ──────────────────────────────────────────────
+  {
+    id: 'ingles-word-parts',
+    title: 'Word Parts: Roots, Prefixes & Suffixes',
+    subtitle: 'Cómo se construye y se interpreta un término médico en inglés',
+    colorKey: 'gramatica',
+    emoji: '🧩',
+    keyPoints: [
+      'A medical term is built from up to four parts: word root, combining form, suffix and prefix.',
+      'The word root carries the core meaning (cardi = heart); the combining form is the root plus a vowel (cardi/o).',
+      'The combining vowel is almost always "o" and links a root to a suffix or to another root.',
+      'A prefix goes at the beginning and often signals number, location, time or negation.',
+      'A suffix goes at the end and usually turns the term into a noun, adjective or procedure.',
+      'To read a term, start at the suffix, then the prefix, then the root(s): peri/card/itis = inflammation around the heart.',
+      'This is the same Greek–Latin machinery MedLex covers, seen from English.',
+    ],
+    sections: [
+      {
+        id: 'iwp-1',
+        number: 1,
+        title: 'Adelanto',
+        blocks: [
+          {
+            type: 'note',
+            title: 'Adelanto — aún no impartido',
+            content:
+              'Este tema procede del libro de texto de la materia, no de una clase impartida. Corresponde a la Unidad II del programa, prevista para la Semana 2. El profesor puede recortarlo, reordenarlo o enfatizar otros puntos. Úsalo para ir por delante, no como guía de lo que entra en el parcial de esta semana.',
+          },
+        ],
+      },
+      {
+        // Fuente: Medical Terminology — A Living Language, Cap. 1 (libro 1–20, PDF 29–48).
+        id: 'iwp-2',
+        number: 2,
+        title: 'The four parts of a medical term',
+        keyTerms: ['word root', 'combining form', 'combining vowel', 'prefix', 'suffix'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Word root',
+            content: 'The foundation of the term; it carries the essential meaning. Ex.: cardi (heart), gastr (stomach), hepat (liver). — Raíz.',
+          },
+          {
+            type: 'definition',
+            title: 'Combining form',
+            content: 'The word root plus a combining vowel (usually "o"): cardi/o, gastr/o, neur/o. Used to join the root to another root or to a suffix that begins with a consonant. — Forma combinante.',
+          },
+          {
+            type: 'definition',
+            title: 'Prefix',
+            content: 'A word part at the beginning of a term. It modifies the root by indicating number, location, time or negation: peri- (around), sub- (under), hyper- (excessive). — Prefijo.',
+          },
+          {
+            type: 'definition',
+            title: 'Suffix',
+            content: 'A word part at the end of a term. It usually indicates a condition, a procedure or turns the term into an adjective: -itis (inflammation), -ectomy (excision), -megaly (enlargement). — Sufijo.',
+          },
+          {
+            type: 'note',
+            content: 'Enlace con MedLex: es el mismo fenómeno grecolatino que cubre /terminologia, visto desde el inglés. Las raíces y afijos coinciden; cambia la lengua vehicular.',
+          },
+        ],
+      },
+      {
+        // Fuente: Medical Terminology, Cap. 1 (libro 1–20, PDF 29–48).
+        id: 'iwp-3',
+        number: 3,
+        title: 'Rules for building and reading terms',
+        keyTerms: ['combining vowel', 'interpretation', 'suffix-first reading'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Rules of construction',
+            steps: [
+              'Keep the combining vowel when the suffix begins with a consonant: cardi/o + -logy → cardiology.',
+              'Drop the combining vowel when the suffix begins with a vowel: cardi/o + -itis → carditis.',
+              'Keep the combining vowel to link two word roots, even before a vowel: gastr/o + enter/o + -logy → gastroenterology.',
+              'A prefix does not usually need a combining vowel: sub- + hepat + -ic → subhepatic.',
+            ],
+          },
+          {
+            type: 'steps',
+            title: 'Rules of interpretation (read a term in this order)',
+            steps: [
+              'Start at the SUFFIX (the end): it tells you the condition or procedure.',
+              'Move to the PREFIX (the beginning): it tells you number, location, time or negation.',
+              'Finish with the ROOT(S) in the middle.',
+              'Example: peri/card/itis → -itis (inflammation) · peri- (around) · card (heart) = inflammation around the heart.',
+            ],
+          },
+        ],
+      },
+      {
+        // Fuente: Medical Terminology, Apéndice I (libro 547, PDF 575).
+        id: 'iwp-4',
+        number: 4,
+        title: 'Common prefixes',
+        keyTerms: ['a-', 'anti-', 'brady-', 'dys-', 'hyper-', 'hypo-', 'peri-', 'tachy-'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Frequent prefixes',
+            data: {
+              headers: ['Prefix', 'Meaning', 'Example'],
+              rows: [
+                ['a- / an-', 'without, absence of', 'apnea (without breathing)'],
+                ['anti-', 'against', 'antibiotic'],
+                ['brady-', 'slow', 'bradycardia'],
+                ['tachy-', 'fast, rapid', 'tachycardia'],
+                ['dys-', 'difficult, painful, abnormal', 'dysphagia'],
+                ['hyper-', 'excessive, above normal', 'hyperglycemia'],
+                ['hypo-', 'deficient, below normal', 'hypoglycemia'],
+                ['endo-', 'within', 'endoscopy'],
+                ['peri-', 'around', 'pericarditis'],
+                ['inter-', 'between', 'intercostal'],
+                ['intra-', 'within', 'intravenous'],
+                ['post-', 'after', 'postoperative'],
+                ['pre-', 'before', 'prenatal'],
+                ['sub-', 'under, below', 'subcutaneous'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        // Fuente: Medical Terminology, Apéndice I (libro 547, PDF 575).
+        id: 'iwp-5',
+        number: 5,
+        title: 'Common combining forms',
+        keyTerms: ['cardi/o', 'gastr/o', 'hepat/o', 'nephr/o', 'neur/o', 'oste/o'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Frequent combining forms (root + o)',
+            data: {
+              headers: ['Combining form', 'Meaning', 'Example'],
+              rows: [
+                ['cardi/o', 'heart', 'cardiology'],
+                ['gastr/o', 'stomach', 'gastritis'],
+                ['hepat/o', 'liver', 'hepatomegaly'],
+                ['nephr/o', 'kidney', 'nephrology'],
+                ['neur/o', 'nerve', 'neuropathy'],
+                ['oste/o', 'bone', 'osteoporosis'],
+                ['hemat/o', 'blood', 'hematology'],
+                ['dermat/o', 'skin', 'dermatitis'],
+                ['pneum/o', 'lung, air', 'pneumonia'],
+                ['my/o', 'muscle', 'myalgia'],
+                ['arthr/o', 'joint', 'arthroscopy'],
+                ['cyt/o', 'cell', 'cytology'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        // Fuente: Medical Terminology, Apéndice I (libro 547, PDF 575).
+        id: 'iwp-6',
+        number: 6,
+        title: 'Common suffixes',
+        keyTerms: ['-itis', '-ectomy', '-ology', '-megaly', '-osis', '-algia'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Frequent suffixes',
+            data: {
+              headers: ['Suffix', 'Meaning', 'Example'],
+              rows: [
+                ['-itis', 'inflammation', 'arthritis'],
+                ['-ectomy', 'surgical removal (excision)', 'appendectomy'],
+                ['-otomy', 'incision, cutting into', 'laparotomy'],
+                ['-ostomy', 'creation of a new opening', 'colostomy'],
+                ['-ology', 'study of', 'cardiology'],
+                ['-pathy', 'disease', 'neuropathy'],
+                ['-megaly', 'enlargement', 'hepatomegaly'],
+                ['-osis', 'abnormal condition', 'cyanosis'],
+                ['-emia', 'blood condition', 'anemia'],
+                ['-algia', 'pain', 'myalgia'],
+                ['-scopy', 'visual examination', 'endoscopy'],
+                ['-plasty', 'surgical repair', 'angioplasty'],
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 'ingles-plurals',
+    title: 'Singular & Plural Endings',
+    subtitle: 'Reglas grecolatinas para formar el plural de los términos médicos',
+    colorKey: 'gramatica',
+    emoji: '🔢',
+    keyPoints: [
+      'Most medical plurals follow the Greek or Latin ending, not the English "-s".',
+      '-a → -ae: vertebra → vertebrae. -us → -i: nucleus → nuclei.',
+      '-um → -a: bacterium → bacteria. -on → -a: ganglion → ganglia.',
+      '-is → -es: diagnosis → diagnoses. -ix/-ex → -ices: appendix → appendices.',
+      '-nx → -nges: phalanx → phalanges. -ma → -mata: carcinoma → carcinomata.',
+      'Some borrowed words already follow the English rule: virus → viruses, sinus → sinuses.',
+      'This is the single most predictable topic of Unit II: learn the ten endings.',
+    ],
+    sections: [
+      {
+        id: 'ipl-1',
+        number: 1,
+        title: 'Adelanto',
+        blocks: [
+          {
+            type: 'note',
+            title: 'Adelanto — aún no impartido',
+            content:
+              'Este tema procede del libro de texto de la materia, no de una clase impartida. Corresponde a la Unidad II del programa, prevista para la Semana 2. El profesor puede recortarlo, reordenarlo o enfatizar otros puntos. Úsalo para ir por delante, no como guía de lo que entra en el parcial de esta semana.',
+          },
+        ],
+      },
+      {
+        // Fuente: Medical Terminology — A Living Language, Cap. 1 (libro 1–20, PDF 29–48).
+        id: 'ipl-2',
+        number: 2,
+        title: 'The ten plural-ending rules',
+        keyTerms: ['-ae', '-i', '-a', '-es', '-ices', '-nges', '-mata'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Singular → plural, with a medical example',
+            data: {
+              headers: ['Singular ending', 'Plural ending', 'Example'],
+              rows: [
+                ['-a', '-ae', 'vertebra → vertebrae'],
+                ['-ax', '-aces', 'thorax → thoraces'],
+                ['-en', '-ina', 'lumen → lumina'],
+                ['-ex / -ix', '-ices', 'apex → apices · appendix → appendices'],
+                ['-is', '-es', 'diagnosis → diagnoses · metastasis → metastases'],
+                ['-ma', '-mata', 'carcinoma → carcinomata · sarcoma → sarcomata'],
+                ['-nx', '-nges', 'phalanx → phalanges · larynx → larynges'],
+                ['-on', '-a', 'ganglion → ganglia · spermatozoon → spermatozoa'],
+                ['-um', '-a', 'bacterium → bacteria · ovum → ova · atrium → atria'],
+                ['-us', '-i', 'nucleus → nuclei · bronchus → bronchi · alveolus → alveoli'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        // Fuente: Medical Terminology, Cap. 1 (libro 1–20, PDF 29–48).
+        id: 'ipl-3',
+        number: 3,
+        title: 'Exceptions: words that take the English plural',
+        keyTerms: ['virus', 'sinus', 'exception'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'They look Latin but add "-es"',
+            items: [
+              'virus → viruses (NOT "viri").',
+              'sinus → sinuses (NOT "sini").',
+              'apparatus → apparatuses.',
+              'Rule of thumb: when in doubt with a common English-borrowed word, the English "-es" is often accepted; the classical plural is preferred in formal writing.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'El par diagnosis → diagnoses es de los más evaluados: el singular termina en -is /ɪs/ y el plural en -es /iːz/. Distinta pronunciación, mismo lema.',
+          },
+        ],
+      },
+    ],
+  },
+
+  // ── Unidad III · Semana 3 ─────────────────────────────────────────────
+  {
+    id: 'ingles-verb-tenses',
+    title: 'Verb Tenses, Modals & Voice',
+    subtitle: 'Tiempos verbales, modales, condicionales y voz pasiva en contexto clínico',
+    colorKey: 'lectoescritura',
+    emoji: '⏳',
+    keyPoints: [
+      'Use the present simple for facts and protocols; the present continuous for what is happening now.',
+      'Use the present perfect to link a past event to the present: "The patient has recovered."',
+      'Modal verbs (can, could, should, must, may, might) express ability, advice, obligation and probability.',
+      'Conditionals link a condition to a result: "If the fever persists, call the doctor."',
+      'The passive voice is central to scientific writing: "The sample was analyzed."',
+      'Reported speech shifts the tense back: "She said she felt dizzy."',
+      'After some verbs use the infinitive; after others the -ing form.',
+    ],
+    sections: [
+      {
+        id: 'ivt-1',
+        number: 1,
+        title: 'Adelanto',
+        blocks: [
+          {
+            type: 'note',
+            title: 'Adelanto — aún no impartido',
+            content:
+              'Este tema procede del libro de texto de la materia, no de una clase impartida. Corresponde a la Unidad III del programa, prevista para la Semana 3. El profesor puede recortarlo, reordenarlo o enfatizar otros puntos. Úsalo para ir por delante, no como guía de lo que entra en el parcial de esta semana.',
+          },
+        ],
+      },
+      {
+        // Fuente: Check Your English Vocabulary for Medicine, unidades 15–18 (workbook 15–18, PDF 22–25).
+        id: 'ivt-2',
+        number: 2,
+        title: 'Tenses in clinical context',
+        keyTerms: ['present simple', 'present continuous', 'past simple', 'present perfect'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'When to use each tense',
+            data: {
+              headers: ['Tense', 'Use', 'Clinical example'],
+              rows: [
+                ['Present simple', 'facts, routines, protocols', 'The heart pumps blood to the body.'],
+                ['Present continuous', 'action happening now', 'The nurse is taking his blood pressure.'],
+                ['Past simple', 'finished action at a known time', 'The patient fainted yesterday.'],
+                ['Present perfect', 'past action with present relevance', 'She has recovered from the infection.'],
+                ['Past continuous', 'action in progress in the past', 'He was bringing up mucus during the night.'],
+                ['Future (will / going to)', 'prediction, plan', 'We will discharge her tomorrow.'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        // Fuente: Check Your English Vocabulary for Medicine, unidad 16 (workbook 16, PDF 23).
+        id: 'ivt-3',
+        number: 3,
+        title: 'Modal verbs',
+        keyTerms: ['can', 'could', 'should', 'must', 'may', 'might'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Modals and their meaning',
+            data: {
+              headers: ['Modal', 'Meaning', 'Example'],
+              rows: [
+                ['can / could', 'ability, possibility', 'The patient can walk without help.'],
+                ['should', 'advice, recommendation', 'You should take the antibiotic with food.'],
+                ['must', 'strong obligation', 'You must not drink alcohol with this drug.'],
+                ['may / might', 'probability, permission', 'The rash may be an allergic reaction.'],
+                ['have to', 'external obligation', 'She has to fast before the surgery.'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        // Fuente: Check Your English Vocabulary for Medicine, unidad 18 (workbook 18, PDF 25).
+        id: 'ivt-4',
+        number: 4,
+        title: 'Conditionals & passive voice',
+        keyTerms: ['zero conditional', 'first conditional', 'passive voice'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Conditionals',
+            items: [
+              'Zero conditional (general truth): If you heat water to 100 °C, it boils.',
+              'First conditional (real future): If the fever persists, call the doctor.',
+              'Second conditional (hypothetical): If I were the physician, I would order a CT scan.',
+            ],
+          },
+          {
+            type: 'definition',
+            title: 'Passive voice',
+            content: 'The object of the action becomes the subject; the doer is often omitted. Formed with "to be" + past participle. Central to scientific writing because the focus is on the procedure, not the person: "The sample was analyzed." / "The patient was admitted." — Voz pasiva.',
+          },
+        ],
+      },
+      {
+        // Fuente: Check Your English Vocabulary for Medicine, unidades 15–18 (workbook 15–18, PDF 22–25).
+        id: 'ivt-5',
+        number: 5,
+        title: 'Reported speech, questions & -ing / infinitive',
+        keyTerms: ['reported speech', 'questions', 'infinitive', 'gerund'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Reported speech (tense goes one step back)',
+            items: [
+              'Direct: "I feel dizzy." → Reported: She said she felt dizzy.',
+              'Direct: "I have taken my pills." → Reported: He said he had taken his pills.',
+            ],
+          },
+          {
+            type: 'list',
+            title: 'Infinitive vs. -ing',
+            items: [
+              'After some verbs use the infinitive: decide to operate, need to rest, agree to sign the consent.',
+              'After others use the -ing form: avoid smoking, stop bleeding, suggest resting.',
+              'After prepositions always use -ing: before eating, after fasting, without breathing.',
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 'ingles-sentence-structure',
+    title: 'Articles, Word Order & Subordination',
+    subtitle: 'Artículos, orden de palabras, proposiciones subordinadas, adjetivos y preposiciones',
+    colorKey: 'redaccion',
+    emoji: '🧱',
+    keyPoints: [
+      'English sentences follow a fixed Subject–Verb–Object order far more strictly than Spanish.',
+      'Use "a/an" for something general and "the" for something specific already known.',
+      'Adjectives come before the noun and follow a set order (opinion, size, age, colour…).',
+      'Subordinate clauses add information with words like because, although, which, that.',
+      'Prepositions often do not translate literally: "suffer FROM", "die OF", "admitted TO hospital".',
+      'A misplaced word in English can change the meaning, not just the style.',
+    ],
+    sections: [
+      {
+        id: 'iss-1',
+        number: 1,
+        title: 'Adelanto',
+        blocks: [
+          {
+            type: 'note',
+            title: 'Adelanto — aún no impartido',
+            content:
+              'Este tema procede del libro de texto de la materia, no de una clase impartida. Corresponde a la Unidad III del programa, prevista para la Semana 3. El profesor puede recortarlo, reordenarlo o enfatizar otros puntos. Úsalo para ir por delante, no como guía de lo que entra en el parcial de esta semana.',
+          },
+        ],
+      },
+      {
+        // Fuente: Check Your English Vocabulary for Medicine, unidad 20 (workbook 20, PDF 27).
+        id: 'iss-2',
+        number: 2,
+        title: 'Articles in context',
+        keyTerms: ['a', 'an', 'the', 'zero article'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'a / an / the / no article',
+            items: [
+              'a / an — one, not specific: The patient has a fever. She needs an X-ray.',
+              'the — specific, already known: The fever went down after the second dose.',
+              'no article — general/uncountable or most diseases: Patients with diabetes… · He has pneumonia.',
+              'Set phrases: in hospital, at home, by ambulance (no article).',
+            ],
+          },
+        ],
+      },
+      {
+        // Fuente: Check Your English Vocabulary for Medicine, unidad 20 (workbook 20, PDF 27).
+        id: 'iss-3',
+        number: 3,
+        title: 'Word order & adjectives',
+        keyTerms: ['SVO', 'adjective order', 'word order'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'English keeps a fixed Subject–Verb–Object order: "The doctor (S) examined (V) the patient (O)." Unlike Spanish, the subject is rarely dropped and the order rarely changes. — El inglés mantiene el orden Sujeto–Verbo–Objeto de forma estricta.',
+          },
+          {
+            type: 'list',
+            title: 'Adjectives go BEFORE the noun, in a set order',
+            items: [
+              'Order: opinion → size → age → shape → colour → origin → material → noun.',
+              'Example: a small round white pill.',
+              'Never: "a pill white" (Spanish order). Always the adjective first in English.',
+            ],
+          },
+        ],
+      },
+      {
+        // Fuente: §4.2 del prompt de Semana 1 (conjunciones subordinantes) + workbook unidad 20.
+        id: 'iss-4',
+        number: 4,
+        title: 'Subordinate clauses & prepositions',
+        keyTerms: ['subordinate clause', 'relative clause', 'preposition'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Subordinate clauses add information',
+            items: [
+              'Reason: We admitted her because her oxygen was low.',
+              'Concession: Although the pain was severe, she stayed calm.',
+              'Relative: The drug, which is taken orally, has few side effects.',
+              'Condition: Call us if the symptoms return.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Prepositions that do not translate literally',
+            data: {
+              headers: ['English', 'Español'],
+              rows: [
+                ['to suffer from a disease', 'padecer una enfermedad'],
+                ['to die of / from', 'morir de'],
+                ['to be admitted to hospital', 'ingresar en el hospital'],
+                ['to be allergic to', 'ser alérgico a'],
+                ['to complain of', 'quejarse de'],
+                ['to respond to treatment', 'responder al tratamiento'],
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
+
+  // ── Unidad IV · Semana 4 ──────────────────────────────────────────────
+  {
+    id: 'ingles-abbreviations',
+    title: 'Acronyms & Abbreviations',
+    subtitle: 'Abreviaturas médicas por área y la lista "do-not-use" de seguridad del paciente',
+    colorKey: 'comunicacion',
+    emoji: '🔠',
+    keyPoints: [
+      'Abbreviations save time but are a leading source of medical error when ambiguous.',
+      'Chart & orders: Dx (diagnosis), Tx (treatment), Hx (history), Rx (prescription), c/o (complains of).',
+      'Frequency: prn (as needed), bid (twice a day), tid (three times), qid (four times), po (by mouth).',
+      'Lab & imaging: CBC, BMP, ABG, UA, CT, MRI, CXR, ECG/EKG.',
+      'The "do-not-use" list forbids dangerous abbreviations: U, IU, QD/QOD, trailing zeros, MS/MSO4.',
+      'When in doubt, spell it out: patient safety beats brevity.',
+    ],
+    sections: [
+      {
+        id: 'iab-1',
+        number: 1,
+        title: 'Adelanto',
+        blocks: [
+          {
+            type: 'note',
+            title: 'Adelanto — aún no impartido',
+            content:
+              'Este tema procede del libro de texto de la materia, no de una clase impartida. Corresponde a la Unidad IV del programa, prevista para la Semana 4. El profesor puede recortarlo, reordenarlo o enfatizar otros puntos. Úsalo para ir por delante, no como guía de lo que entra en el parcial de esta semana.',
+          },
+        ],
+      },
+      {
+        // Fuente: Medical Terminology — Apéndice III (libro 560, PDF 588) + Medical Abbreviations (Studocu, PDF 1–6).
+        id: 'iab-2',
+        number: 2,
+        title: 'Abbreviations by area',
+        keyTerms: ['Dx', 'Tx', 'Hx', 'Rx', 'prn', 'bid', 'tid', 'po', 'CBC', 'CT'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Chart & orders',
+            data: {
+              headers: ['Abbrev.', 'Meaning'],
+              rows: [
+                ['Dx', 'diagnosis'],
+                ['Tx', 'treatment'],
+                ['Hx', 'history'],
+                ['Sx', 'symptoms / surgery (context)'],
+                ['Rx', 'prescription'],
+                ['c/o', 'complains of'],
+                ['SOB', 'shortness of breath'],
+                ['NAD', 'no acute distress'],
+                ['WNL', 'within normal limits'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Pharmacology / frequency & route',
+            data: {
+              headers: ['Abbrev.', 'Meaning'],
+              rows: [
+                ['prn', 'as needed (pro re nata)'],
+                ['bid', 'twice a day'],
+                ['tid', 'three times a day'],
+                ['qid', 'four times a day'],
+                ['po', 'by mouth (per os)'],
+                ['IV', 'intravenous'],
+                ['IM', 'intramuscular'],
+                ['SubQ', 'subcutaneous'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Laboratory & imaging',
+            data: {
+              headers: ['Abbrev.', 'Meaning'],
+              rows: [
+                ['CBC', 'complete blood count'],
+                ['BMP', 'basic metabolic panel'],
+                ['ABG', 'arterial blood gas'],
+                ['UA', 'urinalysis'],
+                ['CT', 'computed tomography'],
+                ['MRI', 'magnetic resonance imaging'],
+                ['CXR', 'chest X-ray'],
+                ['ECG / EKG', 'electrocardiogram'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        // Fuente: Medical Terminology, Cap. 1 (advertencia sobre abreviaturas ambiguas) + lista oficial "do-not-use".
+        id: 'iab-3',
+        number: 3,
+        title: 'Patient safety: the do-not-use list',
+        keyTerms: ['do-not-use', 'ambiguous abbreviation', 'patient safety'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'This is a safety topic, not a vocabulary topic',
+            content:
+              'El libro (Cap. 1) advierte que las abreviaturas ambiguas son una causa frecuente de error médico. Una abreviatura mal interpretada puede cambiar una dosis o un fármaco. Por eso existe una lista oficial "do-not-use": ante la duda, se escribe la palabra completa.',
+          },
+          {
+            type: 'table',
+            title: 'Do-not-use list — write this instead',
+            data: {
+              headers: ['Avoid', 'Why', 'Write instead'],
+              rows: [
+                ['U', 'mistaken for 0, 4 or cc', 'unit'],
+                ['IU', 'mistaken for IV or 10', 'international unit'],
+                ['QD / QOD', 'confused with each other', 'daily / every other day'],
+                ['trailing zero (1.0 mg)', 'the dot is missed → 10 mg', '1 mg'],
+                ['no leading zero (.5 mg)', 'read as 5 mg', '0.5 mg'],
+                ['MS, MSO4, MgSO4', 'morphine vs magnesium confusion', 'morphine sulfate / magnesium sulfate'],
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
+
+  // ── Unidad V · Semana 4 ───────────────────────────────────────────────
+  {
+    id: 'ingles-false-friends',
+    title: 'Common Errors & False Friends',
+    subtitle: 'Falsos cognados español↔inglés que cambian el sentido en la clínica',
+    colorKey: 'lenguaje',
+    emoji: '🎭',
+    keyPoints: [
+      'A false friend looks like a Spanish word but means something different in English.',
+      'intoxicated = drunk / under the influence, NOT "intoxicado" (poisoned).',
+      'constipated = estreñido, NOT "constipado / resfriado" (to have a cold).',
+      'embarrassed = avergonzado, NOT "embarazada" (pregnant).',
+      'actually = en realidad, NOT "actualmente" (currently).',
+      'condition = estado clínico / afección, NOT "condición / requisito".',
+      'The two costliest in a chart are intoxicated and constipated: they invert what you document.',
+    ],
+    sections: [
+      {
+        id: 'iff-1',
+        number: 1,
+        title: 'Adelanto',
+        blocks: [
+          {
+            type: 'note',
+            title: 'Adelanto — aún no impartido',
+            content:
+              'Este tema procede del libro de texto de la materia, no de una clase impartida. Corresponde a la Unidad V del programa, prevista para la Semana 4. El profesor puede recortarlo, reordenarlo o enfatizar otros puntos. Úsalo para ir por delante, no como guía de lo que entra en el parcial de esta semana.',
+          },
+        ],
+      },
+      {
+        // Fuente: Check Your English Vocabulary for Medicine, unidad 26 (workbook 26, PDF 33) + cuadros "Word Watch".
+        id: 'iff-2',
+        number: 2,
+        title: 'The false-friends table',
+        keyTerms: ['intoxicated', 'constipated', 'embarrassed', 'actually', 'condition', 'severe'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'English word · what it means · what it does NOT mean',
+            data: {
+              headers: ['English', 'Significa', 'NO significa'],
+              rows: [
+                ['intoxicated', 'ebrio, bajo efectos de sustancias', 'intoxicado (poisoned)'],
+                ['constipated', 'estreñido', 'constipado / resfriado (to have a cold)'],
+                ['embarrassed', 'avergonzado', 'embarazada (pregnant)'],
+                ['actually', 'en realidad', 'actualmente (currently)'],
+                ['eventually', 'finalmente, con el tiempo', 'eventualmente (occasionally)'],
+                ['to assist', 'ayudar', 'asistir a un lugar (to attend)'],
+                ['to realize', 'darse cuenta', 'realizar (to carry out)'],
+                ['to discuss', 'tratar, exponer', 'discutir / reñir (to argue)'],
+                ['condition', 'estado clínico, afección', 'condición / requisito (requirement)'],
+                ['severe', 'grave', 'severo de carácter (strict)'],
+                ['labor', 'trabajo de parto', 'labor / tarea (task)'],
+                ['disgrace', 'deshonra', 'desgracia (misfortune)'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'iff-3',
+        number: 3,
+        title: 'The two that cost the most',
+        keyTerms: ['intoxicated', 'constipated'],
+        blocks: [
+          {
+            type: 'note',
+            content:
+              'intoxicated y constipated son los dos más peligrosos: en una historia clínica invierten el sentido de lo que se documenta. "The patient is intoxicated" = está ebrio, no envenenado (poisoned). "The patient is constipated" = está estreñido, no resfriado (has a cold). Escribir el falso cognado cambia el cuadro clínico.',
+          },
+        ],
+      },
+    ],
+  },
+
+  // ── Unidad VI · Semana 4 ──────────────────────────────────────────────
+  {
+    id: 'ingles-scientific-literature',
+    title: 'Reading Scientific Literature',
+    subtitle: 'Estructura IMRaD, lectura de abstracts y el inglés como lingua franca',
+    colorKey: 'lectoescritura',
+    emoji: '📄',
+    keyPoints: [
+      'Most research papers follow the IMRaD structure: Introduction, Methods, Results, and Discussion.',
+      'The abstract is a miniature of the whole paper; read it first to decide if the paper is relevant.',
+      'Read strategically: abstract → figures/tables → discussion → methods, not top to bottom.',
+      'English is the lingua franca of medicine: the vast majority of current literature is in English.',
+      'The share of German references fell from 80–90% (1920) to 10–20% (1995).',
+      'Good clinical record-keeping is the everyday counterpart of clear scientific writing.',
+    ],
+    sections: [
+      {
+        id: 'isl-1',
+        number: 1,
+        title: 'Adelanto',
+        blocks: [
+          {
+            type: 'note',
+            title: 'Adelanto — aún no impartido',
+            content:
+              'Este tema procede del libro de texto de la materia, no de una clase impartida. Corresponde a la Unidad VI del programa, prevista para la Semana 4. El profesor puede recortarlo, reordenarlo o enfatizar otros puntos. Úsalo para ir por delante, no como guía de lo que entra en el parcial de esta semana.',
+          },
+        ],
+      },
+      {
+        id: 'isl-2',
+        number: 2,
+        title: 'The IMRaD structure',
+        keyTerms: ['IMRaD', 'introduction', 'methods', 'results', 'discussion'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'The four sections of a research paper',
+            data: {
+              headers: ['Section', 'Answers the question'],
+              rows: [
+                ['Introduction', 'Why was the study done? (background, gap, aim)'],
+                ['Methods', 'How was it done? (design, subjects, procedures)'],
+                ['Results', 'What was found? (data, figures, tables)'],
+                ['Discussion', 'What does it mean? (interpretation, limitations, conclusion)'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'isl-3',
+        number: 3,
+        title: 'How to read an abstract',
+        keyTerms: ['abstract', 'background', 'objective', 'conclusion'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'A structured abstract mirrors IMRaD',
+            items: [
+              'Background / Objective — the question and why it matters.',
+              'Methods — study design and population in one or two lines.',
+              'Results — the key numbers (effect size, p-value, confidence interval).',
+              'Conclusion — the take-home message.',
+            ],
+          },
+          {
+            type: 'steps',
+            title: 'Read strategically, not top to bottom',
+            steps: [
+              'Read the abstract to decide if the paper is relevant.',
+              'Look at the figures and tables — they carry the results.',
+              'Read the discussion for the interpretation.',
+              'Go to the methods only if you need to judge the quality.',
+            ],
+          },
+        ],
+      },
+      {
+        // Fuente: The Language of Medicine (PDF 1–4) + English as an International Language of Medicine (PDF 1–2).
+        id: 'isl-4',
+        number: 4,
+        title: 'English as the lingua franca of medicine',
+        keyTerms: ['lingua franca', 'scientific English'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'For most of the 20th century the language of medical science shifted decisively toward English. Reading the current literature — and publishing in it — requires English. — El inglés es hoy la lengua vehicular de la ciencia médica.',
+          },
+          {
+            type: 'note',
+            content: 'Dato de The Language of Medicine: la proporción de referencias en alemán cayó de un 80–90 % en 1920 a un 10–20 % en 1995, mientras el inglés se volvió dominante.',
+          },
+        ],
+      },
+      {
+        // Fuente: Medical Record Keeping for Quality Patient Care (PDF 1–8).
+        id: 'isl-5',
+        number: 5,
+        title: 'From reading to writing: clinical records',
+        keyTerms: ['record keeping', 'clarity', 'documentation'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Good clinical record-keeping (Medical record keeping…)',
+            items: [
+              'Write legibly, date and sign every entry.',
+              'Be accurate, objective and contemporaneous (write it at the time).',
+              'Avoid ambiguous abbreviations (see the do-not-use list).',
+              'Record what was done and why, including what was NOT done and the reason.',
+              'The record is a legal document: if it is not written down, it did not happen.',
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ]
