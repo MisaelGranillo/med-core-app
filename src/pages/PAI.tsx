@@ -67,7 +67,7 @@ export function PAI() {
               >
                 {isAvailable ? (
                   <Link
-                    to={`/estudio/${mod.slug}`}
+                    to={`/estudio/archivo/${mod.slug}`}
                     className="group block card p-6 hover:shadow-card-hover transition-all duration-200 hover:-translate-y-0.5 h-full"
                   >
                     <ModuloCard mod={mod} statusStyle={s} />

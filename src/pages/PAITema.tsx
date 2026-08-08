@@ -1,4 +1,4 @@
-/* Página de tema de estudio — ruta /estudio/:slug/:temaId */
+/* Página de tema de estudio — ruta /estudio/archivo/:slug/:temaId */
 
 import { useParams, Link } from 'react-router-dom'
 import {
@@ -37,7 +37,7 @@ export function PAITema() {
   if (!tema) return (
     <div className="p-8 text-center">
       <p className="text-zinc-400 text-sm">Tema no encontrado.</p>
-      <Link to={`/estudio/${slug}`} className="mt-4 inline-block text-primary-ink text-sm hover:underline">
+      <Link to={`/estudio/archivo/${slug}`} className="mt-4 inline-block text-primary-ink text-sm hover:underline">
         ← Volver al módulo
       </Link>
     </div>
@@ -48,7 +48,7 @@ export function PAITema() {
       {/* Header */}
       <div className="bg-surface border-b border-zinc-100 sticky top-14 z-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-3">
-          <Link to={`/estudio/${slug}`}
+          <Link to={`/estudio/archivo/${slug}`}
             className="flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-800 transition-colors flex-shrink-0">
             <ArrowLeft weight="bold" className="w-4 h-4" />
             <span className="hidden sm:block">{mod.nombre.replace('MÓDULO — ', '')}</span>
@@ -198,14 +198,14 @@ export function PAITema() {
             {/* Navegación anterior / siguiente */}
             <div className="grid grid-cols-2 gap-3 pt-2">
               {prevTema ? (
-                <Link to={`/estudio/${slug}/${prevTema.id}`}
+                <Link to={`/estudio/archivo/${slug}/${prevTema.id}`}
                   className="card p-4 hover:shadow-card-hover transition-all group text-left">
                   <p className="text-[10px] text-zinc-400 uppercase font-bold tracking-wider mb-1">← Anterior</p>
                   <p className="text-sm font-semibold text-zinc-700 leading-tight line-clamp-2">{prevTema.titulo}</p>
                 </Link>
               ) : <div />}
               {nextTema ? (
-                <Link to={`/estudio/${slug}/${nextTema.id}`}
+                <Link to={`/estudio/archivo/${slug}/${nextTema.id}`}
                   className="card p-4 hover:shadow-card-hover transition-all group text-right">
                   <p className="text-[10px] text-zinc-400 uppercase font-bold tracking-wider mb-1">Siguiente →</p>
                   <p className="text-sm font-semibold text-zinc-700 leading-tight line-clamp-2">{nextTema.titulo}</p>
@@ -224,7 +224,7 @@ export function PAITema() {
                 {allTemas.map(t => (
                   <Link
                     key={t.id}
-                    to={`/estudio/${slug}/${t.id}`}
+                    to={`/estudio/archivo/${slug}/${t.id}`}
                     className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium transition-all
                       ${t.id === temaId
                         ? 'bg-primary-100 text-primary-ink border border-primary-200'

@@ -1,4 +1,4 @@
-/* Página de guía de estudio — ruta /estudio/:slug */
+/* Página de guía de estudio — ruta /estudio/archivo/:slug */
 
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
@@ -117,7 +117,7 @@ export function PAIModulo() {
                   transition={{ delay: i * 0.06, duration: 0.3 }}
                 >
                   <Link
-                    to={`/estudio/${mod.slug}/${tema.id}`}
+                    to={`/estudio/archivo/${mod.slug}/${tema.id}`}
                     className="group card p-5 hover:shadow-card-hover transition-all duration-200 hover:-translate-y-0.5 block"
                   >
                     <div className="flex items-start justify-between gap-3 mb-3">

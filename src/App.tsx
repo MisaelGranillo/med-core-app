@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom'
 import { Navbar } from './components/Navbar'
+import { paiModulos } from './data/pai'
 
 /* Routes are lazy-loaded so each page + its heavy data (topics, quizzes,
  * anatomy meshes) only ships when navigated to — keeps the initial bundle
@@ -20,6 +21,7 @@ const Terminologia = named(() => import('./pages/Terminologia'),  'Terminologia'
 const NotFound     = named(() => import('./pages/NotFound'),      'NotFound')
 const Plan         = named(() => import('./pages/Plan'),          'Plan')
 const SubjectDetail= named(() => import('./pages/SubjectDetail'), 'SubjectDetail')
+const Temas        = named(() => import('./pages/Temas'),         'Temas')
 const Estudio      = named(() => import('./pages/PAI'),           'PAI')
 const EstudioModulo= named(() => import('./pages/PAIModulo'),     'PAIModulo')
 const EstudioTema  = named(() => import('./pages/PAITema'),       'PAITema')
@@ -34,10 +36,27 @@ function ModuloRedirect() {
 }
 
 /* Redirige el antiguo espacio /pai/* al nuevo /estudio/*, preservando la
- * ruta restante (slug y temaId). */
+ * ruta restante (slug y temaId). Encadena con los redirects de compatibilidad
+ * de abajo: /pai/bioquimica → /estudio/bioquimica → /estudio/archivo/bioquimica. */
 function PaiRedirect() {
   const { '*': rest } = useParams()
   return <Navigate to={`/estudio${rest ? `/${rest}` : ''}`} replace />
+}
+
+/* Compatibilidad: /estudio/:slug ahora es el índice PAI archivado. Solo se
+ * redirige si el slug corresponde a un módulo PAI real; si no, 404 normal
+ * (para no capturar rutas inexistentes en silencio). */
+function EstudioSlugRedirect() {
+  const { slug } = useParams<{ slug: string }>()
+  return paiModulos.some(m => m.slug === slug)
+    ? <Navigate to={`/estudio/archivo/${slug}`} replace />
+    : <NotFound />
+}
+function EstudioTemaRedirect() {
+  const { slug, temaId } = useParams<{ slug: string; temaId: string }>()
+  return paiModulos.some(m => m.slug === slug)
+    ? <Navigate to={`/estudio/archivo/${slug}/${temaId}`} replace />
+    : <NotFound />
 }
 
 /* Suspense fallback while a route chunk loads */
@@ -112,11 +131,16 @@ export default function App() {
               <Route path="/lmgc" element={<Navigate to="/plan" replace />} />
               <Route path="/modulos" element={<Navigate to="/plan" replace />} />
               <Route path="/modulos/:id" element={<ModuloRedirect />} />
-              {/* Estudio — guías de estudio agnósticas a la escuela */}
-              <Route path="/estudio" element={<Estudio />} />
-              <Route path="/estudio/:slug" element={<EstudioModulo />} />
-              <Route path="/estudio/:slug/:temaId" element={<EstudioTema />} />
-              {/* Redirecciones legacy /pai/* → /estudio/* */}
+              {/* Temas — índice REAL de guías de estudio (topics) */}
+              <Route path="/estudio" element={<Temas />} />
+              {/* Archivo PAI — guías de admisión, se conservan navegables */}
+              <Route path="/estudio/archivo" element={<Estudio />} />
+              <Route path="/estudio/archivo/:slug" element={<EstudioModulo />} />
+              <Route path="/estudio/archivo/:slug/:temaId" element={<EstudioTema />} />
+              {/* Compatibilidad de enlaces antiguos /estudio/:slug → /estudio/archivo/:slug */}
+              <Route path="/estudio/:slug" element={<EstudioSlugRedirect />} />
+              <Route path="/estudio/:slug/:temaId" element={<EstudioTemaRedirect />} />
+              {/* Redirecciones legacy /pai/* → /estudio/* (encadena con lo anterior) */}
               <Route path="/pai/*" element={<PaiRedirect />} />
               {/* Atlas — Estudio Visual */}
               <Route path="/atlas" element={<Atlas />} />

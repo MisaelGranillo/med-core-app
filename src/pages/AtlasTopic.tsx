@@ -285,7 +285,7 @@ export function AtlasTopic() {
               {topic.relatedPai.map((link) => (
                 <Link
                   key={`${link.modulo}-${link.temaId}`}
-                  to={`/estudio/${link.modulo}/${link.temaId}`}
+                  to={`/estudio/archivo/${link.modulo}/${link.temaId}`}
                   className="card card-interactive p-4 hover:shadow-md transition-all flex items-center gap-3 border-l-4 border-l-blue-500"
                 >
                   <div className="w-9 h-9 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">

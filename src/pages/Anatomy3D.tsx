@@ -76,7 +76,7 @@ export function Anatomy3D() {
         <div className="max-w-[1500px] mx-auto w-full px-4 sm:px-6 h-12 flex items-center gap-2 catalog-code">
           <Link to="/estudio" className="hover:text-primary-ink transition-colors">Estudio</Link>
           <span className="text-faint">/</span>
-          <Link to="/estudio/aparatos-y-sistemas" className="hover:text-primary-ink transition-colors hidden sm:inline">
+          <Link to="/estudio/archivo/aparatos-y-sistemas" className="hover:text-primary-ink transition-colors hidden sm:inline">
             Aparatos y Sistemas
           </Link>
           <span className="text-faint hidden sm:inline">/</span>
@@ -243,7 +243,7 @@ export function Anatomy3D() {
           <Link to="/terminologia" className="btn-ghost w-full justify-center">
             <BookOpenText weight="fill" className="w-4 h-4" /> Ver terminología relacionada
           </Link>
-          <Link to="/estudio/aparatos-y-sistemas" className="flex items-center gap-1.5 catalog-code hover:text-primary-ink transition-colors">
+          <Link to="/estudio/archivo/aparatos-y-sistemas" className="flex items-center gap-1.5 catalog-code hover:text-primary-ink transition-colors">
             <ArrowLeft weight="bold" className="w-3.5 h-3.5" /> Volver al módulo
           </Link>
         </aside>
