@@ -47,6 +47,7 @@ export const uadMedicina: Plan = {
           code: 'AN01001',
           hasLab: true,
           tags: ['anatomia'],
+          topicIds: ['anatomia-generalidades', 'huesos-craneo', 'huesos-cara-hioides', 'columna-vertebral'],
           content: {
             area: 'Ciencias Básicas',
             credits: 13,
@@ -123,6 +124,7 @@ export const uadMedicina: Plan = {
                   'Huesos de la cabeza: cráneo, cara y hueso hioides',
                   'Columna vertebral: vértebras cervicales, dorsales/torácicas, sacras y coccígeas',
                 ],
+                topicIds: ['anatomia-generalidades', 'huesos-craneo', 'huesos-cara-hioides', 'columna-vertebral'],
               },
               {
                 number: 2,

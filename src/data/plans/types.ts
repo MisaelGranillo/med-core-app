@@ -31,6 +31,10 @@ export type Subject = {
   code?: string         // clave oficial UAD, p.ej. 'AN01001'
   hasLab?: boolean
   tags?: string[]       // para enlazar con atlas / medlex / anatomía / quizzes
+  // Topics de `src/data/topics.ts` que cubren esta materia. Enlace EXPLÍCITO
+  // (no derivado de tags): cada id debe existir en `topics`. La verificación de
+  // integridad está en el prompt §5 (script temporal que recorre los planes).
+  topicIds?: string[]
   content?: SubjectContent // ficha + temario oficial (opcional)
 }
 
@@ -68,6 +72,9 @@ export type SemanaContent = {
   title: string          // 'Conceptos generales, planos anatómicos y Osteología I'
   competencia?: string   // competencia a desarrollar en la semana
   temas?: string[]       // temas / subtemas de la semana
+  // Topics impartidos en esta semana concreta. Enlace EXPLÍCITO: cada id debe
+  // existir en `topics` (verificación de integridad en el prompt §5).
+  topicIds?: string[]
 }
 
 export type TemarioUnit = {
