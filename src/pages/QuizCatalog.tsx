@@ -6,7 +6,7 @@
 
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Lightning, ArrowRight, Trophy } from '@phosphor-icons/react'
+import { Lightning, ArrowRight, Trophy, BookOpen } from '@phosphor-icons/react'
 import { modules } from '../data/modules'
 import { topics } from '../data/topics'
 import { questions } from '../data/quizzes'
@@ -74,14 +74,11 @@ export function QuizCatalog() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.03, duration: 0.25 }}
                   >
-                    <Link
-                      to={`/quiz/${t.id}`}
-                      className="card p-4 flex flex-col gap-3 h-full hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200 group"
-                    >
+                    <div className="card p-4 flex flex-col gap-3 h-full">
                       <div className="flex items-start justify-between gap-2">
                         <div className="flex items-center gap-2 min-w-0">
                           <span className="text-2xl flex-shrink-0">{t.emoji}</span>
-                          <h3 className="font-bold text-sm leading-snug text-zinc-900 group-hover:text-primary-700 transition-colors">
+                          <h3 className="font-bold text-sm leading-snug text-zinc-900">
                             {t.title}
                           </h3>
                         </div>
@@ -93,13 +90,27 @@ export function QuizCatalog() {
                         )}
                       </div>
                       <p className="text-xs text-zinc-400 leading-relaxed line-clamp-2">{t.subtitle}</p>
-                      <div className="flex items-center justify-between border-t border-zinc-100 pt-2.5 mt-auto">
+                      <div className="flex items-center border-t border-zinc-100 pt-2.5 mt-auto">
                         <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full ${colors.badge}`}>
                           {qCount} preguntas
                         </span>
-                        <ArrowRight weight="bold" className="w-4 h-4 text-zinc-300 group-hover:text-primary-500 transition-colors" />
                       </div>
-                    </Link>
+                      {/* Estudiar primero: leer antes de examinarse */}
+                      <div className="flex items-center gap-2">
+                        <Link
+                          to={`/topic/${t.id}`}
+                          className="flex-1 flex items-center justify-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-zinc-900 text-white hover:bg-zinc-800 transition-colors"
+                        >
+                          <BookOpen weight="bold" className="w-3.5 h-3.5" /> Estudiar
+                        </Link>
+                        <Link
+                          to={`/quiz/${t.id}`}
+                          className={`flex items-center justify-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl ${colors.badge} transition-colors`}
+                        >
+                          Quiz <ArrowRight weight="bold" className="w-3 h-3" />
+                        </Link>
+                      </div>
+                    </div>
                   </motion.div>
                 )
               })}
