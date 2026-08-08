@@ -14,11 +14,11 @@ import {
 const NAV_ITEMS = [
   { path: '/',            label: 'Inicio',       icon: House,          mobile: true  },
   { path: '/plan',        label: 'Plan',         icon: BookOpen,       mobile: true  },
-  { path: '/anatomia',    label: 'Anatomía',     icon: Cube,           mobile: true  },
+  { path: '/estudio',     label: 'Temas',        icon: GraduationCap,  mobile: true  },
+  { path: '/anatomia',    label: 'Anatomía',     icon: Cube,           mobile: false },
   { path: '/atlas',       label: 'Atlas',        icon: Image,          mobile: true  },
   { path: '/terminologia',label: 'MedLex',       icon: BookOpenText,   mobile: true  },
   { path: '/quiz',        label: 'Quizzes',      icon: Lightning,      mobile: true  },
-  { path: '/estudio',     label: 'Estudio',      icon: GraduationCap,  mobile: false },
   { path: '/progress',    label: 'Progreso',     icon: ChartBar,       mobile: false },
 ] as const
 
