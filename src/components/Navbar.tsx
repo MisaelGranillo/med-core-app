@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import {
   MagnifyingGlass, X, House, BookOpen, Lightning,
-  Cube, BookOpenText, ChartBar, GraduationCap, Brain, Image,
+  Cube, BookOpenText, ChartBar, GraduationCap, Brain, Image, Translate,
 } from '@phosphor-icons/react'
 
 /* Entradas de navegación permanentes. Las cuatro secciones núcleo (Anatomía,
@@ -18,6 +18,7 @@ const NAV_ITEMS = [
   { path: '/anatomia',    label: 'Anatomía',     icon: Cube,           mobile: false },
   { path: '/atlas',       label: 'Atlas',        icon: Image,          mobile: true  },
   { path: '/terminologia',label: 'MedLex',       icon: BookOpenText,   mobile: true  },
+  { path: '/vocabulario', label: 'Vocabulario',  icon: Translate,      mobile: false },
   { path: '/quiz',        label: 'Quizzes',      icon: Lightning,      mobile: true  },
   { path: '/progress',    label: 'Progreso',     icon: ChartBar,       mobile: false },
 ] as const

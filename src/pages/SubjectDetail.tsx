@@ -11,7 +11,7 @@ import { motion } from 'framer-motion'
 import {
   ArrowLeft, ArrowRight, Cube, BookOpenText, Lightning, BookOpen, Flask,
   GraduationCap, Clock, Books, LinkSimple, ListChecks, Target, CalendarCheck,
-  FilePdf, DownloadSimple,
+  FilePdf, DownloadSimple, Translate,
 } from '@phosphor-icons/react'
 import { findSubject, sistemasDeMateria, LIBRARY_BASE } from '../data/plans'
 import { medlexTerms, SISTEMA_LABELS, SISTEMA_COLORS } from '../data/medlex-terms'
@@ -42,6 +42,8 @@ export function SubjectDetail() {
   const subjectTopics = resolveTopics(subject.topicIds)
   const sistemas = sistemasDeMateria(subject.tags)
   const primarySistema = sistemas[0] ?? null
+  // Inglés Médico enlaza a MedEN (vocabulario EN↔ES), como Anatomía enlaza a MedLex.
+  const isIngles = (subject.tags ?? []).includes('ingles')
 
   // Términos MedLex relacionados (primeros 9) — enlace cruzado deliberado.
   const relatedTerms = primarySistema
@@ -146,6 +148,27 @@ export function SubjectDetail() {
               </Link>
             </motion.div>
           </div>
+        )}
+
+        {/* Acceso rápido a MedEN (Inglés Médico) */}
+        {isIngles && (
+          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
+            <Link
+              to="/vocabulario?semana=1"
+              className="card p-5 flex items-center gap-4 hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200 group"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-pink-100 flex items-center justify-center flex-shrink-0">
+                <Translate weight="fill" className="w-6 h-6 text-pink-600" />
+              </div>
+              <div className="flex-1">
+                <p className="font-bold text-zinc-900 text-sm mb-0.5">Vocabulario MedEN</p>
+                <p className="text-xs text-zinc-400">
+                  Términos, abreviaturas y verbos frasales en inglés con su equivalencia en español.
+                </p>
+              </div>
+              <ArrowLeft weight="bold" className="w-4 h-4 text-zinc-400 rotate-180 group-hover:text-pink-600 transition-colors" />
+            </Link>
+          </motion.div>
         )}
 
         {/* Términos MedLex relacionados */}

@@ -18,6 +18,7 @@ const Search       = named(() => import('./pages/Search'),        'Search')
 const Progress     = named(() => import('./pages/Progress'),      'Progress')
 const Anatomy      = named(() => import('./pages/Anatomy'),       'Anatomy')
 const Terminologia = named(() => import('./pages/Terminologia'),  'Terminologia')
+const MedEn        = named(() => import('./pages/MedEn'),         'MedEn')
 const NotFound     = named(() => import('./pages/NotFound'),      'NotFound')
 const Plan         = named(() => import('./pages/Plan'),          'Plan')
 const SubjectDetail= named(() => import('./pages/SubjectDetail'), 'SubjectDetail')
@@ -124,6 +125,8 @@ export default function App() {
               {/* MedLex — terminología (deep-linkable) */}
               <Route path="/terminologia" element={<Terminologia />} />
               <Route path="/terminologia/:termId" element={<Terminologia />} />
+              {/* MedEN — vocabulario inglés↔español de Inglés Médico */}
+              <Route path="/vocabulario" element={<MedEn />} />
               {/* Plan de estudios (capa curricular enchufable) */}
               <Route path="/plan" element={<Plan />} />
               <Route path="/plan/:subjectId" element={<SubjectDetail />} />
