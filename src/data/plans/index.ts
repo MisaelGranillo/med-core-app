@@ -56,5 +56,18 @@ export const SISTEMAS_CORPORALES = [
   'urinario', 'endocrino', 'musculoesqueletico', 'tegumentario',
 ] as const
 
+/*
+ * Devuelve los tags de la materia que SON sistemas corporales (con visor 3D y
+ * MedLex por sistema). Devolver `[]` es un RESULTADO ESPERADO, no un error: los
+ * tags de área académica —'anatomia', 'bioquimica', 'ingles'— no son sistemas
+ * corporales y no tienen por qué mapear a uno.
+ *
+ * Antes esto era un fallo silencioso: Anatomía I (tag 'anatomia') no mostraba
+ * NINGÚN enlace de estudio porque su tag no está en SISTEMAS_CORPORALES. Eso YA
+ * NO es un problema de descubrimiento: los enlaces a las guías de estudio de la
+ * materia vienen ahora de `Subject.topicIds` (explícito y verificable), no de
+ * inferir un sistema a partir del tag. Los cross-links por sistema (3D/MedLex)
+ * son un extra que solo aplica a materias con tag de sistema corporal real.
+ */
 export const sistemasDeMateria = (tags?: string[]): string[] =>
   (tags ?? []).filter(t => (SISTEMAS_CORPORALES as readonly string[]).includes(t))
