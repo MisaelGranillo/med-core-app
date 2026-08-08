@@ -3,21 +3,28 @@
  * Route: /  ·  All values from tokens.css. Stats from real data files.
  * Light default; dark mode automatic via prefers-color-scheme (tokens flip).
  */
-import { useState, useCallback } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Heart, BookOpen, PencilSimple, FirstAid } from '@phosphor-icons/react'
+import { Link, useNavigate } from 'react-router-dom'
+import { Heart, BookOpen, PencilSimple, FirstAid, GraduationCap, ArrowRight } from '@phosphor-icons/react'
 import type { Icon } from '@phosphor-icons/react'
-import { paiModulos } from '../data/pai'
 import { medlexTerms } from '../data/medlex-terms'
 import { hotspots } from '../data/anatomyHotspots'
+import { modules } from '../data/modules'
+import { topics } from '../data/topics'
+import { TOPIC_COLORS } from '../data/colors'
 import { getActivePlan } from '../data/plans'
-import { Toast } from '../components/Toast'
+import { useProgress } from '../store/useProgress'
 
 /* ── Stats from real data ──────────────────────────────────── */
 const TERMS_COUNT     = medlexTerms.length
 const HOTSPOTS_COUNT  = hotspots.length
-const GUIAS_TOTAL     = paiModulos.length
-const GUIAS_DISPON    = paiModulos.filter(m => m.status === 'disponible').length
+const TOPICS_COUNT    = topics.length
+const TOTAL_SECTIONS  = topics.reduce((n, t) => n + t.sections.length, 0)
+
+// Módulos de estudio REALES (los de data/modules con topics), no PAI.
+const topicById = Object.fromEntries(topics.map(t => [t.id, t]))
+const STUDY_MODULES = modules
+  .map(m => ({ module: m, temas: m.topicIds.map(id => topicById[id]).filter(Boolean) }))
+  .filter(g => g.temas.length > 0)
 
 // Hero derivado del plan activo (capa curricular enchufable). Las secciones
 // núcleo funcionan sin plan; el hero solo lo usa para etiquetar el plan activo.
@@ -25,6 +32,7 @@ const ACTIVE_PLAN     = getActivePlan()
 const PLAN_MATERIAS   = ACTIVE_PLAN.periods.reduce((n, p) => n + p.subjects.length, 0)
 
 const TOOLS: { name: string; desc: string; route: string; icon: Icon }[] = [
+  { name: 'Temas',        desc: `${TOPICS_COUNT} guías de estudio`, route: '/estudio',      icon: GraduationCap },
   { name: 'Anatomía',     desc: 'Visor 2D + 3D',                  route: '/anatomia',     icon: Heart },
   { name: 'Terminología', desc: `MedLex · ${TERMS_COUNT} términos`, route: '/terminologia', icon: BookOpen },
   { name: 'Quizzes',      desc: 'Exámenes de práctica',            route: '/quiz',         icon: PencilSimple },
@@ -40,14 +48,25 @@ const HERO_PILLS = [
 const HERO_STATS = [
   { value: `+${TERMS_COUNT}`,     label: 'Términos'    },
   { value: `${HOTSPOTS_COUNT}`,   label: 'Estructuras' },
-  { value: `${GUIAS_DISPON}`,     label: 'Guías'       },
+  { value: `${TOPICS_COUNT}`,     label: 'Temas'       },
   { value: `${PLAN_MATERIAS}`,    label: 'Materias'    },
 ]
 
 export function Home() {
   const navigate = useNavigate()
-  const [toast, setToast] = useState<string | null>(null)
-  const clearToast = useCallback(() => setToast(null), [])
+  const { getSectionsRead, getTotalSectionsRead } = useProgress()
+  const sectionsRead = getTotalSectionsRead()
+
+  // Primer Topic con lectura incompleta; si no hay progreso, el primero de todos.
+  const continueTopic = (() => {
+    for (const { temas } of STUDY_MODULES)
+      for (const t of temas)
+        if (getSectionsRead(t.id).length < t.sections.length) return t
+    return STUDY_MODULES[0]?.temas[0] ?? null
+  })()
+  const continuePct = continueTopic && continueTopic.sections.length > 0
+    ? Math.round((getSectionsRead(continueTopic.id).length / continueTopic.sections.length) * 100)
+    : 0
 
   return (
     <div style={{ background: 'var(--color-page-bg)', flex: 1 }}>
@@ -126,9 +145,37 @@ export function Home() {
             display: 'flex', flexDirection: 'column', gap: 10,
           }}
         >
-          <ProgressRow label="Estudio" fill={GUIAS_DISPON / GUIAS_TOTAL}      color="var(--color-accent)"       value={`${GUIAS_DISPON} de ${GUIAS_TOTAL} guías`} />
+          <ProgressRow label="Estudio" fill={TOTAL_SECTIONS ? sectionsRead / TOTAL_SECTIONS : 0} color="var(--color-accent)" value={`${sectionsRead} de ${TOTAL_SECTIONS} secciones`} />
           <ProgressRow label="Plan"    fill={1 / ACTIVE_PLAN.periods.length} color="var(--color-progress-lmgc)" value={`${ACTIVE_PLAN.schoolShort} · ${ACTIVE_PLAN.periods.length} ${ACTIVE_PLAN.periodLabel.toLowerCase()}s`} />
         </section>
+
+        {/* ── Continuar estudiando ─────────────────────────── */}
+        {continueTopic && (
+          <Link
+            to={`/topic/${continueTopic.id}`}
+            className="home-continue"
+            style={{
+              display: 'flex', alignItems: 'center', gap: 12,
+              background: 'var(--color-surface)', border: '0.5px solid var(--color-border)',
+              borderLeft: `3px solid ${continuePct > 0 ? 'var(--color-accent)' : 'var(--color-progress-lmgc)'}`,
+              borderRadius: 'var(--radius-md)', padding: '12px 14px', marginBottom: 14,
+              textDecoration: 'none',
+            }}
+          >
+            <span className="home-tool-icon" style={{ flexShrink: 0 }}>
+              <GraduationCap weight="fill" size={18} />
+            </span>
+            <span style={{ minWidth: 0, flex: 1 }}>
+              <span style={{ display: 'block', fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--color-text-secondary)' }}>
+                {continuePct > 0 ? `Continuar estudiando · ${continuePct}%` : 'Empieza a estudiar'}
+              </span>
+              <span style={{ display: 'block', fontSize: 13, fontWeight: 500, color: 'var(--color-text-primary)' }}>
+                {continueTopic.emoji}&nbsp; {continueTopic.title}
+              </span>
+            </span>
+            <ArrowRight weight="bold" size={16} style={{ color: 'var(--color-text-secondary)', flexShrink: 0 }} />
+          </Link>
+        )}
 
         {/* ── Tools ─────────────────────────────────────────── */}
         <SectionLabel>Herramientas</SectionLabel>
@@ -147,37 +194,29 @@ export function Home() {
           })}
         </div>
 
-        {/* ── Guías de estudio ─────────────────────────────── */}
-        <SectionLabel>Estudio · Guías</SectionLabel>
+        {/* ── Estudio · Temas ──────────────────────────────── */}
+        <SectionLabel>Estudio · Temas</SectionLabel>
         <div className="home-module-grid">
-          {paiModulos.map(mod => {
-            const available = mod.status === 'disponible'
+          {STUDY_MODULES.map(({ module, temas }) => {
+            const accent = TOPIC_COLORS[temas[0].colorKey]?.dot ?? ''
             return (
               <button
-                key={mod.slug}
-                className={`home-module${available ? ' is-available' : ''}`}
-                style={{ borderLeft: `3px solid ${mod.cardAccent}` }}
-                onClick={() => available
-                  ? navigate(`/estudio/${mod.slug}`)
-                  : setToast('Contenido en preparación. Disponible próximamente.')}
+                key={module.id}
+                className="home-module is-available"
+                style={{ borderLeft: '3px solid var(--color-accent)' }}
+                onClick={() => navigate('/estudio')}
               >
                 <span style={{
                   fontSize: 11, fontWeight: 500, lineHeight: 1.35,
                   color: 'var(--color-text-primary)',
                 }}>
-                  {mod.icono}&nbsp; {mod.nombre.replace('MÓDULO — ', '')}
+                  {module.emoji}&nbsp; {module.title}
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 10, gap: 6 }}>
                   <span style={{ fontSize: 10, color: 'var(--color-text-secondary)' }}>
-                    {mod.temas !== null ? `${mod.temas} temas` : '—'}
+                    {temas.length} temas
                   </span>
-                  <span style={{
-                    fontSize: 10, fontWeight: 500, padding: '2px 7px', borderRadius: 'var(--radius-sm)',
-                    background: available ? 'var(--color-badge-ok-bg)' : 'var(--color-badge-wip-bg)',
-                    color: available ? 'var(--color-badge-ok-text)' : 'var(--color-badge-wip-text)',
-                  }}>
-                    {available ? 'Disponible' : 'Próximo'}
-                  </span>
+                  <span className={accent} style={{ width: 6, height: 6, borderRadius: '50%' }} />
                 </span>
               </button>
             )
@@ -193,8 +232,6 @@ export function Home() {
           Terminología: MedLex (CC BY-SA 4.0) · Modelo anatómico: Open 3D Model (CC BY-SA 4.0)
         </footer>
       </div>
-
-      {toast && <Toast msg={toast} onDone={clearToast} />}
     </div>
   )
 }
