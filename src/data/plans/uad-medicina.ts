@@ -244,27 +244,46 @@ export const uadMedicina: Plan = {
               {
                 number: 2,
                 title: 'Terminología griega y latina útil en el lenguaje médico',
+                estado: 'adelanto',
                 temas: [
                   'Introducción a la terminología grecolatina en inglés médico',
                   'Reglas para la formación de plurales (-a → -ae, -is → -es, -um → -a, -us → -i, …)',
+                ],
+                fuentes: [
+                  { title: 'Medical Terminology — A Living Language', file: 'Medical Terminology - A Living Language 6th ed.pdf', paginas: 'libro 1–20 (PDF 29–48)', nota: 'Cap. 1: raíces, formas combinantes, prefijos y sufijos' },
+                  { title: 'Medical Terminology — Apéndices I y II', file: 'Medical Terminology - A Living Language 6th ed.pdf', paginas: 'libro 547 y 554 (PDF 575 y 582)', nota: 'Partes de palabra ordenadas alfabéticamente' },
+                  { title: 'Check Your English Vocabulary for Medicine', file: 'Check Your English Vocabulary for Medicine.pdf', paginas: 'workbook 1–9 (PDF 8–16)', nota: 'Formación de plurales (unidad 4)' },
                 ],
               },
               {
                 number: 3,
                 title: 'Gramática práctica utilizada en medicina',
+                estado: 'adelanto',
                 temas: [
                   'Tiempos verbales · verbos modales · estructuras condicionales · voz pasiva',
                   'Estilo indirecto · preguntas · infinitivo / sufijo –ing',
                   'Artículos · orden de palabras · proposiciones subordinadas · adjetivos · preposiciones',
                 ],
+                fuentes: [
+                  { title: 'Check Your English Vocabulary for Medicine', file: 'Check Your English Vocabulary for Medicine.pdf', paginas: 'workbook 10–24 (PDF 17–31)', nota: 'Gramática práctica: tiempos, modales y voz pasiva' },
+                ],
               },
               {
                 number: 4,
                 title: 'Acrónimos, errores frecuentes y bibliografía científica',
+                estado: 'adelanto',
                 temas: [
                   'IV. Acrónimos y abreviaturas médicas',
                   'V. Errores frecuentes al hablar inglés en medicina (falsos cognados)',
                   'VI. Bibliografía científica',
+                ],
+                fuentes: [
+                  { title: 'Medical Terminology — Apéndice III', file: 'Medical Terminology - A Living Language 6th ed.pdf', paginas: 'libro 560 (PDF 588)', nota: 'Abreviaturas' },
+                  { title: 'Medical Abbreviations (Studocu)', file: 'Medical Abbreviations (Studocu).pdf', paginas: 'PDF 1–6', nota: 'Listado de abreviaturas por área' },
+                  { title: 'Check Your English Vocabulary for Medicine', file: 'Check Your English Vocabulary for Medicine.pdf', paginas: 'workbook 26 y 30 (PDF 33 y 37)', nota: 'Falsos cognados y abreviaturas' },
+                  { title: 'The Language of Medicine', file: 'The Language of Medicine.pdf', paginas: 'PDF 1–4', nota: 'El inglés como lingua franca de la medicina' },
+                  { title: 'English as an International Language of Medicine', file: 'English as an international language of medicine.pdf', paginas: 'PDF 1–2' },
+                  { title: 'Medical Record Keeping for Quality Patient Care', file: 'Medical record keeping for quality patient care.pdf', paginas: 'PDF 1–8' },
                 ],
               },
             ],

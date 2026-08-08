@@ -67,6 +67,19 @@ export type MaterialRef = {
  * Contenido de una semana del módulo. El material UAD llega cada 4 semanas
  * (1 módulo = 4 semanas); cada semana se añade aquí conforme se recibe.
  */
+/*
+ * Lectura fuente de una semana: capítulo/páginas de un libro de la biblioteca.
+ * `paginas` SIEMPRE lleva las dos numeraciones —la del libro y la del PDF—
+ * porque quien abre el PDF busca la página del PDF y quien cita necesita la
+ * del libro. Ej.: 'libro 1–20 (PDF 29–48)'.
+ */
+export type FuenteRef = {
+  title: string     // 'Medical Terminology — A Living Language'
+  file?: string     // archivo en la biblioteca (LIBRARY_BASE/<subjectId>/<file>)
+  paginas?: string  // 'libro 1–20 (PDF 29–48)' — SIEMPRE ambas numeraciones
+  nota?: string     // 'Capítulo 1: raíces, formas combinantes, prefijos y sufijos'
+}
+
 export type SemanaContent = {
   number: number         // 1
   title: string          // 'Conceptos generales, planos anatómicos y Osteología I'
@@ -75,6 +88,10 @@ export type SemanaContent = {
   // Topics impartidos en esta semana concreta. Enlace EXPLÍCITO: cada id debe
   // existir en `topics` (verificación de integridad en el prompt §5).
   topicIds?: string[]
+  // 'impartido' (por defecto) = visto en clase; 'adelanto' = tomado del libro,
+  // aún no impartido. Una semana 'adelanto' se marca en la interfaz.
+  estado?: 'impartido' | 'adelanto'
+  fuentes?: FuenteRef[]  // lecturas de esa semana, con página exacta
 }
 
 export type TemarioUnit = {

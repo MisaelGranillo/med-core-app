@@ -303,6 +303,14 @@ export function SubjectDetail() {
                           Semana {sem.number}
                         </span>
                         <p className="font-semibold text-sm text-zinc-900">{sem.title}</p>
+                        {sem.estado === 'adelanto' && (
+                          <span
+                            title="Contenido tomado del libro de texto, aún no impartido en clase."
+                            className="flex-shrink-0 text-[10px] font-bold uppercase tracking-wider text-amber-800 bg-amber-100 border border-amber-300 px-2 py-0.5 rounded-full"
+                          >
+                            Adelanto
+                          </span>
+                        )}
                       </div>
                       {sem.competencia && (
                         <p className="text-xs text-zinc-600 leading-relaxed mt-2">
@@ -330,6 +338,39 @@ export function SubjectDetail() {
                               <BookOpen weight="bold" className="w-3 h-3" /> {t.title}
                             </Link>
                           ))}
+                        </div>
+                      )}
+                      {sem.fuentes && sem.fuentes.length > 0 && (
+                        <div className="mt-3 space-y-1.5">
+                          <p className="text-[11px] font-bold uppercase tracking-wider text-emerald-700">Lecturas</p>
+                          {sem.fuentes.map((f, i) => {
+                            const inner = (
+                              <>
+                                <FilePdf weight="fill" className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                                <span className="leading-snug">
+                                  <span className="font-semibold text-zinc-800">{f.title}</span>
+                                  {f.nota && <span className="text-zinc-500"> — {f.nota}</span>}
+                                  {f.paginas && (
+                                    <span className="block text-[11px] text-emerald-700 font-medium">{f.paginas}</span>
+                                  )}
+                                </span>
+                              </>
+                            )
+                            const cls = 'flex items-start gap-2 text-xs bg-white border border-emerald-100 rounded-lg px-2.5 py-1.5'
+                            return f.file ? (
+                              <a
+                                key={i}
+                                href={`${LIBRARY_BASE}/${subject.id}/${f.file}`}
+                                target="_blank"
+                                rel="noreferrer"
+                                className={`${cls} hover:border-emerald-300 hover:shadow-sm transition-all`}
+                              >
+                                {inner}
+                              </a>
+                            ) : (
+                              <div key={i} className={cls}>{inner}</div>
+                            )
+                          })}
                         </div>
                       )}
                     </div>
