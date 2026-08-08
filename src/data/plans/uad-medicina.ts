@@ -290,7 +290,7 @@ export const uadMedicina: Plan = {
               { title: 'Inglés Médico I — Planeación', file: 'Inglés Médico I - Planeación.pdf', kind: 'Planeación' },
             ],
             recursos: [
-              { label: 'Acland Anatomy', url: 'https://www.aclandanatomy.com/' },
+              { label: 'OVID® (bibliografía básica)', url: 'https://www.ovid.com/' },
               { label: 'Bates Visual Guide', url: 'https://batesvisualguide.com/' },
               { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },
               { label: '5-Minute Consult', url: 'https://5minuteconsult.com' },
