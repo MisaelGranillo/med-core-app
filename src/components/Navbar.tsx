@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import {
   MagnifyingGlass, X, House, BookOpen, Lightning,
-  Cube, BookOpenText, ChartBar, GraduationCap, Brain, Image, Translate,
+  Cube, BookOpenText, ChartBar, GraduationCap, Brain, Image, Translate, Gear,
 } from '@phosphor-icons/react'
 
 /* Entradas de navegación permanentes. Las cuatro secciones núcleo (Anatomía,
@@ -21,6 +21,7 @@ const NAV_ITEMS = [
   { path: '/vocabulario', label: 'Vocabulario',  icon: Translate,      mobile: false },
   { path: '/quiz',        label: 'Quizzes',      icon: Lightning,      mobile: true  },
   { path: '/progress',    label: 'Progreso',     icon: ChartBar,       mobile: false },
+  { path: '/ajustes',     label: 'Ajustes',      icon: Gear,           mobile: false },
 ] as const
 
 const MOBILE_ITEMS = NAV_ITEMS.filter(n => n.mobile)
