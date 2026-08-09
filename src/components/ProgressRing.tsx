@@ -48,7 +48,7 @@ export function ProgressRing({
           {Math.round(value)}%
         </span>
         {label && (
-          <span className="text-[9px] text-zinc-400 font-medium leading-none mt-0.5">
+          <span className="text-[0.5625rem] text-zinc-400 font-medium leading-none mt-0.5">
             {label}
           </span>
         )}

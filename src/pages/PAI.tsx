@@ -98,14 +98,14 @@ function ModuloCard({
       {/* Icono + badge de estado */}
       <div className="flex items-start justify-between mb-4">
         <span className="text-3xl">{mod.icono}</span>
-        <span className={`flex items-center gap-1.5 text-[10px] font-bold px-2.5 py-1 rounded-full ${s.bg} ${s.text}`}>
+        <span className={`flex items-center gap-1.5 text-[0.625rem] font-bold px-2.5 py-1 rounded-full ${s.bg} ${s.text}`}>
           <span className={`w-1.5 h-1.5 rounded-full ${s.dot}`} />
           {s.label}
         </span>
       </div>
 
       {/* Materia UAD orientativa */}
-      <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-1">
+      <p className="text-[0.625rem] font-bold text-zinc-400 uppercase tracking-widest mb-1">
         {mod.uadObjetivo}
       </p>
 

@@ -39,7 +39,7 @@ export function SectionPanel({
           {section.title}
         </span>
         {section.keyTerms && section.keyTerms.length > 0 && (
-          <span className="hidden sm:block text-[10px] text-zinc-400 font-medium mr-2 max-w-[140px] truncate">
+          <span className="hidden sm:block text-[0.625rem] text-zinc-400 font-medium mr-2 max-w-[140px] truncate">
             {section.keyTerms.slice(0, 3).join(' · ')}
           </span>
         )}
@@ -78,7 +78,7 @@ export function SectionPanel({
 function BlockLabel({ text, colorKey }: { text: string; colorKey: TopicColorKey }) {
   const colors = TOPIC_COLORS[colorKey]
   return (
-    <p className={`text-[10px] font-bold uppercase tracking-widest mb-2 ${colors.text}`}>
+    <p className={`text-[0.625rem] font-bold uppercase tracking-widest mb-2 ${colors.text}`}>
       {text}
     </p>
   )
@@ -147,7 +147,7 @@ function BlockRenderer({ block, colorKey }: { block: ContentBlock; colorKey: Top
                 <tr className={`${colors.bg}`}>
                   {block.data?.headers.map((h, i) => (
                     <th key={i}
-                      className={`text-left text-[11px] font-bold uppercase tracking-wider
+                      className={`text-left text-[0.6875rem] font-bold uppercase tracking-wider
                                   ${colors.text} px-3 py-2.5 border-b ${colors.border}`}>
                       {h}
                     </th>
@@ -159,7 +159,7 @@ function BlockRenderer({ block, colorKey }: { block: ContentBlock; colorKey: Top
                   <tr key={i} className={i % 2 === 0 ? 'bg-surface' : 'bg-zinc-50/60'}>
                     {row.map((cell, j) => (
                       <td key={j}
-                        className={`py-2.5 px-3 text-zinc-700 border-b border-zinc-100 align-top text-[13px]
+                        className={`py-2.5 px-3 text-zinc-700 border-b border-zinc-100 align-top text-[0.8125rem]
                                     ${j === 0 ? 'font-semibold text-zinc-800' : ''}`}>
                         {cell}
                       </td>
@@ -215,7 +215,7 @@ function BlockRenderer({ block, colorKey }: { block: ContentBlock; colorKey: Top
                   <div className={`absolute left-[10px] top-6 bottom-0 w-px ${colors.bg} border-l-2 ${colors.border} border-dashed`} />
                 )}
                 <span className={`w-[22px] h-[22px] rounded-full ${colors.headerBg} text-white
-                                  text-[10px] font-bold flex items-center justify-center flex-shrink-0
+                                  text-[0.625rem] font-bold flex items-center justify-center flex-shrink-0
                                   shadow-sm z-10 mt-0.5`}>
                   {i + 1}
                 </span>
@@ -233,7 +233,7 @@ function BlockRenderer({ block, colorKey }: { block: ContentBlock; colorKey: Top
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 relative">
             {/* VS divider on desktop */}
             <div className="hidden md:flex absolute inset-y-0 left-1/2 -translate-x-1/2 items-center justify-center z-10 pointer-events-none">
-              <span className="bg-surface border border-zinc-200 text-zinc-400 text-[10px] font-bold px-1.5 py-0.5 rounded-full shadow-sm">
+              <span className="bg-surface border border-zinc-200 text-zinc-400 text-[0.625rem] font-bold px-1.5 py-0.5 rounded-full shadow-sm">
                 VS
               </span>
             </div>

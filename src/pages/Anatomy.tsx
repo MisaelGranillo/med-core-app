@@ -38,7 +38,7 @@ export function Anatomy() {
       {/* Pestañas 2D / 3D */}
       <div className="bg-surface border-b border-zinc-200 flex-shrink-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-12 flex items-center gap-1">
-          <span className="text-[11px] font-bold uppercase tracking-widest text-zinc-400 mr-2 hidden sm:block">
+          <span className="text-[0.6875rem] font-bold uppercase tracking-widest text-zinc-400 mr-2 hidden sm:block">
             Anatomía
           </span>
           <Link to="/anatomia" className={tab(!is3D)}>

@@ -100,7 +100,7 @@ function PanelContent({ part, onClose }: { part: AnatomyPart; onClose: () => voi
       <div className={`${s.bg} ${s.border} border-b px-5 py-4`}>
         <div className="flex items-start justify-between gap-3">
           <div>
-            <span className={`inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-full mb-2 ${s.badge}`}>
+            <span className={`inline-flex items-center gap-1.5 text-[0.625rem] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-full mb-2 ${s.badge}`}>
               {s.icon}
               Sistema {part.sistema}
             </span>
@@ -122,7 +122,7 @@ function PanelContent({ part, onClose }: { part: AnatomyPart; onClose: () => voi
       <div className="overflow-y-auto flex-1 px-5 py-5 space-y-5">
         {/* Descripción */}
         <div>
-          <p className={`text-[10px] font-bold uppercase tracking-widest mb-2 ${s.text}`}>
+          <p className={`text-[0.625rem] font-bold uppercase tracking-widest mb-2 ${s.text}`}>
             Descripción
           </p>
           <p className="text-sm text-zinc-700 leading-relaxed">
@@ -132,7 +132,7 @@ function PanelContent({ part, onClose }: { part: AnatomyPart; onClose: () => voi
 
         {/* Funciones clave */}
         <div>
-          <p className={`text-[10px] font-bold uppercase tracking-widest mb-3 ${s.text}`}>
+          <p className={`text-[0.625rem] font-bold uppercase tracking-widest mb-3 ${s.text}`}>
             Funciones clave
           </p>
           <ul className="space-y-2.5">
@@ -156,7 +156,7 @@ function PanelContent({ part, onClose }: { part: AnatomyPart; onClose: () => voi
             <BookOpenText weight="fill" className="w-5 h-5 text-indigo-600 flex-shrink-0" />
             <div className="flex-1">
               <p className="text-xs font-bold text-indigo-800">Ver terminología relacionada</p>
-              <p className="text-[10px] text-indigo-600 mt-0.5">
+              <p className="text-[0.625rem] text-indigo-600 mt-0.5">
                 Prefijos, sufijos y raíces de este sistema en MedLex
               </p>
             </div>

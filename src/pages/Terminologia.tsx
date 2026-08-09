@@ -78,10 +78,10 @@ function TermCard({ term, onOpen }: { term: MedLexTerm; onOpen: (id: string) => 
           {term.termino}
         </span>
         <div className="flex gap-1.5 flex-shrink-0">
-          <span className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md border ${TIPO_COLORS[term.tipo]}`}>
+          <span className={`text-[0.5625rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md border ${TIPO_COLORS[term.tipo]}`}>
             {TIPO_LABELS[term.tipo]}
           </span>
-          <span className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md border ${ORIGEN_COLORS[term.origen]}`}>
+          <span className={`text-[0.5625rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md border ${ORIGEN_COLORS[term.origen]}`}>
             {term.origen === 'griego' ? 'GR' : 'LA'}
           </span>
         </div>
@@ -95,7 +95,7 @@ function TermCard({ term, onOpen }: { term: MedLexTerm; onOpen: (id: string) => 
       {/* Ejemplos */}
       <div className="flex flex-wrap gap-1.5 mb-3">
         {term.ejemplos.slice(0, 4).map((ej, i) => (
-          <span key={i} className="text-[11px] bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded-full font-medium">
+          <span key={i} className="text-[0.6875rem] bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded-full font-medium">
             {ej}
           </span>
         ))}
@@ -103,13 +103,13 @@ function TermCard({ term, onOpen }: { term: MedLexTerm; onOpen: (id: string) => 
 
       {/* Sistema tag */}
       <div className="flex items-center justify-between">
-        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${sc.bg} ${sc.text} ${sc.border}`}>
+        <span className={`text-[0.625rem] font-bold px-2 py-0.5 rounded-full border ${sc.bg} ${sc.text} ${sc.border}`}>
           {SISTEMA_LABELS[term.sistema] ?? term.sistema}
         </span>
         <Link
           to={`/anatomia-3d?sistema=${term.sistema}`}
           onClick={e => e.stopPropagation()}
-          className="text-[10px] text-zinc-400 hover:text-primary-600 flex items-center gap-1 transition-colors"
+          className="text-[0.625rem] text-zinc-400 hover:text-primary-600 flex items-center gap-1 transition-colors"
         >
           <Cube weight="fill" className="w-3 h-3" />
           Ver en 3D
@@ -327,7 +327,7 @@ export function Terminologia() {
                 ].map(({ n, l }) => (
                   <div key={l} className="text-center">
                     <p className="text-xl font-extrabold text-zinc-900">{n}</p>
-                    <p className="text-[11px] text-zinc-400 font-medium">{l}</p>
+                    <p className="text-[0.6875rem] text-zinc-400 font-medium">{l}</p>
                   </div>
                 ))}
               </div>
@@ -507,13 +507,13 @@ export function Terminologia() {
                   <div>
                     <p className="font-mono font-bold text-2xl text-zinc-900 leading-none mb-2">{activeTerm.termino}</p>
                     <div className="flex gap-1.5">
-                      <span className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md border ${TIPO_COLORS[activeTerm.tipo]}`}>
+                      <span className={`text-[0.5625rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md border ${TIPO_COLORS[activeTerm.tipo]}`}>
                         {TIPO_LABELS[activeTerm.tipo]}
                       </span>
-                      <span className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md border ${ORIGEN_COLORS[activeTerm.origen]}`}>
+                      <span className={`text-[0.5625rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md border ${ORIGEN_COLORS[activeTerm.origen]}`}>
                         {activeTerm.origen === 'griego' ? 'Griego' : 'Latino'}
                       </span>
-                      <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded-md border ${sc.bg} ${sc.text} ${sc.border}`}>
+                      <span className={`text-[0.5625rem] font-bold px-1.5 py-0.5 rounded-md border ${sc.bg} ${sc.text} ${sc.border}`}>
                         {SISTEMA_LABELS[activeTerm.sistema] ?? activeTerm.sistema}
                       </span>
                     </div>
@@ -523,7 +523,7 @@ export function Terminologia() {
                   </button>
                 </div>
                 <p className="text-base font-semibold text-zinc-800 mb-4">{activeTerm.significado}</p>
-                <p className="text-[11px] font-bold uppercase tracking-widest text-zinc-400 mb-2">Ejemplos</p>
+                <p className="text-[0.6875rem] font-bold uppercase tracking-widest text-zinc-400 mb-2">Ejemplos</p>
                 <div className="flex flex-wrap gap-1.5 mb-5">
                   {activeTerm.ejemplos.map((ej, i) => (
                     <span key={i} className="text-xs bg-zinc-100 text-zinc-600 px-2 py-1 rounded-full font-medium">{ej}</span>

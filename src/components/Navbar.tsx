@@ -114,7 +114,7 @@ export function Navbar() {
                   <X weight="bold" className="w-3.5 h-3.5" />
                 </button>
               )}
-              <kbd className="absolute right-3 text-[10px] font-mono text-zinc-400 bg-zinc-200 px-1.5 py-0.5 rounded hidden sm:block">
+              <kbd className="absolute right-3 text-[0.625rem] font-mono text-zinc-400 bg-zinc-200 px-1.5 py-0.5 rounded hidden sm:block">
                 ⌘K
               </kbd>
             </div>
@@ -135,7 +135,7 @@ export function Navbar() {
                   ${active ? 'text-primary' : 'text-zinc-400 hover:text-zinc-600'}`}
               >
                 <Icon weight={active ? 'fill' : 'regular'} className="w-5 h-5" />
-                <span className={`text-[9px] font-semibold leading-none ${active ? 'text-primary' : 'text-zinc-400'}`}>
+                <span className={`text-[0.5625rem] font-semibold leading-none ${active ? 'text-primary' : 'text-zinc-400'}`}>
                   {label}
                 </span>
                 {active && (

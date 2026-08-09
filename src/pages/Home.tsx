@@ -85,27 +85,27 @@ export function Home() {
           }}
         >
           <p className="home-eyebrow" style={{
-            fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '2px',
+            fontFamily: 'var(--font-mono)', fontSize: '0.6875rem', letterSpacing: '2px',
             textTransform: 'uppercase', color: '#93C5FD', marginBottom: 10,
           }}>
             Plataforma de estudio médico
           </p>
 
           <h1 className="home-title" style={{
-            fontFamily: 'var(--font-body)', fontSize: 30, fontWeight: 500,
+            fontFamily: 'var(--font-body)', fontSize: '1.875rem', fontWeight: 500,
             letterSpacing: '-0.3px', color: '#FFFFFF', margin: 0,
           }}>
             MedCore
           </h1>
 
-          <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)', margin: '4px 0 18px' }}>
+          <p style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.7)', margin: '4px 0 18px' }}>
             Plan activo: {ACTIVE_PLAN.school} · {ACTIVE_PLAN.degree}
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 22 }}>
             {HERO_PILLS.map(p => (
               <span key={p.text} style={{
-                fontSize: 11, padding: '4px 12px', borderRadius: 'var(--radius-pill)',
+                fontSize: '0.6875rem', padding: '4px 12px', borderRadius: 'var(--radius-pill)',
                 background: p.active ? 'var(--hero-pill-active-bg)' : 'var(--hero-pill-bg-light)',
                 border: `1px solid ${p.active ? 'var(--hero-pill-active-border)' : 'var(--hero-pill-border-light)'}`,
                 color: p.active ? '#FFFFFF' : '#E0F2FE',
@@ -124,9 +124,9 @@ export function Home() {
                 borderLeft: i === 0 ? 'none' : '1px solid rgba(255,255,255,0.15)',
                 alignSelf: 'stretch',
               }}>
-                <span style={{ fontSize: 20, fontWeight: 500, color: '#FFFFFF', lineHeight: 1.1 }}>{s.value}</span>
+                <span style={{ fontSize: '1.25rem', fontWeight: 500, color: '#FFFFFF', lineHeight: 1.1 }}>{s.value}</span>
                 <span style={{
-                  fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#93C5FD',
+                  fontSize: '0.625rem', textTransform: 'uppercase', letterSpacing: '0.5px', color: '#93C5FD',
                 }}>{s.label}</span>
               </div>
             ))}
@@ -166,10 +166,10 @@ export function Home() {
               <GraduationCap weight="fill" size={18} />
             </span>
             <span style={{ minWidth: 0, flex: 1 }}>
-              <span style={{ display: 'block', fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--color-text-secondary)' }}>
+              <span style={{ display: 'block', fontSize: '0.625rem', textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--color-text-secondary)' }}>
                 {continuePct > 0 ? `Continuar estudiando · ${continuePct}%` : 'Empieza a estudiar'}
               </span>
-              <span style={{ display: 'block', fontSize: 13, fontWeight: 500, color: 'var(--color-text-primary)' }}>
+              <span style={{ display: 'block', fontSize: '0.8125rem', fontWeight: 500, color: 'var(--color-text-primary)' }}>
                 {continueTopic.emoji}&nbsp; {continueTopic.title}
               </span>
             </span>
@@ -186,8 +186,8 @@ export function Home() {
               <button key={t.name} className="home-tool" onClick={() => navigate(t.route)}>
                 <span className="home-tool-icon"><Ic weight="fill" size={18} /></span>
                 <span style={{ minWidth: 0 }}>
-                  <span style={{ display: 'block', fontSize: 12, fontWeight: 500, color: 'var(--color-text-primary)' }}>{t.name}</span>
-                  <span className="home-tool-desc" style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>{t.desc}</span>
+                  <span style={{ display: 'block', fontSize: '0.75rem', fontWeight: 500, color: 'var(--color-text-primary)' }}>{t.name}</span>
+                  <span className="home-tool-desc" style={{ fontSize: '0.6875rem', color: 'var(--color-text-secondary)' }}>{t.desc}</span>
                 </span>
               </button>
             )
@@ -207,13 +207,13 @@ export function Home() {
                 onClick={() => navigate('/estudio')}
               >
                 <span style={{
-                  fontSize: 11, fontWeight: 500, lineHeight: 1.35,
+                  fontSize: '0.6875rem', fontWeight: 500, lineHeight: 1.35,
                   color: 'var(--color-text-primary)',
                 }}>
                   {module.emoji}&nbsp; {module.title}
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 10, gap: 6 }}>
-                  <span style={{ fontSize: 10, color: 'var(--color-text-secondary)' }}>
+                  <span style={{ fontSize: '0.625rem', color: 'var(--color-text-secondary)' }}>
                     {temas.length} temas
                   </span>
                   <span className={accent} style={{ width: 6, height: 6, borderRadius: '50%' }} />
@@ -225,7 +225,7 @@ export function Home() {
 
         {/* ── Footer ────────────────────────────────────────── */}
         <footer style={{
-          fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--color-text-muted)',
+          fontFamily: 'var(--font-mono)', fontSize: '0.6875rem', color: 'var(--color-text-muted)',
           textAlign: 'center', marginTop: 24, paddingBottom: 24, lineHeight: 1.8,
         }}>
           Misael Granillo · MedCore<br />
@@ -240,7 +240,7 @@ export function Home() {
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <p style={{
-      fontFamily: 'var(--font-mono)', fontSize: 11, textTransform: 'uppercase',
+      fontFamily: 'var(--font-mono)', fontSize: '0.6875rem', textTransform: 'uppercase',
       letterSpacing: '1.2px', color: 'var(--color-text-secondary)', margin: '14px 0 9px',
     }}>
       {children}
@@ -253,11 +253,11 @@ function ProgressRow({ label, fill, color, value }: {
 }) {
   return (
     <div className="home-progress-row" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-      <span style={{ fontSize: 11, fontWeight: 500, color: 'var(--color-text-primary)', width: 38, flexShrink: 0 }}>{label}</span>
+      <span style={{ fontSize: '0.6875rem', fontWeight: 500, color: 'var(--color-text-primary)', width: 38, flexShrink: 0 }}>{label}</span>
       <span style={{ flex: 1, height: 4, background: 'var(--color-surface-subtle)', borderRadius: 'var(--radius-pill)', overflow: 'hidden' }}>
         <span style={{ display: 'block', height: '100%', width: `${Math.min(fill * 100, 100)}%`, background: color, borderRadius: 'var(--radius-pill)', transition: 'width var(--t-fill)' }} />
       </span>
-      <span style={{ fontSize: 11, color: 'var(--color-text-secondary)', whiteSpace: 'nowrap' }}>{value}</span>
+      <span style={{ fontSize: '0.6875rem', color: 'var(--color-text-secondary)', whiteSpace: 'nowrap' }}>{value}</span>
     </div>
   )
 }
@@ -301,7 +301,7 @@ const HOME_CSS = `
     .home-module-grid { grid-template-columns: 1fr; }
     .home-tool-desc { display: none; }
     .home-hero { padding: 20px 18px !important; }
-    .home-title { font-size: 24px !important; }
+    .home-title { font-size: 1.5rem !important; }
     .home-hero-stats { display: grid !important; grid-template-columns: 1fr 1fr; gap: 14px; }
     .home-stat { border-left: none !important; padding-left: 0 !important; }
     .home-progress-row { flex-wrap: wrap; }

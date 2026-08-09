@@ -185,7 +185,7 @@ export function Progress() {
                           <p className={`text-sm font-bold ${p >= 70 ? 'text-emerald-600' : 'text-red-500'}`}>
                             {p}%
                           </p>
-                          <p className="text-[10px] text-zinc-400">
+                          <p className="text-[0.625rem] text-zinc-400">
                             {new Date(a.date).toLocaleDateString('es-MX', { month: 'short', day: 'numeric' })}
                           </p>
                         </div>

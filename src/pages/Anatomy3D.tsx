@@ -113,7 +113,7 @@ export function Anatomy3D() {
                   <span className="flex items-center justify-between gap-2 mt-0.5">
                     <span className="catalog-code" style={{ textTransform: 'none' }}>{m.nombre_en}</span>
                     {disabled
-                      ? <span className="text-[10px] text-faint flex-shrink-0">Próximo</span>
+                      ? <span className="text-[0.625rem] text-faint flex-shrink-0">Próximo</span>
                       : <span className={`text-xs font-medium flex items-center gap-0.5 flex-shrink-0 ${on ? 'text-primary-ink' : 'text-muted'}`}>
                           {on ? 'Activo' : 'Cargar'} <ArrowRight weight="bold" className="w-3 h-3" />
                         </span>}

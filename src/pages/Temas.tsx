@@ -58,7 +58,7 @@ export function Temas() {
             <div className="flex items-center gap-2 mb-3">
               <span className="text-xl">{module.emoji}</span>
               <h2 className="font-bold text-zinc-900">{module.title}</h2>
-              <span className="text-[10px] font-semibold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded-full">
+              <span className="text-[0.625rem] font-semibold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded-full">
                 {temas.length} temas
               </span>
             </div>
@@ -90,11 +90,11 @@ export function Temas() {
                       <div className="flex-1 h-1.5 bg-zinc-100 rounded-full overflow-hidden">
                         <div className={`h-full ${colors.dot} rounded-full transition-all`} style={{ width: `${pct}%` }} />
                       </div>
-                      <span className="text-[10px] font-semibold text-zinc-400 flex-shrink-0">{read}/{total}</span>
+                      <span className="text-[0.625rem] font-semibold text-zinc-400 flex-shrink-0">{read}/{total}</span>
                     </div>
 
                     <div className="flex items-center gap-2 mt-auto pt-1">
-                      <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${colors.badge}`}>
+                      <span className={`text-[0.625rem] font-semibold px-2 py-0.5 rounded-full ${colors.badge}`}>
                         {total} secciones{qCount > 0 ? ` · ${qCount} reactivos` : ''}
                       </span>
                     </div>

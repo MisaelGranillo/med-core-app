@@ -47,7 +47,7 @@ export function PAIModulo() {
           <div className="flex items-start gap-4">
             <span className="text-4xl flex-shrink-0">{mod.icono}</span>
             <div className="min-w-0">
-              <p className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest mb-1">
+              <p className="text-[0.6875rem] font-bold text-zinc-400 uppercase tracking-widest mb-1">
                 Guía de estudio · {mod.uadObjetivo}
               </p>
               <h1 className="text-2xl md:text-3xl font-extrabold text-zinc-900 tracking-tight leading-tight mb-2">
@@ -124,9 +124,9 @@ export function PAIModulo() {
                       <span className="text-2xl">{tema.icono}</span>
                       <div className="flex items-center gap-2">
                         {tema.generadoPorIA && (
-                          <span className="text-[9px] text-zinc-400 font-medium">✨ IA</span>
+                          <span className="text-[0.5625rem] text-zinc-400 font-medium">✨ IA</span>
                         )}
-                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${c.badge}`}>
+                        <span className={`text-[0.625rem] font-bold px-2 py-0.5 rounded-full ${c.badge}`}>
                           Tema {tema.orden}
                         </span>
                       </div>
@@ -138,7 +138,7 @@ export function PAIModulo() {
                       {tema.resumen}
                     </p>
                     <div className="flex items-center justify-between pt-2.5 border-t border-zinc-100">
-                      <div className="flex items-center gap-3 text-[11px] text-zinc-400">
+                      <div className="flex items-center gap-3 text-[0.6875rem] text-zinc-400">
                         <span className="flex items-center gap-1">
                           <Star weight="fill" className="w-3 h-3 text-amber-400" />
                           {tema.puntosClave.length} puntos clave

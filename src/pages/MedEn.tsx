@@ -79,7 +79,7 @@ function TermCard({ term, expanded, onToggle }: { term: MedEnTerm; expanded: boo
       <div className="flex items-start justify-between gap-2 mb-2">
         <span className="font-bold text-zinc-900 text-lg leading-tight">{term.term}</span>
         <div className="flex items-center gap-1.5 flex-shrink-0">
-          <span className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md border ${posColor}`}>
+          <span className={`text-[0.5625rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md border ${posColor}`}>
             {POS_LABELS[term.pos]}
           </span>
           {hasDetail && (
@@ -105,7 +105,7 @@ function TermCard({ term, expanded, onToggle }: { term: MedEnTerm; expanded: boo
             <div className="pt-3 mt-3 border-t border-zinc-100 space-y-2.5">
               {term.forms?.map((f, i) => (
                 <div key={i} className="flex items-baseline gap-2 text-xs">
-                  <span className={`text-[8px] font-bold uppercase tracking-wider px-1 py-0.5 rounded border ${POS_COLORS[f.pos] ?? POS_COLORS.article}`}>
+                  <span className={`text-[0.5rem] font-bold uppercase tracking-wider px-1 py-0.5 rounded border ${POS_COLORS[f.pos] ?? POS_COLORS.article}`}>
                     {POS_LABELS[f.pos]}
                   </span>
                   <span className="font-semibold text-zinc-800">{f.word}</span>
@@ -116,7 +116,7 @@ function TermCard({ term, expanded, onToggle }: { term: MedEnTerm; expanded: boo
                 <p className="text-xs italic text-zinc-500 leading-relaxed">“{term.example}”</p>
               )}
               {term.nota && (
-                <p className="text-[11px] text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-2.5 py-1.5 leading-relaxed">
+                <p className="text-[0.6875rem] text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-2.5 py-1.5 leading-relaxed">
                   {term.nota}
                 </p>
               )}
@@ -296,7 +296,7 @@ export function MedEn() {
                 ].map(({ n, l }) => (
                   <div key={l} className="text-center">
                     <p className="text-xl font-extrabold text-zinc-900">{n}</p>
-                    <p className="text-[11px] text-zinc-400 font-medium">{l}</p>
+                    <p className="text-[0.6875rem] text-zinc-400 font-medium">{l}</p>
                   </div>
                 ))}
               </div>

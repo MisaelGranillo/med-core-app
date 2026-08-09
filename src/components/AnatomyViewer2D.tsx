@@ -125,14 +125,14 @@ function InfoPanelContent({ hotspot, onClose }: { hotspot: Hotspot; onClose: () 
         style={{ borderBottom: glassBorder, fontFamily: glassFont }}>
         <div className="flex items-start justify-between gap-3">
           <div>
-            <span className="inline-block text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded mb-2"
+            <span className="inline-block text-[0.625rem] font-bold uppercase tracking-widest px-2.5 py-1 rounded mb-2"
               style={{ background: sc.bg, color: sc.accent, border: `1px solid ${sc.border}` }}>
               {label}
             </span>
             <h2 className="text-xl font-bold leading-tight" style={{ color: '#e0e0e0' }}>
               {hotspot.nombre_es}
             </h2>
-            <p className="text-[13px] italic mt-1" style={{ color: '#666' }}>
+            <p className="text-[0.8125rem] italic mt-1" style={{ color: '#666' }}>
               {hotspot.nombre_lat}
             </p>
           </div>
@@ -147,7 +147,7 @@ function InfoPanelContent({ hotspot, onClose }: { hotspot: Hotspot; onClose: () 
       {/* Cuerpo scrollable */}
       <div className="flex-1 overflow-y-auto px-6 py-5 space-y-5" style={{ fontFamily: glassFont }}>
         <div>
-          <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: sc.accent }}>
+          <p className="text-[0.625rem] font-bold uppercase tracking-widest mb-2" style={{ color: sc.accent }}>
             Descripción
           </p>
           <p className="text-sm leading-relaxed" style={{ color: '#c0c0c0' }}>
@@ -156,7 +156,7 @@ function InfoPanelContent({ hotspot, onClose }: { hotspot: Hotspot; onClose: () 
         </div>
 
         <div style={{ borderTop: glassBorder, paddingTop: 16 }}>
-          <p className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: sc.accent }}>
+          <p className="text-[0.625rem] font-bold uppercase tracking-widest mb-3" style={{ color: sc.accent }}>
             Funciones clave
           </p>
           <ul className="space-y-2.5">
@@ -182,7 +182,7 @@ function InfoPanelContent({ hotspot, onClose }: { hotspot: Hotspot; onClose: () 
               <p className="text-xs font-bold" style={{ color: '#4fc3f7', fontFamily: glassFont }}>
                 Ver terminología relacionada
               </p>
-              <p className="text-[10px] mt-0.5 opacity-70" style={{ color: '#4fc3f7', fontFamily: glassFont }}>
+              <p className="text-[0.625rem] mt-0.5 opacity-70" style={{ color: '#4fc3f7', fontFamily: glassFont }}>
                 Prefijos, sufijos y raíces · MedLex
               </p>
             </div>
@@ -409,7 +409,7 @@ export function AnatomyViewer2D() {
     padding: '7px 14px',
     borderRadius: 4,
     fontFamily: glassFont,
-    fontSize: 11,
+    fontSize: '0.6875rem',
     cursor: 'pointer',
     whiteSpace: 'nowrap' as const,
     transition: 'background 0.15s, color 0.15s',
@@ -432,12 +432,12 @@ export function AnatomyViewer2D() {
         style={{ background: 'rgba(15,15,20,0.9)', borderBottom: glassBorder, backdropFilter: 'blur(12px)' }}>
         <a href="/"
           className="flex items-center gap-1.5 no-underline transition-opacity hover:opacity-70 flex-shrink-0"
-          style={{ color: '#666', fontFamily: glassFont, fontSize: 12 }}>
+          style={{ color: '#666', fontFamily: glassFont, fontSize: '0.75rem' }}>
           <ArrowLeft weight="bold" className="w-4 h-4" />
           <span className="hidden sm:inline">MedCore</span>
         </a>
-        <span style={{ color: '#2a2a2a', fontSize: 12 }}>/</span>
-        <span style={{ color: '#4fc3f7', fontSize: 12, fontWeight: 600, fontFamily: glassFont }}>
+        <span style={{ color: '#2a2a2a', fontSize: '0.75rem' }}>/</span>
+        <span style={{ color: '#4fc3f7', fontSize: '0.75rem', fontWeight: 600, fontFamily: glassFont }}>
           Anatomía Humana
         </span>
         <div className="flex-1" />
@@ -456,7 +456,7 @@ export function AnatomyViewer2D() {
 
         {/* Panel de capas — desktop */}
         <aside className="hidden md:flex flex-col gap-3 p-5 w-56 flex-shrink-0 overflow-y-auto" style={panel}>
-          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: '#444' }}>Capas</p>
+          <p className="text-[0.625rem] font-bold uppercase tracking-widest" style={{ color: '#444' }}>Capas</p>
 
           {LAYER_META.map(({ key, label, dot }) => {
             const state = layers[key]
@@ -492,14 +492,14 @@ export function AnatomyViewer2D() {
           <div style={{ borderTop: glassBorder, paddingTop: 8 }} />
 
           {/* Lista de estructuras */}
-          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: '#444' }}>
+          <p className="text-[0.625rem] font-bold uppercase tracking-widest" style={{ color: '#444' }}>
             Estructuras ({visibleHotspots.length})
           </p>
           <div className="space-y-px">
             {visibleHotspots.map(h => (
               <button key={h.id}
                 onClick={() => handleSelect(h.id)}
-                className="w-full text-left text-[11px] px-2 py-1.5 rounded transition-all"
+                className="w-full text-left text-[0.6875rem] px-2 py-1.5 rounded transition-all"
                 style={{
                   fontFamily: glassFont,
                   color: selectedId === h.id ? '#4fc3f7' : '#555',
@@ -616,7 +616,7 @@ export function AnatomyViewer2D() {
           {/* Layer toggles rápidos */}
           {LAYER_META.map(({ key, label, dot }) => (
             <button key={key} onClick={() => toggleLayer(key)}
-              className="flex items-center gap-1.5 flex-shrink-0 text-[10px] font-bold px-2.5 py-1 rounded transition-all"
+              className="flex items-center gap-1.5 flex-shrink-0 text-[0.625rem] font-bold px-2.5 py-1 rounded transition-all"
               style={{
                 fontFamily: glassFont,
                 background: layers[key].visible ? `${dot}20` : 'rgba(255,255,255,0.04)',
@@ -633,7 +633,7 @@ export function AnatomyViewer2D() {
           {/* Chips de estructuras */}
           {visibleHotspots.map(h => (
             <button key={h.id} onClick={() => handleSelect(h.id)}
-              className="flex-shrink-0 text-[10px] font-semibold px-2.5 py-1 rounded transition-all"
+              className="flex-shrink-0 text-[0.625rem] font-semibold px-2.5 py-1 rounded transition-all"
               style={{
                 fontFamily: glassFont,
                 background: selectedId === h.id ? 'rgba(79,195,247,0.18)' : 'rgba(255,255,255,0.05)',

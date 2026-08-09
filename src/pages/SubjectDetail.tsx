@@ -77,16 +77,16 @@ export function SubjectDetail() {
           </div>
 
           <div className="flex flex-wrap items-center gap-2 mb-3">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-white/60 border border-white/20 px-2.5 py-1 rounded-full">
+            <span className="text-[0.625rem] font-bold uppercase tracking-wider text-white/60 border border-white/20 px-2.5 py-1 rounded-full">
               {plan.school}
             </span>
             {subject.code && (
-              <span className="text-[10px] font-bold font-mono tracking-wider text-white/90 bg-white/10 px-2.5 py-1 rounded-full">
+              <span className="text-[0.625rem] font-bold font-mono tracking-wider text-white/90 bg-white/10 px-2.5 py-1 rounded-full">
                 {subject.code}
               </span>
             )}
             {subject.hasLab && (
-              <span className="flex items-center gap-1 text-[10px] font-bold bg-teal-400 text-teal-900 px-2.5 py-1 rounded-full">
+              <span className="flex items-center gap-1 text-[0.625rem] font-bold bg-teal-400 text-teal-900 px-2.5 py-1 rounded-full">
                 <Flask weight="fill" className="w-3 h-3" /> Laboratorio
               </span>
             )}
@@ -98,7 +98,7 @@ export function SubjectDetail() {
           {(subject.tags ?? []).length > 0 && (
             <div className="flex flex-wrap gap-1.5 mt-3">
               {(subject.tags ?? []).map(t => (
-                <span key={t} className="text-[10px] font-semibold text-white/70 bg-white/10 px-2 py-0.5 rounded-full">
+                <span key={t} className="text-[0.625rem] font-semibold text-white/70 bg-white/10 px-2 py-0.5 rounded-full">
                   {SISTEMA_LABELS[t] ?? t}
                 </span>
               ))}
@@ -203,7 +203,7 @@ export function SubjectDetail() {
                   >
                     <p className={`font-bold text-sm font-mono ${sc.text}`}>{term.termino}</p>
                     <p className="text-xs text-zinc-600 mt-0.5">{term.significado}</p>
-                    <p className="text-[10px] text-zinc-400 mt-1">{term.ejemplos.slice(0, 2).join(' · ')}</p>
+                    <p className="text-[0.625rem] text-zinc-400 mt-1">{term.ejemplos.slice(0, 2).join(' · ')}</p>
                   </Link>
                 )
               })}
@@ -258,7 +258,7 @@ export function SubjectDetail() {
                 )}
                 {content.competencia && (
                   <div className="rounded-xl bg-primary-50 border border-primary-100 p-4">
-                    <p className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-primary-700 mb-1.5">
+                    <p className="flex items-center gap-1.5 text-[0.6875rem] font-bold uppercase tracking-wider text-primary-700 mb-1.5">
                       <Target weight="fill" className="w-3.5 h-3.5" /> Unidad de competencia
                     </p>
                     <p className="text-sm text-primary-900/80 leading-relaxed">{content.competencia}</p>
@@ -299,14 +299,14 @@ export function SubjectDetail() {
                   {content.semanas.map(sem => (
                     <div key={sem.number} className="rounded-xl border border-emerald-100 bg-emerald-50/50 p-4">
                       <div className="flex items-center gap-2 mb-1.5">
-                        <span className="flex-shrink-0 text-[11px] font-bold text-white bg-emerald-600 px-2 py-0.5 rounded-full">
+                        <span className="flex-shrink-0 text-[0.6875rem] font-bold text-white bg-emerald-600 px-2 py-0.5 rounded-full">
                           Semana {sem.number}
                         </span>
                         <p className="font-semibold text-sm text-zinc-900">{sem.title}</p>
                         {sem.estado === 'adelanto' && (
                           <span
                             title="Contenido tomado del libro de texto, aún no impartido en clase."
-                            className="flex-shrink-0 text-[10px] font-bold uppercase tracking-wider text-amber-800 bg-amber-100 border border-amber-300 px-2 py-0.5 rounded-full"
+                            className="flex-shrink-0 text-[0.625rem] font-bold uppercase tracking-wider text-amber-800 bg-amber-100 border border-amber-300 px-2 py-0.5 rounded-full"
                           >
                             Adelanto
                           </span>
@@ -321,7 +321,7 @@ export function SubjectDetail() {
                       {sem.temas && sem.temas.length > 0 && (
                         <ul className="mt-2.5 flex flex-wrap gap-1.5">
                           {sem.temas.map(tema => (
-                            <li key={tema} className="text-[11px] font-medium text-emerald-800 bg-white border border-emerald-100 px-2 py-0.5 rounded-full">
+                            <li key={tema} className="text-[0.6875rem] font-medium text-emerald-800 bg-white border border-emerald-100 px-2 py-0.5 rounded-full">
                               {tema}
                             </li>
                           ))}
@@ -333,7 +333,7 @@ export function SubjectDetail() {
                             <Link
                               key={t.id}
                               to={`/topic/${t.id}`}
-                              className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-white bg-emerald-600 hover:bg-emerald-700 px-2.5 py-1 rounded-full transition-colors"
+                              className="inline-flex items-center gap-1.5 text-[0.6875rem] font-semibold text-white bg-emerald-600 hover:bg-emerald-700 px-2.5 py-1 rounded-full transition-colors"
                             >
                               <BookOpen weight="bold" className="w-3 h-3" /> {t.title}
                             </Link>
@@ -342,7 +342,7 @@ export function SubjectDetail() {
                       )}
                       {sem.fuentes && sem.fuentes.length > 0 && (
                         <div className="mt-3 space-y-1.5">
-                          <p className="text-[11px] font-bold uppercase tracking-wider text-emerald-700">Lecturas</p>
+                          <p className="text-[0.6875rem] font-bold uppercase tracking-wider text-emerald-700">Lecturas</p>
                           {sem.fuentes.map((f, i) => {
                             const inner = (
                               <>
@@ -351,7 +351,7 @@ export function SubjectDetail() {
                                   <span className="font-semibold text-zinc-800">{f.title}</span>
                                   {f.nota && <span className="text-zinc-500"> — {f.nota}</span>}
                                   {f.paginas && (
-                                    <span className="block text-[11px] text-emerald-700 font-medium">{f.paginas}</span>
+                                    <span className="block text-[0.6875rem] text-emerald-700 font-medium">{f.paginas}</span>
                                   )}
                                 </span>
                               </>
@@ -423,7 +423,7 @@ export function SubjectDetail() {
                   {content.bibliografia.map(ref => (
                     <li key={`${ref.title}-${ref.author ?? ''}`} className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 text-sm">
                       {ref.tipo && (
-                        <span className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${ref.tipo === 'básica' ? 'bg-amber-100 text-amber-700' : 'bg-zinc-100 text-zinc-500'}`}>
+                        <span className={`text-[0.5625rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${ref.tipo === 'básica' ? 'bg-amber-100 text-amber-700' : 'bg-zinc-100 text-zinc-500'}`}>
                           {ref.tipo}
                         </span>
                       )}
@@ -439,7 +439,7 @@ export function SubjectDetail() {
                           href={`${LIBRARY_BASE}/${subject.id}/${encodeURIComponent(ref.file)}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 text-[11px] font-semibold text-rose-700 bg-rose-50 border border-rose-100 px-2 py-0.5 rounded-full hover:bg-rose-100 transition-colors"
+                          className="inline-flex items-center gap-1 text-[0.6875rem] font-semibold text-rose-700 bg-rose-50 border border-rose-100 px-2 py-0.5 rounded-full hover:bg-rose-100 transition-colors"
                         >
                           <FilePdf weight="fill" className="w-3 h-3" /> PDF
                           <DownloadSimple weight="bold" className="w-3 h-3" />
@@ -465,7 +465,7 @@ export function SubjectDetail() {
                   {content.materiales.map(m => (
                     <li key={m.file} className="flex items-center gap-3 py-2.5 first:pt-0 last:pb-0">
                       {m.kind && (
-                        <span className="flex-shrink-0 text-[9px] font-bold uppercase tracking-wider text-zinc-500 bg-zinc-100 px-1.5 py-0.5 rounded w-20 text-center">
+                        <span className="flex-shrink-0 text-[0.5625rem] font-bold uppercase tracking-wider text-zinc-500 bg-zinc-100 px-1.5 py-0.5 rounded w-20 text-center">
                           {m.kind}
                         </span>
                       )}
@@ -474,7 +474,7 @@ export function SubjectDetail() {
                         href={`${LIBRARY_BASE}/${subject.id}/${encodeURIComponent(m.file)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-shrink-0 inline-flex items-center gap-1 text-[11px] font-semibold text-rose-700 bg-rose-50 border border-rose-100 px-2 py-1 rounded-full hover:bg-rose-100 transition-colors"
+                        className="flex-shrink-0 inline-flex items-center gap-1 text-[0.6875rem] font-semibold text-rose-700 bg-rose-50 border border-rose-100 px-2 py-1 rounded-full hover:bg-rose-100 transition-colors"
                       >
                         <FilePdf weight="fill" className="w-3 h-3" /> PDF
                         <DownloadSimple weight="bold" className="w-3 h-3" />
@@ -542,7 +542,7 @@ export function SubjectDetail() {
 function FichaStat({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-xl bg-zinc-50 border border-zinc-100 px-3 py-2.5">
-      <p className="text-[10px] font-bold uppercase tracking-wider text-zinc-400">{label}</p>
+      <p className="text-[0.625rem] font-bold uppercase tracking-wider text-zinc-400">{label}</p>
       <p className="text-sm font-bold text-zinc-900 mt-0.5">{value}</p>
     </div>
   )
@@ -568,7 +568,7 @@ function StudyTopicCard({ topic, read }: { topic: Topic; read: number }) {
         <div className="flex-1 h-1.5 bg-zinc-200 rounded-full overflow-hidden">
           <div className={`h-full ${colors.dot} rounded-full transition-all`} style={{ width: `${pct}%` }} />
         </div>
-        <span className="text-[10px] font-semibold text-zinc-400 flex-shrink-0">{read}/{total}</span>
+        <span className="text-[0.625rem] font-semibold text-zinc-400 flex-shrink-0">{read}/{total}</span>
       </div>
       <div className="flex items-center gap-2">
         <Link

@@ -22,7 +22,7 @@ export function Toast({ msg, onDone, duration = 2500 }: {
         transform: 'translateX(-50%)',
         background: 'var(--color-text-primary)',
         color: 'var(--color-page-bg)',
-        fontSize: 13,
+        fontSize: '0.8125rem',
         fontFamily: 'var(--font-body)',
         padding: '10px 20px',
         borderRadius: 'var(--radius-md)',

@@ -120,7 +120,7 @@ export function PAITema() {
                 <ul className="space-y-2.5">
                   {tema.puntosClave.map((punto, i) => (
                     <li key={i} className="flex items-start gap-2.5 text-sm text-warning-ink">
-                      <span className="w-5 h-5 rounded-full bg-warning/20 text-warning-ink text-[10px] font-bold font-mono
+                      <span className="w-5 h-5 rounded-full bg-warning/20 text-warning-ink text-[0.625rem] font-bold font-mono
                                        flex items-center justify-center flex-shrink-0 mt-0.5">
                         {i + 1}
                       </span>
@@ -200,14 +200,14 @@ export function PAITema() {
               {prevTema ? (
                 <Link to={`/estudio/archivo/${slug}/${prevTema.id}`}
                   className="card p-4 hover:shadow-card-hover transition-all group text-left">
-                  <p className="text-[10px] text-zinc-400 uppercase font-bold tracking-wider mb-1">← Anterior</p>
+                  <p className="text-[0.625rem] text-zinc-400 uppercase font-bold tracking-wider mb-1">← Anterior</p>
                   <p className="text-sm font-semibold text-zinc-700 leading-tight line-clamp-2">{prevTema.titulo}</p>
                 </Link>
               ) : <div />}
               {nextTema ? (
                 <Link to={`/estudio/archivo/${slug}/${nextTema.id}`}
                   className="card p-4 hover:shadow-card-hover transition-all group text-right">
-                  <p className="text-[10px] text-zinc-400 uppercase font-bold tracking-wider mb-1">Siguiente →</p>
+                  <p className="text-[0.625rem] text-zinc-400 uppercase font-bold tracking-wider mb-1">Siguiente →</p>
                   <p className="text-sm font-semibold text-zinc-700 leading-tight line-clamp-2">{nextTema.titulo}</p>
                 </Link>
               ) : <div />}
@@ -217,7 +217,7 @@ export function PAITema() {
           {/* Sidebar — índice de temas */}
           <aside className="hidden lg:block">
             <div className="card p-4 sticky top-28">
-              <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-3 px-2">
+              <p className="text-[0.625rem] font-bold text-zinc-400 uppercase tracking-widest mb-3 px-2">
                 Temas del módulo
               </p>
               <nav className="space-y-0.5">

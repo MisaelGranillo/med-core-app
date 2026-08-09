@@ -22,7 +22,7 @@ function Loader() {
           border: '3px solid rgba(255,255,255,0.15)', borderTopColor: 'var(--color-accent)',
           animation: 'spin 0.8s linear infinite',
         }} />
-        <span style={{ color: 'var(--c-stage-muted)', fontSize: 12, whiteSpace: 'nowrap' }}>Cargando modelo…</span>
+        <span style={{ color: 'var(--c-stage-muted)', fontSize: '0.75rem', whiteSpace: 'nowrap' }}>Cargando modelo…</span>
       </div>
     </Html>
   )

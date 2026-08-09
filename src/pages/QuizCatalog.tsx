@@ -58,7 +58,7 @@ export function QuizCatalog() {
             <div className="flex items-center gap-2 mb-3">
               <span className="text-xl">{module.emoji}</span>
               <h2 className="font-bold text-zinc-900">{module.title}</h2>
-              <span className="text-[10px] font-semibold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded-full">
+              <span className="text-[0.625rem] font-semibold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded-full">
                 {temas.length} temas
               </span>
             </div>
@@ -83,7 +83,7 @@ export function QuizCatalog() {
                           </h3>
                         </div>
                         {best !== null && (
-                          <span className="flex items-center gap-1 text-[9px] font-bold text-amber-700 bg-amber-100 border border-amber-200 px-1.5 py-0.5 rounded-full flex-shrink-0">
+                          <span className="flex items-center gap-1 text-[0.5625rem] font-bold text-amber-700 bg-amber-100 border border-amber-200 px-1.5 py-0.5 rounded-full flex-shrink-0">
                             <Trophy weight="fill" className="w-3 h-3" />
                             {best}%
                           </span>
@@ -91,7 +91,7 @@ export function QuizCatalog() {
                       </div>
                       <p className="text-xs text-zinc-400 leading-relaxed line-clamp-2">{t.subtitle}</p>
                       <div className="flex items-center border-t border-zinc-100 pt-2.5 mt-auto">
-                        <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full ${colors.badge}`}>
+                        <span className={`text-[0.6875rem] font-semibold px-2 py-0.5 rounded-full ${colors.badge}`}>
                           {qCount} preguntas
                         </span>
                       </div>

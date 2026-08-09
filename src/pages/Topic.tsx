@@ -163,7 +163,7 @@ export function Topic() {
       {topic.sections.some(s => s.keyTerms && s.keyTerms.length > 0) && (
         <div className="bg-surface border-b border-zinc-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex items-center gap-2 overflow-x-auto scrollbar-hide">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 flex-shrink-0 mr-1">
+            <span className="text-[0.625rem] font-bold uppercase tracking-widest text-zinc-400 flex-shrink-0 mr-1">
               Conceptos
             </span>
             {Array.from(
@@ -171,7 +171,7 @@ export function Topic() {
             ).slice(0, 18).map((term, i) => (
               <span
                 key={i}
-                className={`text-[11px] font-medium px-2 py-0.5 rounded-full flex-shrink-0 ${colors.badge}`}
+                className={`text-[0.6875rem] font-medium px-2 py-0.5 rounded-full flex-shrink-0 ${colors.badge}`}
               >
                 {term}
               </span>
@@ -192,7 +192,7 @@ export function Topic() {
         {/* Sidebar — desktop */}
         <aside className="hidden md:block w-56 flex-shrink-0">
           <div className="sticky top-20 space-y-1">
-            <p className="text-[11px] font-bold uppercase tracking-widest text-zinc-400 mb-3 px-2">
+            <p className="text-[0.6875rem] font-bold uppercase tracking-widest text-zinc-400 mb-3 px-2">
               Secciones
             </p>
             {topic.sections.map((sec) => {
@@ -208,7 +208,7 @@ export function Topic() {
                     }`}
                 >
                   <span
-                    className={`w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-bold
+                    className={`w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-[0.625rem] font-bold
                       ${read ? `${colors.headerBg} text-white` : 'bg-zinc-200 text-zinc-500'}`}
                   >
                     {sec.number}
@@ -243,7 +243,7 @@ export function Topic() {
                     className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-left text-sm text-zinc-600 hover:bg-zinc-100 transition-colors mb-1"
                   >
                     <span
-                      className={`w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-bold
+                      className={`w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-[0.625rem] font-bold
                         ${read ? `${colors.headerBg} text-white` : 'bg-zinc-200 text-zinc-500'}`}
                     >
                       {sec.number}

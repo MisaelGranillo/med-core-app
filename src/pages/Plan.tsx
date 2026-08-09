@@ -38,7 +38,7 @@ function SubjectCard({ subject }: { subject: Subject }) {
       <div className="flex items-start justify-between gap-2">
         <h3 className="font-bold text-sm leading-snug text-zinc-900">{subject.name}</h3>
         {subject.hasLab && (
-          <span className="flex items-center gap-1 text-[9px] bg-teal-100 text-teal-700 border border-teal-200 px-1.5 py-0.5 rounded-full font-bold uppercase tracking-wide flex-shrink-0">
+          <span className="flex items-center gap-1 text-[0.5625rem] bg-teal-100 text-teal-700 border border-teal-200 px-1.5 py-0.5 rounded-full font-bold uppercase tracking-wide flex-shrink-0">
             <Flask weight="fill" className="w-3 h-3" /> Lab
           </span>
         )}
@@ -47,7 +47,7 @@ function SubjectCard({ subject }: { subject: Subject }) {
       <div className="flex items-center justify-between border-t border-zinc-100 pt-2.5 mt-auto">
         <div className="flex flex-wrap gap-1">
           {(subject.tags ?? []).map(t => (
-            <span key={t} className="text-[9px] bg-zinc-100 text-zinc-500 px-1.5 py-0.5 rounded-full font-semibold">
+            <span key={t} className="text-[0.5625rem] bg-zinc-100 text-zinc-500 px-1.5 py-0.5 rounded-full font-semibold">
               {SISTEMA_LABELS[t] ?? t}
             </span>
           ))}
@@ -104,7 +104,7 @@ function PlanSelector({ plan, onChange }: { plan: PlanType; onChange: (id: strin
                 ${p.id === plan.id ? 'bg-primary-50' : ''}`}
             >
               <p className="text-sm font-bold text-zinc-900">{p.schoolShort} · {p.degree}</p>
-              <p className="text-[11px] text-zinc-400">{p.school} · {p.durationLabel}</p>
+              <p className="text-[0.6875rem] text-zinc-400">{p.school} · {p.durationLabel}</p>
             </button>
           ))}
         </div>
@@ -156,8 +156,8 @@ export function Plan() {
             <div className="flex flex-col items-start md:items-end gap-3">
               <PlanSelector plan={plan} onChange={handlePlanChange} />
               <div className="flex gap-3 text-center flex-shrink-0">
-                <div><p className="text-2xl font-extrabold text-zinc-900">{plan.periods.length}</p><p className="text-[11px] text-zinc-400">{plan.periodLabel.toLowerCase()}s</p></div>
-                <div><p className="text-2xl font-extrabold text-primary-600">{totalSubjects}</p><p className="text-[11px] text-zinc-400">materias</p></div>
+                <div><p className="text-2xl font-extrabold text-zinc-900">{plan.periods.length}</p><p className="text-[0.6875rem] text-zinc-400">{plan.periodLabel.toLowerCase()}s</p></div>
+                <div><p className="text-2xl font-extrabold text-primary-600">{totalSubjects}</p><p className="text-[0.6875rem] text-zinc-400">materias</p></div>
               </div>
             </div>
           </div>
@@ -179,7 +179,7 @@ export function Plan() {
                                : 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100'}`}
               >
                 {p.label}
-                <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold
+                <span className={`text-[0.625rem] px-1.5 py-0.5 rounded-full font-bold
                   ${activeIdx === p.index ? 'bg-surface/20 text-white' : 'bg-zinc-100 text-zinc-500'}`}>
                   {p.subjects.length}
                 </span>

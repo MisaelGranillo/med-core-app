@@ -56,6 +56,14 @@
   /* alias kept so any lingering var(--font-sans) resolves to Inter */
   --font-sans: var(--font-body);
 
+  /* Multiplicador global de tamaño de texto (Ajustes → Tamaño de texto).
+   * Vía A: el efecto vive en `html { font-size: calc(100% * var(--fs-scale)) }`
+   * (src/index.css). Como toda la tipografía está en rem —las --fs-* y las
+   * utilidades Tailwind text-xs/sm/…— escala desde la base del html sin doble
+   * conteo. Por eso las --fs-* NO multiplican por --fs-scale. El store
+   * useSettings sobrescribe esta variable en documentElement. Default = 1. */
+  --fs-scale: 1;
+
   /* Type scale (used by index.css component layer) */
   --fs-body:    0.9375rem; /* 15 */
   --fs-small:   0.8125rem; /* 13 */
