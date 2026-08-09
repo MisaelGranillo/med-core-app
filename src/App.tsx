@@ -1,7 +1,8 @@
-import React, { lazy, Suspense } from 'react'
+import React, { lazy, Suspense, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom'
 import { Navbar } from './components/Navbar'
 import { paiModulos } from './data/pai'
+import { useSettings, scaleValue } from './store/useSettings'
 
 /* Routes are lazy-loaded so each page + its heavy data (topics, quizzes,
  * anatomy meshes) only ships when navigated to — keeps the initial bundle
@@ -105,6 +106,12 @@ class ErrorBoundary extends React.Component<
 }
 
 export default function App() {
+  // Aplica el tamaño de texto persistido a --fs-scale en cada carga y cambio.
+  const fontScale = useSettings(s => s.fontScale)
+  useEffect(() => {
+    document.documentElement.style.setProperty('--fs-scale', String(scaleValue(fontScale)))
+  }, [fontScale])
+
   return (
     <ErrorBoundary>
       <BrowserRouter>
