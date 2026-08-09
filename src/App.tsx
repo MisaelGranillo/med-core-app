@@ -20,6 +20,7 @@ const Progress     = named(() => import('./pages/Progress'),      'Progress')
 const Anatomy      = named(() => import('./pages/Anatomy'),       'Anatomy')
 const Terminologia = named(() => import('./pages/Terminologia'),  'Terminologia')
 const MedEn        = named(() => import('./pages/MedEn'),         'MedEn')
+const Ajustes      = named(() => import('./pages/Ajustes'),       'Ajustes')
 const NotFound     = named(() => import('./pages/NotFound'),      'NotFound')
 const Plan         = named(() => import('./pages/Plan'),          'Plan')
 const SubjectDetail= named(() => import('./pages/SubjectDetail'), 'SubjectDetail')
@@ -134,6 +135,8 @@ export default function App() {
               <Route path="/terminologia/:termId" element={<Terminologia />} />
               {/* MedEN — vocabulario inglés↔español de Inglés Médico */}
               <Route path="/vocabulario" element={<MedEn />} />
+              {/* Ajustes — preferencias (tamaño de texto) */}
+              <Route path="/ajustes" element={<Ajustes />} />
               {/* Plan de estudios (capa curricular enchufable) */}
               <Route path="/plan" element={<Plan />} />
               <Route path="/plan/:subjectId" element={<SubjectDetail />} />
