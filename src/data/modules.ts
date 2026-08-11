@@ -10,6 +10,14 @@ export const modules: Module[] = [
     topicIds: ['anatomia-generalidades', 'huesos-craneo', 'huesos-cara-hioides', 'columna-vertebral'],
   },
   {
+    id: 'anatomia-uad-s2',
+    badge: 'UAD · Anatomía Humana y Disección I — Semana 2',
+    title: 'Osteología — Tórax',
+    subtitle: 'Semana 2 (Clase 1): esternón y costillas. Miembros por impartir.',
+    emoji: '🫁',
+    topicIds: ['torax-oseo'],
+  },
+  {
     id: 'ingles-medico-uad',
     badge: 'UAD · Inglés Médico I',
     title: 'Inglés Médico',
