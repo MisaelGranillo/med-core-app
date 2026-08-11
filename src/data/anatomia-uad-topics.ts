@@ -1298,4 +1298,280 @@ export const anatomiaUadTopics: Topic[] = [
       },
     ],
   },
+
+  // ══════════════════════════════════════════════════════════════════════
+  // MIEMBRO SUPERIOR ÓSEO — Semana 2 · Clase 2
+  // Fuente: diapositivas del Dr. Soto Pacheco + Moore, cap. Miembro superior
+  // (Huesos del miembro superior, libro 398–408 / PDF 422–432).
+  // ══════════════════════════════════════════════════════════════════════
+  {
+    id: 'miembro-superior-oseo',
+    title: 'Miembro superior óseo: cintura escapular, brazo, antebrazo y mano',
+    subtitle: 'Clavícula, escápula, húmero, radio, cúbito y huesos de la mano',
+    colorKey: 'osteologia',
+    emoji: '🦾',
+    keyPoints: [
+      'En posición anatómica el radio es lateral (del lado del pulgar) y el cúbito (ulna) es medial.',
+      'La cabeza del radio es proximal; la cabeza del cúbito es distal: extremos opuestos.',
+      'El cuello quirúrgico del húmero es el que se fractura con frecuencia (no el anatómico).',
+      'Epicóndilo medial = epitróclea; epicóndilo lateral = "epicóndilo" del profesor.',
+      'Tubérculo mayor = troquíter, tubérculo menor = troquín; entre ellos, la corredera bicipital.',
+      'El carpo son 8 huesos en 2 filas de 4; el escafoides es el que más se fractura.',
+      'Los metacarpianos se numeran de lateral a medial (I = pulgar); el pulgar tiene 2 falanges.',
+      'El olécranon es del cúbito (proximal); el proceso estiloides existe en radio Y cúbito (ambos distales).',
+    ],
+    sections: [
+      {
+        id: 'mso-1',
+        number: 1,
+        title: 'Divisiones del miembro superior',
+        keyTerms: ['cintura escapular', 'brazo', 'antebrazo', 'mano'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            content:
+              'Se usa la Terminología Anatómica (TA) como principal y el clásico del profesor entre paréntesis; en el examen el clásico cuenta como correcto. Mapeo de esta clase: tubérculo mayor = troquíter · tubérculo menor = troquín · surco intertubercular = corredera bicipital · epicóndilo medial = epitróclea · proceso coracoides = apófisis coracoides · incisura troclear/radial = escotadura troclear/radial · ulna = cúbito · proceso estiloides = apófisis estiloides · surco del nervio radial = canal del n. radial.',
+          },
+          {
+            type: 'list',
+            title: 'El miembro superior se divide en',
+            items: [
+              'Cintura escapular (clavícula y escápula): fija el miembro al tronco.',
+              'Brazo: húmero.',
+              'Antebrazo: radio (lateral) y cúbito/ulna (medial).',
+              'Mano: carpo (8), metacarpo (5) y falanges (14).',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'mso-2',
+        number: 2,
+        title: 'Clavícula',
+        keyTerms: ['extremo acromial', 'extremo esternal', 'tubérculo conoideo', 'línea trapezoide', 'impresión del ligamento costoclavicular'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Hueso largo atípico: tiene 1 diáfisis y 2 epífisis, pero carece de cavidad medular clásica. Se palpa en todo su trayecto y es el hueso que más se fractura del cuerpo.',
+          },
+          {
+            type: 'table',
+            title: 'Accidentes de la clavícula',
+            data: {
+              headers: ['Región', 'Accidente'],
+              rows: [
+                ['Extremo lateral (acromial)', 'Se articula con el acromion; en su cara inferior, tubérculo conoideo y línea trapezoide'],
+                ['Extremo medial (esternal)', 'Se articula con el manubrio; impresión del ligamento costoclavicular'],
+                ['Cara inferior (cuerpo)', 'Surco del músculo subclavio (surco subclavio)'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'mso-3',
+        number: 3,
+        title: 'Escápula',
+        keyTerms: ['fosa subescapular', 'espina', 'acromion', 'fosa supraespinosa', 'fosa infraespinosa', 'proceso coracoides', 'cavidad glenoidea'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Hueso plano triangular con 3 bordes y 3 ángulos, aplicado a la cara posterior del tórax.',
+          },
+          {
+            type: 'comparison',
+            title: 'Caras de la escápula',
+            left: {
+              title: 'Cara anterior (costal)',
+              items: ['Fosa subescapular (ocupada por el músculo subescapular).'],
+            },
+            right: {
+              title: 'Cara posterior (dorsal)',
+              items: [
+                'Espina de la escápula, que termina en el acromion.',
+                'Fosa supraespinosa (por encima de la espina).',
+                'Fosa infraespinosa (por debajo de la espina).',
+                'Incisura espinoglenoidea (escotadura espinoglenoidea).',
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Otros accidentes',
+            items: [
+              'Incisura escapular (escotadura coracoidea).',
+              'Proceso coracoides (apófisis coracoides).',
+              'Cavidad glenoidea (recibe la cabeza del húmero) y cuello.',
+              'Tubérculos supraglenoideo e infraglenoideo.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'mso-4',
+        number: 4,
+        title: 'Húmero',
+        keyTerms: ['cabeza', 'cuello anatómico', 'cuello quirúrgico', 'troquíter', 'troquín', 'corredera bicipital', 'tuberosidad deltoidea', 'surco del nervio radial', 'tróclea', 'epitróclea'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Epífisis superior (proximal)',
+            items: [
+              'Cabeza (articula con la cavidad glenoidea).',
+              'Cuello anatómico y cuello quirúrgico.',
+              'Tubérculo mayor (troquíter) y tubérculo menor (troquín), con sus crestas.',
+              'Surco intertubercular (corredera bicipital), entre ambos tubérculos.',
+            ],
+          },
+          {
+            type: 'definition',
+            title: 'Surco intertubercular (corredera bicipital)',
+            content: 'Canal entre el troquíter y el troquín por donde discurre el tendón de la porción larga del bíceps braquial. — Surco intertubercular.',
+          },
+          {
+            type: 'list',
+            title: 'Diáfisis y epífisis inferior (distal)',
+            items: [
+              'Diáfisis: tuberosidad deltoidea; surco del nervio radial (canal del n. radial), posterior.',
+              'Distal: tróclea y epicóndilo medial (epitróclea); cóndilo/capítulo y epicóndilo lateral.',
+              'Crestas supracondíleas interna y externa.',
+              'Fosa radial y fosa coronoidea (anteriores); fosa del olécranon (posterior).',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Cuello anatómico vs. cuello quirúrgico',
+            left: {
+              title: 'Cuello anatómico',
+              items: ['Justo por debajo de la cabeza, en el límite del cartílago articular.'],
+            },
+            right: {
+              title: 'Cuello quirúrgico',
+              items: ['Por debajo de los tubérculos; es el sitio que se fractura con frecuencia (relación con el nervio axilar).'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'mso-5',
+        number: 5,
+        title: 'Radio (lado lateral, del pulgar)',
+        keyTerms: ['cabeza del radio', 'cuello', 'tuberosidad radial', 'incisura ulnar', 'proceso estiloides', 'tubérculo dorsal'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'De proximal a distal',
+            items: [
+              'Epífisis superior: cabeza del radio (proximal), cuello y tuberosidad radial (bicipital).',
+              'Diáfisis: bordes interóseo, anterior y posterior; cresta del pronador.',
+              'Epífisis inferior: incisura ulnar (escotadura cubital), proceso estiloides, tubérculo dorsal (de Lister) y superficie articular carpiana.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'La cabeza del radio está en el extremo PROXIMAL (codo). Es el error más frecuente confundirla con la cabeza del cúbito, que es DISTAL (muñeca).',
+          },
+        ],
+      },
+      {
+        id: 'mso-6',
+        number: 6,
+        title: 'Cúbito / ulna (lado medial)',
+        keyTerms: ['olécranon', 'proceso coronoides', 'incisura troclear', 'incisura radial', 'cabeza del cúbito', 'proceso estiloides'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Olécranon',
+            content: 'Prominencia posterior de la epífisis proximal del cúbito; forma la punta del codo y se aloja en la fosa del olécranon del húmero en extensión. — Olécranon.',
+          },
+          {
+            type: 'definition',
+            title: 'Incisura troclear (escotadura troclear)',
+            content: 'Concavidad entre el olécranon y el proceso coronoides que articula con la tróclea del húmero. — Incisura troclear.',
+          },
+          {
+            type: 'list',
+            title: 'De proximal a distal',
+            items: [
+              'Epífisis superior: olécranon, proceso coronoides (apófisis coronoides), incisura troclear e incisura radial (escotaduras), tuberosidad del cúbito.',
+              'Diáfisis: borde interóseo; cresta del supinador.',
+              'Epífisis inferior: cabeza del cúbito (distal), proceso estiloides y circunferencia articular.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Incisuras recíprocas (se confunden por el nombre cruzado)',
+            left: {
+              title: 'Incisura radial DEL CÚBITO',
+              items: ['En el cúbito; recibe la cabeza del radio.'],
+            },
+            right: {
+              title: 'Incisura ulnar DEL RADIO',
+              items: ['En el radio (distal); recibe la cabeza del cúbito.'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'mso-7',
+        number: 7,
+        title: 'Huesos de la mano',
+        keyTerms: ['carpo', 'escafoides', 'semilunar', 'piramidal', 'pisiforme', 'trapecio', 'trapezoide', 'hueso grande', 'ganchoso', 'metacarpo', 'falanges'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Carpo: 8 huesos en 2 filas (lateral → medial)',
+            left: {
+              title: 'Fila proximal',
+              items: ['Escafoides (con tubérculo)', 'Semilunar', 'Piramidal', 'Pisiforme'],
+            },
+            right: {
+              title: 'Fila distal',
+              items: ['Trapecio (con tubérculo)', 'Trapezoide', 'Hueso grande (capitate)', 'Ganchoso (apófisis unciforme)'],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Metacarpo y falanges',
+            items: [
+              'Metacarpo: 5 huesos numerados de lateral a medial (I = pulgar); cada uno con base, cuerpo y cabeza.',
+              'Falanges: proximal, media y distal (con tuberosidad ungueal). El pulgar solo tiene 2 falanges.',
+              'Huesos sesamoideos (frecuentes en la articulación metacarpofalángica del pulgar).',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'El escafoides es el hueso del carpo que más se fractura (caída sobre la mano extendida); su fractura puede complicarse con necrosis por su irrigación.',
+          },
+        ],
+      },
+      {
+        id: 'mso-8',
+        number: 8,
+        title: 'Confusiones frecuentes de la clase',
+        keyTerms: ['troquíter', 'troquín', 'epitróclea', 'cabeza del radio', 'cabeza del cúbito', 'olécranon', 'escafoides'],
+        blocks: [
+          {
+            type: 'keypoints',
+            title: 'Los puntos que más se confunden (y más caen)',
+            items: [
+              'Troquíter (tubérculo MAYOR) vs troquín (tubérculo MENOR); entre ellos, la corredera bicipital.',
+              'Epitróclea = epicóndilo MEDIAL; el "epicóndilo" del profesor = epicóndilo LATERAL. La trampa clásica.',
+              'Cuello anatómico vs cuello quirúrgico del húmero: el quirúrgico se fractura.',
+              'Fosa del olécranon (POSTERIOR) vs fosas coronoidea y radial (ANTERIORES).',
+              'Cabeza del radio = PROXIMAL; cabeza del cúbito = DISTAL. Extremos opuestos.',
+              'Olécranon = cúbito (proximal); proceso estiloides = en radio Y cúbito (ambos distales).',
+              'Incisura ulnar del radio vs incisura radial del cúbito (recíprocas, nombre cruzado).',
+              'Radio = lateral (pulgar); cúbito = medial.',
+              'Carpo fila proximal (escafoides, semilunar, piramidal, pisiforme) vs distal (trapecio, trapezoide, hueso grande, ganchoso).',
+              'Escafoides = el hueso del carpo que más se fractura.',
+              'Metacarpianos numerados lateral → medial (I = pulgar), no al revés.',
+              'Escápula: fosa supraespinosa vs infraespinosa; acromion vs proceso coracoides.',
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ]
