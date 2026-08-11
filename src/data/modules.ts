@@ -18,6 +18,14 @@ export const modules: Module[] = [
     topicIds: ['ingles-medical-record', 'ingles-parts-of-speech', 'ingles-word-forms'],
   },
   {
+    id: 'ingles-medico-uad-s2',
+    badge: 'UAD · Inglés Médico I — Semana 2',
+    title: 'Terminología médica: construcción de términos',
+    subtitle: 'Raíces, formas combinantes, prefijos y sufijos grecolatinos.',
+    emoji: '🧬',
+    topicIds: ['ingles-word-parts'],
+  },
+  {
     id: 'anatomia',
     badge: 'Módulo — Anatomía',
     title: 'Anatomía y Medicina',
@@ -41,7 +49,7 @@ export const modules: Module[] = [
     title: 'Inglés Médico · Unidades II a VI',
     subtitle: 'Contenido tomado del libro de texto, aún no impartido en clase. Unidades II a VI del programa.',
     emoji: '📚',
-    topicIds: ['ingles-word-parts', 'ingles-plurals', 'ingles-verb-tenses',
+    topicIds: ['ingles-plurals', 'ingles-verb-tenses',
                'ingles-sentence-structure', 'ingles-abbreviations',
                'ingles-false-friends', 'ingles-scientific-literature'],
   },
