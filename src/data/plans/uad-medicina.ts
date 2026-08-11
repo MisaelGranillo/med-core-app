@@ -129,10 +129,19 @@ export const uadMedicina: Plan = {
               {
                 number: 2,
                 title: 'Osteología II: tórax y miembros',
+                // PARCIAL: solo se impartió la Clase 1 (tórax óseo). Los temas de
+                // miembro superior e inferior aún NO se han impartido — llegan en
+                // Fase 2. Se usa 'impartido' porque el tipo no tiene "en-curso";
+                // los temas de abajo dejan claro qué falta.
+                estado: 'impartido',
+                topicIds: ['torax-oseo'],
                 temas: [
-                  'Esqueleto del tórax: esternón y costillas',
-                  'Esqueleto del miembro superior: hombro, brazo y mano',
-                  'Esqueleto del miembro inferior: pelvis, fémur, tibia y peroné, huesos del pie',
+                  'Clase 1 (impartida): esqueleto del tórax — esternón y costillas',
+                  'Por impartir: esqueleto del miembro superior (hombro, brazo y mano)',
+                  'Por impartir: esqueleto del miembro inferior (pelvis, fémur, tibia, peroné y pie)',
+                ],
+                fuentes: [
+                  { title: 'Moore — Anatomía con orientación clínica', file: 'Moore Anatomía.pdf', paginas: 'cap. Tórax, Esqueleto del tórax, libro 45–57 (PDF 69–81)', nota: 'Caja torácica, esternón, costillas típicas y especiales.' },
                 ],
               },
               {
@@ -172,6 +181,7 @@ export const uadMedicina: Plan = {
               { title: 'Clase 2 — Huesos de la Cabeza', file: 'Semana 1 - Clase 2 Huesos de la Cabeza.pdf', kind: 'Clase' },
               { title: 'Clase 3 — Huesos de la Cara', file: 'Semana 1 - Clase 3 Huesos de la Cara.pdf', kind: 'Clase' },
               { title: 'Clase 4 — Columna Vertebral', file: 'Semana 1 - Clase 4 Columna Vertebral.pdf', kind: 'Clase' },
+              { title: 'Semana 2 · Clase 1 — Tórax óseo (esternón y costillas)', file: 'Semana 2 - Clase 1 Torax Oseo.pdf', kind: 'Clase' },
               { title: 'Manual de Anatomía I', file: 'MANUAL ANATOMIA I.pdf', kind: 'Manual' },
               { title: 'Manual de Anatomía Humana y su Disección 1', file: 'MANUAL DE ANATOMIA HUMANA Y SU DISECCION 1.pdf', kind: 'Manual' },
               { title: 'Programa Académico — Anatomía I', file: 'PROGRAMA ANATOMIA I.pdf', kind: 'Programa' },
