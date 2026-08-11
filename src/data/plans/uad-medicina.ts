@@ -244,15 +244,14 @@ export const uadMedicina: Plan = {
               {
                 number: 2,
                 title: 'Terminología griega y latina útil en el lenguaje médico',
-                estado: 'adelanto',
+                estado: 'impartido',
+                topicIds: ['ingles-word-parts'],
                 temas: [
-                  'Introducción a la terminología grecolatina en inglés médico',
-                  'Reglas para la formación de plurales (-a → -ae, -is → -es, -um → -a, -us → -i, …)',
+                  'Clase 1 (impartida): construcción de términos — raíz, forma combinante, prefijo y sufijo; regla de la vocal de enlace',
+                  'Clases 2–3 (por impartir): reglas para la formación de plurales',
                 ],
                 fuentes: [
-                  { title: 'Medical Terminology — A Living Language', file: 'Medical Terminology - A Living Language 6th ed.pdf', paginas: 'libro 1–20 (PDF 29–48)', nota: 'Cap. 1: raíces, formas combinantes, prefijos y sufijos' },
-                  { title: 'Medical Terminology — Apéndices I y II', file: 'Medical Terminology - A Living Language 6th ed.pdf', paginas: 'libro 547 y 554 (PDF 575 y 582)', nota: 'Partes de palabra ordenadas alfabéticamente' },
-                  { title: 'Check Your English Vocabulary for Medicine', file: 'Check Your English Vocabulary for Medicine.pdf', paginas: 'workbook 1–9 (PDF 8–16)', nota: 'Formación de plurales (unidad 4)' },
+                  { title: 'Medical Terminology — A Living Language', file: 'Medical Terminology - A Living Language 6th ed.pdf', paginas: 'cap. 1, libro 1–20 (PDF 29–48)', nota: 'Construcción de términos: raíz, vocal de enlace, prefijo, sufijo.' },
                 ],
               },
               {
@@ -295,6 +294,8 @@ export const uadMedicina: Plan = {
               { title: 'Clase 3 — Parts of Speech & Word Forms', file: 'Semana 1 - Clase 3 Parts of Speech.pdf', kind: 'Clase' },
               { title: 'Proyecto Integrador Semana 1 — Why is English important…', file: 'Semana 1 - Proyecto Integrador.pdf', kind: 'Entrega' },
               { title: 'Caso Clínico 1 — Shortness of Breath', file: 'Semana 1 - Caso Clinico 1 Shortness of Breath.pdf', kind: 'Caso clínico' },
+              { title: 'Semana 2 · Clase 1 — Terminología griega y latina', file: 'Semana 2 - Clase 1 Terminologia Griega y Latina.pdf', kind: 'Clase' },
+              { title: 'Proyecto Integrador Semana 2 — Medical Terminology Project', file: 'Semana 2 - Proyecto Integrador Medical Terminology.pdf', kind: 'Entrega' },
               { title: 'Medical Terminology — A Living Language (6.ª ed.)', file: 'Medical Terminology - A Living Language 6th ed.pdf', kind: 'Libro' },
               { title: 'Check Your English Vocabulary for Medicine', file: 'Check Your English Vocabulary for Medicine.pdf', kind: 'Cuaderno' },
               { title: 'The Language of Medicine', file: 'The Language of Medicine.pdf', kind: 'Referencia' },
