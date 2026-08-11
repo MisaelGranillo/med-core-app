@@ -628,10 +628,116 @@ const toraxQuestions: Question[] = [
   },
 ]
 
+/* ── MIEMBRO SUPERIOR ÓSEO (Semana 2 · Clase 2) ─────────────────────────
+ * 14 reactivos en orden descendente de valor de estudio. ≥4 atacan las
+ * confusiones de §4.9 (cabeza radio/cúbito, epitróclea, troquíter/troquín,
+ * olécranon, escafoides, incisuras recíprocas). El clásico cuenta como correcto. */
+const msoQuestions: Question[] = [
+  {
+    id: 'mso-q1', topicId: 'miembro-superior-oseo', type: 'multiple-choice',
+    question: 'En posición anatómica, el radio se sitúa:',
+    options: ['Medial (lado del meñique)', 'Posterior al cúbito', 'Lateral (lado del pulgar)', 'Anterior al cúbito'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: 'El radio es lateral (lado del pulgar) y el cúbito (ulna) medial. Es la referencia para orientar todo el antebrazo.',
+  },
+  {
+    id: 'mso-q2', topicId: 'miembro-superior-oseo', type: 'multiple-choice',
+    question: 'La cabeza del radio se encuentra en el extremo ___ y la del cúbito en el ___:',
+    options: ['proximal / distal', 'distal / proximal', 'ambas proximales', 'ambas distales'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'La cabeza del radio es proximal (codo); la cabeza del cúbito es distal (muñeca). Es el error más frecuente confundir ambos extremos.',
+  },
+  {
+    id: 'mso-q3', topicId: 'miembro-superior-oseo', type: 'multiple-choice',
+    question: 'La epitróclea corresponde, en Terminología Anatómica, al:',
+    options: ['Epicóndilo lateral', 'Epicóndilo medial', 'Olécranon', 'Troquíter'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Epitróclea = epicóndilo medial. El "epicóndilo" a secas del profesor es el epicóndilo lateral: la trampa clásica de esta clase.',
+  },
+  {
+    id: 'mso-q4', topicId: 'miembro-superior-oseo', type: 'multiple-choice',
+    question: 'El troquíter es el:',
+    options: ['Tubérculo menor del húmero', 'Olécranon', 'Tubérculo mayor del húmero', 'Proceso coracoides'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Troquíter = tubérculo mayor; troquín = tubérculo menor. Entre ambos está el surco intertubercular (corredera bicipital).',
+  },
+  {
+    id: 'mso-q5', topicId: 'miembro-superior-oseo', type: 'multiple-choice',
+    question: '¿Qué parte del húmero se fractura con más frecuencia?',
+    options: ['Cuello anatómico', 'Tróclea', 'Capítulo', 'Cuello quirúrgico'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'El cuello quirúrgico (por debajo de los tubérculos) es el sitio de fractura frecuente, con riesgo para el nervio axilar. El anatómico está justo bajo la cabeza.',
+  },
+  {
+    id: 'mso-q6', topicId: 'miembro-superior-oseo', type: 'multiple-choice',
+    question: 'El olécranon pertenece al:',
+    options: ['Radio', 'Cúbito (ulna)', 'Húmero', 'Escafoides'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'El olécranon es la prominencia proximal del cúbito (punta del codo); se aloja en la fosa del olécranon del húmero en extensión.',
+  },
+  {
+    id: 'mso-q7', topicId: 'miembro-superior-oseo', type: 'multiple-choice',
+    question: '¿Cuál es el hueso del carpo que más se fractura?',
+    options: ['Semilunar', 'Escafoides', 'Pisiforme', 'Ganchoso'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'El escafoides es el que más se fractura (caída sobre la mano extendida); su fractura puede complicarse con necrosis avascular.',
+  },
+  {
+    id: 'mso-q8', topicId: 'miembro-superior-oseo', type: 'multiple-choice',
+    question: 'El surco intertubercular (corredera bicipital) se ubica entre:',
+    options: ['Los dos epicóndilos', 'El olécranon y el coronoides', 'El troquíter y el troquín', 'Las fosas coronoidea y radial'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'La corredera bicipital corre entre el tubérculo mayor (troquíter) y el menor (troquín); aloja el tendón de la porción larga del bíceps.',
+  },
+  {
+    id: 'mso-q9', topicId: 'miembro-superior-oseo', type: 'multiple-choice',
+    question: 'La fila proximal del carpo (de lateral a medial) es:',
+    options: ['Trapecio, trapezoide, hueso grande, ganchoso', 'Escafoides, semilunar, piramidal, pisiforme', 'Escafoides, trapecio, hueso grande, ganchoso', 'Semilunar, piramidal, hueso grande, ganchoso'],
+    correctIndex: 1, difficulty: 'hard',
+    explanation: 'Proximal: escafoides, semilunar, piramidal, pisiforme. La distal es trapecio, trapezoide, hueso grande y ganchoso.',
+  },
+  {
+    id: 'mso-q10', topicId: 'miembro-superior-oseo', type: 'multiple-choice',
+    question: 'Los metacarpianos se numeran:',
+    options: ['De medial a lateral (I = meñique)', 'De proximal a distal', 'De lateral a medial (I = pulgar)', 'Al azar'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Se numeran de lateral a medial: el I es el del pulgar y el V el del meñique.',
+  },
+  {
+    id: 'mso-q11', topicId: 'miembro-superior-oseo', type: 'multiple-choice',
+    question: 'La fosa del olécranon del húmero está en la cara:',
+    options: ['Anterior', 'Posterior', 'Lateral', 'Medial'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'La fosa del olécranon es POSTERIOR (recibe el olécranon en extensión). Las fosas coronoidea y radial son anteriores.',
+  },
+  {
+    id: 'mso-q12', topicId: 'miembro-superior-oseo', type: 'multiple-choice',
+    question: 'El proceso coracoides (apófisis coracoides) pertenece a:',
+    options: ['El húmero', 'La clavícula', 'La escápula', 'El cúbito'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: 'El proceso coracoides es de la escápula, cerca de la cavidad glenoidea. No confundir con el acromion (también escapular, más posterosuperior).',
+  },
+  {
+    id: 'mso-q13', topicId: 'miembro-superior-oseo', type: 'multiple-choice',
+    question: 'La incisura radial se encuentra en el ___ y recibe ___:',
+    options: ['húmero / el radio', 'radio / la cabeza del cúbito', 'escafoides / el semilunar', 'cúbito / la cabeza del radio'],
+    correctIndex: 3, difficulty: 'hard',
+    explanation: 'La incisura radial está en el CÚBITO y recibe la cabeza del radio. La recíproca es la incisura ulnar del radio (distal), que recibe la cabeza del cúbito.',
+  },
+  {
+    id: 'mso-q14', topicId: 'miembro-superior-oseo', type: 'multiple-choice',
+    question: 'La clavícula es un hueso largo atípico porque:',
+    options: ['Carece de cavidad medular clásica', 'No tiene diáfisis', 'Tiene tres epífisis', 'Es un hueso plano'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'Tiene 1 diáfisis y 2 epífisis como todo hueso largo, pero carece de cavidad medular clásica; por eso se le llama largo atípico.',
+  },
+]
+
 export const anatomiaUadQuestions: Question[] = [
   ...generalidadesQuestions,
   ...craneoQuestions,
   ...caraHioidesQuestions,
   ...columnaQuestions,
   ...toraxQuestions,
+  ...msoQuestions,
 ]
