@@ -1051,4 +1051,251 @@ export const anatomiaUadTopics: Topic[] = [
       },
     ],
   },
+
+  // ══════════════════════════════════════════════════════════════════════
+  // TÓRAX ÓSEO — Semana 2 · Clase 1 (esternón y costillas)
+  // Fuente: diapositivas del Dr. Soto Pacheco + Moore, cap. Tórax
+  // (Esqueleto del tórax, libro 45–57 / PDF 69–81).
+  // ══════════════════════════════════════════════════════════════════════
+  {
+    id: 'torax-oseo',
+    title: 'Tórax óseo: esternón y costillas',
+    subtitle: 'Caja torácica, esternón, costillas típicas y especiales',
+    colorKey: 'osteologia',
+    emoji: '🫁',
+    keyPoints: [
+      'La caja torácica tiene dos aberturas: superior (opérculo) e inferior (limitada por el ángulo subcostal).',
+      'Diámetro mayor de la caja: el lateral (32 cm) > posterior (27) > anterior (15).',
+      'El esternón tiene tres partes: manubrio, cuerpo y proceso xifoides (apéndice xifoides).',
+      'El manubrio recibe la 1.ª costilla; el cuerpo recibe de la 3.ª a la 6.ª.',
+      'Verdaderas 1–7, falsas 8–12, flotantes 11–12 (el profesor clasifica las flotantes como subconjunto de las falsas).',
+      'Tienen 1 sola carilla en la cabeza las costillas 1, 10, 11 y 12; las típicas (2–9) tienen dos.',
+      'La 1.ª costilla lleva el tubérculo del escaleno anterior (escalénico), con el surco de la vena por delante y el de la arteria por detrás.',
+      'Niveles del profesor: articulación manubrio-esternal en D3, xifo-esternal en D10.',
+    ],
+    sections: [
+      {
+        id: 'tor-1',
+        number: 1,
+        title: 'La caja torácica y sus dimensiones',
+        keyTerms: ['caja torácica', 'abertura torácica superior', 'abertura torácica inferior', 'ángulo subcostal', 'ángulo infraesternal'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            content:
+              'Se usa la Terminología Anatómica (TA) como término principal y el clásico del profesor entre paréntesis. En el examen, el término clásico cuenta como correcto. Equivalencias de esta clase: proceso xifoides = apéndice xifoides · incisura yugular = horquilla esternal · incisuras claviculares = escotaduras claviculares · surco costal = canal costal · serrato anterior = serrato mayor · tubérculo del escaleno anterior = tubérculo escalénico (de Lisfranc) · vértebras torácicas (T1–T12) = vértebras dorsales (D1–D12).',
+          },
+          {
+            type: 'note',
+            title: 'Discrepancia de niveles: profesor (D3/D10) vs. Moore (T4–T5)',
+            content:
+              'El profesor sitúa la articulación manubrio-esternal a nivel D3 y la xifo-esternal a nivel D10. La TA/Moore anclan el ángulo del esternón frente al disco T4–T5. El dato del profesor (D3/D10) es el evaluable; el de Moore es referencia. No es una errata sino una convención de nivel distinta.',
+          },
+          {
+            type: 'paragraph',
+            content: 'La caja torácica presenta dos aberturas: la superior (opérculo torácico) y la inferior. Tiene una superficie exterior y otra interior, cada una con cara anterior, cara posterior y caras laterales. La abertura torácica inferior está limitada por abajo por el ángulo subcostal (infraesternal).',
+          },
+          {
+            type: 'table',
+            title: 'Dimensiones de la caja torácica',
+            data: {
+              headers: ['Medida', 'Valor'],
+              rows: [
+                ['Cara posterior', '27 cm'],
+                ['Cara anterior', '15 cm (la menor)'],
+                ['Cara lateral', '32 cm (la mayor)'],
+                ['Abertura superior — anteroposterior', '4–5 cm'],
+                ['Abertura superior — transversal', '10–12 cm'],
+                ['Abertura inferior — anteroposterior', '12 cm'],
+                ['Abertura inferior — transversal', '26 cm'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'El diámetro mayor de la caja es el lateral (32 cm); el menor, el anterior (15 cm). La abertura inferior es mucho más ancha en sentido transversal (26 cm) que la superior (10–12 cm).',
+          },
+        ],
+      },
+      {
+        id: 'tor-2',
+        number: 2,
+        title: 'El esternón',
+        keyTerms: ['manubrio', 'cuerpo del esternón', 'proceso xifoides', 'incisura yugular', 'incisuras claviculares', 'fosita gástrica'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Las tres partes del esternón',
+            items: [
+              'Manubrio: lleva la incisura yugular (horquilla esternal) en el centro y las dos incisuras claviculares (escotaduras claviculares) a los lados. Recibe la 1.ª costilla.',
+              'Cuerpo: parte alargada; recibe de la 3.ª a la 6.ª costilla.',
+              'Proceso xifoides (apéndice xifoides): pequeño; en su cara anterior se marca la fosita gástrica.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Articulaciones del esternón (niveles del profesor)',
+            data: {
+              headers: ['Articulación', 'Costilla / referencia', 'Nivel vertebral'],
+              rows: [
+                ['Manubrio-esternal (ángulo del esternón)', '2.ª costilla', 'D3'],
+                ['Xifo-esternal', '7.ª costilla', 'D10'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'La articulación manubrio-esternal marca el punto donde se articula la 2.ª costilla: es la referencia para empezar a contar costillas en la exploración. Moore la sitúa frente al disco T4–T5 (ver nota de niveles).',
+          },
+        ],
+      },
+      {
+        id: 'tor-3',
+        number: 3,
+        title: 'Costillas: clasificación',
+        keyTerms: ['costillas verdaderas', 'costillas falsas', 'costillas flotantes', 'oblicuidad', 'cartílago costal'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Generalidades',
+            items: [
+              'Son 12 pares.',
+              'Oblicuidad (inclinación descendente): de la 1.ª a la 9.ª.',
+              'Longitud: crece de la 1.ª a la 7.ª y luego decrece.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Verdaderas vs. falsas vs. flotantes',
+            left: {
+              title: 'Verdaderas (1.ª–7.ª)',
+              items: [
+                'Vertebroesternales.',
+                'Su cartílago propio llega directo al esternón.',
+              ],
+            },
+            right: {
+              title: 'Falsas (8.ª–12.ª)',
+              items: [
+                'Vertebrocondrales: 8.ª–10.ª unen su cartílago al de la 7.ª.',
+                'Falsas flotantes (11.ª y 12.ª): terminan libres, sin unión anterior.',
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Matiz del profesor a seguir en el examen: las flotantes son un SUBCONJUNTO de las falsas (falsas = 8–12; flotantes = 11–12). Muchos textos dicen "falsas 8–10, flotantes 11–12"; aquí se usa la versión del profesor.',
+          },
+        ],
+      },
+      {
+        id: 'tor-4',
+        number: 4,
+        title: 'Costilla tipo (3.ª a 9.ª)',
+        keyTerms: ['cabeza', 'cresta interarticular', 'cuello', 'tubérculo costal', 'ángulo', 'surco costal'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Cabeza',
+            content: 'Extremo posterior con dos carillas articulares separadas por la cresta interarticular (articula con dos vértebras contiguas). — Cabeza de la costilla.',
+          },
+          {
+            type: 'definition',
+            title: 'Cuello y tubérculo',
+            content: 'El cuello une la cabeza al cuerpo; en su unión con el cuerpo está la tuberosidad o tubérculo costal, que articula con la apófisis transversa de la vértebra. — Cuello y tubérculo.',
+          },
+          {
+            type: 'definition',
+            title: 'Cuerpo, ángulo y surco costal',
+            content: 'El cuerpo es aplanado; presenta el ángulo (cambio de dirección) y, en su borde inferior interno, el surco costal (canal costal) que aloja el paquete vasculonervioso intercostal. — Cuerpo, ángulo y surco costal (canal costal).',
+          },
+        ],
+      },
+      {
+        id: 'tor-5',
+        number: 5,
+        title: 'Costillas especiales (1.ª, 2.ª, 10.ª–12.ª)',
+        keyTerms: ['1.ª costilla', 'tubérculo del escaleno anterior', 'surco de la arteria subclavia', 'surco de la vena subclavia', 'tuberosidad del serrato anterior'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Rasgos por costilla',
+            items: [
+              '1.ª costilla: la más pequeña, ancha y plana, de curvatura cerrada; 1 sola carilla articular en la cabeza. En su cara superior: surco de la vena subclavia, tubérculo del escaleno anterior (escalénico) y surco de la arteria subclavia.',
+              '2.ª costilla: presenta la tuberosidad del serrato anterior (serrato mayor).',
+              '10.ª, 11.ª y 12.ª: 1 sola carilla articular en la cabeza (como la 1.ª).',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'En la 1.ª costilla: vena vs. arteria subclavia',
+            left: {
+              title: 'Surco de la VENA subclavia',
+              items: [
+                'Por DELANTE (anterior) del tubérculo del escaleno anterior.',
+                'La vena pasa por delante del músculo escaleno anterior.',
+              ],
+            },
+            right: {
+              title: 'Surco de la ARTERIA subclavia',
+              items: [
+                'Por DETRÁS (posterior) del tubérculo del escaleno anterior.',
+                'La arteria pasa por detrás del músculo escaleno anterior.',
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Orden anteroposterior en la 1.ª costilla: surco de la vena → tubérculo del escaleno anterior → surco de la arteria. El tubérculo escalénico separa ambos surcos.',
+          },
+        ],
+      },
+      {
+        id: 'tor-6',
+        number: 6,
+        title: 'Reparto de carillas articulares en la cabeza',
+        keyTerms: ['carilla articular', 'cresta interarticular'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Cuántas carillas tiene la cabeza de cada costilla',
+            data: {
+              headers: ['Costillas', 'Carillas en la cabeza'],
+              rows: [
+                ['1.ª, 10.ª, 11.ª y 12.ª', '1 sola carilla'],
+                ['2.ª a 9.ª (típicas)', '2 carillas + cresta interarticular'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Las costillas con una sola carilla (1, 10, 11, 12) articulan con una única vértebra; las típicas, con dos vértebras contiguas a través de las dos carillas separadas por la cresta interarticular.',
+          },
+        ],
+      },
+      {
+        id: 'tor-7',
+        number: 7,
+        title: 'Confusiones frecuentes de la clase',
+        keyTerms: ['verdaderas', 'falsas', 'flotantes', 'carilla única', 'tubérculo escalénico'],
+        blocks: [
+          {
+            type: 'keypoints',
+            title: 'Los puntos que más se confunden (y más caen)',
+            items: [
+              'Verdaderas 1–7 · falsas 8–12 · flotantes 11–12 (versión del profesor: flotantes ⊂ falsas).',
+              'Carilla única en la cabeza: 1, 10, 11 y 12. Dos carillas: las típicas (2–9).',
+              'En la 1.ª costilla: surco de la VENA por delante y surco de la ARTERIA por detrás del tubérculo escalénico.',
+              'Tubérculo del escaleno anterior → 1.ª costilla; tuberosidad del serrato anterior → 2.ª costilla.',
+              'Manubrio recibe la 1.ª costilla; cuerpo recibe de la 3.ª a la 6.ª; la 2.ª marca la articulación manubrio-esternal.',
+              'Dimensión mayor de la caja: lateral (32). Abertura inferior transversal (26) ≫ superior (10–12).',
+              'Niveles del profesor: manubrio-esternal D3, xifo-esternal D10.',
+              'Oblicuidad = 1.ª a 9.ª; longitud creciente = 1.ª a 7.ª. No confundir los dos rangos.',
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ]
