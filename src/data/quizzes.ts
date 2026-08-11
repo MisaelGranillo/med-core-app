@@ -3,6 +3,7 @@ import { newQuestions } from './new-quizzes'
 import { anatomiaUadQuestions } from './anatomia-uad-quizzes'
 import { inglesUadQuestions } from './ingles-uad-quizzes'
 import { inglesAdelantoQuestions } from './ingles-adelanto-quizzes'
+import { inglesProyectoS2Questions } from './ingles-proyecto-s2-quizzes'
 
 const anatomyQuestions: Question[] = [
   // ─── APARATO DIGESTIVO ──────────────────────────────────────────────
@@ -558,4 +559,4 @@ const anatomyQuestions: Question[] = [
   },
 ]
 
-export const questions: Question[] = [...anatomyQuestions, ...newQuestions, ...anatomiaUadQuestions, ...inglesUadQuestions, ...inglesAdelantoQuestions]
+export const questions: Question[] = [...anatomyQuestions, ...newQuestions, ...anatomiaUadQuestions, ...inglesUadQuestions, ...inglesAdelantoQuestions, ...inglesProyectoS2Questions]
