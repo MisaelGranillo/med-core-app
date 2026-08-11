@@ -164,8 +164,11 @@ const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(
 function buildTerms(
   idPrefix: string,
   rows: [term: string, es: string][],
-  base: { pos: MedEnPos; categoria: string; semana: number; notaBase: string },
+  base: { pos: MedEnPos; categoria: string; semana: number; notaBase: string; adelanto?: boolean },
 ): MedEnTerm[] {
+  // adelanto por defecto true; los word parts (Semana 2) ya se impartieron, así
+  // que van con adelanto:false y su nota NO lleva el prefijo "Adelanto —".
+  const adelanto = base.adelanto ?? true
   return rows.map(([term, es]) => ({
     id: `meden-${idPrefix}-${slug(term)}`,
     term,
@@ -173,7 +176,7 @@ function buildTerms(
     es,
     categoria: base.categoria,
     semana: base.semana,
-    nota: `Adelanto — ${base.notaBase}`,
+    nota: adelanto ? `Adelanto — ${base.notaBase}` : base.notaBase,
   }))
 }
 
@@ -195,6 +198,10 @@ const prefixes: [string, string][] = [
   ['retro-', 'hacia atrás'], ['semi-', 'medio, parcial'], ['sub-', 'debajo'],
   ['supra-', 'por encima'], ['syn- / sym-', 'junto, con'], ['tachy-', 'rápido'],
   ['trans-', 'a través'], ['tri-', 'tres'], ['ultra-', 'más allá'], ['uni-', 'uno'],
+  // Añadidos de la Clase 1 (Semana 2)
+  ['de-', 'quitar, desde'], ['hetero-', 'distinto, otro'], ['homo-', 'igual, mismo'],
+  ['in-', 'en, dentro / no'], ['nulli-', 'ninguno'], ['pseudo-', 'falso'],
+  ['quadri-', 'cuatro'], ['re-', 'de nuevo, hacia atrás'], ['tetra-', 'cuatro'], ['un-', 'no'],
 ]
 
 // Unidad II · Semana 2 — Medical Terminology, Apéndice I (libro 547, PDF 575).
@@ -218,6 +225,8 @@ const combiningForms: [string, string][] = [
   ['py/o', 'pus'], ['ren/o', 'riñón'], ['rhin/o', 'nariz'],
   ['splen/o', 'bazo'], ['thorac/o', 'tórax'], ['thromb/o', 'coágulo'],
   ['trache/o', 'tráquea'], ['ur/o', 'orina'], ['vas/o', 'vaso, conducto'],
+  // Añadidos de la Clase 1 (Semana 2)
+  ['bi/o', 'vida'], ['chem/o', 'químico'], ['cis/o', 'cortar'], ['immun/o', 'inmunidad'],
 ]
 
 // Unidad II · Semana 2 — Medical Terminology, Apéndice I (libro 547, PDF 575).
@@ -238,6 +247,10 @@ const suffixes: [string, string][] = [
   ['-scope', 'instrumento para examinar'], ['-scopy', 'examen visual'], ['-stasis', 'detención, estancamiento'],
   ['-stomy', 'creación de una abertura'], ['-tomy', 'incisión'], ['-trophy', 'desarrollo, nutrición'],
   ['-uria', 'condición de la orina'],
+  // Añadidos de la Clase 1 (Semana 2)
+  ['-gen', 'que produce, origen'], ['-lytic', 'que destruye, que disuelve'], ['-opsy', 'ver, examinar'],
+  ['-plasm', 'formación, sustancia'], ['-rrhexis', 'ruptura'], ['-stenosis', 'estrechamiento'],
+  ['-therapy', 'tratamiento'],
 ]
 
 // Unidad IV · Semana 4 — Medical Terminology, Apéndice III (libro 560, PDF 588)
@@ -290,9 +303,9 @@ const falseFriends: MedEnTerm[] = [
 ]
 
 const adelantoTerms: MedEnTerm[] = [
-  ...buildTerms('wp', prefixes, { pos: 'word-part', categoria: 'terminologia', semana: 2, notaBase: 'Unidad II. Prefijo grecolatino; el mismo fenómeno que cubre MedLex, visto desde el inglés.' }),
-  ...buildTerms('wp', combiningForms, { pos: 'word-part', categoria: 'terminologia', semana: 2, notaBase: 'Unidad II. Forma combinante (raíz + o); ver también MedLex.' }),
-  ...buildTerms('wp', suffixes, { pos: 'word-part', categoria: 'terminologia', semana: 2, notaBase: 'Unidad II. Sufijo grecolatino; ver también MedLex.' }),
+  ...buildTerms('wp', prefixes, { pos: 'word-part', categoria: 'terminologia', semana: 2, adelanto: false, notaBase: 'Semana 2 · Unidad II. Prefijo grecolatino; el mismo fenómeno que cubre MedLex, visto desde el inglés.' }),
+  ...buildTerms('wp', combiningForms, { pos: 'word-part', categoria: 'terminologia', semana: 2, adelanto: false, notaBase: 'Semana 2 · Unidad II. Forma combinante (raíz + o); ver también MedLex.' }),
+  ...buildTerms('wp', suffixes, { pos: 'word-part', categoria: 'terminologia', semana: 2, adelanto: false, notaBase: 'Semana 2 · Unidad II. Sufijo grecolatino; ver también MedLex.' }),
   ...buildTerms('abr', abbreviations, { pos: 'abbreviation', categoria: 'abreviaturas', semana: 4, notaBase: 'Unidad IV. Abreviatura médica.' }),
   ...buildTerms('pv2', pughPhrasal, { pos: 'phrasal-verb', categoria: 'sintomas', semana: 3, notaBase: 'Unidad III. Verbo frasal de síntomas (Pugh).' }),
   ...falseFriends,
