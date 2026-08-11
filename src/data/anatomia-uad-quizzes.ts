@@ -536,9 +536,102 @@ const columnaQuestions: Question[] = [
   },
 ]
 
+/* ── TÓRAX ÓSEO (Semana 2 · Clase 1) ────────────────────────────────────
+ * 12 reactivos en orden descendente de valor de estudio. ≥3 atacan las
+ * confusiones de §4.6 (rangos verdaderas/falsas/flotantes, carillas únicas,
+ * surcos vena/arteria, escalénico vs serrato). El término clásico del profesor
+ * cuenta como correcto. */
+const toraxQuestions: Question[] = [
+  {
+    id: 'tor-q1', topicId: 'torax-oseo', type: 'multiple-choice',
+    question: 'Según la clasificación del profesor, las costillas falsas son la:',
+    options: ['1.ª a 7.ª', '8.ª a 10.ª', '11.ª y 12.ª', '8.ª a 12.ª'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'El profesor clasifica las falsas como 8.ª–12.ª y las flotantes (11.ª–12.ª) como un subconjunto de ellas. Muchos textos separan "falsas 8–10, flotantes 11–12"; en el examen se sigue la versión del profesor.',
+  },
+  {
+    id: 'tor-q2', topicId: 'torax-oseo', type: 'multiple-choice',
+    question: '¿Qué costillas tienen una sola carilla articular en la cabeza?',
+    options: ['1.ª, 10.ª, 11.ª y 12.ª', 'Solo la 11.ª y la 12.ª', 'De la 3.ª a la 9.ª', 'Todas las falsas'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'La 1.ª, 10.ª, 11.ª y 12.ª tienen una sola carilla (articulan con una vértebra). Las típicas (2.ª–9.ª) tienen dos carillas separadas por la cresta interarticular.',
+  },
+  {
+    id: 'tor-q3', topicId: 'torax-oseo', type: 'multiple-choice',
+    question: 'En la 1.ª costilla, respecto al tubérculo del escaleno anterior:',
+    options: ['La arteria subclavia va por delante y la vena por detrás', 'Ambos surcos están por delante del tubérculo', 'La vena subclavia va por delante y la arteria por detrás', 'No hay surcos vasculares'],
+    correctIndex: 2, difficulty: 'hard',
+    explanation: 'Orden anteroposterior: surco de la vena → tubérculo del escaleno anterior → surco de la arteria. La vena va por delante y la arteria por detrás del tubérculo; no al revés.',
+  },
+  {
+    id: 'tor-q4', topicId: 'torax-oseo', type: 'multiple-choice',
+    question: 'El tubérculo del escaleno anterior (tubérculo escalénico) se encuentra en la:',
+    options: ['1.ª costilla', '2.ª costilla', '7.ª costilla', '12.ª costilla'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'El tubérculo escalénico es propio de la 1.ª costilla. La 2.ª costilla lleva la tuberosidad del serrato anterior (serrato mayor): no confundir cuál costilla tiene cuál.',
+  },
+  {
+    id: 'tor-q5', topicId: 'torax-oseo', type: 'multiple-choice',
+    question: 'El cuerpo del esternón recibe las costillas:',
+    options: ['1.ª a 2.ª', '3.ª a 6.ª', '7.ª a 10.ª', 'Solo la 1.ª'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'El cuerpo recibe de la 3.ª a la 6.ª costilla. El manubrio recibe la 1.ª; la 2.ª se articula justo en la unión manubrio-esternal.',
+  },
+  {
+    id: 'tor-q6', topicId: 'torax-oseo', type: 'multiple-choice',
+    question: 'Según el profesor, la articulación manubrio-esternal está a nivel:',
+    options: ['D3', 'T4–T5', 'D10', 'C7'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'El profesor sitúa la manubrio-esternal en D3 y la xifo-esternal en D10 (dato evaluable). Moore ancla el ángulo del esternón frente al disco T4–T5, como referencia; no es una errata sino otra convención de nivel.',
+  },
+  {
+    id: 'tor-q7', topicId: 'torax-oseo', type: 'multiple-choice',
+    question: '¿Cuál es el diámetro mayor de la caja torácica?',
+    options: ['Anterior (15 cm)', 'Posterior (27 cm)', 'Vertical', 'Lateral (32 cm)'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'El diámetro lateral (32 cm) es el mayor; el anterior (15 cm) es el menor; el posterior mide 27 cm.',
+  },
+  {
+    id: 'tor-q8', topicId: 'torax-oseo', type: 'multiple-choice',
+    question: 'Las tres partes del esternón son:',
+    options: ['Cabeza, cuello y cuerpo', 'Manubrio, cuerpo y proceso xifoides', 'Manubrio, ángulo y xifoides', 'Base, cuerpo y vértice'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'Manubrio, cuerpo y proceso xifoides (apéndice xifoides). Cabeza y cuello son partes de una costilla, no del esternón.',
+  },
+  {
+    id: 'tor-q9', topicId: 'torax-oseo', type: 'multiple-choice',
+    question: 'La cabeza de una costilla típica (3.ª–9.ª) presenta:',
+    options: ['Una sola carilla articular', 'El tubérculo escalénico', 'Dos carillas separadas por la cresta interarticular', 'El surco costal'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'La costilla típica tiene dos carillas en la cabeza divididas por la cresta interarticular (articula con dos vértebras). El surco costal está en el cuerpo, no en la cabeza.',
+  },
+  {
+    id: 'tor-q10', topicId: 'torax-oseo', type: 'multiple-choice',
+    question: 'El surco costal (canal costal) se ubica en:',
+    options: ['El borde superior externo del cuerpo', 'El borde inferior interno del cuerpo', 'La cabeza de la costilla', 'El cuello de la costilla'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'El surco costal recorre el borde inferior interno del cuerpo y aloja el paquete vasculonervioso intercostal. No está en la cabeza ni en el cuello.',
+  },
+  {
+    id: 'tor-q11', topicId: 'torax-oseo', type: 'multiple-choice',
+    question: 'La oblicuidad (inclinación descendente) de las costillas aumenta de la:',
+    options: ['1.ª a la 7.ª', '1.ª a la 12.ª', '7.ª a la 12.ª', '1.ª a la 9.ª'],
+    correctIndex: 3, difficulty: 'hard',
+    explanation: 'La oblicuidad crece de la 1.ª a la 9.ª. No confundir con la longitud, que crece de la 1.ª a la 7.ª y luego decrece: son dos rangos distintos.',
+  },
+  {
+    id: 'tor-q12', topicId: 'torax-oseo', type: 'multiple-choice',
+    question: 'La abertura torácica inferior está limitada por abajo por el:',
+    options: ['Opérculo torácico', 'Ángulo subcostal (infraesternal)', 'Proceso xifoides', 'Manubrio'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'La abertura inferior está limitada por el ángulo subcostal (infraesternal). El opérculo es la abertura superior; el proceso xifoides es parte del esternón, no el límite de la abertura.',
+  },
+]
+
 export const anatomiaUadQuestions: Question[] = [
   ...generalidadesQuestions,
   ...craneoQuestions,
   ...caraHioidesQuestions,
   ...columnaQuestions,
+  ...toraxQuestions,
 ]
