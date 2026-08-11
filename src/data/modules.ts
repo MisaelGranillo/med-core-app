@@ -12,10 +12,10 @@ export const modules: Module[] = [
   {
     id: 'anatomia-uad-s2',
     badge: 'UAD · Anatomía Humana y Disección I — Semana 2',
-    title: 'Osteología — Tórax',
-    subtitle: 'Semana 2 (Clase 1): esternón y costillas. Miembros por impartir.',
-    emoji: '🫁',
-    topicIds: ['torax-oseo'],
+    title: 'Osteología — Tórax y miembro superior',
+    subtitle: 'Semana 2: tórax óseo y miembro superior. Miembro inferior por impartir.',
+    emoji: '🦾',
+    topicIds: ['torax-oseo', 'miembro-superior-oseo'],
   },
   {
     id: 'ingles-medico-uad',
