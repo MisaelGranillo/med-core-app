@@ -257,13 +257,13 @@ export const uadMedicina: Plan = {
                 number: 2,
                 title: 'Terminología griega y latina útil en el lenguaje médico',
                 estado: 'impartido',
-                topicIds: ['ingles-word-parts'],
+                topicIds: ['ingles-word-parts', 'ingles-plurals'],
                 temas: [
                   'Clase 1 (impartida): construcción de términos — raíz, forma combinante, prefijo y sufijo; regla de la vocal de enlace',
-                  'Clases 2–3 (por impartir): reglas para la formación de plurales',
+                  'Clase 2 (impartida): interpretación de términos, pronunciación/ortografía y formación de plurales',
                 ],
                 fuentes: [
-                  { title: 'Medical Terminology — A Living Language', file: 'Medical Terminology - A Living Language 6th ed.pdf', paginas: 'cap. 1, libro 1–20 (PDF 29–48)', nota: 'Construcción de términos: raíz, vocal de enlace, prefijo, sufijo.' },
+                  { title: 'Medical Terminology — A Living Language', file: 'Medical Terminology - A Living Language 6th ed.pdf', paginas: 'cap. 1, libro 1–20 (PDF 29–48)', nota: 'Construcción de términos, interpretación, pronunciación y formación de plurales.' },
                 ],
               },
               {
@@ -307,6 +307,7 @@ export const uadMedicina: Plan = {
               { title: 'Proyecto Integrador Semana 1 — Why is English important…', file: 'Semana 1 - Proyecto Integrador.pdf', kind: 'Entrega' },
               { title: 'Caso Clínico 1 — Shortness of Breath', file: 'Semana 1 - Caso Clinico 1 Shortness of Breath.pdf', kind: 'Caso clínico' },
               { title: 'Semana 2 · Clase 1 — Terminología griega y latina', file: 'Semana 2 - Clase 1 Terminologia Griega y Latina.pdf', kind: 'Clase' },
+              { title: 'Semana 2 · Clase 2 — Plurales, interpretación y pronunciación', file: 'Semana 2 - Clase 2 Plurales e Interpretacion.pdf', kind: 'Clase' },
               { title: 'Proyecto Integrador Semana 2 — Medical Terminology Project', file: 'Semana 2 - Proyecto Integrador Medical Terminology.pdf', kind: 'Entrega' },
               { title: 'Medical Terminology — A Living Language (6.ª ed.)', file: 'Medical Terminology - A Living Language 6th ed.pdf', kind: 'Libro' },
               { title: 'Check Your English Vocabulary for Medicine', file: 'Check Your English Vocabulary for Medicine.pdf', kind: 'Cuaderno' },
