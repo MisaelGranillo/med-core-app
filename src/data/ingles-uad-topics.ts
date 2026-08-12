@@ -1094,6 +1094,91 @@ export const inglesUadTopics: Topic[] = [
           },
         ],
       },
+      {
+        // Añadido en la Semana 2 · Clase 2 (11 ago): interpretación de términos.
+        id: 'iwp-9',
+        number: 9,
+        title: 'Interpreting medical terms',
+        keyTerms: ['divide', 'define', 'combine', 'gastroenterology'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Three-step strategy',
+            steps: [
+              'DIVIDE the term into its word parts.',
+              'DEFINE each word part.',
+              'COMBINE the meanings, reading from the suffix backwards.',
+            ],
+          },
+          {
+            type: 'definition',
+            title: 'Worked example: gastroenterology',
+            content: 'gastr/o/enter/o/logy → gastr = stomach · o = combining vowel (no meaning) · enter = small intestine · o = combining vowel · logy = study of → "the study of the stomach and small intestine". — Estrategia de 3 pasos aplicada.',
+          },
+          {
+            type: 'table',
+            title: 'More worked examples from the class',
+            data: {
+              headers: ['Term', 'Parts', 'Meaning'],
+              rows: [
+                ['cardiomegaly', 'cardi/o (heart) + -megaly (enlarged)', 'enlarged heart'],
+                ['epidermal', 'epi- (above) + derm/o (skin) + -al (pertaining to)', 'pertaining to above the skin'],
+                ['polymyositis', 'poly- (many) + myos/o (muscle) + -itis (inflammation)', 'inflammation of many muscles'],
+                ['endocarditis', 'endo- (inner) + cardi/o (heart) + -itis (inflammation)', 'inflammation of the inner lining of the heart'],
+                ['hypodermic', 'hypo- (below) + derm/o (skin) + -ic (pertaining to)', 'pertaining to below the skin'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        // Añadido en la Semana 2 · Clase 2 (11 ago): pronunciación y ortografía.
+        id: 'iwp-10',
+        number: 10,
+        title: 'Pronunciation & Spelling',
+        keyTerms: ['spelling', 'homophone', 'ileum', 'ilium', 'abduction', 'adduction'],
+        blocks: [
+          {
+            type: 'note',
+            content: 'Una palabra puede tener varias pronunciaciones aceptables, pero UNA sola ortografía correcta. Cambiar una letra cambia el significado; ante la duda, consulta un diccionario médico.',
+          },
+          {
+            type: 'comparison',
+            title: 'Homophones: same sound, different meaning',
+            left: {
+              title: 'ileum',
+              items: ['The small intestine (its last part).'],
+            },
+            right: {
+              title: 'ilium',
+              items: ['The hip bone (part of the pelvis).'],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'Opposites that sound almost alike',
+            left: {
+              title: 'abduction',
+              items: ['To move a limb AWAY from the median plane.'],
+            },
+            right: {
+              title: 'adduction',
+              items: ['To move a limb TOWARD the median plane.'],
+            },
+          },
+          {
+            type: 'table',
+            title: 'One sound, two spellings',
+            data: {
+              headers: ['Sound', 'Spellings', 'Examples'],
+              rows: [
+                ['"si"', 'psy- or cy-', 'psychiatry · cytology'],
+                ['"dis"', 'dys- or dis-', 'dyspepsia · dislocation'],
+              ],
+            },
+          },
+        ],
+      },
     ],
   },
 
@@ -1116,13 +1201,13 @@ export const inglesUadTopics: Topic[] = [
       {
         id: 'ipl-1',
         number: 1,
-        title: 'Adelanto',
+        title: 'Impartido en Semana 2',
         blocks: [
           {
             type: 'note',
-            title: 'Adelanto — aún no impartido',
+            title: 'Impartido — Semana 2, Clase 2 (11 ago)',
             content:
-              'Este tema procede del libro de texto de la materia, no de una clase impartida. Corresponde a la Unidad II del programa, prevista para la Semana 2. El profesor puede recortarlo, reordenarlo o enfatizar otros puntos. Úsalo para ir por delante, no como guía de lo que entra en el parcial de esta semana.',
+              'Este tema se impartió en la Semana 2, Clase 2 (11 de agosto de 2026). Está basado en el capítulo 1 de Medical Terminology: A Living Language. Es la Unidad II del programa: formación de plurales grecolatinos, con sus diez reglas y las excepciones inglesas.',
           },
         ],
       },
@@ -1149,6 +1234,7 @@ export const inglesUadTopics: Topic[] = [
                 ['-on', '-a', 'ganglion → ganglia · spermatozoon → spermatozoa'],
                 ['-um', '-a', 'bacterium → bacteria · ovum → ova · atrium → atria'],
                 ['-us', '-i', 'nucleus → nuclei · bronchus → bronchi · alveolus → alveoli'],
+                ['-y', '-ies', 'biopsy → biopsies · therapy → therapies'],
               ],
             },
           },
