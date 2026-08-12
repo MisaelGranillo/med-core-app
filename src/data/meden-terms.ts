@@ -311,7 +311,26 @@ const adelantoTerms: MedEnTerm[] = [
   ...falseFriends,
 ]
 
-export const medenTerms: MedEnTerm[] = [...semana1Terms, ...adelantoTerms]
+// Unidad II · Semana 2 · Clase 2 — pares singular↔plural grecolatinos.
+// Impartidos: sin marca "Adelanto —". El plural va en `forms`.
+const pluralPairs: MedEnTerm[] = [
+  { id: 'meden-pl-vertebra', term: 'vertebra', pos: 'noun', es: 'vértebra', forms: [{ pos: 'noun', word: 'vertebrae', es: 'vértebras (plural, -a → -ae)' }], categoria: 'terminologia', semana: 2 },
+  { id: 'meden-pl-thorax', term: 'thorax', pos: 'noun', es: 'tórax', forms: [{ pos: 'noun', word: 'thoraces', es: 'tórax (plural, -ax → -aces)' }], categoria: 'terminologia', semana: 2 },
+  { id: 'meden-pl-appendix', term: 'appendix', pos: 'noun', es: 'apéndice', forms: [{ pos: 'noun', word: 'appendices', es: 'apéndices (plural, -ix → -ices)' }], categoria: 'terminologia', semana: 2 },
+  { id: 'meden-pl-diagnosis', term: 'diagnosis', pos: 'noun', es: 'diagnóstico', forms: [{ pos: 'noun', word: 'diagnoses', es: 'diagnósticos (plural, -is → -es)' }], categoria: 'terminologia', semana: 2 },
+  { id: 'meden-pl-metastasis', term: 'metastasis', pos: 'noun', es: 'metástasis', forms: [{ pos: 'noun', word: 'metastases', es: 'metástasis (plural, -is → -es)' }], categoria: 'terminologia', semana: 2 },
+  { id: 'meden-pl-sarcoma', term: 'sarcoma', pos: 'noun', es: 'sarcoma', forms: [{ pos: 'noun', word: 'sarcomata', es: 'sarcomas (plural, -ma → -mata)' }], categoria: 'terminologia', semana: 2 },
+  { id: 'meden-pl-phalanx', term: 'phalanx', pos: 'noun', es: 'falange', forms: [{ pos: 'noun', word: 'phalanges', es: 'falanges (plural, -nx → -nges)' }], categoria: 'terminologia', semana: 2 },
+  { id: 'meden-pl-ganglion', term: 'ganglion', pos: 'noun', es: 'ganglio', forms: [{ pos: 'noun', word: 'ganglia', es: 'ganglios (plural, -on → -a)' }], categoria: 'terminologia', semana: 2 },
+  { id: 'meden-pl-ovum', term: 'ovum', pos: 'noun', es: 'óvulo', forms: [{ pos: 'noun', word: 'ova', es: 'óvulos (plural, -um → -a)' }], categoria: 'terminologia', semana: 2 },
+  { id: 'meden-pl-atrium', term: 'atrium', pos: 'noun', es: 'aurícula, atrio', forms: [{ pos: 'noun', word: 'atria', es: 'aurículas (plural, -um → -a)' }], categoria: 'terminologia', semana: 2 },
+  { id: 'meden-pl-nucleus', term: 'nucleus', pos: 'noun', es: 'núcleo', forms: [{ pos: 'noun', word: 'nuclei', es: 'núcleos (plural, -us → -i)' }], categoria: 'terminologia', semana: 2 },
+  { id: 'meden-pl-bronchus', term: 'bronchus', pos: 'noun', es: 'bronquio', forms: [{ pos: 'noun', word: 'bronchi', es: 'bronquios (plural, -us → -i)' }], categoria: 'terminologia', semana: 2 },
+  { id: 'meden-pl-biopsy', term: 'biopsy', pos: 'noun', es: 'biopsia', forms: [{ pos: 'noun', word: 'biopsies', es: 'biopsias (plural, -y → -ies)' }], categoria: 'terminologia', semana: 2 },
+  { id: 'meden-pl-virus', term: 'virus', pos: 'noun', es: 'virus', forms: [{ pos: 'noun', word: 'viruses', es: 'virus (plural inglés; NO "viri")' }], categoria: 'terminologia', semana: 2, nota: 'Excepción: sigue la regla inglesa (-es), no la grecolatina.' },
+]
+
+export const medenTerms: MedEnTerm[] = [...semana1Terms, ...adelantoTerms, ...pluralPairs]
 
 export const MEDEN_STATS = {
   total: medenTerms.length,
