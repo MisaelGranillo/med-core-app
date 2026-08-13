@@ -823,6 +823,124 @@ const coxQuestions: Question[] = [
   },
 ]
 
+// Miembro inferior óseo (Semana 2 · Clase 4). Orden descendente de valor de
+// estudio: primero las confusiones de §4.9 (peroné/tibia, maléolos, fosa vs
+// eminencia intercondílea, tarso), luego el detalle regional.
+const minfQuestions: Question[] = [
+  {
+    id: 'minf-q1', topicId: 'miembro-inferior-oseo', type: 'multiple-choice',
+    question: 'De los dos huesos de la pierna, ¿cuál SOPORTA el peso del cuerpo?',
+    options: ['El peroné (fíbula)', 'El fémur', 'El talus (astrágalo)', 'La tibia'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'La tibia (medial) soporta el peso y forma la rodilla y el maléolo medial. El peroné (fíbula) es lateral, delgado y NO soporta peso: solo estabiliza el tobillo.',
+  },
+  {
+    id: 'minf-q2', topicId: 'miembro-inferior-oseo', type: 'multiple-choice',
+    question: 'El maléolo medial (interno) pertenece a:',
+    options: ['Al peroné (fíbula)', 'Al talus (astrágalo)', 'Al calcáneo', 'A la tibia'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'El maléolo medial es de la TIBIA; el maléolo lateral (externo) es del peroné (fíbula). Es la trampa clásica del tobillo.',
+  },
+  {
+    id: 'minf-q3', topicId: 'miembro-inferior-oseo', type: 'multiple-choice',
+    question: 'El maléolo lateral (externo) pertenece a:',
+    options: ['A la tibia', 'Al talus (astrágalo)', 'Al peroné (fíbula)', 'Al fémur'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'El maléolo lateral es del PERONÉ (fíbula) y desciende más que el medial (de la tibia). No confundir cuál corresponde a cada hueso.',
+  },
+  {
+    id: 'minf-q4', topicId: 'miembro-inferior-oseo', type: 'multiple-choice',
+    question: 'La fóvea de la cabeza del fémur (fosita para el ligamento redondo) sirve para:',
+    options: ['Insertar el ligamento de la cabeza femoral (redondo)', 'Articular con la rótula', 'Insertar el tendón del cuádriceps', 'Articular con la tibia'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'La fóvea aloja el ligamento de la cabeza femoral (redondo). La rótula articula con la tróclea femoral (distal), no con la cabeza.',
+  },
+  {
+    id: 'minf-q5', topicId: 'miembro-inferior-oseo', type: 'multiple-choice',
+    question: 'La línea áspera se localiza en la cara ___ de la diáfisis del fémur:',
+    options: ['anterior', 'posterior', 'medial', 'lateral'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'La línea áspera es una cresta rugosa de la cara POSTERIOR del fémur (labios interno y externo); da inserción a los músculos del muslo.',
+  },
+  {
+    id: 'minf-q6', topicId: 'miembro-inferior-oseo', type: 'multiple-choice',
+    question: 'El relieve que SOBRESALE en la meseta de la tibia es:',
+    options: ['La fosa intercondílea', 'La eminencia intercondílea', 'La tróclea femoral', 'La línea áspera'],
+    correctIndex: 1, difficulty: 'hard',
+    explanation: 'La eminencia intercondílea (espinas tibiales) es un relieve de la TIBIA. La fosa intercondílea es una depresión del FÉMUR: fémur = hueco, tibia = pico.',
+  },
+  {
+    id: 'minf-q7', topicId: 'miembro-inferior-oseo', type: 'multiple-choice',
+    question: '¿Cuántos huesos forman el tarso?',
+    options: ['5', '6', '8', '7'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'El tarso son 7 huesos: talus (astrágalo), calcáneo, navicular (escafoides), cuboides y tres cuneiformes (cuñas).',
+  },
+  {
+    id: 'minf-q8', topicId: 'miembro-inferior-oseo', type: 'multiple-choice',
+    question: 'El sustentaculum tali forma parte del ___ y sostiene al ___:',
+    options: ['calcáneo / talus (astrágalo)', 'talus / calcáneo', 'navicular / cuboides', 'fémur / tibia'],
+    correctIndex: 0, difficulty: 'hard',
+    explanation: 'El sustentaculum tali es una repisa medial del CALCÁNEO que sostiene al talus (astrágalo). Por debajo pasa el tendón del flexor largo del hallux.',
+  },
+  {
+    id: 'minf-q9', topicId: 'miembro-inferior-oseo', type: 'multiple-choice',
+    question: '¿Qué hueso presenta una tuberosidad (apófisis estiloides) en su base?',
+    options: ['El 1.er metatarsiano', 'El calcáneo', 'El navicular', 'El 5.º metatarsiano'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'La tuberosidad (apófisis estiloides) está en la base del 5.º metatarsiano; es un sitio frecuente de fractura por avulsión.',
+  },
+  {
+    id: 'minf-q10', topicId: 'miembro-inferior-oseo', type: 'multiple-choice',
+    question: 'El hallux (dedo gordo) tiene:',
+    options: ['3 falanges', '2 falanges', '1 falange', '4 falanges'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'El hallux solo tiene falange proximal y distal (2). Los demás dedos tienen 3 (proximal, media y distal); por eso hay 14 falanges por pie, no 15.',
+  },
+  {
+    id: 'minf-q11', topicId: 'miembro-inferior-oseo', type: 'multiple-choice',
+    question: 'La cresta intertrocantérea del fémur se localiza en la cara:',
+    options: ['Posterior', 'Anterior', 'Medial', 'Lateral'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'La cresta intertrocantérea es POSTERIOR; la línea intertrocantérea es anterior. Ambas unen los dos trocánteres.',
+  },
+  {
+    id: 'minf-q12', topicId: 'miembro-inferior-oseo', type: 'multiple-choice',
+    question: 'El talus (astrágalo) se articula por arriba con:',
+    options: ['Solo la tibia', 'El calcáneo y el cuboides', 'La tibia y el peroné (mortaja tibioperonea)', 'Solo el peroné'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'La tróclea del talus encaja en la mortaja formada por la tibia (maléolo medial y carilla inferior) y el peroné (maléolo lateral). Con el calcáneo articula por debajo, no por arriba.',
+  },
+  {
+    id: 'minf-q13', topicId: 'miembro-inferior-oseo', type: 'multiple-choice',
+    question: 'El "escafoides del pie" corresponde, en Terminología Anatómica, al hueso:',
+    options: ['Navicular', 'Cuboides', 'Cuneiforme medial', 'Talus (astrágalo)'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'El navicular es el "escafoides del pie". No confundir con el escafoides del carpo (mano): mismo nombre clásico, huesos distintos.',
+  },
+  {
+    id: 'minf-q14', topicId: 'miembro-inferior-oseo', type: 'multiple-choice',
+    question: 'El trocánter mayor del fémur es:',
+    options: ['Medial e inferior al cuello', 'Superolateral, palpable en la cadera', 'Parte de la epífisis distal', 'Una carilla articular'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'El trocánter mayor es superolateral y palpable; el trocánter menor es posteromedial e inferior. Ambos son de la epífisis proximal, no de la distal.',
+  },
+  {
+    id: 'minf-q15', topicId: 'miembro-inferior-oseo', type: 'multiple-choice',
+    question: 'La tróclea femoral (cara anterior de la epífisis distal) articula con:',
+    options: ['La tibia', 'El peroné', 'La rótula (patela)', 'El talus'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'La tróclea femoral recibe la rótula (patela). Los cóndilos femorales articulan con la tibia; el peroné no participa en la rodilla.',
+  },
+  {
+    id: 'minf-q16', topicId: 'miembro-inferior-oseo', type: 'multiple-choice',
+    question: '¿Cuántos huesos cuneiformes (cuñas) hay en el tarso?',
+    options: ['2', '3', '1', '4'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'Hay 3 cuneiformes: medial, intermedio y lateral (1.ª, 2.ª y 3.ª cuña). Junto al cuboides forman la fila anterior del tarso.',
+  },
+]
+
 export const anatomiaUadQuestions: Question[] = [
   ...generalidadesQuestions,
   ...craneoQuestions,
@@ -831,4 +949,5 @@ export const anatomiaUadQuestions: Question[] = [
   ...toraxQuestions,
   ...msoQuestions,
   ...coxQuestions,
+  ...minfQuestions,
 ]
