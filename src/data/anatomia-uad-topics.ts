@@ -1574,4 +1574,226 @@ export const anatomiaUadTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'hueso-coxal',
+    title: 'Hueso coxal (hueso ilíaco): ilion, isquion, pubis y acetábulo',
+    subtitle: 'Los tres huesos de la pelvis ósea y la cavidad acetabular',
+    colorKey: 'osteologia',
+    emoji: '🦴',
+    keyPoints: [
+      'El hueso coxal (hueso ilíaco) es la fusión de tres huesos —ilion, isquion y pubis— que confluyen en el acetábulo.',
+      'El ilion es la parte superior en forma de abanico; el isquion, la posteroinferior; el pubis, la anteromedial.',
+      'La tuberosidad isquiática (del isquion) es el punto de apoyo del cuerpo al sentarse.',
+      'La espina isquiática (espina ciática) separa la incisura isquiática mayor (arriba) de la menor (abajo).',
+      'El acetábulo tiene una parte articular (superficie semilunar) y una no articular (fosa acetabular).',
+      'El agujero obturado está limitado por el pubis y el isquion, no por el ilion.',
+      'La línea arqueada (línea innominada) del ilion forma parte del estrecho superior de la pelvis.',
+      'La cara glútea (fosa ilíaca externa) mira atrás y afuera; la fosa ilíaca interna, adelante y adentro.',
+    ],
+    sections: [
+      {
+        id: 'cox-1',
+        number: 1,
+        title: 'Generalidades',
+        keyTerms: ['hueso coxal', 'ilion', 'isquion', 'pubis', 'acetábulo'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            content:
+              'Se usa la Terminología Anatómica (TA) como principal y el clásico del profesor entre paréntesis; en el examen el clásico cuenta como correcto. Mapeo de esta clase: hueso coxal = hueso ilíaco · línea arqueada = línea innominada · incisura isquiática mayor/menor = escotadura ciática mayor/menor · espina isquiática = espina ciática · acetábulo = cavidad cotiloidea · labrum acetabular = rodete cotiloideo · cara glútea del ala del ilion = fosa ilíaca externa (glútea) · carilla auricular = superficie auricular · eminencia iliopúbica = eminencia iliopectínea · agujero obturado = agujero obturador · rama isquiopúbica = rama ascendente del isquion + rama descendente del pubis. La diapositiva del profesor ya es TA-first: "HUESO COXAL (Hueso ilíaco)".',
+          },
+          {
+            type: 'list',
+            title: 'El hueso coxal resulta de la fusión de tres huesos',
+            items: [
+              'Ilion (hueso ilíaco propiamente dicho): superior, aplanado y en forma de abanico.',
+              'Isquion: posteroinferior; lleva la tuberosidad isquiática.',
+              'Pubis: anteromedial; forma el límite anterior con sus dos ramas.',
+              'Los tres confluyen y se osifican en el acetábulo (cavidad cotiloidea).',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'cox-2',
+        number: 2,
+        title: 'Ilion — cuerpo y ala',
+        keyTerms: ['línea arqueada', 'eminencia iliopúbica', 'cresta ilíaca', 'EIAS', 'EIPS', 'cara glútea', 'fosa ilíaca interna', 'carilla auricular'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Cuerpo del ilion',
+            items: [
+              'Línea arqueada (línea innominada): parte del estrecho superior de la pelvis.',
+              'Eminencia iliopúbica (iliopectínea): unión del cuerpo del ilion con el pubis.',
+              'Forma la parte superior del acetábulo.',
+            ],
+          },
+          {
+            type: 'definition',
+            title: 'Línea arqueada (línea innominada)',
+            content: 'Cresta roma en la cara interna del ilion que continúa con la cresta pectínea del pubis; forma parte del anillo del estrecho superior (límite pelvis mayor/menor). — Línea arqueada.',
+          },
+          {
+            type: 'table',
+            title: 'Ala del ilion: 3 bordes',
+            data: {
+              headers: ['Borde', 'Accidentes'],
+              rows: [
+                ['Superior', 'Cresta ilíaca (labio externo e interno, intersticio y tubérculo de la cresta); termina en EIAS (espina ilíaca anterosuperior) y EIPS (espina ilíaca posterosuperior)'],
+                ['Anterior', 'EIAI (espina ilíaca anteroinferior) y eminencia iliopúbica'],
+                ['Posterior', 'EIPI (espina ilíaca posteroinferior) e incisura isquiática mayor (escotadura ciática mayor)'],
+                ['Medial', 'Línea arqueada (línea innominada)'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Ala del ilion: 3 caras',
+            data: {
+              headers: ['Cara', 'Accidentes'],
+              rows: [
+                ['Glútea (fosa ilíaca externa)', 'Líneas glúteas posterior, anterior e inferior (inserción de los glúteos)'],
+                ['Fosa ilíaca interna', 'Superficie cóncava para el músculo ilíaco'],
+                ['Sacropélvica', 'Carilla auricular (superficie auricular), tuberosidad ilíaca y surco preauricular'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'cox-3',
+        number: 3,
+        title: 'Isquion',
+        keyTerms: ['tuberosidad isquiática', 'espina isquiática', 'incisura isquiática mayor', 'incisura isquiática menor', 'rama isquiopúbica'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Tuberosidad isquiática',
+            content: 'Masa ósea gruesa posteroinferior del isquion; es el punto sobre el que descansa el peso del cuerpo al sentarse y da origen a los músculos isquiotibiales. — Tuberosidad isquiática.',
+          },
+          {
+            type: 'list',
+            title: 'Cuerpo del isquion',
+            items: [
+              'Extremidad superior e inferior; 3 caras (femoral, pélvica y posterior) y 3 bordes (externo, posterior y anterior).',
+              'Accidentes: tuberosidad isquiática, incisura isquiática mayor, espina isquiática (espina ciática) e incisura isquiática menor.',
+              'Rama ascendente (→ rama isquiopúbica): se une a la rama descendente del pubis; presenta borde superior e inferior, cara lateral y medial.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Incisura isquiática mayor vs. menor (separadas por la espina isquiática)',
+            left: {
+              title: 'Incisura isquiática mayor (escotadura ciática mayor)',
+              items: ['Por ENCIMA de la espina isquiática.', 'La cierra el ligamento sacroespinoso → agujero ciático mayor.'],
+            },
+            right: {
+              title: 'Incisura isquiática menor (escotadura ciática menor)',
+              items: ['Por DEBAJO de la espina isquiática.', 'La cierra el ligamento sacrotuberoso → agujero ciático menor.'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'cox-4',
+        number: 4,
+        title: 'Pubis',
+        keyTerms: ['cuerpo del pubis', 'cresta del pubis', 'espina del pubis', 'rama superior', 'rama inferior', 'cresta pectínea', 'surco obturador'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Cuerpo del pubis',
+            items: [
+              '3 caras: sinfisiaria (para la sínfisis del pubis), femoral y pélvica.',
+              'Cresta del pubis y espina del pubis (tubérculo del pubis) en el borde superior.',
+            ],
+          },
+          {
+            type: 'list',
+            title: 'Ramas del pubis',
+            items: [
+              'Rama superior (horizontal): eminencia iliopúbica, cresta pectínea (línea pectínea), cresta obturatriz y surco obturador; 3 bordes (anterior, inferior, posterior) y 3 caras (pectínea, pélvica, obturatriz).',
+              'Rama inferior (descendente): se une a la rama del isquion formando la rama isquiopúbica, que limita el agujero obturado por abajo.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'cox-5',
+        number: 5,
+        title: 'Acetábulo (cavidad cotiloidea)',
+        keyTerms: ['acetábulo', 'superficie semilunar', 'fosa acetabular', 'labrum acetabular', 'incisura isquiopúbica'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Acetábulo (cavidad cotiloidea)',
+            content: 'Cavidad hemisférica en la cara lateral del hueso coxal, formada por la confluencia de ilion, isquion y pubis; recibe la cabeza del fémur. — Acetábulo.',
+          },
+          {
+            type: 'note',
+            title: 'Contribución de cada hueso al acetábulo — dato del profesor (cítese literal)',
+            content:
+              'El profesor anota la contribución de los tres huesos al acetábulo como "isquion +2/5 · pubis 2/5 · ilion −2/5" (diapositiva). Se registra la notación literal de la diapositiva; NO se "corrige" a una fracción limpia. En la mayoría de los textos la proporción se enuncia como isquion ≈ 2/5, ilion ≈ 2/5 y pubis ≈ 1/5, pero aquí se conserva el dato tal como lo dictó el profesor.',
+          },
+          {
+            type: 'comparison',
+            title: 'Superficie semilunar vs. fosa acetabular',
+            left: {
+              title: 'Superficie semilunar (articular)',
+              items: ['Media luna periférica revestida de cartílago.', 'Es la parte que articula con la cabeza del fémur.'],
+            },
+            right: {
+              title: 'Fosa acetabular (no articular)',
+              items: ['Depresión central rugosa, sin cartílago.', 'Aloja grasa y el ligamento de la cabeza femoral.'],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Otros accidentes del acetábulo',
+            items: [
+              'Incisura isquiopúbica (escotadura isquiopúbica): abre el borde inferior del acetábulo.',
+              'Labrum acetabular (rodete cotiloideo): anillo fibrocartilaginoso que profundiza la cavidad.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'cox-6',
+        number: 6,
+        title: 'Agujero obturado',
+        keyTerms: ['agujero obturado', 'membrana obturatriz', 'pubis', 'isquion'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El agujero obturado (agujero obturador) es la gran abertura ovalada del hueso coxal, limitada por el pubis y el isquion (a través de la rama isquiopúbica). En vida está cerrado casi por completo por la membrana obturatriz, que deja libre por arriba el conducto obturador (paso del paquete obturador). El ilion NO participa en su límite.',
+          },
+        ],
+      },
+      {
+        id: 'cox-7',
+        number: 7,
+        title: 'Confusiones frecuentes de la clase',
+        keyTerms: ['acetábulo', 'incisura isquiática', 'tuberosidad isquiática', 'línea arqueada', 'agujero obturado'],
+        blocks: [
+          {
+            type: 'keypoints',
+            title: 'Los puntos que más se confunden (y más caen)',
+            items: [
+              'Qué hueso aporta cada parte del acetábulo: ilion, isquion y pubis; proporción del profesor "isquion +2/5 · pubis 2/5 · ilion −2/5".',
+              'Incisura isquiática MAYOR (arriba) vs MENOR (abajo), separadas por la espina isquiática (espina ciática).',
+              'Tuberosidad isquiática = punto de apoyo al sentarse; pertenece al ISQUION, no al pubis.',
+              'Landmarks de la cresta ilíaca: EIAS, EIPS (borde superior) vs EIAI, EIPI (bordes anterior y posterior). No confundir anterosuperior con anteroinferior.',
+              'Superficie semilunar (ARTICULAR) vs fosa acetabular (NO articular, con grasa y ligamento).',
+              'Cara glútea/externa vs fosa ilíaca interna vs cara sacropélvica (carilla auricular) del ala del ilion.',
+              'Línea arqueada (línea innominada) = parte del estrecho superior de la pelvis.',
+              'Agujero obturado limitado por pubis + isquion, NUNCA por el ilion.',
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ]
