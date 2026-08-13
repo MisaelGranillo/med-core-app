@@ -1514,19 +1514,20 @@ export const inglesUadTopics: Topic[] = [
       'Frequency: prn (as needed), bid (twice a day), tid (three times), qid (four times), po (by mouth).',
       'Lab & imaging: CBC, BMP, ABG, UA, CT, MRI, CXR, ECG/EKG.',
       'The "do-not-use" list forbids dangerous abbreviations: U, IU, QD/QOD, trailing zeros, MS/MSO4.',
+      'Case matters: Ca (calcium / cancer) is NOT ca; SM (simple mastectomy) is NOT sm (small).',
       'When in doubt, spell it out: patient safety beats brevity.',
     ],
     sections: [
       {
         id: 'iab-1',
         number: 1,
-        title: 'Adelanto',
+        title: 'Impartido en Semana 2',
         blocks: [
           {
             type: 'note',
-            title: 'Adelanto — aún no impartido',
+            title: 'Impartido — Semana 2, Clase 3 (12 ago)',
             content:
-              'Este tema procede del libro de texto de la materia, no de una clase impartida. Corresponde a la Unidad IV del programa, prevista para la Semana 4. El profesor puede recortarlo, reordenarlo o enfatizar otros puntos. Úsalo para ir por delante, no como guía de lo que entra en el parcial de esta semana.',
+              'Este tema se impartió en la Semana 2, Clase 3 (12 de agosto de 2026), como parte del repaso/cierre de la Unidad II junto con las abreviaturas y los healthcare settings. Se apoya en el Apéndice III de Medical Terminology y en el listado de abreviaturas de la clase. Las abreviaturas ambiguas son una causa frecuente de error médico: ante la duda, se escribe la palabra completa.',
           },
         ],
       },
@@ -1589,6 +1590,29 @@ export const inglesUadTopics: Topic[] = [
               ],
             },
           },
+          {
+            // Fuente: listado de abreviaturas de la Clase 3 (Semana 2). Se conserva
+            // el orden alfabético de la diapositiva; los pares por mayúscula/minúscula
+            // (Ca/ca, SM/sm) se refuerzan en la sección de seguridad.
+            type: 'table',
+            title: 'From the class list (Semana 2 · Clase 3)',
+            data: {
+              headers: ['Abbrev.', 'Meaning'],
+              rows: [
+                ['ā', 'before (antes)'],
+                ['AAROM', 'active assistive range of motion'],
+                ['AB', 'abortion'],
+                ['AIDS', 'acquired immunodeficiency syndrome'],
+                ['BC', 'bone conduction'],
+                ['BDT', 'bone density testing'],
+                ['bpm', 'beats per minute'],
+                ['bx / BX', 'biopsy'],
+                ['Ca', 'calcium / cancer'],
+                ['SM', 'simple mastectomy'],
+                ['sm', 'small'],
+              ],
+            },
+          },
         ],
       },
       {
@@ -1603,6 +1627,12 @@ export const inglesUadTopics: Topic[] = [
             title: 'This is a safety topic, not a vocabulary topic',
             content:
               'El libro (Cap. 1) advierte que las abreviaturas ambiguas son una causa frecuente de error médico. Una abreviatura mal interpretada puede cambiar una dosis o un fármaco. Por eso existe una lista oficial "do-not-use": ante la duda, se escribe la palabra completa.',
+          },
+          {
+            type: 'note',
+            title: 'Case sensitivity: the SAME letters, different meaning',
+            content:
+              'La mayúscula/minúscula cambia el significado: "Ca" = calcio o cáncer, pero "ca" no es lo mismo; "SM" = simple mastectomy, pero "sm" = small. Las abreviaturas son sensibles al contexto y a las mayúsculas; interpretarlas mal es un problema de seguridad del paciente, igual que las de la lista do-not-use.',
           },
           {
             type: 'table',

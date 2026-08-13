@@ -31,7 +31,7 @@ export const modules: Module[] = [
     title: 'Terminología médica: construcción de términos',
     subtitle: 'Construcción de términos, interpretación y formación de plurales.',
     emoji: '🧬',
-    topicIds: ['ingles-word-parts', 'ingles-plurals'],
+    topicIds: ['ingles-word-parts', 'ingles-plurals', 'ingles-abbreviations'],
   },
   {
     id: 'anatomia',
@@ -58,7 +58,7 @@ export const modules: Module[] = [
     subtitle: 'Contenido tomado del libro de texto, aún no impartido en clase. Unidades II a VI del programa.',
     emoji: '📚',
     topicIds: ['ingles-verb-tenses',
-               'ingles-sentence-structure', 'ingles-abbreviations',
+               'ingles-sentence-structure',
                'ingles-false-friends', 'ingles-scientific-literature'],
   },
 ]
