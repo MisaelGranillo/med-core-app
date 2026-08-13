@@ -733,6 +733,96 @@ const msoQuestions: Question[] = [
   },
 ]
 
+// Hueso coxal (Semana 2 · Clase 3). Orden descendente de valor de estudio:
+// primero las confusiones de §4.7 (qué hueso aporta cada parte, incisuras,
+// tuberosidad, agujero obturado), luego el detalle regional.
+const coxQuestions: Question[] = [
+  {
+    id: 'cox-q1', topicId: 'hueso-coxal', type: 'multiple-choice',
+    question: '¿De la fusión de qué tres huesos resulta el hueso coxal?',
+    options: ['Ilion, sacro y pubis', 'Isquion, pubis y fémur', 'Ilion, isquion y sacro', 'Ilion, isquion y pubis'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'El hueso coxal (hueso ilíaco) es la fusión de ilion, isquion y pubis, que confluyen en el acetábulo. El sacro y el fémur son huesos vecinos, no partes del coxal.',
+  },
+  {
+    id: 'cox-q2', topicId: 'hueso-coxal', type: 'multiple-choice',
+    question: '¿A qué hueso pertenece la tuberosidad isquiática, el punto de apoyo del cuerpo al sentarse?',
+    options: ['Al pubis', 'Al ilion', 'Al isquion', 'Al sacro'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: 'La tuberosidad isquiática es del ISQUION; soporta el peso al sentarse y da origen a los isquiotibiales. El pubis es anteromedial y no contacta el asiento.',
+  },
+  {
+    id: 'cox-q3', topicId: 'hueso-coxal', type: 'multiple-choice',
+    question: '¿Qué estructura separa la incisura isquiática mayor de la incisura isquiática menor?',
+    options: ['La tuberosidad isquiática', 'La eminencia iliopúbica', 'La cresta ilíaca', 'La espina isquiática (espina ciática)'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'La espina isquiática (espina ciática) queda entre ambas: la mayor por encima y la menor por debajo. La tuberosidad isquiática es más inferior.',
+  },
+  {
+    id: 'cox-q4', topicId: 'hueso-coxal', type: 'multiple-choice',
+    question: 'El agujero obturado está limitado por:',
+    options: ['Ilion y pubis', 'Pubis e isquion', 'Ilion e isquion', 'Pubis y sacro'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Lo limitan el pubis y el isquion (mediante la rama isquiopúbica). El ilion NO participa en su contorno.',
+  },
+  {
+    id: 'cox-q5', topicId: 'hueso-coxal', type: 'multiple-choice',
+    question: 'Según la diapositiva del profesor, la contribución de los huesos al acetábulo se anota como:',
+    options: ['Ilion 2/5, isquion 2/5, pubis 1/5', 'Isquion +2/5, pubis 2/5, ilion −2/5', 'Pubis 3/5, ilion 1/5, isquion 1/5', 'Los tres aportan exactamente 1/3'],
+    correctIndex: 1, difficulty: 'hard',
+    explanation: 'El profesor la anota literal como "isquion +2/5 · pubis 2/5 · ilion −2/5" (se cita sin normalizar). La proporción "ilion 2/5, isquion 2/5, pubis 1/5" es la de muchos textos, pero el dato pedido es el del profesor.',
+  },
+  {
+    id: 'cox-q6', topicId: 'hueso-coxal', type: 'multiple-choice',
+    question: 'En el acetábulo, la parte que articula con la cabeza del fémur es:',
+    options: ['La fosa acetabular', 'La superficie semilunar', 'El labrum acetabular', 'La incisura isquiopúbica'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'La superficie semilunar (media luna con cartílago) es la articular. La fosa acetabular es central, rugosa y NO articular: aloja grasa y el ligamento de la cabeza femoral.',
+  },
+  {
+    id: 'cox-q7', topicId: 'hueso-coxal', type: 'multiple-choice',
+    question: 'La línea arqueada (línea innominada) del ilion forma parte del:',
+    options: ['Estrecho superior de la pelvis', 'Agujero obturado', 'Acetábulo', 'Borde del agujero ciático menor'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'La línea arqueada integra el anillo del estrecho superior (límite entre pelvis mayor y menor). No participa en el agujero obturado ni en el acetábulo.',
+  },
+  {
+    id: 'cox-q8', topicId: 'hueso-coxal', type: 'multiple-choice',
+    question: 'Las siglas EIAS corresponden a la espina ilíaca:',
+    options: ['Anteroinferior', 'Posterosuperior', 'Anterosuperior', 'Posteroinferior'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'EIAS = espina ilíaca ANTEROSUPERIOR (referencia palpable, origen del sartorio). La anteroinferior es la EIAI: no confundir antero-superior con antero-inferior.',
+  },
+  {
+    id: 'cox-q9', topicId: 'hueso-coxal', type: 'multiple-choice',
+    question: 'Las líneas glúteas (posterior, anterior e inferior) se encuentran en:',
+    options: ['La fosa ilíaca interna', 'La cara sacropélvica', 'La cara glútea (fosa ilíaca externa) del ala del ilion', 'El cuerpo del pubis'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Las líneas glúteas están en la cara glútea o fosa ilíaca externa, donde se insertan los glúteos. La fosa ilíaca interna aloja al músculo ilíaco; la cara sacropélvica lleva la carilla auricular.',
+  },
+  {
+    id: 'cox-q10', topicId: 'hueso-coxal', type: 'multiple-choice',
+    question: 'El labrum acetabular (rodete cotiloideo) es:',
+    options: ['Un ligamento que une pubis e isquion', 'La parte no articular del acetábulo', 'Un músculo de la cadera', 'Un anillo fibrocartilaginoso que profundiza el acetábulo'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'El labrum (rodete cotiloideo) es un anillo de fibrocartílago en el borde del acetábulo que aumenta su profundidad y estabilidad. La parte no articular del acetábulo es la fosa acetabular.',
+  },
+  {
+    id: 'cox-q11', topicId: 'hueso-coxal', type: 'multiple-choice',
+    question: 'La rama isquiopúbica está formada por:',
+    options: ['La rama superior del pubis y el cuerpo del ilion', 'La rama ascendente del isquion y la rama descendente (inferior) del pubis', 'Las dos ramas del pubis', 'El isquion y el sacro'],
+    correctIndex: 1, difficulty: 'hard',
+    explanation: 'La rama isquiopúbica resulta de la unión de la rama ascendente del isquion con la rama descendente (inferior) del pubis; cierra por abajo el agujero obturado.',
+  },
+  {
+    id: 'cox-q12', topicId: 'hueso-coxal', type: 'multiple-choice',
+    question: 'El ilion es la parte del hueso coxal que es:',
+    options: ['Superior, aplanada y en forma de abanico', 'Posteroinferior, con la tuberosidad', 'Anteromedial, con dos ramas', 'Central, articular con el fémur'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'El ilion es la porción superior en abanico; la posteroinferior con la tuberosidad es el isquion; la anteromedial con dos ramas, el pubis.',
+  },
+]
+
 export const anatomiaUadQuestions: Question[] = [
   ...generalidadesQuestions,
   ...craneoQuestions,
@@ -740,4 +830,5 @@ export const anatomiaUadQuestions: Question[] = [
   ...columnaQuestions,
   ...toraxQuestions,
   ...msoQuestions,
+  ...coxQuestions,
 ]
