@@ -1799,4 +1799,270 @@ export const anatomiaUadTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'miembro-inferior-oseo',
+    title: 'Miembro inferior óseo: fémur, tibia, peroné y pie',
+    subtitle: 'Muslo, pierna y pie; el hueso coxal se estudia aparte',
+    colorKey: 'osteologia',
+    emoji: '🦵',
+    keyPoints: [
+      'El miembro inferior libre son 3 segmentos óseos: fémur (muslo); tibia y peroné/fíbula (pierna); y los huesos del pie.',
+      'El peroné (fíbula) es lateral; la tibia es medial y es la que SOPORTA el peso.',
+      'El maléolo medial (interno) es de la TIBIA; el maléolo lateral (externo) es del peroné (fíbula).',
+      'La fóvea de la cabeza del fémur (fosita para el ligamento redondo) aloja el ligamento de la cabeza femoral.',
+      'La línea áspera es una cresta de la cara POSTERIOR de la diáfisis del fémur.',
+      'No confundir la fosa intercondílea (del fémur) con la eminencia intercondílea (de la tibia).',
+      'El tarso son 7 huesos, con 3 cuneiformes (cuñas); el talus (astrágalo) articula con la mortaja tibioperonea.',
+      'El 5.º metatarsiano tiene una tuberosidad (apófisis estiloides); el hallux solo tiene 2 falanges.',
+    ],
+    sections: [
+      {
+        id: 'minf-1',
+        number: 1,
+        title: 'Divisiones del miembro inferior',
+        keyTerms: ['cintura pélvica', 'muslo', 'pierna', 'pie'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            content:
+              'Se usa la Terminología Anatómica (TA) como principal y el clásico del profesor entre paréntesis; en el examen el clásico cuenta como correcto. El profesor escribe "peroné" y "astrágalo": son justo los que usa el examen. Mapeo de esta clase: fíbula = peroné · talus = astrágalo · hueso navicular = escafoides (del pie) · maléolo medial = maléolo interno · maléolo lateral = maléolo externo · fóvea de la cabeza del fémur = fosita para el ligamento redondo · fosa trocantérea = fosita digital · incisura fibular = escotadura peroneal · tróclea peronea del calcáneo = apófisis peronea · cuneiforme medial/intermedio/lateral = 1.ª/2.ª/3.ª cuña.',
+          },
+          {
+            type: 'list',
+            title: 'El miembro inferior se divide en',
+            items: [
+              'Cintura pélvica (hueso coxal): estudiada en su propio Topic.',
+              'Muslo: fémur.',
+              'Pierna: tibia (medial) y peroné/fíbula (lateral).',
+              'Pie: tarso (7 huesos), metatarso (5) y falanges (14).',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'minf-2',
+        number: 2,
+        title: 'Fémur — epífisis superior (proximal)',
+        keyTerms: ['cabeza', 'fóvea de la cabeza', 'cuello', 'línea intertrocantérea', 'trocánter mayor', 'cresta intertrocantérea', 'fosa trocantérea', 'trocánter menor'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Fóvea de la cabeza del fémur (fosita para el ligamento redondo)',
+            content: 'Pequeña depresión en la cabeza del fémur donde se inserta el ligamento de la cabeza femoral (ligamento redondo). — Fóvea de la cabeza del fémur.',
+          },
+          {
+            type: 'list',
+            title: 'Accidentes de la epífisis superior',
+            items: [
+              'Cabeza: fóvea de la cabeza (fosita para el ligamento redondo).',
+              'Cuello: línea intertrocantérea (anterior) y tubérculo cervical.',
+              'Trocánter mayor (2 caras, 3 bordes): cresta intertrocantérea (posterior), fosa trocantérea (fosita digital) y tubérculo cuadrado.',
+              'Trocánter menor (posteromedial).',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Línea intertrocantérea vs. cresta intertrocantérea',
+            left: {
+              title: 'Línea intertrocantérea',
+              items: ['En la cara ANTERIOR del cuello.', 'Une los dos trocánteres por delante.'],
+            },
+            right: {
+              title: 'Cresta intertrocantérea',
+              items: ['En la cara POSTERIOR.', 'Une los dos trocánteres por detrás; lleva el tubérculo cuadrado.'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'minf-3',
+        number: 3,
+        title: 'Fémur — diáfisis',
+        keyTerms: ['línea áspera', 'labio interno', 'labio externo', 'tuberosidad glútea', 'línea pectínea', 'cresta supracondílea', 'cara poplítea'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Línea áspera',
+            content: 'Cresta rugosa vertical de la cara POSTERIOR de la diáfisis del fémur, con labio interno (medial) y externo (lateral); da inserción a numerosos músculos del muslo. — Línea áspera.',
+          },
+          {
+            type: 'list',
+            title: 'Accidentes de la diáfisis',
+            items: [
+              'Caras: anterior, lateral, medial y posterior; bordes lateral, medial y posterior.',
+              'Línea áspera (labios interno y externo), en la cara posterior.',
+              'Tuberosidad glútea, línea espiral y línea pectínea.',
+              'Crestas supracondíleas externa e interna; tubérculo del 3.er aductor; cara poplítea.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'minf-4',
+        number: 4,
+        title: 'Fémur — epífisis inferior (distal)',
+        keyTerms: ['cóndilo lateral', 'cóndilo medial', 'fosa intercondílea', 'tróclea femoral', 'epicóndilo medial', 'epicóndilo lateral', 'cresta intercondílea'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Accidentes de la epífisis inferior',
+            items: [
+              'Cóndilo lateral y cóndilo medial.',
+              'Fosa intercondílea (entre ambos cóndilos, posterior).',
+              'Tróclea femoral (superficie para la rótula, anterior).',
+              'Epicóndilo medial y epicóndilo lateral.',
+              'Cresta intercondílea.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'minf-5',
+        number: 5,
+        title: 'Tibia',
+        keyTerms: ['cóndilo lateral', 'cóndilo medial', 'tuberosidad de la tibia', 'eminencia intercondílea', 'línea del sóleo', 'maléolo medial', 'incisura fibular'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Tibia — de proximal a distal',
+            data: {
+              headers: ['Región', 'Accidentes'],
+              rows: [
+                ['Epífisis superior', 'Cóndilo lateral y medial; tuberosidad de la tibia; zona intercondílea anterior y posterior; eminencia intercondílea con tubérculos intercondíleos medial y lateral; carilla articular para la cabeza del peroné.'],
+                ['Diáfisis', 'Caras interna, externa y posterior; bordes anterior ("espinilla"), interno y externo; línea del sóleo; agujero nutricio.'],
+                ['Epífisis inferior', 'Maléolo medial (interno), con 5 caras; surco maleolar; incisura fibular (escotadura peroneal); carilla articular inferior.'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'No confundir: fosa intercondílea vs. eminencia intercondílea',
+            content: 'La fosa intercondílea es una DEPRESIÓN de la cara posterior del FÉMUR (entre sus cóndilos). La eminencia intercondílea (espinas tibiales) es un RELIEVE que sobresale en la meseta de la TIBIA. Fémur = hueco; tibia = pico.',
+          },
+        ],
+      },
+      {
+        id: 'minf-6',
+        number: 6,
+        title: 'Peroné (fíbula)',
+        keyTerms: ['cabeza', 'proceso estiloides', 'cresta interósea', 'maléolo lateral', 'fosa maleolar', 'talus'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Peroné (fíbula) — de proximal a distal',
+            items: [
+              'Epífisis superior: cabeza, cuello, superficie articular para la tibia y proceso estiloides (apófisis estiloides).',
+              'Diáfisis: bordes anterior, medial y posterior; caras anterior, posterior y lateral; cresta interósea (cresta interna).',
+              'Epífisis inferior: maléolo lateral (externo), carilla articular para el talus (astrágalo) y fosa maleolar.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Tibia vs. peroné (fíbula)',
+            left: {
+              title: 'Tibia (medial)',
+              items: ['Hueso medial y grueso.', 'SOPORTA el peso del cuerpo.', 'Forma el maléolo medial (interno).', 'Se articula con el fémur (rodilla) y el talus.'],
+            },
+            right: {
+              title: 'Peroné / fíbula (lateral)',
+              items: ['Hueso lateral y delgado.', 'NO soporta peso (estabiliza el tobillo).', 'Forma el maléolo lateral (externo).', 'No participa en la rodilla.'],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'Maléolo medial vs. lateral (la trampa clásica)',
+            left: {
+              title: 'Maléolo medial (interno)',
+              items: ['Pertenece a la TIBIA.', 'Más anterior y más alto.'],
+            },
+            right: {
+              title: 'Maléolo lateral (externo)',
+              items: ['Pertenece al PERONÉ (fíbula).', 'Más posterior y desciende más (≈1 cm más distal).'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'minf-7',
+        number: 7,
+        title: 'Huesos del tarso (7 huesos)',
+        keyTerms: ['talus', 'calcáneo', 'navicular', 'cuboides', 'cuneiformes', 'sustentaculum tali', 'tróclea peronea'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Los 7 huesos del tarso',
+            data: {
+              headers: ['Fila / grupo', 'Huesos'],
+              rows: [
+                ['Posterior', 'Talus (astrágalo) y calcáneo.'],
+                ['Intermedio', 'Navicular (escafoides del pie).'],
+                ['Anterior', 'Cuboides y cuneiformes medial, intermedio y lateral (1.ª, 2.ª y 3.ª cuña).'],
+              ],
+            },
+          },
+          {
+            type: 'definition',
+            title: 'Sustentaculum tali',
+            content: 'Repisa ósea de la cara medial del calcáneo que SOSTIENE al talus (astrágalo); por su cara inferior discurre el tendón del flexor largo del hallux. — Sustentaculum tali.',
+          },
+          {
+            type: 'list',
+            title: 'Talus (astrágalo)',
+            items: [
+              'Cuerpo: tróclea; carillas maleolares medial y lateral; apófisis lateral; apófisis posterior con surco del flexor largo del hallux y tubérculos medial y lateral; carillas calcáneas posterior y media.',
+              'Cuello.',
+              'Cabeza: carilla articular para el navicular (escafoides) y carilla calcánea anterior.',
+            ],
+          },
+          {
+            type: 'list',
+            title: 'Calcáneo (talón)',
+            items: [
+              'Sustentaculum tali; carillas astragalinas posterior, media y anterior.',
+              'Tuberosidad calcánea; tubérculos anterior, medial y lateral.',
+              'Surco del flexor largo del hallux; tróclea peronea (apófisis peronea); superficie articular para el cuboides; seno del tarso.',
+            ],
+          },
+          {
+            type: 'list',
+            title: 'Navicular, cuboides y cuneiformes',
+            items: [
+              'Navicular (escafoides): tuberosidad del navicular.',
+              'Cuboides: tuberosidad, carilla calcánea y surco del m. peroneo largo.',
+              'Cuneiformes: medial, intermedio y lateral (1.ª, 2.ª y 3.ª cuña).',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'minf-8',
+        number: 8,
+        title: 'Metatarso y falanges',
+        keyTerms: ['metatarsianos', 'tuberosidad del 5.º metatarsiano', 'falange proximal', 'falange media', 'falange distal', 'hallux'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Metatarso',
+            items: [
+              'Son 5 metatarsianos; cada uno con base, cuerpo y cabeza.',
+              'El 5.º metatarsiano presenta una tuberosidad (apófisis estiloides) en su base.',
+            ],
+          },
+          {
+            type: 'list',
+            title: 'Falanges',
+            items: [
+              'Proximal (5), media (4) y distal (5); las distales llevan tuberosidad ungueal.',
+              'El hallux (dedo gordo) solo tiene falange proximal y distal (2 falanges).',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'Recuento: 5 metatarsianos y 14 falanges por pie. Faltan las falanges medias del hallux, por eso son 14 y no 15.',
+          },
+        ],
+      },
+    ],
+  },
 ]
