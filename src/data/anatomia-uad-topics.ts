@@ -8,9 +8,11 @@
  *   · PDF 3 "Huesos de la Cara y Hioides"
  * RESPALDO: Moore, Anatomía con orientación clínica (Cap. 1; Cap. 7 Cabeza).
  *
- * NOMENCLATURA (regla del examen): el término PRINCIPAL es el CLÁSICO que usa
- * el profesor; la Terminología Anatómica (TA) internacional va entre paréntesis.
- * No mezclar ambas formas dentro de una misma opción — ver bloque `note` inicial.
+ * NOMENCLATURA (regla MedCore): el término PRINCIPAL es la Terminología
+ * Anatómica (TA) internacional; la nomenclatura clásica del profesor va ENTRE
+ * PARÉNTESIS la primera vez que aparece en cada sección. En el examen la forma
+ * clásica cuenta como correcta, por eso acompaña SIEMPRE a la TA. No mezclar
+ * ambas formas dentro de una misma opción — ver bloque `note` inicial.
  *
  * NOTA DE FUENTE: el PDF 3 se titula "…y Hioides" pero sus 11 diapositivas
  * terminan en el Lagrimal: NO incluye hioides. El hueso hioides se transcribe de
@@ -23,9 +25,9 @@ import type { Topic } from '../types'
 // Bloque reutilizable: coexistencia de nomenclatura clásica y TA (regla §3).
 const notaNomenclatura = {
   type: 'note' as const,
-  title: 'Nomenclatura: clásica vs. Terminología Anatómica (TA)',
+  title: 'Nomenclatura: Terminología Anatómica (TA) principal, clásica entre paréntesis',
   content:
-    'Las diapositivas del profesor usan terminología anatómica CLÁSICA (la que se califica en el examen); Moore y los atlas modernos usan la Terminología Anatómica (TA) internacional. No son intercambiables. Equivalencias frecuentes: Maxilar Superior = Maxilar · Malar/Cigomático-Malar = Cigomático · Hueso Propio de la Nariz = Nasal · Unguis = Lagrimal · Agujero = Foramen · Apófisis = Proceso · Escotadura = Incisura. Usa el término clásico como principal y reconoce el de TA; el error más caro es saber la estructura correcta con el nombre equivocado.',
+    'MedCore usa la Terminología Anatómica (TA) internacional como término PRINCIPAL y la nomenclatura clásica del profesor (la de las diapositivas) entre paréntesis. En el examen la forma clásica cuenta como correcta, por eso siempre acompaña a la TA. Equivalencias frecuentes (TA → clásica): Maxilar → maxilar superior · Cigomático → malar (cigomático-malar) · Nasal → hueso propio de la nariz · Lagrimal → unguis · Foramen → agujero · Proceso → apófisis · Incisura → escotadura · Concha nasal → cornete. El error más caro es saber la estructura correcta con el nombre equivocado: por eso se estudian ambos.',
 }
 
 export const anatomiaUadTopics: Topic[] = [
@@ -86,7 +88,7 @@ export const anatomiaUadTopics: Topic[] = [
         id: 'gen-2',
         number: 2,
         title: 'Terminología anatómica y médica',
-        keyTerms: ['Terminología Anatómica (TA)', 'Nomenclatura clásica', 'Epónimo', 'Foramen / Agujero', 'Apófisis / Proceso'],
+        keyTerms: ['Terminología Anatómica (TA)', 'Nomenclatura clásica', 'Epónimo', 'Foramen / Agujero', 'Proceso / Apófisis'],
         blocks: [
           {
             type: 'paragraph',
@@ -95,17 +97,18 @@ export const anatomiaUadTopics: Topic[] = [
           notaNomenclatura,
           {
             type: 'table',
-            title: 'Equivalencias clásica ↔ TA de uso frecuente',
+            title: 'Equivalencias TA ↔ clásica de uso frecuente',
             data: {
-              headers: ['Clásica (examen)', 'Terminología Anatómica (TA)'],
+              headers: ['Terminología Anatómica (TA)', 'Clásica (examen)'],
               rows: [
-                ['Maxilar Superior', 'Maxilar'],
-                ['Hueso Malar / Cigomático-Malar', 'Cigomático'],
-                ['Hueso Propio de la Nariz', 'Nasal'],
-                ['Unguis', 'Lagrimal'],
-                ['Agujero (occipital, óptico, ciego…)', 'Foramen'],
-                ['Apófisis', 'Proceso'],
-                ['Escotadura', 'Incisura'],
+                ['Maxilar', 'Maxilar superior'],
+                ['Cigomático', 'Malar / cigomático-malar'],
+                ['Nasal', 'Hueso propio de la nariz'],
+                ['Lagrimal', 'Unguis'],
+                ['Foramen (magno, óptico, ciego…)', 'Agujero'],
+                ['Proceso', 'Apófisis'],
+                ['Incisura', 'Escotadura'],
+                ['Concha nasal', 'Cornete'],
               ],
             },
           },
@@ -291,10 +294,10 @@ export const anatomiaUadTopics: Topic[] = [
     emoji: '💀',
     keyPoints: [
       'El cráneo (neurocráneo) está formado por 8 huesos: 2 pares (parietales y temporales) y 4 impares (frontal, esfenoides, occipital y etmoides).',
-      'El frontal presenta 3 caras (anterior, posterior, inferior) y 3 bordes; en su cara posterior están la escotadura etmoidal y el agujero ciego.',
-      'El etmoides es el hueso de las fosas nasales y la órbita: crista galli, lámina cribosa (agujeros olfatorios) y masas laterales con los cornetes superior y medio.',
-      'El esfenoides, en el centro de la base, aloja la silla turca (hipófisis) y sus alas mayores contienen el agujero redondo mayor, el oval y el redondo menor.',
-      'El agujero occipital (35 × 30 mm) del occipital comunica el cráneo con el conducto vertebral; a sus lados están los cóndilos que articulan con el atlas.',
+      'El frontal presenta 3 caras (anterior, posterior, inferior) y 3 bordes; en su cara posterior están la incisura etmoidal (escotadura etmoidal) y el foramen ciego (agujero ciego).',
+      'El etmoides es el hueso de las fosas nasales y la órbita: crista galli, lámina cribosa (forámenes cribosos / agujeros olfatorios) y masas laterales con las conchas nasales superior y media (cornetes).',
+      'El esfenoides, en el centro de la base, aloja la silla turca (hipófisis) y sus alas mayores contienen el foramen redondo (agujero redondo mayor), el foramen oval y el foramen espinoso (agujero redondo menor).',
+      'El foramen magno (agujero occipital, ≈35 × 30 mm) del occipital comunica el cráneo con el conducto vertebral; a sus lados están los cóndilos que articulan con el atlas.',
       'Los puntos craneométricos nacen del cruce de suturas: bregma (coronal + sagital), lambda (sagital + lambdoidea), pterion y asterion.',
       'El etmoides y el esfenoides son impares y forman parte tanto del cráneo como de las cavidades orbitaria y nasal.',
     ],
@@ -328,7 +331,7 @@ export const anatomiaUadTopics: Topic[] = [
         id: 'cra-2',
         number: 2,
         title: 'Hueso frontal',
-        keyTerms: ['Glabela', 'Arcos supraciliares', 'Escotadura etmoidal', 'Agujero ciego', 'Eminencias orbitarias', 'Seno frontal', 'Apófisis cigomática del frontal', 'Bregma'],
+        keyTerms: ['Glabela', 'Arcos supraciliares', 'Incisura etmoidal (escotadura)', 'Foramen ciego (agujero ciego)', 'Eminencias orbitarias', 'Seno frontal', 'Proceso cigomático del frontal (apófisis)', 'Bregma'],
         blocks: [
           {
             type: 'paragraph',
@@ -341,11 +344,11 @@ export const anatomiaUadTopics: Topic[] = [
               headers: ['Cara / Borde', 'Accidentes'],
               rows: [
                 ['Cara anterior', 'Glabela; eminencias frontales; arcos supraciliares; cresta frontal lateral; sutura mediofrontal (metópica).'],
-                ['Cara posterior', 'Surco para el seno longitudinal; cresta frontal; agujero ciego; escotadura etmoidal; eminencias orbitarias; impresiones digitales.'],
+                ['Cara posterior', 'Surco para el seno longitudinal; cresta frontal; foramen ciego (agujero ciego); incisura etmoidal (escotadura etmoidal); eminencias orbitarias; impresiones digitales.'],
                 ['Cara inferior', 'Espina nasal del frontal; orificios de los senos frontales; conductos etmoidales anterior y posterior; fosas orbitarias; fosita lagrimal y troclear.'],
-                ['Borde anterior', 'Escotadura nasal; borde supraorbitario con escotadura supraorbitaria; apófisis orbitaria medial; apófisis cigomática del frontal.'],
+                ['Borde anterior', 'Incisura nasal (escotadura nasal); borde supraorbitario con incisura supraorbitaria (escotadura supraorbitaria); proceso orbitario medial (apófisis orbitaria); proceso cigomático del frontal (apófisis cigomática).'],
                 ['Borde superior', 'Borde parietal (articula con los parietales por la sutura coronal).'],
-                ['Borde posterior', 'Escotadura etmoidal (aloja la lámina cribosa del etmoides).'],
+                ['Borde posterior', 'Incisura etmoidal (escotadura etmoidal; aloja la lámina cribosa del etmoides).'],
               ],
             },
           },
@@ -368,7 +371,7 @@ export const anatomiaUadTopics: Topic[] = [
         id: 'cra-3',
         number: 3,
         title: 'Hueso etmoides',
-        keyTerms: ['Crista galli', 'Lámina perpendicular', 'Lámina cribosa', 'Agujeros olfatorios', 'Masas laterales', 'Cornete superior', 'Cornete medio', 'Celdillas etmoidales', 'Apófisis unciforme'],
+        keyTerms: ['Crista galli', 'Lámina perpendicular', 'Lámina cribosa', 'Forámenes cribosos (agujeros olfatorios)', 'Masas laterales', 'Concha nasal superior (cornete)', 'Concha nasal media (cornete)', 'Celdillas etmoidales', 'Proceso unciforme (apófisis unciforme)'],
         blocks: [
           {
             type: 'paragraph',
@@ -380,12 +383,12 @@ export const anatomiaUadTopics: Topic[] = [
             data: {
               headers: ['Cara / Borde', 'Accidentes'],
               rows: [
-                ['Lámina vertical', 'Apófisis crista galli (arriba, inserción de la hoz del cerebro); lámina perpendicular (abajo, forma el tabique nasal óseo).'],
-                ['Lámina horizontal — cara superior', 'Canal olfatorio; agujeros olfatorios; lámina cribosa (deja pasar los filetes del nervio olfatorio).'],
+                ['Lámina vertical', 'Crista galli (arriba, inserción de la hoz del cerebro); lámina perpendicular (abajo, forma el tabique nasal óseo).'],
+                ['Lámina horizontal — cara superior', 'Canal olfatorio; forámenes cribosos (agujeros olfatorios); lámina cribosa (deja pasar los filetes del nervio olfatorio).'],
                 ['Lámina horizontal — cara inferior', 'Bóveda de las fosas nasales.'],
                 ['Masas laterales — cara externa', 'Lámina orbitaria (pared medial de la órbita, "os planum").'],
-                ['Masas laterales — cara interna', 'Cornetes superior y medio; meato nasal superior.'],
-                ['Masas laterales', 'Celdillas etmoidales (anteriores, medias y posteriores); infundíbulo; apófisis unciforme; meato nasal medio.'],
+                ['Masas laterales — cara interna', 'Conchas nasales superior y media (cornetes); meato nasal superior.'],
+                ['Masas laterales', 'Celdillas etmoidales (anteriores, medias y posteriores); infundíbulo; proceso unciforme (apófisis unciforme); meato nasal medio.'],
               ],
             },
           },
@@ -400,11 +403,11 @@ export const anatomiaUadTopics: Topic[] = [
         id: 'cra-4',
         number: 4,
         title: 'Hueso esfenoides',
-        keyTerms: ['Cuerpo', 'Silla turca', 'Seno esfenoidal', 'Alas menores', 'Agujero óptico', 'Alas mayores', 'Fisura orbitaria superior', 'Agujero redondo mayor', 'Agujero oval', 'Apófisis pterigoides'],
+        keyTerms: ['Cuerpo', 'Silla turca', 'Seno esfenoidal', 'Alas menores', 'Conducto óptico (agujero óptico)', 'Alas mayores', 'Fisura orbitaria superior', 'Foramen redondo (agujero redondo mayor)', 'Foramen oval (agujero oval)', 'Proceso pterigoides (apófisis pterigoides)'],
         blocks: [
           {
             type: 'paragraph',
-            content: 'Hueso impar en forma de mariposa, ubicado en el centro de la base del cráneo. Consta de un cuerpo, dos alas menores, dos alas mayores y dos apófisis pterigoides.',
+            content: 'Hueso impar en forma de mariposa, ubicado en el centro de la base del cráneo. Consta de un cuerpo, dos alas menores, dos alas mayores y dos procesos pterigoides (apófisis pterigoides).',
           },
           {
             type: 'table',
@@ -412,18 +415,18 @@ export const anatomiaUadTopics: Topic[] = [
             data: {
               headers: ['Parte', 'Accidentes principales'],
               rows: [
-                ['Cuerpo — cara superior', 'Yugo esfenoidal; canal óptico; tubérculo pituitario; SILLA TURCA (aloja la hipófisis); lámina cuadrilátera; apófisis clinoides.'],
+                ['Cuerpo — cara superior', 'Yugo esfenoidal; conducto óptico (canal óptico); tubérculo pituitario; SILLA TURCA (aloja la hipófisis); lámina cuadrilátera; procesos clinoides (apófisis clinoides).'],
                 ['Cuerpo — cara anterior', 'Cresta anterior; apertura del seno esfenoidal; carillas etmoidales.'],
                 ['Cuerpo — cara inferior', 'Cresta inferior; pico (rostrum); conducto esfenopalatino.'],
-                ['Alas menores', 'Base perforada por el AGUJERO ÓPTICO; separan la fosa craneal anterior de la media.'],
-                ['Alas mayores (borde interno)', 'Fisura orbitaria superior; agujero redondo mayor; agujero oval; agujero redondo menor; língula; conducto pterigoideo.'],
-                ['Apófisis pterigoides', 'Alas externa e interna; gancho pterigoideo; fosa pterigoidea; fosita escafoidea; conducto pterigoideo en su base.'],
+                ['Alas menores', 'Base perforada por el CONDUCTO ÓPTICO (agujero óptico); separan la fosa craneal anterior de la media.'],
+                ['Alas mayores (borde interno)', 'Fisura orbitaria superior; foramen redondo (agujero redondo mayor); foramen oval (agujero oval); foramen espinoso (agujero redondo menor); língula; conducto pterigoideo.'],
+                ['Proceso pterigoides (apófisis pterigoides)', 'Láminas lateral e interna (alas externa e interna); gancho pterigoideo (hámulo); fosa pterigoidea; fosita escafoidea; conducto pterigoideo en su base.'],
               ],
             },
           },
           {
             type: 'note',
-            content: 'Orden de los agujeros del ala mayor de anterior a posterior: fisura orbitaria superior → agujero redondo mayor → agujero oval → agujero redondo menor. La silla turca del cuerpo es la referencia de la hipófisis.',
+            content: 'Orden de los forámenes del ala mayor de anterior a posterior: fisura orbitaria superior → foramen redondo (agujero redondo mayor) → foramen oval (agujero oval) → foramen espinoso (agujero redondo menor). La silla turca del cuerpo es la referencia de la hipófisis.',
           },
         ],
       },
@@ -431,7 +434,7 @@ export const anatomiaUadTopics: Topic[] = [
         id: 'cra-5',
         number: 5,
         title: 'Hueso parietal',
-        keyTerms: ['Eminencia parietal', 'Líneas temporales', 'Surco de la arteria meníngea media', 'Fositas granulares', 'Agujero parietal', 'Bregma', 'Lambda', 'Pterion', 'Asterion'],
+        keyTerms: ['Eminencia parietal', 'Líneas temporales', 'Surco de la arteria meníngea media', 'Fositas granulares', 'Foramen parietal (agujero parietal)', 'Bregma', 'Lambda', 'Pterion', 'Asterion'],
         blocks: [
           {
             type: 'paragraph',
@@ -445,7 +448,7 @@ export const anatomiaUadTopics: Topic[] = [
               rows: [
                 ['Cara externa', 'Eminencia parietal; líneas temporales superior e inferior.'],
                 ['Cara interna', 'Fosa parietal; surco de la arteria meníngea media; fositas granulares.'],
-                ['Borde superior', 'Sutura sagital; canal del seno longitudinal superior; agujero parietal.'],
+                ['Borde superior', 'Sutura sagital; canal del seno longitudinal superior; foramen parietal (agujero parietal).'],
                 ['Bordes (inf./ant./post.)', 'Inferior: temporal · Anterior: frontal · Posterior: occipital.'],
                 ['Ángulos', 'Anterosuperior: BREGMA (frontoparietal) · Anteroinferior: PTERION (esfenoides) · Posterosuperior: LAMBDA (occipitoparietal) · Posteroinferior: ASTERION (temporal).'],
               ],
@@ -457,11 +460,11 @@ export const anatomiaUadTopics: Topic[] = [
         id: 'cra-6',
         number: 6,
         title: 'Hueso occipital',
-        keyTerms: ['Agujero occipital', 'Porción basilar', 'Tubérculo faríngeo', 'Protuberancia occipital externa (inion)', 'Cóndilos occipitales', 'Protuberancia occipital interna', 'Agujero yugular', 'Lambda'],
+        keyTerms: ['Foramen magno (agujero occipital)', 'Porción basilar', 'Tubérculo faríngeo', 'Protuberancia occipital externa (inion)', 'Cóndilos occipitales', 'Protuberancia occipital interna', 'Foramen yugular (agujero yugular)', 'Lambda'],
         blocks: [
           {
             type: 'paragraph',
-            content: 'Hueso impar de la parte posteroinferior del cráneo. Está perforado por el agujero occipital (≈ 35 × 30 mm), que comunica la cavidad craneal con el conducto vertebral.',
+            content: 'Hueso impar de la parte posteroinferior del cráneo. Está perforado por el foramen magno (agujero occipital, ≈ 35 × 30 mm), que comunica la cavidad craneal con el conducto vertebral.',
           },
           {
             type: 'table',
@@ -469,16 +472,16 @@ export const anatomiaUadTopics: Topic[] = [
             data: {
               headers: ['Cara / Borde', 'Accidentes'],
               rows: [
-                ['Cara posteroinferior', 'Agujero occipital; porción basilar con tubérculo faríngeo; porción escamosa; protuberancia occipital externa (INION); cresta occipital externa; líneas curvas (nucales); cóndilos del occipital; agujeros condíleos.'],
+                ['Cara posteroinferior', 'Foramen magno (agujero occipital); porción basilar con tubérculo faríngeo; porción escamosa; protuberancia occipital externa (INION); cresta occipital externa; líneas curvas (nucales); cóndilos del occipital; conductos condíleos (agujeros condíleos).'],
                 ['Cara anterosuperior', 'Canal basilar; protuberancia occipital interna; cresta occipital interna; surco del seno longitudinal superior; surco del seno lateral y sigmoides; fosas occipitales.'],
-                ['Bordes', 'Superiores (parietales) → ángulo superior = LAMBDA. Inferiores (temporales): apófisis, escotadura, tubérculo y agujero yugular.'],
+                ['Bordes', 'Superiores (parietales) → ángulo superior = LAMBDA. Inferiores (temporales): proceso yugular, incisura yugular, tubérculo y foramen yugular (agujero yugular).'],
                 ['Ángulos', 'Superior: lambda · Inferior: articula con el cuerpo del esfenoides · Laterales: ASTERION (unión parietotemporal).'],
               ],
             },
           },
           {
             type: 'note',
-            content: 'Los cóndilos del occipital, a los lados del agujero occipital, articulan con las carillas superiores del atlas (articulación atlantooccipital) y permiten el movimiento de "sí" con la cabeza.',
+            content: 'Los cóndilos del occipital, a los lados del foramen magno (agujero occipital), articulan con las carillas superiores del atlas (articulación atlantooccipital) y permiten el movimiento de "sí" con la cabeza.',
           },
         ],
       },
@@ -486,12 +489,12 @@ export const anatomiaUadTopics: Topic[] = [
         id: 'cra-7',
         number: 7,
         title: 'Hueso temporal — pendiente',
-        keyTerms: ['Temporal', 'Peñasco', 'Mastoides', 'Apófisis estiloides', 'Apófisis cigomática'],
+        keyTerms: ['Temporal', 'Porción petrosa (peñasco)', 'Mastoides', 'Proceso estiloides (apófisis estiloides)', 'Proceso cigomático (apófisis cigomática)'],
         blocks: [
           {
             type: 'note',
             title: 'Pendiente — clase 4',
-            content: 'El temporal es el 2.º hueso par del cráneo (junto con los parietales), pero la clase 2 NO lo desarrolló: detalla solo 5 de los 6 huesos distintos. Su estudio (escama, peñasco/porción petrosa, mastoides, porción timpánica, apófisis estiloides y cigomática) llega en la clase 4. Se nombra aquí únicamente para completar el conteo de 8 huesos, no como tema impartido.',
+            content: 'El temporal es el 2.º hueso par del cráneo (junto con los parietales), pero la clase 2 NO lo desarrolló: detalla solo 5 de los 6 huesos distintos. Su estudio (escama, porción petrosa/peñasco, mastoides, porción timpánica, procesos estiloides y cigomático) llega en la clase 4. Se nombra aquí únicamente para completar el conteo de 8 huesos, no como tema impartido.',
           },
         ],
       },
@@ -552,7 +555,7 @@ export const anatomiaUadTopics: Topic[] = [
             type: 'table',
             title: 'Fosa craneal anterior',
             data: {
-              headers: ['Agujero / abertura', 'Contenido'],
+              headers: ['Foramen / abertura', 'Contenido'],
               rows: [
                 ['Foramen ciego (agujero ciego)', 'Vena emisaria nasal (en ~1 % de la población).'],
                 ['Forámenes cribosos de la lámina cribosa', 'Axones de las células olfatorias que forman los nervios olfatorios (NC I).'],
@@ -564,7 +567,7 @@ export const anatomiaUadTopics: Topic[] = [
             type: 'table',
             title: 'Fosa craneal media',
             data: {
-              headers: ['Agujero / abertura', 'Contenido'],
+              headers: ['Foramen / abertura', 'Contenido'],
               rows: [
                 ['Conducto óptico (agujero óptico)', 'Nervio óptico (NC II) y arteria oftálmica.'],
                 ['Fisura orbitaria superior', 'Venas oftálmicas; nervio oftálmico (NC V₁); NC III, IV y VI; fibras simpáticas.'],
@@ -580,7 +583,7 @@ export const anatomiaUadTopics: Topic[] = [
             type: 'table',
             title: 'Fosa craneal posterior',
             data: {
-              headers: ['Agujero / abertura', 'Contenido'],
+              headers: ['Foramen / abertura', 'Contenido'],
               rows: [
                 ['Foramen magno (agujero occipital)', 'Médula oblongada y meninges; arterias vertebrales; NC XI; venas de la duramadre; arterias espinales anterior y posteriores.'],
                 ['Foramen yugular (agujero yugular)', 'NC IX, X y XI; bulbo superior de la vena yugular interna; senos petroso inferior y sigmoideo; ramas meníngeas de las arterias faríngea ascendente y occipital.'],
@@ -630,12 +633,12 @@ export const anatomiaUadTopics: Topic[] = [
     colorKey: 'osteologia',
     emoji: '🦴',
     keyPoints: [
-      'El macizo facial (viscerocráneo) está formado por huesos pares —maxilar superior, malar, nasal, unguis (lagrimal), palatino y cornete inferior— e impares —vómer y mandíbula.',
-      'El maxilar superior es la pieza central de la cara: forma el paladar, el suelo de la órbita y la pared de las fosas nasales; aloja el seno maxilar.',
-      'El malar (cigomático) forma el pómulo y, con la apófisis cigomática del temporal, el arco cigomático.',
+      'El macizo facial (viscerocráneo) está formado por huesos pares —maxilar (maxilar superior), cigomático (malar), nasal (hueso propio de la nariz), lagrimal (unguis), palatino y concha nasal inferior (cornete inferior)— e impares —vómer y mandíbula.',
+      'El maxilar (maxilar superior) es la pieza central de la cara: forma el paladar, el suelo de la órbita y la pared de las fosas nasales; aloja el seno maxilar.',
+      'El cigomático (malar) forma el pómulo y, con el proceso cigomático (apófisis cigomática) del temporal, el arco cigomático.',
       'El vómer forma la porción posteroinferior del tabique nasal y separa las coanas.',
       'El palatino, en forma de L, completa por detrás el paladar óseo (porción horizontal) y la pared lateral de la fosa nasal (porción vertical).',
-      'El unguis (lagrimal) forma parte del canal lacrimonasal por el que discurre el conducto nasolagrimal.',
+      'El lagrimal (unguis) forma parte del canal lacrimonasal por el que discurre el conducto nasolagrimal.',
       'La clase 3 cubrió los huesos de la cara hasta el lagrimal; la mandíbula y el hueso hioides quedan pendientes (clases 4–5).',
     ],
     sections: [
@@ -643,7 +646,7 @@ export const anatomiaUadTopics: Topic[] = [
         id: 'cah-1',
         number: 1,
         title: 'Constitución del macizo facial',
-        keyTerms: ['Viscerocráneo', 'Maxilar superior', 'Malar (cigomático)', 'Hueso propio de la nariz', 'Unguis (lagrimal)', 'Palatino', 'Cornete inferior', 'Vómer', 'Mandíbula'],
+        keyTerms: ['Viscerocráneo', 'Maxilar (maxilar superior)', 'Cigomático (malar)', 'Nasal (hueso propio de la nariz)', 'Lagrimal (unguis)', 'Palatino', 'Concha nasal inferior (cornete inferior)', 'Vómer', 'Mandíbula'],
         blocks: [
           {
             type: 'paragraph',
@@ -652,7 +655,7 @@ export const anatomiaUadTopics: Topic[] = [
           {
             type: 'comparison',
             title: 'Huesos de la cara',
-            left: { title: 'Pares (6)', items: ['Maxilar superior', 'Malar / cigomático', 'Hueso propio de la nariz (nasal)', 'Unguis (lagrimal)', 'Palatino', 'Cornete inferior'] },
+            left: { title: 'Pares (6)', items: ['Maxilar (maxilar superior)', 'Cigomático (malar)', 'Nasal (hueso propio de la nariz)', 'Lagrimal (unguis)', 'Palatino', 'Concha nasal inferior (cornete inferior)'] },
             right: { title: 'Impares (2)', items: ['Vómer', 'Mandíbula (maxilar inferior)'] },
           },
           notaNomenclatura,
@@ -661,8 +664,8 @@ export const anatomiaUadTopics: Topic[] = [
       {
         id: 'cah-2',
         number: 2,
-        title: 'Maxilar superior',
-        keyTerms: ['Apófisis palatina', 'Seno maxilar', 'Apófisis frontal', 'Eminencia canina', 'Canal infraorbitario', 'Orificio infraorbitario', 'Apófisis cigomática', 'Tuberosidad del maxilar'],
+        title: 'Maxilar (maxilar superior)',
+        keyTerms: ['Proceso palatino (apófisis palatina)', 'Seno maxilar', 'Proceso frontal (apófisis frontal)', 'Eminencia canina', 'Canal infraorbitario', 'Foramen infraorbitario (orificio infraorbitario)', 'Proceso cigomático (apófisis cigomática)', 'Tuberosidad del maxilar'],
         blocks: [
           {
             type: 'paragraph',
@@ -670,81 +673,81 @@ export const anatomiaUadTopics: Topic[] = [
           },
           {
             type: 'table',
-            title: 'Caras del maxilar superior',
+            title: 'Caras del maxilar',
             data: {
               headers: ['Cara / Borde', 'Accidentes'],
               rows: [
-                ['Cara interna (nasal)', 'Apófisis palatina; agujero palatino anterior; carilla para el palatino; orificio del seno maxilar; apófisis frontal.'],
-                ['Cara externa (yugal)', 'Fosita mirtiforme; eminencia canina; apófisis cigomática; canal y orificio infraorbitario; fosa cigomática; agujeros dentarios posteriores; reborde infraorbitario; fisura orbitaria inferior.'],
-                ['Borde anterior', 'Espina nasal anterior; escotadura nasal; borde anterior de la apófisis frontal.'],
-                ['Borde posterior', 'Tuberosidad del maxilar; carilla para la apófisis pterigoides y el palatino; conducto palatino mayor.'],
-                ['Borde superior', 'Articular para el unguis, etmoides y palatino.'],
+                ['Cara interna (nasal)', 'Proceso palatino (apófisis palatina); foramen palatino anterior (agujero palatino anterior); carilla para el palatino; orificio del seno maxilar; proceso frontal (apófisis frontal).'],
+                ['Cara externa (yugal)', 'Fosita mirtiforme; eminencia canina; proceso cigomático (apófisis cigomática); canal y foramen infraorbitario (orificio infraorbitario); fosa cigomática; forámenes alveolares (agujeros dentarios posteriores); reborde infraorbitario; fisura orbitaria inferior.'],
+                ['Borde anterior', 'Espina nasal anterior; incisura nasal (escotadura nasal); borde anterior del proceso frontal (apófisis frontal).'],
+                ['Borde posterior', 'Tuberosidad del maxilar; carilla para el proceso pterigoides (apófisis pterigoides) y el palatino; conducto palatino mayor.'],
+                ['Borde superior', 'Articular para el lagrimal (unguis), etmoides y palatino.'],
                 ['Borde inferior', 'Cavidades alveolares superiores (arcada dentaria).'],
               ],
             },
           },
           {
             type: 'note',
-            content: 'Las dos apófisis palatinas de ambos maxilares se unen en la línea media y forman los 2/3 anteriores del paladar óseo; el 1/3 posterior lo forman las láminas horizontales de los palatinos.',
+            content: 'Los dos procesos palatinos (apófisis palatinas) de ambos maxilares se unen en la línea media y forman los 2/3 anteriores del paladar óseo; el 1/3 posterior lo forman las láminas horizontales de los palatinos.',
           },
         ],
       },
       {
         id: 'cah-3',
         number: 3,
-        title: 'Malar (cigomático) y arco cigomático',
-        keyTerms: ['Cara externa', 'Cara interna', 'Apófisis frontal', 'Apófisis temporal', 'Fosa temporal', 'Arco cigomático', 'Reborde orbitario'],
+        title: 'Cigomático (malar) y arco cigomático',
+        keyTerms: ['Cara externa', 'Cara interna', 'Proceso frontal (apófisis frontal)', 'Proceso temporal (apófisis temporal)', 'Fosa temporal', 'Arco cigomático', 'Reborde orbitario'],
         blocks: [
           {
             type: 'paragraph',
-            content: 'Hueso par que forma el relieve del pómulo y la pared lateral e inferior de la órbita. Tiene cara externa e interna, cuatro bordes y varios ángulos con apófisis.',
+            content: 'Hueso par que forma el relieve del pómulo y la pared lateral e inferior de la órbita. Tiene cara externa e interna, cuatro bordes y varios ángulos con procesos (apófisis).',
           },
           {
             type: 'table',
-            title: 'Accidentes del malar',
+            title: 'Accidentes del cigomático',
             data: {
               headers: ['Cara / Borde / Ángulo', 'Accidentes'],
               rows: [
                 ['Cara externa', 'Superficie del pómulo (subcutánea).'],
                 ['Cara interna', 'Mira a la fosa temporal y a la fosa infratemporal.'],
-                ['Bordes', 'Anterosuperior: reborde orbitario, apófisis orbitaria · Posterosuperior: fosa temporal · Antero/posteroinferior: articulan con el maxilar.'],
-                ['Ángulos / apófisis', 'Superior: apófisis frontal (articula con el frontal) · Posterior: apófisis temporal (forma el arco cigomático con el temporal).'],
+                ['Bordes', 'Anterosuperior: reborde orbitario, proceso orbitario (apófisis orbitaria) · Posterosuperior: fosa temporal · Antero/posteroinferior: articulan con el maxilar.'],
+                ['Ángulos / procesos', 'Superior: proceso frontal (apófisis frontal; articula con el frontal) · Posterior: proceso temporal (apófisis temporal; forma el arco cigomático con el temporal).'],
               ],
             },
           },
           {
             type: 'note',
-            content: 'El ARCO CIGOMÁTICO resulta de la unión de la apófisis temporal del malar con la apófisis cigomática del temporal. Es un reparo palpable y una fractura frecuente en traumatismos faciales.',
+            content: 'El ARCO CIGOMÁTICO resulta de la unión del proceso temporal (apófisis temporal) del cigomático con el proceso cigomático (apófisis cigomática) del temporal. Es un reparo palpable y una fractura frecuente en traumatismos faciales.',
           },
         ],
       },
       {
         id: 'cah-4',
         number: 4,
-        title: 'Hueso propio de la nariz y unguis (lagrimal)',
-        keyTerms: ['Hueso propio de la nariz (nasal)', 'Unguis (lagrimal)', 'Cresta lagrimal posterior', 'Canal lacrimonasal', 'Cartílagos laterales nasales'],
+        title: 'Nasal (hueso propio de la nariz) y lagrimal (unguis)',
+        keyTerms: ['Nasal (hueso propio de la nariz)', 'Lagrimal (unguis)', 'Cresta lagrimal posterior', 'Canal lacrimonasal', 'Cartílagos laterales nasales'],
         blocks: [
           {
             type: 'definition',
-            title: 'Hueso propio de la nariz (nasal)',
+            title: 'Nasal (hueso propio de la nariz)',
             description: 'Huesecillo par que forma el dorso óseo de la nariz. Cara anterior y posterior (fosas nasales); se articula por arriba con el frontal, por fuera con el maxilar, por dentro con su homónimo, frontal y etmoides, y por abajo con los cartílagos laterales nasales.',
           },
           {
             type: 'definition',
-            title: 'Unguis / hueso lagrimal',
-            description: 'Lámina delgada de la pared medial de la órbita. Su cara externa presenta la cresta lagrimal posterior y participa en el canal lacrimonasal; se articula con frontal, etmoides, maxilar y cornete inferior.',
+            title: 'Lagrimal (unguis)',
+            description: 'Lámina delgada de la pared medial de la órbita. Su cara externa presenta la cresta lagrimal posterior y participa en el canal lacrimonasal; se articula con frontal, etmoides, maxilar y concha nasal inferior (cornete inferior).',
           },
           {
             type: 'note',
-            content: 'El canal lacrimonasal (formado por unguis, maxilar y cornete inferior) aloja el conducto nasolagrimal, que drena la lágrima hacia el meato inferior de la fosa nasal.',
+            content: 'El canal lacrimonasal (formado por lagrimal/unguis, maxilar y concha nasal inferior/cornete inferior) aloja el conducto nasolagrimal, que drena la lágrima hacia el meato inferior de la fosa nasal.',
           },
         ],
       },
       {
         id: 'cah-5',
         number: 5,
-        title: 'Vómer y cornete inferior',
-        keyTerms: ['Vómer', 'Tabique nasal', 'Coanas', 'Canal esfenovomeriano', 'Cornete inferior', 'Meato inferior'],
+        title: 'Vómer y concha nasal inferior (cornete inferior)',
+        keyTerms: ['Vómer', 'Tabique nasal', 'Coanas', 'Canal esfenovomeriano', 'Concha nasal inferior (cornete inferior)', 'Meato inferior'],
         blocks: [
           {
             type: 'table',
@@ -761,8 +764,8 @@ export const anatomiaUadTopics: Topic[] = [
           },
           {
             type: 'definition',
-            title: 'Cornete inferior',
-            description: 'Hueso par, independiente (no es parte del etmoides como los cornetes superior y medio). Su cara externa delimita el meato inferior; presenta apófisis lagrimal, maxilar y etmoidal, y extremidades anterior (maxilar) y posterior (palatino).',
+            title: 'Concha nasal inferior (cornete inferior)',
+            description: 'Hueso par, independiente (no es parte del etmoides como las conchas nasales superior y media / cornetes). Su cara externa delimita el meato inferior; presenta procesos lagrimal, maxilar y etmoidal (apófisis), y extremidades anterior (maxilar) y posterior (palatino).',
           },
         ],
       },
@@ -770,11 +773,11 @@ export const anatomiaUadTopics: Topic[] = [
         id: 'cah-6',
         number: 6,
         title: 'Hueso palatino',
-        keyTerms: ['Porción horizontal', 'Porción vertical', 'Espina nasal posterior', 'Agujero esfenopalatino', 'Surco palatino mayor', 'Apófisis piramidal'],
+        keyTerms: ['Porción horizontal', 'Porción vertical', 'Espina nasal posterior', 'Foramen esfenopalatino (agujero esfenopalatino)', 'Surco palatino mayor', 'Proceso piramidal (apófisis piramidal)'],
         blocks: [
           {
             type: 'paragraph',
-            content: 'Hueso par en forma de "L", profundo, entre el maxilar (delante) y la apófisis pterigoides del esfenoides (detrás). Tiene una porción horizontal y una porción vertical.',
+            content: 'Hueso par en forma de "L", profundo, entre el maxilar (delante) y el proceso pterigoides (apófisis pterigoides) del esfenoides (detrás). Tiene una porción horizontal y una porción vertical.',
           },
           {
             type: 'table',
@@ -785,7 +788,7 @@ export const anatomiaUadTopics: Topic[] = [
                 ['Horizontal', 'Cara superior: suelo de las fosas nasales · Cara inferior: techo de la cavidad bucal (1/3 posterior del paladar óseo) · Borde posterior: espina nasal posterior.'],
                 ['Vertical — cara externa', 'Fondo de la fosa pterigomaxilar; surco palatino mayor.'],
                 ['Vertical — cara interna', 'Pared lateral de las fosas nasales; crestas etmoidal y turbinal; meato medio e inferior.'],
-                ['Vertical — borde superior', 'Escotadura palatina; agujero esfenopalatino; apófisis orbitaria y esfenoidal.'],
+                ['Vertical — borde superior', 'Incisura palatina (escotadura palatina); foramen esfenopalatino (agujero esfenopalatino); procesos orbitario y esfenoidal (apófisis).'],
               ],
             },
           },
@@ -813,17 +816,17 @@ export const anatomiaUadTopics: Topic[] = [
   {
     id: 'columna-vertebral',
     title: 'Columna Vertebral',
-    subtitle: 'Curvaturas, vértebra típica y caracteres de cada región: cervical, dorsal, lumbar, sacra y coccígea',
+    subtitle: 'Curvaturas, vértebra típica y caracteres de cada región: cervical, torácica (dorsal), lumbar, sacra y coccígea',
     colorKey: 'osteologia',
     emoji: '🦴',
     keyPoints: [
-      '24 vértebras presacras móviles: 7 cervicales, 12 dorsales (torácicas) y 5 lumbares, más el sacro y el cóccix.',
+      '24 vértebras presacras móviles: 7 cervicales, 12 torácicas (dorsales) y 5 lumbares, más el sacro y el cóccix.',
       'La columna representa ~2/5 de la altura total del cuerpo; el ángulo lumbosacro mide 130–160°.',
-      'Curvaturas PRIMARIAS (dorsal y sacra) están presentes desde la vida fetal; las SECUNDARIAS (cervical y lumbar) aparecen después del nacimiento.',
+      'Curvaturas PRIMARIAS (torácica y sacra) están presentes desde la vida fetal; las SECUNDARIAS (cervical y lumbar) aparecen después del nacimiento.',
       'La cifosis acentúa las curvaturas primarias y la lordosis las secundarias (ambas anteroposteriores); la escoliosis es una desviación lateral.',
-      'La vértebra típica tiene cuerpo, arco (2 pedículos + 2 láminas) y 7 apófisis (2 transversas, 1 espinosa y 4 articulares).',
-      'Los agujeros transversos son exclusivos de las cervicales; la apófisis odontoides (diente) es exclusiva del axis (C2).',
-      'El agujero vertebral es triangular en cervicales y lumbares, y circular en las dorsales.',
+      'La vértebra típica tiene cuerpo, arco (2 pedículos + 2 láminas) y 7 procesos (apófisis): 2 transversos, 1 espinoso y 4 articulares.',
+      'Los forámenes transversos (agujeros transversos) son exclusivos de las cervicales; el diente del axis (apófisis odontoides) es exclusivo del axis (C2).',
+      'El foramen vertebral (agujero vertebral) es triangular en cervicales y lumbares, y circular en las torácicas.',
       'El sacro son 5 vértebras fusionadas; el cóccix, 4.',
     ],
     sections: [
@@ -835,17 +838,17 @@ export const anatomiaUadTopics: Topic[] = [
         blocks: [
           {
             type: 'paragraph',
-            content: 'La columna vertebral (raquis) está formada por 24 vértebras presacras móviles —7 cervicales, 12 dorsales (torácicas) y 5 lumbares—, más el sacro y el cóccix. Representa aproximadamente 2/5 de la altura total del cuerpo; el ángulo lumbosacro mide 130–160°.',
+            content: 'La columna vertebral (raquis) está formada por 24 vértebras presacras móviles —7 cervicales, 12 torácicas (dorsales) y 5 lumbares—, más el sacro y el cóccix. Representa aproximadamente 2/5 de la altura total del cuerpo; el ángulo lumbosacro mide 130–160°.',
           },
           {
             type: 'note',
-            title: 'Nomenclatura clásica ↔ TA',
-            content: 'Vértebras dorsales = vértebras torácicas (TA). Apófisis odontoides = diente del axis. Apófisis transversa lumbar = proceso costiforme (costal). El término principal en el examen es el clásico.',
+            title: 'Nomenclatura: TA principal, clásica entre paréntesis',
+            content: 'MedCore usa la TA como término principal: vértebras torácicas (dorsales); diente del axis (apófisis odontoides); proceso espinoso, transverso y articular (apófisis); proceso costiforme/costal (apófisis transversa lumbar); foramen (agujero). En el examen la forma clásica cuenta como correcta, por eso acompaña siempre a la TA.',
           },
           {
             type: 'comparison',
             title: 'Curvaturas de la columna',
-            left: { title: 'Primarias', items: ['Cóncavas hacia adelante (cifóticas).', 'Dorsal (torácica) y sacra.', 'Presentes desde la vida fetal.'] },
+            left: { title: 'Primarias', items: ['Cóncavas hacia adelante (cifóticas).', 'Torácica (dorsal) y sacra.', 'Presentes desde la vida fetal.'] },
             right: { title: 'Secundarias', items: ['Cóncavas hacia atrás (lordóticas).', 'Cervical y lumbar.', 'Aparecen tras el nacimiento (sostener la cabeza, bipedestación).'] },
           },
           {
@@ -866,11 +869,11 @@ export const anatomiaUadTopics: Topic[] = [
         id: 'col-2',
         number: 2,
         title: 'Vértebra típica',
-        keyTerms: ['Cuerpo vertebral', 'Arco vertebral', 'Pedículos', 'Escotaduras', 'Láminas', 'Apófisis espinosa', 'Apófisis transversas', 'Apófisis articulares', 'Agujero vertebral', 'Agujero intervertebral'],
+        keyTerms: ['Cuerpo vertebral', 'Arco vertebral', 'Pedículos', 'Incisuras (escotaduras)', 'Láminas', 'Proceso espinoso (apófisis espinosa)', 'Procesos transversos (apófisis)', 'Procesos articulares (apófisis)', 'Foramen vertebral (agujero vertebral)', 'Foramen intervertebral (agujero intervertebral)'],
         blocks: [
           {
             type: 'paragraph',
-            content: 'Una vértebra típica consta de un cuerpo (anterior) y un arco vertebral (posterior). Entre ambos queda el agujero vertebral; la suma de los agujeros forma el conducto vertebral, que aloja la médula espinal.',
+            content: 'Una vértebra típica consta de un cuerpo (anterior) y un arco vertebral (posterior). Entre ambos queda el foramen vertebral (agujero vertebral); la suma de los forámenes forma el conducto vertebral, que aloja la médula espinal.',
           },
           {
             type: 'table',
@@ -879,9 +882,9 @@ export const anatomiaUadTopics: Topic[] = [
               headers: ['Parte', 'Componentes'],
               rows: [
                 ['Cuerpo', 'Porción anterior, cilíndrica; soporta el peso.'],
-                ['Arco vertebral', '2 pedículos (con escotaduras superior e inferior) + 2 láminas.'],
-                ['Apófisis (7)', '2 transversas, 1 espinosa, 2 articulares superiores y 2 articulares inferiores.'],
-                ['Aberturas', 'Agujero vertebral; agujero intervertebral (de conjunción) entre las escotaduras de dos vértebras contiguas, da paso al nervio espinal.'],
+                ['Arco vertebral', '2 pedículos (con incisuras / escotaduras superior e inferior) + 2 láminas.'],
+                ['Procesos (7) — apófisis', '2 transversos, 1 espinoso, 2 articulares superiores y 2 articulares inferiores.'],
+                ['Aberturas', 'Foramen vertebral (agujero vertebral); foramen intervertebral (agujero intervertebral / de conjunción) entre las incisuras de dos vértebras contiguas, da paso al nervio espinal.'],
               ],
             },
           },
@@ -891,7 +894,7 @@ export const anatomiaUadTopics: Topic[] = [
         id: 'col-3',
         number: 3,
         title: 'Vértebras cervicales',
-        keyTerms: ['C3–C6 típicas', 'Agujero transverso', 'Apófisis espinosa bífida', 'Apófisis unciforme', 'Atlas (C1)', 'Axis (C2)', 'Apófisis odontoides', 'C7 prominente'],
+        keyTerms: ['C3–C6 típicas', 'Foramen transverso (agujero transverso)', 'Proceso espinoso bífido (apófisis espinosa)', 'Proceso unciforme (uncus)', 'Atlas (C1)', 'Axis (C2)', 'Diente del axis (apófisis odontoides)', 'C7 prominente'],
         blocks: [
           {
             type: 'table',
@@ -900,55 +903,55 @@ export const anatomiaUadTopics: Topic[] = [
               headers: ['Rasgo', 'Característica'],
               rows: [
                 ['Cuerpo', 'Pequeño y ancho (transversalmente).'],
-                ['Agujero vertebral', 'Grande y triangular.'],
-                ['Apófisis espinosa', 'Corta y bífida.'],
-                ['Apófisis transversas', 'Con agujero transverso (paso de la arteria vertebral); tubérculos anterior y posterior.'],
-                ['Otros', 'Apófisis unciformes (uncus) en los bordes laterales del cuerpo.'],
+                ['Foramen vertebral (agujero vertebral)', 'Grande y triangular.'],
+                ['Proceso espinoso (apófisis espinosa)', 'Corto y bífido.'],
+                ['Procesos transversos (apófisis)', 'Con foramen transverso (agujero transverso; paso de la arteria vertebral); tubérculos anterior y posterior.'],
+                ['Otros', 'Procesos unciformes (uncus) en los bordes laterales del cuerpo.'],
               ],
             },
           },
           {
             type: 'comparison',
             title: 'Vértebras atípicas: atlas vs. axis',
-            left: { title: 'Atlas (C1)', items: ['No tiene cuerpo ni apófisis espinosa.', 'Arco anterior (tubérculo anterior) y arco posterior (tubérculo posterior).', '2 masas laterales con carillas para el occipital y el axis.'] },
-            right: { title: 'Axis (C2)', items: ['Presenta la apófisis odontoides (diente), que representa el cuerpo del atlas.', 'Es el pivote sobre el que rota el atlas (gesto de "no").', 'Apófisis espinosa robusta.'] },
+            left: { title: 'Atlas (C1)', items: ['No tiene cuerpo ni proceso espinoso (apófisis espinosa).', 'Arco anterior (tubérculo anterior) y arco posterior (tubérculo posterior).', '2 masas laterales con carillas para el occipital y el axis.'] },
+            right: { title: 'Axis (C2)', items: ['Presenta el diente del axis (apófisis odontoides), que representa el cuerpo del atlas.', 'Es el pivote sobre el que rota el atlas (gesto de "no").', 'Proceso espinoso (apófisis) robusto.'] },
           },
           {
             type: 'note',
-            content: 'C7 (vértebra prominente) es de transición: su apófisis espinosa es larga y NO bífida, palpable en la base del cuello.',
+            content: 'C7 (vértebra prominente) es de transición: su proceso espinoso (apófisis espinosa) es largo y NO bífido, palpable en la base del cuello.',
           },
         ],
       },
       {
         id: 'col-4',
         number: 4,
-        title: 'Vértebras dorsales (torácicas)',
-        keyTerms: ['D2–D8 típicas', 'Cuerpo reniforme', 'Carillas costales', 'Apófisis espinosa oblicua', 'D1', 'D11', 'D12 transición'],
+        title: 'Vértebras torácicas (dorsales)',
+        keyTerms: ['D2–D8 típicas', 'Cuerpo reniforme', 'Carillas costales', 'Proceso espinoso oblicuo (apófisis espinosa)', 'D1', 'D11', 'D12 transición'],
         blocks: [
           {
             type: 'table',
-            title: 'Dorsal típica (D2–D8)',
+            title: 'Torácica típica (D2–D8)',
             data: {
               headers: ['Rasgo', 'Característica'],
               rows: [
                 ['Cuerpo', 'Reniforme; con carillas (semicarillas) costales para la cabeza de la costilla.'],
-                ['Agujero vertebral', 'Pequeño y circular.'],
-                ['Apófisis espinosa', 'Larga y muy oblicua hacia abajo.'],
-                ['Apófisis transversas', 'Con carilla costal para el tubérculo de la costilla.'],
+                ['Foramen vertebral (agujero vertebral)', 'Pequeño y circular.'],
+                ['Proceso espinoso (apófisis espinosa)', 'Largo y muy oblicuo hacia abajo.'],
+                ['Procesos transversos (apófisis)', 'Con carilla costal para el tubérculo de la costilla.'],
               ],
             },
           },
           {
             type: 'table',
-            title: 'Dorsales atípicas',
+            title: 'Torácicas atípicas',
             data: {
               headers: ['Vértebra', 'Rasgo distintivo'],
               rows: [
-                ['D1', 'Carilla costal superior completa; apófisis espinosa casi horizontal (recta).'],
+                ['D1', 'Carilla costal superior completa; proceso espinoso (apófisis) casi horizontal (recto).'],
                 ['D9', 'Solo semicarilla costal superior (medialuna superior).'],
                 ['D10', 'Semicarilla costal superior (medialuna superior).'],
-                ['D11', 'Carilla costal completa única; sin carillas costales en las apófisis transversas.'],
-                ['D12 (transición)', 'Carilla completa única; apófisis espinosa recta; tubérculos mamilar, accesorio y costal.'],
+                ['D11', 'Carilla costal completa única; sin carillas costales en los procesos transversos (apófisis).'],
+                ['D12 (transición)', 'Carilla completa única; proceso espinoso (apófisis) recto; tubérculos mamilar, accesorio y costal.'],
               ],
             },
           },
@@ -958,7 +961,7 @@ export const anatomiaUadTopics: Topic[] = [
         id: 'col-5',
         number: 5,
         title: 'Vértebras lumbares',
-        keyTerms: ['L1–L4 típicas', 'Cuerpo reniforme grande', 'Apófisis espinosa cuadrilátera', 'Apófisis costiforme', 'Tubérculo mamilar', 'Tubérculo accesorio', 'L5 transición'],
+        keyTerms: ['L1–L4 típicas', 'Cuerpo reniforme grande', 'Proceso espinoso cuadrilátero (apófisis espinosa)', 'Proceso costiforme (apófisis costiforme)', 'Tubérculo mamilar', 'Tubérculo accesorio', 'L5 transición'],
         blocks: [
           {
             type: 'table',
@@ -967,15 +970,15 @@ export const anatomiaUadTopics: Topic[] = [
               headers: ['Rasgo', 'Característica'],
               rows: [
                 ['Cuerpo', 'Grande y reniforme; soporta la mayor carga.'],
-                ['Agujero vertebral', 'Triangular.'],
-                ['Apófisis espinosa', 'Gruesa, cuadrilátera y horizontal.'],
-                ['Apófisis transversas', 'Largas y delgadas (apófisis costiformes/costales); tubérculos accesorio y mamilar.'],
+                ['Foramen vertebral (agujero vertebral)', 'Triangular.'],
+                ['Proceso espinoso (apófisis espinosa)', 'Grueso, cuadrilátero y horizontal.'],
+                ['Procesos transversos (apófisis)', 'Largos y delgados (procesos costiformes/costales); tubérculos accesorio y mamilar.'],
               ],
             },
           },
           {
             type: 'note',
-            content: 'L5 (transición) tiene el cuerpo más grueso por delante que por detrás —contribuye al ángulo lumbosacro— y apófisis transversas grandes y prominentes.',
+            content: 'L5 (transición) tiene el cuerpo más grueso por delante que por detrás —contribuye al ángulo lumbosacro— y procesos transversos (apófisis) grandes y prominentes.',
           },
         ],
       },
@@ -983,7 +986,7 @@ export const anatomiaUadTopics: Topic[] = [
         id: 'col-6',
         number: 6,
         title: 'Sacro',
-        keyTerms: ['5 vértebras fusionadas', 'Cara pélvica', 'Cara dorsal', 'Cresta sacra media', 'Agujeros sacros', 'Promontorio', 'Hiato sacro', 'Astas del sacro', 'Conducto sacro'],
+        keyTerms: ['5 vértebras fusionadas', 'Cara pélvica', 'Cara dorsal', 'Cresta sacra media', 'Forámenes sacros (agujeros sacros)', 'Promontorio', 'Hiato sacro', 'Astas del sacro', 'Conducto sacro'],
         blocks: [
           {
             type: 'paragraph',
@@ -995,10 +998,10 @@ export const anatomiaUadTopics: Topic[] = [
             data: {
               headers: ['Elemento', 'Detalle'],
               rows: [
-                ['Cara anterior (pélvica)', 'Cóncava y lisa; 4 líneas transversales (fusión) y 4 pares de agujeros sacros anteriores.'],
-                ['Cara posterior (dorsal)', 'Convexa y rugosa; crestas sacras media, intermedia y lateral; astas del sacro; 4 pares de agujeros sacros posteriores; hiato sacro.'],
+                ['Cara anterior (pélvica)', 'Cóncava y lisa; 4 líneas transversales (fusión) y 4 pares de forámenes sacros anteriores (agujeros sacros).'],
+                ['Cara posterior (dorsal)', 'Convexa y rugosa; crestas sacras media, intermedia y lateral; astas del sacro; 4 pares de forámenes sacros posteriores (agujeros sacros); hiato sacro.'],
                 ['Bordes laterales', 'Superficie auricular (articula con el ilion) y tuberosidad sacra.'],
-                ['Base', 'Promontorio; carilla articular lumbosacra; conducto sacro; aletas (alas) sacras; 2 apófisis articulares superiores.'],
+                ['Base', 'Promontorio; carilla articular lumbosacra; conducto sacro; aletas (alas) sacras; 2 procesos articulares superiores (apófisis).'],
               ],
             },
           },
@@ -1026,20 +1029,20 @@ export const anatomiaUadTopics: Topic[] = [
         id: 'col-8',
         number: 8,
         title: 'Comparativa región por región',
-        keyTerms: ['Cervical', 'Dorsal', 'Lumbar', 'Sacra', 'Coccígea', 'Número de piezas'],
+        keyTerms: ['Cervical', 'Torácica (dorsal)', 'Lumbar', 'Sacra', 'Coccígea', 'Número de piezas'],
         blocks: [
           {
             type: 'table',
             title: 'Caracteres por región (el formato en que se pregunta)',
             data: {
-              headers: ['Rasgo', 'Cervical', 'Dorsal', 'Lumbar'],
+              headers: ['Rasgo', 'Cervical', 'Torácica', 'Lumbar'],
               rows: [
                 ['Nº de piezas', '7', '12', '5'],
                 ['Cuerpo', 'Pequeño, ancho', 'Reniforme, con carillas costales', 'Grande, reniforme'],
-                ['Agujero vertebral', 'Grande, triangular', 'Pequeño, circular', 'Triangular'],
-                ['Apófisis espinosa', 'Corta, bífida', 'Larga, oblicua', 'Gruesa, cuadrilátera'],
-                ['Apófisis transversas', 'Con agujero transverso', 'Con carilla costal', 'Largas (costiformes)'],
-                ['Rasgo exclusivo', 'Agujeros transversos; unciformes', 'Carillas costales', 'Tubérculos mamilar y accesorio'],
+                ['Foramen vertebral (agujero vertebral)', 'Grande, triangular', 'Pequeño, circular', 'Triangular'],
+                ['Proceso espinoso (apófisis)', 'Corto, bífido', 'Largo, oblicuo', 'Grueso, cuadrilátero'],
+                ['Procesos transversos (apófisis)', 'Con foramen transverso', 'Con carilla costal', 'Largos (costiformes)'],
+                ['Rasgo exclusivo', 'Forámenes transversos; unciformes', 'Carillas costales', 'Tubérculos mamilar y accesorio'],
               ],
             },
           },
