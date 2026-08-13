@@ -1,5 +1,5 @@
 /*
- * Inglés Médico I (UAD · IN01005) — Banco de ADELANTO. 80 reactivos.
+ * Inglés Médico I (UAD · IN01005) — Banco de ADELANTO. 68 reactivos.
  *
  * SEPARADO del banco de Semana 1 (ingles-uad-quizzes.ts): cubre las unidades
  * II a VI, tomadas del libro de texto y aún no impartidas. Se agrega a
@@ -10,7 +10,9 @@
  * contenido: el distractor DEBE ser la trampa del cognado.
  *
  * Distribución: 14 word-parts · 10 plurals · 14 verb-tenses ·
- * 12 sentence-structure · 12 abbreviations · 10 false-friends · 8 literature.
+ * 12 sentence-structure · 10 false-friends · 8 literature.
+ * (Las 12 de abbreviations se promovieron al banco impartido en la Semana 2,
+ * Clase 3 — ver ingles-uad-quizzes.ts.)
  */
 
 import type { Question } from '../types'
@@ -300,92 +302,6 @@ export const inglesAdelantoQuestions: Question[] = [
     options: ['Because', 'Although', 'If', 'So'],
     correctIndex: 1, difficulty: 'medium',
     explanation: '"Although" (aunque) introduce una concesión. "Because" daría causa; "if", condición.',
-  },
-
-  // ─── ABBREVIATIONS (iab) ─────────────────────────────────────────────
-  {
-    id: 'iab-q1', topicId: 'ingles-abbreviations', type: 'multiple-choice',
-    question: 'In a chart, "Dx" means:',
-    options: ['diagnosis', 'treatment', 'discharge', 'dosage'],
-    correctIndex: 0, difficulty: 'easy',
-    explanation: 'Dx = diagnosis (diagnóstico). Tx = treatment; Hx = history; Rx = prescription.',
-  },
-  {
-    id: 'iab-q2', topicId: 'ingles-abbreviations', type: 'multiple-choice',
-    question: 'In a chart, "Tx" means:',
-    options: ['test', 'transfer', 'treatment', 'toxicity'],
-    correctIndex: 2, difficulty: 'easy',
-    explanation: 'Tx = treatment (tratamiento).',
-  },
-  {
-    id: 'iab-q3', topicId: 'ingles-abbreviations', type: 'multiple-choice',
-    question: 'On a prescription, "prn" means:',
-    options: ['before meals', 'as needed', 'at bedtime', 'twice a day'],
-    correctIndex: 1, difficulty: 'medium',
-    explanation: 'prn (pro re nata) = según se necesite / a demanda.',
-  },
-  {
-    id: 'iab-q4', topicId: 'ingles-abbreviations', type: 'multiple-choice',
-    question: 'On a prescription, "bid" means:',
-    options: ['once a day', 'twice a day', 'three times a day', 'every hour'],
-    correctIndex: 1, difficulty: 'medium',
-    explanation: 'bid (bis in die) = dos veces al día. tid = tres veces; qid = cuatro veces.',
-  },
-  {
-    id: 'iab-q5', topicId: 'ingles-abbreviations', type: 'multiple-choice',
-    question: 'On a prescription, "po" means:',
-    options: ['by mouth', 'by injection', 'as needed', 'after meals'],
-    correctIndex: 0, difficulty: 'medium',
-    explanation: 'po (per os) = por vía oral, por la boca.',
-  },
-  {
-    id: 'iab-q6', topicId: 'ingles-abbreviations', type: 'multiple-choice',
-    question: 'In a note, "c/o" means:',
-    options: ['care of', 'check on', 'complains of', 'cleared out'],
-    correctIndex: 2, difficulty: 'medium',
-    explanation: 'c/o = complains of (refiere / se queja de).',
-  },
-  {
-    id: 'iab-q7', topicId: 'ingles-abbreviations', type: 'multiple-choice',
-    question: 'The abbreviation "SOB" in a chart means:',
-    options: ['sign of bleeding', 'shortness of breath', 'state of being', 'small obstruction'],
-    correctIndex: 1, difficulty: 'medium',
-    explanation: 'SOB = shortness of breath (disnea, falta de aire).',
-  },
-  {
-    id: 'iab-q8', topicId: 'ingles-abbreviations', type: 'multiple-choice',
-    question: 'Per the do-not-use list, instead of "U" you should write:',
-    options: ['units', 'u.', 'unit', 'IU'],
-    correctIndex: 2, difficulty: 'hard',
-    explanation: '"U" se confunde con 0, 4 o cc. La lista do-not-use pide escribir "unit" completo. Es un tema de seguridad del paciente.',
-  },
-  {
-    id: 'iab-q9', topicId: 'ingles-abbreviations', type: 'multiple-choice',
-    question: 'The laboratory abbreviation "CBC" means:',
-    options: ['central blood culture', 'complete blood count', 'chronic bronchial condition', 'cardiac baseline check'],
-    correctIndex: 1, difficulty: 'easy',
-    explanation: 'CBC = complete blood count (biometría hemática).',
-  },
-  {
-    id: 'iab-q10', topicId: 'ingles-abbreviations', type: 'multiple-choice',
-    question: 'On a prescription, "tid" means:',
-    options: ['once a day', 'twice a day', 'three times a day', 'as needed'],
-    correctIndex: 2, difficulty: 'medium',
-    explanation: 'tid (ter in die) = tres veces al día.',
-  },
-  {
-    id: 'iab-q11', topicId: 'ingles-abbreviations', type: 'multiple-choice',
-    question: 'Why is writing "1.0 mg" discouraged on the do-not-use list?',
-    options: ['It is too long', 'The trailing zero can be misread as 10 mg', 'It needs a leading zero', 'mg should be capitalized'],
-    correctIndex: 1, difficulty: 'hard',
-    explanation: 'El cero final ("1.0") es peligroso: si no se ve el punto, se lee 10 mg. Se escribe "1 mg". Es seguridad del paciente.',
-  },
-  {
-    id: 'iab-q12', topicId: 'ingles-abbreviations', type: 'multiple-choice',
-    question: 'The imaging abbreviation "MRI" means:',
-    options: ['medical record index', 'magnetic resonance imaging', 'multiple resistance infection', 'mean renal index'],
-    correctIndex: 1, difficulty: 'easy',
-    explanation: 'MRI = magnetic resonance imaging (resonancia magnética).',
   },
 
   // ─── FALSE FRIENDS (iff) — el distractor ES la trampa del cognado ─────

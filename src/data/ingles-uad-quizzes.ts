@@ -1,5 +1,5 @@
 /*
- * Inglés Médico I (UAD · IN01005) — Banco de reactivos, Semana 1. 40 preguntas.
+ * Inglés Médico I (UAD · IN01005) — Banco impartido (Semanas 1–2). 80 preguntas.
  *
  * IDIOMA: `question` y `options` en inglés (es lo que evalúa el examen);
  * `explanation` en español (es donde se aprende).
@@ -10,7 +10,9 @@
  * (imr-q11) y medical/medial (imr-q12). Ningún reactivo es respondible por
  * cognado: las opciones incorrectas son inglés plausible, no traducciones.
  *
- * Distribución: 14 imr · 14 pos · 12 wfp.
+ * Distribución: 14 imr · 14 pos · 12 wfp (Semana 1) · 12 ipl · 8 iwp ·
+ * 16 iab · 4 hcs (Semana 2). Las 12 abreviaturas (iab) y las 3 de repaso
+ * (iwp-q20–22) se promovieron/añadieron en la Semana 2, Clase 3.
  */
 
 import type { Question } from '../types'
@@ -423,5 +425,174 @@ export const inglesUadQuestions: Question[] = [
     options: ['above the skin', 'below the skin', 'within a vein', 'around the heart'],
     correctIndex: 1, difficulty: 'medium',
     explanation: 'hypo- (below) + derm/o (skin) + -ic (pertaining to) = relativo a debajo de la piel. Above the skin sería epidermal (epi-).',
+  },
+
+  // ─── ABBREVIATIONS (iab) — Semana 2 · Clase 3 (promovidos de adelanto) ─
+  {
+    id: 'iab-q1', topicId: 'ingles-abbreviations', type: 'multiple-choice',
+    question: 'In a chart, "Dx" means:',
+    options: ['diagnosis', 'treatment', 'discharge', 'dosage'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'Dx = diagnosis (diagnóstico). Tx = treatment; Hx = history; Rx = prescription.',
+  },
+  {
+    id: 'iab-q2', topicId: 'ingles-abbreviations', type: 'multiple-choice',
+    question: 'In a chart, "Tx" means:',
+    options: ['test', 'transfer', 'treatment', 'toxicity'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: 'Tx = treatment (tratamiento).',
+  },
+  {
+    id: 'iab-q3', topicId: 'ingles-abbreviations', type: 'multiple-choice',
+    question: 'On a prescription, "prn" means:',
+    options: ['before meals', 'as needed', 'at bedtime', 'twice a day'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'prn (pro re nata) = según se necesite / a demanda.',
+  },
+  {
+    id: 'iab-q4', topicId: 'ingles-abbreviations', type: 'multiple-choice',
+    question: 'On a prescription, "bid" means:',
+    options: ['once a day', 'twice a day', 'three times a day', 'every hour'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'bid (bis in die) = dos veces al día. tid = tres veces; qid = cuatro veces.',
+  },
+  {
+    id: 'iab-q5', topicId: 'ingles-abbreviations', type: 'multiple-choice',
+    question: 'On a prescription, "po" means:',
+    options: ['by mouth', 'by injection', 'as needed', 'after meals'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'po (per os) = por vía oral, por la boca.',
+  },
+  {
+    id: 'iab-q6', topicId: 'ingles-abbreviations', type: 'multiple-choice',
+    question: 'In a note, "c/o" means:',
+    options: ['care of', 'check on', 'complains of', 'cleared out'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'c/o = complains of (refiere / se queja de).',
+  },
+  {
+    id: 'iab-q7', topicId: 'ingles-abbreviations', type: 'multiple-choice',
+    question: 'The abbreviation "SOB" in a chart means:',
+    options: ['sign of bleeding', 'shortness of breath', 'state of being', 'small obstruction'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'SOB = shortness of breath (disnea, falta de aire).',
+  },
+  {
+    id: 'iab-q8', topicId: 'ingles-abbreviations', type: 'multiple-choice',
+    question: 'Per the do-not-use list, instead of "U" you should write:',
+    options: ['units', 'u.', 'unit', 'IU'],
+    correctIndex: 2, difficulty: 'hard',
+    explanation: '"U" se confunde con 0, 4 o cc. La lista do-not-use pide escribir "unit" completo. Es un tema de seguridad del paciente.',
+  },
+  {
+    id: 'iab-q9', topicId: 'ingles-abbreviations', type: 'multiple-choice',
+    question: 'The laboratory abbreviation "CBC" means:',
+    options: ['central blood culture', 'complete blood count', 'chronic bronchial condition', 'cardiac baseline check'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'CBC = complete blood count (biometría hemática).',
+  },
+  {
+    id: 'iab-q10', topicId: 'ingles-abbreviations', type: 'multiple-choice',
+    question: 'On a prescription, "tid" means:',
+    options: ['once a day', 'twice a day', 'three times a day', 'as needed'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'tid (ter in die) = tres veces al día.',
+  },
+  {
+    id: 'iab-q11', topicId: 'ingles-abbreviations', type: 'multiple-choice',
+    question: 'Why is writing "1.0 mg" discouraged on the do-not-use list?',
+    options: ['It is too long', 'The trailing zero can be misread as 10 mg', 'It needs a leading zero', 'mg should be capitalized'],
+    correctIndex: 1, difficulty: 'hard',
+    explanation: 'El cero final ("1.0") es peligroso: si no se ve el punto, se lee 10 mg. Se escribe "1 mg". Es seguridad del paciente.',
+  },
+  {
+    id: 'iab-q12', topicId: 'ingles-abbreviations', type: 'multiple-choice',
+    question: 'The imaging abbreviation "MRI" means:',
+    options: ['medical record index', 'magnetic resonance imaging', 'multiple resistance infection', 'mean renal index'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'MRI = magnetic resonance imaging (resonancia magnética).',
+  },
+
+  // ─── ABBREVIATIONS (iab) — nuevos de la Clase 3 (case sensitivity + lista) ─
+  {
+    id: 'iab-q13', topicId: 'ingles-abbreviations', type: 'multiple-choice',
+    question: 'In a report, "Ca" (capital C, lowercase a) may stand for:',
+    options: ['carbohydrate', 'only calcium', 'calcium or cancer', 'cardiac arrest'],
+    correctIndex: 2, difficulty: 'hard',
+    explanation: '"Ca" = calcium o cancer según el contexto. La mayúscula importa: "ca" (minúscula) no es lo mismo; ante la ambigüedad se escribe la palabra completa.',
+  },
+  {
+    id: 'iab-q14', topicId: 'ingles-abbreviations', type: 'multiple-choice',
+    question: 'The abbreviation "bx" means:',
+    options: ['biopsy', 'biology', 'both examinations', 'blood exam'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'bx / BX = biopsy (biopsia). No confundir con "Dx" (diagnosis) ni "Hx" (history).',
+  },
+  {
+    id: 'iab-q15', topicId: 'ingles-abbreviations', type: 'multiple-choice',
+    question: 'In an obstetric history, "AB" stands for:',
+    options: ['antibiotic', 'abortion', 'abdomen', 'abnormal'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'AB = abortion (aborto), en contexto obstétrico. El antibiótico suele abreviarse "abx".',
+  },
+  {
+    id: 'iab-q16', topicId: 'ingles-abbreviations', type: 'multiple-choice',
+    question: 'Which pair shows that CASE (upper vs lower) changes the meaning of an abbreviation?',
+    options: ['bid / tid', 'SM (simple mastectomy) vs sm (small)', 'CT / MRI', 'po / IV'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: '"SM" = simple mastectomy, pero "sm" (minúscula) = small. Las abreviaturas son sensibles a las mayúsculas: interpretarlas mal es un riesgo de seguridad.',
+  },
+
+  // ─── HEALTHCARE SETTINGS (hcs) — Semana 2 · Clase 3 (escenario → centro) ─
+  {
+    id: 'hcs-q1', topicId: 'ingles-healthcare-settings', type: 'multiple-choice',
+    question: 'A terminally ill patient needs comfort care for himself and his family. The best setting is:',
+    options: ['an acute care hospital', 'a rehabilitation center', 'an HMO', 'a hospice'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'Hospice = cuidados de soporte (no curativos) para pacientes terminales y sus familias. El acute care trata agudos; el rehab busca recuperar función.',
+  },
+  {
+    id: 'hcs-q2', topicId: 'ingles-healthcare-settings', type: 'multiple-choice',
+    question: 'An elderly patient who can no longer care for herself and needs prolonged care should go to:',
+    options: ['an outpatient center', 'a long-term care facility (nursing home)', "a physician's office", 'an acute care hospital'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Long-term care / nursing home = estancia prolongada para quien no puede cuidarse. El outpatient no tiene pernocta; el acute care es de corta estancia.',
+  },
+  {
+    id: 'hcs-q3', topicId: 'ingles-healthcare-settings', type: 'multiple-choice',
+    question: 'A patient has minor surgery and goes home the same day, with no overnight stay. This is:',
+    options: ['inpatient care', 'hospice care', 'ambulatory (outpatient) care', 'long-term care'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: 'Sin pernocta = ambulatory / outpatient. "Inpatient" implica ingreso; hospice y long-term no aplican a una cirugía menor ambulatoria.',
+  },
+  {
+    id: 'hcs-q4', topicId: 'ingles-healthcare-settings', type: 'multiple-choice',
+    question: 'A "Health Maintenance Organization (HMO)" is best described as:',
+    options: ['a home nursing service', 'a terminal-care facility', 'an intensive rehab center', 'a prepaid plan with a group of primary-care physicians and specialists'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'HMO = modelo de servicios PREPAGADOS a través de un grupo de médicos de primer contacto y especialistas; no es un lugar de cuidado terminal ni de rehabilitación.',
+  },
+
+  // ─── REVIEW (iwp) — matching game de la Clase 3 (interpretación) ───────
+  {
+    id: 'iwp-q20', topicId: 'ingles-word-parts', type: 'multiple-choice',
+    question: '"Nephromegaly" means:',
+    options: ['inflammation of the kidney', 'enlargement of the kidney', 'surgical removal of the kidney', 'a kidney stone'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'nephr/o (kidney) + -megaly (enlargement) = riñón agrandado. Inflammation sería -itis; removal, -ectomy; stone, -lith (nephrolith).',
+  },
+  {
+    id: 'iwp-q21', topicId: 'ingles-word-parts', type: 'multiple-choice',
+    question: '"Glycosuria" means:',
+    options: ['sugar in the urine', 'blood in the urine', 'painful urination', 'absence of urine'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'glyc/o (sugar) + -uria (urine condition) = glucosa en la orina. Blood sería hemat-/hematuria; painful, dysuria.',
+  },
+  {
+    id: 'iwp-q22', topicId: 'ingles-word-parts', type: 'multiple-choice',
+    question: '"Hyperkalemia" refers to:',
+    options: ['low potassium in blood', 'high calcium in blood', 'high potassium in blood', 'high sugar in blood'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'hyper- (high) + kal(i) (potassium) + -emia (blood condition) = potasio alto en sangre. "Hypo-" sería bajo; el calcio es calc-, el azúcar glyc-.',
   },
 ]
