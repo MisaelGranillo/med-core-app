@@ -1654,6 +1654,116 @@ export const inglesUadTopics: Topic[] = [
     ],
   },
 
+  // ── Semana 2 · Clase 3 (impartida) ────────────────────────────────────
+  {
+    id: 'ingles-healthcare-settings',
+    title: 'Healthcare settings',
+    subtitle: 'Tipos de centros donde se usa la terminología médica',
+    colorKey: 'comunicacion',
+    emoji: '🏥',
+    keyPoints: [
+      'Los healthcare settings son los distintos centros donde se usa la terminología médica.',
+      'Acute care / general hospital: atención de corta estancia; suele incluir urgencias y obstetricia.',
+      'Ambulatory / outpatient center: SIN pernocta; desde cirugía menor hasta diagnóstico o terapia.',
+      'Long-term care / nursing home: estancia prolongada para quien necesita más recuperación o no puede cuidarse solo.',
+      'HMO: servicios prepagados a través de un grupo de médicos de primer contacto y especialistas.',
+      'Home health care: enfermería, terapia o cuidado personal en el domicilio del paciente.',
+      'Rehabilitation center: fisioterapia y terapia ocupacional intensivas (hospitalizado o ambulatorio).',
+      'Hospice: cuidados de soporte (no curativos) para pacientes terminales y sus familias.',
+    ],
+    sections: [
+      {
+        // Fuente: diapositivas «Healthcare settings» (Semana 2, Clase 3).
+        id: 'hcs-1',
+        number: 1,
+        title: 'Types of healthcare settings',
+        keyTerms: ['Acute care hospital', 'Specialty care hospital', 'Long-term care', 'Ambulatory / Outpatient center', "Physician's office", 'HMO', 'Home health care', 'Rehabilitation center', 'Hospice'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La terminología médica se usa en muchos tipos de centros de salud. Cada uno se define por el tiempo de estancia del paciente (corta, prolongada o sin pernocta), el tipo de atención (general, especializada, domiciliaria) y el modelo de pago. Se conservan los nombres en inglés (es lo que se evalúa) con su definición en español.',
+          },
+          {
+            type: 'table',
+            title: 'Healthcare settings — definición',
+            data: {
+              headers: ['Setting (inglés)', 'Definición (español)'],
+              rows: [
+                ['Acute care / General hospital', 'Diagnostica y trata por periodos CORTOS; suele ofrecer también urgencias y atención obstétrica.'],
+                ['Specialty care hospital', 'Se enfoca en tipos de enfermedad muy específicos (p. ej. psiquiátrico).'],
+                ['Nursing home / Long-term care facility', 'Cuidado prolongado para quien necesita más tiempo de recuperación o ya no puede cuidarse a sí mismo.'],
+                ['Ambulatory / Surgical / Outpatient center', 'SIN pernocta; desde cirugías simples hasta pruebas diagnósticas o terapia.'],
+                ["Physician's office", 'Diagnóstico y tratamiento en un consultorio privado.'],
+                ['Health Maintenance Organization (HMO)', 'Amplia gama de servicios PREPAGADOS a través de un grupo de médicos de primer contacto y especialistas.'],
+                ['Home health care', 'Enfermería, terapia, cuidado personal o del hogar en el domicilio del paciente.'],
+                ['Rehabilitation center', 'Fisioterapia y terapia ocupacional intensivas (hospitalizado y ambulatorio).'],
+                ['Hospice', 'Tratamiento de soporte para pacientes terminales y sus familias.'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hcs-2',
+        number: 2,
+        title: 'Outpatient vs inpatient / long-term',
+        keyTerms: ['outpatient', 'inpatient', 'ambulatory', 'overnight stay', 'long-term care'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Sin pernocta vs con estancia',
+            left: {
+              title: 'Ambulatory / Outpatient (sin pernocta)',
+              items: [
+                'El paciente NO se queda a dormir (no overnight stay).',
+                'Ambulatory / surgical / outpatient center: cirugía menor, diagnóstico o terapia.',
+                "Physician's office: consulta y tratamiento en consultorio.",
+                'La rehabilitación puede ser ambulatoria.',
+              ],
+            },
+            right: {
+              title: 'Inpatient / Long-term (con estancia)',
+              items: [
+                'El paciente ingresa y pernocta (admitted / inpatient).',
+                'Acute care hospital: estancia CORTA (agudos, urgencias, obstetricia).',
+                'Nursing home / long-term care: estancia PROLONGADA.',
+                'La rehabilitación también puede ser hospitalizada.',
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'La palabra clave para distinguirlos es la pernocta: "outpatient/ambulatory" = sin quedarse a dormir; "inpatient" = ingresado. "Acute" apunta a corto plazo; "long-term", a estancia prolongada.',
+          },
+        ],
+      },
+      {
+        id: 'hcs-3',
+        number: 3,
+        title: 'HMO, home health, rehab & hospice',
+        keyTerms: ['HMO', 'home health care', 'rehabilitation center', 'hospice', 'palliative'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'No confundir cuatro que suelen mezclarse',
+            content:
+              'HMO no es un lugar físico sino un MODELO de pago: servicios prepagados a través de un grupo de médicos. Home health care lleva la atención al DOMICILIO del paciente. Rehabilitation center ofrece terapia física y ocupacional intensiva. Hospice da cuidados de SOPORTE (no curativos) a pacientes terminales y sus familias.',
+          },
+          {
+            type: 'list',
+            title: 'Regla rápida por escenario',
+            items: [
+              'Paciente terminal, cuidado de confort para él y su familia → hospice.',
+              'Recuperación intensiva con fisioterapia tras un ictus o cirugía → rehabilitation center.',
+              'Curas y terapia en casa del paciente → home health care.',
+              'Plan prepagado con médicos de primer contacto y especialistas → HMO.',
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
   // ── Unidad V · Semana 4 ───────────────────────────────────────────────
   {
     id: 'ingles-false-friends',

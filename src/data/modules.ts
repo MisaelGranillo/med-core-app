@@ -29,9 +29,9 @@ export const modules: Module[] = [
     id: 'ingles-medico-uad-s2',
     badge: 'UAD · Inglés Médico I — Semana 2',
     title: 'Terminología médica: construcción de términos',
-    subtitle: 'Construcción de términos, interpretación y formación de plurales.',
+    subtitle: 'Construcción de términos, plurales, abreviaturas y healthcare settings.',
     emoji: '🧬',
-    topicIds: ['ingles-word-parts', 'ingles-plurals', 'ingles-abbreviations'],
+    topicIds: ['ingles-word-parts', 'ingles-plurals', 'ingles-abbreviations', 'ingles-healthcare-settings'],
   },
   {
     id: 'anatomia',
