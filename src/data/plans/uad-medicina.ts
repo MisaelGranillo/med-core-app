@@ -129,23 +129,23 @@ export const uadMedicina: Plan = {
               {
                 number: 2,
                 title: 'Osteología II: tórax y miembros',
-                // PARCIAL: se impartieron las Clases 1 (tórax óseo), 2 (miembro
-                // superior óseo) y 3 (hueso coxal). El resto del miembro inferior
-                // —fémur, tibia, peroné y pie— aún NO se ha impartido: llega en
-                // Fase 4. Se usa 'impartido' porque el tipo no tiene "en-curso";
-                // los temas de abajo dejan claro qué falta.
+                // COMPLETA: se impartieron las Clases 1 (tórax óseo), 2 (miembro
+                // superior óseo), 3 (hueso coxal) y 4 (miembro inferior óseo:
+                // fémur, tibia, peroné y pie). Semana 2 de osteología cubierta;
+                // lo siguiente es artrología y miología (Semana 3).
                 estado: 'impartido',
-                topicIds: ['torax-oseo', 'miembro-superior-oseo', 'hueso-coxal'],
+                topicIds: ['torax-oseo', 'miembro-superior-oseo', 'hueso-coxal', 'miembro-inferior-oseo'],
                 temas: [
                   'Clase 1 (impartida): esqueleto del tórax — esternón y costillas',
                   'Clase 2 (impartida): esqueleto del miembro superior — clavícula, escápula, húmero, radio, cúbito y mano',
                   'Clase 3 (impartida): hueso coxal (pelvis ósea) — ilion, isquion, pubis y acetábulo',
-                  'Por impartir: fémur, tibia, peroné y huesos del pie',
+                  'Clase 4 (impartida): miembro inferior óseo — fémur, tibia, peroné (fíbula) y huesos del pie',
                 ],
                 fuentes: [
                   { title: 'Moore — Anatomía con orientación clínica', file: 'Moore Anatomía.pdf', paginas: 'cap. Tórax, Esqueleto del tórax, libro 45–57 (PDF 69–81)', nota: 'Caja torácica, esternón, costillas típicas y especiales.' },
                   { title: 'Moore — Anatomía con orientación clínica', file: 'Moore Anatomía.pdf', paginas: 'cap. Miembro superior, Huesos del miembro superior, libro 398–408 (PDF 422–432)', nota: 'Clavícula, escápula, húmero, radio, cúbito y huesos de la mano.' },
                   { title: 'Moore — Anatomía con orientación clínica', file: 'Moore Anatomía.pdf', paginas: 'cap. Pelvis y Periné, Cintura pélvica (pelvis ósea / hueso coxal), libro 196–200 (PDF 220–224)', nota: 'Hueso coxal: ilion, isquion, pubis y acetábulo; fig. 3-2 «Hueso coxal».' },
+                  { title: 'Moore — Anatomía con orientación clínica', file: 'Moore Anatomía.pdf', paginas: 'cap. Miembro inferior, Huesos del miembro inferior, libro 311–317 (PDF 335–341)', nota: 'Fémur, tibia, peroné (fíbula) y huesos del pie (tarso, metatarso y falanges).' },
                 ],
               },
               {
@@ -188,6 +188,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 2 · Clase 1 — Tórax óseo (esternón y costillas)', file: 'Semana 2 - Clase 1 Torax Oseo.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 2 — Miembro superior óseo', file: 'Semana 2 - Clase 2 Miembro Superior Oseo.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 3 — Hueso coxal (pelvis ósea)', file: 'Semana 2 - Clase 3 Hueso Coxal.pdf', kind: 'Clase' },
+              { title: 'Semana 2 · Clase 4 — Miembro inferior óseo (fémur, tibia, peroné y pie)', file: 'Semana 2 - Clase 4 Miembro Inferior Oseo.pdf', kind: 'Clase' },
               { title: 'Manual de Anatomía I', file: 'MANUAL ANATOMIA I.pdf', kind: 'Manual' },
               { title: 'Manual de Anatomía Humana y su Disección 1', file: 'MANUAL DE ANATOMIA HUMANA Y SU DISECCION 1.pdf', kind: 'Manual' },
               { title: 'Programa Académico — Anatomía I', file: 'PROGRAMA ANATOMIA I.pdf', kind: 'Programa' },

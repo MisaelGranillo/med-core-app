@@ -12,10 +12,10 @@ export const modules: Module[] = [
   {
     id: 'anatomia-uad-s2',
     badge: 'UAD · Anatomía Humana y Disección I — Semana 2',
-    title: 'Osteología — Tórax, miembro superior y hueso coxal',
-    subtitle: 'Semana 2: tórax, miembro superior y hueso coxal. Fémur, pierna y pie por impartir.',
-    emoji: '🦾',
-    topicIds: ['torax-oseo', 'miembro-superior-oseo', 'hueso-coxal'],
+    title: 'Osteología — Tórax y miembros',
+    subtitle: 'Semana 2: osteología del tórax y de los miembros superior e inferior.',
+    emoji: '🦿',
+    topicIds: ['torax-oseo', 'miembro-superior-oseo', 'hueso-coxal', 'miembro-inferior-oseo'],
   },
   {
     id: 'ingles-medico-uad',
