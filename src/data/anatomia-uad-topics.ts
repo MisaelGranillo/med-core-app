@@ -2065,4 +2065,132 @@ export const anatomiaUadTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'repaso-2p',
+    title: 'Repaso 2º Parcial — osteología de los miembros y la pelvis',
+    subtitle: 'Puntos que el profesor marcó como evaluables (30 preguntas)',
+    colorKey: 'osteologia',
+    emoji: '📝',
+    keyPoints: [
+      'Articulación glenohumeral = cavidad glenoidea (de la escápula) + cabeza del húmero.',
+      'El pisiforme es un hueso sesamoideo del carpo; la rótula (patela) es el sesamoideo más grande del cuerpo.',
+      'El gancho pertenece al hueso ganchoso (hamate); la fractura más frecuente del carpo es la del escafoides.',
+      'El cúbito NO se articula directamente con el carpo: se interpone un disco articular (fibrocartílago triangular).',
+      'En posición anatómica: radio lateral (pulgar) y cúbito medial; la cabeza del radio es proximal y la del cúbito, distal.',
+      'Maléolo medial (interno) = tibia; maléolo lateral (externo) = peroné (fíbula).',
+      'El talón es el calcáneo; el hueso del pie que articula con la pierna (tobillo) es el astrágalo (talus).',
+      'El fémur es el hueso más largo; el peso lo soportan el fémur y la tibia (el peroné casi no).',
+    ],
+    sections: [
+      {
+        id: 'rep-1',
+        number: 1,
+        title: 'Cómo usar este repaso',
+        keyTerms: ['2º parcial', 'osteología', 'miembros', 'pelvis'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Repaso para el 2º parcial',
+            content:
+              'No es contenido nuevo; concentra lo que el profesor marcó como evaluable en su deck "REPASO SEGUNDO PARCIAL". Cada estructura se estudia a fondo en su Topic de origen. El examen tiene 30 preguntas sobre la osteología de los miembros y la pelvis.',
+          },
+          {
+            type: 'list',
+            title: 'Estudia a fondo en su Topic de origen',
+            items: [
+              'Cintura escapular, húmero, radio, cúbito y mano → «Miembro superior óseo».',
+              'Hueso coxal (ilion, isquion, pubis y acetábulo) → «Hueso coxal».',
+              'Fémur, tibia, peroné (fíbula) y huesos del pie → «Miembro inferior óseo».',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Nomenclatura: TA principal, clásica entre paréntesis',
+            content:
+              'Se usa la Terminología Anatómica (TA) como principal y el clásico del profesor entre paréntesis; en el examen el clásico CUENTA como correcto. Este repaso es denso en nomenclatura clásica: troquíter, troquín, epitróclea, corredera bicipital, peroné, astrágalo y escafoides.',
+          },
+        ],
+      },
+      {
+        id: 'rep-2',
+        number: 2,
+        title: 'Puntos evaluables por región',
+        keyTerms: ['cintura escapular', 'húmero', 'radio', 'cúbito', 'carpo', 'miembro inferior', 'hueso coxal', 'pie'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Lo que marcó el profesor, por región',
+            data: {
+              headers: ['Región', 'Puntos clave'],
+              rows: [
+                ['Cintura escapular', 'Clavícula + escápula. Cara anterior: fosa subescapular. Cara posterior: espina, acromion, fosa supraespinosa e infraespinosa. Glenohumeral = cavidad glenoidea + cabeza del húmero.'],
+                ['Húmero (proximal)', 'Cabeza, cuello anatómico, cuello quirúrgico (se fractura), tubérculo mayor (troquíter), tubérculo menor (troquín) y surco intertubercular (corredera bicipital).'],
+                ['Húmero (distal)', 'Tróclea, capítulo (cóndilo), epicóndilo medial (epitróclea), epicóndilo lateral, fosa coronoidea, fosa radial y fosa del olécranon (posterior).'],
+                ['Radio y cúbito', 'Radio lateral, cúbito medial; membrana interósea entre ambos. Cúbito proximal: olécranon, proceso coronoides, incisura troclear y radial (escotaduras). Cúbito distal: cabeza y proceso estiloides.'],
+                ['Carpo', 'Fila proximal: escafoides, semilunar, piramidal y pisiforme (sesamoideo). Fila distal: trapecio, trapezoide, hueso grande y ganchoso (el gancho). Radiocarpiana: escafoides y semilunar.'],
+                ['Mano', 'Metacarpianos: 5, del I al V de lateral a medial. Falanges: proximal, media y distal; el pulgar solo tiene 2.'],
+                ['Miembro inferior', 'Fémur = hueso más largo. Soportan peso: fémur y tibia. Rótula (patela) = sesamoideo más grande. Tobillo (talocrural): tibia + peroné + astrágalo.'],
+                ['Hueso coxal', 'Ilion + isquion + pubis → acetábulo. Tuberosidad isquiática (apoyo al sentarse); espina isquiática entre las dos incisuras isquiáticas (escotaduras ciáticas).'],
+                ['Pie', 'Tarso = 7 huesos. Talón = calcáneo. Articula con la pierna = astrágalo (talus).'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'rep-3',
+        number: 3,
+        title: 'Las trampas clásicas',
+        keyTerms: ['troquíter', 'troquín', 'epitróclea', 'radio', 'cúbito', 'maléolo medial', 'maléolo lateral'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Troquíter vs. troquín (húmero)',
+            left: { title: 'Troquíter', items: ['Es el tubérculo MAYOR del húmero.', 'Lateral.'] },
+            right: { title: 'Troquín', items: ['Es el tubérculo MENOR del húmero.', 'Anterior; entre ambos corre la corredera bicipital (surco intertubercular).'] },
+          },
+          {
+            type: 'comparison',
+            title: 'Epitróclea vs. epicóndilo (húmero distal)',
+            left: { title: 'Epitróclea', items: ['Es el epicóndilo MEDIAL.', 'Da origen a los flexores del antebrazo.'] },
+            right: { title: 'Epicóndilo (a secas)', items: ['Es el epicóndilo LATERAL.', 'Da origen a los extensores.'] },
+          },
+          {
+            type: 'comparison',
+            title: 'Radio vs. cúbito (posición anatómica)',
+            left: { title: 'Radio', items: ['Lateral (lado del pulgar).', 'Su cabeza es PROXIMAL (codo).'] },
+            right: { title: 'Cúbito (ulna)', items: ['Medial.', 'Su cabeza es DISTAL (muñeca).'] },
+          },
+          {
+            type: 'comparison',
+            title: 'Maléolo medial vs. lateral (tobillo)',
+            left: { title: 'Maléolo medial (interno)', items: ['Pertenece a la TIBIA.'] },
+            right: { title: 'Maléolo lateral (externo)', items: ['Pertenece al PERONÉ (fíbula); desciende más.'] },
+          },
+        ],
+      },
+      {
+        id: 'rep-4',
+        number: 4,
+        title: 'Datos que el profesor repite',
+        keyTerms: ['glenohumeral', 'pisiforme', 'ganchoso', 'escafoides', 'disco articular', 'rótula', 'calcáneo', 'astrágalo'],
+        blocks: [
+          {
+            type: 'keypoints',
+            title: 'Los que más caen',
+            items: [
+              'Glenohumeral = cavidad glenoidea (escápula) + cabeza del húmero.',
+              'Pisiforme = hueso sesamoideo del carpo; rótula (patela) = sesamoideo más grande del cuerpo.',
+              'El gancho es del hueso ganchoso (hamate).',
+              'Fractura más frecuente del carpo = escafoides.',
+              'El cúbito NO toca el carpo: se interpone un disco articular (fibrocartílago triangular).',
+              'Más medial de la fila proximal = pisiforme; más lateral = escafoides.',
+              'Talón = calcáneo; articula con la pierna el astrágalo (talus).',
+              'Maléolo medial = tibia; maléolo lateral = peroné (fíbula).',
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ]
