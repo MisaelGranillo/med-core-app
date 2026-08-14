@@ -18,6 +18,14 @@ export const modules: Module[] = [
     topicIds: ['torax-oseo', 'miembro-superior-oseo', 'hueso-coxal', 'miembro-inferior-oseo'],
   },
   {
+    id: 'anatomia-uad-repaso-p2',
+    badge: 'UAD · Anatomía I — Repaso',
+    title: 'Repaso 2º Parcial',
+    subtitle: 'Osteología de miembros y pelvis: lo evaluable, en 30 reactivos.',
+    emoji: '📝',
+    topicIds: ['repaso-2p'],
+  },
+  {
     id: 'ingles-medico-uad',
     badge: 'UAD · Inglés Médico I',
     title: 'Inglés Médico',
