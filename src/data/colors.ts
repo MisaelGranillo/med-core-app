@@ -30,6 +30,20 @@ export const TOPIC_COLORS: Record<TopicColorKey, TopicColors> = {
     gradientTo: 'to-stone-700',
     headerBg: 'bg-gradient-to-br from-stone-500 to-stone-700',
   },
+  // Artrología (articulaciones) — teal, para distinguirla de la osteología (stone).
+  artrologia: {
+    bg: 'bg-teal-50',
+    bgLight: 'bg-teal-50/60',
+    border: 'border-teal-200',
+    text: 'text-teal-700',
+    badge: 'bg-teal-100 text-teal-800',
+    button: 'bg-teal-600 hover:bg-teal-700 text-white',
+    dot: 'bg-teal-500',
+    ring: 'ring-teal-300',
+    gradientFrom: 'from-teal-500',
+    gradientTo: 'to-teal-700',
+    headerBg: 'bg-gradient-to-br from-teal-500 to-teal-700',
+  },
   digestivo: {
     bg: 'bg-amber-50',
     bgLight: 'bg-amber-50/60',

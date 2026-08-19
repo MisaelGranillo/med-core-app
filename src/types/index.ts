@@ -71,6 +71,7 @@ export type TopicColorKey =
   | 'lenguaje'
   | 'anatomiaGeneral'
   | 'osteologia'
+  | 'artrologia'
 
 export interface Module {
   id: string
