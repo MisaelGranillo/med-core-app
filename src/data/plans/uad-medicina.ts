@@ -276,14 +276,17 @@ export const uadMedicina: Plan = {
               {
                 number: 3,
                 title: 'Gramática práctica utilizada en medicina',
-                estado: 'adelanto',
+                estado: 'impartido',
+                topicIds: ['ingles-verb-tenses', 'ingles-sentence-structure'],
                 temas: [
-                  'Tiempos verbales · verbos modales · estructuras condicionales · voz pasiva',
-                  'Estilo indirecto · preguntas · infinitivo / sufijo –ing',
-                  'Artículos · orden de palabras · proposiciones subordinadas · adjetivos · preposiciones',
+                  'Clase 1 (impartida): artículos (a/an/the), verbo to be, preguntas y verbos regulares e irregulares',
+                  'Clase 2 (impartida): presente y pasado simple, futuro simple, presente y pasado continuo',
+                  'Clase 3 (impartida): tiempos perfectos, verbos modales, condicionales 0–3, voz pasiva y conjunciones subordinantes',
+                  'Visto de forma breve: estilo indirecto e infinitivo/–ing (se refuerzan con el workbook)',
                 ],
                 fuentes: [
                   { title: 'Check Your English Vocabulary for Medicine', file: 'Check Your English Vocabulary for Medicine.pdf', paginas: 'workbook 10–24 (PDF 17–31)', nota: 'Gramática práctica: tiempos, modales y voz pasiva' },
+                  { title: 'English Grammar in Use (Murphy)', nota: 'Referencia de gramática para tiempos, modales, condicionales y voz pasiva' },
                 ],
               },
               {
@@ -317,6 +320,10 @@ export const uadMedicina: Plan = {
               { title: 'Semana 2 · Clase 2 — Plurales, interpretación y pronunciación', file: 'Semana 2 - Clase 2 Plurales e Interpretacion.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 3 — Abreviaturas, healthcare settings y repaso', file: 'Semana 2 - Clase 3 Abreviaturas y Healthcare Settings.pdf', kind: 'Clase' },
               { title: 'Proyecto Integrador Semana 2 — Medical Terminology Project', file: 'Semana 2 - Proyecto Integrador Medical Terminology.pdf', kind: 'Entrega' },
+              { title: 'Semana 3 · Clase 1 — Gramática: artículos, verbo to be y verbos', file: 'Semana 3 - Clase 1 Gramatica Articulos y Verbos.pdf', kind: 'Clase' },
+              { title: 'Semana 3 · Clase 2 — Tiempos: presente, pasado, futuro y continuos', file: 'Semana 3 - Clase 2 Tiempos Simples y Continuos.pdf', kind: 'Clase' },
+              { title: 'Semana 3 · Clase 3 — Perfectos, modales, condicionales, voz pasiva y subordinación', file: 'Semana 3 - Clase 3 Perfectos Modales Condicionales Pasiva.pdf', kind: 'Clase' },
+              { title: 'Proyecto Integrador Semana III', file: 'Semana 3 - Proyecto Integrador.pdf', kind: 'Entrega' },
               { title: 'Medical Terminology — A Living Language (6.ª ed.)', file: 'Medical Terminology - A Living Language 6th ed.pdf', kind: 'Libro' },
               { title: 'Check Your English Vocabulary for Medicine', file: 'Check Your English Vocabulary for Medicine.pdf', kind: 'Cuaderno' },
               { title: 'The Language of Medicine', file: 'The Language of Medicine.pdf', kind: 'Referencia' },

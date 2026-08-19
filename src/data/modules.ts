@@ -42,6 +42,14 @@ export const modules: Module[] = [
     topicIds: ['ingles-word-parts', 'ingles-plurals', 'ingles-abbreviations', 'ingles-healthcare-settings'],
   },
   {
+    id: 'ingles-medico-uad-s3',
+    badge: 'UAD · Inglés Médico I — Semana 3',
+    title: 'Gramática práctica en medicina',
+    subtitle: 'Tiempos verbales, modales, condicionales, voz pasiva, subordinación y artículos.',
+    emoji: '✍️',
+    topicIds: ['ingles-verb-tenses', 'ingles-sentence-structure'],
+  },
+  {
     id: 'anatomia',
     badge: 'Módulo — Anatomía',
     title: 'Anatomía y Medicina',
@@ -65,8 +73,6 @@ export const modules: Module[] = [
     title: 'Inglés Médico · Unidades II a VI',
     subtitle: 'Contenido tomado del libro de texto, aún no impartido en clase. Unidades II a VI del programa.',
     emoji: '📚',
-    topicIds: ['ingles-verb-tenses',
-               'ingles-sentence-structure',
-               'ingles-false-friends', 'ingles-scientific-literature'],
+    topicIds: ['ingles-false-friends', 'ingles-scientific-literature'],
   },
 ]
