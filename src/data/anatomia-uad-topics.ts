@@ -2193,4 +2193,200 @@ export const anatomiaUadTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'artrologia-generalidades',
+    title: 'Artrología: clasificación y articulación sinovial',
+    subtitle: 'Tipos de articulaciones por material y por forma; composición de la sinovial',
+    colorKey: 'artrologia',
+    emoji: '🔗',
+    keyPoints: [
+      'Las articulaciones se clasifican por el material que une los huesos: sinoviales (móviles), cartilaginosas (semimóviles) y fibrosas (inmóviles).',
+      'Sinovial = diartrosis; cartilaginosa = anfiartrosis; fibrosa = sinartrosis (nombres clásicos).',
+      'La articulación sinovial tiene cartílago hialino, cápsula articular (fibrosa), ligamentos de sostén, membrana sinovial y líquido sinovial.',
+      'Las sinoviales se subclasifican por forma y ejes: esferoidea (multiaxial), condílea y selar (biaxiales), plana, y las uniaxiales troclear y trocoide.',
+      'Esferoidea (enartrosis) = hombro y cadera; selar (silla de montar) = trapeciometacarpiana del pulgar.',
+      'La membrana sinovial produce el líquido sinovial, que nutre el cartílago y lubrica la articulación.',
+      'El cartílago hialino recubre las superficies articulares; carece de vasos y nervios.',
+    ],
+    sections: [
+      {
+        id: 'art-1',
+        number: 1,
+        title: 'Clasificación de las articulaciones por su material',
+        keyTerms: ['sinovial', 'diartrosis', 'cartilaginosa', 'anfiartrosis', 'fibrosa', 'sinartrosis'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            content:
+              'Se usa la Terminología Anatómica (TA) como principal y el clásico del profesor entre paréntesis; en el examen el clásico cuenta como correcto. Mapeo de esta clase: articulación sinovial = diartrosis · articulación cartilaginosa = anfiartrosis · articulación fibrosa = sinartrosis · esferoidea = enartrosis · selar (en silla de montar) = encaje recíproco · plana = artrodia · troclear = gínglimo · trocoide = pivote.',
+          },
+          {
+            type: 'comparison',
+            title: 'Por el material que une los huesos (y su movilidad)',
+            left: {
+              title: 'Sinovial (diartrosis)',
+              items: ['Cavidad articular con líquido sinovial.', 'MÓVIL (p. ej. hombro, cadera, rodilla).'],
+            },
+            right: {
+              title: 'Cartilaginosa (anfiartrosis) · Fibrosa (sinartrosis)',
+              items: ['Cartilaginosa: unida por cartílago; SEMIMÓVIL (discos intervertebrales, sínfisis del pubis).', 'Fibrosa: unida por tejido fibroso; INMÓVIL (suturas del cráneo, sindesmosis).'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'art-2',
+        number: 2,
+        title: 'Composición de la articulación sinovial',
+        keyTerms: ['cartílago hialino', 'cápsula articular', 'membrana sinovial', 'líquido sinovial', 'ligamentos'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Elementos de toda articulación sinovial',
+            items: [
+              'Superficies articulares lisas recubiertas de cartílago hialino (sin vasos ni nervios).',
+              'Cápsula articular (fibrosa) que rodea la articulación.',
+              'Ligamentos de sostén (refuerzan la cápsula).',
+              'Membrana sinovial (tapiza el interior de la cápsula, salvo el cartílago).',
+              'Líquido sinovial (lubrica y nutre el cartílago).',
+            ],
+          },
+          {
+            type: 'definition',
+            title: 'Membrana sinovial',
+            content: 'Capa que tapiza la cara interna de la cápsula articular (excepto el cartílago) y produce el líquido sinovial, que nutre el cartílago avascular y reduce la fricción. — Membrana sinovial.',
+          },
+        ],
+      },
+      {
+        id: 'art-3',
+        number: 3,
+        title: 'Clasificación de las sinoviales por forma y ejes',
+        keyTerms: ['esferoidea', 'condílea', 'selar', 'plana', 'troclear', 'trocoide'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Por número de ejes de movimiento',
+            data: {
+              headers: ['Ejes', 'Tipo (TA / clásico)', 'Ejemplo'],
+              rows: [
+                ['Multiaxial', 'Esferoidea (enartrosis)', 'Glenohumeral (hombro), coxofemoral (cadera)'],
+                ['Biaxial', 'Condílea (elipsoidal)', 'Radiocarpiana (muñeca)'],
+                ['Biaxial', 'Selar / en silla de montar (encaje recíproco)', 'Trapeciometacarpiana del pulgar'],
+                ['Poliaxial (deslizamiento)', 'Plana (artrodia)', 'Tarsometatarsianas, cigapofisarias'],
+                ['Uniaxial', 'Troclear (gínglimo, bisagra)', 'Húmero-cubital (codo)'],
+                ['Uniaxial', 'Trocoide (pivote)', 'Radiocubital proximal, atlantoaxial'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'art-4',
+        number: 4,
+        title: 'Confusiones frecuentes de la clase',
+        keyTerms: ['diartrosis', 'anfiartrosis', 'sinartrosis', 'esferoidea', 'selar'],
+        blocks: [
+          {
+            type: 'keypoints',
+            title: 'Lo que más se confunde',
+            items: [
+              'Sinovial = diartrosis = MÓVIL; cartilaginosa = anfiartrosis = SEMIMÓVIL; fibrosa = sinartrosis = INMÓVIL.',
+              'Esferoidea (enartrosis) = multiaxial (hombro, cadera). No confundir con condílea (biaxial) ni plana (artrodia).',
+              'Selar (en silla de montar) = pulgar (trapeciometacarpiana): dos superficies cóncavo-convexas encajadas.',
+              'El cartílago articular es hialino, avascular y sin nervios; se nutre del líquido sinovial.',
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'articulacion-temporomandibular',
+    title: 'Articulación temporomandibular (ATM)',
+    subtitle: 'Disco articular, ligamentos y músculos de los movimientos mandibulares',
+    colorKey: 'artrologia',
+    emoji: '🦷',
+    keyPoints: [
+      'La ATM es una articulación sinovial con un disco articular que la divide en dos compartimentos.',
+      'El disco articular tiene cara superior cóncavo-convexa y cara inferior cóncava; a él se inserta el pterigoideo lateral.',
+      'Ligamentos: temporomandibular (lateral, el principal), esfenomandibular (esfenomaxilar) y estilomandibular (estilomaxilar).',
+      'Descenso (apertura): pterigoideo lateral, digástrico, milohioideo, geniohioideo y la gravedad.',
+      'Elevación (cierre): temporal, masetero y pterigoideo medial.',
+      'Protrusión: pterigoideos medial y lateral y masetero; retracción: temporal.',
+    ],
+    sections: [
+      {
+        id: 'atm-1',
+        number: 1,
+        title: 'Generalidades y disco articular',
+        keyTerms: ['sinovial', 'disco articular', 'cápsula articular', 'pterigoideo lateral'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            content:
+              'Se usa la TA como principal y el clásico entre paréntesis (cuenta como correcto en el examen). En la ATM: ligamento esfenomandibular = esfenomaxilar · ligamento estilomandibular = estilomaxilar.',
+          },
+          {
+            type: 'definition',
+            title: 'Disco articular',
+            content: 'Placa de fibrocartílago entre el hueso temporal y el cóndilo mandibular que divide la articulación en dos compartimentos (superior e inferior). Su cara superior es cóncavo-convexa y la inferior, cóncava; a su parte anterior se inserta el músculo pterigoideo lateral. — Disco articular.',
+          },
+          {
+            type: 'list',
+            title: 'Superficies y cápsula',
+            items: [
+              'Fosa mandibular y tubérculo articular del hueso temporal (arriba).',
+              'Cabeza (cóndilo) de la mandíbula (abajo).',
+              'Cápsula articular que rodea la articulación; membrana sinovial en cada compartimento.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'atm-2',
+        number: 2,
+        title: 'Ligamentos de la ATM',
+        keyTerms: ['ligamento temporomandibular', 'ligamento esfenomandibular', 'ligamento estilomandibular'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Los tres ligamentos',
+            items: [
+              'Ligamento temporomandibular (lateral): refuerza la cápsula por fuera; es el principal.',
+              'Ligamento esfenomandibular (esfenomaxilar): del espinoso del esfenoides a la língula de la mandíbula; ligamento accesorio profundo.',
+              'Ligamento estilomandibular (estilomaxilar): del proceso estiloides al ángulo de la mandíbula.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'atm-3',
+        number: 3,
+        title: 'Movimientos y músculos',
+        keyTerms: ['descenso', 'elevación', 'protrusión', 'retracción'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Cada movimiento y sus músculos',
+            data: {
+              headers: ['Movimiento', 'Músculos'],
+              rows: [
+                ['Descenso (apertura)', 'Pterigoideo lateral, digástrico, milohioideo, geniohioideo y la gravedad.'],
+                ['Elevación (cierre)', 'Temporal, masetero y pterigoideo medial.'],
+                ['Protrusión (adelante)', 'Pterigoideos medial y lateral y masetero.'],
+                ['Retracción (atrás)', 'Temporal (fibras posteriores).'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Trampa frecuente: el DESCENSO (abrir la boca) lo inicia el pterigoideo lateral (+ suprahioideos y gravedad); la ELEVACIÓN (cerrar) la hacen temporal, masetero y pterigoideo medial.',
+          },
+        ],
+      },
+    ],
+  },
 ]
