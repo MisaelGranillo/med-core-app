@@ -1279,6 +1279,8 @@ export const inglesUadTopics: Topic[] = [
       'Modal verbs (can, could, should, must, may, might) express ability, advice, obligation and probability.',
       'Conditionals link a condition to a result: "If the fever persists, call the doctor."',
       'The passive voice is central to scientific writing: "The sample was analyzed."',
+      'The signal word usually tells the tense: yesterday → past simple, since/for → present perfect, now → present continuous, by next week → future perfect.',
+      'Modals take a bare infinitive (no "to"), no -s in the 3rd person and no do/does: "she must rest", not "she musts to rest".',
       'Reported speech shifts the tense back: "She said she felt dizzy."',
       'After some verbs use the infinitive; after others the -ing form.',
     ],
@@ -1286,13 +1288,13 @@ export const inglesUadTopics: Topic[] = [
       {
         id: 'ivt-1',
         number: 1,
-        title: 'Adelanto',
+        title: 'Impartido en Semana 3',
         blocks: [
           {
             type: 'note',
-            title: 'Adelanto — aún no impartido',
+            title: 'Impartido — Semana 3 (Clases 1–3)',
             content:
-              'Este tema procede del libro de texto de la materia, no de una clase impartida. Corresponde a la Unidad III del programa, prevista para la Semana 3. El profesor puede recortarlo, reordenarlo o enfatizar otros puntos. Úsalo para ir por delante, no como guía de lo que entra en el parcial de esta semana.',
+              'Impartido en la Semana 3 (Clases 1–3). Gramática práctica: tiempos verbales, modales, condicionales, voz pasiva, subordinación y artículos. Corresponde a la Unidad III del programa. Se apoya en Check Your English Vocabulary for Medicine y en English Grammar in Use (Murphy).',
           },
         ],
       },
@@ -1300,23 +1302,35 @@ export const inglesUadTopics: Topic[] = [
         // Fuente: Check Your English Vocabulary for Medicine, unidades 15–18 (workbook 15–18, PDF 22–25).
         id: 'ivt-2',
         number: 2,
-        title: 'Tenses in clinical context',
-        keyTerms: ['present simple', 'present continuous', 'past simple', 'present perfect'],
+        title: 'The 12 tenses in clinical context',
+        keyTerms: ['signal words', 'present simple', 'present perfect', 'past simple', 'future perfect'],
         blocks: [
           {
             type: 'table',
-            title: 'When to use each tense',
+            title: 'Los 12 tiempos: palabra señal · forma · ejemplo',
             data: {
-              headers: ['Tense', 'Use', 'Clinical example'],
+              headers: ['Tense', 'Signal words', 'Form', 'Clinical example'],
               rows: [
-                ['Present simple', 'facts, routines, protocols', 'The heart pumps blood to the body.'],
-                ['Present continuous', 'action happening now', 'The nurse is taking his blood pressure.'],
-                ['Past simple', 'finished action at a known time', 'The patient fainted yesterday.'],
-                ['Present perfect', 'past action with present relevance', 'She has recovered from the infection.'],
-                ['Past continuous', 'action in progress in the past', 'He was bringing up mucus during the night.'],
-                ['Future (will / going to)', 'prediction, plan', 'We will discharge her tomorrow.'],
+                ['Present simple', 'every day, always, never', 'verb (+s 3rd person)', 'The heart pumps blood to the body.'],
+                ['Present continuous', 'now, at the moment', 'am/is/are + -ing', 'The nurse is taking his blood pressure.'],
+                ['Present perfect', 'just, yet, ever, since, for, already', 'have/has + past participle', 'She has recovered from the infection.'],
+                ['Present perfect continuous', 'all day, since, for, how long', 'have/has + been + -ing', 'He has been coughing for two days.'],
+                ['Past simple', 'yesterday, ago, last…, in 1990', 'verb-ed / 2nd column', 'The patient fainted yesterday.'],
+                ['Past continuous', 'while', 'was/were + -ing', 'He was bringing up mucus during the night.'],
+                ['Past perfect', 'already, just, before', 'had + past participle', 'The pain had started before he arrived.'],
+                ['Past perfect continuous', 'how long, since, for', 'had + been + -ing', 'She had been feeling dizzy for hours.'],
+                ['Simple future', 'tomorrow, next…', 'will + verb', 'We will discharge her tomorrow.'],
+                ['Future continuous', 'at this time tomorrow', 'will be + -ing', 'This time tomorrow she will be recovering.'],
+                ['Future perfect', 'by next week', 'will have + past participle', 'By Friday he will have finished the course.'],
+                ['Future perfect continuous', 'by … for + duration', 'will have been + -ing', 'By June she will have been working here for a year.'],
               ],
             },
+          },
+          {
+            type: 'note',
+            title: 'La palabra señal te dice el tiempo',
+            content:
+              'La regla práctica del profesor: la palabra señal suele indicar el tiempo. yesterday / ago / last week → past simple · now / at the moment → present continuous · since / for / already / just → present perfect · while → past continuous · by next week → future perfect.',
           },
         ],
       },
@@ -1325,21 +1339,34 @@ export const inglesUadTopics: Topic[] = [
         id: 'ivt-3',
         number: 3,
         title: 'Modal verbs',
-        keyTerms: ['can', 'could', 'should', 'must', 'may', 'might'],
+        keyTerms: ['can', 'could', 'may', 'might', 'must', 'have to', 'should', 'shall', 'would'],
         blocks: [
           {
             type: 'table',
-            title: 'Modals and their meaning',
+            title: 'Matriz de modales por función',
             data: {
-              headers: ['Modal', 'Meaning', 'Example'],
+              headers: ['Modal', 'Function', 'Example'],
               rows: [
-                ['can / could', 'ability, possibility', 'The patient can walk without help.'],
-                ['should', 'advice, recommendation', 'You should take the antibiotic with food.'],
-                ['must', 'strong obligation', 'You must not drink alcohol with this drug.'],
-                ['may / might', 'probability, permission', 'The rash may be an allergic reaction.'],
+                ['can', 'ability / permission', 'The patient can walk without help.'],
+                ["can't", 'impossibility / denied permission', "You can't eat before the test."],
+                ['could', 'past ability / possibility / polite permission', 'Could you describe the pain?'],
+                ['may', 'possibility / formal permission', 'The rash may be an allergic reaction.'],
+                ['might', 'weaker possibility', 'The results might be ready today.'],
+                ['must', 'obligation / strong deduction', 'You must fast before surgery.'],
                 ['have to', 'external obligation', 'She has to fast before the surgery.'],
+                ['shall', 'offers / suggestions', 'Shall I call the doctor?'],
+                ['should / ought to', 'advice', 'You should take it with food.'],
+                ['had better', 'strong advice / warning', "You'd better rest."],
+                ['would', 'offers / hypothetical', 'I would recommend a scan.'],
+                ['will', 'future / willingness', 'We will discharge her tomorrow.'],
               ],
             },
+          },
+          {
+            type: 'note',
+            title: 'Reglas de los verbos modales',
+            content:
+              'Los modales NO se conjugan: no llevan -s en 3.ª persona (she must, no "she musts"); no usan do/does en preguntas ni don\'t/doesn\'t en negativos (Must she fast?, She must not eat); van seguidos de INFINITIVO SIN "to" (bare infinitive): "must rest", no "must to rest"; y no tienen formas de infinitivo ni -ing ("to can" ✗, "musting" ✗ → se sustituyen por can/be able to, must/have to).',
           },
         ],
       },
@@ -1348,21 +1375,30 @@ export const inglesUadTopics: Topic[] = [
         id: 'ivt-4',
         number: 4,
         title: 'Conditionals & passive voice',
-        keyTerms: ['zero conditional', 'first conditional', 'passive voice'],
+        keyTerms: ['zero conditional', 'first conditional', 'second conditional', 'third conditional', 'unless', 'passive voice'],
         blocks: [
           {
-            type: 'list',
-            title: 'Conditionals',
-            items: [
-              'Zero conditional (general truth): If you heat water to 100 °C, it boils.',
-              'First conditional (real future): If the fever persists, call the doctor.',
-              'Second conditional (hypothetical): If I were the physician, I would order a CT scan.',
-            ],
+            type: 'table',
+            title: 'The four conditionals (0–3)',
+            data: {
+              headers: ['Type', 'Structure', 'Use / example'],
+              rows: [
+                ['Zero', 'if + present, present', 'Verdad permanente: If you heat water to 100 °C, it boils.'],
+                ['First', 'if + present, will/can/must + verb', 'Real y futuro: If I specialize, I will be on cardiology.'],
+                ['Second', 'if + past, would/could + inf', 'Improbable/imposible: If I had more time, I would exercise. ("If I were you, I\'d rest" = consejo.)'],
+                ['Third', 'if + past perfect, would have + participle', 'Pasado imposible/arrepentimiento: If he had taken it, he would have recovered.'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'unless = "if not"',
+            content: '"unless" significa "si no" y NUNCA va seguido de will: "Unless you rest, you won\'t recover" (no "unless you will rest"). Introduce la condición negativa del primer condicional.',
           },
           {
             type: 'definition',
             title: 'Passive voice',
-            content: 'The object of the action becomes the subject; the doer is often omitted. Formed with "to be" + past participle. Central to scientific writing because the focus is on the procedure, not the person: "The sample was analyzed." / "The patient was admitted." — Voz pasiva.',
+            content: 'El receptor de la acción pasa a ser el sujeto; el agente suele omitirse. Forma: sujeto + be + participio pasado + by + agente (opcional): "Appendicitis was diagnosed by the doctor." Se usa para destacar al receptor, cuando el agente es desconocido, obvio o irrelevante, y en la escritura formal/científica: "The sample was analyzed." — Voz pasiva.',
           },
         ],
       },
@@ -1373,6 +1409,12 @@ export const inglesUadTopics: Topic[] = [
         title: 'Reported speech, questions & -ing / infinitive',
         keyTerms: ['reported speech', 'questions', 'infinitive', 'gerund'],
         blocks: [
+          {
+            type: 'note',
+            title: 'Visto de forma breve',
+            content:
+              'El estilo indirecto (reported speech) y la distinción infinitivo/-ing se vieron de forma BREVE en clase; se refuerzan con el workbook (Check Your English Vocabulary for Medicine y English Grammar in Use, Murphy). Repásalos, pero el peso del parcial está en tiempos, modales, condicionales y voz pasiva.',
+          },
           {
             type: 'list',
             title: 'Reported speech (tense goes one step back)',
