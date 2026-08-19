@@ -1455,13 +1455,13 @@ export const inglesUadTopics: Topic[] = [
       {
         id: 'iss-1',
         number: 1,
-        title: 'Adelanto',
+        title: 'Impartido en Semana 3',
         blocks: [
           {
             type: 'note',
-            title: 'Adelanto — aún no impartido',
+            title: 'Impartido — Semana 3 (Clases 1–3)',
             content:
-              'Este tema procede del libro de texto de la materia, no de una clase impartida. Corresponde a la Unidad III del programa, prevista para la Semana 3. El profesor puede recortarlo, reordenarlo o enfatizar otros puntos. Úsalo para ir por delante, no como guía de lo que entra en el parcial de esta semana.',
+              'Impartido en la Semana 3 (Clases 1–3), junto con los tiempos verbales. Cubre artículos, orden de palabras y adjetivos, cláusulas subordinadas y preposiciones. Corresponde a la Unidad III del programa; se apoya en Check Your English Vocabulary for Medicine y English Grammar in Use (Murphy).',
           },
         ],
       },
@@ -1481,6 +1481,12 @@ export const inglesUadTopics: Topic[] = [
               'no article — general/uncountable or most diseases: Patients with diabetes… · He has pneumonia.',
               'Set phrases: in hospital, at home, by ambulance (no article).',
             ],
+          },
+          {
+            type: 'note',
+            title: 'a vs. an: se decide por el SONIDO, no por la letra',
+            content:
+              '"a" antes de sonido consonántico; "an" antes de sonido vocálico. Cuenta el sonido, no la letra: an X-ray /ˈeks/, an MRI /ˈem/, an hour /ˈaʊər/ (h muda); pero a university /juː/, a European, a one-off. Error frecuente: "a X-ray" ✗ → an X-ray.',
           },
         ],
       },
@@ -1522,6 +1528,12 @@ export const inglesUadTopics: Topic[] = [
               'Relative: The drug, which is taken orally, has few side effects.',
               'Condition: Call us if the symptoms return.',
             ],
+          },
+          {
+            type: 'note',
+            title: 'Conjunciones subordinantes y la regla de la coma',
+            content:
+              'Conjunciones frecuentes: after, before, since, although, even though, than, that, unless, until, because, when, where, while, in order to, as long as. REGLA DE LA COMA: si la cláusula subordinada va PRIMERO, se separa con coma ("Although the pain was severe, she stayed calm"); si va DESPUÉS de la principal, NO lleva coma ("She stayed calm although the pain was severe").',
           },
           {
             type: 'table',
