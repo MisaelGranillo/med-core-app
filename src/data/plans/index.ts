@@ -37,6 +37,34 @@ export const getPlan = (id: string): Plan | null =>
 export const getActivePlan = (): Plan =>
   getPlan(activePlanId) ?? plans[0]
 
+/*
+ * Contexto de plan para un tema: en qué materia y semana se estudia. Único
+ * resolvedor usado tanto por el índice de Temas (tag materia · semana) como por
+ * la miga de pan de la página de Topic. Busca primero en las semanas
+ * (`content.semanas[].topicIds`) y, si no, en el `topicIds` de la materia.
+ * Devuelve `null` si ningún plan referencia el tema (p. ej. temas de adelanto):
+ * el llamador cae entonces al módulo.
+ */
+export type PlanContext = { subjectId: string; subjectName: string; semana?: number }
+
+export const planContextForTopic = (topicId: string): PlanContext | null => {
+  for (const plan of plans) {
+    for (const period of plan.periods) {
+      for (const subject of period.subjects) {
+        for (const sem of subject.content?.semanas ?? []) {
+          if (sem.topicIds?.includes(topicId)) {
+            return { subjectId: subject.id, subjectName: subject.name, semana: sem.number }
+          }
+        }
+        if (subject.topicIds?.includes(topicId)) {
+          return { subjectId: subject.id, subjectName: subject.name }
+        }
+      }
+    }
+  }
+  return null
+}
+
 // Busca un plan que contenga un subjectId dado (para enlaces profundos).
 export const findSubject = (subjectId: string) => {
   for (const plan of plans) {

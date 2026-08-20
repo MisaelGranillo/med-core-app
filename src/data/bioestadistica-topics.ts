@@ -10,6 +10,7 @@ export const bioestadisticaTopics: Topic[] = [
     title: 'Probabilidad',
     subtitle: 'Cuantificar la incertidumbre para tomar decisiones informadas en ciencias de la salud',
     colorKey: 'probabilidad',
+    categoria: 'Probabilidad',
     emoji: '🎲',
     keyPoints: [
       'La probabilidad mide la posibilidad de ocurrencia de un evento (0 a 1).',
@@ -180,6 +181,7 @@ export const bioestadisticaTopics: Topic[] = [
     title: 'Estadística Descriptiva',
     subtitle: 'Organizar, resumir y presentar datos para comprender fenómenos en ciencias de la salud',
     colorKey: 'estadDesc',
+    categoria: 'Estadística',
     emoji: '📊',
     keyPoints: [
       'Las variables pueden ser cualitativas o cuantitativas.',
@@ -334,6 +336,7 @@ export const bioestadisticaTopics: Topic[] = [
     title: 'Estadística Inferencial',
     subtitle: 'Inferir, decidir, concluir y aplicar en ciencias de la salud',
     colorKey: 'estadInf',
+    categoria: 'Estadística',
     emoji: '📈',
     keyPoints: [
       'La estadística inferencial permite generalizar de la muestra a la población con riesgo de error controlado.',

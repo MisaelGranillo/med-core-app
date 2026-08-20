@@ -41,11 +41,28 @@ export interface Section {
   keyTerms?: string[]
 }
 
+// Categoría temática con la que se agrupan los temas en /estudio (independiente
+// del colorKey, que es solo de estilo). Lista controlada y extensible.
+export type TopicCategoria =
+  | 'Anatomía general'
+  | 'Osteología'
+  | 'Artrología'
+  | 'Miología'
+  | 'Esplacnología'
+  | 'Neuroanatomía'
+  | 'Aparatos y sistemas'
+  | 'Terminología médica'
+  | 'Gramática médica'
+  | 'Comunicación clínica'
+  | 'Probabilidad'
+  | 'Estadística'
+
 export interface Topic {
   id: string
   title: string
   subtitle: string
   colorKey: TopicColorKey
+  categoria: TopicCategoria
   emoji: string
   sections: Section[]
   keyPoints: string[]

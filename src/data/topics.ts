@@ -9,6 +9,7 @@ const anatomyTopics: Topic[] = [
     title: 'Aparato Digestivo',
     subtitle: 'Digestión, absorción y eliminación de nutrientes',
     colorKey: 'digestivo',
+    categoria: 'Aparatos y sistemas',
     emoji: '🫃',
     keyPoints: [
       'La digestión comienza en la boca y se completa principalmente en el intestino delgado.',
@@ -324,6 +325,7 @@ const anatomyTopics: Topic[] = [
     title: 'Aparato Urinario y Sistema RAAS',
     subtitle: 'Filtración, regulación y homeostasis del medio interno',
     colorKey: 'urinario',
+    categoria: 'Aparatos y sistemas',
     emoji: '🫘',
     keyPoints: [
       'TFG normal: ~120 mL/min; TCP reabsorbe ~65% del Na⁺; RAAS mantiene la PA.',
@@ -625,6 +627,7 @@ const anatomyTopics: Topic[] = [
     title: 'Aparato Reproductor y Ciclo Menstrual',
     subtitle: 'Reproducción, gametos, hormonas y ciclo menstrual',
     colorKey: 'reproductor',
+    categoria: 'Aparatos y sistemas',
     emoji: '🧬',
     keyPoints: [
       'Testículos producen espermatozoides y testosterona; ovarios producen óvulos y hormonas.',
@@ -853,6 +856,7 @@ const anatomyTopics: Topic[] = [
     title: 'Sistema Circulatorio, ECG y Anemias',
     subtitle: 'Corazón, sangre, electrocardiograma y trastornos hematológicos',
     colorKey: 'circulatorio',
+    categoria: 'Aparatos y sistemas',
     emoji: '❤️',
     keyPoints: [
       'El GC depende de FC y VS; en reposo ≈ 5 L/min.',
@@ -1180,6 +1184,7 @@ const anatomyTopics: Topic[] = [
     title: 'Aparato Respiratorio',
     subtitle: 'Intercambio gaseoso, ventilación y regulación ácido-base',
     colorKey: 'respiratorio',
+    categoria: 'Aparatos y sistemas',
     emoji: '🫁',
     keyPoints: [
       'La función principal es el intercambio de gases: O₂ entra a la sangre y CO₂ sale.',
@@ -1463,6 +1468,7 @@ const anatomyTopics: Topic[] = [
     title: 'Sistema Locomotor',
     subtitle: 'Huesos, músculos y articulaciones — movimiento y soporte',
     colorKey: 'locomotor',
+    categoria: 'Aparatos y sistemas',
     emoji: '🦴',
     keyPoints: [
       'El sistema locomotor permite movimiento, soporte, protección y homeostasis.',
@@ -1692,6 +1698,7 @@ const anatomyTopics: Topic[] = [
     title: 'Sistema Nervioso Central y Periférico',
     subtitle: 'Integración, neurotransmisión y enfermedades neurológicas',
     colorKey: 'nervioso',
+    categoria: 'Aparatos y sistemas',
     emoji: '🧠',
     keyPoints: [
       'SNC: procesa y coordina. SNP: conecta SNC con el cuerpo.',

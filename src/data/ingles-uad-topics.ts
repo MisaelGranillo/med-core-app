@@ -30,6 +30,7 @@ export const inglesUadTopics: Topic[] = [
     title: 'The Medical Record',
     subtitle: 'Componentes del expediente clínico en inglés y su equivalencia en español',
     colorKey: 'lenguaje',
+    categoria: 'Comunicación clínica',
     emoji: '📋',
     keyPoints: [
       'The Medical Record is also called the Medical History, Case History or Anamnesis.',
@@ -303,6 +304,7 @@ export const inglesUadTopics: Topic[] = [
     title: 'Parts of Speech',
     subtitle: 'Las nueve categorías gramaticales con vocabulario médico',
     colorKey: 'gramatica',
+    categoria: 'Comunicación clínica',
     emoji: '🔤',
     keyPoints: [
       'The nine parts of speech: nouns, articles, verbs, adjectives, adverbs, pronouns, prepositions, conjunctions, interjections.',
@@ -614,6 +616,7 @@ export const inglesUadTopics: Topic[] = [
     title: 'Word Forms & Phrasal Verbs',
     subtitle: 'Derivación verbo↔sustantivo↔adjetivo y verbos frasales clínicos',
     colorKey: 'comunicacion',
+    categoria: 'Comunicación clínica',
     emoji: '🔀',
     keyPoints: [
       'The same root shifts part of speech: to diagnose (verb) → a diagnosis (noun).',
@@ -830,6 +833,7 @@ export const inglesUadTopics: Topic[] = [
     title: 'Word Parts: Roots, Prefixes & Suffixes',
     subtitle: 'Cómo se construye y se interpreta un término médico en inglés',
     colorKey: 'gramatica',
+    categoria: 'Terminología médica',
     emoji: '🧩',
     keyPoints: [
       'A medical term is built from up to four parts: word root, combining form, suffix and prefix.',
@@ -1187,6 +1191,7 @@ export const inglesUadTopics: Topic[] = [
     title: 'Singular & Plural Endings',
     subtitle: 'Reglas grecolatinas para formar el plural de los términos médicos',
     colorKey: 'gramatica',
+    categoria: 'Terminología médica',
     emoji: '🔢',
     keyPoints: [
       'Most medical plurals follow the Greek or Latin ending, not the English "-s".',
@@ -1272,6 +1277,7 @@ export const inglesUadTopics: Topic[] = [
     title: 'Verb Tenses, Modals & Voice',
     subtitle: 'Tiempos verbales, modales, condicionales y voz pasiva en contexto clínico',
     colorKey: 'lectoescritura',
+    categoria: 'Gramática médica',
     emoji: '⏳',
     keyPoints: [
       'Use the present simple for facts and protocols; the present continuous for what is happening now.',
@@ -1442,6 +1448,7 @@ export const inglesUadTopics: Topic[] = [
     title: 'Articles, Word Order & Subordination',
     subtitle: 'Artículos, orden de palabras, proposiciones subordinadas, adjetivos y preposiciones',
     colorKey: 'redaccion',
+    categoria: 'Gramática médica',
     emoji: '🧱',
     keyPoints: [
       'English sentences follow a fixed Subject–Verb–Object order far more strictly than Spanish.',
@@ -1561,6 +1568,7 @@ export const inglesUadTopics: Topic[] = [
     title: 'Acronyms & Abbreviations',
     subtitle: 'Abreviaturas médicas por área y la lista "do-not-use" de seguridad del paciente',
     colorKey: 'comunicacion',
+    categoria: 'Terminología médica',
     emoji: '🔠',
     keyPoints: [
       'Abbreviations save time but are a leading source of medical error when ambiguous.',
@@ -1714,6 +1722,7 @@ export const inglesUadTopics: Topic[] = [
     title: 'Healthcare settings',
     subtitle: 'Tipos de centros donde se usa la terminología médica',
     colorKey: 'comunicacion',
+    categoria: 'Terminología médica',
     emoji: '🏥',
     keyPoints: [
       'Los healthcare settings son los distintos centros donde se usa la terminología médica.',
@@ -1824,6 +1833,7 @@ export const inglesUadTopics: Topic[] = [
     title: 'Common Errors & False Friends',
     subtitle: 'Falsos cognados español↔inglés que cambian el sentido en la clínica',
     colorKey: 'lenguaje',
+    categoria: 'Comunicación clínica',
     emoji: '🎭',
     keyPoints: [
       'A false friend looks like a Spanish word but means something different in English.',
@@ -1900,6 +1910,7 @@ export const inglesUadTopics: Topic[] = [
     title: 'Reading Scientific Literature',
     subtitle: 'Estructura IMRaD, lectura de abstracts y el inglés como lingua franca',
     colorKey: 'lectoescritura',
+    categoria: 'Comunicación clínica',
     emoji: '📄',
     keyPoints: [
       'Most research papers follow the IMRaD structure: Introduction, Methods, Results, and Discussion.',

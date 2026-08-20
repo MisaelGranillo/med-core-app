@@ -39,6 +39,7 @@ export const anatomiaUadTopics: Topic[] = [
     title: 'Generalidades, Terminología y Planos',
     subtitle: 'Métodos de estudio, posición y planos anatómicos, términos de relación y movimiento',
     colorKey: 'anatomiaGeneral',
+    categoria: 'Anatomía general',
     emoji: '🧭',
     keyPoints: [
       'La posición anatómica es la referencia universal: bipedestación, mirada al frente, brazos a los lados y palmas hacia adelante.',
@@ -291,6 +292,7 @@ export const anatomiaUadTopics: Topic[] = [
     title: 'Huesos del Cráneo',
     subtitle: 'Los 8 huesos del neurocráneo: caras, bordes, accidentes, forámenes y puntos craneométricos',
     colorKey: 'osteologia',
+    categoria: 'Osteología',
     emoji: '💀',
     keyPoints: [
       'El cráneo (neurocráneo) está formado por 8 huesos: 2 pares (parietales y temporales) y 4 impares (frontal, esfenoides, occipital y etmoides).',
@@ -631,6 +633,7 @@ export const anatomiaUadTopics: Topic[] = [
     title: 'Huesos de la Cara',
     subtitle: 'Viscerocráneo: relieves, cavidades y articulaciones',
     colorKey: 'osteologia',
+    categoria: 'Osteología',
     emoji: '🦴',
     keyPoints: [
       'El macizo facial (viscerocráneo) está formado por huesos pares —maxilar (maxilar superior), cigomático (malar), nasal (hueso propio de la nariz), lagrimal (unguis), palatino y concha nasal inferior (cornete inferior)— e impares —vómer y mandíbula.',
@@ -818,6 +821,7 @@ export const anatomiaUadTopics: Topic[] = [
     title: 'Columna Vertebral',
     subtitle: 'Curvaturas, vértebra típica y caracteres de cada región: cervical, torácica (dorsal), lumbar, sacra y coccígea',
     colorKey: 'osteologia',
+    categoria: 'Osteología',
     emoji: '🦴',
     keyPoints: [
       '24 vértebras presacras móviles: 7 cervicales, 12 torácicas (dorsales) y 5 lumbares, más el sacro y el cóccix.',
@@ -1065,6 +1069,7 @@ export const anatomiaUadTopics: Topic[] = [
     title: 'Tórax óseo: esternón y costillas',
     subtitle: 'Caja torácica, esternón, costillas típicas y especiales',
     colorKey: 'osteologia',
+    categoria: 'Osteología',
     emoji: '🫁',
     keyPoints: [
       'La caja torácica tiene dos aberturas: superior (opérculo) e inferior (limitada por el ángulo subcostal).',
@@ -1312,6 +1317,7 @@ export const anatomiaUadTopics: Topic[] = [
     title: 'Miembro superior óseo: cintura escapular, brazo, antebrazo y mano',
     subtitle: 'Clavícula, escápula, húmero, radio, cúbito y huesos de la mano',
     colorKey: 'osteologia',
+    categoria: 'Osteología',
     emoji: '🦾',
     keyPoints: [
       'En posición anatómica el radio es lateral (del lado del pulgar) y el cúbito (ulna) es medial.',
@@ -1582,6 +1588,7 @@ export const anatomiaUadTopics: Topic[] = [
     title: 'Hueso coxal (hueso ilíaco): ilion, isquion, pubis y acetábulo',
     subtitle: 'Los tres huesos de la pelvis ósea y la cavidad acetabular',
     colorKey: 'osteologia',
+    categoria: 'Osteología',
     emoji: '🦴',
     keyPoints: [
       'El hueso coxal (hueso ilíaco) es la fusión de tres huesos —ilion, isquion y pubis— que confluyen en el acetábulo.',
@@ -1804,6 +1811,7 @@ export const anatomiaUadTopics: Topic[] = [
     title: 'Miembro inferior óseo: fémur, tibia, peroné y pie',
     subtitle: 'Muslo, pierna y pie; el hueso coxal se estudia aparte',
     colorKey: 'osteologia',
+    categoria: 'Osteología',
     emoji: '🦵',
     keyPoints: [
       'El miembro inferior libre son 3 segmentos óseos: fémur (muslo); tibia y peroné/fíbula (pierna); y los huesos del pie.',
@@ -2070,6 +2078,7 @@ export const anatomiaUadTopics: Topic[] = [
     title: 'Repaso 2º Parcial — osteología de los miembros y la pelvis',
     subtitle: 'Puntos que el profesor marcó como evaluables (30 preguntas)',
     colorKey: 'osteologia',
+    categoria: 'Osteología',
     emoji: '📝',
     keyPoints: [
       'Articulación glenohumeral = cavidad glenoidea (de la escápula) + cabeza del húmero.',
@@ -2198,6 +2207,7 @@ export const anatomiaUadTopics: Topic[] = [
     title: 'Artrología: clasificación y articulación sinovial',
     subtitle: 'Tipos de articulaciones por material y por forma; composición de la sinovial',
     colorKey: 'artrologia',
+    categoria: 'Artrología',
     emoji: '🔗',
     keyPoints: [
       'Las articulaciones se clasifican por el material que une los huesos: sinoviales (móviles), cartilaginosas (semimóviles) y fibrosas (inmóviles).',
@@ -2307,6 +2317,7 @@ export const anatomiaUadTopics: Topic[] = [
     title: 'Articulación temporomandibular (ATM)',
     subtitle: 'Disco articular, ligamentos y músculos de los movimientos mandibulares',
     colorKey: 'artrologia',
+    categoria: 'Artrología',
     emoji: '🦷',
     keyPoints: [
       'La ATM es una articulación sinovial con un disco articular que la divide en dos compartimentos.',
@@ -2394,6 +2405,7 @@ export const anatomiaUadTopics: Topic[] = [
     title: 'Articulaciones de la columna vertebral',
     subtitle: 'Los seis grupos: cuerpos, arcos, craneovertebrales, costovertebrales y sacroilíaca',
     colorKey: 'artrologia',
+    categoria: 'Artrología',
     emoji: '🦴',
     keyPoints: [
       'Entre los CUERPOS vertebrales: discos intervertebrales (cartilaginosas) + ligamento longitudinal anterior y posterior.',
@@ -2517,6 +2529,7 @@ export const anatomiaUadTopics: Topic[] = [
     title: 'Articulaciones del miembro superior',
     subtitle: 'Esternoclavicular, hombro, codo, muñeca y mano',
     colorKey: 'artrologia',
+    categoria: 'Artrología',
     emoji: '💪',
     keyPoints: [
       'Esternoclavicular: doble encaje recíproco (selar), con fibrocartílago interarticular y DOS cavidades sinoviales.',
@@ -2632,6 +2645,7 @@ export const anatomiaUadTopics: Topic[] = [
     title: 'Articulaciones del miembro inferior',
     subtitle: 'Cadera, rodilla, tibiofibulares y tobillo',
     colorKey: 'artrologia',
+    categoria: 'Artrología',
     emoji: '🦵',
     keyPoints: [
       'Coxofemoral (cadera): esferoidea (enartrosis); el labrum acetabular (rodete cotiloideo) profundiza el acetábulo.',
