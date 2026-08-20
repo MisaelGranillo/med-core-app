@@ -151,11 +151,22 @@ export const uadMedicina: Plan = {
               {
                 number: 3,
                 title: 'Artrología y Miología I',
+                // PARCIAL: se impartió la ARTROLOGÍA (Clases 1–3: clasificación,
+                // ATM, columna y articulaciones de los miembros). La MIOLOGÍA
+                // (músculos) aún NO se ha impartido — llega en Fase 2.
+                estado: 'impartido',
+                topicIds: ['artrologia-generalidades', 'articulacion-temporomandibular', 'articulaciones-columna', 'articulaciones-miembro-superior', 'articulaciones-miembro-inferior'],
                 temas: [
-                  'Artrología: tipos de articulaciones; articulaciones de la cabeza, columna, tórax y miembros',
-                  'Miología: tipos de músculos, inserciones y anexos',
-                  'Músculos de la cabeza (cráneo, cara, nuca), cuello, región hioidea y prevertebral',
-                  'Músculos superficiales cervicales, dorsales y lumbares; músculos del tórax y diafragma',
+                  'Clase 1 (impartida): artrología — clasificación de las articulaciones, articulación sinovial, ATM e inicio de la columna',
+                  'Clase 2 (impartida): articulaciones de la columna vertebral y del miembro superior',
+                  'Clase 3 (impartida): articulaciones de la mano y del miembro inferior (cadera, rodilla, tibiofibulares y tobillo)',
+                  'Por impartir (Miología): tipos de músculos e inserciones; músculos de cabeza, cuello, región hioidea/prevertebral; cervicales, dorsales, lumbares; tórax y diafragma',
+                ],
+                fuentes: [
+                  { title: 'Moore — Anatomía con orientación clínica', file: 'Moore Anatomía.pdf', paginas: 'cap. Dorso, Articulaciones de la columna vertebral, libro 269–276 (PDF 293–300)', nota: 'Discos IV, ligamentos longitudinales, cigapofisarias, craneovertebrales.' },
+                  { title: 'Moore — Anatomía con orientación clínica', file: 'Moore Anatomía.pdf', paginas: 'cap. Miembro superior, Articulaciones del miembro superior, libro 446–460 (PDF 470–484)', nota: 'Esternoclavicular, hombro, codo, muñeca y mano.' },
+                  { title: 'Moore — Anatomía con orientación clínica', file: 'Moore Anatomía.pdf', paginas: 'cap. Miembro inferior, Articulaciones del miembro inferior, libro 343–360 (PDF 367–384)', nota: 'Cadera, rodilla, tibiofibulares y tobillo.' },
+                  { title: 'Moore — Anatomía con orientación clínica', file: 'Moore Anatomía.pdf', paginas: 'cap. Cabeza, Articulación temporomandibular (ATM), libro 543–549 (PDF 567–573)', nota: 'Disco, cápsula, ligamentos y músculos de los movimientos.' },
                 ],
               },
               {
@@ -189,6 +200,9 @@ export const uadMedicina: Plan = {
               { title: 'Semana 2 · Clase 2 — Miembro superior óseo', file: 'Semana 2 - Clase 2 Miembro Superior Oseo.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 3 — Hueso coxal (pelvis ósea)', file: 'Semana 2 - Clase 3 Hueso Coxal.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 4 — Miembro inferior óseo (fémur, tibia, peroné y pie)', file: 'Semana 2 - Clase 4 Miembro Inferior Oseo.pdf', kind: 'Clase' },
+              { title: 'Semana 3 · Clase 1 — Artrología: clasificación, ATM e inicio de columna', file: 'Semana 3 - Clase 1 Artrologia y ATM.pdf', kind: 'Clase' },
+              { title: 'Semana 3 · Clase 2 — Articulaciones de la columna y del miembro superior', file: 'Semana 3 - Clase 2 Columna y Miembro Superior.pdf', kind: 'Clase' },
+              { title: 'Semana 3 · Clase 3 — Articulaciones de la mano y del miembro inferior', file: 'Semana 3 - Clase 3 Mano y Miembro Inferior.pdf', kind: 'Clase' },
               { title: 'Manual de Anatomía I', file: 'MANUAL ANATOMIA I.pdf', kind: 'Manual' },
               { title: 'Manual de Anatomía Humana y su Disección 1', file: 'MANUAL DE ANATOMIA HUMANA Y SU DISECCION 1.pdf', kind: 'Manual' },
               { title: 'Programa Académico — Anatomía I', file: 'PROGRAMA ANATOMIA I.pdf', kind: 'Programa' },

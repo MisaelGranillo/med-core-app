@@ -18,6 +18,14 @@ export const modules: Module[] = [
     topicIds: ['torax-oseo', 'miembro-superior-oseo', 'hueso-coxal', 'miembro-inferior-oseo'],
   },
   {
+    id: 'anatomia-uad-s3',
+    badge: 'UAD · Anatomía Humana y Disección I — Semana 3',
+    title: 'Artrología — articulaciones',
+    subtitle: 'Clasificación, ATM, columna y articulaciones de los miembros. Miología por impartir.',
+    emoji: '🦵',
+    topicIds: ['artrologia-generalidades', 'articulacion-temporomandibular', 'articulaciones-columna', 'articulaciones-miembro-superior', 'articulaciones-miembro-inferior'],
+  },
+  {
     id: 'anatomia-uad-repaso-p2',
     badge: 'UAD · Anatomía I — Repaso',
     title: 'Repaso 2º Parcial',
