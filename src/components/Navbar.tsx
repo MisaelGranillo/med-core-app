@@ -18,7 +18,7 @@ const NAV_ITEMS = [
   { path: '/anatomia',    label: 'Anatomía',     icon: Cube,           mobile: false },
   { path: '/atlas',       label: 'Atlas',        icon: Image,          mobile: true  },
   { path: '/terminologia',label: 'MedLex',       icon: BookOpenText,   mobile: true  },
-  { path: '/vocabulario', label: 'Vocabulario',  icon: Translate,      mobile: false },
+  { path: '/vocabulario', label: 'EnLex',         icon: Translate,      mobile: false },
   { path: '/quiz',        label: 'Quizzes',      icon: Lightning,      mobile: true  },
   { path: '/progress',    label: 'Progreso',     icon: ChartBar,       mobile: false },
   { path: '/ajustes',     label: 'Ajustes',      icon: Gear,           mobile: false },

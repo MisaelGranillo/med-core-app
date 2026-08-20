@@ -279,10 +279,10 @@ export function MedEn() {
             <div>
               <div className="inline-flex items-center gap-2 bg-pink-50 border border-pink-200 text-pink-700 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-3">
                 <Translate weight="fill" className="w-3.5 h-3.5" />
-                Vocabulario · MedEN
+                EnLex · Vocabulario de Inglés Médico
               </div>
               <h1 className="text-3xl font-extrabold text-zinc-900 tracking-tight leading-none mb-2">
-                Vocabulario Médico EN↔ES
+                EnLex · Vocabulario de Inglés Médico
               </h1>
               <p className="text-zinc-500 text-sm max-w-[55ch]">
                 Términos, abreviaturas, derivaciones y verbos frasales de Inglés Médico I. Fuente: clases de la Dra. Ana Paulina Nájera Soto.
@@ -417,7 +417,7 @@ export function MedEn() {
       <footer className="border-t border-zinc-100 bg-zinc-50 py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <p className="text-xs text-zinc-400 leading-relaxed">
-            <span className="font-semibold text-zinc-600">MedEN</span> · Vocabulario de Inglés Médico I (UAD).
+            <span className="font-semibold text-zinc-600">EnLex</span> · Vocabulario de Inglés Médico I (UAD).
             Contenido tomado de las clases y de los libros de texto de la materia, para uso educativo.
           </p>
         </div>
