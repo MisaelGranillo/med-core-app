@@ -83,6 +83,12 @@ export const anatomiaUadTopics: Topic[] = [
               'Endoscopia y observación in vivo.',
             ],
           },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'La variación es la norma',
+            content: 'Las variaciones anatómicas son frecuentes y muchas no dan síntomas; por eso, antes de operar, se confirma la anatomía real del paciente (imagen, disección cuidadosa) en vez de asumir el patrón "de libro".',
+          },
         ],
       },
       {
@@ -327,6 +333,12 @@ export const anatomiaUadTopics: Topic[] = [
             right: { title: 'Viscerocráneo (cara)', items: ['Esqueleto de la cara.', 'Aloja órganos de los sentidos y vía aérea/digestiva alta.', 'Ver tema "Huesos de la Cara y Hioides".'] },
           },
           notaNomenclatura,
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Pterión y hematoma epidural',
+            content: 'El pterión es el punto más delgado del cráneo y por debajo pasa la arteria meníngea media; un golpe ahí puede romperla y causar un hematoma epidural, una urgencia neuroquirúrgica.',
+          },
         ],
       },
       {
@@ -662,6 +674,12 @@ export const anatomiaUadTopics: Topic[] = [
             right: { title: 'Impares (2)', items: ['Vómer', 'Mandíbula (maxilar inferior)'] },
           },
           notaNomenclatura,
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Sinusitis maxilar',
+            content: 'El seno maxilar drena por un orificio ALTO en su pared medial, así que de pie drena mal; es el seno paranasal que más se infecta y el dolor aumenta al inclinar la cabeza.',
+          },
         ],
       },
       {
@@ -866,6 +884,12 @@ export const anatomiaUadTopics: Topic[] = [
                 ['Escoliosis', 'Desviación lateral de la columna.'],
               ],
             },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Punción lumbar segura',
+            content: 'La punción lumbar se hace por DEBAJO de L2, donde ya no hay médula (solo cauda equina), para no lesionarla; la línea que une ambas crestas ilíacas (de Tuffier) orienta el nivel L4.',
           },
         ],
       },
@@ -1124,6 +1148,12 @@ export const anatomiaUadTopics: Topic[] = [
             type: 'note',
             content: 'El diámetro mayor de la caja es el lateral (32 cm); el menor, el anterior (15 cm). La abertura inferior es mucho más ancha en sentido transversal (26 cm) que la superior (10–12 cm).',
           },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Ángulo de Louis',
+            content: 'El ángulo del esternón (de Louis) marca la 2.ª costilla: es la referencia para contar los espacios intercostales al auscultar y localizar focos cardíacos.',
+          },
         ],
       },
       {
@@ -1351,6 +1381,12 @@ export const anatomiaUadTopics: Topic[] = [
               'Antebrazo: radio (lateral) y cúbito/ulna (medial).',
               'Mano: carpo (8), metacarpo (5) y falanges (14).',
             ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Cuello quirúrgico y nervio axilar',
+            content: 'El cuello quirúrgico del húmero se fractura con frecuencia y pone en riesgo el nervio axilar, con pérdida de la abducción del hombro y de la sensibilidad sobre el deltoides.',
           },
         ],
       },
@@ -1623,6 +1659,12 @@ export const anatomiaUadTopics: Topic[] = [
               'Los tres confluyen y se osifican en el acetábulo (cavidad cotiloidea).',
             ],
           },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Referencia obstétrica',
+            content: 'La tuberosidad isquiática soporta el peso al sentarse; es además la referencia ósea para el bloqueo del nervio pudendo en obstetricia.',
+          },
         ],
       },
       {
@@ -1845,6 +1887,12 @@ export const anatomiaUadTopics: Topic[] = [
               'Pierna: tibia (medial) y peroné/fíbula (lateral).',
               'Pie: tarso (7 huesos), metatarso (5) y falanges (14).',
             ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Fractura de cuello femoral',
+            content: 'El cuello del fémur se fractura con frecuencia en el anciano; su irrigación retrógrada puede interrumpirse y causar necrosis avascular de la cabeza femoral.',
           },
         ],
       },
@@ -2118,6 +2166,12 @@ export const anatomiaUadTopics: Topic[] = [
             content:
               'Se usa la Terminología Anatómica (TA) como principal y el clásico del profesor entre paréntesis; en el examen el clásico CUENTA como correcto. Este repaso es denso en nomenclatura clásica: troquíter, troquín, epitróclea, corredera bicipital, peroné, astrágalo y escafoides.',
           },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'El nombre es la respuesta',
+            content: 'En osteología el nombre ES la respuesta del examen: dominar la TA con su equivalente clásico (troquíter, epitróclea, peroné, astrágalo) vale tanto como reconocer la estructura.',
+          },
         ],
       },
       {
@@ -2243,6 +2297,12 @@ export const anatomiaUadTopics: Topic[] = [
               items: ['Cartilaginosa: unida por cartílago; SEMIMÓVIL (discos intervertebrales, sínfisis del pubis).', 'Fibrosa: unida por tejido fibroso; INMÓVIL (suturas del cráneo, sindesmosis).'],
             },
           },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Por qué la artrosis no repara',
+            content: 'El cartílago articular es avascular y sin nervios: se nutre del líquido sinovial. Por eso repara mal y su desgaste (artrosis) es en gran parte irreversible.',
+          },
         ],
       },
       {
@@ -2354,6 +2414,12 @@ export const anatomiaUadTopics: Topic[] = [
               'Cápsula articular que rodea la articulación; membrana sinovial en cada compartimento.',
             ],
           },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Chasquido y bloqueo de la ATM',
+            content: 'El disco de la ATM puede desplazarse hacia delante y producir un chasquido al abrir la boca y bloqueo mandibular: es el trastorno interno de la ATM, muy frecuente.',
+          },
         ],
       },
       {
@@ -2439,6 +2505,12 @@ export const anatomiaUadTopics: Topic[] = [
               'Costovertebrales: vértebras–costillas.',
               'Sacroilíaca: sacro–hueso coxal.',
             ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Estenosis del conducto',
+            content: 'Los ligamentos flavos (amarillos) pueden hipertrofiarse con la edad y estrechar el conducto vertebral (estenosis lumbar), comprimiendo las raíces de la cauda equina.',
           },
         ],
       },
@@ -2562,6 +2634,12 @@ export const anatomiaUadTopics: Topic[] = [
               'Ligamentos: esternoclaviculares anterior, posterior y superior; interclavicular; costoclavicular.',
               'Movimientos: descenso/elevación, protracción/retracción y circunducción.',
             ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'La articulación que más se luxa',
+            content: 'El hombro (glenohumeral) es la articulación que más se luxa del cuerpo, casi siempre hacia delante (anteroinferior), por su gran movilidad y su cavidad glenoidea poco profunda.',
           },
         ],
       },
@@ -2688,6 +2766,12 @@ export const anatomiaUadTopics: Topic[] = [
                 ['Inervación', 'Nervios femoral, obturador, glúteo superior y del cuadrado femoral.'],
               ],
             },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Ligamento redondo y necrosis',
+            content: 'El ligamento de la cabeza del fémur (redondo) lleva una arteria a la cabeza sobre todo en el niño; una luxación o fractura de cadera puede comprometer la irrigación y causar necrosis avascular.',
           },
         ],
       },
