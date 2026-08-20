@@ -2,8 +2,8 @@
  *
  * Sección núcleo, agnóstica a la escuela: funciona sin ningún plan cargado.
  * Solo se ofrece el visor 3D (Anatomy3D), cargado de forma diferida para no
- * descargar el bundle 3D (pesado) hasta que se entra a la sección. El visor 2D
- * se retiró; el componente AnatomyViewer2D queda en el repo pero sin usar. */
+ * descargar el bundle 3D (pesado) hasta que se entra a la sección. El antiguo
+ * visor plano se retiró; su componente queda en el repo pero sin cablear. */
 
 import { lazy, Suspense } from 'react'
 

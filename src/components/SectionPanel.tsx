@@ -213,7 +213,7 @@ function BlockRenderer({ block, colorKey }: { block: ContentBlock; colorKey: Top
       const cfg = CORR[block.variant ?? 'dato']
       const Icon = cfg.Icon
       return (
-        <div className={`rounded-2xl border border-zinc-200 border-l-4 ${cfg.border} bg-zinc-50/70 px-4 py-3.5`}>
+        <div className={`rounded-2xl border border-zinc-200 border-l-4 ${cfg.border} bg-zinc-50 px-4 py-3.5`}>
           <div className={`flex items-center gap-1.5 mb-1.5 ${cfg.text}`}>
             <Icon weight="fill" className="w-4 h-4 flex-shrink-0" />
             <span className="text-[0.625rem] font-bold uppercase tracking-widest">{cfg.label}</span>
