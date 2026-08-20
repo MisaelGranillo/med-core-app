@@ -41,6 +41,12 @@ const anatomyTopics: Topic[] = [
               'DEFENSA: Barrera mucosa, ácido, enzimas y microbiota.',
             ],
           },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'B12 y el íleon terminal',
+            content: 'El intestino delgado es el principal sitio de absorción; la vitamina B12 se absorbe solo en el íleon terminal, por eso su resección o la enfermedad de Crohn causan anemia megaloblástica.',
+          },
         ],
       },
       {
@@ -370,6 +376,12 @@ const anatomyTopics: Topic[] = [
               ],
             },
           },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Creatinina y filtración',
+            content: 'El riñón filtra unos 180 L de plasma al día y reabsorbe casi todo; la creatinina sérica sirve como marcador de la filtración glomerular porque apenas se reabsorbe.',
+          },
         ],
       },
       {
@@ -653,6 +665,12 @@ const anatomyTopics: Topic[] = [
               'DESARROLLO: Embarazo, nutrición fetal y parto.',
             ],
           },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Temperatura testicular',
+            content: 'La espermatogénesis dura unos 74 días y necesita una temperatura 2-3 °C menor que la corporal; por eso los testículos están en el escroto, fuera del abdomen.',
+          },
         ],
       },
       {
@@ -887,6 +905,12 @@ const anatomyTopics: Topic[] = [
             type: 'list',
             title: 'Componentes',
             items: ['Corazón', 'Vasos sanguíneos: arterias, venas, capilares', 'Sangre'],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'El marcapasos del corazón',
+            content: 'El nodo sinusal impone el ritmo cardíaco; si falla, nodos inferiores toman el relevo a menor frecuencia (ritmos de escape).',
           },
         ],
       },
@@ -1212,6 +1236,12 @@ const anatomyTopics: Topic[] = [
               'FONACIÓN Y OLFATO: Laringe (voz) y epitelio olfatorio.',
             ],
           },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Aspiración al bronquio derecho',
+            content: 'El bronquio principal derecho es más vertical y ancho, por eso los cuerpos extraños aspirados suelen alojarse a la derecha; el intercambio de gases ocurre por difusión en los alvéolos.',
+          },
         ],
       },
       {
@@ -1495,6 +1525,12 @@ const anatomyTopics: Topic[] = [
               'HEMATOPOYESIS: Producción de células sanguíneas en médula ósea roja.',
             ],
           },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'El hueso se remodela siempre',
+            content: 'El músculo esquelético es cerca del 40 % del peso corporal; el hueso se remodela toda la vida: los osteoblastos forman matriz y los osteoclastos la resorben.',
+          },
         ],
       },
       {
@@ -1734,6 +1770,12 @@ const anatomyTopics: Topic[] = [
                 'EFERENTE (motor): lleva órdenes del SNC al cuerpo.',
               ],
             },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'La barrera hematoencefálica',
+            content: 'La barrera hematoencefálica protege el encéfalo, pero también impide que muchos fármacos lleguen a él; por eso tratar infecciones y tumores del SNC es un reto farmacológico.',
           },
         ],
       },
