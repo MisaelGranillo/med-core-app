@@ -2389,4 +2389,353 @@ export const anatomiaUadTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'articulaciones-columna',
+    title: 'Articulaciones de la columna vertebral',
+    subtitle: 'Los seis grupos: cuerpos, arcos, craneovertebrales, costovertebrales y sacroilíaca',
+    colorKey: 'artrologia',
+    emoji: '🦴',
+    keyPoints: [
+      'Entre los CUERPOS vertebrales: discos intervertebrales (cartilaginosas) + ligamento longitudinal anterior y posterior.',
+      'Entre los ARCOS vertebrales: articulaciones cigapofisarias (sinoviales planas) + ligamentos flavos, supraespinoso, interespinosos, intertransversos y nucal.',
+      'Los ligamentos flavos (amarillos) unen las láminas; el ligamento nucal (cervical posterior) es la continuación cervical del supraespinoso.',
+      'La articulación atlantooccipital (occipitoatloidea) es sinovial condílea: permite el gesto de "sí".',
+      'La articulación atlantoaxial (atlas–axis) es trocoide (pivote): permite el gesto de "no".',
+      'Costovertebrales (vértebras–costillas) y sacroilíaca (sacro–hueso coxal) completan los seis grupos.',
+    ],
+    sections: [
+      {
+        id: 'acol-1',
+        number: 1,
+        title: 'Los seis grupos de articulaciones',
+        keyTerms: ['cuerpos vertebrales', 'arcos vertebrales', 'atlantooccipital', 'atlantoaxial', 'costovertebrales', 'sacroilíaca'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            content:
+              'Se usa la TA como principal y el clásico entre paréntesis (cuenta como correcto). Mapeo: ligamento longitudinal anterior/posterior = ligamento longitudinal común anterior/posterior · ligamentos flavos = ligamentos amarillos · ligamento nucal = ligamento cervical posterior · articulación atlantooccipital = occipitoatloidea.',
+          },
+          {
+            type: 'list',
+            title: 'La columna se articula en seis grupos',
+            items: [
+              'Entre los cuerpos vertebrales (discos intervertebrales).',
+              'Entre los arcos vertebrales (articulaciones cigapofisarias).',
+              'Atlantooccipital (occipitoatloidea): cráneo–atlas.',
+              'Atlantoaxial: atlas–axis.',
+              'Costovertebrales: vértebras–costillas.',
+              'Sacroilíaca: sacro–hueso coxal.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'acol-2',
+        number: 2,
+        title: 'Entre los cuerpos vertebrales',
+        keyTerms: ['disco intervertebral', 'ligamento longitudinal anterior', 'ligamento longitudinal posterior'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Discos y ligamentos de los cuerpos',
+            items: [
+              'Discos intervertebrales (articulación cartilaginosa / anfiartrosis): anillo fibroso + núcleo pulposo.',
+              'Ligamento longitudinal anterior (común anterior): por delante de los cuerpos; limita la extensión.',
+              'Ligamento longitudinal posterior (común posterior): por detrás de los cuerpos, dentro del conducto; limita la flexión.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'acol-3',
+        number: 3,
+        title: 'Entre los arcos vertebrales',
+        keyTerms: ['cigapofisarias', 'ligamentos flavos', 'supraespinoso', 'nucal', 'interespinosos', 'intertransversos'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Articulaciones y ligamentos de los arcos',
+            data: {
+              headers: ['Estructura', 'Descripción'],
+              rows: [
+                ['Articulaciones cigapofisarias', 'Sinoviales PLANAS (artrodias) entre los procesos articulares.'],
+                ['Ligamentos flavos (amarillos)', 'Unen las láminas de vértebras contiguas; muy elásticos.'],
+                ['Ligamento supraespinoso', 'Une los vértices de los procesos espinosos.'],
+                ['Ligamento nucal (cervical posterior)', 'Continuación cervical del supraespinoso, hasta la protuberancia occipital externa.'],
+                ['Ligamentos interespinosos', 'Entre procesos espinosos contiguos.'],
+                ['Ligamentos intertransversos', 'Entre procesos transversos contiguos.'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'No confundir: los ligamentos longitudinales (anterior/posterior) unen los CUERPOS; los flavos, supraespinoso, interespinosos e intertransversos unen los ARCOS.',
+          },
+        ],
+      },
+      {
+        id: 'acol-4',
+        number: 4,
+        title: 'Articulaciones craneovertebrales',
+        keyTerms: ['atlantooccipital', 'atlantoaxial', 'membrana atlantooccipital', 'diente del axis'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Atlantooccipital vs. atlantoaxial',
+            left: {
+              title: 'Atlantooccipital (occipitoatloidea)',
+              items: ['Sinovial CONDÍLEA (cóndilos del occipital + masas laterales del atlas).', 'Membranas atlantooccipital anterior y posterior.', 'Movimiento de "sí" (flexoextensión).'],
+            },
+            right: {
+              title: 'Atlantoaxial (atlas–axis)',
+              items: ['Trocoide (pivote): el atlas gira sobre el diente del axis.', 'Movimiento de "no" (rotación).'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'acol-5',
+        number: 5,
+        title: 'Costovertebrales y sacroilíaca',
+        keyTerms: ['costovertebrales', 'sacroilíaca'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Los dos grupos restantes',
+            items: [
+              'Costovertebrales: entre las costillas y las vértebras torácicas (cabeza de la costilla con los cuerpos; tubérculo con el proceso transverso).',
+              'Sacroilíaca: entre el sacro y el hueso coxal (superficie auricular); sinovial reforzada por potentes ligamentos, con muy poca movilidad.',
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'articulaciones-miembro-superior',
+    title: 'Articulaciones del miembro superior',
+    subtitle: 'Esternoclavicular, hombro, codo, muñeca y mano',
+    colorKey: 'artrologia',
+    emoji: '💪',
+    keyPoints: [
+      'Esternoclavicular: doble encaje recíproco (selar), con fibrocartílago interarticular y DOS cavidades sinoviales.',
+      'Hombro: glenohumeral (esferoidea / enartrosis) + acromioclavicular.',
+      'Codo: húmero-cubital (troclear) + húmero-radial + radiocubital proximal (trocoide).',
+      'Radiocarpiana (muñeca): condílea; radio + escafoides, semilunar y piramidal.',
+      'El complejo del fibrocartílago triangular (ligamento triangular) tiene la base en el radio y el vértice hacia el cúbito; separa el cúbito del carpo.',
+      'La mano articula el carpo (mediocarpiana), las carpometacarpianas, intermetacarpianas, metacarpofalángicas e interfalángicas.',
+    ],
+    sections: [
+      {
+        id: 'amsup-1',
+        number: 1,
+        title: 'Esternoclavicular',
+        keyTerms: ['esternoclavicular', 'encaje recíproco', 'fibrocartílago interarticular', 'costoclavicular'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            content:
+              'Se usa la TA como principal y el clásico entre paréntesis (cuenta como correcto). Mapeo: articulación radiocarpiana = articulación de la muñeca · complejo del fibrocartílago triangular = ligamento triangular · selar = encaje recíproco.',
+          },
+          {
+            type: 'list',
+            title: 'Articulación esternoclavicular',
+            items: [
+              'Tipo: doble encaje recíproco (selar); única unión del miembro superior con el esqueleto axial.',
+              'Superficies: manubrio del esternón, 1.er cartílago costal y extremo (cabeza) medial de la clavícula.',
+              'Fibrocartílago interarticular que crea DOS cavidades sinoviales.',
+              'Ligamentos: esternoclaviculares anterior, posterior y superior; interclavicular; costoclavicular.',
+              'Movimientos: descenso/elevación, protracción/retracción y circunducción.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'amsup-2',
+        number: 2,
+        title: 'Hombro',
+        keyTerms: ['glenohumeral', 'esferoidea', 'acromioclavicular'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Articulaciones del hombro',
+            items: [
+              'Glenohumeral: sinovial esferoidea (enartrosis); cavidad glenoidea de la escápula + cabeza del húmero. La más móvil del cuerpo.',
+              'Acromioclavicular: entre el acromion y el extremo lateral de la clavícula.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'amsup-3',
+        number: 3,
+        title: 'Codo',
+        keyTerms: ['húmero-cubital', 'húmero-radial', 'radiocubital proximal', 'troclear'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'El codo agrupa tres articulaciones',
+            items: [
+              'Húmero-cubital: tróclea del húmero + incisura troclear del cúbito; troclear (gínglimo, bisagra) → flexoextensión.',
+              'Húmero-radial: capítulo del húmero + cabeza del radio.',
+              'Radiocubital proximal: circunferencia de la cabeza del radio + incisura radial del cúbito; trocoide → pronosupinación.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'amsup-4',
+        number: 4,
+        title: 'Radiocarpiana (muñeca)',
+        keyTerms: ['radiocarpiana', 'condílea', 'complejo del fibrocartílago triangular', 'escafoides', 'semilunar'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Complejo del fibrocartílago triangular (ligamento triangular)',
+            content: 'Disco fibrocartilaginoso con la BASE en el radio (incisura ulnar) y el VÉRTICE hacia el cúbito; se interpone entre la cabeza del cúbito y el carpo, de modo que el cúbito NO articula directamente con los huesos del carpo. — Complejo del fibrocartílago triangular.',
+          },
+          {
+            type: 'list',
+            title: 'Radiocarpiana',
+            items: [
+              'Tipo: condílea (elipsoidal); superficies: extremo distal del radio + escafoides, semilunar y piramidal.',
+              'Ligamentos: radiocarpiano palmar, cubitocarpiano palmar, medial (colateral cubital), lateral (colateral radial) y radiocarpiano dorsal.',
+              'Movimientos: flexión/extensión y abducción/aducción (desviación radial/cubital).',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'amsup-5',
+        number: 5,
+        title: 'Articulaciones de la mano',
+        keyTerms: ['mediocarpiana', 'carpometacarpianas', 'metacarpofalángicas', 'interfalángicas'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'De proximal a distal',
+            items: [
+              'Del carpo: entre la 1.ª fila, la 2.ª fila y la articulación mediocarpiana (entre ambas filas).',
+              'Carpometacarpianas: la del pulgar es selar (silla de montar); las de los otros 4 dedos, planas.',
+              'Intermetacarpianas (entre las bases de los metacarpianos).',
+              'Metacarpofalángicas (condíleas) e interfalángicas (trocleares).',
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'articulaciones-miembro-inferior',
+    title: 'Articulaciones del miembro inferior',
+    subtitle: 'Cadera, rodilla, tibiofibulares y tobillo',
+    colorKey: 'artrologia',
+    emoji: '🦵',
+    keyPoints: [
+      'Coxofemoral (cadera): esferoidea (enartrosis); el labrum acetabular (rodete cotiloideo) profundiza el acetábulo.',
+      'Ligamentos capsulares de la cadera: iliofemoral (el más fuerte, en Y invertida), pubofemoral e isquiofemoral, más la zona orbicular.',
+      'El ligamento de la cabeza del fémur (redondo) lleva una arteria a la cabeza femoral (rama acetabular de la obturatriz).',
+      'Rodilla: cóndilos femorales y tibiales, meniscos medial y lateral, ligamentos cruzados (anterior y posterior) y colaterales (tibial y peroneo), y la rótula.',
+      'Tibiofibular proximal = plana (sinovial); tibiofibular distal = sindesmosis (fibrosa).',
+      'Tobillo (talocrural): la mortaja tibioperonea recibe la tróclea del astrágalo (talus); troclear (bisagra).',
+    ],
+    sections: [
+      {
+        id: 'aminf-1',
+        number: 1,
+        title: 'Coxofemoral (cadera)',
+        keyTerms: ['coxofemoral', 'esferoidea', 'labrum acetabular', 'iliofemoral', 'ligamento de la cabeza del fémur'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            content:
+              'Se usa la TA como principal y el clásico entre paréntesis (cuenta como correcto). Mapeo: labrum acetabular = rodete cotiloideo · ligamento de la cabeza del fémur = ligamento redondo · esferoidea = enartrosis.',
+          },
+          {
+            type: 'list',
+            title: 'La articulación de la cadera',
+            items: [
+              'Tipo: sinovial esferoidea (enartrosis); acetábulo + cabeza del fémur.',
+              'Labrum acetabular (rodete cotiloideo) y ligamento transverso del acetábulo: profundizan y completan la cavidad.',
+              'Ligamentos capsulares: iliofemoral (el MÁS FUERTE, en Y invertida), pubofemoral e isquiofemoral (posterior); zona orbicular.',
+              'Ligamento de la cabeza del fémur (redondo): lleva la arteria a la cabeza femoral. Bolsa serosa iliopectínea.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Irrigación e inervación de la cadera',
+            data: {
+              headers: ['Aspecto', 'Detalle'],
+              rows: [
+                ['Irrigación', 'A. obturatriz (rama acetabular, por el ligamento redondo); aa. circunflejas femorales lateral y medial (ramas retinaculares).'],
+                ['Inervación', 'Nervios femoral, obturador, glúteo superior y del cuadrado femoral.'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'aminf-2',
+        number: 2,
+        title: 'Rodilla',
+        keyTerms: ['cóndilos', 'meniscos', 'ligamentos cruzados', 'ligamentos colaterales', 'rótula'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Elementos de la rodilla',
+            items: [
+              'Superficies: cóndilos del fémur + cóndilos (meseta) de la tibia; la rótula (patela) articula con la tróclea femoral.',
+              'Meniscos medial y lateral: fibrocartílagos que amortiguan y congruencian.',
+              'Ligamentos cruzados anterior y posterior (intraarticulares): estabilidad anteroposterior.',
+              'Ligamentos colaterales tibial (medial) y peroneo (lateral): estabilidad lateral.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'aminf-3',
+        number: 3,
+        title: 'Articulaciones tibiofibulares',
+        keyTerms: ['tibiofibular proximal', 'tibiofibular distal', 'sindesmosis', 'plana'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Tibiofibular proximal vs. distal',
+            left: {
+              title: 'Proximal',
+              items: ['Sinovial PLANA (artrodia).', 'Cabeza del peroné + cóndilo lateral de la tibia.', 'Ligamentos anterior y posterior de la cabeza del peroné.'],
+            },
+            right: {
+              title: 'Distal',
+              items: ['SINDESMOSIS (fibrosa / fibrocartilaginosa), no sinovial.', 'Une los extremos distales de tibia y peroné; forma la mortaja del tobillo.'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'aminf-4',
+        number: 4,
+        title: 'Tobillo (talocrural)',
+        keyTerms: ['talocrural', 'mortaja tibioperonea', 'talus', 'troclear'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'La articulación del tobillo',
+            items: [
+              'Tipo: troclear (bisagra) → flexión dorsal y plantar.',
+              'La mortaja formada por la tibia (maléolo medial + carilla inferior) y el peroné (maléolo lateral) recibe la tróclea del astrágalo (talus).',
+              'Ligamentos: medial (deltoideo, muy fuerte) y laterales (peroneoastragalinos anterior y posterior, peroneocalcáneo).',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'Recuerda: la tibiofibular DISTAL es una sindesmosis (fibrosa) que mantiene unida la mortaja; la PROXIMAL es una articulación plana sinovial. No las intercambies.',
+          },
+        ],
+      },
+    ],
+  },
 ]
