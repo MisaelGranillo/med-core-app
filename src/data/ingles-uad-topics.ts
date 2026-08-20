@@ -70,6 +70,12 @@ export const inglesUadTopics: Topic[] = [
               'History & Physical (H&P) — the working format that combines history + examination.',
             ],
           },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'El orden SOAP',
+            content: 'El expediente clínico en inglés sigue el orden SOAP (Subjective, Objective, Assessment, Plan); reconocer sus siglas acelera la lectura de una historia real.',
+          },
         ],
       },
       {
@@ -342,6 +348,12 @@ export const inglesUadTopics: Topic[] = [
               'Conjunctions — join words and phrases together.',
               'Interjections — express emotional states; can stand alone.',
             ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'La misma palabra, otra función',
+            content: 'Muchas palabras médicas cambian de categoría sin cambiar de forma: to chart (verbo) y a chart (sustantivo); la posición en la frase decide su función.',
           },
         ],
       },
@@ -648,6 +660,12 @@ export const inglesUadTopics: Topic[] = [
               'Noun → Adjective: a thing becomes a quality (pain → painful).',
             ],
           },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Derivar multiplica vocabulario',
+            content: 'Del mismo lema salen varias formas: diagnose (verbo) → diagnosis (sustantivo) → diagnostic (adjetivo); dominar la derivación multiplica el vocabulario.',
+          },
         ],
       },
       {
@@ -856,6 +874,12 @@ export const inglesUadTopics: Topic[] = [
             title: 'Impartido — Semana 2, Clase 1 (10 ago)',
             content:
               'Este tema se impartió en la Semana 2, Clase 1 (10 de agosto de 2026). Está basado en el capítulo 1 de Medical Terminology: A Living Language: el profesor tomó las tablas de formas combinantes, prefijos y sufijos casi textualmente del libro. Es la Unidad II del programa: construcción de términos médicos grecolatinos.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'El término se descompone',
+            content: 'La mayor parte del vocabulario médico es grecolatino: diagnóstico = dia- (a través) + gnosis (conocimiento); descomponer el término revela su significado sin memorizarlo.',
           },
         ],
       },
@@ -1214,6 +1238,12 @@ export const inglesUadTopics: Topic[] = [
             content:
               'Este tema se impartió en la Semana 2, Clase 2 (11 de agosto de 2026). Está basado en el capítulo 1 de Medical Terminology: A Living Language. Es la Unidad II del programa: formación de plurales grecolatinos, con sus diez reglas y las excepciones inglesas.',
           },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Plural grecolatino, muy evaluado',
+            content: 'Los plurales grecolatinos son de lo más evaluado: diagnosis → diagnoses (se pronuncia /iːz/); el singular en -is pasa a -es, no a -ises.',
+          },
         ],
       },
       {
@@ -1301,6 +1331,12 @@ export const inglesUadTopics: Topic[] = [
             title: 'Impartido — Semana 3 (Clases 1–3)',
             content:
               'Impartido en la Semana 3 (Clases 1–3). Gramática práctica: tiempos verbales, modales, condicionales, voz pasiva, subordinación y artículos. Corresponde a la Unidad III del programa. Se apoya en Check Your English Vocabulary for Medicine y en English Grammar in Use (Murphy).',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Por qué la voz pasiva',
+            content: 'La literatura médica prefiere la voz pasiva (the sample was analyzed) para centrar el objeto de estudio, no al autor.',
           },
         ],
       },
@@ -1470,6 +1506,12 @@ export const inglesUadTopics: Topic[] = [
             content:
               'Impartido en la Semana 3 (Clases 1–3), junto con los tiempos verbales. Cubre artículos, orden de palabras y adjetivos, cláusulas subordinadas y preposiciones. Corresponde a la Unidad III del programa; se apoya en Check Your English Vocabulary for Medicine y English Grammar in Use (Murphy).',
           },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'a/an por el sonido',
+            content: 'El artículo se elige por el SONIDO, no por la letra: an X-ray /eks/ pero a university /juː/; un error clásico al leer resultados en voz alta.',
+          },
         ],
       },
       {
@@ -1590,6 +1632,12 @@ export const inglesUadTopics: Topic[] = [
             title: 'Impartido — Semana 2, Clase 3 (12 ago)',
             content:
               'Este tema se impartió en la Semana 2, Clase 3 (12 de agosto de 2026), como parte del repaso/cierre de la Unidad II junto con las abreviaturas y los healthcare settings. Se apoya en el Apéndice III de Medical Terminology y en el listado de abreviaturas de la clase. Las abreviaturas ambiguas son una causa frecuente de error médico: ante la duda, se escribe la palabra completa.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'La lista do-not-use',
+            content: 'Las abreviaturas ambiguas causan errores de medicación reales; por eso existe la lista do-not-use (U, IU, MSO4) y la regla de escribir la palabra completa ante la duda.',
           },
         ],
       },
@@ -1764,6 +1812,12 @@ export const inglesUadTopics: Topic[] = [
               ],
             },
           },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Outpatient vs inpatient',
+            content: 'Distinguir el setting correcto importa en la práctica: outpatient (sin pernocta) frente a inpatient (ingresado) cambia el cuidado, la logística y la facturación.',
+          },
         ],
       },
       {
@@ -1856,6 +1910,12 @@ export const inglesUadTopics: Topic[] = [
             content:
               'Este tema procede del libro de texto de la materia, no de una clase impartida. Corresponde a la Unidad V del programa, prevista para la Semana 4. El profesor puede recortarlo, reordenarlo o enfatizar otros puntos. Úsalo para ir por delante, no como guía de lo que entra en el parcial de esta semana.',
           },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Falsos cognados, riesgo clínico',
+            content: 'Los falsos cognados son un riesgo clínico: en inglés intoxicated significa ebrio (no intoxicado/poisoned); confundirlos cambia el sentido de una historia clínica.',
+          },
         ],
       },
       {
@@ -1931,6 +1991,12 @@ export const inglesUadTopics: Topic[] = [
             title: 'Adelanto — aún no impartido',
             content:
               'Este tema procede del libro de texto de la materia, no de una clase impartida. Corresponde a la Unidad VI del programa, prevista para la Semana 4. El profesor puede recortarlo, reordenarlo o enfatizar otros puntos. Úsalo para ir por delante, no como guía de lo que entra en el parcial de esta semana.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Inglés, lingua franca',
+            content: 'El inglés es la lingua franca de la medicina: la mayoría de los artículos indexados en PubMed están en inglés, y leerlo da acceso a la evidencia más reciente.',
           },
         ],
       },
