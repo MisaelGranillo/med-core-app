@@ -1157,6 +1157,223 @@ const rep2Questions: Question[] = [
   },
 ]
 
+// Artrología · Generalidades (Semana 3). Orden descendente por valor de estudio;
+// ataca las confusiones de §4.6 (material→movilidad, forma de las sinoviales).
+const artQuestions: Question[] = [
+  {
+    id: 'art-q1', topicId: 'artrologia-generalidades', type: 'multiple-choice',
+    question: 'Una articulación sinovial (diartrosis) es, por su movilidad:',
+    options: ['Inmóvil', 'Semimóvil', 'Móvil', 'Rígida'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: 'Sinovial = diartrosis = MÓVIL (con cavidad y líquido sinovial). La semimóvil es la cartilaginosa (anfiartrosis); la inmóvil, la fibrosa (sinartrosis).',
+  },
+  {
+    id: 'art-q2', topicId: 'artrologia-generalidades', type: 'multiple-choice',
+    question: 'Los discos intervertebrales y la sínfisis del pubis son articulaciones:',
+    options: ['Cartilaginosas (anfiartrosis), semimóviles', 'Sinoviales (diartrosis), móviles', 'Fibrosas (sinartrosis), inmóviles', 'Trocoides'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'Están unidas por cartílago → cartilaginosas (anfiartrosis), SEMIMÓVILES. Las sinoviales tienen cavidad; las fibrosas son inmóviles.',
+  },
+  {
+    id: 'art-q3', topicId: 'artrologia-generalidades', type: 'multiple-choice',
+    question: 'Las suturas del cráneo son articulaciones:',
+    options: ['Sinoviales', 'Cartilaginosas', 'Fibrosas (sinartrosis), inmóviles', 'Selares'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: 'Las suturas son fibrosas (sinartrosis), INMÓVILES: hueso unido a hueso por tejido fibroso. Las sinoviales serían móviles.',
+  },
+  {
+    id: 'art-q4', topicId: 'artrologia-generalidades', type: 'multiple-choice',
+    question: 'El hombro y la cadera son articulaciones sinoviales de tipo:',
+    options: ['Plana (artrodia)', 'Condílea', 'Selar', 'Esferoidea (enartrosis), multiaxial'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'Esferoidea (enartrosis) = multiaxial: hombro y cadera. La condílea es biaxial (muñeca); la plana permite deslizamiento; la selar es el pulgar.',
+  },
+  {
+    id: 'art-q5', topicId: 'artrologia-generalidades', type: 'multiple-choice',
+    question: 'La articulación trapeciometacarpiana del pulgar es de tipo:',
+    options: ['Esferoidea', 'Selar / en silla de montar (encaje recíproco)', 'Troclear', 'Plana'],
+    correctIndex: 1, difficulty: 'hard',
+    explanation: 'La del pulgar es selar (silla de montar / encaje recíproco): dos superficies cóncavo-convexas encajadas. La esferoidea es hombro/cadera.',
+  },
+  {
+    id: 'art-q6', topicId: 'artrologia-generalidades', type: 'multiple-choice',
+    question: '¿Qué tejido recubre las superficies articulares de una sinovial y se nutre del líquido sinovial?',
+    options: ['Cartílago hialino', 'Hueso compacto', 'Fibrocartílago', 'Membrana fibrosa'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'El cartílago hialino (avascular y sin nervios) recubre las superficies; se nutre del líquido sinovial que produce la membrana sinovial.',
+  },
+]
+
+// Artrología · ATM (Semana 3).
+const atmQuestions: Question[] = [
+  {
+    id: 'atm-q1', topicId: 'articulacion-temporomandibular', type: 'multiple-choice',
+    question: '¿Qué músculo inicia el DESCENSO (apertura) de la mandíbula en la ATM?',
+    options: ['El temporal', 'El masetero', 'El pterigoideo lateral', 'El pterigoideo medial'],
+    correctIndex: 2, difficulty: 'hard',
+    explanation: 'El descenso lo inicia el pterigoideo lateral (con los suprahioideos y la gravedad). El temporal, el masetero y el pterigoideo medial ELEVAN (cierran).',
+  },
+  {
+    id: 'atm-q2', topicId: 'articulacion-temporomandibular', type: 'multiple-choice',
+    question: 'La ELEVACIÓN (cierre) de la mandíbula la realizan:',
+    options: ['Temporal, masetero y pterigoideo medial', 'Pterigoideo lateral y digástrico', 'Milohioideo y geniohioideo', 'Solo la gravedad'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'Elevan (cierran): temporal, masetero y pterigoideo medial. El pterigoideo lateral y los suprahioideos participan en el descenso.',
+  },
+  {
+    id: 'atm-q3', topicId: 'articulacion-temporomandibular', type: 'multiple-choice',
+    question: 'El disco articular de la ATM:',
+    options: ['Impide todo movimiento', 'Divide la articulación en dos compartimentos', 'Es de hueso compacto', 'Pertenece al pterigoideo medial'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'El disco (fibrocartílago) divide la ATM en un compartimento superior y uno inferior; a su parte anterior se inserta el pterigoideo lateral.',
+  },
+  {
+    id: 'atm-q4', topicId: 'articulacion-temporomandibular', type: 'multiple-choice',
+    question: 'El ligamento principal (lateral) que refuerza la cápsula de la ATM es el:',
+    options: ['Esfenomandibular (esfenomaxilar)', 'Estilomandibular (estilomaxilar)', 'Temporomandibular', 'Nucal'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'El ligamento temporomandibular (lateral) es el principal. El esfenomandibular y el estilomandibular son accesorios; el nucal es de la columna cervical.',
+  },
+]
+
+// Artrología · Columna (Semana 3).
+const acolQuestions: Question[] = [
+  {
+    id: 'acol-q1', topicId: 'articulaciones-columna', type: 'multiple-choice',
+    question: '¿Qué ligamentos unen los CUERPOS vertebrales?',
+    options: ['Ligamentos flavos y supraespinoso', 'Ligamentos longitudinal anterior y posterior', 'Ligamentos interespinosos', 'Ligamento nucal'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Los cuerpos los unen los ligamentos longitudinales anterior y posterior (más los discos). Los flavos, supraespinoso e interespinosos unen los ARCOS.',
+  },
+  {
+    id: 'acol-q2', topicId: 'articulaciones-columna', type: 'multiple-choice',
+    question: 'Los ligamentos flavos (amarillos) unen:',
+    options: ['Los cuerpos vertebrales', 'Las láminas de vértebras contiguas', 'Las costillas con las vértebras', 'El sacro con el ilion'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Los ligamentos flavos (amarillos), muy elásticos, unen las láminas de los arcos vertebrales. No están entre los cuerpos.',
+  },
+  {
+    id: 'acol-q3', topicId: 'articulaciones-columna', type: 'multiple-choice',
+    question: 'La articulación atlantooccipital (occipitoatloidea) es de tipo ___ y permite ___:',
+    options: ['Trocoide · el gesto de "no"', 'Plana · deslizamiento', 'Condílea · el gesto de "sí"', 'Fibrosa · nada'],
+    correctIndex: 2, difficulty: 'hard',
+    explanation: 'Es sinovial CONDÍLEA (cóndilos del occipital + masas laterales del atlas): permite la flexoextensión, el gesto de "sí". El gesto de "no" es la atlantoaxial (trocoide).',
+  },
+  {
+    id: 'acol-q4', topicId: 'articulaciones-columna', type: 'multiple-choice',
+    question: 'El gesto de "no" (rotación de la cabeza) ocurre en la articulación:',
+    options: ['Atlantooccipital', 'Atlantoaxial (trocoide)', 'Cigapofisaria', 'Costovertebral'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'La atlantoaxial es trocoide (pivote): el atlas gira sobre el diente del axis → gesto de "no". La atlantooccipital da el "sí".',
+  },
+  {
+    id: 'acol-q5', topicId: 'articulaciones-columna', type: 'multiple-choice',
+    question: 'Las articulaciones cigapofisarias (entre los procesos articulares) son sinoviales de tipo:',
+    options: ['Esferoideas', 'Planas (artrodias)', 'Selares', 'Trocleares'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Las cigapofisarias son sinoviales PLANAS (artrodias): permiten deslizamiento entre los procesos articulares de vértebras contiguas.',
+  },
+  {
+    id: 'acol-q6', topicId: 'articulaciones-columna', type: 'multiple-choice',
+    question: 'La articulación sacroilíaca une:',
+    options: ['El sacro y el hueso coxal', 'Dos vértebras lumbares', 'El sacro y el cóccix', 'La costilla y la vértebra'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'La sacroilíaca une el sacro con el hueso coxal (superficie auricular); es sinovial pero con muy poca movilidad por sus potentes ligamentos.',
+  },
+]
+
+// Artrología · Miembro superior (Semana 3).
+const amsupQuestions: Question[] = [
+  {
+    id: 'amsup-q1', topicId: 'articulaciones-miembro-superior', type: 'multiple-choice',
+    question: 'La articulación esternoclavicular se caracteriza por tener:',
+    options: ['Una sola cavidad sinovial', 'Un fibrocartílago interarticular y DOS cavidades sinoviales', 'Ningún ligamento', 'Un menisco lateral'],
+    correctIndex: 1, difficulty: 'hard',
+    explanation: 'La esternoclavicular (doble encaje recíproco) tiene un fibrocartílago interarticular que crea DOS cavidades sinoviales. Es la única unión del miembro superior al esqueleto axial.',
+  },
+  {
+    id: 'amsup-q2', topicId: 'articulaciones-miembro-superior', type: 'multiple-choice',
+    question: 'La articulación glenohumeral (hombro) es de tipo:',
+    options: ['Condílea', 'Plana', 'Esferoidea (enartrosis)', 'Troclear'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: 'La glenohumeral es esferoidea (enartrosis): cavidad glenoidea + cabeza del húmero; la más móvil del cuerpo.',
+  },
+  {
+    id: 'amsup-q3', topicId: 'articulaciones-miembro-superior', type: 'multiple-choice',
+    question: 'La articulación radiocarpiana (muñeca) es de tipo:',
+    options: ['Condílea (elipsoidal)', 'Esferoidea', 'Selar', 'Plana'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'La radiocarpiana es condílea (biaxial): radio + escafoides, semilunar y piramidal; flexión/extensión y abducción/aducción.',
+  },
+  {
+    id: 'amsup-q4', topicId: 'articulaciones-miembro-superior', type: 'multiple-choice',
+    question: 'El complejo del fibrocartílago triangular (ligamento triangular) tiene:',
+    options: ['La base en el cúbito y el vértice en el radio', 'La base en el radio y el vértice hacia el cúbito', 'Base y vértice en el carpo', 'Forma esférica'],
+    correctIndex: 1, difficulty: 'hard',
+    explanation: 'Tiene la BASE en el radio y el VÉRTICE hacia el cúbito; se interpone entre la cabeza del cúbito y el carpo, de modo que el cúbito no articula con el carpo.',
+  },
+  {
+    id: 'amsup-q5', topicId: 'articulaciones-miembro-superior', type: 'multiple-choice',
+    question: 'La articulación húmero-cubital del codo es de tipo:',
+    options: ['Trocoide', 'Troclear (gínglimo, bisagra)', 'Esferoidea', 'Plana'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'La húmero-cubital (tróclea + incisura troclear) es troclear (bisagra): flexoextensión. La radiocubital proximal es trocoide (pronosupinación).',
+  },
+  {
+    id: 'amsup-q6', topicId: 'articulaciones-miembro-superior', type: 'multiple-choice',
+    question: 'La articulación carpometacarpiana del pulgar es de tipo:',
+    options: ['Plana', 'Selar (silla de montar)', 'Condílea', 'Troclear'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'La del pulgar es selar (silla de montar), lo que le da gran movilidad y la oposición; las de los otros 4 dedos son planas.',
+  },
+]
+
+// Artrología · Miembro inferior (Semana 3).
+const aminfQuestions: Question[] = [
+  {
+    id: 'aminf-q1', topicId: 'articulaciones-miembro-inferior', type: 'multiple-choice',
+    question: '¿Cuál es el ligamento MÁS FUERTE de la articulación de la cadera?',
+    options: ['El pubofemoral', 'El isquiofemoral', 'El iliofemoral (en Y invertida)', 'El ligamento redondo'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'El iliofemoral (en Y invertida) es el más fuerte; limita la extensión. El pubofemoral y el isquiofemoral son más débiles; el redondo lleva la arteria a la cabeza femoral.',
+  },
+  {
+    id: 'aminf-q2', topicId: 'articulaciones-miembro-inferior', type: 'multiple-choice',
+    question: 'El ligamento de la cabeza del fémur (redondo) es importante porque:',
+    options: ['Es el más fuerte de la cadera', 'Lleva una arteria a la cabeza del fémur', 'Profundiza el acetábulo', 'Une la tibia y el peroné'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'El ligamento redondo conduce la rama acetabular de la a. obturatriz hasta la cabeza femoral. Quien profundiza el acetábulo es el labrum (rodete cotiloideo).',
+  },
+  {
+    id: 'aminf-q3', topicId: 'articulaciones-miembro-inferior', type: 'multiple-choice',
+    question: '¿Qué estructura PROFUNDIZA el acetábulo de la cadera?',
+    options: ['El labrum acetabular (rodete cotiloideo)', 'El ligamento iliofemoral', 'La zona orbicular', 'El menisco medial'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'El labrum acetabular (rodete cotiloideo) es un anillo fibrocartilaginoso que profundiza el acetábulo. Los meniscos son de la rodilla.',
+  },
+  {
+    id: 'aminf-q4', topicId: 'articulaciones-miembro-inferior', type: 'multiple-choice',
+    question: 'La articulación tibiofibular DISTAL es de tipo:',
+    options: ['Sinovial plana', 'Sindesmosis (fibrosa)', 'Esferoidea', 'Troclear'],
+    correctIndex: 1, difficulty: 'hard',
+    explanation: 'La tibiofibular distal es una SINDESMOSIS (fibrosa) que mantiene la mortaja del tobillo. La PROXIMAL sí es sinovial plana. No las intercambies.',
+  },
+  {
+    id: 'aminf-q5', topicId: 'articulaciones-miembro-inferior', type: 'multiple-choice',
+    question: 'En el tobillo (talocrural), la mortaja tibioperonea recibe:',
+    options: ['El calcáneo', 'La tróclea del astrágalo (talus)', 'El navicular', 'La cabeza del fémur'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'La mortaja (tibia + peroné) recibe la tróclea del astrágalo (talus). El calcáneo está por debajo del astrágalo, no en la mortaja.',
+  },
+  {
+    id: 'aminf-q6', topicId: 'articulaciones-miembro-inferior', type: 'multiple-choice',
+    question: 'Los ligamentos cruzados anterior y posterior pertenecen a la articulación:',
+    options: ['De la cadera', 'De la rodilla', 'Del tobillo', 'Del codo'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'Los cruzados (anterior y posterior) son intraarticulares de la RODILLA y dan estabilidad anteroposterior. La cadera tiene el iliofemoral, pubofemoral e isquiofemoral.',
+  },
+]
+
 export const anatomiaUadQuestions: Question[] = [
   ...generalidadesQuestions,
   ...craneoQuestions,
@@ -1167,4 +1384,9 @@ export const anatomiaUadQuestions: Question[] = [
   ...coxQuestions,
   ...minfQuestions,
   ...rep2Questions,
+  ...artQuestions,
+  ...atmQuestions,
+  ...acolQuestions,
+  ...amsupQuestions,
+  ...aminfQuestions,
 ]
