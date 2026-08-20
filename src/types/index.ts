@@ -8,6 +8,7 @@ export type BlockType =
   | 'steps'
   | 'comparison'
   | 'definition'
+  | 'correlacion'
 
 export interface TableData {
   headers: string[]
@@ -31,6 +32,9 @@ export interface ContentBlock {
   steps?: string[]
   left?: ComparisonSide
   right?: ComparisonSide
+  // bloque 'correlacion': callout de correlación clínica / dato de interés.
+  // Reutiliza `title` (encabezado) y `content` (cuerpo).
+  variant?: 'clinica' | 'dato' | 'mnemotecnia' | 'historia'
 }
 
 export interface Section {

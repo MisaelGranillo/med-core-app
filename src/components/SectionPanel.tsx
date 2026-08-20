@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { CaretRight, CheckCircle, Equals, ArrowRight } from '@phosphor-icons/react'
+import { CaretRight, CheckCircle, Equals, ArrowRight, Heartbeat, Lightbulb, Brain, ClockCounterClockwise } from '@phosphor-icons/react'
 import type { Section, ContentBlock, TopicColorKey } from '../types'
 import { TOPIC_COLORS } from '../data/colors'
 
@@ -202,6 +202,27 @@ function BlockRenderer({ block, colorKey }: { block: ContentBlock; colorKey: Top
           <p className="text-sm text-zinc-700 leading-relaxed">{block.content}</p>
         </div>
       )
+
+    case 'correlacion': {
+      const CORR = {
+        clinica:     { Icon: Heartbeat,             label: 'Correlación clínica', border: 'border-l-rose-400',   text: 'text-rose-500' },
+        dato:        { Icon: Lightbulb,             label: 'Dato de interés',     border: 'border-l-sky-400',    text: 'text-sky-500' },
+        mnemotecnia: { Icon: Brain,                 label: 'Mnemotecnia',         border: 'border-l-amber-400',  text: 'text-amber-500' },
+        historia:    { Icon: ClockCounterClockwise, label: 'Nota histórica',      border: 'border-l-violet-400', text: 'text-violet-500' },
+      }
+      const cfg = CORR[block.variant ?? 'dato']
+      const Icon = cfg.Icon
+      return (
+        <div className={`rounded-2xl border border-zinc-200 border-l-4 ${cfg.border} bg-zinc-50/70 px-4 py-3.5`}>
+          <div className={`flex items-center gap-1.5 mb-1.5 ${cfg.text}`}>
+            <Icon weight="fill" className="w-4 h-4 flex-shrink-0" />
+            <span className="text-[0.625rem] font-bold uppercase tracking-widest">{cfg.label}</span>
+          </div>
+          {block.title && <p className="text-sm font-semibold text-zinc-800 mb-0.5">{block.title}</p>}
+          <p className="text-sm text-zinc-700 leading-relaxed">{block.content}</p>
+        </div>
+      )
+    }
 
     case 'steps':
       return (
