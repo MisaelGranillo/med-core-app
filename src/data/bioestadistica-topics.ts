@@ -34,6 +34,12 @@ export const bioestadisticaTopics: Topic[] = [
             },
           },
           { type: 'note', content: 'SIEMPRE: 0 ≤ P(E) ≤ 1. La suma de todas las probabilidades del espacio muestral es igual a 1.' },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Condicional = diagnóstico',
+            content: 'La probabilidad condicional es la base del diagnóstico: la sensibilidad es P(prueba+ | enfermo) y el valor predictivo positivo es P(enfermo | prueba+); no son lo mismo y se confunden a menudo.',
+          },
         ],
       },
       {
@@ -213,6 +219,12 @@ export const bioestadisticaTopics: Topic[] = [
               ],
             },
           },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Media vs mediana',
+            content: 'La media se deja arrastrar por los valores extremos; en distribuciones sesgadas (estancia hospitalaria, salarios) la mediana describe mejor el centro.',
+          },
         ],
       },
       {
@@ -356,6 +368,12 @@ export const bioestadisticaTopics: Topic[] = [
           { type: 'note', content: 'OBJETIVO: Generalizar resultados y tomar decisiones con un nivel de incertidumbre controlado.' },
           { type: 'steps', title: 'Proceso general de inferencia',
             steps: ['Definir la POBLACIÓN de interés.', 'Seleccionar una MUESTRA representativa.', 'Aplicar técnicas estadísticas a la muestra.', 'Hacer INFERENCIA sobre la población con un margen de error conocido.'],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'VPP y prevalencia',
+            content: 'La sensibilidad y la especificidad no cambian con la prevalencia, pero el valor predictivo positivo SÍ: por eso una prueba muy buena falla como cribado en enfermedades raras (muchos falsos positivos).',
           },
         ],
       },
