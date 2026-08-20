@@ -14,6 +14,7 @@ import {
 import { modules } from '../data/modules'
 import { topics } from '../data/topics'
 import { questions } from '../data/quizzes'
+import { planContextForTopic } from '../data/plans'
 import { TOPIC_COLORS } from '../data/colors'
 import { useProgress } from '../store/useProgress'
 import { SectionPanel } from '../components/SectionPanel'
@@ -51,6 +52,7 @@ export function Topic() {
   const bestScore = getBestScore(topic.id)
   const qCount = questions.filter((q) => q.topicId === topic.id).length
   const module = modules.find((m) => m.topicIds.includes(topic.id))
+  const planCtx = planContextForTopic(topic.id)
 
   const scrollToSection = (id: string) => {
     setActiveSection(id)
@@ -93,12 +95,22 @@ export function Topic() {
               <ArrowLeft weight="bold" className="w-4 h-4" />
               Todos los temas
             </Link>
-            {module && (
+            {planCtx ? (
+              <>
+                <span className="text-white/30 text-xs">/</span>
+                <Link
+                  to={`/plan/${planCtx.subjectId}`}
+                  className="text-white/70 hover:text-white text-xs font-semibold transition-colors"
+                >
+                  {planCtx.subjectName}{planCtx.semana ? ` · Semana ${planCtx.semana}` : ''}
+                </Link>
+              </>
+            ) : module ? (
               <>
                 <span className="text-white/30 text-xs">/</span>
                 <span className="text-white/60 text-xs font-semibold">{module.badge}</span>
               </>
-            )}
+            ) : null}
           </div>
 
           <div className="flex flex-col md:flex-row md:items-end gap-6">

@@ -296,7 +296,7 @@ export function SubjectDetail() {
                   <h2 className="font-bold text-zinc-900">Plan semanal</h2>
                 </div>
                 <div className="space-y-3">
-                  {content.semanas.map(sem => (
+                  {content.semanas.map(sem => { const weekTopics = resolveTopics(sem.topicIds); return (
                     <div key={sem.number} className="rounded-xl border border-emerald-100 bg-emerald-50/50 p-4">
                       <div className="flex items-center gap-2 mb-1.5">
                         <span className="flex-shrink-0 text-[0.6875rem] font-bold text-white bg-emerald-600 px-2 py-0.5 rounded-full">
@@ -319,25 +319,44 @@ export function SubjectDetail() {
                         </p>
                       )}
                       {sem.temas && sem.temas.length > 0 && (
-                        <ul className="mt-2.5 flex flex-wrap gap-1.5">
-                          {sem.temas.map(tema => (
-                            <li key={tema} className="text-[0.6875rem] font-medium text-emerald-800 bg-white border border-emerald-100 px-2 py-0.5 rounded-full">
-                              {tema}
-                            </li>
-                          ))}
-                        </ul>
+                        <div className="mt-2.5">
+                          {weekTopics.length === 0 && (
+                            <p className="text-[0.625rem] font-bold uppercase tracking-wider text-zinc-400 mb-1.5">
+                              Próximamente
+                            </p>
+                          )}
+                          <ul className="flex flex-wrap gap-1.5">
+                            {sem.temas.map(tema => (
+                              <li
+                                key={tema}
+                                className={`text-[0.6875rem] font-medium px-2 py-0.5 rounded-full border ${
+                                  weekTopics.length === 0
+                                    ? 'text-zinc-500 bg-zinc-50 border-zinc-200'
+                                    : 'text-emerald-800 bg-white border-emerald-100'
+                                }`}
+                              >
+                                {tema}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       )}
-                      {resolveTopics(sem.topicIds).length > 0 && (
-                        <div className="mt-3 flex flex-wrap gap-2">
-                          {resolveTopics(sem.topicIds).map(t => (
-                            <Link
-                              key={t.id}
-                              to={`/topic/${t.id}`}
-                              className="inline-flex items-center gap-1.5 text-[0.6875rem] font-semibold text-white bg-emerald-600 hover:bg-emerald-700 px-2.5 py-1 rounded-full transition-colors"
-                            >
-                              <BookOpen weight="bold" className="w-3 h-3" /> {t.title}
-                            </Link>
-                          ))}
+                      {weekTopics.length > 0 && (
+                        <div className="mt-3">
+                          <p className="text-[0.625rem] font-bold uppercase tracking-wider text-emerald-700 mb-1.5">
+                            Temas de esta semana
+                          </p>
+                          <div className="flex flex-wrap gap-2">
+                            {weekTopics.map(t => (
+                              <Link
+                                key={t.id}
+                                to={`/topic/${t.id}`}
+                                className="inline-flex items-center gap-1.5 text-[0.6875rem] font-semibold text-white bg-emerald-600 hover:bg-emerald-700 px-2.5 py-1 rounded-full transition-colors"
+                              >
+                                <BookOpen weight="bold" className="w-3 h-3" /> {t.title}
+                              </Link>
+                            ))}
+                          </div>
                         </div>
                       )}
                       {sem.fuentes && sem.fuentes.length > 0 && (
@@ -374,7 +393,7 @@ export function SubjectDetail() {
                         </div>
                       )}
                     </div>
-                  ))}
+                  )})}
                 </div>
               </motion.section>
             )}
