@@ -2257,6 +2257,130 @@ export const anatomiaUadTopics: Topic[] = [
     ],
   },
   {
+    id: 'repaso-3p',
+    title: 'Repaso 3er Parcial — artrología y miología',
+    subtitle: 'Lo evaluable del módulo: articulaciones, tipos de músculo y músculos de cabeza, cuello y tronco',
+    colorKey: 'artrologia',
+    categoria: 'Artrología',
+    emoji: '📝',
+    keyPoints: [
+      'Una articulación une hueso con hueso, cartílago o diente; se clasifica por movilidad en sinartrosis (inmóvil), anfiartrosis (semimóvil) y diartrosis (móvil).',
+      'Una sinovial requiere cápsula, cavidad con líquido sinovial y cartílago articular. Tibioperonea distal = sindesmosis (membrana interósea).',
+      'Glenohumeral y coxofemoral = esferoideas (multiaxiales); húmero-cubital e interfalángicas = trocleares/bisagra (uniaxiales).',
+      'Ligamentos cruzados restringen el desplazamiento antero-posterior; los colaterales, el lateral.',
+      'Tres tipos de músculo: esquelético (estriado voluntario), liso (involuntario visceral) y cardíaco (estriado involuntario).',
+      'Tendón une músculo con hueso; ligamento une hueso con hueso; cartílago amortigua.',
+      'ECM: orígenes esternón, clavícula y apófisis mastoides. Diafragma: principal inspirador, nervio frénico.',
+      'Masticación V3 vs. mímica VII; suprahioideos con inervación mixta (V, VII, XII). Intercostales elevan/descienden costillas.',
+    ],
+    sections: [
+      {
+        id: 'rep3-1',
+        number: 1,
+        title: 'Cómo usar este repaso',
+        keyTerms: ['3er parcial', 'artrología', 'miología'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Repaso para el 3er parcial (no es contenido nuevo)',
+            content:
+              'No es contenido nuevo: concentra lo que el profesor marcó como evaluable en el repaso de artrología y miología. Cada estructura se estudia a fondo en su Topic de origen. El clásico del profesor cuenta como correcto en el examen.',
+          },
+          {
+            type: 'list',
+            title: 'Estudia a fondo en su Topic de origen',
+            items: [
+              'Clasificación de articulaciones y sinovial → «Artrología: clasificación y articulación sinovial».',
+              'Tipos de músculo y generalidades → «Miología: generalidades del músculo».',
+              'Masticación (V3) y mímica (VII) → «Músculos de la masticación» y «Músculos de la mímica».',
+              'Cuello, nuca e hioideos → «Músculos del cuello y la nuca». Diafragma e intercostales → «Diafragma toracoabdominal».',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'rep3-2',
+        number: 2,
+        title: 'Artrología: lo de alto rendimiento',
+        keyTerms: ['sinovial', 'sindesmosis', 'esferoidea', 'troclear', 'ligamentos cruzados'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Articulaciones que más caen',
+            data: {
+              headers: ['Concepto', 'Clave'],
+              rows: [
+                ['Definición', 'Une hueso con hueso, cartílago o diente.'],
+                ['Clasificación funcional', 'Sinartrosis (inmóvil) · anfiartrosis (semimóvil) · diartrosis (móvil).'],
+                ['Requisitos de una sinovial', 'Cápsula articular + cavidad con líquido sinovial + cartílago articular.'],
+                ['Tibioperonea distal', 'Sindesmosis (fibrosa), unida por la membrana interósea.'],
+                ['Esferoideas (multiaxiales)', 'Glenohumeral (hombro) y coxofemoral (cadera).'],
+                ['Trocleares/bisagra (uniaxiales)', 'Húmero-cubital (codo) e interfalángicas: flexión-extensión, eje transversal.'],
+                ['Ligamentos de la rodilla', 'Cruzados → limitan el desplazamiento antero-posterior; colaterales → el lateral.'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'rep3-3',
+        number: 3,
+        title: 'Miología: lo de alto rendimiento',
+        keyTerms: ['esquelético', 'liso', 'cardíaco', 'tendón', 'ligamento', 'ECM', 'diafragma'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Músculos y estructuras que más caen',
+            data: {
+              headers: ['Concepto', 'Clave'],
+              rows: [
+                ['Tipos de músculo', 'Esquelético (estriado voluntario) · liso (involuntario visceral) · cardíaco (estriado involuntario).'],
+                ['Tendón vs. ligamento vs. cartílago', 'Tendón: músculo-hueso · ligamento: hueso-hueso · cartílago: amortigua.'],
+                ['ECM', 'Orígenes: esternón, clavícula y apófisis mastoides del temporal.'],
+                ['Diafragma', 'Principal inspirador; nervio frénico (C3-4-5); "dolor de caballo".'],
+                ['Recto anterior del abdomen', 'Poligástrico ("cuadritos"/lavadero). Masetero = el más fuerte (~90 kg).'],
+                ['Intercostales', 'Externos elevan (inspiración); internos descienden (espiración) las costillas.'],
+                ['Inervación de la cara', 'Masticación V3 · mímica VII. Suprahioideos: inervación mixta (V, VII, XII).'],
+                ['Triángulo suboccipital', 'Contenido: arteria vertebral, nervio suboccipital y plexo venoso suboccipital.'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'rep3-4',
+        number: 4,
+        title: 'Las trampas clásicas',
+        keyTerms: ['sindesmosis', 'esferoidea', 'troclear', 'V3', 'VII'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Esferoidea vs. troclear',
+            left: { title: 'Esferoidea (multiaxial)', items: ['Glenohumeral y coxofemoral.', 'Se mueve en los tres ejes.'] },
+            right: { title: 'Troclear/bisagra (uniaxial)', items: ['Húmero-cubital e interfalángicas.', 'Solo flexión-extensión, eje transversal.'] },
+          },
+          {
+            type: 'comparison',
+            title: 'Masticación vs. mímica',
+            left: { title: 'Masticación → V3', items: ['Masetero, temporal, pterigoideos.', 'Masetero = el más fuerte.'] },
+            right: { title: 'Mímica → VII', items: ['Orbiculares, buccinador, cigomáticos, risorio…', 'Buccinador es de la mímica, no masticatorio.'] },
+          },
+          {
+            type: 'keypoints',
+            title: 'Los que más se equivocan',
+            items: [
+              'Tibioperonea distal = sindesmosis (NO sínfisis ni sinovial).',
+              'Sinovial: exige cápsula + cavidad con líquido sinovial + cartílago articular.',
+              'Suprahioideos: inervación MIXTA (V, VII, XII), no un solo nervio.',
+              'El diafragma lo inerva el FRÉNICO (C3-4-5), no los intercostales.',
+              'ECM: se inserta en la MASTOIDES; sus orígenes son esternón y clavícula.',
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: 'artrologia-generalidades',
     title: 'Artrología: clasificación y articulación sinovial',
     subtitle: 'Tipos de articulaciones por material y por forma; composición de la sinovial',
