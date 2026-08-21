@@ -1372,6 +1372,268 @@ const aminfQuestions: Question[] = [
     correctIndex: 1, difficulty: 'easy',
     explanation: 'Los cruzados (anterior y posterior) son intraarticulares de la RODILLA y dan estabilidad anteroposterior. La cadera tiene el iliofemoral, pubofemoral e isquiofemoral.',
   },
+  // Articulaciones del pie (Semana 3 · Clase 4).
+  {
+    id: 'aminf-q7', topicId: 'articulaciones-miembro-inferior', type: 'multiple-choice',
+    question: 'Las articulaciones tarsometatarsianas e intermetatarsianas son de tipo:',
+    options: ['Trocleares', 'Planas (artrodias)', 'Esferoideas', 'Selares'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Ambas son planas (artrodias): permiten deslizamiento entre superficies casi planas. Las trocleares son las interfalángicas.',
+  },
+  {
+    id: 'aminf-q8', topicId: 'articulaciones-miembro-inferior', type: 'multiple-choice',
+    question: 'Las articulaciones metatarsofalángicas son ___ y las interfalángicas son ___:',
+    options: ['planas / esferoideas', 'condíleas / trocleares', 'trocleares / condíleas', 'selares / planas'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Las metatarsofalángicas son condíleas (flexión/extensión y algo de abducción/aducción); las interfalángicas, trocleares (solo flexión/extensión).',
+  },
+  {
+    id: 'aminf-q9', topicId: 'articulaciones-miembro-inferior', type: 'multiple-choice',
+    question: 'El ligamento transverso profundo del metatarso une:',
+    options: ['Las bases de los metatarsianos', 'Las cabezas de los metatarsianos', 'El tarso con el metatarso', 'Las falanges entre sí'],
+    correctIndex: 1, difficulty: 'hard',
+    explanation: 'El ligamento transverso profundo del metatarso conecta las CABEZAS de los metatarsianos, en las metatarsofalángicas; impide que se separen.',
+  },
+  {
+    id: 'aminf-q10', topicId: 'articulaciones-miembro-inferior', type: 'multiple-choice',
+    question: 'Las articulaciones del pie contribuyen sobre todo a:',
+    options: ['La rotación de la cadera', 'Sostener los arcos plantares y amortiguar la marcha', 'La flexión de la rodilla', 'La estabilidad del hombro'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'Las articulaciones del pie mantienen los arcos longitudinal y transverso, que reparten el peso y amortiguan la marcha; su colapso es el pie plano.',
+  },
+]
+
+// ══════════════════════════════════════════════════════════════════════
+// MIOLOGÍA I (Semana 3 · Clase 4–5). Orden descendente de valor de estudio;
+// ≥8 reactivos atacan §3.3 (V3 vs VII, pterigoideo lateral, envolturas,
+// escalenos, frénico, orificios del diafragma, erectores).
+// ══════════════════════════════════════════════════════════════════════
+const mioQuestions: Question[] = [
+  {
+    id: 'mio-q1', topicId: 'miologia-generalidades', type: 'multiple-choice',
+    question: '¿Qué envoltura rodea directamente a cada fibra muscular (miocito)?',
+    options: ['El epimisio', 'El perimisio', 'El endomisio', 'La aponeurosis'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'De dentro afuera: endomisio (fibra) → perimisio (fascículo) → epimisio (músculo). El endomisio rodea cada fibra.',
+  },
+  {
+    id: 'mio-q2', topicId: 'miologia-generalidades', type: 'multiple-choice',
+    question: 'El perimisio envuelve:',
+    options: ['El músculo entero', 'El fascículo (haz de fibras)', 'Una sola fibra', 'El tendón'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'El perimisio agrupa las fibras en fascículos; el epimisio envuelve el músculo entero y el endomisio, la fibra individual.',
+  },
+  {
+    id: 'mio-q3', topicId: 'miologia-generalidades', type: 'multiple-choice',
+    question: 'El músculo cardíaco es:',
+    options: ['Estriado e involuntario', 'Estriado y voluntario', 'Liso e involuntario', 'Liso y voluntario'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'El cardíaco es estriado pero INVOLUNTARIO (con discos intercalares). El esquelético es estriado y voluntario; el liso, involuntario.',
+  },
+  {
+    id: 'mio-q4', topicId: 'miologia-generalidades', type: 'multiple-choice',
+    question: 'En un músculo, el "origen" corresponde a la inserción ___ y la "inserción" a la ___:',
+    options: ['móvil / fija', 'fija / móvil', 'proximal / distal', 'tendinosa / carnosa'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'Origen = inserción fija (el punto que suele quedar quieto); inserción = inserción móvil (la que se desplaza).',
+  },
+  {
+    id: 'mio-q5', topicId: 'miologia-generalidades', type: 'multiple-choice',
+    question: 'El recto del abdomen, con varios vientres separados por intersecciones, es un músculo:',
+    options: ['Fusiforme', 'Digástrico', 'Poligástrico', 'Unipenniforme'],
+    correctIndex: 2, difficulty: 'hard',
+    explanation: 'Poligástrico = varios vientres (recto del abdomen). Digástrico son 2 vientres; fusiforme, en huso; penniforme, en pluma.',
+  },
+]
+
+const mmastQuestions: Question[] = [
+  {
+    id: 'mmast-q1', topicId: 'musculos-masticacion', type: 'multiple-choice',
+    question: '¿Qué nervio inerva a los cuatro músculos de la masticación?',
+    options: ['El VII (facial)', 'El V3 (mandibular, del trigémino)', 'El XII (hipogloso)', 'El V2 (maxilar)'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'Los cuatro masticatorios reciben el V3 (rama mandibular del trigémino). El VII es de la mímica: es el contraste más evaluado.',
+  },
+  {
+    id: 'mmast-q2', topicId: 'musculos-masticacion', type: 'multiple-choice',
+    question: '¿Cuál de los músculos masticatorios ABRE la boca (desciende la mandíbula)?',
+    options: ['El masetero', 'El temporal', 'El pterigoideo medial', 'El pterigoideo lateral'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'El pterigoideo lateral (externo) desciende y protruye la mandíbula (abre). Masetero, temporal y pterigoideo medial la ELEVAN (cierran).',
+  },
+  {
+    id: 'mmast-q3', topicId: 'musculos-masticacion', type: 'multiple-choice',
+    question: 'El masetero se origina en ___ y se inserta en ___:',
+    options: ['la fosa temporal / el proceso coronoides', 'el arco cigomático / la mandíbula', 'el esfenoides / el hioides', 'la mandíbula / el maxilar'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'El masetero va del arco cigomático a la cara lateral del ángulo de la mandíbula; eleva la mandíbula. La fosa temporal → coronoides es el temporal.',
+  },
+  {
+    id: 'mmast-q4', topicId: 'musculos-masticacion', type: 'multiple-choice',
+    question: 'Masetero, temporal y pterigoideo medial comparten la función de:',
+    options: ['Descender la mandíbula', 'Elevar la mandíbula (cerrar)', 'Protruir la lengua', 'Abrir la boca'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'Los tres ELEVAN la mandíbula (cierran la boca); solo el pterigoideo lateral la desciende.',
+  },
+]
+
+const mcaraQuestions: Question[] = [
+  {
+    id: 'mcara-q1', topicId: 'musculos-cara-craneo', type: 'multiple-choice',
+    question: '¿Qué nervio inerva a todos los músculos de la expresión facial (mímica)?',
+    options: ['El V3', 'El VII (facial)', 'El IX (glosofaríngeo)', 'El XI (accesorio)'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'Toda la mímica recibe el VII (facial). La masticación es del V3: es la distinción clave del tema.',
+  },
+  {
+    id: 'mcara-q2', topicId: 'musculos-cara-craneo', type: 'multiple-choice',
+    question: 'Los dos vientres del occipitofrontal (epicráneo) se unen por:',
+    options: ['Un tendón óseo', 'La galea aponeurótica (aponeurosis epicraneal)', 'El músculo temporal', 'El periostio del cráneo'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'La galea aponeurótica (aponeurosis epicraneal) une el vientre occipital y el frontal sobre la bóveda craneal.',
+  },
+  {
+    id: 'mcara-q3', topicId: 'musculos-cara-craneo', type: 'multiple-choice',
+    question: 'El músculo que actúa como esfínter de los párpados es el:',
+    options: ['Corrugador superciliar', 'Orbicular del ojo (de los párpados)', 'Elevador del párpado', 'Frontal'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'El orbicular del ojo (de los párpados) cierra los párpados (esfínter, protección ocular). El elevador del párpado los abre y no es de la mímica.',
+  },
+  {
+    id: 'mcara-q4', topicId: 'musculos-cara-craneo', type: 'multiple-choice',
+    question: 'El buccinador, que comprime la mejilla al soplar, es un músculo:',
+    options: ['Masticatorio, inervado por el V3', 'De la mímica, inervado por el VII', 'Del cuello, inervado por el XII', 'Prevertebral'],
+    correctIndex: 1, difficulty: 'hard',
+    explanation: 'Aunque ayuda a masticar, el buccinador es de la MÍMICA y lo inerva el VII (facial), no el V3. Es una trampa clásica.',
+  },
+  {
+    id: 'mcara-q5', topicId: 'musculos-cara-craneo', type: 'multiple-choice',
+    question: 'Los músculos cigomáticos mayor y menor:',
+    options: ['Cierran la mandíbula', 'Llevan la comisura de la boca arriba y afuera (sonrisa)', 'Cierran los párpados', 'Descienden la ceja'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Los cigomáticos elevan y retraen la comisura labial (sonrisa). Son de la mímica (VII).',
+  },
+  {
+    id: 'mcara-q6', topicId: 'musculos-cara-craneo', type: 'multiple-choice',
+    question: 'Una parálisis del VII (facial) produciría:',
+    options: ['Debilidad para morder', 'Pérdida de la expresión facial de ese lado', 'Desviación de la lengua', 'Caída del hombro'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'El VII mueve la cara: su parálisis borra los pliegues faciales, impide cerrar el ojo y desvía la comisura, sin afectar la mordida (V3 intacto).',
+  },
+]
+
+const mcueQuestions: Question[] = [
+  {
+    id: 'mcue-q1', topicId: 'musculos-cuello-nuca', type: 'multiple-choice',
+    question: 'El escaleno anterior y el escaleno medio se insertan en:',
+    options: ['La 2.ª costilla', 'La 1.ª costilla', 'La clavícula', 'El hioides'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'El anterior y el medio van a la 1.ª costilla; el escaleno posterior, a la 2.ª. Entre el anterior y el medio pasan el plexo braquial y la subclavia.',
+  },
+  {
+    id: 'mcue-q2', topicId: 'musculos-cuello-nuca', type: 'multiple-choice',
+    question: 'El escaleno posterior se inserta en la:',
+    options: ['1.ª costilla', '2.ª costilla', 'Apófisis mastoides', 'Escápula'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'El escaleno posterior llega a la 2.ª costilla; el anterior y el medio, a la 1.ª.',
+  },
+  {
+    id: 'mcue-q3', topicId: 'musculos-cuello-nuca', type: 'multiple-choice',
+    question: 'El triángulo suboccipital contiene:',
+    options: ['El nervio frénico', 'El nervio suboccipital y la arteria vertebral', 'La arteria carótida interna', 'El plexo braquial'],
+    correctIndex: 1, difficulty: 'hard',
+    explanation: 'En el triángulo suboccipital discurren el nervio suboccipital (C1) y la arteria vertebral, antes de entrar al cráneo.',
+  },
+  {
+    id: 'mcue-q4', topicId: 'musculos-cuello-nuca', type: 'multiple-choice',
+    question: '¿Cuál de estos es un músculo SUPRAHIOIDEO?',
+    options: ['Esternotiroideo', 'Milohioideo', 'Escaleno medio', 'Largo del cuello'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'El milohioideo es suprahioideo (con digástrico, estilohioideo y geniohioideo). El esternotiroideo es infrahioideo.',
+  },
+  {
+    id: 'mcue-q5', topicId: 'musculos-cuello-nuca', type: 'multiple-choice',
+    question: 'Además de flexionar lateralmente el cuello, los escalenos actúan como:',
+    options: ['Espiradores', 'Inspiradores accesorios', 'Masticadores', 'Rotadores del hombro'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Los escalenos elevan las dos primeras costillas: son inspiradores accesorios, evidentes en la disnea.',
+  },
+  {
+    id: 'mcue-q6', topicId: 'musculos-cuello-nuca', type: 'multiple-choice',
+    question: 'Los músculos prevertebrales (largo de la cabeza, largo del cuello) actúan como:',
+    options: ['Extensores del cuello', 'Flexores del cuello', 'Elevadores del hioides', 'Rotadores de la escápula'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Los prevertebrales, por delante de la columna cervical, FLEXIONAN el cuello y la cabeza.',
+  },
+]
+
+const mdorQuestions: Question[] = [
+  {
+    id: 'mdor-q1', topicId: 'musculos-dorso', type: 'multiple-choice',
+    question: 'Los erectores de la columna, de LATERAL a MEDIAL, son:',
+    options: ['Espinoso, longísimo, iliocostal', 'Iliocostal, longísimo, espinoso', 'Longísimo, iliocostal, espinoso', 'Iliocostal, espinoso, longísimo'],
+    correctIndex: 1, difficulty: 'hard',
+    explanation: 'De lateral a medial: iliocostal, longísimo (dorsal largo) y espinoso (epiespinoso). Enderezan el tronco.',
+  },
+  {
+    id: 'mdor-q2', topicId: 'musculos-dorso', type: 'multiple-choice',
+    question: 'El trapecio y el dorsal ancho pertenecen al grupo ___ del dorso:',
+    options: ['Profundo', 'Intermedio', 'Superficial', 'Prevertebral'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: 'Trapecio y dorsal ancho son superficiales (extrínsecos): mueven el miembro superior, no la columna.',
+  },
+  {
+    id: 'mdor-q3', topicId: 'musculos-dorso', type: 'multiple-choice',
+    question: 'El "angular del omóplato" corresponde, en Terminología Anatómica, al:',
+    options: ['Romboides mayor', 'Elevador de la escápula', 'Serrato posterior superior', 'Esplenio del cuello'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Angular del omóplato = elevador de la escápula (TA). Es un músculo intermedio del dorso.',
+  },
+  {
+    id: 'mdor-q4', topicId: 'musculos-dorso', type: 'multiple-choice',
+    question: 'El grupo transversoespinoso incluye:',
+    options: ['Iliocostal y longísimo', 'Semiespinosos, multífidos y rotadores', 'Trapecio y romboides', 'Esplenios de la cabeza y el cuello'],
+    correctIndex: 1, difficulty: 'hard',
+    explanation: 'El transversoespinoso lo forman semiespinosos, multífidos, rotadores, interespinosos e intertransversos (profundos, estabilizan la columna).',
+  },
+  {
+    id: 'mdor-q5', topicId: 'musculos-dorso', type: 'multiple-choice',
+    question: 'Los músculos romboides menor y mayor:',
+    options: ['Retraen (aducen) la escápula', 'Extienden la cabeza', 'Elevan las costillas', 'Flexionan el cuello'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'Los romboides retraen y fijan la escápula hacia la columna; son músculos intermedios del dorso.',
+  },
+]
+
+const mdiaQuestions: Question[] = [
+  {
+    id: 'mdia-q1', topicId: 'musculos-diafragma', type: 'multiple-choice',
+    question: '¿Qué nervio inerva el diafragma?',
+    options: ['El nervio vago (X)', 'El nervio frénico (C3–C4–C5)', 'Los nervios intercostales', 'El nervio torácico largo'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'El diafragma lo inerva el nervio frénico (C3–C4–C5): "C3, 4, 5 keep the diaphragm alive".',
+  },
+  {
+    id: 'mdia-q2', topicId: 'musculos-diafragma', type: 'multiple-choice',
+    question: 'El orificio de la vena cava del diafragma está a la altura de:',
+    options: ['T8', 'T10', 'T12', 'L1'],
+    correctIndex: 0, difficulty: 'hard',
+    explanation: 'Vena cava T8, esofágico T10, aórtico T12 (mnemotecnia 8-10-12). La cava es el orificio más alto y está en el centro tendinoso.',
+  },
+  {
+    id: 'mdia-q3', topicId: 'musculos-diafragma', type: 'multiple-choice',
+    question: '¿Qué estructura pasa por el hiato esofágico (T10)?',
+    options: ['La aorta y el conducto torácico', 'El esófago y los nervios vagos', 'La vena cava inferior', 'El nervio frénico izquierdo'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Por el hiato esofágico (T10) pasan el esófago y los nervios vagos. La aorta va por el hiato aórtico (T12); la cava, por su orificio (T8).',
+  },
+  {
+    id: 'mdia-q4', topicId: 'musculos-diafragma', type: 'multiple-choice',
+    question: 'La porción lumbar del diafragma está formada por:',
+    options: ['El apéndice xifoides', 'Los pilares y los ligamentos arqueados', 'Los 6 últimos cartílagos costales', 'El centro tendinoso'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'La porción lumbar la forman los pilares derecho e izquierdo y los ligamentos arqueados. La esternal nace del xifoides; la costal, de los cartílagos costales.',
+  },
 ]
 
 export const anatomiaUadQuestions: Question[] = [
@@ -1389,4 +1651,10 @@ export const anatomiaUadQuestions: Question[] = [
   ...acolQuestions,
   ...amsupQuestions,
   ...aminfQuestions,
+  ...mioQuestions,
+  ...mmastQuestions,
+  ...mcaraQuestions,
+  ...mcueQuestions,
+  ...mdorQuestions,
+  ...mdiaQuestions,
 ]
