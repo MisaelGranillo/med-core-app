@@ -2721,7 +2721,7 @@ export const anatomiaUadTopics: Topic[] = [
   {
     id: 'articulaciones-miembro-inferior',
     title: 'Articulaciones del miembro inferior',
-    subtitle: 'Cadera, rodilla, tibiofibulares y tobillo',
+    subtitle: 'Cadera, rodilla, tibiofibulares, tobillo y pie',
     colorKey: 'artrologia',
     categoria: 'Artrología',
     emoji: '🦵',
@@ -2831,6 +2831,33 @@ export const anatomiaUadTopics: Topic[] = [
           {
             type: 'note',
             content: 'Recuerda: la tibiofibular DISTAL es una sindesmosis (fibrosa) que mantiene unida la mortaja; la PROXIMAL es una articulación plana sinovial. No las intercambies.',
+          },
+        ],
+      },
+      {
+        id: 'aminf-5',
+        number: 5,
+        title: 'Articulaciones del pie',
+        keyTerms: ['tarsometatarsianas', 'intermetatarsianas', 'metatarsofalángicas', 'interfalángicas'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Articulaciones del antepié',
+            data: {
+              headers: ['Articulación', 'Tipo y detalle'],
+              rows: [
+                ['Tarsometatarsianas', 'Planas (artrodias): la 1.ª forma una cavidad aislada; la 2.ª y 3.ª continúan con las intertarsianas; la 4.ª y 5.ª comparten cavidad. Ligamentos tarsometatarsianos dorsales, plantares e interóseos.'],
+                ['Intermetatarsianas', 'Planas (artrodias) entre las bases de los metatarsianos (la 1.ª y 2.ª separadas). Ligamentos dorsales, plantares e interóseos.'],
+                ['Metatarsofalángicas', 'Condíleas. Ligamentos colaterales y ligamento transverso profundo del metatarso (une las cabezas).'],
+                ['Interfalángicas', 'Trocleares (bisagra). Ligamentos colaterales.'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Los arcos del pie',
+            content: 'Las articulaciones del pie sostienen los arcos longitudinal y transverso, que reparten el peso y amortiguan la marcha; su colapso (pie plano) altera el apoyo y sobrecarga rodillas y cadera.',
           },
         ],
       },
