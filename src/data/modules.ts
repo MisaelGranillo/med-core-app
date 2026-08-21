@@ -42,6 +42,14 @@ export const modules: Module[] = [
     topicIds: ['repaso-2p'],
   },
   {
+    id: 'anatomia-uad-repaso-p3',
+    badge: 'UAD · Anatomía I — Repaso',
+    title: 'Repaso 3er Parcial',
+    subtitle: 'Artrología y miología: lo evaluable del módulo, en 30 reactivos.',
+    emoji: '📝',
+    topicIds: ['repaso-3p'],
+  },
+  {
     id: 'ingles-medico-uad',
     badge: 'UAD · Inglés Médico I',
     title: 'Inglés Médico',
