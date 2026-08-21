@@ -3191,4 +3191,317 @@ export const anatomiaUadTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'musculos-cuello-nuca',
+    title: 'Músculos del cuello y la nuca',
+    subtitle: 'Suboccipitales, suprahioideos, escalenos y prevertebrales',
+    colorKey: 'miologia',
+    categoria: 'Miología',
+    emoji: '🦒',
+    keyPoints: [
+      'Nuca (triángulo suboccipital): recto posterior mayor y menor de la cabeza, oblicuo inferior y superior; su contenido es el nervio suboccipital y la arteria vertebral.',
+      'Suprahioideos: digástrico, estilohioideo, milohioideo y geniohioideo; elevan el hioides y ayudan a descender la mandíbula.',
+      'Escalenos anterior y medio se insertan en la 1.ª costilla; el posterior, en la 2.ª.',
+      'Los escalenos hacen flexión lateral del cuello y son inspiradores accesorios (elevan las dos primeras costillas).',
+      'Prevertebrales: recto lateral y anterior de la cabeza, largo de la cabeza y largo del cuello (flexores del cuello).',
+      'Entre el escaleno anterior y el medio pasan el plexo braquial y la arteria subclavia (desfiladero de los escalenos).',
+    ],
+    sections: [
+      {
+        id: 'mcue-1',
+        number: 1,
+        title: 'Los grupos del cuello y la nuca',
+        keyTerms: ['suboccipital', 'suprahioideos', 'escalenos', 'prevertebrales'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            content:
+              'Se usa la TA como principal y el clásico entre paréntesis (cuenta como correcto). En esta clase se ven la nuca (suboccipitales), los suprahioideos, los escalenos y los prevertebrales; los infrahioideos y los triángulos del cuello son referencia de la misma clase.',
+          },
+        ],
+      },
+      {
+        id: 'mcue-2',
+        number: 2,
+        title: 'Nuca y triángulo suboccipital',
+        keyTerms: ['recto posterior mayor', 'recto posterior menor', 'oblicuo inferior', 'oblicuo superior', 'arteria vertebral'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Músculos suboccipitales (origen → inserción)',
+            data: {
+              headers: ['Músculo', 'Origen → inserción'],
+              rows: [
+                ['Recto posterior MAYOR de la cabeza', 'Proceso espinoso de C2 (axis) → línea nucal inferior del occipital'],
+                ['Recto posterior MENOR de la cabeza', 'Tubérculo posterior de C1 (atlas) → línea nucal inferior del occipital'],
+                ['Oblicuo inferior de la cabeza (oblicuo mayor)', 'Proceso espinoso de C2 → proceso transverso de C1'],
+                ['Oblicuo superior de la cabeza (oblicuo menor)', 'Proceso transverso de C1 → occipital'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'El triángulo suboccipital (recto posterior mayor medial, oblicuo superior lateral, oblicuo inferior abajo) contiene el nervio suboccipital (C1) y la arteria vertebral.',
+          },
+        ],
+      },
+      {
+        id: 'mcue-3',
+        number: 3,
+        title: 'Suprahioideos',
+        keyTerms: ['digástrico', 'estilohioideo', 'milohioideo', 'geniohioideo'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Suprahioideos (origen → inserción · inervación)',
+            data: {
+              headers: ['Músculo', 'Origen → inserción', 'Inervación'],
+              rows: [
+                ['Digástrico', 'Vientre post.: mastoides · vientre ant.: fosa digástrica de la mandíbula → hioides (tendón intermedio)', 'V.a: V3 · V.p: VII'],
+                ['Estilohioideo', 'Proceso estiloides → cuerpo del hioides', 'VII (facial)'],
+                ['Milohioideo', 'Línea milohioidea de la mandíbula → rafe medio y hioides', 'V3'],
+                ['Geniohioideo', 'Espina mentoniana de la mandíbula → hioides', 'C1 (por el hipogloso)'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'mcue-4',
+        number: 4,
+        title: 'Escalenos',
+        keyTerms: ['escaleno anterior', 'escaleno medio', 'escaleno posterior', '1.ª costilla', '2.ª costilla'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Escalenos (origen → inserción)',
+            data: {
+              headers: ['Músculo', 'Origen → inserción'],
+              rows: [
+                ['Escaleno anterior', 'Tubérculos anteriores de los procesos transversos de C3–C6 → 1.ª costilla'],
+                ['Escaleno medio', 'Procesos transversos de C1–C7 → 1.ª costilla'],
+                ['Escaleno posterior', 'Tubérculos posteriores de los procesos transversos de C4–C6 → 2.ª costilla'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Función de todos: flexión lateral del cuello e inspiradores accesorios (elevan las dos primeras costillas). Inervación: ramas anteriores cervicales (≈ C3–C4).',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Desfiladero de los escalenos',
+            content: 'Entre el escaleno anterior y el medio pasan el plexo braquial y la arteria subclavia; su compresión ahí produce el síndrome del desfiladero torácico (dolor, hormigueo y frialdad del miembro superior).',
+          },
+        ],
+      },
+      {
+        id: 'mcue-5',
+        number: 5,
+        title: 'Prevertebrales',
+        keyTerms: ['recto lateral de la cabeza', 'recto anterior de la cabeza', 'largo de la cabeza', 'largo del cuello'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Delante de la columna cervical',
+            items: [
+              'Recto lateral de la cabeza: proceso transverso de C1 → proceso yugular del occipital.',
+              'Recto anterior de la cabeza: proceso transverso de C1 → porción basilar del occipital.',
+              'Largo de la cabeza: tubérculos anteriores de C3–C6 → occipital.',
+              'Largo del cuello: por la cara anterior de las vértebras cervicales y torácicas altas; flexiona el cuello.',
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'musculos-dorso',
+    title: 'Músculos del dorso',
+    subtitle: 'Superficiales, intermedios y profundos (erectores de la columna)',
+    colorKey: 'miologia',
+    categoria: 'Miología',
+    emoji: '🐢',
+    keyPoints: [
+      'Superficiales: trapecio y dorsal ancho; mueven el miembro superior (no son propios del dorso).',
+      'Intermedios: elevador de la escápula (angular del omóplato), romboides menor y mayor, serrato posterior superior e inferior.',
+      'Profundos (propios): erectores de la columna, esplenios y transversoespinoso.',
+      'Erectores de la columna, de LATERAL a MEDIAL: iliocostal, longísimo (dorsal largo) y espinoso (epiespinoso).',
+      'El transversoespinoso incluye semiespinosos, multífidos, rotadores, interespinosos e intertransversos.',
+      'Los serratos posteriores superior e inferior (serrato menor posterosuperior/posteroinferior) son respiratorios accesorios.',
+    ],
+    sections: [
+      {
+        id: 'mdor-1',
+        number: 1,
+        title: 'Los tres grupos del dorso',
+        keyTerms: ['superficial', 'intermedio', 'profundo'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            content:
+              'Se usa la TA como principal y el clásico entre paréntesis. Mapeo: elevador de la escápula = angular del omóplato · serrato posterior superior/inferior = serrato menor posterosuperior/posteroinferior · longísimo = dorsal largo · espinoso = epiespinoso.',
+          },
+          {
+            type: 'list',
+            title: 'Por profundidad',
+            items: [
+              'Superficiales (extrínsecos): trapecio y dorsal ancho — mueven el miembro superior.',
+              'Intermedios: elevador de la escápula, romboides y serratos posteriores.',
+              'Profundos (intrínsecos): erectores de la columna, esplenios y transversoespinoso — mueven y estabilizan la columna.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'mdor-2',
+        number: 2,
+        title: 'Superficiales e intermedios',
+        keyTerms: ['trapecio', 'dorsal ancho', 'elevador de la escápula', 'romboides'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Superficiales vs. intermedios',
+            left: {
+              title: 'Superficiales',
+              items: ['Trapecio: mueve y fija la escápula; extiende el cuello.', 'Dorsal ancho: aduce, extiende y rota medialmente el brazo.'],
+            },
+            right: {
+              title: 'Intermedios',
+              items: ['Elevador de la escápula (angular del omóplato).', 'Romboides menor y mayor (retraen la escápula).', 'Serratos posteriores superior e inferior (respiratorios accesorios).'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'mdor-3',
+        number: 3,
+        title: 'Profundos: erectores y transversoespinoso',
+        keyTerms: ['iliocostal', 'longísimo', 'espinoso', 'esplenios', 'transversoespinoso'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Erectores de la columna',
+            content: 'Columna muscular a cada lado de las apófisis espinosas que endereza el tronco y controla su flexión. De LATERAL a MEDIAL: iliocostal, longísimo (dorsal largo) y espinoso (epiespinoso). — Erector de la columna.',
+          },
+          {
+            type: 'list',
+            title: 'Profundos del dorso',
+            items: [
+              'Erectores de la columna (grupo espinotransverso): iliocostal, longísimo y espinoso.',
+              'Esplenios de la cabeza y del cuello: extienden y rotan la cabeza.',
+              'Transversoespinoso (grupo transversoespinoso): semiespinosos, multífidos, rotadores, interespinosos e intertransversos.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Lumbalgia y erectores',
+            content: 'La sobrecarga de los erectores de la columna es una causa frecuente de lumbalgia mecánica; por eso fortalecer el core y la musculatura paravertebral es clave en su prevención y rehabilitación.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'musculos-diafragma',
+    title: 'Diafragma toracoabdominal',
+    subtitle: 'Porciones, orificios e inervación (nervio frénico C3–C4–C5)',
+    colorKey: 'miologia',
+    categoria: 'Miología',
+    emoji: '🫁',
+    keyPoints: [
+      'El diafragma es el principal músculo de la inspiración; separa el tórax del abdomen.',
+      'Tres porciones: esternal (apéndice xifoides), costal (6 últimos cartílagos costales) y lumbar (pilares y ligamentos arqueados).',
+      'Todas convergen en el centro tendinoso (frénico).',
+      'Inervación: nervio frénico (C3–C4–C5): "C3, 4, 5 keep the diaphragm alive".',
+      'Tres orificios: hiato aórtico, hiato esofágico y orificio de la vena cava inferior.',
+      'Niveles clásicos: vena cava T8 · esofágico T10 · aórtico T12 (mnemotecnia 8-10-12).',
+    ],
+    sections: [
+      {
+        id: 'mdia-1',
+        number: 1,
+        title: 'El principal músculo inspirador',
+        keyTerms: ['diafragma', 'centro tendinoso', 'inspiración'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Diafragma toracoabdominal',
+            content:
+              'Tabique musculotendinoso abovedado que separa el tórax del abdomen. Al contraerse desciende y aumenta el volumen torácico: es el principal músculo de la inspiración. Sus fibras convergen en el centro tendinoso (frénico).',
+          },
+        ],
+      },
+      {
+        id: 'mdia-2',
+        number: 2,
+        title: 'Porciones',
+        keyTerms: ['porción esternal', 'porción costal', 'porción lumbar', 'pilares'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Las tres porciones (por su origen)',
+            data: {
+              headers: ['Porción', 'Origen'],
+              rows: [
+                ['Esternal', 'Cara posterior del apéndice xifoides.'],
+                ['Costal', 'Los 6 últimos cartílagos costales y las 4 últimas costillas.'],
+                ['Lumbar', 'Pilares derecho e izquierdo y ligamentos arqueados medial, lateral y medio.'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'mdia-3',
+        number: 3,
+        title: 'Orificios',
+        keyTerms: ['hiato aórtico', 'hiato esofágico', 'orificio de la vena cava'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Los tres orificios (nivel · contenido)',
+            data: {
+              headers: ['Orificio', 'Nivel', 'Contenido'],
+              rows: [
+                ['Orificio de la vena cava', 'T8', 'Vena cava inferior, nervio frénico derecho, linfáticos hepáticos.'],
+                ['Hiato esofágico', 'T10', 'Esófago y nervios vagos.'],
+                ['Hiato aórtico', 'T12', 'Aorta, conducto torácico y nervios esplácnicos mayores.'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Mnemotecnia de niveles: vena Cava T8, Esófago T10, Aorta T12 (8-10-12). El hiato aórtico es el más posterior y bajo; el de la cava, el más alto y en el centro tendinoso.',
+          },
+        ],
+      },
+      {
+        id: 'mdia-4',
+        number: 4,
+        title: 'Inervación',
+        keyTerms: ['nervio frénico', 'C3', 'C4', 'C5'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Nervio frénico',
+            items: [
+              'El nervio frénico (C3–C4–C5) da la inervación motora del diafragma y sensitiva del centro tendinoso.',
+              'Los nervios intercostales inferiores dan sensibilidad a la periferia.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'C3-4-5 mantiene vivo el diafragma',
+            content: 'Como el frénico nace de C3–C4–C5, una lesión medular POR ENCIMA de C3 paraliza el diafragma y exige ventilación mecánica, mientras que una lesión por debajo de C5 la respeta. El hipo es una contracción espasmódica del diafragma por irritación del frénico.',
+          },
+        ],
+      },
+    ],
+  },
 ]
