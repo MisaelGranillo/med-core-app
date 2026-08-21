@@ -2863,4 +2863,332 @@ export const anatomiaUadTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'miologia-generalidades',
+    title: 'Generalidades del sistema muscular',
+    subtitle: 'Propiedades, clasificación, envolturas, partes y nomenclatura del músculo',
+    colorKey: 'miologia',
+    categoria: 'Miología',
+    emoji: '💪',
+    keyPoints: [
+      'El músculo se contrae y genera movimiento; sus propiedades son excitabilidad, contractilidad, extensibilidad y elasticidad.',
+      'Del latín mus / musculus ("ratoncito", por el aspecto del vientre muscular al moverse).',
+      'Tejido muscular: estriado (esquelético voluntario y cardíaco involuntario) y liso (involuntario, vísceras).',
+      'Envolturas: endomisio rodea la fibra (miocito); perimisio, el fascículo; epimisio, el músculo entero.',
+      'Origen = inserción fija; inserción = inserción móvil. El músculo tiene cabeza, vientre y tendón.',
+      'La aponeurosis es una lámina tendinosa ancha; el músculo se inserta en hueso, piel, mucosa, aponeurosis o membrana sinovial.',
+      'Se nombran por morfología (trapecio), origen/inserción (esternocleidomastoideo), localización, número de vientres (digástrico) o acción (elevador de la escápula).',
+    ],
+    sections: [
+      {
+        id: 'mio-1',
+        number: 1,
+        title: '¿Qué es un músculo? Propiedades',
+        keyTerms: ['excitabilidad', 'contractilidad', 'extensibilidad', 'elasticidad'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            content:
+              'Se usa la Terminología Anatómica (TA) como principal y el clásico del profesor entre paréntesis; en el examen el clásico cuenta como correcto. Mapeo de esta clase: pterigoideo medial/lateral = pterigoideo interno/externo · mandíbula = maxilar inferior · orbicular del ojo = orbicular de los párpados · corrugador superciliar = superciliar · occipitofrontal/epicráneo = cutáneo del cráneo · galea aponeurótica = aponeurosis epicraneal · elevador de la escápula = angular del omóplato · longísimo = dorsal largo · espinoso = epiespinoso.',
+          },
+          {
+            type: 'definition',
+            title: 'Músculo',
+            content: 'Estructura con capacidad de contraerse y generar movimiento. Sus cuatro propiedades son: excitabilidad (responde a estímulos), contractilidad (se acorta), extensibilidad (se estira) y elasticidad (recupera su forma). — Músculo.',
+          },
+        ],
+      },
+      {
+        id: 'mio-2',
+        number: 2,
+        title: 'Clasificación del tejido muscular',
+        keyTerms: ['estriado', 'esquelético', 'cardíaco', 'liso'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Estriado vs. liso',
+            left: {
+              title: 'Estriado',
+              items: ['Esquelético: VOLUNTARIO (extremidades, paredes).', 'Cardíaco: INVOLUNTARIO (corazón), con discos intercalares.'],
+            },
+            right: {
+              title: 'Liso',
+              items: ['INVOLUNTARIO.', 'En las vísceras y los vasos (sistema digestivo, urinario, etc.).'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'mio-3',
+        number: 3,
+        title: 'Estructura y envolturas',
+        keyTerms: ['miocito', 'endomisio', 'fascículo', 'perimisio', 'epimisio', 'aponeurosis'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Endomisio · perimisio · epimisio',
+            content: 'Tres envolturas de tejido conjuntivo, de dentro hacia fuera: el ENDOMISIO rodea cada fibra muscular (miocito); el PERIMISIO agrupa las fibras en fascículos (haces); el EPIMISIO envuelve el músculo entero. — Envolturas del músculo.',
+          },
+          {
+            type: 'steps',
+            title: 'De la fibra al músculo',
+            steps: [
+              'Fibra muscular (miocito) → rodeada por el endomisio.',
+              'Fascículo o haz muscular (grupo de fibras) → rodeado por el perimisio.',
+              'Músculo entero → rodeado por el epimisio.',
+              'Aponeurosis: lámina tendinosa ancha por la que el músculo se inserta.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'mio-4',
+        number: 4,
+        title: 'Partes, inserciones y formas',
+        keyTerms: ['origen', 'inserción', 'cabeza', 'vientre', 'tendón', 'fusiforme', 'penniforme'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Partes e inserciones',
+            items: [
+              'Origen (inserción fija) e inserción (inserción móvil).',
+              'Cabeza, vientre y tendón.',
+              'Se inserta en hueso, piel, mucosa, aponeurosis o membrana sinovial.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Formas del músculo',
+            data: {
+              headers: ['Forma', 'Ejemplo'],
+              rows: [
+                ['Fusiforme de 1 cabeza', 'Braquial'],
+                ['Fusiforme de 2 cabezas', 'Bíceps braquial'],
+                ['Digástrico (2 vientres)', 'Digástrico'],
+                ['Poligástrico (varios vientres)', 'Recto del abdomen'],
+                ['Unipenniforme (tendón lateral)', 'Tibial posterior'],
+                ['Bipenniforme (tendón central)', 'Recto femoral'],
+                ['Plano de varias cabezas', 'Oblicuo mayor (externo) del abdomen'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'mio-5',
+        number: 5,
+        title: 'Nomenclatura muscular',
+        keyTerms: ['morfología', 'origen/inserción', 'localización', 'número de vientres', 'acción'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Cómo se nombra un músculo',
+            data: {
+              headers: ['Criterio', 'Ejemplo'],
+              rows: [
+                ['Morfología', 'Trapecio, romboides'],
+                ['Origen / inserción', 'Esternocleidomastoideo, estilohioideo'],
+                ['Localización', 'Tibial posterior, cubital anterior'],
+                ['Número de vientres', 'Digástrico, bíceps braquial'],
+                ['Acción', 'Elevador de la escápula, extensor de los dedos'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Origen fijo vs. móvil según el gesto',
+            content: 'Origen e inserción pueden invertir su papel: en una dominada, la inserción (húmero) queda fija y el origen (tronco) se mueve hacia el brazo. Por eso "origen fijo / inserción móvil" describe el gesto habitual, no una regla absoluta.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'musculos-masticacion',
+    title: 'Músculos masticatorios',
+    subtitle: 'Masetero, temporal y pterigoideos: todos inervados por el V3',
+    colorKey: 'miologia',
+    categoria: 'Miología',
+    emoji: '😬',
+    keyPoints: [
+      'Los 4 músculos de la masticación son masetero, temporal, pterigoideo medial (interno) y pterigoideo lateral (externo).',
+      'TODOS están inervados por el V3 (rama mandibular del trigémino).',
+      'Masetero, temporal y pterigoideo medial ELEVAN la mandíbula (cierran la boca).',
+      'El pterigoideo lateral (externo) la DESCIENDE y protruye (abre la boca).',
+      'Masetero: origen en el arco cigomático; inserción en la mandíbula (maxilar inferior).',
+      'Temporal: origen en la fosa temporal; inserción en el proceso coronoides (apófisis coronoides) de la mandíbula.',
+    ],
+    sections: [
+      {
+        id: 'mmast-1',
+        number: 1,
+        title: 'Los cuatro músculos masticatorios',
+        keyTerms: ['masetero', 'temporal', 'pterigoideo medial', 'pterigoideo lateral', 'V3'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Todos por el V3',
+            content:
+              'Los cuatro músculos de la masticación reciben el nervio mandibular (V3), tercera rama del trigémino. Es el dato más evaluable de la clase y el contraste con la mímica (VII). TA principal, clásico entre paréntesis: pterigoideo medial/lateral = interno/externo; mandíbula = maxilar inferior.',
+          },
+          {
+            type: 'table',
+            title: 'Origen · inserción · función (inervación: V3 en todos)',
+            data: {
+              headers: ['Músculo', 'Origen → inserción', 'Función'],
+              rows: [
+                ['Masetero', 'Arco cigomático → mandíbula (cara lateral del ángulo)', 'Eleva la mandíbula'],
+                ['Temporal', 'Fosa temporal → proceso coronoides y rama de la mandíbula', 'Eleva (y retrae) la mandíbula'],
+                ['Pterigoideo medial (interno)', 'Lámina pterigoidea lateral y palatino → cara medial del ángulo mandibular', 'Eleva la mandíbula'],
+                ['Pterigoideo lateral (externo)', 'Ala mayor del esfenoides y lámina pterigoidea lateral → cápsula de la ATM y cuello mandibular', 'Desciende (abre) y protruye la mandíbula'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'mmast-2',
+        number: 2,
+        title: 'Elevación vs. apertura',
+        keyTerms: ['elevación', 'descenso', 'protrusión'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Quién cierra y quién abre',
+            left: {
+              title: 'Elevan (cierran)',
+              items: ['Masetero', 'Temporal', 'Pterigoideo medial (interno)'],
+            },
+            right: {
+              title: 'Desciende / protruye (abre)',
+              items: ['Pterigoideo lateral (externo)', '(con los suprahioideos y la gravedad)'],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'V3 y el reflejo maseterino',
+            content: 'Como el V3 lleva la orden motora y también la sensibilidad de la mandíbula, se explora con el reflejo maseterino (percutir el mentón cierra la boca). Su exageración indica una lesión de la vía motora superior por encima del núcleo del trigémino.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'musculos-cara-craneo',
+    title: 'Músculos de la mímica y cutáneos del cráneo',
+    subtitle: 'La expresión facial, toda inervada por el VII (facial)',
+    colorKey: 'miologia',
+    categoria: 'Miología',
+    emoji: '🙂',
+    keyPoints: [
+      'TODOS los músculos de la expresión facial (mímica) están inervados por el VII (nervio facial).',
+      'Contraste clave del examen: masticación = V3; mímica = VII.',
+      'El occipitofrontal (epicráneo) tiene un vientre occipital y uno frontal unidos por la galea aponeurótica (aponeurosis epicraneal).',
+      'Periorbitarios: orbicular del ojo (de los párpados), con porciones orbitaria, palpebral y lagrimal; corrugador superciliar.',
+      'Peribucales: orbicular de los labios, buccinador, cigomático mayor y menor, risorio, elevadores y depresores.',
+      'El buccinador comprime la mejilla (soplar, masticar), pero es un músculo de la MÍMICA (VII), no masticatorio.',
+    ],
+    sections: [
+      {
+        id: 'mcara-1',
+        number: 1,
+        title: 'La mímica: toda por el VII',
+        keyTerms: ['expresión facial', 'nervio facial', 'VII'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Masticación V3 · mímica VII',
+            content:
+              'Todos los músculos cutáneos de la cara y del cráneo (la expresión facial) reciben el VII (nervio facial). Es el contraste que más se pregunta frente a los masticatorios (V3). TA principal, clásico entre paréntesis: orbicular del ojo = orbicular de los párpados; corrugador superciliar = superciliar; galea aponeurótica = aponeurosis epicraneal.',
+          },
+        ],
+      },
+      {
+        id: 'mcara-2',
+        number: 2,
+        title: 'Cutáneos del cráneo: occipitofrontal',
+        keyTerms: ['occipitofrontal', 'epicráneo', 'galea aponeurótica'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Galea aponeurótica (aponeurosis epicraneal)',
+            content: 'Lámina tendinosa que cubre la bóveda craneal y une los vientres occipital y frontal del músculo occipitofrontal (epicráneo). Está firmemente unida a la piel del cuero cabelludo y laxamente al periostio. — Galea aponeurótica.',
+          },
+          {
+            type: 'list',
+            title: 'Occipitofrontal (epicráneo)',
+            items: [
+              'Vientre occipital: origen en la línea nucal superior del occipital y la mastoides; inserción en la galea; tensa la aponeurosis.',
+              'Vientre frontal: origen en la galea; inserción en la piel de las cejas y la raíz nasal; eleva las cejas y arruga la frente.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'mcara-3',
+        number: 3,
+        title: 'Periorbitarios y de la nariz',
+        keyTerms: ['orbicular del ojo', 'corrugador superciliar', 'prócer', 'nasal'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Alrededor del ojo y la nariz',
+            items: [
+              'Orbicular del ojo (de los párpados): porciones orbitaria, palpebral y lagrimal; es el esfínter que cierra los párpados y protege el ojo.',
+              'Corrugador superciliar (superciliar): frunce el ceño (arruga vertical entre las cejas).',
+              'Depresor de la ceja.',
+              'Nariz: prócer/piramidal, transverso de la nariz (nasal) y mirtiforme (depresor del tabique): mueven la piel y los orificios nasales.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'mcara-4',
+        number: 4,
+        title: 'Peribucales',
+        keyTerms: ['orbicular de los labios', 'buccinador', 'cigomático mayor', 'risorio'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Alrededor de la boca',
+            items: [
+              'Orbicular de los labios: esfínter de la boca; frunce y proyecta los labios.',
+              'Buccinador: origen en ambos maxilares y el ligamento pterigomandibular; comprime la mejilla (soplar, silbar, mantener el bolo entre los dientes).',
+              'Cigomático mayor y menor: llevan la comisura arriba y afuera (sonrisa).',
+              'Risorio (sonrisa), elevadores del labio y del ala nasal, depresor del ángulo de la boca.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'mcara-5',
+        number: 5,
+        title: 'Masticación (V3) vs. mímica (VII)',
+        keyTerms: ['V3', 'VII', 'buccinador'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'La trampa de la inervación',
+            left: {
+              title: 'Masticación → V3',
+              items: ['Masetero, temporal, pterigoideos medial y lateral.', 'Mueven la mandíbula.'],
+            },
+            right: {
+              title: 'Mímica → VII',
+              items: ['Occipitofrontal, orbiculares, buccinador, cigomáticos, risorio…', 'Mueven la piel de la cara.'],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Parálisis de Bell',
+            content: 'La parálisis del VII (parálisis de Bell) borra los pliegues de un lado de la cara, impide cerrar el ojo y desvía la comisura, pero NO debilita la mordida (V3 intacto). Distinguir mímica de masticación es exactamente lo que localiza la lesión.',
+          },
+        ],
+      },
+    ],
+  },
 ]
