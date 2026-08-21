@@ -3189,20 +3189,72 @@ export const anatomiaUadTopics: Topic[] = [
           },
         ],
       },
+      {
+        id: 'mcara-6',
+        number: 6,
+        title: 'Músculos de la nariz (detalle)',
+        keyTerms: ['piramidal', 'transverso', 'mirtiforme', 'dilatador del ala nasal'],
+        blocks: [
+          {
+            type: 'note',
+            title: '11 por lado (según el profesor)',
+            content:
+              'El profesor cuenta 11 músculos de la nariz por lado; los principales que hay que reconocer son cuatro. Todos son de la mímica → VII (facial).',
+          },
+          {
+            type: 'list',
+            title: 'Los cuatro que caen',
+            items: [
+              'Piramidal (prócer): desciende la piel ciliar (entre las cejas) y produce las arrugas transversales de la raíz nasal.',
+              'Transverso de la nariz (nasal, porción transversa): estrecha los orificios nasales.',
+              'Mirtiforme (depresor del tabique nasal): estrecha los orificios y baja el tabique.',
+              'Dilatador propio del ala nasal: abre (dilata) las alas de la nariz.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'mcara-7',
+        number: 7,
+        title: 'Músculos de la boca (detalle)',
+        keyTerms: ['orbicular de los labios', 'buccinador', 'conducto de Stenon', 'cigomático mayor', 'risorio de Santorini'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Alrededor de la boca, en detalle',
+            items: [
+              'Orbicular de los labios: ÚNICO (no par); actúa como esfínter que cierra y proyecta los labios.',
+              'Buccinador: permite soplar y silbar; está atravesado por el conducto de Stenon (parotídeo), que drena la glándula parótida.',
+              'Elevadores: elevador común del ala de la nariz y del labio superior, elevador propio del labio superior y elevador del ángulo de la boca.',
+              'Cigomático mayor y menor: llevan la comisura arriba y afuera.',
+              'Risorio (de Santorini): estira la comisura hacia fuera.',
+              'Depresores (del labio inferior y del ángulo de la boca) y mentonianos (borla del mentón): bajan y proyectan el labio inferior.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'La sonrisa, el Joker y el VII',
+            content:
+              'El cigomático mayor es el "músculo de la sonrisa"; el elevador del ángulo de la boca es el "músculo del Joker". Toda la mímica corre por el VII (facial), que se reparte en cinco ramas: temporal, cigomática, bucal, mandibular y cervical.',
+          },
+        ],
+      },
     ],
   },
   {
     id: 'musculos-cuello-nuca',
     title: 'Músculos del cuello y la nuca',
-    subtitle: 'Suboccipitales, suprahioideos, escalenos y prevertebrales',
+    subtitle: 'Superficiales, suboccipitales, hioideos, escalenos y prevertebrales',
     colorKey: 'miologia',
     categoria: 'Miología',
     emoji: '🦒',
     keyPoints: [
-      'Nuca (triángulo suboccipital): recto posterior mayor y menor de la cabeza, oblicuo inferior y superior; su contenido es el nervio suboccipital y la arteria vertebral.',
-      'Suprahioideos: digástrico, estilohioideo, milohioideo y geniohioideo; elevan el hioides y ayudan a descender la mandíbula.',
-      'Escalenos anterior y medio se insertan en la 1.ª costilla; el posterior, en la 2.ª.',
-      'Los escalenos hacen flexión lateral del cuello y son inspiradores accesorios (elevan las dos primeras costillas).',
+      'Nuca (triángulo suboccipital): límites recto posterior mayor (medial), oblicuo superior (lateral) y oblicuo inferior (inferior); contenido = arteria vertebral, nervio suboccipital (rama posterior de C1) y plexo venoso suboccipital.',
+      'Superficiales: platisma (cutáneo del cuello, VII), ECM y trapecio; el ECM y el trapecio comparten inervación XI (motor) + C2–C3 (propiocepción).',
+      'Suprahioideos con inervación mixta: V (milohioideo y vientre anterior del digástrico), VII (estilohioideo y vientre posterior del digástrico) y XII/C1 (geniohioideo).',
+      'Infrahioideos (esternohioideo, esternotiroideo, tirohioideo, omohioideo): descienden el hioides y la laringe; inervación asa cervical (C1–C2).',
+      'Escalenos anterior y medio se insertan en la 1.ª costilla; el posterior, en la 2.ª. Flexión lateral del cuello e inspiradores accesorios.',
       'Prevertebrales: recto lateral y anterior de la cabeza, largo de la cabeza y largo del cuello (flexores del cuello).',
       'Entre el escaleno anterior y el medio pasan el plexo braquial y la arteria subclavia (desfiladero de los escalenos).',
     ],
@@ -3241,8 +3293,23 @@ export const anatomiaUadTopics: Topic[] = [
             },
           },
           {
+            type: 'table',
+            title: 'Triángulo suboccipital: límites, piso, techo y contenido',
+            data: {
+              headers: ['Elemento', 'Detalle'],
+              rows: [
+                ['Límite medial', 'Recto posterior MAYOR de la cabeza'],
+                ['Límite lateral', 'Oblicuo superior de la cabeza (oblicuo menor)'],
+                ['Límite inferior', 'Oblicuo inferior de la cabeza (oblicuo mayor)'],
+                ['Piso', 'Membrana atlantooccipital posterior + arco posterior del atlas (C1)'],
+                ['Techo', 'Complejo mayor (semiespinoso de la cabeza)'],
+                ['Contenido', 'Arteria vertebral, nervio suboccipital y plexo venoso suboccipital'],
+              ],
+            },
+          },
+          {
             type: 'note',
-            content: 'El triángulo suboccipital (recto posterior mayor medial, oblicuo superior lateral, oblicuo inferior abajo) contiene el nervio suboccipital (C1) y la arteria vertebral.',
+            content: 'El nervio suboccipital es la rama posterior (dorsal) de C1 e inerva todos los músculos suboccipitales. La arteria vertebral cruza el triángulo sobre el arco posterior del atlas antes de entrar en el cráneo.',
           },
         ],
       },
@@ -3261,9 +3328,16 @@ export const anatomiaUadTopics: Topic[] = [
                 ['Digástrico', 'Vientre post.: mastoides · vientre ant.: fosa digástrica de la mandíbula → hioides (tendón intermedio)', 'V.a: V3 · V.p: VII'],
                 ['Estilohioideo', 'Proceso estiloides → cuerpo del hioides', 'VII (facial)'],
                 ['Milohioideo', 'Línea milohioidea de la mandíbula → rafe medio y hioides', 'V3'],
-                ['Geniohioideo', 'Espina mentoniana de la mandíbula → hioides', 'C1 (por el hipogloso)'],
+                ['Geniohioideo', 'Espina mentoniana de la mandíbula → hioides', 'C1 (por el XII, hipogloso)'],
               ],
             },
+          },
+          {
+            type: 'correlacion',
+            variant: 'mnemotecnia',
+            title: 'Suprahioideos: inervación mixta (V, VII, XII)',
+            content:
+              'Los suprahioideos NO tienen un solo nervio: milohioideo y vientre anterior del digástrico por el V (trigémino); estilohioideo y vientre posterior del digástrico por el VII (facial); geniohioideo por fibras de C1 que viajan con el XII (hipogloso). El digástrico resume la regla: vientre anterior V, vientre posterior VII.',
           },
         ],
       },
@@ -3312,6 +3386,52 @@ export const anatomiaUadTopics: Topic[] = [
               'Largo de la cabeza: tubérculos anteriores de C3–C6 → occipital.',
               'Largo del cuello: por la cara anterior de las vértebras cervicales y torácicas altas; flexiona el cuello.',
             ],
+          },
+        ],
+      },
+      {
+        id: 'mcue-6',
+        number: 6,
+        title: 'Cuello superficiales: platisma, ECM y trapecio',
+        keyTerms: ['platisma', 'esternocleidomastoideo', 'ECM', 'trapecio', 'XI'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Superficiales del cuello (función · inervación)',
+            data: {
+              headers: ['Músculo', 'Función', 'Inervación'],
+              rows: [
+                ['Platisma (cutáneo del cuello)', 'Tensa la piel del cuello y baja la comisura; es músculo de la mímica', 'VII (facial), rama cervical'],
+                ['Esternocleidomastoideo (ECM)', 'Bilateral: flexiona el cuello. Unilateral: gira la cabeza al lado opuesto e inclina al mismo lado', 'XI (accesorio) motor + C2–C3'],
+                ['Trapecio', 'Mueve y fija la escápula; extiende el cuello', 'XI (accesorio) motor + C2–C3'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'El ECM se origina en el esternón (cabeza esternal) y la clavícula (cabeza clavicular) y se inserta en el proceso mastoides (y la línea nucal superior). El XI aporta la fibra motora; C2–C3 aportan la propiocepción.',
+          },
+        ],
+      },
+      {
+        id: 'mcue-7',
+        number: 7,
+        title: 'Infrahioideos',
+        keyTerms: ['esternohioideo', 'esternotiroideo', 'tirohioideo', 'omohioideo', 'asa cervical'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Los cuatro infrahioideos (descienden el hioides y la laringe)',
+            items: [
+              'Esternohioideo: del manubrio esternal al hioides.',
+              'Esternotiroideo: del manubrio al cartílago tiroides.',
+              'Tirohioideo: del cartílago tiroides al hioides.',
+              'Omohioideo: de la escápula al hioides (vientres superior e inferior con tendón intermedio).',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'Inervación: asa cervical (C1–C2, ansa cervicalis); el tirohioideo es la excepción: recibe una rama independiente de C1 que viaja con el XII (hipogloso). Función común: bajan el hioides y la laringe tras la deglución.',
           },
         ],
       },
@@ -3420,6 +3540,7 @@ export const anatomiaUadTopics: Topic[] = [
       'Inervación: nervio frénico (C3–C4–C5): "C3, 4, 5 keep the diaphragm alive".',
       'Tres orificios: hiato aórtico, hiato esofágico y orificio de la vena cava inferior.',
       'Niveles clásicos: vena cava T8 · esofágico T10 · aórtico T12 (mnemotecnia 8-10-12).',
+      'Intercostales externos: elevan las costillas (inspiración); intercostales internos: las descienden (espiración).',
     ],
     sections: [
       {
@@ -3499,6 +3620,29 @@ export const anatomiaUadTopics: Topic[] = [
             variant: 'clinica',
             title: 'C3-4-5 mantiene vivo el diafragma',
             content: 'Como el frénico nace de C3–C4–C5, una lesión medular POR ENCIMA de C3 paraliza el diafragma y exige ventilación mecánica, mientras que una lesión por debajo de C5 la respeta. El hipo es una contracción espasmódica del diafragma por irritación del frénico.',
+          },
+        ],
+      },
+      {
+        id: 'mdia-5',
+        number: 5,
+        title: 'Músculos intercostales',
+        keyTerms: ['intercostales externos', 'intercostales internos', 'inspiración', 'espiración'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Intercostales (dirección de fibras · función)',
+            data: {
+              headers: ['Músculo', 'Dirección de las fibras', 'Función'],
+              rows: [
+                ['Intercostales externos', 'Oblicuas hacia abajo y adelante (como meter las manos en los bolsillos)', 'ELEVAN las costillas → inspiración'],
+                ['Intercostales internos', 'Oblicuas hacia abajo y atrás (perpendiculares a las externas)', 'DESCIENDEN las costillas → espiración'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Ocupan los espacios intercostales entre costillas contiguas. Inervación: nervios intercostales (ramas anteriores de los nervios torácicos). Junto con el diafragma forman la musculatura respiratoria: el diafragma y los intercostales externos son los inspiradores principales.',
           },
         ],
       },
