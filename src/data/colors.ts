@@ -44,6 +44,20 @@ export const TOPIC_COLORS: Record<TopicColorKey, TopicColors> = {
     gradientTo: 'to-teal-700',
     headerBg: 'bg-gradient-to-br from-teal-500 to-teal-700',
   },
+  // Miología (músculos) — rose, distinta de osteología (stone) y artrología (teal).
+  miologia: {
+    bg: 'bg-rose-50',
+    bgLight: 'bg-rose-50/60',
+    border: 'border-rose-200',
+    text: 'text-rose-700',
+    badge: 'bg-rose-100 text-rose-800',
+    button: 'bg-rose-600 hover:bg-rose-700 text-white',
+    dot: 'bg-rose-500',
+    ring: 'ring-rose-300',
+    gradientFrom: 'from-rose-500',
+    gradientTo: 'to-rose-700',
+    headerBg: 'bg-gradient-to-br from-rose-500 to-rose-700',
+  },
   digestivo: {
     bg: 'bg-amber-50',
     bgLight: 'bg-amber-50/60',
