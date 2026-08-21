@@ -26,6 +26,14 @@ export const modules: Module[] = [
     topicIds: ['artrologia-generalidades', 'articulacion-temporomandibular', 'articulaciones-columna', 'articulaciones-miembro-superior', 'articulaciones-miembro-inferior'],
   },
   {
+    id: 'anatomia-uad-s3-miologia',
+    badge: 'UAD · Anatomía Humana y Disección I — Semana 3 (Miología)',
+    title: 'Miología I — músculos de cabeza, cuello, dorso y diafragma',
+    subtitle: 'Generalidades del músculo y músculos de la cabeza, cuello, dorso y diafragma.',
+    emoji: '💪',
+    topicIds: ['miologia-generalidades', 'musculos-masticacion', 'musculos-cara-craneo', 'musculos-cuello-nuca', 'musculos-dorso', 'musculos-diafragma'],
+  },
+  {
     id: 'anatomia-uad-repaso-p2',
     badge: 'UAD · Anatomía I — Repaso',
     title: 'Repaso 2º Parcial',
