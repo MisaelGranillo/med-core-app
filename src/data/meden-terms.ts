@@ -330,7 +330,35 @@ const pluralPairs: MedEnTerm[] = [
   { id: 'meden-pl-virus', term: 'virus', pos: 'noun', es: 'virus', forms: [{ pos: 'noun', word: 'viruses', es: 'virus (plural inglés; NO "viri")' }], categoria: 'terminologia', semana: 2, nota: 'Excepción: sigue la regla inglesa (-es), no la grecolatina.' },
 ]
 
-export const medenTerms: MedEnTerm[] = [...semana1Terms, ...adelantoTerms, ...pluralPairs]
+// Semana 4 · Clase 3 — síntomas de cold & flu y verbos médicos regulares.
+// Impartidos (sin marca "Adelanto —"). No se duplican fever/sore/pain (Semana 1).
+const semana4Terms: MedEnTerm[] = [
+  { id: 'meden-s4-headache', term: 'headache', pos: 'noun', es: 'dolor de cabeza', categoria: 'sintomas', semana: 4 },
+  { id: 'meden-s4-sore-throat', term: 'sore throat', pos: 'noun', es: 'dolor / irritación de garganta', categoria: 'sintomas', semana: 4 },
+  { id: 'meden-s4-cough', term: 'cough', pos: 'noun', es: 'tos', forms: [{ pos: 'adjective', word: 'dry / hacking cough', es: 'tos seca / persistente' }, { pos: 'adjective', word: 'wet cough', es: 'tos productiva (con flema)' }], categoria: 'sintomas', semana: 4 },
+  { id: 'meden-s4-sneezing', term: 'sneezing', pos: 'noun', es: 'estornudos', forms: [{ pos: 'verb', word: 'to sneeze', es: 'estornudar' }], categoria: 'sintomas', semana: 4 },
+  { id: 'meden-s4-nasal-congestion', term: 'nasal congestion', pos: 'noun', es: 'congestión nasal (nariz tapada)', forms: [{ pos: 'adjective', word: 'stuffy / blocked / bunged up', es: 'tapado (nariz)' }], categoria: 'sintomas', semana: 4 },
+  { id: 'meden-s4-runny-nose', term: 'runny nose', pos: 'noun', es: 'nariz que gotea / mocos', categoria: 'sintomas', semana: 4 },
+  { id: 'meden-s4-watering-eyes', term: 'watering eyes', pos: 'noun', es: 'ojos llorosos', categoria: 'sintomas', semana: 4 },
+  { id: 'meden-s4-chills', term: 'chills', pos: 'noun', es: 'escalofríos', forms: [{ pos: 'noun', word: 'shivering', es: 'tiritar' }], categoria: 'sintomas', semana: 4 },
+  { id: 'meden-s4-feverish', term: 'feverish', pos: 'adjective', es: 'afiebrado, con fiebre', categoria: 'sintomas', semana: 4, nota: 'raised / high / mild fever = fiebre alta / leve.' },
+  { id: 'meden-s4-sweating', term: 'sweating', pos: 'noun', es: 'sudoración', forms: [{ pos: 'noun', word: 'perspiration', es: 'sudoración (formal)' }], categoria: 'sintomas', semana: 4 },
+  { id: 'meden-s4-fatigue', term: 'fatigue', pos: 'noun', es: 'fatiga, cansancio', forms: [{ pos: 'noun', word: 'weariness / exhaustion', es: 'agotamiento' }], categoria: 'sintomas', semana: 4 },
+  { id: 'meden-s4-nausea', term: 'nausea', pos: 'noun', es: 'náusea', forms: [{ pos: 'noun', word: 'vomiting', es: 'vómito' }], categoria: 'sintomas', semana: 4 },
+  { id: 'meden-s4-body-aches', term: 'body aches', pos: 'noun', es: 'dolores corporales generalizados', categoria: 'sintomas', semana: 4 },
+  { id: 'meden-s4-loss-of-smell', term: 'loss of smell', pos: 'noun', es: 'pérdida del olfato', categoria: 'sintomas', semana: 4 },
+  // Verbos médicos regulares (pasado en -ed) — el examen llega hasta aquí.
+  { id: 'meden-s4-administer', term: 'to administer', pos: 'verb', es: 'administrar (un fármaco)', categoria: 'general', semana: 4 },
+  { id: 'meden-s4-admit', term: 'to admit', pos: 'verb', es: 'ingresar / hospitalizar', categoria: 'general', semana: 4 },
+  { id: 'meden-s4-diagnose', term: 'to diagnose', pos: 'verb', es: 'diagnosticar', categoria: 'general', semana: 4 },
+  { id: 'meden-s4-prescribe', term: 'to prescribe', pos: 'verb', es: 'recetar, prescribir', categoria: 'general', semana: 4 },
+  { id: 'meden-s4-discharge', term: 'to discharge', pos: 'verb', es: 'dar de alta', categoria: 'general', semana: 4 },
+  { id: 'meden-s4-refer', term: 'to refer', pos: 'verb', es: 'derivar / referir a otro servicio', categoria: 'general', semana: 4 },
+  { id: 'meden-s4-treat', term: 'to treat', pos: 'verb', es: 'tratar', categoria: 'general', semana: 4 },
+  { id: 'meden-s4-vaccinate', term: 'to vaccinate', pos: 'verb', es: 'vacunar', categoria: 'general', semana: 4 },
+]
+
+export const medenTerms: MedEnTerm[] = [...semana1Terms, ...adelantoTerms, ...pluralPairs, ...semana4Terms]
 
 export const MEDEN_STATS = {
   total: medenTerms.length,
