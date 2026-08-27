@@ -34,6 +34,14 @@ export const modules: Module[] = [
     topicIds: ['miologia-generalidades', 'musculos-masticacion', 'musculos-cara-craneo', 'musculos-cuello-nuca', 'musculos-dorso', 'musculos-diafragma'],
   },
   {
+    id: 'anatomia-uad-s4-miologia',
+    badge: 'UAD · Anatomía Humana y Disección I — Semana 4',
+    title: 'Miología II — pared abdominal y miembros',
+    subtitle: 'Músculos de la pared abdominal, miembro superior e inferior. Cierra Anatomía I (el pie queda pendiente).',
+    emoji: '🦿',
+    topicIds: ['musculos-pared-abdominal', 'musculos-hombro-brazo', 'musculos-antebrazo-mano', 'musculos-cadera-muslo', 'musculos-pierna-pie'],
+  },
+  {
     id: 'anatomia-uad-repaso-p2',
     badge: 'UAD · Anatomía I — Repaso',
     title: 'Repaso 2º Parcial',

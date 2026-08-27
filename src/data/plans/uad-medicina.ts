@@ -173,12 +173,23 @@ export const uadMedicina: Plan = {
               },
               {
                 number: 4,
-                title: 'Miología II: abdomen, pelvis y miembros',
+                title: 'Miología II: pared abdominal y miembros',
+                // COMPLETA salvo el pie: la Clase 4 cerró muslo y pierna; los
+                // músculos intrínsecos del pie se impartían en la sesión siguiente
+                // (parche pendiente). Cierra Anatomía Humana y Disección I.
+                estado: 'impartido',
+                topicIds: ['musculos-pared-abdominal', 'musculos-hombro-brazo', 'musculos-antebrazo-mano', 'musculos-cadera-muslo', 'musculos-pierna-pie'],
                 temas: [
-                  'Músculos del abdomen y región inguinal',
-                  'Músculos de la pelvis',
-                  'Músculos del miembro superior',
-                  'Músculos del miembro inferior',
+                  'Clase 1 (impartida): pared abdominal anterolateral (oblicuos, transverso, recto, piramidal; Camper/Scarpa, línea alba, Petit) y posterior (iliopsoas, cuadrado lumbar)',
+                  'Clase 2 (impartida): miembro superior — región pectoral, dorso, hombro, manguito rotador (SITS) y brazo',
+                  'Clase 3 (impartida): antebrazo posterior y mano (tenar, hipotenar, lumbricales, interóseos); glúteos y rotadores externos',
+                  'Clase 4 (impartida): muslo (3 compartimientos, pata de ganso) y pierna (3 compartimientos, tendón de Aquiles)',
+                  'Pendiente (parche): músculos intrínsecos del pie (planta y dorso), que cerraban en la sesión siguiente',
+                ],
+                fuentes: [
+                  { title: 'Moore — Anatomía con orientación clínica', file: 'Moore Anatomía.pdf', paginas: 'cap. Abdomen, Músculos de la pared anterolateral y posterior, libro 189–210 (PDF 213–234)', nota: 'Oblicuos, transverso, recto, vaina del recto, línea alba, iliopsoas y cuadrado lumbar.' },
+                  { title: 'Moore — Anatomía con orientación clínica', file: 'Moore Anatomía.pdf', paginas: 'cap. Miembro superior, Músculos, libro 408–446 (PDF 432–470)', nota: 'Pectoral, escápulo-humerales, manguito rotador, brazo, antebrazo y mano.' },
+                  { title: 'Moore — Anatomía con orientación clínica', file: 'Moore Anatomía.pdf', paginas: 'cap. Miembro inferior, Músculos, libro 317–343 (PDF 341–367)', nota: 'Glúteos, rotadores externos, compartimientos del muslo y de la pierna.' },
                 ],
               },
             ],
@@ -207,6 +218,10 @@ export const uadMedicina: Plan = {
               { title: 'Semana 3 · Clase 3 — Articulaciones de la mano y del miembro inferior', file: 'Semana 3 - Clase 3 Mano y Miembro Inferior.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Clase 4 — Miología I: generalidades y músculos de cabeza, cuello, dorso y diafragma', file: 'Semana 3 - Miologia I Musculos.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Clase 5 — Músculos de cara y cuello (nariz, boca, nuca e hioideos)', file: 'Semana 3 - Clase 5 Musculos cara y cuello.pdf', kind: 'Clase' },
+              { title: 'Semana 4 · Clases 1–2 — Miología II: pared abdominal y miembro superior', file: 'Semana 4 - Musculos Clases 1-2.pdf', kind: 'Clase' },
+              { title: 'Semana 4 · Clase 3 — Miología II: mano, glúteos y muslo', file: 'Semana 4 - Musculos Clase 3.pdf', kind: 'Clase' },
+              { title: 'Semana 4 · Caso Clínico — Ruptura del bíceps (signo de Popeye)', file: 'Semana 4 - Caso Clinico Biceps Popeye.pdf', kind: 'Caso clínico' },
+              { title: 'Semana 4 · Proyecto Integrador — Tabla de 5+5 músculos (inserciones, arteria, vena y nervio)', file: 'Semana 4 - Proyecto Integrador Tabla Musculos.pdf', kind: 'Entrega' },
               { title: 'Manual de Anatomía I', file: 'MANUAL ANATOMIA I.pdf', kind: 'Manual' },
               { title: 'Manual de Anatomía Humana y su Disección 1', file: 'MANUAL DE ANATOMIA HUMANA Y SU DISECCION 1.pdf', kind: 'Manual' },
               { title: 'Programa Académico — Anatomía I', file: 'PROGRAMA ANATOMIA I.pdf', kind: 'Programa' },
