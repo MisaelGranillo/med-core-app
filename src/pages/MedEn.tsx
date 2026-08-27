@@ -10,12 +10,17 @@ import { useSearchParams } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   MagnifyingGlass, X, CheckCircle, XCircle,
-  Trophy, ArrowCounterClockwise, CaretDown, Translate,
+  Trophy, ArrowCounterClockwise, CaretDown, Translate, DownloadSimple,
 } from '@phosphor-icons/react'
 import {
   medenTerms, POS_LABELS, CATEGORIA_LABELS, MEDEN_STATS,
   type MedEnTerm, type MedEnPos,
 } from '../data/meden-terms'
+import { abreviaturas } from '../data/abbreviations'
+
+// Abreviaturas ordenadas alfabéticamente por sigla (una sola vez).
+const abreviaturasSorted = [...abreviaturas].sort((a, b) =>
+  a.abbr.localeCompare(b.abbr, 'en', { sensitivity: 'base' }))
 
 // ──────────────────────────────────────────────────────────────
 // Helpers
@@ -236,6 +241,7 @@ export function MedEn() {
   const initialPos = (searchParams.get('pos') as MedEnPos | null) ?? 'todos'
   const initialSemana = searchParams.get('semana') ?? 'todas'
 
+  const [view, setView]             = useState<'vocabulario' | 'abreviaturas'>('vocabulario')
   const [query, setQuery]           = useState('')
   const [filterPos, setFilterPos]   = useState<string>(initialPos)
   const [filterCat, setFilterCat]   = useState<string>(initialCategoria)
@@ -267,6 +273,13 @@ export function MedEn() {
       return true
     })
   }, [filterPos, filterCat, filterSem, query])
+
+  const filteredAbrev = useMemo(() => {
+    if (!query) return abreviaturasSorted
+    const q = query.toLowerCase()
+    return abreviaturasSorted.filter(a =>
+      a.abbr.toLowerCase().includes(q) || a.meaning.toLowerCase().includes(q))
+  }, [query])
 
   const resetFilters = () => { setQuery(''); setFilterPos('todos'); setFilterCat('todas'); setFilterSem('todas') }
 
@@ -302,13 +315,15 @@ export function MedEn() {
               </div>
             </div>
 
-            <button
-              onClick={() => setShowQuiz(true)}
-              className="btn-primary bg-zinc-900 hover:bg-zinc-700 text-white px-5 py-2.5 self-start md:self-end"
-            >
-              <Trophy weight="fill" className="w-4 h-4" />
-              Iniciar Quiz (10 preguntas)
-            </button>
+            {view === 'vocabulario' && (
+              <button
+                onClick={() => setShowQuiz(true)}
+                className="btn-primary bg-zinc-900 hover:bg-zinc-700 text-white px-5 py-2.5 self-start md:self-end"
+              >
+                <Trophy weight="fill" className="w-4 h-4" />
+                Iniciar Quiz (10 preguntas)
+              </button>
+            )}
           </div>
         </div>
       </section>
@@ -316,13 +331,27 @@ export function MedEn() {
       {/* Filtros */}
       <div className="bg-surface border-b border-zinc-100 sticky top-14 z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 space-y-2.5">
+          {/* Conmutador Vocabulario / Abreviaturas */}
+          <div className="inline-flex items-center gap-1 bg-zinc-100 rounded-xl p-1">
+            {([['vocabulario', 'Vocabulario'], ['abreviaturas', 'Abreviaturas']] as const).map(([v, label]) => (
+              <button
+                key={v}
+                onClick={() => { setView(v); setQuery('') }}
+                className={`text-xs font-bold px-4 py-1.5 rounded-lg transition-all duration-150
+                  ${view === v ? 'bg-surface text-zinc-900 shadow-sm' : 'text-zinc-500 hover:text-zinc-700'}`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
           <div className="relative max-w-md">
             <MagnifyingGlass className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 pointer-events-none" />
             <input
               type="text"
               value={query}
               onChange={e => setQuery(e.target.value)}
-              placeholder="Buscar término, significado o ejemplo..."
+              placeholder={view === 'abreviaturas' ? 'Buscar sigla o significado...' : 'Buscar término, significado o ejemplo...'}
               className="w-full bg-zinc-100 pl-9 pr-9 py-2 rounded-xl text-sm outline-none focus:ring-2 focus:ring-pink-300 focus:bg-surface transition-all"
             />
             {query && (
@@ -332,6 +361,24 @@ export function MedEn() {
             )}
           </div>
 
+          {view === 'abreviaturas' ? (
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="text-xs text-zinc-400 font-medium">
+                <span className="text-zinc-700 font-bold">{filteredAbrev.length}</span>
+                {query ? ` de ${abreviaturas.length}` : ''} abreviaturas
+              </p>
+              <a
+                href="/descargas/medical-abbreviations-enlex.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full border border-pink-200 bg-pink-50 text-pink-700 hover:bg-pink-100 transition-colors"
+              >
+                <DownloadSimple weight="bold" className="w-3.5 h-3.5" />
+                Descargar PDF
+              </a>
+            </div>
+          ) : (
+          <>
           <div className="flex flex-wrap gap-2 items-center">
             {/* Categoría gramatical (pos) */}
             <button
@@ -382,12 +429,38 @@ export function MedEn() {
           <p className="text-xs text-zinc-400 font-medium">
             Mostrando <span className="text-zinc-700 font-bold">{filtered.length}</span> de {MEDEN_STATS.total} términos
           </p>
+          </>
+          )}
         </div>
       </div>
 
       {/* Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
-        {filtered.length === 0 ? (
+        {view === 'abreviaturas' ? (
+          filteredAbrev.length === 0 ? (
+            <div className="flex flex-col items-center justify-center gap-3 py-20 text-center">
+              <p className="text-4xl">🔍</p>
+              <p className="font-semibold text-zinc-700">Sin resultados</p>
+              <p className="text-sm text-zinc-400">Prueba con otra búsqueda.</p>
+              <button onClick={() => setQuery('')} className="btn-primary bg-zinc-100 hover:bg-zinc-200 text-zinc-700 px-4 py-2 mt-2">
+                <ArrowCounterClockwise weight="bold" className="w-4 h-4" />
+                Limpiar búsqueda
+              </button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1.5">
+              {filteredAbrev.map(a => (
+                <div
+                  key={a.abbr}
+                  className="flex items-baseline gap-3 py-1.5 px-3 rounded-lg hover:bg-zinc-50 transition-colors"
+                >
+                  <span className="font-bold text-pink-700 text-sm shrink-0 min-w-[3.5rem]">{a.abbr}</span>
+                  <span className="text-sm text-zinc-500 leading-snug">{a.meaning}</span>
+                </div>
+              ))}
+            </div>
+          )
+        ) : filtered.length === 0 ? (
           <div className="flex flex-col items-center justify-center gap-3 py-20 text-center">
             <p className="text-4xl">🔍</p>
             <p className="font-semibold text-zinc-700">Sin resultados</p>
