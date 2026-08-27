@@ -3772,4 +3772,562 @@ export const anatomiaUadTopics: Topic[] = [
       },
     ],
   },
+
+  // ═══════════════ Semana 4 · Miología II ═══════════════
+  {
+    id: 'musculos-pared-abdominal',
+    title: 'Músculos de la pared abdominal',
+    subtitle: 'Anterolateral (los "cuadritos" y las capas) y posterior (psoas ilíaco y cuadrado lumbar)',
+    colorKey: 'miologia',
+    categoria: 'Miología',
+    emoji: '🧱',
+    keyPoints: [
+      'Anterolateral (5): oblicuo externo (mayor), oblicuo interno (menor), transverso del abdomen, recto del abdomen y piramidal.',
+      'El recto del abdomen es poligástrico: sus intersecciones tendinosas dan los "cuadritos" (lavadero).',
+      'Capas superficiales: piel, fascia de Camper (grasa) y fascia de Scarpa (Escarpa, membranosa).',
+      'La vaina del recto (hojas anterior y posterior) se entrecruza en la línea alba; bajo el arco de Douglas desaparece la hoja posterior.',
+      'Triángulo lumbar de Petit: medial el dorsal ancho, lateral el oblicuo externo, piso el oblicuo interno, base la cresta ilíaca.',
+      'Posterior: psoas ilíaco (iliopsoas) → trocánter menor (flexiona el muslo o el tronco); psoas menor (inconstante) y cuadrado lumbar.',
+      'El cuadrado lumbar fija el tronco y la 12.ª costilla; lo inervan el subcostal y el plexo lumbar.',
+    ],
+    sections: [
+      {
+        id: 'mpab-1',
+        number: 1,
+        title: 'Nomenclatura y capas',
+        keyTerms: ['oblicuo externo', 'oblicuo interno', 'fascia de Camper', 'fascia de Scarpa'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            content:
+              'Se usa la TA como principal y el clásico entre paréntesis (cuenta como correcto). Mapeo: oblicuo externo = oblicuo mayor · oblicuo interno = oblicuo menor · recto del abdomen = recto anterior del abdomen · fascia de Scarpa = fascia de Escarpa.',
+          },
+          {
+            type: 'list',
+            title: 'Capas de la pared (de superficial a profundo)',
+            items: [
+              'Piel.',
+              'Fascia de Camper: capa grasa del tejido subcutáneo.',
+              'Fascia de Scarpa (Escarpa): capa membranosa del tejido subcutáneo.',
+              'Los tres planos musculares anchos y el recto, envueltos por la vaina del recto.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'mpab-2',
+        number: 2,
+        title: 'Anterolateral (5 músculos)',
+        keyTerms: ['transverso del abdomen', 'recto del abdomen', 'piramidal', 'poligástrico'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Los cinco (función · inervación)',
+            data: {
+              headers: ['Músculo', 'Función', 'Inervación'],
+              rows: [
+                ['Oblicuo externo (mayor)', 'Flexiona y rota el tronco; comprime el abdomen', 'Nervios intercostales inferiores (T7–T11) y subcostal'],
+                ['Oblicuo interno (menor)', 'Flexiona y rota el tronco al MISMO lado', 'Intercostales inferiores, subcostal e iliohipogástrico/ilioinguinal (L1)'],
+                ['Transverso del abdomen', 'Comprime las vísceras (faja abdominal)', 'Intercostales inferiores, subcostal, iliohipogástrico/ilioinguinal'],
+                ['Recto del abdomen', 'Flexiona el tronco; poligástrico ("cuadritos")', 'Intercostales inferiores (T7–T12)'],
+                ['Piramidal', 'Tensa la línea alba (inconstante)', 'Subcostal (T12)'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'mpab-3',
+        number: 3,
+        title: 'Vaina del recto y línea alba',
+        keyTerms: ['vaina del recto', 'línea alba', 'arco de Douglas'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Línea alba',
+            content: 'Rafe fibroso medio, del apéndice xifoides a la sínfisis del pubis, formado por el entrecruzamiento de las aponeurosis de los tres músculos anchos (las hojas de la vaina del recto). — Línea alba.',
+          },
+          {
+            type: 'note',
+            content: 'La vaina del recto tiene hoja anterior y posterior. Por debajo del arco de Douglas (línea arqueada) desaparece la hoja posterior: las tres aponeurosis pasan por delante del recto, que queda apoyado sobre la fascia transversalis.',
+          },
+        ],
+      },
+      {
+        id: 'mpab-4',
+        number: 4,
+        title: 'Triángulo lumbar de Petit',
+        keyTerms: ['triángulo de Petit', 'dorsal ancho', 'cresta ilíaca'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Triángulo lumbar de Petit',
+            content: 'Zona débil de la pared posterolateral: límite medial el borde del dorsal ancho, límite lateral el oblicuo externo, piso el oblicuo interno y base la cresta ilíaca. Punto posible de hernia lumbar. — Triángulo lumbar inferior (de Petit).',
+          },
+        ],
+      },
+      {
+        id: 'mpab-5',
+        number: 5,
+        title: 'Pared posterior',
+        keyTerms: ['psoas ilíaco', 'iliopsoas', 'psoas menor', 'cuadrado lumbar'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Músculos posteriores (origen → inserción · función · inervación)',
+            data: {
+              headers: ['Músculo', 'Origen → inserción · función', 'Inervación'],
+              rows: [
+                ['Psoas ilíaco (iliopsoas)', 'Cuerpos/apófisis lumbares + fosa ilíaca → trocánter menor; flexiona el muslo o el tronco', 'Ramas del plexo lumbar (L1–L3) / nervio femoral (ilíaco)'],
+                ['Psoas menor (inconstante)', 'Vértebras T12–L1 → eminencia iliopúbica; ayuda a flexionar la columna', 'Plexo lumbar (L1)'],
+                ['Cuadrado lumbar', '12.ª costilla y apófisis transversas → cresta ilíaca; fija el tronco y la 12.ª costilla', 'Subcostal (T12) y plexo lumbar (L1–L4)'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'El iliopsoas y el signo del psoas',
+            content: 'El psoas ilíaco es el flexor más potente de la cadera y un músculo bidireccional (mueve el muslo o el tronco según el punto fijo). En una apendicitis, extender la cadera estira el psoas y despierta dolor: es el signo del psoas.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'musculos-hombro-brazo',
+    title: 'Músculos del hombro y el brazo',
+    subtitle: 'Región pectoral, dorso, manguito rotador (SITS) y los músculos del brazo',
+    colorKey: 'miologia',
+    categoria: 'Miología',
+    emoji: '💪',
+    keyPoints: [
+      'Región pectoral: pectoral mayor (→ canal bicipital; aducción y rotación interna), pectoral menor, subclavio y serrato anterior (mayor).',
+      'El serrato anterior lo inerva el nervio torácico largo (de Bell); su lesión da la escápula alada.',
+      'Manguito rotador = SITS: Supraespinoso, Infraespinoso, redondo menor (Teres minor) y Subescapular.',
+      'El manguito estabiliza la cabeza del húmero en la glenoides; el supraespinoso es el que más se desgarra.',
+      'Brazo, flexores (musculocutáneo): bíceps braquial, coracobraquial y braquial anterior.',
+      'Brazo, extensor: tríceps braquial, inervado por el nervio radial.',
+      'El deltoides (nervio axilar) es el principal abductor del hombro tras los primeros grados del supraespinoso.',
+    ],
+    sections: [
+      {
+        id: 'mhb-1',
+        number: 1,
+        title: 'Nomenclatura',
+        keyTerms: ['serrato anterior', 'surco intertubercular', 'manguito rotador'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            content:
+              'TA como principal y clásico entre paréntesis (cuenta como correcto). Mapeo: serrato anterior = serrato mayor · elevador de la escápula = angular del omóplato · surco intertubercular = canal (corredera) bicipital · redondo menor = teres minor.',
+          },
+        ],
+      },
+      {
+        id: 'mhb-2',
+        number: 2,
+        title: 'Región pectoral',
+        keyTerms: ['pectoral mayor', 'pectoral menor', 'subclavio', 'serrato anterior'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Pectorales y serrato (función · inervación)',
+            data: {
+              headers: ['Músculo', 'Origen → inserción · función', 'Inervación'],
+              rows: [
+                ['Pectoral mayor', 'Clavícula y esternón → surco intertubercular (canal bicipital); aducción y rotación interna del brazo', 'Nervios pectorales medial y lateral'],
+                ['Pectoral menor', '3.ª–5.ª costillas → apófisis coracoides; desciende y estabiliza la escápula', 'Nervio pectoral medial'],
+                ['Subclavio', '1.ª costilla → clavícula; estabiliza la clavícula', 'Nervio del subclavio'],
+                ['Serrato anterior (mayor)', 'Costillas 1–8 → borde medial de la escápula; la fija y la rota (abducción del brazo)', 'Nervio torácico largo (de Bell)'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'mhb-3',
+        number: 3,
+        title: 'Dorso y hombro',
+        keyTerms: ['trapecio', 'dorsal ancho', 'deltoides', 'romboides'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Que mueven la escápula y el hombro',
+            items: [
+              'Trapecio (XI + C3–C4) y dorsal ancho (nervio toracodorsal): superficiales.',
+              'Elevador de la escápula (angular del omóplato) y romboides menor/mayor: nervio dorsal escapular.',
+              'Deltoides (nervio axilar): abductor principal del hombro.',
+              'Redondo mayor (subescapular inferior): aduce y rota internamente el brazo — NO es del manguito.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'mhb-4',
+        number: 4,
+        title: 'Manguito rotador (SITS)',
+        keyTerms: ['supraespinoso', 'infraespinoso', 'redondo menor', 'subescapular', 'SITS'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Manguito rotador (SITS)',
+            content: 'Los cuatro músculos que rodean y estabilizan la articulación del hombro: Supraespinoso, Infraespinoso, redondo menor (Teres minor) y Subescapular (mnemotecnia SITS / "CIS menor"). — Manguito de los rotadores.',
+          },
+          {
+            type: 'table',
+            title: 'Los cuatro del manguito (función · inervación)',
+            data: {
+              headers: ['Músculo', 'Función', 'Inervación'],
+              rows: [
+                ['Supraespinoso', 'Inicia la abducción (primeros ~15°)', 'Nervio supraescapular'],
+                ['Infraespinoso', 'Rotación externa', 'Nervio supraescapular'],
+                ['Redondo menor', 'Rotación externa', 'Nervio axilar'],
+                ['Subescapular', 'Rotación interna', 'Nervios subescapular superior e inferior'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'mhb-5',
+        number: 5,
+        title: 'Músculos del brazo',
+        keyTerms: ['bíceps braquial', 'coracobraquial', 'braquial anterior', 'tríceps braquial'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Flexores vs. extensor del brazo',
+            left: {
+              title: 'Flexores → musculocutáneo',
+              items: ['Bíceps braquial (flexiona y supina el antebrazo).', 'Coracobraquial (flexiona el brazo).', 'Braquial anterior (flexor puro del codo).'],
+            },
+            right: {
+              title: 'Extensor → radial',
+              items: ['Tríceps braquial: extiende el codo.', 'Inervado por el nervio radial.'],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Signo de Popeye y desgarro del manguito',
+            content: 'La ruptura del tendón distal (o de la cabeza larga) del bíceps braquial da el signo de Popeye: el vientre se retrae y abulta en el brazo. Y el manguito rotador (SITS) estabiliza la cabeza del húmero en la glenoides: el supraespinoso es el que más se desgarra.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'musculos-antebrazo-mano',
+    title: 'Músculos del antebrazo y la mano',
+    subtitle: 'Antebrazo anterior (flexores) y posterior (extensores), y la musculatura intrínseca de la mano',
+    colorKey: 'miologia',
+    categoria: 'Miología',
+    emoji: '✋',
+    keyPoints: [
+      'Antebrazo anterior: flexores y pronadores, en planos superficial y profundo; nervio mediano (y cubital en el borde medial).',
+      'El túnel del carpo transmite el nervio mediano y los tendones flexores; su compresión da el síndrome del túnel carpiano.',
+      'Antebrazo posterior: extensores y supinadores; nervio radial y su rama profunda (interóseo posterior).',
+      'Braquiorradial (supinador largo): origen en la cresta supracondílea lateral → estiloides del radio; único posterior que FLEXIONA el antebrazo.',
+      'Mano — eminencia tenar (pulgar) e hipotenar (meñique); solo el pulgar y el meñique tienen oponente.',
+      'Lumbricales: unen tendón (flexor profundo) con la expansión extensora; interóseos: unen hueso con hueso.',
+      'Los interóseos palmares se originan en el 2.º, 4.º y 5.º metacarpianos (corrección de la clase: NO en el 1.º).',
+    ],
+    sections: [
+      {
+        id: 'mam-1',
+        number: 1,
+        title: 'Nomenclatura',
+        keyTerms: ['braquiorradial', 'supinador', 'interóseos'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            content:
+              'TA como principal y clásico entre paréntesis (cuenta como correcto). Mapeo: braquiorradial = supinador largo · supinador = supinador corto · extensor de los dedos = extensor común de los dedos · extensor del índice = extensor propio del índice.',
+          },
+        ],
+      },
+      {
+        id: 'mam-2',
+        number: 2,
+        title: 'Antebrazo anterior (flexores)',
+        keyTerms: ['flexores', 'pronadores', 'túnel del carpo', 'nervio mediano'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Flexores y pronadores',
+            items: [
+              'Superficiales: pronador redondo, flexor radial del carpo, palmar largo, flexor cubital del carpo y flexor superficial de los dedos.',
+              'Profundos: flexor profundo de los dedos, flexor largo del pulgar y pronador cuadrado.',
+              'Inervación: nervio mediano; excepción cubital → flexor cubital del carpo y la mitad medial del flexor profundo.',
+              'El túnel del carpo transmite el nervio mediano y los tendones flexores bajo el retináculo flexor.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'mam-3',
+        number: 3,
+        title: 'Antebrazo posterior (extensores)',
+        keyTerms: ['braquiorradial', 'extensor radial', 'ancóneo', 'interóseo posterior'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'El braquiorradial, la excepción',
+            content: 'El braquiorradial (supinador largo) nace en la cresta supracondílea lateral y se inserta en la apófisis estiloides del radio: pese a estar en el compartimiento posterior, FLEXIONA el antebrazo (sobre todo en semipronación).',
+          },
+          {
+            type: 'list',
+            title: 'Superficiales y profundos',
+            items: [
+              'Superficiales: extensor radial largo y corto del carpo, extensor de los dedos, extensor del meñique, extensor cubital del carpo y ancóneo.',
+              'Profundos (5): supinador, abductor largo del pulgar, extensor corto y largo del pulgar y extensor del índice.',
+              'Inervación: nervio radial y su rama profunda / nervio interóseo posterior.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'mam-4',
+        number: 4,
+        title: 'Músculos de la mano',
+        keyTerms: ['eminencia tenar', 'hipotenar', 'lumbricales', 'interóseos'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Intrínsecos de la mano',
+            data: {
+              headers: ['Grupo', 'Músculos · función'],
+              rows: [
+                ['Eminencia tenar (pulgar)', 'Abductor corto, flexor corto, oponente y aductor del pulgar'],
+                ['Eminencia hipotenar (meñique)', 'Palmar corto, abductor, flexor corto y oponente del meñique'],
+                ['Lumbricales', 'Del tendón del flexor profundo → expansión extensora; flexionan MCF y extienden IF'],
+                ['Interóseos', 'Palmares (aducen, del 2.º/4.º/5.º MC) y dorsales (abducen); referencia = 3.er dedo'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Inervación: nervio mediano (tenar y lumbricales laterales) y nervio cubital (hipotenar, interóseos, lumbricales mediales y aductor del pulgar). La abducción/aducción de los dedos se refiere al 3.er dedo, no a la línea media del cuerpo.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Síndrome del túnel carpiano',
+            content: 'La compresión del nervio mediano en el túnel del carpo produce parestesias en los tres primeros dedos y debilidad de la oposición del pulgar (atrofia tenar): es el síndrome del túnel carpiano, la neuropatía por atrapamiento más frecuente.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'musculos-cadera-muslo',
+    title: 'Músculos de la cadera y el muslo',
+    subtitle: 'Glúteos, rotadores externos y los tres compartimientos del muslo',
+    colorKey: 'miologia',
+    categoria: 'Miología',
+    emoji: '🦵',
+    keyPoints: [
+      'Glúteos: mayor (nervio glúteo inferior), mediano, menor y tensor de la fascia lata (nervio glúteo superior) → tracto iliotibial / trocánter mayor.',
+      'Rotadores externos: piriforme (piramidal), obturador interno, gemelos superior e inferior, cuadrado femoral y obturador externo.',
+      'Muslo, compartimiento anterior (nervio femoral): cuádriceps (recto femoral + 3 vastos), sartorio, iliopsoas.',
+      'Compartimiento medial (nervio obturador): pectíneo, aductores mayor/mediano/menor y grácil (recto interno).',
+      'Compartimiento posterior (nervio ciático): bíceps femoral, semitendinoso y semimembranoso (isquiotibiales).',
+      'Los isquiotibiales flexionan la pierna y extienden el muslo.',
+      'Pata de ganso = sartorio + grácil (recto interno) + semitendinoso, en la cara medial de la tibia.',
+    ],
+    sections: [
+      {
+        id: 'mcm-1',
+        number: 1,
+        title: 'Nomenclatura',
+        keyTerms: ['piriforme', 'grácil', 'bíceps femoral', 'tracto iliotibial'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            content:
+              'TA como principal y clásico entre paréntesis (cuenta como correcto). Mapeo: piriforme = piramidal de la pelvis · grácil = recto interno · bíceps femoral = bíceps crural · recto femoral = recto anterior del muslo · tensor de la fascia lata → tracto iliotibial (cintilla de Maissiat).',
+          },
+        ],
+      },
+      {
+        id: 'mcm-2',
+        number: 2,
+        title: 'Glúteos y tensor de la fascia lata',
+        keyTerms: ['glúteo mayor', 'glúteo mediano', 'glúteo menor', 'TFL'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Región glútea (función · inervación)',
+            data: {
+              headers: ['Músculo', 'Función', 'Inervación'],
+              rows: [
+                ['Glúteo mayor', 'Extensor y rotador externo potente de la cadera (único con porción craneal en humanos)', 'Nervio glúteo inferior'],
+                ['Glúteo mediano', 'Abduce y estabiliza la pelvis al caminar', 'Nervio glúteo superior'],
+                ['Glúteo menor', 'Abduce y rota internamente la cadera', 'Nervio glúteo superior'],
+                ['Tensor de la fascia lata (TFL)', 'Tensa el tracto iliotibial; abduce y estabiliza', 'Nervio glúteo superior'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'mcm-3',
+        number: 3,
+        title: 'Rotadores externos',
+        keyTerms: ['piriforme', 'obturador interno', 'gemelos', 'cuadrado femoral'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Los seis rotadores externos (de arriba abajo)',
+            items: [
+              'Piriforme (piramidal): referencia clave de la región glútea; la arteria y los nervios salen por encima y por debajo de él.',
+              'Obturador interno, con el gemelo superior y el gemelo inferior.',
+              'Cuadrado femoral.',
+              'Obturador externo (más profundo).',
+              'Todos rotan externamente la cadera y la estabilizan.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'mcm-4',
+        number: 4,
+        title: 'Los tres compartimientos del muslo',
+        keyTerms: ['cuádriceps', 'aductores', 'isquiotibiales', 'fascia lata'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Compartimiento y su nervio',
+            left: {
+              title: 'Anterior → femoral',
+              items: ['Cuádriceps: recto femoral + vastos lateral, medial e intermedio.', 'Sartorio (el más largo) e iliopsoas.', 'Extienden la rodilla; flexionan la cadera.'],
+            },
+            right: {
+              title: 'Medial → obturador · Posterior → ciático',
+              items: ['Medial: pectíneo, aductores mayor/mediano/menor y grácil (aducen).', 'Posterior (isquiotibiales): bíceps femoral, semitendinoso y semimembranoso.', 'Isquiotibiales: flexión de pierna + extensión de muslo.'],
+            },
+          },
+          {
+            type: 'definition',
+            title: 'Pata de ganso (pes anserinus)',
+            content: 'Inserción común en la cara medial superior de la tibia de tres músculos de tres compartimientos distintos: sartorio (anterior), grácil/recto interno (medial) y semitendinoso (posterior). Comparten la bursa anserina. — Pata de ganso.',
+          },
+        ],
+      },
+      {
+        id: 'mcm-5',
+        number: 5,
+        title: 'Correlaciones',
+        keyTerms: ['Trendelenburg', 'pata de ganso', 'isquiotibiales'],
+        blocks: [
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Marcha de Trendelenburg y tendinitis anserina',
+            content: 'La parálisis del glúteo mediano produce la marcha de Trendelenburg ("de pato"): al apoyar en el lado afectado, la pelvis cae hacia el lado sano. Y la tendinitis de la pata de ganso (sartorio, grácil, semitendinoso) inflama la bursa anserina y causa dolor medial de rodilla.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'musculos-pierna-pie',
+    title: 'Músculos de la pierna',
+    subtitle: 'Los tres compartimientos de la pierna y el tendón de Aquiles (el pie queda pendiente)',
+    colorKey: 'miologia',
+    categoria: 'Miología',
+    emoji: '🦶',
+    keyPoints: [
+      'La fascia de la pierna, la membrana interósea y los tabiques dividen la pierna en tres compartimientos.',
+      'Anterior (nervio peroneo profundo): tibial anterior, extensor largo del hallux, extensor largo de los dedos y peroneo anterior (tercer peroneo). Dorsiflexión.',
+      'Lateral (nervio peroneo superficial): peroneo largo y peroneo corto. Eversión del pie.',
+      'Posterior superficial: gastrocnemio (gemelos), sóleo y plantar → tendón calcáneo (de Aquiles). Flexión plantar.',
+      'Posterior profundo (nervio tibial): poplíteo, flexor largo de los dedos, flexor largo del hallux y tibial posterior.',
+      'El tendón de Aquiles (calcáneo) es el más grueso y fuerte del cuerpo; su rotura da el signo de Thompson.',
+      'Grados de esguince: 1 = distensión, 2 = ruptura parcial, 3 = ruptura total del ligamento.',
+    ],
+    sections: [
+      {
+        id: 'mpp-1',
+        number: 1,
+        title: 'Nomenclatura y alcance',
+        keyTerms: ['gastrocnemio', 'peroneo', 'tendón calcáneo'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            content:
+              'TA como principal y clásico entre paréntesis (cuenta como correcto). Mapeo: gastrocnemio = gemelos · peroneo largo/corto = peroné lateral largo/corto (fibular) · tendón calcáneo = tendón de Aquiles.',
+          },
+          {
+            type: 'note',
+            title: 'Los músculos del pie quedan pendientes',
+            content:
+              'Esta clase (Semana 4, Clase 4) cubrió el muslo y la pierna; los músculos intrínsecos del pie (planta por capas y dorso) se cerraban en la sesión siguiente. Se cargarán como un parche cuando esté el material.',
+          },
+        ],
+      },
+      {
+        id: 'mpp-2',
+        number: 2,
+        title: 'Compartimiento anterior',
+        keyTerms: ['tibial anterior', 'extensor largo del hallux', 'peroneo profundo', 'dorsiflexión'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Anterior → dorsiflexión (nervio peroneo profundo)',
+            items: [
+              'Tibial anterior: dorsiflexión e inversión del pie.',
+              'Extensor largo del hallux: extiende el dedo gordo.',
+              'Extensor largo de los dedos: extiende los dedos 2–5.',
+              'Peroneo anterior (tercer peroneo): colabora en la dorsiflexión y la eversión.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'mpp-3',
+        number: 3,
+        title: 'Compartimiento lateral',
+        keyTerms: ['peroneo largo', 'peroneo corto', 'peroneo superficial', 'eversión'],
+        blocks: [
+          {
+            type: 'note',
+            content: 'Compartimiento lateral → eversión del pie, inervado por el nervio peroneo superficial. El peroneo largo cruza la planta hasta el 1.er metatarsiano/cuña medial (como el tibial anterior pero por el lado contrario); el peroneo corto se inserta en la apófisis estiloides del 5.º metatarsiano.',
+          },
+        ],
+      },
+      {
+        id: 'mpp-4',
+        number: 4,
+        title: 'Compartimiento posterior',
+        keyTerms: ['gastrocnemio', 'sóleo', 'tibial posterior', 'nervio tibial'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Posterior superficial vs. profundo (nervio tibial)',
+            left: {
+              title: 'Superficial',
+              items: ['Gastrocnemio (gemelos) y sóleo → tríceps sural.', 'Plantar (delgado).', 'Convergen en el tendón calcáneo (de Aquiles); flexión plantar.'],
+            },
+            right: {
+              title: 'Profundo',
+              items: ['Poplíteo (desbloquea la rodilla).', 'Flexor largo de los dedos y flexor largo del hallux.', 'Tibial posterior: flexión plantar e inversión.'],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Tendón de Aquiles y grados de esguince',
+            content: 'El tendón calcáneo (de Aquiles) es el más grueso del cuerpo; su rotura impide la flexión plantar (signo de Thompson: al apretar la pantorrilla, el pie no se mueve). Grados de esguince ligamentario: 1 = distensión, 2 = ruptura parcial, 3 = ruptura total.',
+          },
+        ],
+      },
+    ],
+  },
 ]
