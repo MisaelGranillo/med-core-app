@@ -1767,6 +1767,43 @@ export const inglesUadTopics: Topic[] = [
           },
         ],
       },
+      {
+        // Fuente: Inglés Médico I, Semana 4, Clase 1 (repaso de acrónimos y sus riesgos).
+        id: 'iab-4',
+        number: 4,
+        title: 'Origen, ventajas y riesgos (Semana 4)',
+        keyTerms: ['acronym', 'LASER', 'SONAR', 'ISMP', 'COFEPRIS', 'HIPAA'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Origen y ventajas',
+            items: [
+              'Origen: abreviaturas en los manuscritos latinos medievales; los acrónimos se popularizan en el siglo XX (LASER, SONAR).',
+              'Ventajas en el expediente (medical record): simplifican la comunicación y ahorran tiempo, espacio y esfuerzo.',
+              'Cada centro sigue su propia lista de abreviaturas aprobadas: en México rige COFEPRIS; en EE. UU., HIPAA.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Los riesgos, en cifras',
+            content:
+              'El ISMP (Institute for Safe Medication Practices) estima >7,000 muertes/año por errores de medicación, parte atribuida a abreviaturas mal interpretadas. En una auditoría pediátrica del Reino Unido, solo el 56 % de los pediatras y el 31 % del personal identificaban las abreviaturas de forma consistente.',
+          },
+          {
+            type: 'note',
+            title: 'Regla: escribe la palabra completa si es ambigua',
+            content:
+              'Ante acrónimos ambiguos, se escribe la palabra completa: AED (automated external defibrillator o antiepileptic drug), ED (emergency department o erectile dysfunction), CA (cancer, calcium o cardiac arrest). El contexto no siempre basta.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'La ambigüedad es un problema de seguridad del paciente',
+            content:
+              'La abreviatura ambigua no es un detalle de estilo: es un problema de seguridad del paciente. Por eso existen listas aprobadas por centro (COFEPRIS, HIPAA) y la regla de deletrear lo dudoso. Escribir "AED" sin contexto puede confundir un desfibrilador con un antiepiléptico.',
+          },
+        ],
+      },
     ],
   },
 
@@ -1891,11 +1928,16 @@ export const inglesUadTopics: Topic[] = [
   {
     id: 'ingles-false-friends',
     title: 'Common Errors & False Friends',
-    subtitle: 'Falsos cognados español↔inglés que cambian el sentido en la clínica',
+    subtitle: 'Collocations médicas y falsos cognados que cambian el sentido en la clínica',
     colorKey: 'lenguaje',
     categoria: 'Comunicación clínica',
     emoji: '🎭',
     keyPoints: [
+      'Collocations: operate ON a patient, attend TO a patient, MAKE a diagnosis (not "do").',
+      'complain OF (síntoma interno) vs complain ABOUT (queja externa); suffer FROM a disease.',
+      'Profesión con artículo ("I\'m A pediatrician"); medicación con "on" ("I\'m ON antibiotics").',
+      'Edad: "a 23-year-old patient" (year sin -s, con guiones); síntomas con "have" ("she HAS a fever").',
+      'sore = molestia leve/irritado vs pain = dolor; sore ≠ sour (agrio).',
       'A false friend looks like a Spanish word but means something different in English.',
       'intoxicated = drunk / under the influence, NOT "intoxicado" (poisoned).',
       'constipated = estreñido, NOT "constipado / resfriado" (to have a cold).',
@@ -1906,15 +1948,49 @@ export const inglesUadTopics: Topic[] = [
     ],
     sections: [
       {
+        // Fuente: Inglés Médico I, Semana 4, Clase 1 (errores comunes / collocations).
         id: 'iff-1',
         number: 1,
-        title: 'Adelanto',
+        title: 'Errores comunes: collocations médicas',
+        keyTerms: ['operate on', 'attend to', 'make a diagnosis', 'complain of', 'complain about', 'on antibiotics'],
         blocks: [
           {
             type: 'note',
-            title: 'Adelanto — aún no impartido',
+            title: 'Impartido — Semana 4, Clase 1',
             content:
-              'Este tema procede del libro de texto de la materia, no de una clase impartida. Corresponde a la Unidad V del programa, prevista para la Semana 4. El profesor puede recortarlo, reordenarlo o enfatizar otros puntos. Úsalo para ir por delante, no como guía de lo que entra en el parcial de esta semana.',
+              'Se impartió en la Semana 4 (Unidad V) junto con las abreviaturas: 10 errores gramaticales frecuentes en profesionales de la salud. La clave es la collocation (la palabra que acompaña al verbo o al sustantivo): en inglés médico muchas se fijan por uso, no por traducción literal.',
+          },
+          {
+            type: 'table',
+            title: 'Collocations: la preposición o el verbo correcto',
+            data: {
+              headers: ['Se dice', 'NO', 'Nota'],
+              rows: [
+                ['operate on a patient', 'operate a patient', 'operar A un paciente lleva "on".'],
+                ['attend to a patient', 'attend a patient', 'atender A un paciente lleva "to".'],
+                ['make a diagnosis', 'do a diagnosis', 'con diagnosis se usa "make", no "do".'],
+                ['suffer from (a disease)', 'suffer of', 'padecer una enfermedad = suffer FROM.'],
+                ['complain of chest pain', 'complain about chest pain', 'síntoma INTERNO → complain OF.'],
+                ['complain about the food', 'complain of the food', 'queja EXTERNA → complain ABOUT.'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Artículo, medicación, edad y síntomas',
+            items: [
+              'Profesión con artículo: "I\'m A pediatrician" (no "I\'m pediatrician").',
+              'Medicación con "on": "I\'m ON antibiotics" (estoy tomando antibióticos).',
+              'Edad: "a 23-year-old female patient" — "year" sin -s y con guiones cuando es adjetivo.',
+              'Síntomas con "have": "She HAS a fever" (no "she is fever").',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'sore vs. pain (y sore ≠ sour)',
+            content:
+              'Sore = molestia leve, irritado (a sore throat = garganta irritada); pain = dolor propiamente dicho. Y ojo con la confusión sonora: sore (adolorido) NO es sour (agrio). Elegir mal la palabra cambia lo que documentas del paciente.',
           },
           {
             type: 'correlacion',
@@ -1964,6 +2040,220 @@ export const inglesUadTopics: Topic[] = [
             type: 'note',
             content:
               'intoxicated y constipated son los dos más peligrosos: en una historia clínica invierten el sentido de lo que se documenta. "The patient is intoxicated" = está ebrio, no envenenado (poisoned). "The patient is constipated" = está estreñido, no resfriado (has a cold). Escribir el falso cognado cambia el cuadro clínico.',
+          },
+        ],
+      },
+    ],
+  },
+
+  // ── Semana 4 · Clases 2–3 (impartidas) ────────────────────────────────
+  {
+    id: 'ingles-clinical-communication',
+    title: 'Clinical Communication',
+    subtitle: 'Verbos frasales, "have something done" y preguntas sobre el dolor',
+    colorKey: 'comunicacion',
+    categoria: 'Comunicación clínica',
+    emoji: '🗣️',
+    keyPoints: [
+      'Phrasal verbs de síntomas: bring up, cough up, throw up, pull through, break out in, wear out, puff up, flare up.',
+      'wear out = muy cansado; burnout = agotamiento extremo por sobrecarga sostenida.',
+      '"Have something done" = have + objeto + past participle (+ by doer): la acción la hace un profesional.',
+      'Ejemplos: have your eyes tested, have a biopsy taken, have a colonoscopy performed.',
+      'También para lesiones/experiencias no deseadas: "he had his nose broken".',
+      'Preguntas de dolor: inicio/desencadenantes, descripción/intensidad (1–10), frecuencia y duración.',
+      'Tratar al paciente como individuo: comunicación y consentimiento informado forman parte del trabajo médico.',
+    ],
+    sections: [
+      {
+        id: 'icc-1',
+        number: 1,
+        title: 'Impartido en Semana 4',
+        blocks: [
+          {
+            type: 'note',
+            title: 'Impartido — Semana 4, Clases 2–3',
+            content:
+              'Se impartió en la Semana 4 (Clases 2 y 3): verbos frasales médicos, la estructura "have something done" y las preguntas al paciente sobre el dolor. El inglés se conserva (es lo que se evalúa) con la glosa en español.',
+          },
+        ],
+      },
+      {
+        id: 'icc-2',
+        number: 2,
+        title: 'Phrasal verbs médicos',
+        keyTerms: ['bring up', 'cough up', 'throw up', 'pull through', 'break out in', 'wear out', 'puff up', 'flare up'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Síntomas y condiciones',
+            data: {
+              headers: ['Phrasal verb', 'Significado'],
+              rows: [
+                ['bring up', 'expulsar al toser/vomitar (bring up phlegm = expectorar flema)'],
+                ['cough up', 'expectorar al toser (cough up blood = toser sangre)'],
+                ['throw up', 'vomitar'],
+                ['pull through', 'recuperarse, salir adelante de una enfermedad grave'],
+                ['break out in', 'brotar (break out in a rash / in a sweat = brotar un sarpullido / sudar)'],
+                ['wear out', 'agotar(se), quedar muy cansado'],
+                ['puff up', 'hincharse, inflamarse'],
+                ['flare up', 'recrudecer, reactivarse (una condición crónica)'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'wear out (muy cansado) NO es lo mismo que burnout: el burnout es el agotamiento extremo por sobrecarga sostenida (físico y emocional).',
+          },
+        ],
+      },
+      {
+        id: 'icc-3',
+        number: 3,
+        title: 'Have something done',
+        keyTerms: ['have something done', 'past participle', 'by doer'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'have + objeto + past participle',
+            content: 'Estructura para decir que la acción la realiza un profesional (no el sujeto): have + objeto + participio pasado (+ by + agente). "I had my eyes tested" = me hicieron un examen de la vista. — Have something done.',
+          },
+          {
+            type: 'list',
+            title: 'Ejemplos clínicos',
+            items: [
+              'have your eyes tested — que te examinen la vista.',
+              'have a biopsy taken — que te tomen una biopsia.',
+              'have a colonoscopy performed — que te realicen una colonoscopia.',
+              'Lesiones/experiencias no deseadas: "he had his nose broken" (le rompieron la nariz).',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'icc-4',
+        number: 4,
+        title: 'Preguntas sobre el dolor',
+        keyTerms: ['onset', 'trigger', 'intensity', 'frequency', 'duration'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Qué preguntar y cómo',
+            data: {
+              headers: ['Aspecto', 'Pregunta modelo'],
+              rows: [
+                ['Inicio / desencadenantes', 'When did you get the pain? Does anything trigger it?'],
+                ['Descripción / intensidad', 'Can you describe the pain? Rate it on a scale of 1 to 10.'],
+                ['Frecuencia', 'How often do you get the pain?'],
+                ['Duración', 'How long does the pain last?'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Variar el tiempo verbal según el caso (presente, pasado, present perfect y perfect continuous). Indagar automedicación, alergias, creencias y metas de manejo.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'El paciente como individuo',
+            content: 'Ver al paciente como una persona, no como un conjunto de síntomas de libro: la comunicación y el consentimiento informado son parte del trabajo médico, no un extra.',
+          },
+        ],
+      },
+    ],
+  },
+
+  // ── Semana 4 · Clase 3 (impartida) ────────────────────────────────────
+  {
+    id: 'ingles-symptoms',
+    title: 'Symptoms: Cold & Flu',
+    subtitle: 'Vocabulario de síntomas de gripa/influenza y verbos médicos regulares',
+    colorKey: 'lenguaje',
+    categoria: 'Comunicación clínica',
+    emoji: '🤧',
+    keyPoints: [
+      'Cough: dry/hacking (seca) vs wet (productiva); sore throat = garganta irritada.',
+      'Nasal congestion: stuffy / blocked / bunged up (congestión); runny nose = nariz que gotea.',
+      'Fiebre: fever (mild / high / raised), feverish; chills / shivering = escalofríos.',
+      'Fatigue / weariness / exhaustion = cansancio; body aches = dolores generalizados.',
+      'Otros: sneezing, watering eyes, sweating/perspiration, nausea/vomiting, loss of smell.',
+      'Verbos médicos regulares: administer, admit, diagnose, prescribe, discharge, refer, treat, vaccinate…',
+      'El examen cubre HASTA esta lista de verbos regulares (según la clase).',
+    ],
+    sections: [
+      {
+        id: 'isy-1',
+        number: 1,
+        title: 'Impartido en Semana 4',
+        blocks: [
+          {
+            type: 'note',
+            title: 'Impartido — Semana 4, Clase 3',
+            content:
+              'Vocabulario de síntomas de cold and flu y la lista de verbos médicos regulares. El inglés se conserva (es lo evaluado) con la glosa en español.',
+          },
+        ],
+      },
+      {
+        id: 'isy-2',
+        number: 2,
+        title: 'Síntomas de cold & flu',
+        keyTerms: ['sore throat', 'cough', 'nasal congestion', 'runny nose', 'chills', 'fever'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Symptom vocabulary',
+            data: {
+              headers: ['English', 'Español'],
+              rows: [
+                ['headache', 'dolor de cabeza'],
+                ['sore throat', 'dolor / irritación de garganta'],
+                ['cough (dry / hacking)', 'tos (seca / persistente)'],
+                ['cough (wet)', 'tos productiva (con flema)'],
+                ['sneezing', 'estornudos'],
+                ['nasal congestion (stuffy / blocked / bunged up)', 'congestión nasal (nariz tapada)'],
+                ['runny nose', 'nariz que gotea / mocos'],
+                ['watering eyes', 'ojos llorosos'],
+                ['chills / shivering', 'escalofríos / tiritar'],
+                ['fever (mild / high / raised) · feverish', 'fiebre (leve / alta) · afiebrado'],
+                ['sweating / perspiration', 'sudoración'],
+                ['fatigue / weariness / exhaustion', 'fatiga / cansancio / agotamiento'],
+                ['nausea / vomiting', 'náusea / vómito'],
+                ['body aches', 'dolores corporales generalizados'],
+                ['loss of smell', 'pérdida del olfato'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'isy-3',
+        number: 3,
+        title: 'Verbos médicos regulares',
+        keyTerms: ['administer', 'admit', 'diagnose', 'prescribe', 'discharge', 'refer', 'treat', 'vaccinate'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Regular medical verbs (pasado en -ed)',
+            data: {
+              headers: ['Verbo', 'Significado'],
+              rows: [
+                ['to administer', 'administrar (un fármaco)'],
+                ['to admit', 'ingresar / hospitalizar'],
+                ['to diagnose', 'diagnosticar'],
+                ['to prescribe', 'recetar, prescribir'],
+                ['to discharge', 'dar de alta'],
+                ['to refer', 'derivar / referir a otro servicio'],
+                ['to treat', 'tratar'],
+                ['to vaccinate', 'vacunar'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Alcance del examen',
+            content:
+              'Según la clase, el examen abarca HASTA esta lista de verbos regulares médicos. El ejercicio de pasado simple mezcla regulares (-ed) con irregulares (began, ate, drove, became, broke, went).',
           },
         ],
       },
