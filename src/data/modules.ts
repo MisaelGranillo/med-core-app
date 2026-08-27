@@ -74,6 +74,14 @@ export const modules: Module[] = [
     topicIds: ['ingles-verb-tenses', 'ingles-sentence-structure'],
   },
   {
+    id: 'ingles-medico-uad-s4',
+    badge: 'UAD · Inglés Médico I — Semana 4',
+    title: 'Acrónimos, errores frecuentes y comunicación clínica',
+    subtitle: 'Acrónimos y sus riesgos, collocations/falsos cognados, verbos frasales, "have something done" y síntomas de cold & flu.',
+    emoji: '🩺',
+    topicIds: ['ingles-abbreviations', 'ingles-false-friends', 'ingles-clinical-communication', 'ingles-symptoms'],
+  },
+  {
     id: 'anatomia',
     badge: 'Módulo — Anatomía',
     title: 'Anatomía y Medicina',
@@ -94,9 +102,9 @@ export const modules: Module[] = [
     // FINAL del índice a propósito: lo impartido tiene prioridad de orden.
     id: 'ingles-medico-adelanto',
     badge: 'UAD · Inglés Médico I — Adelanto',
-    title: 'Inglés Médico · Unidades II a VI',
-    subtitle: 'Contenido tomado del libro de texto, aún no impartido en clase. Unidades II a VI del programa.',
+    title: 'Inglés Médico · Unidad VI',
+    subtitle: 'Contenido tomado del libro de texto, aún no impartido en clase. Unidad VI del programa (bibliografía científica).',
     emoji: '📚',
-    topicIds: ['ingles-false-friends', 'ingles-scientific-literature'],
+    topicIds: ['ingles-scientific-literature'],
   },
 ]
