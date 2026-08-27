@@ -1639,6 +1639,12 @@ export const inglesUadTopics: Topic[] = [
             title: 'La lista do-not-use',
             content: 'Las abreviaturas ambiguas causan errores de medicación reales; por eso existe la lista do-not-use (U, IU, MSO4) y la regla de escribir la palabra completa ante la duda.',
           },
+          {
+            type: 'note',
+            title: 'Lista completa en EnLex',
+            content:
+              'La lista completa de 461 abreviaturas médicas (Medical Terminology: A Living Language, Apéndice III + capítulos) está en EnLex → pestaña «Abreviaturas», con búsqueda por sigla o significado y PDF descargable.',
+          },
         ],
       },
       {

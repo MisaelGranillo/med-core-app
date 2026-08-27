@@ -360,6 +360,7 @@ export const uadMedicina: Plan = {
               // sin login. URL root-relative: funciona en dev y en medcore.icu.
               { label: 'Medical Terminology — Word Parts (PDF de estudio)', url: '/descargas/medical-terminology-word-parts.pdf' },
               { label: 'Grammar Cheat Sheet — tiempos, modales, condicionales y voz pasiva (PDF)', url: '/descargas/medical-english-grammar-cheatsheet.pdf' },
+              { label: 'Abreviaturas médicas (461) — lista completa (PDF)', url: '/descargas/medical-abbreviations-enlex.pdf' },
               { label: 'OVID® (bibliografía básica)', url: 'https://www.ovid.com/' },
               { label: 'Bates Visual Guide', url: 'https://batesvisualguide.com/' },
               { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },
