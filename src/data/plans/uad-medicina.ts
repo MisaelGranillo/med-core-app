@@ -222,6 +222,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 4 · Clase 3 — Miología II: mano, glúteos y muslo', file: 'Semana 4 - Musculos Clase 3.pdf', kind: 'Clase' },
               { title: 'Semana 4 · Caso Clínico — Ruptura del bíceps (signo de Popeye)', file: 'Semana 4 - Caso Clinico Biceps Popeye.pdf', kind: 'Caso clínico' },
               { title: 'Semana 4 · Proyecto Integrador — Tabla de 5+5 músculos (inserciones, arteria, vena y nervio)', file: 'Semana 4 - Proyecto Integrador Tabla Musculos.pdf', kind: 'Entrega' },
+              { title: 'Semana 4 — Músculos (semana completa, incluye pie)', file: 'Semana 4 - Musculos (semana completa).pdf', kind: 'Clase' },
               { title: 'Manual de Anatomía I', file: 'MANUAL ANATOMIA I.pdf', kind: 'Manual' },
               { title: 'Manual de Anatomía Humana y su Disección 1', file: 'MANUAL DE ANATOMIA HUMANA Y SU DISECCION 1.pdf', kind: 'Manual' },
               { title: 'Programa Académico — Anatomía I', file: 'PROGRAMA ANATOMIA I.pdf', kind: 'Programa' },

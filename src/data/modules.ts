@@ -58,6 +58,14 @@ export const modules: Module[] = [
     topicIds: ['repaso-3p'],
   },
   {
+    id: 'anatomia-uad-repaso-final',
+    badge: 'UAD · Anatomía I — Repaso',
+    title: 'Repaso final',
+    subtitle: 'Miología II y pie: lo evaluable del examen final, en 26 reactivos.',
+    emoji: '📝',
+    topicIds: ['repaso-4'],
+  },
+  {
     id: 'ingles-medico-uad',
     badge: 'UAD · Inglés Médico I',
     title: 'Inglés Médico',
