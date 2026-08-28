@@ -2381,6 +2381,114 @@ export const anatomiaUadTopics: Topic[] = [
     ],
   },
   {
+    id: 'repaso-4',
+    title: 'Repaso final — músculos (Semana 4)',
+    subtitle: 'Lo evaluable: pared abdominal, miembros y sus inervaciones',
+    colorKey: 'miologia',
+    categoria: 'Miología',
+    emoji: '📝',
+    keyPoints: [
+      'Capas de la pared abdominal: piel, fascia de Camper (grasa) y fascia de Scarpa (membranosa).',
+      'Vaina del recto (hoja anterior y posterior); bajo el arco de Douglas desaparece la posterior; línea alba (media) y línea semilunar (borde lateral del recto).',
+      'Pectoral mayor: aducción y rotación interna del hombro; deltoides: abductor principal.',
+      'Manguito rotador = SITS: supraespinoso, infraespinoso, redondo menor y subescapular.',
+      'Antebrazo: mediano (flexores/pronadores + túnel del carpo), cubital (mano), radial (extensores posteriores).',
+      'Muslo: anterior femoral, medial obturador, posterior ciático; isquiotibiales; pata de ganso.',
+      'Pierna: posterior → tendón de Aquiles; anterior dorsiflexión; lateral eversión (peroneos).',
+      'Pie: dorsal = solo extensor corto de los dedos (peroneo profundo); planta = 4 planos (plantar medial/lateral).',
+    ],
+    sections: [
+      {
+        id: 'rep4-1',
+        number: 1,
+        title: 'Cómo usar este repaso',
+        keyTerms: ['examen final', 'miología II', 'pie'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Repaso para el examen final (no es contenido nuevo)',
+            content:
+              'No es contenido nuevo: concentra lo que el profesor marcó como evaluable en el Kahoot de repaso de la Semana 4 (Miología II + pie). Cada estructura se estudia a fondo en su Topic de origen. El clásico del profesor cuenta como correcto.',
+          },
+          {
+            type: 'list',
+            title: 'Estudia a fondo en su Topic de origen',
+            items: [
+              'Pared abdominal (capas, vaina del recto, línea alba/semilunar) → «Músculos de la pared abdominal».',
+              'Hombro, manguito rotador y brazo → «Músculos del hombro y el brazo».',
+              'Antebrazo y mano (inervaciones) → «Músculos del antebrazo y la mano».',
+              'Cadera y muslo (compartimientos) → «Músculos de la cadera y el muslo». Pierna y pie → «Músculos de la pierna y el pie».',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'rep4-2',
+        number: 2,
+        title: 'Alto rendimiento: tronco y miembro superior',
+        keyTerms: ['Camper', 'Scarpa', 'línea alba', 'SITS', 'mediano', 'cubital', 'radial'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Lo que más cae (tronco y miembro superior)',
+            data: {
+              headers: ['Tema', 'Clave'],
+              rows: [
+                ['Capas de la pared abdominal', 'Piel · fascia de Camper (grasa) · fascia de Scarpa (membranosa).'],
+                ['Vaina del recto y líneas', 'Hoja anterior y posterior → línea alba (media); línea semilunar = borde lateral del recto; bajo el arco de Douglas desaparece la hoja posterior.'],
+                ['Pectoral mayor / deltoides', 'Pectoral mayor: aducción y rotación interna; deltoides: abducción del hombro.'],
+                ['Manguito rotador (SITS)', 'Supraespinoso, infraespinoso, redondo menor y subescapular.'],
+                ['Inervación del antebrazo', 'Mediano (flexores/pronadores + túnel del carpo) · cubital (mayoría de la mano) · radial (extensores posteriores).'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'rep4-3',
+        number: 3,
+        title: 'Alto rendimiento: miembro inferior y pie',
+        keyTerms: ['femoral', 'obturador', 'ciático', 'Aquiles', 'plantar medial', 'plantar lateral'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Lo que más cae (miembro inferior)',
+            data: {
+              headers: ['Tema', 'Clave'],
+              rows: [
+                ['Compartimientos del muslo', 'Anterior → femoral · medial → obturador · posterior → ciático.'],
+                ['Isquiotibiales y pata de ganso', 'Bíceps femoral, semitendinoso y semimembranoso; pata de ganso = sartorio + grácil + semitendinoso.'],
+                ['Compartimientos de la pierna', 'Anterior → dorsiflexión (peroneo profundo) · lateral → eversión (peroneo superficial) · posterior → flexión plantar / tendón de Aquiles (tibial).'],
+                ['Pie — dorsal', 'Solo el extensor corto de los dedos (nervio peroneo profundo).'],
+                ['Pie — plantar', 'Cuatro planos; inervación por los nervios plantar medial y lateral.'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'rep4-4',
+        number: 4,
+        title: 'Las trampas clásicas',
+        keyTerms: ['SITS', 'braquiorradial', 'ciático', 'Trendelenburg'],
+        blocks: [
+          {
+            type: 'keypoints',
+            title: 'Los que más se equivocan',
+            items: [
+              'Manguito rotador = SITS (redondo MENOR, no el mayor; no el deltoides).',
+              'Tríceps = radial; flexores del brazo = musculocutáneo.',
+              'Braquiorradial (supinador largo): FLEXIONA el antebrazo pese a ser posterior.',
+              'Muslo posterior = ciático; medial = obturador; anterior = femoral.',
+              'Glúteo mediano paralizado → marcha de Trendelenburg ("de pato").',
+              'Dorso del pie = un solo músculo (extensor corto de los dedos); planta = 4 planos.',
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: 'artrologia-generalidades',
     title: 'Artrología: clasificación y articulación sinovial',
     subtitle: 'Tipos de articulaciones por material y por forma; composición de la sinovial',
