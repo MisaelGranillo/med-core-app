@@ -2218,6 +2218,34 @@ const mppQuestions: Question[] = [
     correctIndex: 1, difficulty: 'medium',
     explanation: 'El peroneo corto se inserta en la estiloides del 5.º metatarsiano; el peroneo largo cruza la planta hasta el 1.er metatarsiano/cuña medial.',
   },
+  {
+    id: 'mpp-q9', topicId: 'musculos-pierna-pie', type: 'multiple-choice',
+    question: 'El único músculo intrínseco de la región DORSAL del pie es:',
+    options: ['El cuadrado plantar', 'El extensor corto de los dedos', 'El abductor del hallux', 'El flexor corto de los dedos'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'En el dorso del pie solo hay un intrínseco: el extensor corto de los dedos (del 1.º al 4.º dedo). Los demás (cuadrado plantar, abductor del hallux, flexor corto) son plantares.',
+  },
+  {
+    id: 'mpp-q10', topicId: 'musculos-pierna-pie', type: 'multiple-choice',
+    question: 'La región plantar del pie se organiza en:',
+    options: ['Un solo plano', 'Dos planos', 'Cuatro planos', 'Tres compartimientos como la pierna'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'La planta se organiza en cuatro planos (de superficial a profundo). Los tres compartimientos son de la pierna, no del pie.',
+  },
+  {
+    id: 'mpp-q11', topicId: 'musculos-pierna-pie', type: 'multiple-choice',
+    question: 'El extensor corto de los dedos (dorso del pie) está inervado por el:',
+    options: ['Nervio plantar medial', 'Nervio plantar lateral', 'Nervio peroneo profundo (fibular profundo)', 'Nervio tibial'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'El dorso del pie lo inerva el peroneo profundo. Los músculos plantares dependen de los nervios plantar medial y lateral (ramas del tibial).',
+  },
+  {
+    id: 'mpp-q12', topicId: 'musculos-pierna-pie', type: 'multiple-choice',
+    question: 'En el 2.º plano de la planta, el músculo que corrige la línea de tracción del flexor largo de los dedos es el:',
+    options: ['Abductor del hallux', 'Cuadrado plantar (flexor accesorio)', 'Aductor del hallux', 'Flexor corto del 5.º dedo'],
+    correctIndex: 1, difficulty: 'hard',
+    explanation: 'El cuadrado plantar (flexor accesorio), del 2.º plano, endereza la tracción oblicua del flexor largo de los dedos hacia el talón. Se acompaña de los lumbricales.',
+  },
 ]
 
 export const anatomiaUadQuestions: Question[] = [

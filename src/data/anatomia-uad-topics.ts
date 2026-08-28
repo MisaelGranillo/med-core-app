@@ -4237,8 +4237,8 @@ export const anatomiaUadTopics: Topic[] = [
   },
   {
     id: 'musculos-pierna-pie',
-    title: 'Músculos de la pierna',
-    subtitle: 'Los tres compartimientos de la pierna y el tendón de Aquiles (el pie queda pendiente)',
+    title: 'Músculos de la pierna y el pie',
+    subtitle: 'Los tres compartimientos de la pierna, el tendón de Aquiles y los músculos del pie',
     colorKey: 'miologia',
     categoria: 'Miología',
     emoji: '🦶',
@@ -4249,7 +4249,8 @@ export const anatomiaUadTopics: Topic[] = [
       'Posterior superficial: gastrocnemio (gemelos), sóleo y plantar → tendón calcáneo (de Aquiles). Flexión plantar.',
       'Posterior profundo (nervio tibial): poplíteo, flexor largo de los dedos, flexor largo del hallux y tibial posterior.',
       'El tendón de Aquiles (calcáneo) es el más grueso y fuerte del cuerpo; su rotura da el signo de Thompson.',
-      'Grados de esguince: 1 = distensión, 2 = ruptura parcial, 3 = ruptura total del ligamento.',
+      'Pie, región dorsal: SOLO el extensor corto de los dedos (peroneo profundo). Región plantar: 4 planos.',
+      'Inervación plantar: nervio plantar medial (interno) y plantar lateral (externo) según el músculo.',
     ],
     sections: [
       {
@@ -4266,9 +4267,8 @@ export const anatomiaUadTopics: Topic[] = [
           },
           {
             type: 'note',
-            title: 'Los músculos del pie quedan pendientes',
             content:
-              'Esta clase (Semana 4, Clase 4) cubrió el muslo y la pierna; los músculos intrínsecos del pie (planta por capas y dorso) se cerraban en la sesión siguiente. Se cargarán como un parche cuando esté el material.',
+              'Además de los tres compartimientos de la pierna, este tema incluye los músculos intrínsecos del pie (Clase 5): una región dorsal y una región plantar en cuatro planos.',
           },
         ],
       },
@@ -4325,6 +4325,45 @@ export const anatomiaUadTopics: Topic[] = [
             variant: 'clinica',
             title: 'Tendón de Aquiles y grados de esguince',
             content: 'El tendón calcáneo (de Aquiles) es el más grueso del cuerpo; su rotura impide la flexión plantar (signo de Thompson: al apretar la pantorrilla, el pie no se mueve). Grados de esguince ligamentario: 1 = distensión, 2 = ruptura parcial, 3 = ruptura total.',
+          },
+        ],
+      },
+      {
+        // Fuente: Semana 4, Clase 5 (músculos del pie: dorsal y planta en 4 planos).
+        id: 'mpp-5',
+        number: 5,
+        title: 'Músculos del pie',
+        keyTerms: ['extensor corto de los dedos', 'aponeurosis plantar', 'cuadrado plantar', 'plantar medial', 'plantar lateral'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Región dorsal: un solo músculo',
+            content:
+              'En el dorso del pie hay un único músculo intrínseco: el extensor corto de los dedos (extensor digitorum brevis), que se inserta del 1.º al 4.º dedo (su fascículo para el 1.º se llama extensor corto del hallux). Lo inerva el nervio peroneo profundo (fibular profundo).',
+          },
+          {
+            type: 'table',
+            title: 'Región plantar: cuatro planos (de superficial a profundo)',
+            data: {
+              headers: ['Plano', 'Músculos'],
+              rows: [
+                ['1.º (superficial)', 'Aponeurosis plantar + abductor del hallux, flexor corto de los dedos y abductor del 5.º dedo'],
+                ['2.º', 'Cuadrado plantar (flexor accesorio) y lumbricales; tendones del flexor largo de los dedos y del flexor largo del hallux'],
+                ['3.º', 'Flexor corto del hallux, aductor del hallux y flexor corto del 5.º dedo'],
+                ['4.º (profundo)', 'Interóseos plantares (aducen) y dorsales (abducen)'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Inervación plantar: el nervio plantar medial (interno) y el nervio plantar lateral (externo) —ramas del tibial— se reparten los músculos, de forma análoga al mediano y el cubital en la mano. El cuadrado plantar y casi todos los profundos van por el plantar lateral.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Aponeurosis plantar y cuadrado plantar',
+            content:
+              'La aponeurosis plantar sostiene el arco longitudinal; su inflamación en la inserción calcánea es la fascitis plantar (dolor en el talón a los primeros pasos). El cuadrado plantar corrige la línea de tracción oblicua del flexor largo de los dedos, para que la flexión sea recta hacia el talón.',
           },
         ],
       },
