@@ -238,7 +238,86 @@ export const uadMedicina: Plan = {
           },
         },
         { id: 'bioquimica-1', name: 'Bioquímica I y su laboratorio', code: 'BQ01002', hasLab: true, tags: ['bioquimica'] },
-        { id: 'genetica-basica', name: 'Genética Básica', code: 'GB01003' },
+        {
+          id: 'genetica-basica',
+          name: 'Genética Básica',
+          code: 'GB01003',
+          tags: ['celular'],
+          content: {
+            area: 'Ciencias Básicas',
+            credits: 4,
+            teacherHours: 32,
+            independentHours: 32,
+            modality: 'Virtual',
+            description:
+              'Bases moleculares de la herencia, material genético, bases cromosómicas y aplicaciones de la genética en la medicina general. Modalidad virtual. Evaluación: 4 parciales (extraordinario/título si aplica); promoción con ≥80 % de asistencia y calificación ≥7.0.',
+            competencia:
+              'Identifica y relaciona las bases moleculares de la herencia que rigen al ser humano, así como las malformaciones genéticas más frecuentes, resolviendo problemáticas reales o supuestas bien argumentadas, con interés cognitivo, tolerancia y disciplina, en un ambiente de colaboración.',
+            semanas: [
+              {
+                number: 1,
+                title: 'Desarrollo histórico de la genética humana',
+                temas: [
+                  'Desarrollo histórico de los conceptos de la genética',
+                  'Leyes de Mendel',
+                  'La molécula del ADN',
+                  'El código genético',
+                ],
+              },
+              {
+                number: 2,
+                title: 'El material genético: ADN y cromosomas',
+                temas: [
+                  'Dogma central de la biología molecular',
+                  'Estructura del ADN y del ARN',
+                  'Elementos básicos del cromosoma',
+                  'Transcripción, traducción y expresión génica',
+                  'Reparación del ADN',
+                ],
+              },
+              {
+                number: 3,
+                title: 'Bases cromosómicas de la herencia',
+                temas: [
+                  'Bases cromosómicas de la herencia',
+                  'Ciclo celular',
+                  'División celular: mitosis y meiosis',
+                  'Estructura y función de cromosomas y genes',
+                  'Fundamentos de la expresión génica',
+                ],
+              },
+              {
+                number: 4,
+                title: 'La genética en la medicina general',
+                temas: [
+                  'Citogenética clínica',
+                  'Errores del metabolismo: definición, diagnóstico clínico y hallazgos de laboratorio',
+                  'Crecimiento y desarrollo: organogénesis y teratogénesis',
+                  'Diferenciación sexual normal y sus anomalías',
+                  'Vigilancia epidemiológica de las malformaciones congénitas',
+                ],
+              },
+            ],
+            bibliografia: [
+              { title: 'Bioquímica, Biología Molecular y Genética', author: 'Lieberman · Ricer', editorial: 'Lippincott', year: '2017', tipo: 'básica' },
+              { title: 'Genética en Medicina (Thompson & Thompson)', author: 'Nussbaum · McInnes · Willard', year: '2009', tipo: 'complementaria' },
+              { title: 'Cell and Molecular Biology', author: 'Karp', editorial: 'John Wiley & Sons', year: '2011', tipo: 'complementaria' },
+            ],
+            materiales: [
+              { title: 'Genética — resumen', file: 'genetica-resumen.pdf', kind: 'Resumen' },
+              { title: 'Reparación del ADN', file: 'reparacion-adn.pdf', kind: 'Resumen' },
+              { title: 'Puntos de regulación del ciclo celular', file: 'puntos-de-regulacion-del-ciclo-celular.pdf', kind: 'Resumen' },
+              { title: 'Programa Académico — Genética Básica', file: 'Genetica Basica - Programa.pdf', kind: 'Programa' },
+            ],
+            recursos: [
+              { label: 'Acland Anatomy', url: 'https://aclandanatomy.com/' },
+              { label: 'Bates Visual Guide', url: 'https://batesvisualguide.com/' },
+              { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },
+              { label: '5-Minute Consult', url: 'https://5minuteconsult.com' },
+              { label: 'OVID®', url: 'https://www.ovid.com/' },
+            ],
+          },
+        },
         { id: 'embriologia-1', name: 'Embriología I', code: 'EM01004', tags: ['anatomia'] },
         {
           id: 'ingles-medico-1',
@@ -390,7 +469,79 @@ export const uadMedicina: Plan = {
             ],
           },
         },
-        { id: 'histologia-1', name: 'Histología I y su Laboratorio', code: 'HS01006', hasLab: true },
+        {
+          id: 'histologia-1',
+          name: 'Histología I y su Laboratorio',
+          code: 'HS01006',
+          hasLab: true,
+          tags: ['celular'],
+          content: {
+            area: 'Ciencias Básicas',
+            credits: 8,
+            teacherHours: 80,
+            independentHours: 48,
+            modality: 'Virtual · Teórico-Práctico',
+            description:
+              'Estudio de la célula y de los tejidos fundamentales (epitelial, conectivo y sus variedades, sanguíneo y linfático): generalidades, clasificación, características, funciones y aplicaciones clínicas, con trabajo de laboratorio. Modalidad virtual. Seriación subsecuente: Histología II (HS02011). Evaluación: 4 parciales; promoción con ≥80 % de asistencia y calificación ≥7.0.',
+            semanas: [
+              {
+                number: 1,
+                title: 'La célula y el microscopio',
+                temas: [
+                  'Técnicas utilizadas en histología',
+                  'Preparación de tejidos',
+                  'Manejo y estructura del microscopio',
+                  'La célula: organelos membranosos y no membranosos',
+                ],
+              },
+              {
+                number: 2,
+                title: 'Tejido epitelial',
+                temas: [
+                  'Generalidades',
+                  'Clasificación',
+                  'Características',
+                  'Funciones',
+                  'Aplicaciones clínicas',
+                ],
+              },
+              {
+                number: 3,
+                title: 'Tejido conectivo',
+                temas: [
+                  'Generalidades, clasificación (laxo y denso), características, función y aplicaciones clínicas',
+                  'Tejido óseo: generalidades, clasificación, características, funciones y aplicaciones clínicas',
+                  'Tejido cartilaginoso: generalidades, clasificación, características, funciones y aplicaciones clínicas',
+                  'Tejido adiposo: generalidades, clasificación, características, funciones y aplicaciones clínicas',
+                ],
+              },
+              {
+                number: 4,
+                title: 'Tejidos sanguíneo y linfático',
+                temas: [
+                  'Generalidades',
+                  'Clasificación',
+                  'Características',
+                  'Funciones',
+                  'Aplicaciones clínicas',
+                ],
+              },
+            ],
+            bibliografia: [
+              { title: 'Histología I y su Laboratorio', author: 'García Garza', editorial: 'LBS', year: '2023', tipo: 'básica' },
+              { title: 'Histología', author: 'Lee', editorial: 'Lippincott', year: '2014', tipo: 'básica' },
+              { title: 'Histología. Texto y Atlas Color con Biología Celular y Molecular', author: 'Ross · Pawlina', editorial: 'Médica Panamericana', tipo: 'básica' },
+              { title: 'Histología', author: 'Geneser', editorial: 'Médica Panamericana', tipo: 'complementaria' },
+              { title: 'Histología Básica. Texto y Atlas', author: 'Junqueira · Carneiro', tipo: 'complementaria', file: 'Histologia_Basica_Texto_y_Atlas_Junqueira_Carneiro.pdf' },
+            ],
+            recursos: [
+              { label: 'Acland Anatomy', url: 'https://aclandanatomy.com/' },
+              { label: 'Bates Visual Guide', url: 'https://batesvisualguide.com/' },
+              { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },
+              { label: 'OVID®', url: 'https://www.ovid.com/' },
+            ],
+          },
+        },
         { id: 'medicina-humanistica', name: 'Medicina Humanística', code: 'MH01007' },
       ],
     },
