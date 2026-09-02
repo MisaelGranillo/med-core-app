@@ -55,6 +55,8 @@ export type TopicCategoria =
   | 'Esplacnología'
   | 'Neuroanatomía'
   | 'Aparatos y sistemas'
+  | 'Genética'
+  | 'Histología'
   | 'Terminología médica'
   | 'Gramática médica'
   | 'Comunicación clínica'
@@ -94,6 +96,8 @@ export type TopicColorKey =
   | 'osteologia'
   | 'artrologia'
   | 'miologia'
+  | 'genetica'
+  | 'histologia'
 
 export interface Module {
   id: string

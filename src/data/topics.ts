@@ -2,6 +2,8 @@ import type { Topic } from '../types'
 import { bioestadisticaTopics } from './bioestadistica-topics'
 import { anatomiaUadTopics } from './anatomia-uad-topics'
 import { inglesUadTopics } from './ingles-uad-topics'
+import { geneticaTopics } from './genetica-topics'
+import { histologiaTopics } from './histologia-topics'
 
 const anatomyTopics: Topic[] = [
   {
@@ -2040,4 +2042,4 @@ const anatomyTopics: Topic[] = [
   },
 ]
 
-export const topics: Topic[] = [...anatomiaUadTopics, ...inglesUadTopics, ...anatomyTopics, ...bioestadisticaTopics]
+export const topics: Topic[] = [...anatomiaUadTopics, ...inglesUadTopics, ...geneticaTopics, ...histologiaTopics, ...anatomyTopics, ...bioestadisticaTopics]
