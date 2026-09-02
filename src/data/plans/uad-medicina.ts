@@ -243,6 +243,7 @@ export const uadMedicina: Plan = {
           name: 'Genética Básica',
           code: 'GB01003',
           tags: ['celular'],
+          topicIds: ['genetica-conceptos', 'genetica-mendel'],
           content: {
             area: 'Ciencias Básicas',
             credits: 4,
@@ -257,11 +258,19 @@ export const uadMedicina: Plan = {
               {
                 number: 1,
                 title: 'Desarrollo histórico de la genética humana',
+                // Parcial: impartidas las Clases 1–2 (conceptos, historia y leyes de
+                // Mendel). La Clase 3 (molécula del ADN y código genético) queda
+                // pendiente — Genética tiene 3 clases por semana.
+                estado: 'impartido',
+                topicIds: ['genetica-conceptos', 'genetica-mendel'],
                 temas: [
-                  'Desarrollo histórico de los conceptos de la genética',
-                  'Leyes de Mendel',
-                  'La molécula del ADN',
-                  'El código genético',
+                  'Clase 1 (impartida): conceptos base (cromosoma, gen, alelo, genotipo/fenotipo), tipos de dominancia, epigenética e historia de la genética',
+                  'Clase 2 (impartida): las tres leyes de Mendel (3:1 y 9:3:3:1), grupos sanguíneos/paternidad y herencia mitocondrial materna',
+                  'Clase 3 (pendiente): la molécula del ADN y el código genético',
+                ],
+                fuentes: [
+                  { title: 'Genética Básica — Semana 1, Clase 1', file: 'Genetica Basica - Semana 1 - Clase 1.pdf', nota: 'Conceptos base e historia de la genética.' },
+                  { title: 'Genética Básica — Semana 1, Clase 2', file: 'Genetica Basica - Semana 1 - Clase 2.pdf', nota: 'Las leyes de Mendel.' },
                 ],
               },
               {
@@ -304,6 +313,8 @@ export const uadMedicina: Plan = {
               { title: 'Cell and Molecular Biology', author: 'Karp', editorial: 'John Wiley & Sons', year: '2011', tipo: 'complementaria' },
             ],
             materiales: [
+              { title: 'Semana 1 · Clase 1 — Conceptos base e historia', file: 'Genetica Basica - Semana 1 - Clase 1.pdf', kind: 'Clase' },
+              { title: 'Semana 1 · Clase 2 — Leyes de Mendel', file: 'Genetica Basica - Semana 1 - Clase 2.pdf', kind: 'Clase' },
               { title: 'Genética — resumen', file: 'genetica-resumen.pdf', kind: 'Resumen' },
               { title: 'Reparación del ADN', file: 'reparacion-adn.pdf', kind: 'Resumen' },
               { title: 'Puntos de regulación del ciclo celular', file: 'puntos-de-regulacion-del-ciclo-celular.pdf', kind: 'Resumen' },
@@ -475,6 +486,7 @@ export const uadMedicina: Plan = {
           code: 'HS01006',
           hasLab: true,
           tags: ['celular'],
+          topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica'],
           content: {
             area: 'Ciencias Básicas',
             credits: 8,
@@ -487,11 +499,15 @@ export const uadMedicina: Plan = {
               {
                 number: 1,
                 title: 'La célula y el microscopio',
+                estado: 'impartido',
+                topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica'],
                 temas: [
-                  'Técnicas utilizadas en histología',
-                  'Preparación de tejidos',
-                  'Manejo y estructura del microscopio',
-                  'La célula: organelos membranosos y no membranosos',
+                  'Clase 1 (impartida): enfoque de la materia (epitelial y conectivo), origen celular y capacidad regenerativa por tejido',
+                  'Clase 2 (impartida): tipos de microscopio y resolución, microscopio óptico, técnica histológica y tinciones (H&E, PAS, Feulgen)',
+                  'En curso: la célula y sus organelos (membranosos y no membranosos) pueden continuar con más detalle',
+                ],
+                fuentes: [
+                  { title: 'Histología I — Semana 1, Clase 1', file: 'Histologia 1 - Semana 1 - Clase 1.pdf', nota: 'Introducción: célula y tejidos.' },
                 ],
               },
               {
@@ -533,6 +549,10 @@ export const uadMedicina: Plan = {
               { title: 'Histología. Texto y Atlas Color con Biología Celular y Molecular', author: 'Ross · Pawlina', editorial: 'Médica Panamericana', tipo: 'básica' },
               { title: 'Histología', author: 'Geneser', editorial: 'Médica Panamericana', tipo: 'complementaria' },
               { title: 'Histología Básica. Texto y Atlas', author: 'Junqueira · Carneiro', tipo: 'complementaria', file: 'Histologia_Basica_Texto_y_Atlas_Junqueira_Carneiro.pdf' },
+            ],
+            materiales: [
+              { title: 'Semana 1 · Clase 1 — Introducción: célula y tejidos', file: 'Histologia 1 - Semana 1 - Clase 1.pdf', kind: 'Clase' },
+              { title: 'Proyecto Integrador Semana 1 — Organelos celulares', file: 'Histologia 1 - Semana 1 - Proyecto Integrador.pdf', kind: 'Entrega' },
             ],
             recursos: [
               { label: 'Acland Anatomy', url: 'https://aclandanatomy.com/' },

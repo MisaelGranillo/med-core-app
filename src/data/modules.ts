@@ -106,6 +106,22 @@ export const modules: Module[] = [
     topicIds: ['digestivo', 'urinario', 'reproductor', 'circulatorio', 'respiratorio', 'locomotor', 'nervioso'],
   },
   {
+    id: 'genetica-uad-s1',
+    badge: 'UAD · Genética Básica — Semana 1',
+    title: 'Genética: conceptos y leyes de Mendel',
+    subtitle: 'Conceptos base, historia y las tres leyes de Mendel. (Clase 3 pendiente.)',
+    emoji: '🧬',
+    topicIds: ['genetica-conceptos', 'genetica-mendel'],
+  },
+  {
+    id: 'histologia-uad-s1',
+    badge: 'UAD · Histología I — Semana 1',
+    title: 'Histología: célula, microscopía y técnica',
+    subtitle: 'Introducción, microscopios y técnica histológica.',
+    emoji: '🔬',
+    topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica'],
+  },
+  {
     id: 'bioestadistica',
     badge: 'UAD · Epidemiología y Bioestadística',
     title: 'Bioestadística',
