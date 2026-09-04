@@ -894,6 +894,11 @@ const anatomyTopics: Topic[] = [
         keyTerms: ['transporte', 'protección', 'regulación', 'homeostasis', 'corazón', 'vasos', 'sangre'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'El sistema circulatorio es la red de transporte del cuerpo: una bomba (el corazón) impulsa un fluido (la sangre) por un circuito cerrado de tubos (los vasos) para llevar oxígeno y nutrientes a cada célula y retirar el CO₂ y los desechos. Funciona como un doble circuito: el menor (pulmonar) lleva sangre al pulmón a oxigenarse y el mayor (sistémico) la reparte por todo el cuerpo. Además de transportar, distribuye calor, hormonas y células de defensa, por lo que es clave en la homeostasis. Entender este esquema —bomba, conductos y fluido en dos circuitos— es lo que permite luego interpretar la presión arterial, el electrocardiograma y las anemias.',
+          },
+          {
             type: 'list',
             title: 'Funciones del sistema circulatorio',
             items: [
@@ -1228,6 +1233,11 @@ const anatomyTopics: Topic[] = [
         keyTerms: ['ventilación', 'intercambio gaseoso', 'defensa', 'regulación', 'fonación', 'olfato'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'El aparato respiratorio existe para una tarea esencial: captar oxígeno del aire y expulsar el CO₂ que produce el metabolismo. Conviene separar dos procesos que a menudo se confunden: la ventilación es el movimiento mecánico de aire que entra y sale (inspiración/espiración), mientras que el intercambio gaseoso es el paso real de gases entre el alvéolo y la sangre por difusión. Una vía de conducción (nariz, tráquea, bronquios) filtra, calienta y humidifica el aire y lo lleva hasta la zona respiratoria (los alvéolos), donde ocurre el intercambio. Como el CO₂ forma ácido en la sangre, el pulmón también regula el equilibrio ácido-base, y de ahí que la respiración esté ligada al pH.',
+          },
+          {
             type: 'list',
             title: 'Funciones del aparato respiratorio',
             items: [
@@ -1516,6 +1526,11 @@ const anatomyTopics: Topic[] = [
         title: 'Visión General',
         keyTerms: ['soporte', 'movimiento', 'protección', 'almacenamiento', 'hematopoyesis', 'calcio', 'médula ósea'],
         blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El sistema locomotor integra huesos, músculos y articulaciones para dos fines: dar SOPORTE y permitir el MOVIMIENTO. Los huesos son las palancas rígidas y el armazón; las articulaciones son las bisagras que definen qué movimiento es posible en cada punto; y los músculos son los motores que, al contraerse y tirar de los huesos a través de los tendones, producen el movimiento. Pero el hueso no es solo estructura: almacena y libera calcio (clave para la contracción y la coagulación) y, en su médula, fabrica las células de la sangre (hematopoyesis). Ver el conjunto como palancas + bisagras + motores es lo que conecta la osteología, la artrología y la miología en una sola función.',
+          },
           {
             type: 'list',
             title: 'Funciones del sistema locomotor',
