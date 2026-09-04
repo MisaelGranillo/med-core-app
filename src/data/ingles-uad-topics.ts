@@ -891,6 +891,11 @@ export const inglesUadTopics: Topic[] = [
         keyTerms: ['word root', 'combining form', 'combining vowel', 'prefix', 'suffix'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'Un término médico funciona como una palabra ensamblada por piezas, y saber el mecanismo evita memorizar miles de palabras sueltas. La raíz aporta el significado central (cardi = corazón); si hay que unirla a otra pieza que empieza por consonante, se le añade una vocal de unión (casi siempre "o") formando la forma combinante (cardi/o). El prefijo, al inicio, matiza (lugar, número, tiempo, negación); el sufijo, al final, define de qué tipo de término se trata (una inflamación, una cirugía, un adjetivo). Regla práctica: todo término lleva sufijo, pero no todos llevan prefijo. Para LEER un término se empieza por el sufijo, luego el prefijo y al final la raíz: peri/card/itis → "inflamación (-itis) alrededor (peri-) del corazón (card)". Así el término se interpreta solo.',
+          },
+          {
             type: 'definition',
             title: 'Word root',
             content: 'The foundation of the term; it carries the essential meaning. Ex.: cardi (heart), gastr (stomach), hepat (liver). — Raíz.',
@@ -1347,6 +1352,11 @@ export const inglesUadTopics: Topic[] = [
         title: 'The 12 tenses in clinical context',
         keyTerms: ['signal words', 'present simple', 'present perfect', 'past simple', 'future perfect'],
         blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Los doce tiempos no son doce reglas sueltas: son la combinación de un TIEMPO (pasado, presente, futuro) con un ASPECTO (simple = hecho puntual o habitual; continuo/-ing = acción en curso; perfecto = acción conectada con otro momento; perfecto continuo = duración hasta ese momento). Por eso "he coughs" (hábito), "he is coughing" (ahora), "he has coughed" (con efecto presente) y "he has been coughing for two days" (duración) describen la misma tos desde ángulos distintos. En la práctica, la palabra señal delata el tiempo: yesterday → pasado simple, since/for → presente perfecto, now → presente continuo, by next week → futuro perfecto. Elegir bien el tiempo es lo que hace que una historia clínica se lea con precisión.',
+          },
           {
             type: 'table',
             title: 'Los 12 tiempos: palabra señal · forma · ejemplo',
