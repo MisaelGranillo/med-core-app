@@ -26,6 +26,7 @@ export const bioestadisticaTopics: Topic[] = [
         id: 'pro-1', number: 1, title: 'Definición y Fórmula Básica',
         keyTerms: ['probabilidad', 'evento', 'espacio muestral', 'ocurrencias', 'escala de probabilidad'],
         blocks: [
+          { type: 'paragraph', content: 'La probabilidad mide qué tan factible es que ocurra un evento, en una escala de 0 (imposible) a 1 (seguro). Su forma más simple, la probabilidad clásica, supone que todos los resultados posibles son igualmente probables y se calcula como una fracción: los casos favorables sobre el total de casos posibles (el espacio muestral). Por eso al lanzar un dado la probabilidad de un 3 es 1/6. En medicina esta idea es el cimiento del razonamiento diagnóstico y del riesgo: la incidencia de una enfermedad, la eficacia de un tratamiento o el resultado de una prueba se expresan como probabilidades, y toda decisión clínica es, en el fondo, una apuesta informada sobre lo que probablemente ocurrirá.' },
           { type: 'formula', formula: 'P(E) = ocurrencias de E / total de ocurrencias posibles', description: 'La probabilidad de un evento E es la razón entre el número de veces que puede ocurrir y el número total de resultados posibles igualmente probables.' },
           { type: 'table', title: 'Escala de probabilidad (0 → 1)',
             data: {
@@ -203,6 +204,7 @@ export const bioestadisticaTopics: Topic[] = [
         id: 'edsc-1', number: 1, title: 'Tipos de Variables',
         keyTerms: ['variable cualitativa', 'variable cuantitativa', 'dicotómica', 'politómica', 'discreta', 'continua', 'categórica'],
         blocks: [
+          { type: 'paragraph', content: 'La estadística descriptiva resume y presenta los datos, y el primer paso —el que determina TODO lo demás— es clasificar la variable, porque de su tipo dependen la medida de resumen, la gráfica y la prueba estadística que se podrán usar. Una variable cualitativa describe cualidades o categorías (sexo, grupo sanguíneo) y se resume con frecuencias y proporciones; una cuantitativa mide cantidades y puede ser discreta (valores contables, como el número de hijos) o continua (cualquier valor en un rango, como el peso o la tensión arterial), y se resume con promedios y desviaciones. Elegir mal el tipo lleva a análisis sin sentido (p. ej. "promediar" grupos sanguíneos), así que esta clasificación es la base de toda la asignatura.' },
           { type: 'comparison',
             left: {
               title: 'CUALITATIVAS (Categóricas) — Describen cualidades',
@@ -364,7 +366,7 @@ export const bioestadisticaTopics: Topic[] = [
         id: 'inf-1', number: 1, title: '¿Qué es la Estadística Inferencial?',
         keyTerms: ['estadística inferencial', 'población', 'muestra', 'inferencia', 'generalización', 'incertidumbre'],
         blocks: [
-          { type: 'paragraph', content: 'Rama de la estadística que utiliza la probabilidad para extraer conclusiones sobre una población (N) a partir de información obtenida de una muestra (n).' },
+          { type: 'paragraph', content: 'La estadística inferencial usa la probabilidad para dar el salto de lo que se observa en una muestra (n) a lo que se afirma sobre toda la población (N), que casi nunca se puede medir por completo. Como una muestra nunca refleja a la población con exactitud, ese salto conlleva incertidumbre, y de ahí que sus dos herramientas centrales sean la estimación (calcular un valor poblacional con un intervalo de confianza) y el contraste de hipótesis (decidir, con un margen de error conocido —el nivel de significancia—, si un hallazgo es real o pudo deberse al azar). Es la maquinaria detrás de "el tratamiento redujo la mortalidad (p < 0.05)": no prueba certezas, sino que cuantifica cuán probable es que una conclusión sea correcta. Por eso una muestra representativa y de buen tamaño es tan importante: condiciona la validez de todo lo que se infiera.' },
           { type: 'note', content: 'OBJETIVO: Generalizar resultados y tomar decisiones con un nivel de incertidumbre controlado.' },
           { type: 'steps', title: 'Proceso general de inferencia',
             steps: ['Definir la POBLACIÓN de interés.', 'Seleccionar una MUESTRA representativa.', 'Aplicar técnicas estadísticas a la muestra.', 'Hacer INFERENCIA sobre la población con un margen de error conocido.'],
