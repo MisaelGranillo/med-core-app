@@ -379,7 +379,7 @@ export function SubjectDetail() {
                             return f.file ? (
                               <a
                                 key={i}
-                                href={`${LIBRARY_BASE}/${subject.id}/${f.file}`}
+                                href={`${LIBRARY_BASE}/${subject.id}/${encodeURIComponent(f.file)}`}
                                 target="_blank"
                                 rel="noreferrer"
                                 className={`${cls} hover:border-emerald-300 hover:shadow-sm transition-all`}
