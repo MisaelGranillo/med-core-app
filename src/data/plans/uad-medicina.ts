@@ -486,7 +486,7 @@ export const uadMedicina: Plan = {
           code: 'HS01006',
           hasLab: true,
           tags: ['celular'],
-          topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica'],
+          topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica', 'histologia-celula'],
           content: {
             area: 'Ciencias Básicas',
             credits: 8,
@@ -500,14 +500,14 @@ export const uadMedicina: Plan = {
                 number: 1,
                 title: 'La célula y el microscopio',
                 estado: 'impartido',
-                topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica'],
+                topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica', 'histologia-celula'],
                 temas: [
-                  'Clase 1 (impartida): enfoque de la materia (epitelial y conectivo), origen celular y capacidad regenerativa por tejido',
-                  'Clase 2 (impartida): tipos de microscopio y resolución, microscopio óptico, técnica histológica y tinciones (H&E, PAS, Feulgen)',
-                  'En curso: la célula y sus organelos (membranosos y no membranosos) pueden continuar con más detalle',
+                  'Introducción: definición, los 4 tejidos básicos, método inductivo vs deductivo, aplicaciones diagnósticas, origen celular y regeneración por tejido',
+                  'Microscopía, técnica y tinciones: microscopios y resolución, microscopio óptico, técnica histológica (fijación → inclusión → corte → tinción), colorantes ácidos/básicos, fenómenos (metacromasia, birrefringencia) y tinciones especiales (H&E, Mallory, PAS, OsO₄, Feulgen)',
+                  'La célula: membrana plasmática (8–10 nm), núcleo (eucromatina/heterocromatina), organelos membranosos y no membranosos, citoesqueleto y transporte a través de la membrana',
                 ],
                 fuentes: [
-                  { title: 'Histología I — Semana 1, Clase 1', file: 'Histologia 1 - Semana 1 - Clase 1.pdf', nota: 'Introducción: célula y tejidos.' },
+                  { title: 'Histología I — Semana 1 (deck completo, 114 diapositivas)', file: 'Histologia I - Semana 1 (deck completo).pdf', nota: 'Introducción, microscopía/técnica/tinciones y la célula.' },
                 ],
               },
               {
@@ -551,7 +551,7 @@ export const uadMedicina: Plan = {
               { title: 'Histología Básica. Texto y Atlas', author: 'Junqueira · Carneiro', tipo: 'complementaria', file: 'Histologia_Basica_Texto_y_Atlas_Junqueira_Carneiro.pdf' },
             ],
             materiales: [
-              { title: 'Semana 1 · Clase 1 — Introducción: célula y tejidos', file: 'Histologia 1 - Semana 1 - Clase 1.pdf', kind: 'Clase' },
+              { title: 'Semana 1 — Deck completo (114 diapositivas): célula, microscopía y tinciones', file: 'Histologia I - Semana 1 (deck completo).pdf', kind: 'Clase' },
               { title: 'Proyecto Integrador Semana 1 — Organelos celulares', file: 'Histologia 1 - Semana 1 - Proyecto Integrador.pdf', kind: 'Entrega' },
             ],
             recursos: [

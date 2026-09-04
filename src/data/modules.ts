@@ -117,9 +117,9 @@ export const modules: Module[] = [
     id: 'histologia-uad-s1',
     badge: 'UAD · Histología I — Semana 1',
     title: 'Histología: célula, microscopía y técnica',
-    subtitle: 'Introducción, microscopios y técnica histológica.',
+    subtitle: 'Introducción, microscopía/técnica/tinciones y la célula (membrana, núcleo, organelos, transporte).',
     emoji: '🔬',
-    topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica'],
+    topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica', 'histologia-celula'],
   },
   {
     id: 'bioestadistica',
