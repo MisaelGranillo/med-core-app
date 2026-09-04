@@ -1259,6 +1259,11 @@ export const inglesUadTopics: Topic[] = [
         keyTerms: ['-ae', '-i', '-a', '-es', '-ices', '-nges', '-mata'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'La mayoría de los términos médicos conservan el plural de su lengua de origen (latín o griego), no el inglés de añadir -s. La clave es fijarse en la TERMINACIÓN del singular, porque cada una tiene su regla: -a → -ae (vertebra → vertebrae), -us → -i (bronchus → bronchi), -um → -a (ovum → ova), -is → -es (diagnosis → diagnoses), -ix/-ex → -ices (appendix → appendices), -nx → -nges (phalanx → phalanges) y -ma → -mata (sarcoma → sarcomata). Reconocer el patrón evita errores frecuentes (no es "diagnosises" sino "diagnoses"). Como toda regla, tiene excepciones que ya siguen el plural inglés, como "virus → viruses" (nunca "viri").',
+          },
+          {
             type: 'table',
             title: 'Singular → plural, with a medical example',
             data: {
@@ -1665,6 +1670,11 @@ export const inglesUadTopics: Topic[] = [
         keyTerms: ['Dx', 'Tx', 'Hx', 'Rx', 'prn', 'bid', 'tid', 'po', 'CBC', 'CT'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'Las abreviaturas ahorran tiempo y espacio en el expediente, pero solo funcionan si emisor y receptor comparten el mismo código; por eso conviene aprenderlas por áreas de uso. En la nota y las órdenes se abrevian los datos del proceso clínico (Dx diagnóstico, Tx tratamiento, Hx historia, Rx receta, c/o complains of); en farmacología, la frecuencia y la vía (prn a demanda, bid dos veces al día, po por vía oral); y en pruebas, los estudios de laboratorio e imagen (CBC biometría, CT tomografía). Muchas derivan del latín (bid = bis in die), así que reconocer el patrón ayuda a descifrarlas. La regla de oro: si una abreviatura es ambigua, se escribe la palabra completa —es una cuestión de seguridad del paciente—.',
+          },
+          {
             type: 'table',
             title: 'Chart & orders',
             data: {
@@ -1965,6 +1975,11 @@ export const inglesUadTopics: Topic[] = [
         keyTerms: ['operate on', 'attend to', 'make a diagnosis', 'complain of', 'complain about', 'on antibiotics'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'Una collocation es la combinación de palabras que el idioma fija por costumbre, no por lógica: en inglés se dice "make a diagnosis" (no "do"), "operate ON a patient" y "suffer FROM a disease", aunque en español usemos otros verbos o preposiciones. El error típico del hispanohablante es traducir literalmente ("do a diagnosis", "operate a patient"), lo que suena incorrecto aunque se entienda. Un caso con matiz clínico útil es "complain": el paciente "complains OF" un síntoma interno (chest pain) pero "complains ABOUT" algo externo (the food). Aprender estas parejas de memoria —como bloques— es lo que hace que el inglés médico suene natural y preciso.',
+          },
+          {
             type: 'note',
             title: 'Impartido — Semana 4, Clase 1',
             content:
@@ -2094,6 +2109,11 @@ export const inglesUadTopics: Topic[] = [
         keyTerms: ['bring up', 'cough up', 'throw up', 'pull through', 'break out in', 'wear out', 'puff up', 'flare up'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'Un phrasal verb es un verbo seguido de una partícula (preposición o adverbio) que, juntos, adquieren un significado propio que no se deduce del verbo solo: "bring" es traer, pero "bring up" es vomitar/expectorar. Por eso hay que aprenderlos como una unidad, no traducir palabra por palabra. En el habla médica cotidiana son muy frecuentes cuando el paciente describe síntomas ("I keep bringing up phlegm", "the rash broke out overnight"), así que reconocerlos evita malentendidos: confundir "throw up" (vomitar) con "pull through" (recuperarse) cambia por completo la historia. Conviene fijarse también en matices como "wear out" (agotarse) frente a "burnout" (agotamiento por sobrecarga sostenida).',
+          },
+          {
             type: 'table',
             title: 'Síntomas y condiciones',
             data: {
@@ -2210,6 +2230,11 @@ export const inglesUadTopics: Topic[] = [
         title: 'Síntomas de cold & flu',
         keyTerms: ['sore throat', 'cough', 'nasal congestion', 'runny nose', 'chills', 'fever'],
         blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Buena parte de la consulta de primer contacto es un cuadro de vías respiratorias altas, así que conviene dominar el vocabulario con el que el paciente describe sus síntomas en inglés y sus matices. La tos se distingue por su carácter: dry/hacking (seca) frente a wet/productive (con flema). La nariz puede estar tapada —stuffy, blocked, bunged up (nasal congestion)— o, al revés, gotear (runny nose). La fiebre se gradúa (mild/high) y se acompaña de chills/shivering (escalofríos). Usar el término preciso (sore throat = garganta irritada, no "pain") permite entender al paciente y documentar bien; recuérdese que los síntomas se expresan con "have" ("she has a fever", no "she is fever").',
+          },
           {
             type: 'table',
             title: 'Symptom vocabulary',
