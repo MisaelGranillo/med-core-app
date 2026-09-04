@@ -2544,6 +2544,11 @@ export const anatomiaUadTopics: Topic[] = [
         keyTerms: ['cartílago hialino', 'cápsula articular', 'membrana sinovial', 'líquido sinovial', 'ligamentos'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'La articulación sinovial es la más móvil porque separa los huesos con una cavidad llena de líquido, en vez de unirlos con tejido macizo. Está envuelta por una cápsula fibrosa cuya capa interna, la membrana sinovial, secreta el líquido sinovial: un ultrafiltrado del plasma rico en ácido hialurónico que lubrica y, sobre todo, NUTRE al cartílago hialino, que es avascular y aneural (no recibe vasos ni nervios y por eso cicatriza mal). Los ligamentos y la propia cápsula dan estabilidad sin impedir el movimiento. Este diseño explica la clínica: una inflamación de la membrana (sinovitis) produce derrame y dolor, y el desgaste del cartílago —que no se regenera— es la base de la artrosis.',
+          },
+          {
             type: 'list',
             title: 'Elementos de toda articulación sinovial',
             items: [
@@ -4080,6 +4085,11 @@ export const anatomiaUadTopics: Topic[] = [
         keyTerms: ['supraespinoso', 'infraespinoso', 'redondo menor', 'subescapular', 'SITS'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'El hombro sacrifica estabilidad por movilidad: la cabeza del húmero, grande, se apoya en una cavidad glenoidea pequeña y poco profunda, como una pelota sobre un plato. Lo que la mantiene centrada durante el movimiento no son los huesos ni los ligamentos, sino cuatro músculos que la rodean y "tiran" de ella contra la glenoides: el manguito rotador (SITS). Además de estabilizar, cada uno mueve: el supraespinoso inicia la abducción y los demás rotan. Como el supraespinoso pasa por un espacio estrecho bajo el acromion, es el que más se pinza y se desgarra, y su lesión —muy frecuente— produce dolor y debilidad para levantar el brazo.',
+          },
+          {
             type: 'definition',
             title: 'Manguito rotador (SITS)',
             content: 'Los cuatro músculos que rodean y estabilizan la articulación del hombro: Supraespinoso, Infraespinoso, redondo menor (Teres minor) y Subescapular (mnemotecnia SITS / "CIS menor"). — Manguito de los rotadores.',
@@ -4308,6 +4318,11 @@ export const anatomiaUadTopics: Topic[] = [
         title: 'Los tres compartimientos del muslo',
         keyTerms: ['cuádriceps', 'aductores', 'isquiotibiales', 'fascia lata'],
         blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La fascia lata envuelve el muslo y manda tabiques hacia el fémur que lo dividen en tres compartimientos; la utilidad de esta división es que agrupa músculos por FUNCIÓN, IRRIGACIÓN y —lo más examinable— por el NERVIO que los inerva. Así, el compartimiento anterior extiende la rodilla y lo gobierna el nervio femoral; el medial aduce el muslo y lo gobierna el obturador; y el posterior flexiona la rodilla y extiende la cadera, inervado por el ciático. Recordar "anterior-femoral, medial-obturador, posterior-ciático" permite deducir la función y el déficit de una lesión nerviosa sin memorizar músculo por músculo. Clínicamente, esos tabiques cerrados son también los que, al hincharse, producen un síndrome compartimental.',
+          },
           {
             type: 'comparison',
             title: 'Compartimiento y su nervio',
