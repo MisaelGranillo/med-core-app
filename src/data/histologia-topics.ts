@@ -115,6 +115,11 @@ export const histologiaTopics: Topic[] = [
         keyTerms: ['regeneración', 'cardiomiocitos', 'neuronas', 'cicatriz'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'La capacidad de regenerar depende de si el tejido conserva células capaces de dividirse. El epitelial se renueva sin cesar porque tiene células madre en constante mitosis (por eso cicatriza rápido y, por lo mismo, es donde más aparecen los cánceres). El conectivo repara bien mediante fibroblastos, aunque a menudo deja cicatriz fibrosa. El muscular regenera poco y el nervioso casi nada: los cardiomiocitos y las neuronas maduras salen del ciclo celular y ya no se dividen, de modo que la pérdida se rellena con tejido no funcional. Esta jerarquía (epitelial > conectivo > muscular > nervioso) explica el pronóstico de muchas lesiones.',
+          },
+          {
             type: 'table',
             title: 'Cuánto regenera cada tejido',
             data: {
@@ -176,6 +181,11 @@ export const histologiaTopics: Topic[] = [
         title: 'Tipos de microscopio y resolución',
         keyTerms: ['campo claro', 'campo oscuro', 'contraste de fase', 'MEB', 'MET', 'fuerza atómica'],
         blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La resolución es la distancia mínima a la que dos puntos se ven separados y no como uno solo: cuanto MENOR es ese número, MEJOR es el microscopio. El ojo humano llega a 0.2 mm; la microscopía óptica, limitada por la longitud de onda de la luz visible, se detiene en torno a 0.2 μm (unas mil veces mejor). Para ver más fino hay que cambiar de "iluminación": los microscopios electrónicos usan haces de electrones (longitud de onda mucho menor) y alcanzan nanómetros —el MEB da relieve de superficie en 3D y el MET, la ultraestructura interna—, mientras que la fuerza atómica "palpa" la muestra con una punta y llega a picómetros. Las variantes ópticas (campo oscuro, contraste de fase, fluorescencia) no mejoran la resolución: cambian el CONTRASTE para ver cosas que el campo claro no muestra, como células vivas sin teñir.',
+          },
           {
             type: 'table',
             title: 'Microscopios ordenados por resolución (mayor número = peor resolución)',
@@ -242,6 +252,11 @@ export const histologiaTopics: Topic[] = [
         keyTerms: ['fijación', 'inclusión', 'microtomo', 'ultramicrotomo', 'tetróxido de osmio'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'La técnica histológica convierte un tejido blando y opaco en un corte finísimo, transparente y coloreado que la luz pueda atravesar. Cada paso resuelve un problema: la fijación (formol) mata las enzimas y entrecruza las proteínas para que el tejido no se autodigiera ni se deforme; la deshidratación con alcoholes retira el agua para que pueda entrar un medio que no se mezcla con ella; el aclaramiento con xilol sustituye el alcohol por un solvente miscible con la parafina; la inclusión en parafina endurece la pieza para poder cortarla; el microtomo obtiene secciones de pocas micras; y como el corte es incoloro, la tinción le da contraste. Saltarse o invertir un paso arruina la preparación (p. ej. cortar sin incluir desgarra el tejido).',
+          },
+          {
             type: 'steps',
             title: 'Del tejido al portaobjetos',
             steps: [
@@ -270,6 +285,11 @@ export const histologiaTopics: Topic[] = [
         title: 'Tinciones',
         keyTerms: ['H&E', 'hematoxilina', 'eosina', 'PAS', 'Feulgen', 'basófilo', 'acidófilo'],
         blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Las tinciones funcionan por atracción de cargas. Un colorante BÁSICO (catiónico), como la hematoxilina, se une a lo que tiene carga negativa —ácidos nucleicos: el ADN del núcleo y el ARN—, que por eso se llaman estructuras BASÓFILAS y salen azul-violeta. Un colorante ÁCIDO (aniónico), como la eosina, se une a lo que tiene carga positiva —muchas proteínas citoplasmáticas y del colágeno—, estructuras ACIDÓFILAS que salen rosa. La combinación de ambos es la tinción de rutina H&E: núcleos azules sobre citoplasma rosa. Las demás son tinciones especiales que revelan un componente concreto (PAS para glucógeno, Feulgen para ADN, fucsina-resorcina para fibras elásticas).',
+          },
           {
             type: 'table',
             title: 'Tinciones de uso común',
@@ -365,6 +385,11 @@ export const histologiaTopics: Topic[] = [
         keyTerms: ['fosfolípidos', 'colesterol', 'balsas lipídicas', 'glucoproteínas', 'proteínas receptoras'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'La membrana plasmática es una bicapa de fosfolípidos: cada molécula tiene una cabeza hidrofílica (hacia el agua) y dos colas hidrofóbicas (hacia dentro), lo que la hace una barrera para lo hidrosoluble y le da su grosor de 8–10 nm. Sobre esa bicapa "flotan" proteínas (modelo de mosaico fluido): integrales, que la atraviesan y hacen de canales, transportadores o receptores, y periféricas, adosadas a la superficie. El colesterol se intercala entre los fosfolípidos y regula la fluidez —de ahí lo de "pegamento dinámico": ni rígida ni demasiado líquida—. Los carbohidratos unidos a lípidos y proteínas (glucocáliz) sirven de carné de identidad para el reconocimiento celular. Que el espesor sea de solo unos nanómetros es lo que obliga a usar el MET (no el óptico) para verla.',
+          },
+          {
             type: 'table',
             title: 'Composición y componentes',
             data: {
@@ -436,6 +461,11 @@ export const histologiaTopics: Topic[] = [
         keyTerms: ['retículo endoplásmico', 'aparato de Golgi', 'mitocondria', 'lisosoma', 'proteasoma', 'peroxisoma'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'Los organelos membranosos separan reacciones incompatibles en compartimentos, y varios forman una cadena de montaje —el sistema de endomembranas—: el ribosoma sintetiza la proteína sobre el retículo endoplásmico RUGOSO, que la pliega y la envía en vesículas al aparato de Golgi, donde se glucosila y se etiqueta según su destino (secreción, membrana o lisosoma). En paralelo, la mitocondria quema nutrientes con oxígeno para producir ATP y, por su origen bacteriano, conserva ADN propio; el lisosoma digiere y recicla material con enzimas ácidas; el proteasoma degrada proteínas concretas marcadas con ubiquitina; y el peroxisoma neutraliza peróxidos y oxida ácidos grasos. Entender ese flujo explica por qué las células muy secretoras (páncreas, plasmocitos) tienen un RE rugoso y un Golgi enormes.',
+          },
+          {
             type: 'table',
             title: 'Los organelos con membrana',
             data: {
@@ -498,6 +528,11 @@ export const histologiaTopics: Topic[] = [
         title: 'Transporte a través de la membrana',
         keyTerms: ['difusión', 'ósmosis', 'endocitosis', 'clatrina', 'macropinocitosis', 'exocitosis'],
         blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Como la membrana es selectiva, la célula controla qué entra y qué sale, y la pregunta clave siempre es: ¿gasta energía? El transporte PASIVO va a favor del gradiente de concentración (de donde sobra a donde falta) y no consume ATP: así cruzan los gases (O₂, CO₂) y, por ósmosis, el agua. El ACTIVO va en contra del gradiente y por eso exige ATP (las bombas de iones, la endocitosis y la exocitosis). Para moléculas grandes la célula usa vesículas: en la endocitosis mediada por receptor, la proteína clatrina moldea la vesícula recubierta; la fagocitosis (partículas/bacterias) y la macropinocitosis (grandes tragos de líquido) dependen de actina; y la exocitosis fusiona vesículas con la membrana para secretar, ya sea de forma continua (constitutiva) o solo ante una señal (regulada).',
+          },
           {
             type: 'comparison',
             title: 'Pasivo vs. activo',
