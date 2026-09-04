@@ -6,33 +6,75 @@ import type { Topic } from '../types'
 export const histologiaTopics: Topic[] = [
   {
     id: 'histologia-introduccion',
-    title: 'Introducción: célula y tejidos',
-    subtitle: 'Enfoque de la materia, origen celular y capacidad regenerativa por tejido',
+    title: 'Introducción a la histología',
+    subtitle: 'Definición, los 4 tejidos básicos, aplicaciones diagnósticas, origen celular y regeneración',
     colorKey: 'histologia',
     categoria: 'Histología',
     emoji: '🔬',
     keyPoints: [
-      'Histología I cubre el tejido epitelial y el conectivo; el muscular y el nervioso quedan para Histología II.',
-      'Abordaje inductivo: de la célula al tejido y del tejido al órgano, con enfoque clínico.',
+      'Histología = histos (tejido) + logos (estudio): el estudio de los tejidos.',
+      'Cuatro tejidos básicos: epitelial, conectivo, muscular y nervioso. Histología I cubre el epitelial y el conectivo.',
+      'Método inductivo (de lo particular a lo general: célula → tejido → órgano) frente al deductivo (al revés).',
+      'Aplicaciones diagnósticas: la biopsia y la histopatología (p. ej. oncológica) sustentan muchos diagnósticos.',
       'Origen de la vida: sopa primordial → ARN (la chispa) → procariota → eucariota.',
-      'Procariota: pequeña, sin organelos membranosos, material genético en el nucleoide.',
-      'Eucariota: más grande, con núcleo definido y organelos membranosos.',
+      'Procariota: pequeña, sin organelos membranosos (material genético en el nucleoide); eucariota: núcleo definido y organelos membranosos.',
       '★ Capacidad regenerativa por tejido: epitelial ALTA, conectivo variable, muscular LIMITADA, nervioso MÍNIMA.',
       'Los cardiomiocitos y las neuronas maduras no se dividen: sus lesiones dejan cicatriz o daño permanente.',
-      'Evaluación semanal: examen 40 %, proyecto integrador 30 %, casos clínicos 30 %.',
     ],
     sections: [
       {
         id: 'hint-1',
         number: 1,
-        title: 'Enfoque de la materia',
-        keyTerms: ['tejido epitelial', 'tejido conectivo', 'inductivo', 'célula-tejido-órgano'],
+        title: 'Qué es la histología',
+        keyTerms: ['histología', 'tejido', 'epitelial', 'conectivo', 'muscular', 'nervioso'],
         blocks: [
+          {
+            type: 'definition',
+            title: 'Histología',
+            content: 'Del griego histos (tejido) y logos (estudio): la ciencia que estudia los tejidos, su estructura microscópica y su relación con la función. Enlaza la anatomía (estructura) con la fisiología (función). — Histología.',
+          },
+          {
+            type: 'list',
+            title: 'Los cuatro tejidos básicos',
+            items: [
+              'Tejido epitelial: reviste superficies y forma glándulas. (Histología I)',
+              'Tejido conectivo: sostiene y une; incluye óseo, cartilaginoso, adiposo, sanguíneo y linfático. (Histología I)',
+              'Tejido muscular: genera movimiento. (Histología II)',
+              'Tejido nervioso: recibe y transmite señales. (Histología II)',
+            ],
+          },
           {
             type: 'note',
             title: 'Qué cubre Histología I',
             content:
-              'Histología I estudia el tejido epitelial y el conectivo (y sus variedades: óseo, cartilaginoso, adiposo, sanguíneo y linfático). Los tejidos muscular y nervioso se abordan en Histología II. El método es inductivo: de la célula al tejido y de este al órgano, siempre con enfoque clínico. Bibliografía de apoyo sugerida: Ross, Histología.',
+              'Histología I estudia el tejido epitelial y el conectivo (con sus variedades). El muscular y el nervioso se abordan en Histología II. Bibliografía de apoyo sugerida: Ross, Histología. Evaluación semanal: examen 40 %, proyecto integrador 30 %, casos clínicos 30 %.',
+          },
+        ],
+      },
+      {
+        id: 'hint-4',
+        number: 4,
+        title: 'Método y aplicaciones diagnósticas',
+        keyTerms: ['inductivo', 'deductivo', 'biopsia', 'histopatología'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Método inductivo vs. deductivo',
+            left: {
+              title: 'Inductivo',
+              items: ['De lo particular a lo general.', 'Célula → tejido → órgano.', 'El abordaje de esta materia.'],
+            },
+            right: {
+              title: 'Deductivo',
+              items: ['De lo general a lo particular.', 'Órgano → tejido → célula.'],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'La histología en el diagnóstico',
+            content:
+              'La biopsia y su estudio microscópico (histopatología) confirman diagnósticos que la clínica y la imagen solo sugieren; en oncología, distinguir un tejido benigno de uno maligno depende del patrón histológico. Por eso la histología es la base de la anatomía patológica.',
           },
         ],
       },
@@ -98,7 +140,7 @@ export const histologiaTopics: Topic[] = [
   },
   {
     id: 'histologia-microscopia-tecnica',
-    title: 'Microscopía y técnica histológica',
+    title: 'Microscopía, técnica y tinciones',
     subtitle: 'Microscopios y resolución, el microscopio óptico, la técnica paso a paso y las tinciones',
     colorKey: 'histologia',
     categoria: 'Histología',
@@ -208,7 +250,7 @@ export const histologiaTopics: Topic[] = [
               'Deshidratación: alcoholes en concentración ascendente.',
               'Aclaramiento (diafanización): xilol o tolueno.',
               'Inclusión: en parafina, para dar consistencia al bloque.',
-              'Corte: microtomo (3–5 μm para óptico) o ultramicrotomo (50–150 nm para electrónico).',
+              'Corte: microtomo (5–15 μm para óptico) o ultramicrotomo (50–150 nm para electrónico).',
               'Tinción: para dar contraste (H&E de rutina).',
               'Montaje: con pineno o resinas, y cubreobjetos.',
             ],
@@ -218,7 +260,7 @@ export const histologiaTopics: Topic[] = [
             variant: 'dato',
             title: '★ Punto de examen — ultramicrotomo y OsO₄',
             content:
-              'Para microscopía electrónica se usa el ULTRAMICROTOMO (cortes de 50–150 nm) y se fija con TETRÓXIDO DE OSMIO (OsO₄), que conserva las membranas. El microtomo óptico corta secciones mucho más gruesas (3–5 μm).',
+              'Para microscopía electrónica se usa el ULTRAMICROTOMO (cortes de 50–150 nm) y se fija con TETRÓXIDO DE OSMIO (OsO₄), que conserva las membranas. El microtomo óptico corta secciones mucho más gruesas (5–15 μm).',
           },
         ],
       },
@@ -256,6 +298,239 @@ export const histologiaTopics: Topic[] = [
             title: '★ Punto de examen — colorantes ácidos vs. básicos',
             content:
               'Colorantes ÁCIDOS (Eosina ★, naranja G, anilina azul): tiñen los componentes ACIDÓFILOS, como las proteínas citoplasmáticas (acidofilia = afinidad por colorantes ácidos). Colorantes BÁSICOS (Azul de metileno ★, hematoxilina, pironina G): tiñen los componentes BASÓFILOS, como la heterocromatina ★ y el ARN.',
+          },
+          {
+            type: 'table',
+            title: '★ Fenómenos de tinción',
+            data: {
+              headers: ['Fenómeno', 'Qué es'],
+              rows: [
+                ['Metacromasia ★', 'El colorante tiñe la estructura de un color DISTINTO al suyo (p. ej. azul de toluidina → violeta en mastocitos).'],
+                ['Basofilia ★', 'Afinidad de un componente por los colorantes básicos (núcleos, ARN).'],
+                ['Birrefringencia ★', 'Propiedad de desdoblar la luz polarizada (colágeno, amiloide con rojo Congo).'],
+                ['Estequiometría ★', 'La cantidad de colorante fijado es proporcional a la cantidad de sustancia (permite cuantificar, p. ej. Feulgen para ADN).'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: '★ Punto de examen — tinciones especiales',
+            content:
+              'Especiales que hay que reconocer: Mallory ★ (tricrómico del conectivo), PAS ★ (ácido peryódico de Schiff: glucógeno y polisacáridos) y OsO₄ ★ (tetróxido de osmio: lípidos y membranas). El H&E combina un colorante básico (hematoxilina) y uno ácido (eosina).',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'histologia-celula',
+    title: 'La célula',
+    subtitle: 'Membrana, núcleo, organelos, citoesqueleto y transporte a través de la membrana',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🧫',
+    keyPoints: [
+      '★ La membrana plasmática mide 8–10 nm; su composición principal es fosfolípidos + colesterol + proteínas.',
+      '★ El colesterol es el "pegamento dinámico" de la membrana; las balsas lipídicas planas llevan flotilinas y las caveolares, caveolinas.',
+      'Núcleo: centro de control con el ADN; envoltura nuclear con poros; eucromatina (activa) vs heterocromatina (condensada).',
+      '★ El retículo endoplásmico RUGOSO sintetiza las proteínas destinadas a secreción; el Golgi las glucosila.',
+      'La mitocondria produce ATP (respiración celular) y tiene ADN propio; el proteasoma degrada proteínas marcadas con ubiquitina (76 aa).',
+      '★ El citoesqueleto transporta vesículas por microtúbulos de tubulina α/β; la dineína las lleva al extremo negativo (la cinesina, al positivo).',
+      '★ Transporte pasivo (difusión, ósmosis) sin ATP vs activo con ATP; la clatrina forma las vesículas recubiertas de la endocitosis mediada por receptor.',
+      '★ Macropinocitosis: independiente de clatrina, dependiente de actina; la exocitosis (activa) tiene vías constitutiva y regulada.',
+    ],
+    sections: [
+      {
+        id: 'hcel-1',
+        number: 1,
+        title: 'Cómo estudiar la célula',
+        keyTerms: ['membrana', 'núcleo', 'citoplasma'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Tres grandes bloques',
+            items: [
+              'Membrana celular: barrera selectiva que protege e intercambia sustancias con el entorno.',
+              'Núcleo: centro de control que contiene el ADN y dirige las funciones celulares.',
+              'Citoplasma: medio interno con los organelos que realizan las funciones vitales.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'hcel-2',
+        number: 2,
+        title: 'Membrana plasmática',
+        keyTerms: ['fosfolípidos', 'colesterol', 'balsas lipídicas', 'glucoproteínas', 'proteínas receptoras'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Composición y componentes',
+            data: {
+              headers: ['Componente', 'Nota'],
+              rows: [
+                ['Espesor total ★', '8–10 nm.'],
+                ['Composición principal ★', 'Fosfolípidos + colesterol + proteínas.'],
+                ['Proteínas de membrana ★', 'Integrales (atraviesan) y periféricas (asociadas a la superficie).'],
+                ['Balsas lipídicas', 'Planas (flotilinas ★) y caveolares (caveolinas); microdominios ordenados.'],
+                ['Colesterol ★', 'El "pegamento dinámico": da fluidez y estabilidad a la membrana.'],
+                ['Glucoproteínas ★', 'Carbohidratos + proteína; reconocimiento celular (glucocáliz).'],
+                ['Proteínas receptoras ★', 'Reconocen señales y desencadenan respuestas.'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Funciones de la membrana',
+            items: [
+              'Barrera selectiva y mantenimiento del gradiente electroquímico.',
+              'Transporte de moléculas pequeñas.',
+              'Comunicación y señalización celular.',
+              'Motilidad y soporte.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: '★ Punto de examen — membrana plasmática',
+            content:
+              'Datos clave: espesor 8–10 nm ★; composición principal fosfolípidos + colesterol + proteínas ★; proteínas integrales y periféricas ★; balsas lipídicas planas (flotilinas ★) y caveolares (caveolinas); colesterol = pegamento dinámico ★; glucoproteínas ★ y proteínas receptoras ★.',
+          },
+        ],
+      },
+      {
+        id: 'hcel-3',
+        number: 3,
+        title: 'Núcleo',
+        keyTerms: ['envoltura nuclear', 'poros nucleares', 'eucromatina', 'heterocromatina', 'nucléolo'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'El centro de control',
+            items: [
+              'Contiene el ADN y dirige el crecimiento y la reproducción celular.',
+              'Envoltura nuclear: doble membrana con poros que regulan el intercambio con el citoplasma.',
+              'Nucleoplasma: el medio interno del núcleo.',
+              'Nucléolo: produce y ensambla los componentes de los ribosomas.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Eucromatina vs. heterocromatina',
+            left: {
+              title: 'Eucromatina',
+              items: ['Poco condensada (laxa).', 'Transcripcionalmente ACTIVA.', 'Clara al microscopio.'],
+            },
+            right: {
+              title: 'Heterocromatina',
+              items: ['Muy condensada.', 'Transcripcionalmente INACTIVA (o poco activa).', 'Oscura (basófila ★).'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hcel-4',
+        number: 4,
+        title: 'Organelos membranosos',
+        keyTerms: ['retículo endoplásmico', 'aparato de Golgi', 'mitocondria', 'lisosoma', 'proteasoma', 'peroxisoma'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Los organelos con membrana',
+            data: {
+              headers: ['Organelo', 'Función'],
+              rows: [
+                ['RE rugoso ★', 'Con ribosomas; sintetiza las proteínas destinadas a SECRECIÓN.'],
+                ['RE liso', 'Sin ribosomas; síntesis de lípidos, metabolismo y almacén de calcio.'],
+                ['Aparato de Golgi', 'Modifica y glucosila proteínas (glicosilación), forma glicolípidos y las clasifica según su destino.'],
+                ['Mitocondria', 'Produce ATP (respiración celular, ciclo de Krebs y cadena de transporte); regula apoptosis y calcio; tiene ADN propio.'],
+                ['Lisosoma', 'Digestión y reciclaje (enzimas hidrolíticas).'],
+                ['Proteasoma', 'Degrada proteínas marcadas con ubiquitina (proteína de 76 aminoácidos, el "beso de la muerte").'],
+                ['Peroxisoma', 'Desintoxicación celular (oxida ácidos grasos, neutraliza peróxidos).'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: '★ Punto de examen — RE rugoso',
+            content:
+              'El organelo donde se sintetiza la mayoría de las proteínas destinadas a SECRECIÓN es el retículo endoplásmico RUGOSO (no el liso ni el Golgi). El Golgi las modifica después.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'La mitocondria tiene su propio ADN',
+            content:
+              'Además del núcleo, la mitocondria contiene ADN propio (de herencia materna). Sus defectos causan miopatías mitocondriales, que se estudian con el MET buscando alteraciones de la ultraestructura.',
+          },
+        ],
+      },
+      {
+        id: 'hcel-5',
+        number: 5,
+        title: 'Organelos no membranosos y citoesqueleto',
+        keyTerms: ['ribosomas', 'microtúbulos', 'tubulina', 'dineína', 'actina', 'filamentos intermedios'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Sin membrana',
+            items: [
+              'Ribosomas: ensamblan proteínas por traducción del ARN.',
+              'Microtúbulos: de tubulina α y β; vías del transporte intracelular de vesículas.',
+              'Microfilamentos: de actina; contracción, movimiento amiboideo y soporte de la membrana.',
+              'Filamentos intermedios: de proteínas fibrosas (queratina); dan soporte estructural.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: '★ Punto de examen — citoesqueleto',
+            content:
+              'Las estructuras responsables del transporte intracelular de vesículas están formadas por TUBULINA α y β (microtúbulos) ★. La proteína motora que lleva las vesículas hacia el extremo NEGATIVO del microtúbulo es la DINEÍNA ★ (la cinesina las lleva hacia el positivo).',
+          },
+        ],
+      },
+      {
+        id: 'hcel-6',
+        number: 6,
+        title: 'Transporte a través de la membrana',
+        keyTerms: ['difusión', 'ósmosis', 'endocitosis', 'clatrina', 'macropinocitosis', 'exocitosis'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Pasivo vs. activo',
+            left: {
+              title: 'Pasivo (sin ATP)',
+              items: ['A favor del gradiente (de mayor a menor concentración).', 'Difusión simple (CO₂, O₂, vitaminas), difusión facilitada y ósmosis.'],
+            },
+            right: {
+              title: 'Activo (con ATP)',
+              items: ['En contra del gradiente (de menor a mayor).', 'Bombas de iones; endocitosis y exocitosis.'],
+            },
+          },
+          {
+            type: 'table',
+            title: '★ Endocitosis y exocitosis',
+            data: {
+              headers: ['Proceso', 'Nota'],
+              rows: [
+                ['Difusión pasiva ★', 'Moléculas pequeñas a favor del gradiente, sin gasto de energía.'],
+                ['Fagocitosis ★', 'Ingesta de partículas grandes (bacterias); dependiente de actina.'],
+                ['Pinocitosis', 'Ingesta de líquidos y moléculas pequeñas en vesículas.'],
+                ['Endocitosis mediada por receptor', 'La proteína CLATRINA ★ forma las vesículas recubiertas.'],
+                ['Macropinocitosis ★', 'Independiente de clatrina, DEPENDIENTE de actina; forma macropinosomas grandes.'],
+                ['Exocitosis ★', 'Saca vesículas (activo, con ATP); vías constitutiva y de secreción regulada ★.'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: '★ Punto de examen — endocitosis',
+            content:
+              'La difusión pasiva ★ no gasta ATP. La fagocitosis ★ (bacterias) depende de actina. La clatrina ★ forma las vesículas recubiertas de la endocitosis mediada por receptor. La macropinocitosis ★ es independiente de clatrina y dependiente de actina. La exocitosis ★ tiene vías constitutiva y regulada ★.',
           },
         ],
       },
