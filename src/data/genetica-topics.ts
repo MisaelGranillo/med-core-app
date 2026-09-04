@@ -42,6 +42,11 @@ export const geneticaTopics: Topic[] = [
         keyTerms: ['cromosoma', 'gen', 'locus', 'alelo', 'genotipo', 'fenotipo', 'haploide', 'diploide'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'La genética estudia cómo se guarda y se transmite la información hereditaria. El ADN se empaqueta con proteínas en cromosomas; cada tramo del ADN que codifica un producto es un gen, y la posición fija que ese gen ocupa en el cromosoma es su locus. De un mismo gen existen variantes —los alelos—. Como heredamos un juego cromosómico de cada progenitor, las células somáticas son diploides (dos alelos por gen): si los dos alelos son iguales el individuo es homocigoto y, si difieren, heterocigoto. Los gametos, en cambio, son haploides (un solo juego), de modo que al unirse restauran la dotación diploide. El conjunto de alelos que se posee es el genotipo, pero lo que se observa es el fenotipo, que surge de la interacción del genotipo con el ambiente. Dominar este vocabulario es lo que permite después leer cualquier cruce.',
+          },
+          {
             type: 'table',
             title: 'El vocabulario de la herencia',
             data: {
@@ -68,6 +73,11 @@ export const geneticaTopics: Topic[] = [
         title: 'Tipos de dominancia',
         keyTerms: ['dominancia completa', 'dominancia incompleta', 'codominancia', 'heterocromía'],
         blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La dominancia describe qué se ve en el heterocigoto (Aa), es decir, cómo se "relacionan" los dos alelos al expresarse. No es una propiedad del gen en abstracto, sino de la pareja concreta de alelos y del rasgo que producen. En la dominancia completa, el alelo dominante fabrica suficiente producto para que el heterocigoto sea indistinguible del homocigoto dominante (el recesivo queda enmascarado). En la incompleta, ninguno domina del todo y el producto intermedio da un fenotipo mezclado. En la codominancia, ambos alelos se expresan a la vez y por separado, de modo que se ven los dos rasgos simultáneamente. Distinguirlas importa porque cambian las proporciones esperadas y explican patrones clínicos como los grupos sanguíneos o la heterocromía.',
+          },
           {
             type: 'list',
             title: 'Cómo se expresan los alelos del heterocigoto',
@@ -156,6 +166,11 @@ export const geneticaTopics: Topic[] = [
         title: 'Las tres leyes',
         keyTerms: ['uniformidad', 'segregación', 'transmisión independiente', '3:1', '9:3:3:1'],
         blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Las tres leyes se entienden a partir de un hecho: durante la meiosis, los dos alelos de cada gen se SEPARAN y cada gameto recibe solo uno (al azar). Por eso un cruce de razas puras (AA × aa) da una F1 toda Aa —uniforme y con el fenotipo dominante— (1.ª ley). Al cruzar esos heterocigotos (Aa × Aa), cada uno aporta A o a con igual probabilidad, y la combinación al azar reconstruye 1 AA : 2 Aa : 1 aa; como AA y Aa se ven igual, el fenotipo sale 3:1 y reaparece el recesivo (2.ª ley). Si seguimos dos genes a la vez y están en cromosomas distintos, se reparten de forma independiente, y el dihíbrido AaBb × AaBb combina las dos proporciones 3:1 en 16 casillas → 9:3:3:1 (3.ª ley). El cuadro de Punnett no es más que la forma visual de contar esas combinaciones.',
+          },
           {
             type: 'table',
             title: 'Ley · cruce · proporción',
