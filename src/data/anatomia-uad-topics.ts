@@ -1873,6 +1873,11 @@ export const anatomiaUadTopics: Topic[] = [
         keyTerms: ['cintura pélvica', 'muslo', 'pierna', 'pie'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'El esqueleto del miembro inferior está diseñado para soportar el peso del cuerpo y transmitirlo al suelo, por lo que sus huesos son más robustos que los del superior. Se organiza en cuatro segmentos en serie: la cintura pélvica (el coxal) ancla el miembro al esqueleto axial y recibe la carga de la columna; el muslo (fémur, el hueso más largo y fuerte) la lleva a la rodilla; la pierna (tibia, que soporta el peso, y peroné, que sobre todo da inserciones y estabiliza el tobillo) la baja al pie; y el pie (tarso, metatarso y falanges) forma arcos que la reparten en la pisada. Seguir esa cadena de carga —pelvis → fémur → tibia → pie— es la mejor forma de recordar qué hueso articula con cuál.',
+          },
+          {
             type: 'note',
             title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
             content:
@@ -2632,6 +2637,11 @@ export const anatomiaUadTopics: Topic[] = [
         keyTerms: ['sinovial', 'disco articular', 'cápsula articular', 'pterigoideo lateral'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'La articulación temporomandibular (ATM) une el cóndilo de la mandíbula con la fosa mandibular del temporal y es la única articulación móvil del cráneo. Su rasgo distintivo es un disco articular de fibrocartílago que la divide en DOS cavidades sinoviales superpuestas, y eso le permite dos movimientos combinados: en la cavidad inferior el cóndilo rota (bisagra, primeros grados de apertura) y en la superior el conjunto cóndilo-disco se desliza hacia delante (para abrir bien la boca), traccionado por el pterigoideo lateral. Entender ese doble mecanismo explica los chasquidos y bloqueos cuando el disco se desplaza (disfunción de la ATM).',
+          },
+          {
             type: 'note',
             title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
             content:
@@ -2725,6 +2735,11 @@ export const anatomiaUadTopics: Topic[] = [
         title: 'Los seis grupos de articulaciones',
         keyTerms: ['cuerpos vertebrales', 'arcos vertebrales', 'atlantooccipital', 'atlantoaxial', 'costovertebrales', 'sacroilíaca'],
         blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La columna combina dos tipos de unión que reparten las funciones: entre los CUERPOS vertebrales hay articulaciones cartilaginosas (los discos intervertebrales), que soportan el peso y amortiguan; entre los ARCOS hay articulaciones sinoviales (las cigapofisarias o facetarias), que guían y limitan el movimiento. Sumadas a lo largo de muchas vértebras, dan a la columna mucha movilidad total con poca en cada nivel. Todo el conjunto lo refuerzan ligamentos largos —el longitudinal anterior y el posterior recorren los cuerpos— que dan estabilidad y frenan los extremos del movimiento. Esta arquitectura explica tanto la hernia de disco (falla el amortiguador) como la artrosis facetaria (fallan las sinoviales).',
+          },
           {
             type: 'note',
             title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
@@ -2856,6 +2871,11 @@ export const anatomiaUadTopics: Topic[] = [
         keyTerms: ['esternoclavicular', 'encaje recíproco', 'fibrocartílago interarticular', 'costoclavicular'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'El miembro superior está hecho para la movilidad, y sus articulaciones lo reflejan: cada una gana rango a costa de estabilidad. La esternoclavicular es la ÚNICA unión ósea entre el miembro superior y el esqueleto axial —de ahí que toda la cintura escapular "cuelgue" de ella— y, pese a su pequeño tamaño, lleva un disco de fibrocartílago que la hace muy resistente. Más lateralmente, la acromioclavicular ajusta la posición de la escápula, y la glenohumeral (hombro) es la más móvil del cuerpo. Este diseño explica su patología típica: la clavícula se fractura con facilidad y el hombro es la articulación que más se luxa.',
+          },
+          {
             type: 'note',
             title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
             content:
@@ -2977,6 +2997,11 @@ export const anatomiaUadTopics: Topic[] = [
         title: 'Coxofemoral (cadera)',
         keyTerms: ['coxofemoral', 'esferoidea', 'labrum acetabular', 'iliofemoral', 'ligamento de la cabeza del fémur'],
         blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'A diferencia del miembro superior, el inferior prioriza la ESTABILIDAD para soportar el peso, y sus dos grandes articulaciones lo muestran. La cadera (coxofemoral) es esferoidea como el hombro, pero su cavidad —el acetábulo— es profunda y está ampliada por el labrum y reforzada por ligamentos potentes (iliofemoral), de modo que es muy estable y se luxa poco. La rodilla es una tróclea (bisagra) enorme, poco encajada, cuya estabilidad no la dan los huesos sino los ligamentos cruzados y colaterales y los meniscos que amortiguan y congruencian. Por eso la patología de la rodilla es sobre todo ligamentosa y meniscal (deportiva), mientras que la de la cadera es más ósea y degenerativa (fractura de cuello, artrosis).',
+          },
           {
             type: 'note',
             title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
@@ -3163,6 +3188,11 @@ export const anatomiaUadTopics: Topic[] = [
         keyTerms: ['miocito', 'endomisio', 'fascículo', 'perimisio', 'epimisio', 'aponeurosis'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'El músculo esquelético está organizado en capas de tejido conjuntivo que lo envuelven a tres niveles anidados, como cables dentro de cables. Esta organización no es decorativa: cada envoltura conduce vasos y nervios hasta las fibras y, sobre todo, transmite la fuerza de la contracción. Las tres capas convergen en los extremos y se continúan con el tendón (o con una aponeurosis, si es una lámina ancha), de modo que el tirón de millones de fibras se concentra y se aplica sobre el hueso. Por eso un músculo se contrae acercando su inserción móvil a la fija, y el tendón —aunque no se contrae— es imprescindible para que ese acortamiento produzca movimiento articular.',
+          },
+          {
             type: 'definition',
             title: 'Endomisio · perimisio · epimisio',
             content: 'Tres envolturas de tejido conjuntivo, de dentro hacia fuera: el ENDOMISIO rodea cada fibra muscular (miocito); el PERIMISIO agrupa las fibras en fascículos (haces); el EPIMISIO envuelve el músculo entero. — Envolturas del músculo.',
@@ -3265,6 +3295,11 @@ export const anatomiaUadTopics: Topic[] = [
         keyTerms: ['masetero', 'temporal', 'pterigoideo medial', 'pterigoideo lateral', 'V3'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'Los músculos masticatorios mueven la mandíbula sobre la articulación temporomandibular para triturar el alimento. Se entienden mejor por parejas de fuerzas: el masetero (superficial, potente) y el pterigoideo medial forman un cabestrillo a ambos lados del ángulo mandibular que lo eleva con fuerza, mientras el temporal, en abanico, eleva y además RETRAE la mandíbula. La apertura, en cambio, no es solo dejar caer la boca: el pterigoideo lateral tira del cóndilo y del disco hacia delante (protrusión), y así desciende y adelanta la mandíbula. La clave del examen es que los cuatro comparten inervación —el V3 (mandibular del trigémino)—, lo que los opone a los músculos de la mímica (VII).',
+          },
+          {
             type: 'note',
             title: 'Todos por el V3',
             content:
@@ -3335,6 +3370,11 @@ export const anatomiaUadTopics: Topic[] = [
         title: 'La mímica: toda por el VII',
         keyTerms: ['expresión facial', 'nervio facial', 'VII'],
         blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Los músculos de la mímica son cutáneos: a diferencia del resto, se insertan en la PIEL (no solo en hueso), de modo que al contraerse la mueven y generan los gestos. Se disponen alrededor de los orificios de la cara (ojos, nariz, boca) actuando como esfínteres que los cierran o dilatadores que los abren; por eso el orbicular de los labios frunce la boca y el orbicular del ojo la cierra. Todos comparten un mismo nervio motor, el VII (facial), que sale por el agujero estilomastoideo y se abre en abanico por la cara. Ese detalle es el que se pregunta una y otra vez: la mímica es VII, frente a la masticación, que es V3.',
+          },
           {
             type: 'note',
             title: 'Masticación V3 · mímica VII',
@@ -3502,6 +3542,11 @@ export const anatomiaUadTopics: Topic[] = [
         title: 'Los grupos del cuello y la nuca',
         keyTerms: ['suboccipital', 'suprahioideos', 'escalenos', 'prevertebrales'],
         blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El cuello es un cilindro con muchas estructuras vitales (vía aérea, vasos, nervios) protegidas por capas musculares organizadas por planos y por función. En superficie, el platisma tensa la piel y el esternocleidomastoideo y el trapecio mueven la cabeza; en profundidad, los suboccipitales ajustan finamente la posición de la cabeza sobre el atlas, los hioideos suben y bajan el hioides y la laringe al tragar y hablar, y los escalenos y prevertebrales flexionan la columna cervical. Entender a qué plano y a qué función pertenece cada grupo permite predecir su inervación y localizar estructuras (p. ej. el paquete vasculonervioso que pasa entre los escalenos).',
+          },
           {
             type: 'note',
             title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
@@ -3697,6 +3742,11 @@ export const anatomiaUadTopics: Topic[] = [
         keyTerms: ['superficial', 'intermedio', 'profundo'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'Los músculos del dorso se ordenan en tres planos según su origen embriológico y su función, y esa distinción es la que hay que tener clara. Los superficiales (trapecio, dorsal ancho) y los intermedios son EXTRÍNSECOS: nacen en el tronco pero mueven el miembro superior o intervienen en la respiración, y por eso los inervan ramos anteriores (nervios del plexo braquial), no del dorso. Los profundos son los INTRÍNSECOS o propios: los erectores de la columna y el grupo transversoespinoso, que extienden y estabilizan la columna y siempre están inervados por ramos posteriores de los nervios espinales. Así, "extrínseco = mueve el brazo = ramo anterior; intrínseco = mueve la columna = ramo posterior" resume todo el capítulo.',
+          },
+          {
             type: 'note',
             title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
             content:
@@ -3800,6 +3850,11 @@ export const anatomiaUadTopics: Topic[] = [
         title: 'Porciones',
         keyTerms: ['porción esternal', 'porción costal', 'porción lumbar', 'pilares'],
         blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El diafragma es una cúpula musculotendinosa cuyas fibras nacen de todo el reborde inferior del tórax —del xifoides por delante, de los cartílagos costales a los lados y de la columna lumbar por detrás (los pilares)— y convergen hacia arriba en una lámina central sin músculo, el centro tendinoso. Esta forma de "paracaídas" es la que explica su acción: al contraerse, la cúpula desciende y aplana, el volumen torácico aumenta y el aire entra (inspiración). Distinguir sus tres porciones por el origen importa porque entre ellas quedan los orificios por donde pasan la aorta, el esófago y la cava a distintos niveles.',
+          },
           {
             type: 'table',
             title: 'Las tres porciones (por su origen)',
@@ -3934,6 +3989,11 @@ export const anatomiaUadTopics: Topic[] = [
         title: 'Anterolateral (5 músculos)',
         keyTerms: ['transverso del abdomen', 'recto del abdomen', 'piramidal', 'poligástrico'],
         blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La pared anterolateral no tiene hueso: la sostienen tres músculos anchos superpuestos cuyas fibras corren en direcciones distintas (el oblicuo externo hacia abajo y adentro, el interno al revés y el transverso en horizontal), un contrachapado que da resistencia en todos los sentidos y comprime las vísceras al toser, defecar o parir. Por delante, a cada lado de la línea media, el recto del abdomen —vertical y poligástrico— flexiona el tronco. Sus aponeurosis se entrecruzan formando la vaina del recto y la línea alba. Esta disposición explica por qué las hernias asoman por los puntos débiles (línea alba, región inguinal) y por qué una prensa abdominal fuerte protege la columna lumbar.',
+          },
           {
             type: 'table',
             title: 'Los cinco (función · inervación)',
@@ -4175,6 +4235,11 @@ export const anatomiaUadTopics: Topic[] = [
         keyTerms: ['flexores', 'pronadores', 'túnel del carpo', 'nervio mediano'],
         blocks: [
           {
+            type: 'paragraph',
+            content:
+              'El antebrazo se divide en dos compartimientos que resumen su función y su inervación. El ANTERIOR contiene los flexores de la muñeca y los dedos y los pronadores; casi todos nacen de un origen común en la epitróclea (epicóndilo medial) y los gobierna el nervio MEDIANO, con la sola excepción del flexor cubital del carpo y la mitad medial del flexor profundo (nervio cubital). Sus tendones bajan a la mano por el túnel del carpo, junto al mediano. Saber esto permite leer la clínica: una lesión del mediano debilita la flexión y la pinza del pulgar, y su compresión en el túnel del carpo produce el hormigueo característico de los tres primeros dedos.',
+          },
+          {
             type: 'list',
             title: 'Flexores y pronadores',
             items: [
@@ -4401,6 +4466,11 @@ export const anatomiaUadTopics: Topic[] = [
         title: 'Compartimiento anterior',
         keyTerms: ['tibial anterior', 'extensor largo del hallux', 'peroneo profundo', 'dorsiflexión'],
         blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La pierna se organiza en tres compartimientos fasciales, y cada uno empareja una función con un nervio, lo que hace muy predecible la exploración. El ANTERIOR sube el pie (dorsiflexión) y extiende los dedos, inervado por el peroneo profundo; su fallo da el "pie caído". El LATERAL evierte el pie (peroneo superficial). El POSTERIOR baja el pie (flexión plantar) por el tendón de Aquiles y lo inerva el tibial. Como son compartimientos cerrados por fascia, un aumento de presión (traumatismo, isquemia) comprime su contenido y produce un síndrome compartimental, una urgencia. Por eso conviene memorizarlos como bloque función-nervio y no músculo por músculo.',
+          },
           {
             type: 'list',
             title: 'Anterior → dorsiflexión (nervio peroneo profundo)',
