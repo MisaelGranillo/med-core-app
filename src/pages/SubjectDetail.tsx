@@ -54,7 +54,7 @@ export function SubjectDetail() {
     <div className="flex-1 flex flex-col pb-20 md:pb-0">
 
       {/* ── Hero de la materia ─────────────────────────────── */}
-      <div className="bg-gradient-to-br from-zinc-900 to-zinc-700 text-white relative overflow-hidden">
+      <div className="bg-gradient-to-br from-neutral-900 to-neutral-700 text-white relative overflow-hidden">
         <svg aria-hidden className="absolute inset-0 w-full h-full opacity-10 pointer-events-none" preserveAspectRatio="xMidYMid slice">
           <defs>
             <pattern id="dots-subj" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
