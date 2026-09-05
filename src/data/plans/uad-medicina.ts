@@ -243,7 +243,7 @@ export const uadMedicina: Plan = {
           name: 'Genética Básica',
           code: 'GB01003',
           tags: ['celular'],
-          topicIds: ['genetica-conceptos', 'genetica-mendel'],
+          topicIds: ['genetica-conceptos', 'genetica-mendel', 'genetica-adn'],
           content: {
             area: 'Ciencias Básicas',
             credits: 4,
@@ -258,19 +258,19 @@ export const uadMedicina: Plan = {
               {
                 number: 1,
                 title: 'Desarrollo histórico de la genética humana',
-                // Parcial: impartidas las Clases 1–2 (conceptos, historia y leyes de
-                // Mendel). La Clase 3 (molécula del ADN y código genético) queda
-                // pendiente — Genética tiene 3 clases por semana.
+                // Completa: impartidas las Clases 1–3 (conceptos e historia, leyes de
+                // Mendel, y la molécula del ADN y el código genético).
                 estado: 'impartido',
-                topicIds: ['genetica-conceptos', 'genetica-mendel'],
+                topicIds: ['genetica-conceptos', 'genetica-mendel', 'genetica-adn'],
                 temas: [
                   'Clase 1 (impartida): conceptos base (cromosoma, gen, alelo, genotipo/fenotipo), tipos de dominancia, epigenética e historia de la genética',
                   'Clase 2 (impartida): las tres leyes de Mendel (3:1 y 9:3:3:1), grupos sanguíneos/paternidad y herencia mitocondrial materna',
-                  'Clase 3 (pendiente): la molécula del ADN y el código genético',
+                  'Clase 3 (impartida): la molécula del ADN, apareamiento de bases, código genético (codones) y empaquetamiento en nucleosomas',
                 ],
                 fuentes: [
                   { title: 'Genética Básica — Semana 1, Clase 1', file: 'Genetica Basica - Semana 1 - Clase 1.pdf', nota: 'Conceptos base e historia de la genética.' },
                   { title: 'Genética Básica — Semana 1, Clase 2', file: 'Genetica Basica - Semana 1 - Clase 2.pdf', nota: 'Las leyes de Mendel.' },
+                  { title: 'Genética Básica — Semana 1, Clase 3', file: 'Genetica Basica - Semana 1 - Clase 3.pdf', nota: 'La molécula del ADN y el código genético.' },
                 ],
               },
               {
@@ -315,6 +315,7 @@ export const uadMedicina: Plan = {
             materiales: [
               { title: 'Semana 1 · Clase 1 — Conceptos base e historia', file: 'Genetica Basica - Semana 1 - Clase 1.pdf', kind: 'Clase' },
               { title: 'Semana 1 · Clase 2 — Leyes de Mendel', file: 'Genetica Basica - Semana 1 - Clase 2.pdf', kind: 'Clase' },
+              { title: 'Semana 1 · Clase 3 — La molécula del ADN y el código genético', file: 'Genetica Basica - Semana 1 - Clase 3.pdf', kind: 'Clase' },
               { title: 'Genética — resumen', file: 'genetica-resumen.pdf', kind: 'Resumen' },
               { title: 'Reparación del ADN', file: 'reparacion-adn.pdf', kind: 'Resumen' },
               { title: 'Puntos de regulación del ciclo celular', file: 'puntos-de-regulacion-del-ciclo-celular.pdf', kind: 'Resumen' },

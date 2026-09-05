@@ -109,9 +109,9 @@ export const modules: Module[] = [
     id: 'genetica-uad-s1',
     badge: 'UAD · Genética Básica — Semana 1',
     title: 'Genética: conceptos y leyes de Mendel',
-    subtitle: 'Conceptos base, historia y las tres leyes de Mendel. (Clase 3 pendiente.)',
+    subtitle: 'Conceptos base, historia, leyes de Mendel y la molécula del ADN.',
     emoji: '🧬',
-    topicIds: ['genetica-conceptos', 'genetica-mendel'],
+    topicIds: ['genetica-conceptos', 'genetica-mendel', 'genetica-adn'],
   },
   {
     id: 'histologia-uad-s1',
