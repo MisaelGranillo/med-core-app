@@ -571,4 +571,68 @@ export const histologiaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'histologia-repaso-s1',
+    title: 'Repaso para el examen — Semana 1',
+    subtitle: 'Banco tipo examen del profesor: microscopía, tinciones, célula y transporte',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '📝',
+    keyPoints: [
+      'Criofractura = MET; campo claro 0.2 μm (menor resolución); fuerza atómica 50 pm (mayor).',
+      'Contraste de fase = células vivas sin teñir (p. ej. espermatozoides).',
+      'Colorantes ácidos: eosina, naranja G, anilina; básicos: hematoxilina, azul de metileno.',
+      'Mallory = 3 colorantes ÁCIDOS (anilina azul, fucsina ácida, naranja G); PAS no tiñe ARN.',
+      'Proteasoma degrada proteínas marcadas con ubiquitina; el lisosoma digiere material en vesículas.',
+      'Pasivo (difusión, ósmosis) = sin ATP; activo (fago/pino/macropinocitosis, endocitosis por receptor, exocitosis) = con ATP.',
+      'Microtúbulos: 13 protofilamentos de tubulina α/β, plantilla γ-tubulina, polimerizan con GTP; cinesina → extremo +, dineína → extremo −.',
+    ],
+    sections: [
+      {
+        id: 'hrep-1',
+        number: 1,
+        title: 'Cómo usar este repaso',
+        keyTerms: ['repaso', 'examen', 'banco del profesor'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Es repaso — banco tipo examen del profesor',
+            content:
+              'No es contenido nuevo: la Clase 5 no tuvo diapositivas; fue un repaso previo al examen en el que el profesor resolvió un banco de preguntas tipo examen. Aquí están esas preguntas. Cada tema se estudia a fondo en «Microscopía, técnica y tinciones» y «La célula».',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: '★ Estrategia de examen',
+            content:
+              'Consejos del profesor para el examen: lee bien el enunciado (¿la sustancia ENTRA o SALE de la célula?); en opción múltiple elimina primero los dos distractores obvios y decide entre los dos que quedan; y cuida las UNIDADES de resolución (μm vs nm vs pm), que es la trampa más común.',
+          },
+        ],
+      },
+      {
+        id: 'hrep-2',
+        number: 2,
+        title: 'Lo evaluable, agrupado',
+        keyTerms: ['microscopía', 'tinciones', 'membrana', 'transporte', 'citoesqueleto'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Datos de alto rendimiento (del banco del profesor)',
+            data: {
+              headers: ['Tema', 'Clave'],
+              rows: [
+                ['Microscopía', 'Criofractura → MET; campo claro 0.2 μm (menor resolución); contraste de fase → células vivas sin teñir; fuerza atómica 50 pm (mayor).'],
+                ['Tinciones', 'Ácidos: eosina, naranja G, anilina · básicos: hematoxilina, azul de metileno. Mallory = 3 ácidos. Metacromasia = cambio de color de una tinción básica. PAS: glucógeno/mucopolisacáridos/glucoproteínas, no ARN.'],
+                ['Técnica', 'Aclaramiento con xileno/tolueno; el tetraóxido de osmio es FIJADOR (membranas).'],
+                ['Membrana', 'Bicapa 8–10 nm: fosfolípidos + colesterol + proteínas (integrales/periféricas). Balsas planas → flotilinas; caveolares → caveolina. Receptoras: reconocen y unen ligandos.'],
+                ['Organelos', 'Proteasoma → proteínas marcadas con ubiquitina; lisosoma → material en vesículas. Membrana mitocondrial interna → cadena respiratoria; RE liso → citocromo P450.'],
+                ['Transporte', 'Pasivo (difusión simple/facilitada, ósmosis) sin ATP; activo (fago/pino/macropinocitosis, endocitosis por receptor, exocitosis) con ATP. Exocitosis = SALE de la célula.'],
+                ['Citoesqueleto', 'Microtúbulos: 13 protofilamentos de tubulina α/β, plantilla γ-tubulina, GTP. Cinesina → +, dineína → −, catanina los corta. Filamentos intermedios: vimentina (mesodermo), citoqueratinas (epitelios).'],
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
 ]

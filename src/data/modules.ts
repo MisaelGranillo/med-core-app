@@ -122,6 +122,14 @@ export const modules: Module[] = [
     topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica', 'histologia-celula'],
   },
   {
+    id: 'histologia-uad-repaso-s1',
+    badge: 'UAD · Histología I — Repaso',
+    title: 'Repaso para el examen — Semana 1',
+    subtitle: 'Banco tipo examen del profesor: microscopía, tinciones, célula y transporte.',
+    emoji: '📝',
+    topicIds: ['histologia-repaso-s1'],
+  },
+  {
     id: 'bioestadistica',
     badge: 'UAD · Epidemiología y Bioestadística',
     title: 'Bioestadística',
