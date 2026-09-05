@@ -80,7 +80,7 @@ export function Navbar() {
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-sm font-medium
                             transition-all duration-150
                             ${isActive(path)
-                              ? 'bg-zinc-900 text-white'
+                              ? 'bg-zinc-900 text-app'
                               : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'}`}
               >
                 <Icon weight={isActive(path) ? 'fill' : 'regular'} className="w-3.5 h-3.5" />

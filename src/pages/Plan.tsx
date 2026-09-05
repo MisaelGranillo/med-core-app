@@ -175,7 +175,7 @@ export function Plan() {
                 className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold
                              whitespace-nowrap transition-all duration-150 flex-shrink-0
                              ${activeIdx === p.index
-                               ? 'bg-zinc-900 text-white'
+                               ? 'bg-zinc-900 text-app'
                                : 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100'}`}
               >
                 {p.label}

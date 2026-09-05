@@ -196,7 +196,7 @@ export function Topic() {
         {/* Mobile sidebar toggle */}
         <button
           onClick={() => setSidebarOpen(true)}
-          className="fixed bottom-6 right-6 z-30 md:hidden bg-zinc-900 text-white p-3.5 rounded-full shadow-lg"
+          className="fixed bottom-6 right-6 z-30 md:hidden bg-zinc-900 text-app p-3.5 rounded-full shadow-lg"
         >
           <List weight="bold" className="w-5 h-5" />
         </button>

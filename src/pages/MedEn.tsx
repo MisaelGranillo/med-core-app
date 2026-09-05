@@ -318,7 +318,7 @@ export function MedEn() {
             {view === 'vocabulario' && (
               <button
                 onClick={() => setShowQuiz(true)}
-                className="btn-primary bg-zinc-900 hover:bg-zinc-700 text-white px-5 py-2.5 self-start md:self-end"
+                className="btn-primary bg-zinc-900 hover:bg-zinc-700 text-app px-5 py-2.5 self-start md:self-end"
               >
                 <Trophy weight="fill" className="w-4 h-4" />
                 Iniciar Quiz (10 preguntas)
@@ -384,7 +384,7 @@ export function MedEn() {
             <button
               onClick={() => setFilterPos('todos')}
               className={`text-xs font-semibold px-3 py-1 rounded-full border transition-all duration-150
-                ${filterPos === 'todos' ? 'bg-zinc-900 text-white border-zinc-900' : 'bg-surface text-zinc-600 border-zinc-200 hover:border-zinc-400'}`}
+                ${filterPos === 'todos' ? 'bg-zinc-900 text-app border-zinc-900' : 'bg-surface text-zinc-600 border-zinc-200 hover:border-zinc-400'}`}
             >
               Todas las categorías
             </button>
@@ -393,7 +393,7 @@ export function MedEn() {
                 key={p}
                 onClick={() => setFilterPos(p)}
                 className={`text-xs font-semibold px-3 py-1 rounded-full border transition-all duration-150
-                  ${filterPos === p ? 'bg-zinc-900 text-white border-zinc-900' : 'bg-surface text-zinc-600 border-zinc-200 hover:border-zinc-400'}`}
+                  ${filterPos === p ? 'bg-zinc-900 text-app border-zinc-900' : 'bg-surface text-zinc-600 border-zinc-200 hover:border-zinc-400'}`}
               >
                 {POS_LABELS[p]}
               </button>

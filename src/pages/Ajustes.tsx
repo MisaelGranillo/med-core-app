@@ -55,7 +55,7 @@ export function Ajustes() {
                   aria-pressed={active}
                   className={`relative flex flex-col items-center justify-center gap-2 py-6 rounded-2xl border-2 transition-all duration-150
                     ${active
-                      ? 'bg-zinc-900 text-white border-zinc-900'
+                      ? 'bg-zinc-900 text-app border-zinc-900'
                       : 'bg-surface text-zinc-600 border-zinc-200 hover:border-zinc-400'}`}
                 >
                   {active && (

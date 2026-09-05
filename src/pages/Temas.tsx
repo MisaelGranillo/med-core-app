@@ -73,7 +73,7 @@ export function Temas() {
             <button
               onClick={() => setFilter('Todas')}
               className={`text-xs font-semibold px-3 py-1.5 rounded-full transition-colors ${
-                filter === 'Todas' ? 'bg-zinc-900 text-white' : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                filter === 'Todas' ? 'bg-zinc-900 text-app' : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
               }`}
             >
               Todas
@@ -83,7 +83,7 @@ export function Temas() {
                 key={cat}
                 onClick={() => setFilter(cat)}
                 className={`text-xs font-semibold px-3 py-1.5 rounded-full transition-colors inline-flex items-center gap-1.5 ${
-                  filter === cat ? 'bg-zinc-900 text-white' : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                  filter === cat ? 'bg-zinc-900 text-app' : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
                 }`}
               >
                 <span>{CATEGORIA_META[cat].emoji}</span>
@@ -155,7 +155,7 @@ export function Temas() {
                       <div className="flex items-center gap-2">
                         <Link
                           to={`/topic/${t.id}`}
-                          className="flex-1 flex items-center justify-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-zinc-900 text-white hover:bg-zinc-800 transition-colors"
+                          className="flex-1 flex items-center justify-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-zinc-900 text-app hover:bg-zinc-800 transition-colors"
                         >
                           <BookOpen weight="bold" className="w-3.5 h-3.5" /> Estudiar
                         </Link>
