@@ -35,18 +35,18 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 const POS_COLORS: Record<string, string> = {
-  noun: 'bg-sky-100 text-sky-800 border-sky-200',
-  verb: 'bg-emerald-100 text-emerald-800 border-emerald-200',
-  adjective: 'bg-amber-100 text-amber-800 border-amber-200',
-  adverb: 'bg-orange-100 text-orange-800 border-orange-200',
-  pronoun: 'bg-violet-100 text-violet-800 border-violet-200',
-  preposition: 'bg-teal-100 text-teal-800 border-teal-200',
-  conjunction: 'bg-lime-100 text-lime-800 border-lime-200',
-  interjection: 'bg-rose-100 text-rose-800 border-rose-200',
+  noun: 'bg-sky-100 dark:bg-sky-500/20 text-sky-800 dark:text-sky-300 border-sky-200 dark:border-sky-500/30',
+  verb: 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-500/30',
+  adjective: 'bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-500/30',
+  adverb: 'bg-orange-100 dark:bg-orange-500/20 text-orange-800 dark:text-orange-300 border-orange-200 dark:border-orange-500/30',
+  pronoun: 'bg-violet-100 dark:bg-violet-500/20 text-violet-800 dark:text-violet-300 border-violet-200 dark:border-violet-500/30',
+  preposition: 'bg-teal-100 dark:bg-teal-500/20 text-teal-800 dark:text-teal-300 border-teal-200 dark:border-teal-500/30',
+  conjunction: 'bg-lime-100 dark:bg-lime-500/20 text-lime-800 dark:text-lime-300 border-lime-200 dark:border-lime-500/30',
+  interjection: 'bg-rose-100 dark:bg-rose-500/20 text-rose-800 dark:text-rose-300 border-rose-200 dark:border-rose-500/30',
   article: 'bg-zinc-100 text-zinc-700 border-zinc-200',
-  'phrasal-verb': 'bg-indigo-100 text-indigo-800 border-indigo-200',
-  abbreviation: 'bg-fuchsia-100 text-fuchsia-800 border-fuchsia-200',
-  'word-part': 'bg-cyan-100 text-cyan-800 border-cyan-200',
+  'phrasal-verb': 'bg-indigo-100 dark:bg-indigo-500/20 text-indigo-800 dark:text-indigo-300 border-indigo-200 dark:border-indigo-500/30',
+  abbreviation: 'bg-fuchsia-100 dark:bg-fuchsia-500/20 text-fuchsia-800 dark:text-fuchsia-300 border-fuchsia-200 dark:border-fuchsia-500/30',
+  'word-part': 'bg-cyan-100 dark:bg-cyan-500/20 text-cyan-800 dark:text-cyan-300 border-cyan-200 dark:border-cyan-500/30',
 }
 
 interface QuizQuestion {
@@ -121,7 +121,7 @@ function TermCard({ term, expanded, onToggle }: { term: MedEnTerm; expanded: boo
                 <p className="text-xs italic text-zinc-500 leading-relaxed">“{term.example}”</p>
               )}
               {term.nota && (
-                <p className="text-[0.6875rem] text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-2.5 py-1.5 leading-relaxed">
+                <p className="text-[0.6875rem] text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-500/15 border border-amber-200 dark:border-amber-500/30 rounded-lg px-2.5 py-1.5 leading-relaxed">
                   {term.nota}
                 </p>
               )}

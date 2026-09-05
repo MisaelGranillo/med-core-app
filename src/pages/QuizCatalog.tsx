@@ -83,7 +83,7 @@ export function QuizCatalog() {
                           </h3>
                         </div>
                         {best !== null && (
-                          <span className="flex items-center gap-1 text-[0.5625rem] font-bold text-amber-700 bg-amber-100 border border-amber-200 px-1.5 py-0.5 rounded-full flex-shrink-0">
+                          <span className="flex items-center gap-1 text-[0.5625rem] font-bold text-amber-700 dark:text-amber-300 bg-amber-100 dark:bg-amber-500/20 border border-amber-200 dark:border-amber-500/30 px-1.5 py-0.5 rounded-full flex-shrink-0">
                             <Trophy weight="fill" className="w-3 h-3" />
                             {best}%
                           </span>

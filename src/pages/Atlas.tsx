@@ -103,8 +103,8 @@ function AtlasCard({
   const masteryColors = {
     0: 'bg-zinc-200 text-zinc-700',
     1: 'bg-blue-200 text-blue-700',
-    2: 'bg-amber-200 text-amber-700',
-    3: 'bg-green-200 text-green-700',
+    2: 'bg-amber-200 dark:bg-amber-500/25 text-amber-700 dark:text-amber-300',
+    3: 'bg-green-200 dark:bg-green-500/25 text-green-700 dark:text-green-300',
   }
 
   const categoryEmojis: Record<string, string> = {

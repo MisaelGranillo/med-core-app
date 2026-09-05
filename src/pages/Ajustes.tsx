@@ -59,7 +59,7 @@ export function Ajustes() {
                       : 'bg-surface text-zinc-600 border-zinc-200 hover:border-zinc-400'}`}
                 >
                   {active && (
-                    <span className="absolute top-2 right-2 w-4 h-4 rounded-full bg-white flex items-center justify-center">
+                    <span className="absolute top-2 right-2 w-4 h-4 rounded-full bg-surface flex items-center justify-center">
                       <Check weight="bold" className="w-3 h-3 text-zinc-900" />
                     </span>
                   )}

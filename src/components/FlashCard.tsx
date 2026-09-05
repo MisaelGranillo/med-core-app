@@ -95,8 +95,8 @@ export function FlashCard({
           </button>
           <button
             onClick={() => handleAnswer(true)}
-            className="flex-1 max-w-[180px] py-3 rounded-xl border-2 border-emerald-200 bg-emerald-50
-                       text-emerald-700 font-semibold text-sm hover:bg-emerald-100
+            className="flex-1 max-w-[180px] py-3 rounded-xl border-2 border-emerald-200 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/15
+                       text-emerald-700 dark:text-emerald-300 font-semibold text-sm hover:bg-emerald-100 dark:bg-emerald-500/20
                        active:scale-[0.98] transition-all duration-150"
           >
             Lo supe
@@ -110,7 +110,7 @@ export function FlashCard({
           animate={{ opacity: 1, y: 0 }}
           className={`mt-5 py-3 rounded-xl text-center text-sm font-semibold ${
             answered === 'correct'
-              ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+              ? 'bg-emerald-50 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-500/30'
               : 'bg-red-50 text-red-700 border border-red-200'
           }`}
         >

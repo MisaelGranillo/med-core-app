@@ -10,12 +10,12 @@ import { paiBySlug, type PaiModulo } from '../data/pai'
 import { usePaiContent } from '../hooks/usePaiContent'
 
 const MODULO_COLORS: Record<string, { accent: string; badge: string; bg: string }> = {
-  'salud-publica':         { accent: 'text-cyan-600',    badge: 'bg-cyan-100 text-cyan-700',      bg: 'bg-cyan-50'    },
-  'bioquimica':            { accent: 'text-violet-600',  badge: 'bg-violet-100 text-violet-700',  bg: 'bg-violet-50'  },
-  'aparatos-y-sistemas':   { accent: 'text-red-600',     badge: 'bg-red-100 text-red-700',        bg: 'bg-red-50'     },
-  'comprension-lectura':   { accent: 'text-emerald-600', badge: 'bg-emerald-100 text-emerald-700',bg: 'bg-emerald-50' },
-  'ingles-medico':         { accent: 'text-blue-600',    badge: 'bg-blue-100 text-blue-700',      bg: 'bg-blue-50'    },
-  'matematicas':           { accent: 'text-amber-600',   badge: 'bg-amber-100 text-amber-700',    bg: 'bg-amber-50'   },
+  'salud-publica':         { accent: 'text-cyan-600 dark:text-cyan-400',    badge: 'bg-cyan-100 dark:bg-cyan-500/20 text-cyan-700 dark:text-cyan-300',      bg: 'bg-cyan-50 dark:bg-cyan-500/15'    },
+  'bioquimica':            { accent: 'text-violet-600 dark:text-violet-400',  badge: 'bg-violet-100 dark:bg-violet-500/20 text-violet-700 dark:text-violet-300',  bg: 'bg-violet-50 dark:bg-violet-500/15'  },
+  'aparatos-y-sistemas':   { accent: 'text-red-600 dark:text-red-400',     badge: 'bg-red-100 dark:bg-red-500/20 text-red-700 dark:text-red-300',        bg: 'bg-red-50 dark:bg-red-500/15'     },
+  'comprension-lectura':   { accent: 'text-emerald-600 dark:text-emerald-400', badge: 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300',bg: 'bg-emerald-50 dark:bg-emerald-500/15' },
+  'ingles-medico':         { accent: 'text-blue-600 dark:text-blue-400',    badge: 'bg-blue-100 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300',      bg: 'bg-blue-50 dark:bg-blue-500/15'    },
+  'matematicas':           { accent: 'text-amber-600 dark:text-amber-400',   badge: 'bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300',    bg: 'bg-amber-50 dark:bg-amber-500/15'   },
   'investigacion':         { accent: 'text-zinc-700',    badge: 'bg-zinc-100 text-zinc-700',      bg: 'bg-zinc-50'    },
 }
 
@@ -80,11 +80,11 @@ export function PAIModulo() {
 
         {/* Aviso "En construcción" */}
         {isUnderConstruction && (
-          <div className="flex gap-3 bg-amber-50 border border-amber-200 rounded-2xl p-5">
+          <div className="flex gap-3 bg-amber-50 dark:bg-amber-500/15 border border-amber-200 dark:border-amber-500/30 rounded-2xl p-5">
             <Clock weight="fill" className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
             <div>
-              <p className="text-sm font-bold text-amber-800 mb-1">Contenido en construcción</p>
-              <p className="text-sm text-amber-700 leading-relaxed">
+              <p className="text-sm font-bold text-amber-800 dark:text-amber-300 mb-1">Contenido en construcción</p>
+              <p className="text-sm text-amber-700 dark:text-amber-300 leading-relaxed">
                 Esta guía aún no tiene apuntes propios. El contenido mostrado es
                 una guía general; actualización pendiente con apuntes del curso.
               </p>

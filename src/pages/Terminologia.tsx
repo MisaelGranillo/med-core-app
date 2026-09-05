@@ -44,14 +44,14 @@ const TIPO_LABELS: Record<string, string> = {
 }
 
 const TIPO_COLORS: Record<string, string> = {
-  prefijo: 'bg-indigo-100 text-indigo-800 border-indigo-200',
-  sufijo:  'bg-rose-100 text-rose-800 border-rose-200',
-  raiz:    'bg-amber-100 text-amber-800 border-amber-200',
+  prefijo: 'bg-indigo-100 dark:bg-indigo-500/20 text-indigo-800 dark:text-indigo-300 border-indigo-200 dark:border-indigo-500/30',
+  sufijo:  'bg-rose-100 dark:bg-rose-500/20 text-rose-800 dark:text-rose-300 border-rose-200 dark:border-rose-500/30',
+  raiz:    'bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-500/30',
 }
 
 const ORIGEN_COLORS: Record<string, string> = {
   griego: 'bg-blue-50 text-blue-700 border-blue-200',
-  latino: 'bg-green-50 text-green-700 border-green-200',
+  latino: 'bg-green-50 dark:bg-green-500/15 text-green-700 dark:text-green-300 border-green-200 dark:border-green-500/30',
 }
 
 // ──────────────────────────────────────────────────────────────
@@ -306,8 +306,8 @@ export function Terminologia() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
-              <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-200
-                              text-indigo-700 text-xs font-bold uppercase tracking-widest px-3 py-1.5
+              <div className="inline-flex items-center gap-2 bg-indigo-50 dark:bg-indigo-500/15 border border-indigo-200 dark:border-indigo-500/30
+                              text-indigo-700 dark:text-indigo-300 text-xs font-bold uppercase tracking-widest px-3 py-1.5
                               rounded-full mb-3">
                 Terminología · MedLex
               </div>
@@ -450,12 +450,12 @@ export function Terminologia() {
       {/* ── Enlace al módulo MedLex activo ───────────────────── */}
       {filterSistema !== 'todos' && (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-8">
-          <div className="card p-4 flex items-center gap-4 bg-indigo-50 border-indigo-200">
+          <div className="card p-4 flex items-center gap-4 bg-indigo-50 dark:bg-indigo-500/15 border-indigo-200 dark:border-indigo-500/30">
             <div className="flex-1">
-              <p className="text-sm font-bold text-indigo-800">
+              <p className="text-sm font-bold text-indigo-800 dark:text-indigo-300">
                 Estudiando sistema: {SISTEMA_LABELS[filterSistema] ?? filterSistema}
               </p>
-              <p className="text-xs text-indigo-600 mt-0.5">
+              <p className="text-xs text-indigo-600 dark:text-indigo-400 mt-0.5">
                 Explora la anatomía de este sistema en el visor 3D interactivo.
               </p>
             </div>

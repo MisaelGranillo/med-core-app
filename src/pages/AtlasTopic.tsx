@@ -191,7 +191,7 @@ export function AtlasTopic() {
               className="card card-interactive p-6 hover:shadow-lg transition-all text-left group"
             >
               <div className="flex items-start gap-3 mb-3">
-                <div className="p-3 rounded-lg bg-amber-100 text-amber-600 group-hover:bg-amber-200 transition-colors">
+                <div className="p-3 rounded-lg bg-amber-100 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 group-hover:bg-amber-200 dark:bg-amber-500/25 transition-colors">
                   <Lightning weight="fill" className="w-5 h-5" />
                 </div>
                 <div>
@@ -206,7 +206,7 @@ export function AtlasTopic() {
               className="card card-interactive p-6 hover:shadow-lg transition-all text-left group"
             >
               <div className="flex items-start gap-3 mb-3">
-                <div className="p-3 rounded-lg bg-green-100 text-green-600 group-hover:bg-green-200 transition-colors">
+                <div className="p-3 rounded-lg bg-green-100 dark:bg-green-500/20 text-green-600 dark:text-green-400 group-hover:bg-green-200 dark:bg-green-500/25 transition-colors">
                   <BookOpen weight="fill" className="w-5 h-5" />
                 </div>
                 <div>
@@ -508,7 +508,7 @@ function QuizMode({
           let bgClass = 'bg-surface hover:bg-zinc-50 border-zinc-200'
           if (isAnswered) {
             if (isCorrectOption) {
-              bgClass = 'bg-green-100 border-green-500'
+              bgClass = 'bg-green-100 dark:bg-green-500/20 border-green-500'
             } else if (isSelected) {
               bgClass = 'bg-red-100 border-red-500'
             }
@@ -552,7 +552,7 @@ function QuizMode({
       {isAnswered && (
         <div
           className={`p-4 rounded-lg mb-6 ${
-            isCorrect ? 'bg-green-100 text-green-900' : 'bg-red-100 text-red-900'
+            isCorrect ? 'bg-green-100 dark:bg-green-500/20 text-green-900' : 'bg-red-100 text-red-900'
           }`}
         >
           <p className="font-semibold mb-2">{isCorrect ? '✓ Correcto' : '✗ Incorrecto'}</p>

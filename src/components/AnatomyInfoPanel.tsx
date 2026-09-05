@@ -32,10 +32,10 @@ interface AnatomyInfoPanelProps {
 // Paleta visual por sistema
 const SISTEMA_STYLES: Record<string, { bg: string; text: string; border: string; badge: string; icon: React.ReactNode }> = {
   'Esquelético': {
-    bg:     'bg-amber-50',
-    text:   'text-amber-700',
-    border: 'border-amber-200',
-    badge:  'bg-amber-100 text-amber-800',
+    bg:     'bg-amber-50 dark:bg-amber-500/15',
+    text:   'text-amber-700 dark:text-amber-300',
+    border: 'border-amber-200 dark:border-amber-500/30',
+    badge:  'bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300',
     icon:   <Bone weight="fill" className="w-3.5 h-3.5" />,
   },
   'Muscular': {
@@ -150,17 +150,17 @@ function PanelContent({ part, onClose }: { part: AnatomyPart; onClose: () => voi
           <Link
             to={`/terminologia?sistema=${medlexSistema}`}
             onClick={onClose}
-            className="flex items-center gap-3 p-3 rounded-2xl bg-indigo-50 border border-indigo-200
-                       hover:bg-indigo-100 transition-colors group"
+            className="flex items-center gap-3 p-3 rounded-2xl bg-indigo-50 dark:bg-indigo-500/15 border border-indigo-200 dark:border-indigo-500/30
+                       hover:bg-indigo-100 dark:bg-indigo-500/20 transition-colors group"
           >
-            <BookOpenText weight="fill" className="w-5 h-5 text-indigo-600 flex-shrink-0" />
+            <BookOpenText weight="fill" className="w-5 h-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0" />
             <div className="flex-1">
-              <p className="text-xs font-bold text-indigo-800">Ver terminología relacionada</p>
-              <p className="text-[0.625rem] text-indigo-600 mt-0.5">
+              <p className="text-xs font-bold text-indigo-800 dark:text-indigo-300">Ver terminología relacionada</p>
+              <p className="text-[0.625rem] text-indigo-600 dark:text-indigo-400 mt-0.5">
                 Prefijos, sufijos y raíces de este sistema en MedLex
               </p>
             </div>
-            <ArrowRight weight="bold" className="w-4 h-4 text-indigo-400 group-hover:text-indigo-600 transition-colors" />
+            <ArrowRight weight="bold" className="w-4 h-4 text-indigo-400 group-hover:text-indigo-600 dark:text-indigo-400 transition-colors" />
           </Link>
         )}
 

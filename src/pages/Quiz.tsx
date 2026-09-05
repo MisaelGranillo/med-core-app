@@ -179,8 +179,8 @@ export function Quiz() {
                     const count = topicQuestions.filter((q) => q.difficulty === d).length
                     const labels = { easy: 'Básico', medium: 'Intermedio', hard: 'Avanzado' }
                     const colors2 = {
-                      easy: 'bg-emerald-100 text-emerald-700',
-                      medium: 'bg-amber-100 text-amber-700',
+                      easy: 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300',
+                      medium: 'bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300',
                       hard: 'bg-red-100 text-red-700',
                     }
                     return (
@@ -207,7 +207,7 @@ export function Quiz() {
               <div className="flex items-center justify-between text-sm text-zinc-400">
                 <span>{current + 1} / {deck.length}</span>
                 <div className="flex items-center gap-3">
-                  <span className="text-emerald-600 font-semibold flex items-center gap-1">
+                  <span className="text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1">
                     <CheckCircle weight="fill" className="w-4 h-4" />{score}
                   </span>
                   <span className="text-red-500 font-semibold flex items-center gap-1">
@@ -265,7 +265,7 @@ export function Quiz() {
 
                 <div className="flex justify-center gap-6 mb-8">
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-emerald-600">{score}</p>
+                    <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">{score}</p>
                     <p className="text-xs text-zinc-400 font-medium">Correctas</p>
                   </div>
                   <div className="w-px bg-zinc-200" />

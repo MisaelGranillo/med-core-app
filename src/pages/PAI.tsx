@@ -10,7 +10,7 @@ import { paiModulos, type PaiStatus } from '../data/pai'
 
 const STATUS_STYLES: Record<PaiStatus, { label: string; bg: string; text: string; dot: string }> = {
   'disponible':      { label: 'Disponible',       bg: 'bg-primary-100',  text: 'text-primary-700',  dot: 'bg-primary-500' },
-  'en-construccion': { label: 'En construcción',  bg: 'bg-amber-100', text: 'text-amber-700', dot: 'bg-amber-500' },
+  'en-construccion': { label: 'En construcción',  bg: 'bg-amber-100 dark:bg-amber-500/20', text: 'text-amber-700 dark:text-amber-300', dot: 'bg-amber-500' },
   'bloqueado':       { label: 'Bloqueado',         bg: 'bg-zinc-100',  text: 'text-zinc-500',  dot: 'bg-zinc-400' },
 }
 

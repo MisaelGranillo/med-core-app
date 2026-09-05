@@ -182,7 +182,7 @@ export function Progress() {
                           key={idx}
                           className="flex-shrink-0 text-center bg-zinc-50 border border-zinc-100 rounded-xl px-3 py-2"
                         >
-                          <p className={`text-sm font-bold ${p >= 70 ? 'text-emerald-600' : 'text-red-500'}`}>
+                          <p className={`text-sm font-bold ${p >= 70 ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-500'}`}>
                             {p}%
                           </p>
                           <p className="text-[0.625rem] text-zinc-400">
