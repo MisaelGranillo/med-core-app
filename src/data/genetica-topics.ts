@@ -1,7 +1,7 @@
 import type { Topic } from '../types'
 
-// Genética Básica (UAD · GB01003) — Semana 1, Clases 1–2 (Dra. Cazares).
-// Clase 3 (molécula del ADN y código genético) queda pendiente: la semana es parcial.
+// Genética Básica (UAD · GB01003) — Semana 1, Clases 1–3 (Dra. Cazares):
+// conceptos e historia, leyes de Mendel, y la molécula del ADN y el código genético.
 export const geneticaTopics: Topic[] = [
   {
     id: 'genetica-conceptos',
@@ -227,6 +227,162 @@ export const geneticaTopics: Topic[] = [
             title: 'Linajes por ADN mitocondrial',
             content:
               'Como el ADN mitocondrial pasa intacto de madre a hijos, permite rastrear linajes maternos a lo largo de generaciones y estudiar enfermedades mitocondriales, que siempre se heredan por la madre.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'genetica-adn',
+    title: 'La molécula del ADN y el código genético',
+    subtitle: 'Estructura de la doble hélice, apareamiento de bases, codones y empaquetamiento en el núcleo',
+    colorKey: 'genetica',
+    categoria: 'Genética',
+    emoji: '🧬',
+    keyPoints: [
+      'Nucleótido = fosfato + desoxirribosa (azúcar) + base nitrogenada; es la unidad del ADN.',
+      'El esqueleto externo es azúcar-fosfato unido por enlaces fosfodiéster; las bases apuntan hacia el interior.',
+      'Las dos cadenas son antiparalelas: una va 5′→3′ y la complementaria 3′→5′.',
+      'Apareamiento: A–T con 2 puentes de hidrógeno; G–C con 3 (siempre una purina con una pirimidina).',
+      'Purinas (doble anillo): adenina y guanina; pirimidinas (un anillo): timina y citosina.',
+      'Codón = 3 bases (64 combinaciones); en el ARN la timina se sustituye por uracilo (U).',
+      'Codón de inicio: AUG (metionina); codones de paro: UAA, UAG y UGA.',
+      'El ADN (~2 m por célula) se empaqueta en nucleosomas: nucleótido → ADN → nucleosoma → cromatina → cromosoma.',
+    ],
+    sections: [
+      {
+        id: 'gadn-1',
+        number: 1,
+        title: 'Estructura de la doble hélice',
+        keyTerms: ['doble hélice', 'nucleótido', 'desoxirribosa', 'fosfodiéster', 'antiparalelas', "5′→3′"],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El ADN es una escalera de caracol (doble hélice), un modelo que Watson y Crick propusieron en 1953 a partir de la imagen de difracción de rayos X (Photo 51) de Rosalind Franklin (visto en la Clase 1). Sus dos largueros son un esqueleto de azúcar y fosfato que se repite, y sus peldaños son las bases nitrogenadas mirando hacia el interior. La pieza que se repite es el nucleótido: un grupo fosfato + el azúcar desoxirribosa + una base nitrogenada. Los nucleótidos se encadenan porque el fosfato de uno se une al azúcar del siguiente por un enlace fosfodiéster, que forma el larguero. Ese azúcar —la desoxirribosa— es el que da nombre al ácido DESOXIrribonucleico.',
+          },
+          {
+            type: 'definition',
+            title: 'Nucleótido',
+            content: 'La unidad estructural del ADN: un grupo fosfato + el azúcar desoxirribosa + una base nitrogenada (A, T, G o C). Encadenados por enlaces fosfodiéster forman cada hebra. — Nucleótido.',
+          },
+          {
+            type: 'paragraph',
+            content:
+              'Las dos hebras corren en sentido opuesto: son antiparalelas. Los carbonos del azúcar se numeran con prima (1′ a 5′), y por eso una hebra va en dirección 5′→3′ mientras su complementaria va 3′→5′. El extremo 5′ lleva un fosfato libre. Esta orientación opuesta no es un detalle cosmético: es la que permite que las bases se apareen de forma correcta y la que marca la dirección en que las enzimas leen y copian el ADN.',
+          },
+        ],
+      },
+      {
+        id: 'gadn-2',
+        number: 2,
+        title: 'Apareamiento de bases',
+        keyTerms: ['A–T', 'G–C', 'puentes de hidrógeno', 'purinas', 'pirimidinas'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Las bases del interior no se emparejan al azar: la adenina siempre con la timina (A–T) y la guanina siempre con la citosina (G–C). Lo que las mantiene unidas son puentes de hidrógeno —2 en el par A–T y 3 en el par G–C—, por eso las regiones ricas en G–C son algo más estables. En cada peldaño se une una purina (base grande, de doble anillo: adenina o guanina) con una pirimidina (base pequeña, de un anillo: timina o citosina); así todos los peldaños miden lo mismo y la hélice es uniforme. Truco del profesor: el nombre más largo (piri-mi-dina) es la molécula más chica (un solo anillo).',
+          },
+          {
+            type: 'table',
+            title: 'Bases y su apareamiento',
+            data: {
+              headers: ['Grupo', 'Bases', 'Se aparea con'],
+              rows: [
+                ['Purinas (doble anillo)', 'Adenina (A), Guanina (G)', 'A → T (2 H) · G → C (3 H)'],
+                ['Pirimidinas (un anillo)', 'Timina (T), Citosina (C)', 'T → A · C → G'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content:
+              'Cuidado con una confusión común: A y G son ambas PURINAS, pero eso NO significa que se enlacen entre sí. El par siempre es purina–pirimidina: A con T y G con C.',
+          },
+        ],
+      },
+      {
+        id: 'gadn-3',
+        number: 3,
+        title: 'El código genético',
+        keyTerms: ['codón', 'AUG', 'uracilo', 'UAA', 'UAG', 'UGA'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La secuencia de bases es un mensaje escrito con un alfabeto de cuatro letras, y se lee de tres en tres: cada triplete de bases es un codón. Con 4 bases en grupos de 3 hay 64 codones posibles (la tabla del código genético), y cada uno especifica un aminoácido o una señal. El ADN es el "libro de instrucciones" que se queda en el núcleo: las proteínas NO se fabrican directamente sobre él, sino sobre una copia de ARN. Por eso, al pasar al lenguaje del ARN, la timina (T) se sustituye por uracilo (U): un codón de ADN "ATG" se lee "AUG" en el ARN.',
+          },
+          {
+            type: 'list',
+            title: 'Señales del código',
+            items: [
+              'Codón de inicio: AUG, que además codifica el aminoácido metionina (toda síntesis empieza aquí).',
+              'Codones de paro (no codifican aminoácido, detienen la síntesis): UAA, UAG y UGA.',
+              'El resto de los 64 codones especifican los 20 aminoácidos (varios codones por aminoácido: el código es redundante).',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'gadn-4',
+        number: 4,
+        title: 'Los tres tipos de ARN',
+        keyTerms: ['ARNm', 'ARNt', 'ARNr', 'anticodón', 'aminoácidos esenciales'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Si el ADN es el libro que no sale de la biblioteca (el núcleo), el ARN es la fotocopia que se lleva al taller (el ribosoma) para fabricar la proteína. Intervienen tres tipos de ARN con papeles distintos, que conviene reconocer aunque el detalle del proceso se vea en la Semana 2.',
+          },
+          {
+            type: 'table',
+            title: 'ARN mensajero, de transferencia y ribosomal',
+            data: {
+              headers: ['Tipo', 'Función'],
+              rows: [
+                ['ARNm (mensajero)', 'Copia las bases complementarias del ADN y lleva el mensaje (los codones) al ribosoma.'],
+                ['ARNt (transferencia)', 'Lleva el anticodón (complementario del codón) y su aminoácido correspondiente al ribosoma.'],
+                ['ARNr (ribosomal)', 'Forma, junto con proteínas, la estructura del ribosoma donde se ensambla la proteína.'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Adelanto (Semana 2)',
+            content:
+              'La transcripción (ADN → ARNm) y la traducción (ARNm → proteína) se desarrollan en la Semana 2. Aquí solo se nombran los actores. Dato de la clase: los aminoácidos esenciales se obtienen por la dieta; combinaciones como frijol con arroz se complementan para aportarlos todos.',
+          },
+        ],
+      },
+      {
+        id: 'gadn-5',
+        number: 5,
+        title: 'Empaquetamiento del ADN en el núcleo',
+        keyTerms: ['nucleosoma', 'histonas', 'octámero', 'cromatina', 'cromosoma'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Cada célula guarda alrededor de 2 metros de ADN dentro de un núcleo microscópico, lo que solo es posible enrollándolo de forma muy ordenada. La primera vuelta la da alrededor de un carrete de proteínas: el nucleosoma, formado por un octámero de histonas (dos copias de H2A, H2B, H3 y H4). Enrollarse en nucleosomas, y luego plegar esos nucleosomas una y otra vez, compacta el ADN por niveles crecientes.',
+          },
+          {
+            type: 'steps',
+            title: 'Niveles de organización (de lo simple a lo compacto)',
+            steps: [
+              'Nucleótido: la unidad química.',
+              'ADN: la doble hélice (cadena de nucleótidos).',
+              'Nucleosoma: el ADN enrollado sobre el octámero de histonas.',
+              'Cromatina: los nucleosomas plegados (el estado habitual en la interfase).',
+              'Cromosoma: la cromatina condensada al máximo (visible en la división celular).',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Estabilidad de la hélice y mutaciones',
+            content:
+              'La combinación del esqueleto fosfodiéster (fuerte, covalente) y los puentes de hidrógeno entre bases da a la doble hélice la estabilidad que resiste agresiones internas y externas y evita que las bases se desplacen o cambien —lo que sería una mutación—. Cuando aun así ocurre un daño, entran los mecanismos de reparación del ADN (que se ven en la Semana 2). Por eso entender la estructura es el paso previo para entender la mutación y su reparación.',
           },
         ],
       },
