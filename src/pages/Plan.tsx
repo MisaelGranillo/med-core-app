@@ -38,7 +38,7 @@ function SubjectCard({ subject }: { subject: Subject }) {
       <div className="flex items-start justify-between gap-2">
         <h3 className="font-bold text-sm leading-snug text-zinc-900">{subject.name}</h3>
         {subject.hasLab && (
-          <span className="flex items-center gap-1 text-[0.5625rem] bg-teal-100 text-teal-700 border border-teal-200 px-1.5 py-0.5 rounded-full font-bold uppercase tracking-wide flex-shrink-0">
+          <span className="flex items-center gap-1 text-[0.5625rem] bg-teal-100 dark:bg-teal-500/20 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-500/30 px-1.5 py-0.5 rounded-full font-bold uppercase tracking-wide flex-shrink-0">
             <Flask weight="fill" className="w-3 h-3" /> Lab
           </span>
         )}
@@ -65,10 +65,10 @@ function SubjectCard({ subject }: { subject: Subject }) {
             <Link
               to={`/terminologia?sistema=${sistemas[0]}`}
               onClick={e => e.stopPropagation()}
-              className="w-6 h-6 rounded-lg bg-indigo-50 border border-indigo-200 flex items-center justify-center hover:bg-indigo-100 transition-colors"
+              className="w-6 h-6 rounded-lg bg-indigo-50 dark:bg-indigo-500/15 border border-indigo-200 dark:border-indigo-500/30 flex items-center justify-center hover:bg-indigo-100 dark:bg-indigo-500/20 transition-colors"
               title="Ver terminología"
             >
-              <BookOpenText weight="fill" className="w-3 h-3 text-indigo-600" />
+              <BookOpenText weight="fill" className="w-3 h-3 text-indigo-600 dark:text-indigo-400" />
             </Link>
           </div>
         )}

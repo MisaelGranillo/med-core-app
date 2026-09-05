@@ -65,7 +65,7 @@ export function SubjectDetail() {
         </svg>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-8">
-          <div className="flex items-center gap-2 mb-5 text-white/60 text-sm">
+          <div className="flex items-center gap-2 mb-5 text-white/80 text-sm">
             <Link to="/plan" className="flex items-center gap-1.5 hover:text-white transition-colors">
               <ArrowLeft weight="bold" className="w-4 h-4" />
               Plan de Estudios
@@ -77,11 +77,11 @@ export function SubjectDetail() {
           </div>
 
           <div className="flex flex-wrap items-center gap-2 mb-3">
-            <span className="text-[0.625rem] font-bold uppercase tracking-wider text-white/60 border border-white/20 px-2.5 py-1 rounded-full">
+            <span className="text-[0.625rem] font-bold uppercase tracking-wider text-white/80 border border-white/30 px-2.5 py-1 rounded-full">
               {plan.school}
             </span>
             {subject.code && (
-              <span className="text-[0.625rem] font-bold font-mono tracking-wider text-white/90 bg-white/10 px-2.5 py-1 rounded-full">
+              <span className="text-[0.625rem] font-bold font-mono tracking-wider text-white/90 bg-white/15 px-2.5 py-1 rounded-full">
                 {subject.code}
               </span>
             )}
@@ -98,7 +98,7 @@ export function SubjectDetail() {
           {(subject.tags ?? []).length > 0 && (
             <div className="flex flex-wrap gap-1.5 mt-3">
               {(subject.tags ?? []).map(t => (
-                <span key={t} className="text-[0.625rem] font-semibold text-white/70 bg-white/10 px-2 py-0.5 rounded-full">
+                <span key={t} className="text-[0.625rem] font-semibold text-white/80 bg-white/15 px-2 py-0.5 rounded-full">
                   {SISTEMA_LABELS[t] ?? t}
                 </span>
               ))}
@@ -135,8 +135,8 @@ export function SubjectDetail() {
                 to={`/terminologia?sistema=${primarySistema}`}
                 className="card p-5 flex items-center gap-4 hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200 group"
               >
-                <div className="w-12 h-12 rounded-2xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                  <BookOpenText weight="fill" className="w-6 h-6 text-indigo-600" />
+                <div className="w-12 h-12 rounded-2xl bg-indigo-100 dark:bg-indigo-500/20 flex items-center justify-center flex-shrink-0">
+                  <BookOpenText weight="fill" className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
                 </div>
                 <div className="flex-1">
                   <p className="font-bold text-zinc-900 text-sm mb-0.5">Terminología MedLex</p>
@@ -144,7 +144,7 @@ export function SubjectDetail() {
                     Prefijos, sufijos y raíces del sistema {SISTEMA_LABELS[primarySistema] ?? primarySistema}.
                   </p>
                 </div>
-                <ArrowLeft weight="bold" className="w-4 h-4 text-zinc-400 rotate-180 group-hover:text-indigo-600 transition-colors" />
+                <ArrowLeft weight="bold" className="w-4 h-4 text-zinc-400 rotate-180 group-hover:text-indigo-600 dark:text-indigo-400 transition-colors" />
               </Link>
             </motion.div>
           </div>
@@ -181,12 +181,12 @@ export function SubjectDetail() {
           >
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
-                <BookOpenText weight="fill" className="w-5 h-5 text-indigo-600" />
+                <BookOpenText weight="fill" className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                 <h2 className="font-bold text-zinc-900">Terminología clave</h2>
               </div>
               <Link
                 to={`/terminologia?sistema=${primarySistema}`}
-                className="text-xs text-indigo-600 hover:text-indigo-800 font-semibold flex items-center gap-1 transition-colors"
+                className="text-xs text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:text-indigo-300 font-semibold flex items-center gap-1 transition-colors"
               >
                 Ver todos
                 <ArrowLeft weight="bold" className="w-3.5 h-3.5 rotate-180" />
@@ -292,12 +292,12 @@ export function SubjectDetail() {
                 className="card p-6"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <CalendarCheck weight="fill" className="w-5 h-5 text-emerald-600" />
+                  <CalendarCheck weight="fill" className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                   <h2 className="font-bold text-zinc-900">Plan semanal</h2>
                 </div>
                 <div className="space-y-3">
                   {content.semanas.map(sem => { const weekTopics = resolveTopics(sem.topicIds); return (
-                    <div key={sem.number} className="rounded-xl border border-emerald-100 bg-emerald-50/50 p-4">
+                    <div key={sem.number} className="rounded-xl border border-emerald-100 dark:border-emerald-500/25 bg-emerald-50/50 dark:bg-emerald-500/15 p-4">
                       <div className="flex items-center gap-2 mb-1.5">
                         <span className="flex-shrink-0 text-[0.6875rem] font-bold text-white bg-emerald-600 px-2 py-0.5 rounded-full">
                           Semana {sem.number}
@@ -306,7 +306,7 @@ export function SubjectDetail() {
                         {sem.estado === 'adelanto' && (
                           <span
                             title="Contenido tomado del libro de texto, aún no impartido en clase."
-                            className="flex-shrink-0 text-[0.625rem] font-bold uppercase tracking-wider text-amber-800 bg-amber-100 border border-amber-300 px-2 py-0.5 rounded-full"
+                            className="flex-shrink-0 text-[0.625rem] font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300 bg-amber-100 dark:bg-amber-500/20 border border-amber-300 px-2 py-0.5 rounded-full"
                           >
                             Adelanto
                           </span>
@@ -314,7 +314,7 @@ export function SubjectDetail() {
                       </div>
                       {sem.competencia && (
                         <p className="text-xs text-zinc-600 leading-relaxed mt-2">
-                          <span className="font-semibold text-emerald-700">Competencia · </span>
+                          <span className="font-semibold text-emerald-700 dark:text-emerald-300">Competencia · </span>
                           {sem.competencia}
                         </p>
                       )}
@@ -332,7 +332,7 @@ export function SubjectDetail() {
                                 className={`text-[0.6875rem] font-medium px-2 py-0.5 rounded-full border ${
                                   weekTopics.length === 0
                                     ? 'text-zinc-500 bg-zinc-50 border-zinc-200'
-                                    : 'text-emerald-800 bg-white border-emerald-100'
+                                    : 'text-emerald-800 dark:text-emerald-300 bg-surface border-emerald-100 dark:border-emerald-500/25'
                                 }`}
                               >
                                 {tema}
@@ -343,7 +343,7 @@ export function SubjectDetail() {
                       )}
                       {weekTopics.length > 0 && (
                         <div className="mt-3">
-                          <p className="text-[0.625rem] font-bold uppercase tracking-wider text-emerald-700 mb-1.5">
+                          <p className="text-[0.625rem] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300 mb-1.5">
                             Temas de esta semana
                           </p>
                           <div className="flex flex-wrap gap-2">
@@ -361,21 +361,21 @@ export function SubjectDetail() {
                       )}
                       {sem.fuentes && sem.fuentes.length > 0 && (
                         <div className="mt-3 space-y-1.5">
-                          <p className="text-[0.6875rem] font-bold uppercase tracking-wider text-emerald-700">Lecturas</p>
+                          <p className="text-[0.6875rem] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300">Lecturas</p>
                           {sem.fuentes.map((f, i) => {
                             const inner = (
                               <>
-                                <FilePdf weight="fill" className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                                <FilePdf weight="fill" className="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
                                 <span className="leading-snug">
                                   <span className="font-semibold text-zinc-800">{f.title}</span>
                                   {f.nota && <span className="text-zinc-500"> — {f.nota}</span>}
                                   {f.paginas && (
-                                    <span className="block text-[0.6875rem] text-emerald-700 font-medium">{f.paginas}</span>
+                                    <span className="block text-[0.6875rem] text-emerald-700 dark:text-emerald-300 font-medium">{f.paginas}</span>
                                   )}
                                 </span>
                               </>
                             )
-                            const cls = 'flex items-start gap-2 text-xs bg-white border border-emerald-100 rounded-lg px-2.5 py-1.5'
+                            const cls = 'flex items-start gap-2 text-xs bg-surface border border-emerald-100 dark:border-emerald-500/25 rounded-lg px-2.5 py-1.5'
                             return f.file ? (
                               <a
                                 key={i}
@@ -405,12 +405,12 @@ export function SubjectDetail() {
                 className="card p-6"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <ListChecks weight="fill" className="w-5 h-5 text-indigo-600" />
+                  <ListChecks weight="fill" className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                   <h2 className="font-bold text-zinc-900">Contenido temático</h2>
                 </div>
                 <div className="space-y-4">
                   {content.temario.map(unit => (
-                    <div key={unit.title} className="border-l-2 border-indigo-200 pl-4">
+                    <div key={unit.title} className="border-l-2 border-indigo-200 dark:border-indigo-500/30 pl-4">
                       <p className="font-semibold text-sm text-zinc-900">{unit.title}</p>
                       {unit.items.length > 0 && (
                         <ul className="mt-1.5 space-y-1">
@@ -435,14 +435,14 @@ export function SubjectDetail() {
                 className="card p-6"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <Books weight="fill" className="w-5 h-5 text-amber-600" />
+                  <Books weight="fill" className="w-5 h-5 text-amber-600 dark:text-amber-400" />
                   <h2 className="font-bold text-zinc-900">Bibliografía</h2>
                 </div>
                 <ul className="space-y-2.5">
                   {content.bibliografia.map(ref => (
                     <li key={`${ref.title}-${ref.author ?? ''}`} className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 text-sm">
                       {ref.tipo && (
-                        <span className={`text-[0.5625rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${ref.tipo === 'básica' ? 'bg-amber-100 text-amber-700' : 'bg-zinc-100 text-zinc-500'}`}>
+                        <span className={`text-[0.5625rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${ref.tipo === 'básica' ? 'bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300' : 'bg-zinc-100 text-zinc-500'}`}>
                           {ref.tipo}
                         </span>
                       )}
@@ -458,7 +458,7 @@ export function SubjectDetail() {
                           href={`${LIBRARY_BASE}/${subject.id}/${encodeURIComponent(ref.file)}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 text-[0.6875rem] font-semibold text-rose-700 bg-rose-50 border border-rose-100 px-2 py-0.5 rounded-full hover:bg-rose-100 transition-colors"
+                          className="inline-flex items-center gap-1 text-[0.6875rem] font-semibold text-rose-700 dark:text-rose-300 bg-rose-50 dark:bg-rose-500/15 border border-rose-100 dark:border-rose-500/25 px-2 py-0.5 rounded-full hover:bg-rose-100 dark:bg-rose-500/20 transition-colors"
                         >
                           <FilePdf weight="fill" className="w-3 h-3" /> PDF
                           <DownloadSimple weight="bold" className="w-3 h-3" />
@@ -477,7 +477,7 @@ export function SubjectDetail() {
                 className="card p-6"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <Books weight="fill" className="w-5 h-5 text-rose-600" />
+                  <Books weight="fill" className="w-5 h-5 text-rose-600 dark:text-rose-400" />
                   <h2 className="font-bold text-zinc-900">Materiales y lecturas</h2>
                 </div>
                 <ul className="divide-y divide-zinc-100">
@@ -493,7 +493,7 @@ export function SubjectDetail() {
                         href={`${LIBRARY_BASE}/${subject.id}/${encodeURIComponent(m.file)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-shrink-0 inline-flex items-center gap-1 text-[0.6875rem] font-semibold text-rose-700 bg-rose-50 border border-rose-100 px-2 py-1 rounded-full hover:bg-rose-100 transition-colors"
+                        className="flex-shrink-0 inline-flex items-center gap-1 text-[0.6875rem] font-semibold text-rose-700 dark:text-rose-300 bg-rose-50 dark:bg-rose-500/15 border border-rose-100 dark:border-rose-500/25 px-2 py-1 rounded-full hover:bg-rose-100 dark:bg-rose-500/20 transition-colors"
                       >
                         <FilePdf weight="fill" className="w-3 h-3" /> PDF
                         <DownloadSimple weight="bold" className="w-3 h-3" />
@@ -511,7 +511,7 @@ export function SubjectDetail() {
                 className="card p-6"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <LinkSimple weight="bold" className="w-5 h-5 text-teal-600" />
+                  <LinkSimple weight="bold" className="w-5 h-5 text-teal-600 dark:text-teal-400" />
                   <h2 className="font-bold text-zinc-900">Recursos digitales</h2>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -521,7 +521,7 @@ export function SubjectDetail() {
                       href={r.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-semibold text-teal-700 bg-teal-50 border border-teal-100 px-3 py-1.5 rounded-full hover:bg-teal-100 transition-colors"
+                      className="text-xs font-semibold text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-500/15 border border-teal-100 dark:border-teal-500/25 px-3 py-1.5 rounded-full hover:bg-teal-100 dark:bg-teal-500/20 transition-colors"
                     >
                       {r.label}
                     </a>
