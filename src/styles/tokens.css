@@ -179,8 +179,8 @@
     --color-border-strong:  rgba(56,138,221,0.30);
 
     --color-text-primary:   #C8E0F8;
-    --color-text-secondary: #4A7FAA;
-    --color-text-muted:     #2D5A7A;
+    --color-text-secondary: #7FA9CE;
+    --color-text-muted:     #6E96B8;
 
     --color-hero-gradient:  linear-gradient(135deg, #0d2347 0%, #0f3060 35%, #0a3d5c 70%, #062e4a 100%);
 
@@ -203,6 +203,12 @@
     /* Primary scale tints that are hard-coded above need dark variants */
     --c-primary-300: #2D5A7A;
     --c-primary-400: #378ADD;
+    /* Tinted boxes/chips + "primary-700/900" text (competencia, chips) on dark */
+    --c-primary-50:  rgba(56,138,221,0.12);
+    --c-primary-100: rgba(56,138,221,0.18);
+    --c-primary-200: rgba(56,138,221,0.28);
+    --c-primary-700: #7FB3E8;
+    --c-primary-900: #A9CCF0;
   }
 }
 
