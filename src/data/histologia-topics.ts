@@ -867,4 +867,196 @@ export const histologiaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'histologia-epitelial-polaridad',
+    title: 'Polaridad celular epitelial: dominios, uniones y glándulas',
+    subtitle: 'Apical/lateral/basal, especializaciones, medios de unión, membrana basal y glándulas',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🔬',
+    keyPoints: [
+      'La célula epitelial es POLAR: dominio apical (hacia la luz, funcional), lateral (unión y comunicación) y basal (anclaje y nutrición).',
+      'Apical: microvellosidades (actina; absorción — ribete en cepillo intestinal, chapa estriada renal), estereocilios (inmóviles, sensoriales) y cilios (móviles).',
+      'Cilios móviles = axonema 9+2 con dineína; primarios y nodales = 9+0.',
+      'Uniones laterales: zónula occludens (ocludina/claudina, sella), zónula adherente (cadherinas/Ca²⁺), desmosoma (desmogleína/desmocolina) y nexos (conexinas).',
+      'Uniones basales a la matriz: hemidesmosoma (integrina + filamentos intermedios) y contacto focal (integrina + actina).',
+      'Membrana basal: lámina lúcida, densa (colágeno tipo IV) y reticular; filtra y limita la invasión maligna.',
+      'Glándulas: exocrinas (con conducto; adenómero = porción secretora) vs endocrinas (a capilares).',
+      'Mecanismos de secreción: merócrina (exocitosis), apócrina (pierde ápice), holócrina (muere la célula), endócrina (a capilares).',
+    ],
+    sections: [
+      {
+        id: 'hpol-1',
+        number: 1,
+        title: 'Polaridad celular: los tres dominios',
+        keyTerms: ['polaridad', 'apical', 'lateral', 'basal'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La célula epitelial no es uniforme: tiene POLARIDAD, es decir, tres regiones de membrana con estructura y función distintas. Esa división del trabajo es la que permite dirigir procesos en un sentido —por ejemplo, el enterocito capta nutrientes por su cara apical (la que mira a la luz intestinal) y los entrega por la basal hacia los vasos—. Conocer qué hace cada dominio explica dónde se ubican las especializaciones y las uniones.',
+          },
+          {
+            type: 'table',
+            title: 'Los tres dominios',
+            data: {
+              headers: ['Dominio', 'Ubicación', 'Función'],
+              rows: [
+                ['Apical', 'Hacia la luz o superficie libre', 'Polo funcional (absorción, secreción, movimiento)'],
+                ['Lateral', 'Entre células vecinas', 'Unión y comunicación'],
+                ['Basal', 'Hacia la membrana basal', 'Anclaje y nutrición'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hpol-2',
+        number: 2,
+        title: 'Dominio apical: microvellosidades, estereocilios y cilios',
+        keyTerms: ['microvellosidades', 'actina', 'estereocilios', 'cilios', 'axonema', 'dineína'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El dominio apical suele llevar prolongaciones especializadas, y conviene no confundirlas. Las MICROVELLOSIDADES son pliegues digitiformes con núcleo de ACTINA (estabilizada por villina) que multiplican la superficie de absorción: se ven como "ribete en cepillo" en el intestino y "chapa estriada" en el túbulo proximal renal. Los ESTEREOCILIOS son prolongaciones largas, filiformes e INMÓVILES (con espectrina), sensoriales o de absorción, en el oído interno, el epidídimo y el conducto deferente. Los CILIOS son MÓVILES (~10 μm), con un esqueleto interno llamado axonema movido por la proteína motora dineína.',
+          },
+          {
+            type: 'table',
+            title: 'Tipos de cilios (por su axonema)',
+            data: {
+              headers: ['Tipo', 'Movimiento', 'Axonema', 'Función / localización'],
+              rows: [
+                ['Móviles', 'Rítmico y coordinado', '9+2', 'Desplazan moco/partículas: vías respiratorias, trompas de Falopio (golpe efectivo + de recuperación, ritmo metacrónico)'],
+                ['Primarios', 'Inmóviles', '9+0', 'Sensoriales; en muchas células'],
+                ['Nodales', 'Rotatorio', '9+0', 'Desarrollo embrionario: eje izquierda-derecha'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hpol-3',
+        number: 3,
+        title: 'Dominio lateral: medios de unión',
+        keyTerms: ['zónula occludens', 'zónula adherente', 'desmosoma', 'nexos', 'cadherinas', 'conexinas'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'En el dominio lateral, las células vecinas se unen y comunican mediante complejos que se clasifican por su extensión: ZÓNULA (rodea toda la célula, como un cinturón), FASCIA o banda (una zona amplia) y MÁCULA (un punto). De arriba abajo, la zónula occludens sella el espacio; debajo, la zónula adherente y el desmosoma dan resistencia mecánica; y los nexos comunican. Cada una tiene sus proteínas características, que son lo más preguntado.',
+          },
+          {
+            type: 'table',
+            title: 'Los cuatro medios de unión',
+            data: {
+              headers: ['Unión', 'Qué hace', 'Proteínas clave'],
+              rows: [
+                ['Zónula occludens (estrecha)', 'Sella el espacio intercelular; barrera selectiva', 'Ocludina, claudina'],
+                ['Zónula adherente', 'Cinturón de adhesión (bajo la occludens); unida a actina', 'Cadherinas (dependientes de Ca²⁺)'],
+                ['Desmosoma (mácula adherente)', 'Unión célula-célula fuerte; resistencia mecánica', 'Desmogleína, desmocolina'],
+                ['Unión comunicante (nexo)', 'Comunicación rápida entre células (músculo cardíaco)', 'Conexinas (forman conexones)'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Pénfigo vulgar',
+            content:
+              'El pénfigo vulgar es una enfermedad autoinmune con autoanticuerpos contra la desmogleína (desmogleína 1/3) del desmosoma: al perderse la adhesión célula-célula, la epidermis se separa y se forman ampollas. Es el ejemplo clínico que liga el desmosoma con la patología.',
+          },
+        ],
+      },
+      {
+        id: 'hpol-4',
+        number: 4,
+        title: 'Dominio basal: unión a la matriz',
+        keyTerms: ['hemidesmosoma', 'integrina', 'filamentos intermedios', 'contacto focal'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Hemidesmosoma vs. contacto focal',
+            left: {
+              title: 'Hemidesmosoma',
+              items: ['Ancla la célula a la membrana basal.', 'Integrina + FILAMENTOS INTERMEDIOS.', 'Epitelios con abrasión: piel, córnea, cavidad oral, esófago, vagina.'],
+            },
+            right: {
+              title: 'Contacto focal',
+              items: ['Unión más dinámica a la matriz.', 'Integrina + FILAMENTOS DE ACTINA (vinculina, talina).', 'Migración celular y cicatrización.'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hpol-5',
+        number: 5,
+        title: 'Membrana basal',
+        keyTerms: ['lámina lúcida', 'lámina densa', 'lámina reticular', 'colágeno tipo IV'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La membrana basal es la lámina sobre la que se asienta todo epitelio y hace de interfaz con el conectivo. Se organiza en tres capas —lámina lúcida, lámina densa y lámina reticular—, y la lámina densa es rica en COLÁGENO TIPO IV (su marcador). Además de dar soporte, filtra de forma selectiva (clave en el glomérulo renal), participa en la reparación y —mientras permanezca intacta— limita la invasión de células malignas; su ruptura es un paso hacia la invasión tumoral.',
+          },
+        ],
+      },
+      {
+        id: 'hpol-6',
+        number: 6,
+        title: 'Glándulas',
+        keyTerms: ['glándula', 'adenómero', 'exocrina', 'endocrina', 'célula caliciforme'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Una célula glandular es un epitelio especializado en sintetizar y liberar un producto; una glándula es el conjunto organizado de esas células. Se forman por HISTOGÉNESIS: el epitelio se invagina hacia el tejido conjuntivo durante el desarrollo. Si conserva el conducto que la une a la superficie, es EXOCRINA (su porción secretora se llama adenómero); si pierde el conducto y vierte a la sangre, es ENDOCRINA. Un caso unicelular típico es la célula caliciforme, secretora de moco del epitelio gastrointestinal.',
+          },
+          {
+            type: 'list',
+            title: 'Cómo se clasifican las glándulas',
+            items: [
+              'Por el conducto: simple o compuesta.',
+              'Por la forma del adenómero (porción secretora).',
+              'Por el producto: serosa, mucosa o mixta.',
+              'Por el mecanismo de secreción: merócrina, apócrina, holócrina o endócrina.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'hpol-7',
+        number: 7,
+        title: 'Mecanismos de secreción (tarea)',
+        keyTerms: ['merócrina', 'apócrina', 'holócrina', 'endócrina'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Tarea del docente',
+            content: 'El profesor dejó como TAREA elaborar la tabla de mecanismos de secreción con ejemplos. Aquí queda resuelta.',
+          },
+          {
+            type: 'table',
+            title: 'Merócrina · apócrina · holócrina · endócrina',
+            data: {
+              headers: ['Tipo', 'Qué pasa con la célula', 'Ejemplo'],
+              rows: [
+                ['Merócrina', 'Queda íntegra; libera por EXOCITOSIS', 'Sudoríparas, acinos pancreáticos'],
+                ['Apócrina', 'Pierde parte del citoplasma apical con el producto', 'Glándula mamaria'],
+                ['Holócrina', 'MUERE toda la célula y pasa a la secreción', 'Glándula sebácea'],
+                ['Endócrina', 'Queda íntegra; libera a los capilares', 'Tiroides'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Enriquecimiento (no visto en clase): cilios y Kartagener',
+            content:
+              'Dato complementario, no dado en clase: la discinesia ciliar primaria (síndrome de Kartagener) se debe a una dineína ciliar defectuosa; al fallar los cilios móviles 9+2 y los nodales, aparece situs inversus, bronquiectasias e infertilidad. Conecta la biología del cilio con la clínica, pero verifícalo aparte —no formó parte de la clase—.',
+          },
+        ],
+      },
+    ],
+  },
 ]
