@@ -243,7 +243,7 @@ export const uadMedicina: Plan = {
           name: 'Genética Básica',
           code: 'GB01003',
           tags: ['celular'],
-          topicIds: ['genetica-conceptos', 'genetica-mendel', 'genetica-adn', 'genetica-dogma-transcripcion', 'genetica-cromosomas-cariotipo', 'genetica-traduccion'],
+          topicIds: ['genetica-conceptos', 'genetica-mendel', 'genetica-adn', 'genetica-dogma-transcripcion', 'genetica-cromosomas-cariotipo', 'genetica-traduccion', 'genetica-reparacion-adn', 'genetica-repaso-s2'],
           content: {
             area: 'Ciencias Básicas',
             credits: 4,
@@ -277,16 +277,18 @@ export const uadMedicina: Plan = {
                 number: 2,
                 title: 'El material genético: ADN y cromosomas',
                 estado: 'impartido',
-                topicIds: ['genetica-dogma-transcripcion', 'genetica-cromosomas-cariotipo', 'genetica-traduccion'],
+                topicIds: ['genetica-dogma-transcripcion', 'genetica-cromosomas-cariotipo', 'genetica-traduccion', 'genetica-reparacion-adn', 'genetica-repaso-s2'],
                 temas: [
                   'Clase 1 (impartida): dogma central (ADN→ARN→proteína), los tres ARN y la transcripción (ARN polimerasa, complementariedad A→U)',
                   'Clase 1 (impartida): cromosomas — empaquetamiento en histonas/nucleosomas, estructura (centrómero, brazos p/q, telómeros), clasificación por centrómero y cariotipo humano (46 = 23 pares)',
                   'Clase 2 (impartida): aminoácidos (20 estándar, 9 esenciales), péptidos (enlace peptídico) y las tres etapas de la traducción (iniciación AUG, elongación A/P/E, terminación UAA/UAG/UGA)',
-                  'Clase 3 (pendiente): reparación del ADN',
+                  'Clase 3 (impartida): reparación del ADN — daños endógenos/exógenos, enzimas (glicosilasa, ADN polimerasa, ADN ligasa) y vías de reparación',
+                  'Repaso ★: las 9 prioridades del examen dictadas por la Dra.',
                 ],
                 fuentes: [
                   { title: 'Genética Básica — Semana 2, Clase 1', file: 'Genetica Basica - Semana 2 - Clase 1.pdf', nota: 'Dogma central, ARN, transcripción y cromosomas/cariotipo.' },
                   { title: 'Genética Básica — Semana 2, Clase 2', file: 'Genetica Basica - Semana 2 - Clase 2.pdf', nota: 'Aminoácidos, péptidos y traducción.' },
+                  { title: 'Genética Básica — Semana 2, Clase 3', file: 'Genetica Basica - Semana 2 - Clase 3.pdf', nota: 'Reparación del ADN.' },
                 ],
               },
               {
@@ -323,6 +325,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 1 · Clase 3 — La molécula del ADN y el código genético', file: 'Genetica Basica - Semana 1 - Clase 3.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 1 — Dogma central, ARN, transcripción y cromosomas', file: 'Genetica Basica - Semana 2 - Clase 1.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 2 — Aminoácidos, péptidos y traducción', file: 'Genetica Basica - Semana 2 - Clase 2.pdf', kind: 'Clase' },
+              { title: 'Semana 2 · Clase 3 — Reparación del ADN', file: 'Genetica Basica - Semana 2 - Clase 3.pdf', kind: 'Clase' },
               { title: 'Genética — resumen', file: 'genetica-resumen.pdf', kind: 'Resumen' },
               { title: 'Reparación del ADN', file: 'reparacion-adn.pdf', kind: 'Resumen' },
               { title: 'Puntos de regulación del ciclo celular', file: 'puntos-de-regulacion-del-ciclo-celular.pdf', kind: 'Resumen' },
