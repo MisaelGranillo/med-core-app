@@ -1,7 +1,7 @@
 import type { Topic } from '../types'
 
-// Histología I y su Laboratorio (UAD · HS01006) — Semana 1, Clases 1–2 (Dr. Santín).
-// El profesor marca con ★ los puntos que pueden aparecer en el examen: se conservan
+// Histología I y su Laboratorio (UAD · HS01006) — Semana 1, Clases 1–2.
+// Se marcan con ★ los puntos que pueden aparecer en el examen: se conservan
 // como callouts «★ Punto de examen» (correlacion variant 'dato') o keyPoints con ★.
 export const histologiaTopics: Topic[] = [
   {
@@ -171,7 +171,7 @@ export const histologiaTopics: Topic[] = [
             type: 'note',
             title: 'Cómo leer los ★',
             content:
-              'El profesor marca con una estrella (★) los datos que pueden caer en el examen. En este tema se conservan como callouts «★ Punto de examen». Los ★ confirmados están en la resolución de los microscopios, en las piezas del microscopio óptico y en la técnica y las tinciones.',
+              'Se marcan con una estrella (★) los datos que pueden caer en el examen. En este tema se conservan como callouts «★ Punto de examen». Los ★ confirmados están en la resolución de los microscopios, en las piezas del microscopio óptico y en la técnica y las tinciones.',
           },
         ],
       },
@@ -574,7 +574,7 @@ export const histologiaTopics: Topic[] = [
   {
     id: 'histologia-repaso-s1',
     title: 'Repaso para el examen — Semana 1',
-    subtitle: 'Banco tipo examen del profesor: microscopía, tinciones, célula y transporte',
+    subtitle: 'Banco tipo examen: microscopía, tinciones, célula y transporte',
     colorKey: 'histologia',
     categoria: 'Histología',
     emoji: '📝',
@@ -592,20 +592,20 @@ export const histologiaTopics: Topic[] = [
         id: 'hrep-1',
         number: 1,
         title: 'Cómo usar este repaso',
-        keyTerms: ['repaso', 'examen', 'banco del profesor'],
+        keyTerms: ['repaso', 'examen', 'banco del examen'],
         blocks: [
           {
             type: 'note',
-            title: 'Es repaso — banco tipo examen del profesor',
+            title: 'Es repaso — banco tipo examen',
             content:
-              'No es contenido nuevo: la Clase 5 no tuvo diapositivas; fue un repaso previo al examen en el que el profesor resolvió un banco de preguntas tipo examen. Aquí están esas preguntas. Cada tema se estudia a fondo en «Microscopía, técnica y tinciones» y «La célula».',
+              'No es contenido nuevo: la Clase 5 no tuvo diapositivas; fue un repaso previo al examen en el que se resolvió un banco de preguntas tipo examen. Aquí están esas preguntas. Cada tema se estudia a fondo en «Microscopía, técnica y tinciones» y «La célula».',
           },
           {
             type: 'correlacion',
             variant: 'dato',
             title: '★ Estrategia de examen',
             content:
-              'Consejos del profesor para el examen: lee bien el enunciado (¿la sustancia ENTRA o SALE de la célula?); en opción múltiple elimina primero los dos distractores obvios y decide entre los dos que quedan; y cuida las UNIDADES de resolución (μm vs nm vs pm), que es la trampa más común.',
+              'Consejos para el examen: lee bien el enunciado (¿la sustancia ENTRA o SALE de la célula?); en opción múltiple elimina primero los dos distractores obvios y decide entre los dos que quedan; y cuida las UNIDADES de resolución (μm vs nm vs pm), que es la trampa más común.',
           },
         ],
       },
@@ -617,7 +617,7 @@ export const histologiaTopics: Topic[] = [
         blocks: [
           {
             type: 'table',
-            title: 'Datos de alto rendimiento (del banco del profesor)',
+            title: 'Datos de alto rendimiento (del banco del examen)',
             data: {
               headers: ['Tema', 'Clave'],
               rows: [
@@ -861,7 +861,7 @@ export const histologiaTopics: Topic[] = [
             variant: 'dato',
             title: '★ Núcleo duro para el examen',
             content:
-              'Asociaciones que el docente priorizó: alvéolos / cápsula de Bowman / vasos → plano simple; tiroides / túbulos renales → cúbico simple; tubo digestivo → cilíndrico simple; piel → plano estratificado queratinizado; esófago → plano estratificado NO queratinizado; tráquea → cilíndrico pseudoestratificado ciliado; vías urinarias → transicional. Y las reglas: el estratificado se nombra por la capa superficial; el epitelio es avascular y se nutre por difusión desde el corion.',
+              'Asociaciones prioritarias para el examen: alvéolos / cápsula de Bowman / vasos → plano simple; tiroides / túbulos renales → cúbico simple; tubo digestivo → cilíndrico simple; piel → plano estratificado queratinizado; esófago → plano estratificado NO queratinizado; tráquea → cilíndrico pseudoestratificado ciliado; vías urinarias → transicional. Y las reglas: el estratificado se nombra por la capa superficial; el epitelio es avascular y se nutre por difusión desde el corion.',
           },
         ],
       },
@@ -1032,8 +1032,8 @@ export const histologiaTopics: Topic[] = [
         blocks: [
           {
             type: 'note',
-            title: 'Tarea del docente',
-            content: 'El profesor dejó como TAREA elaborar la tabla de mecanismos de secreción con ejemplos. Aquí queda resuelta.',
+            title: 'Tarea de clase',
+            content: 'Se dejó como TAREA elaborar la tabla de mecanismos de secreción con ejemplos. Aquí queda resuelta.',
           },
           {
             type: 'table',

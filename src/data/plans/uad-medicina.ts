@@ -108,7 +108,7 @@ export const uadMedicina: Plan = {
               },
             ],
             // SOURCE NOTE: temario transcrito VERBATIM del temario del PDF 1
-            // (diapositivas del Dr. Soto Pacheco). La columna vertebral figura en
+            // (diapositivas de clase). La columna vertebral figura en
             // la Semana 1 por ser el temario oficial, aunque su Topic/reactivos se
             // cargan en Fase 2 (jue-vie de la semana), no hoy.
             semanas: [
@@ -283,7 +283,7 @@ export const uadMedicina: Plan = {
                   'Clase 1 (impartida): cromosomas — empaquetamiento en histonas/nucleosomas, estructura (centrómero, brazos p/q, telómeros), clasificación por centrómero y cariotipo humano (46 = 23 pares)',
                   'Clase 2 (impartida): aminoácidos (20 estándar, 9 esenciales), péptidos (enlace peptídico) y las tres etapas de la traducción (iniciación AUG, elongación A/P/E, terminación UAA/UAG/UGA)',
                   'Clase 3 (impartida): reparación del ADN — daños endógenos/exógenos, enzimas (glicosilasa, ADN polimerasa, ADN ligasa) y vías de reparación',
-                  'Repaso ★: las 9 prioridades del examen dictadas por la Dra.',
+                  'Repaso ★: las 9 prioridades del examen.',
                 ],
                 fuentes: [
                   { title: 'Genética Básica — Semana 2, Clase 1', file: 'Genetica Basica - Semana 2 - Clase 1.pdf', nota: 'Dogma central, ARN, transcripción y cromosomas/cariotipo.' },

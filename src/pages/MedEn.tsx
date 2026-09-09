@@ -298,7 +298,7 @@ export function MedEn() {
                 EnLex · Vocabulario de Inglés Médico
               </h1>
               <p className="text-zinc-500 text-sm max-w-[55ch]">
-                Términos, abreviaturas, derivaciones y verbos frasales de Inglés Médico I. Fuente: clases de la Dra. Ana Paulina Nájera Soto.
+                Términos, abreviaturas, derivaciones y verbos frasales de Inglés Médico I. Fuente: clases de Inglés Médico I.
               </p>
               <div className="flex flex-wrap gap-4 mt-4">
                 {[

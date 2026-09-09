@@ -1,6 +1,6 @@
 /*
  * Banco de reactivos — Anatomía Humana y Disección I (UAD · AN01001), Semana 1.
- * Fuente: diapositivas del Dr. Soto Pacheco (autoridad de examen) + Moore Cap.1.
+ * Fuente: diapositivas de clase (autoridad de examen) + Moore Cap.1.
  *
  * ORDEN POR VALOR DE ESTUDIO (obligatorio, §5.4): dentro de cada bloque los
  * reactivos van en orden DESCENDENTE de valor. El q1 es el que más lamentarías
@@ -531,7 +531,7 @@ const columnaQuestions: Question[] = [
     type: 'multiple-choice',
     options: ['Vértebras lumbares', 'Vértebras torácicas', 'Vértebras sacras', 'Vértebras cervicales'],
     correctIndex: 1,
-    explanation: 'Vértebras torácicas (TA) = vértebras dorsales (nomenclatura clásica). Son las 12 que se articulan con las costillas. La forma clásica "dorsales" es la que usa el examen del profesor y cuenta como correcta.',
+    explanation: 'Vértebras torácicas (TA) = vértebras dorsales (nomenclatura clásica). Son las 12 que se articulan con las costillas. La forma clásica "dorsales" es la que usa el examen y cuenta como correcta.',
     difficulty: 'easy',
   },
 ]
@@ -539,15 +539,15 @@ const columnaQuestions: Question[] = [
 /* ── TÓRAX ÓSEO (Semana 2 · Clase 1) ────────────────────────────────────
  * 12 reactivos en orden descendente de valor de estudio. ≥3 atacan las
  * confusiones de §4.6 (rangos verdaderas/falsas/flotantes, carillas únicas,
- * surcos vena/arteria, escalénico vs serrato). El término clásico del profesor
+ * surcos vena/arteria, escalénico vs serrato). El término clásico del examen
  * cuenta como correcto. */
 const toraxQuestions: Question[] = [
   {
     id: 'tor-q1', topicId: 'torax-oseo', type: 'multiple-choice',
-    question: 'Según la clasificación del profesor, las costillas falsas son la:',
+    question: 'Según la clasificación del examen, las costillas falsas son la:',
     options: ['1.ª a 7.ª', '8.ª a 10.ª', '11.ª y 12.ª', '8.ª a 12.ª'],
     correctIndex: 3, difficulty: 'medium',
-    explanation: 'El profesor clasifica las falsas como 8.ª–12.ª y las flotantes (11.ª–12.ª) como un subconjunto de ellas. Muchos textos separan "falsas 8–10, flotantes 11–12"; en el examen se sigue la versión del profesor.',
+    explanation: 'En el examen se clasifican las falsas como 8.ª–12.ª y las flotantes (11.ª–12.ª) como un subconjunto de ellas. Muchos textos separan "falsas 8–10, flotantes 11–12"; el examen sigue esta versión.',
   },
   {
     id: 'tor-q2', topicId: 'torax-oseo', type: 'multiple-choice',
@@ -579,10 +579,10 @@ const toraxQuestions: Question[] = [
   },
   {
     id: 'tor-q6', topicId: 'torax-oseo', type: 'multiple-choice',
-    question: 'Según el profesor, la articulación manubrio-esternal está a nivel:',
+    question: 'Según el examen, la articulación manubrio-esternal está a nivel:',
     options: ['D3', 'T4–T5', 'D10', 'C7'],
     correctIndex: 0, difficulty: 'medium',
-    explanation: 'El profesor sitúa la manubrio-esternal en D3 y la xifo-esternal en D10 (dato evaluable). Moore ancla el ángulo del esternón frente al disco T4–T5, como referencia; no es una errata sino otra convención de nivel.',
+    explanation: 'En el examen, la manubrio-esternal se sitúa en D3 y la xifo-esternal en D10 (dato evaluable). Moore ancla el ángulo del esternón frente al disco T4–T5, como referencia; no es una errata sino otra convención de nivel.',
   },
   {
     id: 'tor-q7', topicId: 'torax-oseo', type: 'multiple-choice',
@@ -652,7 +652,7 @@ const msoQuestions: Question[] = [
     question: 'La epitróclea corresponde, en Terminología Anatómica, al:',
     options: ['Epicóndilo lateral', 'Epicóndilo medial', 'Olécranon', 'Troquíter'],
     correctIndex: 1, difficulty: 'medium',
-    explanation: 'Epitróclea = epicóndilo medial. El "epicóndilo" a secas del profesor es el epicóndilo lateral: la trampa clásica de esta clase.',
+    explanation: 'Epitróclea = epicóndilo medial. El "epicóndilo" a secas en el examen es el epicóndilo lateral: la trampa clásica de esta clase.',
   },
   {
     id: 'mso-q4', topicId: 'miembro-superior-oseo', type: 'multiple-choice',
@@ -767,10 +767,10 @@ const coxQuestions: Question[] = [
   },
   {
     id: 'cox-q5', topicId: 'hueso-coxal', type: 'multiple-choice',
-    question: 'Según la diapositiva del profesor, la contribución de los huesos al acetábulo se anota como:',
+    question: 'Según la diapositiva, la contribución de los huesos al acetábulo se anota como:',
     options: ['Ilion 2/5, isquion 2/5, pubis 1/5', 'Isquion +2/5, pubis 2/5, ilion −2/5', 'Pubis 3/5, ilion 1/5, isquion 1/5', 'Los tres aportan exactamente 1/3'],
     correctIndex: 1, difficulty: 'hard',
-    explanation: 'El profesor la anota literal como "isquion +2/5 · pubis 2/5 · ilion −2/5" (se cita sin normalizar). La proporción "ilion 2/5, isquion 2/5, pubis 1/5" es la de muchos textos, pero el dato pedido es el del profesor.',
+    explanation: 'Se anota literal como "isquion +2/5 · pubis 2/5 · ilion −2/5" (se cita sin normalizar). La proporción "ilion 2/5, isquion 2/5, pubis 1/5" es la de muchos textos, pero el dato pedido es el de la diapositiva.',
   },
   {
     id: 'cox-q6', topicId: 'hueso-coxal', type: 'multiple-choice',
@@ -941,7 +941,7 @@ const minfQuestions: Question[] = [
   },
 ]
 
-// Repaso 2º Parcial — orden descendente por énfasis del profesor (los "____ + ____"
+// Repaso 2º Parcial — orden descendente por énfasis del examen (los "____ + ____"
 // de su deck son los de mayor valor). No es contenido nuevo: concentra lo evaluable
 // de miembro superior, hueso coxal y miembro inferior. El clásico cuenta como correcto.
 const rep2Questions: Question[] = [
@@ -985,7 +985,7 @@ const rep2Questions: Question[] = [
     question: 'La epitróclea es, en Terminología Anatómica, el:',
     options: ['Epicóndilo lateral', 'Capítulo', 'Epicóndilo medial', 'Olécranon'],
     correctIndex: 2, difficulty: 'medium',
-    explanation: 'Epitróclea = epicóndilo medial (origen de los flexores del antebrazo). El "epicóndilo" a secas del profesor es el lateral.',
+    explanation: 'Epitróclea = epicóndilo medial (origen de los flexores del antebrazo). El "epicóndilo" a secas en el examen es el lateral.',
   },
   {
     id: 'rep2-q7', topicId: 'repaso-2p', type: 'multiple-choice',
@@ -1636,7 +1636,7 @@ const mdiaQuestions: Question[] = [
   },
 ]
 
-// Repaso 3er Parcial — orden descendente por énfasis del profesor (artrología y
+// Repaso 3er Parcial — orden descendente por énfasis del examen (artrología y
 // miología). No es contenido nuevo: concentra lo evaluable del módulo. El clásico
 // cuenta como correcto. ≥8 ítems sobre las trampas clásicas.
 const rep3Questions: Question[] = [

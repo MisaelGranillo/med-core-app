@@ -1,6 +1,6 @@
 import type { Question } from '../types'
 
-// Histología I — Semana 1 (Clases 1–2). Objetivo: los ★ del profesor, tinción
+// Histología I — Semana 1 (Clases 1–2). Objetivo: los ★ del examen, tinción
 // acidófilo/basófilo, orden de resoluciones, regeneración por tejido y la técnica.
 export const histologiaQuestions: Question[] = [
   {
@@ -151,9 +151,9 @@ export const histologiaQuestions: Question[] = [
     explanation: 'La eucromatina está laxa y es activa (se ve clara). La heterocromatina está condensada, es inactiva y se tiñe oscura (basófila).',
   },
 
-  // ═══════════ Repaso examen · Semana 1 — banco tipo examen del profesor (★) ═══════════
-  // Clase 5 sin diapositivas: el profesor resolvió preguntas tipo examen. Verificadas
-  // contra el transcript; ★ = ítems de examen del propio docente.
+  // ═══════════ Repaso examen · Semana 1 — banco tipo examen (★) ═══════════
+  // Clase 5 sin diapositivas: se resolvieron preguntas tipo examen. Verificadas
+  // contra el transcript; ★ = ítems de examen.
   {
     id: 'his-r-q1', topicId: 'histologia-repaso-s1', type: 'multiple-choice',
     question: '★ La técnica de criofractura se emplea con el microscopio:',
@@ -208,7 +208,7 @@ export const histologiaQuestions: Question[] = [
     question: '★ El reactivo de Schiff (PAS) tiñe glucógeno, mucopolisacáridos y glucoproteínas, pero NO tiñe:',
     options: ['El glucógeno', 'El ARN', 'Los mucopolisacáridos', 'Las glucoproteínas'],
     correctIndex: 1, difficulty: 'medium',
-    explanation: 'El PAS no tiñe el ARN. (El profesor dejó pendiente verificar si tampoco tiñe el ADN.)',
+    explanation: 'El PAS no tiñe el ARN. (Queda pendiente verificar si tampoco tiñe el ADN.)',
   },
   {
     id: 'his-r-q9', topicId: 'histologia-repaso-s1', type: 'multiple-choice',

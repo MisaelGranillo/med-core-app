@@ -1,6 +1,6 @@
 /*
  * Inglés Médico I (UAD · IN01005) — Guías de estudio, Semana 1.
- * Prof. Dra. Ana Paulina Nájera Soto.
+ * Docente titular de la asignatura (autoridad de examen).
  *
  * IDIOMA: la interfaz y las explicaciones van en español; el CONTENIDO DE
  * APRENDIZAJE —términos, definiciones, oraciones de ejemplo, tablas— va en
@@ -8,7 +8,7 @@
  * Donde ayuda, la definición inglesa se acompaña de su glosa en español tras
  * un guion largo (« — »).
  *
- * FUENTE (autoridad de examen): diapositivas de la profesora.
+ * FUENTE (autoridad de examen): diapositivas de clase.
  *   · Clase 2 (mar 4 ago) — The Medical Record (11 diapositivas)
  *   · Clase 3 (mié 5 ago) — Parts of Speech · Word Forms · Phrasal Verbs (23)
  * La Clase 1 fue encuadre (sin capturas): no se genera contenido de ella.
@@ -873,7 +873,7 @@ export const inglesUadTopics: Topic[] = [
             type: 'note',
             title: 'Impartido — Semana 2, Clase 1 (10 ago)',
             content:
-              'Este tema se impartió en la Semana 2, Clase 1 (10 de agosto de 2026). Está basado en el capítulo 1 de Medical Terminology: A Living Language: el profesor tomó las tablas de formas combinantes, prefijos y sufijos casi textualmente del libro. Es la Unidad II del programa: construcción de términos médicos grecolatinos.',
+              'Este tema se impartió en la Semana 2, Clase 1 (10 de agosto de 2026). Está basado en el capítulo 1 de Medical Terminology: A Living Language: las tablas de formas combinantes, prefijos y sufijos se tomaron casi textualmente del libro. Es la Unidad II del programa: construcción de términos médicos grecolatinos.',
           },
           {
             type: 'correlacion',
@@ -1387,7 +1387,7 @@ export const inglesUadTopics: Topic[] = [
             type: 'note',
             title: 'La palabra señal te dice el tiempo',
             content:
-              'La regla práctica del profesor: la palabra señal suele indicar el tiempo. yesterday / ago / last week → past simple · now / at the moment → present continuous · since / for / already / just → present perfect · while → past continuous · by next week → future perfect.',
+              'La regla práctica: la palabra señal suele indicar el tiempo. yesterday / ago / last week → past simple · now / at the moment → present continuous · since / for / already / just → present perfect · while → past continuous · by next week → future perfect.',
           },
         ],
       },
@@ -2321,7 +2321,7 @@ export const inglesUadTopics: Topic[] = [
             type: 'note',
             title: 'Adelanto — aún no impartido',
             content:
-              'Este tema procede del libro de texto de la materia, no de una clase impartida. Corresponde a la Unidad VI del programa, prevista para la Semana 4. El profesor puede recortarlo, reordenarlo o enfatizar otros puntos. Úsalo para ir por delante, no como guía de lo que entra en el parcial de esta semana.',
+              'Este tema procede del libro de texto de la materia, no de una clase impartida. Corresponde a la Unidad VI del programa, prevista para la Semana 4. Puede recortarse, reordenarse o reenfatizarse en clase. Úsalo para ir por delante, no como guía de lo que entra en el parcial de esta semana.',
           },
           {
             type: 'correlacion',

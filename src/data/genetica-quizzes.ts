@@ -399,7 +399,7 @@ export const geneticaQuestions: Question[] = [
     explanation: 'Homóloga = usa el cromosoma homólogo como molde (precisa, ligada a la meiosis). No homóloga = une los extremos rotos sin molde (más rápida pero puede mutar).',
   },
 
-  // Semana 2 · Repaso del examen — 9 prioridades de la Dra. (★ examen).
+  // Semana 2 · Repaso del examen — 9 prioridades del examen (★ examen).
   {
     id: 'gen-s2rq-q1', topicId: 'genetica-repaso-s2', type: 'multiple-choice',
     question: '★ En un cromosoma, el cinetocoro sirve para:',

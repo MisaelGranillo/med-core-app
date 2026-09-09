@@ -29,7 +29,7 @@ export interface MedEnTerm {
   example?: string      // oración en inglés, verbatim de la clase si existe
   categoria: string     // 'historia-clinica' | 'sintomas' | 'diagnostico' | 'general' | 'gramatica'
   semana: number        // 1
-  nota?: string         // errata del profesor u observación de uso
+  nota?: string         // errata de la fuente u observación de uso
 }
 
 export const POS_LABELS: Record<MedEnPos, string> = {

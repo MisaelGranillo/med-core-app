@@ -1,6 +1,6 @@
 import type { Topic } from '../types'
 
-// Genética Básica (UAD · GB01003) — Semana 1, Clases 1–3 (Dra. Cazares):
+// Genética Básica (UAD · GB01003) — Semana 1, Clases 1–3 :
 // conceptos e historia, leyes de Mendel, y la molécula del ADN y el código genético.
 export const geneticaTopics: Topic[] = [
   {
@@ -31,7 +31,7 @@ export const geneticaTopics: Topic[] = [
             type: 'note',
             title: 'Genética clásica (Semana 1)',
             content:
-              'El primer mes se centra en la genética clásica: ADN, ARN, cromosomas y las patologías asociadas. No hay libro base único; la docente sugiere como apoyo «Biología molecular de la célula» (Bruce Alberts). Nota: esta semana es parcial —la Clase 3 (molécula del ADN y código genético) se imparte después—.',
+              'El primer mes se centra en la genética clásica: ADN, ARN, cromosomas y las patologías asociadas. No hay libro base único; se sugiere como apoyo «Biología molecular de la célula» (Bruce Alberts). Nota: esta semana es parcial —la Clase 3 (molécula del ADN y código genético) se imparte después—.',
           },
         ],
       },
@@ -282,7 +282,7 @@ export const geneticaTopics: Topic[] = [
           {
             type: 'paragraph',
             content:
-              'Las bases del interior no se emparejan al azar: la adenina siempre con la timina (A–T) y la guanina siempre con la citosina (G–C). Lo que las mantiene unidas son puentes de hidrógeno —2 en el par A–T y 3 en el par G–C—, por eso las regiones ricas en G–C son algo más estables. En cada peldaño se une una purina (base grande, de doble anillo: adenina o guanina) con una pirimidina (base pequeña, de un anillo: timina o citosina); así todos los peldaños miden lo mismo y la hélice es uniforme. Truco del profesor: el nombre más largo (piri-mi-dina) es la molécula más chica (un solo anillo).',
+              'Las bases del interior no se emparejan al azar: la adenina siempre con la timina (A–T) y la guanina siempre con la citosina (G–C). Lo que las mantiene unidas son puentes de hidrógeno —2 en el par A–T y 3 en el par G–C—, por eso las regiones ricas en G–C son algo más estables. En cada peldaño se une una purina (base grande, de doble anillo: adenina o guanina) con una pirimidina (base pequeña, de un anillo: timina o citosina); así todos los peldaños miden lo mismo y la hélice es uniforme. Truco para recordarlo: el nombre más largo (piri-mi-dina) es la molécula más chica (un solo anillo).',
           },
           {
             type: 'table',
@@ -749,7 +749,7 @@ export const geneticaTopics: Topic[] = [
             variant: 'dato',
             title: '★ Lo que prioriza el examen',
             content:
-              'La profesora indicó que NO hay que memorizar las 64 combinaciones de la tabla, sino dominar dos puntos: AUG = metionina = inicio, y UAA / UAG / UGA = codones de paro. Recuerda además la regla de los sitios: A entra, P proteína (se une), E sale.',
+              'Para el examen, NO hay que memorizar las 64 combinaciones de la tabla, sino dominar dos puntos: AUG = metionina = inicio, y UAA / UAG / UGA = codones de paro. Recuerda además la regla de los sitios: A entra, P proteína (se une), E sale.',
           },
           {
             type: 'note',
@@ -840,7 +840,7 @@ export const geneticaTopics: Topic[] = [
           {
             type: 'paragraph',
             content:
-              'La Dra. subrayó que, de todas las moléculas implicadas, hay tres enzimas que sí hay que aprender, porque describen el patrón común de casi toda reparación. La regla mnemónica es Quitar → Rellenar → Sellar.',
+              'Se subrayó que, de todas las moléculas implicadas, hay tres enzimas que sí hay que aprender, porque describen el patrón común de casi toda reparación. La regla mnemónica es Quitar → Rellenar → Sellar.',
           },
           {
             type: 'table',
@@ -906,7 +906,7 @@ export const geneticaTopics: Topic[] = [
   {
     id: 'genetica-repaso-s2',
     title: 'Repaso para el examen — Semana 2',
-    subtitle: 'Las 9 prioridades que dictó la Dra.: cromosoma, ADN/ARN, transcripción, traducción y reparación',
+    subtitle: 'Las 9 prioridades dictadas para el examen: cromosoma, ADN/ARN, transcripción, traducción y reparación',
     colorKey: 'genetica',
     categoria: 'Genética',
     emoji: '📝',
@@ -928,16 +928,16 @@ export const geneticaTopics: Topic[] = [
         blocks: [
           {
             type: 'note',
-            title: 'Banco de prioridades dictado por la Dra.',
+            title: 'Banco de prioridades del examen',
             content:
-              'No es contenido nuevo: al cerrar la Clase 3, la Dra. dictó las 9 prioridades del examen de la Semana 2. Aquí quedan como guía de estudio; cada punto se estudia a fondo en su topic (dogma/transcripción, cromosomas/cariotipo, traducción y reparación del ADN).',
+              'No es contenido nuevo: al cerrar la Clase 3, se dictaron las 9 prioridades del examen de la Semana 2. Aquí quedan como guía de estudio; cada punto se estudia a fondo en su topic (dogma/transcripción, cromosomas/cariotipo, traducción y reparación del ADN).',
           },
           {
             type: 'correlacion',
             variant: 'dato',
             title: '★ Estrategia de examen',
             content:
-              'La Dra. aclaró que el examen se concentra en los conceptos fundamentales y que NO hay que memorizar nombres complejos adicionales (ni las 64 combinaciones de codones). Domina las 9 prioridades de abajo y las dos parejas clave: AUG = metionina/inicio y UAA/UAG/UGA = paro.',
+              'El examen se concentra en los conceptos fundamentales y NO exige memorizar nombres complejos adicionales (ni las 64 combinaciones de codones). Domina las 9 prioridades de abajo y las dos parejas clave: AUG = metionina/inicio y UAA/UAG/UGA = paro.',
           },
         ],
       },

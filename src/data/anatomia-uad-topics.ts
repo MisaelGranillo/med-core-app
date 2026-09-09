@@ -1,15 +1,15 @@
 /*
  * Anatomía Humana y Disección I (UAD · AN01001) — Guías de estudio, Semana 1.
- * Prof. Dr. Leonardo Andrés Soto Pacheco.
+ * Docente titular de la asignatura (autoridad de examen).
  *
- * FUENTE PRIMARIA (autoridad de examen): diapositivas del profesor
+ * FUENTE PRIMARIA (autoridad de examen): diapositivas de clase
  *   · PDF 1 "Generalidades de la Anatomía" (temario + conceptos, planos, términos)
  *   · PDF 2 "Huesos de la Cabeza" (cráneo, hueso por hueso)
  *   · PDF 3 "Huesos de la Cara y Hioides"
  * RESPALDO: Moore, Anatomía con orientación clínica (Cap. 1; Cap. 7 Cabeza).
  *
  * NOMENCLATURA (regla MedCore): el término PRINCIPAL es la Terminología
- * Anatómica (TA) internacional; la nomenclatura clásica del profesor va ENTRE
+ * Anatómica (TA) internacional; la nomenclatura clásica (la del examen) va ENTRE
  * PARÉNTESIS la primera vez que aparece en cada sección. En el examen la forma
  * clásica cuenta como correcta, por eso acompaña SIEMPRE a la TA. No mezclar
  * ambas formas dentro de una misma opción — ver bloque `note` inicial.
@@ -27,7 +27,7 @@ const notaNomenclatura = {
   type: 'note' as const,
   title: 'Nomenclatura: Terminología Anatómica (TA) principal, clásica entre paréntesis',
   content:
-    'MedCore usa la Terminología Anatómica (TA) internacional como término PRINCIPAL y la nomenclatura clásica del profesor (la de las diapositivas) entre paréntesis. En el examen la forma clásica cuenta como correcta, por eso siempre acompaña a la TA. Equivalencias frecuentes (TA → clásica): Maxilar → maxilar superior · Cigomático → malar (cigomático-malar) · Nasal → hueso propio de la nariz · Lagrimal → unguis · Foramen → agujero · Proceso → apófisis · Incisura → escotadura · Concha nasal → cornete. El error más caro es saber la estructura correcta con el nombre equivocado: por eso se estudian ambos.',
+    'MedCore usa la Terminología Anatómica (TA) internacional como término PRINCIPAL y la nomenclatura clásica (la de las diapositivas) entre paréntesis. En el examen la forma clásica cuenta como correcta, por eso siempre acompaña a la TA. Equivalencias frecuentes (TA → clásica): Maxilar → maxilar superior · Cigomático → malar (cigomático-malar) · Nasal → hueso propio de la nariz · Lagrimal → unguis · Foramen → agujero · Proceso → apófisis · Incisura → escotadura · Concha nasal → cornete. El error más caro es saber la estructura correcta con el nombre equivocado: por eso se estudian ambos.',
 }
 
 export const anatomiaUadTopics: Topic[] = [
@@ -551,7 +551,7 @@ export const anatomiaUadTopics: Topic[] = [
           {
             type: 'note',
             title: 'Discrepancia — asterión (diapositiva vs. Moore)',
-            content: 'La diapositiva del occipital define el asterión como "unión parietotemporal"; Moore lo define como la confluencia de TRES suturas (parietomastoidea, occipitomastoidea y lambdoidea). Describen el mismo punto, pero la del profesor es más laxa. El valor clínico del pterión —por su relación con la arteria meníngea media y el hematoma epidural— no aparece en las diapositivas y sí en Moore: es aporte del libro.',
+            content: 'La diapositiva del occipital define el asterión como "unión parietotemporal"; Moore lo define como la confluencia de TRES suturas (parietomastoidea, occipitomastoidea y lambdoidea). Describen el mismo punto, pero la de la diapositiva es más laxa. El valor clínico del pterión —por su relación con la arteria meníngea media y el hematoma epidural— no aparece en las diapositivas y sí en Moore: es aporte del libro.',
           },
         ],
       },
@@ -1085,7 +1085,7 @@ export const anatomiaUadTopics: Topic[] = [
 
   // ══════════════════════════════════════════════════════════════════════
   // TÓRAX ÓSEO — Semana 2 · Clase 1 (esternón y costillas)
-  // Fuente: diapositivas del Dr. Soto Pacheco + Moore, cap. Tórax
+  // Fuente: diapositivas de clase + Moore, cap. Tórax
   // (Esqueleto del tórax, libro 45–57 / PDF 69–81).
   // ══════════════════════════════════════════════════════════════════════
   {
@@ -1100,10 +1100,10 @@ export const anatomiaUadTopics: Topic[] = [
       'Diámetro mayor de la caja: el lateral (32 cm) > posterior (27) > anterior (15).',
       'El esternón tiene tres partes: manubrio, cuerpo y proceso xifoides (apéndice xifoides).',
       'El manubrio recibe la 1.ª costilla; el cuerpo recibe de la 3.ª a la 6.ª.',
-      'Verdaderas 1–7, falsas 8–12, flotantes 11–12 (el profesor clasifica las flotantes como subconjunto de las falsas).',
+      'Verdaderas 1–7, falsas 8–12, flotantes 11–12 (en el examen las flotantes son un subconjunto de las falsas).',
       'Tienen 1 sola carilla en la cabeza las costillas 1, 10, 11 y 12; las típicas (2–9) tienen dos.',
       'La 1.ª costilla lleva el tubérculo del escaleno anterior (escalénico), con el surco de la vena por delante y el de la arteria por detrás.',
-      'Niveles del profesor: articulación manubrio-esternal en D3, xifo-esternal en D10.',
+      'Niveles del examen: articulación manubrio-esternal en D3, xifo-esternal en D10.',
     ],
     sections: [
       {
@@ -1114,15 +1114,15 @@ export const anatomiaUadTopics: Topic[] = [
         blocks: [
           {
             type: 'note',
-            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            title: 'Nomenclatura: TA principal, clásica (la del examen) entre paréntesis',
             content:
-              'Se usa la Terminología Anatómica (TA) como término principal y el clásico del profesor entre paréntesis. En el examen, el término clásico cuenta como correcto. Equivalencias de esta clase: proceso xifoides = apéndice xifoides · incisura yugular = horquilla esternal · incisuras claviculares = escotaduras claviculares · surco costal = canal costal · serrato anterior = serrato mayor · tubérculo del escaleno anterior = tubérculo escalénico (de Lisfranc) · vértebras torácicas (T1–T12) = vértebras dorsales (D1–D12).',
+              'Se usa la Terminología Anatómica (TA) como término principal y el clásico (el del examen) entre paréntesis. En el examen, el término clásico cuenta como correcto. Equivalencias de esta clase: proceso xifoides = apéndice xifoides · incisura yugular = horquilla esternal · incisuras claviculares = escotaduras claviculares · surco costal = canal costal · serrato anterior = serrato mayor · tubérculo del escaleno anterior = tubérculo escalénico (de Lisfranc) · vértebras torácicas (T1–T12) = vértebras dorsales (D1–D12).',
           },
           {
             type: 'note',
-            title: 'Discrepancia de niveles: profesor (D3/D10) vs. Moore (T4–T5)',
+            title: 'Discrepancia de niveles: examen (D3/D10) vs. Moore (T4–T5)',
             content:
-              'El profesor sitúa la articulación manubrio-esternal a nivel D3 y la xifo-esternal a nivel D10. La TA/Moore anclan el ángulo del esternón frente al disco T4–T5. El dato del profesor (D3/D10) es el evaluable; el de Moore es referencia. No es una errata sino una convención de nivel distinta.',
+              'En el examen, la articulación manubrio-esternal se sitúa a nivel D3 y la xifo-esternal a nivel D10. La TA/Moore anclan el ángulo del esternón frente al disco T4–T5. El dato del examen (D3/D10) es el evaluable; el de Moore es referencia. No es una errata sino una convención de nivel distinta.',
           },
           {
             type: 'paragraph',
@@ -1173,7 +1173,7 @@ export const anatomiaUadTopics: Topic[] = [
           },
           {
             type: 'table',
-            title: 'Articulaciones del esternón (niveles del profesor)',
+            title: 'Articulaciones del esternón (niveles del examen)',
             data: {
               headers: ['Articulación', 'Costilla / referencia', 'Nivel vertebral'],
               rows: [
@@ -1223,7 +1223,7 @@ export const anatomiaUadTopics: Topic[] = [
           },
           {
             type: 'note',
-            content: 'Matiz del profesor a seguir en el examen: las flotantes son un SUBCONJUNTO de las falsas (falsas = 8–12; flotantes = 11–12). Muchos textos dicen "falsas 8–10, flotantes 11–12"; aquí se usa la versión del profesor.',
+            content: 'Matiz a seguir en el examen: las flotantes son un SUBCONJUNTO de las falsas (falsas = 8–12; flotantes = 11–12). Muchos textos dicen "falsas 8–10, flotantes 11–12"; aquí se usa la versión del examen.',
           },
         ],
       },
@@ -1322,13 +1322,13 @@ export const anatomiaUadTopics: Topic[] = [
             type: 'keypoints',
             title: 'Los puntos que más se confunden (y más caen)',
             items: [
-              'Verdaderas 1–7 · falsas 8–12 · flotantes 11–12 (versión del profesor: flotantes ⊂ falsas).',
+              'Verdaderas 1–7 · falsas 8–12 · flotantes 11–12 (versión del examen: flotantes ⊂ falsas).',
               'Carilla única en la cabeza: 1, 10, 11 y 12. Dos carillas: las típicas (2–9).',
               'En la 1.ª costilla: surco de la VENA por delante y surco de la ARTERIA por detrás del tubérculo escalénico.',
               'Tubérculo del escaleno anterior → 1.ª costilla; tuberosidad del serrato anterior → 2.ª costilla.',
               'Manubrio recibe la 1.ª costilla; cuerpo recibe de la 3.ª a la 6.ª; la 2.ª marca la articulación manubrio-esternal.',
               'Dimensión mayor de la caja: lateral (32). Abertura inferior transversal (26) ≫ superior (10–12).',
-              'Niveles del profesor: manubrio-esternal D3, xifo-esternal D10.',
+              'Niveles del examen: manubrio-esternal D3, xifo-esternal D10.',
               'Oblicuidad = 1.ª a 9.ª; longitud creciente = 1.ª a 7.ª. No confundir los dos rangos.',
             ],
           },
@@ -1339,7 +1339,7 @@ export const anatomiaUadTopics: Topic[] = [
 
   // ══════════════════════════════════════════════════════════════════════
   // MIEMBRO SUPERIOR ÓSEO — Semana 2 · Clase 2
-  // Fuente: diapositivas del Dr. Soto Pacheco + Moore, cap. Miembro superior
+  // Fuente: diapositivas de clase + Moore, cap. Miembro superior
   // (Huesos del miembro superior, libro 398–408 / PDF 422–432).
   // ══════════════════════════════════════════════════════════════════════
   {
@@ -1353,7 +1353,7 @@ export const anatomiaUadTopics: Topic[] = [
       'En posición anatómica el radio es lateral (del lado del pulgar) y el cúbito (ulna) es medial.',
       'La cabeza del radio es proximal; la cabeza del cúbito es distal: extremos opuestos.',
       'El cuello quirúrgico del húmero es el que se fractura con frecuencia (no el anatómico).',
-      'Epicóndilo medial = epitróclea; epicóndilo lateral = "epicóndilo" del profesor.',
+      'Epicóndilo medial = epitróclea; epicóndilo lateral = "epicóndilo" a secas en el examen.',
       'Tubérculo mayor = troquíter, tubérculo menor = troquín; entre ellos, la corredera bicipital.',
       'El carpo son 8 huesos en 2 filas de 4; el escafoides es el que más se fractura.',
       'Los metacarpianos se numeran de lateral a medial (I = pulgar); el pulgar tiene 2 falanges.',
@@ -1368,9 +1368,9 @@ export const anatomiaUadTopics: Topic[] = [
         blocks: [
           {
             type: 'note',
-            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            title: 'Nomenclatura: TA principal, clásica (la del examen) entre paréntesis',
             content:
-              'Se usa la Terminología Anatómica (TA) como principal y el clásico del profesor entre paréntesis; en el examen el clásico cuenta como correcto. Mapeo de esta clase: tubérculo mayor = troquíter · tubérculo menor = troquín · surco intertubercular = corredera bicipital · epicóndilo medial = epitróclea · proceso coracoides = apófisis coracoides · incisura troclear/radial = escotadura troclear/radial · ulna = cúbito · proceso estiloides = apófisis estiloides · surco del nervio radial = canal del n. radial.',
+              'Se usa la Terminología Anatómica (TA) como principal y el clásico (el del examen) entre paréntesis; en el examen el clásico cuenta como correcto. Mapeo de esta clase: tubérculo mayor = troquíter · tubérculo menor = troquín · surco intertubercular = corredera bicipital · epicóndilo medial = epitróclea · proceso coracoides = apófisis coracoides · incisura troclear/radial = escotadura troclear/radial · ulna = cúbito · proceso estiloides = apófisis estiloides · surco del nervio radial = canal del n. radial.',
           },
           {
             type: 'list',
@@ -1602,7 +1602,7 @@ export const anatomiaUadTopics: Topic[] = [
             title: 'Los puntos que más se confunden (y más caen)',
             items: [
               'Troquíter (tubérculo MAYOR) vs troquín (tubérculo MENOR); entre ellos, la corredera bicipital.',
-              'Epitróclea = epicóndilo MEDIAL; el "epicóndilo" del profesor = epicóndilo LATERAL. La trampa clásica.',
+              'Epitróclea = epicóndilo MEDIAL; el "epicóndilo" a secas del examen = epicóndilo LATERAL. La trampa clásica.',
               'Cuello anatómico vs cuello quirúrgico del húmero: el quirúrgico se fractura.',
               'Fosa del olécranon (POSTERIOR) vs fosas coronoidea y radial (ANTERIORES).',
               'Cabeza del radio = PROXIMAL; cabeza del cúbito = DISTAL. Extremos opuestos.',
@@ -1645,9 +1645,9 @@ export const anatomiaUadTopics: Topic[] = [
         blocks: [
           {
             type: 'note',
-            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            title: 'Nomenclatura: TA principal, clásica (la del examen) entre paréntesis',
             content:
-              'Se usa la Terminología Anatómica (TA) como principal y el clásico del profesor entre paréntesis; en el examen el clásico cuenta como correcto. Mapeo de esta clase: hueso coxal = hueso ilíaco · línea arqueada = línea innominada · incisura isquiática mayor/menor = escotadura ciática mayor/menor · espina isquiática = espina ciática · acetábulo = cavidad cotiloidea · labrum acetabular = rodete cotiloideo · cara glútea del ala del ilion = fosa ilíaca externa (glútea) · carilla auricular = superficie auricular · eminencia iliopúbica = eminencia iliopectínea · agujero obturado = agujero obturador · rama isquiopúbica = rama ascendente del isquion + rama descendente del pubis. La diapositiva del profesor ya es TA-first: "HUESO COXAL (Hueso ilíaco)".',
+              'Se usa la Terminología Anatómica (TA) como principal y el clásico (el del examen) entre paréntesis; en el examen el clásico cuenta como correcto. Mapeo de esta clase: hueso coxal = hueso ilíaco · línea arqueada = línea innominada · incisura isquiática mayor/menor = escotadura ciática mayor/menor · espina isquiática = espina ciática · acetábulo = cavidad cotiloidea · labrum acetabular = rodete cotiloideo · cara glútea del ala del ilion = fosa ilíaca externa (glútea) · carilla auricular = superficie auricular · eminencia iliopúbica = eminencia iliopectínea · agujero obturado = agujero obturador · rama isquiopúbica = rama ascendente del isquion + rama descendente del pubis. La diapositiva ya es TA-first: "HUESO COXAL (Hueso ilíaco)".',
           },
           {
             type: 'list',
@@ -1785,9 +1785,9 @@ export const anatomiaUadTopics: Topic[] = [
           },
           {
             type: 'note',
-            title: 'Contribución de cada hueso al acetábulo — dato del profesor (cítese literal)',
+            title: 'Contribución de cada hueso al acetábulo — dato del examen (cítese literal)',
             content:
-              'El profesor anota la contribución de los tres huesos al acetábulo como "isquion +2/5 · pubis 2/5 · ilion −2/5" (diapositiva). Se registra la notación literal de la diapositiva; NO se "corrige" a una fracción limpia. En la mayoría de los textos la proporción se enuncia como isquion ≈ 2/5, ilion ≈ 2/5 y pubis ≈ 1/5, pero aquí se conserva el dato tal como lo dictó el profesor.',
+              'En la diapositiva, la contribución de los tres huesos al acetábulo se anota como "isquion +2/5 · pubis 2/5 · ilion −2/5". Se registra la notación literal de la diapositiva; NO se "corrige" a una fracción limpia. En la mayoría de los textos la proporción se enuncia como isquion ≈ 2/5, ilion ≈ 2/5 y pubis ≈ 1/5, pero aquí se conserva el dato tal como aparece en la diapositiva.',
           },
           {
             type: 'comparison',
@@ -1834,7 +1834,7 @@ export const anatomiaUadTopics: Topic[] = [
             type: 'keypoints',
             title: 'Los puntos que más se confunden (y más caen)',
             items: [
-              'Qué hueso aporta cada parte del acetábulo: ilion, isquion y pubis; proporción del profesor "isquion +2/5 · pubis 2/5 · ilion −2/5".',
+              'Qué hueso aporta cada parte del acetábulo: ilion, isquion y pubis; proporción de la diapositiva "isquion +2/5 · pubis 2/5 · ilion −2/5".',
               'Incisura isquiática MAYOR (arriba) vs MENOR (abajo), separadas por la espina isquiática (espina ciática).',
               'Tuberosidad isquiática = punto de apoyo al sentarse; pertenece al ISQUION, no al pubis.',
               'Landmarks de la cresta ilíaca: EIAS, EIPS (borde superior) vs EIAI, EIPI (bordes anterior y posterior). No confundir anterosuperior con anteroinferior.',
@@ -1879,9 +1879,9 @@ export const anatomiaUadTopics: Topic[] = [
           },
           {
             type: 'note',
-            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            title: 'Nomenclatura: TA principal, clásica (la del examen) entre paréntesis',
             content:
-              'Se usa la Terminología Anatómica (TA) como principal y el clásico del profesor entre paréntesis; en el examen el clásico cuenta como correcto. El profesor escribe "peroné" y "astrágalo": son justo los que usa el examen. Mapeo de esta clase: fíbula = peroné · talus = astrágalo · hueso navicular = escafoides (del pie) · maléolo medial = maléolo interno · maléolo lateral = maléolo externo · fóvea de la cabeza del fémur = fosita para el ligamento redondo · fosa trocantérea = fosita digital · incisura fibular = escotadura peroneal · tróclea peronea del calcáneo = apófisis peronea · cuneiforme medial/intermedio/lateral = 1.ª/2.ª/3.ª cuña.',
+              'Se usa la Terminología Anatómica (TA) como principal y el clásico (el del examen) entre paréntesis; en el examen el clásico cuenta como correcto. En las diapositivas se escribe "peroné" y "astrágalo": son justo los que usa el examen. Mapeo de esta clase: fíbula = peroné · talus = astrágalo · hueso navicular = escafoides (del pie) · maléolo medial = maléolo interno · maléolo lateral = maléolo externo · fóvea de la cabeza del fémur = fosita para el ligamento redondo · fosa trocantérea = fosita digital · incisura fibular = escotadura peroneal · tróclea peronea del calcáneo = apófisis peronea · cuneiforme medial/intermedio/lateral = 1.ª/2.ª/3.ª cuña.',
           },
           {
             type: 'list',
@@ -2129,7 +2129,7 @@ export const anatomiaUadTopics: Topic[] = [
   {
     id: 'repaso-2p',
     title: 'Repaso 2º Parcial — osteología de los miembros y la pelvis',
-    subtitle: 'Puntos que el profesor marcó como evaluables (30 preguntas)',
+    subtitle: 'Puntos marcados como evaluables (30 preguntas)',
     colorKey: 'osteologia',
     categoria: 'Osteología',
     emoji: '📝',
@@ -2154,7 +2154,7 @@ export const anatomiaUadTopics: Topic[] = [
             type: 'note',
             title: 'Repaso para el 2º parcial',
             content:
-              'No es contenido nuevo; concentra lo que el profesor marcó como evaluable en su deck "REPASO SEGUNDO PARCIAL". Cada estructura se estudia a fondo en su Topic de origen. El examen tiene 30 preguntas sobre la osteología de los miembros y la pelvis.',
+              'No es contenido nuevo; concentra lo marcado como evaluable en el deck "REPASO SEGUNDO PARCIAL". Cada estructura se estudia a fondo en su Topic de origen. El examen tiene 30 preguntas sobre la osteología de los miembros y la pelvis.',
           },
           {
             type: 'list',
@@ -2169,7 +2169,7 @@ export const anatomiaUadTopics: Topic[] = [
             type: 'note',
             title: 'Nomenclatura: TA principal, clásica entre paréntesis',
             content:
-              'Se usa la Terminología Anatómica (TA) como principal y el clásico del profesor entre paréntesis; en el examen el clásico CUENTA como correcto. Este repaso es denso en nomenclatura clásica: troquíter, troquín, epitróclea, corredera bicipital, peroné, astrágalo y escafoides.',
+              'Se usa la Terminología Anatómica (TA) como principal y el clásico (el del examen) entre paréntesis; en el examen el clásico CUENTA como correcto. Este repaso es denso en nomenclatura clásica: troquíter, troquín, epitróclea, corredera bicipital, peroné, astrágalo y escafoides.',
           },
           {
             type: 'correlacion',
@@ -2187,7 +2187,7 @@ export const anatomiaUadTopics: Topic[] = [
         blocks: [
           {
             type: 'table',
-            title: 'Lo que marcó el profesor, por región',
+            title: 'Lo marcado como evaluable, por región',
             data: {
               headers: ['Región', 'Puntos clave'],
               rows: [
@@ -2240,7 +2240,7 @@ export const anatomiaUadTopics: Topic[] = [
       {
         id: 'rep-4',
         number: 4,
-        title: 'Datos que el profesor repite',
+        title: 'Datos que se repiten en el examen',
         keyTerms: ['glenohumeral', 'pisiforme', 'ganchoso', 'escafoides', 'disco articular', 'rótula', 'calcáneo', 'astrágalo'],
         blocks: [
           {
@@ -2289,7 +2289,7 @@ export const anatomiaUadTopics: Topic[] = [
             type: 'note',
             title: 'Repaso para el 3er parcial (no es contenido nuevo)',
             content:
-              'No es contenido nuevo: concentra lo que el profesor marcó como evaluable en el repaso de artrología y miología. Cada estructura se estudia a fondo en su Topic de origen. El clásico del profesor cuenta como correcto en el examen.',
+              'No es contenido nuevo: concentra lo marcado como evaluable en el repaso de artrología y miología. Cada estructura se estudia a fondo en su Topic de origen. La forma clásica cuenta como correcta en el examen.',
           },
           {
             type: 'list',
@@ -2413,7 +2413,7 @@ export const anatomiaUadTopics: Topic[] = [
             type: 'note',
             title: 'Repaso para el examen final (no es contenido nuevo)',
             content:
-              'No es contenido nuevo: concentra lo que el profesor marcó como evaluable en el Kahoot de repaso de la Semana 4 (Miología II + pie). Cada estructura se estudia a fondo en su Topic de origen. El clásico del profesor cuenta como correcto.',
+              'No es contenido nuevo: concentra lo marcado como evaluable en el Kahoot de repaso de la Semana 4 (Miología II + pie). Cada estructura se estudia a fondo en su Topic de origen. La forma clásica cuenta como correcta.',
           },
           {
             type: 'list',
@@ -2518,9 +2518,9 @@ export const anatomiaUadTopics: Topic[] = [
         blocks: [
           {
             type: 'note',
-            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            title: 'Nomenclatura: TA principal, clásica (la del examen) entre paréntesis',
             content:
-              'Se usa la Terminología Anatómica (TA) como principal y el clásico del profesor entre paréntesis; en el examen el clásico cuenta como correcto. Mapeo de esta clase: articulación sinovial = diartrosis · articulación cartilaginosa = anfiartrosis · articulación fibrosa = sinartrosis · esferoidea = enartrosis · selar (en silla de montar) = encaje recíproco · plana = artrodia · troclear = gínglimo · trocoide = pivote.',
+              'Se usa la Terminología Anatómica (TA) como principal y el clásico (el del examen) entre paréntesis; en el examen el clásico cuenta como correcto. Mapeo de esta clase: articulación sinovial = diartrosis · articulación cartilaginosa = anfiartrosis · articulación fibrosa = sinartrosis · esferoidea = enartrosis · selar (en silla de montar) = encaje recíproco · plana = artrodia · troclear = gínglimo · trocoide = pivote.',
           },
           {
             type: 'comparison',
@@ -2643,7 +2643,7 @@ export const anatomiaUadTopics: Topic[] = [
           },
           {
             type: 'note',
-            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            title: 'Nomenclatura: TA principal, clásica (la del examen) entre paréntesis',
             content:
               'Se usa la TA como principal y el clásico entre paréntesis (cuenta como correcto en el examen). En la ATM: ligamento esfenomandibular = esfenomaxilar · ligamento estilomandibular = estilomaxilar.',
           },
@@ -2742,7 +2742,7 @@ export const anatomiaUadTopics: Topic[] = [
           },
           {
             type: 'note',
-            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            title: 'Nomenclatura: TA principal, clásica (la del examen) entre paréntesis',
             content:
               'Se usa la TA como principal y el clásico entre paréntesis (cuenta como correcto). Mapeo: ligamento longitudinal anterior/posterior = ligamento longitudinal común anterior/posterior · ligamentos flavos = ligamentos amarillos · ligamento nucal = ligamento cervical posterior · articulación atlantooccipital = occipitoatloidea.',
           },
@@ -2877,7 +2877,7 @@ export const anatomiaUadTopics: Topic[] = [
           },
           {
             type: 'note',
-            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            title: 'Nomenclatura: TA principal, clásica (la del examen) entre paréntesis',
             content:
               'Se usa la TA como principal y el clásico entre paréntesis (cuenta como correcto). Mapeo: articulación radiocarpiana = articulación de la muñeca · complejo del fibrocartílago triangular = ligamento triangular · selar = encaje recíproco.',
           },
@@ -3004,7 +3004,7 @@ export const anatomiaUadTopics: Topic[] = [
           },
           {
             type: 'note',
-            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            title: 'Nomenclatura: TA principal, clásica (la del examen) entre paréntesis',
             content:
               'Se usa la TA como principal y el clásico entre paréntesis (cuenta como correcto). Mapeo: labrum acetabular = rodete cotiloideo · ligamento de la cabeza del fémur = ligamento redondo · esferoidea = enartrosis.',
           },
@@ -3150,9 +3150,9 @@ export const anatomiaUadTopics: Topic[] = [
         blocks: [
           {
             type: 'note',
-            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            title: 'Nomenclatura: TA principal, clásica (la del examen) entre paréntesis',
             content:
-              'Se usa la Terminología Anatómica (TA) como principal y el clásico del profesor entre paréntesis; en el examen el clásico cuenta como correcto. Mapeo de esta clase: pterigoideo medial/lateral = pterigoideo interno/externo · mandíbula = maxilar inferior · orbicular del ojo = orbicular de los párpados · corrugador superciliar = superciliar · occipitofrontal/epicráneo = cutáneo del cráneo · galea aponeurótica = aponeurosis epicraneal · elevador de la escápula = angular del omóplato · longísimo = dorsal largo · espinoso = epiespinoso.',
+              'Se usa la Terminología Anatómica (TA) como principal y el clásico (el del examen) entre paréntesis; en el examen el clásico cuenta como correcto. Mapeo de esta clase: pterigoideo medial/lateral = pterigoideo interno/externo · mandíbula = maxilar inferior · orbicular del ojo = orbicular de los párpados · corrugador superciliar = superciliar · occipitofrontal/epicráneo = cutáneo del cráneo · galea aponeurótica = aponeurosis epicraneal · elevador de la escápula = angular del omóplato · longísimo = dorsal largo · espinoso = epiespinoso.',
           },
           {
             type: 'definition',
@@ -3474,9 +3474,9 @@ export const anatomiaUadTopics: Topic[] = [
         blocks: [
           {
             type: 'note',
-            title: '11 por lado (según el profesor)',
+            title: '11 por lado (según el examen)',
             content:
-              'El profesor cuenta 11 músculos de la nariz por lado; los principales que hay que reconocer son cuatro. Todos son de la mímica → VII (facial).',
+              'Se cuentan 11 músculos de la nariz por lado (según el examen); los principales que hay que reconocer son cuatro. Todos son de la mímica → VII (facial).',
           },
           {
             type: 'list',
@@ -3549,7 +3549,7 @@ export const anatomiaUadTopics: Topic[] = [
           },
           {
             type: 'note',
-            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            title: 'Nomenclatura: TA principal, clásica (la del examen) entre paréntesis',
             content:
               'Se usa la TA como principal y el clásico entre paréntesis (cuenta como correcto). En esta clase se ven la nuca (suboccipitales), los suprahioideos, los escalenos y los prevertebrales; los infrahioideos y los triángulos del cuello son referencia de la misma clase.',
           },
@@ -3748,7 +3748,7 @@ export const anatomiaUadTopics: Topic[] = [
           },
           {
             type: 'note',
-            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            title: 'Nomenclatura: TA principal, clásica (la del examen) entre paréntesis',
             content:
               'Se usa la TA como principal y el clásico entre paréntesis. Mapeo: elevador de la escápula = angular del omóplato · serrato posterior superior/inferior = serrato menor posterosuperior/posteroinferior · longísimo = dorsal largo · espinoso = epiespinoso.',
           },
@@ -3967,7 +3967,7 @@ export const anatomiaUadTopics: Topic[] = [
         blocks: [
           {
             type: 'note',
-            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            title: 'Nomenclatura: TA principal, clásica (la del examen) entre paréntesis',
             content:
               'Se usa la TA como principal y el clásico entre paréntesis (cuenta como correcto). Mapeo: oblicuo externo = oblicuo mayor · oblicuo interno = oblicuo menor · recto del abdomen = recto anterior del abdomen · fascia de Scarpa = fascia de Escarpa.',
           },
@@ -4093,7 +4093,7 @@ export const anatomiaUadTopics: Topic[] = [
         blocks: [
           {
             type: 'note',
-            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            title: 'Nomenclatura: TA principal, clásica (la del examen) entre paréntesis',
             content:
               'TA como principal y clásico entre paréntesis (cuenta como correcto). Mapeo: serrato anterior = serrato mayor · elevador de la escápula = angular del omóplato · surco intertubercular = canal (corredera) bicipital · redondo menor = teres minor.',
           },
@@ -4222,7 +4222,7 @@ export const anatomiaUadTopics: Topic[] = [
         blocks: [
           {
             type: 'note',
-            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            title: 'Nomenclatura: TA principal, clásica (la del examen) entre paréntesis',
             content:
               'TA como principal y clásico entre paréntesis (cuenta como correcto). Mapeo: braquiorradial = supinador largo · supinador = supinador corto · extensor de los dedos = extensor común de los dedos · extensor del índice = extensor propio del índice.',
           },
@@ -4331,7 +4331,7 @@ export const anatomiaUadTopics: Topic[] = [
         blocks: [
           {
             type: 'note',
-            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            title: 'Nomenclatura: TA principal, clásica (la del examen) entre paréntesis',
             content:
               'TA como principal y clásico entre paréntesis (cuenta como correcto). Mapeo: piriforme = piramidal de la pelvis · grácil = recto interno · bíceps femoral = bíceps crural · recto femoral = recto anterior del muslo · tensor de la fascia lata → tracto iliotibial (cintilla de Maissiat).',
           },
@@ -4449,7 +4449,7 @@ export const anatomiaUadTopics: Topic[] = [
         blocks: [
           {
             type: 'note',
-            title: 'Nomenclatura: TA principal, clásica del profesor entre paréntesis',
+            title: 'Nomenclatura: TA principal, clásica (la del examen) entre paréntesis',
             content:
               'TA como principal y clásico entre paréntesis (cuenta como correcto). Mapeo: gastrocnemio = gemelos · peroneo largo/corto = peroné lateral largo/corto (fibular) · tendón calcáneo = tendón de Aquiles.',
           },
