@@ -141,9 +141,9 @@ export const modules: Module[] = [
     id: 'histologia-uad-s2',
     badge: 'UAD · Histología I — Semana 2',
     title: 'Histología: tejido epitelial',
-    subtitle: 'Generalidades, clasificación, funciones, nutrición y glándulas del epitelio.',
+    subtitle: 'Epitelio: clasificación y funciones; polaridad, medios de unión, membrana basal y glándulas.',
     emoji: '🔬',
-    topicIds: ['histologia-epitelial'],
+    topicIds: ['histologia-epitelial', 'histologia-epitelial-polaridad'],
   },
   {
     id: 'bioestadistica',

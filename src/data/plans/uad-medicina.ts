@@ -494,7 +494,7 @@ export const uadMedicina: Plan = {
           code: 'HS01006',
           hasLab: true,
           tags: ['celular'],
-          topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica', 'histologia-celula', 'histologia-epitelial'],
+          topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica', 'histologia-celula', 'histologia-epitelial', 'histologia-epitelial-polaridad'],
           content: {
             area: 'Ciencias Básicas',
             credits: 8,
@@ -522,13 +522,14 @@ export const uadMedicina: Plan = {
                 number: 2,
                 title: 'Tejido epitelial',
                 estado: 'impartido',
-                topicIds: ['histologia-epitelial'],
+                topicIds: ['histologia-epitelial', 'histologia-epitelial-polaridad'],
                 temas: [
-                  'Clase 1 (impartida): generalidades del epitelio y los 4 tejidos básicos; epitelio avascular sobre membrana basal',
-                  'Clasificación por número de capas (simple, estratificado, pseudoestratificado, transicional) y por forma celular (plano, cúbico, cilíndrico)',
-                  'Las cinco funciones (protección, transporte, absorción, síntesis/secreción, recepción)',
-                  'Nutrición por difusión desde el corion (liso vs papilar) y glándulas exocrinas vs endocrinas',
-                  'Pendiente (siguiente clase): polaridad celular (dominios apical, basal y lateral)',
+                  'Clase 1 (impartida): generalidades del epitelio y los 4 tejidos; clasificación por capas y forma; las cinco funciones; nutrición por difusión desde el corion y glándulas exo/endocrinas',
+                  'Clase 2 (impartida): polaridad celular (dominios apical, lateral y basal)',
+                  'Especializaciones apicales: microvellosidades, estereocilios y cilios (móviles 9+2 vs primarios/nodales 9+0)',
+                  'Medios de unión (occludens, adherente, desmosoma, nexos) y unión a la matriz (hemidesmosoma, contacto focal)',
+                  'Membrana basal (colágeno tipo IV) y glándulas: histogénesis, exo/endocrinas y mecanismos de secreción (merócrina/apócrina/holócrina/endócrina)',
+                  'Pendiente (siguiente clase): tejido conectivo',
                 ],
               },
               {
@@ -564,6 +565,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 1 — Deck completo (114 diapositivas): célula, microscopía y tinciones', file: 'Histologia I - Semana 1 (deck completo).pdf', kind: 'Clase' },
               { title: 'Proyecto Integrador Semana 1 — Organelos celulares', file: 'Histologia 1 - Semana 1 - Proyecto Integrador.pdf', kind: 'Entrega' },
               { title: 'Semana 2 · Clase 1 — Tejido epitelial', file: 'Histologia 2 - Semana 2 - Clase 1 Tejido Epitelial.pdf', kind: 'Clase' },
+              { title: 'Semana 2 · Clase 2 — Polaridad celular, uniones y glándulas', file: 'Histologia 2 - Semana 2 - Clase 2 Polaridad y Glandulas.pdf', kind: 'Clase' },
             ],
             recursos: [
               { label: 'Acland Anatomy', url: 'https://aclandanatomy.com/' },
