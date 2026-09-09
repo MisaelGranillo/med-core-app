@@ -761,4 +761,212 @@ export const geneticaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'genetica-reparacion-adn',
+    title: 'Reparación del ADN',
+    subtitle: 'Daños endógenos y exógenos, enzimas clave y vías de reparación',
+    colorKey: 'genetica',
+    categoria: 'Genética',
+    emoji: '🧬',
+    keyPoints: [
+      'La reparación mantiene intacta la información genética; si el daño no se repara → apoptosis; si se replica con daño → mutaciones y cáncer.',
+      'Daño endógeno: radicales libres (electrones no apareados, subproducto de la respiración aerobia).',
+      'Daño exógeno: UV, rayos X, rayos gamma, químicos y humo de cigarro.',
+      'La radiación UV forma dímeros de timina (T–T) que distorsionan la hélice.',
+      'Tres enzimas clave — Glicosilasa: detecta y quita la base dañada; ADN polimerasa: rellena; ADN ligasa: sella (Quitar → Rellenar → Sellar).',
+      'La ADN polimerasa además REVISA durante la replicación (corrige un G–T a G–C).',
+      'Excisión de BASES (quita una base — glicosilasa) vs excisión de NUCLEÓTIDOS (quita un segmento — distorsiones grandes, dímeros).',
+      'Ruptura de doble cadena: recombinación homóloga (usa molde, precisa) vs unión de extremos no homólogos (une sin molde, menos precisa).',
+    ],
+    sections: [
+      {
+        id: 'grep-1',
+        number: 1,
+        title: 'Para qué sirve y qué pasa si falla',
+        keyTerms: ['reparación', 'apoptosis', 'mutaciones', 'cáncer'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El ADN sufre daños constantemente, y la reparación es el conjunto de mecanismos que los corrige para mantener intacta la información genética antes de que se transmita en la división celular. El desenlace depende de si el daño se repara: si se corrige, todo sigue normal; si NO puede repararse, la célula suele entrar en apoptosis (muerte programada) para no propagar el error; y si los controles fallan y la célula se divide con el ADN dañado, se acumulan mutaciones y puede aparecer cáncer. Por eso la reparación es a la vez un guardián del genoma y un freno a la tumorogénesis.',
+          },
+        ],
+      },
+      {
+        id: 'grep-2',
+        number: 2,
+        title: 'Origen del daño: endógeno vs. exógeno',
+        keyTerms: ['radicales libres', 'UV', 'rayos X', 'rayos gamma', 'radiación ionizante'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: '¿De dónde viene el daño?',
+            left: {
+              title: 'Endógeno (interno)',
+              items: ['Radicales libres: moléculas con electrones no apareados, muy reactivas.', 'Se producen como subproducto de la respiración aerobia normal.', 'Dañan las bases continuamente.'],
+            },
+            right: {
+              title: 'Exógeno (externo)',
+              items: ['UV, rayos X, rayos gamma, químicos, humo de cigarro.', 'Las radiaciones ionizantes rompen una o ambas cadenas.', 'También dañan bases y generan radicales libres.'],
+            },
+          },
+          {
+            type: 'note',
+            title: 'La UV y los dímeros de timina',
+            content:
+              'La radiación UV merece atención aparte: une de forma anormal dos timinas adyacentes formando un DÍMERO DE TIMINA (T–T). Ese enlace distorsiona la doble hélice y estorba la replicación, obligando a repararlo por excisión de nucleótidos.',
+          },
+        ],
+      },
+      {
+        id: 'grep-3',
+        number: 3,
+        title: 'Revisión y mal apareamiento',
+        keyTerms: ['ADN polimerasa', 'revisión', 'mal apareamiento', 'inserciones', 'deleciones'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La primera línea de defensa actúa durante la propia replicación: la ADN polimerasa REVISA lo que va copiando y, si detecta un nucleótido mal apareado (p. ej. una G frente a una T donde debía ir G–C), lo elimina y lo reemplaza por el correcto. Lo que se le escapa lo corrige después la reparación de mal apareamiento, que retira bases mal apareadas y pequeñas inserciones o deleciones (surgidas cuando la polimerasa "resbala"). En ambos casos el patrón final es el mismo: detectar → quitar la región errónea → rellenar (ADN polimerasa) → sellar (ADN ligasa).',
+          },
+        ],
+      },
+      {
+        id: 'grep-4',
+        number: 4,
+        title: 'Las tres enzimas clave',
+        keyTerms: ['glicosilasa', 'ADN polimerasa', 'ADN ligasa'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La Dra. subrayó que, de todas las moléculas implicadas, hay tres enzimas que sí hay que aprender, porque describen el patrón común de casi toda reparación. La regla mnemónica es Quitar → Rellenar → Sellar.',
+          },
+          {
+            type: 'table',
+            title: 'Quitar → Rellenar → Sellar',
+            data: {
+              headers: ['Enzima', 'Función'],
+              rows: [
+                ['Glicosilasa', 'Detecta y QUITA la base dañada.'],
+                ['ADN polimerasa', 'RELLENA con el/los nucleótido(s) correcto(s).'],
+                ['ADN ligasa', 'SELLA la brecha y restablece la continuidad de la hebra.'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'grep-5',
+        number: 5,
+        title: 'Vías de excisión: bases vs. nucleótidos',
+        keyTerms: ['reversión directa', 'excisión de bases', 'excisión de nucleótidos', 'uracilo'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Existen varias vías. La reversión directa deshace ciertos daños químicos sin quitar nada. Las dos vías de excisión se distinguen por CUÁNTO retiran: la excisión de BASES quita solo la base dañada (la glicosilasa la reconoce) —ejemplo típico: un uracilo que aparece en el ADN, G–U, se corrige a G–C—; la excisión de NUCLEÓTIDOS retira un SEGMENTO entero de la hebra, y se usa para distorsiones grandes como los dímeros de timina o el daño por humo y químicos. Regla: base = quitas una base; nucleótidos = quitas un segmento.',
+          },
+          {
+            type: 'table',
+            title: 'Excisión de bases vs. de nucleótidos',
+            data: {
+              headers: ['', 'Excisión de bases', 'Excisión de nucleótidos'],
+              rows: [
+                ['Qué elimina', 'Una base', 'Un segmento de nucleótidos'],
+                ['Tipo de daño', 'Base dañada puntual (p. ej. uracilo)', 'Distorsión de la hélice (dímeros de timina, químicos)'],
+                ['Enzima destacada', 'Glicosilasa', 'Complejo de reparación'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'grep-6',
+        number: 6,
+        title: 'Ruptura de doble cadena',
+        keyTerms: ['doble cadena', 'recombinación homóloga', 'unión de extremos no homólogos', 'molde'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Cuando se rompen las DOS cadenas a la vez el daño es grave, porque puede perderse un segmento entero de información. Hay dos formas de arreglarlo, y la diferencia clave es si hay un molde de dónde copiar. La RECOMBINACIÓN HOMÓLOGA usa el cromosoma homólogo (una copia sana equivalente) como molde: es precisa y apenas introduce errores, y es la misma maquinaria del entrecruzamiento en la meiosis. La UNIÓN DE EXTREMOS NO HOMÓLOGOS simplemente vuelve a pegar los extremos rotos sin molde: es más rápida pero "tosca" y puede dejar mutaciones. Regla: homóloga = tiene de dónde copiar; no homóloga = une los extremos.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'UV, dímeros y cáncer de piel',
+            content:
+              'La UV forma dímeros de timina a diario; si la excisión de nucleótidos no los repara, se acumulan mutaciones que pueden derivar en cáncer de piel. Los radicales libres del propio metabolismo son un daño endógeno continuo. (Enriquecimiento, NO dado en clase: el xeroderma pigmentoso es una enfermedad hereditaria por excisión de nucleótidos defectuosa, con fotosensibilidad extrema y cáncer cutáneo temprano —verifícalo aparte—.)',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'genetica-repaso-s2',
+    title: 'Repaso para el examen — Semana 2',
+    subtitle: 'Las 9 prioridades que dictó la Dra.: cromosoma, ADN/ARN, transcripción, traducción y reparación',
+    colorKey: 'genetica',
+    categoria: 'Genética',
+    emoji: '📝',
+    keyPoints: [
+      'Partes del cromosoma y su función: centrómero, brazos p/q, cinetocoro, telómeros, cromátidas.',
+      'ADN vs ARN: desoxirribosa/ribosa, doble/una cadena, timina/uracilo.',
+      'Nucleosoma = octámero de histonas (2× H2A, H2B, H3, H4 = 8); cadena ADN→histonas→nucleosoma→cromatina→cromosoma.',
+      'Tipos de cromosoma por el centrómero: metacéntrico, submetacéntrico, acrocéntrico, telocéntrico.',
+      'Transcripción (núcleo, ARN polimerasa, U por T) y traducción (citoplasma, iniciación/elongación/terminación).',
+      'Ribosoma: sitios A (entra) → P (proteína) → E (sale).',
+      'Codones: AUG = metionina (inicio); UAA/UAG/UGA = paro. Reparación: endógeno/exógeno, enzimas y vías.',
+    ],
+    sections: [
+      {
+        id: 'gs2r-1',
+        number: 1,
+        title: 'Cómo usar este repaso',
+        keyTerms: ['prioridades de examen', 'Semana 2'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Banco de prioridades dictado por la Dra.',
+            content:
+              'No es contenido nuevo: al cerrar la Clase 3, la Dra. dictó las 9 prioridades del examen de la Semana 2. Aquí quedan como guía de estudio; cada punto se estudia a fondo en su topic (dogma/transcripción, cromosomas/cariotipo, traducción y reparación del ADN).',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: '★ Estrategia de examen',
+            content:
+              'La Dra. aclaró que el examen se concentra en los conceptos fundamentales y que NO hay que memorizar nombres complejos adicionales (ni las 64 combinaciones de codones). Domina las 9 prioridades de abajo y las dos parejas clave: AUG = metionina/inicio y UAA/UAG/UGA = paro.',
+          },
+        ],
+      },
+      {
+        id: 'gs2r-2',
+        number: 2,
+        title: 'Las 9 prioridades',
+        keyTerms: ['cromosoma', 'ADN vs ARN', 'nucleosoma', 'transcripción', 'traducción', 'reparación'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Lo evaluable, en orden',
+            data: {
+              headers: ['#', 'Prioridad', 'Clave'],
+              rows: [
+                ['1', 'Partes del cromosoma', 'Centrómero, brazo p (corto)/q (largo), cinetocoro (huso), telómeros (extremos), cromátidas.'],
+                ['2', 'ADN vs ARN', 'Azúcar (desoxirribosa/ribosa), base (T/U), estructura (doble/una) y función.'],
+                ['3', 'Nucleosoma', 'Octámero: 2× H2A, H2B, H3, H4 = 8. Cadena: ADN→histonas→nucleosoma→cromatina→cromosoma.'],
+                ['4', 'Tipos de cromosoma', 'Meta / submeta / acro / telocéntrico (por posición del centrómero).'],
+                ['5', 'Transcripción', 'ADN→ARN, en el núcleo, ARN polimerasa; U sustituye a T; ARNm, intrones/exones.'],
+                ['6', 'Traducción', 'En el citoplasma; ARNm/ARNt/ARNr; iniciación, elongación, terminación.'],
+                ['7', 'Ribosoma A/P/E', 'A entra el ARNt, P se une la cadena, E sale el ARNt.'],
+                ['8', 'Codones', 'AUG = metionina (inicio); UAA, UAG, UGA = paro.'],
+                ['9', 'Reparación del ADN', 'Endógeno (radicales libres)/exógeno (UV); mal apareamiento; excisión de bases/nucleótidos; doble cadena homóloga/no homóloga; enzimas glicosilasa/polimerasa/ligasa.'],
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
 ]
