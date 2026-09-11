@@ -1059,4 +1059,749 @@ export const histologiaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'histologia-glandulas',
+    title: 'Glándulas y regeneración epitelial',
+    subtitle: 'Mecanismos y tipos de secreción, clasificación, estroma/parénquima y células madre',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🔬',
+    keyPoints: [
+      'Secreción REGULADA: se almacena el producto en gránulos y se libera ante una señal (nerviosa/hormonal). CONSTITUTIVA: se libera de forma continua, sin almacenamiento.',
+      'Cuatro tipos: MERÓCRINA (exocitosis, célula intacta — páncreas, sudoríparas), APÓCRINA (pierde el ápice — mamaria), HOLÓCRINA (muere toda la célula — sebácea) y CITÓGENA (libera células completas — óvulos, espermatozoides).',
+      'Adenómero = porción secretora; conducto excretor = transporta. Es una diferencia muy preguntada en el examen.',
+      'Clasificación: por conducto (simple/compuesta/acinar en racimos), por forma del adenómero (acinosa/alveolar/tubular), por nº de células (unicelular = caliciforme / multicelular), por producto (mucoso/seroso/mixto) y por ubicación (intraepitelial/intramural/extramural).',
+      'Producto mucoso: núcleo aplanado, citoplasma claro. Seroso: núcleo redondo, citoplasma granular basófilo. Mixto: semilunas de Gianuzzi (sublingual, submandibular).',
+      'Organización topográfica: cápsula, tabiques, lóbulos y lobulillos. ESTROMA = soporte (conjuntivo); PARÉNQUIMA = función (secretora).',
+      'El epitelio se renueva por mitosis de células madre: en simples con glándulas, en el fondo del adenómero; en pseudoestratificado y estratificado, en la capa basal. Modelo ASIMÉTRICO (una hija sigue madre, otra se diferencia) vs SIMÉTRICO (expansión).',
+    ],
+    sections: [
+      {
+        id: 'hgla-1',
+        number: 1,
+        title: 'Recap y mecanismos de secreción: regulado vs constitutivo',
+        keyTerms: ['secreción regulada', 'secreción constitutiva', 'gránulos'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Las glándulas ya se introdujeron en «Polaridad celular epitelial» (exocrina/endocrina, adenómero y los mecanismos merócrina/apócrina/holócrina). Aquí se amplía la clase: se añade un cuarto mecanismo (citógena), la diferencia entre secreción regulada y constitutiva, y toda la clasificación. Una célula glandular libera su producto por dos vías según cómo lo maneje en el tiempo.',
+          },
+          {
+            type: 'table',
+            title: 'Regulado vs constitutivo',
+            data: {
+              headers: ['Mecanismo', 'Qué ocurre', 'Cuándo se libera'],
+              rows: [
+                ['Regulado', 'Se almacena el producto en gránulos', 'Ante una señal o estímulo (nervioso, hormonal)'],
+                ['Constitutivo', 'Las moléculas van directas a la membrana en vesículas', 'De forma continua, sin almacenamiento previo'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hgla-2',
+        number: 2,
+        title: 'Los cuatro tipos de secreción',
+        keyTerms: ['merócrina', 'apócrina', 'holócrina', 'citógena'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Merócrina · apócrina · holócrina · citógena',
+            data: {
+              headers: ['Tipo', 'Qué ocurre con la célula', 'Ejemplos'],
+              rows: [
+                ['Merócrina', 'Exocitosis sin pérdida de citoplasma; célula intacta', 'Páncreas, glándulas sudoríparas'],
+                ['Apócrina', 'Pierde parte del citoplasma apical junto con el producto', 'Glándula mamaria (algunas sudoríparas)'],
+                ['Holócrina', 'Muere la célula completa y pasa a formar parte del producto', 'Glándula sebácea'],
+                ['Citógena', 'Se liberan células completas', 'Ovario (óvulos), testículo (espermatozoides)'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Novedad respecto a la Clase 2',
+            content: 'La CITÓGENA es el cuarto tipo que se añade en esta clase (no estaba en la tabla de la Clase 2). Es una diferencia señalada como muy preguntada en el examen: asocia merócrina→exocitosis, apócrina→pierde ápice, holócrina→muere la célula, citógena→libera células.',
+          },
+        ],
+      },
+      {
+        id: 'hgla-3',
+        number: 3,
+        title: 'Adenómero vs conducto excretor',
+        keyTerms: ['adenómero', 'conducto excretor'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Las dos porciones de una glándula exocrina',
+            left: {
+              title: 'Adenómero',
+              items: ['Porción SECRETORA.', 'Aquí se localizan las células dedicadas a secretar.'],
+            },
+            right: {
+              title: 'Conducto excretor',
+              items: ['TRANSPORTA y guía la secreción.', 'Conecta el adenómero con la superficie.'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hgla-4',
+        number: 4,
+        title: 'Clasificación de las glándulas',
+        keyTerms: ['simple', 'compuesta', 'acinosa', 'alveolar', 'tubular', 'caliciforme', 'intramural', 'extramural'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Las glándulas se clasifican por varios criterios simultáneos; en el examen conviene poder ubicar una glándula en cada eje. Los cuatro ejes son: el conducto, la forma del adenómero, el número de células y la ubicación del adenómero (el producto se trata aparte).',
+          },
+          {
+            type: 'table',
+            title: 'Por conducto y por forma del adenómero',
+            data: {
+              headers: ['Criterio', 'Categorías'],
+              rows: [
+                ['Conducto', 'Simple (no se ramifica) · Compuesta (se ramifica) · Acinar/en racimos (múltiples adenómeros agrupados)'],
+                ['Forma del adenómero', 'Acinosa (redondeada) · Alveolar (como acinosa, con luz más amplia) · Tubular (en tubo; gástricas e intestinales)'],
+                ['Nº de células', 'Unicelular (célula caliciforme, secreta moco) · Multicelular'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Por ubicación del adenómero',
+            data: {
+              headers: ['Ubicación', 'Dónde está', 'Ejemplos'],
+              rows: [
+                ['Intraepitelial', 'Dentro del epitelio', 'Células caliciformes'],
+                ['Intramural', 'Dentro de la pared del órgano', 'Glándulas del esófago y del estómago'],
+                ['Extramural', 'Fuera del órgano, unida por conductos largos', 'Páncreas, hígado, glándulas salivales'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hgla-5',
+        number: 5,
+        title: 'Clasificación por el producto: mucoso, seroso y mixto',
+        keyTerms: ['mucoso', 'seroso', 'mixto', 'semilunas de Gianuzzi'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Mucoso vs seroso',
+            data: {
+              headers: ['Producto', 'Secreción', 'Núcleo', 'Citoplasma'],
+              rows: [
+                ['Mucoso', 'Rica en moco y glucoproteínas (lubrica y protege)', 'Aplanado', 'Claro'],
+                ['Seroso', 'Acuosa, rica en proteínas y enzimas', 'Redondo', 'Granular, basófilo'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content:
+              'La glándula MIXTA tiene componentes mucosos y serosos. Las células serosas pueden disponerse en media luna alrededor de las mucosas: son las SEMILUNAS DE GIANUZZI, típicas de las glándulas sublingual y submandibular. En el componente mixto, el mucoso lubrica y protege (ayuda a formar el bolo) y el seroso aporta agua y enzimas digestivas.',
+          },
+        ],
+      },
+      {
+        id: 'hgla-6',
+        number: 6,
+        title: 'Organización topográfica: estroma vs parénquima',
+        keyTerms: ['cápsula', 'tabiques', 'lóbulos', 'lobulillos', 'estroma', 'parénquima'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Organización interna de una glándula grande',
+            items: [
+              'Cápsula: envoltura externa de tejido conjuntivo.',
+              'Tabiques: proyecciones de conjuntivo hacia el interior.',
+              'Lóbulos: divisiones principales.',
+              'Lobulillos: subdivisiones de los lóbulos.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Estroma vs parénquima',
+            left: {
+              title: 'Estroma',
+              items: ['Elementos de tejido conjuntivo.', 'SOPORTE de la glándula.'],
+            },
+            right: {
+              title: 'Parénquima',
+              items: ['Porción secretora.', 'FUNCIÓN de la glándula.'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hgla-7',
+        number: 7,
+        title: 'Regeneración epitelial y modelos de célula madre',
+        keyTerms: ['células madre', 'modelo asimétrico', 'modelo simétrico'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Los epitelios se renuevan por mitosis de células madre, y su localización depende del tipo de epitelio: en los epitelios simples con glándulas están en el fondo del adenómero (o repartidas entre las células); en los pseudoestratificados y estratificados, en la capa basal. Al dividirse una célula madre estratificada, una hija conserva el estado de madre y la otra asciende y se diferencia: así se mantiene la reserva y se renueva el epitelio.',
+          },
+          {
+            type: 'comparison',
+            title: 'Modelo asimétrico vs simétrico',
+            left: {
+              title: 'Asimétrico',
+              items: ['Una hija sigue siendo madre; la otra se diferencia.', 'Mantiene constante la población de células madre.'],
+            },
+            right: {
+              title: 'Simétrico',
+              items: ['Ambas hijas conservan el estado de madre.', 'Favorece la expansión rápida de la población.'],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: '★ Por qué la piel conserva reserva de células madre',
+            content:
+              'En tejidos con alta necesidad de protección y recambio, como la piel, es importante conservar la población de células madre basales. El modelo asimétrico permite renovar el epitelio sin agotar la reserva: una hija repone la superficie y la otra mantiene el pool germinativo.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'histologia-epitelios-urinario',
+    title: 'Epitelios del aparato urinario: urotelio y glomérulo',
+    subtitle: 'Urotelio de transición, células en paraguas, cápsula de Bowman y barrera de filtración',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🔬',
+    keyPoints: [
+      'El UROTELIO (epitelio de transición) reviste desde los cálices menores → cálices mayores → pelvis renal → uréteres → vejiga → uretra proximal (NO toda la uretra).',
+      'Tres poblaciones: basales (pequeñas, tocan la MB, células madre), intermedias (piriformes, reserva) y superficiales o EN PARAGUAS (grandes, binucleadas, enfrentan la orina).',
+      'Distensión: vejiga vacía = más estratos y células abombadas (parece grueso); llena = parece delgado, las células se deslizan y aplanan (no se pierden) → de ahí «epitelio de transición».',
+      'Protección frente a la orina: placas uroteliales (uroplaquinas), vesículas fusiformes, uniones ocluyentes muy desarrolladas y recambio lento.',
+      'Corpúsculo renal = glomérulo + cápsula de Bowman. Hoja PARIETAL = plano simple; hoja VISCERAL = podocitos con pedicelos que forman ranuras de filtración.',
+      'Barrera de filtración glomerular (3 capas): endotelio fenestrado + membrana basal glomerular (colágeno IV + heparán sulfato, barrera de carga que frena la albúmina) + podocitos/pedicelos.',
+      'La vía urinaria conduce y almacena; NO modifica la orina tras la filtración. Se producen ~180 L/día de ultrafiltrado y se reabsorbe >99 %.',
+    ],
+    sections: [
+      {
+        id: 'huri-1',
+        number: 1,
+        title: 'Urotelio: qué es y hasta dónde llega',
+        keyTerms: ['urotelio', 'epitelio de transición', 'vías urinarias'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El urotelio es el epitelio de transición de las vías urinarias. Debe resolver dos problemas a la vez: permitir que la vejiga se distienda sin romperse y evitar que la orina pase al tejido y a la sangre. Su extensión exacta es dato de examen.',
+          },
+          {
+            type: 'note',
+            title: '★ Extensión del urotelio',
+            content: 'Cálices menores → cálices mayores → pelvis renal → uréteres → vejiga → segmento proximal de la uretra. No reviste toda la uretra.',
+          },
+        ],
+      },
+      {
+        id: 'huri-2',
+        number: 2,
+        title: 'Poblaciones celulares y distensión',
+        keyTerms: ['células basales', 'células intermedias', 'células en paraguas', 'distensión'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Las tres poblaciones del urotelio',
+            data: {
+              headers: ['Población', 'Rasgos', 'Función'],
+              rows: [
+                ['Basales', 'Pequeñas; contactan la membrana basal; mitóticamente activas', 'Células madre del epitelio'],
+                ['Intermedias', 'Morfología piriforme', 'Reserva estructural'],
+                ['Superficiales / en paraguas', 'Grandes, con frecuencia binucleadas; enfrentan la orina', 'Protección del epitelio'],
+              ],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'Vejiga vacía vs llena',
+            left: {
+              title: 'Vacía / relajada',
+              items: ['Se observan más estratos.', 'Células superficiales más abombadas.', 'El epitelio aparenta ser más grueso.'],
+            },
+            right: {
+              title: 'Llena / distendida',
+              items: ['Aparenta ser más delgado; menos capas.', 'Las células se deslizan y se aplanan.', 'No se pierden células: cambia su disposición.'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'huri-3',
+        number: 3,
+        title: 'Protección del urotelio frente a la orina',
+        keyTerms: ['placas uroteliales', 'uroplaquinas', 'vesículas fusiformes', 'uniones ocluyentes'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Cuatro mecanismos de protección',
+            items: [
+              'Placas uroteliales: áreas rígidas de la membrana apical formadas por uroplaquinas.',
+              'Vesículas fusiformes: reservas de membrana que se incorporan a la superficie al llenarse y se recuperan por endocitosis.',
+              'Uniones ocluyentes muy desarrolladas: reducen el paso paracelular.',
+              'Recambio celular lento (puede acelerarse ante lesión).',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Correlaciones clínicas del urotelio',
+            content:
+              'Cistitis: la inflamación puede exfoliar células en paraguas → disuria, aumento de la frecuencia y, en lesión avanzada, hematuria. Escherichia coli es el patógeno urinario más frecuente y se adhiere al urotelio con fimbrias, dificultando su arrastre en la micción. Reflujo vesicoureteral (sobre todo en niños): retorno de orina hacia los uréteres/riñón, con IVU recurrentes y posible cicatrización renal. Carcinoma urotelial: suele ser multifocal porque todo el urotelio se expuso a los mismos carcinógenos (tabaco, aminas aromáticas, tintes, pinturas, hule, cuero).',
+          },
+        ],
+      },
+      {
+        id: 'huri-4',
+        number: 4,
+        title: 'Corpúsculo renal y cápsula de Bowman',
+        keyTerms: ['corpúsculo renal', 'cápsula de Bowman', 'podocitos', 'pedicelos', 'polo vascular', 'polo urinario'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El corpúsculo renal = glomérulo (ovillo de capilares) + cápsula de Bowman, y su función es filtrar la sangre para producir el ultrafiltrado. La cápsula tiene dos hojas y su epitelio es dato de examen.',
+          },
+          {
+            type: 'comparison',
+            title: 'Las dos hojas de la cápsula de Bowman',
+            left: {
+              title: 'Hoja parietal',
+              items: ['Hoja externa.', 'Epitelio PLANO SIMPLE.', 'Apoyada sobre membrana basal.'],
+            },
+            right: {
+              title: 'Hoja visceral',
+              items: ['Hoja interna.', 'Formada por PODOCITOS.', 'Sus pedicelos forman las ranuras de filtración.'],
+            },
+          },
+          {
+            type: 'paragraph',
+            content:
+              'En el POLO VASCULAR entra la arteriola aferente y sale la eferente. En el POLO URINARIO, el epitelio plano simple de la hoja parietal cambia a cúbico simple: es el inicio del túbulo contorneado proximal.',
+          },
+          {
+            type: 'table',
+            title: 'Epitelios a lo largo de la nefrona',
+            data: {
+              headers: ['Región', 'Epitelio'],
+              rows: [
+                ['Cápsula de Bowman (parietal)', 'Plano simple'],
+                ['Túbulo proximal', 'Cúbico simple con borde en cepillo'],
+                ['Asa de Henle', 'Plano simple'],
+                ['Túbulo colector', 'Cúbico a cilíndrico simple'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'huri-5',
+        number: 5,
+        title: 'Barrera de filtración glomerular',
+        keyTerms: ['endotelio fenestrado', 'membrana basal glomerular', 'colágeno IV', 'albuminuria'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Las tres capas de la barrera',
+            items: [
+              'Endotelio fenestrado: poros que dejan pasar moléculas pequeñas y retienen elementos celulares.',
+              'Membrana basal glomerular: rica en colágeno tipo IV y heparán sulfato; barrera de tamaño y de carga (la carga negativa frena la albúmina).',
+              'Podocitos y pedicelos: sus ranuras de filtración dejan pasar agua, iones y moléculas pequeñas y frenan células y proteínas grandes.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Diabetes y albuminuria',
+            content:
+              'La hiperglucemia crónica altera la barrera glomerular: hiperfiltración → engrosamiento y daño de la barrera → pérdida de proteínas → ALBUMINURIA (albúmina en orina), señal importante de daño glomerular en el paciente diabético.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: '★ Cifras del ultrafiltrado',
+            content:
+              'El corpúsculo renal produce ~180 L de ultrafiltrado al día; después se reabsorbe más del 99 % a lo largo de los túbulos. La vía urinaria conduce y almacena la orina, pero NO la modifica tras su formación renal.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'histologia-epitelios-respiratorio',
+    title: 'Epitelios del aparato respiratorio y alvéolo',
+    subtitle: 'Porción conductora vs respiratoria, epitelio pseudoestratificado ciliado, alvéolo y neumocitos',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🔬',
+    keyPoints: [
+      'Porción CONDUCTORA (conduce, limpia, calienta y humidifica el aire) vs porción RESPIRATORIA (intercambio gaseoso en los alvéolos).',
+      'Epitelio respiratorio (tráquea y bronquios principales): cilíndrico PSEUDOESTRATIFICADO ciliado con caliciformes (todas tocan la MB, no todas llegan a la superficie; núcleos a distinta altura).',
+      'Células principales: ciliadas (llegan a la superficie), caliciformes (secretan moco) y basales (madre). Sistema mucociliar: el moco atrapa partículas y los cilios las desplazan.',
+      'A menor calibre, epitelio más bajo y menos caliciformes (tráquea → bronquios → bronquiolos → alvéolos). En bronquiolos aparecen las células de Club.',
+      'Alvéolo: epitelio PLANO SIMPLE. Neumocito I (≈95 % de la superficie, intercambio gaseoso); neumocito II (surfactante en cuerpos lamelares + célula progenitora que regenera).',
+      'Barrera hematogaseosa (~0.2 μm): neumocito I + membranas basales fusionadas + endotelio capilar. Los macrófagos alveolares limpian.',
+    ],
+    sections: [
+      {
+        id: 'hres-1',
+        number: 1,
+        title: 'Porción conductora vs respiratoria',
+        keyTerms: ['porción conductora', 'porción respiratoria'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Las dos regiones funcionales',
+            left: {
+              title: 'Conductora',
+              items: ['Conduce el aire.', 'Lo limpia, lo calienta y lo humidifica.', 'Tráquea, bronquios, bronquiolos.'],
+            },
+            right: {
+              title: 'Respiratoria',
+              items: ['Intercambio gaseoso.', 'Ocurre en los alvéolos.'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hres-2',
+        number: 2,
+        title: 'Epitelio respiratorio y sus células',
+        keyTerms: ['pseudoestratificado', 'ciliadas', 'caliciformes', 'células basales'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'En la tráquea y los bronquios principales el epitelio es cilíndrico pseudoestratificado ciliado con células caliciformes. Se llama pseudoestratificado porque todas las células se apoyan sobre la membrana basal, pero no todas llegan a la superficie, y sus núcleos quedan a diferentes alturas: parece estratificado sin serlo.',
+          },
+          {
+            type: 'table',
+            title: 'Células principales del epitelio respiratorio',
+            data: {
+              headers: ['Célula', 'Función'],
+              rows: [
+                ['Ciliadas', 'Abundantes; llegan a la superficie; desplazan el moco'],
+                ['Caliciformes', 'Secretan moco'],
+                ['Basales', 'Células madre; renuevan el epitelio'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hres-3',
+        number: 3,
+        title: 'Sistema mucociliar y cambio por calibre',
+        keyTerms: ['sistema mucociliar', 'células de Club', 'metaplasia escamosa'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Sistema mucociliar (defensa de la vía aérea)',
+            steps: [
+              'Una partícula inhalada queda atrapada en el moco.',
+              'Los cilios laten de forma coordinada.',
+              'El moco cargado de partículas se desplaza hacia fuera.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'A menor calibre, epitelio más bajo',
+            content: 'Tráquea → bronquios → bronquiolos → alvéolos: el epitelio se hace más bajo y con menos caliciformes. En los bronquiolos aparecen las células de Club.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Tabaquismo y fibrosis quística',
+            content:
+              'El tabaquismo crónico daña el epitelio respiratorio: pierde cilios y sufre metaplasia escamosa (aparece epitelio plano donde no corresponde), lo que se asocia a enfermedad respiratoria crónica. En la fibrosis quística el moco es espeso y los cilios no lo movilizan bien → infecciones respiratorias recurrentes y bronquiectasias.',
+          },
+        ],
+      },
+      {
+        id: 'hres-4',
+        number: 4,
+        title: 'Alvéolo y neumocitos',
+        keyTerms: ['alvéolo', 'plano simple', 'neumocito I', 'neumocito II', 'surfactante', 'cuerpos lamelares'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Los alvéolos son las estructuras terminales del intercambio gaseoso y su epitelio es PLANO SIMPLE: su extrema delgadez favorece la difusión de gases. En él conviven dos tipos de neumocito.',
+          },
+          {
+            type: 'comparison',
+            title: 'Neumocito I vs II',
+            left: {
+              title: 'Neumocito tipo I',
+              items: ['Célula muy plana, citoplasma extendido.', 'Cubre ≈95 % de la superficie alveolar.', 'Función: INTERCAMBIO gaseoso.'],
+            },
+            right: {
+              title: 'Neumocito tipo II',
+              items: ['Generalmente cúbico; menor superficie.', 'Produce SURFACTANTE (almacenado en cuerpos lamelares).', 'Célula progenitora: REGENERA el epitelio.'],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Surfactante',
+            content: 'Reduce la tensión superficial, facilita la expansión pulmonar y disminuye el esfuerzo para inflar los alvéolos.',
+          },
+        ],
+      },
+      {
+        id: 'hres-5',
+        number: 5,
+        title: 'Barrera hematogaseosa y macrófagos',
+        keyTerms: ['barrera hematogaseosa', 'macrófagos alveolares'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Barrera hematogaseosa (~0.2 μm)',
+            items: [
+              'Citoplasma del neumocito tipo I.',
+              'Membranas basales fusionadas.',
+              'Citoplasma del endotelio capilar.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content:
+              'Su extrema delgadez (≈0.2 μm) facilita el intercambio de gases. Los macrófagos alveolares fagocitan partículas y microorganismos y mantienen limpio el alvéolo.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Anafilaxia y edema pulmonar',
+            content:
+              'En la anafilaxia, una respuesta inmunitaria intensa con liberación masiva de histamina altera los vasos y la barrera alveolar y compromete el intercambio: dificultad respiratoria, caída de la saturación de oxígeno, infiltración de líquido y edema pulmonar agudo.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'histologia-piel',
+    title: 'Histología de la piel: epidermis y estratos',
+    subtitle: 'Epidermis plano estratificada queratinizada, los 5 estratos, las 4 células y la unión dermoepidérmica',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🔬',
+    keyPoints: [
+      'La piel es el órgano más grande (~1.8 m², ≈16 % del peso; recambio epidérmico en 4–6 semanas). Funciones: barrera, termorregulación, sensorial, inmunovigilancia (Langerhans), vitamina D y fotoprotección.',
+      'Epidermis (epitelio ectodérmico, AVASCULAR) + dermis (conjuntivo mesodérmico, con vasos y nervios) + hipodermis (fascia superficial; estrictamente no es piel).',
+      'Epidermis = plano estratificado QUERATINIZADO. Cinco estratos B-E-G-L-C: basal → espinoso → granuloso → lúcido → córneo. El lúcido solo se ve en PIEL GRUESA (palmas y plantas).',
+      'Cuatro poblaciones: queratinocito (ectodermo, 85–90 %), melanocito (cresta neural, basal, melanosomas; 1 melanocito ≈ 30–40 queratinocitos), Langerhans (médula ósea, espinoso, presenta antígeno) y Merkel (basal, mecanorreceptor de adaptación lenta).',
+      'Uniones: DESMOSOMA (queratinocito↔queratinocito; desmogleína/desmocolina) vs HEMIDESMOSOMA (queratinocito basal↔membrana basal; integrinas, BP180/BP230).',
+      'Clínica: pénfigo vulgar (anti-desmogleína → ampolla INTRAepidérmica) vs penfigoide ampolloso (hemidesmosoma/BP180-BP230 → ampolla SUBepidérmica); vitíligo (destrucción autoinmune de melanocitos) vs albinismo (melanocitos presentes, tirosinasa deficiente); melanoma (invasivo al cruzar la MB; regla ABCDE).',
+    ],
+    sections: [
+      {
+        id: 'hpiel-1',
+        number: 1,
+        title: 'Generalidades y funciones de la piel',
+        keyTerms: ['órgano más grande', 'barrera', 'termorregulación', 'inmunovigilancia'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'La piel en cifras',
+            data: {
+              headers: ['Característica', 'Dato'],
+              rows: [
+                ['Superficie (adulto)', '≈1.8 m²'],
+                ['Porcentaje del peso corporal', '≈16 %'],
+                ['Espesor', '0.5 mm a >4 mm según la región'],
+                ['Recambio epidérmico completo', '4–6 semanas'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Funciones',
+            items: [
+              'Barrera física, química y microbiológica (organización de la epidermis y sus lípidos).',
+              'Termorregulación (plexos vasculares dérmicos y glándulas sudoríparas).',
+              'Recepción sensorial (corpúsculos y terminaciones nerviosas de la dermis).',
+              'Inmunovigilancia (células de Langerhans).',
+              'Síntesis de vitamina D (queratinocitos, 7-dehidrocolesterol).',
+              'Fotoprotección frente a la radiación ultravioleta (melanina).',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'hpiel-2',
+        number: 2,
+        title: 'Componentes: epidermis, dermis e hipodermis',
+        keyTerms: ['epidermis', 'dermis', 'hipodermis', 'avascular'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Los tres componentes del tegumento',
+            data: {
+              headers: ['Región', 'Origen / naturaleza', 'Clave'],
+              rows: [
+                ['Epidermis', 'Epitelio, ectodermo', 'AVASCULAR'],
+                ['Dermis', 'Tejido conectivo, mesodermo', 'Vasos y nervios'],
+                ['Hipodermis', 'Conjuntivo laxo y adiposo', 'Fascia superficial; estrictamente no es piel'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hpiel-3',
+        number: 3,
+        title: 'Epidermis y los cinco estratos (B-E-G-L-C)',
+        keyTerms: ['plano estratificado queratinizado', 'basal', 'espinoso', 'granuloso', 'lúcido', 'córneo'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La epidermis es un epitelio plano estratificado queratinizado, avascular, apoyado sobre la membrana basal, en el que los queratinocitos se diferencian progresivamente hacia la superficie. De profundo a superficial se ordenan en cinco estratos.',
+          },
+          {
+            type: 'table',
+            title: 'Los cinco estratos (de profundo a superficial)',
+            data: {
+              headers: ['Estrato', 'Rasgos', 'Clave'],
+              rows: [
+                ['Basal (germinativo)', 'Una hilera, células cúbicas/cilíndricas, núcleos hipercromáticos', 'Mitosis, células madre, melanocitos y Merkel'],
+                ['Espinoso', '8–10 hileras poliédricas; desmosomas + tonofilamentos', 'Resistencia mecánica; Langerhans'],
+                ['Granuloso', '3–5 hileras aplanadas; gránulos de queratohialina (filagrina)', 'Cuerpos lamelares → ceramidas/colesterol/ácidos grasos = barrera'],
+                ['Lúcido', 'Banda clara, eosinófila, anucleada; eleidina', 'SOLO en piel gruesa (palmas y plantas)'],
+                ['Córneo', '15–20 hileras de corneocitos anucleados', 'Queratina; barrera física'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Mnemotecnia y piel delgada vs gruesa',
+            content: 'B-E-G-L-C: Basal → Espinoso → Granuloso → Lúcido → Córneo. La diferencia epidérmica más útil para identificar al microscopio es la presencia del estrato LÚCIDO: solo aparece en la piel gruesa (palmas y plantas).',
+          },
+        ],
+      },
+      {
+        id: 'hpiel-4',
+        number: 4,
+        title: 'Historia de vida del queratinocito',
+        keyTerms: ['queratinocito', 'diferenciación', 'descamación'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Del estrato basal a la descamación',
+            steps: [
+              'Nace por mitosis en el estrato basal.',
+              'En el espinoso adquiere desmosomas y tonofilamentos (resistencia).',
+              'En el granuloso forma queratohialina y libera lípidos de barrera.',
+              'En piel gruesa atraviesa el estrato lúcido.',
+              'En el córneo se convierte en corneocito anucleado y finalmente se descama.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'hpiel-5',
+        number: 5,
+        title: 'Las cuatro poblaciones celulares',
+        keyTerms: ['queratinocito', 'melanocito', 'Langerhans', 'Merkel', 'unidad melanoepidérmica'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Células de la epidermis',
+            data: {
+              headers: ['Célula', 'Origen', 'Localización', 'Función', '% aprox.'],
+              rows: [
+                ['Queratinocito', 'Ectodermo superficial', 'Todos los estratos', 'Protección y queratina', '85–90 %'],
+                ['Melanocito', 'Cresta neural', 'Basal', 'Melanina / fotoprotección (melanosomas)', '5–10 %'],
+                ['Langerhans', 'Médula ósea', 'Espinoso', 'Presentación de antígeno (inmunovigilancia)', '2–5 %'],
+                ['Merkel', 'Precursor epidérmico (según las diapositivas)', 'Basal', 'Mecanorreceptor de adaptación lenta', '<1 %'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: '★ Unidad melanoepidérmica',
+            content:
+              'Un melanocito abastece de melanina a ≈30–40 queratinocitos vecinos. La melanina se distribuye en los queratinocitos y forma una «sombrilla perinuclear» sobre el núcleo: absorbe la radiación ultravioleta y protege el ADN.',
+          },
+        ],
+      },
+      {
+        id: 'hpiel-6',
+        number: 6,
+        title: 'Unión dermoepidérmica y membrana basal',
+        keyTerms: ['desmosoma', 'hemidesmosoma', 'BP180', 'BP230', 'membrana basal'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Desmosoma vs hemidesmosoma',
+            left: {
+              title: 'Desmosoma',
+              items: ['Une queratinocito ↔ queratinocito.', 'Desmogleínas, desmocolinas y tonofilamentos.'],
+            },
+            right: {
+              title: 'Hemidesmosoma',
+              items: ['Une queratinocito basal ↔ membrana basal.', 'Integrinas y proteínas de anclaje (BP180, BP230).'],
+            },
+          },
+          {
+            type: 'paragraph',
+            content:
+              'La membrana basal de la unión dermoepidérmica presenta lámina lúcida y lámina densa (colágeno tipo IV) y fibrillas de anclaje (colágeno tipo VII) que la sujetan a la dermis. La dermis se organiza en papilar (superficial, papilas, nutre la epidermis) y reticular (profunda, conjuntivo denso, con folículos, glándulas sebáceas y sudoríparas); sus plexos vasculares sostienen la termorregulación. La celularidad detallada de la dermis se estudia con el tejido conectivo.',
+          },
+        ],
+      },
+      {
+        id: 'hpiel-7',
+        number: 7,
+        title: 'Correlaciones clínicas de la piel',
+        keyTerms: ['pénfigo vulgar', 'penfigoide ampolloso', 'vitíligo', 'albinismo', 'melanoma', 'ABCDE'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Pénfigo vulgar vs penfigoide ampolloso',
+            left: {
+              title: 'Pénfigo vulgar',
+              items: ['Anticuerpos anti-desmogleína 1/3 (desmosoma).', 'Se pierde adhesión queratinocito-queratinocito.', 'Ampolla INTRAepidérmica.'],
+            },
+            right: {
+              title: 'Penfigoide ampolloso',
+              items: ['Daño al hemidesmosoma (BP180/BP230).', 'Se separa la basal de la membrana basal.', 'Ampolla SUBepidérmica.'],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'Vitíligo vs albinismo',
+            left: {
+              title: 'Vitíligo',
+              items: ['Destrucción autoinmune de melanocitos.', 'Pérdida de pigmentación en las áreas afectadas.'],
+            },
+            right: {
+              title: 'Albinismo',
+              items: ['Melanocitos PRESENTES.', 'Deficiencia de tirosinasa → melanina disminuida.'],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Melanoma, psoriasis y quemaduras',
+            content:
+              'Melanoma: tumor del melanocito; se vuelve invasivo al atravesar la membrana basal y alcanzar vasos sanguíneos y linfáticos (mejor pronóstico si se detecta antes de cruzarla). Se valora con la regla ABCDE (Asimetría, Bordes, Color, Diámetro, Evolución) y el diagnóstico definitivo es por biopsia. Psoriasis: recambio acelerado (~7–10 días frente a las 4–6 semanas normales). Quemadura: la epidermis es avascular y no sangra; si alcanza la dermis (2.º grado) sí sangra.',
+          },
+        ],
+      },
+    ],
+  },
 ]
