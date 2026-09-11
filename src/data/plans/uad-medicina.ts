@@ -497,7 +497,7 @@ export const uadMedicina: Plan = {
           code: 'HS01006',
           hasLab: true,
           tags: ['celular'],
-          topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica', 'histologia-celula', 'histologia-epitelial', 'histologia-epitelial-polaridad'],
+          topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica', 'histologia-celula', 'histologia-epitelial', 'histologia-epitelial-polaridad', 'histologia-glandulas', 'histologia-epitelios-urinario', 'histologia-epitelios-respiratorio', 'histologia-piel'],
           content: {
             area: 'Ciencias Básicas',
             credits: 8,
@@ -523,16 +523,21 @@ export const uadMedicina: Plan = {
               },
               {
                 number: 2,
-                title: 'Tejido epitelial',
+                title: 'Tejido epitelial: glándulas, epitelios de órganos y piel',
                 estado: 'impartido',
-                topicIds: ['histologia-epitelial', 'histologia-epitelial-polaridad'],
+                topicIds: ['histologia-epitelial', 'histologia-epitelial-polaridad', 'histologia-glandulas', 'histologia-epitelios-urinario', 'histologia-epitelios-respiratorio', 'histologia-piel'],
                 temas: [
                   'Clase 1 (impartida): generalidades del epitelio y los 4 tejidos; clasificación por capas y forma; las cinco funciones; nutrición por difusión desde el corion y glándulas exo/endocrinas',
-                  'Clase 2 (impartida): polaridad celular (dominios apical, lateral y basal)',
-                  'Especializaciones apicales: microvellosidades, estereocilios y cilios (móviles 9+2 vs primarios/nodales 9+0)',
-                  'Medios de unión (occludens, adherente, desmosoma, nexos) y unión a la matriz (hemidesmosoma, contacto focal)',
-                  'Membrana basal (colágeno tipo IV) y glándulas: histogénesis, exo/endocrinas y mecanismos de secreción (merócrina/apócrina/holócrina/endócrina)',
-                  'Pendiente (siguiente clase): tejido conectivo',
+                  'Clase 2 (impartida): polaridad celular (dominios apical, lateral y basal); especializaciones apicales (microvellosidades, estereocilios, cilios 9+2 vs 9+0); medios de unión y membrana basal (colágeno tipo IV); glándulas (histogénesis, exo/endocrinas, mecanismos de secreción)',
+                  'Clase 3 (impartida): glándulas y regeneración — secreción regulada/constitutiva, los cuatro tipos (merócrina/apócrina/holócrina/citógena), clasificación (conducto, forma, nº de células, producto, ubicación), estroma/parénquima y células madre (modelo asimétrico/simétrico)',
+                  'Clase 3 (impartida): epitelios del aparato urinario — urotelio de transición (cálices menores → uretra proximal), células en paraguas, protección (uroplaquinas), cápsula de Bowman (parietal plano simple; podocitos), epitelios de la nefrona y barrera de filtración glomerular',
+                  'Clase 3 (impartida): epitelios del aparato respiratorio — cilíndrico pseudoestratificado ciliado con caliciformes, sistema mucociliar, células de Club; alvéolo (plano simple, neumocitos I y II, surfactante) y barrera hematogaseosa (~0.2 μm)',
+                  'Clase 4 (impartida): histología de la piel — epidermis (plano estratificado queratinizado), los cinco estratos B-E-G-L-C, las cuatro poblaciones celulares, unión dermoepidérmica (desmosoma vs hemidesmosoma) y clínica (pénfigo/penfigoide, vitíligo/albinismo, melanoma/ABCDE)',
+                  'Pendiente (siguiente semana): tejido conectivo',
+                ],
+                fuentes: [
+                  { title: 'Semana 2 · Clase 3 — Glándulas, urotelio, glomérulo y aparato respiratorio', file: 'Histologia I - Semana 2 - Clase 3.pdf', nota: 'Glándulas y regeneración; epitelios de órganos (urinario y respiratorio).' },
+                  { title: 'Semana 2 · Clase 4 — Histología de la piel', file: 'Histologia I - Semana 2 - Clase 4.pdf', nota: 'Epidermis, estratos, celularidad y unión dermoepidérmica; incluye 15 preguntas de repaso.' },
                 ],
               },
               {

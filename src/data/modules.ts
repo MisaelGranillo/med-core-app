@@ -149,9 +149,9 @@ export const modules: Module[] = [
     id: 'histologia-uad-s2',
     badge: 'UAD · Histología I — Semana 2',
     title: 'Histología: tejido epitelial',
-    subtitle: 'Epitelio: clasificación y funciones; polaridad, medios de unión, membrana basal y glándulas.',
+    subtitle: 'Epitelio, polaridad y uniones; glándulas y regeneración; epitelios de órganos (urinario y respiratorio) y piel.',
     emoji: '🔬',
-    topicIds: ['histologia-epitelial', 'histologia-epitelial-polaridad'],
+    topicIds: ['histologia-epitelial', 'histologia-epitelial-polaridad', 'histologia-glandulas', 'histologia-epitelios-urinario', 'histologia-epitelios-respiratorio', 'histologia-piel'],
   },
   {
     id: 'bioestadistica',
