@@ -525,7 +525,7 @@ export const uadMedicina: Plan = {
                 number: 2,
                 title: 'Tejido epitelial: glándulas, epitelios de órganos y piel',
                 estado: 'impartido',
-                topicIds: ['histologia-epitelial', 'histologia-epitelial-polaridad', 'histologia-glandulas', 'histologia-epitelios-urinario', 'histologia-epitelios-respiratorio', 'histologia-piel'],
+                topicIds: ['histologia-epitelial', 'histologia-epitelial-polaridad', 'histologia-glandulas', 'histologia-epitelios-urinario', 'histologia-epitelios-respiratorio', 'histologia-piel', 'histologia-repaso-s2'],
                 temas: [
                   'Clase 1 (impartida): generalidades del epitelio y los 4 tejidos; clasificación por capas y forma; las cinco funciones; nutrición por difusión desde el corion y glándulas exo/endocrinas',
                   'Clase 2 (impartida): polaridad celular (dominios apical, lateral y basal); especializaciones apicales (microvellosidades, estereocilios, cilios 9+2 vs 9+0); medios de unión y membrana basal (colágeno tipo IV); glándulas (histogénesis, exo/endocrinas, mecanismos de secreción)',
@@ -533,11 +533,13 @@ export const uadMedicina: Plan = {
                   'Clase 3 (impartida): epitelios del aparato urinario — urotelio de transición (cálices menores → uretra proximal), células en paraguas, protección (uroplaquinas), cápsula de Bowman (parietal plano simple; podocitos), epitelios de la nefrona y barrera de filtración glomerular',
                   'Clase 3 (impartida): epitelios del aparato respiratorio — cilíndrico pseudoestratificado ciliado con caliciformes, sistema mucociliar, células de Club; alvéolo (plano simple, neumocitos I y II, surfactante) y barrera hematogaseosa (~0.2 μm)',
                   'Clase 4 (impartida): histología de la piel — epidermis (plano estratificado queratinizado), los cinco estratos B-E-G-L-C, las cuatro poblaciones celulares, unión dermoepidérmica (desmosoma vs hemidesmosoma) y clínica (pénfigo/penfigoide, vitíligo/albinismo, melanoma/ABCDE)',
+                  'Clase 5 (impartida): repaso para el examen — identificación histológica de epitelios y caso clínico (síndrome de Kartagener). Examen: 30 preguntas de banco + 5 del caso clínico',
                   'Pendiente (siguiente semana): tejido conectivo',
                 ],
                 fuentes: [
                   { title: 'Semana 2 · Clase 3 — Glándulas, urotelio, glomérulo y aparato respiratorio', file: 'Histologia I - Semana 2 - Clase 3.pdf', nota: 'Glándulas y regeneración; epitelios de órganos (urinario y respiratorio).' },
                   { title: 'Semana 2 · Clase 4 — Histología de la piel', file: 'Histologia I - Semana 2 - Clase 4.pdf', nota: 'Epidermis, estratos, celularidad y unión dermoepidérmica; incluye 15 preguntas de repaso.' },
+                  { title: 'Semana 2 · Clase 5 — Repaso para el examen (identificación de epitelios y caso Kartagener)', file: 'Histologia I - Semana 2 - Clase 5.pdf', nota: 'Repaso previo al examen; solo diapositivas de identificación.' },
                 ],
               },
               {

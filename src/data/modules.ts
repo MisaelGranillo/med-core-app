@@ -146,6 +146,14 @@ export const modules: Module[] = [
     topicIds: ['histologia-repaso-s1'],
   },
   {
+    id: 'histologia-uad-repaso-s2',
+    badge: 'UAD · Histología I — Repaso',
+    title: 'Repaso para el examen — Semana 2',
+    subtitle: 'Banco tipo examen: identificación de epitelios y caso clínico.',
+    emoji: '📝',
+    topicIds: ['histologia-repaso-s2'],
+  },
+  {
     id: 'histologia-uad-s2',
     badge: 'UAD · Histología I — Semana 2',
     title: 'Histología: tejido epitelial',
