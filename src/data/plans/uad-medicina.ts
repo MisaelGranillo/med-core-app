@@ -576,6 +576,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 2 · Clase 2 — Polaridad celular, uniones y glándulas', file: 'Histologia 2 - Semana 2 - Clase 2 Polaridad y Glandulas.pdf', kind: 'Clase' },
             ],
             recursos: [
+              { label: 'Infografías — Histología Semana 2 (epitelios, uniones, glándulas, órganos, piel) · PDF', url: '/descargas/histologia-semana-2-infografias.pdf' },
               { label: 'Acland Anatomy', url: 'https://aclandanatomy.com/' },
               { label: 'Bates Visual Guide', url: 'https://batesvisualguide.com/' },
               { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },
