@@ -1804,4 +1804,97 @@ export const histologiaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'histologia-repaso-s2',
+    title: 'Repaso para el examen — Semana 2',
+    subtitle: 'Banco tipo examen: identificación de epitelios y caso clínico',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '📝',
+    keyPoints: [
+      'El examen es PURAMENTE histológico (identificar epitelios): 30 preguntas de banco aleatorio + 5 del caso clínico = 35.',
+      'Plano simple → cápsula de Bowman (hoja parietal), alvéolos y vasos. Un capilar se distingue por los eritrocitos atrapados en la luz; neumocito II abombado vs I aplanado.',
+      'Cúbico simple → conductos (colectores renales, ovillos sudoríparos) y glándulas (folículos tiroideos). Cilíndrico simple → vesícula biliar; intestino delgado (borde en cepillo + caliciformes) vs estómago (foveolas, SIN caliciformes).',
+      'Plano estratificado QUERATINIZADO → piel y lengua; NO queratinizado → esófago y endocérvix (las células superficiales conservan núcleo).',
+      'Urotelio (transición) → de cálices menores a uretra proximal; células en paraguas superficiales, abombadas y BINUCLEADAS; parece adelgazarse al distenderse (las células se deslizan).',
+      'Tráquea → cilíndrico pseudoestratificado ciliado con caliciformes; cilio móvil = axonema 9+2 con dineína.',
+      'Caso Kartagener (discinesia ciliar primaria): ausencia de los brazos de dineína → cilios inmóviles → bronquiectasias y sinusitis; situs inversus por alteración de los cilios nodales embrionarios.',
+    ],
+    sections: [
+      {
+        id: 'hrep2-1',
+        number: 1,
+        title: 'Cómo usar este repaso',
+        keyTerms: ['repaso', 'examen', 'identificación'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Es repaso — banco tipo examen',
+            content:
+              'No es contenido nuevo: la Clase 5 fue un repaso previo al examen con ejercicios de identificación al microscopio. El examen es PURAMENTE histológico (reconocer epitelios) y consta de 30 preguntas de banco aleatorio + 5 del caso clínico (síndrome de Kartagener) = 35. Cada tema se estudia a fondo en sus topics de Semana 2 (glándulas, epitelios del aparato urinario y respiratorio, y piel).',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: '★ Estrategia de examen',
+            content:
+              'Lee el caso clínico con calma (2–3 veces): todas las preguntas apuntan a temas de histología ya vistos, no a medicina avanzada, así que no busques definiciones más complejas. En opción múltiple, primero descarta los dos distractores obvios y decide entre los dos que quedan. Ubícate siempre en la capa basal y sigue el epitelio hacia la superficie.',
+          },
+        ],
+      },
+      {
+        id: 'hrep2-2',
+        number: 2,
+        title: 'Lo evaluable, agrupado (identificación de epitelios)',
+        keyTerms: ['plano simple', 'cúbico simple', 'cilíndrico simple', 'estratificado', 'transición', 'pseudoestratificado'],
+        blocks: [
+          {
+            type: 'table',
+            title: '★ Asociaciones de alto rendimiento',
+            data: {
+              headers: ['Epitelio', 'Dónde / cómo se identifica'],
+              rows: [
+                ['Plano simple', 'Cápsula de Bowman (hoja parietal), alvéolos y vasos. Capilar = eritrocitos en la luz; neumocito II abombado vs I aplanado; macrófago alveolar = célula grande en la luz.'],
+                ['Cúbico simple', 'Conductos colectores renales, folículos tiroideos (con coloide) y ovillos de glándulas sudoríparas (luz reducida). Regla: cúbico → conductos/glándulas.'],
+                ['Cilíndrico simple', 'Vesícula biliar; intestino delgado (borde en cepillo + caliciformes); estómago (foveolas, SIN caliciformes, secreta moco por sus conductos).'],
+                ['Plano estratificado queratinizado', 'Piel (estrato córneo anucleado, aspecto asalmonelado) y lengua (botones gustativos).'],
+                ['Plano estratificado no queratinizado', 'Esófago y endocérvix; las células superficiales conservan el núcleo (mucosa húmeda, sin estrato córneo).'],
+                ['Cúbico estratificado', 'Dos hileras de células cúbicas: conductos de glándulas sudoríparas y grandes conductos exocrinos; transición anorrectal (línea pectínea).'],
+                ['Transición (urotelio)', 'De cálices menores a uretra proximal; células en paraguas superficiales, abombadas y binucleadas; parece adelgazarse al distenderse.'],
+                ['Cilíndrico pseudoestratificado ciliado', 'Tráquea y bronquios: todas las células tocan la MB, no todas llegan a la superficie; con caliciformes. Cilio móvil = axonema 9+2 con dineína.'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: '★ Dos que se anunciaron como probables',
+            content:
+              'Hallazgo frecuente de las células en paraguas del urotelio = son BINUCLEADAS. Sitio donde INICIA el urotelio = los cálices menores (renales).',
+          },
+        ],
+      },
+      {
+        id: 'hrep2-3',
+        number: 3,
+        title: 'Caso clínico — síndrome de Kartagener',
+        keyTerms: ['discinesia ciliar primaria', 'dineína', 'situs inversus', 'cilios nodales'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Enunciado del caso (5 preguntas)',
+            content:
+              'Hombre de 24 años, no fumador, sin exposición ocupacional, con tos productiva crónica y expectoración mucopurulenta de años de evolución; infecciones respiratorias y sinusitis de repetición desde la infancia, pólipos nasales e infertilidad primaria. Radiografía: dextrocardia. TC: bronquiectasias de predominio en lóbulos inferiores. Espermograma: espermatozoides de morfología normal pero INMÓVILES. La MET del axonema muestra 9 dobletes periféricos + par central conservados, con AUSENCIA de los brazos interno y externo de dineína.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: '★ Claves del caso',
+            content:
+              'Diagnóstico: discinesia ciliar primaria (síndrome de Kartagener). El déficit de brazos de dineína deja los cilios inmóviles → falla del transporte mucociliar → infecciones y bronquiectasias. El situs inversus se explica por alteración de los cilios NODALES embrionarios, que establecen el eje izquierda-derecha. Tríada clásica: situs inversus + bronquiectasias + sinusitis. (En el caso NO hay metaplasia: es un distractor.)',
+          },
+        ],
+      },
+    ],
+  },
 ]
