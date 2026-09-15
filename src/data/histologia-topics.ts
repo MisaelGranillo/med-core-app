@@ -1897,4 +1897,315 @@ export const histologiaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'histologia-conectivo-matriz',
+    title: 'Tejido conectivo: matriz, fibras y colágenos',
+    subtitle: 'MEC vs células, clasificación, funciones, fibras y los colágenos I–VII',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🔬',
+    keyPoints: [
+      'El conectivo es el tejido de SOSTÉN: a diferencia del epitelio (donde mandan las células), aquí predomina la MATRIZ EXTRACELULAR (MEC) sobre las células.',
+      'Nueva estrategia de lectura: MEC → fibras → células → organización → función (en epitelio era forma celular → capas → especializaciones).',
+      'Clasificación: embrionario (mesénquima), propiamente dicho y especializado (hueso, cartílago, adiposo, sangre).',
+      'Cuatro funciones: soporte (tendón de Aquiles ↔ colágeno I), intercambio (vaso → MEC → célula), defensa (macrófagos, mastocitos, linfocitos, plasmocitos) y depósito de grasa (adipocitos → triglicéridos).',
+      'MEC = fibras + sustancia fundamental + líquido + proteoglucanos; su composición define las propiedades mecánicas.',
+      'Tres fibras: colágenas, elásticas y reticulares. El colágeno es la proteína MÁS abundante (~30 % de la proteína corporal, >28 tipos).',
+      'Colágenos clave: I tracción (hueso, dentina, cemento, cicatriz), II cartílago, III reticular (hígado, vasos, granulación), IV lámina densa de la membrana basal, V placenta, VII anclaje (unión dermoepidérmica).',
+    ],
+    sections: [
+      {
+        id: 'hcon-1',
+        number: 1,
+        title: 'Idea central: conectivo vs epitelio',
+        keyTerms: ['tejido conectivo', 'matriz extracelular', 'sostén'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El tejido conectivo es el tejido de sostén del organismo. Su diferencia clave con el epitelio es de proporción: en el epitelio las células son el elemento principal, mientras que en el conectivo lo es la MATRIZ EXTRACELULAR (MEC). Ya se vio un conectivo en «Histología de la piel» (la dermis) y su interfaz con el epitelio en «Polaridad celular epitelial» (membrana basal, colágeno IV); aquí se desarrolla el tejido en sí.',
+          },
+          {
+            type: 'note',
+            title: 'Regla inicial',
+            content: 'Epitelio → las CÉLULAS como elemento principal. Conectivo → la MATRIZ EXTRACELULAR como elemento principal.',
+          },
+        ],
+      },
+      {
+        id: 'hcon-2',
+        number: 2,
+        title: 'Clasificación general',
+        keyTerms: ['embrionario', 'propiamente dicho', 'especializado', 'mesénquima'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Tres grandes grupos',
+            items: [
+              'Embrionario: mesénquima.',
+              'Propiamente dicho: el que empieza a estudiarse en esta clase.',
+              'Especializado: hueso, cartílago, tejido adiposo y sangre (temas de clases siguientes).',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'hcon-3',
+        number: 3,
+        title: 'Funciones del tejido conectivo',
+        keyTerms: ['soporte', 'intercambio', 'defensa', 'depósito de grasa'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Las cuatro funciones',
+            data: {
+              headers: ['Función', 'En qué consiste', 'Ejemplo'],
+              rows: [
+                ['Soporte estructural', 'Andamiaje que mantiene órganos y tejidos', 'Tendón de Aquiles (colágeno I organizado para resistir la tracción)'],
+                ['Medio de intercambio', 'Los nutrientes pasan del vaso a la célula a través de la MEC', 'Vaso → MEC → célula'],
+                ['Defensa y protección', 'Aloja células inmunitarias', 'Macrófagos, mastocitos, linfocitos, plasmocitos'],
+                ['Depósito de grasa', 'Reserva de energía', 'Adipocitos → triglicéridos'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hcon-4',
+        number: 4,
+        title: 'Matriz extracelular y fibras',
+        keyTerms: ['MEC', 'sustancia fundamental', 'proteoglucanos', 'fibras colágenas', 'fibras elásticas', 'fibras reticulares'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Componentes de la MEC',
+            items: [
+              'Fibras (colágenas, elásticas, reticulares).',
+              'Sustancia fundamental.',
+              'Líquido.',
+              'Proteoglucanos y otras macromoléculas.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content:
+              'La composición de la MEC determina las propiedades mecánicas del tejido. Las fibras son de tres tipos —colágenas, elásticas y reticulares— y el objetivo ahora es entrenar el ojo para reconocerlas, sin depender solo de la forma celular.',
+          },
+        ],
+      },
+      {
+        id: 'hcon-5',
+        number: 5,
+        title: 'Colágeno: tipos I–VII',
+        keyTerms: ['colágeno', 'tracción', 'cartílago', 'reticular', 'lámina densa', 'anclaje'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El colágeno es la proteína MÁS abundante del cuerpo (~30 % de la proteína corporal). Existen más de 28 tipos; esta semana se enfatizan seis.',
+          },
+          {
+            type: 'table',
+            title: 'Los colágenos que se enfatizan',
+            data: {
+              headers: ['Tipo', 'Dónde / asociación', 'Clave'],
+              rows: [
+                ['I', 'Conectivo, hueso, dentina, cemento, cicatriz', 'Tracción (el más abundante)'],
+                ['II', 'Cartílago hialino y elástico', 'Cartílago'],
+                ['III', 'Fibras reticulares; hígado y vasos', 'Red / granulación'],
+                ['IV', 'Lámina densa de la membrana basal', 'Lámina'],
+                ['V', 'Placenta', 'Placenta'],
+                ['VII', 'Une la lámina basal con la reticular (unión dermoepidérmica)', 'Anclaje'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Colágenos y MEC en la clínica',
+            content:
+              'Colágeno I → osteogénesis imperfecta (huesos frágiles). Colágeno III → aparece primero en la reparación y forma el tejido de granulación. Colágeno VII → epidermólisis ampollosa (falla el anclaje dermoepidérmico). Fibrilina/MEC → síndrome de Marfan. La cirrosis es fibrosis: acúmulo de colágeno que sustituye al tejido funcional.',
+          },
+        ],
+      },
+      {
+        id: 'hcon-6',
+        number: 6,
+        title: 'Cómo identificar el conectivo al microscopio',
+        keyTerms: ['algoritmo', 'identificación'],
+        blocks: [
+          {
+            type: 'note',
+            title: 'Algoritmo de identificación',
+            content:
+              '1) ¿Cuánta matriz extracelular hay? → 2) ¿Qué fibras predominan? → 3) ¿Cómo se organizan? → 4) ¿Qué células aparecen? → 5) ¿Cuál es la función mecánica o biológica? → 6) ¿Qué tejido puede ser? En conectivo se empieza por la MATRIZ, no por la forma celular.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'histologia-conectivo-celulas',
+    title: 'Células del tejido conectivo',
+    subtitle: 'Células fijas y móviles: fibroblasto, adipocito, pericito, mastocito, macrófago y leucocitos',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🔬',
+    keyPoints: [
+      'FIJAS (residentes): fibroblasto, adipocito, pericito, mastocito y macrófago. MÓVILES (llegan de la sangre): plasmocito, linfocito, neutrófilo, eosinófilo, basófilo y monocito. El macrófago aparece en ambas según su origen.',
+      'Fibroblasto: la célula más abundante; SINTETIZA la MEC (colágeno, elastina, sustancia fundamental); fusiforme, RER abundante, Golgi desarrollado. El miofibroblasto participa en la cicatrización.',
+      'Adipocito: almacena TRIGLICÉRIDOS y es endocrino (leptina); se ve como una gran gota lipídica clara con el núcleo desplazado a la periferia. Se distingue del folículo tiroideo (que tiene luz + coloide + epitelio).',
+      'Pericito: rodea los capilares; regula el flujo y da soporte microvascular (tiene actina/miosina).',
+      'Mastocito: gránulos metacromáticos; libera histamina y heparina; inflamación e hipersensibilidad inmediata.',
+      'Macrófago: fagocitosis y presentación de antígenos; núcleo excéntrico (arriñonado), lisosomas. Sistema fagocítico mononuclear: monoblasto → monocito → (tejido) → macrófago; especializados: Kupffer (hígado), alveolares (pulmón), microglía (SNC).',
+      'Plasmocito: deriva del linfocito B, produce anticuerpos; núcleo excéntrico "en rueda de carro"; vive 2–3 semanas.',
+    ],
+    sections: [
+      {
+        id: 'hctc-1',
+        number: 1,
+        title: 'Células fijas vs móviles',
+        keyTerms: ['células fijas', 'células móviles', 'residentes'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos grandes grupos',
+            left: {
+              title: 'Fijas (residentes)',
+              items: ['Fibroblasto', 'Adipocito', 'Pericito', 'Mastocito', 'Macrófago'],
+            },
+            right: {
+              title: 'Móviles (llegan de la sangre)',
+              items: ['Plasmocito', 'Linfocito', 'Neutrófilo', 'Eosinófilo', 'Basófilo', 'Monocito'],
+            },
+          },
+          {
+            type: 'note',
+            title: 'El macrófago está en ambas',
+            content: 'El macrófago aparece en las dos categorías: el monocito circulante (móvil) migra al tejido y se convierte en macrófago (residente). Es la relación monocito ↔ macrófago.',
+          },
+        ],
+      },
+      {
+        id: 'hctc-2',
+        number: 2,
+        title: 'Fibroblasto',
+        keyTerms: ['fibroblasto', 'MEC', 'miofibroblasto'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El fibroblasto es la célula más abundante y difundida del conectivo, y su función es SINTETIZAR la MEC: colágeno, elastina y sustancia fundamental. Es fusiforme, de núcleo elongado, citoplasma pálido, con RER abundante y Golgi desarrollado (activo cuando fabrica colágeno). El MIOFIBROBLASTO, con capacidad contráctil, participa en la cicatrización de heridas.',
+          },
+        ],
+      },
+      {
+        id: 'hctc-3',
+        number: 3,
+        title: 'Adipocito',
+        keyTerms: ['adipocito', 'triglicéridos', 'leptina', 'gota lipídica'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El adipocito almacena energía como TRIGLICÉRIDOS y cumple funciones de reserva, aislamiento térmico, protección mecánica y endocrina (produce adipocinas como la LEPTINA). Al microscopio se ve como un gran espacio claro (la gota lipídica se pierde en el procesamiento) con el núcleo desplazado a la periferia.',
+          },
+          {
+            type: 'comparison',
+            title: 'Adipocito vs folículo tiroideo (no confundir)',
+            left: {
+              title: 'Adipocito',
+              items: ['Gran gota lipídica (espacio claro).', 'Núcleo periférico.', 'Sin epitelio que forme un folículo.'],
+            },
+            right: {
+              title: 'Folículo tiroideo',
+              items: ['Luz con coloide (acidófilo).', 'Rodeado de epitelio cúbico.', 'Es una glándula, no un depósito.'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hctc-4',
+        number: 4,
+        title: 'Pericito y mastocito',
+        keyTerms: ['pericito', 'mastocito', 'gránulos metacromáticos', 'histamina'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El PERICITO deriva de células mesenquimatosas indiferenciadas, rodea parcialmente el endotelio de los capilares y regula el flujo sanguíneo y el soporte microvascular (contiene actina, miosina y tropomiosina). El MASTOCITO es una célula residente ovoide de núcleo central, con el citoplasma lleno de GRÁNULOS METACROMÁTICOS; libera histamina y heparina y participa en la inflamación y la hipersensibilidad inmediata. Regla: muchos gránulos metacromáticos = mastocito.',
+          },
+        ],
+      },
+      {
+        id: 'hctc-5',
+        number: 5,
+        title: 'Macrófago y sistema fagocítico mononuclear',
+        keyTerms: ['macrófago', 'sistema fagocítico mononuclear', 'Kupffer', 'microglía'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El macrófago hace fagocitosis, elimina desechos y microorganismos y presenta antígenos. Mide 10–30 μm, de forma irregular, con núcleo excéntrico semejante a un riñón, RER abundante, Golgi desarrollado y lisosomas numerosos.',
+          },
+          {
+            type: 'steps',
+            title: 'Sistema fagocítico mononuclear',
+            steps: [
+              'Célula madre hematopoyética.',
+              'Monoblasto.',
+              'Monocito (circula en sangre).',
+              'Migra al tejido.',
+              'Macrófago (residente).',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Macrófagos especializados',
+            content: 'Células de Kupffer → hígado. Macrófagos alveolares (células de polvo) → pulmón. Microglía → sistema nervioso central. En la inflamación crónica aparecen células epitelioides y células gigantes.',
+          },
+        ],
+      },
+      {
+        id: 'hctc-6',
+        number: 6,
+        title: 'Células móviles y tabla de estudio',
+        keyTerms: ['plasmocito', 'linfocito', 'neutrófilo', 'eosinófilo', 'basófilo', 'monocito'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El PLASMOCITO deriva del linfocito B y produce anticuerpos; su núcleo excéntrico muestra la heterocromatina "en rueda de carro" y vive 2–3 semanas. Los demás leucocitos: neutrófilo (primer respondedor, defensa bacteriana), eosinófilo (parásitos y alergias), basófilo (alergia; histamina/heparina), linfocito (inmunidad adaptativa) y monocito (precursor del macrófago tisular).',
+          },
+          {
+            type: 'table',
+            title: 'Tabla de estudio de células',
+            data: {
+              headers: ['Célula', 'Clasificación', 'Función', 'Rasgo clave'],
+              rows: [
+                ['Fibroblasto', 'Fija', 'Sintetiza la MEC', 'Fusiforme, RER abundante'],
+                ['Adipocito', 'Fija', 'Almacena triglicéridos', 'Gran gota lipídica, núcleo periférico'],
+                ['Pericito', 'Fija', 'Soporte/regulación capilar', 'Rodea capilares'],
+                ['Mastocito', 'Fija', 'Inflamación/alergia', 'Gránulos metacromáticos'],
+                ['Macrófago', 'Fija/móvil', 'Fagocitosis, presenta antígenos', 'Núcleo excéntrico + lisosomas'],
+                ['Plasmocito', 'Móvil', 'Anticuerpos', 'Núcleo "en rueda de carro"'],
+                ['Linfocito', 'Móvil', 'Inmunidad adaptativa', 'Célula inmunitaria'],
+                ['Neutrófilo', 'Móvil', 'Fagocitosis bacteriana', 'Primer respondedor (inflamación aguda)'],
+                ['Eosinófilo', 'Móvil', 'Parásitos/alergias', 'Defensa antiparasitaria'],
+                ['Basófilo', 'Móvil', 'Alergia', 'Histamina/heparina'],
+                ['Monocito', 'Móvil', 'Precursor del macrófago', 'Circula en sangre'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Células del conectivo en la clínica',
+            content:
+              'Pericitos → retinopatía diabética (su pérdida daña la microvasculatura) y angiogénesis tumoral. Obesidad → hipertrofia de adipocitos. Cicatrización → fibroblastos y miofibroblastos que depositan y contraen la MEC.',
+          },
+        ],
+      },
+    ],
+  },
 ]
