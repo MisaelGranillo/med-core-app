@@ -130,6 +130,14 @@ export const modules: Module[] = [
     topicIds: ['genetica-repaso-s2'],
   },
   {
+    id: 'genetica-uad-s3',
+    badge: 'UAD · Genética Básica — Semana 3',
+    title: 'Genética: bases cromosómicas y ciclo celular',
+    subtitle: 'Bases cromosómicas de la herencia, cariotipo y bandeo; el ciclo celular (interfase).',
+    emoji: '🧬',
+    topicIds: ['genetica-cromosomas-herencia', 'genetica-ciclo-celular'],
+  },
+  {
     id: 'histologia-uad-s1',
     badge: 'UAD · Histología I — Semana 1',
     title: 'Histología: célula, microscopía y técnica',
@@ -152,6 +160,14 @@ export const modules: Module[] = [
     subtitle: 'Banco tipo examen: identificación de epitelios y caso clínico.',
     emoji: '📝',
     topicIds: ['histologia-repaso-s2'],
+  },
+  {
+    id: 'histologia-uad-s3',
+    badge: 'UAD · Histología I — Semana 3',
+    title: 'Histología: tejido conectivo',
+    subtitle: 'Matriz, fibras y colágenos; células fijas y móviles.',
+    emoji: '🔬',
+    topicIds: ['histologia-conectivo-matriz', 'histologia-conectivo-celulas'],
   },
   {
     id: 'histologia-uad-s2',
