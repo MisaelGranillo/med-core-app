@@ -969,4 +969,296 @@ export const geneticaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'genetica-cromosomas-herencia',
+    title: 'Bases cromosómicas de la herencia, cariotipo y bandeo',
+    subtitle: 'Teoría cromosómica, homólogos, cromatina/cromátida, cariograma y bandeo',
+    colorKey: 'genetica',
+    categoria: 'Genética',
+    emoji: '🧬',
+    keyPoints: [
+      'Teoría cromosómica: genes ↔ ADN ↔ cromosomas ↔ herencia. Los genes son segmentos de ADN en posiciones específicas (LOCI); conecta las leyes de Mendel con el comportamiento de los cromosomas.',
+      '46 cromosomas = 23 pares homólogos (uno materno + uno paterno): 22 autosomas + 1 par sexual (XX/XY). El homólogo sano sirve de molde en la reparación homóloga.',
+      'CROMATINA = material genético menos condensado; CROMÁTIDA = una copia de un cromosoma duplicado. HOMÓLOGOS = mismo par (materno+paterno); CROMÁTIDAS HERMANAS = copias idénticas unidas por el centrómero.',
+      'CARIOTIPO = conjunto de características cromosómicas de la especie; CARIOGRAMA = su representación gráfica ordenada por pares (por tamaño).',
+      'Bandeo: G (Giemsa+tripsina, el MÁS usado), Q (quinacrina, fluorescencia), R (patrón inverso, regiones terminales), T (telómeros), C (centrómero/heterocromatina). Alta resolución ~550–650 bandas.',
+      'Nomenclatura del locus 7q31.2 → 7 (cromosoma) · q (brazo largo) · 31.2 (región y sub-banda). Recordar: p = brazo corto, q = brazo largo.',
+      'El cariotipo detecta número, forma y anomalías cromosómicas (p. ej. trisomía 21); las células se obtienen por cultivo o por amniocentesis.',
+    ],
+    sections: [
+      {
+        id: 'gher-1',
+        number: 1,
+        title: 'Teoría cromosómica de la herencia',
+        keyTerms: ['teoría cromosómica', 'gen', 'locus', 'herencia'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La teoría cromosómica de la herencia relaciona genes ↔ ADN ↔ cromosomas ↔ herencia: los genes son segmentos de ADN localizados en posiciones específicas (LOCI) de los cromosomas. Así se conectan los patrones descritos por Mendel (ver «Leyes de Mendel») con el comportamiento de los cromosomas durante la división celular. La secuencia es: cromosoma → cromatina → ADN → genes.',
+          },
+        ],
+      },
+      {
+        id: 'gher-2',
+        number: 2,
+        title: 'Cromosomas homólogos',
+        keyTerms: ['homólogos', 'autosomas', 'par sexual', 'reparación homóloga'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Los cromosomas se organizan en pares homólogos: 46 = 23 pares, cada par con un cromosoma materno y uno paterno. Los primeros 22 pares son AUTOSOMAS y el par 23 es el sexual (XX o XY). Como los homólogos llevan la misma información, el homólogo sano puede servir de molde para reparar el ADN por recombinación homóloga (ver «Reparación del ADN»). Ya se vio el empaquetamiento y la clasificación de los cromosomas en «Cromosomas y cariotipo»; aquí se profundiza en la herencia, el cariograma y el bandeo.',
+          },
+        ],
+      },
+      {
+        id: 'gher-3',
+        number: 3,
+        title: 'Dos parejas que se confunden',
+        keyTerms: ['cromatina', 'cromátida', 'cromátidas hermanas'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Cromatina vs cromátida',
+            left: {
+              title: 'Cromatina',
+              items: ['Material genético MENOS condensado.', 'Estado habitual en el núcleo en interfase.'],
+            },
+            right: {
+              title: 'Cromátida',
+              items: ['Una de las dos copias de un cromosoma duplicado.', 'Las cromátidas hermanas se unen por el centrómero.'],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'Homólogos vs cromátidas hermanas',
+            left: {
+              title: 'Cromosomas homólogos',
+              items: ['Mismo par: uno materno + uno paterno.', 'Llevan los mismos genes (alelos que pueden diferir).'],
+            },
+            right: {
+              title: 'Cromátidas hermanas',
+              items: ['Copias IDÉNTICAS de un cromosoma duplicado.', 'Resultado de la replicación en fase S.'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'gher-4',
+        number: 4,
+        title: 'Cariotipo vs cariograma',
+        keyTerms: ['cariotipo', 'cariograma'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'No son lo mismo',
+            left: {
+              title: 'Cariotipo',
+              items: ['Conjunto de características cromosómicas de la especie.', 'En humanos: 46 = 23 pares (22 autosómicos + 1 sexual).'],
+            },
+            right: {
+              title: 'Cariograma',
+              items: ['Representación gráfica de los cromosomas.', 'Ordenados por pares, según el tamaño.'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'gher-5',
+        number: 5,
+        title: 'Bandeo cromosómico y nomenclatura del locus',
+        keyTerms: ['bandeo G', 'Giemsa', 'quinacrina', 'locus', '7q31.2'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Tipos de bandeo',
+            data: {
+              headers: ['Bandeo', 'Técnica / patrón', 'Utilidad'],
+              rows: [
+                ['G', 'Giemsa + tripsina; bandas claras/oscuras', 'Identificación general; el MÁS usado'],
+                ['Q', 'Quinacrina; microscopía de fluorescencia', 'Bandas brillantes/opacas'],
+                ['R', 'Patrón inverso al G/Q', 'Regiones terminales'],
+                ['T', 'Resalta telómeros', 'Regiones teloméricas'],
+                ['C', 'Resalta centrómero y heterocromatina', 'Centrómero/heterocromatina'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Nomenclatura del locus (7q31.2) y resolución',
+            content: '7q31.2 = cromosoma 7 · brazo largo (q) · región 31, sub-banda 2. Recordar: p = brazo corto, q = brazo largo. El bandeo de alta resolución alcanza ~550–650 bandas (más detalle para ubicar regiones).',
+          },
+        ],
+      },
+      {
+        id: 'gher-6',
+        number: 6,
+        title: 'Utilidad clínica del cariotipo',
+        keyTerms: ['trisomía 21', 'cultivo', 'amniocentesis'],
+        blocks: [
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Qué permite estudiar el cariotipo',
+            content:
+              'El cariotipo permite ver el número y la forma de los cromosomas y detectar anomalías numéricas y estructurales, como la TRISOMÍA 21 (síndrome de Down). Las células se obtienen por cultivo celular (se reproducen, se tiñen, se fotografían y se ordenan por pares) o por AMNIOCENTESIS (líquido amniótico extraído con aguja fina guiada por ultrasonido) para estudios prenatales.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'genetica-ciclo-celular',
+    title: 'El ciclo celular: interfase',
+    subtitle: 'Interfase (G1, S, G2), diploide/haploide, puntos de control y citocinesis',
+    colorKey: 'genetica',
+    categoria: 'Genética',
+    emoji: '🧬',
+    keyPoints: [
+      'Ciclo celular = INTERFASE (G1 + S + G2) + fase M. La interfase prepara y duplica; en M ocurre la división.',
+      'DIPLOIDE 2n = 46 (células somáticas, homólogos, producto de mitosis → 2 hijas) vs HAPLOIDE n = 23 (gametos, producto de meiosis → 4 hijas). Óvulo 23 + espermatozoide 23 → cigoto 46.',
+      'G1 (6–12 h): crecimiento, síntesis de proteínas, ATP e inicio de la duplicación de centrosomas. Destinos: seguir a S, G0/quiescencia, senescencia o apoptosis.',
+      'Puntos de control (G1 y G2): daño → detención → reparación → si no se repara, apoptosis. Las CDK + ciclinas regulan la progresión por FOSFORILACIÓN.',
+      'Fase S (6–8 h): REPLICACIÓN del ADN (cada cadena es molde; se necesitan cebadores/primers) + duplicación del centrosoma.',
+      'Fase G2 (~4 h): crecimiento final, verificación de la replicación y preparación de centrosomas; checkpoint con p53 antes de entrar a M.',
+      'Citocinesis = división del citoplasma. La interfase dura ≈ 24 h (máximos 12+8+4); no incluye la fase M.',
+    ],
+    sections: [
+      {
+        id: 'gcic-1',
+        number: 1,
+        title: 'Concepto: interfase + fase M',
+        keyTerms: ['ciclo celular', 'interfase', 'fase M'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El ciclo celular es la secuencia por la que una célula crece, duplica su material genético, se prepara y se divide. Se divide en INTERFASE (G1 + S + G2) y fase M (división). Esta clase desarrolla la interfase.',
+          },
+          {
+            type: 'note',
+            title: 'Adelanto',
+            content: 'La mitosis y la meiosis se ven en la siguiente clase; aquí no se desarrollan. Conviene dominar primero G1 → S → G2 → M.',
+          },
+        ],
+      },
+      {
+        id: 'gcic-2',
+        number: 2,
+        title: 'Diploide vs haploide',
+        keyTerms: ['diploide', 'haploide', '2n', 'n', 'cigoto'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: '2n vs n',
+            left: {
+              title: 'Diploide (2n = 46)',
+              items: ['Células somáticas, con homólogos.', 'Producto de la mitosis.', 'La mitosis produce 2 células hijas.'],
+            },
+            right: {
+              title: 'Haploide (n = 23)',
+              items: ['Gametos (mitad de la carga).', 'Producto de la meiosis.', 'La meiosis produce 4 células hijas.'],
+            },
+          },
+          {
+            type: 'paragraph',
+            content:
+              'Los gametos son haploides para que, al unirse, se restablezca la diploidía: óvulo 23 + espermatozoide 23 → cigoto 46.',
+          },
+        ],
+      },
+      {
+        id: 'gcic-3',
+        number: 3,
+        title: 'Fase G1 y destinos de la célula',
+        keyTerms: ['G1', 'G0', 'quiescencia', 'senescencia', 'apoptosis'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'G1 (6–12 h) es sobre todo de preparación: crecimiento, síntesis de proteínas, acumulación de ATP, preparación para replicar el ADN e inicio de la duplicación de los centrosomas. Desde G1 la célula puede tomar distintos caminos.',
+          },
+          {
+            type: 'list',
+            title: 'Destinos posibles desde G1',
+            items: [
+              'Continuar hacia la fase S.',
+              'G0 / quiescencia: reposo, viva pero sin dividirse.',
+              'Senescencia: deja de dividirse (envejecimiento celular).',
+              'Apoptosis: muerte celular programada.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'gcic-4',
+        number: 4,
+        title: 'Puntos de control: CDK, ciclinas y fosforilación',
+        keyTerms: ['puntos de control', 'CDK', 'ciclinas', 'fosforilación'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'En G1 y G2 hay puntos de control que deciden si la célula avanza: ante un daño importante, se detiene → repara → y si no puede repararse, entra en apoptosis. La progresión la regulan las CDK (quinasas dependientes de ciclinas) junto con las ciclinas, mediante fosforilación (no hace falta memorizar CDK2/CDK4).',
+          },
+          {
+            type: 'note',
+            title: 'Fosforilación',
+            content: 'Es la adición de un grupo fosfato a una proteína; puede activarla o inactivarla. Es el mecanismo con que las CDK+ciclinas controlan el avance del ciclo.',
+          },
+        ],
+      },
+      {
+        id: 'gcic-5',
+        number: 5,
+        title: 'Fase S: replicación del ADN',
+        keyTerms: ['fase S', 'replicación', 'cebadores', 'primers', 'centrosoma'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La fase S (síntesis, 6–8 h) es donde se REPLICA el ADN: las cadenas se separan, cada una sirve de molde y se añaden nucleótidos complementarios; para iniciar cada cadena nueva se necesitan pequeños fragmentos llamados cebadores (primers). En S también se duplica el centrosoma, que después organizará el huso mitótico.',
+          },
+        ],
+      },
+      {
+        id: 'gcic-6',
+        number: 6,
+        title: 'Fase G2, citocinesis y tiempos',
+        keyTerms: ['G2', 'p53', 'citocinesis', 'interfase'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'G2 (~4 h) es la preparación final antes de M: crecimiento, verificación de que el ADN se replicó bien, preparación de los centrosomas y acumulación de energía; su checkpoint destaca a p53 ante el daño. La CITOCINESIS es la división del citoplasma que separa físicamente las células hijas tras la división nuclear.',
+          },
+          {
+            type: 'table',
+            title: 'Interfase: fases y tiempos',
+            data: {
+              headers: ['Fase', 'Función principal', 'Duración'],
+              rows: [
+                ['G1', 'Crecimiento y preparación', '6–12 h'],
+                ['S', 'Replicación del ADN + duplicación del centrosoma', '6–8 h'],
+                ['G2', 'Crecimiento final y control antes de M', '~4 h'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Cuánto dura la interfase',
+            content: 'Con los valores máximos, 12 + 8 + 4 ≈ 24 h corresponden a la INTERFASE, no al ciclo completo (que incluye la fase M).',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Puntos de control, p53 y cáncer',
+            content:
+              'Los puntos de control y p53 evitan que una célula con ADN dañado se divida. Cuando este control falla, el daño se transmite a las células hijas: es un mecanismo central en el desarrollo del cáncer.',
+          },
+        ],
+      },
+    ],
+  },
 ]
