@@ -2208,4 +2208,162 @@ export const histologiaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'histologia-conectivo-variedades',
+    title: 'Variedades del tejido conectivo',
+    subtitle: 'Embrionario, laxo, denso (regular/irregular) y reticular',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🔬',
+    keyPoints: [
+      'Embrionario: MESENQUIMATOSO (precursor del laxo) y MUCOSO (gelatina de Wharton, colágeno I y III, en el cordón umbilical).',
+      'LAXO (areolar): fibras SIN orientación preferencial, muy vascularizado, con células inmunes (macrófagos, mastocitos, plasmocitos). Es el principal sitio de inflamación y edema.',
+      'DENSO REGULAR COLAGENOSO: haces PARALELOS, resistente a la tracción → tendones, ligamentos, córnea.',
+      'DENSO REGULAR ELÁSTICO: disposición "en resorte" → grandes vasos, ligamentos amarillos, ligamento suspensorio del pene.',
+      'DENSO IRREGULAR: fibras en MÚLTIPLES ángulos, soporte multidireccional → dermis reticular, cápsulas de órganos.',
+      'RETICULAR: colágeno tipo III ramificado en malla → ganglios linfáticos, bazo, médula ósea, hígado (enlaza con los colágenos de la Clase 1).',
+    ],
+    sections: [
+      {
+        id: 'hcva-1',
+        number: 1,
+        title: 'Tejido conectivo embrionario',
+        keyTerms: ['mesenquimatoso', 'mucoso', 'gelatina de Wharton', 'cordón umbilical'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Esta clase desarrolla las VARIEDADES del conectivo propiamente dicho; los colágenos y las células ya se definieron en «Tejido conectivo: matriz» y «Células del tejido conectivo». El conectivo embrionario tiene dos formas: el MESENQUIMATOSO, precursor del tejido conectivo laxo, y el MUCOSO, conocido como GELATINA DE WHARTON (rica en colágeno I y III), que se encuentra en el cordón umbilical.',
+          },
+        ],
+      },
+      {
+        id: 'hcva-2',
+        number: 2,
+        title: 'Tejido conectivo laxo (areolar)',
+        keyTerms: ['laxo', 'areolar', 'vascularizado', 'edema', 'inflamación'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El tejido conectivo LAXO tiene fibras dispuestas SIN orientación preferencial, es muy vascularizado y aloja las células inmunes (macrófagos, mastocitos, plasmocitos). Por eso es el principal sitio de la respuesta inflamatoria y donde se acumula líquido (edema). Se localiza en la lámina propia, la dermis papilar, el mesenterio, la pleura y el peritoneo.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Edema e inflamación en el laxo',
+            content:
+              'Como el laxo es laxo y vascularizado, es donde se acumula líquido: el edema (p. ej. en la insuficiencia cardíaca) se manifiesta ahí. También es donde se monta la inflamación local, como en la dermatitis de contacto.',
+          },
+        ],
+      },
+      {
+        id: 'hcva-3',
+        number: 3,
+        title: 'Tejido conectivo denso',
+        keyTerms: ['denso regular', 'denso irregular', 'colagenoso', 'elástico', 'tracción'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Las tres formas de conectivo denso',
+            data: {
+              headers: ['Variedad', 'Fibras / orientación', 'Localización'],
+              rows: [
+                ['Denso regular colagenoso', 'Haces PARALELOS; resiste la tracción', 'Tendones, ligamentos, córnea'],
+                ['Denso regular elástico', 'Disposición "en resorte" (elástica)', 'Grandes vasos, ligamentos amarillos, suspensorio del pene'],
+                ['Denso irregular', 'Fibras en MÚLTIPLES ángulos; soporte multidireccional', 'Dermis reticular, cápsulas de órganos'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hcva-4',
+        number: 4,
+        title: 'Tejido conectivo reticular',
+        keyTerms: ['reticular', 'colágeno III', 'malla'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El tejido conectivo RETICULAR está formado por COLÁGENO TIPO III ramificado en una malla de sostén (las mismas fibras reticulares de la Clase 1). Forma el estroma de órganos hematopoyéticos y linfoides: ganglios linfáticos, bazo, médula ósea e hígado (también tiroides y páncreas).',
+          },
+          {
+            type: 'note',
+            title: 'Comparativa de variedades',
+            content: 'Embrionario (mesenquimatoso/mucoso) → precursor / cordón umbilical. Laxo → fibras sin orientación, vascularizado → inflamación y edema. Denso regular colagenoso → paralelo → tracción (tendón). Denso regular elástico → en resorte → grandes vasos. Denso irregular → múltiples ángulos → dermis reticular/cápsulas. Reticular → colágeno III en malla → bazo/ganglio/médula/hígado.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'histologia-tejido-adiposo',
+    title: 'Tejido adiposo',
+    subtitle: 'Unilocular (blanco) vs multilocular (pardo), función endocrina y obesidad',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🔬',
+    keyPoints: [
+      'UNILOCULAR (blanco): una gran gota lipídica con el núcleo periférico; predomina en el adulto; función de reserva.',
+      'MULTILOCULAR (pardo): múltiples gotas y MITOCONDRIAS abundantes; hace TERMOGÉNESIS; en neonatos y zonas perirrenales.',
+      'El adipocito es un órgano ENDOCRINO: leptina (regula el apetito) y adiponectina (mejora la sensibilidad a la insulina). Un ~20–25 % del peso corporal en grasa se considera saludable.',
+      'Obesidad: hipertrofia del adipocito, con inflamación e hipoxia del tejido.',
+    ],
+    sections: [
+      {
+        id: 'hadi-1',
+        number: 1,
+        title: 'Unilocular (blanco) vs multilocular (pardo)',
+        keyTerms: ['unilocular', 'multilocular', 'termogénesis', 'mitocondrias'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Los dos tipos de tejido adiposo',
+            left: {
+              title: 'Unilocular (blanco)',
+              items: ['Una gran gota lipídica.', 'Núcleo desplazado a la periferia.', 'Predomina en el adulto; función de reserva.'],
+            },
+            right: {
+              title: 'Multilocular (pardo)',
+              items: ['Múltiples gotas pequeñas.', 'Mitocondrias abundantes → TERMOGÉNESIS.', 'Neonatos y zonas perirrenales.'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hadi-2',
+        number: 2,
+        title: 'El adipocito como órgano endocrino',
+        keyTerms: ['leptina', 'adiponectina', 'endocrino'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El tejido adiposo no solo almacena energía: es un órgano ENDOCRINO. Produce LEPTINA (regula el apetito y la saciedad) y ADIPONECTINA (mejora la sensibilidad a la insulina). Tener alrededor de un 20–25 % del peso corporal en grasa se considera saludable; el problema aparece con el exceso.',
+          },
+        ],
+      },
+      {
+        id: 'hadi-3',
+        number: 3,
+        title: 'Obesidad y manejo',
+        keyTerms: ['obesidad', 'hipertrofia', 'GLP-1', 'cortisol'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'En la obesidad el adipocito se HIPERTROFIA y el tejido desarrolla inflamación e hipoxia. El manejo es multidisciplinario: dieta, ejercicio (sobre todo de FUERZA), control del cortisol y buen sueño.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Análogos de GLP-1 (contenido clínico de la clase)',
+            content:
+              'Los análogos de GLP-1 (Mounjaro, Wegovy) son eficaces para bajar de peso, pero REQUIEREN ejercicio de fuerza para no perder masa muscular junto con la grasa. El seguimiento se hace con el índice cintura-cadera. Es una correlación clínica de la clase, no núcleo histológico.',
+          },
+        ],
+      },
+    ],
+  },
 ]
