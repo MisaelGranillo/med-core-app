@@ -243,7 +243,7 @@ export const uadMedicina: Plan = {
           name: 'Genética Básica',
           code: 'GB01003',
           tags: ['celular'],
-          topicIds: ['genetica-conceptos', 'genetica-mendel', 'genetica-adn', 'genetica-dogma-transcripcion', 'genetica-cromosomas-cariotipo', 'genetica-traduccion', 'genetica-reparacion-adn', 'genetica-repaso-s2', 'genetica-cromosomas-herencia', 'genetica-ciclo-celular'],
+          topicIds: ['genetica-conceptos', 'genetica-mendel', 'genetica-adn', 'genetica-dogma-transcripcion', 'genetica-cromosomas-cariotipo', 'genetica-traduccion', 'genetica-reparacion-adn', 'genetica-repaso-s2', 'genetica-cromosomas-herencia', 'genetica-ciclo-celular', 'genetica-mitosis-meiosis', 'genetica-gametogenesis'],
           content: {
             area: 'Ciencias Básicas',
             credits: 4,
@@ -294,15 +294,17 @@ export const uadMedicina: Plan = {
               {
                 number: 3,
                 title: 'Bases cromosómicas de la herencia',
-                topicIds: ['genetica-cromosomas-herencia', 'genetica-ciclo-celular'],
+                topicIds: ['genetica-cromosomas-herencia', 'genetica-ciclo-celular', 'genetica-mitosis-meiosis', 'genetica-gametogenesis'],
                 temas: [
                   'Clase 1 (impartida): bases cromosómicas de la herencia (genes/loci, homólogos 46=23 pares), cromatina vs cromátida, cariotipo vs cariograma, bandeo (G/Q/R/T/C) y nomenclatura del locus (7q31.2)',
                   'Clase 1 (impartida): el ciclo celular — interfase (G1, S, G2), diploide/haploide, puntos de control (CDK/ciclinas, p53) y citocinesis',
-                  'Pendiente (Clases 2–3): división celular — mitosis y meiosis; repaso del ciclo celular',
+                  'Clase 2 (impartida): división celular — mitosis (fases; 2 hijas), meiosis I/II (crossing over en Profase I; anafase I homólogos vs II hermanas; 4 haploides) y gametogénesis (ovogénesis, espermatogénesis, fecundación)',
+                  'Nota: semana corta por el feriado del 16 de septiembre — Genética tuvo solo 2 clases',
                   'Estructura y función de cromosomas y genes; fundamentos de la expresión génica',
                 ],
                 fuentes: [
                   { title: 'Genética Básica — Semana 3, Clase 1', file: 'Genetica Basica - Semana 3 - Clase 1.pdf', nota: 'Bases cromosómicas, cariotipo/bandeo y ciclo celular (interfase).' },
+                  { title: 'Genética Básica — Semana 3, Clase 2', file: 'Genetica Basica - Semana 3 - Clase 2.pdf', nota: 'Mitosis, meiosis y gametogénesis.' },
                 ],
               },
               {
@@ -500,7 +502,7 @@ export const uadMedicina: Plan = {
           code: 'HS01006',
           hasLab: true,
           tags: ['celular'],
-          topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica', 'histologia-celula', 'histologia-epitelial', 'histologia-epitelial-polaridad', 'histologia-glandulas', 'histologia-epitelios-urinario', 'histologia-epitelios-respiratorio', 'histologia-piel', 'histologia-conectivo-matriz', 'histologia-conectivo-celulas'],
+          topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica', 'histologia-celula', 'histologia-epitelial', 'histologia-epitelial-polaridad', 'histologia-glandulas', 'histologia-epitelios-urinario', 'histologia-epitelios-respiratorio', 'histologia-piel', 'histologia-conectivo-matriz', 'histologia-conectivo-celulas', 'histologia-conectivo-variedades', 'histologia-tejido-adiposo'],
           content: {
             area: 'Ciencias Básicas',
             credits: 8,
@@ -548,15 +550,18 @@ export const uadMedicina: Plan = {
               {
                 number: 3,
                 title: 'Tejido conectivo',
-                topicIds: ['histologia-conectivo-matriz', 'histologia-conectivo-celulas'],
+                topicIds: ['histologia-conectivo-matriz', 'histologia-conectivo-celulas', 'histologia-conectivo-variedades', 'histologia-tejido-adiposo'],
                 temas: [
                   'Clase 1 (impartida): introducción al tejido conectivo — MEC > células, clasificación (embrionario/propio/especializado), funciones (soporte, intercambio, defensa, depósito de grasa), matriz extracelular y fibras',
                   'Clase 1 (impartida): colágenos I–VII (I tracción/hueso, II cartílago, III reticular, IV lámina densa, V placenta, VII anclaje) y correlaciones (osteogénesis imperfecta, epidermólisis ampollosa, Marfan)',
                   'Clase 1 (impartida): células del conectivo — fijas (fibroblasto, adipocito, pericito, mastocito, macrófago) y móviles (plasmocito, linfocito, neutrófilo, eosinófilo, basófilo, monocito); sistema fagocítico mononuclear',
-                  'Pendiente (próximas clases): clasificación de leucocitos, variedades laxo/denso, y tejidos especializados — óseo, cartilaginoso y adiposo',
+                  'Clase 2 (impartida): variedades del conectivo — embrionario (mesenquimatoso/mucoso = gelatina de Wharton), laxo (edema/inflamación), denso regular colagenoso/elástico, denso irregular y reticular (colágeno III)',
+                  'Clase 2 (impartida): tejido adiposo — unilocular (blanco) vs multilocular (pardo, termogénesis), función endocrina (leptina/adiponectina) y obesidad (GLP-1, cortisol)',
+                  'Pendiente (próxima clase): tejido óseo y cartilaginoso',
                 ],
                 fuentes: [
                   { title: 'Semana 3 · Clase 1 — Tejido conectivo (introducción)', file: 'Histologia I - Semana 3 - Clase 1.pdf', nota: 'Matriz extracelular, fibras/colágenos y células fijas y móviles.' },
+                  { title: 'Semana 3 · Clase 2 — Variedades del conectivo y tejido adiposo', file: 'Histologia I - Semana 3 - Clase 2.pdf', nota: 'Embrionario, laxo, denso, reticular y adiposo (blanco/pardo).' },
                 ],
               },
               {

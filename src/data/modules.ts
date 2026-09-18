@@ -132,10 +132,10 @@ export const modules: Module[] = [
   {
     id: 'genetica-uad-s3',
     badge: 'UAD · Genética Básica — Semana 3',
-    title: 'Genética: bases cromosómicas y ciclo celular',
-    subtitle: 'Bases cromosómicas de la herencia, cariotipo y bandeo; el ciclo celular (interfase).',
+    title: 'Genética: bases cromosómicas y división celular',
+    subtitle: 'Bases cromosómicas, cariotipo y ciclo celular; mitosis, meiosis y gametogénesis.',
     emoji: '🧬',
-    topicIds: ['genetica-cromosomas-herencia', 'genetica-ciclo-celular'],
+    topicIds: ['genetica-cromosomas-herencia', 'genetica-ciclo-celular', 'genetica-mitosis-meiosis', 'genetica-gametogenesis'],
   },
   {
     id: 'histologia-uad-s1',
@@ -165,9 +165,9 @@ export const modules: Module[] = [
     id: 'histologia-uad-s3',
     badge: 'UAD · Histología I — Semana 3',
     title: 'Histología: tejido conectivo',
-    subtitle: 'Matriz, fibras y colágenos; células fijas y móviles.',
+    subtitle: 'Matriz, fibras y colágenos; células fijas y móviles; variedades y tejido adiposo.',
     emoji: '🔬',
-    topicIds: ['histologia-conectivo-matriz', 'histologia-conectivo-celulas'],
+    topicIds: ['histologia-conectivo-matriz', 'histologia-conectivo-celulas', 'histologia-conectivo-variedades', 'histologia-tejido-adiposo'],
   },
   {
     id: 'histologia-uad-s2',
