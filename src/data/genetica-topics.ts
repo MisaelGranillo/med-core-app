@@ -1261,4 +1261,231 @@ export const geneticaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'genetica-mitosis-meiosis',
+    title: 'División celular: mitosis y meiosis',
+    subtitle: 'Fases de la mitosis y la meiosis, anafase I vs II y crossing over',
+    colorKey: 'genetica',
+    categoria: 'Genética',
+    emoji: '🧬',
+    keyPoints: [
+      'La división celular es la fase M del ciclo (ver «El ciclo celular»). MITOSIS = células somáticas, 1 división → 2 hijas DIPLOIDES (crecimiento/reparación). MEIOSIS = células germinales, 2 divisiones → 4 hijas HAPLOIDES (reduce el número y genera variabilidad).',
+      'Fases de la mitosis: profase (condensa, desaparece nucléolo y carioteca, se forma el huso) → prometafase (huso a los cinetocoros) → metafase (placa ecuatorial) → anafase (separa cromátidas hermanas) → telofase (descondensa) → citocinesis (2 células).',
+      'MEIOSIS I separa cromosomas HOMÓLOGOS. La Profase I es la más importante: sinapsis de homólogos y CROSSING OVER (en paquiteno) → variabilidad. Da 2 haploides con cromosomas aún duplicados.',
+      'MEIOSIS II no tiene nueva replicación del ADN; su anafase separa cromátidas HERMANAS → 4 haploides.',
+      'Anafase I = homólogos; anafase II = hermanas; anafase mitótica = hermanas. Regla: mitosis = mantiene; meiosis = mitad + mezcla.',
+      'Existen mitosis, meiosis I y meiosis II — NO existe "mitosis I/II".',
+    ],
+    sections: [
+      {
+        id: 'gmm-1',
+        number: 1,
+        title: 'Mitosis: fases',
+        keyTerms: ['mitosis', 'profase', 'metafase', 'anafase', 'cinetocoro'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La mitosis divide las células SOMÁTICAS: una célula madre diploide produce 2 células hijas diploides (crecimiento, reparación y desarrollo). Es la fase M que sigue a la interfase (G1→S→G2).',
+          },
+          {
+            type: 'steps',
+            title: 'Las fases de la mitosis',
+            steps: [
+              'Profase: se condensan los cromosomas, desaparece el nucléolo, se desintegra la carioteca y se forma el huso.',
+              'Prometafase: el huso se une a los cromosomas por los cinetocoros (aún sin alinear).',
+              'Metafase: los cromosomas se alinean en el plano ecuatorial (placa metafásica).',
+              'Anafase: se separan las cromátidas hermanas hacia polos opuestos (aquí pueden surgir aneuploidías).',
+              'Telofase: los cromosomas llegan a los polos, se descondensan y se rearma la envoltura nuclear.',
+              'Citocinesis: se divide el citoplasma → 2 células hijas.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'gmm-2',
+        number: 2,
+        title: 'Meiosis I: homólogos y crossing over',
+        keyTerms: ['meiosis I', 'sinapsis', 'crossing over', 'paquiteno', 'homólogos'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La meiosis ocurre en células GERMINALES y produce gametos: reduce el número cromosómico y genera variabilidad. La MEIOSIS I separa cromosomas HOMÓLOGOS. Su Profase I es la fase clave: los homólogos se aparean (SINAPSIS) e intercambian segmentos (CROSSING OVER, en paquiteno), lo que produce variabilidad genética. Después: metafase I (doble placa ecuatorial), anafase I (separa homólogos, no las hermanas) y telofase I → 2 células haploides con los cromosomas aún duplicados.',
+          },
+          {
+            type: 'note',
+            title: 'Subfases de Profase I',
+            content: 'Leptoteno → cigoteno → paquiteno (crossing over) → diploteno → diacinesis. No es necesario memorizar los nombres individuales; sí saber que el crossing over ocurre en paquiteno.',
+          },
+        ],
+      },
+      {
+        id: 'gmm-3',
+        number: 3,
+        title: 'Meiosis II y anafase I vs II',
+        keyTerms: ['meiosis II', 'cromátidas hermanas', 'anafase'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La meiosis II ocurre justo después de la I y NO hay una nueva replicación del ADN entre ambas. Sus fases (profase II → metafase II → anafase II → telofase II → citocinesis) terminan separando en la anafase II las cromátidas HERMANAS → 4 células haploides. En la Profase II no hay crossing over.',
+          },
+          {
+            type: 'table',
+            title: 'Qué se separa en cada anafase',
+            data: {
+              headers: ['Fase', 'Qué se separa'],
+              rows: [
+                ['Anafase I (meiosis)', 'Cromosomas homólogos'],
+                ['Anafase II (meiosis)', 'Cromátidas hermanas'],
+                ['Anafase mitótica', 'Cromátidas hermanas'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'gmm-4',
+        number: 4,
+        title: 'Mitosis vs meiosis',
+        keyTerms: ['mitosis', 'meiosis', 'ploidía'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Comparación completa',
+            data: {
+              headers: ['Característica', 'Mitosis', 'Meiosis'],
+              rows: [
+                ['Tipo celular', 'Somática', 'Germinal'],
+                ['Nº de divisiones', '1', '2'],
+                ['Células finales', '2', '4'],
+                ['Ploidía final', 'Diploide', 'Haploide'],
+                ['Nº cromosómico', 'Se mantiene', 'Se reduce'],
+                ['Crossing over', 'No', 'Sí (Profase I)'],
+                ['Función', 'Crecimiento y reparación', 'Formación de gametos'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Regla y aclaración',
+            content: 'MITOSIS = MANTIENE; MEIOSIS = MITAD + MEZCLA. Existen mitosis, meiosis I y meiosis II; NO existe "mitosis I" ni "mitosis II".',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'No disyunción y aneuploidías',
+            content:
+              'Si la segregación es incorrecta en la anafase (no disyunción), las células hijas quedan con un número anómalo de cromosomas (aneuploidía), como en la trisomía 21 (ver «Bases cromosómicas de la herencia»).',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'genetica-gametogenesis',
+    title: 'Gametogénesis: ovogénesis y espermatogénesis',
+    subtitle: 'Formación de gametos, detenciones del ovocito, espermatogénesis y fecundación',
+    colorKey: 'genetica',
+    categoria: 'Genética',
+    emoji: '🧬',
+    keyPoints: [
+      'MEIOSIS ≠ gametogénesis: la meiosis describe las fases de división; la gametogénesis aplica esos procesos para formar gametos (ovogénesis y espermatogénesis).',
+      'Ovogénesis: el ovocito primario queda detenido en PROFASE I (diploteno) hasta la pubertad; al completar meiosis I → ovocito secundario + cuerpo polar; se detiene en METAFASE II (~3 h antes de la ovulación).',
+      'El citoplasma se reparte desigual: la ovogénesis da 1 gameto funcional + 3 cuerpos polares.',
+      'Espermatogénesis: inicia en la pubertad, en los túbulos seminíferos, asociada a las células de Sertoli. Espermatogonio → espermatocito primario → (meiosis I) → secundarios → (meiosis II) → espermátides → espermiogénesis → espermatozoides. Profase I ~22 días; regulación por LH/FSH.',
+      'Espermiogénesis = espermátide → espermatozoide: reduce citoplasma y forma cabeza, acrosoma, pieza intermedia y cola.',
+      'Fecundación: n(23) + n(23) → cigoto 2n(46), recuperando la diploidía.',
+    ],
+    sections: [
+      {
+        id: 'ggam-1',
+        number: 1,
+        title: 'Meiosis vs gametogénesis',
+        keyTerms: ['gametogénesis', 'ovogénesis', 'espermatogénesis'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La gametogénesis convierte células germinales en gametos y tiene dos formas: ovogénesis y espermatogénesis. Conviene no confundirla con la meiosis: la MEIOSIS describe las fases de la división (ver «División celular»); la GAMETOGÉNESIS aplica esa división a la formación concreta de óvulos y espermatozoides.',
+          },
+        ],
+      },
+      {
+        id: 'ggam-2',
+        number: 2,
+        title: 'Ovogénesis',
+        keyTerms: ['ovocito primario', 'Profase I', 'Metafase II', 'cuerpos polares'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Lo más importante: el ovocito primario queda DETENIDO en PROFASE I (diploteno) hasta la pubertad. Después, la meiosis se reanuda; al completar la meiosis I se forman el ovocito secundario y un cuerpo polar, y el ovocito vuelve a detenerse en METAFASE II, aproximadamente 3 horas antes de la ovulación.',
+          },
+          {
+            type: 'note',
+            title: 'Resultado: 1 útil + 3 polares',
+            content: 'La división del citoplasma es desigual: el ovocito funcional se queda con casi todo el citoplasma. Resultado: 1 gameto femenino funcional + 3 cuerpos polares.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Detención prolongada y edad materna',
+            content:
+              'La larga detención del ovocito en Profase I (años, hasta la ovulación de cada ciclo) se relaciona con el aumento de aneuploidías conforme avanza la edad materna.',
+          },
+        ],
+      },
+      {
+        id: 'ggam-3',
+        number: 3,
+        title: 'Espermatogénesis y espermiogénesis',
+        keyTerms: ['espermatogénesis', 'túbulos seminíferos', 'Sertoli', 'espermiogénesis', 'acrosoma'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La espermatogénesis inicia en la PUBERTAD, en los TÚBULOS SEMINÍFEROS, asociada a las células de SERTOLI, y está regulada por LH y FSH. Los espermatocitos primarios pasan ~22 días en Profase I.',
+          },
+          {
+            type: 'steps',
+            title: 'Secuencia',
+            steps: [
+              'Espermatogonio.',
+              'Espermatocito primario → meiosis I → espermatocitos secundarios.',
+              'Meiosis II → espermátides.',
+              'Espermiogénesis: la espermátide se transforma en espermatozoide (reduce citoplasma; forma cabeza, acrosoma, pieza intermedia y cola).',
+              'Espermatozoides.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'ggam-4',
+        number: 4,
+        title: 'Fecundación y clonación',
+        keyTerms: ['fecundación', 'cigoto', 'clonación', 'transferencia nuclear'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La meiosis produce gametos haploides (n = 23). En la FECUNDACIÓN, óvulo 23 + espermatozoide 23 → cigoto 2n = 46, recuperando la diploidía.',
+          },
+          {
+            type: 'comparison',
+            title: 'Fecundación vs clonación',
+            left: {
+              title: 'Fecundación (meiosis)',
+              items: ['Une dos gametos haploides.', 'Con crossing over → variabilidad genética.', 'Cigoto 2n con mezcla de ambos padres.'],
+            },
+            right: {
+              title: 'Clonación (transferencia nuclear)',
+              items: ['Núcleo somático → óvulo enucleado.', 'Conserva la información del donante.', 'EVITA el crossing over → no busca variabilidad.'],
+            },
+          },
+        ],
+      },
+    ],
+  },
 ]
