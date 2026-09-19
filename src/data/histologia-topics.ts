@@ -2366,4 +2366,328 @@ export const histologiaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'histologia-cartilago',
+    title: 'Tejido cartilaginoso',
+    subtitle: 'Matriz, células, pericondrio, tipos (hialino/elástico/fibrocartílago) y placa de crecimiento',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🔬',
+    keyPoints: [
+      'Conectivo ESPECIALIZADO del mesodermo; matriz SEMISÓLIDA; AVASCULAR, aneural y alinfático → se nutre por DIFUSIÓN. Funciones: sostén, armazón flexible, amortiguación y protección.',
+      'Matriz = componente forme (fibras) + amorfo (GAG: condroitín/queratán sulfato, ácido hialurónico; proteoglucanos que retienen agua → 70–80 % del peso es AGUA); la condronectina une fibras ↔ células.',
+      'Línea celular: condrógena (progenitora, en el pericondrio) → condroblasto (produce matriz) → condrocito (maduro, en LAGUNAS).',
+      'Pericondrio: capa fibrosa (colágeno I, fibroblastos) + capa condrogénica; nutre, hace crecer y repara. EXCEPCIÓN: el fibrocartílago y el cartílago articular NO tienen pericondrio (el articular se nutre del líquido sinovial por compresión-descompresión).',
+      'Crecimiento: INTERSTICIAL (desde dentro, condrocitos que se dividen) vs APOSICIONAL (desde el pericondrio/superficie).',
+      'Tipos: HIALINO (colágeno II, el más abundante, grupos isógenos, matriz vítrea; articulaciones, tráquea, costillas, esqueleto fetal), ELÁSTICO (fibras elásticas, flexible, SÍ pericondrio; oreja, epiglotis) y FIBROCARTÍLAGO (colágeno I, condrocitos EN HILERAS, SIN pericondrio; discos, meniscos, sínfisis del pubis).',
+      'Placa epifisaria (crecimiento longitudinal), 5 zonas: reserva → proliferación (columnas) → hipertrofia → calcificación → formación ósea.',
+    ],
+    sections: [
+      {
+        id: 'hcar-1',
+        number: 1,
+        title: 'Definición y funciones',
+        keyTerms: ['cartílago', 'mesodermo', 'avascular', 'difusión'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El tejido cartilaginoso es una especialización del conectivo que deriva del MESODERMO. Cuatro rasgos para memorizar: matriz SEMISÓLIDA (como una gelatina firme, entre el líquido de la sangre y la rigidez del hueso), células separadas por abundante matriz, AVASCULAR, y aneural y alinfático. Al no tener vasos, se nutre por difusión. Funciones: sostén estructural, armazón flexible, amortiguación articular y protección/recubrimiento (cartílagos costales, nariz, oreja, tráquea, articulaciones).',
+          },
+        ],
+      },
+      {
+        id: 'hcar-2',
+        number: 2,
+        title: 'Matriz del cartílago',
+        keyTerms: ['matriz', 'GAG', 'proteoglucanos', 'condronectina', 'agua'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La matriz tiene un componente FORME (fibras colágenas, elásticas o reticulares según el tipo) y uno AMORFO (glucosaminoglucanos —condroitín sulfato, queratán sulfato, ácido hialurónico—, proteoglucanos y glucoproteínas). Los proteoglucanos RETIENEN AGUA: cerca del 70–80 % del peso del cartílago es agua, lo que le da su capacidad de soportar presión. La CONDRONECTINA es una glucoproteína que une las fibras con las células (el "pegamento" de la matriz).',
+          },
+        ],
+      },
+      {
+        id: 'hcar-3',
+        number: 3,
+        title: 'Células: condrógena → condroblasto → condrocito',
+        keyTerms: ['condrógena', 'condroblasto', 'condrocito', 'lagunas'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Línea de maduración',
+            steps: [
+              'Célula condrógena: progenitora, en la capa interna del pericondrio; origina condroblastos.',
+              'Condroblasto: célula joven y activa que sintetiza y secreta matriz; al quedar rodeado por su matriz queda alojado en una laguna.',
+              'Condrocito: célula madura dentro de una LAGUNA, menos activa; aislada o en grupos.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'hcar-4',
+        number: 4,
+        title: 'Pericondrio, nutrición y crecimiento',
+        keyTerms: ['pericondrio', 'líquido sinovial', 'intersticial', 'aposicional'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El PERICONDRIO rodea a casi todos los cartílagos y tiene dos capas: la FIBROSA (conectivo denso con fibroblastos, produce colágeno I) y la CONDROGÉNICA (con células condrógenas). Nutre, hace crecer y repara. Como el cartílago es avascular, los nutrientes difunden desde los vasos del pericondrio hacia los condrocitos; si el pericondrio se daña, baja la nutrición y el cartílago puede necrosarse (de ahí su lenta reparación). EXCEPCIÓN: el fibrocartílago y el cartílago articular NO tienen pericondrio; el articular se nutre del LÍQUIDO SINOVIAL mediante ciclos de compresión-descompresión con el movimiento.',
+          },
+          {
+            type: 'comparison',
+            title: 'Crecimiento intersticial vs aposicional',
+            left: {
+              title: 'Intersticial (desde dentro)',
+              items: ['Los condrocitos se dividen dentro de la matriz.', 'Expansión interna; importante en cartílago joven.'],
+            },
+            right: {
+              title: 'Aposicional (desde la superficie)',
+              items: ['Las células condrógenas del pericondrio forman condroblastos.', 'Añaden matriz en la superficie → aumenta el espesor.'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hcar-5',
+        number: 5,
+        title: 'Los tres tipos de cartílago',
+        keyTerms: ['hialino', 'elástico', 'fibrocartílago', 'grupos isógenos', 'colágeno II'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Hialino · elástico · fibrocartílago',
+            data: {
+              headers: ['Rasgo', 'Hialino', 'Elástico', 'Fibrocartílago'],
+              rows: [
+                ['Colágeno / fibras', 'Colágeno II (el más abundante)', 'Colágeno II + fibras elásticas', 'Colágeno I (fibras visibles)'],
+                ['Células / organización', 'Condrocitos aislados o en grupos isógenos', 'Condrocitos grandes, grupos coronarios', 'Condrocitos escasos, EN HILERAS'],
+                ['Matriz', 'Homogénea, vítrea, basófila (grupos isógenos con matriz territorial)', 'Con fibras elásticas', 'Mucho colágeno, poca matriz amorfa'],
+                ['Pericondrio', 'Sí (salvo superficies articulares)', 'Sí', 'NO'],
+                ['Función / ejemplos', 'Soporte y amortiguación: articulaciones, tráquea, costillas, esqueleto fetal', 'Flexibilidad: oreja, epiglotis, trompa de Eustaquio', 'Tracción + compresión: discos intervertebrales, meniscos, sínfisis del pubis'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Identificación y la tráquea',
+            content: 'Condrocitos en lagunas: ¿matriz homogénea + grupos isógenos? → hialino. ¿Fibras elásticas + condrocitos grandes? → elástico. ¿Mucho colágeno + hileras + sin pericondrio? → fibrocartílago. Integración: la TRÁQUEA combina epitelio cilíndrico pseudoestratificado ciliado + glándulas submucosas + cartílago hialino con su pericondrio.',
+          },
+        ],
+      },
+      {
+        id: 'hcar-6',
+        number: 6,
+        title: 'Placa epifisaria (crecimiento longitudinal)',
+        keyTerms: ['placa epifisaria', 'reserva', 'proliferación', 'hipertrofia', 'calcificación'],
+        blocks: [
+          {
+            type: 'steps',
+            title: '★ Las 5 zonas (crecimiento en longitud)',
+            steps: [
+              'Reserva: condrocitos pequeños, poca mitosis.',
+              'Proliferación: condrocitos que se dividen y se ordenan en columnas paralelas (crecimiento longitudinal).',
+              'Hipertrofia: condrocitos que aumentan mucho de tamaño; lagunas grandes.',
+              'Calcificación: la matriz se calcifica y llegan vasos.',
+              'Formación ósea: llegan osteoblastos/osteoclastos; el cartílago calcificado sirve de andamio y se deposita hueso.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Radiología y osificación endocondral',
+            content:
+              'La placa epifisaria es normal en niños y se cierra con la maduración: una radiografía pediátrica se interpreta según la edad. El cartílago hialino del esqueleto fetal se convierte en hueso por OSIFICACIÓN ENDOCONDRAL, mecanismo que también da el crecimiento longitudinal (ver «Tejido óseo»). El cartílago se regenera lento por ser avascular.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'histologia-hueso',
+    title: 'Tejido óseo',
+    subtitle: 'Matriz mineralizada, osteona (Havers/Volkmann), células, osificación y remodelación',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🔬',
+    keyPoints: [
+      'Conectivo especializado con matriz MINERALIZADA → dureza y resistencia; es tejido vivo, vascularizado, inervado y en constante remodelación (~14 % del peso corporal).',
+      'Matriz: inorgánica ≈65–70 % (hidroxiapatita Ca₁₀(PO₄)₆(OH)₂ → dureza/compresión) + orgánica ≈30–35 % (~90 % colágeno tipo I → flexibilidad/tensión; con osteonectina, osteocalcina, osteopontina, decorina).',
+      'Cubiertas: PERIOSTIO (externo; capa fibrosa con fibras de Sharpey que anclan, capa osteogénica con osteoprogenitoras/osteoblastos; muy inervado → dolor óseo) y ENDOSTIO (interno; recubre cavidad medular y canales; sitio de remodelación).',
+      'Compacto = OSTEONAS (diáfisis). Esponjoso = TRABÉCULAS + médula (epífisis, vértebras, planos); las trabéculas siguen las líneas de fuerza (ley de Wolff).',
+      'Osteona (Havers): línea de cemento → laminillas concéntricas (8–15) → lagunas con osteocitos → canalículos → canal de Havers (central, LONGITUDINAL). Los canales de Volkmann son TRANSVERSALES y conectan los de Havers. ★ Havers longitudinal vs Volkmann transversal.',
+      'Células: osteoprogenitora → osteoblasto (forma OSTEOIDE, colágeno I) → osteocito (atrapado en LAGUNA, prolongaciones en canalículos, mecanorreceptor); OSTEOCLASTO (grande, MULTINUCLEADO, línea monocito/macrófago, REABSORBE en la laguna de Howship con catepsina K).',
+      'Osificación INTRAMEMBRANOSA (mesénquima → hueso; cráneo, mandíbula, clavícula) vs ENDOCONDRAL (molde de cartílago → hueso; huesos largos, crecimiento longitudinal, reparación de fracturas).',
+    ],
+    sections: [
+      {
+        id: 'hhue-1',
+        number: 1,
+        title: 'Definición y matriz ósea',
+        keyTerms: ['matriz mineralizada', 'hidroxiapatita', 'colágeno I'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El hueso es un conectivo especializado con matriz CALCIFICADA/MINERALIZADA, que le da dureza y resistencia conservando cierta flexibilidad. Es tejido vivo, muy vascularizado, inervado y en constante remodelación (~14 % del peso corporal). Su matriz combina una fracción INORGÁNICA, dominada por HIDROXIAPATITA (Ca₁₀(PO₄)₆(OH)₂ → dureza y resistencia a la compresión; con carbonato, magnesio, sodio, flúor, citrato), y una fracción ORGÁNICA, ~90 % COLÁGENO TIPO I (flexibilidad y resistencia a la tensión; más osteonectina, osteocalcina, osteopontina y decorina).',
+          },
+          {
+            type: 'note',
+            title: 'Proporción inorgánico/orgánico (rango)',
+            content: 'La fuente da dos cifras: la explicación oral, ≈70 % inorgánico / 30 % orgánico; la diapositiva, ≈65 % / 35 %. Se registra como RANGO: ≈65–70 % inorgánico y ≈30–35 % orgánico. La idea fija: hidroxiapatita (inorgánico) + colágeno I (orgánico).',
+          },
+        ],
+      },
+      {
+        id: 'hhue-2',
+        number: 2,
+        title: 'Periostio y endostio',
+        keyTerms: ['periostio', 'endostio', 'fibras de Sharpey', 'dolor óseo'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Las dos cubiertas',
+            left: {
+              title: 'Periostio (externo)',
+              items: ['Capa fibrosa (conectivo denso) con FIBRAS DE SHARPEY que anclan al hueso.', 'Capa osteogénica/cambial: osteoprogenitoras y osteoblastos.', 'Muy inervado → dolor óseo intenso; inserta tendones/ligamentos.'],
+            },
+            right: {
+              title: 'Endostio (interno)',
+              items: ['Capa delgada que recubre la cavidad medular y los canales.', 'Osteoprogenitoras, osteoblastos y osteoclastos.', 'Sitio importante de REMODELACIÓN.'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hhue-3',
+        number: 3,
+        title: 'Compacto vs esponjoso',
+        keyTerms: ['compacto', 'esponjoso', 'osteona', 'trabéculas', 'ley de Wolff'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Hueso compacto vs esponjoso',
+            data: {
+              headers: ['Rasgo', 'Compacto (cortical)', 'Esponjoso (trabecular)'],
+              rows: [
+                ['Localización', 'Diáfisis y corticales externas', 'Epífisis, vértebras, huesos cortos y planos'],
+                ['Organización', 'Osteonas (sistemas de Havers)', 'Trabéculas con médula entre ellas'],
+                ['Densidad / porosidad', 'Alta densidad, poca porosidad', 'Menor densidad, mayor porosidad'],
+                ['Otros', 'Cavidad medular profunda', 'Trabéculas siguen las líneas de fuerza (ley de Wolff)'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hhue-4',
+        number: 4,
+        title: 'La osteona: Havers vs Volkmann',
+        keyTerms: ['osteona', 'canal de Havers', 'canales de Volkmann', 'laminillas', 'línea de cemento'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La OSTEONA (sistema de Havers) es la unidad del hueso compacto: un cilindro paralelo al eje del hueso. De fuera a dentro: LÍNEA DE CEMENTO (límite, rica en proteoglucanos, limita microfracturas) → LAMINILLAS concéntricas (8–15, con el colágeno en distinta orientación entre capas) → LAGUNAS con osteocitos → CANALÍCULOS → CANAL DE HAVERS central (vasos, nervios, conectivo laxo).',
+          },
+          {
+            type: 'comparison',
+            title: '★ Havers vs Volkmann (muy preguntado)',
+            left: {
+              title: 'Canal de Havers',
+              items: ['CENTRAL y LONGITUDINAL (eje de la osteona).', 'Lleva vasos y nervios.'],
+            },
+            right: {
+              title: 'Canales de Volkmann',
+              items: ['TRANSVERSALES / perpendiculares.', 'Conectan canales de Havers entre sí y con periostio/endostio.'],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Hueso primario vs secundario',
+            content: 'Primario (inmaduro/reticular): colágeno irregular, más celular, transitorio (feto, primera fase de fractura). Secundario (maduro/laminar): colágeno en laminillas, más resistente; predomina en el adulto (osteonas en compacto, trabéculas en esponjoso).',
+          },
+        ],
+      },
+      {
+        id: 'hhue-5',
+        number: 5,
+        title: 'Células óseas',
+        keyTerms: ['osteoprogenitora', 'osteoblasto', 'osteocito', 'osteoclasto', 'osteoide'],
+        blocks: [
+          {
+            type: 'table',
+            title: '★ Las cuatro células del hueso',
+            data: {
+              headers: ['Célula', 'Origen', 'Función', 'Rasgo clave'],
+              rows: [
+                ['Osteoprogenitora', 'Mesenquimal', 'Origina células óseas', 'Periostio/endostio'],
+                ['Osteoblasto', 'Osteoprogenitora', 'Forma osteoide (colágeno I)', 'RER y Golgi abundantes; "construye"'],
+                ['Osteocito', 'Osteoblasto atrapado', 'Mecanorreceptor; regula la remodelación', 'Cuerpo en la LAGUNA; prolongaciones en canalículos'],
+                ['Osteoclasto', 'Línea monocito/macrófago', 'Reabsorbe hueso', 'Grande, MULTINUCLEADO; laguna de Howship, catepsina K'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: '★ Puntos de examen',
+            content: 'El cuerpo del osteocito está en la LAGUNA; los canalículos comunican osteocitos y transportan nutrientes. La célula grande MULTINUCLEADA que reabsorbe es el osteoclasto.',
+          },
+        ],
+      },
+      {
+        id: 'hhue-6',
+        number: 6,
+        title: 'Osificación: intramembranosa vs endocondral',
+        keyTerms: ['osificación intramembranosa', 'osificación endocondral'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: '★ Los dos mecanismos',
+            left: {
+              title: 'Intramembranosa',
+              items: ['Mesénquima → osteoblastos → osteoide → hueso (sin molde de cartílago).', 'Cráneo, mandíbula, clavícula.'],
+            },
+            right: {
+              title: 'Endocondral',
+              items: ['Molde de cartílago hialino → se calcifica y se reemplaza por hueso.', 'Huesos largos, crecimiento longitudinal, reparación de fracturas.'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hhue-7',
+        number: 7,
+        title: 'Remodelación y regulación',
+        keyTerms: ['remodelación', 'ARF', 'RANKL', 'PTH', 'calcitonina', 'vitamina D'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Ciclo de remodelación (ARF + inversión)',
+            steps: [
+              'Activación: los osteocitos detectan fuerzas/daño y reclutan precursores de osteoclastos (RANKL, M-CSF).',
+              'Reabsorción: los osteoclastos crean la laguna de Howship, acidifican y liberan catepsina K → disuelven mineral y colágeno.',
+              'Inversión: macrófagos limpian la superficie; TGF-β e IGF-1 reclutan osteoblastos.',
+              'Formación: los osteoblastos secretan osteoide y lo mineralizan; algunos quedan como osteocitos.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content:
+              'En el adulto sano, formación ≈ reabsorción. Si predomina la reabsorción → pérdida de masa ósea (OSTEOPOROSIS, T-score ≤ −2.5); si predomina la formación → osteopetrosis. Regulación: la PTH aumenta la actividad osteoclástica y moviliza calcio; la CALCITONINA la inhibe; la VITAMINA D favorece la absorción de calcio y fósforo y la mineralización (su déficit da RAQUITISMO en niños y OSTEOMALACIA en adultos).',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Reparación de fractura y caso pediátrico',
+            content:
+              'Cuatro fases: hematoma (0–48 h, inflamación) → callo blando (FIBROCARTÍLAGO) → callo duro (OSIFICACIÓN ENDOCONDRAL, hueso primario, 2–6 sem) → remodelación (hueso secundario). Caso de la clase (niño de 8 años, fractura de fémur): la osificación inicial del callo es ENDOCONDRAL (se forma primero un molde cartilaginoso), y un déficit de VITAMINA D altera la mineralización (menor absorción de calcio).',
+          },
+        ],
+      },
+    ],
+  },
 ]
