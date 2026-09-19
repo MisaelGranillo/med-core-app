@@ -502,7 +502,7 @@ export const uadMedicina: Plan = {
           code: 'HS01006',
           hasLab: true,
           tags: ['celular'],
-          topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica', 'histologia-celula', 'histologia-epitelial', 'histologia-epitelial-polaridad', 'histologia-glandulas', 'histologia-epitelios-urinario', 'histologia-epitelios-respiratorio', 'histologia-piel', 'histologia-conectivo-matriz', 'histologia-conectivo-celulas', 'histologia-conectivo-variedades', 'histologia-tejido-adiposo'],
+          topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica', 'histologia-celula', 'histologia-epitelial', 'histologia-epitelial-polaridad', 'histologia-glandulas', 'histologia-epitelios-urinario', 'histologia-epitelios-respiratorio', 'histologia-piel', 'histologia-conectivo-matriz', 'histologia-conectivo-celulas', 'histologia-conectivo-variedades', 'histologia-tejido-adiposo', 'histologia-cartilago', 'histologia-hueso'],
           content: {
             area: 'Ciencias Básicas',
             credits: 8,
@@ -550,18 +550,21 @@ export const uadMedicina: Plan = {
               {
                 number: 3,
                 title: 'Tejido conectivo',
-                topicIds: ['histologia-conectivo-matriz', 'histologia-conectivo-celulas', 'histologia-conectivo-variedades', 'histologia-tejido-adiposo'],
+                topicIds: ['histologia-conectivo-matriz', 'histologia-conectivo-celulas', 'histologia-conectivo-variedades', 'histologia-tejido-adiposo', 'histologia-cartilago', 'histologia-hueso'],
                 temas: [
                   'Clase 1 (impartida): introducción al tejido conectivo — MEC > células, clasificación (embrionario/propio/especializado), funciones (soporte, intercambio, defensa, depósito de grasa), matriz extracelular y fibras',
                   'Clase 1 (impartida): colágenos I–VII (I tracción/hueso, II cartílago, III reticular, IV lámina densa, V placenta, VII anclaje) y correlaciones (osteogénesis imperfecta, epidermólisis ampollosa, Marfan)',
                   'Clase 1 (impartida): células del conectivo — fijas (fibroblasto, adipocito, pericito, mastocito, macrófago) y móviles (plasmocito, linfocito, neutrófilo, eosinófilo, basófilo, monocito); sistema fagocítico mononuclear',
                   'Clase 2 (impartida): variedades del conectivo — embrionario (mesenquimatoso/mucoso = gelatina de Wharton), laxo (edema/inflamación), denso regular colagenoso/elástico, denso irregular y reticular (colágeno III)',
                   'Clase 2 (impartida): tejido adiposo — unilocular (blanco) vs multilocular (pardo, termogénesis), función endocrina (leptina/adiponectina) y obesidad (GLP-1, cortisol)',
-                  'Pendiente (próxima clase): tejido óseo y cartilaginoso',
+                  'Clase 3 (impartida): tejido cartilaginoso — matriz/células, pericondrio, hialino (colágeno II)/elástico/fibrocartílago (colágeno I) y placa de crecimiento (5 zonas)',
+                  'Clase 3 (impartida): tejido óseo — matriz mineralizada (hidroxiapatita + colágeno I), osteona (Havers/Volkmann), células (osteoblasto/osteocito/osteoclasto), osificación (intramembranosa/endocondral), remodelación (ARF, PTH/calcitonina/vitamina D) y reparación de fracturas',
+                  'Pendiente (próxima semana): tejido sanguíneo. Nota: semana corta (feriado del 16-sep + martes cancelado)',
                 ],
                 fuentes: [
                   { title: 'Semana 3 · Clase 1 — Tejido conectivo (introducción)', file: 'Histologia I - Semana 3 - Clase 1.pdf', nota: 'Matriz extracelular, fibras/colágenos y células fijas y móviles.' },
                   { title: 'Semana 3 · Clase 2 — Variedades del conectivo y tejido adiposo', file: 'Histologia I - Semana 3 - Clase 2.pdf', nota: 'Embrionario, laxo, denso, reticular y adiposo (blanco/pardo).' },
+                  { title: 'Semana 3 · Clase 3 — Cartílago y hueso', file: 'Histologia I - Semana 3 - Clase 3.pdf', nota: 'Cartílago (hialino/elástico/fibrocartílago, placa de crecimiento) y hueso (osteona, células, osificación, remodelación, fracturas).' },
                 ],
               },
               {

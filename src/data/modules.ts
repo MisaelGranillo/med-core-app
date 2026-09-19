@@ -164,10 +164,10 @@ export const modules: Module[] = [
   {
     id: 'histologia-uad-s3',
     badge: 'UAD · Histología I — Semana 3',
-    title: 'Histología: tejido conectivo',
-    subtitle: 'Matriz, fibras y colágenos; células fijas y móviles; variedades y tejido adiposo.',
+    title: 'Histología: tejido conectivo y especializados',
+    subtitle: 'Matriz, fibras y células; variedades y adiposo; cartílago y hueso.',
     emoji: '🔬',
-    topicIds: ['histologia-conectivo-matriz', 'histologia-conectivo-celulas', 'histologia-conectivo-variedades', 'histologia-tejido-adiposo'],
+    topicIds: ['histologia-conectivo-matriz', 'histologia-conectivo-celulas', 'histologia-conectivo-variedades', 'histologia-tejido-adiposo', 'histologia-cartilago', 'histologia-hueso'],
   },
   {
     id: 'histologia-uad-s2',
