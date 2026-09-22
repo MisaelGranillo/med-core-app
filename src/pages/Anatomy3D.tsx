@@ -237,12 +237,13 @@ export function Anatomy3D() {
 
               {/* Corte: selector de eje + slider (aparece con el corte activo) */}
               {clip.enabled && cutOpen && (
-                <div className="stage-pop absolute left-1/2 -translate-x-1/2 bottom-[4.25rem] z-20 flex flex-col gap-2 px-3 py-2.5"
+                <div role="group" aria-label="Plano de corte"
+                     className="stage-pop absolute left-1/2 -translate-x-1/2 bottom-[4.25rem] z-20 flex flex-col gap-2 px-3 py-2.5"
                      style={{ width: 'min(92%, 320px)' }}>
                   <div className="flex items-center justify-between">
                     <span className="label-mono" style={{ color: 'var(--stage-muted)' }}>Plano de corte</span>
                   </div>
-                  <div className="grid grid-cols-3 gap-1">
+                  <div role="group" aria-label="Eje del corte" className="grid grid-cols-3 gap-1">
                     {([['x', 'Sagital'], ['z', 'Coronal'], ['y', 'Axial']] as [ClipAxis, string][]).map(([ax, lbl]) => (
                       <button key={ax} type="button" onClick={() => setClipAxis(ax)} aria-pressed={clip.axis === ax}
                         className="stage-seg" data-on={clip.axis === ax}>
@@ -257,15 +258,16 @@ export function Anatomy3D() {
               )}
 
               {/* Barra de controles flotante */}
-              <div className="stage-bar absolute left-1/2 -translate-x-1/2 bottom-3 z-10 flex items-center gap-0.5 px-1.5 py-1">
-                <ToolBtn icon={ArrowsClockwise} label={reducedMotion ? 'Auto-rotar (desactivado por reduced-motion)' : 'Auto-rotar'}
+              <div role="toolbar" aria-label="Controles del visor 3D" aria-orientation="horizontal"
+                className="stage-bar absolute left-1/2 -translate-x-1/2 bottom-3 z-10 flex items-center gap-0.5 px-1.5 py-1">
+                <ToolBtn icon={ArrowsClockwise} label={reducedMotion ? 'Auto-rotar (desactivado por «reduce motion»)' : 'Auto-rotar'}
                   active={autoRotate && !reducedMotion} disabled={reducedMotion} onClick={() => setAutoRotate(v => !v)} />
                 <ToolBtn icon={ArrowCounterClockwise} label="Reiniciar vista" onClick={resetView} />
-                <ToolBtn icon={Selection} label="Aislar estructura" active={isolated} disabled={!selected} onClick={toggleIsolate} />
+                <ToolBtn icon={Selection} label="Aislar estructura seleccionada" active={isolated} disabled={!selected} onClick={toggleIsolate} />
                 <ToolBtn icon={Scissors} label="Corte / sección" active={clip.enabled} onClick={toggleCut} />
-                <span className="stage-bar-sep" />
+                <span className="stage-bar-sep" aria-hidden="true" />
                 <ToolBtn icon={MapPin} label="Puntos interactivos" active={showDots} onClick={() => setShowDots(v => !v)} />
-                <ToolBtn icon={Tag} label="Etiquetas" active={showLabels} onClick={() => setShowLabels(v => !v)} />
+                <ToolBtn icon={Tag} label="Etiquetas en escena" active={showLabels} onClick={() => setShowLabels(v => !v)} />
                 {bilateral && (
                   <ToolBtn icon={FlipHorizontal} label="Espejo (mostrar lado contrario)" active={mirror} onClick={() => setMirror(v => !v)} />
                 )}
