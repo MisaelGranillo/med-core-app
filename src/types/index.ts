@@ -36,15 +36,16 @@ export interface ContentBlock {
   // bloque 'correlacion': callout de correlación clínica / dato de interés.
   // Reutiliza `title` (encabezado) y `content` (cuerpo).
   variant?: 'clinica' | 'dato' | 'mnemotecnia' | 'historia'
-  // bloque 'image': figura ilustrativa (Servier Medical Art CC BY 4.0, o NIAID
-  // NIH BioART Source). `src` es una ruta bajo /public; `source`/`sourceUrl`
-  // determinan el crédito (por imagen). `credit` queda como nota opcional.
+  // bloque 'image': figura ilustrativa de NIAID NIH BioART Source. `src` es una
+  // ruta bajo /public; `sourceUrl`/`license` determinan el crédito por imagen
+  // (dominio público o CC BY 4.0). `credit` queda como nota opcional.
   src?: string
   alt?: string
   caption?: string
   credit?: string
-  source?: 'servier' | 'bioart'
+  source?: 'bioart'
   sourceUrl?: string
+  license?: 'pd' | 'ccby'
 }
 
 export interface Section {
@@ -83,14 +84,14 @@ export interface Topic {
   sections: Section[]
   keyPoints: string[]
   // Ilustración de cabecera del tema (distinta del `imagePath` del Atlas).
-  // Servier Medical Art (CC BY 4.0) o NIAID NIH BioART Source; `source`/
-  // `sourceUrl` determinan el crédito por imagen.
+  // De NIAID NIH BioART Source; `sourceUrl`/`license` determinan el crédito.
   illustration?: {
     src: string
     alt: string
     credit: string
-    source?: 'servier' | 'bioart'
+    source?: 'bioart'
     sourceUrl?: string
+    license?: 'pd' | 'ccby'
   }
 }
 

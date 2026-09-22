@@ -271,7 +271,7 @@ export function Topic() {
 
         {/* Main content */}
         <div className="flex-1 min-w-0 space-y-4">
-          {/* Ilustración de cabecera del tema (Servier Medical Art, CC BY 4.0). */}
+          {/* Ilustración de cabecera del tema (NIAID NIH BioART Source). */}
           {topic.illustration && (
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -293,8 +293,8 @@ export function Topic() {
                 />
               </div>
               <IllustrationCredit
-                source={topic.illustration.source}
                 sourceUrl={topic.illustration.sourceUrl}
+                license={topic.illustration.license}
                 className="mt-3 text-center"
               />
             </motion.div>

@@ -301,8 +301,8 @@ function BlockRenderer({ block, colorKey }: { block: ContentBlock; colorKey: Top
       return (
         <figure>
           {block.title && <BlockLabel text={block.title} colorKey={colorKey} />}
-          {/* Fondo blanco fijo: las SVG de línea de Servier pueden desaparecer
-              sobre superficies oscuras en dark mode. */}
+          {/* Fondo blanco fijo: las ilustraciones de línea/transparentes pueden
+              desaparecer sobre superficies oscuras en dark mode. */}
           <div className="rounded-xl border border-zinc-200 bg-white overflow-hidden">
             <img
               src={block.src}
@@ -314,7 +314,7 @@ function BlockRenderer({ block, colorKey }: { block: ContentBlock; colorKey: Top
           {block.caption && (
             <figcaption className="text-xs text-muted leading-relaxed mt-2">{block.caption}</figcaption>
           )}
-          <IllustrationCredit source={block.source} sourceUrl={block.sourceUrl} className="mt-1" />
+          <IllustrationCredit sourceUrl={block.sourceUrl} license={block.license} className="mt-1" />
         </figure>
       )
 

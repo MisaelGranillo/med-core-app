@@ -95,7 +95,7 @@ export function Ajustes() {
           </p>
           <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
             <p className="text-sm text-zinc-700 leading-relaxed">
-              Algunas ilustraciones provienen de{' '}
+              Las ilustraciones provienen de{' '}
               <a
                 href="https://bioart.niaid.nih.gov"
                 target="_blank"
@@ -104,16 +104,7 @@ export function Ajustes() {
               >
                 NIAID NIH BioART Source
               </a>{' '}
-              (bioart.niaid.nih.gov; en su mayoría de dominio público) y de{' '}
-              <a
-                href="https://smart.servier.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-zinc-900 underline hover:text-zinc-600"
-              >
-                Servier Medical Art
-              </a>{' '}
-              (smart.servier.com), bajo licencia{' '}
+              (bioart.niaid.nih.gov): la mayoría de dominio público y algunas bajo licencia{' '}
               <a
                 href="https://creativecommons.org/licenses/by/4.0/"
                 target="_blank"
@@ -122,7 +113,7 @@ export function Ajustes() {
               >
                 CC BY 4.0
               </a>
-              . Algunas fueron adaptadas (optimizadas y recortadas) para su uso en la app.
+              . Cada figura cita su entrada. Algunas fueron adaptadas (recortadas/optimizadas) para su uso en la app.
             </p>
           </div>
         </section>
