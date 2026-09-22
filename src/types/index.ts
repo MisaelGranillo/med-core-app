@@ -9,6 +9,7 @@ export type BlockType =
   | 'comparison'
   | 'definition'
   | 'correlacion'
+  | 'image'
 
 export interface TableData {
   headers: string[]
@@ -35,6 +36,12 @@ export interface ContentBlock {
   // bloque 'correlacion': callout de correlación clínica / dato de interés.
   // Reutiliza `title` (encabezado) y `content` (cuerpo).
   variant?: 'clinica' | 'dato' | 'mnemotecnia' | 'historia'
+  // bloque 'image': figura ilustrativa (p. ej. Servier Medical Art, CC BY 4.0).
+  // `src` es una ruta bajo /public; `credit` es la atribución obligatoria.
+  src?: string
+  alt?: string
+  caption?: string
+  credit?: string
 }
 
 export interface Section {
@@ -72,6 +79,9 @@ export interface Topic {
   emoji: string
   sections: Section[]
   keyPoints: string[]
+  // Ilustración de cabecera del tema (distinta del `imagePath` del Atlas).
+  // p. ej. Servier Medical Art (CC BY 4.0). `credit` = atribución obligatoria.
+  illustration?: { src: string; alt: string; credit: string }
 }
 
 export type TopicColorKey =
