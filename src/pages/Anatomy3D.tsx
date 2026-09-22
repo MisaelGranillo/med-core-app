@@ -8,7 +8,8 @@ import { useState, useEffect, useCallback, useMemo } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import {
   ArrowLeft, ArrowRight, BookOpenText, Cube, CursorClick, Eye, EyeSlash,
-  CaretRight, Tag, FlipHorizontal, MapPin,
+  CaretRight, Tag, FlipHorizontal, MapPin, ArrowsClockwise, ArrowCounterClockwise,
+  Scissors, Selection, type Icon,
 } from '@phosphor-icons/react'
 import {
   anatomyModels, anatomyRegions, anatomyModelById, availableModelCount,
@@ -16,7 +17,7 @@ import {
 } from '../data/anatomyModels'
 import { buildStructures, toSpanish, sideOf, groupOf, GROUP_LABEL } from '../data/anatomyStructures'
 import { anatomyParts, type AnatomyPart } from '../data/anatomy-3d-data'
-import { AnatomyModelViewer } from '../components/AnatomyModelViewer'
+import { AnatomyModelViewer, type ClipConfig, type ClipAxis } from '../components/AnatomyModelViewer'
 
 /* Best-effort map from a GLB node name (Terminologia Anatomica) to a rich
  * AnatomyPart record (función / descripción). First match wins; many bones
@@ -44,6 +45,23 @@ function matchPart(node: string): AnatomyPart | null {
 }
 const SIDE_LABEL: Record<string, string> = { right: 'Derecho', left: 'Izquierdo', central: 'Central / medial' }
 
+/* Round icon button for the floating control bar. Styling + focus ring live in
+ * the .stage-tool CSS (index.css); state is exposed via aria-pressed. */
+function ToolBtn({ icon: IconCmp, label, active = false, disabled = false, onClick }: {
+  icon: Icon
+  label: string
+  active?: boolean
+  disabled?: boolean
+  onClick: () => void
+}) {
+  return (
+    <button type="button" onClick={onClick} disabled={disabled}
+      aria-label={label} aria-pressed={active} title={label} className="stage-tool">
+      <IconCmp weight={active ? 'fill' : 'regular'} className="w-[18px] h-[18px]" />
+    </button>
+  )
+}
+
 function resolveModel(param: string | null): AnatomyModel {
   if (param) {
     const byId = anatomyModelById[param]
@@ -67,12 +85,34 @@ export function Anatomy3D() {
   const [showDots, setShowDots] = useState(true)
   const [mirror, setMirror] = useState(false)
   const [openGroups, setOpenGroups] = useState<Set<string>>(new Set())
+  const [autoRotate, setAutoRotate] = useState(false)
+  const [isolated, setIsolated] = useState(false)
+  const [clip, setClip] = useState<ClipConfig>({ enabled: false, axis: 'x', pos: 0 })
+  const [cutOpen, setCutOpen] = useState(false)
+  const [resetSignal, setResetSignal] = useState(0)
+
+  // prefers-reduced-motion → never auto-rotate (respected live).
+  const [reducedMotion, setReducedMotion] = useState(false)
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const on = () => setReducedMotion(mq.matches)
+    on(); mq.addEventListener('change', on)
+    return () => mq.removeEventListener('change', on)
+  }, [])
 
   // Reset everything when the model changes
   useEffect(() => {
     setNames([]); setHidden(new Set()); setSelected(null)
     setShowLabels(false); setShowDots(true); setMirror(false); setOpenGroups(new Set())
+    setAutoRotate(false); setIsolated(false); setClip({ enabled: false, axis: 'x', pos: 0 }); setCutOpen(false)
   }, [active.id])
+
+  // Keep "isolate" in sync with the current selection.
+  useEffect(() => {
+    if (!isolated) return
+    if (!selected) { setIsolated(false); setHidden(new Set()); return }
+    setHidden(new Set(names.filter(n => n !== selected)))
+  }, [isolated, selected, names])
 
   const onStructures = useCallback((n: string[]) => setNames(n), [])
   const { groups, bilateral } = useMemo(() => buildStructures(names), [names])
@@ -97,8 +137,23 @@ export function Anatomy3D() {
     items.forEach(i => allHidden ? next.delete(i.name) : next.add(i.name))
     return next
   })
-  const showAll = () => setHidden(new Set())
+  const showAll = () => { setIsolated(false); setHidden(new Set()) }
   const hideAll = () => setHidden(new Set(names))
+  const toggleIsolate = () => {
+    if (!selected) return
+    setIsolated(v => { if (v) setHidden(new Set()); return !v })
+  }
+  const resetView = () => {
+    setIsolated(false); setHidden(new Set())
+    setClip({ enabled: false, axis: 'x', pos: 0 }); setCutOpen(false)
+    setResetSignal(s => s + 1)
+  }
+  const setClipAxis = (axis: ClipAxis) => setClip(c => ({ ...c, axis }))
+  const setClipPos = (pos: number) => setClip(c => ({ ...c, pos }))
+  const toggleCut = () => {
+    setClip(c => ({ ...c, enabled: !c.enabled }))
+    setCutOpen(o => !clip.enabled ? true : !o)
+  }
   const toggleOpen = (id: string) => setOpenGroups(prev => {
     const next = new Set(prev); next.has(id) ? next.delete(id) : next.add(id); return next
   })
@@ -165,16 +220,57 @@ export function Anatomy3D() {
                background: 'radial-gradient(115% 85% at 50% 38%, var(--stage-bg-2) 0%, var(--stage-bg) 68%)',
              }}>
           {active.status === 'available' ? (
-            <AnatomyModelViewer
-              url={active.glb}
-              hidden={hidden}
-              showLabels={showLabels}
-              showDots={showDots}
-              mirror={mirror}
-              selected={selected}
-              onSelect={setSelected}
-              onStructures={onStructures}
-            />
+            <>
+              <AnatomyModelViewer
+                url={active.glb}
+                hidden={hidden}
+                showLabels={showLabels}
+                showDots={showDots}
+                mirror={mirror}
+                selected={selected}
+                clip={clip}
+                autoRotate={autoRotate && !reducedMotion}
+                resetSignal={resetSignal}
+                onSelect={setSelected}
+                onStructures={onStructures}
+              />
+
+              {/* Corte: selector de eje + slider (aparece con el corte activo) */}
+              {clip.enabled && cutOpen && (
+                <div className="stage-pop absolute left-1/2 -translate-x-1/2 bottom-[4.25rem] z-20 flex flex-col gap-2 px-3 py-2.5"
+                     style={{ width: 'min(92%, 320px)' }}>
+                  <div className="flex items-center justify-between">
+                    <span className="label-mono" style={{ color: 'var(--stage-muted)' }}>Plano de corte</span>
+                  </div>
+                  <div className="grid grid-cols-3 gap-1">
+                    {([['x', 'Sagital'], ['z', 'Coronal'], ['y', 'Axial']] as [ClipAxis, string][]).map(([ax, lbl]) => (
+                      <button key={ax} type="button" onClick={() => setClipAxis(ax)} aria-pressed={clip.axis === ax}
+                        className="stage-seg" data-on={clip.axis === ax}>
+                        {lbl}
+                      </button>
+                    ))}
+                  </div>
+                  <input type="range" min={-1} max={1} step={0.02} value={clip.pos}
+                    onChange={e => setClipPos(parseFloat(e.target.value))}
+                    aria-label="Posición del plano de corte" className="stage-range" />
+                </div>
+              )}
+
+              {/* Barra de controles flotante */}
+              <div className="stage-bar absolute left-1/2 -translate-x-1/2 bottom-3 z-10 flex items-center gap-0.5 px-1.5 py-1">
+                <ToolBtn icon={ArrowsClockwise} label={reducedMotion ? 'Auto-rotar (desactivado por reduced-motion)' : 'Auto-rotar'}
+                  active={autoRotate && !reducedMotion} disabled={reducedMotion} onClick={() => setAutoRotate(v => !v)} />
+                <ToolBtn icon={ArrowCounterClockwise} label="Reiniciar vista" onClick={resetView} />
+                <ToolBtn icon={Selection} label="Aislar estructura" active={isolated} disabled={!selected} onClick={toggleIsolate} />
+                <ToolBtn icon={Scissors} label="Corte / sección" active={clip.enabled} onClick={toggleCut} />
+                <span className="stage-bar-sep" />
+                <ToolBtn icon={MapPin} label="Puntos interactivos" active={showDots} onClick={() => setShowDots(v => !v)} />
+                <ToolBtn icon={Tag} label="Etiquetas" active={showLabels} onClick={() => setShowLabels(v => !v)} />
+                {bilateral && (
+                  <ToolBtn icon={FlipHorizontal} label="Espejo (mostrar lado contrario)" active={mirror} onClick={() => setMirror(v => !v)} />
+                )}
+              </div>
+            </>
           ) : (
             <div className="flex flex-col items-center justify-center text-center gap-2 px-6"
                  style={{ height: 'min(80vh, 760px)', color: 'var(--stage-ink)' }}>
@@ -253,28 +349,8 @@ export function Anatomy3D() {
           {/* Structure controls + accordion */}
           {active.status === 'available' && groups.length > 0 && (
             <div className="card p-3 flex flex-col gap-2 lg:max-h-[58vh] lg:overflow-y-auto">
-              <div className="flex items-center gap-1.5 flex-wrap">
-                <button onClick={() => setShowDots(v => !v)} aria-pressed={showDots}
-                  className={`flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-md border transition-colors
-                    ${showDots ? 'bg-primary-tint border-primary-200 text-primary-ink' : 'bg-surface border-line text-muted hover:border-line-strong'}`}>
-                  <MapPin weight={showDots ? 'fill' : 'regular'} className="w-3.5 h-3.5" /> Puntos
-                </button>
-                <button onClick={() => setShowLabels(v => !v)} aria-pressed={showLabels}
-                  className={`flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-md border transition-colors
-                    ${showLabels ? 'bg-primary-tint border-primary-200 text-primary-ink' : 'bg-surface border-line text-muted hover:border-line-strong'}`}>
-                  <Tag weight={showLabels ? 'fill' : 'regular'} className="w-3.5 h-3.5" /> Etiquetas
-                </button>
-                {bilateral && (
-                  <button onClick={() => setMirror(v => !v)}
-                    className={`flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-md border transition-colors
-                      ${mirror ? 'bg-primary-tint border-primary-200 text-primary-ink' : 'bg-surface border-line text-muted hover:border-line-strong'}`}
-                    title="Reflejar las estructuras del lado derecho para mostrar el izquierdo">
-                    <FlipHorizontal weight={mirror ? 'fill' : 'regular'} className="w-3.5 h-3.5" /> Espejo
-                  </button>
-                )}
-              </div>
               <div className="flex items-center justify-between catalog-code">
-                <span>Estructuras</span>
+                <span>Capas</span>
                 <span className="flex gap-2">
                   <button onClick={showAll} className="hover:text-primary-ink transition-colors">Mostrar todo</button>
                   <button onClick={hideAll} className="hover:text-primary-ink transition-colors">Ocultar todo</button>

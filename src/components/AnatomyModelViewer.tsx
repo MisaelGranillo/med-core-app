@@ -6,18 +6,26 @@
  */
 import { Suspense, useEffect, useMemo, useRef } from 'react'
 import { Canvas, type ThreeEvent } from '@react-three/fiber'
-import { OrbitControls, Bounds, useGLTF, Html, ContactShadows } from '@react-three/drei'
+import { OrbitControls, Bounds, useBounds, useGLTF, Html, ContactShadows } from '@react-three/drei'
 import * as THREE from 'three'
 import { sideOf, toSpanish } from '../data/anatomyStructures'
 
 const HIGHLIGHT = new THREE.Color('#3B82F6')
-const LABEL_CAP = 60 // max in-scene labels/dots at once (perf guard)
+const LABEL_CAP = 60 // max in-scene labels at once (perf guard)
+const DOT_CAP = 22   // max hotspot dots — the largest structures = the "key" ones
 
 /** Read a CSS custom property off :root (for values three.js needs as hex). */
 function stageVar(name: string, fallback: string): string {
   if (typeof window === 'undefined') return fallback
   const v = getComputedStyle(document.documentElement).getPropertyValue(name).trim()
   return v || fallback
+}
+
+/** Build a section (clipping) plane. Normal points along -axis so the slider
+ * reveals a cross-section: fragments beyond `coord` on that axis are clipped. */
+function sectionPlane(axis: ClipAxis, coord: number): THREE.Plane {
+  const n = new THREE.Vector3(axis === 'x' ? -1 : 0, axis === 'y' ? -1 : 0, axis === 'z' ? -1 : 0)
+  return new THREE.Plane(n, coord)
 }
 
 function Loader() {
@@ -35,6 +43,9 @@ function Loader() {
   )
 }
 
+export type ClipAxis = 'x' | 'y' | 'z'
+export interface ClipConfig { enabled: boolean; axis: ClipAxis; pos: number } // pos in [-1, 1]
+
 interface ModelProps {
   url: string
   hidden: Set<string>
@@ -42,11 +53,12 @@ interface ModelProps {
   showDots: boolean
   mirror: boolean
   selected: string | null
+  clip: ClipConfig
   onSelect: (name: string | null) => void
   onStructures: (names: string[]) => void
 }
 
-function Model({ url, hidden, showLabels, showDots, mirror, selected, onSelect, onStructures }: ModelProps) {
+function Model({ url, hidden, showLabels, showDots, mirror, selected, clip, onSelect, onStructures }: ModelProps) {
   const { scene } = useGLTF(url)
   const model = useMemo(() => scene.clone(true), [scene])
 
@@ -94,6 +106,7 @@ function Model({ url, hidden, showLabels, showDots, mirror, selected, onSelect, 
     const base = (Array.isArray(m.material) ? m.material[0] : m.material) as THREE.MeshStandardMaterial
     const hi = base.clone()
     if ('emissive' in hi) { hi.emissive = HIGHLIGHT; hi.emissiveIntensity = 0.6 }
+    hi.clippingPlanes = clipPlanesRef.current   // keep the cut on the selected part
     sel.current = { mesh: m, mat: m.material }
     m.material = hi
   }, [selected, named])
@@ -104,6 +117,39 @@ function Model({ url, hidden, showLabels, showDots, mirror, selected, onSelect, 
     while (o && !o.name) o = o.parent
     onSelect(o?.name ?? null)
   }
+
+  // Model bounding box → contact-shadow placement (a "plinth" under the piece).
+  const modelBox = useMemo(() => {
+    model.updateMatrixWorld(true)
+    const box = new THREE.Box3().setFromObject(model)
+    const center = new THREE.Vector3(); box.getCenter(center)
+    const size = new THREE.Vector3(); box.getSize(size)
+    return { center, size, minY: box.min.y }
+  }, [model])
+
+  const contactColor = useMemo(() => stageVar('--stage-contact', '#2A2015'), [])
+
+  // ── Section / cut via clipping planes ────────────────────────────────────
+  // Keep the active planes in a ref so the selection-highlight material (which
+  // is cloned on the fly) can inherit them too.
+  const clipPlanesRef = useRef<THREE.Plane[]>([])
+  const clipPlanes = useMemo(() => {
+    if (!clip.enabled) return []
+    const half = { x: modelBox.size.x / 2, y: modelBox.size.y / 2, z: modelBox.size.z / 2 }
+    const coord = modelBox.center[clip.axis] + clip.pos * half[clip.axis]
+    return [sectionPlane(clip.axis, coord)]
+  }, [clip.enabled, clip.axis, clip.pos, modelBox])
+
+  useEffect(() => {
+    clipPlanesRef.current = clipPlanes
+    const apply = (root: THREE.Object3D) => root.traverse(o => {
+      const m = o as THREE.Mesh
+      if (!m.isMesh) return
+      const mats = Array.isArray(m.material) ? m.material : [m.material]
+      mats.forEach(mt => { (mt as THREE.Material).clippingPlanes = clipPlanes })
+    })
+    apply(model)
+  }, [clipPlanes, model])
 
   // Mirror: bake right-side meshes (world transforms) into a flat group and
   // reflect it across the sagittal plane. Flattening avoids container nodes
@@ -132,19 +178,15 @@ function Model({ url, hidden, showLabels, showDots, mirror, selected, onSelect, 
 
   useEffect(() => {
     if (!mirrorObj) return
-    for (const child of mirrorObj.children) child.visible = !hidden.has(child.name)
-  }, [mirrorObj, hidden])
-
-  // Model bounding box → contact-shadow placement (a "plinth" under the piece).
-  const modelBox = useMemo(() => {
-    model.updateMatrixWorld(true)
-    const box = new THREE.Box3().setFromObject(model)
-    const center = new THREE.Vector3(); box.getCenter(center)
-    const size = new THREE.Vector3(); box.getSize(size)
-    return { center, size, minY: box.min.y }
-  }, [model])
-
-  const contactColor = useMemo(() => stageVar('--stage-contact', '#2A2015'), [])
+    for (const child of mirrorObj.children) {
+      child.visible = !hidden.has(child.name)
+      const m = child as THREE.Mesh
+      if (m.isMesh) {
+        const mats = Array.isArray(m.material) ? m.material : [m.material]
+        mats.forEach(mt => { (mt as THREE.Material).clippingPlanes = clipPlanes })
+      }
+    }
+  }, [mirrorObj, hidden, clipPlanes])
 
   // Label positions (computed once per model).
   const labelPositions = useMemo(() => {
@@ -180,7 +222,7 @@ function Model({ url, hidden, showLabels, showDots, mirror, selected, onSelect, 
       return { name, pos: [c.x, c.y, c.z] as [number, number, number], vol: s.x * s.y * s.z }
     }).filter(Boolean) as { name: string; pos: [number, number, number]; vol: number }[]
     arr.sort((a, b) => b.vol - a.vol)
-    return arr.slice(0, LABEL_CAP)
+    return arr.slice(0, DOT_CAP)
   }, [named, model])
 
   const dots = useMemo(
@@ -244,6 +286,17 @@ function Model({ url, hidden, showLabels, showDots, mirror, selected, onSelect, 
   )
 }
 
+/** Re-fits the camera to the model when `signal` changes (Reset view). */
+function BoundsRefit({ signal }: { signal: number }) {
+  const bounds = useBounds()
+  const first = useRef(true)
+  useEffect(() => {
+    if (first.current) { first.current = false; return }
+    bounds.refresh().clip().fit()
+  }, [signal, bounds])
+  return null
+}
+
 export interface AnatomyViewerProps {
   url: string
   hidden: Set<string>
@@ -251,6 +304,9 @@ export interface AnatomyViewerProps {
   showDots: boolean
   mirror: boolean
   selected: string | null
+  clip: ClipConfig
+  autoRotate: boolean
+  resetSignal: number
   onSelect: (name: string | null) => void
   onStructures: (names: string[]) => void
 }
@@ -261,6 +317,7 @@ export function AnatomyModelViewer(props: AnatomyViewerProps) {
       key={props.url}
       camera={{ position: [0, 0, 6], fov: 45, near: 0.01, far: 5000 }}
       onPointerMissed={() => props.onSelect(null)}
+      onCreated={({ gl }) => { gl.localClippingEnabled = true }}
       style={{ background: 'transparent', height: 'min(80vh, 760px)', width: '100%', display: 'block' }}
       dpr={[1, 2]}
       gl={{ alpha: true, antialias: true }}
@@ -272,10 +329,24 @@ export function AnatomyModelViewer(props: AnatomyViewerProps) {
       <directionalLight position={[-5, 2, -4]} intensity={0.28} />
       <Suspense fallback={<Loader />}>
         <Bounds fit clip observe margin={1.15}>
-          <Model {...props} />
+          <BoundsRefit signal={props.resetSignal} />
+          <Model
+            url={props.url}
+            hidden={props.hidden}
+            showLabels={props.showLabels}
+            showDots={props.showDots}
+            mirror={props.mirror}
+            selected={props.selected}
+            clip={props.clip}
+            onSelect={props.onSelect}
+            onStructures={props.onStructures}
+          />
         </Bounds>
       </Suspense>
-      <OrbitControls makeDefault enableDamping dampingFactor={0.1} />
+      <OrbitControls
+        makeDefault enableDamping dampingFactor={0.1}
+        autoRotate={props.autoRotate} autoRotateSpeed={0.9}
+      />
     </Canvas>
   )
 }
