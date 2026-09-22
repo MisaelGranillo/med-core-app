@@ -272,7 +272,7 @@
 
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* In-scene anatomy labels (drei <Html>) */
+  /* In-scene anatomy labels (drei <Html>) — read on the warm studio stage. */
   .anat-label {
     font-family: var(--font-mono);
     font-size: 0.625rem;
@@ -280,17 +280,95 @@
     white-space: nowrap;
     padding: 2px 6px;
     border-radius: var(--radius-sm);
-    background: rgba(10, 22, 40, 0.82);
-    color: #C8E0F8;
-    border: 1px solid rgba(56, 138, 221, 0.4);
+    background: color-mix(in srgb, var(--stage-bg) 80%, transparent);
+    color: var(--stage-ink);
+    border: 1px solid var(--stage-line);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.12);
     user-select: none;
     transform: translateZ(0);
   }
   .anat-label-active {
     background: var(--color-accent);
     color: #fff;
-    border-color: #fff;
+    border-color: rgba(255,255,255,0.6);
     font-weight: 600;
+  }
+
+  /* ── Hotspot "dots" (drei <Html>) — luminous points on key structures. ──── */
+  .anat-dot {
+    --dot-size: 11px;
+    display: block;
+    width: var(--dot-size);
+    height: var(--dot-size);
+    padding: 0;
+    border-radius: 50%;
+    border: 1.5px solid color-mix(in srgb, var(--stage-bg) 70%, #fff);
+    background: var(--color-accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 22%, transparent),
+                0 1px 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: transform 140ms ease, box-shadow 140ms ease;
+    position: relative;
+    transform: translateZ(0);
+  }
+  .anat-dot:hover,
+  .anat-dot:focus-visible {
+    transform: scale(1.35);
+    box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-accent) 26%, transparent),
+                0 2px 6px rgba(0,0,0,0.35);
+    outline: none;
+    z-index: 5;
+  }
+  .anat-dot-on {
+    background: #fff;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 40%, transparent),
+                0 1px 4px rgba(0,0,0,0.35);
+  }
+  /* Name bubble revealed on hover/focus/selection. */
+  .anat-dot-name {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 7px);
+    transform: translateX(-50%) translateY(3px);
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    background: color-mix(in srgb, var(--stage-bg) 90%, transparent);
+    border: 1px solid var(--stage-line);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.22);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 140ms ease, transform 140ms ease;
+  }
+  .anat-dot:hover .anat-dot-name,
+  .anat-dot:focus-visible .anat-dot-name,
+  .anat-dot-on .anat-dot-name {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  .anat-dot-name .es {
+    font-family: var(--font-voice);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--stage-ink);
+    line-height: 1.15;
+  }
+  .anat-dot-name .ta {
+    font-family: var(--font-mono);
+    font-size: 0.5625rem;
+    color: var(--stage-muted);
+    line-height: 1.1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .anat-dot, .anat-dot-name { transition: none; }
   }
 
   .animate-fade-up-delay-1 { animation-delay: 100ms; }

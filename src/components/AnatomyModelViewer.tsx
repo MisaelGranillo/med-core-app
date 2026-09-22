@@ -6,12 +6,19 @@
  */
 import { Suspense, useEffect, useMemo, useRef } from 'react'
 import { Canvas, type ThreeEvent } from '@react-three/fiber'
-import { OrbitControls, Bounds, useGLTF, Html } from '@react-three/drei'
+import { OrbitControls, Bounds, useGLTF, Html, ContactShadows } from '@react-three/drei'
 import * as THREE from 'three'
 import { sideOf, toSpanish } from '../data/anatomyStructures'
 
 const HIGHLIGHT = new THREE.Color('#3B82F6')
-const LABEL_CAP = 60 // max in-scene labels at once (perf guard)
+const LABEL_CAP = 60 // max in-scene labels/dots at once (perf guard)
+
+/** Read a CSS custom property off :root (for values three.js needs as hex). */
+function stageVar(name: string, fallback: string): string {
+  if (typeof window === 'undefined') return fallback
+  const v = getComputedStyle(document.documentElement).getPropertyValue(name).trim()
+  return v || fallback
+}
 
 function Loader() {
   return (
@@ -22,7 +29,7 @@ function Loader() {
           border: '3px solid rgba(255,255,255,0.15)', borderTopColor: 'var(--color-accent)',
           animation: 'spin 0.8s linear infinite',
         }} />
-        <span style={{ color: 'var(--c-stage-muted)', fontSize: '0.75rem', whiteSpace: 'nowrap' }}>Cargando modelo…</span>
+        <span style={{ color: 'var(--stage-muted)', fontSize: '0.75rem', whiteSpace: 'nowrap' }}>Cargando modelo…</span>
       </div>
     </Html>
   )
@@ -127,6 +134,17 @@ function Model({ url, hidden, showLabels, mirror, selected, onSelect, onStructur
     for (const child of mirrorObj.children) child.visible = !hidden.has(child.name)
   }, [mirrorObj, hidden])
 
+  // Model bounding box → contact-shadow placement (a "plinth" under the piece).
+  const modelBox = useMemo(() => {
+    model.updateMatrixWorld(true)
+    const box = new THREE.Box3().setFromObject(model)
+    const center = new THREE.Vector3(); box.getCenter(center)
+    const size = new THREE.Vector3(); box.getSize(size)
+    return { center, size, minY: box.min.y }
+  }, [model])
+
+  const contactColor = useMemo(() => stageVar('--stage-contact', '#2A2015'), [])
+
   // Label positions (computed once per model).
   const labelPositions = useMemo(() => {
     model.updateMatrixWorld(true)
@@ -153,6 +171,29 @@ function Model({ url, hidden, showLabels, mirror, selected, onSelect, onStructur
     <>
       <primitive object={model} onClick={handleClick} />
       {mirrorObj && <primitive object={mirrorObj} />}
+      {/* Contact shadow → the piece "floats" on a soft plinth. */}
+      <ContactShadows
+        position={[modelBox.center.x, modelBox.minY - modelBox.size.y * 0.012, modelBox.center.z]}
+        scale={Math.max(modelBox.size.x, modelBox.size.z) * 1.9}
+        far={modelBox.size.y * 1.25 || 4}
+        blur={2.6}
+        opacity={0.5}
+        resolution={1024}
+        color={contactColor}
+        frames={1}
+      />
+      {mirror && mirrorObj && (
+        <ContactShadows
+          position={[2 * midlineX - modelBox.center.x, modelBox.minY - modelBox.size.y * 0.012, modelBox.center.z]}
+          scale={Math.max(modelBox.size.x, modelBox.size.z) * 1.9}
+          far={modelBox.size.y * 1.25 || 4}
+          blur={2.6}
+          opacity={0.5}
+          resolution={1024}
+          color={contactColor}
+          frames={1}
+        />
+      )}
       {labels.map(l => (
         <Html key={l.name} position={l.pos} center style={{ pointerEvents: 'none' }} zIndexRange={[20, 0]}>
           <span className="anat-label">{toSpanish(l.name)}</span>
@@ -183,13 +224,15 @@ export function AnatomyModelViewer(props: AnatomyViewerProps) {
       key={props.url}
       camera={{ position: [0, 0, 6], fov: 45, near: 0.01, far: 5000 }}
       onPointerMissed={() => props.onSelect(null)}
-      style={{ background: 'var(--c-stage)', height: 'min(80vh, 760px)', width: '100%', display: 'block' }}
+      style={{ background: 'transparent', height: 'min(80vh, 760px)', width: '100%', display: 'block' }}
       dpr={[1, 2]}
+      gl={{ alpha: true, antialias: true }}
     >
-      <ambientLight intensity={0.9} />
-      <hemisphereLight args={['#ffffff', '#1a2438', 0.6]} />
-      <directionalLight position={[5, 10, 7]} intensity={1.1} />
-      <directionalLight position={[-6, -4, -6]} intensity={0.4} />
+      {/* Studio lighting: soft ambient + warm hemisphere + one key + faint fill. */}
+      <ambientLight intensity={0.62} />
+      <hemisphereLight args={['#fff7ec', '#2a2620', 0.38]} />
+      <directionalLight position={[4, 9, 6]} intensity={1.15} />
+      <directionalLight position={[-5, 2, -4]} intensity={0.28} />
       <Suspense fallback={<Loader />}>
         <Bounds fit clip observe margin={1.15}>
           <Model {...props} />

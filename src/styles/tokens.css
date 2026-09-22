@@ -149,9 +149,22 @@
   --mod-8-tint: var(--color-surface-subtle); --mod-8-ink: var(--color-text-primary); --mod-8-accent: var(--card-m8);
   --mod-9-tint: var(--color-surface-subtle); --mod-9-ink: var(--color-text-primary); --mod-9-accent: var(--card-m9);
 
-  /* Dark stage (anatomy iframe wrapper) */
+  /* Dark stage (anatomy 2D atlas wrapper) — do not change: Atlas 2D depends on it. */
   --c-stage: #0A1628;
   --c-stage-border: rgba(56,138,221,0.30);
+
+  /* ── 3D "atelier" stage — its OWN warm studio palette (light = cream). ──────
+   * Independent of the app blue; switches to warm charcoal in dark mode via
+   * [data-mode="dark"] and a prefers-color-scheme fallback (see below). */
+  --stage-bg:      #EFE7DA;              /* warm cream base */
+  --stage-bg-2:    #F7F2EA;              /* lighter centre glow (subtle gradient) */
+  --stage-ink:     #3B342A;              /* warm ink for on-stage text */
+  --stage-muted:   #8C8272;              /* warm muted */
+  --stage-line:    rgba(59,52,42,0.14);  /* hairline on the stage */
+  --stage-contact: #2A2015;              /* contact-shadow tone (three.js) */
+
+  /* Editorial serif accent (titles) — system stack, no web-font dependency. */
+  --font-voice: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, Cambria, 'Times New Roman', serif;
 
   /* Shadows */
   --shadow-sm:         0 1px 2px rgba(15,31,61,0.06);
@@ -209,7 +222,35 @@
     --c-primary-200: rgba(56,138,221,0.28);
     --c-primary-700: #7FB3E8;
     --c-primary-900: #A9CCF0;
+
+    /* 3D stage → warm charcoal in dark mode (fallback: honours the OS unless
+     * an explicit [data-mode="light"] opts out). */
+    --stage-bg:      #1C1A17;
+    --stage-bg-2:    #24211C;
+    --stage-ink:     #E9E2D5;
+    --stage-muted:   #9B9285;
+    --stage-line:    rgba(233,226,213,0.12);
+    --stage-contact: #000000;
   }
+}
+
+/* Explicit theme hooks for the 3D "atelier" stage. The stage keeps its own warm
+ * palette regardless of the app theme; these let a future in-app toggle force it. */
+:root[data-mode="dark"] {
+  --stage-bg:      #1C1A17;
+  --stage-bg-2:    #24211C;
+  --stage-ink:     #E9E2D5;
+  --stage-muted:   #9B9285;
+  --stage-line:    rgba(233,226,213,0.12);
+  --stage-contact: #000000;
+}
+:root[data-mode="light"] {
+  --stage-bg:      #EFE7DA;
+  --stage-bg-2:    #F7F2EA;
+  --stage-ink:     #3B342A;
+  --stage-muted:   #8C8272;
+  --stage-line:    rgba(59,52,42,0.14);
+  --stage-contact: #2A2015;
 }
 
 @media (prefers-reduced-motion: reduce) {

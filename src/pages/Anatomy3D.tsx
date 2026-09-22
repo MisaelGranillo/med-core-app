@@ -125,8 +125,11 @@ export function Anatomy3D() {
         </aside>
 
         {/* ── Viewer (center) ───────────────────────────────── */}
-        <div className="min-w-0 rounded-lg overflow-hidden border border-stage-border"
-             style={{ background: 'var(--c-stage)' }}>
+        <div className="relative min-w-0 rounded-xl overflow-hidden"
+             style={{
+               border: '1px solid var(--stage-line)',
+               background: 'radial-gradient(115% 85% at 50% 38%, var(--stage-bg-2) 0%, var(--stage-bg) 68%)',
+             }}>
           {active.status === 'available' ? (
             <AnatomyModelViewer
               url={active.glb}
@@ -139,10 +142,10 @@ export function Anatomy3D() {
             />
           ) : (
             <div className="flex flex-col items-center justify-center text-center gap-2 px-6"
-                 style={{ height: 'min(80vh, 760px)', color: 'var(--c-stage-text)' }}>
+                 style={{ height: 'min(80vh, 760px)', color: 'var(--stage-ink)' }}>
               <Cube className="w-8 h-8 opacity-50" />
               <p className="text-sm font-medium">{active.nombre}</p>
-              <p className="text-xs" style={{ color: 'var(--c-stage-muted)', maxWidth: 320 }}>
+              <p className="text-xs" style={{ color: 'var(--stage-muted)', maxWidth: 320 }}>
                 Este modelo aún no está disponible en la fuente Open 3D Model. Selecciona otro modelo.
               </p>
             </div>
