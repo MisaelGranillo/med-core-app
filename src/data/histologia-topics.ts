@@ -2170,6 +2170,15 @@ export const histologiaTopics: Topic[] = [
             content:
               'El PERICITO deriva de células mesenquimatosas indiferenciadas, rodea parcialmente el endotelio de los capilares y regula el flujo sanguíneo y el soporte microvascular (contiene actina, miosina y tropomiosina). El MASTOCITO es una célula residente ovoide de núcleo central, con el citoplasma lleno de GRÁNULOS METACROMÁTICOS; libera histamina y heparina y participa en la inflamación y la hipersensibilidad inmediata. Regla: muchos gránulos metacromáticos = mastocito.',
           },
+          {
+            type: 'image',
+            src: '/ilustraciones/histologia/conectivo-mastocito.png',
+            alt: 'Mastocito: célula redondeada con núcleo central y el citoplasma cargado de gránulos.',
+            caption: 'Mastocito, con su núcleo central y los gránulos citoplasmáticos.',
+            source: 'bioart',
+            sourceUrl: 'https://bioart.niaid.nih.gov/bioart/879',
+            credit: 'NIAID NIH BioART Source — dominio público',
+          },
         ],
       },
       {
