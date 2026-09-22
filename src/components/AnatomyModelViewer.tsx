@@ -39,13 +39,14 @@ interface ModelProps {
   url: string
   hidden: Set<string>
   showLabels: boolean
+  showDots: boolean
   mirror: boolean
   selected: string | null
   onSelect: (name: string | null) => void
   onStructures: (names: string[]) => void
 }
 
-function Model({ url, hidden, showLabels, mirror, selected, onSelect, onStructures }: ModelProps) {
+function Model({ url, hidden, showLabels, showDots, mirror, selected, onSelect, onStructures }: ModelProps) {
   const { scene } = useGLTF(url)
   const model = useMemo(() => scene.clone(true), [scene])
 
@@ -167,6 +168,26 @@ function Model({ url, hidden, showLabels, mirror, selected, onSelect, onStructur
     [selected, labelPositions],
   )
 
+  // Hotspot dots → the KEY structures = the largest by bounding-box volume,
+  // capped for performance. Anchored to each node's centre (drei <Html>).
+  const dotData = useMemo(() => {
+    model.updateMatrixWorld(true)
+    const arr = named.map(({ name, obj }) => {
+      const b = new THREE.Box3().setFromObject(obj)
+      if (b.isEmpty()) return null
+      const c = new THREE.Vector3(); b.getCenter(c)
+      const s = new THREE.Vector3(); b.getSize(s)
+      return { name, pos: [c.x, c.y, c.z] as [number, number, number], vol: s.x * s.y * s.z }
+    }).filter(Boolean) as { name: string; pos: [number, number, number]; vol: number }[]
+    arr.sort((a, b) => b.vol - a.vol)
+    return arr.slice(0, LABEL_CAP)
+  }, [named, model])
+
+  const dots = useMemo(
+    () => showDots ? dotData.filter(d => !hidden.has(d.name)) : [],
+    [showDots, dotData, hidden],
+  )
+
   return (
     <>
       <primitive object={model} onClick={handleClick} />
@@ -199,11 +220,26 @@ function Model({ url, hidden, showLabels, mirror, selected, onSelect, onStructur
           <span className="anat-label">{toSpanish(l.name)}</span>
         </Html>
       ))}
-      {selectedLabel && (
+      {selectedLabel && !showDots && (
         <Html position={selectedLabel.pos} center style={{ pointerEvents: 'none' }} zIndexRange={[40, 10]}>
           <span className="anat-label anat-label-active">{toSpanish(selectedLabel.name)}</span>
         </Html>
       )}
+      {dots.map(d => (
+        <Html key={d.name} position={d.pos} center zIndexRange={[30, 0]} style={{ pointerEvents: 'auto' }}>
+          <button
+            type="button"
+            className={`anat-dot${selected === d.name ? ' anat-dot-on' : ''}`}
+            aria-label={toSpanish(d.name)}
+            onClick={e => { e.stopPropagation(); onSelect(d.name) }}
+          >
+            <span className="anat-dot-name">
+              <span className="es">{toSpanish(d.name)}</span>
+              <span className="ta">{d.name}</span>
+            </span>
+          </button>
+        </Html>
+      ))}
     </>
   )
 }
@@ -212,6 +248,7 @@ export interface AnatomyViewerProps {
   url: string
   hidden: Set<string>
   showLabels: boolean
+  showDots: boolean
   mirror: boolean
   selected: string | null
   onSelect: (name: string | null) => void

@@ -8,14 +8,41 @@ import { useState, useEffect, useCallback, useMemo } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import {
   ArrowLeft, ArrowRight, BookOpenText, Cube, CursorClick, Eye, EyeSlash,
-  CaretRight, Tag, FlipHorizontal,
+  CaretRight, Tag, FlipHorizontal, MapPin,
 } from '@phosphor-icons/react'
 import {
   anatomyModels, anatomyRegions, anatomyModelById, availableModelCount,
   type AnatomyModel,
 } from '../data/anatomyModels'
-import { buildStructures, toSpanish } from '../data/anatomyStructures'
+import { buildStructures, toSpanish, sideOf, groupOf, GROUP_LABEL } from '../data/anatomyStructures'
+import { anatomyParts, type AnatomyPart } from '../data/anatomy-3d-data'
 import { AnatomyModelViewer } from '../components/AnatomyModelViewer'
+
+/* Best-effort map from a GLB node name (Terminologia Anatomica) to a rich
+ * AnatomyPart record (función / descripción). First match wins; many bones
+ * therefore inherit their regional part's description. */
+const PART_MATCHERS: [RegExp, string][] = [
+  [/skull|cranium|frontal|parietal|occipital|temporal|sphenoid|ethmoid|maxilla|mandible|nasal bone|zygomat|palatine|vomer/i, 'craneo'],
+  [/vertebra|atlas|axis|sacrum|coccyx|spine|spinal/i, 'columna-vertebral'],
+  [/\brib\b|costal|sternum|manubrium|xiphoid/i, 'caja-toracica'],
+  [/humerus/i, 'humero'],
+  [/femur/i, 'femur'],
+  [/biceps/i, 'biceps'],
+  [/quadricep|rectus femoris|vastus/i, 'cuadriceps'],
+  [/diaphragm/i, 'diafragma'],
+  [/trapezius/i, 'trapecio'],
+  [/gastrocnemius/i, 'gastrocnemio'],
+  [/cerebr|brain/i, 'cerebro'],
+  [/heart|cardiac/i, 'corazon'],
+  [/lung|pulmon/i, 'pulmones'],
+  [/liver|hepat/i, 'higado'],
+  [/stomach|gastr(?!ocnemius)/i, 'estomago'],
+]
+function matchPart(node: string): AnatomyPart | null {
+  for (const [re, id] of PART_MATCHERS) if (re.test(node)) return anatomyParts[id] ?? null
+  return null
+}
+const SIDE_LABEL: Record<string, string> = { right: 'Derecho', left: 'Izquierdo', central: 'Central / medial' }
 
 function resolveModel(param: string | null): AnatomyModel {
   if (param) {
@@ -37,17 +64,24 @@ export function Anatomy3D() {
   const [hidden, setHidden] = useState<Set<string>>(new Set())
   const [selected, setSelected] = useState<string | null>(null)
   const [showLabels, setShowLabels] = useState(false)
+  const [showDots, setShowDots] = useState(true)
   const [mirror, setMirror] = useState(false)
   const [openGroups, setOpenGroups] = useState<Set<string>>(new Set())
 
   // Reset everything when the model changes
   useEffect(() => {
     setNames([]); setHidden(new Set()); setSelected(null)
-    setShowLabels(false); setMirror(false); setOpenGroups(new Set())
+    setShowLabels(false); setShowDots(true); setMirror(false); setOpenGroups(new Set())
   }, [active.id])
 
   const onStructures = useCallback((n: string[]) => setNames(n), [])
   const { groups, bilateral } = useMemo(() => buildStructures(names), [names])
+
+  // Editorial "ficha" data for the selected structure.
+  const part = selected ? matchPart(selected) : null
+  const regionLabel = anatomyRegions.find(r => r.id === active.region)?.nombre ?? '—'
+  const groupLabel = selected ? (GROUP_LABEL[groupOf(selected)] ?? 'Otros') : '—'
+  const sideLabel = selected ? SIDE_LABEL[sideOf(selected)] : '—'
 
   const select = (id: string) => setParams({ model: id }, { replace: true })
   const shown = anatomyModels.filter(m => region === 'all' || m.region === region)
@@ -135,6 +169,7 @@ export function Anatomy3D() {
               url={active.glb}
               hidden={hidden}
               showLabels={showLabels}
+              showDots={showDots}
               mirror={mirror}
               selected={selected}
               onSelect={setSelected}
@@ -157,26 +192,74 @@ export function Anatomy3D() {
           <div className="card p-4">
             <div className="flex items-center gap-2 mb-1">
               <Cube weight="fill" className="w-4 h-4 text-primary" />
-              <h1 className="text-base font-semibold text-ink m-0 leading-tight">{active.nombre}</h1>
+              <h1 className="text-base font-semibold text-ink m-0 leading-tight"
+                  style={{ fontFamily: 'var(--font-voice)' }}>{active.nombre}</h1>
             </div>
             <p className="catalog-code mb-2" style={{ textTransform: 'none' }}>{active.nombre_en}</p>
-            <p className="text-sm text-body leading-relaxed mb-3">{active.description}</p>
-
-            {active.status === 'available' && (
-              <div className="rounded-md border border-line bg-surface-2 p-3">
-                <p className="catalog-code mb-1">Estructura seleccionada</p>
-                {selected
-                  ? <p className="text-sm font-medium text-primary-ink break-words">{toSpanish(selected)}</p>
-                  : <p className="text-xs text-muted flex items-center gap-1.5"><CursorClick className="w-3.5 h-3.5" /> Haz clic en una estructura</p>}
-              </div>
-            )}
+            <p className="text-sm text-body leading-relaxed">{active.description}</p>
           </div>
+
+          {/* ── Editorial "ficha" of the selected structure ─────── */}
+          {active.status === 'available' && (
+            selected ? (
+              <div className="flex flex-col gap-2.5">
+                {/* Datos clave */}
+                <div className="card p-4">
+                  <p className="label-mono mb-2">Datos clave</p>
+                  <p className="text-lg font-semibold text-ink leading-snug break-words"
+                     style={{ fontFamily: 'var(--font-voice)' }}>{toSpanish(selected)}</p>
+                  <p className="catalog-code mb-3" style={{ textTransform: 'none' }}>{selected}</p>
+                  <dl className="grid grid-cols-[5rem_1fr] gap-x-3 gap-y-1.5 text-xs">
+                    {part && (<><dt className="text-muted">Sistema</dt><dd className="text-body font-medium">{part.sistema}</dd></>)}
+                    <dt className="text-muted">Región</dt><dd className="text-body font-medium">{regionLabel}</dd>
+                    <dt className="text-muted">Grupo</dt><dd className="text-body font-medium">{groupLabel}</dd>
+                    <dt className="text-muted">Lado</dt><dd className="text-body font-medium">{sideLabel}</dd>
+                  </dl>
+                </div>
+
+                {/* Función */}
+                {part && (
+                  <div className="card p-4">
+                    <p className="label-mono mb-2">Función</p>
+                    <p className="text-xs text-body leading-relaxed mb-2.5">{part.descripcion}</p>
+                    <ul className="flex flex-col gap-1.5">
+                      {part.funcionesClave.map((f, i) => (
+                        <li key={i} className="text-xs text-body leading-snug flex gap-2">
+                          <span className="text-primary mt-[3px] flex-shrink-0">●</span>
+                          <span>{f}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                <Link to="/terminologia"
+                  className="flex items-center gap-1.5 catalog-code hover:text-primary-ink transition-colors">
+                  <BookOpenText weight="fill" className="w-3.5 h-3.5" />
+                  Buscar «{toSpanish(selected)}» en terminología
+                </Link>
+              </div>
+            ) : (
+              <div className="card p-4">
+                <p className="label-mono mb-1.5">Estructura seleccionada</p>
+                <p className="text-xs text-muted flex items-center gap-1.5">
+                  <CursorClick className="w-3.5 h-3.5 flex-shrink-0" />
+                  Haz clic en una estructura o en un punto para ver su ficha.
+                </p>
+              </div>
+            )
+          )}
 
           {/* Structure controls + accordion */}
           {active.status === 'available' && groups.length > 0 && (
             <div className="card p-3 flex flex-col gap-2 lg:max-h-[58vh] lg:overflow-y-auto">
               <div className="flex items-center gap-1.5 flex-wrap">
-                <button onClick={() => setShowLabels(v => !v)}
+                <button onClick={() => setShowDots(v => !v)} aria-pressed={showDots}
+                  className={`flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-md border transition-colors
+                    ${showDots ? 'bg-primary-tint border-primary-200 text-primary-ink' : 'bg-surface border-line text-muted hover:border-line-strong'}`}>
+                  <MapPin weight={showDots ? 'fill' : 'regular'} className="w-3.5 h-3.5" /> Puntos
+                </button>
+                <button onClick={() => setShowLabels(v => !v)} aria-pressed={showLabels}
                   className={`flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-md border transition-colors
                     ${showLabels ? 'bg-primary-tint border-primary-200 text-primary-ink' : 'bg-surface border-line text-muted hover:border-line-strong'}`}>
                   <Tag weight={showLabels ? 'fill' : 'regular'} className="w-3.5 h-3.5" /> Etiquetas
