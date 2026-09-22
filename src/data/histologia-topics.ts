@@ -345,6 +345,11 @@ export const histologiaTopics: Topic[] = [
   },
   {
     id: 'histologia-celula',
+    illustration: {
+      src: '/ilustraciones/histologia/celula.png',
+      alt: 'Célula animal con sus organelos: membrana, núcleo y nucléolo, retículo endoplásmico rugoso y liso, aparato de Golgi, mitocondrias, lisosoma, centrosoma y ribosomas.',
+      credit: 'Servier Medical Art — CC BY 4.0 (adaptada)',
+    },
     title: 'La célula',
     subtitle: 'Membrana, núcleo, organelos, citoesqueleto y transporte a través de la membrana',
     colorKey: 'histologia',
@@ -869,6 +874,11 @@ export const histologiaTopics: Topic[] = [
   },
   {
     id: 'histologia-epitelial-polaridad',
+    illustration: {
+      src: '/ilustraciones/histologia/polaridad-uniones.png',
+      alt: 'Uniones entre dos células epiteliales: uniones estrechas (ocluyentes), uniones comunicantes (gap) y desmosomas.',
+      credit: 'Servier Medical Art — CC BY 4.0 (adaptada)',
+    },
     title: 'Polaridad celular epitelial: dominios, uniones y glándulas',
     subtitle: 'Apical/lateral/basal, especializaciones, medios de unión, membrana basal y glándulas',
     colorKey: 'histologia',
@@ -1273,6 +1283,11 @@ export const histologiaTopics: Topic[] = [
   },
   {
     id: 'histologia-epitelios-urinario',
+    illustration: {
+      src: '/ilustraciones/histologia/urinario-corpusculo.png',
+      alt: 'Corpúsculo renal: ovillo de capilares del glomérulo dentro de la cápsula de Bowman, con las arteriolas del polo vascular.',
+      credit: 'Servier Medical Art — CC BY 4.0 (adaptada)',
+    },
     title: 'Epitelios del aparato urinario: urotelio y glomérulo',
     subtitle: 'Urotelio de transición, células en paraguas, cápsula de Bowman y barrera de filtración',
     colorKey: 'histologia',
@@ -1441,6 +1456,11 @@ export const histologiaTopics: Topic[] = [
   },
   {
     id: 'histologia-epitelios-respiratorio',
+    illustration: {
+      src: '/ilustraciones/histologia/respiratorio-alveolos.png',
+      alt: 'Vías aéreas intrapulmonares: un bronquiolo que termina en sacos alveolares rodeados por la red de capilares del intercambio gaseoso.',
+      credit: 'Servier Medical Art — CC BY 4.0 (adaptada)',
+    },
     title: 'Epitelios del aparato respiratorio y alvéolo',
     subtitle: 'Porción conductora vs respiratoria, epitelio pseudoestratificado ciliado, alvéolo y neumocitos',
     colorKey: 'histologia',
@@ -1592,6 +1612,11 @@ export const histologiaTopics: Topic[] = [
   },
   {
     id: 'histologia-piel',
+    illustration: {
+      src: '/ilustraciones/histologia/piel-epidermis.png',
+      alt: 'Epidermis y sus poblaciones celulares: queratinocitos, un melanocito con gránulos de melanina y una célula de Langerhans, sobre la dermis.',
+      credit: 'Servier Medical Art — CC BY 4.0 (adaptada)',
+    },
     title: 'Histología de la piel: epidermis y estratos',
     subtitle: 'Epidermis plano estratificada queratinizada, los 5 estratos, las 4 células y la unión dermoepidérmica',
     colorKey: 'histologia',
@@ -1899,6 +1924,11 @@ export const histologiaTopics: Topic[] = [
   },
   {
     id: 'histologia-conectivo-matriz',
+    illustration: {
+      src: '/ilustraciones/histologia/conectivo-colageno.png',
+      alt: 'Fibras de colágeno y el modelo de su triple hélice.',
+      credit: 'Servier Medical Art — CC BY 4.0 (adaptada)',
+    },
     title: 'Tejido conectivo: matriz, fibras y colágenos',
     subtitle: 'MEC vs células, clasificación, funciones, fibras y los colágenos I–VII',
     colorKey: 'histologia',
@@ -2046,6 +2076,11 @@ export const histologiaTopics: Topic[] = [
   },
   {
     id: 'histologia-conectivo-celulas',
+    illustration: {
+      src: '/ilustraciones/histologia/conectivo-fibroblasto.png',
+      alt: 'Fibroblastos: células fusiformes con prolongaciones, las más abundantes del tejido conectivo.',
+      credit: 'Servier Medical Art — CC BY 4.0 (adaptada)',
+    },
     title: 'Células del tejido conectivo',
     subtitle: 'Células fijas y móviles: fibroblasto, adipocito, pericito, mastocito, macrófago y leucocitos',
     colorKey: 'histologia',
@@ -2508,6 +2543,11 @@ export const histologiaTopics: Topic[] = [
   },
   {
     id: 'histologia-hueso',
+    illustration: {
+      src: '/ilustraciones/histologia/hueso-osteona.png',
+      alt: 'Osteona (sistema de Havers): laminillas concéntricas alrededor del canal central con vasos, canales de Volkmann perpendiculares y osteocitos en sus lagunas.',
+      credit: 'Servier Medical Art — CC BY 4.0 (adaptada)',
+    },
     title: 'Tejido óseo',
     subtitle: 'Matriz mineralizada, osteona (Havers/Volkmann), células, osificación y remodelación',
     colorKey: 'histologia',
@@ -2635,6 +2675,13 @@ export const histologiaTopics: Topic[] = [
             type: 'note',
             title: '★ Puntos de examen',
             content: 'El cuerpo del osteocito está en la LAGUNA; los canalículos comunican osteocitos y transportan nutrientes. La célula grande MULTINUCLEADA que reabsorbe es el osteoclasto.',
+          },
+          {
+            type: 'image',
+            src: '/ilustraciones/histologia/hueso-remodelacion.png',
+            alt: 'Ciclo de remodelación ósea con sus células: osteoclasto reabsorbiendo, macrófagos, osteoblastos depositando osteoide y osteocitos incluidos en el hueso.',
+            caption: 'Las células óseas en el ciclo de remodelación: osteoclasto (reabsorbe), macrófagos, osteoblastos (forman osteoide) y osteocitos (en sus lagunas).',
+            credit: 'Servier Medical Art — CC BY 4.0 (adaptada)',
           },
         ],
       },
