@@ -97,6 +97,15 @@ export function Ajustes() {
             <p className="text-sm text-zinc-700 leading-relaxed">
               Algunas ilustraciones provienen de{' '}
               <a
+                href="https://bioart.niaid.nih.gov"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-zinc-900 underline hover:text-zinc-600"
+              >
+                NIAID NIH BioART Source
+              </a>{' '}
+              (bioart.niaid.nih.gov; en su mayoría de dominio público) y de{' '}
+              <a
                 href="https://smart.servier.com"
                 target="_blank"
                 rel="noopener noreferrer"

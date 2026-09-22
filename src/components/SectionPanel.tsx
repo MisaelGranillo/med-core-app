@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { CaretRight, CheckCircle, Equals, ArrowRight, Heartbeat, Lightbulb, Brain, ClockCounterClockwise } from '@phosphor-icons/react'
 import type { Section, ContentBlock, TopicColorKey } from '../types'
 import { TOPIC_COLORS } from '../data/colors'
-import { ServierCredit } from './ServierCredit'
+import { IllustrationCredit } from './IllustrationCredit'
 
 interface SectionPanelProps {
   section: Section
@@ -314,7 +314,7 @@ function BlockRenderer({ block, colorKey }: { block: ContentBlock; colorKey: Top
           {block.caption && (
             <figcaption className="text-xs text-muted leading-relaxed mt-2">{block.caption}</figcaption>
           )}
-          <ServierCredit className="mt-1" />
+          <IllustrationCredit source={block.source} sourceUrl={block.sourceUrl} className="mt-1" />
         </figure>
       )
 

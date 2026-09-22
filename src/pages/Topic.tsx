@@ -19,7 +19,7 @@ import { TOPIC_COLORS } from '../data/colors'
 import { useProgress } from '../store/useProgress'
 import { SectionPanel } from '../components/SectionPanel'
 import { ProgressRing } from '../components/ProgressRing'
-import { ServierCredit } from '../components/ServierCredit'
+import { IllustrationCredit } from '../components/IllustrationCredit'
 
 const COLOR_RING: Record<string, string> = {
   // Anatomía
@@ -292,7 +292,11 @@ export function Topic() {
                   onError={(e) => { e.currentTarget.closest('.card')?.classList.add('hidden') }}
                 />
               </div>
-              <ServierCredit className="mt-3 text-center" />
+              <IllustrationCredit
+                source={topic.illustration.source}
+                sourceUrl={topic.illustration.sourceUrl}
+                className="mt-3 text-center"
+              />
             </motion.div>
           )}
 
