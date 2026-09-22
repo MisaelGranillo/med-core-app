@@ -19,6 +19,7 @@ import { TOPIC_COLORS } from '../data/colors'
 import { useProgress } from '../store/useProgress'
 import { SectionPanel } from '../components/SectionPanel'
 import { ProgressRing } from '../components/ProgressRing'
+import { ServierCredit } from '../components/ServierCredit'
 
 const COLOR_RING: Record<string, string> = {
   // Anatomía
@@ -270,6 +271,31 @@ export function Topic() {
 
         {/* Main content */}
         <div className="flex-1 min-w-0 space-y-4">
+          {/* Ilustración de cabecera del tema (Servier Medical Art, CC BY 4.0). */}
+          {topic.illustration && (
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="card p-6"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <BookOpen weight="fill" className={`w-5 h-5 ${colors.text}`} />
+                <h3 className="font-bold text-zinc-900">Ilustración</h3>
+              </div>
+              {/* Fondo blanco fijo para que la SVG de línea se vea en dark mode. */}
+              <div className="rounded-lg border border-zinc-200 bg-white overflow-hidden max-w-2xl mx-auto">
+                <img
+                  src={topic.illustration.src}
+                  alt={topic.illustration.alt}
+                  className="block w-full h-auto max-h-[22rem] object-contain mx-auto p-4"
+                  onError={(e) => { e.currentTarget.closest('.card')?.classList.add('hidden') }}
+                />
+              </div>
+              <ServierCredit className="mt-3 text-center" />
+            </motion.div>
+          )}
+
           {topic.sections.map((section, i) => (
             <div key={section.id} id={`section-${section.id}`}>
               <motion.div

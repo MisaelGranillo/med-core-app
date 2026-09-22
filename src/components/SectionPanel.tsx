@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { CaretRight, CheckCircle, Equals, ArrowRight, Heartbeat, Lightbulb, Brain, ClockCounterClockwise } from '@phosphor-icons/react'
 import type { Section, ContentBlock, TopicColorKey } from '../types'
 import { TOPIC_COLORS } from '../data/colors'
+import { ServierCredit } from './ServierCredit'
 
 interface SectionPanelProps {
   section: Section
@@ -293,6 +294,28 @@ function BlockRenderer({ block, colorKey }: { block: ContentBlock; colorKey: Top
             )}
           </div>
         </div>
+      )
+
+    case 'image':
+      if (!block.src) return null
+      return (
+        <figure>
+          {block.title && <BlockLabel text={block.title} colorKey={colorKey} />}
+          {/* Fondo blanco fijo: las SVG de línea de Servier pueden desaparecer
+              sobre superficies oscuras en dark mode. */}
+          <div className="rounded-xl border border-zinc-200 bg-white overflow-hidden">
+            <img
+              src={block.src}
+              alt={block.alt ?? ''}
+              loading="lazy"
+              className="block w-full h-auto max-h-96 object-contain mx-auto p-3"
+            />
+          </div>
+          {block.caption && (
+            <figcaption className="text-xs text-muted leading-relaxed mt-2">{block.caption}</figcaption>
+          )}
+          <ServierCredit className="mt-1" />
+        </figure>
       )
 
     default:

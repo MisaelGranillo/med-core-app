@@ -87,6 +87,37 @@ export function Ajustes() {
           </div>
         </section>
 
+        {/* Créditos / atribución de terceros */}
+        <section className="card p-6">
+          <h2 className="font-bold text-zinc-900 mb-1">Créditos</h2>
+          <p className="text-sm text-zinc-500 mb-4">
+            Recursos de terceros utilizados en MedCore.
+          </p>
+          <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
+            <p className="text-sm text-zinc-700 leading-relaxed">
+              Algunas ilustraciones provienen de{' '}
+              <a
+                href="https://smart.servier.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-zinc-900 underline hover:text-zinc-600"
+              >
+                Servier Medical Art
+              </a>{' '}
+              (smart.servier.com), bajo licencia{' '}
+              <a
+                href="https://creativecommons.org/licenses/by/4.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-zinc-900 underline hover:text-zinc-600"
+              >
+                CC BY 4.0
+              </a>
+              . Algunas fueron adaptadas (optimizadas y recortadas) para su uso en la app.
+            </p>
+          </div>
+        </section>
+
         {/* Futuros ajustes: tema, etc. */}
       </div>
     </main>
