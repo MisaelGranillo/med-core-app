@@ -3211,4 +3211,182 @@ export const histologiaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'histologia-medula-hematopoyesis',
+    title: 'Plaquetas, hemostasia y médula ósea',
+    subtitle: 'Estructura plaquetaria y hemostasia, médula ósea, hematopoyesis y sus reguladores',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🔬',
+    keyPoints: [
+      'Plaqueta = HIALÓMERO (citoesqueleto: actina/miosina/microtúbulos) + GRANULÓMERO (gránulos α = fibrinógeno/vWF; densos/δ = ADP, serotonina, Ca²⁺; λ = lisosomales). Sin núcleo, con actividad metabólica. Origen: megacariocito; regulación por TROMBOPOYETINA.',
+      'Hemostasia: lesión → ADHESIÓN (el vWF une la plaqueta al colágeno subendotelial) → activación → agregación → tapón plaquetario primario → cascada de coagulación (fibrinógeno → FIBRINA) → coágulo estable.',
+      'Enfermedad de von Willebrand = trastorno hemorrágico hereditario más frecuente (sangrado de mucosas). AAS: inhibe COX-1 → ↓ tromboxano A₂ → ANTIAGREGANTE (no anticoagulante).',
+      'Médula ROJA (hematopoyética: esternón, costillas, cráneo, vértebras, pelvis, epífisis proximales) vs AMARILLA (grasa/reserva; puede reactivarse). Sinusoides = salida de células maduras; celularidad ≈ 100 − edad.',
+      'HSC (células madre hematopoyéticas): AUTORRENOVACIÓN + DIFERENCIACIÓN → línea MIELOIDE (eritrocitos, plaquetas, neutrófilos, eosinófilos, basófilos, monocitos) y LINFOIDE (B, T, NK).',
+      'Reguladores clave: SCF (temprana), GM-CSF (granulocitos+macrófagos), G-CSF → neutrófilos, M-CSF → monocitos/macrófagos, IL-5 → eosinófilos, IL-8 → migración de neutrófilos.',
+    ],
+    sections: [
+      {
+        id: 'hmed-1',
+        number: 1,
+        title: 'Estructura de la plaqueta',
+        keyTerms: ['hialómero', 'granulómero', 'gránulos alfa', 'gránulos densos', 'trombopoyetina'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La plaqueta (trombocito) es un fragmento de megacariocito SIN núcleo pero con actividad metabólica (mitocondrias, lisosomas, glucógeno). Se produce por trombopoyesis (megacariocito → fragmentación) y se regula por la TROMBOPOYETINA (producida sobre todo en hígado y riñón).',
+          },
+          {
+            type: 'comparison',
+            title: 'Dos regiones',
+            left: {
+              title: 'Hialómero (periférico)',
+              items: ['Citoesqueleto: actina, miosina, microtúbulos', 'Mantiene la forma', 'Permite el cambio de forma y la contracción en la activación'],
+            },
+            right: {
+              title: 'Granulómero (central)',
+              items: ['Gránulos α: fibrinógeno, factor de von Willebrand', 'Gránulos densos/δ: ADP, serotonina, Ca²⁺', 'Gránulos λ: lisosomales'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hmed-2',
+        number: 2,
+        title: 'Hemostasia',
+        keyTerms: ['hemostasia', 'von Willebrand', 'fibrina', 'AAS'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Secuencia de la hemostasia',
+            steps: [
+              'Lesión vascular.',
+              'Adhesión: el factor de von Willebrand (vWF) une la plaqueta al colágeno subendotelial.',
+              'Activación y agregación de plaquetas → tapón plaquetario primario.',
+              'Cascada de coagulación: fibrinógeno → FIBRINA.',
+              'Coágulo estable (hemostasia secundaria).',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'von Willebrand y AAS',
+            content: 'La enfermedad de von Willebrand (vWF deficiente/anómalo) es el trastorno hemorrágico hereditario MÁS FRECUENTE: peor adhesión plaquetaria → sangrado de mucosas y menstruación prolongada. El AAS (aspirina) inhibe la COX-1 → ↓ tromboxano A₂ → antiagregante plaquetario (NO anticoagulante).',
+          },
+        ],
+      },
+      {
+        id: 'hmed-3',
+        number: 3,
+        title: 'Médula ósea: roja y amarilla',
+        keyTerms: ['médula roja', 'médula amarilla', 'sinusoides', 'islotes eritroblásticos'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Médula roja vs amarilla',
+            left: {
+              title: 'Roja (hematopoyética)',
+              items: ['Produce eritrocitos, leucocitos y plaquetas', 'En el adulto: esternón, costillas, cráneo, vértebras, pelvis y epífisis proximales de fémur/húmero', 'Muy vascularizada'],
+            },
+            right: {
+              title: 'Amarilla (reserva)',
+              items: ['Sobre todo tejido adiposo', 'Reserva de lípidos; no hematopoyética', 'Puede reactivarse ante demanda extrema (anemias hemolíticas crónicas)'],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Organización y datos',
+            content: 'Los SINUSOIDES son las «puertas de salida» de las células maduras hacia la sangre. En los ISLOTES ERITROBLÁSTICOS los eritroblastos rodean a un macrófago central («niñera»). La celularidad medular ≈ 100 − edad (interpretar según la edad del paciente).',
+          },
+        ],
+      },
+      {
+        id: 'hmed-4',
+        number: 4,
+        title: 'Hematopoyesis: HSC y las dos líneas',
+        keyTerms: ['HSC', 'mieloide', 'linfoide', 'autorrenovación'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La célula madre hematopoyética (HSC) tiene dos propiedades: AUTORRENOVACIÓN (produce nuevas HSC) y DIFERENCIACIÓN (origina las líneas celulares). Son muy escasas en la médula.',
+          },
+          {
+            type: 'comparison',
+            title: 'Dos grandes líneas',
+            left: {
+              title: 'Línea mieloide',
+              items: ['Eritrocitos', 'Plaquetas (megacariocitos)', 'Neutrófilos, eosinófilos, basófilos', 'Monocitos'],
+            },
+            right: {
+              title: 'Línea linfoide',
+              items: ['Linfocitos B', 'Linfocitos T', 'Células NK'],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Nivel de detalle',
+            content: 'El árbol detallado de maduración no se exige a ese nivel; lo importante es el concepto de origen común (HSC) y diferenciación en líneas mieloide y linfoide.',
+          },
+        ],
+      },
+      {
+        id: 'hmed-5',
+        number: 5,
+        title: 'Reguladores de la hematopoyesis',
+        keyTerms: ['SCF', 'G-CSF', 'M-CSF', 'IL-5', 'GM-CSF'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Los reguladores clave',
+            data: {
+              headers: ['Regulador', 'Asociación principal'],
+              rows: [
+                ['SCF (factor de célula madre)', 'Hematopoyesis temprana'],
+                ['GM-CSF', 'Granulocitos + macrófagos'],
+                ['G-CSF', 'Neutrófilos'],
+                ['M-CSF', 'Monocitos/macrófagos'],
+                ['IL-5', 'Eosinófilos'],
+                ['IL-8', 'Migración de neutrófilos'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Referencia',
+            content: 'La lista completa (16 factores con su acción y origen) está en el PDF de reguladores de la hemopoyesis — es material de referencia, no de memorizar.',
+          },
+        ],
+      },
+      {
+        id: 'hmed-6',
+        number: 6,
+        title: 'Correlación clínica: leucemia y otras alteraciones',
+        keyTerms: ['leucemia', 'pancitopenia', 'trombocitopenia', 'poliglobulia'],
+        blocks: [
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Leucemia = la fábrica ocupada',
+            content: 'La leucemia es una neoplasia hematopoyética cuyas células ocupan la médula y DESPLAZAN la producción normal → anemia + neutropenia + trombocitopenia (PANCITOPENIA). El diagnóstico se apoya en el aspirado/biopsia de médula ósea (cresta ilíaca o esternón).',
+          },
+          {
+            type: 'table',
+            title: 'Otras alteraciones integradas',
+            data: {
+              headers: ['Condición', 'Cambio', 'Clave'],
+              rows: [
+                ['Anemia', '↓ eritrocitos o hemoglobina', 'Palidez, fatiga, disnea'],
+                ['Trombocitopenia', '↓ plaquetas (< 150,000/μL)', 'Petequias (p. ej. dengue grave)'],
+                ['Poliglobulia', '↑ eritrocitos por hipoxia crónica', 'EPO ↑ (EPOC, apnea, tabaquismo)'],
+                ['Policitemia vera', 'Neoplasia mieloproliferativa', 'Hematocrito alto, rubicundez, trombosis'],
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
 ]
