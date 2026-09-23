@@ -2898,4 +2898,166 @@ export const histologiaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'histologia-leucocitos',
+    title: 'Leucocitos, plaquetas e identificación en frotis',
+    subtitle: 'Clasificación y fórmula leucocitaria, morfología de cada célula y reconocimiento en el frotis',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🔬',
+    keyPoints: [
+      'LEUCOCITOS ≠ linfocitos (el linfocito es un tipo de leucocito). Se dividen en GRANULOCITOS/polimorfonucleares (neutrófilo, eosinófilo, basófilo) y AGRANULOCITOS/mononucleares (linfocito, monocito).',
+      'Fórmula leucocitaria: neutrófilos 60–70 %, linfocitos 20–35 %, monocitos 3–8 %, eosinófilos 2–4 %, basófilos 0.5–1 %.',
+      'Neutrófilo = núcleo MULTILOBULADO (3–5 lóbulos), fagocitosis bacteriana (NETs). Eosinófilo = BILOBULADO, gránulos NARANJA, parásitos/alergia. Basófilo = gránulos AZUL-VIOLETA que ocultan el núcleo, histamina/heparina (hipersensibilidad tipo I).',
+      'Monocito = el más grande (12–20 μm), núcleo ARRIÑONADO → macrófago tisular (Kupffer/microglía/osteoclasto).',
+      'Plaqueta = fragmento de megacariocito, SIN núcleo, 2–4 μm, 150,000–400,000/μL, vida 7–10 días.',
+      'Terminología: -osis/-filia (aumento) vs -penia (disminución): leucocitosis/leucopenia, neutrofilia/neutropenia, trombocitosis/trombocitopenia.',
+    ],
+    sections: [
+      {
+        id: 'hleu-1',
+        number: 1,
+        title: 'Clasificación de los leucocitos',
+        keyTerms: ['granulocitos', 'agranulocitos', 'polimorfonucleares'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Los leucocitos (glóbulos blancos) son la defensa celular. Punto clave: LEUCOCITOS ≠ LINFOCITOS; el linfocito es solo un tipo de leucocito. Se clasifican en dos grandes grupos según sus gránulos.',
+          },
+          {
+            type: 'comparison',
+            title: 'Dos grandes grupos',
+            left: {
+              title: 'Granulocitos (polimorfonucleares)',
+              items: ['Neutrófilos', 'Eosinófilos', 'Basófilos'],
+            },
+            right: {
+              title: 'Agranulocitos (mononucleares)',
+              items: ['Linfocitos', 'Monocitos'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hleu-2',
+        number: 2,
+        title: 'Fórmula leucocitaria',
+        keyTerms: ['fórmula leucocitaria', 'porcentajes'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Proporciones aproximadas',
+            data: {
+              headers: ['Leucocito', '% aproximado'],
+              rows: [
+                ['Neutrófilos', '60–70 %'],
+                ['Linfocitos', '20–35 %'],
+                ['Monocitos', '3–8 %'],
+                ['Eosinófilos', '2–4 %'],
+                ['Basófilos', '0.5–1 %'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Memoria',
+            content: 'De más a menos: Neutrófilos > Linfocitos > Monocitos > Eosinófilos > Basófilos («Never Let Monkeys Eat Bananas»).',
+          },
+        ],
+      },
+      {
+        id: 'hleu-3',
+        number: 3,
+        title: 'Granulocitos: neutrófilo, eosinófilo, basófilo',
+        keyTerms: ['neutrófilo', 'eosinófilo', 'basófilo', 'histamina'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Los tres granulocitos',
+            data: {
+              headers: ['Célula', 'Núcleo / gránulos', 'Función'],
+              rows: [
+                ['Neutrófilo', 'Multilobulado (3–5 lóbulos), gránulos finos', 'Fagocitosis bacteriana; forma NETs; vida corta'],
+                ['Eosinófilo', 'Bilobulado, gránulos grandes NARANJA', 'Parásitos y alergias (proteína básica mayor)'],
+                ['Basófilo', 'Gránulos AZUL-VIOLETA que ocultan el núcleo', 'Histamina/heparina; hipersensibilidad inmediata tipo I'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Claves visuales',
+            content: 'Muchos lóbulos → neutrófilo. Dos lóbulos + gránulos naranja → eosinófilo. Gránulos violeta que tapan el núcleo → basófilo.',
+          },
+        ],
+      },
+      {
+        id: 'hleu-4',
+        number: 4,
+        title: 'Agranulocitos: linfocito y monocito',
+        keyTerms: ['linfocito', 'monocito', 'macrófago'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El LINFOCITO es célula pequeña de núcleo grande y redondo con poco citoplasma; es la inmunidad adaptativa (T, B y NK — se detallan en la Clase 2). El MONOCITO es el leucocito más grande (12–20 μm), con núcleo ARRIÑONADO (en herradura) y citoplasma gris-azulado.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Monocito → macrófago',
+            content: 'El monocito circula ~1–3 días y migra al tejido para diferenciarse en MACRÓFAGO: osteoclasto (hueso), microglía (SNC), célula de Kupffer (hígado). Enlaza con el sistema fagocítico mononuclear (tejido conectivo, Semana 3).',
+          },
+        ],
+      },
+      {
+        id: 'hleu-5',
+        number: 5,
+        title: 'Plaquetas (introducción)',
+        keyTerms: ['plaquetas', 'megacariocito', 'trombocitos'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Las plaquetas (trombocitos) NO son células completas: son fragmentos citoplasmáticos derivados de los MEGACARIOCITOS (el núcleo queda en el megacariocito). Miden 2–4 μm, el recuento normal es 150,000–400,000/μL y su vida es de 7–10 días; participan en la hemostasia. (Su estructura y la hemostasia se detallan en la Clase 2.)',
+          },
+        ],
+      },
+      {
+        id: 'hleu-6',
+        number: 6,
+        title: 'Terminología de recuentos e identificación en frotis',
+        keyTerms: ['-osis', '-penia', 'frotis', 'biometría hemática'],
+        blocks: [
+          {
+            type: 'note',
+            title: '-osis/-filia (aumento) vs -penia (disminución)',
+            content: 'Leucocitosis/leucopenia · neutrofilia/neutropenia · trombocitosis/trombocitopenia.',
+          },
+          {
+            type: 'table',
+            title: 'Reconocimiento en el frotis',
+            data: {
+              headers: ['Si observas…', 'Piensa en…'],
+              rows: [
+                ['Núcleo con 3–5 lóbulos', 'Neutrófilo'],
+                ['2 lóbulos + gránulos naranja', 'Eosinófilo'],
+                ['Gránulos azul-violeta que ocultan el núcleo', 'Basófilo'],
+                ['Célula pequeña, núcleo grande, poco citoplasma', 'Linfocito'],
+                ['Célula grande, núcleo arriñonado', 'Monocito'],
+                ['Fragmentos pequeños sin núcleo', 'Plaquetas'],
+                ['Discos rosados sin núcleo, con palidez central', 'Eritrocitos'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Biometría hemática',
+            content: 'Una neutrofilia (> ~7,000/μL) ORIENTA hacia infección bacteriana aguda o inflamación (no la diagnostica por sí sola); una neutropenia (< ~1,500/μL) aparece por quimioterapia, virus o supresión medular.',
+          },
+        ],
+      },
+    ],
+  },
 ]
