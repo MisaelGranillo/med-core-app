@@ -2740,4 +2740,162 @@ export const histologiaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'histologia-sangre',
+    title: 'Tejido sanguíneo: plasma y eritrocitos',
+    subtitle: 'La sangre como tejido conjuntivo especializado, plasma, proteínas y eritrocitos',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🔬',
+    keyPoints: [
+      'La sangre es un TEJIDO CONJUNTIVO ESPECIALIZADO de matriz extracelular LÍQUIDA (el plasma); volumen 5–6 L (~8 % del peso).',
+      'Al centrifugar: PLASMA 55 % / ELEMENTOS FORMES 45 % (eritrocitos, leucocitos, plaquetas). Se producen en la médula ósea roja (hematopoyesis).',
+      'Plasma = agua 90–92 % + proteínas 7–8 % + iones + orgánicas. Proteínas: albúmina (presión oncótica), globulinas (defensa/transporte) y fibrinógeno (→ fibrina → coagulación).',
+      'Eritrocito: disco BICÓNCAVO (~7–8 μm), ANUCLEADO y sin organelos (máximo espacio para hemoglobina); vida ~120 días.',
+      'Hemoglobina = 4 globinas + 4 hemo con Fe²⁺, que une el O₂. Eritropoyesis en médula roja, estimulada por EPO (riñón) ante HIPOXIA.',
+      'Correlación: la anemia es falta de capacidad de transporte de O₂ (aunque haya eritrocitos, sin hemoglobina suficiente); ↓ albúmina → edema.',
+    ],
+    sections: [
+      {
+        id: 'hsan-1',
+        number: 1,
+        title: 'La sangre como tejido conjuntivo especializado',
+        keyTerms: ['matriz líquida', 'plasma', 'elementos formes', 'hematopoyesis'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La sangre es un TEJIDO CONJUNTIVO ESPECIALIZADO: lo particular es que su matriz extracelular es LÍQUIDA (el plasma), a diferencia de los conectivos sólidos. El volumen total en el adulto es de 5–6 L (~8 % del peso corporal). Sus células (elementos formes) se producen continuamente en la médula ósea roja (hematopoyesis, a partir de células madre hematopoyéticas).',
+          },
+          {
+            type: 'note',
+            title: 'Centrifugación: 55 / 45',
+            content: 'Al centrifugar la sangre se separan PLASMA (~55 %, fracción superior clara) y ELEMENTOS FORMES (~45 %: eritrocitos, leucocitos y plaquetas).',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Volumen y hemorragia',
+            content: 'Estimar el volumen perdido orienta el manejo: una pérdida > ~30 % (≈ 1.5 L) puede corresponder a un choque hemorrágico clase III.',
+          },
+        ],
+      },
+      {
+        id: 'hsan-2',
+        number: 2,
+        title: 'Plasma: composición',
+        keyTerms: ['agua', 'proteínas plasmáticas', 'iones'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El plasma (~55 % del volumen sanguíneo) es el medio de transporte químico de la sangre. Está formado sobre todo por agua, con proteínas, iones y sustancias orgánicas disueltas.',
+          },
+          {
+            type: 'table',
+            title: 'Composición del plasma',
+            data: {
+              headers: ['Componente', 'Proporción / ejemplos'],
+              rows: [
+                ['Agua', '90–92 % del plasma (medio de transporte)'],
+                ['Proteínas', '7–8 % (albúmina, globulinas, fibrinógeno)'],
+                ['Iones', 'Na⁺, K⁺, Ca²⁺, Cl⁻, HCO₃⁻ (equilibrio ácido-base, osmolaridad)'],
+                ['Orgánicas', 'Glucosa, aminoácidos, lípidos, urea, creatinina, hormonas, desechos'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hsan-3',
+        number: 3,
+        title: 'Proteínas plasmáticas',
+        keyTerms: ['albúmina', 'globulinas', 'fibrinógeno', 'presión oncótica'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Tres grupos principales',
+            data: {
+              headers: ['Proteína', 'Función'],
+              rows: [
+                ['Albúmina', 'Mantiene la presión oncótica (retiene agua en los vasos)'],
+                ['Globulinas', 'Transporte y defensa (inmunoglobulinas/anticuerpos)'],
+                ['Fibrinógeno', 'Precursor de la fibrina → coagulación'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: '↓ albúmina → edema',
+            content: 'Si baja la albúmina, cae la presión oncótica y el agua sale de los vasos hacia los tejidos → edema (y ascitis en la cavidad abdominal). Ejemplos: cirrosis hepática y síndrome nefrótico.',
+          },
+        ],
+      },
+      {
+        id: 'hsan-4',
+        number: 4,
+        title: 'Funciones de la sangre',
+        keyTerms: ['transporte de gases', 'hemostasia', 'homeostasis'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Cuatro funciones',
+            items: [
+              'Transporte de gases: los eritrocitos llevan O₂ y CO₂ (por hemoglobina).',
+              'Defensa inmunitaria: leucocitos (fagocitosis, anticuerpos, destrucción de células infectadas).',
+              'Hemostasia: plaquetas + factores plasmáticos detienen el sangrado.',
+              'Homeostasis: regula temperatura, distribuye nutrientes/hormonas y mantiene el pH (7.35–7.45).',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'hsan-5',
+        number: 5,
+        title: 'Eritrocitos y hemoglobina',
+        keyTerms: ['disco bicóncavo', 'anucleado', 'hemoglobina', 'hierro'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El eritrocito (glóbulo rojo) es un DISCO BICÓNCAVO de ~7–8 μm (≈ 7.5 μm): esa forma aumenta la superficie de intercambio y le da flexibilidad para atravesar capilares. El eritrocito maduro es ANUCLEADO y ha perdido sus organelos, para maximizar el espacio de hemoglobina; su vida es de ~120 días.',
+          },
+          {
+            type: 'note',
+            title: 'Hemoglobina',
+            content: 'Formada por 4 cadenas de globina + 4 grupos hemo; cada hemo contiene Fe²⁺, que es el que une el O₂. Una molécula de hemoglobina transporta hasta 4 moléculas de O₂.',
+          },
+        ],
+      },
+      {
+        id: 'hsan-6',
+        number: 6,
+        title: 'Eritropoyesis, EPO y grupos sanguíneos',
+        keyTerms: ['eritropoyesis', 'eritropoyetina', 'reticulocito', 'ABO'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Eritropoyesis (médula ósea roja)',
+            steps: [
+              'Hipoxia → el riñón (células peritubulares) libera ERITROPOYETINA (EPO).',
+              'La EPO estimula la médula ósea roja.',
+              'Maduración: célula madre → eritroblasto → RETICULOCITO (joven, ~12–24 h) → eritrocito maduro.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Grupos sanguíneos (introducción)',
+            content: 'El sistema ABO depende de antígenos de la membrana del eritrocito: A (antígeno A), B (antígeno B), AB (A+B), O (ninguno). El sistema Rh añade la clasificación positivo/negativo.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Anemia: no basta con tener eritrocitos',
+            content: 'Sin hemoglobina suficiente (p. ej. por déficit de hierro) no hay transporte adecuado de O₂ aunque existan eritrocitos. Distinguir «cuántos eritrocitos» de «cuánta capacidad de transporte».',
+          },
+        ],
+      },
+    ],
+  },
 ]
