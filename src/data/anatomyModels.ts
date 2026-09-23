@@ -15,7 +15,7 @@
 
 export type AnatomyRegionId =
   | 'general' | 'cabeza' | 'tronco' | 'pelvis'
-  | 'miembro-superior' | 'miembro-inferior'
+  | 'miembro-superior' | 'miembro-inferior' | 'organos'
 
 export interface AnatomyModel {
   id: string
@@ -26,6 +26,9 @@ export interface AnatomyModel {
   viewerModel: string | null   // hosted ?model= folder (null if unavailable)
   status: 'available' | 'unavailable'
   description: string
+  // Per-model attribution shown in the viewer (for organs from NIH 3D, etc.).
+  // Open 3D Model bones share the global footer credit, so they omit this.
+  credit?: string
 }
 
 export const anatomyModels: AnatomyModel[] = [
@@ -150,6 +153,19 @@ export const anatomyModels: AnatomyModel[] = [
     status: 'available',
     description: 'Miembro inferior completo: cintura pélvica, muslo, pierna y pie.',
   },
+
+  // ── ÓRGANOS (NIH 3D — Human Reference Atlas) ──────────
+  {
+    id: 'liver-vh',
+    nombre: 'Hígado (Visible Human)',
+    nombre_en: 'Liver, male',
+    region: 'organos',
+    glb: '/models/organ-VH_M_Liver.glb',
+    viewerModel: null,
+    status: 'available',
+    description: 'Hígado masculino del Visible Human Project, con lóbulos, cápsula, área desnuda y ligamentos diferenciados. Órgano de referencia del Human Reference Atlas (NIH 3D).',
+    credit: '«3D Reference Organ — Liver, Male» · Kristen Browne y Heidi Schlehlein (HuBMAP / Human Reference Atlas), NIH 3D · CC BY 4.0',
+  },
 ]
 
 export const anatomyRegions: { id: 'all' | AnatomyRegionId; nombre: string }[] = [
@@ -160,6 +176,7 @@ export const anatomyRegions: { id: 'all' | AnatomyRegionId; nombre: string }[] =
   { id: 'pelvis',           nombre: 'Pelvis' },
   { id: 'miembro-superior', nombre: 'Miembro superior' },
   { id: 'miembro-inferior', nombre: 'Miembro inferior' },
+  { id: 'organos',          nombre: 'Órganos' },
 ]
 
 export const anatomyModelById = Object.fromEntries(anatomyModels.map(m => [m.id, m]))

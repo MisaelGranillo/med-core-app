@@ -25,6 +25,7 @@ export function sideOf(name: string): Side {
 /** Display name without the side suffix and underscores. */
 export function cleanName(name: string): string {
   return name
+    .replace(/^VH_[MF]_/i, '')          // NIH Visible Human organ prefix
     .replace(/(\.r|\.l|_r|_l)$/i, '')
     .replace(/\s(right|left)$/i, '')
     .replace(/_/g, ' ')
@@ -227,7 +228,7 @@ function lookup(base: string): string | null {
 /** Translate a structure node name to its correct medical Spanish name. */
 export function toSpanish(name: string): string {
   // normalize: drop zero-width chars, trailing ".001"/dots, underscores
-  const norm = name.replace(/[​-‍]/g, '').replace(/\.\d+$/, '').replace(/_/g, ' ').replace(/\.+$/, '').trim()
+  const norm = name.replace(/[​-‍]/g, '').replace(/^VH_[MF]_/i, '').replace(/\.\d+$/, '').replace(/_/g, ' ').replace(/\.+$/, '').trim()
   const [rawBase, side] = splitSide(norm)
   const base = rawBase.replace(/\.+$/, '').trim()
   if (!base) return name + sideSuffix(side)

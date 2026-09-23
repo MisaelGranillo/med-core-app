@@ -306,6 +306,9 @@ export function Anatomy3D() {
             </div>
             <p className="catalog-code mb-2" style={{ textTransform: 'none' }}>{active.nombre_en}</p>
             <p className="text-sm text-body leading-relaxed">{active.description}</p>
+            {active.credit && (
+              <p className="mt-2 pt-2 border-t border-line text-[0.6875rem] leading-snug text-faint">{active.credit}</p>
+            )}
           </div>
 
           {/* ── Editorial "ficha" of the selected structure ─────── */}
@@ -427,10 +430,11 @@ export function Anatomy3D() {
       {/* ── Attribution footer (CC BY-SA 4.0) ───────────────── */}
       <footer className="border-t border-line bg-surface-2 mt-auto">
         <div className="max-w-[1500px] mx-auto w-full px-4 sm:px-6 py-4 text-xs text-muted leading-relaxed">
-          <span className="font-semibold text-body">Modelos anatómicos: Open 3D Model (CC BY-SA 4.0).</span>{' '}
+          <span className="font-semibold text-body">Modelos óseos y musculares: Open 3D Model (CC BY-SA 4.0).</span>{' '}
           Texturas musculares: CC BY-NC-SA 4.0 (Claudia Krebs et al., University of British Columbia).
           Departamentos de Anatomía: Leiden, Utrecht, Maastricht, Leuven, Amsterdam, Nijmegen y Gent.
-          Basado en BodyParts3D y Z-Anatomy.
+          Basado en BodyParts3D y Z-Anatomy.{' '}
+          <span className="font-semibold text-body">Órganos: NIH 3D (3d.nih.gov)</span>, Human Reference Atlas — ver crédito por modelo.
         </div>
       </footer>
     </div>
