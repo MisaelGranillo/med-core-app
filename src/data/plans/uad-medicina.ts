@@ -510,7 +510,7 @@ export const uadMedicina: Plan = {
           code: 'HS01006',
           hasLab: true,
           tags: ['celular'],
-          topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica', 'histologia-celula', 'histologia-epitelial', 'histologia-epitelial-polaridad', 'histologia-glandulas', 'histologia-epitelios-urinario', 'histologia-epitelios-respiratorio', 'histologia-piel', 'histologia-conectivo-matriz', 'histologia-conectivo-celulas', 'histologia-conectivo-variedades', 'histologia-tejido-adiposo', 'histologia-cartilago', 'histologia-hueso'],
+          topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica', 'histologia-celula', 'histologia-epitelial', 'histologia-epitelial-polaridad', 'histologia-glandulas', 'histologia-epitelios-urinario', 'histologia-epitelios-respiratorio', 'histologia-piel', 'histologia-conectivo-matriz', 'histologia-conectivo-celulas', 'histologia-conectivo-variedades', 'histologia-tejido-adiposo', 'histologia-cartilago', 'histologia-hueso', 'histologia-sangre', 'histologia-leucocitos'],
           content: {
             area: 'Ciencias Básicas',
             credits: 8,
@@ -578,12 +578,15 @@ export const uadMedicina: Plan = {
               {
                 number: 4,
                 title: 'Tejidos sanguíneo y linfático',
+                topicIds: ['histologia-sangre', 'histologia-leucocitos'],
                 temas: [
-                  'Generalidades',
-                  'Clasificación',
-                  'Características',
-                  'Funciones',
-                  'Aplicaciones clínicas',
+                  'Clase 1 (impartida): tejido sanguíneo — sangre como conjuntivo de matriz líquida (55/45), plasma (agua/proteínas: albúmina, globulinas, fibrinógeno), funciones y eritrocitos (bicóncavo/anucleado, hemoglobina, eritropoyesis/EPO, ABO)',
+                  'Clase 1 (impartida): leucocitos (granulocitos vs agranulocitos, fórmula leucocitaria, morfología de cada célula) y plaquetas (introducción); terminología de recuentos y biometría hemática',
+                  'Por impartir (Clase 2): linfocitos T/B/NK a fondo, plaquetas/hemostasia y médula ósea/hematopoyesis',
+                  'Por impartir: tejido linfático (órganos linfoides primarios y secundarios)',
+                ],
+                fuentes: [
+                  { title: 'Semana 4 · Clase 1 — Tejido sanguíneo', file: 'Histologia I - Semana 4 - Clase 1.pdf', nota: 'Plasma, eritrocitos, leucocitos y plaquetas; identificación en frotis.' },
                 ],
               },
             ],
@@ -599,6 +602,7 @@ export const uadMedicina: Plan = {
               { title: 'Proyecto Integrador Semana 1 — Organelos celulares', file: 'Histologia 1 - Semana 1 - Proyecto Integrador.pdf', kind: 'Entrega' },
               { title: 'Semana 2 · Clase 1 — Tejido epitelial', file: 'Histologia 2 - Semana 2 - Clase 1 Tejido Epitelial.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 2 — Polaridad celular, uniones y glándulas', file: 'Histologia 2 - Semana 2 - Clase 2 Polaridad y Glandulas.pdf', kind: 'Clase' },
+              { title: 'Semana 4 · Clase 1 — Tejido sanguíneo', file: 'Histologia I - Semana 4 - Clase 1.pdf', kind: 'Clase' },
             ],
             recursos: [
               { label: 'Infografías — Histología Semana 2 (epitelios, uniones, glándulas, órganos, piel) · PDF', url: '/descargas/histologia-semana-2-infografias.pdf' },

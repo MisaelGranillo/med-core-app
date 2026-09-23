@@ -170,6 +170,14 @@ export const modules: Module[] = [
     topicIds: ['histologia-repaso-s2'],
   },
   {
+    id: 'histologia-uad-s4',
+    badge: 'UAD · Histología I — Semana 4',
+    title: 'Histología: tejido sanguíneo',
+    subtitle: 'Plasma, eritrocitos, leucocitos y plaquetas; identificación en frotis.',
+    emoji: '🔬',
+    topicIds: ['histologia-sangre', 'histologia-leucocitos'],
+  },
+  {
     id: 'histologia-uad-s3',
     badge: 'UAD · Histología I — Semana 3',
     title: 'Histología: tejido conectivo y especializados',
