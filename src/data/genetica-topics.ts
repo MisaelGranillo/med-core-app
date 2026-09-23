@@ -1649,4 +1649,148 @@ export const geneticaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'genetica-errores-metabolismo',
+    title: 'Errores innatos del metabolismo y tamiz neonatal',
+    subtitle: 'Fenilcetonuria, hipotiroidismo congénito, galactosemia e hiperplasia suprarrenal congénita',
+    colorKey: 'genetica',
+    categoria: 'Genética',
+    emoji: '🧬',
+    keyPoints: [
+      'El tamiz neonatal (2.º–7.º día de vida) busca detectar temprano para tratar temprano y prevenir complicaciones.',
+      'Fenilcetonuria (PKU): déficit de fenilalanina hidroxilasa → ↑ fenilalanina (no pasa a tirosina) → daño neurológico; tratamiento = dieta temprana (el aspartamo contiene fenilalanina).',
+      'Hipotiroidismo congénito: causa principal disgenesia tiroidea (~85 %); tratamiento levotiroxina; en el tamiz se mide tirotropina (TSH).',
+      'Galactosemia: defecto del metabolismo de la galactosa (vía galactosa-1-fosfato) → acumulación → daño hepático/gastrointestinal.',
+      'Hiperplasia suprarrenal congénita: déficit de 21-hidroxilasa (~95 %) → ↓ cortisol y aldosterona + ↑ andrógenos.',
+      'Enfoque de examen ★: por cada patología, el binomio defecto → consecuencia y su relación con el tamiz.',
+    ],
+    sections: [
+      {
+        id: 'gmet-1',
+        number: 1,
+        title: 'Tamiz neonatal',
+        keyTerms: ['tamiz neonatal'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El tamiz neonatal básico se realiza entre el 2.º y el 7.º día de vida y sirve para detectar de forma presintomática cuatro patologías: fenilcetonuria, hipotiroidismo congénito, galactosemia e hiperplasia suprarrenal congénita.',
+          },
+          {
+            type: 'note',
+            title: 'Idea central',
+            content: 'Detectar temprano → tratar temprano → prevenir complicaciones. La detección antes de los síntomas permite tratar antes del daño.',
+          },
+        ],
+      },
+      {
+        id: 'gmet-2',
+        number: 2,
+        title: 'Fenilcetonuria (PKU)',
+        keyTerms: ['fenilalanina hidroxilasa', 'fenilalanina', 'dieta'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Se debe al déficit de FENILALANINA HIDROXILASA, la enzima que convierte la fenilalanina en tirosina (mutación asociada al cromosoma 12). Sin ella, la fenilalanina no pasa a tirosina y se ACUMULA, produciendo daño neurológico.',
+          },
+          {
+            type: 'note',
+            title: 'Vía bloqueada',
+            content: '↓ fenilalanina hidroxilasa → ↑ fenilalanina → daño neurológico. La fenilalanina es un aminoácido esencial de los alimentos ricos en proteínas (carnes, lácteos).',
+          },
+          {
+            type: 'note',
+            title: 'Tratamiento y aspartamo',
+            content: 'El tratamiento destacado es la dieta temprana y adecuada (restricción de fenilalanina). El aspartamo contiene fenilalanina, por lo que debe evitarse.',
+          },
+        ],
+      },
+      {
+        id: 'gmet-3',
+        number: 3,
+        title: 'Hipotiroidismo congénito',
+        keyTerms: ['disgenesia tiroidea', 'levotiroxina', 'tirotropina'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Enfermedad endocrina por síntesis insuficiente de hormonas tiroideas. La causa principal es la DISGENESIA TIROIDEA (~85 %; el ~15 % restante corresponde a alteraciones de la síntesis hormonal). Las hormonas tiroideas son clave para el neurodesarrollo, el desarrollo cerebral y la maduración ósea.',
+          },
+          {
+            type: 'note',
+            title: 'Tamiz y tratamiento',
+            content: 'En el tamiz se mide la TIROTROPINA (TSH). El tratamiento es levotiroxina, con reemplazo temprano. Se toma nueva muestra en prematuros, peso < 2.5 kg, críticos o gemelos.',
+          },
+        ],
+      },
+      {
+        id: 'gmet-4',
+        number: 4,
+        title: 'Galactosemia',
+        keyTerms: ['galactosa', 'galactosa-1-fosfato', 'daño hepático'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Enfermedad hereditaria con incapacidad para metabolizar adecuadamente la GALACTOSA de la dieta (defecto en la vía de la galactosa-1-fosfato). La galactosa se ACUMULA y provoca daño orgánico. Como la leche expone al recién nacido desde el nacimiento, la enfermedad puede progresar con rapidez.',
+          },
+          {
+            type: 'list',
+            title: 'Hallazgos destacados',
+            items: [
+              'Daño hepatocelular, hepatomegalia e ictericia.',
+              'Vómitos, diarrea e intolerancia alimentaria.',
+              'Alteraciones de la coagulación y posible septicemia.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'gmet-5',
+        number: 5,
+        title: 'Hiperplasia suprarrenal congénita',
+        keyTerms: ['21-hidroxilasa', 'cortisol', 'andrógenos'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Grupo de enfermedades hereditarias por deficiencia de las enzimas necesarias para sintetizar cortisol en la corteza suprarrenal. La más frecuente (~95 %) es el déficit de 21-HIDROXILASA.',
+          },
+          {
+            type: 'note',
+            title: 'Desequilibrio hormonal',
+            content: '↓ 21-hidroxilasa → ↓ cortisol y aldosterona + ↑ andrógenos. Este desequilibrio puede alterar el desarrollo sexual.',
+          },
+        ],
+      },
+      {
+        id: 'gmet-6',
+        number: 6,
+        title: 'Tabla resumen y correlación',
+        keyTerms: ['defecto', 'consecuencia'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Tamiz neonatal: defecto → consecuencia ★',
+            data: {
+              headers: ['Patología', 'Defecto básico', 'Consecuencia / clave'],
+              rows: [
+                ['Fenilcetonuria', '↓ fenilalanina hidroxilasa', '↑ fenilalanina → daño neurológico (tratar con dieta)'],
+                ['Hipotiroidismo congénito', 'Disgenesia tiroidea', '↓ hormonas tiroideas → neurodesarrollo (levotiroxina; tamiz: TSH)'],
+                ['Galactosemia', 'Metabolismo de galactosa', 'Acumulación → daño hepático/gastrointestinal'],
+                ['Hiperplasia suprarrenal congénita', '↓ 21-hidroxilasa', '↓ cortisol/aldosterona + ↑ andrógenos'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'La lógica del tamiz',
+            content: 'La detección presintomática permite iniciar el tratamiento antes de que se produzca el daño. Memoriza los cuatro binomios defecto → consecuencia.',
+          },
+        ],
+      },
+    ],
+  },
 ]
