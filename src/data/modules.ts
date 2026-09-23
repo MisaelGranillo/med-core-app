@@ -173,9 +173,9 @@ export const modules: Module[] = [
     id: 'histologia-uad-s4',
     badge: 'UAD · Histología I — Semana 4',
     title: 'Histología: tejido sanguíneo',
-    subtitle: 'Plasma, eritrocitos, leucocitos y plaquetas; identificación en frotis.',
+    subtitle: 'Plasma, eritrocitos, leucocitos y plaquetas; linfocitos T/B/NK, hemostasia y médula ósea/hematopoyesis.',
     emoji: '🔬',
-    topicIds: ['histologia-sangre', 'histologia-leucocitos'],
+    topicIds: ['histologia-sangre', 'histologia-leucocitos', 'histologia-linfocitos', 'histologia-medula-hematopoyesis'],
   },
   {
     id: 'histologia-uad-s3',
