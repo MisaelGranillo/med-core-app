@@ -1948,4 +1948,153 @@ export const geneticaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'genetica-teratogenesis',
+    title: 'Teratogénesis',
+    subtitle: 'Grupos de teratógenos y los factores que determinan el daño (agente, dosis, momento)',
+    colorKey: 'genetica',
+    categoria: 'Genética',
+    emoji: '🧬',
+    keyPoints: [
+      'Teratogénesis: alteraciones del desarrollo por factores que interfieren con el embrión o el feto (teratos = «monstruo»).',
+      'El efecto depende de AGENTE + DOSIS + DURACIÓN + MOMENTO del desarrollo («no es el veneno, sino la dosis»).',
+      'Genética del embrión + ambiente: muchas malformaciones son multifactoriales; gran parte tiene causa desconocida.',
+      'Farmacológicos ★: talidomida → focomelia (~21–40 días); ácido valproico → defectos del tubo neural; estreptomicina → sordera; tetraciclinas → pigmentación del esmalte.',
+      'Físicos ★: rayos X / radiaciones → microcefalia/hidrocefalia; hipertermia → defectos del tubo neural; mecánicos (bandas amnióticas, oligohidramnios).',
+      'Infecciosos ★: rubéola → cataratas + cardiopatía + sordera; toxoplasma → hidrocefalia + calcificaciones; CMV → lesión cerebral.',
+    ],
+    sections: [
+      {
+        id: 'gter-1',
+        number: 1,
+        title: 'Concepto y factores del daño',
+        keyTerms: ['teratógeno', 'dosis', 'momento del desarrollo'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La teratogénesis es la aparición de alteraciones del desarrollo por factores que interfieren con el embrión o el feto (teratos = «monstruo»); se asocia a malformaciones anatómicas, que pueden detectarse en la gestación, al nacimiento o después.',
+          },
+          {
+            type: 'note',
+            title: 'Principio de dosis ★',
+            content: '«No es el veneno, sino la dosis.» El riesgo/gravedad depende del agente + la dosis + la duración + el momento de exposición: no basta con identificar el agente, importa cuánto y cuándo estuvo expuesto el embrión.',
+          },
+        ],
+      },
+      {
+        id: 'gter-2',
+        number: 2,
+        title: 'Genética + ambiente y epidemiología',
+        keyTerms: ['multifactorial', 'malformaciones congénitas'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Algunos defectos resultan de la interacción entre predisposición genética y factores ambientales, lo que explica por qué muchas malformaciones son MULTIFACTORIALES. Una gran parte tiene, además, origen desconocido.',
+          },
+          {
+            type: 'note',
+            title: 'Idea central (porcentajes aproximados)',
+            content: 'En la gráfica de la clase: ~50 % desconocidas, ~25 % multifactoriales, ~10 % cromosómicas, ~8 % monogénicas, ~7 % ambientales. Conserva la idea (muchas son desconocidas o multifactoriales), no los números exactos.',
+          },
+        ],
+      },
+      {
+        id: 'gter-3',
+        number: 3,
+        title: 'Teratógenos farmacológicos ★',
+        keyTerms: ['talidomida', 'focomelia', 'ácido valproico'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Fármacos y su efecto emblemático',
+            data: {
+              headers: ['Agente', 'Efecto destacado'],
+              rows: [
+                ['Talidomida', 'Focomelia (acortamiento/ausencia de extremidades); período crítico ~21–40 días'],
+                ['Ácido valproico (anticonvulsivante)', 'Defectos del cierre del tubo neural'],
+                ['Isotretinoína (ácido retinoico, acné)', 'Daño cardíaco y cerebral'],
+                ['Anticoagulantes dicumarínicos', 'Alteraciones del SNC, atrofia óptica, cardiopatía, retraso del crecimiento'],
+                ['Estreptomicina (antibiótico)', 'Sordera'],
+                ['Tetraciclinas (antibiótico)', 'Pigmentación del esmalte dentario'],
+                ['Antineoplásicos', 'Muerte embrionaria/fetal y malformaciones diversas'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Claves ★',
+            content: 'Talidomida → focomelia. Ácido valproico → tubo neural.',
+          },
+        ],
+      },
+      {
+        id: 'gter-4',
+        number: 4,
+        title: 'Teratógenos físicos ★',
+        keyTerms: ['rayos X', 'hipertermia', 'radiaciones'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Agentes físicos',
+            items: [
+              'Radiaciones atómicas: microcefalia y retraso psicomotor.',
+              'Rayos X: aborto, microcefalia, hidrocefalia, defectos oculares y retraso del crecimiento.',
+              'Hipertermia: defectos del cierre del tubo neural, microcefalia y alteraciones de cara/cuello.',
+              'Factores mecánicos: bandas amnióticas, oligohidramnios, gestación múltiple → deformaciones.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Clave ★',
+            content: 'Rayos X / radiaciones → microcefalia/hidrocefalia. Hipertermia → defectos del tubo neural.',
+          },
+        ],
+      },
+      {
+        id: 'gter-5',
+        number: 5,
+        title: 'Teratógenos infecciosos ★',
+        keyTerms: ['rubéola', 'toxoplasma', 'citomegalovirus'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Infecciones y su efecto',
+            data: {
+              headers: ['Agente', 'Efecto destacado'],
+              rows: [
+                ['Rubéola', 'Cataratas + cardiopatía congénita + sordera (0–60 días cataratas/cardiopatía; hasta ~120 días sordera)'],
+                ['Citomegalovirus (CMV)', 'Lesión cerebral y retraso del crecimiento'],
+                ['Herpes simple', 'Microcefalia, calcificaciones intracraneales, defectos oculares'],
+                ['Varicela zóster', 'Defectos de piel, reducción de miembros, retraso del crecimiento'],
+                ['Parvovirus B19', 'Hidrops y anemia hemolítica'],
+                ['Toxoplasma gondii', 'Hidrocefalia, microftalmia, coriorretinitis y calcificaciones cerebrales'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Claves ★',
+            content: 'Rubéola → ojos + corazón + audición. Toxoplasma → hidrocefalia + calcificaciones.',
+          },
+        ],
+      },
+      {
+        id: 'gter-6',
+        number: 6,
+        title: 'Correlación clínica',
+        keyTerms: ['prevención', 'folato', 'rayos X'],
+        blocks: [
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Prevención en la práctica',
+            content:
+              'Identificar un posible embarazo ANTES de exponer a rayos X; vigilar fármacos de riesgo (control de valproato/isotretinoína) y suplementar folato por el riesgo de defectos del tubo neural. También cuentan factores maternos como la diabetes y la deficiencia de yodo.',
+          },
+        ],
+      },
+    ],
+  },
 ]
