@@ -9,7 +9,7 @@ import { useSearchParams, Link } from 'react-router-dom'
 import {
   ArrowLeft, ArrowRight, BookOpenText, Cube, CursorClick, Eye, EyeSlash,
   CaretRight, Tag, FlipHorizontal, MapPin, ArrowsClockwise, ArrowCounterClockwise,
-  Scissors, Selection, type Icon,
+  Scissors, Selection, Warning, type Icon,
 } from '@phosphor-icons/react'
 import {
   anatomyModels, anatomyRegions, anatomyModelById, availableModelCount,
@@ -128,8 +128,11 @@ export function Anatomy3D() {
     }
   }, [bilateral, active.id])
 
-  // Editorial "ficha" data for the selected structure.
-  const part = selected ? matchPart(selected) : null
+  // Editorial "ficha" data for the selected structure. When the GLB node names
+  // are generic (single-mesh organs), fall back to the model's declared organ.
+  const part = selected
+    ? (matchPart(selected) ?? (active.organ ? anatomyParts[active.organ] ?? null : null))
+    : null
   const regionLabel = anatomyRegions.find(r => r.id === active.region)?.nombre ?? '—'
   const groupLabel = selected ? (GROUP_LABEL[groupOf(selected)] ?? 'Otros') : '—'
   const sideLabel = selected ? SIDE_LABEL[sideOf(selected)] : '—'
@@ -209,7 +212,14 @@ export function Anatomy3D() {
                   className={`text-left rounded-md border px-3 py-2 transition-colors
                     ${on ? 'border-primary-200 bg-primary-tint' : 'border-line bg-surface hover:border-line-strong'}
                     ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}>
-                  <span className="block text-sm font-medium text-ink leading-snug">{m.nombre}</span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="text-sm font-medium text-ink leading-snug">{m.nombre}</span>
+                    {m.illustrative && (
+                      <span className="inline-flex items-center flex-shrink-0 text-[0.5625rem] font-semibold px-1 py-px rounded"
+                            style={{ background: 'var(--c-warning-tint)', color: 'var(--c-warning-ink)' }}
+                            title="Modelo ilustrativo (generado por IA)">IA</span>
+                    )}
+                  </span>
                   <span className="flex items-center justify-between gap-2 mt-0.5">
                     <span className="catalog-code" style={{ textTransform: 'none' }}>{m.nombre_en}</span>
                     {disabled
@@ -240,6 +250,8 @@ export function Anatomy3D() {
                 mirror={mirror}
                 selected={selected}
                 clip={clip}
+                fixMaterials={active.region === 'organos'}
+                tint={active.tint}
                 autoRotate={autoRotate && !reducedMotion}
                 resetSignal={resetSignal}
                 onSelect={setSelected}
@@ -303,9 +315,25 @@ export function Anatomy3D() {
               <Cube weight="fill" className="w-4 h-4 text-primary" />
               <h1 className="text-base font-semibold text-ink m-0 leading-tight"
                   style={{ fontFamily: 'var(--font-voice)' }}>{active.nombre}</h1>
+              {active.illustrative && (
+                <span className="ml-auto flex-shrink-0 inline-flex items-center gap-1 text-[0.625rem] font-semibold px-1.5 py-0.5 rounded"
+                      style={{ background: 'var(--c-warning-tint)', color: 'var(--c-warning-ink)' }}>
+                  <Warning weight="fill" className="w-3 h-3" /> Ilustrativo
+                </span>
+              )}
             </div>
             <p className="catalog-code mb-2" style={{ textTransform: 'none' }}>{active.nombre_en}</p>
             <p className="text-sm text-body leading-relaxed">{active.description}</p>
+            {active.illustrative && (
+              <div className="mt-3 flex items-start gap-2 rounded-md px-2.5 py-2"
+                   style={{ background: 'var(--c-warning-tint)', border: '1px solid var(--c-warning)' }}>
+                <Warning weight="fill" className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: 'var(--c-warning)' }} />
+                <p className="text-[0.6875rem] leading-snug" style={{ color: 'var(--c-warning-ink)' }}>
+                  Modelo <strong>ilustrativo</strong> (generado por IA). Puede diferir de la anatomía real;
+                  úsalo solo como referencia visual, no como fuente de estudio detallado.
+                </p>
+              </div>
+            )}
             {active.credit && (
               <p className="mt-2 pt-2 border-t border-line text-[0.6875rem] leading-snug text-faint">{active.credit}</p>
             )}

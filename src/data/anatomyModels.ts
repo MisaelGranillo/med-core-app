@@ -29,6 +29,14 @@ export interface AnatomyModel {
   // Per-model attribution shown in the viewer (for organs from NIH 3D, etc.).
   // Open 3D Model bones share the global footer credit, so they omit this.
   credit?: string
+  // anatomyParts key → drives the "Función" ficha even when the GLB's node
+  // names are generic (e.g. an organ exported as a single "Object_2" mesh).
+  organ?: string
+  // true → AI-generated / approximate model: shows an "ilustrativo" warning.
+  illustrative?: boolean
+  // Flat tissue colour (hex) to force onto the material — for organs whose GLB
+  // ships a near-black spec-gloss/vertex-colour material that renders unreadable.
+  tint?: string
 }
 
 export const anatomyModels: AnatomyModel[] = [
@@ -154,7 +162,7 @@ export const anatomyModels: AnatomyModel[] = [
     description: 'Miembro inferior completo: cintura pélvica, muslo, pierna y pie.',
   },
 
-  // ── ÓRGANOS (NIH 3D — Human Reference Atlas) ──────────
+  // ── ÓRGANOS · referencia NIH 3D (anatómicamente correctos) ────────────────
   {
     id: 'liver-vh',
     nombre: 'Hígado (Visible Human)',
@@ -163,8 +171,104 @@ export const anatomyModels: AnatomyModel[] = [
     glb: '/models/organ-VH_M_Liver.glb',
     viewerModel: null,
     status: 'available',
-    description: 'Hígado masculino del Visible Human Project, con lóbulos, cápsula, área desnuda y ligamentos diferenciados. Órgano de referencia del Human Reference Atlas (NIH 3D).',
+    organ: 'higado',
+    description: 'Hígado masculino del Visible Human Project, con lóbulos, segmentos de Couinaud, cápsula, área desnuda y ligamentos diferenciados. Órgano de referencia del Human Reference Atlas (NIH 3D).',
     credit: '«3D Reference Organ — Liver, Male» · Kristen Browne y Heidi Schlehlein (HuBMAP / Human Reference Atlas), NIH 3D · CC BY 4.0',
+  },
+  {
+    id: 'brain-nih',
+    nombre: 'Cerebro',
+    nombre_en: 'Detailed human brain',
+    region: 'organos',
+    glb: '/models/organ-brain-nih.glb',
+    viewerModel: null,
+    status: 'available',
+    organ: 'cerebro',
+    tint: '#BBA6AC',
+    description: 'Encéfalo humano con la superficie de circunvoluciones y surcos. Modelo de referencia detallado de NIH 3D.',
+    credit: '«Detailed Human Brain Model» · NIH 3D (3DPX-021161) · CC BY 4.0',
+  },
+  {
+    id: 'lungs-nih',
+    nombre: 'Árbol bronquial',
+    nombre_en: 'Bronchial tree',
+    region: 'organos',
+    glb: '/models/organ-lungs-nih.glb',
+    viewerModel: null,
+    status: 'available',
+    organ: 'pulmones',
+    tint: '#CE908C',
+    description: 'Pulmones con el árbol bronquial (representación de la vía aérea durante la respiración). Modelo de NIH 3D.',
+    credit: '«Lungs bronchi (while breathing)» · NIH 3D (3DPX-021148) · CC BY 4.0',
+  },
+  {
+    id: 'kidney-nih',
+    nombre: 'Riñón',
+    nombre_en: 'Human kidney',
+    region: 'organos',
+    glb: '/models/organ-kidney-nih.glb',
+    viewerModel: null,
+    status: 'available',
+    description: 'Modelo de riñón humano de NIH 3D (3d.nih.gov).',
+    credit: 'Modelo de riñón humano · NIH 3D (3d.nih.gov) · uso libre',
+  },
+
+  // ── ÓRGANOS · ilustrativos (generados por IA, aproximados) ────────────────
+  {
+    id: 'heart-ai',
+    nombre: 'Corazón',
+    nombre_en: 'Heart (illustrative)',
+    region: 'organos',
+    glb: '/models/organ-heart.glb',
+    viewerModel: null,
+    status: 'available',
+    organ: 'corazon',
+    illustrative: true,
+    description: 'Modelo ilustrativo del corazón para ubicar cámaras y grandes vasos a grandes rasgos.',
+  },
+  {
+    id: 'eye-ai',
+    nombre: 'Globo ocular',
+    nombre_en: 'Eyeball (illustrative)',
+    region: 'organos',
+    glb: '/models/organ-eyeball.glb',
+    viewerModel: null,
+    status: 'available',
+    illustrative: true,
+    description: 'Modelo ilustrativo del globo ocular.',
+  },
+  {
+    id: 'intestine-ai',
+    nombre: 'Intestino',
+    nombre_en: 'Intestine (illustrative)',
+    region: 'organos',
+    glb: '/models/organ-intestine.glb',
+    viewerModel: null,
+    status: 'available',
+    illustrative: true,
+    description: 'Modelo ilustrativo del intestino.',
+  },
+  {
+    id: 'pancreas-ai',
+    nombre: 'Páncreas',
+    nombre_en: 'Pancreas (illustrative)',
+    region: 'organos',
+    glb: '/models/organ-pancreas.glb',
+    viewerModel: null,
+    status: 'available',
+    illustrative: true,
+    description: 'Modelo ilustrativo del páncreas.',
+  },
+  {
+    id: 'skin-ai',
+    nombre: 'Piel (superficie corporal)',
+    nombre_en: 'Skin (illustrative)',
+    region: 'organos',
+    glb: '/models/organ-skin.glb',
+    viewerModel: null,
+    status: 'available',
+    illustrative: true,
+    description: 'Modelo ilustrativo de la superficie corporal / piel.',
   },
 ]
 

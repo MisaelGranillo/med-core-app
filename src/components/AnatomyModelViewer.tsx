@@ -5,10 +5,25 @@
  * Client-side WebGL — runs on Cloudflare Pages static hosting.
  */
 import { Suspense, useEffect, useMemo, useRef } from 'react'
-import { Canvas, type ThreeEvent } from '@react-three/fiber'
+import { Canvas, type ThreeEvent, useThree } from '@react-three/fiber'
 import { OrbitControls, Bounds, useBounds, useGLTF, Html, ContactShadows } from '@react-three/drei'
 import * as THREE from 'three'
+import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js'
 import { sideOf, toSpanish } from '../data/anatomyStructures'
+
+/** Procedural neutral studio environment (no network / HDRI file) so PBR and
+ * metallic materials have something to reflect and don't render black. */
+function StudioEnv() {
+  const gl = useThree(s => s.gl)
+  const scene = useThree(s => s.scene)
+  useEffect(() => {
+    const pmrem = new THREE.PMREMGenerator(gl)
+    const env = pmrem.fromScene(new RoomEnvironment(), 0.04).texture
+    scene.environment = env
+    return () => { scene.environment = null; env.dispose(); pmrem.dispose() }
+  }, [gl, scene])
+  return null
+}
 
 const HIGHLIGHT = new THREE.Color('#3B82F6')
 const LABEL_CAP = 60 // max in-scene labels at once (perf guard)
@@ -54,13 +69,43 @@ interface ModelProps {
   mirror: boolean
   selected: string | null
   clip: ClipConfig
+  fixMaterials: boolean
+  tint?: string
   onSelect: (name: string | null) => void
   onStructures: (names: string[]) => void
 }
 
-function Model({ url, hidden, showLabels, showDots, mirror, selected, clip, onSelect, onStructures }: ModelProps) {
+function Model({ url, hidden, showLabels, showDots, mirror, selected, clip, fixMaterials, tint, onSelect, onStructures }: ModelProps) {
   const { scene } = useGLTF(url)
-  const model = useMemo(() => scene.clone(true), [scene])
+  const model = useMemo(() => {
+    const m = scene.clone(true)
+    // Some GLBs (Sketchfab / AI exports) ship materials with no base colour and
+    // the glTF default metalness of 1.0, or a near-black spec-gloss/vertex-colour
+    // material → they render solid black. Clone + neutralize so organs read on
+    // either stage. `tint` forces a flat tissue colour for the worst offenders.
+    if (fixMaterials) {
+      m.traverse(o => {
+        const mesh = o as THREE.Mesh
+        if (!mesh.isMesh) return
+        const fix = (mt: THREE.Material) => {
+          const sm = (mt.clone() as THREE.MeshStandardMaterial)
+          if ('metalness' in sm) sm.metalness = Math.min(sm.metalness, 0.15)
+          if ('roughness' in sm && sm.roughness < 0.25) sm.roughness = 0.6
+          if (tint && 'color' in sm) {
+            sm.color.set(tint)
+            sm.vertexColors = false          // drop baked (near-black) vertex colours
+            if ('map' in sm) sm.map = null
+          } else if ('map' in sm && !sm.map && sm.color && sm.color.r > 0.95 && sm.color.g > 0.95 && sm.color.b > 0.95) {
+            sm.color.setHex(0xC9A2A0)          // colourless white-metal → neutral tissue tone
+          }
+          sm.needsUpdate = true
+          return sm
+        }
+        mesh.material = Array.isArray(mesh.material) ? mesh.material.map(fix) : fix(mesh.material)
+      })
+    }
+    return m
+  }, [scene, fixMaterials, tint])
 
   // Named structures (node names = Terminologia Anatomica).
   const named = useMemo(() => {
@@ -305,6 +350,8 @@ export interface AnatomyViewerProps {
   mirror: boolean
   selected: string | null
   clip: ClipConfig
+  fixMaterials: boolean
+  tint?: string
   autoRotate: boolean
   resetSignal: number
   onSelect: (name: string | null) => void
@@ -322,6 +369,7 @@ export function AnatomyModelViewer(props: AnatomyViewerProps) {
       dpr={[1, 2]}
       gl={{ alpha: true, antialias: true }}
     >
+      <StudioEnv />
       {/* Studio lighting: soft ambient + warm hemisphere + one key + faint fill. */}
       <ambientLight intensity={0.62} />
       <hemisphereLight args={['#fff7ec', '#2a2620', 0.38]} />
@@ -338,6 +386,8 @@ export function AnatomyModelViewer(props: AnatomyViewerProps) {
             mirror={props.mirror}
             selected={props.selected}
             clip={props.clip}
+            fixMaterials={props.fixMaterials}
+            tint={props.tint}
             onSelect={props.onSelect}
             onStructures={props.onStructures}
           />
