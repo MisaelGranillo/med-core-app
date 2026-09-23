@@ -243,7 +243,7 @@ export const uadMedicina: Plan = {
           name: 'Genética Básica',
           code: 'GB01003',
           tags: ['celular'],
-          topicIds: ['genetica-conceptos', 'genetica-mendel', 'genetica-adn', 'genetica-dogma-transcripcion', 'genetica-cromosomas-cariotipo', 'genetica-traduccion', 'genetica-reparacion-adn', 'genetica-repaso-s2', 'genetica-cromosomas-herencia', 'genetica-ciclo-celular', 'genetica-mitosis-meiosis', 'genetica-gametogenesis', 'genetica-citogenetica-clinica', 'genetica-errores-metabolismo', 'genetica-organogenesis', 'genetica-teratogenesis'],
+          topicIds: ['genetica-conceptos', 'genetica-mendel', 'genetica-adn', 'genetica-dogma-transcripcion', 'genetica-cromosomas-cariotipo', 'genetica-traduccion', 'genetica-reparacion-adn', 'genetica-repaso-s2', 'genetica-cromosomas-herencia', 'genetica-ciclo-celular', 'genetica-mitosis-meiosis', 'genetica-gametogenesis', 'genetica-citogenetica-clinica', 'genetica-errores-metabolismo', 'genetica-organogenesis', 'genetica-teratogenesis', 'genetica-diferenciacion-sexual', 'genetica-dsd'],
           content: {
             area: 'Ciencias Básicas',
             credits: 4,
@@ -310,18 +310,21 @@ export const uadMedicina: Plan = {
               {
                 number: 4,
                 title: 'La genética en la medicina general',
-                topicIds: ['genetica-citogenetica-clinica', 'genetica-errores-metabolismo', 'genetica-organogenesis', 'genetica-teratogenesis'],
+                // Completa: impartidas las Clases 1–3 (última clase del curso).
+                estado: 'impartido',
+                topicIds: ['genetica-citogenetica-clinica', 'genetica-errores-metabolismo', 'genetica-organogenesis', 'genetica-teratogenesis', 'genetica-diferenciacion-sexual', 'genetica-dsd'],
                 temas: [
                   'Clase 1 (impartida): citogenética clínica — anomalías numéricas (monosomía/trisomía, aneuploidía por no disyunción) y estructurales (deleción, inversión, translocación recíproca/robertsoniana) y síndromes (Down 21, Edwards 18, Patau 13, Turner 45,X, Klinefelter 47,XXY, Triple X 47,XXX)',
                   'Clase 1 (impartida): errores innatos del metabolismo y tamiz neonatal (2.º-7.º día) — fenilcetonuria, hipotiroidismo congénito, galactosemia e hiperplasia suprarrenal congénita',
                   'Clase 2 (impartida): organogénesis — del cigoto a las capas germinales (derivados de ectodermo/mesodermo/endodermo) y semanas 4–8 del desarrollo',
                   'Clase 2 (impartida): teratogénesis — factores del daño (agente/dosis/momento) y grupos de teratógenos (farmacológicos, físicos e infecciosos)',
-                  'Por impartir: diferenciación sexual normal y sus anomalías',
+                  'Clase 3 (impartida, cierre del curso): anomalías de la diferenciación sexual — tres niveles, genes SRY/SOX9/DAX1/SF1, vías masculina y femenina, y enfoque clínico de las DSD (sospecha, cariotipo + hormonas + imagen, tratamiento individualizado)',
                   'Vigilancia epidemiológica de las malformaciones congénitas',
                 ],
                 fuentes: [
                   { title: 'Genética Básica — Semana 4, Clase 1', file: 'Genetica Basica - Semana 4 - Clase 1.pdf', nota: 'Citogenética clínica (síndromes) y errores del metabolismo (tamiz neonatal).' },
                   { title: 'Genética Básica — Semana 4, Clase 2', file: 'Genetica Basica - Semana 4 - Clase 2.pdf', nota: 'Organogénesis (capas germinales, semanas 4–8) y teratogénesis (grupos de teratógenos).' },
+                  { title: 'Genética Básica — Semana 4, Clase 3', file: 'Genetica Basica - Semana 4 - Clase 3.pdf', nota: 'Diferenciación sexual (genes y vías) y DSD (enfoque clínico). Última clase del curso.' },
                 ],
               },
             ],
@@ -339,6 +342,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 2 · Clase 3 — Reparación del ADN', file: 'Genetica Basica - Semana 2 - Clase 3.pdf', kind: 'Clase' },
               { title: 'Semana 4 · Clase 1 — Citogenética clínica y errores del metabolismo', file: 'Genetica Basica - Semana 4 - Clase 1.pdf', kind: 'Clase' },
               { title: 'Semana 4 · Clase 2 — Organogénesis y teratogénesis', file: 'Genetica Basica - Semana 4 - Clase 2.pdf', kind: 'Clase' },
+              { title: 'Semana 4 · Clase 3 — Diferenciación sexual y DSD', file: 'Genetica Basica - Semana 4 - Clase 3.pdf', kind: 'Clase' },
               { title: 'Genética — resumen', file: 'genetica-resumen.pdf', kind: 'Resumen' },
               { title: 'Reparación del ADN', file: 'reparacion-adn.pdf', kind: 'Resumen' },
               { title: 'Puntos de regulación del ciclo celular', file: 'puntos-de-regulacion-del-ciclo-celular.pdf', kind: 'Resumen' },

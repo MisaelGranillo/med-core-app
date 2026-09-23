@@ -141,9 +141,9 @@ export const modules: Module[] = [
     id: 'genetica-uad-s4',
     badge: 'UAD · Genética Básica — Semana 4',
     title: 'La genética en la medicina general',
-    subtitle: 'Citogenética clínica y síndromes, errores del metabolismo (tamiz), y desarrollo embrionario: organogénesis y teratogénesis.',
+    subtitle: 'Citogenética clínica y síndromes, errores del metabolismo (tamiz), organogénesis y teratogénesis, y diferenciación sexual (DSD).',
     emoji: '🧬',
-    topicIds: ['genetica-citogenetica-clinica', 'genetica-errores-metabolismo', 'genetica-organogenesis', 'genetica-teratogenesis'],
+    topicIds: ['genetica-citogenetica-clinica', 'genetica-errores-metabolismo', 'genetica-organogenesis', 'genetica-teratogenesis', 'genetica-diferenciacion-sexual', 'genetica-dsd'],
   },
   {
     id: 'histologia-uad-s1',
