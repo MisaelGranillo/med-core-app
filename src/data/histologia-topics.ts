@@ -3060,4 +3060,155 @@ export const histologiaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'histologia-linfocitos',
+    title: 'Linfocitos T, B y NK',
+    subtitle: 'Inmunidad humoral, celular e innata: dónde maduran, cómo actúan y sus marcadores',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🔬',
+    keyPoints: [
+      'En el frotis el linfocito es pequeño, con núcleo grande redondo y poco citoplasma; T y B NO se distinguen por morfología (se requieren marcadores). Proporciones: T 70–80 %, B 10–15 %, NK el resto.',
+      'Linfocitos B → inmunidad HUMORAL; se desarrollan en la MÉDULA ÓSEA (pro-B→pre-B→inmaduro→maduro); marcadores CD19/CD20. Al activarse (con coestimulación T) → PLASMOCITO (anticuerpos) o célula B de MEMORIA (base de la vacunación).',
+      'Linfocitos T → inmunidad CELULAR; maduran en el TIMO (selección positiva/negativa). CD4+ coordina (citocinas) · CD8+ destruye (perforinas/granzimas → apoptosis).',
+      'Reconocimiento: TCR + MHC/CMH. MHC-II → CD4 · MHC-I → CD8.',
+      'Células NK → inmunidad INNATA: citotoxicidad SIN sensibilización previa (perforinas/granzimas) contra células infectadas/tumorales.',
+      'Correlación: el VIH afecta a los CD4+; CD4 < 200/μL = criterio de SIDA (infecciones oportunistas).',
+    ],
+    sections: [
+      {
+        id: 'hlin-1',
+        number: 1,
+        title: 'Panorama: los linfocitos en el frotis',
+        keyTerms: ['linfocito', 'marcadores', 'inmunofenotipo'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'En un frotis convencional el linfocito es una célula pequeña, con núcleo grande, redondo y central, y poco citoplasma. Un punto importante: morfológicamente NO se puede diferenciar con certeza un linfocito T de uno B; para distinguirlos se necesitan marcadores (inmunofenotipificación).',
+          },
+          {
+            type: 'table',
+            title: 'Tres tipos de linfocito',
+            data: {
+              headers: ['Tipo', 'Proporción (dentro de linfocitos)', 'Inmunidad'],
+              rows: [
+                ['T', '70–80 %', 'Celular / coordinación'],
+                ['B', '10–15 %', 'Humoral (anticuerpos)'],
+                ['NK', 'El resto', 'Innata (citotoxicidad)'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hlin-2',
+        number: 2,
+        title: 'Linfocitos B (inmunidad humoral)',
+        keyTerms: ['linfocito B', 'médula ósea', 'plasmocito', 'memoria', 'CD19/CD20'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Los linfocitos B son la inmunidad HUMORAL (anticuerpos). Se desarrollan en la MÉDULA ÓSEA (pro-B → pre-B → B inmaduro → B maduro, ensamblando y probando su receptor). Se identifican con marcadores como CD19, CD20 y CD21. El B maduro circula y espera en órganos linfoides secundarios (ganglios, bazo, MALT) hasta encontrar su antígeno.',
+          },
+          {
+            type: 'note',
+            title: 'Activación → plasmocito o memoria',
+            content: 'Al reconocer el antígeno y recibir coestimulación de linfocitos T, el B se convierte en PLASMOCITO («fábrica de anticuerpos») o en célula B de MEMORIA (respuesta secundaria rápida). La memoria inmunológica es la base biológica de la VACUNACIÓN.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Plasmocito',
+            content: 'El plasmocito produce grandes cantidades de anticuerpos (miles de moléculas por segundo). Enlaza con la célula plasmática del tejido conectivo (Semana 3).',
+          },
+        ],
+      },
+      {
+        id: 'hlin-3',
+        number: 3,
+        title: 'Linfocitos T (inmunidad celular): CD4 y CD8',
+        keyTerms: ['linfocito T', 'timo', 'CD4', 'CD8', 'TCR', 'MHC'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Los linfocitos T son la inmunidad CELULAR y los más abundantes de los linfocitos. Sus precursores salen de la médula y maduran en el TIMO, con selección positiva (que reconozcan antígeno) y negativa (que no ataquen lo propio). Reconocen el antígeno mediante su receptor TCR unido al complejo MHC/CMH de las células presentadoras.',
+          },
+          {
+            type: 'comparison',
+            title: 'CD4 vs CD8',
+            left: {
+              title: 'CD4+ (colaborador) — «coordina»',
+              items: ['Secreta CITOCINAS', 'Activa macrófagos y linfocitos B', 'Recluta otras células efectoras', 'Se activa con MHC-II'],
+            },
+            right: {
+              title: 'CD8+ (citotóxico) — «ejecuta»',
+              items: ['Libera PERFORINAS y GRANZIMAS', 'Induce APOPTOSIS', 'Destruye células infectadas/tumorales', 'Se activa con MHC-I'],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Regla del MHC',
+            content: 'MHC-II → CD4 · MHC-I → CD8. Un subgrupo de T queda como células de MEMORIA para responder más rápido en una futura exposición.',
+          },
+        ],
+      },
+      {
+        id: 'hlin-4',
+        number: 4,
+        title: 'Células NK (inmunidad innata)',
+        keyTerms: ['NK', 'inmunidad innata', 'perforinas', 'granzimas'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Las células NK (Natural Killer) son parte de la inmunidad INNATA. Su característica clave es que actúan SIN sensibilización previa específica, destruyendo células infectadas o tumorales mediante moléculas citotóxicas (perforinas y granzimas).',
+          },
+        ],
+      },
+      {
+        id: 'hlin-5',
+        number: 5,
+        title: 'Cuadro comparativo T / B / NK',
+        keyTerms: ['comparación', 'inmunidad'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'T CD4 · T CD8 · B · NK',
+            data: {
+              headers: ['Célula', 'Inmunidad', 'Función', 'Asociación'],
+              rows: [
+                ['T CD4+', 'Adaptativa', 'Coordina mediante citocinas', 'CD4 = coordina'],
+                ['T CD8+', 'Adaptativa', 'Destruye células alteradas', 'CD8 = mata (perforina/granzima)'],
+                ['B', 'Adaptativa (humoral)', 'Anticuerpos (plasmocito)', 'B = anticuerpos'],
+                ['NK', 'Innata', 'Citotoxicidad sin sensibilización', 'NK = destrucción rápida'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hlin-6',
+        number: 6,
+        title: 'Correlación clínica: VIH y trasplantes',
+        keyTerms: ['VIH', 'SIDA', 'CD4', 'rechazo', 'ciclosporina'],
+        blocks: [
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'VIH → CD4 < 200 = SIDA',
+            content: 'El VIH afecta principalmente a los linfocitos T CD4+. Cuando el recuento cae por debajo de 200/μL se usa como criterio de SIDA, con riesgo de infecciones oportunistas (candidiasis, neumonía por Pneumocystis jirovecii). El seguimiento incluye carga viral y recuento de CD4.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Trasplante y rechazo',
+            content: 'Los linfocitos T del receptor reconocen el MHC del donante como extraño → rechazo. Se usan inmunosupresores (ciclosporina), que al bajar la respuesta T aumentan el riesgo de infecciones.',
+          },
+        ],
+      },
+    ],
+  },
 ]
