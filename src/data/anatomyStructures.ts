@@ -13,7 +13,13 @@ const RE_LEFT = /(\.l$|\sleft$|_l$|\.l\b)/i
 export function sideOf(name: string): Side {
   if (RE_RIGHT.test(name)) return 'right'
   if (RE_LEFT.test(name)) return 'left'
-  return 'central'
+  // GLTF loaders strip '.' and turn spaces into '_', so a raw ".r"/".l" side
+  // marker arrives fused to the previous word (e.g. "Femur.r" -> "Femurr",
+  // "1st metacarpal bone.r" -> "1st_metacarpal_boner"). Normalize underscores
+  // back to spaces and reuse splitSide's de-gluing — the same path toSpanish
+  // uses — so mirroring and the bilateral check match the labels users see.
+  const norm = name.replace(/_/g, ' ').replace(/\.\d+$/, '').replace(/\.+$/, '').trim()
+  return splitSide(norm)[1]
 }
 
 /** Display name without the side suffix and underscores. */

@@ -4,7 +4,7 @@
  * mirroring. ?model={id} selects the model. Registry: data/anatomyModels.ts.
  * Models: Open 3D Model (CC BY-SA 4.0) — see attribution footer.
  */
-import { useState, useEffect, useCallback, useMemo } from 'react'
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import {
   ArrowLeft, ArrowRight, BookOpenText, Cube, CursorClick, Eye, EyeSlash,
@@ -116,6 +116,17 @@ export function Anatomy3D() {
 
   const onStructures = useCallback((n: string[]) => setNames(n), [])
   const { groups, bilateral } = useMemo(() => buildStructures(names), [names])
+
+  // One-sided source models (right side only) look "half". Turn the sagittal
+  // mirror on automatically the first time a bilateral model loads, so it shows
+  // complete; a manual toggle afterwards is respected (auto-runs once per model).
+  const autoMirrored = useRef<string>('')
+  useEffect(() => {
+    if (bilateral && autoMirrored.current !== active.id) {
+      autoMirrored.current = active.id
+      setMirror(true)
+    }
+  }, [bilateral, active.id])
 
   // Editorial "ficha" data for the selected structure.
   const part = selected ? matchPart(selected) : null
