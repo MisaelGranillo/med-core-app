@@ -1488,4 +1488,165 @@ export const geneticaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'genetica-citogenetica-clinica',
+    title: 'Citogenética clínica: anomalías cromosómicas y síndromes',
+    subtitle: 'Cariotipo, anomalías numéricas y estructurales, y los síndromes por aneuploidía',
+    colorKey: 'genetica',
+    categoria: 'Genética',
+    emoji: '🧬',
+    keyPoints: [
+      'La citogenética clínica estudia los cromosomas (estructura, número y alteraciones) con aplicación médica: ADN → cromatina → cromosoma → cariotipo → alteraciones.',
+      'Enfoque de examen ★: relacionar el CARIOTIPO con el SÍNDROME, no memorizar toda la clínica de cada uno.',
+      'Anomalías NUMÉRICAS: monosomía (2n − 1, falta un cromosoma) y trisomía (2n + 1, uno de más); la aneuploidía surge por NO DISYUNCIÓN en la anafase.',
+      'Anomalías ESTRUCTURALES: deleción (terminal/intersticial), inversión y translocación (recíproca o robertsoniana = fusión de acrocéntricos → 45 cromosomas).',
+      'Aneuploidías clave: Down = trisomía 21 · Edwards = 18 · Patau = 13.',
+      'Cromosomas sexuales: Turner = 45,X (mujer, talla baja, disgenesia gonadal) · Klinefelter = 47,XXY (varón, ginecomastia, azoospermia) · Triple X = 47,XXX (mujer, talla alta).',
+    ],
+    sections: [
+      {
+        id: 'gcit-1',
+        number: 1,
+        title: '¿Qué estudia la citogenética clínica?',
+        keyTerms: ['citogenética clínica', 'cariotipo', 'aneuploidía'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La citogenética clínica estudia los cromosomas —su estructura, su número y sus alteraciones— con aplicación médica. La cadena conceptual es: ADN → cromatina → cromosoma → cariotipo → alteraciones cromosómicas. El ser humano tiene 46 cromosomas (23 pares): los pares 1–22 son autosomas y el par 23 es sexual (46,XX femenino / 46,XY masculino). Ver «Bases cromosómicas de la herencia» para el cariotipo y el bandeo.',
+          },
+          {
+            type: 'note',
+            title: 'El cariotipo permite ver',
+            content: 'Cromosomas adicionales o faltantes y alteraciones estructurales (por ejemplo, deleciones), sobre la organización cromosómica ordenada por tamaño.',
+          },
+        ],
+      },
+      {
+        id: 'gcit-2',
+        number: 2,
+        title: 'Anomalías numéricas y aneuploidía',
+        keyTerms: ['monosomía', 'trisomía', 'aneuploidía', 'no disyunción'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Las anomalías NUMÉRICAS afectan la cantidad de cromosomas. La MONOSOMÍA es la falta de un cromosoma (2n − 1) y la TRISOMÍA es un cromosoma adicional (2n + 1). La ANEUPLOIDÍA es cualquier alteración del número (uno de más o de menos) y se origina por errores de NO DISYUNCIÓN, especialmente durante la ANAFASE.',
+          },
+          {
+            type: 'note',
+            title: 'Asociación para examen ★',
+            content: 'Anafase → no disyunción → aneuploidía. Monosomía = 2n − 1 · Trisomía = 2n + 1.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Enlace con la meiosis',
+            content:
+              'La no disyunción durante la meiosis (ver «División celular») reparte mal los cromosomas hacia los gametos; la larga detención del ovocito en Profase I ayuda a explicar el aumento de aneuploidías conforme avanza la edad materna.',
+          },
+        ],
+      },
+      {
+        id: 'gcit-3',
+        number: 3,
+        title: 'Anomalías estructurales',
+        keyTerms: ['deleción', 'inversión', 'translocación', 'robertsoniana', 'disomía uniparental'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Tipos de alteración estructural',
+            items: [
+              'Deleción: pérdida de un segmento de ADN; puede ser terminal o intersticial.',
+              'Inversión: un segmento del cromosoma cambia de orientación.',
+              'Translocación: intercambio de material genético entre cromosomas; puede ser recíproca o robertsoniana.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Translocación robertsoniana',
+            content: 'Fusión de cromosomas acrocéntricos en la región de sus centrómeros; el resultado es un total de 45 cromosomas.',
+          },
+          {
+            type: 'definition',
+            title: 'Disomía uniparental',
+            content: 'Dos copias de un mismo cromosoma provenientes de un solo progenitor y ninguna del otro. — Disomía uniparental.',
+          },
+        ],
+      },
+      {
+        id: 'gcit-4',
+        number: 4,
+        title: 'Síndromes por aneuploidía (cariotipo ↔ síndrome ★)',
+        keyTerms: ['Down', 'Edwards', 'Patau', 'Turner', 'Klinefelter', 'Triple X'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Aneuploidías más frecuentes',
+            data: {
+              headers: ['Síndrome', 'Cariotipo', 'Rasgos clave (según clase)'],
+              rows: [
+                ['Down', 'Trisomía 21', 'Pliegue epicántico, puente nasal plano, manchas de Brushfield, pliegue simiano'],
+                ['Edwards', 'Trisomía 18', 'Bajo peso, microcefalia, micrognatia, cabalgamiento de dedos, cardiopatía; supervivencia reducida'],
+                ['Patau', 'Trisomía 13', 'Labio/paladar hendido, microcefalia, polidactilia, malformaciones cerebrales/cardíacas'],
+                ['Turner', '45,X', 'Mujer; talla baja, cuello alado, disgenesia gonadal, alteraciones de la aorta'],
+                ['Klinefelter', '47,XXY', 'Varón; ginecomastia, testículos pequeños, azoospermia/infertilidad'],
+                ['Triple X', '47,XXX', 'Mujer; talla alta; suele pasar desapercibido'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'mnemotecnia',
+            title: 'Números de las trisomías',
+            content: 'Patau 13 · Edwards 18 · Down 21. Sexuales: Turner 45,X · Klinefelter 47,XXY · Triple X 47,XXX.',
+          },
+        ],
+      },
+      {
+        id: 'gcit-5',
+        number: 5,
+        title: 'Glosario de términos clínicos',
+        keyTerms: ['pliegue epicántico', 'manchas de Brushfield', 'micrognatia', 'ginecomastia'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Términos usados al describir los síndromes (como referencia, no para memorizar en detalle):',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Término', 'Significado'],
+              rows: [
+                ['Pliegue epicántico', 'Piel del párpado superior que cubre el ángulo interno del ojo'],
+                ['Manchas de Brushfield', 'Manchas blanquecinas/grisáceas en la periferia del iris'],
+                ['Micrognatia', 'Mandíbula inferior pequeña'],
+                ['Microtia', 'Oreja pequeña o de desarrollo incompleto'],
+                ['Microftalmia', 'Desarrollo incompleto de uno o ambos ojos'],
+                ['Paladar ojival', 'Paladar estrecho y alto'],
+                ['Polidactilia', 'Más dedos de lo habitual'],
+                ['Ginecomastia', 'Aumento del tejido mamario en el varón'],
+                ['Criptorquidia', 'Testículo no descendido'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'gcit-6',
+        number: 6,
+        title: 'Correlación clínica',
+        keyTerms: ['detección prenatal', 'ultrasonido estructural'],
+        blocks: [
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Detección prenatal en Down',
+            content:
+              'Se menciona el ultrasonido estructural alrededor de las 12–13 semanas, con valoración del hueso nasal y la región occipital, como parte de la detección prenatal del síndrome de Down.',
+          },
+        ],
+      },
+    ],
+  },
 ]
