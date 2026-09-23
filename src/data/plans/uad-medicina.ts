@@ -243,7 +243,7 @@ export const uadMedicina: Plan = {
           name: 'Genética Básica',
           code: 'GB01003',
           tags: ['celular'],
-          topicIds: ['genetica-conceptos', 'genetica-mendel', 'genetica-adn', 'genetica-dogma-transcripcion', 'genetica-cromosomas-cariotipo', 'genetica-traduccion', 'genetica-reparacion-adn', 'genetica-repaso-s2', 'genetica-cromosomas-herencia', 'genetica-ciclo-celular', 'genetica-mitosis-meiosis', 'genetica-gametogenesis'],
+          topicIds: ['genetica-conceptos', 'genetica-mendel', 'genetica-adn', 'genetica-dogma-transcripcion', 'genetica-cromosomas-cariotipo', 'genetica-traduccion', 'genetica-reparacion-adn', 'genetica-repaso-s2', 'genetica-cromosomas-herencia', 'genetica-ciclo-celular', 'genetica-mitosis-meiosis', 'genetica-gametogenesis', 'genetica-citogenetica-clinica', 'genetica-errores-metabolismo'],
           content: {
             area: 'Ciencias Básicas',
             credits: 4,
@@ -310,12 +310,15 @@ export const uadMedicina: Plan = {
               {
                 number: 4,
                 title: 'La genética en la medicina general',
+                topicIds: ['genetica-citogenetica-clinica', 'genetica-errores-metabolismo'],
                 temas: [
-                  'Citogenética clínica',
-                  'Errores del metabolismo: definición, diagnóstico clínico y hallazgos de laboratorio',
-                  'Crecimiento y desarrollo: organogénesis y teratogénesis',
-                  'Diferenciación sexual normal y sus anomalías',
+                  'Clase 1 (impartida): citogenética clínica — anomalías numéricas (monosomía/trisomía, aneuploidía por no disyunción) y estructurales (deleción, inversión, translocación recíproca/robertsoniana) y síndromes (Down 21, Edwards 18, Patau 13, Turner 45,X, Klinefelter 47,XXY, Triple X 47,XXX)',
+                  'Clase 1 (impartida): errores innatos del metabolismo y tamiz neonatal (2.º-7.º día) — fenilcetonuria, hipotiroidismo congénito, galactosemia e hiperplasia suprarrenal congénita',
+                  'Por impartir: crecimiento y desarrollo (organogénesis y teratogénesis) y diferenciación sexual normal y sus anomalías',
                   'Vigilancia epidemiológica de las malformaciones congénitas',
+                ],
+                fuentes: [
+                  { title: 'Genética Básica — Semana 4, Clase 1', file: 'Genetica Basica - Semana 4 - Clase 1.pdf', nota: 'Citogenética clínica (síndromes) y errores del metabolismo (tamiz neonatal).' },
                 ],
               },
             ],
@@ -331,6 +334,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 2 · Clase 1 — Dogma central, ARN, transcripción y cromosomas', file: 'Genetica Basica - Semana 2 - Clase 1.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 2 — Aminoácidos, péptidos y traducción', file: 'Genetica Basica - Semana 2 - Clase 2.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 3 — Reparación del ADN', file: 'Genetica Basica - Semana 2 - Clase 3.pdf', kind: 'Clase' },
+              { title: 'Semana 4 · Clase 1 — Citogenética clínica y errores del metabolismo', file: 'Genetica Basica - Semana 4 - Clase 1.pdf', kind: 'Clase' },
               { title: 'Genética — resumen', file: 'genetica-resumen.pdf', kind: 'Resumen' },
               { title: 'Reparación del ADN', file: 'reparacion-adn.pdf', kind: 'Resumen' },
               { title: 'Puntos de regulación del ciclo celular', file: 'puntos-de-regulacion-del-ciclo-celular.pdf', kind: 'Resumen' },

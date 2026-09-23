@@ -138,6 +138,14 @@ export const modules: Module[] = [
     topicIds: ['genetica-cromosomas-herencia', 'genetica-ciclo-celular', 'genetica-mitosis-meiosis', 'genetica-gametogenesis'],
   },
   {
+    id: 'genetica-uad-s4',
+    badge: 'UAD · Genética Básica — Semana 4',
+    title: 'La genética en la medicina general',
+    subtitle: 'Citogenética clínica y síndromes, y errores innatos del metabolismo (tamiz neonatal).',
+    emoji: '🧬',
+    topicIds: ['genetica-citogenetica-clinica', 'genetica-errores-metabolismo'],
+  },
+  {
     id: 'histologia-uad-s1',
     badge: 'UAD · Histología I — Semana 1',
     title: 'Histología: célula, microscopía y técnica',
