@@ -2097,4 +2097,143 @@ export const geneticaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'genetica-diferenciacion-sexual',
+    title: 'Diferenciación sexual: genes y vías',
+    subtitle: 'Tres niveles, gónada indiferenciada, genes SRY/SOX9/DAX1/SF1 y las vías masculina y femenina',
+    colorKey: 'genetica',
+    categoria: 'Genética',
+    emoji: '🧬',
+    keyPoints: [
+      'Tres niveles ★: CROMOSÓMICO (XX/XY) → GONADAL (ovario/testículo) → FENOTÍPICO (genitales internos/externos). Regla: cromosoma → gónada → fenotipo.',
+      'Al inicio existe una GÓNADA INDIFERENCIADA (SF1 participa en el primordio); de ella parte la vía masculina o la femenina.',
+      'SRY (cromosoma Y) inicia la vía masculina activando SOX9; SOX9 induce las células de SERTOLI. DAX1 (cromosoma X) regula la vía femenina y antagoniza la masculina. SF1: primordio gonadal/genital y función endocrina.',
+      'Cadena masculina ★: SRY → SOX9 → Sertoli → AMH → regresión de Müller · Leydig → testosterona → conductos de Wolff · testosterona → 5α-reductasa → DHT → genitales externos, próstata y uretra.',
+      'Vía femenina: sin la señal masculina se forma el ovario; Müller PERSISTE (trompas, útero, parte superior de vagina) y Wolff regresa.',
+      'Enfoque de examen: comprender la lógica de la cadena, no memorizar cada gen o mecanismo.',
+    ],
+    sections: [
+      {
+        id: 'gdsx-1',
+        number: 1,
+        title: 'Tres niveles de diferenciación',
+        keyTerms: ['sexo cromosómico', 'sexo gonadal', 'sexo fenotípico'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La diferenciación sexual ocurre en tres niveles encadenados. El sexo CROMOSÓMICO depende del cariotipo (XX, XY u otras variaciones); el sexo GONADAL depende de si se desarrolla ovario o testículo; y el sexo FENOTÍPICO depende de los genitales internos y externos. Cada nivel condiciona al siguiente.',
+          },
+          {
+            type: 'note',
+            title: 'Regla ★',
+            content: 'Cromosoma → gónada → fenotipo. Una alteración puede aparecer en cualquiera de los tres niveles.',
+          },
+        ],
+      },
+      {
+        id: 'gdsx-2',
+        number: 2,
+        title: 'Gónada indiferenciada y genes clave',
+        keyTerms: ['gónada indiferenciada', 'SRY', 'SOX9', 'DAX1', 'SF1'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Al inicio del desarrollo no hay ovario ni testículo definidos: existe una GÓNADA INDIFERENCIADA. A partir de ella, un pequeño grupo de genes decide la vía.',
+          },
+          {
+            type: 'table',
+            title: 'Los cuatro genes',
+            data: {
+              headers: ['Gen', 'Localización / papel', 'Idea clave'],
+              rows: [
+                ['SRY', 'Brazo corto del cromosoma Y', 'Inicia la vía masculina activando SOX9'],
+                ['SOX9', 'Actúa tras SRY', 'Induce las células de Sertoli; su duplicación en XX puede favorecer testículo'],
+                ['DAX1', 'Cromosoma X', 'Regula la vía gonadal femenina; antagonista de la masculina'],
+                ['SF1', 'Antes de la diferenciación definitiva', 'Primordio gonadal/genital y función endocrina; su falla → insuficiencia suprarrenal/disgenesia gonadal'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'gdsx-3',
+        number: 3,
+        title: 'Vía masculina ★',
+        keyTerms: ['Sertoli', 'AMH', 'Leydig', 'testosterona', '5α-reductasa', 'DHT'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'La cadena masculina',
+            steps: [
+              'XY → SRY → SOX9 → células de SERTOLI.',
+              'Sertoli producen AMH (hormona antimülleriana) → REGRESIÓN de los conductos de Müller.',
+              'Células de LEYDIG → TESTOSTERONA → desarrollo de los conductos de WOLFF (epidídimo, conductos deferentes, vesículas seminales).',
+              'Testosterona → 5α-REDUCTASA → DHT (dihidrotestosterona).',
+              'DHT → genitales externos masculinos, próstata y uretra.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Dos hormonas, dos destinos',
+            content: 'La testosterona actúa sobre los conductos INTERNOS (Wolff); la DHT, derivada de ella por la 5α-reductasa, actúa sobre los genitales EXTERNOS y la próstata.',
+          },
+        ],
+      },
+      {
+        id: 'gdsx-4',
+        number: 4,
+        title: 'Vía femenina y conductos',
+        keyTerms: ['conductos de Müller', 'conductos de Wolff', 'ovario'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'En el escenario XX, y en ausencia de la señal masculina, la gónada sigue la vía ovárica (con DAX1 en la regulación) y se forma el OVARIO. Sin AMH, los conductos de MÜLLER persisten; sin testosterona, los de WOLFF regresan. Los genitales externos femeninos incluyen clítoris, labios menores y mayores y orificio vaginal.',
+          },
+          {
+            type: 'comparison',
+            title: 'Qué forma cada conducto',
+            left: {
+              title: 'Müller (paramesonéfrico)',
+              items: ['Trompas de Falopio', 'Útero', 'Parte superior de la vagina', 'Regresa por la AMH en la vía masculina'],
+            },
+            right: {
+              title: 'Wolff (mesonéfrico)',
+              items: ['Epidídimo', 'Conductos deferentes', 'Vesículas seminales', 'Se desarrolla por la testosterona'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'gdsx-5',
+        number: 5,
+        title: 'Genitales externos: período indiferenciado',
+        keyTerms: ['tubérculo genital', 'pliegue cloacal', 'eminencias genitales'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Antes de diferenciarse, los genitales externos comparten estructuras comunes: tubérculo genital, pliegue cloacal, eminencias genitales y orificio cloacal. La acción androgénica (DHT) los masculiniza; en su ausencia siguen el desarrollo femenino. Enlaza con la organogénesis (derivados de las capas germinales).',
+          },
+        ],
+      },
+      {
+        id: 'gdsx-6',
+        number: 6,
+        title: 'Correlación clínica: dónde falla la cadena',
+        keyTerms: ['5α-reductasa', 'AMH'],
+        blocks: [
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Dos fallas típicas en 46,XY',
+            content:
+              'Déficit de 5α-REDUCTASA: la testosterona es normal pero la DHT baja → masculinización externa incompleta pese al cariotipo 46,XY. Falla de la AMH: no regresan los conductos de Müller → útero y trompas persistentes en una persona 46,XY.',
+          },
+        ],
+      },
+    ],
+  },
 ]
