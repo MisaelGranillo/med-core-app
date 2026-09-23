@@ -1793,4 +1793,159 @@ export const geneticaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'genetica-organogenesis',
+    title: 'Organogénesis y capas germinales',
+    subtitle: 'Del cigoto a las tres capas germinales y las semanas 4–8 del desarrollo',
+    colorKey: 'genetica',
+    categoria: 'Genética',
+    emoji: '🧬',
+    keyPoints: [
+      'Secuencia ★: fecundación → cigoto → divisiones por mitosis → mórula → blastocisto → gastrulación → 3 capas germinales → organogénesis.',
+      'El blastocisto aparece cuando se forma una CAVIDAD; tiene trofoblasto (externo) y embrioblasto (interno, que dará el embrión).',
+      'La gastrulación (epiblasto/hipoblasto) establece las tres capas: ECTODERMO, MESODERMO y ENDODERMO (disco trilaminar).',
+      'Ectodermo → SNC/SNP, epidermis, piel, uñas, pelo, cristalino y córnea (+ cresta neural).',
+      'Mesodermo → tejido conectivo, hueso, cartílago, músculo, sangre, linfático, riñón/uréteres y reproductor.',
+      'Endodermo → tubo digestivo, hígado, vías respiratorias, vejiga y tiroides/paratiroides.',
+      'Semanas 4–8: 4 = arcos + corazón + forma de C; 5 = cabeza; 6 = radios digitales; 7 = muescas; 8 = dedos libres + párpados y pabellones.',
+    ],
+    sections: [
+      {
+        id: 'gorg-1',
+        number: 1,
+        title: 'La secuencia del desarrollo',
+        keyTerms: ['organogénesis', 'cigoto', 'mórula', 'blastocisto'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La organogénesis es la formación de los órganos y sistemas durante el desarrollo embrionario. Las primeras divisiones son por MITOSIS, por lo que las células hijas conservan el mismo material genético. Factores endógenos y exógenos pueden alterar el proceso.',
+          },
+          {
+            type: 'steps',
+            title: 'De la fecundación a la organogénesis',
+            steps: [
+              'Fecundación: óvulo + espermatozoide → CIGOTO.',
+              'Divisiones por mitosis (1 → 2 → 4 → 8 …).',
+              'MÓRULA: masa celular compacta (~12–32, hasta 64 células).',
+              'BLASTOCISTO: aparece la cavidad; trofoblasto + embrioblasto.',
+              'GASTRULACIÓN: se organizan las tres capas germinales.',
+              'ORGANOGÉNESIS: se forman los órganos y sistemas.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'gorg-2',
+        number: 2,
+        title: 'Blastocisto: trofoblasto y embrioblasto',
+        keyTerms: ['cavidad', 'trofoblasto', 'embrioblasto'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Al llegar el embrión al útero entra líquido y se forma una CAVIDAD: esto diferencia al blastocisto de la mórula. Se distinguen dos poblaciones celulares.',
+          },
+          {
+            type: 'comparison',
+            title: 'Dos partes del blastocisto',
+            left: {
+              title: 'Trofoblasto',
+              items: ['Capa externa.', 'Rodea al blastocisto.', 'Contribuye a los anexos (placenta).'],
+            },
+            right: {
+              title: 'Embrioblasto',
+              items: ['Grupo celular interno.', 'Dará origen al embrión.'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'gorg-3',
+        number: 3,
+        title: 'Gastrulación y disco trilaminar',
+        keyTerms: ['gastrulación', 'epiblasto', 'hipoblasto', 'cresta neural'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Durante la gastrulación el embrioblasto se organiza en capas (epiblasto e hipoblasto) y se establecen las tres capas germinativas —ECTODERMO, MESODERMO y ENDODERMO— que forman el disco trilaminar. El mesodermo se subdivide en paraxial, intermedio y lateral.',
+          },
+          {
+            type: 'note',
+            title: 'Cresta neural',
+            content: 'Asociada al tubo neural, sus células migran y contribuyen a estructuras del sistema nervioso periférico, melanocitos y parte del macizo craneofacial (junto al tubo neural y la notocorda).',
+          },
+        ],
+      },
+      {
+        id: 'gorg-4',
+        number: 4,
+        title: 'Derivados de las capas germinales ★',
+        keyTerms: ['ectodermo', 'mesodermo', 'endodermo'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Qué origina cada capa',
+            data: {
+              headers: ['Capa germinal', 'Deriva principalmente en'],
+              rows: [
+                ['Ectodermo', 'SNC y SNP, epidermis, piel, uñas, pelo, cristalino y córnea'],
+                ['Mesodermo', 'Tejido conectivo, hueso, cartílago, músculo, sangre, linfático, riñón/uréteres y sistema reproductor'],
+                ['Endodermo', 'Tubo digestivo, hígado, vías respiratorias, vejiga y tiroides/paratiroides'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'mnemotecnia',
+            title: 'Regla rápida',
+            content: 'Ectodermo = nervioso + tegumentos · Mesodermo = soporte + músculo + sangre + riñón · Endodermo = tubo digestivo + respiratorio + hígado + tiroides.',
+          },
+        ],
+      },
+      {
+        id: 'gorg-5',
+        number: 5,
+        title: 'Semanas 4–8 ★',
+        keyTerms: ['arcos faríngeos', 'radios digitales', 'muescas'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Lo que debes recordar de cada semana',
+            data: {
+              headers: ['Semana', 'Evento clave'],
+              rows: [
+                ['4', 'Arcos faríngeos (1.º mandibular, 2.º hioideo) + prominencia cardíaca + forma de C + esbozos de extremidades'],
+                ['5', 'Crecimiento marcado de la cabeza (prominencias cerebrales y faciales)'],
+                ['6', 'Radios digitales (primordios de los dedos) + se distingue el codo'],
+                ['7', 'Muescas entre los radios digitales (dedos más definidos)'],
+                ['8', '(~54–55 días) dedos libres + párpados y pabellones auriculares más desarrollados'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Regla rápida',
+            content: '4 = arco + corazón + C · 5 = cabeza · 6 = radios · 7 = muescas · 8 = dedos libres.',
+          },
+        ],
+      },
+      {
+        id: 'gorg-6',
+        number: 6,
+        title: 'Correlación: el período crítico',
+        keyTerms: ['período crítico', 'teratógenos'],
+        blocks: [
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Organogénesis = ventana de máxima susceptibilidad',
+            content:
+              'Como durante la organogénesis (semanas ~3–8) se están formando activamente los órganos, es el período de MÁXIMA susceptibilidad a los teratógenos. Es el puente hacia el tema siguiente: la teratogénesis.',
+          },
+        ],
+      },
+    ],
+  },
 ]
