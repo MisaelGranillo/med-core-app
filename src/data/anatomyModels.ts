@@ -178,15 +178,15 @@ export const anatomyModels: AnatomyModel[] = [
   {
     id: 'brain-nih',
     nombre: 'Cerebro',
-    nombre_en: 'Detailed human brain',
+    nombre_en: 'Brain',
     region: 'organos',
     glb: '/models/organ-brain-nih.glb',
     viewerModel: null,
     status: 'available',
     organ: 'cerebro',
     tint: '#BBA6AC',
-    description: 'Encéfalo humano con la superficie de circunvoluciones y surcos. Modelo de referencia detallado de NIH 3D.',
-    credit: '«Detailed Human Brain Model» · NIH 3D (3DPX-021161) · CC BY 4.0',
+    description: 'Encéfalo humano mostrando la superficie de circunvoluciones (giros) y surcos de los hemisferios cerebrales.',
+    credit: '«Brain» · dgallichan (Sketchfab) · CC BY 4.0',
   },
   {
     id: 'lungs-nih',
@@ -198,8 +198,8 @@ export const anatomyModels: AnatomyModel[] = [
     status: 'available',
     organ: 'pulmones',
     tint: '#CE908C',
-    description: 'Pulmones con el árbol bronquial (representación de la vía aérea durante la respiración). Modelo de NIH 3D.',
-    credit: '«Lungs bronchi (while breathing)» · NIH 3D (3DPX-021148) · CC BY 4.0',
+    description: 'Árbol bronquial: tráquea, bronquios principales y sus sucesivas ramificaciones hacia los bronquiolos. Muestra el patrón de ramificación de la vía aérea (no el parénquima pulmonar).',
+    credit: '«240112 bronchi reduced» · marcguntow (Sketchfab) · CC BY 4.0',
   },
   {
     id: 'kidney-nih',
@@ -210,8 +210,8 @@ export const anatomyModels: AnatomyModel[] = [
     viewerModel: null,
     status: 'available',
     organ: 'rinon',
-    description: 'Modelo de riñón humano de NIH 3D (3d.nih.gov).',
-    credit: 'Modelo de riñón humano · NIH 3D (3d.nih.gov) · uso libre',
+    description: 'Par renal en el retroperitoneo, acompañado de la aorta, la vena cava inferior y los uréteres, para ubicar los riñones y su relación con los grandes vasos.',
+    credit: '«Human Kidney» · neshallads (Sketchfab) · CC BY 4.0',
   },
 
   // ── ÓRGANOS · ilustrativos (generados por IA, aproximados) ────────────────

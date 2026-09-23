@@ -462,7 +462,7 @@ export function Anatomy3D() {
           Texturas musculares: CC BY-NC-SA 4.0 (Claudia Krebs et al., University of British Columbia).
           Departamentos de Anatomía: Leiden, Utrecht, Maastricht, Leuven, Amsterdam, Nijmegen y Gent.
           Basado en BodyParts3D y Z-Anatomy.{' '}
-          <span className="font-semibold text-body">Órganos: NIH 3D (3d.nih.gov)</span>, Human Reference Atlas — ver crédito por modelo.
+          <span className="font-semibold text-body">Órganos:</span> hígado de NIH 3D (Human Reference Atlas); cerebro, pulmones y riñón de autores en Sketchfab, todos CC BY 4.0; los modelos marcados «ilustrativo» son generados por IA. Ver crédito por modelo.
         </div>
       </footer>
     </div>
