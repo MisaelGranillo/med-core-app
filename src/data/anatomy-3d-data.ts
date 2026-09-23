@@ -288,6 +288,88 @@ export const anatomyParts: Record<string, AnatomyPart> = {
       'Producción de factor intrínseco: esencial para la absorción de vitamina B12 en el íleon.',
     ],
   },
+
+  'rinon': {
+    id: 'rinon',
+    nombre: 'Riñón',
+    sistema: 'Órganos',
+    descripcion:
+      'Órgano par retroperitoneal (~11 cm, 130–150 g cada uno) situado a ambos lados de la ' +
+      'columna, entre T12 y L3; el derecho algo más bajo por el hígado. Se distingue una ' +
+      'corteza externa y una médula con pirámides renales; su unidad funcional es la nefrona ' +
+      '(~1 millón por riñón). Filtra ~180 L de plasma al día y produce ~1–1.5 L de orina.',
+    funcionesClave: [
+      'Filtración glomerular y formación de orina; reabsorción tubular (>99%).',
+      'Equilibrio hidroelectrolítico y ácido-base (Na⁺, K⁺, H⁺, bicarbonato).',
+      'Regulación de la presión arterial mediante el sistema renina-angiotensina-aldosterona.',
+      'Función endocrina: eritropoyetina (eritropoyesis) y activación de la vitamina D (calcitriol).',
+    ],
+  },
+
+  'ojo': {
+    id: 'ojo',
+    nombre: 'Globo ocular',
+    sistema: 'Órganos',
+    descripcion:
+      'Órgano de la visión (~2.4 cm de diámetro) con tres capas: externa (esclerótica y ' +
+      'córnea), media o úvea (coroides, cuerpo ciliar e iris) e interna (retina). Contiene el ' +
+      'cristalino y los humores acuoso y vítreo que mantienen su forma y transparencia.',
+    funcionesClave: [
+      'Enfoque de la imagen sobre la retina mediante la córnea y la acomodación del cristalino.',
+      'Fototransducción en la retina: conos (visión de color y detalle) y bastones (visión con poca luz).',
+      'Regulación de la entrada de luz por el iris (pupila).',
+      'Transmisión del impulso visual por el nervio óptico (II par) hacia la corteza occipital.',
+    ],
+  },
+
+  'intestino': {
+    id: 'intestino',
+    nombre: 'Intestino',
+    sistema: 'Órganos',
+    descripcion:
+      'Porción más larga del tubo digestivo. El intestino delgado (~6 m: duodeno, yeyuno e ' +
+      'íleon) tiene vellosidades y microvellosidades que amplían enormemente la superficie de ' +
+      'absorción. El intestino grueso (~1.5 m: ciego, colon, recto) reabsorbe agua y electrolitos ' +
+      'y alberga la microbiota.',
+    funcionesClave: [
+      'Digestión final y absorción de nutrientes (delgado): borde en cepillo y enzimas.',
+      'Absorción de agua y electrolitos, y formación de las heces (grueso).',
+      'Función inmunitaria: tejido linfoide asociado al intestino (GALT, placas de Peyer).',
+      'Hospedaje de la microbiota intestinal (síntesis de vitamina K y algunas del grupo B).',
+    ],
+  },
+
+  'pancreas': {
+    id: 'pancreas',
+    nombre: 'Páncreas',
+    sistema: 'Órganos',
+    descripcion:
+      'Glándula mixta retroperitoneal (cabeza, cuerpo y cola) situada en el epigastrio, por ' +
+      'detrás del estómago. Es a la vez exocrina (acinos que vierten jugo pancreático al ' +
+      'duodeno) y endocrina (islotes de Langerhans).',
+    funcionesClave: [
+      'Función exocrina: jugo pancreático con enzimas (amilasa, lipasa, tripsinógeno) y bicarbonato.',
+      'Función endocrina: insulina (células β) y glucagón (células α) para regular la glucemia.',
+      'Somatostatina (células δ) que modula la secreción de otras hormonas.',
+      'Neutralización del quimo ácido en el duodeno mediante el bicarbonato.',
+    ],
+  },
+
+  'piel': {
+    id: 'piel',
+    nombre: 'Piel',
+    sistema: 'Órganos',
+    descripcion:
+      'Órgano más grande del cuerpo (~1.8 m², ~16% del peso). Consta de epidermis (epitelio ' +
+      'plano estratificado queratinizado, avascular), dermis (tejido conectivo con vasos y ' +
+      'nervios) e hipodermis (tejido adiposo). Se renueva por completo en 4–6 semanas.',
+    funcionesClave: [
+      'Barrera física, química y microbiológica frente al ambiente.',
+      'Termorregulación (vasos dérmicos y glándulas sudoríparas).',
+      'Recepción sensorial (tacto, presión, temperatura, dolor) y fotoprotección (melanina).',
+      'Síntesis de vitamina D a partir del 7-dehidrocolesterol.',
+    ],
+  },
 }
 
 // Colores por sistema (valores hexadecimales en formato Three.js)
