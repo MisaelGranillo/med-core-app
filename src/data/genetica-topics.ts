@@ -2236,4 +2236,170 @@ export const geneticaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'genetica-dsd',
+    title: 'Diferencias del desarrollo sexual (DSD): enfoque clínico',
+    subtitle: 'Qué son, cuándo sospecharlas, diagnóstico de primera línea y tratamiento individualizado',
+    colorKey: 'genetica',
+    categoria: 'Genética',
+    emoji: '🧬',
+    keyPoints: [
+      'DSD = diferencias del desarrollo sexual: una alteración en el nivel cromosómico, gonadal u hormonal/enzimático. Idea central: sexo cromosómico ≠ necesariamente gonadal ≠ necesariamente fenotípico.',
+      'Categorías: 46,XY DSD, 46,XX DSD, formas mixtas, disgenesia gonadal, alteraciones de la síntesis/acción de andrógenos y persistencia de Müller.',
+      'Se sospecha ante ambigüedad genital, historia familiar de DSD o discordancia entre genitales y cariotipo.',
+      'Primera línea ★: CARIOTIPO (+ FISH para SRY) + HORMONAS (testosterona, DHT, AMH, 17-hidroxiprogesterona, electrolitos) + IMAGEN (ecografía: ¿hay útero?).',
+      'Tratamiento individualizado: asignación de género + médico (déficit adrenal → hidrocortisona; desarrollo puberal → terapia hormonal) + quirúrgico según el caso.',
+      'Turner (45,X) y Klinefelter (47,XXY) son alteraciones cromosómicas del desarrollo sexual (ver «Citogenética clínica»).',
+    ],
+    sections: [
+      {
+        id: 'gdsd-1',
+        number: 1,
+        title: '¿Qué es una DSD?',
+        keyTerms: ['DSD', '46,XY DSD', '46,XX DSD', 'disgenesia gonadal'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Las diferencias del desarrollo sexual (DSD) son variaciones que surgen durante el desarrollo fetal por una alteración en cualquiera de los niveles de la cadena: cromosómico, gonadal u hormonal/enzimático. La idea central es que el sexo cromosómico no determina necesariamente el gonadal, ni este el fenotípico.',
+          },
+          {
+            type: 'list',
+            title: 'Categorías',
+            items: [
+              '46,XY DSD y 46,XX DSD.',
+              'Formas mixtas (p. ej., alteraciones cromosómicas sexuales).',
+              'Disgenesia gonadal (parcial o completa).',
+              'Alteraciones de la síntesis o de la acción de los andrógenos.',
+              'Persistencia de los conductos de Müller.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Terminología',
+            content: 'En el material aparecen términos históricos (pseudohermafroditismo masculino/femenino, hermafroditismo verdadero u ovotesticular). Conviene reconocerlos como vocabulario, pero razonar en términos actuales: DSD + causa concreta.',
+          },
+        ],
+      },
+      {
+        id: 'gdsd-2',
+        number: 2,
+        title: '¿Cuándo sospechar una DSD?',
+        keyTerms: ['ambigüedad genital', 'clitoromegalia', 'hipospadias', 'escala de masculinización'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Tres situaciones',
+            items: [
+              'Ambigüedad genital.',
+              'Historia familiar de DSD.',
+              'Discordancia entre los genitales y el cariotipo.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Ejemplos de ambigüedad genital',
+            left: {
+              title: 'En genitales de apariencia femenina',
+              items: ['Hipertrofia del clítoris (clitoromegalia)', 'Fusión labial posterior', 'Masa inguinal o labial'],
+            },
+            right: {
+              title: 'En genitales de apariencia masculina',
+              items: ['Micropene', 'Hipospadias proximal o distal', 'Testículos no descendidos bilaterales'],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Escala de masculinización externa',
+            content: 'Describe objetivamente el grado de masculinización valorando la fusión escrotal, el tamaño del tubérculo genital, la posición del meato uretral y la localización de las gónadas. Importa saber qué variables observa, no memorizar los puntajes.',
+          },
+        ],
+      },
+      {
+        id: 'gdsd-3',
+        number: 3,
+        title: 'Diagnóstico de primera línea ★',
+        keyTerms: ['cariotipo', 'FISH', 'testosterona', 'DHT', 'AMH', '17-hidroxiprogesterona'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El abordaje integra cariotipo, genética, hormonas e imagen para localizar el punto de falla de la vía. El CARIOTIPO define si hay 46,XX, 46,XY u otra alteración; el FISH valora la presencia y localización de SRY.',
+          },
+          {
+            type: 'table',
+            title: 'Qué se pide y por qué',
+            data: {
+              headers: ['Estudio', 'Qué aporta'],
+              rows: [
+                ['Cariotipo + FISH (SRY)', 'Sexo cromosómico y presencia del gen SRY'],
+                ['Testosterona + DHT', 'Juntas valoran la conversión por 5α-reductasa (testosterona normal con DHT baja → falla enzimática)'],
+                ['AMH', 'Función de Sertoli y regresión de Müller'],
+                ['17-hidroxiprogesterona + electrolitos', 'Orientan a alteraciones suprarrenales (ver hiperplasia suprarrenal congénita)'],
+                ['Ecografía', '¿Hay útero y estructuras müllerianas? ¿Dónde están las gónadas?'],
+                ['RM, genitograma, laparoscopia, biopsia gonadal', 'Definir la anatomía interna o el tejido gonadal cuando la ecografía no basta'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'gdsd-4',
+        number: 4,
+        title: 'Tratamiento individualizado',
+        keyTerms: ['asignación de género', 'hidrocortisona', 'terapia hormonal'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'No hay un tratamiento único: se decide caso por caso, con acompañamiento, considerando anatomía, gónadas, hormonas, desarrollo puberal, cariotipo y la identidad y preferencias de la persona. Tiene tres componentes: asignación de género, tratamiento médico y tratamiento quirúrgico.',
+          },
+          {
+            type: 'table',
+            title: 'Tratamiento médico',
+            data: {
+              headers: ['Situación', 'Sustitución'],
+              rows: [
+                ['Déficit adrenal', 'Hidrocortisona'],
+                ['Necesidad de desarrollo hormonal/puberal', 'Terapia hormonal'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'gdsd-5',
+        number: 5,
+        title: 'Turner y Klinefelter dentro de las DSD',
+        keyTerms: ['Turner', 'Klinefelter'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Los síndromes de Turner (45,X) y Klinefelter (47,XXY), estudiados en «Citogenética clínica», son alteraciones del desarrollo sexual originadas en el nivel cromosómico.',
+          },
+        ],
+      },
+      {
+        id: 'gdsd-6',
+        number: 6,
+        title: 'Casos para razonar y cierre del curso',
+        keyTerms: ['razonamiento clínico', 'SOX9'],
+        blocks: [
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Tres casos ★',
+            content:
+              '(1) 46,XY + testosterona normal + DHT baja → pensar en déficit de 5α-REDUCTASA. (2) 46,XY + útero y trompas presentes → pensar en la vía de la AMH (persistencia de Müller). (3) 46,XX + desarrollo testicular → pensar en duplicación o activación de SOX9.',
+          },
+          {
+            type: 'note',
+            title: 'Cierre del curso',
+            content: 'La reconstrucción mental que se debe poder hacer es: cariotipo → genes → gónada → hormonas → estructuras internas → genitales externos → diagnóstico. Comprender el proceso es más útil que memorizarlo.',
+          },
+        ],
+      },
+    ],
+  },
 ]
