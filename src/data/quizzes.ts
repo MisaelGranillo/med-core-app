@@ -6,6 +6,7 @@ import { inglesAdelantoQuestions } from './ingles-adelanto-quizzes'
 import { inglesProyectoS2Questions } from './ingles-proyecto-s2-quizzes'
 import { geneticaQuestions } from './genetica-quizzes'
 import { histologiaQuestions } from './histologia-quizzes'
+import { bioquimicaQuestions } from './bioquimica-quizzes'
 
 const anatomyQuestions: Question[] = [
   // ─── APARATO DIGESTIVO ──────────────────────────────────────────────
@@ -561,4 +562,4 @@ const anatomyQuestions: Question[] = [
   },
 ]
 
-export const questions: Question[] = [...anatomyQuestions, ...newQuestions, ...anatomiaUadQuestions, ...inglesUadQuestions, ...inglesAdelantoQuestions, ...inglesProyectoS2Questions, ...geneticaQuestions, ...histologiaQuestions]
+export const questions: Question[] = [...anatomyQuestions, ...newQuestions, ...anatomiaUadQuestions, ...inglesUadQuestions, ...inglesAdelantoQuestions, ...inglesProyectoS2Questions, ...geneticaQuestions, ...histologiaQuestions, ...bioquimicaQuestions]
