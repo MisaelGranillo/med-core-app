@@ -3706,4 +3706,150 @@ export const histologiaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'histologia-biometria-hematica',
+    title: 'Interpretación de la biometría hemática (casos)',
+    subtitle: 'Valores de referencia, patrones leucocitarios y tres casos clínicos para integrar lo visto en sangre',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🔬',
+    keyPoints: [
+      'Los valores de referencia varían con la edad, el laboratorio y el equipo; siempre vienen junto al resultado.',
+      'La biometría ORIENTA y CONFIRMA, no diagnostica: primero interrogatorio y exploración, después laboratorio.',
+      'Rangos clave (adulto): leucocitos 4,500–11,000/μL (niño de 5 años: hasta ~15,000) · plaquetas 150,000–450,000/μL · bandas 0–5 %.',
+      '«Leucocitos totales» suma granulocitos y agranulocitos: siempre hay que ver QUÉ línea sube o baja (¿neutrófilos? ¿linfocitos?).',
+      'Patrones ★: neutrofilia + bandas (desviación a la izquierda) + granulaciones tóxicas/cuerpos de Döhle → infección bacteriana · IgE + eosinofilia → alergia (o parásitos) · leucopenia + linfopenia + CD4 < 200 → VIH/SIDA.',
+    ],
+    sections: [
+      {
+        id: 'hbh-1',
+        number: 1,
+        title: 'Principios de interpretación',
+        keyTerms: ['biometría hemática', 'valores de referencia'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Los valores de referencia están estandarizados, pero cambian entre adulto y niño y entre laboratorios, porque el control de calidad depende del equipo y de los reactivos; por eso el reporte los incluye al lado del resultado. No basta con saber si un valor está «elevado»: hay que integrar cuánto, en qué línea celular y qué significa en el contexto clínico.',
+          },
+          {
+            type: 'note',
+            title: 'Orienta, no diagnostica',
+            content: 'El orden es siempre: interrogatorio → exploración física → laboratorio. La biometría apoya y confirma la sospecha clínica; por sí sola no establece el diagnóstico.',
+          },
+        ],
+      },
+      {
+        id: 'hbh-2',
+        number: 2,
+        title: 'Valores de referencia y su significado',
+        keyTerms: ['leucocitosis', 'neutrofilia', 'desviación a la izquierda', 'linfopenia', 'eosinofilia'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Parámetros clave (adulto)',
+            data: {
+              headers: ['Parámetro', 'Referencia', 'Disminuido', 'Aumentado'],
+              rows: [
+                ['Hemoglobina', 'H 13.5–17.5 · M 12–16 g/dL', 'Anemia', 'Policitemia/eritrocitosis'],
+                ['Leucocitos totales', '4,500–11,000/μL', 'Leucopenia (virus graves, daño medular, fármacos)', 'Leucocitosis (bacterias, inflamación, estrés, leucemias)'],
+                ['Neutrófilos absolutos', '1,800–7,700/μL', 'Neutropenia (quimioterapia, aplasia)', 'Neutrofilia (infección bacteriana aguda, corticoides)'],
+                ['Neutrófilos en banda', '0–5 %', 'Sin significado aislado', 'Desviación a la izquierda (infección bacteriana aguda grave)'],
+                ['Linfocitos absolutos', '1,000–4,000/μL', 'Linfopenia (VIH, inmunodeficiencias, corticoides)', 'Linfocitosis (virus, algunas leucemias/linfomas)'],
+                ['Monocitos', '2–10 %', 'Aplasia medular', 'Monocitosis (infecciones crónicas como TB)'],
+                ['Eosinófilos absolutos', '< 500/μL', 'Poca relevancia', 'Eosinofilia (alergia, asma, parásitos)'],
+                ['Plaquetas', '150,000–450,000/μL', 'Trombocitopenia (sangrado)', 'Trombocitosis (mieloproliferativos, inflamación crónica)'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Niños y laboratorios',
+            content: 'En un niño de 5 años los leucocitos normales llegan a ~15,000/μL y la hemoglobina es de 11.5–13.5 g/dL. El límite superior de plaquetas varía por laboratorio (por eso aparece 400,000 o 450,000/μL según la fuente).',
+          },
+        ],
+      },
+      {
+        id: 'hbh-3',
+        number: 3,
+        title: 'Caso 1 — Neumonía bacteriana en un niño',
+        keyTerms: ['neutrofilia', 'bandas', 'cuerpos de Döhle', 'granulaciones tóxicas'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Niño de 5 años con fiebre, tos productiva, taquipnea, tiraje subcostal leve, saturación de 93 % al aire ambiente y consolidación basal derecha en la radiografía. Biometría: leucocitos 16,400/μL (por encima del rango pediátrico) con NEUTRÓFILOS EN BANDA 18 % (normal 0–5 %), y reporte de GRANULACIONES TÓXICAS y CUERPOS DE DÖHLE.',
+          },
+          {
+            type: 'note',
+            title: 'Interpretación',
+            content: 'Leucocitosis con neutrofilia y desviación a la izquierda: la médula libera formas jóvenes (bandas). Las granulaciones tóxicas y los cuerpos de Döhle reflejan una granulopoyesis acelerada. El patrón orienta a INFECCIÓN BACTERIANA; con la clínica y la radiografía, a neumonía bacteriana (se maneja con antibiótico).',
+          },
+        ],
+      },
+      {
+        id: 'hbh-4',
+        number: 4,
+        title: 'Caso 2 — Rinitis alérgica estacional',
+        keyTerms: ['IgE', 'eosinofilia', 'alergia'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Mujer de 22 años con síntomas nasales cada primavera, antecedente de dermatitis atópica y madre asmática. Laboratorio: IgE ELEVADA y EOSINOFILIA leve; el resto de la biometría es normal.',
+          },
+          {
+            type: 'note',
+            title: 'Interpretación',
+            content: 'IgE + eosinofilia con el resto normal es típico de una alergia no complicada. Si fuera una parasitosis se esperaría además LEUCOCITOSIS. Puede pedirse la búsqueda de eosinófilos en el moco nasal.',
+          },
+        ],
+      },
+      {
+        id: 'hbh-5',
+        number: 5,
+        title: 'Caso 3 — VIH/SIDA',
+        keyTerms: ['leucopenia', 'linfopenia', 'CD4', 'carga viral'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Hombre de 34 años con pérdida de peso, diarrea, diaforesis nocturna, candidiasis oral y adenomegalias. Biometría: LEUCOPENIA y LINFOPENIA, con monocitosis leve. Carga viral de 285,000 copias/mL y CD4 de 132 células/μL.',
+          },
+          {
+            type: 'note',
+            title: 'Interpretación',
+            content: 'El VIH destruye los linfocitos T CD4 → linfopenia. Un recuento de CD4 < 200/μL, con la clínica de infecciones oportunistas, establece SIDA. Se inicia tratamiento antirretroviral y se tratan las infecciones oportunistas (p. ej., antifúngico para la candidiasis). Tras una exposición de riesgo existe profilaxis postexposición dentro de las primeras 72 horas.',
+          },
+        ],
+      },
+      {
+        id: 'hbh-6',
+        number: 6,
+        title: 'Del patrón a la orientación (cierre del curso)',
+        keyTerms: ['patrones leucocitarios', 'integración'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Patrones ★',
+            data: {
+              headers: ['Patrón en la biometría', 'Orienta hacia'],
+              rows: [
+                ['Leucocitosis + neutrofilia + bandas + granulaciones tóxicas/Döhle', 'Infección bacteriana aguda'],
+                ['Eosinofilia + IgE elevada, resto normal', 'Alergia (con leucocitosis: pensar en parásitos)'],
+                ['Leucopenia + linfopenia + CD4 bajo', 'VIH/SIDA (inmunodeficiencia celular)'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Integrar, no memorizar rangos',
+            content:
+              'Cada alteración se rastrea hasta una línea celular estudiada en el curso: neutrófilos y eosinófilos («Leucocitos, plaquetas e identificación en frotis»), linfocitos T CD4 («Linfocitos T, B y NK»). El patrón ORIENTA; la clínica decide.',
+          },
+        ],
+      },
+    ],
+  },
 ]
