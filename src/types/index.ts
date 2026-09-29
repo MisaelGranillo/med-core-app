@@ -68,6 +68,7 @@ export type TopicCategoria =
   | 'Aparatos y sistemas'
   | 'Genética'
   | 'Histología'
+  | 'Bioquímica'
   | 'Terminología médica'
   | 'Gramática médica'
   | 'Comunicación clínica'
@@ -119,6 +120,7 @@ export type TopicColorKey =
   | 'miologia'
   | 'genetica'
   | 'histologia'
+  | 'bioquimica'
 
 export interface Module {
   id: string

@@ -237,7 +237,87 @@ export const uadMedicina: Plan = {
             ],
           },
         },
-        { id: 'bioquimica-1', name: 'Bioquímica I y su laboratorio', code: 'BQ01002', hasLab: true, tags: ['bioquimica'] },
+        {
+          id: 'bioquimica-1',
+          name: 'Bioquímica I y su Laboratorio',
+          code: 'BQ01002',
+          hasLab: true,
+          tags: ['bioquimica'],
+          content: {
+            area: 'Ciencias Básicas',
+            credits: 11,
+            teacherHours: 112,
+            independentHours: 64,
+            modality: 'Virtual',
+            description:
+              'Mecanismos bioquímicos que rigen el funcionamiento normal del ser humano y la biología molecular que les da base, y cómo pueden alterarse hasta producir patología, reconocida mediante correlaciones con casos clínicos. Modalidad virtual. Evaluación: 4 parciales (extraordinario y título de suficiencia si aplica); promoción con calificación final ≥70. Seriación subsecuente: Bioquímica II y su Laboratorio (BQ02009).',
+            competencia:
+              'Comprende y analiza la estructura, organización y comportamiento metabólico de las biomoléculas y su interacción entre sí y con los procesos biológicos, con el objetivo de diferenciar el funcionamiento bioquímico normal del anormal, así como integrar el conocimiento teórico con el práctico mediante prácticas de laboratorio y casos integradores.',
+            semanas: [
+              {
+                number: 1,
+                title: 'Componentes bioquímicos del cuerpo humano y carbohidratos',
+                temas: [
+                  'Clase 1 (impartida): introducción — metabolismo digestivo (metabolismo, anabolismo vs catabolismo, regulación neuronal y endocrina, saliva, dónde inicia la digestión de cada macromolécula, fases luminal/mucosa/transporte, maladigestión vs malabsorción)',
+                  '1. Componentes bioquímicos del cuerpo humano: agua y electrolitos, propiedades fisicoquímicas del agua, concentración de solutos, presión osmótica, equilibrio ácido-base y sistemas amortiguadores',
+                  '2. Carbohidratos (glúcidos): estructura general, clasificación y función',
+                ],
+                fuentes: [
+                  { title: 'Bioquímica I — Semana 1, Introducción', file: 'Bioquimica I - Semana 1 - Introduccion.pdf', nota: 'Encuadre del curso.' },
+                  { title: 'Bioquímica I — Semana 1, Clase 1', file: 'Bioquimica I - Semana 1 - Clase 1.pdf', nota: 'Metabolismo digestivo.' },
+                ],
+              },
+              {
+                number: 2,
+                title: 'Lípidos y proteínas',
+                temas: [
+                  '3. Lípidos: estructura general, clasificación y función',
+                  '4. Proteínas: estructura general, clasificación y función',
+                ],
+              },
+              {
+                number: 3,
+                title: 'Enzimas y ácidos nucleicos',
+                temas: [
+                  '5. Enzimas: estructura general, clasificación y función',
+                  '6. Ácidos nucleicos: estructura general, clasificación y función',
+                ],
+              },
+              {
+                number: 4,
+                title: 'Hormonas, bioenergética y metabolismo',
+                temas: [
+                  '7. Hormonas: estructura general, clasificación y función',
+                  '8. Bioenergética y metabolismo: principios de bioenergética y termodinámica, energía libre en reacciones biológicas, transferencia del grupo fosfato, ATP y su hidrólisis, otros compuestos de alta energía',
+                ],
+              },
+            ],
+            bibliografia: [
+              { title: 'Bioquímica I y su Laboratorio', author: 'Hernández Cabadas', editorial: 'LBS', year: '2023', tipo: 'básica' },
+              { title: 'Bioquímica médica básica: un enfoque clínico', author: 'Marks', editorial: 'Lippincott', year: '2013', tipo: 'básica' },
+              { title: 'Bioquímica, biología molecular y genética', author: 'Lieberman', editorial: 'Lippincott', year: '2015', tipo: 'básica', file: 'Lieberman - Bioquimica Biologia Molecular y Genetica.pdf' },
+              { title: 'Bioquímica', author: 'Ferrier', editorial: 'Lippincott', year: '2014', tipo: 'básica' },
+              { title: 'Bioquímica', author: 'Mathews · Van Holde · Ahern', editorial: 'Addison Wesley', year: '2002', tipo: 'complementaria', file: 'Mathews - Bioquimica 3a ed.pdf' },
+              { title: 'Biochemistry', author: 'Voet · Voet', editorial: 'Wiley', tipo: 'complementaria' },
+              { title: 'Bioquímica ilustrada de Harper', author: 'Murray', editorial: 'McGraw-Hill / Manual Moderno', tipo: 'complementaria', file: 'Harper - Bioquimica Ilustrada 30a ed.pdf' },
+              { title: 'Bioquímica fundamental', author: 'Conn', editorial: 'Limusa/Wiley', year: '2008', tipo: 'complementaria' },
+            ],
+            materiales: [
+              { title: 'Semana 1 · Introducción al curso', file: 'Bioquimica I - Semana 1 - Introduccion.pdf', kind: 'Clase' },
+              { title: 'Semana 1 · Clase 1 — Metabolismo digestivo', file: 'Bioquimica I - Semana 1 - Clase 1.pdf', kind: 'Clase' },
+              { title: 'Programa Académico — Bioquímica I y su Laboratorio', file: 'Bioquimica I - Programa.pdf', kind: 'Programa' },
+              { title: 'Planeación — Bioquímica I (2025-1)', file: 'Bioquimica I - Planeacion.pdf', kind: 'Programa' },
+            ],
+            recursos: [
+              { label: 'Atlas MedCore — Introducción a la bioquímica', url: '/atlas/introduccion-bioquimica' },
+              { label: 'Atlas MedCore — Bioenergética', url: '/atlas/bioenergetica' },
+              { label: 'Atlas MedCore — Proteínas y enzimas', url: '/atlas/proteinas-enzimas' },
+              { label: 'Atlas MedCore — Macromoléculas: ADN y ARN', url: '/atlas/macromoleculas-adn-arn' },
+              { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },
+              { label: 'OVID®', url: 'https://www.ovid.com/' },
+            ],
+          },
+        },
         {
           id: 'genetica-basica',
           name: 'Genética Básica',
