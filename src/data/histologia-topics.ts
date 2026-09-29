@@ -3540,4 +3540,170 @@ export const histologiaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'histologia-linfoide-secundarios',
+    title: 'Ganglios linfáticos y bazo',
+    subtitle: 'Órganos linfoides secundarios: el ganglio filtra la linfa, el bazo filtra la sangre',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🔬',
+    keyPoints: [
+      'Los órganos linfoides secundarios (ganglios, bazo, MALT) son donde los linfocitos maduros inician las respuestas inmunitarias específicas.',
+      'GANGLIO: encapsulado, arriñonado, con HILIO. Corteza = folículos con centros germinales (zona B) · Paracorteza = zona T · Médula = cordones y senos medulares (plasmocitos, macrófagos).',
+      'Linfa: vasos AFERENTES (varios) entran por la convexidad → vasos EFERENTES salen por el hilio. El ganglio FILTRA LA LINFA y pone en contacto antígeno y linfocitos.',
+      'BAZO: filtra la SANGRE. Pulpa BLANCA = PALS (T) + folículos (B) · Zona marginal = captura de antígenos sanguíneos · Pulpa ROJA = cordones de Billroth + sinusoides (elimina eritrocitos viejos: «cementerio de los eritrocitos»).',
+      'Regla: timo = educación · ganglio = activación con la linfa · bazo = activación y filtración con la sangre.',
+      'Howell-Jolly abundantes en sangre → pensar en función esplénica disminuida; hiperesplenismo → secuestro → citopenias.',
+    ],
+    sections: [
+      {
+        id: 'hls-1',
+        number: 1,
+        title: 'Ganglio linfático: arquitectura',
+        keyTerms: ['ganglio linfático', 'corteza', 'paracorteza', 'médula', 'hilio'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Los ganglios son pequeños órganos linfoides ENCAPSULADOS, redondeados u ovalados/arriñonados, con una superficie convexa y una zona cóncava, el HILIO. Se agrupan en cuello, axilas, región inguinal, mediastino y abdomen. Bajo la cápsula de tejido conectivo se distinguen tres regiones.',
+          },
+          {
+            type: 'table',
+            title: 'Tres regiones',
+            data: {
+              headers: ['Región', 'Población predominante', 'Estructuras'],
+              rows: [
+                ['Corteza', 'Linfocitos B', 'Folículos linfoides con centros germinales'],
+                ['Paracorteza', 'Linfocitos T', 'Células dendríticas interdigitantes y vénulas de endotelio alto (entrada de linfocitos desde la sangre)'],
+                ['Médula', 'Plasmocitos, macrófagos, linfocitos', 'Cordones y senos medulares'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'mnemotecnia',
+            title: 'Regla visual',
+            content: 'Folículos = corteza = B · Paracorteza = T · Médula = plasmocitos y macrófagos.',
+          },
+        ],
+      },
+      {
+        id: 'hls-2',
+        number: 2,
+        title: 'Circulación de la linfa y función del ganglio',
+        keyTerms: ['vasos aferentes', 'vasos eferentes', 'filtración de la linfa'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'El recorrido de la linfa ★',
+            steps: [
+              'Vasos linfáticos AFERENTES (varios) entran por la superficie convexa.',
+              'La linfa recorre los senos, donde se filtra y sus antígenos contactan a los linfocitos y las células presentadoras.',
+              'La linfa sale por los vasos EFERENTES, que emergen por el HILIO.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Función',
+            content: 'FILTRAR LA LINFA: retener partículas, detectar antígenos y activar la respuesta inmunitaria. Aferente = entra · Eferente = sale.',
+          },
+        ],
+      },
+      {
+        id: 'hls-3',
+        number: 3,
+        title: 'Bazo: pulpa blanca, zona marginal y pulpa roja',
+        keyTerms: ['bazo', 'pulpa blanca', 'PALS', 'zona marginal', 'pulpa roja', 'cordones de Billroth'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El bazo es un órgano linfoide secundario del cuadrante superior izquierdo del abdomen, bajo el diafragma y a la izquierda del estómago. Tiene cápsula de tejido conectivo y trabéculas, y tres regiones funcionales. A diferencia del ganglio, FILTRA SANGRE (llega por la arteria esplénica).',
+          },
+          {
+            type: 'table',
+            title: 'Regiones del bazo',
+            data: {
+              headers: ['Región', 'Componentes', 'Función'],
+              rows: [
+                ['Pulpa blanca', 'PALS alrededor de la arteria central (linfocitos T) + folículos con centros germinales (linfocitos B)', 'Respuesta inmunitaria frente a antígenos sanguíneos (como un «ganglio conectado a la sangre»)'],
+                ['Zona marginal', 'Linfocitos B de memoria, T CD4, macrófagos, red reticular', 'Captura de antígenos sanguíneos; el flujo se enlentece y favorece el contacto'],
+                ['Pulpa roja', 'Cordones esplénicos de Billroth + sinusoides esplénicos', 'Filtración: elimina eritrocitos envejecidos y plaquetas defectuosas'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Circulación abierta: el «cementerio de los eritrocitos»',
+            content: 'En la pulpa roja la sangre pasa de las arteriolas a los cordones y de ahí a los sinusoides. Los eritrocitos jóvenes y flexibles atraviesan; los envejecidos o rígidos quedan retenidos y los macrófagos los eliminan.',
+          },
+          {
+            type: 'list',
+            title: 'Funciones globales del bazo',
+            items: [
+              'Filtración de la sangre (células viejas o defectuosas, restos e inclusiones).',
+              'Inmunológica (respuesta a antígenos sanguíneos; fagocitosis de bacterias).',
+              'Hematológica (almacena plaquetas, eritrocitos y leucocitos).',
+              'Hemostática.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'hls-4',
+        number: 4,
+        title: 'MALT',
+        keyTerms: ['MALT', 'placas de Peyer', 'amígdalas'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El MALT (tejido linfoide asociado a mucosas) es un órgano linfoide secundario no encapsulado, distribuido en el tubo digestivo y las vías respiratorias; permite respuestas inmunitarias locales frente a los antígenos que contactan las mucosas. Ejemplos: las PLACAS DE PEYER del íleon y las amígdalas.',
+          },
+        ],
+      },
+      {
+        id: 'hls-5',
+        number: 5,
+        title: 'Comparaciones para identificar',
+        keyTerms: ['timo vs ganglio', 'ganglio vs bazo'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Timo · ganglio · bazo',
+            data: {
+              headers: ['Rasgo', 'Timo', 'Ganglio', 'Bazo'],
+              rows: [
+                ['Tipo', 'Primario', 'Secundario', 'Secundario'],
+                ['Función', 'Educación/selección T', 'Filtrar LINFA y activar', 'Filtrar SANGRE y activar'],
+                ['Estroma', 'Epitelial', 'Reticular', 'Reticular'],
+                ['Folículos', 'No típicos', 'Sí (corteza)', 'Sí (pulpa blanca)'],
+                ['Distintivo', 'Corpúsculos de Hassall', 'Corteza + paracorteza + médula', 'Nódulos linfoides en una matriz roja de eritrocitos'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Preguntas decisivas al microscopio',
+            content: '¿Médula clara con corpúsculos concéntricos eosinófilos? → timo. ¿Folículos periféricos y una médula central? → ganglio. ¿Zonas linfoides azuladas incrustadas en una matriz roja llena de eritrocitos? → bazo.',
+          },
+        ],
+      },
+      {
+        id: 'hls-6',
+        number: 6,
+        title: 'Correlación clínica',
+        keyTerms: ['esplenomegalia', 'hiperesplenismo', 'Howell-Jolly', 'linfadenopatía'],
+        blocks: [
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Bazo y ganglios en la clínica',
+            content:
+              'La ESPLENOMEGALIA (p. ej., por hipertensión portal o cirrosis) puede causar HIPERESPLENISMO: el bazo secuestra células y aparecen citopenias, como trombocitopenia. Los cuerpos de HOWELL-JOLLY (restos de ADN que el bazo normalmente retira) abundantes en sangre periférica sugieren función esplénica disminuida o ausente. En una LINFADENOPATÍA reactiva, la expansión de los folículos (zona B) o de la paracorteza (zona T) orienta sobre el tipo de estímulo: se suele asociar la hiperplasia paracortical a infecciones virales y la folicular a estímulos bacterianos, como orientación y no como diagnóstico.',
+          },
+        ],
+      },
+    ],
+  },
 ]
