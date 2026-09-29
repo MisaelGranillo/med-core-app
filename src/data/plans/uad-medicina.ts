@@ -243,6 +243,7 @@ export const uadMedicina: Plan = {
           code: 'BQ01002',
           hasLab: true,
           tags: ['bioquimica'],
+          topicIds: ['bioquimica-metabolismo-digestivo'],
           content: {
             area: 'Ciencias Básicas',
             credits: 11,
@@ -257,6 +258,7 @@ export const uadMedicina: Plan = {
               {
                 number: 1,
                 title: 'Componentes bioquímicos del cuerpo humano y carbohidratos',
+                topicIds: ['bioquimica-metabolismo-digestivo'],
                 temas: [
                   'Clase 1 (impartida): introducción — metabolismo digestivo (metabolismo, anabolismo vs catabolismo, regulación neuronal y endocrina, saliva, dónde inicia la digestión de cada macromolécula, fases luminal/mucosa/transporte, maladigestión vs malabsorción)',
                   '1. Componentes bioquímicos del cuerpo humano: agua y electrolitos, propiedades fisicoquímicas del agua, concentración de solutos, presión osmótica, equilibrio ácido-base y sistemas amortiguadores',

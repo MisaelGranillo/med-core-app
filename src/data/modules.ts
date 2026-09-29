@@ -146,6 +146,14 @@ export const modules: Module[] = [
     topicIds: ['genetica-citogenetica-clinica', 'genetica-errores-metabolismo', 'genetica-organogenesis', 'genetica-teratogenesis', 'genetica-diferenciacion-sexual', 'genetica-dsd'],
   },
   {
+    id: 'bioquimica-uad-s1',
+    badge: 'UAD · Bioquímica I — Semana 1',
+    title: 'Bioquímica: metabolismo digestivo',
+    subtitle: 'Metabolismo, anabolismo y catabolismo; saliva, inicio de la digestión por macromolécula y fases luminal, mucosa y de transporte.',
+    emoji: '🧪',
+    topicIds: ['bioquimica-metabolismo-digestivo'],
+  },
+  {
     id: 'histologia-uad-s1',
     badge: 'UAD · Histología I — Semana 1',
     title: 'Histología: célula, microscopía y técnica',
