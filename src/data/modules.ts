@@ -180,10 +180,10 @@ export const modules: Module[] = [
   {
     id: 'histologia-uad-s4',
     badge: 'UAD · Histología I — Semana 4',
-    title: 'Histología: tejido sanguíneo',
-    subtitle: 'Plasma, eritrocitos, leucocitos y plaquetas; linfocitos T/B/NK, hemostasia y médula ósea/hematopoyesis.',
+    title: 'Histología: tejidos sanguíneo y linfático',
+    subtitle: 'Plasma, eritrocitos, leucocitos y plaquetas; linfocitos T/B/NK, hemostasia y médula ósea; tejido linfoide (timo, ganglios, bazo) e interpretación de la biometría hemática.',
     emoji: '🔬',
-    topicIds: ['histologia-sangre', 'histologia-leucocitos', 'histologia-linfocitos', 'histologia-medula-hematopoyesis'],
+    topicIds: ['histologia-sangre', 'histologia-leucocitos', 'histologia-linfocitos', 'histologia-medula-hematopoyesis', 'histologia-linfoide-primarios', 'histologia-linfoide-secundarios', 'histologia-biometria-hematica'],
   },
   {
     id: 'histologia-uad-s3',

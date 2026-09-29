@@ -596,7 +596,7 @@ export const uadMedicina: Plan = {
           code: 'HS01006',
           hasLab: true,
           tags: ['celular'],
-          topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica', 'histologia-celula', 'histologia-epitelial', 'histologia-epitelial-polaridad', 'histologia-glandulas', 'histologia-epitelios-urinario', 'histologia-epitelios-respiratorio', 'histologia-piel', 'histologia-conectivo-matriz', 'histologia-conectivo-celulas', 'histologia-conectivo-variedades', 'histologia-tejido-adiposo', 'histologia-cartilago', 'histologia-hueso', 'histologia-sangre', 'histologia-leucocitos', 'histologia-linfocitos', 'histologia-medula-hematopoyesis'],
+          topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica', 'histologia-celula', 'histologia-epitelial', 'histologia-epitelial-polaridad', 'histologia-glandulas', 'histologia-epitelios-urinario', 'histologia-epitelios-respiratorio', 'histologia-piel', 'histologia-conectivo-matriz', 'histologia-conectivo-celulas', 'histologia-conectivo-variedades', 'histologia-tejido-adiposo', 'histologia-cartilago', 'histologia-hueso', 'histologia-sangre', 'histologia-leucocitos', 'histologia-linfocitos', 'histologia-medula-hematopoyesis', 'histologia-linfoide-primarios', 'histologia-linfoide-secundarios', 'histologia-biometria-hematica'],
           content: {
             area: 'Ciencias Básicas',
             credits: 8,
@@ -664,16 +664,21 @@ export const uadMedicina: Plan = {
               {
                 number: 4,
                 title: 'Tejidos sanguíneo y linfático',
-                topicIds: ['histologia-sangre', 'histologia-leucocitos', 'histologia-linfocitos', 'histologia-medula-hematopoyesis'],
+                // Completa: impartidas las Clases 1–4 (la 4 es la última del curso).
+                estado: 'impartido',
+                topicIds: ['histologia-sangre', 'histologia-leucocitos', 'histologia-linfocitos', 'histologia-medula-hematopoyesis', 'histologia-linfoide-primarios', 'histologia-linfoide-secundarios', 'histologia-biometria-hematica'],
                 temas: [
                   'Clase 1 (impartida): tejido sanguíneo — sangre como conjuntivo de matriz líquida (55/45), plasma (agua/proteínas: albúmina, globulinas, fibrinógeno), funciones y eritrocitos (bicóncavo/anucleado, hemoglobina, eritropoyesis/EPO, ABO)',
                   'Clase 1 (impartida): leucocitos (granulocitos vs agranulocitos, fórmula leucocitaria, morfología de cada célula) y plaquetas (introducción); terminología de recuentos y biometría hemática',
                   'Clase 2 (impartida): linfocitos T/B/NK (B humoral/médula, T celular/timo, CD4 coordina vs CD8 citotóxico, NK innata), plaquetas y hemostasia (vWF, fibrina, von Willebrand, AAS) y médula ósea/hematopoyesis (roja/amarilla, HSC, reguladores)',
-                  'Por impartir: tejido linfático (órganos linfoides primarios —médula, timo— y secundarios —ganglios, bazo, MALT)',
+                  'Clase 3 (impartida): tejido linfoide — órganos primarios vs secundarios; timo linfoepitelial (corteza/médula, Hassall, selección positiva y negativa, CD4↔MHC-II/CD8↔MHC-I); ganglio (corteza B, paracorteza T, médula; aferentes/eferentes); bazo (pulpa blanca PALS/folículos, zona marginal, pulpa roja de Billroth) y MALT',
+                  'Clase 4 (impartida, cierre del curso): interpretación de la biometría hemática con tres casos clínicos — neumonía bacteriana, rinitis alérgica y VIH/SIDA',
                 ],
                 fuentes: [
                   { title: 'Semana 4 · Clase 1 — Tejido sanguíneo', file: 'Histologia I - Semana 4 - Clase 1.pdf', nota: 'Plasma, eritrocitos, leucocitos y plaquetas; identificación en frotis.' },
                   { title: 'Semana 4 · Clase 2 — Linfocitos, hemostasia y médula ósea', file: 'Histologia I - Semana 4 - Clase 2.pdf', nota: 'Linfocitos T/B/NK, plaquetas/hemostasia y médula ósea/hematopoyesis (reguladores).' },
+                  { title: 'Semana 4 · Clase 3 — Tejido linfoide', file: 'Histologia I - Semana 4 - Clase 3.pdf', nota: 'Timo, ganglios linfáticos y bazo.' },
+                  { title: 'Semana 4 · Clase 4 — Biometría hemática (casos)', file: 'Histologia I - Semana 4 - Clase 4.pdf', nota: 'Interpretación de la biometría hemática; última clase del curso.' },
                 ],
               },
             ],
@@ -692,6 +697,9 @@ export const uadMedicina: Plan = {
               { title: 'Semana 4 · Clase 1 — Tejido sanguíneo', file: 'Histologia I - Semana 4 - Clase 1.pdf', kind: 'Clase' },
               { title: 'Semana 4 · Clase 2 — Linfocitos, hemostasia y médula ósea', file: 'Histologia I - Semana 4 - Clase 2.pdf', kind: 'Clase' },
               { title: 'Reguladores de la hemopoyesis (tabla de referencia)', file: 'Reguladores de la Hemopoyesis.pdf', kind: 'Resumen' },
+              { title: 'Semana 4 · Clase 3 — Tejido linfoide', file: 'Histologia I - Semana 4 - Clase 3.pdf', kind: 'Clase' },
+              { title: 'Semana 4 · Clase 4 — Biometría hemática (casos)', file: 'Histologia I - Semana 4 - Clase 4.pdf', kind: 'Clase' },
+              { title: 'Biometría hemática — tabla de valores de referencia', file: 'Biometria Hematica.pdf', kind: 'Resumen' },
             ],
             recursos: [
               { label: 'Infografías — Histología Semana 2 (epitelios, uniones, glándulas, órganos, piel) · PDF', url: '/descargas/histologia-semana-2-infografias.pdf' },
