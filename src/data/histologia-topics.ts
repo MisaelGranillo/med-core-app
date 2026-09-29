@@ -3389,4 +3389,155 @@ export const histologiaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'histologia-linfoide-primarios',
+    title: 'Órganos linfoides primarios: timo',
+    subtitle: 'El sistema linfoide como microambientes, arquitectura del timo y selección de los linfocitos T',
+    colorKey: 'histologia',
+    categoria: 'Histología',
+    emoji: '🔬',
+    keyPoints: [
+      'El sistema linfoide se entiende como MICROAMBIENTES: linfocito + microambiente + células accesorias + señales = respuesta inmunitaria.',
+      'Primarios/centrales (maduración): MÉDULA ÓSEA y TIMO · Secundarios/periféricos (respuesta): GANGLIOS, BAZO y MALT.',
+      'El timo es un órgano LINFOEPITELIAL: su estroma es de células EPITELIALES (del endodermo faríngeo), no de tejido reticular. Mediastino anterosuperior, bilobulado; involuciona desde la pubertad pero sigue funcional.',
+      'Lobulillo: CORTEZA oscura (timocitos, «cielo estrellado», barrera hematotímica, selección positiva) y MÉDULA clara (selección negativa, CORPÚSCULOS DE HASSALL).',
+      'Selección POSITIVA (corteza): sobrevive quien reconoce el MHC propio · Selección NEGATIVA (médula): muere quien reacciona fuerte contra lo propio (evita autoinmunidad). Más del 95 % de los timocitos muere.',
+      'Timocito doble positivo (CD4+CD8+) → MHC-II conserva CD4 · MHC-I conserva CD8.',
+    ],
+    sections: [
+      {
+        id: 'hlp-1',
+        number: 1,
+        title: 'El sistema linfoide como microambientes',
+        keyTerms: ['microambiente', 'órganos linfoides primarios', 'órganos linfoides secundarios'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El tejido linfoide se estudia como un sistema de MICROAMBIENTES: la arquitectura de cada órgano crea las condiciones para que los linfocitos maduren, se activen y reconozcan antígenos. Cambiar de órgano es cambiar de microambiente, y por eso cambia su histología. Guía la identificación la arquitectura del órgano, no un linfocito aislado.',
+          },
+          {
+            type: 'comparison',
+            title: 'Clasificación',
+            left: {
+              title: 'Primarios o centrales — maduración',
+              items: ['Médula ósea (origen hematopoyético y maduración B)', 'Timo (maduración y selección T)'],
+            },
+            right: {
+              title: 'Secundarios o periféricos — respuesta',
+              items: ['Ganglios linfáticos', 'Bazo', 'MALT (tejido linfoide asociado a mucosas)'],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Protagonistas',
+            content: 'Linfocitos B (receptor BCR) y T (receptor TCR), que no se distinguen por morfología (se usa inmunohistoquímica), más células accesorias —macrófagos y células dendríticas— que presentan antígenos. Ver «Linfocitos T, B y NK».',
+          },
+        ],
+      },
+      {
+        id: 'hlp-2',
+        number: 2,
+        title: 'Timo: órgano linfoepitelial',
+        keyTerms: ['timo', 'linfoepitelial', 'endodermo faríngeo', 'involución tímica'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El timo es un órgano LINFOEPITELIAL: su estroma no es tejido conjuntivo reticular típico, sino una red de células EPITELIALES. Está en el MEDIASTINO ANTEROSUPERIOR, por delante de los grandes vasos, y es BILOBULADO. Su epitelio deriva del ENDODERMO FARÍNGEO (desde la 3.ª–4.ª semana, hacia la 8.ª), y los progenitores linfoides llegan después por la circulación.',
+          },
+          {
+            type: 'note',
+            title: 'Involución ≠ pérdida de función',
+            content: 'Alcanza ~30–40 g en la pubertad; después involuciona y su parénquima se reemplaza por tejido adiposo, pero el timo adulto sigue siendo funcional.',
+          },
+        ],
+      },
+      {
+        id: 'hlp-3',
+        number: 3,
+        title: 'El lobulillo tímico: corteza y médula',
+        keyTerms: ['corteza tímica', 'médula tímica', 'corpúsculos de Hassall', 'barrera hematotímica'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Regiones del lobulillo',
+            data: {
+              headers: ['Región', 'Aspecto', 'Qué ocurre'],
+              rows: [
+                ['Zona subcapsular', 'Bajo la cápsula', 'Llegan los progenitores; las células nodrizas rodean a los timocitos jóvenes, que proliferan'],
+                ['Corteza', 'Oscura/basófila (muchos timocitos)', 'Proliferación, reordenamiento del TCR y SELECCIÓN POSITIVA; «cielo estrellado» por macrófagos que fagocitan timocitos apoptóticos'],
+                ['Unión corticomedular', 'Frontera', 'Vasos y células dendríticas interdigitantes; migración de timocitos'],
+                ['Médula', 'Clara/pálida, menos celular', 'SELECCIÓN NEGATIVA; CORPÚSCULOS DE HASSALL'],
+              ],
+            },
+          },
+          {
+            type: 'definition',
+            title: 'Corpúsculos de Hassall',
+            content: 'Estructuras concéntricas «en capas de cebolla» formadas por células epiteliales medulares, con centro queratinizado e intensamente eosinófilo; son distintivos de la médula tímica y aumentan con la edad. — Corpúsculos de Hassall.',
+          },
+          {
+            type: 'note',
+            title: 'Células epiteliales y barrera',
+            content: 'Tres poblaciones epiteliales: células NODRIZAS (subcapsulares), CORTICALES (selección positiva) y MEDULARES (selección negativa y presentación de antígenos). La BARRERA HEMATOTÍMICA de la corteza protege a los timocitos en maduración de los antígenos circulantes.',
+          },
+        ],
+      },
+      {
+        id: 'hlp-4',
+        number: 4,
+        title: 'Maduración y selección del linfocito T ★',
+        keyTerms: ['selección positiva', 'selección negativa', 'doble positivo', 'MHC'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Las dos selecciones',
+            left: {
+              title: 'Selección positiva — CORTEZA',
+              items: [
+                'La hacen las células epiteliales corticales',
+                'Pregunta: ¿el TCR reconoce el MHC propio con afinidad adecuada?',
+                'Sí → sobrevive · No → apoptosis',
+              ],
+            },
+            right: {
+              title: 'Selección negativa — MÉDULA',
+              items: [
+                'La hacen las células epiteliales medulares y las dendríticas',
+                'Pregunta: ¿reacciona con demasiada afinidad contra lo propio?',
+                'Sí → apoptosis (evita la autoinmunidad) · No → sobrevive',
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'CD4 o CD8',
+            content: 'El timocito inicial es DOBLE POSITIVO (CD4+ CD8+). Si interactúa con MHC clase II conserva CD4 → linfocito T CD4+; si interactúa con MHC clase I conserva CD8 → linfocito T CD8+.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Una selección muy estricta',
+            content: 'Más del 95 % de los timocitos muere por apoptosis dentro del timo; los macrófagos eliminan los restos. El timo no libera todo lo que produce: educa y selecciona.',
+          },
+        ],
+      },
+      {
+        id: 'hlp-5',
+        number: 5,
+        title: 'Correlación clínica',
+        keyTerms: ['aplasia tímica', 'sombra tímica', 'autoinmunidad', 'VIH'],
+        blocks: [
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Cuando el timo falla o engaña',
+            content:
+              'APLASIA o HIPOPLASIA tímica (p. ej., en el contexto del síndrome de DiGeorge) → inmunodeficiencia de células T desde el nacimiento. La SOMBRA TÍMICA en la radiografía de tórax del lactante puede confundirse con una masa mediastinal y ser un timo normal. Si falla la selección negativa, escapan linfocitos autorreactivos → enfermedad autoinmune (lupus, artritis reumatoide). El VIH usa CD4 como receptor y destruye los linfocitos T CD4+.',
+          },
+        ],
+      },
+    ],
+  },
 ]
