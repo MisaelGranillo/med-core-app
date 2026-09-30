@@ -4,7 +4,7 @@ import { ArrowRight } from '@phosphor-icons/react'
 import { atlasTopics, type AtlasTopic } from '../data/atlas-topics'
 import { useAtlasStore } from '../store/atlasStore'
 
-type Category = 'todos' | 'anatomia' | 'bioquimica' | 'celular' | 'fisiologia'
+type Category = 'todos' | 'anatomia' | 'histologia' | 'genetica' | 'bioquimica' | 'celular' | 'fisiologia'
 
 export function Atlas() {
   const [selectedCategory, setSelectedCategory] = useState<Category>('todos')
@@ -13,6 +13,8 @@ export function Atlas() {
   const categories: { id: Category; label: string }[] = [
     { id: 'todos', label: 'Todos' },
     { id: 'anatomia', label: 'Anatomía' },
+    { id: 'histologia', label: 'Histología' },
+    { id: 'genetica', label: 'Genética' },
     { id: 'bioquimica', label: 'Bioquímica' },
     { id: 'celular', label: 'Celular' },
     { id: 'fisiologia', label: 'Fisiología' },
@@ -109,6 +111,8 @@ function AtlasCard({
 
   const categoryEmojis: Record<string, string> = {
     anatomia: '🫀',
+    histologia: '🔬',
+    genetica: '🧬',
     bioquimica: '⚗️',
     celular: '🔬',
     fisiologia: '💊',

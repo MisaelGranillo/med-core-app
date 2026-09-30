@@ -9,9 +9,18 @@ import {
   ArrowsOut,
   X,
 } from '@phosphor-icons/react'
-import { atlasTopics } from '../data/atlas-topics'
+import { atlasTopics, type AtlasTopic as AtlasTopicData } from '../data/atlas-topics'
 import { useAtlasStore } from '../store/atlasStore'
 import { ImageLightbox, DownloadPdfButton } from '../components/ImageLightbox'
+
+const CATEGORY_LABELS: Record<AtlasTopicData['category'], string> = {
+  anatomia: 'Anatomía',
+  histologia: 'Histología',
+  genetica: 'Genética',
+  bioquimica: 'Bioquímica',
+  celular: 'Celular',
+  fisiologia: 'Fisiología',
+}
 
 type StudyMode = 'view' | 'quiz' | 'recall' | null
 
@@ -137,7 +146,7 @@ export function AtlasTopic() {
               <div className="flex items-center gap-3 text-sm text-white/80">
                 <span>{topic.questions.length} preguntas</span>
                 <span>•</span>
-                <span className="capitalize">{topic.category}</span>
+                <span>{CATEGORY_LABELS[topic.category]}</span>
               </div>
             </div>
 
