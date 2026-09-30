@@ -784,4 +784,554 @@ export const bioquimicaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'bioquimica-presion-osmotica-oncotica',
+    title: 'Presión osmótica, oncótica y fuerzas de Starling',
+    subtitle: 'Osmolaridad vs osmolalidad, ósmosis vs difusión, albúmina, Starling y cristaloides vs coloides',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🫧',
+    keyPoints: [
+      'OSMOLARIDAD = partículas por LITRO de solución (mOsm/L; plasma 275–295) · OSMOLALIDAD = partículas por KG de solvente (mOsm/kg H₂O). Ambas = molaridad o molalidad × i (partículas por disociación).',
+      'ÓSMOSIS = paso pasivo de AGUA de menor a mayor concentración de solutos · PRESIÓN OSMÓTICA = la fuerza que frena ese paso (~17 mmHg por litro). DIFUSIÓN = paso de SOLUTOS según tamaño, carga y polaridad.',
+      'Na⁺ = principal soluto osmótico EXTRACELULAR · K⁺ = INTRACELULAR · proteínas (albúmina) = INTRAVASCULAR.',
+      'ALBÚMINA ★: ~60 % de las proteínas del plasma, ~25 mmHg de presión oncótica, se sintetiza en el hígado y transporta ácidos grasos, bilirrubina, iones y fármacos.',
+      'STARLING: la presión HIDROSTÁTICA saca agua del vaso al intersticio; la ONCÓTICA la regresa del intersticio al vaso.',
+      'CRISTALOIDES (fisiológica, mixta, Hartmann) vs COLOIDES (albúmina, almidón, gelatinas): los coloides elevan la presión oncótica y retienen agua en el vaso.',
+    ],
+    sections: [
+      {
+        id: 'bpo-1',
+        number: 1,
+        title: 'Osmolaridad vs osmolalidad',
+        keyTerms: ['osmolaridad', 'osmolalidad', 'factor i', 'osmómetro'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Dos formas de expresar las partículas',
+            data: {
+              headers: ['Rasgo', 'Osmolaridad plasmática', 'Osmolalidad plasmática'],
+              rows: [
+                ['Qué mide', 'Partículas osmóticamente activas por LITRO de solución', 'Partículas osmóticamente activas por KG de agua (solvente)'],
+                ['Fórmula', 'Molaridad × i', 'Molalidad × i'],
+                ['Unidad', 'mOsm/L', 'mOsm/kg H₂O'],
+                ['Cómo se obtiene', 'Se calcula con fórmula (sodio, glucosa, nitrógeno ureico)', 'Se mide en el laboratorio con un osmómetro'],
+                ['Temperatura', 'Varía con la temperatura y el volumen', 'No varía con la temperatura'],
+                ['Rango normal', '275–295 mOsm/L', '275–295 mOsm/kg H₂O'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'El factor i',
+            content: 'El factor i es el número de partículas que libera el soluto al disolverse: la glucosa no se disocia (i = 1); el NaCl se separa en Na⁺ y Cl⁻ (i ≈ 2). Por eso una misma molaridad de NaCl aporta casi el doble de osmoles que de glucosa. Regla: osmolaRidad = litRo de solución; osmolaLidad = kiLo de solvente.',
+          },
+        ],
+      },
+      {
+        id: 'bpo-2',
+        number: 2,
+        title: 'Estados clínicos hiper e hipoosmolares',
+        keyTerms: ['estado hiperglucémico hiperosmolar', 'diabetes insípida', 'SIADH', 'polidipsia psicógena'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Lo que muestra la presentación',
+            data: {
+              headers: ['Condición', 'Estado osmolar', 'Mecanismo', 'Clave clínica'],
+              rows: [
+                ['Estado hiperglucémico hiperosmolar (EHH)', 'Hiperosmolar (> 320 mOsm/kg)', 'Glucosa muy elevada (> 600 mg/dL)', 'Deshidratación celular severa, alteración del estado de alerta'],
+                ['Diabetes insípida', 'Hiperosmolar (> 295)', 'Pérdida de agua libre (hipernatremia)', 'Poliuria diluida (> 3 L/día), polidipsia'],
+                ['Intoxicación por metanol / etilenglicol', 'Hiperosmolar (brecha osmolar > 10)', 'Alcoholes o glicoles no medidos', 'Acidosis metabólica con anión gap e hiperosmolaridad'],
+                ['SIADH', 'Hipoosmolar (< 275)', 'Retención de agua libre por ADH', 'Hiponatremia euvolémica; riesgo de edema cerebral'],
+                ['Insuficiencia cardíaca / cirrosis', 'Hipoosmolar (< 275)', 'Retención de agua por estímulo neurohumoral', 'Edema periférico o ascitis con hiponatremia dilucional'],
+                ['Polidipsia psicógena', 'Hipoosmolar (< 275)', 'Ingesta masiva de agua', 'Orina extremadamente diluida (< 100 mOsm/kg)'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Etanol vs metanol',
+            content:
+              'El etanol es el alcohol de consumo; el metanol (alcohol de madera) es tóxico: produce hiperosmolaridad y acidosis metabólica. Se insistió en su relevancia en temporadas de fiestas, cuando aumentan las bebidas adulteradas.',
+          },
+        ],
+      },
+      {
+        id: 'bpo-3',
+        number: 3,
+        title: 'Presión osmótica y ósmosis',
+        keyTerms: ['presión osmótica', 'ósmosis', 'membrana semipermeable'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'No son lo mismo',
+            left: { title: 'Ósmosis', items: ['Paso de AGUA de menor a mayor concentración de solutos', 'Busca igualar la concentración a ambos lados', 'Proceso pasivo', 'Requiere membrana semipermeable'] },
+            right: { title: 'Presión osmótica', items: ['Fuerza que ejercen los solutos para atraer agua', 'Fuerza necesaria para FRENAR la ósmosis', 'Se mide en miliosmoles; ~17 mmHg por litro de agua', 'Depende del número de partículas, no de su carga'] },
+          },
+          {
+            type: 'list',
+            title: 'Factores que afectan la presión osmótica',
+            items: ['Concentración de solutos.', 'Volumen de la solución.', 'Temperatura.'],
+          },
+          {
+            type: 'note',
+            title: 'Usos de la presión osmótica',
+            content: 'La presión osmótica mantiene la integridad de la célula y el equilibrio hídrico entre compartimentos. Fuera del cuerpo se aprovecha en membranas semipermeables, purificación de agua y conservación de alimentos (deshidratarlos en soluciones muy concentradas alarga su vida).',
+          },
+        ],
+      },
+      {
+        id: 'bpo-4',
+        number: 4,
+        title: 'Ósmosis vs difusión',
+        keyTerms: ['difusión', 'canales iónicos', 'GLUT', 'Na⁺/K⁺-ATPasa'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Qué se mueve',
+            left: { title: 'Difusión', items: ['Se mueven MOLÉCULAS (solutos)', 'Depende de tamaño, carga, polaridad y gradiente', 'Pasiva, por canales o transportadores (GLUT)', 'Activa si gasta energía (bomba Na⁺/K⁺-ATPasa, simportadores, antiportadores)'] },
+            right: { title: 'Ósmosis', items: ['Se mueve el AGUA', 'Va hacia donde hay más solutos', 'Siempre pasiva'] },
+          },
+          {
+            type: 'correlacion',
+            variant: 'mnemotecnia',
+            title: 'Regla rápida',
+            content: 'Difusión = solutos. Ósmosis = agua. Presión osmótica = la fuerza contraria a la ósmosis.',
+          },
+        ],
+      },
+      {
+        id: 'bpo-5',
+        number: 5,
+        title: 'Electrolitos que sostienen la presión osmótica',
+        keyTerms: ['sodio', 'potasio', 'volemia', 'potencial de membrana'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Cada compartimento tiene su soluto dominante: el Na⁺ regula la presión osmótica EXTRACELULAR (y con ella la volemia), el K⁺ la INTRACELULAR (clave en la conducción eléctrica y el potencial de membrana) y las proteínas, sobre todo la albúmina, la INTRAVASCULAR.',
+          },
+          {
+            type: 'table',
+            title: 'Tabla de esta presentación (mEq/L)',
+            data: {
+              headers: ['Electrolito', 'Extracelular', 'Intracelular'],
+              rows: [
+                ['Sodio (Na⁺)', '135–145', '15–20'],
+                ['Potasio (K⁺)', '3.5–5', '150–155'],
+                ['Calcio (Ca²⁺)', '1–2', '4.5–5'],
+                ['Bicarbonato (HCO₃⁻)', '18–23', '10–12'],
+                ['Cloro (Cl⁻)', '98–108', '1–4'],
+                ['Magnesio (Mg²⁺)', '4.5–5.5', '27–29'],
+                ['Fosfato (HPO₄²⁻)', '1.7–4.5', '100–104'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Cifras distintas entre clases',
+            content: 'Esta tabla no coincide del todo con la de la Clase 2 (p. ej., K⁺ intracelular 150–155 vs 140–150; Mg²⁺ extracelular 4.5–5.5 vs 1.5–2.5; HCO₃⁻ extracelular 18–23 vs 22–26). Las ideas que no cambian: Na⁺ y Cl⁻ dominan fuera de la célula; K⁺, Mg²⁺ y fosfatos, dentro. Para valores clínicos de laboratorio conviene usar los de la Clase 2 (Na⁺ 135–145, K⁺ 3.5–5.0, HCO₃⁻ 22–26 mEq/L).',
+          },
+        ],
+      },
+      {
+        id: 'bpo-6',
+        number: 6,
+        title: 'Albúmina y presión oncótica',
+        keyTerms: ['albúmina', 'presión oncótica', 'fenitoína', 'hipoalbuminemia'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Presión oncótica',
+            content: 'Presión osmótica que ejercen las proteínas del plasma. Es pequeña comparada con la de los electrolitos, pero decisiva para retener agua dentro del vaso. La principal responsable es la albúmina. — Presión oncótica (coloidosmótica).',
+          },
+          {
+            type: 'list',
+            title: 'Albúmina ★',
+            items: [
+              'Representa ~60 % de las proteínas del plasma.',
+              'Aporta ~25 mmHg de presión oncótica.',
+              'Se sintetiza principalmente en el hígado.',
+              'Transporta ácidos grasos, bilirrubina, iones metálicos y fármacos.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Fenitoína e hipoalbuminemia',
+            content:
+              'La fenitoína (difenilhidantoína) viaja muy unida a la albúmina; solo la fracción libre actúa. Si la albúmina baja (enfermedad hepática, malnutrición proteica), aumenta la fenitoína libre y el paciente puede intoxicarse aunque la dosis no haya cambiado.',
+          },
+        ],
+      },
+      {
+        id: 'bpo-7',
+        number: 7,
+        title: 'Fuerzas de Starling',
+        keyTerms: ['presión hidrostática', 'presión oncótica', 'intersticio', 'edema'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Ley de Starling',
+            data: {
+              headers: ['Presión', 'Efecto'],
+              rows: [
+                ['Hidrostática', 'Favorece que el agua pase del compartimento INTRAVASCULAR al INTERSTICIAL'],
+                ['Oncótica', 'Favorece que el agua regrese del INTERSTICIAL al INTRAVASCULAR'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content:
+              'El equilibrio entre ambas fuerzas regula el intercambio de agua y electrolitos entre la sangre y el líquido intersticial. Si cae la albúmina, la presión oncótica ya no compensa a la hidrostática y el agua se queda en el intersticio: edema.',
+          },
+        ],
+      },
+      {
+        id: 'bpo-8',
+        number: 8,
+        title: 'Cristaloides, coloides y tonicidad',
+        keyTerms: ['cristaloides', 'coloides', 'hipovolemia', 'tonicidad'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos familias de soluciones IV',
+            left: { title: 'Cristaloides', items: ['Solutos pequeños (electrolitos, glucosa)', 'Se reparten con facilidad entre compartimentos', 'Fisiológica 0.9 %, mixta, Hartmann'] },
+            right: { title: 'Coloides', items: ['Moléculas grandes', 'Elevan la presión oncótica y retienen agua en el vaso', 'Albúmina, almidón, gelatinas'] },
+          },
+          {
+            type: 'table',
+            title: 'Clasificación por tonicidad (actividad 5)',
+            data: {
+              headers: ['Hipertónicas', 'Isotónicas', 'Hipotónicas'],
+              rows: [
+                ['Dextrosa 50 % (clase)', 'NaCl 0.9 % (clase)', 'Dextrosa 5 %* (clase)'],
+                ['NaCl 3 %', 'Hartmann / Ringer lactato', 'NaCl 0.45 %'],
+                ['Dextrosa 10 %', 'Plasma-Lyte A', 'NaCl 0.225 %'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: '*Dextrosa 5 %',
+            content: '*La dextrosa 5 % es casi isoosmolar en la bolsa, pero al metabolizarse la glucosa queda agua libre: su efecto en el cuerpo es hipotónico. Los ejemplos sin «(clase)» son soluciones hospitalarias habituales para completar la actividad.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Choque hipovolémico',
+            content:
+              'Ante la pérdida de volumen intravascular se reponen cristaloides y, según el caso, coloides (albúmina, gelatinas, almidón) para sostener la presión oncótica. En clase se advirtió que la solución salina hipertónica no es la opción para reponer volumen, porque saca agua de las células y las deshidrata.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-equilibrio-acido-base',
+    title: 'Equilibrio ácido-base y sistemas amortiguadores',
+    subtitle: 'pH, gasometría, pulmón vs riñón, amortiguadores y los cuatro trastornos',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '⚖️',
+    keyPoints: [
+      'pH sanguíneo normal 7.35–7.45 ★: < 7.35 = ACIDOSIS · > 7.45 = ALCALOSIS. Ácido = DONA H⁺; base = ACEPTA H⁺.',
+      'Gasometría ★: pCO₂ 35–45 mmHg (pulmón) · HCO₃⁻ 22–26 mEq/L (riñón) · pO₂ 80–100 mmHg (pulmón) · pH 7.35–7.45.',
+      'CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻ (la anhidrasa carbónica acelera la reacción). ↑ CO₂ → ↑ H⁺ → ↓ pH.',
+      'PULMÓN corrige en MINUTOS (retiene o elimina CO₂) · RIÑÓN en HORAS a DÍAS (secreta H⁺, reabsorbe ~80 % del HCO₃⁻ en el túbulo proximal, genera bicarbonato nuevo con glutamina y fosfatos).',
+      'Regla de clase: si el trastorno es METABÓLICO, pH y HCO₃⁻ van en la MISMA dirección; si es RESPIRATORIO, pH y pCO₂ van en dirección CONTRARIA.',
+      'Ejemplos: cetoacidosis diabética y acidosis láctica (acidosis metabólica) · vómito crónico y furosemida (alcalosis metabólica) · EPOC y asma (acidosis respiratoria) · ansiedad e hiperventilación (alcalosis respiratoria).',
+    ],
+    sections: [
+      {
+        id: 'bab-1',
+        number: 1,
+        title: 'pH, ácidos y bases',
+        keyTerms: ['pH', 'ácido', 'base', 'Henderson-Hasselbalch'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Ácido vs base',
+            left: { title: 'Ácido', items: ['DONADOR de protones (H⁺)', 'Fuerte: se disocia totalmente (HCl)', 'La mayoría son débiles: se disocian parcialmente'] },
+            right: { title: 'Base', items: ['ACEPTOR de protones (H⁺)', 'Fuerte: se ioniza completamente liberando OH⁻', 'La mayoría son débiles'] },
+          },
+          {
+            type: 'note',
+            title: 'Henderson-Hasselbalch',
+            content: 'Henderson-Hasselbalch: pH = pKa + log (A⁻ / HA), donde HA es el ácido y A⁻ su base conjugada. No se pide calcular: basta entender que el pH depende de la proporción entre la base y el ácido. En la sangre esa proporción es HCO₃⁻ (riñón) frente a CO₂ (pulmón).',
+          },
+          {
+            type: 'table',
+            title: 'Gases arteriales y quién los regula ★',
+            data: {
+              headers: ['Parámetro', 'Valor normal', 'Órgano que lo regula'],
+              rows: [
+                ['pCO₂', '35–45 mmHg', 'Respiratorio'],
+                ['HCO₃⁻', '22–26 mEq/L', 'Renal'],
+                ['pO₂', '80–100 mmHg', 'Respiratorio'],
+                ['pH', '7.35–7.45', 'Diversos mecanismos'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'bab-2',
+        number: 2,
+        title: 'Regulación respiratoria: el CO₂',
+        keyTerms: ['CO₂', 'ácido carbónico', 'hiperventilación', 'hipoventilación'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El CO₂ que producen las células actúa como ácido: al unirse al agua forma ácido carbónico (H₂CO₃), que libera H⁺ y HCO₃⁻. Como es una molécula pequeña y muy soluble, difunde con facilidad entre membranas y compartimentos, así que el pulmón puede cambiar el pH en MINUTOS ventilando más o menos.',
+          },
+          {
+            type: 'steps',
+            title: 'Efecto de los cambios en la pCO₂',
+            steps: [
+              'Hipoventilación → se retiene CO₂ → ↑ H₂CO₃ → ↑ H⁺ → ↓ pH → acidosis respiratoria.',
+              'Hiperventilación → se elimina CO₂ → ↓ H₂CO₃ → ↓ H⁺ → ↑ pH → alcalosis respiratoria.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Anhidrasa carbónica',
+            content: 'La anhidrasa carbónica es la enzima que acelera CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻ (reacción reversible). Está en el eritrocito, el páncreas, el intestino, el músculo estriado, el endotelio pulmonar y la nefrona.',
+          },
+        ],
+      },
+      {
+        id: 'bab-3',
+        number: 3,
+        title: 'Regulación renal: H⁺ y bicarbonato',
+        keyTerms: ['túbulo proximal', 'glutamina', 'amonio', 'fosfato'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Qué hace el riñón (horas a días)',
+            items: [
+              'El túbulo proximal aumenta o disminuye la secreción de H⁺.',
+              'Reabsorbe ~80 % del HCO₃⁻ filtrado.',
+              'Produce bicarbonato nuevo por dos vías: glutamina y fosfatos.',
+            ],
+          },
+          {
+            type: 'steps',
+            title: 'Vía de la glutamina',
+            steps: [
+              'La glutamina se desamina en la célula tubular → α-cetoglutarato + amonio (NH₄⁺).',
+              'El α-cetoglutarato se metaboliza con CO₂ y H₂O → HCO₃⁻ nuevo, que pasa a la sangre.',
+              'El NH₄⁺ se disocia en amoniaco y se elimina en la luz tubular: sale ácido por la orina.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Sistema fosfato (H₂PO₄⁻ ⇌ H⁺ + HPO₄²⁻)',
+            data: {
+              headers: ['Situación', 'Qué hace el fosfato'],
+              rows: [
+                ['Aumenta el H⁺', 'HPO₄²⁻ capta H⁺ → H₂PO₄⁻ (fosfato ácido, se elimina por orina)'],
+                ['Disminuye el H⁺', 'H₂PO₄⁻ libera H⁺ → HPO₄²⁻'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Dónde actúa el fosfato',
+            content: 'El fosfato actúa sobre todo dentro de la célula (alta concentración de PO₄, presente en ATP, ADN, ARN y fosfolípidos) y en el túbulo renal, donde se filtra en el glomérulo y se une a H⁺ para eliminarse como fosfato ácido. Es el principal control metabólico (no respiratorio) del equilibrio ácido-base.',
+          },
+        ],
+      },
+      {
+        id: 'bab-4',
+        number: 4,
+        title: 'Sistemas amortiguadores',
+        keyTerms: ['amortiguador', 'tampón', 'bicarbonato', 'hemoglobina'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Amortiguador',
+            content: 'Sistema (tampón o buffer) que capta o cede H⁺ para impedir cambios bruscos de pH. El principal de la sangre es el par bicarbonato / ácido carbónico. — Amortiguador (tampón, buffer).',
+          },
+          {
+            type: 'table',
+            title: 'Seis amortiguadores (actividad 11)',
+            data: {
+              headers: ['Amortiguador', 'Dónde / cómo actúa'],
+              rows: [
+                ['Bicarbonato / ácido carbónico', 'Principal amortiguador extracelular; conecta pulmón (CO₂) y riñón (HCO₃⁻)'],
+                ['Fosfato', 'Intracelular y tubular renal; capta o libera H⁺'],
+                ['Albúmina y proteínas plasmáticas', 'Sus grupos ácidos y básicos captan o ceden H⁺'],
+                ['Hemoglobina', 'Amortigua el H⁺ que se genera al transportar CO₂ en el eritrocito'],
+                ['Proteínas intracelulares', 'Amortiguación dentro de la célula'],
+                ['Amonio / amoniaco (NH₄⁺/NH₃)', 'Permite al riñón eliminar ácido por la orina'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Qué viene de la clase',
+            content: 'El bicarbonato, el fosfato, el amonio (vía glutamina) y la albúmina se vieron en clase; hemoglobina y proteínas intracelulares completan la actividad con la bibliografía.',
+          },
+        ],
+      },
+      {
+        id: 'bab-5',
+        number: 5,
+        title: 'Los cuatro trastornos ácido-base',
+        keyTerms: ['acidosis metabólica', 'alcalosis metabólica', 'acidosis respiratoria', 'alcalosis respiratoria'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Tabla de la presentación',
+            data: {
+              headers: ['Trastorno', 'pH', 'HCO₃⁻', 'pCO₂', 'Causas'],
+              rows: [
+                ['Acidosis metabólica', '< 7.35', '< 22 mEq/L', '< 35 mmHg (compensa)', 'Enfermedad renal, choque, cetoacidosis diabética, diarrea, acidosis tubular, intoxicación por ácidos'],
+                ['Alcalosis metabólica', '> 7.45', '> 26 mEq/L', '> 45 mmHg (compensa)', 'Vómito crónico, furosemida, torasemida, potasio bajo'],
+                ['Acidosis respiratoria', '< 7.35', '> 26 mEq/L (compensa)', '> 45 mmHg', 'EPOC, asma, neumonía, enfisema, falla cardíaca'],
+                ['Alcalosis respiratoria', '> 7.45', '< 22 mEq/L (compensa)', '< 35 mmHg', 'Ansiedad, hiperventilación, dolor, teofilina, encefalitis, traumatismo craneoencefálico'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Hiperaldosteronismo',
+            content: 'Ojo con el hiperaldosteronismo: en clase y en la diapositiva se mencionó el hiperaldosteronismo entre las causas de acidosis metabólica. En la bibliografía (Guyton, Harper) se asocia con ALCALOSIS metabólica: la aldosterona hace que el riñón pierda H⁺ y K⁺. Conviene anotarlo en la alcalosis.',
+          },
+          {
+            type: 'steps',
+            title: 'Cómo leer una gasometría (regla de clase)',
+            steps: [
+              'Mira el pH: < 7.35 acidosis; > 7.45 alcalosis.',
+              'Busca el origen: si cambió sobre todo el HCO₃⁻ es METABÓLICO; si cambió la pCO₂ es RESPIRATORIO.',
+              'Metabólico: pH y HCO₃⁻ van en la MISMA dirección. Respiratorio: pH y pCO₂ van en dirección CONTRARIA.',
+              'Revisa la compensación: el otro órgano mueve su parámetro para acercar el pH a la normalidad.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Ejemplos que dio el docente',
+            content:
+              'Cetoacidosis diabética y acidosis láctica → acidosis metabólica. Vómito de contenido gástrico ácido (se pierde HCl) y furosemida → alcalosis metabólica. Crisis de asma o EPOC (retienen CO₂) → acidosis respiratoria. Ataque de ansiedad (hiperventila) → alcalosis respiratoria.',
+          },
+        ],
+      },
+      {
+        id: 'bab-6',
+        number: 6,
+        title: 'Fósforo y enfermedad renal',
+        keyTerms: ['fósforo sérico', 'fosfaturia', 'enfermedad renal crónica', 'hiperparatiroidismo'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Pruebas para el fosfato',
+            data: {
+              headers: ['Prueba', 'Qué aporta'],
+              rows: [
+                ['Fósforo sérico ★', 'La mejor prueba: 2.5–4.5 mg/dL; refleja el fosfato extracelular'],
+                ['Fósforo urinario de 24 h', 'Cuantifica la excreción (muestra titulable)'],
+                ['EGO', 'Detecta fosfatos en orina (fosfaturia, cristales)'],
+                ['Gases arteriales', 'pH, pCO₂ y HCO₃⁻: estado ácido-base'],
+                ['Electrolitos séricos', 'Na⁺, K⁺, Cl⁻, HCO₃⁻, Ca²⁺, Mg²⁺ y fosfato'],
+                ['Depuración renal', 'TFG / aclaramiento de creatinina'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Indicaciones específicas',
+            data: {
+              headers: ['Situación', 'Qué pedir'],
+              rows: [
+                ['Litiasis renal', 'Fosfato urinario de 24 h, EGO (cristales), electrolitos y función renal'],
+                ['Hiperparatiroidismo', 'Fósforo sérico (suele estar bajo), calcio (elevado), PTH, vitamina D, función renal'],
+                ['Enfermedad renal crónica', 'Fósforo sérico y urinario, electrolitos, gases arteriales, TFG/creatinina'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Riñón enfermo → acidosis',
+            content:
+              'En la enfermedad renal disminuye la excreción de H⁺ y falla el amortiguador fosfato: aparece acidosis metabólica. Las alteraciones del fósforo afectan además el metabolismo óseo y la producción de ATP.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-glucidos',
+    title: 'Glúcidos: introducción',
+    subtitle: 'Unidad II — por qué importan los carbohidratos y los destinos de la glucosa',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🍞',
+    keyPoints: [
+      'Un adulto requiere ~2000 kcal/día: carbohidratos 40–60 %, lípidos 30–40 %, proteínas 10–15 %.',
+      'La GLUCOSA es el glúcido más importante: fuente de energía y precursor de muchas biomoléculas.',
+      'De la glucosa derivan glucógeno, ribosa y desoxirribosa (ácidos nucleicos) y galactosa (lactosa de la leche); además forma glucolípidos, glucoproteínas y proteoglucanos.',
+    ],
+    sections: [
+      {
+        id: 'bgl-1',
+        number: 1,
+        title: 'Los glúcidos en la dieta',
+        keyTerms: ['carbohidratos', 'kcal', 'dieta'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Distribución de ~2000 kcal/día en el adulto',
+            data: {
+              headers: ['Macronutriente', 'Proporción'],
+              rows: [
+                ['Carbohidratos (glúcidos)', '40–60 %'],
+                ['Lípidos', '30–40 %'],
+                ['Proteínas', '10–15 %'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Unidad II',
+            content: 'Esta clase solo abrió la Unidad II (estructura, función e importancia de los glúcidos). La estructura, clasificación y función de monosacáridos, disacáridos y polisacáridos se agregará con las clases siguientes.',
+          },
+        ],
+      },
+      {
+        id: 'bgl-2',
+        number: 2,
+        title: 'La glucosa y sus destinos',
+        keyTerms: ['glucosa', 'glucógeno', 'ribosa', 'galactosa'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Qué se obtiene de la glucosa',
+            items: [
+              'Energía: es la principal fuente.',
+              'Glucógeno: su forma de almacenamiento.',
+              'Ribosa y desoxirribosa: los azúcares de ARN y ADN.',
+              'Galactosa: para sintetizar la lactosa de la leche.',
+              'Glucolípidos.',
+              'Glucoproteínas.',
+              'Proteoglucanos.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Conexión con clases previas',
+            content:
+              'La glucosa une temas ya vistos: la amilasa inicia la digestión de los glúcidos en la boca (Clase 1), la dextrosa es glucosa en las soluciones IV y la hiperglucemia eleva la osmolaridad (Clases 2 y 3), y la cetoacidosis diabética aparece cuando la célula no puede usarla (acidosis metabólica).',
+          },
+        ],
+      },
+    ],
+  },
 ]

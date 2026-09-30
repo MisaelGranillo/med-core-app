@@ -148,10 +148,10 @@ export const modules: Module[] = [
   {
     id: 'bioquimica-uad-s1',
     badge: 'UAD · Bioquímica I — Semana 1',
-    title: 'Bioquímica: digestión, agua y electrolitos',
-    subtitle: 'Metabolismo digestivo; agua corporal, compartimentos y electrolitos; propiedades del agua, osmolaridad vs tonicidad y cálculo de soluciones.',
+    title: 'Bioquímica: agua, electrolitos y ácido-base',
+    subtitle: 'Metabolismo digestivo; agua, electrolitos y soluciones; presión osmótica y oncótica, Starling; equilibrio ácido-base; inicio de glúcidos.',
     emoji: '🧪',
-    topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones'],
+    topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones', 'bioquimica-presion-osmotica-oncotica', 'bioquimica-equilibrio-acido-base', 'bioquimica-glucidos'],
   },
   {
     id: 'histologia-uad-s1',
