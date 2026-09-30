@@ -431,6 +431,7 @@ export const uadMedicina: Plan = {
               { title: 'Programa Académico — Genética Básica', file: 'Genetica Basica - Programa.pdf', kind: 'Programa' },
             ],
             recursos: [
+              { label: 'Infografías — Genética Semana 2 (dogma, ribosoma, cromosomas, reparación) · PDF', url: '/descargas/genetica-semana-2-infografias.pdf' },
               { label: 'Acland Anatomy', url: 'https://aclandanatomy.com/' },
               { label: 'Bates Visual Guide', url: 'https://batesvisualguide.com/' },
               { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },
