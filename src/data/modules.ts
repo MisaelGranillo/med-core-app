@@ -148,10 +148,10 @@ export const modules: Module[] = [
   {
     id: 'bioquimica-uad-s1',
     badge: 'UAD · Bioquímica I — Semana 1',
-    title: 'Bioquímica: metabolismo digestivo',
-    subtitle: 'Metabolismo, anabolismo y catabolismo; saliva, inicio de la digestión por macromolécula y fases luminal, mucosa y de transporte.',
+    title: 'Bioquímica: digestión, agua y electrolitos',
+    subtitle: 'Metabolismo digestivo; agua corporal, compartimentos y electrolitos; propiedades del agua, osmolaridad vs tonicidad y cálculo de soluciones.',
     emoji: '🧪',
-    topicIds: ['bioquimica-metabolismo-digestivo'],
+    topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones'],
   },
   {
     id: 'histologia-uad-s1',
