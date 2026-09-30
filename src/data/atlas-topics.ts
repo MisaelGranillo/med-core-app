@@ -34,7 +34,7 @@ export const atlasTopics: AtlasTopic[] = [
     subtitle: 'Los 8 huesos del neurocráneo, diferenciados por color',
     category: 'anatomia',
     emoji: '💀',
-    imagePath: '/atlas/huesos-craneo.png',
+    imagePath: '/atlas/huesos-craneo.webp',
     colorKey: 'osteologia',
     relatedTopicIds: ['huesos-cara-hioides', 'columna-vertebral'],
     questions: [
@@ -53,16 +53,16 @@ export const atlasTopics: AtlasTopic[] = [
     subtitle: 'Macizo facial (viscerocráneo); mandíbula e hioides pendientes',
     category: 'anatomia',
     emoji: '🦴',
-    imagePath: '/atlas/huesos-cara-hioides.png',
+    imagePath: '/atlas/huesos-cara-hioides.webp',
     colorKey: 'osteologia',
     relatedTopicIds: ['huesos-craneo', 'columna-vertebral'],
     questions: [
       { id: 'hch-1', question: '¿Qué hueso (naranja) es la pieza central de la cara y forma el paladar?', options: ['Palatino', 'Maxilar superior', 'Malar', 'Vómer'], correctIndex: 1, explanation: 'El maxilar superior (naranja) forma el paladar, el suelo de la órbita y la pared de la fosa nasal, y aloja el seno maxilar.', difficulty: 'easy' },
       { id: 'hch-2', question: 'El relieve del pómulo lo forma el hueso:', options: ['Nasal', 'Malar (cigomático)', 'Lagrimal', 'Palatino'], correctIndex: 1, explanation: 'El malar o cigomático (azul) forma el pómulo y, con la apófisis cigomática del temporal, el arco cigomático.', difficulty: 'medium' },
-      { id: 'hch-3', question: 'En el corte sagital, ¿qué hueso (coral) forma la porción posteroinferior del tabique nasal?', options: ['Cornete inferior', 'Palatino', 'Vómer', 'Nasal'], correctIndex: 2, explanation: 'El vómer (coral) forma la porción posteroinferior del tabique y su borde libre separa las coanas.', difficulty: 'medium' },
-      { id: 'hch-4', question: 'El tercio posterior del paladar óseo lo forma el hueso:', options: ['Maxilar superior', 'Vómer', 'Palatino', 'Cornete inferior'], correctIndex: 2, explanation: 'La lámina horizontal del palatino (oliva) forma el 1/3 posterior del paladar; los 2/3 anteriores son las apófisis palatinas del maxilar.', difficulty: 'medium' },
+      { id: 'hch-3', question: '¿Qué hueso impar forma la porción posteroinferior del tabique nasal?', options: ['Cornete inferior', 'Palatino', 'Vómer', 'Nasal'], correctIndex: 2, explanation: 'El vómer forma la porción posteroinferior del tabique y su borde libre separa las coanas.', difficulty: 'medium' },
+      { id: 'hch-4', question: 'El tercio posterior del paladar óseo lo forma el hueso:', options: ['Maxilar superior', 'Vómer', 'Palatino', 'Cornete inferior'], correctIndex: 2, explanation: 'La lámina horizontal del palatino forma el 1/3 posterior del paladar; los 2/3 anteriores son las apófisis palatinas del maxilar.', difficulty: 'medium' },
       { id: 'hch-5', question: 'El "unguis" (morado) corresponde, en Terminología Anatómica, al hueso:', options: ['Nasal', 'Palatino', 'Cigomático', 'Lagrimal'], correctIndex: 3, explanation: 'Unguis = hueso lagrimal (TA), en la pared medial de la órbita; participa en el canal lacrimonasal.', difficulty: 'medium' },
-      { id: 'hch-6', question: 'El cornete inferior (dorado) es un hueso independiente; los cornetes superior y medio pertenecen al:', options: ['Maxilar', 'Etmoides', 'Palatino', 'Esfenoides'], correctIndex: 1, explanation: 'Los cornetes superior y medio son proyecciones del etmoides; solo el inferior es un hueso propio de la cara.', difficulty: 'medium' },
+      { id: 'hch-6', question: 'El cornete inferior es un hueso independiente; los cornetes superior y medio pertenecen al:', options: ['Maxilar', 'Etmoides', 'Palatino', 'Esfenoides'], correctIndex: 1, explanation: 'Los cornetes superior y medio son proyecciones del etmoides; solo el inferior es un hueso propio de la cara.', difficulty: 'medium' },
       { id: 'hch-7', question: '¿Qué estructuras NO impartió la clase 3 pese al título de la lámina?', options: ['Vómer y palatino', 'Mandíbula e hioides', 'Maxilar y malar', 'Nasal y lagrimal'], correctIndex: 1, explanation: 'La clase 3 terminó en el lagrimal: la mandíbula y el hueso hioides quedan pendientes (clases 4–5), como indica la clave de color.', difficulty: 'medium' },
     ],
   },
@@ -72,7 +72,7 @@ export const atlasTopics: AtlasTopic[] = [
     subtitle: 'Curvaturas y caracteres de cada región, diferenciados por color',
     category: 'anatomia',
     emoji: '🦴',
-    imagePath: '/atlas/columna-vertebral.png',
+    imagePath: '/atlas/columna-vertebral.webp',
     colorKey: 'osteologia',
     relatedTopicIds: ['huesos-craneo', 'huesos-cara-hioides'],
     questions: [
@@ -110,7 +110,7 @@ export const atlasTopics: AtlasTopic[] = [
     subtitle: 'Clavícula, escápula, húmero, radio, cúbito y mano, por color',
     category: 'anatomia',
     emoji: '🦾',
-    imagePath: '/atlas/miembro-superior-oseo.png',
+    imagePath: '/atlas/miembro-superior-oseo.webp',
     colorKey: 'osteologia',
     relatedTopicIds: ['torax-oseo', 'columna-vertebral'],
     questions: [
@@ -130,7 +130,7 @@ export const atlasTopics: AtlasTopic[] = [
     subtitle: 'Ilion, isquion, pubis y acetábulo, diferenciados por color',
     category: 'anatomia',
     emoji: '🦴',
-    imagePath: '/atlas/hueso-coxal.png',
+    imagePath: '/atlas/hueso-coxal.webp',
     colorKey: 'osteologia',
     relatedTopicIds: ['miembro-superior-oseo', 'torax-oseo'],
     questions: [
@@ -150,7 +150,7 @@ export const atlasTopics: AtlasTopic[] = [
     subtitle: 'Fémur, tibia, peroné (fíbula) y huesos del pie, por color',
     category: 'anatomia',
     emoji: '🦵',
-    imagePath: '/atlas/miembro-inferior-oseo.png',
+    imagePath: '/atlas/miembro-inferior-oseo.webp',
     colorKey: 'osteologia',
     relatedTopicIds: ['hueso-coxal', 'miembro-superior-oseo'],
     questions: [
@@ -170,7 +170,7 @@ export const atlasTopics: AtlasTopic[] = [
     subtitle: 'Cada forma con su tipo (TA / clásico) y un ejemplo',
     category: 'anatomia',
     emoji: '🔗',
-    imagePath: '/atlas/artrologia-clasificacion.png',
+    imagePath: '/atlas/artrologia-clasificacion.webp',
     colorKey: 'artrologia',
     relatedTopicIds: ['artrologia-generalidades'],
     questions: [
@@ -188,7 +188,7 @@ export const atlasTopics: AtlasTopic[] = [
     subtitle: 'Disco, cápsula, superficies y músculos de los movimientos',
     category: 'anatomia',
     emoji: '🦷',
-    imagePath: '/atlas/articulacion-temporomandibular.png',
+    imagePath: '/atlas/articulacion-temporomandibular.webp',
     colorKey: 'artrologia',
     relatedTopicIds: ['articulacion-temporomandibular'],
     questions: [
@@ -206,7 +206,7 @@ export const atlasTopics: AtlasTopic[] = [
     subtitle: 'Ligamentos, labrum y ligamento redondo (vista anterior)',
     category: 'anatomia',
     emoji: '🦵',
-    imagePath: '/atlas/articulaciones-miembro-inferior.png',
+    imagePath: '/atlas/articulaciones-miembro-inferior.webp',
     colorKey: 'artrologia',
     relatedTopicIds: ['articulaciones-miembro-inferior', 'hueso-coxal'],
     questions: [
@@ -224,7 +224,7 @@ export const atlasTopics: AtlasTopic[] = [
     subtitle: 'Ligamentos y disco entre los cuerpos y los arcos, por color',
     category: 'anatomia',
     emoji: '🦴',
-    imagePath: '/atlas/articulaciones-columna.png',
+    imagePath: '/atlas/articulaciones-columna.webp',
     colorKey: 'artrologia',
     relatedTopicIds: ['articulaciones-columna'],
     questions: [
@@ -242,7 +242,7 @@ export const atlasTopics: AtlasTopic[] = [
     subtitle: 'El complejo del hombro: esternoclavicular, acromioclavicular y glenohumeral',
     category: 'anatomia',
     emoji: '💪',
-    imagePath: '/atlas/articulaciones-miembro-superior.png',
+    imagePath: '/atlas/articulaciones-miembro-superior.webp',
     colorKey: 'artrologia',
     relatedTopicIds: ['articulaciones-miembro-superior'],
     questions: [

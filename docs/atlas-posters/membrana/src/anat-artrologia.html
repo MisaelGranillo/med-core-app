@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+.six { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.six .mini img { height: 150px; max-width: 100%; object-fit: contain; display: block; margin: 4px auto 6px; }
+.six .ax { display: inline-block; font-size: 9.5px; font-weight: 800; color: #fff; border-radius: 9px; padding: 1px 8px; margin: 0 0 4px; }
+.six .ex { font-size: 10px; color: var(--blue); font-weight: 600; margin: 0; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Anatomía</p>
+  <h1>Clasificación de las Articulaciones</h1>
+  <p class="tag">Por su movilidad y, las sinoviales, por la forma de sus superficies.</p>
+</header>
+
+<section class="panel">
+  <div class="ph"><span class="n">1</span>Clasificación funcional</div>
+  <svg viewBox="0 0 980 170" style="width:100%;display:block">
+    <g font-family="Inter" text-anchor="middle">
+      <!-- fibrosa -->
+      <rect x="20" y="14" width="300" height="146" rx="10" fill="#f6f8fc"/>
+      <path d="M90 40 h80 v40 q-10 6 -20 0 q-10 -6 -20 0 q-10 6 -20 0 q-10 -6 -20 0 z" fill="#e9dcc0" stroke="#8a6a2e" stroke-width="2"/>
+      <path d="M90 118 h80 v-34 q-10 6 -20 0 q-10 -6 -20 0 q-10 6 -20 0 q-10 -6 -20 0 z" fill="#e9dcc0" stroke="#8a6a2e" stroke-width="2"/>
+      <path d="M90 82 q10 -6 20 0 q10 6 20 0 q10 -6 20 0 q10 6 20 0" stroke="#c8242c" stroke-width="3" fill="none"/>
+      <text x="250" y="60" font-size="13" font-weight="800" fill="#13295b">Fibrosa</text>
+      <text x="250" y="78" font-size="10.5" fill="#4b5567">(sinartrosis)</text>
+      <text x="250" y="100" font-size="11" font-weight="700" fill="#c8242c">Inmóvil</text>
+      <text x="170" y="148" font-size="10" fill="#4b5567">Suturas del cráneo · sindesmosis</text>
+      <!-- cartilaginosa -->
+      <rect x="340" y="14" width="300" height="146" rx="10" fill="#f6f8fc"/>
+      <rect x="410" y="36" width="80" height="38" rx="6" fill="#e9dcc0" stroke="#8a6a2e" stroke-width="2"/>
+      <rect x="414" y="76" width="72" height="14" rx="6" fill="#9fc3e6" stroke="#4b7fb5" stroke-width="1.5"/>
+      <rect x="410" y="92" width="80" height="38" rx="6" fill="#e9dcc0" stroke="#8a6a2e" stroke-width="2"/>
+      <text x="570" y="60" font-size="13" font-weight="800" fill="#13295b">Cartilaginosa</text>
+      <text x="570" y="78" font-size="10.5" fill="#4b5567">(anfiartrosis)</text>
+      <text x="570" y="100" font-size="11" font-weight="700" fill="#e8912e">Semimóvil</text>
+      <text x="490" y="148" font-size="10" fill="#4b5567">Discos intervertebrales · sínfisis del pubis</text>
+      <!-- sinovial -->
+      <rect x="660" y="14" width="300" height="146" rx="10" fill="#f6f8fc"/>
+      <path d="M730 30 h60 v26 a30 22 0 0 1 -60 0 z" fill="#e9dcc0" stroke="#8a6a2e" stroke-width="2"/>
+      <path d="M730 130 h60 v-26 a30 22 0 0 0 -60 0 z" fill="#e9dcc0" stroke="#8a6a2e" stroke-width="2"/>
+      <path d="M722 50 q-10 30 0 60 M798 50 q10 30 0 60" stroke="#7b5cc4" stroke-width="3" fill="none"/>
+      <ellipse cx="760" cy="80" rx="28" ry="7" fill="#bfe0f5"/>
+      <text x="890" y="60" font-size="13" font-weight="800" fill="#13295b">Sinovial</text>
+      <text x="890" y="78" font-size="10.5" fill="#4b5567">(diartrosis)</text>
+      <text x="890" y="100" font-size="11" font-weight="700" fill="#2e9d6b">Móvil</text>
+      <text x="810" y="148" font-size="10" fill="#4b5567">Hombro · cadera · rodilla · codo</text>
+    </g>
+  </svg>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">2</span>Articulaciones sinoviales por su forma <small>— TA (clásico)</small></div>
+  <div class="six">
+    <div class="mini"><p class="t">Esferoidea (enartrosis)</p><img src="{{img:ana/art-esf.png}}"><span class="ax" style="background:#8a63c0">Multiaxial</span><p class="ex">Hombro · cadera</p></div>
+    <div class="mini"><p class="t">Condílea (elipsoidal)</p><img src="{{img:ana/art-cond.png}}"><span class="ax" style="background:#5ba24f">Biaxial</span><p class="ex">Muñeca (radiocarpiana)</p></div>
+    <div class="mini"><p class="t">Selar (encaje recíproco)</p><img src="{{img:ana/art-selar.png}}"><span class="ax" style="background:#e8912e">Biaxial</span><p class="ex">Pulgar (trapeciometacarpiana)</p></div>
+    <div class="mini"><p class="t">Plana (artrodia)</p><img src="{{img:ana/art-plana.png}}"><span class="ax" style="background:#4f86c6">Deslizamiento</span><p class="ex">Tarsometatarsianas · cigapofisarias</p></div>
+    <div class="mini"><p class="t">Troclear (gínglimo)</p><img src="{{img:ana/art-troc.png}}"><span class="ax" style="background:#3a9d8f">Uniaxial · bisagra</span><p class="ex">Codo (húmero-cubital)</p></div>
+    <div class="mini"><p class="t">Trocoide (pivote)</p><img src="{{img:ana/art-trocoide.png}}"><span class="ax" style="background:#d85c86">Uniaxial · rotación</span><p class="ex">Radiocubital proximal · atlantoaxial</p></div>
+  </div>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">3</span>Anatomía de una sinovial</div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <svg viewBox="0 0 200 230" style="width:190px;flex-shrink:0">
+        <path d="M60 4 h80 v64 a40 30 0 0 1 -80 0 z" fill="#e9dcc0" stroke="#8a6a2e" stroke-width="2"/>
+        <path d="M60 226 h80 v-64 a40 30 0 0 0 -80 0 z" fill="#e9dcc0" stroke="#8a6a2e" stroke-width="2"/>
+        <path d="M61 70 a39 28 0 0 0 78 0" fill="none" stroke="#7fb3e0" stroke-width="7"/>
+        <path d="M61 160 a39 28 0 0 1 78 0" fill="none" stroke="#7fb3e0" stroke-width="7"/>
+        <ellipse cx="100" cy="115" rx="34" ry="12" fill="#cfe9f7"/>
+        <path d="M52 50 C 30 90, 30 140, 52 180 M148 50 C 170 90, 170 140, 148 180" fill="none" stroke="#7b5cc4" stroke-width="5"/>
+        <path d="M58 58 C 42 92, 42 138, 58 172 M142 58 C 158 92, 158 138, 142 172" fill="none" stroke="#e07ba0" stroke-width="2.5"/>
+      </svg>
+      <div class="cards" style="flex:1">
+        <div class="card"><span class="sw" style="background:#7fb3e0"></span><div><p class="t">Cartílago hialino</p><p class="d">Cubre las superficies; amortigua.</p></div></div>
+        <div class="card"><span class="sw" style="background:#7b5cc4"></span><div><p class="t">Cápsula fibrosa</p><p class="d">Envuelve la articulación.</p></div></div>
+        <div class="card"><span class="sw" style="background:#e07ba0"></span><div><p class="t">Membrana sinovial</p><p class="d">Secreta el líquido sinovial.</p></div></div>
+        <div class="card"><span class="sw" style="background:#cfe9f7"></span><div><p class="t">Líquido sinovial</p><p class="d">Lubrica y nutre el cartílago.</p></div></div>
+      </div>
+    </div>
+    <p style="font-size:10.5px;margin:6px 0 0">Los <b>ligamentos</b> estabilizan la articulación desde fuera de la cápsula.</p>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">4</span>Ejes de movimiento</div>
+    <table>
+      <tr><th>Ejes</th><th>Tipos</th><th>Ejemplo</th></tr>
+      <tr><td class="k">Multiaxial</td><td>Esferoidea</td><td>Hombro, cadera</td></tr>
+      <tr><td class="k">Biaxial</td><td>Condílea · selar</td><td>Muñeca, pulgar</td></tr>
+      <tr><td class="k">Uniaxial</td><td>Troclear · trocoide</td><td>Codo, atlantoaxial</td></tr>
+      <tr><td class="k">Deslizamiento</td><td>Plana</td><td>Cigapofisarias</td></tr>
+    </table>
+    <p style="font-size:10.5px;margin:6px 0 0">A <b>más</b> movilidad, <b>menos</b> estabilidad.</p>
+  </section>
+</div>
+
+<div class="row">
+  <section class="clin" style="flex:1.3">
+    <div class="ph"><span class="n">5</span>Correlación clínica</div>
+    <p style="font-size:10.5px">Las <b>esferoideas</b> (hombro, cadera) son las más móviles pero también las más <b>luxables</b>.</p>
+    <p style="font-size:10.5px;margin:0">La <b>tibioperonea distal</b> es una sindesmosis (fibrosa): une por membrana interósea, casi sin movimiento.</p>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">6</span>Nomenclatura TA ↔ clásica</div>
+    <p style="font-size:10.5px;margin:0">Sinovial (diartrosis) · esferoidea (enartrosis) · selar (encaje recíproco) · plana (artrodia). El clásico del profesor es válido en el examen.</p>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">7</span>Resumen clave</div>
+  <div class="sum">
+    <div>{{icon:Lock}}<span>Fibrosa = <b>inmóvil</b>.</span></div>
+    <div>{{icon:LockOpen}}<span>Cartilaginosa = <b>semimóvil</b>.</span></div>
+    <div>{{icon:ArrowsOut}}<span>Sinovial = <b>móvil</b>.</span></div>
+    <div>{{icon:Globe}}<span>Esferoidea = <b>multiaxial</b>.</span></div>
+    <div>{{icon:DoorOpen}}<span>Troclear = <b>bisagra</b> (codo).</span></div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Atlas · Anatomía Humana y Disección I · UAD · Semana 3 · Ilustración con fines de estudio</p>
+</div></body></html>
