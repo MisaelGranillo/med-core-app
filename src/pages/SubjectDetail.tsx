@@ -13,7 +13,7 @@ import {
   GraduationCap, Clock, Books, LinkSimple, ListChecks, Target, CalendarCheck,
   FilePdf, DownloadSimple, Translate,
 } from '@phosphor-icons/react'
-import { findSubject, sistemasDeMateria, LIBRARY_BASE } from '../data/plans'
+import { findSubject, sistemasDeMateria, libraryUrl } from '../data/plans'
 import { medlexTerms, SISTEMA_LABELS, SISTEMA_COLORS } from '../data/medlex-terms'
 import { topics } from '../data/topics'
 import { questions } from '../data/quizzes'
@@ -379,7 +379,7 @@ export function SubjectDetail() {
                             return f.file ? (
                               <a
                                 key={i}
-                                href={`${LIBRARY_BASE}/${subject.id}/${encodeURIComponent(f.file)}`}
+                                href={libraryUrl(subject.id, f.file)}
                                 target="_blank"
                                 rel="noreferrer"
                                 className={`${cls} hover:border-emerald-300 hover:shadow-sm transition-all`}
@@ -455,7 +455,7 @@ export function SubjectDetail() {
                       )}
                       {ref.file && (
                         <a
-                          href={`${LIBRARY_BASE}/${subject.id}/${encodeURIComponent(ref.file)}`}
+                          href={libraryUrl(subject.id, ref.file)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 text-[0.6875rem] font-semibold text-rose-700 dark:text-rose-300 bg-rose-50 dark:bg-rose-500/15 border border-rose-100 dark:border-rose-500/25 px-2 py-0.5 rounded-full hover:bg-rose-100 dark:bg-rose-500/20 transition-colors"
@@ -490,7 +490,7 @@ export function SubjectDetail() {
                       )}
                       <span className="flex-1 text-sm text-zinc-800">{m.title}</span>
                       <a
-                        href={`${LIBRARY_BASE}/${subject.id}/${encodeURIComponent(m.file)}`}
+                        href={libraryUrl(subject.id, m.file)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-shrink-0 inline-flex items-center gap-1 text-[0.6875rem] font-semibold text-rose-700 dark:text-rose-300 bg-rose-50 dark:bg-rose-500/15 border border-rose-100 dark:border-rose-500/25 px-2 py-1 rounded-full hover:bg-rose-100 dark:bg-rose-500/20 transition-colors"

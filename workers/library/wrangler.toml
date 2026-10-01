@@ -1,0 +1,19 @@
+# Worker que sirve library.medcore.icu desde R2 (bucket privado medcore-library).
+# Sin workers.dev ni URLs de preview: el único acceso es la ruta del dominio,
+# que pasa primero por Cloudflare Access.
+name = "medcore-library"
+main = "index.js"
+compatibility_date = "2026-05-28"
+workers_dev = false
+preview_urls = false
+
+[[r2_buckets]]
+binding = "LIBRARY"
+bucket_name = "medcore-library"
+
+[vars]
+# Host del equipo de Zero Trust (p. ej. "miequipo.cloudflareaccess.com") y AUD
+# de la aplicación de Access que protege /privado.
+# Mientras estén vacíos, todo lo que está bajo /privado responde 403 (falla cerrado).
+TEAM_DOMAIN = ""
+PRIVADO_AUD = ""

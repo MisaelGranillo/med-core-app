@@ -59,7 +59,7 @@ export type SubjectContent = {
 
 export type MaterialRef = {
   title: string
-  file: string   // nombre del archivo en la biblioteca (LIBRARY_BASE/<subjectId>/<file>)
+  file: string   // nombre del archivo en la biblioteca (ver libraryUrl() en plans/index.ts)
   kind?: string  // etiqueta corta: 'Libro' | 'Artículo' | 'Programa' | …
 }
 
@@ -75,7 +75,7 @@ export type MaterialRef = {
  */
 export type FuenteRef = {
   title: string     // 'Medical Terminology — A Living Language'
-  file?: string     // archivo en la biblioteca (LIBRARY_BASE/<subjectId>/<file>)
+  file?: string     // archivo en la biblioteca (ver libraryUrl() en plans/index.ts)
   paginas?: string  // 'libro 1–20 (PDF 29–48)' — SIEMPRE ambas numeraciones
   nota?: string     // 'Capítulo 1: raíces, formas combinantes, prefijos y sufijos'
 }
@@ -105,7 +105,7 @@ export type BiblioRef = {
   editorial?: string
   year?: string
   tipo?: 'básica' | 'complementaria'
-  file?: string // nombre del archivo en la biblioteca privada (LIBRARY_BASE/<subjectId>/<file>)
+  file?: string // nombre del archivo en la biblioteca privada (ver libraryUrl() en plans/index.ts)
 }
 
 export type RecursoLink = {
