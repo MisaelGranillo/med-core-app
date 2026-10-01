@@ -243,7 +243,7 @@ export const uadMedicina: Plan = {
           code: 'BQ01002',
           hasLab: true,
           tags: ['bioquimica'],
-          topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones', 'bioquimica-presion-osmotica-oncotica', 'bioquimica-equilibrio-acido-base', 'bioquimica-glucidos'],
+          topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones', 'bioquimica-presion-osmotica-oncotica', 'bioquimica-equilibrio-acido-base', 'bioquimica-glucidos', 'bioquimica-glucidos-clasificacion'],
           content: {
             area: 'Ciencias Básicas',
             credits: 11,
@@ -258,11 +258,12 @@ export const uadMedicina: Plan = {
               {
                 number: 1,
                 title: 'Componentes bioquímicos del cuerpo humano y carbohidratos',
-                topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones', 'bioquimica-presion-osmotica-oncotica', 'bioquimica-equilibrio-acido-base', 'bioquimica-glucidos'],
+                topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones', 'bioquimica-presion-osmotica-oncotica', 'bioquimica-equilibrio-acido-base', 'bioquimica-glucidos', 'bioquimica-glucidos-clasificacion'],
                 temas: [
                   'Clase 1 (impartida): introducción — metabolismo digestivo (metabolismo, anabolismo vs catabolismo, regulación neuronal y endocrina, saliva, dónde inicia la digestión de cada macromolécula, fases luminal/mucosa/transporte, maladigestión vs malabsorción)',
                   'Clase 2 (impartida): agua y electrolitos (agua corporal, compartimentos LIC/LEC, Na⁺/K⁺/Ca²⁺/Mg²⁺ y sus alteraciones, regulación y pérdidas), propiedades fisicoquímicas del agua (dipolo, puentes de hidrógeno, nucleófilo/hidrólisis), osmolaridad vs tonicidad y formas de expresar concentración (% m/v, molaridad, molalidad; D5 %, D50 %, NaCl 0.9 %)',
                   'Clase 3 (impartida): osmolaridad vs osmolalidad y estados hiper/hipoosmolares; presión osmótica, ósmosis vs difusión; albúmina, presión oncótica y fuerzas de Starling; cristaloides vs coloides; equilibrio ácido-base (pulmón, riñón, glutamina, fosfato, amortiguadores y los 4 trastornos); inicio de la Unidad II: glúcidos y glucosa',
+                  'Clase 4 (impartida): glúcidos — estructura general (polihidroxialdehídos/cetonas, grupos –OH, aldosas y cetosas, Fischer y Haworth, D/L y α/β) y clasificación (por carbonos y por unidades; disacáridos, oligo y polisacáridos; enlace glucosídico)',
                   '1. Componentes bioquímicos del cuerpo humano: agua y electrolitos, propiedades fisicoquímicas del agua, concentración de solutos, presión osmótica, equilibrio ácido-base y sistemas amortiguadores',
                   '2. Carbohidratos (glúcidos): estructura general, clasificación y función',
                 ],
@@ -272,6 +273,7 @@ export const uadMedicina: Plan = {
                   { title: 'Bioquímica I — Semana 1, Clase 2', file: 'Bioquimica I - Semana 1 - Clase 2.pdf', nota: 'Agua, electrolitos, osmolaridad y soluciones.' },
                   { title: 'Bioquímica I — Semana 1, Clase 3 (Unidad 1)', file: 'Bioquimica I - Semana 1 - Clase 3 - Unidad 1.pdf', nota: 'Presión osmótica y oncótica, ácido-base.' },
                   { title: 'Bioquímica I — Semana 1, Clase 3 (Unidad 2)', file: 'Bioquimica I - Semana 1 - Clase 3 - Unidad 2.pdf', nota: 'Inicio de glúcidos.' },
+                  { title: 'Bioquímica I — Semana 1, Clase 4 (Unidad 2)', file: 'Bioquimica I - Semana 1 - Clase 4 - Unidad 2.pdf', nota: 'Glúcidos: estructura general y clasificación.' },
                 ],
               },
               {
@@ -315,6 +317,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 1 · Clase 2 — Agua, electrolitos y soluciones', file: 'Bioquimica I - Semana 1 - Clase 2.pdf', kind: 'Clase' },
               { title: 'Semana 1 · Clase 3 — Presión oncótica y ácido-base', file: 'Bioquimica I - Semana 1 - Clase 3 - Unidad 1.pdf', kind: 'Clase' },
               { title: 'Semana 1 · Clase 3 — Inicio de glúcidos', file: 'Bioquimica I - Semana 1 - Clase 3 - Unidad 2.pdf', kind: 'Clase' },
+              { title: 'Semana 1 · Clase 4 — Glúcidos: estructura y clasificación', file: 'Bioquimica I - Semana 1 - Clase 4 - Unidad 2.pdf', kind: 'Clase' },
               { title: 'Programa Académico — Bioquímica I y su Laboratorio', file: 'Bioquimica I - Programa.pdf', kind: 'Programa' },
               { title: 'Planeación — Bioquímica I (2025-1)', file: 'Bioquimica I - Planeacion.pdf', kind: 'Programa' },
             ],

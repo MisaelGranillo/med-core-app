@@ -1268,15 +1268,18 @@ export const bioquimicaTopics: Topic[] = [
   },
   {
     id: 'bioquimica-glucidos',
-    title: 'Glúcidos: introducción',
-    subtitle: 'Unidad II — por qué importan los carbohidratos y los destinos de la glucosa',
+    title: 'Glúcidos: concepto y estructura general',
+    subtitle: 'Unidad II — glucosa, grupos hidroxilo, aldosas y cetosas, Fischer y Haworth, D/L y α/β',
     colorKey: 'bioquimica',
     categoria: 'Bioquímica',
     emoji: '🍞',
     keyPoints: [
-      'Un adulto requiere ~2000 kcal/día: carbohidratos 40–60 %, lípidos 30–40 %, proteínas 10–15 %.',
-      'La GLUCOSA es el glúcido más importante: fuente de energía y precursor de muchas biomoléculas.',
-      'De la glucosa derivan glucógeno, ribosa y desoxirribosa (ácidos nucleicos) y galactosa (lactosa de la leche); además forma glucolípidos, glucoproteínas y proteoglucanos.',
+      'GLÚCIDOS ★ = polihidroxialdehídos o polihidroxicetonas: cadenas de carbono con varios grupos hidroxilo (–OH) y un grupo carbonilo (C=O). En el curso se prefiere «glúcidos» a «carbohidratos».',
+      'Fórmula general (CH₂O)n, proporción C:H:O = 1:2:1. Un adulto requiere ~2000 kcal/día: glúcidos 40–60 %, lípidos 30–40 %, proteínas 10–15 %.',
+      'ALDOSA = carbonilo como aldehído en C1 (glucosa) · CETOSA = carbonilo como cetona en C2 (fructosa). Solo los MONOSACÁRIDOS se clasifican en aldosas y cetosas.',
+      'Glucosa, fructosa y galactosa comparten C₆H₁₂O₆: lo que las distingue es la POSICIÓN de los –OH y del carbonilo (pregunta de examen).',
+      'FISCHER = representación LINEAL (orienta los carbonos y los –OH) · HAWORTH = representación CÍCLICA, en azúcares de 5 o más carbonos en medio acuoso; permite ver α y β.',
+      'D = forma natural y más abundante; L = su imagen en espejo. En el anillo: –OH del carbono anomérico ABAJO = α; ARRIBA = β.',
     ],
     sections: [
       {
@@ -1300,7 +1303,7 @@ export const bioquimicaTopics: Topic[] = [
           {
             type: 'note',
             title: 'Unidad II',
-            content: 'Esta clase solo abrió la Unidad II (estructura, función e importancia de los glúcidos). La estructura, clasificación y función de monosacáridos, disacáridos y polisacáridos se agregará con las clases siguientes.',
+            content: 'La Unidad II (estructura, función e importancia de los glúcidos) empezó en la Clase 3 y su estructura general se desarrolló en la Clase 4. La clasificación y el enlace glucosídico están en el tema «Clasificación de los glúcidos y enlace glucosídico».',
           },
         ],
       },
@@ -1329,6 +1332,332 @@ export const bioquimicaTopics: Topic[] = [
             title: 'Conexión con clases previas',
             content:
               'La glucosa une temas ya vistos: la amilasa inicia la digestión de los glúcidos en la boca (Clase 1), la dextrosa es glucosa en las soluciones IV y la hiperglucemia eleva la osmolaridad (Clases 2 y 3), y la cetoacidosis diabética aparece cuando la célula no puede usarla (acidosis metabólica).',
+          },
+        ],
+      },
+      {
+        id: 'bgl-3',
+        number: 3,
+        title: 'Qué es un glúcido',
+        keyTerms: ['polihidroxialdehído', 'polihidroxicetona', 'carbonilo', '(CH₂O)n'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Glúcido',
+            content: 'Compuesto polihidroxialdehído o polihidroxicetona: una cadena de carbonos con varios grupos hidroxilo (–OH) y un grupo carbonilo (C=O). Fórmula general (CH₂O)n, con proporción C:H:O de 1:2:1 (triosa C₃H₆O₃, pentosa C₅H₁₀O₅, hexosa C₆H₁₂O₆). — Glúcido (carbohidrato, hidrato de carbono).',
+          },
+          {
+            type: 'note',
+            title: '¿Por qué «glúcidos»?',
+            content: '«Carbohidrato» viene de carbono + hidrato (H y O). En clase se prefiere «glúcidos» porque lípidos y proteínas también contienen carbono, hidrógeno y oxígeno: el nombre no los distingue.',
+          },
+          {
+            type: 'paragraph',
+            content:
+              'Conocer la estructura importa porque en sus enlaces se almacena la energía que la planta capta en la fotosíntesis, y esa energía se libera al romperlos durante la respiración celular. La estructura determina también cómo se almacena el glúcido y si nuestras enzimas pueden digerirlo.',
+          },
+        ],
+      },
+      {
+        id: 'bgl-4',
+        number: 4,
+        title: 'El grupo hidroxilo (–OH)',
+        keyTerms: ['grupo hidroxilo', 'isómeros', 'solubilidad', 'puentes de hidrógeno'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Qué determina el –OH',
+            items: [
+              'Polaridad y solubilidad: forma puentes de hidrógeno con el agua y hace que los glúcidos se disuelvan en sangre y citoplasma.',
+              'Reactividad y formación de enlaces: con él se forman los anillos y los enlaces α o β.',
+              'Reconocimiento biológico: enzimas, transportadores y señalización celular reconocen la orientación de cada –OH.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Misma fórmula, distinta molécula ★',
+            data: {
+              headers: ['Molécula', 'Fórmula', 'Carbonilo', 'Tipo'],
+              rows: [
+                ['Glucosa', 'C₆H₁₂O₆', 'Aldehído en C1', 'Aldohexosa'],
+                ['Galactosa', 'C₆H₁₂O₆', 'Aldehído en C1 (–OH de C4 invertido respecto a la glucosa)', 'Aldohexosa'],
+                ['Fructosa', 'C₆H₁₂O₆', 'Cetona en C2', 'Cetohexosa'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'mnemotecnia',
+            title: 'Pregunta de examen',
+            content: 'Glucosa, galactosa y fructosa son isómeros: misma fórmula molecular, distinta posición de los –OH o del carbonilo. Esa diferencia basta para cambiar su nombre, sus propiedades y su función.',
+          },
+        ],
+      },
+      {
+        id: 'bgl-5',
+        number: 5,
+        title: 'Aldosas y cetosas',
+        keyTerms: ['aldosa', 'cetosa', 'aldohexosa', 'cetohexosa'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Según el grupo carbonilo',
+            left: { title: 'Aldosa', items: ['Carbonilo en forma de ALDEHÍDO', 'En el carbono 1 (C1)', 'Glucosa, galactosa, ribosa, gliceraldehído'] },
+            right: { title: 'Cetosa', items: ['Carbonilo en forma de CETONA', 'En el carbono 2 (C2)', 'Fructosa, ribulosa, dihidroxiacetona'] },
+          },
+          {
+            type: 'note',
+            title: 'Dos criterios que se combinan',
+            content: 'Aldosa/cetosa describe el carbonilo; triosa/pentosa/hexosa, el número de carbonos. Se juntan en un solo nombre: la glucosa es una ALDOHEXOSA (aldehído + 6 carbonos) y la fructosa una CETOHEXOSA. Solo los monosacáridos se clasifican así.',
+          },
+        ],
+      },
+      {
+        id: 'bgl-6',
+        number: 6,
+        title: 'Proyecciones de Fischer y Haworth',
+        keyTerms: ['proyección de Fischer', 'proyección de Haworth', 'forma cíclica', 'carbono anomérico'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos maneras de dibujar la glucosa',
+            left: { title: 'Fischer (lineal)', items: ['Cadena vertical: el carbonilo arriba', 'Muestra la orientación de los carbonos y de cada –OH', 'Enlaces horizontales: salen hacia el observador', 'Enlaces verticales: van hacia atrás del plano', 'Se puede girar 180° sin cambiar la configuración, pero NO 90°'] },
+            right: { title: 'Haworth (cíclica)', items: ['En medio acuoso, los glúcidos de 5 o más carbonos forman un anillo', 'El carbonilo se une al oxígeno de un –OH de la misma cadena', 'El anillo se dibuja plano (aunque no lo es)', 'Permite ver la configuración α y β'] },
+          },
+          {
+            type: 'note',
+            title: 'El nombre',
+            content: 'En clase se pronunció «Howard», pero el nombre correcto es proyección de HAWORTH (Walter Haworth). La glucosa se ve así en tres formas: cadena abierta, Fischer y anillo de Haworth.',
+          },
+        ],
+      },
+      {
+        id: 'bgl-7',
+        number: 7,
+        title: 'Configuración D/L y α/β',
+        keyTerms: ['D-glucosa', 'L-glucosa', 'enantiómeros', 'alfa', 'beta'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos pares que no hay que confundir',
+            left: { title: 'D y L', items: ['Se definen en la forma LINEAL (Fischer)', 'Son imágenes en espejo (enantiómeros)', 'D = forma natural y más abundante; la que usa el cuerpo'] },
+            right: { title: 'α y β', items: ['Se definen en la forma CÍCLICA (Haworth)', '–OH del carbono anomérico ABAJO → α', '–OH del carbono anomérico ARRIBA → β', 'Las formas α y β pueden interconvertirse'] },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: '¿Por qué D-glucosa y no L-glucosa? (actividad)',
+            content: 'Las enzimas y los transportadores (como los GLUT) tienen sitios con forma tridimensional específica: reconocen la D-glucosa y no su imagen en espejo, igual que una mano derecha no entra en un guante izquierdo. Por eso el organismo usa la forma D.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-glucidos-clasificacion',
+    title: 'Clasificación de los glúcidos y enlace glucosídico',
+    subtitle: 'Por carbonos y por unidades; mono, di, oligo y polisacáridos; enlaces α y β',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🍬',
+    keyPoints: [
+      'Por CARBONOS ★: 3 triosa · 4 tetrosa · 5 pentosa · 6 hexosa · 7 heptosa. Ribosa (ARN) y desoxirribosa (ADN) son pentosas.',
+      'Por UNIDADES ★: 1 monosacárido · 2 disacárido · 3–10 oligosacárido · más de 10 polisacárido.',
+      'Disacáridos clave: SACAROSA = glucosa + fructosa, α(1→2) · LACTOSA = galactosa + glucosa, β(1→4) · MALTOSA = glucosa + glucosa, α(1→4).',
+      'ENLACE GLUCOSÍDICO: unión covalente por CONDENSACIÓN (libera agua). Azúcar–azúcar = O-glucosídico; con nitrógeno = N-glucosídico.',
+      'Enlaces α se digieren (ALMIDÓN) · enlaces β no se digieren: no tenemos celulasa (CELULOSA, fibra).',
+      'Lactulosa = galactosa + fructosa: laxante para estreñimiento y encefalopatía hepática.',
+    ],
+    sections: [
+      {
+        id: 'bgc-1',
+        number: 1,
+        title: 'Clasificación por número de carbonos',
+        keyTerms: ['triosa', 'pentosa', 'hexosa', 'heptosa'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Monosacáridos según sus carbonos',
+            data: {
+              headers: ['Carbonos', 'Nombre', 'Aldosa (ejemplo)', 'Cetosa (ejemplo)'],
+              rows: [
+                ['3', 'Triosa', 'Gliceraldehído', 'Dihidroxiacetona'],
+                ['4', 'Tetrosa', 'Eritrosa', 'Eritrulosa'],
+                ['5', 'Pentosa', 'Ribosa', 'Ribulosa, xilulosa'],
+                ['6', 'Hexosa', 'Glucosa, galactosa, manosa', 'Fructosa'],
+                ['7', 'Heptosa', '—', 'Sedoheptulosa'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Por qué importan los carbonos',
+            content: 'Los monosacáridos más comunes tienen 3, 4, 5 y 6 carbonos, y el número reaparecerá en el metabolismo: la glucosa (6 C) se parte en moléculas de 3 C como el gliceraldehído-3-fosfato. La ribosa (ARN) y la desoxirribosa (ADN) son pentosas.',
+          },
+        ],
+      },
+      {
+        id: 'bgc-2',
+        number: 2,
+        title: 'Clasificación por número de unidades',
+        keyTerms: ['monosacárido', 'disacárido', 'oligosacárido', 'polisacárido'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Moléculas de azúcar',
+            data: {
+              headers: ['Grupo', 'Unidades', 'Ejemplos'],
+              rows: [
+                ['Monosacárido', '1', 'Glucosa, fructosa, galactosa, ribosa'],
+                ['Disacárido', '2', 'Sacarosa, lactosa, maltosa'],
+                ['Oligosacárido', '3–10', 'Rafinosa (trisacárido)'],
+                ['Polisacárido', 'Más de 10', 'Almidón, glucógeno, celulosa'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Simples vs complejos',
+            content: 'Por su tamaño, los monosacáridos, disacáridos y oligosacáridos se agrupan como glúcidos SIMPLES (bajo peso molecular) y los polisacáridos como COMPLEJOS (alto peso molecular, polímeros).',
+          },
+        ],
+      },
+      {
+        id: 'bgc-3',
+        number: 3,
+        title: 'Monosacáridos',
+        keyTerms: ['ribosa', 'desoxirribosa', 'glucosamina', 'ácido glucurónico'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Características',
+            items: ['Una sola molécula de azúcar; no se hidrolizan en glúcidos más pequeños.', 'Tienen 3 o más carbonos.', 'Pueden estar en cadena lineal o en anillo.', 'Son los únicos que se clasifican en aldosas y cetosas.'],
+          },
+          {
+            type: 'table',
+            title: 'Ejemplos y usos (presentación)',
+            data: {
+              headers: ['Monosacárido', 'Uso o importancia'],
+              rows: [
+                ['Fructosa', 'Presente en frutas; alimento para el espermatozoide'],
+                ['Galactosa', 'Con la glucosa forma lactosa; parte de glucolípidos, glucoproteínas y cerebrósidos'],
+                ['Ribosa', 'Necesaria para formar ARN y ATP'],
+                ['Desoxirribosa', 'Azúcar de los nucleótidos del ADN'],
+                ['Gliceraldehído', 'Intermediario de la vía metabólica de la glucosa'],
+                ['Glucosamina', 'Amino azúcar usado para proteger las articulaciones; presente en el cartílago'],
+                ['Ácido glucurónico', 'Se forma por oxidación de la glucosa; abundante en el tejido conectivo'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'bgc-4',
+        number: 4,
+        title: 'El enlace glucosídico',
+        keyTerms: ['enlace glucosídico', 'condensación', 'O-glucosídico', 'N-glucosídico'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Cómo se forma',
+            steps: [
+              'Un –OH de un monosacárido reacciona con un –OH de otra molécula.',
+              'Se forma un enlace covalente tipo éter (C–O–C) y se libera una molécula de agua (condensación).',
+              'La enzima que lo construye es una glicosiltransferasa.',
+              'La numeración indica qué carbonos se unen: 1→4 une el C1 de un azúcar con el C4 del siguiente (maltosa).',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Tipos de enlace glucosídico',
+            data: {
+              headers: ['Tipo', 'El azúcar se une a…', 'Dónde aparece'],
+              rows: [
+                ['O-glucosídico', 'Un oxígeno: otro azúcar', 'Disacáridos (1→4, 1→6), oligo y polisacáridos; se forma en el aparato de Golgi'],
+                ['N-glucosídico', 'Un nitrógeno', 'Glucoproteínas (retículo endoplásmico) y nucleótidos (base nitrogenada)'],
+                ['S-glucosídico', 'Un azufre', 'Menos frecuente'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'S-glucosídico',
+            content: 'En clase se asoció el enlace S-glucosídico con los lípidos. La «S» se refiere al azufre: es la unión del azúcar con otra molécula a través de un átomo de azufre (tioglucósidos). Para el examen conviene recordar O = azúcar–azúcar y N = con nitrógeno (proteínas, nucleótidos).',
+          },
+        ],
+      },
+      {
+        id: 'bgc-5',
+        number: 5,
+        title: 'Disacáridos',
+        keyTerms: ['sacarosa', 'lactosa', 'maltosa', 'lactulosa'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Los tres disacáridos principales ★',
+            data: {
+              headers: ['Disacárido', 'Monosacáridos', 'Enlace', 'Características'],
+              rows: [
+                ['Sacarosa', 'Glucosa + fructosa', 'α(1→2)', 'Azúcar de mesa (caña, remolacha); muy soluble y dulce; cristalina, incolora y sólida'],
+                ['Lactosa', 'Galactosa + glucosa', 'β(1→4)', 'Azúcar de la leche; soluble, menos dulce'],
+                ['Maltosa', 'Glucosa + glucosa', 'α(1→4)', 'Producto de la hidrólisis del almidón (cebada, cerveza)'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Rasgos de los disacáridos',
+            items: ['Dos monosacáridos unidos por condensación (enlace glucosídico + H₂O).', 'Pueden ser iguales (maltosa) o diferentes (sacarosa).', 'Muy solubles en agua y casi todos de sabor dulce (la lactosa menos).', 'Son los glúcidos más abundantes de la dieta.'],
+          },
+          {
+            type: 'table',
+            title: 'Otros disacáridos (presentación)',
+            data: {
+              headers: ['Disacárido', 'Composición', 'Uso'],
+              rows: [
+                ['Trehalosa', 'Glucosa + glucosa', 'En hongos; propiedades reductoras'],
+                ['Celobiosa', 'Glucosa + glucosa', 'Resulta de la hidrólisis de la celulosa'],
+                ['Isomaltosa', 'Glucosa + glucosa', 'Del metabolismo del almidón; edulcorante'],
+                ['Lactulosa', 'Fructosa + galactosa', 'Estreñimiento y encefalopatía hepática'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Lactulosa',
+            content: 'La lactulosa no se absorbe: llega al colon, retiene agua por efecto osmótico y actúa como laxante; también se usa en la encefalopatía hepática. Como contiene fructosa y galactosa, el docente advirtió no usarla de forma continua sin indicación, sobre todo en pacientes con diabetes.',
+          },
+        ],
+      },
+      {
+        id: 'bgc-6',
+        number: 6,
+        title: 'Oligosacáridos y polisacáridos',
+        keyTerms: ['prebióticos', 'almidón', 'glucógeno', 'celulosa'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Oligosacáridos o prebióticos (3–10 unidades)',
+            items: ['Presentes en las plantas en forma de fibra.', 'No se absorben en el estómago ni en el intestino.', 'No aportan glucosa.', 'Los metabolizan las bacterias intestinales por fermentación.', 'Forman parte de glucoproteínas y glucolípidos.'],
+          },
+          {
+            type: 'table',
+            title: 'Polisacáridos (más de 10 unidades de glucosa)',
+            data: {
+              headers: ['Polisacárido', 'Función', 'Enlace', '¿Lo digerimos?'],
+              rows: [
+                ['Almidón', 'Reserva energética vegetal (papa, arroz, maíz, trigo)', 'α', 'Sí'],
+                ['Glucógeno', 'Reserva energética animal (hígado y músculo)', 'α', 'Sí'],
+                ['Celulosa', 'Estructura de la planta; fibra dietética', 'β', 'No: no tenemos celulasa'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Almidón vs celulosa',
+            content: 'Ambos están hechos solo de glucosa: lo que cambia es el enlace. Las enzimas digestivas rompen los enlaces α del almidón y liberan glucosa; los enlaces β de la celulosa llegan intactos al colon como fibra, aumentan el bolo fecal y alimentan a la microbiota.',
           },
         ],
       },
