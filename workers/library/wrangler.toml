@@ -6,6 +6,7 @@ main = "index.js"
 compatibility_date = "2026-05-28"
 workers_dev = false
 preview_urls = false
+routes = [{ pattern = "library.medcore.icu/*", zone_name = "medcore.icu" }]
 
 [[r2_buckets]]
 binding = "LIBRARY"
