@@ -482,13 +482,14 @@ export function SubjectDetail() {
                 </div>
                 <ul className="divide-y divide-zinc-100">
                   {content.materiales.map(m => (
-                    <li key={m.file} className="flex items-center gap-3 py-2.5 first:pt-0 last:pb-0">
+                    <li key={m.file ?? m.title} className="flex items-center gap-3 py-2.5 first:pt-0 last:pb-0">
                       {m.kind && (
                         <span className="flex-shrink-0 text-[0.5625rem] font-bold uppercase tracking-wider text-zinc-500 bg-zinc-100 px-1.5 py-0.5 rounded w-20 text-center">
                           {m.kind}
                         </span>
                       )}
                       <span className="flex-1 text-sm text-zinc-800">{m.title}</span>
+                      {m.file ? (
                       <a
                         href={libraryUrl(subject.id, m.file)}
                         target="_blank"
@@ -498,6 +499,9 @@ export function SubjectDetail() {
                         <FilePdf weight="fill" className="w-3 h-3" /> PDF
                         <DownloadSimple weight="bold" className="w-3 h-3" />
                       </a>
+                      ) : (
+                        <span className="flex-shrink-0 text-[0.6875rem] text-zinc-400 px-2 py-1">Sin PDF</span>
+                      )}
                     </li>
                   ))}
                 </ul>

@@ -59,7 +59,7 @@ export type SubjectContent = {
 
 export type MaterialRef = {
   title: string
-  file: string   // nombre del archivo en la biblioteca (ver libraryUrl() en plans/index.ts)
+  file?: string  // nombre del archivo en la biblioteca (ver libraryUrl() en plans/index.ts); sin archivo se muestra solo el título
   kind?: string  // etiqueta corta: 'Libro' | 'Artículo' | 'Programa' | …
 }
 
