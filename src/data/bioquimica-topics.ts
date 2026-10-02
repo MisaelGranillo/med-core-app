@@ -1663,4 +1663,390 @@ export const bioquimicaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'bioquimica-polisacaridos-fibra',
+    title: 'Polisacáridos, fibra y prebióticos',
+    subtitle: 'Almidón, glucógeno y celulosa; fibra soluble e insoluble; prebióticos vs probióticos',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🌾',
+    keyPoints: [
+      'HOMOPOLISACÁRIDOS = un solo tipo de monosacárido (almidón, glucógeno, celulosa, quitina) · HETEROPOLISACÁRIDOS = varios tipos (ácido hialurónico, condroitín sulfato, heparina).',
+      'ALMIDÓN = reserva VEGETAL: amilosa (~20 %, lineal y helicoidal, α1→4, 200–2500 glucosas) + amilopectina (~80 %, ramificada, α1→4 con ramas α1→6 cada 10–30 glucosas). Es ~70 % de la dieta humana.',
+      'GLUCÓGENO = reserva ANIMAL, aún más ramificado (α1→4 y α1→6). HÍGADO: mantiene la glucemia en ayuno · MÚSCULO: reserva local, no libera glucosa a la sangre. Lo regulan insulina, glucagón y noradrenalina.',
+      'CELULOSA = glucosa con enlaces β(1→4): estructural, fibra; nuestras enzimas no la hidrolizan.',
+      'FIBRA SOLUBLE (pectinas, β-glucanos, mucílagos, gomas, inulina, FOS) forma gel · INSOLUBLE (celulosa, hemicelulosa, lignina, almidón resistente) aumenta el volumen fecal. Recomendación: 20–30 g/día.',
+      'PREBIÓTICO = sustrato que alimenta a la microbiota · PROBIÓTICO = microorganismo vivo benéfico.',
+    ],
+    sections: [
+      {
+        id: 'bpf-1',
+        number: 1,
+        title: 'Oligosacáridos: prebióticos y probióticos',
+        keyTerms: ['oligosacárido', 'prebiótico', 'probiótico', 'microbiota'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Qué hacen los oligosacáridos (prebióticos)',
+            items: [
+              'Sirven de alimento para la microbiota intestinal.',
+              'Participan en la formación de membranas y nucleótidos.',
+              'Favorecen el funcionamiento de la digestión.',
+              'Contribuyen a disminuir el colesterol.',
+              'Ayudan a regular la concentración de glucosa.',
+              'Favorecen el peristaltismo y previenen el estreñimiento.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'No son lo mismo',
+            left: { title: 'Prebiótico', items: ['Sustrato (alimento) que usan las bacterias benéficas', 'Ajo, cebolla, plátano verde, espárragos, achicoria'] },
+            right: { title: 'Probiótico', items: ['Microorganismo VIVO que aporta beneficios', 'Yogur natural con cultivos vivos, kéfir, chucrut, kimchi, miso'] },
+          },
+        ],
+      },
+      {
+        id: 'bpf-2',
+        number: 2,
+        title: 'Fibra dietética',
+        keyTerms: ['fibra soluble', 'fibra insoluble', 'mucílago', 'nopal'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Fibra soluble vs insoluble',
+            left: { title: 'Soluble', items: ['Pectinas, β-glucanos, mucílagos, gomas, inulina, fructooligosacáridos', 'Forma un gel con el agua', 'Ayuda a regular glucosa y colesterol', 'Avena, manzana con cáscara, cítricos, chía, lentejas'] },
+            right: { title: 'Insoluble', items: ['Celulosa, hemicelulosa, lignina, almidón resistente', 'Aumenta el volumen de las heces', 'Favorece el tránsito intestinal', 'Pan y arroz integrales, verduras de hoja verde y crucíferas, frutos secos, quinoa'] },
+          },
+          {
+            type: 'note',
+            title: 'Cuánta fibra',
+            content: 'La recomendación citada en clase (OMS) es de 20–30 g de fibra al día, con suficiente agua. El exceso también causa molestias gastrointestinales. La fruta madura y sin cáscara aporta menos fibra: conviene comerla con cáscara.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'El nopal en el paciente diabético',
+            content: 'El nopal es rico en fibra y forma mucílago, que disminuye la absorción de glucosa. En clase se recomendó agregar medio nopal tierno crudo (licuado o en ensalada) a la dieta del paciente diabético, en lugar de productos procesados como las «tortillas de nopal» con mucha sal.',
+          },
+        ],
+      },
+      {
+        id: 'bpf-3',
+        number: 3,
+        title: 'Clasificación de los polisacáridos',
+        keyTerms: ['homopolisacárido', 'heteropolisacárido', 'reserva', 'estructural'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Polisacáridos o glucanos',
+            data: {
+              headers: ['Grupo', 'Función', 'Ejemplos'],
+              rows: [
+                ['Homopolisacáridos', 'Reserva', 'Almidón, glucógeno, dextrano, inulina'],
+                ['Homopolisacáridos', 'Estructural', 'Celulosa, quitina (y la lignina, que acompaña a la celulosa)'],
+                ['Heteropolisacáridos', 'Estructurales y de matriz', 'Ácido hialurónico, condroitín sulfato, heparina, hemicelulosas, pectinas, agar, goma arábiga'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Datos de la presentación',
+            content: 'El monosacárido más común en los polisacáridos tiene 6 carbonos (glucosa). El almidón representa ~70 % de los glúcidos de la dieta humana (avena, papa, trigo, arroz, maíz, pan). La quitina está en el exoesqueleto de camarón, langosta e insectos y en los hongos.',
+          },
+        ],
+      },
+      {
+        id: 'bpf-4',
+        number: 4,
+        title: 'Almidón: amilosa y amilopectina',
+        keyTerms: ['almidón', 'amilosa', 'amilopectina', 'α(1→6)'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Los dos componentes del almidón ★',
+            data: {
+              headers: ['Rasgo', 'Amilosa', 'Amilopectina'],
+              rows: [
+                ['Proporción', '~15–20 %', '~80 %'],
+                ['Forma', 'Lineal, helicoidal', 'Muy ramificada (como un árbol)'],
+                ['Enlaces', 'α(1→4)', 'α(1→4) en la cadena + α(1→6) en las ramas'],
+                ['Tamaño / ramas', '200–2500 glucosas', 'Una rama cada 10–30 glucosas'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content:
+              'El almidón es la reserva de energía de las plantas: miles de moléculas de glucosa unidas por enlaces α. Como esos enlaces son α, la amilasa (salival y pancreática) los rompe y libera glucosa.',
+          },
+        ],
+      },
+      {
+        id: 'bpf-5',
+        number: 5,
+        title: 'Glucógeno: la reserva animal',
+        keyTerms: ['glucógeno', 'hígado', 'músculo', 'glucagón'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El glucógeno es un polímero de glucosa con enlaces α(1→4) y α(1→6), más ramificado que la amilopectina. Sus muchos extremos permiten liberar glucosa rápidamente cuando se hidroliza.',
+          },
+          {
+            type: 'comparison',
+            title: 'Dos depósitos con funciones distintas',
+            left: { title: 'Hígado', items: ['Mantiene la glucemia durante el ayuno', 'Libera glucosa a la sangre'] },
+            right: { title: 'Músculo', items: ['Reserva para la propia contracción', 'NO libera glucosa a la sangre'] },
+          },
+          {
+            type: 'note',
+            title: 'Regulación hormonal',
+            content: 'La síntesis (glucogénesis) y la degradación (glucogenólisis) del glucógeno hepático las regulan la insulina, el glucagón y la noradrenalina.',
+          },
+        ],
+      },
+      {
+        id: 'bpf-6',
+        number: 6,
+        title: 'Celulosa vs almidón (práctica 6)',
+        keyTerms: ['celulosa', 'β(1→4)', 'celulasa'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Misma glucosa, distinto enlace',
+            data: {
+              headers: ['Rasgo', 'Almidón', 'Celulosa'],
+              rows: [
+                ['Monómero', 'Glucosa', 'Glucosa'],
+                ['Enlace', 'α(1→4) (+ α1→6 en la amilopectina)', 'β(1→4)'],
+                ['Forma', 'Hélices y ramas', 'Cadenas rectas paralelas'],
+                ['Función', 'Reserva energética vegetal', 'Estructura de la pared vegetal'],
+                ['¿Lo digerimos?', 'Sí (amilasa)', 'No: no tenemos celulasa → fibra'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'mnemotecnia',
+            title: 'Idea de examen',
+            content: 'Misma unidad (glucosa) + distinto enlace (α vs β) = distinta estructura y función. Almidón y glucógeno se digieren; la celulosa llega al colon como fibra.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-glucidos-funcion',
+    title: 'Función de los glúcidos e índice glucémico',
+    subtitle: 'Simples vs complejos, índice glucémico, edulcorantes y glucoconjugados de membrana',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '📈',
+    keyPoints: [
+      'SIMPLES (glucosa, fructosa, sacarosa, lactosa…): moléculas pequeñas, se absorben rápido, picos altos y breves de glucosa («calorías vacías») · COMPLEJOS (almidón, fibra): cadenas largas, absorción lenta y sostenida, más vitaminas y minerales.',
+      'ÍNDICE GLUCÉMICO (1–100) = qué tan rápido sube la glucosa tras comer un alimento: BAJO < 55 · MEDIO 55–69 · ALTO ≥ 70.',
+      'El IG sube con el refinamiento, la madurez y la cocción o molienda; baja con la fibra, la grasa y la acidez.',
+      'Absorción intestinal relativa: galactosa 110 > glucosa 100 > fructosa 43 > manosa 39 > xilosa 15 > arabinosa 9.',
+      'Edulcorantes: NATURALES (glucosa, fructosa, miel…), NUTRITIVOS (jarabes, azúcar invertido, polioles como sorbitol y xilitol, FOS; todos aportan calorías) e INTENSOS (sacarina, aspartamo, acesulfamo, ciclamato; de origen vegetal: glicirrina).',
+      'Glúcido + proteína = glucoproteína (enlaces N u O-glucosídicos) · glúcido + lípido = glucolípido (cerebrósidos, gangliósidos): reconocimiento celular y glucocálix.',
+    ],
+    sections: [
+      {
+        id: 'bgf-1',
+        number: 1,
+        title: 'Funciones de los glúcidos',
+        keyTerms: ['energía', 'estructura', 'comunicación celular', 'respiración celular'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Las funciones que da la presentación',
+            items: [
+              'Comunicación celular (glucocálix, receptores).',
+              'Energía celular y fibra.',
+              'Estructura celular.',
+              'Ahorran proteínas y grasas: al usarse como combustible evitan que estas se degraden para obtener energía.',
+              'Participan en la regulación de procesos metabólicos.',
+              'Edulcorantes.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Respiración celular',
+            content: 'La energía de la glucosa se obtiene al oxidarla: C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O + ~32 ATP.',
+          },
+          {
+            type: 'note',
+            title: 'Dos aclaraciones',
+            content: 'La presentación pone a la insulina como ejemplo de «glúcido con funciones metabólicas», pero la insulina es una hormona proteica que REGULA el metabolismo de la glucosa, no un glúcido. Y como antioxidantes menciona los polifenoles, que no son glúcidos (aunque en las plantas suelen estar unidos a azúcares).',
+          },
+        ],
+      },
+      {
+        id: 'bgf-2',
+        number: 2,
+        title: 'Glúcidos simples vs complejos',
+        keyTerms: ['glúcidos simples', 'glúcidos complejos', 'calorías vacías'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Cómo se comportan',
+            left: { title: 'Simples («calorías vacías»)', items: ['Moléculas pequeñas', 'Se absorben y metabolizan rápido', 'Glucosa alta en sangre, pero por poco tiempo', 'Glucosa, fructosa, galactosa, ribosa, sacarosa, lactosa, maltosa', 'Azúcar, refrescos, dulces, cereales envasados'] },
+            right: { title: 'Complejos', items: ['Cadenas largas de azúcares simples', 'Absorción y metabolismo más lentos', 'Glucosa más baja y sostenida', 'Menos probable que se conviertan en grasa', 'Ricos en vitaminas y minerales', 'Integrales, avena, maíz, leguminosas, verduras, papa'] },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Picos de insulina',
+            content: 'Los glúcidos simples producen picos de glucosa y de insulina; repetidos con frecuencia favorecen la resistencia a la insulina. Los complejos dan una curva más plana, aunque la cantidad sigue importando. En diabetes tipo 1 se hace conteo de glúcidos repartidos en tres comidas y dos colaciones, según la dosis de insulina.',
+          },
+        ],
+      },
+      {
+        id: 'bgf-3',
+        number: 3,
+        title: 'Índice glucémico',
+        keyTerms: ['índice glucémico', 'refinamiento', 'madurez', 'absorción'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Índice glucémico',
+            content: 'Escala de 1 (más lento) a 100 (más rápido) que mide cuánto y qué tan rápido sube la glucosa en sangre después de comer un alimento, comparado con una dosis de glucosa. — Índice glucémico (IG).',
+          },
+          {
+            type: 'table',
+            title: 'Rangos y ejemplos (presentación)',
+            data: {
+              headers: ['IG', 'Qué pasa', 'Ejemplos'],
+              rows: [
+                ['Alto (≥ 70)', 'Pasa rápido a la sangre', 'Pan blanco, donas, bizcochos, arroz blanco, papa cocida, melón, maíz inflado'],
+                ['Medio (55–69)', 'Absorción más lenta y moderada', 'Pan integral, pasta, arroz integral, plátano, piña, mango'],
+                ['Bajo (< 55)', 'Glucosa sostenida, sin grandes picos de insulina', 'Pera, manzana, naranja, lentejas, zanahoria, nueces, leche, yogur natural, verduras de hoja verde, brócoli, tomate'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'De qué depende el IG',
+            items: [
+              'Refinamiento: el carbohidrato refinado sube más.',
+              'Tipo de almidón: la papa se absorbe más rápido que la cebada.',
+              'Fibra: más fibra, menos carbohidrato absorbido.',
+              'Madurez: fruta más madura, más IG.',
+              'Grasa y acidez: a más grasa y acidez, menos absorción.',
+              'Preparación: más cocido o molido, más IG.',
+              'Un carbohidrato complejo tiene menor IG que uno simple.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Tasa de absorción intestinal (glucosa = 100)',
+            data: {
+              headers: ['Monosacárido', 'Tasa relativa'],
+              rows: [['Galactosa', '110'], ['Glucosa', '100'], ['Fructosa', '43'], ['Manosa', '39'], ['Xilosa', '15'], ['Arabinosa', '9']],
+            },
+          },
+        ],
+      },
+      {
+        id: 'bgf-4',
+        number: 4,
+        title: 'Edulcorantes',
+        keyTerms: ['edulcorantes', 'polioles', 'sacarina', 'aspartamo'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Tres grupos',
+            data: {
+              headers: ['Grupo', 'Ejemplos', 'Calorías'],
+              rows: [
+                ['Naturales', 'Glucosa, fructosa, galactosa, lactosa, maltosa, miel', 'Sí'],
+                ['Nutritivos', 'Jarabe de glucosa (del almidón), azúcar invertido (de la sacarosa), polioles (sorbitol, manitol, xilitol), fructooligosacáridos', 'Sí: todos aportan calorías'],
+                ['Intensos', 'Artificiales: sacarina, aspartamo, acesulfamo, ciclamato, alitamo · de origen vegetal: glicirrina (y la stevia)', 'Prácticamente ninguna por la cantidad que se usa'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Sobre la stevia',
+            content: 'En clase se dijo que casi todos los edulcorantes aportan calorías salvo la stevia. Es más preciso decir que los edulcorantes intensos (stevia, sacarina, sucralosa, acesulfamo, aspartamo) se usan en cantidades tan pequeñas que su aporte es prácticamente nulo; los naturales y los nutritivos sí aportan calorías.',
+          },
+        ],
+      },
+      {
+        id: 'bgf-5',
+        number: 5,
+        title: 'Aldosas, cetosas y cuerpos cetónicos',
+        keyTerms: ['aldosa', 'cetosa', 'cuerpos cetónicos', 'acetona'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Comparación (presentación)',
+            data: {
+              headers: ['Rasgo', 'Aldosa', 'Cetosa'],
+              rows: [
+                ['Grupo funcional', 'Aldehído (–CHO)', 'Cetona (>C=O)'],
+                ['Posición del carbonilo', 'Extremo (C1)', 'Interior (C2)'],
+                ['Ejemplo', 'Glucosa (aldohexosa)', 'Fructosa (cetohexosa)'],
+                ['Nomenclatura', 'Prefijo aldo- + número de carbonos', 'Prefijo ceto- + número de carbonos (cetotriosa = dihidroxiacetona)'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Cetosa ≠ cetona ≠ cuerpo cetónico',
+            content: 'En clase se dijo que las cetosas son «más tóxicas»; ahí se mezclaron conceptos. Una CETOSA es un azúcar (la fructosa de la fruta y la miel) y no es tóxica. Las CETONAS industriales (como la acetona) son otra cosa, y los CUERPOS CETÓNICOS (acetona, acetoacetato y 3-hidroxibutirato) son productos del metabolismo de las grasas. Comparten la raíz «ceto» por el grupo C=O, nada más.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Cuerpos cetónicos',
+            content: 'Cuando la célula no puede usar glucosa (ayuno prolongado, diabetes descompensada), el hígado produce cuerpos cetónicos a partir de las grasas. En exceso causan cetoacidosis (acidosis metabólica, ver «Equilibrio ácido-base»), y la acetona se elimina por el pulmón: aliento afrutado.',
+          },
+        ],
+      },
+      {
+        id: 'bgf-6',
+        number: 6,
+        title: 'Glucoconjugados y estructura celular',
+        keyTerms: ['glucoproteína', 'glucolípido', 'cerebrósido', 'gangliósido'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Glúcidos unidos a otras moléculas (actividad 9)',
+            data: {
+              headers: ['Molécula', 'Composición', 'Función'],
+              rows: [
+                ['Glucoproteína', 'Glúcido + proteína', 'Reconocimiento celular, receptores, adhesión'],
+                ['Glucolípido', 'Glúcido + lípido', 'Membrana, reconocimiento y señalización'],
+                ['Cerebrósido', 'Ceramida + glucosa o galactosa', 'Membranas del tejido nervioso: ~2 % de la materia gris y ~12 % de la blanca'],
+                ['Gangliósido', 'Glúcido complejo + lípido', 'Receptores de membrana en el glucocálix; diferenciación celular y morfogénesis'],
+                ['Proteoglucano', 'Glucosaminoglucanos + proteína central', 'Matriz extracelular del tejido conectivo'],
+              ],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'Cómo se unen el glúcido y la proteína',
+            left: { title: 'N-glucosídico', items: ['Grupo amida de una ASPARAGINA', '+ carbono anomérico de la N-acetilglucosamina'] },
+            right: { title: 'O-glucosídico', items: ['Grupo –OH de una SERINA o TREONINA', '+ carbono anomérico de la N-acetilgalactosamina o la xilosa'] },
+          },
+          {
+            type: 'note',
+            title: 'Por qué sirven como estructura',
+            content: 'Los glúcidos forman muchos puentes de hidrógeno entre sí, lo que da estabilidad y rigidez a estructuras como la celulosa, la quitina y el ácido hialurónico, que no se descomponen fácilmente.',
+          },
+          {
+            type: 'list',
+            title: 'Cuatro polímeros con uso médico (práctica 7)',
+            items: [
+              'Ácido hialurónico: matriz extracelular; usos oftálmicos y articulares.',
+              'Heparina: anticoagulante.',
+              'Condroitín sulfato: componente del cartílago.',
+              'Dextrano: coloide expansor del plasma (ver «Presión osmótica, oncótica…»).',
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ]

@@ -149,9 +149,9 @@ export const modules: Module[] = [
     id: 'bioquimica-uad-s1',
     badge: 'UAD · Bioquímica I — Semana 1',
     title: 'Bioquímica: agua, ácido-base y glúcidos',
-    subtitle: 'Metabolismo digestivo; agua, electrolitos y soluciones; presión osmótica y oncótica, Starling; equilibrio ácido-base; glúcidos: estructura general y clasificación.',
+    subtitle: 'Metabolismo digestivo; agua, electrolitos y soluciones; presión osmótica y oncótica, Starling; equilibrio ácido-base; glúcidos: estructura, clasificación, polisacáridos, fibra, función e índice glucémico.',
     emoji: '🧪',
-    topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones', 'bioquimica-presion-osmotica-oncotica', 'bioquimica-equilibrio-acido-base', 'bioquimica-glucidos', 'bioquimica-glucidos-clasificacion'],
+    topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones', 'bioquimica-presion-osmotica-oncotica', 'bioquimica-equilibrio-acido-base', 'bioquimica-glucidos', 'bioquimica-glucidos-clasificacion', 'bioquimica-polisacaridos-fibra', 'bioquimica-glucidos-funcion'],
   },
   {
     id: 'histologia-uad-s1',
