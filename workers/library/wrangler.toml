@@ -16,5 +16,5 @@ bucket_name = "medcore-library"
 # Host del equipo de Zero Trust (p. ej. "miequipo.cloudflareaccess.com") y AUD
 # de la aplicación de Access que protege /privado.
 # Mientras estén vacíos, todo lo que está bajo /privado responde 403 (falla cerrado).
-TEAM_DOMAIN = ""
-PRIVADO_AUD = ""
+TEAM_DOMAIN = "core-box.cloudflareaccess.com"
+PRIVADO_AUD = "1dd5c11fa4b29d78cfc7e2107d467add79b16a64bed2b1ddbdb18af9cfbdb3ff"
