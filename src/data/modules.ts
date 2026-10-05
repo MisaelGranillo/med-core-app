@@ -154,6 +154,14 @@ export const modules: Module[] = [
     topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones', 'bioquimica-presion-osmotica-oncotica', 'bioquimica-equilibrio-acido-base', 'bioquimica-glucidos', 'bioquimica-glucidos-clasificacion', 'bioquimica-polisacaridos-fibra', 'bioquimica-glucidos-funcion'],
   },
   {
+    id: 'bioquimica-uad-s2',
+    badge: 'UAD · Bioquímica I — Semana 2',
+    title: 'Bioquímica: lípidos y ácidos grasos',
+    subtitle: 'Estructura de los lípidos, enlace éster, ácidos grasos (longitud, saturación, cis/trans), omega 3/6/9, esenciales, EPA/DHA, eicosanoides, grasas y aceites.',
+    emoji: '🧈',
+    topicIds: ['bioquimica-lipidos-estructura', 'bioquimica-omega-grasas-aceites'],
+  },
+  {
     id: 'histologia-uad-s1',
     badge: 'UAD · Histología I — Semana 1',
     title: 'Histología: célula, microscopía y técnica',

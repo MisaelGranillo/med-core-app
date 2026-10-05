@@ -2049,4 +2049,355 @@ export const bioquimicaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'bioquimica-lipidos-estructura',
+    title: 'Lípidos: estructura y ácidos grasos',
+    subtitle: 'Enlace éster, anfipatía, clasificación de los lípidos, longitud de cadena, saturados vs insaturados y cis vs trans',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🧈',
+    keyPoints: [
+      'LÍPIDOS = C, H y O; insolubles en agua y solubles en solventes no polares (éter, cloroformo). Aportan ~9 kcal/g.',
+      'ENLACE ÉSTER = ácido carboxílico + alcohol → éster + H₂O (en los glúcidos el enlace es glucosídico).',
+      'ÁCIDO GRASO = COOH–(CH₂)n–CH₃: cabeza carboxilo HIDROFÍLICA + cadena hidrocarbonada LIPOFÍLICA → molécula ANFIPÁTICA (micelas, emulsiones, bicapa).',
+      'Normalmente 12–22 carbonos, cadena lineal sin ramificar; más de 70 tipos en la naturaleza.',
+      'LONGITUD: corta < 6 C · mediana 6–12 C · larga > 12 C (las más abundantes).',
+      'SATURADO = sin dobles enlaces C=C (terminación -anoico, sólido) · INSATURADO = 1 (mono) o ≥ 2 (poli) dobles enlaces (terminación -enoico).',
+      'CIS = cadena doblada, líquida, la forma natural · TRANS = cadena recta y rígida, rara en la naturaleza, se forma por hidrogenación parcial; se asocia a cardiopatía.',
+    ],
+    sections: [
+      {
+        id: 'ble-1',
+        number: 1,
+        title: 'Qué son los lípidos y el enlace éster',
+        keyTerms: ['lípido', 'enlace éster', 'solventes no polares'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Glúcidos, lípidos y proteínas comparten carbono, hidrógeno y oxígeno. Lo que distingue a los lípidos es que son insolubles en agua y solubles en solventes no polares, como el éter y el cloroformo. En el cuerpo se encuentran sobre todo como ésteres: grasas, aceites y ácidos grasos.',
+          },
+          {
+            type: 'definition',
+            title: 'Enlace éster',
+            content: 'Unión entre el grupo carboxilo de un ácido y el grupo hidroxilo de un alcohol, con liberación de una molécula de agua: R₁–COOH + HO–R₂ ⇌ R₁–COO–R₂ + H₂O. — Enlace éster.',
+          },
+          {
+            type: 'comparison',
+            title: 'El enlace característico de cada biomolécula',
+            left: { title: 'Glúcidos', items: ['Enlace glucosídico (O-glucosídico)', 'Une monosacárido con monosacárido'] },
+            right: { title: 'Lípidos', items: ['Enlace éster', 'Une ácido graso con alcohol (p. ej., glicerol en los triglicéridos)'] },
+          },
+          {
+            type: 'note',
+            title: 'Triglicéridos',
+            content: 'Un triglicérido (triacilglicerol) es glicerol esterificado con tres ácidos grasos (tres enlaces éster). Es la principal forma de almacenar energía en el tejido adiposo.',
+          },
+        ],
+      },
+      {
+        id: 'ble-2',
+        number: 2,
+        title: 'Estructura del ácido graso: una molécula anfipática',
+        keyTerms: ['ácido graso', 'anfipático', 'micela', 'bicapa lipídica'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Las dos regiones de un ácido graso (ejemplo: ácido esteárico)',
+            data: {
+              headers: ['Región', 'Grupo', 'Comportamiento en agua'],
+              rows: [
+                ['Cabeza', 'Carboxilo (–COOH)', 'Hidrofílica: interactúa con el agua (hasta 4 moléculas de H₂O)'],
+                ['Cola', 'Cadena hidrocarbonada (CH₂)n y metilo terminal (–CH₃)', 'Hidrofóbica / lipofílica: evita el agua'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Características de los ácidos grasos (presentación)',
+            items: [
+              'Son ácidos carboxílicos de 12 a 22 carbonos.',
+              'Cadena larga, lineal y sin ramificar.',
+              'Componentes estructurales de grasas y aceites (no de los esteroides).',
+              'Hay más de 70 en la naturaleza.',
+              'Se clasifican por la presencia y el número de dobles enlaces C=C.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content:
+              'En agua, las colas hidrofóbicas de varios ácidos grasos se agrupan y dejan un espacio del que se excluye el agua. Así se forman micelas, emulsiones (otras moléculas quedan atrapadas dentro) o espuma (queda aire). La misma propiedad permite formar la bicapa lipídica de las membranas: cabezas hacia el agua, colas hacia el interior.',
+          },
+          {
+            type: 'note',
+            title: '(CH₂)n',
+            content: 'La «n» indica la longitud de la cadena. En Bioquímica II será clave para la β-oxidación: cada vuelta corta la cadena de dos en dos carbonos.',
+          },
+        ],
+      },
+      {
+        id: 'ble-3',
+        number: 3,
+        title: 'Clasificación de los lípidos',
+        keyTerms: ['triglicéridos', 'fosfoglicéridos', 'esfingolípidos', 'esteroides'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Esquema de la presentación',
+            items: [
+              'Ácidos grasos → triglicéridos y ceras.',
+              'Fosfoglicéridos (fosfolípidos).',
+              'Esfingolípidos → esfingomielina y glucolípidos (cerebrósidos y gangliósidos).',
+              'Esteroides (no derivan de ácidos grasos; ejemplo: colesterol).',
+            ],
+          },
+          {
+            type: 'list',
+            title: 'Funciones generales',
+            items: [
+              'Reserva de energía: ~9 kcal/g, más del doble que glúcidos y proteínas (4 kcal/g).',
+              'Componentes de las membranas celulares.',
+              'Precursores de hormonas esteroideas y de sales biliares.',
+              'Absorción de las vitaminas liposolubles A, D, E y K.',
+              'Aporte de ácidos grasos esenciales y señalización celular (eicosanoides).',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'ble-4',
+        number: 4,
+        title: 'Longitud de la cadena',
+        keyTerms: ['cadena corta', 'cadena mediana', 'cadena larga', 'butirato'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Clasificación por número de carbonos ★',
+            data: {
+              headers: ['Tipo', 'Carbonos', 'Ejemplos', 'Dato clínico'],
+              rows: [
+                ['Corta', '< 6', 'Acético (2), butírico (4), valérico (5)', 'La microbiota produce butirato, el combustible de los colonocitos'],
+                ['Mediana', '6–12', 'Caproico (6), caprílico (8), cáprico (10), láurico (12)', 'Se absorben directo a la vena porta, sin formar quilomicrones'],
+                ['Larga', '> 12', 'Mirístico (14), palmítico (16), esteárico (18), oleico (18)', 'Las más abundantes en la dieta; se empaquetan en quilomicrones'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Triglicéridos de cadena media',
+            content: 'Como los ácidos grasos de cadena mediana no necesitan sales biliares ni quilomicrones para absorberse, los triglicéridos de cadena media (aceite MCT, derivado del coco) se usan en nutrición clínica en pacientes con malabsorción de grasas.',
+          },
+        ],
+      },
+      {
+        id: 'ble-5',
+        number: 5,
+        title: 'Saturados vs insaturados',
+        keyTerms: ['saturado', 'monoinsaturado', 'poliinsaturado', 'anoico', 'enoico'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Por tipo de enlace ★',
+            left: { title: 'Saturados', items: ['Solo enlaces simples C–C', 'El máximo de hidrógenos en la cadena', 'Cadena recta: se compactan, sólidos a temperatura ambiente (mantequilla)', 'Terminación -anoico (hexadecanoico = palmítico)', 'Palmítico (C16:0), esteárico (C18:0), láurico, mirístico'] },
+            right: { title: 'Insaturados', items: ['Uno o más dobles enlaces C=C', 'Menos hidrógenos', '«Codos» en cada doble enlace: líquidos a temperatura ambiente', 'Terminación -enoico (octadecenoico = oleico)', 'Mono (1 C=C): oleico · Poli (≥ 2 C=C): linoleico, linolénico, araquidónico'] },
+          },
+          {
+            type: 'note',
+            title: 'Los de mayor presencia',
+            content: 'El ácido graso saturado más abundante en los alimentos es el palmítico (C16:0) y el insaturado más abundante es el oleico (C18:1).',
+          },
+          {
+            type: 'note',
+            title: 'Nomenclatura C18:1',
+            content: 'El primer número indica los carbonos y el segundo los dobles enlaces: palmítico C16:0, esteárico C18:0, oleico C18:1, linoleico C18:2, α-linolénico C18:3, araquidónico C20:4. Ojo: el araquídico (C20:0, saturado) no es el araquidónico (C20:4, poliinsaturado).',
+          },
+        ],
+      },
+      {
+        id: 'ble-6',
+        number: 6,
+        title: 'Configuración cis vs trans',
+        keyTerms: ['cis', 'trans', 'hidrogenación parcial', 'grasas trans'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Dos formas del mismo doble enlace',
+            data: {
+              headers: ['Rasgo', 'Cis', 'Trans'],
+              rows: [
+                ['Hidrógenos del C=C', 'Del mismo lado', 'En lados opuestos'],
+                ['Forma de la cadena', 'Doblada', 'Recta, parecida a un saturado'],
+                ['Estado', 'Líquido a temperatura ambiente', 'Sólido o semisólido'],
+                ['En la membrana', 'Da fluidez y flexibilidad', 'Da rigidez'],
+                ['Origen', 'La forma natural (mono y poliinsaturados)', 'Rara en la naturaleza; se forma por hidrogenación parcial industrial'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Grasas trans y riesgo cardiovascular',
+            content: 'Las grasas trans (margarinas parcialmente hidrogenadas, frituras comerciales, repostería y galletas industriales, snacks ultraprocesados) elevan el colesterol LDL y bajan el HDL, favorecen la inflamación y la aterosclerosis y aumentan el riesgo de cardiopatía isquémica. Por eso conviene evitarlas por completo.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-omega-grasas-aceites',
+    title: 'Omega 3, 6 y 9; grasas y aceites',
+    subtitle: 'Posición del doble enlace, ácidos grasos esenciales, EPA y DHA, eicosanoides y composición de grasas y aceites',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🐟',
+    keyPoints: [
+      'OMEGA (ω, n) = posición del PRIMER doble enlace contado desde el extremo METILO: ω-3 en C3, ω-6 en C6, ω-9 en C9. Pregunta de examen.',
+      'DELTA (Δ) cuenta desde el extremo CARBOXILO: oleico = C18:1 Δ9 = C18:1 n-9.',
+      'ESENCIALES (hay que comerlos) = linoleico (ω-6, C18:2) y α-linolénico (ω-3, C18:3): los mamíferos no pueden colocar dobles enlaces en esas posiciones · el OLEICO (ω-9) NO es esencial.',
+      'NO esenciales: el cuerpo los sintetiza a partir de acetil-CoA (exceso de glúcidos o proteínas).',
+      'EPA → corazón, articulaciones, inmunidad · DHA → vista, cerebro y desarrollo. Fuentes baratas: sardina y salmón.',
+      'Poliinsaturados (araquidónico, C20:4 ω-6) → EICOSANOIDES: prostaglandinas, tromboxanos y leucotrienos.',
+      'GRASA = sólida (más saturados) · ACEITE = líquido (más insaturados). Recalentar el aceite lo degrada (acroleína).',
+    ],
+    sections: [
+      {
+        id: 'bom-1',
+        number: 1,
+        title: 'Nomenclatura omega y delta',
+        keyTerms: ['omega', 'delta', 'extremo metilo', 'extremo carboxilo'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Dónde está el primer doble enlace ★',
+            data: {
+              headers: ['Familia', 'Primer doble enlace (desde el metilo)', 'Ácido graso representativo'],
+              rows: [
+                ['Omega-3', 'Carbono 3', 'α-linolénico (ALA), C18:3 n-3'],
+                ['Omega-6', 'Carbono 6', 'Linoleico (LA), C18:2 n-6'],
+                ['Omega-9', 'Carbono 9', 'Oleico, C18:1 n-9'],
+              ],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'No confundir los dos sistemas',
+            left: { title: 'Omega (ω o n)', items: ['Cuenta desde el extremo METILO (–CH₃)', 'Oleico = n-9'] },
+            right: { title: 'Delta (Δ)', items: ['Cuenta desde el extremo CARBOXILO (–COOH)', 'Oleico = Δ9 · linoleico = Δ9,12 · linolénico = Δ9,12,15 · araquidónico = Δ5,8,11,14'] },
+          },
+        ],
+      },
+      {
+        id: 'bom-2',
+        number: 2,
+        title: 'Ácidos grasos esenciales',
+        keyTerms: ['esencial', 'linoleico', 'α-linolénico', 'acetil-CoA'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Los mamíferos pueden introducir dobles enlaces hasta el carbono 9 contado desde el carboxilo, pero no más allá (hacia el metilo). Por eso no pueden fabricar los dobles enlaces de las posiciones ω-3 y ω-6, y esos ácidos grasos deben venir de la dieta. El oleico (ω-9) sí se sintetiza.',
+          },
+          {
+            type: 'comparison',
+            title: 'Esenciales vs no esenciales',
+            left: { title: 'Esenciales', items: ['Poliinsaturados', 'Linoleico (ω-6) y α-linolénico (ω-3)', 'Deben consumirse en la dieta'] },
+            right: { title: 'No esenciales', items: ['El cuerpo los sintetiza a partir de acetil-CoA', 'Proviene del exceso de glúcidos o de proteínas', 'Ejemplo: oleico (ω-9), palmítico'] },
+          },
+          {
+            type: 'note',
+            title: 'Una contradicción en las fuentes',
+            content: 'En clase se dijo que omega 3, 6 y 9 «se consideran esenciales», y una diapositiva dice que el humano «no puede sintetizar omega 3 y 9». Lo correcto, y lo que muestra la propia infografía de la presentación, es que los esenciales son el ω-3 (α-linolénico) y el ω-6 (linoleico); el ω-9 (oleico) NO es esencial.',
+          },
+        ],
+      },
+      {
+        id: 'bom-3',
+        number: 3,
+        title: 'De ALA y LA a EPA, DHA y araquidónico',
+        keyTerms: ['EPA', 'DHA', 'araquidónico', 'eicosanoides'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Las dos rutas (desaturación y elongación)',
+            steps: [
+              'Omega-6: linoleico (18:2) → γ-linolénico (18:3) → dihomo-γ-linolénico (20:3) → ARAQUIDÓNICO (20:4).',
+              'Omega-3: α-linolénico (18:3) → estearidónico (18:4) → eicosatetraenoico (20:4) → EPA (20:5) → DPA (22:5) → DHA (22:6).',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'EPA vs DHA',
+            left: { title: 'EPA (eicosapentaenoico)', items: ['Salud cardiovascular', 'Articulaciones', 'Inmunidad y regulación de la inflamación', 'Estado de ánimo'] },
+            right: { title: 'DHA (docosahexaenoico)', items: ['Retina (vista)', 'Cerebro y memoria', 'Desarrollo neurológico fetal e infantil'] },
+          },
+          {
+            type: 'paragraph',
+            content:
+              'Los ácidos grasos poliinsaturados de 20 carbonos (como el araquidónico) son precursores de los eicosanoides: prostaglandinas, tromboxanos y leucotrienos, que regulan la inflamación, la coagulación, la respuesta inmune y el tono vascular.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Orientación al paciente',
+            content: 'EPA y DHA son especialmente importantes en el embarazo y en etapas de crecimiento. Como fuente económica de omega-3 se sugirió la sardina (también salmón, arenque y aceite de algas); el ALA vegetal está en chía, linaza y canola. El omega-6 abunda en aceites de girasol, soya, maíz y sésamo, almendras, cacahuates, huevo y carne de ave.',
+          },
+        ],
+      },
+      {
+        id: 'bom-4',
+        number: 4,
+        title: 'Grasas vs aceites: composición',
+        keyTerms: ['grasa', 'aceite', 'aceite de oliva', 'aceite de coco', 'canola'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Grasa vs aceite',
+            left: { title: 'Grasa', items: ['Sólida o semisólida a temperatura ambiente', 'Predominan los saturados', 'Mantequilla, sebo, manteca de cerdo'] },
+            right: { title: 'Aceite', items: ['Líquido a temperatura ambiente', 'Predominan los insaturados', 'Oliva, canola, maíz, soya, cacahuate'] },
+          },
+          {
+            type: 'table',
+            title: 'Composición media (% de ácidos grasos, presentación)',
+            data: {
+              headers: ['Alimento', 'Saturados (láurico + mirístico + palmítico + esteárico)', 'Oleico (ω-9)', 'Linoleico (ω-6)', 'Linolénico (ω-3)'],
+              rows: [
+                ['Mantequilla', '3 + 11 + 27 + 12', '29', '2', '1'],
+                ['Manteca de cerdo', '— + 2 + 26 + 14', '44', '10', '—'],
+                ['Aceite de coco', '47 + 18 + 9 + 3', '6', '2', '—'],
+                ['Aceite de oliva', '— + — + 13 + 3', '71', '10', '1'],
+                ['Aceite de canola', '— + — + 4 + 2', '62', '22', '10'],
+                ['Aceite de maíz', '— + — + 11 + 2', '28', '58', '1'],
+                ['Aceite de soya', '— + — + 11 + 4', '24', '54', '7'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Cómo leer la tabla',
+            content: 'El palmítico es el saturado presente en casi todo. El aceite de coco es casi todo saturado (sobre todo láurico, de cadena mediana), aunque sea vegetal. La manteca de cerdo tiene mucho oleico (44 %), pero también ~42 % de saturados. La canola tiene muy pocos saturados (~6 %), mucho oleico (62 %) y omega-3, por lo que en clase se presentó como una buena opción para recomendar.',
+          },
+        ],
+      },
+      {
+        id: 'bom-5',
+        number: 5,
+        title: 'El calor y el aceite recalentado',
+        keyTerms: ['acroleína', 'recalentamiento', 'prensado en frío'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Calentar y sobre todo recalentar varias veces un aceite lo oxida y lo degrada. A temperaturas altas el glicerol se deshidrata y forma acroleína, un compuesto irritante y tóxico clasificado como probable carcinógeno; además se forman otros productos de oxidación y el aceite pierde calidad.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Qué recomendar',
+            content: 'No reutilizar el aceite de freír. El aceite de oliva extra virgen (prensado en frío) se aprovecha mejor crudo, en ensaladas. Para cocinar conviene un aceite con pocos saturados (canola) en lugar de manteca o mantequilla.',
+          },
+        ],
+      },
+    ],
+  },
 ]

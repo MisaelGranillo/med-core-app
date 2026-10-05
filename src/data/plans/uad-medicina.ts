@@ -243,7 +243,7 @@ export const uadMedicina: Plan = {
           code: 'BQ01002',
           hasLab: true,
           tags: ['bioquimica'],
-          topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones', 'bioquimica-presion-osmotica-oncotica', 'bioquimica-equilibrio-acido-base', 'bioquimica-glucidos', 'bioquimica-glucidos-clasificacion', 'bioquimica-polisacaridos-fibra', 'bioquimica-glucidos-funcion'],
+          topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones', 'bioquimica-presion-osmotica-oncotica', 'bioquimica-equilibrio-acido-base', 'bioquimica-glucidos', 'bioquimica-glucidos-clasificacion', 'bioquimica-polisacaridos-fibra', 'bioquimica-glucidos-funcion', 'bioquimica-lipidos-estructura', 'bioquimica-omega-grasas-aceites'],
           content: {
             area: 'Ciencias Básicas',
             credits: 11,
@@ -281,9 +281,14 @@ export const uadMedicina: Plan = {
               {
                 number: 2,
                 title: 'Lípidos y proteínas',
+                topicIds: ['bioquimica-lipidos-estructura', 'bioquimica-omega-grasas-aceites'],
                 temas: [
+                  'Clase 1 (impartida): inicio de la Unidad III — lípidos: enlace éster, ácido graso anfipático (micelas, bicapa), clasificación de los lípidos, longitud de cadena, saturados vs insaturados, cis vs trans, omega 3/6/9 y ácidos grasos esenciales, EPA/DHA, eicosanoides, grasas vs aceites y efecto del calor',
                   '3. Lípidos: estructura general, clasificación y función',
                   '4. Proteínas: estructura general, clasificación y función',
+                ],
+                fuentes: [
+                  { title: 'Bioquímica I — Semana 2, Clase 1 (Unidad 3)', file: 'Bioquimica I - Semana 2 - Clase 1 - Unidad 3.pdf', nota: 'Lípidos: estructura y ácidos grasos, omega 3/6/9.' },
                 ],
               },
               {
@@ -321,6 +326,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 1 · Clase 3 — Inicio de glúcidos', file: 'Bioquimica I - Semana 1 - Clase 3 - Unidad 2.pdf', kind: 'Clase' },
               { title: 'Semana 1 · Clase 4 — Glúcidos: estructura y clasificación', file: 'Bioquimica I - Semana 1 - Clase 4 - Unidad 2.pdf', kind: 'Clase' },
               { title: 'Semana 1 · Clase 5 — Polisacáridos, fibra e índice glucémico', file: 'Bioquimica I - Semana 1 - Clase 5 - Unidad 2.pdf', kind: 'Clase' },
+              { title: 'Semana 2 · Clase 1 — Lípidos y ácidos grasos', file: 'Bioquimica I - Semana 2 - Clase 1 - Unidad 3.pdf', kind: 'Clase' },
               { title: 'Programa Académico — Bioquímica I y su Laboratorio', file: 'Bioquimica I - Programa.pdf', kind: 'Programa' },
               { title: 'Planeación — Bioquímica I (2025-1)', file: 'Bioquimica I - Planeacion.pdf', kind: 'Programa' },
             ],
