@@ -156,10 +156,10 @@ export const modules: Module[] = [
   {
     id: 'bioquimica-uad-s2',
     badge: 'UAD · Bioquímica I — Semana 2',
-    title: 'Bioquímica: lípidos y ácidos grasos',
-    subtitle: 'Estructura de los lípidos, enlace éster, ácidos grasos (longitud, saturación, cis/trans), omega 3/6/9, esenciales, EPA/DHA, eicosanoides, grasas y aceites.',
+    title: 'Bioquímica: lípidos',
+    subtitle: 'Estructura de los lípidos, enlace éster, ácidos grasos (longitud, saturación, cis/trans), omega 3/6/9, esenciales, EPA/DHA, grasas y aceites; triglicéridos, fosfolípidos, esfingolípidos y eicosanoides.',
     emoji: '🧈',
-    topicIds: ['bioquimica-lipidos-estructura', 'bioquimica-omega-grasas-aceites'],
+    topicIds: ['bioquimica-lipidos-estructura', 'bioquimica-omega-grasas-aceites', 'bioquimica-trigliceridos-fosfolipidos', 'bioquimica-eicosanoides'],
   },
   {
     id: 'histologia-uad-s1',

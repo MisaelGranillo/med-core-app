@@ -2400,4 +2400,336 @@ export const bioquimicaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'bioquimica-trigliceridos-fosfolipidos',
+    title: 'Triglicéridos, fosfolípidos y esfingolípidos',
+    subtitle: 'Esterificación y reserva anhidra, triglicérido simple vs mixto, glicerofosfolípidos, ceramida, esfingomielina, glucolípidos y esfingolipidosis',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🫧',
+    keyPoints: [
+      'TRIGLICÉRIDO = glicerol + 3 ácidos grasos unidos por enlaces ÉSTER. Al esterificarse pierde sus grupos polares → apolar e hidrófobo → se almacena de forma ANHIDRA en el adipocito.',
+      'SIMPLE = los 3 ácidos grasos iguales (triestearina) · MIXTO = 2 o 3 ácidos grasos diferentes.',
+      'Del triglicérido, solo el GLICEROL puede convertirse en glucosa; los ácidos grasos van a β-oxidación. En ayuno prolongado o dieta cetogénica se forman cuerpos cetónicos (la acetona sale por el pulmón: halitosis).',
+      'GLICEROFOSFOLÍPIDO = glicerol + 2 ácidos grasos + fosfato + alcohol (colina, etanolamina, serina, inositol, glicerol). La FOSFATIDILCOLINA (lecitina) es el más abundante de la membrana.',
+      'ESFINGOLÍPIDO = ESFINGOSINA (no glicerol) + ácido graso por enlace AMIDA = CERAMIDA, precursora de todos los esfingolípidos.',
+      'Ceramida + fosfocolina = ESFINGOMIELINA (mielina) · ceramida + azúcar = GLUCOLÍPIDOS: cerebrósidos (1 azúcar), globósidos (oligosacárido) y gangliósidos (oligosacárido + ácido siálico).',
+      'Esfingolipidosis (lisosomales): Niemann-Pick (esfingomielinasa) · Gaucher (glucocerebrosidasa) · Fabry (α-galactosidasa A) · Tay-Sachs (hexosaminidasa A).',
+    ],
+    sections: [
+      {
+        id: 'btf-1',
+        number: 1,
+        title: 'Por qué importan el linoleico y el α-linolénico',
+        keyTerms: ['esenciales', 'EPA', 'DHA', 'araquidónico'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Importancia de los ácidos grasos esenciales (presentación)',
+            items: [
+              'No los podemos sintetizar: deben venir de la dieta.',
+              'Son necesarios para el crecimiento y el desarrollo.',
+              'Participan en el transporte y el metabolismo del colesterol.',
+              'El omega-3 (α-linolénico) es necesario para formar EPA y DHA.',
+              'El omega-6 (linoleico) es necesario para formar el ácido araquidónico.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Recordatorio',
+            content: 'Los esenciales son el linoleico (ω-6) y el α-linolénico (ω-3). El oleico (ω-9) lo sintetiza el cuerpo. Los no esenciales se forman a partir de acetil-CoA, que proviene del exceso de glúcidos y proteínas.',
+          },
+        ],
+      },
+      {
+        id: 'btf-2',
+        number: 2,
+        title: 'Triglicéridos: estructura y función',
+        keyTerms: ['triglicérido', 'esterificación', 'anhidro', 'β-oxidación'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El triglicérido (triacilglicerol) se forma cuando cada uno de los tres –OH del glicerol se une al –COOH de un ácido graso, liberando agua (enlace éster). Al perder esos grupos polares la molécula queda apolar e hidrófoba, y por eso el adipocito puede guardarla sin agua (forma anhidra): mucha energía en poco peso.',
+          },
+          {
+            type: 'list',
+            title: 'Funciones',
+            items: [
+              'Reserva de energía: los ácidos grasos están más reducidos que los glúcidos (~9 vs 4 kcal/g).',
+              'Aislamiento y protección: almohadillas de grasa alrededor de órganos como el riñón y el corazón; aislante térmico.',
+              'Mantenimiento celular: sus ácidos grasos son precursores de fosfolípidos, esfingolípidos y, si son poliinsaturados (araquidónico), de eicosanoides.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Simple vs mixto',
+            left: { title: 'Triglicérido simple', items: ['Los 3 –OH esterificados con el mismo ácido graso', 'Ejemplo: triestearina (3 × esteárico)'] },
+            right: { title: 'Triglicérido mixto', items: ['2 o 3 ácidos grasos diferentes', 'Ejemplo: palmítico + mirístico + oleico', 'Es lo habitual en los alimentos'] },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Ayuno, dieta cetogénica y halitosis',
+            content: 'Al romper un triglicérido, los tres ácidos grasos van a β-oxidación y solo el glicerol puede convertirse en glucosa (se verá en Bioquímica II). En ayuno prolongado o dieta cetogénica se moviliza mucha grasa y el exceso de acetil-CoA forma cuerpos cetónicos. La acetona es volátil y se elimina por el pulmón: aliento con olor afrutado (halitosis).',
+          },
+        ],
+      },
+      {
+        id: 'btf-3',
+        number: 3,
+        title: 'Grasas y aceites: propiedades',
+        keyTerms: ['grasa', 'aceite', 'saponificación', 'caroteno'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Propiedades (presentación)',
+            items: [
+              'Son los lípidos más abundantes de la naturaleza; químicamente son triglicéridos.',
+              'Más ligeros que el agua; malos conductores de calor y electricidad (excelentes aislantes).',
+              'Se hidrolizan; con bases forman jabón (saponificación).',
+              'Grasa si es sólida a 25 °C, aceite si es líquida: depende del grado de insaturación y del número de carbonos.',
+              'Puros son incoloros, inodoros e insípidos: el color y el sabor vienen de otras moléculas que absorben.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Animal sólido, vegetal líquido… con excepciones',
+            content: 'La presentación generaliza que los triglicéridos animales son sólidos y los vegetales líquidos. Hay excepciones importantes: los aceites de coco y de palma son vegetales y muy saturados, y el aceite de pescado es animal y líquido.',
+          },
+          {
+            type: 'note',
+            title: 'El color de la mantequilla',
+            content: 'El color amarillo viene de carotenos (de la dieta de la vaca o añadidos) y el sabor del diacetilo y la 3-hidroxi-2-butanona (acetoína), producidos por fermentación bacteriana. En clase se mencionó que los pigmentos del cempasúchil se usan para dar color amarillo al pollo.',
+          },
+        ],
+      },
+      {
+        id: 'btf-4',
+        number: 4,
+        title: 'Glicerofosfolípidos',
+        keyTerms: ['fosfatidilcolina', 'lecitina', 'cefalina', 'cardiolipina'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Un glicerofosfolípido tiene como base el glicerol: dos de sus –OH se unen a ácidos grasos (colas hidrofóbicas) y el tercero a un fosfato, que a su vez se une a un alcohol (cabeza polar). Es anfipático, por lo que forma la bicapa de las membranas. Los dobles enlaces cis de sus colas dan flexibilidad a la membrana.',
+          },
+          {
+            type: 'table',
+            title: 'El alcohol da el nombre ★',
+            data: {
+              headers: ['Cabeza polar (X)', 'Fosfolípido', 'Dato'],
+              rows: [
+                ['Colina', 'Fosfatidilcolina (lecitina)', 'El más abundante de la membrana'],
+                ['Etanolamina', 'Fosfatidiletanolamina (cefalina)', 'Abundante en tejido nervioso'],
+                ['Serina', 'Fosfatidilserina', 'Cara interna; si se expone afuera es señal de apoptosis'],
+                ['Inositol', 'Fosfatidilinositol (PIP₂)', 'Da los segundos mensajeros IP₃ y DAG'],
+                ['Glicerol', 'Cardiolipina (difosfatidilglicerol)', 'Membrana mitocondrial interna'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'btf-5',
+        number: 5,
+        title: 'Esfingolípidos y ceramida',
+        keyTerms: ['esfingosina', 'ceramida', 'enlace amida', 'esfingomielina'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Cambia la molécula base',
+            left: { title: 'Glicerofosfolípido', items: ['Base: GLICEROL', 'Ácidos grasos unidos por enlace éster'] },
+            right: { title: 'Esfingolípido', items: ['Base: ESFINGOSINA (aminoalcohol)', 'Ácido graso unido al grupo amino del C-2 por enlace AMIDA'] },
+          },
+          {
+            type: 'definition',
+            title: 'Ceramida',
+            content: 'Esfingosina + ácido graso unidos por enlace amida. Es el precursor de todos los esfingolípidos y una molécula señalizadora en el estrés celular y la muerte celular programada. Los esfingolípidos se clasifican según el grupo polar unido al –OH del C-1 de la ceramida. — Ceramida.',
+          },
+          {
+            type: 'paragraph',
+            content:
+              'La ESFINGOMIELINA es el único esfingolípido con fosfato (ceramida + fosfocolina). Forma la vaina de mielina, actúa como aislante eléctrico y abunda en las balsas lipídicas junto con el colesterol.',
+          },
+        ],
+      },
+      {
+        id: 'btf-6',
+        number: 6,
+        title: 'Glucolípidos y esfingolipidosis',
+        keyTerms: ['cerebrósido', 'globósido', 'gangliósido', 'Tay-Sachs', 'Gaucher'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Glucoesfingolípidos (sin fosfato; el azúcar va por enlace O-glucosídico)',
+            data: {
+              headers: ['Tipo', 'Composición', 'Dónde / función'],
+              rows: [
+                ['Cerebrósidos', 'Ceramida + glucosa o galactosa', 'Galactocerebrósidos: tejido nervioso y mielina · glucocerebrósidos: tejidos no neuronales'],
+                ['Globósidos', 'Ceramida + oligosacárido', 'Grupos sanguíneos (ABO), receptores de toxinas bacterianas'],
+                ['Gangliósidos', 'Ceramida + oligosacárido + ácido siálico (carga negativa)', 'Sustancia gris (~6 % de sus lípidos de membrana), receptores celulares (toxina del cólera); GM1, GM2, GD1…'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Esfingolipidosis: falta una enzima lisosomal y el lípido se acumula ★',
+            data: {
+              headers: ['Enfermedad', 'Enzima deficiente', 'Lo que se acumula'],
+              rows: [
+                ['Niemann-Pick (A y B)', 'Esfingomielinasa ácida', 'Esfingomielina en hígado, bazo y cerebro'],
+                ['Gaucher', 'Glucocerebrosidasa (β-glucosidasa)', 'Glucosilceramida en macrófagos (células de Gaucher)'],
+                ['Fabry', 'α-galactosidasa A', 'Trihexosilceramida en vasos sanguíneos y riñones'],
+                ['Tay-Sachs', 'Hexosaminidasa A', 'Gangliósido GM2 en neuronas: neurodegeneración grave'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'mnemotecnia',
+            title: 'Error frecuente',
+            content: 'En estas enfermedades el lípido SÍ se forma pero NO se degrada: la enzima que falta es la que lo rompe en el lisosoma, por eso se acumula. (En clase se dijo que en Niemann-Pick «no se genera esfingomielina»; es al revés: se acumula.)',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-eicosanoides',
+    title: 'Eicosanoides: COX, lipoxigenasa y fármacos',
+    subtitle: 'Prostaglandinas, prostaciclinas, tromboxanos, leucotrienos y lipoxinas; vías del araquidonato y su farmacología básica',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '💊',
+    keyPoints: [
+      'EICOSANOIDES = moléculas de señalización local de 20 carbonos («eicosa») derivadas del ácido araquidónico u otros ácidos grasos poliinsaturados.',
+      'Fosfolípido de membrana → (fosfolipasa A₂) → ÁCIDO ARAQUIDÓNICO.',
+      'Vía COX (COX-1 y COX-2) → PGH₂ → PROSTAGLANDINAS, PROSTACICLINA (PGI₂) y TROMBOXANO (TXA₂) · vía LIPOXIGENASA → LEUCOTRIENOS (y lipoxinas).',
+      'TXA₂ (plaquetas) = vasoconstricción + agregación · PGI₂ (endotelio) = vasodilatación + inhibe la agregación.',
+      'Leucotrienos = inflamación, alergia y BRONCOCONSTRICCIÓN (asma).',
+      'Aspirina a dosis baja (75–150 mg) bloquea el TXA₂ plaquetario: ANTIAGREGANTE. COX-2 selectivos (celecoxib, etoricoxib) = antiinflamatorios con menos daño gástrico pero más riesgo de infarto. Pregunta de examen.',
+      'Cada familia tiene 4 series: 2 de ω-6, 1 de ω-3 (EPA) y 1 de ω-9 (ácido de Mead). El ω-6 no se convierte en ω-3.',
+    ],
+    sections: [
+      {
+        id: 'bei-1',
+        number: 1,
+        title: 'Qué son los eicosanoides',
+        keyTerms: ['eicosanoide', 'ácido araquidónico', 'series'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Eicosanoides',
+            content: 'Moléculas de señalización producidas por la oxidación enzimática (o no enzimática) del ácido araquidónico u otros ácidos grasos poliinsaturados de 20 carbonos. Actúan localmente sobre la inflamación, el dolor, la fiebre, la coagulación y el tono vascular. — Eicosanoides.',
+          },
+          {
+            type: 'list',
+            title: 'Familias y series (presentación)',
+            items: [
+              'Familias: prostaglandinas, tromboxanos, leucotrienos, lipoxinas, resolvinas y eoxinas.',
+              'Cada familia tiene al menos 4 series de metabolitos:',
+              '— 2 series de ω-6 (araquidónico y dihomo-γ-linolénico).',
+              '— 1 serie de ω-3 (eicosapentaenoico, EPA).',
+              '— 1 serie de ω-9 (ácido de Mead).',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Omega-6 vs omega-3',
+            content: 'El cuerpo no puede convertir ω-6 en ω-3. Por eso la proporción de ambos en los tejidos, y de los eicosanoides que derivan de ellos, depende directamente de lo que se come. Las series ω-6 y ω-3 tienen efectos fisiológicos y patológicos distintos.',
+          },
+        ],
+      },
+      {
+        id: 'bei-2',
+        number: 2,
+        title: 'Las dos vías del ácido araquidónico',
+        keyTerms: ['fosfolipasa A₂', 'ciclooxigenasa', 'lipoxigenasa', 'PGH₂'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'De la membrana al mediador',
+            steps: [
+              'Una lesión (por ejemplo, una cortada) activa la fosfolipasa A₂, que libera ácido araquidónico de los fosfolípidos de membrana.',
+              'Vía de la CICLOOXIGENASA (COX-1 y COX-2; «PGH₂ sintasa») → PGH₂ → prostaglandinas (PGD₂, PGE₂, PGF₂α), prostaciclina (PGI₂, en el endotelio) y tromboxano A₂ (TXA₂, en las plaquetas).',
+              'Vía de la LIPOXIGENASA (5-LOX) → HPETE → leucotrieno A₄ → LTB₄, o con glutatión → LTC₄ → LTD₄ → LTE₄.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'COX-1 vs COX-2',
+            left: { title: 'COX-1', items: ['Constitutiva («fisiológica»)', 'Protege la mucosa gástrica (prostaglandinas: moco y bicarbonato)', 'TXA₂ de las plaquetas', 'Función renal'] },
+            right: { title: 'COX-2', items: ['Inducible: aumenta en la inflamación', 'Inflamación, dolor y fiebre', 'También produce PGI₂ en el endotelio'] },
+          },
+        ],
+      },
+      {
+        id: 'bei-3',
+        number: 3,
+        title: 'Qué hace cada eicosanoide',
+        keyTerms: ['prostaglandina', 'tromboxano', 'prostaciclina', 'leucotrieno', 'lipoxina'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Familias y funciones ★',
+            data: {
+              headers: ['Eicosanoide', 'Estructura / origen', 'Función principal'],
+              rows: [
+                ['Prostaglandinas', 'Ácido prostanoico: anillo de 5 carbonos + cadena con COOH', 'Inflamación, dolor, fiebre, contracción uterina; protegen la mucosa gástrica. PGD₂: potente inductor del sueño'],
+                ['Tromboxano A₂', 'Plaquetas', 'Vasoconstricción y agregación plaquetaria'],
+                ['Prostaciclina (PGI₂)', 'Endotelio vascular', 'Vasodilatación e inhibe la agregación plaquetaria'],
+                ['Leucotrienos', 'Sin anillo, 4 dobles enlaces (vía lipoxigenasa)', 'Inflamación, alergia, broncoconstricción, permeabilidad vascular'],
+                ['Lipoxinas', 'Sin anillo, 4 dobles enlaces; las forman neutrófilos y plaquetas', 'Resolución de la inflamación'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Equilibrio en el vaso',
+            content: 'El tromboxano (plaqueta) y la prostaciclina (endotelio) son opuestos: uno agrega y contrae, el otro antiagrega y dilata. Su equilibrio mantiene la sangre fluida sin dejar de coagular cuando hay una lesión.',
+          },
+          {
+            type: 'note',
+            title: 'Prostaglandinas y AMPc',
+            content: 'Según la presentación, las prostaglandinas aumentan el AMPc en plaquetas, tiroides, cuerpo lúteo, hueso fetal, adenohipófisis y pulmón, y lo reducen en el túbulo renal y el tejido adiposo.',
+          },
+        ],
+      },
+      {
+        id: 'bei-4',
+        number: 4,
+        title: 'Farmacología de los eicosanoides',
+        keyTerms: ['aspirina', 'AINE', 'COX-2 selectivo', 'montelukast', 'misoprostol'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Fármacos que actúan sobre estas vías',
+            data: {
+              headers: ['Fármaco', 'Mecanismo', 'Uso'],
+              rows: [
+                ['Ácido acetilsalicílico (aspirina)', 'Inhibe la COX de forma irreversible; en la plaqueta (sin núcleo) bloquea el TXA₂ toda su vida', 'Dosis baja (75–150 mg; presentación de 100 mg): antiagregante. Dosis mayores: analgésico, antipirético y antiinflamatorio'],
+                ['AINE no selectivos (diclofenaco, naproxeno, ketorolaco)', 'Inhiben COX-1 y COX-2', 'Dolor e inflamación; dañan la mucosa gástrica'],
+                ['COX-2 selectivos (celecoxib, etoricoxib)', 'Inhiben solo la COX-2', 'Inflamación (artritis) con menos daño gástrico; más caros y con más riesgo de infarto'],
+                ['Montelukast', 'Antagonista del receptor de leucotrienos (CysLT₁)', 'Asma y rinitis alérgica: menos broncoconstricción'],
+                ['Misoprostol', 'Análogo sintético de la prostaglandina E₁', 'Protege la mucosa gástrica (moco y bicarbonato); también induce contracción uterina (uso obstétrico)'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Por qué los COX-2 dan infartos',
+            content: 'Al bloquear solo la COX-2 se reduce la prostaciclina del endotelio (antiagregante y vasodilatadora), pero el tromboxano de las plaquetas, que depende de la COX-1, sigue intacto. El equilibrio se inclina hacia la agregación y la vasoconstricción, lo que aumenta el riesgo de trombosis e infarto.',
+          },
+          {
+            type: 'note',
+            title: 'Correcciones a lo dicho en clase',
+            content: 'El montelukast no inhibe la lipoxigenasa: bloquea el receptor de leucotrienos (el que inhibe la 5-lipoxigenasa es el zileutón). El misoprostol no «estimula la COX-1»: es una prostaglandina sintética que sustituye a las que el AINE deja de producir. Y las dosis analgésica y antipirética de la aspirina son mayores que las dichas en clase (en adultos, ~500 mg–1 g por toma); solo el rango antiagregante (75–150 mg) es correcto.',
+          },
+        ],
+      },
+    ],
+  },
 ]
