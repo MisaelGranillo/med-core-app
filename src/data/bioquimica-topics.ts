@@ -2732,4 +2732,461 @@ export const bioquimicaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'bioquimica-lipidos-funcion-esteroides',
+    title: 'Funciones de los lípidos, colesterol y hormonas esteroideas',
+    subtitle: 'Clasificación funcional, omega 3/6/9, esfingolipidosis, colesterol, esteroidogénesis y hormonas que derivan de él',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🧬',
+    keyPoints: [
+      'Funciones: energía (9 kcal/g, reserva en el tejido adiposo), membrana, ácidos grasos esenciales, vitaminas liposolubles (A, D, E, K), hormonas, aislante térmico, protección de órganos, eicosanoides y señalización (DAG, esfingosina).',
+      'El exceso, sobre todo de saturados, se asocia a obesidad, resistencia a la insulina, infarto, evento vascular cerebral, embolias y trombosis.',
+      'ω-3 = antiinflamatorio, cardioprotector, retina y neuronas · ω-6 = proinflamatorio fisiológico (eicosanoides de serie 2 y 4) · ω-9 = no esencial (Δ9-desaturasa), baja el LDL.',
+      'Esfingolipidosis: Farber (ceramidasa) · Niemann-Pick (esfingomielinasa) · Krabbe (galactocerebrosidasa) · Gaucher (glucocerebrosidasa) · leucodistrofia metacromática (arilsulfatasa A) · Fabry (α-galactosidasa A) · Tay-Sachs (hexosaminidasa A) · Sandhoff (hexosaminidasa A y B).',
+      'COLESTEROL = núcleo esteroide de 4 anillos fusionados (A, B, C, D). Precursor de progestágenos, andrógenos, estrógenos, glucocorticoides, mineralocorticoides, vitamina D y sales biliares.',
+      'Esteroidogénesis: colesterol → mitocondria (proteína StAR) → PREGNENOLONA (desmolasa, P450scc) → retículo endoplásmico liso → hormona.',
+      'Aldosterona: reabsorbe Na⁺ y agua, excreta K⁺ y H⁺. Addison = hiponatremia, hiperpotasemia, hipotensión · Conn = hipertensión, hipopotasemia, alcalosis, renina baja.',
+    ],
+    sections: [
+      {
+        id: 'bfe-1',
+        number: 1,
+        title: 'Clasificación funcional de los lípidos',
+        keyTerms: ['lípidos simples', 'lípidos complejos', 'precursores y derivados'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Tres grupos (presentación)',
+            data: {
+              headers: ['Grupo', 'Composición', 'Ejemplos'],
+              rows: [
+                ['Simples', 'C, H y O: ácido graso + alcohol', 'Grasas (ésteres de glicerol, saturadas, sólidas: mantequilla, sebo), aceites (insaturados, líquidos: oliva, linaza, girasol, soya), ceras (ácido graso + alcohol monohidroxilado)'],
+                ['Complejos o de membrana', 'C, H, O, N, P y S: además glúcidos o aminas', 'Fosfolípidos (glicerofosfolípidos y esfingolípidos), glucolípidos, sulfolípidos y aminolípidos'],
+                ['Precursores y derivados', 'Grupo heterogéneo; muchos derivan de alcoholes cíclicos', 'Ácidos grasos, glicerol, esteroides, cuerpos cetónicos, vitaminas liposolubles, hormonas'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Lípidos de membrana (según Lehninger)',
+            items: [
+              'Glicerofosfolípidos: glicerol + 2 ácidos grasos + fosfato + alcohol (fosfatidilcolina, etanolamina, serina).',
+              'Esfingolípidos: fosfoesfingolípidos (esfingomielina) y glucoesfingolípidos (cerebrósidos y gangliósidos).',
+              'Esteroles: colesterol.',
+              'Los fosfolípidos son los lípidos más abundantes de la membrana (la presentación cita ~70 %); los dobles enlaces de sus colas separan las moléculas y dan fluidez.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'bfe-2',
+        number: 2,
+        title: 'Funciones y riesgos del consumo excesivo',
+        keyTerms: ['reserva energética', 'aislante térmico', 'señalización', 'segundos mensajeros'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Para qué sirven los lípidos',
+            items: [
+              'Fuente y reserva de energía: 9 kcal/g, almacenada como triglicéridos en el tejido adiposo; se usa cuando faltan glúcidos.',
+              'Membrana plasmática: forman la bicapa y le dan fluidez, permeabilidad y soporte.',
+              'Ácidos grasos esenciales (ω-3 y ω-6) para funciones metabólicas y de señalización.',
+              'Absorción y transporte de las vitaminas A, D, E y K.',
+              'Hormonas: el colesterol es precursor de las hormonas esteroideas y de las sales biliares.',
+              'Aislante térmico y protección de órganos (almohadillas lipídicas).',
+              'Mielina: función neurológica.',
+              'Eicosanoides (inflamación, coagulación) y segundos mensajeros (diacilglicerol, esfingosina).',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Por qué cuidar su consumo',
+            content: 'El consumo excesivo de ácidos grasos saturados se asocia a obesidad, resistencia a la insulina, evento vascular cerebral, infarto agudo de miocardio, embolias y trombosis. En la orientación al paciente se prefieren las grasas insaturadas, sobre todo el ω-3.',
+          },
+        ],
+      },
+      {
+        id: 'bfe-3',
+        number: 3,
+        title: 'Omega-3, 6 y 9: diferencias funcionales',
+        keyTerms: ['omega-3', 'omega-6', 'omega-9', 'proinflamatorio'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Comparación (presentación)',
+            data: {
+              headers: ['Rasgo', 'Omega-3 (ALA, EPA, DHA)', 'Omega-6 (linoleico, araquidónico)', 'Omega-9 (oleico)'],
+              rows: [
+                ['¿Esencial?', 'Sí', 'Sí', 'No: se sintetiza con la Δ9-desaturasa'],
+                ['Función', 'Antiinflamatorio (resolvinas, protectinas), cardioprotector (baja VLDL y triglicéridos), antiagregante, estructural en neuronas y retina', 'Proinflamatorio fisiológico (eicosanoides de serie 2 y 4), respuesta inmune y hemostasia, barrera cutánea', 'Cardioprotector: baja el LDL sin bajar el HDL; más estable frente a la oxidación; mejora la sensibilidad a la insulina'],
+                ['Problema', 'Deficiencia: retraso del neurodesarrollo, piel seca, más riesgo cardiovascular. Exceso: sangrado', 'Exceso relativo (ω-6:ω-3 > 10:1): inflamación crónica, aterosclerosis, trombosis', 'Deficiencia rara; exceso = exceso calórico'],
+                ['Fuentes', 'Pescados azules (salmón, sardina, atún, caballa), krill, microalgas; chía, linaza, nueces, canola', 'Aceites de soya, maíz, girasol, cártamo; carnes, pollo, huevo', 'Aceite de oliva, aguacate, almendras, avellanas, cacahuates'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Proinflamatorio no es «malo»',
+            content: 'Los eicosanoides del ω-6 son necesarios para defenderse, coagular y reparar tejidos. Lo que se asocia a enfermedad es el exceso relativo de ω-6 frente a ω-3, típico de la dieta occidental.',
+          },
+        ],
+      },
+      {
+        id: 'bfe-4',
+        number: 4,
+        title: 'Esfingolípidos: tabla completa de patologías',
+        keyTerms: ['Farber', 'Krabbe', 'leucodistrofia metacromática', 'Sandhoff'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Esfingolipidosis (enzima lisosomal deficiente) ★',
+            data: {
+              headers: ['Lípido que se acumula', 'Estructura', 'Enfermedad', 'Enzima deficiente'],
+              rows: [
+                ['Ceramida', 'Esfingosina + ácido graso (amida en C-2)', 'Farber', 'Ceramidasa ácida'],
+                ['Esfingomielina', 'Ceramida + fosfocolina', 'Niemann-Pick A y B', 'Esfingomielinasa ácida'],
+                ['Galactocerebrósido', 'Ceramida + galactosa', 'Krabbe (leucodistrofia de células globoides)', 'β-galactocerebrosidasa'],
+                ['Glucocerebrósido', 'Ceramida + glucosa', 'Gaucher', 'β-glucocerebrosidasa'],
+                ['Sulfátido', 'Ceramida + galactosa + sulfato', 'Leucodistrofia metacromática', 'Arilsulfatasa A'],
+                ['Globósidos', 'Ceramida + oligosacárido neutro', 'Fabry', 'α-galactosidasa A'],
+                ['Gangliósidos (GM2)', 'Ceramida + oligosacárido + ácido siálico (NANA)', 'Tay-Sachs · Sandhoff', 'β-hexosaminidasa A · hexosaminidasas A y B'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Dónde está cada uno',
+            content: 'Esfingomielina: mielina y balsas lipídicas. Galactocerebrósido y sulfátido: mielina del SNC y SNP. Glucocerebrósido: bazo, hígado y médula ósea. Globósidos: eritrocitos y endotelio (antígenos ABO). Gangliósidos: neuronas y sinapsis (~6 % de los lípidos de la sustancia gris; GM1 es el receptor de la toxina del cólera).',
+          },
+        ],
+      },
+      {
+        id: 'bfe-5',
+        number: 5,
+        title: 'Colesterol y esteroidogénesis',
+        keyTerms: ['colesterol', 'núcleo esteroide', 'StAR', 'pregnenolona', 'P450scc'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El colesterol tiene un núcleo esteroide de cuatro anillos fusionados (A, B y C de seis carbonos y D de cinco), un –OH en el C-3 y una cadena lateral. Es la base de todas las hormonas esteroideas, de la vitamina D y de las sales biliares. Conviene memorizar los cuatro anillos: se retoman en Bioquímica II.',
+          },
+          {
+            type: 'steps',
+            title: 'Esteroidogénesis (presentación)',
+            steps: [
+              'El colesterol del citoplasma entra a la mitocondria gracias a la proteína StAR.',
+              'En la mitocondria la desmolasa (P450scc, corta la cadena lateral) lo convierte en PREGNENOLONA.',
+              'La pregnenolona pasa al retículo endoplásmico liso, donde se modifica por deshidrogenación e hidroxilación enzimática.',
+              'La hormona terminada sale a la sangre (por ejemplo, la progesterona) o regresa a la mitocondria para el último paso y después sale.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Familias por número de carbonos',
+            data: {
+              headers: ['Esqueleto', 'Carbonos', 'Hormonas'],
+              rows: [
+                ['Pregnano', 'C21', 'Progesterona, cortisol, aldosterona'],
+                ['Androstano', 'C19', 'Testosterona, DHEA, androstenediona'],
+                ['Estrano', 'C18', 'Estradiol, estrona, estriol (anillo A aromático)'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'bfe-6',
+        number: 6,
+        title: 'Hormonas esteroideas: función, deficiencia y exceso',
+        keyTerms: ['estrógenos', 'progesterona', 'andrógenos', 'aldosterona', 'aromatasa'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Resumen (presentación)',
+            data: {
+              headers: ['Hormona', 'Síntesis', 'Funciones', 'Deficiencia', 'Exceso'],
+              rows: [
+                ['Estrógenos (estradiol)', 'Androstenediona/testosterona → aromatasa (CYP19A1); ovario, placenta, tejido adiposo', 'Caracteres sexuales femeninos, endometrio proliferativo, cierre epifisario, densidad ósea, ↑HDL ↓LDL', 'Amenorrea, osteoporosis, atrofia urogenital, bochornos, infertilidad', 'Hiperplasia endometrial, riesgo de cáncer de endometrio y mama, tromboembolismo, ginecomastia'],
+                ['Progesterona', 'Colesterol → pregnenolona → progesterona (3β-HSD); cuerpo lúteo, placenta', 'Endometrio secretor para la implantación, mantiene el embarazo, ↑temperatura basal, desarrollo mamario', 'Abortos recurrentes (insuficiencia lútea), sangrado disfuncional, ciclos anovulatorios', 'Sedación, retención de líquidos, estreñimiento'],
+                ['Andrógenos (testosterona, DHT)', 'Pregnenolona → DHEA → testosterona; → DHT por 5α-reductasa; células de Leydig, suprarrenal', 'Caracteres sexuales masculinos, espermatogénesis, anabolismo proteico, eritropoyesis, próstata (DHT)', 'Hipogonadismo, infertilidad, disfunción eréctil, anemia, pérdida ósea', 'Hirsutismo y virilización en mujeres, hiperplasia prostática (DHT), policitemia, cierre epifisario prematuro'],
+                ['Mineralocorticoides (aldosterona)', 'Progesterona → desoxicorticosterona → aldosterona (aldosterona sintasa, CYP11B2); zona glomerulosa', '↑Reabsorción de Na⁺ y agua y ↑excreción de K⁺ y H⁺ en el túbulo distal y colector; volumen y presión', 'Addison: hiponatremia, hiperpotasemia, hipotensión, acidosis metabólica hiperclorémica (tipo 4)', 'Conn: hipertensión resistente, hipopotasemia, alcalosis metabólica, renina suprimida'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Testosterona exógena',
+            content: 'La testosterona que se usa sin indicación (por ejemplo, en el gimnasio) frena por retroalimentación negativa la LH y la FSH: los testículos dejan de producir testosterona y espermatozoides. Resultado: atrofia testicular, infertilidad y, al suspenderla, hipogonadismo con baja de la libido.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-vitaminas-liposolubles-patologias',
+    title: 'Vitaminas liposolubles, eicosanoides y patologías de los ácidos grasos',
+    subtitle: 'Vitaminas A y E, los tres grupos de eicosanoides, leucotrienos y lipoxinas, patologías por mal metabolismo de ácidos grasos y síndrome de Reye',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🥕',
+    keyPoints: [
+      'Vitaminas LIPOSOLUBLES = A, D, E y K: se absorben con las grasas (micelas, sales biliares) y pueden acumularse.',
+      'VITAMINA A (retinol; provitamina: β-caroteno): visión (11-cis-retinal + opsina = rodopsina), expresión génica, epitelios e inmunidad. Deficiencia: ceguera nocturna → xeroftalmia → queratomalacia. Exceso: teratógena.',
+      'VITAMINA E (α-tocoferol): principal antioxidante de las membranas, protege los ácidos grasos poliinsaturados. Deficiencia: anemia hemolítica, ataxia, neuropatía. Dosis muy altas antagonizan la vitamina K.',
+      'Eicosanoides en 3 grupos: dihomo-γ-linolénico → serie 1 · araquidónico → serie 2 (prostanoides) y serie 4 (leucotrienos) · EPA → serie 3 y serie 5.',
+      'Leucotrienos C₄, D₄, E₄ = broncoconstricción potente · + B₄ = permeabilidad vascular, quimiotaxis de leucocitos, hipersensibilidad inmediata (asma).',
+      'SÍNDROME DE REYE = encefalopatía aguda + esteatosis hepática microvesicular por disfunción mitocondrial; asociado a salicilatos (aspirina) en niños con infecciones virales.',
+      'La aspirina acetila la COX de la plaqueta de forma IRREVERSIBLE: el efecto dura lo que vive la plaqueta (7–10 días).',
+    ],
+    sections: [
+      {
+        id: 'bvl-1',
+        number: 1,
+        title: 'Vitamina A',
+        keyTerms: ['retinol', 'rodopsina', 'ceguera nocturna', 'xeroftalmia', 'β-caroteno'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Vitamina A (presentación)',
+            data: {
+              headers: ['Aspecto', 'Detalle'],
+              rows: [
+                ['Formas', 'Retinoides: retinol, retinal, ácido retinoico. Provitamina: β-caroteno'],
+                ['Funciones', 'Visión: el 11-cis-retinal se une a la opsina y forma rodopsina (visión nocturna). Expresión génica: el ácido retinoico actúa sobre receptores nucleares (RAR/RXR) y regula la diferenciación de epitelios. Inmunidad e integridad epitelial'],
+                ['Deficiencia', 'Ceguera nocturna (nictalopía) → xeroftalmia (sequedad corneal y conjuntival, manchas de Bitot) → queratomalacia (ulceración corneal, ceguera irreversible); hiperqueratosis folicular e infecciones recurrentes'],
+                ['Exceso', 'Aguda: cefalea, papiledema, náusea, vómito. Crónica: hepatomegalia, cirrosis, alopecia, piel seca. Teratogenia: malformaciones graves si se consume en dosis altas en el embarazo'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Isotretinoína y embarazo',
+            content: 'Por la teratogenia de los retinoides, los derivados de la vitamina A que se usan contra el acné (isotretinoína) están contraindicados en el embarazo y exigen anticoncepción segura durante el tratamiento.',
+          },
+        ],
+      },
+      {
+        id: 'bvl-2',
+        number: 2,
+        title: 'Vitamina E',
+        keyTerms: ['α-tocoferol', 'antioxidante', 'peroxidación lipídica', 'anemia hemolítica'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Vitamina E (tocoferoles y tocotrienoles)',
+            data: {
+              headers: ['Aspecto', 'Detalle'],
+              rows: [
+                ['Estructura', 'Anillo cromanol + cadena isoprenoide hidrofóbica (principalmente α-tocoferol)'],
+                ['Función', 'Principal antioxidante liposoluble de las membranas: atrapa radicales libres y protege a los ácidos grasos poliinsaturados de la peroxidación; estabiliza la membrana del eritrocito y de tejidos con alto consumo de O₂ (músculo, sistema nervioso)'],
+                ['Fuentes', 'Aceites vegetales, frutos secos, semillas, aguacate, verduras de hoja verde'],
+                ['Deficiencia', 'Anemia hemolítica (sobre todo en prematuros), ataxia espinocerebelosa, neuropatía periférica, retinopatía pigmentaria, miopatía'],
+                ['Exceso', 'Es la liposoluble menos tóxica, pero a dosis muy altas (> 1000 mg/día) antagoniza la vitamina K y aumenta el sangrado, sobre todo con warfarina'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'bvl-3',
+        number: 3,
+        title: 'Los tres grupos de eicosanoides',
+        keyTerms: ['serie 1', 'serie 2', 'serie 3', 'leucotrienos', 'lipoxinas'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Origen de cada grupo (Harper)',
+            data: {
+              headers: ['Grupo', 'Precursor', 'Prostanoides (vía COX)', 'Leucotrienos (vía LOX)'],
+              rows: [
+                ['1', 'Dihomo-γ-linolénico (del linoleico, ω-6)', 'Serie 1 (PGE₁, TXA₁)', 'Serie 3'],
+                ['2', 'Araquidónico (ω-6), liberado por la fosfolipasa A₂', 'Serie 2 (PGE₂, PGI₂, TXA₂)', 'Serie 4 (LTB₄, LTC₄…) y lipoxinas'],
+                ['3', 'Eicosapentaenoico (EPA, del α-linolénico, ω-3)', 'Serie 3 (PGI₃, TXA₃)', 'Serie 5'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'El subíndice',
+            content: 'El número del subíndice indica cuántos dobles enlaces tiene la molécula, y con eso la serie a la que pertenece. La fosfolipasa A₂ se activa por angiotensina II, bradicinina, epinefrina y trombina.',
+          },
+          {
+            type: 'list',
+            title: 'Leucotrienos y lipoxinas (presentación)',
+            items: [
+              'La vía de la lipoxigenasa forma leucotrienos en leucocitos, mastocitos, plaquetas y macrófagos ante estímulos inmunitarios y no inmunitarios.',
+              'Leucotrienos C₄, D₄ y E₄: potentes constrictores del músculo liso bronquial.',
+              'C₄, D₄, E₄ + B₄: aumentan la permeabilidad vascular, atraen y activan leucocitos; reacciones inflamatorias y de hipersensibilidad inmediata (asma).',
+              'Lipoxinas: vasoactivas e inmunorreguladoras.',
+              'Prostaglandinas: dolor, fiebre, presión arterial, coagulación, inducción del parto, sueño y vigilia.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Aspirina antes de un procedimiento',
+            content: 'La aspirina acetila de forma irreversible la COX de la plaqueta, que no tiene núcleo para fabricar otra; el efecto antiagregante dura lo que vive la plaqueta (7–10 días). En clase se indicó suspenderla 7 días antes de una cirugía dental. Hoy la decisión se individualiza: en extracciones simples la dosis baja suele mantenerse con hemostasia local, y nunca se suspende por cuenta propia si el paciente la toma por un stent o un infarto previo.',
+          },
+        ],
+      },
+      {
+        id: 'bvl-4',
+        number: 4,
+        title: 'Patologías del metabolismo de los ácidos grasos esenciales',
+        keyTerms: ['deficiencia de ácidos grasos esenciales', 'Sjögren-Larsson', 'síndrome de Reye'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Metabolismo anormal de ácidos grasos esenciales (presentación)',
+            data: {
+              headers: ['Situación', 'Qué pasa'],
+              rows: [
+                ['Dieta insuficiente', 'Poco ω-3 y ω-6: dermatitis, alteraciones del crecimiento, de la piel, inmunes y neurológicas, retraso del desarrollo'],
+                ['Fibrosis quística, acrodermatitis enteropática, síndrome hepatorrenal', 'Mala absorción o metabolismo de los esenciales: piel seca y descamativa, alteraciones hepáticas y renales'],
+                ['Síndrome de Sjögren-Larsson', 'Deficiencia de la aldehído deshidrogenasa de ácidos grasos de cadena larga'],
+                ['Degeneración neonatal multisistémica', 'Déficit grave en neonatos: piel, sistema nervioso, retina, inmunidad y crecimiento'],
+                ['Enfermedad de Crohn', 'Inflamación intestinal crónica → malabsorción de lípidos y deficiencia de esenciales'],
+                ['Cirrosis y alcoholismo', 'Menor síntesis de fosfolípidos y lipoproteínas; hígado graso; daño de membranas'],
+                ['Síndrome de Reye', 'Encefalopatía aguda con esteatosis hepática microvesicular por disfunción mitocondrial (β-oxidación); asociado a salicilatos en niños con infecciones virales'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Síndrome de Reye',
+            content: 'En niños y adolescentes con influenza o varicela no se usa aspirina para la fiebre. La aspirina daña la mitocondria hepática: falla la β-oxidación, se acumula grasa en el hígado y sube el amonio, que causa edema cerebral. Para la fiebre en niños se usa paracetamol o ibuprofeno.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-proteinas-aminoacidos',
+    title: 'Proteínas: aminoácidos y enlace peptídico',
+    subtitle: 'Inicio de la Unidad IV: estructura del aminoácido, clasificación por grupo R, enlace peptídico y destino glucogénico o cetogénico',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🥚',
+    keyPoints: [
+      'PROTEÍNAS = biopolímeros de aminoácidos unidos por ENLACES PEPTÍDICOS; se sintetizan en los ribosomas del retículo endoplásmico a partir del ARN.',
+      'AMINOÁCIDO = carbono α unido a un grupo AMINO (–NH₂), un grupo CARBOXILO (–COOH), un H y un grupo R (cadena lateral).',
+      'El esqueleto proteico se forma normalmente con 20 aminoácidos; el grupo R define sus propiedades.',
+      'Por su R: no polares alifáticos · aromáticos · polares sin carga · con carga positiva (básicos) · con carga negativa (ácidos).',
+      'ENLACE PEPTÍDICO = –COOH de un aminoácido + –NH₂ del siguiente, con salida de una molécula de agua. La cadena tiene un extremo amino (N-terminal) y uno carboxilo (C-terminal).',
+      'Esqueleto carbonado: GLUCOGÉNICO (da glucosa), CETOGÉNICO (da cuerpos cetónicos: solo leucina y lisina) o ambos (isoleucina, fenilalanina, tirosina, triptófano, treonina).',
+    ],
+    sections: [
+      {
+        id: 'bpa-1',
+        number: 1,
+        title: 'Qué son las proteínas',
+        keyTerms: ['biopolímero', 'aminoácido', 'ribosoma'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Características (presentación)',
+            items: [
+              'Se sintetizan en el retículo endoplásmico rugoso (ribosomas) a partir del ARN.',
+              'Interaccionan con lípidos y carbohidratos (lipoproteínas, glucoproteínas).',
+              'Su esqueleto se forma normalmente con 20 aminoácidos.',
+              'Son biopolímeros: los aminoácidos se unen por enlaces peptídicos, quedan terminales carboxilo y amino, y en cada unión sale una molécula de agua.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Las mismas tres biomoléculas',
+            content: 'Glúcidos, lípidos y proteínas comparten C, H y O; las proteínas además tienen nitrógeno (el grupo amino) y, algunas, azufre (cisteína, metionina). Cada una tiene su enlace: glucosídico, éster y peptídico.',
+          },
+        ],
+      },
+      {
+        id: 'bpa-2',
+        number: 2,
+        title: 'Estructura del aminoácido',
+        keyTerms: ['carbono α', 'grupo amino', 'grupo carboxilo', 'grupo R'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Todos los aminoácidos de las proteínas comparten la misma base: un carbono central, el carbono α, unido a cuatro grupos distintos: un grupo amino (–NH₂), un grupo carboxilo (–COOH), un átomo de hidrógeno y un grupo R o cadena lateral. Lo único que cambia de un aminoácido a otro es el R.',
+          },
+          {
+            type: 'table',
+            title: 'Clasificación por el grupo R ★',
+            data: {
+              headers: ['Grupo', 'Aminoácidos', 'Rasgo'],
+              rows: [
+                ['No polares, alifáticos', 'Glicina, alanina, valina, leucina, isoleucina, metionina, prolina', 'Hidrofóbicos; tienden al interior de la proteína'],
+                ['Aromáticos', 'Fenilalanina, tirosina, triptófano', 'Anillo aromático; absorben luz UV'],
+                ['Polares sin carga', 'Serina, treonina, cisteína, asparagina, glutamina', 'Forman puentes de hidrógeno; la cisteína forma puentes disulfuro'],
+                ['Con carga positiva (básicos)', 'Lisina, arginina, histidina', 'R con grupo amino o imidazol'],
+                ['Con carga negativa (ácidos)', 'Aspartato, glutamato', 'R con un segundo grupo carboxilo'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'bpa-3',
+        number: 3,
+        title: 'Enlace peptídico',
+        keyTerms: ['enlace peptídico', 'N-terminal', 'C-terminal', 'deshidratación'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Enlace peptídico',
+            content: 'Enlace amida entre el grupo carboxilo de un aminoácido y el grupo amino del siguiente, con liberación de una molécula de agua (condensación). — Enlace peptídico.',
+          },
+          {
+            type: 'paragraph',
+            content:
+              'Al unir muchos aminoácidos queda una cadena con un esqueleto repetido (N–Cα–C) y las cadenas laterales hacia afuera. Un extremo conserva el amino libre (N-terminal) y el otro el carboxilo libre (C-terminal); la secuencia se lee de N a C.',
+          },
+          {
+            type: 'comparison',
+            title: 'Los enlaces de las biomoléculas',
+            left: { title: 'Glúcidos y lípidos', items: ['Glucosídico: entre monosacáridos', 'Éster: ácido graso + alcohol'] },
+            right: { title: 'Proteínas', items: ['Peptídico (amida): –COOH + –NH₂', 'También se libera agua al formarse'] },
+          },
+        ],
+      },
+      {
+        id: 'bpa-4',
+        number: 4,
+        title: 'Destino del esqueleto carbonado',
+        keyTerms: ['glucogénico', 'cetogénico', 'ciclo de Krebs'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Cuando un aminoácido se usa como combustible pierde su grupo amino y su esqueleto de carbonos entra al metabolismo central. Según en qué molécula entre, puede servir para fabricar glucosa, cuerpos cetónicos o ambos. Se estudia a fondo en Bioquímica II.',
+          },
+          {
+            type: 'table',
+            title: 'Glucogénicos vs cetogénicos (Lehninger, figura 20.11)',
+            data: {
+              headers: ['Tipo', 'Entran como', 'Aminoácidos'],
+              rows: [
+                ['Glucogénicos', 'Piruvato, oxalacetato, fumarato, succinil-CoA o α-cetoglutarato → glucosa', 'La mayoría: alanina, glicina, serina, cisteína, aspartato, asparagina, glutamato, glutamina, arginina, histidina, prolina, valina, metionina'],
+                ['Solo cetogénicos', 'Acetil-CoA o acetoacetato → cuerpos cetónicos', 'Leucina y lisina'],
+                ['Ambos', 'Por más de una vía', 'Isoleucina, fenilalanina, tirosina, triptófano, treonina'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'mnemotecnia',
+            title: 'Solo cetogénicos',
+            content: 'Leucina y Lisina son los únicos puramente cetogénicos: «las dos L».',
+          },
+        ],
+      },
+    ],
+  },
 ]
