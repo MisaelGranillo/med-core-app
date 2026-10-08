@@ -156,10 +156,10 @@ export const modules: Module[] = [
   {
     id: 'bioquimica-uad-s2',
     badge: 'UAD · Bioquímica I — Semana 2',
-    title: 'Bioquímica: lípidos e inicio de proteínas',
-    subtitle: 'Estructura de los lípidos, enlace éster, ácidos grasos (longitud, saturación, cis/trans), omega 3/6/9, esenciales, EPA/DHA, grasas y aceites; triglicéridos, fosfolípidos, esfingolípidos y eicosanoides; colesterol y hormonas esteroideas, vitaminas A y E; aminoácidos y enlace peptídico.',
+    title: 'Bioquímica: lípidos y proteínas',
+    subtitle: 'Estructura de los lípidos, enlace éster, ácidos grasos (longitud, saturación, cis/trans), omega 3/6/9, esenciales, EPA/DHA, grasas y aceites; triglicéridos, fosfolípidos, esfingolípidos y eicosanoides; colesterol y hormonas esteroideas, vitaminas A y E; aminoácidos (D/L, clasificación, derivados), enlace peptídico y plegamiento.',
     emoji: '🧈',
-    topicIds: ['bioquimica-lipidos-estructura', 'bioquimica-omega-grasas-aceites', 'bioquimica-trigliceridos-fosfolipidos', 'bioquimica-eicosanoides', 'bioquimica-lipidos-funcion-esteroides', 'bioquimica-vitaminas-liposolubles-patologias', 'bioquimica-proteinas-aminoacidos'],
+    topicIds: ['bioquimica-lipidos-estructura', 'bioquimica-omega-grasas-aceites', 'bioquimica-trigliceridos-fosfolipidos', 'bioquimica-eicosanoides', 'bioquimica-lipidos-funcion-esteroides', 'bioquimica-vitaminas-liposolubles-patologias', 'bioquimica-proteinas-aminoacidos', 'bioquimica-aminoacidos-clasificacion', 'bioquimica-plegamiento-proteico'],
   },
   {
     id: 'histologia-uad-s1',

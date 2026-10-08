@@ -3189,4 +3189,340 @@ export const bioquimicaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'bioquimica-aminoacidos-clasificacion',
+    title: 'Aminoácidos: configuración D/L, clasificación y derivados',
+    subtitle: 'L vs D, seis grupos por cadena lateral, cisteína vs metionina, esenciales, glucogénicos/cetogénicos, moléculas derivadas y péptidos',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🧩',
+    keyPoints: [
+      'Las proteínas humanas se fabrican con L-α-aminoácidos. Los D-aminoácidos existen en la pared bacteriana (D-Ala, D-Glu), en antibióticos peptídicos y en el SNC (D-serina, coagonista del receptor NMDA).',
+      'Péptidos con D-aminoácidos resisten a las peptidasas (que solo reconocen enlaces entre L-aminoácidos): vida media más larga, útil en fármacos.',
+      'Seis grupos por R: alifáticos · hidroxilo o azufre · cíclicos (prolina) · aromáticos · básicos · ácidos o amidas.',
+      'CISTEÍNA (–SH) forma puentes disulfuro · METIONINA (–S–CH₃) es esencial, no forma puentes disulfuro e inicia la síntesis de proteínas.',
+      'Esenciales (presentación): arginina*, histidina, isoleucina, leucina, lisina, metionina, fenilalanina, treonina, triptófano, valina.',
+      'Solo cetogénicos: leucina y lisina · glucogénicos y cetogénicos: isoleucina, fenilalanina, tirosina, triptófano.',
+      'Péptidos: di (2, carnosina) · tri (3, glutatión) · tetra (4, encefalinas) · oligo (2–10, oxitocina y vasopresina de 9 aa) · poli (> 10).',
+    ],
+    sections: [
+      {
+        id: 'bac-1',
+        number: 1,
+        title: 'Configuración L y D',
+        keyTerms: ['L-aminoácido', 'D-aminoácido', 'quiralidad', 'péptidos D'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El carbono α tiene cuatro grupos distintos (amino, carboxilo, H y R), así que es quiral: cada aminoácido existe en dos formas, imágenes en espejo, llamadas L y D. La glicina es la excepción porque su R es otro H. Los ribosomas solo usan L-aminoácidos.',
+          },
+          {
+            type: 'table',
+            title: 'Funciones de los D-aminoácidos (presentación)',
+            data: {
+              headers: ['Sistema', 'Papel', 'Ejemplo'],
+              rows: [
+                ['Pared bacteriana', 'Resistencia frente a las proteasas del huésped, que solo rompen enlaces entre L-aminoácidos', 'D-alanina y D-glutamato en el peptidoglucano (Gram + y Gram −)'],
+                ['Antibióticos peptídicos', 'Síntesis no ribosomal en hongos y bacterias', 'Gramicidina y valinomicina'],
+                ['Sistema nervioso central', 'Neuromodulación; se forman a partir de L-aminoácidos por racemasas', 'D-serina: coagonista del receptor NMDA · D-aspartato: desarrollo neural y endocrino'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Péptidos D en farmacología',
+            content: 'Los péptidos terapéuticos normales (de L-aminoácidos) se degradan rápido por las peptidasas del plasma y el hígado. Sustituir algunos por D-aminoácidos (o diseñar péptidos «retro-inversos») alarga mucho su vida media. Con la misma idea se diseñan péptidos antimicrobianos que no se inactivan en el organismo.',
+          },
+        ],
+      },
+      {
+        id: 'bac-2',
+        number: 2,
+        title: 'Clasificación por cadena lateral',
+        keyTerms: ['alifáticos', 'aromáticos', 'básicos', 'ácidos', 'prolina'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Seis grupos (presentación) ★',
+            data: {
+              headers: ['Grupo', 'Rasgo del R', 'Aminoácidos'],
+              rows: [
+                ['1. Alifáticos', 'Cadena hidrocarbonada no polar', 'Glicina, alanina, valina, leucina, isoleucina'],
+                ['2. Hidroxilo o azufre', 'Grupo –OH o –S', 'Serina, treonina (–OH); cisteína, metionina (S)'],
+                ['3. Cíclicos', 'La cadena lateral cierra un anillo con el grupo amino', 'Prolina'],
+                ['4. Aromáticos', 'Anillo aromático', 'Fenilalanina, tirosina, triptófano'],
+                ['5. Básicos', 'Carga positiva a pH fisiológico', 'Lisina, arginina, histidina'],
+                ['6. Ácidos o amidas', 'Carga negativa o grupo amida', 'Aspartato, glutamato; asparagina, glutamina (amidas)'],
+              ],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'Los dos aminoácidos con azufre',
+            left: { title: 'Cisteína (Cys, C)', items: ['Grupo tiol (–SH), reactivo', 'Dos cisteínas forman un puente disulfuro (–S–S–) que estabiliza proteínas', 'El tiol puede ionizarse (pKR ≈ 8.3)', 'No esencial'] },
+            right: { title: 'Metionina (Met, M)', items: ['Tioéter (–S–CH₃), menos reactivo', 'No forma puentes disulfuro', 'ESENCIAL', 'Inicia la síntesis de proteínas (metionina iniciadora, codón AUG)'] },
+          },
+        ],
+      },
+      {
+        id: 'bac-3',
+        number: 3,
+        title: 'Esenciales y destino del esqueleto carbonado',
+        keyTerms: ['esenciales', 'glucogénicos', 'cetogénicos'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Según la presentación',
+            left: { title: 'Esenciales', items: ['Arginina*, histidina, isoleucina, leucina, lisina, metionina, fenilalanina, treonina, triptófano, valina', '*La arginina es condicionalmente esencial: hace falta en la dieta durante el crecimiento o el estrés'] },
+            right: { title: 'No esenciales', items: ['Alanina, asparagina, aspartato, cisteína, glutamato, glutamina, glicina, prolina, serina, tirosina', 'La tirosina se forma a partir de la fenilalanina'] },
+          },
+          {
+            type: 'table',
+            title: 'Qué pasa con el esqueleto al quitar el grupo amino ★',
+            data: {
+              headers: ['Destino', 'Aminoácidos'],
+              rows: [
+                ['Solo glucogénicos (dan glucosa)', 'Alanina, arginina, asparagina, aspartato, cisteína, glutamato, glutamina, glicina, histidina, metionina, prolina, serina, treonina, valina'],
+                ['Glucogénicos y cetogénicos', 'Isoleucina, fenilalanina, tirosina, triptófano'],
+                ['Solo cetogénicos (dan acetil-CoA/acetoacetato)', 'Leucina y lisina'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Ojo con la tabla de la diapositiva',
+            content: 'La tabla de la presentación pone al triptófano en la columna de solo cetogénicos, pero el diagrama de la misma diapositiva (y los textos) lo muestran entrando también como piruvato: es glucogénico y cetogénico. Los únicos puramente cetogénicos son leucina y lisina. La treonina aparece como glucogénica en esta clase y como mixta en Lehninger; ambas clasificaciones se usan.',
+          },
+        ],
+      },
+      {
+        id: 'bac-4',
+        number: 4,
+        title: 'Moléculas que derivan de los aminoácidos',
+        keyTerms: ['serotonina', 'catecolaminas', 'hemo', 'óxido nítrico', 'GABA'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Funciones biosintéticas (presentación) ★',
+            data: {
+              headers: ['Aminoácido', 'Produce'],
+              rows: [
+                ['Arginina', 'Urea, creatina, óxido nítrico'],
+                ['Glutamato', 'GABA (con vitamina B₆), glutatión (con cisteína y glicina)'],
+                ['Glicina', 'Porfirinas → grupo hemo (con B₆); purinas'],
+                ['Aspartato y glutamina', 'Purinas y pirimidinas'],
+                ['Histidina', 'Histamina (con B₆)'],
+                ['Triptófano', 'Serotonina → melatonina (con B₆ y BH₄); niacina (NAD⁺/NADP⁺)'],
+                ['Fenilalanina → tirosina', 'Hormonas tiroideas (T₄, T₃), melanina, DOPA → dopamina → noradrenalina → adrenalina'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Ejemplos de clase',
+            content: 'La alanina se convierte en piruvato y entra al ciclo de Krebs; la glicina participa en la síntesis del grupo hemo; el triptófano, con vitamina B₆, da serotonina y melatonina.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Suplementos de aminoácidos',
+            content: 'Los suplementos de aminoácidos que se venden sin control no están libres de riesgo. En pacientes que sí los necesitan (por ejemplo, desnutrición por cáncer) se indican con un equipo interdisciplinario y con vigilancia.',
+          },
+        ],
+      },
+      {
+        id: 'bac-5',
+        number: 5,
+        title: 'Péptidos por número de aminoácidos',
+        keyTerms: ['dipéptido', 'tripéptido', 'oligopéptido', 'polipéptido', 'glutatión'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Clasificación (presentación)',
+            data: {
+              headers: ['Tipo', 'Aminoácidos', 'Ejemplo'],
+              rows: [
+                ['Dipéptido', '2', 'Carnosina (β-alanina + histidina)'],
+                ['Tripéptido', '3', 'Glutatión (γ-glutamato + cisteína + glicina)'],
+                ['Tetrapéptido', '4', 'Encefalinas (péptidos opioides endógenos)'],
+                ['Oligopéptido', '2 a ~10', 'Oxitocina y vasopresina (9 aminoácidos)'],
+                ['Polipéptido', '> 10', 'Cadena lineal o proteína funcional'],
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-plegamiento-proteico',
+    title: 'Enlace peptídico y plegamiento: estructura primaria y secundaria',
+    subtitle: 'Enlace peptídico plano, cómo se estudian las proteínas, ciclo de vida, estructura primaria, α-hélice y β-lámina, globinas y desnaturalización',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🌀',
+    keyPoints: [
+      'ENLACE PEPTÍDICO: condensación –COOH + –NH₂ con salida de H₂O. Por resonancia tiene carácter de doble enlace parcial: es RÍGIDO y PLANO.',
+      'La secuencia se numera desde el extremo amino libre (N-terminal) hacia el carboxilo (C-terminal).',
+      'Lo que diferencia a las proteínas es el NÚMERO, TIPO y SECUENCIA de sus aminoácidos.',
+      'El plegamiento es secuencial: primaria → secundaria → terciaria → cuaternaria; cada nivel depende del anterior. Estructura → plegamiento → función.',
+      'PRIMARIA = secuencia lineal unida por enlaces peptídicos (covalentes).',
+      'SECUNDARIA = α-hélice y β-lámina plegada, estabilizadas por PUENTES DE HIDRÓGENO. La α-hélice gira a la derecha con ~3.6 aminoácidos por vuelta.',
+      'Mioglobina y hemoglobina: ~70 % α-hélice, residuos hidrofóbicos hacia el interior y grupo HEMO como grupo prostético.',
+    ],
+    sections: [
+      {
+        id: 'bpp-1',
+        number: 1,
+        title: 'El enlace peptídico',
+        keyTerms: ['condensación', 'resonancia', 'plano', 'N-terminal'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'De dos aminoácidos a un dipéptido',
+            steps: [
+              'El –OH del carboxilo de un aminoácido y un H del amino del siguiente salen como agua (condensación o deshidratación).',
+              'El C del carbonilo queda unido al N: enlace peptídico (–CO–NH–).',
+              'La cadena crece de forma lineal; la unidad repetitiva es N–Cα–C con las cadenas R hacia afuera.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content:
+              'Los electrones se reparten entre el C=O y el C–N (resonancia), por lo que el enlace peptídico tiene carácter de doble enlace parcial: no gira libremente, es rígido y plano. Los giros de la cadena ocurren en los enlaces del carbono α, y eso limita las formas que puede adoptar la proteína.',
+          },
+        ],
+      },
+      {
+        id: 'bpp-2',
+        number: 2,
+        title: 'Cómo se estudian las proteínas',
+        keyTerms: ['Edman', 'electroforesis', 'cristalografía', 'ninhidrina'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Para conocer qué aminoácidos tiene una proteína, cuántos y en qué orden, se hidroliza. En la secuenciación de Edman, el fenilisotiocianato (PITC) se une al aminoácido del extremo amino, se separa por escisión ácida y se identifica; el proceso se repite con el siguiente.',
+          },
+          {
+            type: 'table',
+            title: 'Técnicas (presentación)',
+            data: {
+              headers: ['Técnica', 'Qué determina'],
+              rows: [
+                ['Cromatografía', 'Separa aminoácidos por carga, tamaño y afinidad'],
+                ['Electroforesis', 'Separa por carga'],
+                ['Cristalografía de rayos X', 'Configuración tridimensional'],
+                ['Espectroscopia de fluorescencia y dicroísmo circular', 'Tipo de plegamiento'],
+                ['Resonancia magnética nuclear', 'Estructura en solución'],
+                ['Espectrometría de masas', 'Relación masa/carga de los iones'],
+                ['Reacción con ninhidrina', 'Color con los aminoácidos que tienen grupo amino libre'],
+                ['Secuenciación y proteólisis', 'Orden de los aminoácidos'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'bpp-3',
+        number: 3,
+        title: 'Ciclo de vida de una proteína',
+        keyTerms: ['ubiquitinación', 'modificación covalente', 'proteasoma'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Diez etapas (figura de Harper en la presentación)',
+            steps: [
+              'Síntesis en el ribosoma a partir del ARNm.',
+              'Plegamiento.',
+              'Procesamiento (por ejemplo, formación de puentes disulfuro).',
+              'Modificación covalente (por ejemplo, acilación con un ácido graso).',
+              'Translocación a su destino (por ejemplo, la membrana).',
+              'Activación.',
+              'Catálisis o función.',
+              '«Envejecimiento»: oxidación, desamidación, desnaturalización.',
+              'Ubiquitinación: se marca para destruirse.',
+              'Degradación; sus aminoácidos regresan al pool para reutilizarse.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'bpp-4',
+        number: 4,
+        title: 'Estructura primaria y secundaria',
+        keyTerms: ['estructura primaria', 'α-hélice', 'β-lámina', 'puentes de hidrógeno'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Los dos primeros niveles',
+            left: { title: 'Primaria', items: ['Secuencia lineal de aminoácidos', 'Enlaces peptídicos (covalentes)', 'La presentación cita 50–300 aminoácidos (algunas > 1000)', 'Las cadenas R sobresalen y luego interactúan con otros aminoácidos'] },
+            right: { title: 'Secundaria', items: ['Conformación tridimensional local', 'Estabilizada por puentes de hidrógeno del esqueleto (C=O ··· H–N)', 'Dos formas: α-hélice y β-lámina plegada', 'Forma los motivos y dominios de la proteína'] },
+          },
+          {
+            type: 'list',
+            title: 'α-hélice',
+            items: [
+              'Espiral que gira hacia la derecha (dextrógira).',
+              '~3.6 aminoácidos por vuelta (la presentación redondea a 3.5); avanza 0.54 nm por vuelta.',
+              'Cada giro depende de los aminoácidos que la forman; puentes de hidrógeno entre vueltas.',
+              'Las cadenas R quedan hacia el exterior: deciden si el segmento es hidrofóbico o hidrofílico.',
+              'Segmentos hidrofóbicos atraviesan la membrana (interactúan con las colas de los fosfolípidos); las proteínas solubles tienen hélices ricas en residuos polares hacia el agua.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Correcciones a la presentación',
+            content: 'La diapositiva dice que la secundaria forma «codones»; los codones son tripletes del ARNm, no partes de la proteína: lo correcto es motivos o dominios. Habla de «β-hélice», que es β-lámina plegada. Y la clasificación omite la estructura cuaternaria, que sí existe (varias subunidades, como en la hemoglobina).',
+          },
+        ],
+      },
+      {
+        id: 'bpp-5',
+        number: 5,
+        title: 'Globinas: mioglobina y hemoglobina',
+        keyTerms: ['mioglobina', 'hemoglobina', 'grupo hemo', 'histidina proximal'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La mioglobina y las subunidades de la hemoglobina son ~70 % α-hélice. Sus aminoácidos hidrofóbicos quedan hacia el interior y los hidrofílicos hacia el exterior. En el centro está el grupo hemo, su grupo prostético: un anillo plano e hidrófobo con un Fe²⁺ que une el O₂.',
+          },
+          {
+            type: 'comparison',
+            title: 'Las dos histidinas del hemo',
+            left: { title: 'His F8 (proximal, His 93)', items: ['En la hélice F', 'Se une directamente al hierro del hemo'] },
+            right: { title: 'His E7 (distal, His 64)', items: ['En la hélice E', 'Forma un puente de hidrógeno con el O₂ unido'] },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Anemia falciforme',
+            content: 'Un solo cambio en la estructura primaria de la cadena β de la hemoglobina (glutamato → valina en la posición 6) crea una zona hidrofóbica. Las moléculas desoxigenadas se pegan entre sí y deforman al eritrocito en hoz: cambio de secuencia → cambio de plegamiento → cambio de función → enfermedad.',
+          },
+        ],
+      },
+      {
+        id: 'bpp-6',
+        number: 6,
+        title: 'Desnaturalización y alergias',
+        keyTerms: ['desnaturalización', 'pH', 'temperatura', 'reactividad cruzada'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La temperatura y el pH rompen los enlaces débiles que mantienen el plegamiento (puentes de hidrógeno, interacciones entre cadenas R). La proteína pierde su forma y su función, aunque la secuencia (primaria) quede intacta: eso es desnaturalización. El pH cambia la carga de los grupos amino, carboxilo y R, y con ello sus interacciones. Por eso el pH extracelular se mantiene entre 7.35 y 7.45.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Alergias alimentarias',
+            content: 'Algunas proteínas alergénicas son termolábiles: cocer la fruta (por ejemplo, la manzana) las desnaturaliza y el paciente la tolera. Otras resisten el calor (cacahuate, leche en muchos casos). La alergia al látex se cruza con el plátano (síndrome látex-fruta) porque comparten proteínas de secuencia parecida que el sistema inmune reconoce igual.',
+          },
+        ],
+      },
+    ],
+  },
 ]
