@@ -3525,4 +3525,384 @@ export const bioquimicaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'bioquimica-estructura-terciaria-cuaternaria',
+    title: 'Plegamiento: β-lámina, estructura terciaria y cuaternaria',
+    subtitle: 'Hemoglobina vs mioglobina, β-lámina paralela y antiparalela, interacciones de la terciaria, dominios, cuaternaria, desnaturalización y AlphaFold',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🧶',
+    keyPoints: [
+      'MIOGLOBINA = una cadena con un hemo (músculo) · HEMOGLOBINA = tetrámero (2α + 2β), un hemo por subunidad. Al unirse el O₂ cambia la conformación de los aminoácidos cercanos al hemo: estado T (tenso) → R (relajado).',
+      'β-LÁMINA = zigzag; varias cadenas lado a lado unidas por puentes de hidrógeno ENTRE cadenas. PARALELA (mismo sentido) o ANTIPARALELA (sentidos opuestos, como la fibroína de la seda).',
+      'Que se forme hélice o lámina depende de la secuencia y de los ángulos φ (phi) y ψ (psi); hay segmentos largos sin estructura secundaria definida.',
+      'TERCIARIA = plegamiento 3D completo de una cadena, determinado por los grupos R. Enlaces covalentes (disulfuro, amida entre cadenas laterales) y no covalentes (electrostáticos, puentes de H, hidrofóbicos, Van der Waals).',
+      'DOMINIOS = regiones que se pliegan por separado y funcionan como unidades autónomas; su asociación da la terciaria (por ejemplo, los 3 dominios de la albúmina).',
+      'CUATERNARIA = varias cadenas polipeptídicas plegadas que se asocian (hemoglobina, colágeno, miosina, tubulina α/β).',
+      'Desnaturalizan: temperatura, pH, disolventes (alcohol, cetonas, cloroformo), detergentes, sales concentradas, urea y guanidina.',
+    ],
+    sections: [
+      {
+        id: 'btc-1',
+        number: 1,
+        title: 'Mioglobina y hemoglobina',
+        keyTerms: ['mioglobina', 'hemoglobina', 'tetrámero', 'estado T', 'estado R'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos globinas ricas en α-hélice',
+            left: { title: 'Mioglobina', items: ['Una sola cadena polipeptídica', 'Un grupo hemo', 'Músculo: une y guarda O₂ para la fibra muscular', 'Estructura terciaria'] },
+            right: { title: 'Hemoglobina', items: ['Cuatro cadenas: 2 α y 2 β (HbA)', 'Un hemo en cada subunidad: hasta 4 O₂', 'Eritrocito: transporta O₂ en la sangre', 'Estructura cuaternaria'] },
+          },
+          {
+            type: 'paragraph',
+            content:
+              'Cuando el O₂ se une al hierro del hemo, el hierro entra al plano del anillo y arrastra a la histidina F8 y a la hélice F. Ese movimiento cambia la conformación de los aminoácidos vecinos: la hemoglobina pasa del estado T (tenso, menor afinidad por O₂) al estado R (relajado, mayor afinidad). Así una subunidad «avisa» a las demás.',
+          },
+          {
+            type: 'note',
+            title: 'Actividades pendientes',
+            content: 'La curva de saturación de mioglobina vs hemoglobina, el efecto Bohr, el 2,3-bisfosfoglicerato y la hemoglobina fetal se dejaron como actividades de investigación (4, 5 y 6) y se cargarán cuando se expliquen en clase.',
+          },
+        ],
+      },
+      {
+        id: 'btc-2',
+        number: 2,
+        title: 'β-lámina plegada',
+        keyTerms: ['β-lámina', 'paralela', 'antiparalela', 'ángulos φ y ψ'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Características (presentación)',
+            items: [
+              'Forma de zigzag o lámina plegada; más estable, ordenada y compacta por su forma laminar.',
+              'Varias cadenas (o segmentos de la misma cadena) se colocan lado a lado.',
+              'Paralela si van en la misma dirección (N→C); antiparalela si van en dirección opuesta.',
+              'Los puentes de hidrógeno se forman ENTRE cadenas vecinas, no dentro de la misma cadena (a diferencia de la α-hélice).',
+              'La rigidez del enlace peptídico y la apolaridad de los radicales mantienen la forma.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Qué aminoácidos favorecen cada forma (gráfica de la presentación)',
+            data: {
+              headers: ['Forma', 'Aminoácidos que la favorecen'],
+              rows: [
+                ['α-hélice', 'Glutamato, metionina, alanina, leucina, lisina'],
+                ['β-lámina', 'Fenilalanina, triptófano, tirosina, isoleucina, valina, treonina, cisteína'],
+                ['Giros β (curvas)', 'Glicina, prolina, asparagina, aspartato, serina'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Dos precisiones',
+            content: 'La presentación dice que en la β-lámina «prevalecen glicina y prolina», pero su propia gráfica muestra que esos dos favorecen los giros, no las láminas (la prolina rompe hélices y láminas). Y el cabello y las uñas son de α-queratina; la β-queratina está en plumas, escamas y garras de aves y reptiles.',
+          },
+        ],
+      },
+      {
+        id: 'btc-3',
+        number: 3,
+        title: 'Estructura terciaria y dominios',
+        keyTerms: ['estructura terciaria', 'puente disulfuro', 'interacciones hidrofóbicas', 'dominio'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La estructura terciaria es el plegamiento tridimensional completo de una cadena polipeptídica. La deciden las interacciones entre grupos R, aunque estén lejos en la secuencia, y es la que determina la función.',
+          },
+          {
+            type: 'table',
+            title: 'Enlaces que la estabilizan ★',
+            data: {
+              headers: ['Tipo', 'Enlace', 'Entre'],
+              rows: [
+                ['Covalente', 'Puente disulfuro (–S–S–)', 'Dos cisteínas'],
+                ['Covalente', 'Enlace amida (isopeptídico)', 'Cadena lateral de lisina y la de glutamina o aspartato'],
+                ['No covalente', 'Electrostático (puente salino)', 'Cadenas ionizadas de carga opuesta (Asp⁻/Glu⁻ con Lys⁺/Arg⁺)'],
+                ['No covalente', 'Puente de hidrógeno', 'Aminoácidos polares'],
+                ['No covalente', 'Interacción hidrofóbica', 'Cadenas apolares, que se esconden del agua'],
+                ['No covalente', 'Van der Waals / dipolo-dipolo', 'Átomos muy cercanos'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Dominios',
+            items: [
+              'Regiones diferenciadas dentro de la estructura terciaria: un nivel intermedio entre la secundaria y la terciaria.',
+              'Se pliegan por separado mientras se sintetiza la cadena.',
+              'Funcionan como unidades autónomas de plegamiento y de desnaturalización.',
+              'Cada uno puede tener una función: unión a ADN, sitio catalítico, unión a ligandos, regulación.',
+              'Ejemplo: la albúmina sérica humana tiene 3 dominios (I, II y III) con 7 sitios de unión a ácidos grasos.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Enlaces débiles = reciclaje',
+            content: 'Como la mayoría de las interacciones son débiles, las proteínas se pueden desplegar y degradar con facilidad, y sus aminoácidos se reutilizan para fabricar proteínas nuevas.',
+          },
+        ],
+      },
+      {
+        id: 'btc-4',
+        number: 4,
+        title: 'Estructura cuaternaria',
+        keyTerms: ['cuaternaria', 'subunidades', 'tubulina', 'aspartato transcarbamilasa'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Cuando dos o más cadenas polipeptídicas ya plegadas (con su terciaria) se asocian, forman una estructura cuaternaria. Las unen los mismos enlaces: puentes disulfuro, atracción electrostática, puentes de hidrógeno e interacciones hidrofóbicas. Permite que la proteína interactúe con otras y cumpla funciones nuevas.',
+          },
+          {
+            type: 'table',
+            title: 'Cómo pueden ser las subunidades (presentación)',
+            data: {
+              headers: ['Subunidades', 'Ejemplo'],
+              rows: [
+                ['Iguales', 'Fosfoglucoisomerasa'],
+                ['Parecidas', 'Lactato deshidrogenasa'],
+                ['Distintas pero con la misma función', 'Hemoglobina (α y β transportan O₂)'],
+                ['Distintas en estructura y función, juntas forman una unidad', 'Aspartato transcarbamilasa (subunidades catalíticas y reguladoras)'],
+                ['Proteína + proteína para formar dímeros', 'Tubulina α y β (microtúbulos)'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Proteínas fibrosas con varias hebras',
+            items: [
+              'Miosina y tropomiosina: dos α-hélices enrolladas entre sí (superhélice levógira).',
+              'α-queratina (cabello) y fibrinógeno: hélices α enrolladas en una fibra.',
+              'Colágeno: tres hebras helicoidales levógiras que forman una superhélice dextrógira.',
+              'Fibroína de la seda: varias hebras en lámina β antiparalela.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'btc-5',
+        number: 5,
+        title: 'Desnaturalización y predicción de estructuras',
+        keyTerms: ['desnaturalización', 'urea', 'renaturalización', 'AlphaFold', 'CASP'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Factores que desnaturalizan (presentación)',
+            items: [
+              'Temperatura y pH.',
+              'Disolventes orgánicos: alcohol, cetonas, cloroformo.',
+              'Detergentes.',
+              'Sales en alta concentración.',
+              'Compuestos polares: urea y guanidina.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content:
+              'En el experimento clásico con la ribonucleasa, la urea y un agente reductor despliegan la proteína y rompen sus puentes disulfuro: queda inactiva. Al retirarlos, la proteína vuelve a plegarse sola, se reforman los disulfuros correctos y recupera su actividad. La secuencia contiene la información del plegamiento.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Productos de limpieza',
+            content: 'Mezclar productos de limpieza (por ejemplo, cloro con amoniaco o con ácidos) libera gases tóxicos, y muchos de estos productos desnaturalizan las proteínas de la piel: causan dermatitis por contacto e irritación de vías respiratorias.',
+          },
+          {
+            type: 'note',
+            title: 'Predecir la forma desde la secuencia',
+            content: 'CASP es la competencia internacional que evalúa métodos para predecir la estructura de las proteínas. AlphaFold 2 (DeepMind, Google) logró predicciones casi tan exactas como la cristalografía y aceleró el estudio de secuencias, dominios y posibles funciones. Una predicción orienta, pero se confirma de forma experimental.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Por qué importa el plegamiento',
+            content: 'Conocerlo permite entender la función de cada proteína y estudiar enfermedades genéticas: una secuencia anormal se pliega mal y pierde sus propiedades biológicas.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-proteinas-clasificacion-funcion',
+    title: 'Proteínas fibrosas y globulares, colágeno, clasificación y funciones',
+    subtitle: 'Fibrosas vs globulares, colágeno y sus patologías, anemia falciforme, holoproteínas y heteroproteínas, funciones y albúmina',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🦴',
+    keyPoints: [
+      'FIBROSAS = estructurales, insolubles, un tipo de estructura secundaria repetida (colágeno, elastina, α-queratina) · GLOBULARES = solubles, varias estructuras secundarias, enzimas y reguladoras.',
+      'COLÁGENO = tres cadenas levógiras que forman una superhélice dextrógira (tropocolágeno); repetición Gly-X-Y, rico en glicina, prolina/hidroxiprolina y alanina.',
+      'Colágeno I: tendón, hueso y piel · II: cartílago · III: vasos, piel del recién nacido y pared intestinal.',
+      'Patologías: escorbuto (falta vitamina C) · osteogénesis imperfecta (mutación de glicina en colágeno I) · Ehlers-Danlos (piel hiperextensible, articulaciones laxas) · latirismo (inhibición de la lisil oxidasa) · anemia falciforme (Glu6Val).',
+      'HOLOPROTEÍNAS (simples) = solo aminoácidos · HETEROPROTEÍNAS (conjugadas) = proteína + grupo prostético: glucoproteínas, lipoproteínas, nucleoproteínas, cromoproteínas.',
+      'Funciones: estructura, catálisis, transporte, almacenamiento, defensa, regulación, movimiento.',
+      'ALBÚMINA: ~60 % de las proteínas del plasma, principal responsable de la presión oncótica y transportadora. Al 25 % = 25 g/100 mL → un frasco de 50 mL tiene 12.5 g.',
+    ],
+    sections: [
+      {
+        id: 'bpc-1',
+        number: 1,
+        title: 'Fibrosas vs globulares',
+        keyTerms: ['proteínas fibrosas', 'proteínas globulares', 'solubilidad'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos formas de proteína',
+            left: { title: 'Fibrosas', items: ['Un tipo de estructura secundaria que se repite', 'Función estructural', 'Insolubles en agua', 'Colágeno, elastina, α-queratinas, fibroína'] },
+            right: { title: 'Globulares', items: ['Varias estructuras secundarias plegadas en una esfera', 'Enzimas y proteínas reguladoras o transportadoras', 'Solubles en agua', 'Hemoglobina, mioglobina, albúmina, anticuerpos'] },
+          },
+        ],
+      },
+      {
+        id: 'bpc-2',
+        number: 2,
+        title: 'Colágeno',
+        keyTerms: ['colágeno', 'tropocolágeno', 'triple hélice', 'glicina', 'hidroxiprolina'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Estructura (presentación)',
+            items: [
+              'Está en el tejido conjuntivo: tendones, cartílago, matriz orgánica del hueso, córnea.',
+              'Cada cadena es una hélice levógira, más extendida que la α-hélice (~3.3 residuos por vuelta).',
+              'Tres cadenas se enrollan en una superhélice dextrógira: el tropocolágeno.',
+              'Secuencia repetida Gly-X-Y (X suele ser prolina e Y hidroxiprolina): la glicina, cada tercer residuo, es el único aminoácido lo bastante pequeño para caber en el centro de la triple hélice.',
+              'Según la tabla de la presentación: ~33 % glicina, ~22 % prolina e hidroxiprolina, ~12 % alanina.',
+              'Las moléculas se alinean escalonadas y forman fibras con estrías cada 64 nm.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Tipos principales',
+            data: {
+              headers: ['Tipo', 'Cadenas', 'Dónde'],
+              rows: [
+                ['I', '[α1(I)]₂ α2(I)', 'Tendones, hueso y piel'],
+                ['II', '[α1(II)]₃', 'Cartílago'],
+                ['III', '[α1(III)]₃', 'Vasos, piel del recién nacido y pared intestinal'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Precisión',
+            content: 'La presentación describe la hélice del colágeno como «más compacta» que la α-hélice: en realidad es más extendida (cada residuo avanza ~0.29 nm, contra 0.15 nm en la α-hélice). La resistencia viene de enrollar tres cadenas juntas.',
+          },
+        ],
+      },
+      {
+        id: 'bpc-3',
+        number: 3,
+        title: 'Patologías por estructura o plegamiento anormal',
+        keyTerms: ['escorbuto', 'osteogénesis imperfecta', 'Ehlers-Danlos', 'latirismo', 'HbS'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Proteína alterada = función perdida ★',
+            data: {
+              headers: ['Patología', 'Qué falla', 'Manifestaciones (presentación)'],
+              rows: [
+                ['Escorbuto', 'Falta de vitamina C, cofactor de la prolil y lisil hidroxilasa: colágeno poco estable', 'Fragilidad capilar, encías sangrantes, mala cicatrización'],
+                ['Osteogénesis imperfecta', 'Mutación que sustituye glicina (por ejemplo por cisteína) en el colágeno tipo I', 'Huesos frágiles, deformación del esqueleto'],
+                ['Síndrome de Ehlers-Danlos', 'Defectos de la síntesis o el procesamiento del colágeno (según el tipo)', 'Piel hiperextensible, articulaciones hipermóviles, rotura de arterias y vejiga'],
+                ['Latirismo', 'Inhibición de la lisil oxidasa: faltan los enlaces cruzados del colágeno y la elastina', 'Deformación de la columna, luxaciones, desmineralización ósea, hemorragias'],
+                ['Anemia falciforme', 'Glutamato → valina en la posición 6 de la cadena β (HbS)', 'Eritrocitos en hoz, hemólisis, crisis vasooclusivas'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Electroforesis de hemoglobina',
+            content: 'Al cambiar glutamato (carga −) por valina (sin carga), la HbS tiene menos carga negativa y en la electroforesis migra más lento hacia el polo positivo que la HbA. Así se distingue: sano (solo A), rasgo falciforme (S y A) y anemia falciforme (solo S). La HbS desoxigenada polimeriza en fibras que deforman al eritrocito.',
+          },
+        ],
+      },
+      {
+        id: 'bpc-4',
+        number: 4,
+        title: 'Clasificación de las proteínas',
+        keyTerms: ['holoproteínas', 'heteroproteínas', 'grupo prostético', 'lipoproteínas'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Las proteínas se clasifican por su composición química, su estructura, su solubilidad y su sensibilidad. La división principal es por composición: simples u holoproteínas (solo aminoácidos) y conjugadas o heteroproteínas (proteína + grupo prostético no proteico).',
+          },
+          {
+            type: 'table',
+            title: 'Holoproteínas (simples)',
+            data: {
+              headers: ['Tipo', 'Ejemplos (presentación)'],
+              rows: [
+                ['Globulares', 'Prolaminas (maíz, trigo, cebada), gluteninas (trigo, arroz), albúminas (lactoalbúmina, ovoalbúmina), hormonas (insulina, prolactina, tirotropina), enzimas (hidrolasas, ligasas, liasas)'],
+                ['Fibrosas', 'Colágenos, queratinas (pelo, uña, pluma), elastinas (tendones, vasos), fibroínas (seda, araña, insectos)'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Heteroproteínas (conjugadas)',
+            data: {
+              headers: ['Tipo', 'Grupo prostético', 'Ejemplos'],
+              rows: [
+                ['Glucoproteínas', 'Glúcidos', 'Ribonucleasas, mucoproteínas, anticuerpos, hormona luteinizante'],
+                ['Lipoproteínas', 'Lípidos', 'LDL, HDL, VLDL'],
+                ['Nucleoproteínas', 'Ácidos nucleicos', 'Histonas, protamina, telomerasa'],
+                ['Cromoproteínas', 'Grupo con color (hemo)', 'Hemoglobina, citocromos'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'bpc-5',
+        number: 5,
+        title: 'Funciones de las proteínas y albúmina',
+        keyTerms: ['enzimas', 'transporte', 'anticuerpos', 'albúmina', 'presión oncótica'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Funciones (presentación)',
+            data: {
+              headers: ['Función', 'Ejemplos'],
+              rows: [
+                ['Estructura y soporte; forma celular', 'Colágeno, queratina; citoesqueleto'],
+                ['Catálisis (enzimas)', 'Amilasa, tripsina, lactasa'],
+                ['Transporte', 'Hemoglobina, GLUT-4, albúmina, bomba sodio-potasio'],
+                ['Almacenamiento de nutrientes', 'Caseína, ovoalbúmina, ferritina'],
+                ['Defensa inmunológica', 'Anticuerpos, citocinas'],
+                ['Regulación de procesos biológicos', 'Hormonas, proteínas que regulan ADN, ARN y metabolismo'],
+                ['Contracción y masa muscular', 'Actina, miosina'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Albúmina',
+            items: [
+              'La proteína más abundante del plasma: ~60 % de las proteínas plasmáticas.',
+              'Principal responsable de la presión oncótica (ver «Presión osmótica, oncótica…»): de los ~25 mmHg de presión oncótica del plasma, la mayor parte se debe a ella.',
+              'Transportadora: ácidos grasos, bilirrubina, hormonas, calcio y fármacos (por ejemplo, fenitoína).',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Cuánta albúmina tiene un frasco',
+            content: 'Una solución al 25 % (p/v) contiene 25 g por cada 100 mL. Un frasco de 50 mL tiene 25 × 50/100 = 12.5 g de albúmina. Existen presentaciones al 5 % (iso-oncótica) y al 20–25 % (hiperoncótica); antes de indicarla se verifica qué hay disponible en el hospital.',
+          },
+          {
+            type: 'note',
+            title: '«60 % del volumen plasmático»',
+            content: 'La diapositiva dice que la albúmina es el «60 % del volumen plasmático». Lo correcto es el 60 % de las PROTEÍNAS del plasma; el plasma es ~92 % agua.',
+          },
+        ],
+      },
+    ],
+  },
 ]

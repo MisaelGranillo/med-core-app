@@ -243,7 +243,7 @@ export const uadMedicina: Plan = {
           code: 'BQ01002',
           hasLab: true,
           tags: ['bioquimica'],
-          topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones', 'bioquimica-presion-osmotica-oncotica', 'bioquimica-equilibrio-acido-base', 'bioquimica-glucidos', 'bioquimica-glucidos-clasificacion', 'bioquimica-polisacaridos-fibra', 'bioquimica-glucidos-funcion', 'bioquimica-lipidos-estructura', 'bioquimica-omega-grasas-aceites', 'bioquimica-trigliceridos-fosfolipidos', 'bioquimica-eicosanoides', 'bioquimica-lipidos-funcion-esteroides', 'bioquimica-vitaminas-liposolubles-patologias', 'bioquimica-proteinas-aminoacidos', 'bioquimica-aminoacidos-clasificacion', 'bioquimica-plegamiento-proteico'],
+          topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones', 'bioquimica-presion-osmotica-oncotica', 'bioquimica-equilibrio-acido-base', 'bioquimica-glucidos', 'bioquimica-glucidos-clasificacion', 'bioquimica-polisacaridos-fibra', 'bioquimica-glucidos-funcion', 'bioquimica-lipidos-estructura', 'bioquimica-omega-grasas-aceites', 'bioquimica-trigliceridos-fosfolipidos', 'bioquimica-eicosanoides', 'bioquimica-lipidos-funcion-esteroides', 'bioquimica-vitaminas-liposolubles-patologias', 'bioquimica-proteinas-aminoacidos', 'bioquimica-aminoacidos-clasificacion', 'bioquimica-plegamiento-proteico', 'bioquimica-estructura-terciaria-cuaternaria', 'bioquimica-proteinas-clasificacion-funcion'],
           content: {
             area: 'Ciencias Básicas',
             credits: 11,
@@ -281,12 +281,13 @@ export const uadMedicina: Plan = {
               {
                 number: 2,
                 title: 'Lípidos y proteínas',
-                topicIds: ['bioquimica-lipidos-estructura', 'bioquimica-omega-grasas-aceites', 'bioquimica-trigliceridos-fosfolipidos', 'bioquimica-eicosanoides', 'bioquimica-lipidos-funcion-esteroides', 'bioquimica-vitaminas-liposolubles-patologias', 'bioquimica-proteinas-aminoacidos', 'bioquimica-aminoacidos-clasificacion', 'bioquimica-plegamiento-proteico'],
+                topicIds: ['bioquimica-lipidos-estructura', 'bioquimica-omega-grasas-aceites', 'bioquimica-trigliceridos-fosfolipidos', 'bioquimica-eicosanoides', 'bioquimica-lipidos-funcion-esteroides', 'bioquimica-vitaminas-liposolubles-patologias', 'bioquimica-proteinas-aminoacidos', 'bioquimica-aminoacidos-clasificacion', 'bioquimica-plegamiento-proteico', 'bioquimica-estructura-terciaria-cuaternaria', 'bioquimica-proteinas-clasificacion-funcion'],
                 temas: [
                   'Clase 1 (impartida): inicio de la Unidad III — lípidos: enlace éster, ácido graso anfipático (micelas, bicapa), clasificación de los lípidos, longitud de cadena, saturados vs insaturados, cis vs trans, omega 3/6/9 y ácidos grasos esenciales, EPA/DHA, eicosanoides, grasas vs aceites y efecto del calor',
                   'Clase 2 (impartida): triglicéridos (esterificación, reserva anhidra, simple vs mixto), grasas y aceites, glicerofosfolípidos, esfingolípidos (ceramida, esfingomielina, cerebrósidos, globósidos, gangliósidos) y esfingolipidosis; eicosanoides (vías COX y lipoxigenasa) y su farmacología básica',
                   'Clase 3 (impartida): cierre de lípidos — clasificación y funciones, omega 3/6/9, esfingolipidosis, colesterol y esteroidogénesis, hormonas esteroideas, vitaminas A y E, grupos de eicosanoides y patologías de los ácidos grasos (síndrome de Reye); inicio de la Unidad IV — aminoácidos, grupo R, enlace peptídico, glucogénicos y cetogénicos',
                   'Clase 4 (impartida): aminoácidos — configuración D/L, clasificación por cadena lateral, cisteína vs metionina, esenciales, glucogénicos y cetogénicos, moléculas derivadas, péptidos; enlace peptídico, técnicas de estudio, ciclo de vida de la proteína, estructura primaria y secundaria (α-hélice, β-lámina), globinas y desnaturalización',
+                  'Clase 5 (impartida): β-lámina, estructura terciaria (interacciones, dominios) y cuaternaria, mioglobina y hemoglobina (estados T y R), desnaturalización y AlphaFold; proteínas fibrosas y globulares, colágeno y sus patologías, anemia falciforme, clasificación (holo y heteroproteínas), funciones y albúmina',
                   '3. Lípidos: estructura general, clasificación y función',
                   '4. Proteínas: estructura general, clasificación y función',
                 ],
@@ -296,6 +297,7 @@ export const uadMedicina: Plan = {
                   { title: 'Bioquímica I — Semana 2, Clase 3 (Unidad 3)', file: 'Bioquimica I - Semana 2 - Clase 3 - Unidad 3.pdf', nota: 'Funciones de los lípidos, esteroides, vitaminas liposolubles.' },
                   { title: 'Bioquímica I — Semana 2, Clase 3 (Unidad 4)', file: 'Bioquimica I - Semana 2 - Clase 3 - Unidad 4.pdf', nota: 'Proteínas: aminoácidos y enlace peptídico.' },
                   { title: 'Bioquímica I — Semana 2, Clase 4 (Unidad 4)', file: 'Bioquimica I - Semana 2 - Clase 4 - Unidad 4.pdf', nota: 'Aminoácidos, péptidos y plegamiento primario y secundario.' },
+                  { title: 'Bioquímica I — Semana 2, Clase 5 (Unidad 4)', file: 'Bioquimica I - Semana 2 - Clase 5 - Unidad 4.pdf', nota: 'Plegamiento terciario y cuaternario, colágeno, clasificación y funciones de las proteínas.' },
                 ],
               },
               {
@@ -338,6 +340,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 2 · Clase 3 — Funciones de los lípidos, esteroides y vitaminas', file: 'Bioquimica I - Semana 2 - Clase 3 - Unidad 3.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 3 — Proteínas: aminoácidos', file: 'Bioquimica I - Semana 2 - Clase 3 - Unidad 4.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 4 — Aminoácidos y plegamiento proteico', file: 'Bioquimica I - Semana 2 - Clase 4 - Unidad 4.pdf', kind: 'Clase' },
+              { title: 'Semana 2 · Clase 5 — Plegamiento, colágeno y funciones de las proteínas', file: 'Bioquimica I - Semana 2 - Clase 5 - Unidad 4.pdf', kind: 'Clase' },
               { title: 'Programa Académico — Bioquímica I y su Laboratorio', file: 'Bioquimica I - Programa.pdf', kind: 'Programa' },
               { title: 'Planeación — Bioquímica I (2025-1)', file: 'Bioquimica I - Planeacion.pdf', kind: 'Programa' },
             ],
