@@ -165,9 +165,9 @@ export const modules: Module[] = [
     id: 'bioquimica-uad-s3',
     badge: 'UAD · Bioquímica I — Semana 3',
     title: 'Bioquímica: enzimas y metabolismo del nitrógeno',
-    subtitle: 'Apoenzima y holoenzima, aminoácidos del sitio activo, cofactores y coenzimas (vitaminas B); transaminación, desaminación y ciclo de la urea.',
+    subtitle: 'Apoenzima y holoenzima, aminoácidos del sitio activo, cofactores y coenzimas (vitaminas B); transaminación, desaminación y ciclo de la urea; minerales, citocromo P450, clasificación de las enzimas y biomarcadores.',
     emoji: '✂️',
-    topicIds: ['bioquimica-enzimas-estructura', 'bioquimica-nitrogeno-ciclo-urea'],
+    topicIds: ['bioquimica-enzimas-estructura', 'bioquimica-nitrogeno-ciclo-urea', 'bioquimica-coenzimas-minerales-p450', 'bioquimica-enzimas-mecanismo-clinica'],
   },
   {
     id: 'histologia-uad-s1',

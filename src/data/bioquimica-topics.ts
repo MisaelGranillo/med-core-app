@@ -4238,4 +4238,381 @@ export const bioquimicaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'bioquimica-coenzimas-minerales-p450',
+    title: 'Coenzimas, minerales y citocromo P450',
+    subtitle: 'Holoenzima vs holoproteína, funciones del cofactor, vitaminas y sus deficiencias, minerales como cofactores y metabolismo de fármacos por CYP450',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '💊',
+    keyPoints: [
+      'HOLOENZIMA = apoenzima + cofactor (enzima activa) · HOLOPROTEÍNA = proteína hecha solo de aminoácidos (colágeno, albúmina). No es lo mismo holoenzima, apoenzima, cofactor, sitio de fijación y sitio activo.',
+      'Funciones del cofactor: 1) participar en la catálisis, 2) servir de puente enzima–sustrato, 3) cambiar la conformación de la enzima a su forma activa.',
+      'Cada enzima tiene sus sustratos; cada sustrato puede ser transformado por varias enzimas.',
+      'Deficiencias: B1 → beriberi, Wernicke-Korsakoff · B2 → ariboflavinosis · B3 → pelagra (dermatitis, diarrea, demencia) · B6 → anemia sideroblástica, neuropatía · B9 → anemia megaloblástica, defectos del tubo neural · B12 → anemia perniciosa, degeneración medular.',
+      'Minerales: Zn (anhidrasa carbónica, carboxipeptidasas) · Mg (estabiliza el ATP; cinasas) · Fe (hemo, citocromos) · Cu (citocromo c oxidasa; Menkes/Wilson) · Mn (arginasa, piruvato carboxilasa, SOD mitocondrial) · Se (glutatión peroxidasa; Keshan).',
+      'CITOCROMO P450 = principal grupo de enzimas de fase I del metabolismo de fármacos (oxida e hidroxila). CYP3A4 participa en ~50 % de los fármacos.',
+      'Inhibidores o inductores del CYP y las variantes genéticas (metabolizadores rápidos o lentos) cambian la concentración de los medicamentos: interacciones en la polifarmacia.',
+    ],
+    sections: [
+      {
+        id: 'bcm-1',
+        number: 1,
+        title: 'Términos que no son lo mismo',
+        keyTerms: ['holoenzima', 'apoenzima', 'holoproteína', 'cosustrato'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Definiciones correctas ★',
+            data: {
+              headers: ['Término', 'Qué es'],
+              rows: [
+                ['Apoenzima', 'Parte proteica de una enzima que necesita cofactor; sola no es óptimamente activa'],
+                ['Cofactor', 'Parte no proteica necesaria para la actividad: un ion metálico o una molécula orgánica'],
+                ['Coenzima (cosustrato)', 'Cofactor orgánico, casi siempre derivado de vitaminas, que transporta grupos químicos entre enzimas (CoA, NAD, ácido lipoico)'],
+                ['Holoenzima', 'Apoenzima + cofactor: la enzima completa y activa. Una misma enzima puede necesitar dos cofactores distintos'],
+                ['Holoproteína', 'Proteína formada solo por aminoácidos, sin grupo prostético (colágeno, miosina, queratina, albúmina, actina, histonas)'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Ojo con la diapositiva 22',
+            content: 'La tabla de la diapositiva 22 tiene las definiciones cruzadas (a la holoenzima le pone «parte no proteica… un simple ion» y a la coenzima «complejo de proteína y cofactor»); parece un ejercicio para relacionar columnas. Las definiciones correctas son las de la tabla de arriba. Además, no todas las enzimas necesitan cofactor: muchas actúan solo con sus aminoácidos.',
+          },
+          {
+            type: 'list',
+            title: 'Para qué sirve el cofactor (presentación)',
+            items: [
+              'Llevar a cabo la catálisis.',
+              'Funcionar como puente de unión entre la enzima y el sustrato.',
+              'Introducir un cambio de conformación que moldea a la enzima en su forma activa.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Ideas de examen',
+            content: 'Cada enzima tiene un sustrato (o un grupo pequeño de sustratos) del que es específica, y cada sustrato puede ser transformado por varias enzimas a lo largo de una ruta metabólica. La estructura de las enzimas determina la individualidad de cada especie (la termita tiene una enzima para digerir la celulosa de la madera) y la presencia de enfermedades (galactosemia).',
+          },
+        ],
+      },
+      {
+        id: 'bcm-2',
+        number: 2,
+        title: 'Coenzimas de vitaminas y sus deficiencias',
+        keyTerms: ['beriberi', 'pelagra', 'ariboflavinosis', 'anemia megaloblástica'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Vitamina → coenzima → enfermedad (presentación) ★',
+            data: {
+              headers: ['Vitamina', 'Coenzima', 'Función', 'Deficiencia'],
+              rows: [
+                ['B1 tiamina', 'Pirofosfato de tiamina (TPP)', 'Descarboxilación oxidativa de α-cetoácidos (piruvato DH, α-cetoglutarato DH) y transcetolasa', 'Beriberi (húmedo: insuficiencia cardiaca; seco: neuropatía) y síndrome de Wernicke-Korsakoff'],
+                ['B2 riboflavina', 'FAD / FMN', 'Aceptan o donan 2 H⁺ + 2 e⁻ en flavoproteínas (succinato DH, cadena respiratoria)', 'Ariboflavinosis: queilitis angular, estomatitis, glositis, vascularización corneal'],
+                ['B3 niacina', 'NAD⁺/NADH', 'Transporta electrones en el catabolismo (glucólisis, Krebs, β-oxidación)', 'Pelagra: dermatitis, diarrea, demencia (las 3 D)'],
+                ['B3 niacina', 'NADP⁺/NADPH', 'Reductor en la síntesis de lípidos y colesterol; defensa antioxidante (glutatión)', 'Sensibilidad al estrés oxidativo; hemólisis en la deficiencia de G6PD'],
+                ['B5 ácido pantoténico', 'Coenzima A', 'Transfiere grupos acilo (acetil-CoA, succinil-CoA)', 'Rara: síndrome del «pie ardiente», parestesias, astenia'],
+                ['B6 piridoxina', 'Piridoxal fosfato (PLP)', 'Transaminación, descarboxilación de aminoácidos, síntesis de neurotransmisores y hemo', 'Anemia sideroblástica, convulsiones (menos GABA), neuropatía periférica'],
+                ['B7 biotina', 'Biotina', 'Transfiere grupos carboxilo (piruvato carboxilasa, acetil-CoA carboxilasa)', 'Dermatitis descamativa, alopecia, ataxia, acidosis láctica'],
+                ['B9 ácido fólico', 'Tetrahidrofolato (THF)', 'Transfiere unidades de un carbono: purinas, timidina, ADN', 'Anemia megaloblástica; defectos del tubo neural (espina bífida)'],
+                ['B12 cobalamina', 'Metilcobalamina / 5′-desoxiadenosilcobalamina', 'Remetila homocisteína a metionina; metilmalonil-CoA → succinil-CoA', 'Anemia perniciosa (megaloblástica) y degeneración combinada subaguda de la médula'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Otras coenzimas',
+            content: 'El ácido lipoico participa en la descarboxilación oxidativa del piruvato. La vitamina K es el cofactor de la γ-glutamil carboxilasa que activa los factores de coagulación. En la presentación la biotina aparece como B8; en la nomenclatura más usada es B7.',
+          },
+        ],
+      },
+      {
+        id: 'bcm-3',
+        number: 3,
+        title: 'Minerales como cofactores',
+        keyTerms: ['zinc', 'magnesio', 'cobre', 'manganeso', 'selenio'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Cofactores inorgánicos (presentación) ★',
+            data: {
+              headers: ['Mineral', 'Función', 'Alteración'],
+              rows: [
+                ['Hierro (Fe²⁺/Fe³⁺)', 'Transporte de O₂ (hemoglobina, mioglobina); electrones en citocromos y centros Fe-S', 'Anemia ferropénica (deficiencia); hemocromatosis (sobrecarga)'],
+                ['Magnesio (Mg²⁺)', 'Estabiliza el ATP (Mg²⁺-ATP); cofactor de cinasas y polimerasas', 'Hipomagnesemia: tetania, arritmias, debilidad, convulsiones'],
+                ['Zinc (Zn²⁺)', 'Dedos de zinc; anhidrasa carbónica, carboxipeptidasas, SOD1; almacenamiento de insulina', 'Acrodermatitis enteropática, retraso del crecimiento, hipogonadismo, mala cicatrización, inmunodeficiencia'],
+                ['Cobre (Cu⁺/Cu²⁺)', 'Citocromo c oxidasa, ceruloplasmina, dopamina β-hidroxilasa, SOD', 'Enfermedad de Menkes (no se absorbe); enfermedad de Wilson (se acumula)'],
+                ['Manganeso (Mn²⁺)', 'Piruvato carboxilasa, arginasa, SOD mitocondrial (Mn-SOD)', 'Raro: ataxia, alteraciones del metabolismo de glúcidos y lípidos, anomalías esqueléticas'],
+                ['Selenio (Se)', 'Selenocisteína de la glutatión peroxidasa y de las yodotironina desyodasas', 'Enfermedad de Keshan (miocardiopatía); enfermedad de Kashin-Beck (osteoartropatía)'],
+                ['Potasio (K⁺)', 'Activa la piruvato cinasa', '—'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Quelación con lácteos',
+            content: 'El calcio de los lácteos (y el hierro, el magnesio o los antiácidos) se une a las tetraciclinas y a las quinolonas y forma complejos que no se absorben. Por eso estos antibióticos se toman separados de la leche y de los suplementos minerales.',
+          },
+        ],
+      },
+      {
+        id: 'bcm-4',
+        number: 4,
+        title: 'Citocromo P450 y metabolismo de fármacos',
+        keyTerms: ['citocromo P450', 'CYP3A4', 'CYP2C19', 'inducción', 'inhibición'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El citocromo P450 (CYP) es una familia de hemoproteínas, sobre todo del retículo endoplásmico del hepatocito. Son las principales enzimas de fase I del metabolismo de xenobióticos (frente a reductasas, peroxidasas, hidrolasas y flavín-monooxigenasas). Su ciclo catalítico usa el hierro del hemo, O₂ y electrones para introducir un –OH en el sustrato (monooxigenasa): el producto queda más polar y listo para conjugarse y eliminarse. También sintetizan hormonas esteroideas, ácidos biliares y metabolitos de la vitamina D.',
+          },
+          {
+            type: 'table',
+            title: 'Principales P450 del hígado humano (Donato, presentación)',
+            data: {
+              headers: ['CYP', 'Fármacos que metaboliza (%)', 'Rasgo'],
+              rows: [
+                ['3A4', '~50 %', 'La más abundante (~30 % del P450 hepático); inducible y polimórfica'],
+                ['2D6', '~25 %', 'Muy polimórfica (metabolizadores lentos y ultrarrápidos)'],
+                ['2C9', '~11 %', 'Polimórfica (warfarina, AINE)'],
+                ['2C19', '~6 %', 'Polimórfica (inhibidores de la bomba de protones, clopidogrel)'],
+                ['1A2 · 2E1', '~4 % cada una', 'Inducibles (tabaco; alcohol)'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Polifarmacia e interacciones',
+            content: 'Un paciente con claritromicina, amlodipino, un inhibidor de la bomba de protones, una estatina y una benzodiacepina tiene varios fármacos que compiten por el mismo CYP3A4. Un INHIBIDOR (claritromicina, jugo de toronja) sube la concentración de los demás y su toxicidad (miopatía por estatina, sedación); un INDUCTOR (rifampicina, carbamazepina) la baja y falla el tratamiento. La genética también cuenta: según la presentación, ~31 % de una muestra de Tlaxcala son metabolizadores lentos de CYP2C19, contra 6–8 % en Guadalajara y Monterrey.',
+          },
+          {
+            type: 'note',
+            title: 'Precisiones',
+            content: 'En clase se dijo que CYP3A4 metaboliza el 50 % de «alimentos y medicamentos»; el dato de la tabla es el 50 % de los fármacos. Los «acetiladores rápidos y lentos» son otra enzima (N-acetiltransferasa 2, fase II); lo que muestra la diapositiva es el fenotipo de CYP2C19 (metabolizadores rápidos y lentos).',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-enzimas-mecanismo-clinica',
+    title: 'Enzimas: mecanismo, clasificación y uso clínico',
+    subtitle: 'Complejo enzima-sustrato, especificidad, llave-cerradura vs ajuste inducido, nomenclatura, las 6 clases, isoenzimas y biomarcadores',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🔬',
+    keyPoints: [
+      'La actividad catalítica depende de la integridad de la conformación nativa y de la secuencia de aminoácidos. Actúan por los grupos R, por su cofactor o por ambos.',
+      'E + S ⇌ [ES] ⇌ E + P. El complejo enzima–sustrato se forma cuando los radicales de fijación coinciden con los del sustrato.',
+      'Especificidad: de reacción · de sustrato · absoluta (un solo sustrato) · de grupo (varios sustratos parecidos).',
+      'LLAVE-CERRADURA = sitio activo rígido, encaje exacto · AJUSTE INDUCIDO = el sitio activo cambia de forma al unirse el sustrato.',
+      'Seis clases: 1 oxidorreductasas · 2 transferasas · 3 hidrolasas · 4 liasas · 5 isomerasas · 6 ligasas.',
+      'Isoenzimas de CK: CK-MM (músculo), CK-MB (corazón), CK-BB (cerebro). La troponina es el marcador más específico de lesión miocárdica.',
+      'Enzimas: catalizadores eficientes, no se gastan, están reguladas, son muy específicas y ayudan a predecir el pronóstico.',
+    ],
+    sections: [
+      {
+        id: 'bmc-1',
+        number: 1,
+        title: 'Complejo enzima–sustrato y especificidad',
+        keyTerms: ['complejo enzima-sustrato', 'especificidad absoluta', 'especificidad de grupo'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La actividad de una enzima depende de que conserve su conformación nativa: si se desnaturaliza (por ejemplo, la fosfofructocinasa desplegada), pierde la forma del sitio activo y deja de catalizar. Según su estructura, unas enzimas actúan por los grupos químicos de sus cadenas R, otras por su cofactor y otras por ambos.',
+          },
+          {
+            type: 'steps',
+            title: 'E + S ⇌ [ES] ⇌ E + P',
+            steps: [
+              'El sustrato se une al sitio activo; los radicales de los aminoácidos de fijación coinciden con los del sustrato.',
+              'Se forma el complejo enzima–sustrato [ES], un estado transitorio.',
+              'Los aminoácidos catalíticos (o el cofactor) transforman al sustrato.',
+              'Se liberan los productos y la enzima queda libre e intacta.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Tipos de especificidad (presentación)',
+            data: {
+              headers: ['Tipo', 'Significado'],
+              rows: [
+                ['De reacción', 'Cataliza un solo tipo de reacción (hidrólisis, oxidación, reducción)'],
+                ['De sustrato', 'Actúa sobre uno o muy pocos sustratos'],
+                ['Absoluta', 'Actúa sobre un único sustrato'],
+                ['De grupo', 'Actúa sobre varios sustratos que comparten un grupo químico'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'bmc-2',
+        number: 2,
+        title: 'Modelos de unión: llave-cerradura y ajuste inducido',
+        keyTerms: ['llave-cerradura', 'ajuste inducido', 'Fischer', 'Koshland'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Comparación (presentación) ★',
+            data: {
+              headers: ['Característica', 'Llave-cerradura', 'Ajuste inducido'],
+              rows: [
+                ['Sitio activo', 'Rígido, con forma específica para el sustrato', 'Flexible: se adapta al sustrato al unirse'],
+                ['Unión', 'El sustrato encaja exactamente, en un solo paso', 'La unión estabiliza al sustrato y acelera la reacción'],
+                ['Cambio conformacional', 'No significativo', 'Sí: la enzima cambia de forma al unirse'],
+                ['Especificidad', 'Alta: solo sustratos del tamaño y forma correctos', 'Alta, por ajuste inducido'],
+                ['Ejemplo', 'Enzimas con alta especificidad de sustrato', 'Muchas enzimas, incluidas las alostéricas'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'El modelo aceptado',
+            content: 'El modelo de llave-cerradura (Fischer, 1894) explica la especificidad, pero el de ajuste inducido (Koshland, 1958) describe mejor lo que ocurre: la enzima se moldea alrededor del sustrato y lo lleva al estado de transición.',
+          },
+        ],
+      },
+      {
+        id: 'bmc-3',
+        number: 3,
+        title: 'Nomenclatura y las seis clases',
+        keyTerms: ['sufijo -asa', 'oxidorreductasas', 'transferasas', 'hidrolasas', 'liasas', 'isomerasas', 'ligasas'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Cómo se nombran (presentación)',
+            items: [
+              'Sufijo «-asa» sobre la reacción: hidrogenasa, proteasa, isomerasa.',
+              'Por el sustrato: xantina oxidasa, alcohol deshidrogenasa.',
+              'Por la fuente: ribonucleasa pancreática.',
+              'Por su regulación: lipasa sensible a hormonas.',
+              'Con letras o números para las formas múltiples: ARN polimerasa III, proteína cinasa Cβ.',
+              'Nombres históricos sin «-asa»: tripsina, pepsina.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Clasificación internacional (EC) ★',
+            data: {
+              headers: ['Clase', 'Reacción', 'Ejemplo'],
+              rows: [
+                ['1. Oxidorreductasas', 'Oxidación-reducción (transfieren electrones o H; usan NAD, NADP, FAD)', 'Alcohol deshidrogenasa: etanol → acetaldehído'],
+                ['2. Transferasas', 'Transfieren un grupo (metilo, amino, fosfato, glucosilo) que no es agua', 'Creatina cinasa: creatina → creatina-fosfato; transaminasas'],
+                ['3. Hidrolasas', 'Rompen enlaces añadiendo agua', 'Enzimas digestivas (amilasa, lipasa, proteasas); glucosa-6-fosfatasa'],
+                ['4. Liasas', 'Rompen o forman enlaces sin agua ni oxidación; eliminan grupos (H₂O, CO₂, NH₃) formando dobles enlaces, o los añaden', 'Histidina descarboxilasa: histidina → histamina'],
+                ['5. Isomerasas', 'Reordenan átomos dentro de la misma molécula', 'Triosafosfato isomerasa; epimerasas y mutasas'],
+                ['6. Ligasas', 'Unen dos moléculas usando la energía del ATP (enlaces C–C, C–O, C–N, C–S)', 'Aminoacil-ARNt sintetasas'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Corrección a la tabla de la presentación',
+            content: 'La diapositiva pone como ejemplo de isomerasa la «formación de almidón a partir de unidades de glucosa»; eso lo hacen transferasas (glucosiltransferasas). Ejemplos correctos de isomerasa: triosafosfato isomerasa, fosfoglucomutasa.',
+          },
+        ],
+      },
+      {
+        id: 'bmc-4',
+        number: 4,
+        title: 'Isoenzimas y biomarcadores',
+        keyTerms: ['isoenzimas', 'CK-MB', 'troponina', 'biomarcador'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Formas de una enzima según su origen (presentación)',
+            data: {
+              headers: ['Tipo', 'Origen', 'Ejemplo'],
+              rows: [
+                ['Isoenzimas verdaderas', 'Misma función, codificadas por genes distintos; diferente Km', 'LDH, CK (subunidades M y B), fosfatasa alcalina, GGT, amilasa salival vs pancreática'],
+                ['Formas múltiples', 'Un solo gen; distintas modificaciones postraduccionales según el tejido', 'Fosfatasa alcalina hepática, ósea, renal, de leucocitos'],
+                ['Isoformas', 'Mismo gen; se modifican al llegar al plasma (la carboxipeptidasa quita la lisina C-terminal)', 'CK-MM → MM1, MM2, MM3; CK-MB → MB1, MB2'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Creatina cinasa (CK)',
+            data: {
+              headers: ['Isoenzima', 'Tejido'],
+              rows: [
+                ['CK-MM', 'Músculo esquelético (sube también con el ejercicio intenso o una inyección intramuscular)'],
+                ['CK-MB', 'Miocardio (no es exclusiva del corazón)'],
+                ['CK-BB', 'Cerebro'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Marcadores de infarto',
+            content: 'Un buen marcador de infarto es selectivo del corazón, específico y aparece pronto (los que tardan más de 12 h no ayudan al diagnóstico inicial). Las transaminasas no sirven. Según lo visto en clase, la CK-MB aparece a las ~4 h y dura ~72 h; la troponina aparece a las ~2–4 h y dura hasta 7–14 días. La troponina cardiaca (hoy de alta sensibilidad) es el marcador de elección en las guías; la CK-MB queda como apoyo, por ejemplo para detectar un reinfarto.',
+          },
+          {
+            type: 'table',
+            title: 'Enzimas séricas en el diagnóstico (Harper, cuadro 7-2)',
+            data: {
+              headers: ['Enzima', 'Uso que muestra el cuadro'],
+              rows: [
+                ['ALT (TGP)', 'Hepatitis viral'],
+                ['AST (TGO)', 'Infarto de miocardio (uso histórico; hoy se usa sobre todo en enfermedad hepática)'],
+                ['Amilasa · lipasa', 'Pancreatitis aguda (la lipasa es más específica)'],
+                ['Ceruloplasmina', 'Enfermedad de Wilson'],
+                ['CK', 'Trastornos musculares e infarto'],
+                ['GGT', 'Enfermedades hepáticas'],
+                ['LDH-5', 'Enfermedades hepáticas'],
+                ['Fosfatasa ácida', 'Cáncer de próstata metastásico (hoy sustituida por el PSA)'],
+                ['Fosfatasa alcalina (isoenzimas)', 'Trastornos óseos y colestasis'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Cómo se miden',
+            content: 'Muchas de estas enzimas no son específicas de una sola enfermedad. Se interpretan con la historia clínica y farmacológica, según cuándo suben (etapa temprana o tardía) y qué tan rápido bajan. Su concentración en plasma depende de su resistencia a la proteólisis y de la eliminación renal; se miden en plasma, suero u orina.',
+          },
+        ],
+      },
+      {
+        id: 'bmc-5',
+        number: 5,
+        title: 'Enzimas en la medicina y la industria',
+        keyTerms: ['PCR', 'glucosa oxidasa', 'tPA', 'terapia de reemplazo enzimático'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Enzimas con impacto (presentación)',
+            data: {
+              headers: ['Enzima', 'Uso'],
+              rows: [
+                ['ADN polimerasa termoestable (PCR)', 'Millones de copias de un segmento de ADN a partir de cantidades mínimas: detectar y caracterizar ADN'],
+                ['Glucosa oxidasa', 'Medir la glucosa en plasma (tiras reactivas, glucómetros)'],
+                ['Activador tisular del plasminógeno (tPA) · estreptocinasa', 'Fibrinólisis en el infarto agudo de miocardio'],
+                ['Enzimas pancreáticas (tripsina, lipasa, amilasa)', 'Reemplazo enzimático en la insuficiencia pancreática de la fibrosis quística'],
+                ['Glucocerebrosidasa recombinante (IV)', 'Terapia de reemplazo enzimático en la enfermedad de Gaucher'],
+                ['Lactasa', 'Producción de leche deslactosada'],
+                ['Proteasas y amilasas', 'Detergentes'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Qué cambia la cantidad o la actividad de una enzima',
+            items: [
+              'Defecto genético → trastornos metabólicos y enfermedades hereditarias.',
+              'Déficit nutricional (vitaminas y minerales que actúan como cofactores).',
+              'Daño de tejido (la enzima sale a la sangre: base de los biomarcadores).',
+              'Toxinas.',
+              'Infección por virus o bacterias.',
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ]
