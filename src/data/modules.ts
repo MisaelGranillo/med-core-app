@@ -162,6 +162,14 @@ export const modules: Module[] = [
     topicIds: ['bioquimica-lipidos-estructura', 'bioquimica-omega-grasas-aceites', 'bioquimica-trigliceridos-fosfolipidos', 'bioquimica-eicosanoides', 'bioquimica-lipidos-funcion-esteroides', 'bioquimica-vitaminas-liposolubles-patologias', 'bioquimica-proteinas-aminoacidos', 'bioquimica-aminoacidos-clasificacion', 'bioquimica-plegamiento-proteico', 'bioquimica-estructura-terciaria-cuaternaria', 'bioquimica-proteinas-clasificacion-funcion'],
   },
   {
+    id: 'bioquimica-uad-s3',
+    badge: 'UAD · Bioquímica I — Semana 3',
+    title: 'Bioquímica: enzimas y metabolismo del nitrógeno',
+    subtitle: 'Apoenzima y holoenzima, aminoácidos del sitio activo, cofactores y coenzimas (vitaminas B); transaminación, desaminación y ciclo de la urea.',
+    emoji: '✂️',
+    topicIds: ['bioquimica-enzimas-estructura', 'bioquimica-nitrogeno-ciclo-urea'],
+  },
+  {
     id: 'histologia-uad-s1',
     badge: 'UAD · Histología I — Semana 1',
     title: 'Histología: célula, microscopía y técnica',

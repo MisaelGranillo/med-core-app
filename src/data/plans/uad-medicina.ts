@@ -243,7 +243,7 @@ export const uadMedicina: Plan = {
           code: 'BQ01002',
           hasLab: true,
           tags: ['bioquimica'],
-          topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones', 'bioquimica-presion-osmotica-oncotica', 'bioquimica-equilibrio-acido-base', 'bioquimica-glucidos', 'bioquimica-glucidos-clasificacion', 'bioquimica-polisacaridos-fibra', 'bioquimica-glucidos-funcion', 'bioquimica-lipidos-estructura', 'bioquimica-omega-grasas-aceites', 'bioquimica-trigliceridos-fosfolipidos', 'bioquimica-eicosanoides', 'bioquimica-lipidos-funcion-esteroides', 'bioquimica-vitaminas-liposolubles-patologias', 'bioquimica-proteinas-aminoacidos', 'bioquimica-aminoacidos-clasificacion', 'bioquimica-plegamiento-proteico', 'bioquimica-estructura-terciaria-cuaternaria', 'bioquimica-proteinas-clasificacion-funcion'],
+          topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones', 'bioquimica-presion-osmotica-oncotica', 'bioquimica-equilibrio-acido-base', 'bioquimica-glucidos', 'bioquimica-glucidos-clasificacion', 'bioquimica-polisacaridos-fibra', 'bioquimica-glucidos-funcion', 'bioquimica-lipidos-estructura', 'bioquimica-omega-grasas-aceites', 'bioquimica-trigliceridos-fosfolipidos', 'bioquimica-eicosanoides', 'bioquimica-lipidos-funcion-esteroides', 'bioquimica-vitaminas-liposolubles-patologias', 'bioquimica-proteinas-aminoacidos', 'bioquimica-aminoacidos-clasificacion', 'bioquimica-plegamiento-proteico', 'bioquimica-estructura-terciaria-cuaternaria', 'bioquimica-proteinas-clasificacion-funcion', 'bioquimica-enzimas-estructura', 'bioquimica-nitrogeno-ciclo-urea'],
           content: {
             area: 'Ciencias Básicas',
             credits: 11,
@@ -303,9 +303,14 @@ export const uadMedicina: Plan = {
               {
                 number: 3,
                 title: 'Enzimas y ácidos nucleicos',
+                topicIds: ['bioquimica-enzimas-estructura', 'bioquimica-nitrogeno-ciclo-urea'],
                 temas: [
+                  'Clase 1 (impartida): enzimas — apoenzima, cofactor y holoenzima; aminoácidos estructurales, de fijación y catalíticos; sitio activo y especificidad; patologías por cambio de aminoácido; cofactores y coenzimas (vitaminas B); transaminación, desaminación oxidativa, ciclo de la urea e hiperamonemia; β-oxidación',
                   '5. Enzimas: estructura general, clasificación y función',
                   '6. Ácidos nucleicos: estructura general, clasificación y función',
+                ],
+                fuentes: [
+                  { title: 'Bioquímica I — Semana 3, Clase 1', file: 'Bioquimica I - Semana 3 - Clase 1.pdf', nota: 'Enzimas, coenzimas y ciclo de la urea.' },
                 ],
               },
               {
@@ -341,6 +346,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 2 · Clase 3 — Proteínas: aminoácidos', file: 'Bioquimica I - Semana 2 - Clase 3 - Unidad 4.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 4 — Aminoácidos y plegamiento proteico', file: 'Bioquimica I - Semana 2 - Clase 4 - Unidad 4.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 5 — Plegamiento, colágeno y funciones de las proteínas', file: 'Bioquimica I - Semana 2 - Clase 5 - Unidad 4.pdf', kind: 'Clase' },
+              { title: 'Semana 3 · Clase 1 — Enzimas, coenzimas y ciclo de la urea', file: 'Bioquimica I - Semana 3 - Clase 1.pdf', kind: 'Clase' },
               { title: 'Programa Académico — Bioquímica I y su Laboratorio', file: 'Bioquimica I - Programa.pdf', kind: 'Programa' },
               { title: 'Planeación — Bioquímica I (2025-1)', file: 'Bioquimica I - Planeacion.pdf', kind: 'Programa' },
             ],

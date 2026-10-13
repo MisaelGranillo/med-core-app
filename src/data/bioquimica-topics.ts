@@ -3905,4 +3905,337 @@ export const bioquimicaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'bioquimica-enzimas-estructura',
+    title: 'Enzimas: apoenzima, sitio activo y coenzimas',
+    subtitle: 'Apoenzima, cofactor y holoenzima; aminoácidos estructurales, de fijación y catalíticos; sitio activo, especificidad, patologías y vitaminas como coenzimas',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '✂️',
+    keyPoints: [
+      'ENZIMAS = catalizadores biológicos; casi todas son proteínas globulares (unas pocas son ARN: ribozimas). Aceleran la reacción y salen intactas: se reutilizan.',
+      'APOENZIMA (parte proteica, inactiva sola) + COFACTOR (parte no proteica) = HOLOENZIMA (activa). Pregunta de examen.',
+      'Tres tipos de aminoácidos en la enzima: ESTRUCTURALES (dan forma) · de FIJACIÓN (sujetan al sustrato con enlaces débiles) · CATALÍTICOS (rompen o forman enlaces del sustrato).',
+      'SITIO ACTIVO = hendidura donde el sustrato se fija y reacciona; lo forman aminoácidos que pueden estar lejos en la secuencia. Ejemplo: tríada catalítica de la quimotripsina (Asp102, His57, Ser195).',
+      'Un aminoácido cambiado = enzima ausente o no funcional: fenilcetonuria, jarabe de arce, alcaptonuria, deficiencia de OTC.',
+      'Cofactores INORGÁNICOS (Mg²⁺, Zn²⁺, Cu, Fe, Mn) u ORGÁNICOS: grupo prostético (unido fuerte, como el hemo) o coenzima (unida de forma transitoria, como NAD).',
+      'Coenzimas de vitaminas B: B1 → TPP · B2 → FAD/FMN · B3 → NAD/NADP · B5 → CoA · B6 → PLP (transaminasas) · biotina → carboxilasas · B9 → THF · B12 → cobalamina.',
+    ],
+    sections: [
+      {
+        id: 'bez-1',
+        number: 1,
+        title: 'Qué es una enzima',
+        keyTerms: ['enzima', 'catalizador', 'ribozima', 'complejo enzima-sustrato'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Las enzimas son catalizadores biológicos: aceleran reacciones químicas sin consumirse. Son proteínas (la mayoría globulares), es decir, polímeros de aminoácidos unidos por enlaces covalentes con una estructura tridimensional precisa. Existen también algunas enzimas de ARN, las ribozimas (por ejemplo, el ribosoma).',
+          },
+          {
+            type: 'steps',
+            title: 'Cómo actúa (ejemplo: lactasa)',
+            steps: [
+              'El sustrato (lactosa) entra al sitio activo de la enzima.',
+              'Se forma el complejo enzima–sustrato.',
+              'La enzima hidroliza el enlace: complejo enzima–productos.',
+              'Salen los productos (glucosa + galactosa) y la enzima queda libre para otra molécula.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Deficiencia enzimática',
+            content: 'Un déficit puede deberse a que la enzima falte, a que haya poca o a que exista pero no funcione. En la intolerancia a la lactosa hay poca lactasa: la lactosa no se digiere, llega al colon y las bacterias la fermentan (gases, distensión, diarrea).',
+          },
+        ],
+      },
+      {
+        id: 'bez-2',
+        number: 2,
+        title: 'Apoenzima, cofactor y holoenzima',
+        keyTerms: ['apoenzima', 'cofactor', 'holoenzima'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Holoenzima',
+            content: 'Enzima completa y activa: la parte proteica (apoenzima, inactiva por sí sola) unida a su parte no proteica (cofactor o coenzima). — Holoenzima.',
+          },
+          {
+            type: 'comparison',
+            title: 'Las dos partes',
+            left: { title: 'Apoenzima (parte proteica)', items: ['Da la estructura espacial específica para unir al sustrato', 'Contiene los aminoácidos estructurales, de fijación y catalíticos', 'Sola es inactiva si necesita cofactor'] },
+            right: { title: 'Cofactor (parte no proteica)', items: ['Molécula químicamente distinta a la enzima', 'Necesaria para que tenga actividad', 'Inorgánico (iones metálicos) u orgánico (grupo prostético o coenzima)'] },
+          },
+        ],
+      },
+      {
+        id: 'bez-3',
+        number: 3,
+        title: 'Tres tipos de aminoácidos y el sitio activo',
+        keyTerms: ['aminoácidos estructurales', 'de fijación', 'catalíticos', 'sitio activo', 'tríada catalítica'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Aminoácidos de la enzima según su función ★',
+            data: {
+              headers: ['Tipo', 'Qué hace', 'Interacciones', 'Ejemplos'],
+              rows: [
+                ['Estructurales', 'Dan forma a la proteína y sostienen el sitio activo; casi siempre en el núcleo hidrofóbico', 'Hidrofóbicas, Van der Waals, puentes disulfuro', 'Leucina, isoleucina, valina, fenilalanina; glicina, prolina, cisteína, alanina'],
+                ['De fijación', 'Reconocen, orientan y sujetan al sustrato', 'Enlaces débiles: iónicos, puentes de hidrógeno, Van der Waals', 'Lisina, arginina, aspartato, glutamato, serina, tirosina'],
+                ['Catalíticos', 'Debilitan y rompen (o forman) los enlaces del sustrato; pueden formar enlaces covalentes transitorios', 'Catálisis ácido–base, catálisis covalente', 'Histidina, serina, cisteína, aspartato, glutamato, lisina'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Aminoácidos estructurales destacados (presentación)',
+            data: {
+              headers: ['Aminoácido', 'Rasgo', 'Papel'],
+              rows: [
+                ['Glicina', 'H como cadena lateral (el más pequeño)', 'Permite compactación extrema (triple hélice del colágeno)'],
+                ['Prolina', 'Anillo rígido', 'Rigidez y giros'],
+                ['Cisteína', 'Tiol (–SH)', 'Puentes disulfuro'],
+                ['Alanina', 'Metilo corto', 'Empaquetamiento hidrofóbico denso'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content:
+              'El sitio activo es una hendidura o bolsa en la superficie de la enzima donde el sustrato se fija (por reconocimiento complementario y de forma reversible) y donde ocurre la reacción. Solo unos pocos aminoácidos lo forman, y no necesitan estar juntos en la estructura primaria: el plegamiento los acerca. En la quimotripsina, aspartato 102, histidina 57 y serina 195 forman la tríada catalítica (un ácido, una base y un nucleófilo).',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Especificidad y biomarcadores',
+            content: 'Cada enzima reconoce un sustrato y abunda en ciertos tejidos. Por eso se usan como marcadores: las transaminasas (ALT/TGP, AST/TGO) para lesión hepática, la CK y la troponina para lesión muscular o cardiaca. Se interpretan siempre junto con la clínica (se profundiza en Bioquímica II).',
+          },
+        ],
+      },
+      {
+        id: 'bez-4',
+        number: 4,
+        title: 'Cuando cambia un aminoácido',
+        keyTerms: ['fenilcetonuria', 'jarabe de arce', 'alcaptonuria', 'cistinuria'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Aminoácido, enzima y enfermedad (presentación) ★',
+            data: {
+              headers: ['Aminoácido / ruta', 'Enfermedad', 'Qué falla'],
+              rows: [
+                ['Cisteína', 'Cistinuria', 'Transporte renal de cistina (y aminoácidos dibásicos): la cistina, poco soluble, forma cálculos'],
+                ['Leucina, isoleucina, valina', 'Enfermedad de la orina con olor a jarabe de arce (MSUD)', 'Complejo deshidrogenasa de α-cetoácidos de cadena ramificada: neurotoxicidad y edema cerebral'],
+                ['Fenilalanina', 'Fenilcetonuria (PKU)', 'Fenilalanina hidroxilasa: la fenilalanina se acumula y causa daño neurológico (tamiz neonatal)'],
+                ['Tirosina', 'Alcaptonuria · tirosinemia tipo I', 'Alcaptonuria: homogentisato oxidasa → ácido homogentísico, ocronosis (pigmento oscuro en cartílagos), artritis, orina que oscurece. Tirosinemia I: fumarilacetoacetato hidrolasa (daño hepático y renal)'],
+                ['Lisina / arginina (fijación)', 'Hiperamonemia por deficiencia de OTC', 'Sin esos residuos, la ornitina transcarbamilasa no fija su sustrato y el ciclo de la urea se detiene'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Cistinuria no es cistinosis',
+            content: 'En clase se usaron ambos nombres. La cistinuria es un defecto del transporte de cistina en riñón e intestino (cálculos). La cistinosis es una enfermedad de depósito lisosomal (cristales de cistina en riñón, córnea y otros órganos).',
+          },
+        ],
+      },
+      {
+        id: 'bez-5',
+        number: 5,
+        title: 'Cofactores y coenzimas',
+        keyTerms: ['cofactor', 'grupo prostético', 'coenzima', 'iones metálicos'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Clasificación de la parte no proteica',
+            data: {
+              headers: ['Tipo', 'Unión a la apoenzima', 'Ejemplos'],
+              rows: [
+                ['Inorgánico: ion metálico', 'Variable', 'Mg²⁺, Zn²⁺, Cu²⁺, Fe²⁺, Mn²⁺'],
+                ['Orgánico: grupo prostético', 'Fuerte y permanente (a veces covalente)', 'Grupo hemo'],
+                ['Orgánico: coenzima', 'Transitoria, por enlaces débiles; cambia durante la reacción y se regenera', 'NAD⁺, NADP⁺, FAD, CoA'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Vitaminas B → coenzimas (presentación) ★',
+            data: {
+              headers: ['Vitamina', 'Coenzima', 'Enzimas', 'Grupo que transporta'],
+              rows: [
+                ['B1 tiamina', 'TPP (pirofosfato de tiamina)', 'Piruvato deshidrogenasa, α-cetoglutarato deshidrogenasa', 'Aldehídos'],
+                ['B2 riboflavina', 'FAD, FMN', 'Deshidrogenasas (flavoproteínas)', 'Electrones (hidrógenos)'],
+                ['B3 niacina', 'NAD⁺, NADP⁺', 'Deshidrogenasas', 'Electrones (hidrógenos)'],
+                ['B5 ácido pantoténico', 'Coenzima A (CoA)', 'Piruvato DH, acil-CoA sintetasa', 'Grupos acilo'],
+                ['B6 piridoxina', 'Piridoxal fosfato (PLP)', 'Aminotransferasas', 'Grupos amino'],
+                ['B7 biotina', 'Biotina', 'Carboxilasas', 'CO₂'],
+                ['B9 folato', 'Tetrahidrofolato (THF)', 'Metabolismo de aminoácidos y nucleótidos', 'Unidades de un carbono'],
+                ['B12 cobalamina', 'Coenzimas B12', 'Metilmalonil-CoA mutasa (propionato), metionina sintasa', 'Reordenamientos y grupos metilo'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Nomenclatura',
+            content: 'En clase la biotina se llamó B8 (así se nombra en algunos países) y una fila de la diapositiva la pone junto a B6; en la nomenclatura más usada es la vitamina B7. La tabla de la presentación indica que B12 transporta «hidrógenos»: sus reacciones son de reordenamiento (metilmalonil-CoA → succinil-CoA) y de transferencia de metilos.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Alcoholismo y vitamina B6',
+            content: 'En el consumo crónico de alcohol baja el PLP (B6). Sin PLP las aminotransferasas trabajan mal, y también se afectan otras reacciones del metabolismo de aminoácidos.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-nitrogeno-ciclo-urea',
+    title: 'Eliminación del nitrógeno: transaminación, desaminación y ciclo de la urea',
+    subtitle: 'Aminotransferasas y PLP, ciclo alanina-glucosa, glutamato deshidrogenasa, las 5 enzimas del ciclo de la urea, hiperamonemia y β-oxidación',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🚽',
+    keyPoints: [
+      'Flujo del nitrógeno: aminoácido → TRANSAMINACIÓN (el amino pasa al α-cetoglutarato → glutamato) → DESAMINACIÓN OXIDATIVA del glutamato (→ NH₃) → CICLO DE LA UREA → urea.',
+      'Aminotransferasas usan PLP (B6). Todos los aminoácidos se transaminan excepto lisina, treonina, prolina e hidroxiprolina.',
+      'ALT: alanina ⇌ piruvato · AST: aspartato ⇌ oxalacetato (ambas con α-cetoglutarato/glutamato).',
+      'Ciclo alanina–glucosa: el músculo envía su nitrógeno al hígado como alanina; el hígado la transamina a piruvato (→ glucosa) y el amino va a urea. Pregunta de examen.',
+      'Glutamato deshidrogenasa (con NAD⁺ o NADP⁺): glutamato → α-cetoglutarato + NH₃. Produce la mayor parte del amoniaco.',
+      'CICLO DE LA UREA (hígado, mitocondria + citosol, 5 enzimas, 4 enlaces de alta energía por urea): CPS-I → OTC → argininosuccinato sintetasa → argininosuccinato liasa → arginasa. El aspartato aporta el segundo N.',
+      'Deficiencia de CPS-I u OTC (pasos 1 y 2) = hiperamonemia más grave. El amoniaco es neurotóxico.',
+    ],
+    sections: [
+      {
+        id: 'bnu-1',
+        number: 1,
+        title: 'Transaminación',
+        keyTerms: ['transaminación', 'aminotransferasa', 'PLP', 'ALT', 'AST'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Antes de oxidar el esqueleto de un aminoácido hay que quitarle el grupo amino. En la transaminación, una aminotransferasa pasa el grupo amino de un α-aminoácido a un α-cetoácido (casi siempre el α-cetoglutarato, que se convierte en glutamato). Todas usan piridoxal fosfato (PLP, de la vitamina B6). Se transaminan todos los aminoácidos excepto lisina, treonina, prolina e hidroxiprolina.',
+          },
+          {
+            type: 'table',
+            title: 'Las dos transaminasas de la clínica',
+            data: {
+              headers: ['Enzima', 'Reacción'],
+              rows: [
+                ['ALT (TGP)', 'Alanina + α-cetoglutarato ⇌ piruvato + glutamato'],
+                ['AST (TGO)', 'Aspartato + α-cetoglutarato ⇌ oxalacetato + glutamato'],
+              ],
+            },
+          },
+          {
+            type: 'steps',
+            title: 'Ciclo alanina–glucosa ★',
+            steps: [
+              'En el músculo, el amoniaco de la degradación de aminoácidos se transamina hasta glutamato.',
+              'La ALT pasa ese amino al piruvato: se forma alanina.',
+              'La alanina viaja por la sangre al hígado.',
+              'En el hígado se transamina de nuevo a piruvato, que hace gluconeogénesis (glucosa de regreso al músculo).',
+              'El grupo amino termina en el ciclo de la urea.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Glutamina',
+            content: 'Otra forma de transportar nitrógeno es la glutamina. En el hígado la glutaminasa la desamina y el amoniaco libre entra al ciclo de la urea; el glutamato restante se transamina a α-cetoglutarato.',
+          },
+        ],
+      },
+      {
+        id: 'bnu-2',
+        number: 2,
+        title: 'Desaminación oxidativa del glutamato',
+        keyTerms: ['glutamato deshidrogenasa', 'α-cetoglutarato', 'amoniaco'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La glutamato deshidrogenasa (GDH), que puede usar NAD⁺ o NADP⁺ como coenzima, separa el grupo amino del glutamato: se forma α-cetoglutarato (que vuelve a recibir aminos) y amoniaco (NH₃). La mayor parte del amoniaco del cuerpo sale de esta reacción.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Ayuno',
+            content: 'En la inanición aumenta la degradación de proteínas para obtener energía; con ello aumenta la producción de amoniaco y la expresión de todas las enzimas del ciclo de la urea. Los cambios en la dieta pueden subir 10 a 20 veces la cantidad de estas enzimas.',
+          },
+        ],
+      },
+      {
+        id: 'bnu-3',
+        number: 3,
+        title: 'Ciclo de la urea',
+        keyTerms: ['ciclo de la urea', 'CPS-I', 'OTC', 'arginasa', 'N-acetilglutamato'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Concepto (presentación)',
+            items: [
+              'El amoniaco se convierte en urea en el hígado; la urea se elimina por el riñón.',
+              'Requiere 5 enzimas.',
+              'El aspartato cede el segundo grupo amino.',
+              'Ocurre entre la mitocondria (pasos 1 y 2) y el citosol (pasos 3 a 5).',
+              'Consume 4 enlaces fosfato de alta energía (3 ATP) por cada molécula de urea.',
+            ],
+          },
+          {
+            type: 'steps',
+            title: 'Las cinco reacciones ★',
+            steps: [
+              'Mitocondria: NH₃ + CO₂ (HCO₃⁻) + 2 ATP → carbamoil fosfato (carbamoil fosfato sintetasa I, CPS-I).',
+              'Mitocondria: carbamoil fosfato + ornitina → citrulina (ornitina transcarbamilasa, OTC).',
+              'Citosol: citrulina + aspartato + ATP → argininosuccinato (argininosuccinato sintetasa).',
+              'Citosol: argininosuccinato → arginina + fumarato (argininosuccinato liasa).',
+              'Citosol: arginina + H₂O → urea + ornitina (arginasa); la ornitina regresa a la mitocondria.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Regulación',
+            content: 'La CPS-I solo funciona con su activador, el N-acetilglutamato, que se forma a partir de acetil-CoA y glutamato (N-acetilglutamato sintasa) y se hidroliza a acetato y glutamato (N-acetilglutamato hidrolasa). El fumarato que sale del paso 4 conecta el ciclo de la urea con el ciclo de Krebs.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Hiperamonemia',
+            content: 'La deficiencia de las enzimas de los pasos 1 o 2 (CPS-I u OTC) causa la intoxicación por amoniaco más grave. La deficiencia de OTC, ligada al X, es la más frecuente: el recién nacido se ve sano y a los pocos días tiene vómito, letargo, convulsiones y coma por edema cerebral. Pregunta de examen: causa de hiperamonemia = falla de una enzima del ciclo de la urea, sobre todo OTC.',
+          },
+        ],
+      },
+      {
+        id: 'bnu-4',
+        number: 4,
+        title: 'Coenzimas en acción: β-oxidación',
+        keyTerms: ['β-oxidación', 'acil-CoA', 'FAD', 'NAD⁺'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Antes de oxidarse, el ácido graso se activa con CoA (coenzima de la B5): la acil-CoA sintetasa (tioquinasa) gasta un ATP (→ AMP + PPi) y forma acil-CoA. Después, en la mitocondria, cada vuelta de β-oxidación tiene cuatro pasos y corta dos carbonos:',
+          },
+          {
+            type: 'steps',
+            title: 'Una vuelta de β-oxidación',
+            steps: [
+              'Oxidación por la acil-CoA deshidrogenasa: FAD → FADH₂ (B2).',
+              'Hidratación por la enoil-CoA hidratasa.',
+              'Oxidación por la 3-hidroxiacil-CoA deshidrogenasa: NAD⁺ → NADH (B3).',
+              'Tiólisis por la tiolasa con otra CoA: sale un acetil-CoA y queda un acil-CoA con dos carbonos menos.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Lo que hay que recordar',
+            content: 'Cada vuelta produce 1 FADH₂, 1 NADH y 1 acetil-CoA. Sin B2, B3 y B5 la β-oxidación no puede ocurrir: un ejemplo de por qué las coenzimas son indispensables. Se estudia a fondo en Bioquímica II.',
+          },
+        ],
+      },
+    ],
+  },
 ]
