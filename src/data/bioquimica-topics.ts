@@ -4615,4 +4615,250 @@ export const bioquimicaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'bioquimica-biomarcadores-enzimaticos',
+    title: 'Biomarcadores: infarto, páncreas, hígado y próstata',
+    subtitle: 'Cómo elegir un biomarcador, cronología de los marcadores cardiacos, lipasa vs amilasa, ALT/AST, GGT y fosfatasa alcalina, PSA',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🩸',
+    keyPoints: [
+      'Un biomarcador se elige por su SELECTIVIDAD (de qué tejido viene), su ESPECIFICIDAD (qué enfermedad indica) y su VENTANA (cuándo sube y cuánto dura). Se interpreta con la clínica.',
+      'Infarto: MIOGLOBINA aparece primero (1–3 h) pero es inespecífica · TROPONINAS (3–4 h, duran 7–14 días) = estándar de oro · CK-MB (3–6 h, normaliza en 48–72 h) útil para reinfarto.',
+      'Pancreatitis aguda: LIPASA = biomarcador de elección (más específica y dura más) · AMILASA sube y baja rápido y también viene de glándulas salivales e intestino.',
+      'Hígado: ALT = predominantemente hepática (hepatitis viral, tóxica, isquémica) · AST también en miocardio y músculo; AST/ALT > 2 sugiere hepatitis alcohólica.',
+      'Colestasis: fosfatasa alcalina elevada + GGT elevada = origen hepatobiliar (la FA también viene del hueso).',
+      'Próstata: PSA total (cáncer, hiperplasia prostática benigna, prostatitis, instrumentación) y cociente PSA libre/total (bajo = más sospecha de cáncer).',
+    ],
+    sections: [
+      {
+        id: 'bbm-1',
+        number: 1,
+        title: 'Cómo se elige un biomarcador',
+        keyTerms: ['biomarcador', 'selectividad', 'especificidad', 'ventana diagnóstica'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Cuando un tejido se lesiona, sus enzimas y proteínas salen a la sangre. Su concentración depende de cuánto tejido se dañó, de cuándo se liberan y de cuánto tardan en eliminarse (proteólisis y eliminación renal). Se miden en suero, plasma u orina.',
+          },
+          {
+            type: 'list',
+            title: 'Tres preguntas antes de pedirlo',
+            items: [
+              'Selectividad: ¿de qué tejido u órgano proviene?',
+              '¿Qué tan específico es para la enfermedad que se busca?',
+              '¿Cuándo empieza a subir, cuándo llega al máximo y cuándo se normaliza?',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'bbm-2',
+        number: 2,
+        title: 'Marcadores de lesión miocárdica',
+        keyTerms: ['troponina', 'mioglobina', 'CK-MB', 'copeptina', 'LDH'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Cronología desde el inicio del dolor (presentación) ★',
+            data: {
+              headers: ['Marcador', 'Sube', 'Pico', 'Se normaliza', 'Utilidad'],
+              rows: [
+                ['Mioglobina', '1–3 h', '6–10 h', '~24 h', 'Muy precoz pero poco específica (también músculo esquelético); un valor negativo ayuda a descartar en las primeras horas'],
+                ['Troponinas cardiacas (cTnI, cTnT)', '3–4 h', '12–24 h', '7–14 días', 'Estándar de oro: muy específicas y sensibles; detectan necrosis mínima y daño tardío'],
+                ['CK total', '4–9 h', '12–30 h', '48–72 h', 'Daño muscular cardiaco o esquelético; requiere fraccionar'],
+                ['CK-MB', '3–6 h', '18–24 h', '48–72 h', 'Más específica del miocardio que la CK total; útil para detectar reinfarto por su normalización rápida'],
+                ['LDH (LDH-1)', '6–12 h', '24–72 h', '8–14 días', 'Tardía; la inversión LDH-1 > LDH-2 ayudaba en infartos subagudos (uso histórico)'],
+                ['Copeptina', '< 1 h', '2–4 h', '24–48 h', 'Se libera con la vasopresina por el estrés agudo; se combina con troponina para descartar rápido'],
+                ['PCR ultrasensible', '6–12 h', '48–72 h', '1–2 semanas', 'Marcador inflamatorio de fase aguda (no es enzima)'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'En la práctica',
+            content: 'La troponina cardiaca (hoy de alta sensibilidad, con mediciones seriadas) es el marcador de elección para diagnosticar infarto, junto con el cuadro clínico y el electrocardiograma. Un solo valor temprano normal no descarta el infarto. La troponina no es una enzima: es una proteína reguladora de la contracción.',
+          },
+        ],
+      },
+      {
+        id: 'bbm-3',
+        number: 3,
+        title: 'Páncreas, hígado y próstata',
+        keyTerms: ['lipasa', 'amilasa', 'ALT', 'AST', 'GGT', 'fosfatasa alcalina', 'PSA'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Biomarcadores por órgano (presentación) ★',
+            data: {
+              headers: ['Órgano', 'Marcador', 'Sube', 'Se normaliza', 'Utilidad'],
+              rows: [
+                ['Pancreatitis aguda', 'Lipasa', '4–8 h', '8–14 días', 'Elección: más específica del páncreas que la amilasa y permanece elevada más tiempo'],
+                ['Pancreatitis aguda', 'Amilasa', '2–12 h', '3–5 días', 'Sube rápido pero se normaliza pronto aunque siga el cuadro; también de origen salival o intestinal'],
+                ['Hígado (agudo)', 'ALT (TGP)', '24–48 h', '2–5 semanas', 'Predominantemente hepática: hepatitis viral, tóxica o isquémica'],
+                ['Hígado (crónico)', 'AST (TGO)', '24–48 h', '1–3 semanas', 'Hígado, miocardio y músculo; en la hepatitis alcohólica AST/ALT suele ser > 2'],
+                ['Colestasis', 'Fosfatasa alcalina + GGT', '24–48 h', 'Días a semanas', 'La GGT confirma el origen hepatobiliar de una FA alta'],
+                ['Próstata', 'PSA total', 'Variable', 'Persiste hasta tratar la causa', 'Cáncer, hiperplasia prostática benigna, prostatitis o tras instrumentación'],
+                ['Próstata', 'Cociente PSA libre/total', 'Variable', 'Persistente', 'Un cociente bajo aumenta la sospecha de cáncer cuando el PSA total está ligeramente alto'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Un sustrato, muchas enzimas',
+            content: 'Ningún marcador basta por sí solo: varias enfermedades elevan la misma enzima y una enfermedad eleva varias. Por eso se piden en conjunto (perfil hepático, pancreático) y se interpretan con la clínica.',
+          },
+          {
+            type: 'note',
+            title: 'Actividades pendientes',
+            content: 'Las actividades 5 a 11 (productos enzimáticos hospitalarios, ejemplos por clase, enzimas inflamatorias, marcadores renales, tabla vitamina-coenzima-patología y valores de referencia de CK) son trabajo de la libreta.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-acidos-nucleicos-estructura',
+    title: 'Ácidos nucleicos: nucleótidos, bases y enlaces',
+    subtitle: 'ADN y ARN, pentosas, purinas y pirimidinas, nucleósido vs nucleótido, enlace N-glucosídico y fosfodiéster, pares de bases y temperatura de fusión',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🧬',
+    keyPoints: [
+      'ÁCIDOS NUCLEICOS = ADN y ARN: polímeros de nucleótidos, ácidos y con carga negativa a pH fisiológico (por sus fosfatos), solubles en agua.',
+      'NUCLEÓTIDO = pentosa + base nitrogenada + fosfato · NUCLEÓSIDO = pentosa + base (sin fosfato) · POLINUCLEÓTIDO = muchos nucleótidos.',
+      'PENTOSAS: ribosa (ARN, con –OH en el C2′) · 2-desoxirribosa (ADN, H en el C2′).',
+      'PURINAS (2 anillos): adenina y guanina · PIRIMIDINAS (1 anillo): citosina, timina (solo ADN) y uracilo (solo ARN).',
+      'ENLACE N-GLUCOSÍDICO: base + C1′ de la pentosa · ENLACE FOSFODIÉSTER 3′→5′: el fosfato une el C3′ de un nucleótido con el C5′ del siguiente (columna vertebral azúcar-fosfato).',
+      'Pares: A=T (2 puentes de H) · G≡C (3 puentes de H). Más G-C = mayor temperatura de fusión (Tm).',
+      'Nomenclatura: adenina → adenosina (nucleósido) → ácido adenílico/AMP (nucleótido).',
+    ],
+    sections: [
+      {
+        id: 'ban-1',
+        number: 1,
+        title: 'Qué son los ácidos nucleicos',
+        keyTerms: ['ADN', 'ARN', 'polinucleótido', 'carga negativa'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'Los ácidos nucleicos son polímeros grandes formados por nucleótidos. Hay dos: el ácido desoxirribonucleico (ADN), que guarda y transmite la información genética, y el ácido ribonucleico (ARN), que la expresa (por ejemplo, en la síntesis de proteínas). Son ácidos por sus grupos fosfato, que a pH fisiológico tienen carga negativa; esa carga y sus grupos polares los hacen solubles en agua.',
+          },
+          {
+            type: 'note',
+            title: 'Bases, no aminoácidos',
+            content: 'La presentación pregunta por los «aminoácidos» de los ácidos nucleicos y pone «base nitrogenada (forman los aminoácidos)». Los ácidos nucleicos no tienen aminoácidos ni componentes proteicos: sus unidades son nucleótidos y sus «letras» son las bases nitrogenadas A, G, C, T y U. Las proteínas se forman a partir de la información que llevan.',
+          },
+        ],
+      },
+      {
+        id: 'ban-2',
+        number: 2,
+        title: 'Componentes del nucleótido',
+        keyTerms: ['pentosa', 'purinas', 'pirimidinas', 'nucleósido', 'nucleótido'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Cómo se arma',
+            steps: [
+              'Pentosa + base nitrogenada = nucleósido (enlace N-glucosídico en el C1′).',
+              'Nucleósido + ácido fosfórico (en el C5′) = nucleótido.',
+              'Nucleótido + nucleótido + … (n) = polinucleótido.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Las dos pentosas',
+            left: { title: 'Ribosa (ARN)', items: ['Grupo –OH en el carbono 2′', 'Más reactiva: el ARN se hidroliza con más facilidad', 'La degradan las ribonucleasas'] },
+            right: { title: '2-desoxirribosa (ADN)', items: ['Un H en el carbono 2′ (le falta un oxígeno)', 'Más estable', 'La degradan las desoxirribonucleasas'] },
+          },
+          {
+            type: 'table',
+            title: 'Bases, nucleósidos y nucleótidos (presentación) ★',
+            data: {
+              headers: ['Base', 'Tipo', 'Está en', 'Nucleósido', 'Nucleótido'],
+              rows: [
+                ['Adenina (A)', 'Purina', 'ADN y ARN', 'Adenosina', 'Ácido adenílico (AMP)'],
+                ['Guanina (G)', 'Purina', 'ADN y ARN', 'Guanosina', 'Ácido guanílico (GMP)'],
+                ['Citosina (C)', 'Pirimidina', 'ADN y ARN', 'Citidina', 'Ácido citidílico (CMP)'],
+                ['Timina (T)', 'Pirimidina (5-metiluracilo)', 'Solo ADN', 'Timidina', 'Ácido timidílico (TMP)'],
+                ['Uracilo (U)', 'Pirimidina', 'Solo ARN', 'Uridina', 'Ácido uridílico (UMP)'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'mnemotecnia',
+            title: 'Para no confundir',
+            content: 'Purinas = 2 anillos = Adenina y Guanina («PURo AGua»). Pirimidinas = 1 anillo = C, T, U (las que tienen «y» en inglés: cytosine, thymine). El nucleósido termina en «-ina»/«-osina» (adenosina, citidina) y el nucleótido es el «ácido …ílico».',
+          },
+        ],
+      },
+      {
+        id: 'ban-3',
+        number: 3,
+        title: 'Enlaces y la columna azúcar-fosfato',
+        keyTerms: ['enlace N-glucosídico', 'enlace fosfodiéster', '5′→3′', 'columna vertebral'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Los enlaces del ácido nucleico',
+            data: {
+              headers: ['Enlace', 'Une', 'Forma'],
+              rows: [
+                ['N-glucosídico', 'N de la base con el C1′ de la pentosa', 'El nucleósido'],
+                ['Fosfoéster', 'Fosfato con el –OH del C5′ de la pentosa', 'El nucleótido'],
+                ['Fosfodiéster 3′→5′', 'Un fosfato con el C3′ de un nucleótido y el C5′ del siguiente', 'La cadena (columna vertebral azúcar-fosfato)'],
+                ['Puentes de hidrógeno', 'Bases complementarias de dos cadenas', 'La doble hélice del ADN'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'El fosfato (presentación)',
+            items: [
+              'Deriva del ácido fosfórico.',
+              'Se une covalentemente al azúcar para formar los monómeros (nucleótidos).',
+              'Une los nucleótidos entre sí: forma la columna vertebral de la cadena de ADN y ARN.',
+              'Se une al carbono 5′ de un nucleótido y al 3′ del siguiente: por eso la cadena tiene dirección 5′→3′.',
+              'Al añadir un nucleótido a la cadena (desoxinucleósido trifosfato) se libera pirofosfato.',
+            ],
+          },
+          {
+            type: 'note',
+            title: '¿Qué parte genera las patologías?',
+            content: 'En clase se destacó al fosfato porque sin él no hay columna vertebral ni doble hélice. Sin embargo, las enfermedades genéticas no se deben a una «deficiencia de fosfato»: se deben sobre todo a cambios en la SECUENCIA de bases (mutaciones), a fallas de reparación o replicación y a alteraciones cromosómicas.',
+          },
+        ],
+      },
+      {
+        id: 'ban-4',
+        number: 4,
+        title: 'Pares de bases y temperatura de fusión',
+        keyTerms: ['complementariedad', 'puentes de hidrógeno', 'temperatura de fusión', 'Tm'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Pares complementarios',
+            left: { title: 'A = T (A = U en ARN)', items: ['2 puentes de hidrógeno', 'Unión más débil', 'Regiones ricas en A-T se separan con más facilidad'] },
+            right: { title: 'G ≡ C', items: ['3 puentes de hidrógeno', 'Unión más fuerte', 'Más G-C = más calor (más energía) para separar las cadenas'] },
+          },
+          {
+            type: 'paragraph',
+            content:
+              'La temperatura de fusión (Tm) es la temperatura a la que se separa (desnaturaliza) la mitad del ADN de doble cadena en cadenas sencillas. A mayor proporción de G-C, mayor Tm: el ADN es más estable. Además de los puentes de hidrógeno, el apilamiento de las bases contribuye mucho a esa estabilidad. El ADN es de doble cadena (antiparalela, en doble hélice) y el ARN suele ser de cadena sencilla.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Tm en el laboratorio',
+            content: 'La PCR usa este principio: se calienta el ADN (~94 °C) para separar las cadenas y se enfría para que los cebadores se unan. Los cebadores ricos en G-C necesitan temperaturas de alineamiento más altas.',
+          },
+        ],
+      },
+    ],
+  },
 ]
