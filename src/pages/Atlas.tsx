@@ -180,14 +180,9 @@ function AtlasCard({
           </span>
         </div>
 
-        <button
-          onClick={(e) => {
-            e.preventDefault()
-          }}
-          className="mt-3 w-full flex items-center justify-center gap-1 text-xs font-semibold text-primary-ink hover:text-primary-700 transition-colors"
-        >
+        <span className="mt-3 w-full flex items-center justify-center gap-1 text-xs font-semibold text-primary-ink">
           Ver tema <ArrowRight weight="bold" className="w-3 h-3" />
-        </button>
+        </span>
       </div>
     </Link>
   )

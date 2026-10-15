@@ -314,7 +314,7 @@ export function AtlasTopic() {
               {relatedTopics.map((t) => (
                 <Link
                   key={t.id}
-                  to={`/topic/${t.id}`}
+                  to={`/atlas/${t.id}`}
                   className="card card-interactive p-4 hover:shadow-md transition-all flex items-center gap-3"
                 >
                   <span className="text-2xl">{t.emoji}</span>
