@@ -4,20 +4,22 @@ import { useState, useRef, useEffect } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import {
   MagnifyingGlass, X, House, BookOpen, Lightning,
-  Cube, BookOpenText, ChartBar, GraduationCap, Brain, Image, Translate, Gear,
+  Cube, BookOpenText, ChartBar, GraduationCap, Image, Translate, Gear, DotsThreeOutline,
 } from '@phosphor-icons/react'
+import { LogoMark } from './Logo'
+import { AppearanceMenu } from './AppearanceMenu'
 
 /* Entradas de navegación permanentes. Las cuatro secciones núcleo (Anatomía,
  * Atlas, MedLex, Quizzes) nunca están anidadas ni condicionadas a que haya un
- * plan seleccionado. `mobile: true` marca las que aparecen en la barra inferior
- * móvil. "Buscar" se cubre con el cuadro de búsqueda. */
+ * plan seleccionado. `mobile: true` marca las cuatro que van directo en la
+ * barra inferior móvil; el resto vive en «Más». "Buscar" es el cuadro de búsqueda. */
 const NAV_ITEMS = [
   { path: '/',            label: 'Inicio',       icon: House,          mobile: true  },
-  { path: '/plan',        label: 'Plan',         icon: BookOpen,       mobile: true  },
+  { path: '/plan',        label: 'Plan',         icon: BookOpen,       mobile: false },
   { path: '/estudio',     label: 'Temas',        icon: GraduationCap,  mobile: true  },
   { path: '/anatomia',    label: 'Anatomía',     icon: Cube,           mobile: false },
   { path: '/atlas',       label: 'Atlas',        icon: Image,          mobile: true  },
-  { path: '/terminologia',label: 'MedLex',       icon: BookOpenText,   mobile: true  },
+  { path: '/terminologia',label: 'MedLex',       icon: BookOpenText,   mobile: false },
   { path: '/vocabulario', label: 'EnLex',         icon: Translate,      mobile: false },
   { path: '/quiz',        label: 'Quizzes',      icon: Lightning,      mobile: true  },
   { path: '/progress',    label: 'Progreso',     icon: ChartBar,       mobile: false },
@@ -25,10 +27,12 @@ const NAV_ITEMS = [
 ] as const
 
 const MOBILE_ITEMS = NAV_ITEMS.filter(n => n.mobile)
+const MORE_ITEMS = NAV_ITEMS.filter(n => !n.mobile)
 
 export function Navbar() {
   const [query,   setQuery]   = useState('')
   const [focused, setFocused] = useState(false)
+  const [moreOpen, setMoreOpen] = useState(false)
   const inputRef  = useRef<HTMLInputElement>(null)
   const navigate  = useNavigate()
   const location  = useLocation()
@@ -50,6 +54,9 @@ export function Navbar() {
     return () => window.removeEventListener('keydown', handler)
   }, [])
 
+  // Cierra «Más» al cambiar de ruta.
+  useEffect(() => { setMoreOpen(false) }, [location.pathname])
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
     if (query.trim()) { navigate(`/search?q=${encodeURIComponent(query.trim())}`); inputRef.current?.blur() }
@@ -58,16 +65,14 @@ export function Navbar() {
   return (
     <>
       {/* ── Top bar (desktop) ────────────────────────────── */}
-      <header className="sticky top-0 z-40 bg-surface/90 backdrop-blur-sm border-b border-zinc-200/80">
+      <header className="sticky top-0 z-40 bg-surface border-b border-zinc-200" style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center gap-3">
 
           {/* Logo MedCore */}
           <Link to="/" className="flex items-center gap-2 flex-shrink-0 group mr-1">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-700 rounded-md flex items-center justify-center shadow-sm">
-              <Brain weight="fill" className="w-4 h-4 text-white" />
-            </div>
-            <span className="font-bold text-zinc-900 tracking-tight hidden sm:block">
-              Med<span className="text-primary">Core</span>
+            <LogoMark className="w-8 h-8" />
+            <span className="font-display font-medium text-zinc-900 tracking-tight hidden sm:block">
+              MedCore
             </span>
           </Link>
 
@@ -80,7 +85,7 @@ export function Navbar() {
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-sm font-medium
                             transition-all duration-150
                             ${isActive(path)
-                              ? 'bg-zinc-900 text-app'
+                              ? 'bg-primary-tint text-primary-ink'
                               : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'}`}
               >
                 <Icon weight={isActive(path) ? 'fill' : 'regular'} className="w-3.5 h-3.5" />
@@ -120,31 +125,63 @@ export function Navbar() {
               </kbd>
             </div>
           </form>
+
+          <AppearanceMenu />
         </div>
       </header>
 
-      {/* ── Mobile bottom tab bar ───────────────────────── */}
-      <nav className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-surface/95 backdrop-blur-sm border-t border-zinc-200">
-        <div className="grid grid-cols-6 h-16 max-w-lg mx-auto">
+      {/* ── Mobile bottom tab bar: 4 destinos + «Más» ─────── */}
+      {moreOpen && (
+        <div className="fixed inset-0 z-40 md:hidden" onClick={() => setMoreOpen(false)}>
+          <div className="absolute inset-0 bg-black/30" />
+          <div
+            className="absolute left-3 right-3 card p-2 shadow-pop grid grid-cols-3 gap-1"
+            style={{ bottom: 'calc(4.5rem + env(safe-area-inset-bottom, 0px))' }}
+            onClick={e => e.stopPropagation()}
+          >
+            {MORE_ITEMS.map(({ path, label, icon: Icon }) => (
+              <Link
+                key={path}
+                to={path}
+                className={`flex flex-col items-center justify-center gap-1.5 min-h-[4.5rem] rounded-xl text-xs
+                  ${isActive(path) ? 'bg-primary-tint text-primary-ink' : 'text-zinc-600 hover:bg-zinc-100'}`}
+              >
+                <Icon weight={isActive(path) ? 'fill' : 'regular'} className="w-5 h-5" />
+                {label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+      <nav
+        className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-surface border-t border-zinc-200"
+        style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
+      >
+        <div className="grid grid-cols-5 h-16 max-w-lg mx-auto">
           {MOBILE_ITEMS.map(({ path, label, icon: Icon }) => {
             const active = isActive(path)
             return (
               <Link
                 key={path}
                 to={path}
-                className={`flex flex-col items-center justify-center gap-0.5 transition-all duration-150
-                  ${active ? 'text-primary' : 'text-zinc-400 hover:text-zinc-600'}`}
+                className={`flex flex-col items-center justify-center gap-1 transition-colors duration-150
+                  ${active ? 'text-primary' : 'text-zinc-500 hover:text-zinc-700'}`}
               >
-                <Icon weight={active ? 'fill' : 'regular'} className="w-5 h-5" />
-                <span className={`text-[0.5625rem] font-semibold leading-none ${active ? 'text-primary' : 'text-zinc-400'}`}>
-                  {label}
-                </span>
-                {active && (
-                  <span className="absolute bottom-1 w-1 h-1 rounded-full bg-primary" />
-                )}
+                <Icon weight={active ? 'fill' : 'regular'} className="w-6 h-6" />
+                <span className="text-[0.6875rem] leading-none">{label}</span>
               </Link>
             )
           })}
+          <button
+            type="button"
+            onClick={() => setMoreOpen(o => !o)}
+            aria-expanded={moreOpen}
+            className={`flex flex-col items-center justify-center gap-1 transition-colors duration-150
+              ${moreOpen || MORE_ITEMS.some(n => isActive(n.path)) ? 'text-primary' : 'text-zinc-500 hover:text-zinc-700'}`}
+          >
+            <DotsThreeOutline weight={moreOpen ? 'fill' : 'regular'} className="w-6 h-6" />
+            <span className="text-[0.6875rem] leading-none">Más</span>
+          </button>
         </div>
       </nav>
     </>

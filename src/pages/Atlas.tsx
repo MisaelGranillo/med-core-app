@@ -39,20 +39,13 @@ export function Atlas() {
 
   return (
     <div className="flex-1 flex flex-col">
-      <div className="bg-hero-gradient text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 rounded-lg bg-surface/15 backdrop-blur-sm flex items-center justify-center text-2xl">
-              🗺️
-            </div>
-            <div>
-              <h1 className="text-3xl font-bold">Atlas Visual</h1>
-              <p className="text-white/80 text-sm">
-                Estudio mediante imágenes anotadas · {atlasTopics.length} temas
-              </p>
-            </div>
-          </div>
-        </div>
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 pt-8">
+        <h1 className="font-display font-light text-[2.25rem] sm:text-[2.75rem] leading-[1.05] tracking-[-0.025em] text-zinc-900">
+          Atlas visual
+        </h1>
+        <p className="mt-2 text-base text-zinc-500">
+          Estudio mediante imágenes anotadas · {atlasTopics.length} temas
+        </p>
       </div>
 
       <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 py-8">
@@ -63,7 +56,7 @@ export function Atlas() {
               onClick={() => setSelectedCategory(cat.id)}
               className={`px-4 py-2 rounded-full font-medium text-sm transition-all flex-shrink-0 ${
                 selectedCategory === cat.id
-                  ? 'bg-primary text-white shadow-sm'
+                  ? 'bg-primary text-primary-fg shadow-sm'
                   : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
               }`}
             >

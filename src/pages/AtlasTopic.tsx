@@ -121,29 +121,24 @@ export function AtlasTopic() {
   return (
     <div className="flex-1 flex flex-col">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+      <div className="border-b border-zinc-200 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
           <Link
             to="/atlas"
-            className="inline-flex items-center gap-1.5 text-white/70 hover:text-white text-sm font-medium mb-4 transition-colors"
+            className="inline-flex items-center gap-1.5 text-zinc-500 hover:text-zinc-900 text-sm mb-4 transition-colors"
           >
-            <ArrowLeft weight="bold" className="w-4 h-4" />
-            Volver a Atlas
+            <ArrowLeft weight="regular" className="w-4 h-4" />
+            Atlas
           </Link>
 
           <div className="grid md:grid-cols-2 gap-6 items-center">
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-surface/20 backdrop-blur-sm flex items-center justify-center text-3xl">
-                  {topic.emoji}
-                </div>
-                <div>
-                  <h1 className="text-3xl font-bold">{topic.title}</h1>
-                  <p className="text-white/70 text-sm">{topic.subtitle}</p>
-                </div>
+              <div className="mb-4">
+                <h1 className="font-display font-light text-[2rem] sm:text-[2.6rem] leading-[1.08] tracking-[-0.025em] text-zinc-900 text-balance">{topic.title}</h1>
+                <p className="mt-2 text-base text-zinc-600">{topic.subtitle}</p>
               </div>
 
-              <div className="flex items-center gap-3 text-sm text-white/80">
+              <div className="flex items-center gap-3 text-sm text-zinc-500">
                 <span>{topic.questions.length} preguntas</span>
                 <span>•</span>
                 <span>{CATEGORY_LABELS[topic.category]}</span>
@@ -153,7 +148,7 @@ export function AtlasTopic() {
             <button
               type="button"
               onClick={() => setLightboxOpen(true)}
-              className="hidden md:block h-40 bg-surface/10 rounded-lg overflow-hidden flex-shrink-0 cursor-zoom-in group relative"
+              className="hidden md:block h-40 bg-zinc-100 rounded-2xl overflow-hidden flex-shrink-0 cursor-zoom-in group relative"
             >
               <img
                 src={topic.imagePath}

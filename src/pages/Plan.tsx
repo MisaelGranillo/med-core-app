@@ -25,7 +25,7 @@ function SubjectCard({ subject }: { subject: Subject }) {
   return (
     <motion.div
       layout
-      initial={{ opacity: 0, y: 10 }}
+      initial={{ opacity: 1, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25 }}
       role="link"

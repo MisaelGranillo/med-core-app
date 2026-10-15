@@ -98,17 +98,17 @@ export function Quiz() {
 
   return (
     <div className="flex-1 flex flex-col">
-      {/* Header */}
-      <div className={`${colors.headerBg} text-white`}>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 flex items-center justify-between">
+      {/* Encabezado: barra discreta con retorno al tema (sin banner) */}
+      <div className="border-b border-zinc-200 bg-surface">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-4">
           <Link
             to={`/topic/${topic.id}`}
-            className="inline-flex items-center gap-1.5 text-white/70 hover:text-white text-sm font-medium transition-colors"
+            className="inline-flex items-center gap-1.5 min-w-0 text-zinc-600 hover:text-zinc-900 text-sm transition-colors"
           >
-            <ArrowLeft weight="bold" className="w-4 h-4" />
-            {topic.title}
+            <ArrowLeft weight="regular" className="w-4 h-4 flex-shrink-0" />
+            <span className="truncate">{topic.title}</span>
           </Link>
-          <span className="text-white/70 text-sm">
+          <span className="text-zinc-500 text-sm flex-shrink-0">
             {topicQuestions.length} preguntas
           </span>
         </div>
@@ -127,8 +127,7 @@ export function Quiz() {
               className="space-y-6"
             >
               <div className="text-center mb-8">
-                <span className="text-4xl mb-3 block">{topic.emoji}</span>
-                <h2 className="text-2xl font-extrabold text-zinc-900 tracking-tight mb-2">
+                <h2 className="font-display font-light text-[2rem] leading-[1.1] tracking-[-0.02em] text-zinc-900 mb-2 text-balance">
                   {topic.title}
                 </h2>
                 <p className="text-zinc-500 text-sm">Elige cómo quieres repasar</p>

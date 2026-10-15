@@ -119,7 +119,7 @@ export function Temas() {
                   return (
                     <motion.div
                       key={t.id}
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 1, y: 6 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.03, duration: 0.25 }}
                       className="card p-4 flex flex-col gap-3 h-full"

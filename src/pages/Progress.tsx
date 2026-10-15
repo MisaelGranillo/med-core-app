@@ -45,7 +45,7 @@ export function Progress() {
         ].map((stat, i) => (
           <motion.div
             key={stat.label}
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 1, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.08 }}
             className="card p-5 flex flex-col items-center text-center gap-3"

@@ -19,11 +19,24 @@ const neutral = {
 
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  /* Tema elegible (Ajustes → Tema): la clase .dark en <html> la ponen
+   * index.html (antes del primer pintado) y useThemeSync. */
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
         sans: ['var(--font-body)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-mono)', 'monospace'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+        /* Sin monoespaciada: `font-mono` heredado cae a la sans. */
+        mono: ['var(--font-mono)', 'system-ui', 'sans-serif'],
+      },
+      /* Dirección «delgada y limpia»: los pesos gruesos heredados se
+       * aligeran globalmente (bold/extrabold → 600, semibold → 500). */
+      fontWeight: {
+        semibold: '500',
+        bold: '600',
+        extrabold: '600',
+        black: '700',
       },
       colors: {
         /* neutral migration: zinc → clinical-blue tokens (dark-adaptive) */

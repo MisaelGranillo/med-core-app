@@ -175,7 +175,7 @@ function QuizEngine({ terms, onClose }: { terms: MedEnTerm[]; onClose: () => voi
           <button onClick={onClose} className="btn-primary bg-zinc-100 hover:bg-zinc-200 text-zinc-700 px-5 py-2.5">
             Cerrar quiz
           </button>
-          <button onClick={() => window.location.reload()} className="btn-primary bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5">
+          <button onClick={() => window.location.reload()} className="btn-primary bg-primary-600 hover:bg-primary-700 text-primary-fg px-5 py-2.5">
             <ArrowCounterClockwise weight="bold" className="w-4 h-4" />
             Intentar de nuevo
           </button>

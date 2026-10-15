@@ -2,7 +2,7 @@ import React, { lazy, Suspense, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom'
 import { Navbar } from './components/Navbar'
 import { paiModulos } from './data/pai'
-import { useSettings, scaleValue } from './store/useSettings'
+import { useSettings, scaleValue, useThemeSync } from './store/useSettings'
 
 /* Routes are lazy-loaded so each page + its heavy data (topics, quizzes,
  * anatomy meshes) only ships when navigated to — keeps the initial bundle
@@ -112,12 +112,14 @@ export default function App() {
   useEffect(() => {
     document.documentElement.style.setProperty('--fs-scale', String(scaleValue(fontScale)))
   }, [fontScale])
+  // Aplica el tema (Sistema · Claro · Oscuro) elegido en Ajustes o en la barra.
+  useThemeSync()
 
   return (
     <ErrorBoundary>
       <BrowserRouter>
         {/* pb-16 md:pb-0 deja espacio para la barra de navegación inferior en móvil */}
-        <div className="flex flex-col min-h-[100dvh] pb-16 md:pb-0">
+        <div className="flex flex-col min-h-[100dvh] pb-[calc(4rem+env(safe-area-inset-bottom,0px))] md:pb-0">
           <Navbar />
           <Suspense fallback={<RouteFallback />}>
             <Routes>

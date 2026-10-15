@@ -1,47 +1,54 @@
 /* ============================================================================
- * tokens.css — MedCore Clinical Blue Design System
- * Single source of truth. Every color/space/radius/font is defined here.
- * Components reference tokens only — no magic numbers.
+ * tokens.css — MedCore «Monitor suave» (dirección C, ver PRODUCT.md/DESIGN.md)
+ * Única fuente de verdad: todo color/espacio/radio/fuente vive aquí.
+ * Los componentes leen solo tokens.
  *
- * Light mode is the default. Dark mode is automatic via prefers-color-scheme
- * (CSS only — no JS toggle, no localStorage). Every surface flips because
- * components read the --color-* tokens (directly, via the --c-* bridge, or
- * via the Tailwind `zinc` ramp which is remapped to these tokens).
+ * Tema: claro por defecto en :root; oscuro en :root.dark. La clase la pone
+ * el script de index.html antes del primer pintado (sin parpadeo) y luego
+ * useThemeSync según Ajustes → Tema (Sistema · Claro · Oscuro). Los `dark:`
+ * de Tailwind usan la misma clase (darkMode: 'class').
  * ========================================================================== */
 
 :root {
-  /* ── Surfaces & text (light) ───────────────────────────────────────── */
-  --color-page-bg:        #EFF6FF;
-  --color-surface:        #FFFFFF;
-  --color-surface-subtle: #DBEAFE;
-  --color-border:         #DBEAFE;
-  --color-border-strong:  #93C5FD;
+  /* ── Superficies y texto (claro) ───────────────────────────────────── */
+  --color-page-bg:        #ECEFF3;
+  --color-surface:        #FBFCFD;
+  --color-surface-subtle: #E4E8EE;
+  --color-border:         #E1E5EB;
+  --color-border-strong:  #C9D0DA;
 
-  --color-text-primary:   #1E3A5F;
-  --color-text-secondary: #64748B;
-  --color-text-muted:     #94A3B8;
+  --color-text-primary:   #1B2029;
+  --color-text-secondary: #515B6B;
+  --color-text-muted:     #5F6878;
 
-  --color-hero-gradient:  linear-gradient(135deg, #1e4d8c 0%, #2563a8 35%, #1a7a9e 70%, #0e6b7c 100%);
+  /* Ya no hay banners con degradado: el «hero» es la propia superficie. */
+  --color-hero-gradient:  var(--color-surface);
 
-  --color-accent:         #2563A8;
-  --color-accent-light:   #DBEAFE;
-  --color-accent-text:    #1E4D8C;
+  --color-accent:         #2A63DB;
+  --color-accent-light:   #E3ECFD;
+  --color-accent-text:    #1F4FB5;
+  --color-on-accent:      #FFFFFF;
 
   --color-progress-lmgc:  #1D9E75;
 
-  --color-badge-ok-bg:    #DBEAFE;
-  --color-badge-ok-text:  #1E4D8C;
-  --color-badge-wip-bg:   #F1F5F9;
-  --color-badge-wip-text: #94A3B8;
+  --color-badge-ok-bg:    #E3ECFD;
+  --color-badge-ok-text:  #1F4FB5;
+  --color-badge-wip-bg:   #E4E8EE;
+  --color-badge-wip-text: #5F6878;
 
-  --color-tool-icon-bg:   #DBEAFE;
-  --color-tool-icon:      #1E4D8C;
+  --color-tool-icon-bg:   #E3ECFD;
+  --color-tool-icon:      #1F4FB5;
+
+  /* Avisos (nota / crítico) y éxito — claro */
+  --callout-nota-bg:     #FBF1DF;  --callout-nota-border:     #B7791F;  --callout-nota-text:     #6B4510;
+  --callout-critico-bg:  #FCEBEB;  --callout-critico-border:  #B42318;  --callout-critico-text:  #7A1A12;
+  --color-success: #17875F;  --color-success-tint: #DDF3EA;  --color-success-text: #0E5A40;
 
   /* ── Shared (both modes) ───────────────────────────────────────────── */
-  --radius-sm:   4px;
-  --radius-md:   8px;
-  --radius-lg:   12px;
-  --radius-pill: 20px;
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   22px;
+  --radius-pill: 999px;
 
   --space-1:  4px;
   --space-2:  8px;
@@ -51,9 +58,11 @@
   --space-6:  24px;
   --space-8:  32px;
 
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', ui-monospace, monospace;
-  /* alias kept so any lingering var(--font-sans) resolves to Inter */
+  --font-body: 'Urbanist', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Urbanist', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  /* Sin monoespaciada (PRODUCT.md): las etiquetas usan la misma sans. */
+  --font-mono: var(--font-body);
+  /* alias para cualquier var(--font-sans) heredado */
   --font-sans: var(--font-body);
 
   /* Multiplicador global de tamaño de texto (Ajustes → Tamaño de texto).
@@ -65,7 +74,7 @@
   --fs-scale: 1;
 
   /* Type scale (used by index.css component layer) */
-  --fs-body:    0.9375rem; /* 15 */
+  --fs-body:    1rem;      /* 16 */
   --fs-small:   0.8125rem; /* 13 */
   --fs-label:   0.75rem;   /* 12 — mono labels */
   --fs-caption: 0.75rem;
@@ -94,13 +103,6 @@
   --card-m8: #185FA5;
   --card-m9: #7F77DD;
 
-  /* Callout fixed palettes (Section D) */
-  --callout-nota-bg:     #FAEEDA;  --callout-nota-border:     #BA7517;  --callout-nota-text:     #633806;
-  --callout-critico-bg:  #FCEBEB;  --callout-critico-border:  #A32D2D;  --callout-critico-text:  #791F1F;
-
-  /* Semantic (success kept for quiz feedback) */
-  --color-success: #1D9E75;  --color-success-tint: #DBF3EA;  --color-success-text: #0F5C44;
-
   /* ── Bridge: legacy --c-* names → clinical tokens ──────────────────────
    * Lets pre-existing components keep their token utilities while adopting
    * the new palette + dark mode (these resolve to --color-* at use site).  */
@@ -118,12 +120,12 @@
   --c-primary-hover: var(--color-accent-text);
   --c-primary-ink:   var(--color-accent-text);
   --c-primary-tint:  var(--color-accent-light);
-  --c-primary-fg:    #FFFFFF;
+  --c-primary-fg:    var(--color-on-accent);
   --c-primary-50:  var(--color-accent-light);
   --c-primary-100: var(--color-accent-light);
   --c-primary-200: var(--color-border-strong);
-  --c-primary-300: #93C5FD;
-  --c-primary-400: #60A5FA;
+  --c-primary-300: #A9C3F5;
+  --c-primary-400: #5E8BEA;
   --c-primary-500: var(--color-accent);
   --c-primary-600: var(--color-accent);
   --c-primary-700: var(--color-accent-text);
@@ -131,7 +133,7 @@
   --c-primary-900: var(--color-accent-text);
 
   --c-header-gradient: var(--color-hero-gradient);
-  --c-stamp-700: #1e4d8c;  --c-stamp-800: #0f3060;  --c-stamp-900: #0d2347;
+  --c-stamp-700: var(--color-accent);  --c-stamp-800: var(--color-accent-text);  --c-stamp-900: var(--color-accent-text);
 
   --c-success: var(--color-success);  --c-success-tint: var(--color-success-tint);  --c-success-ink: var(--color-success-text);
   --c-warning: var(--callout-nota-border);    --c-warning-tint: var(--callout-nota-bg);     --c-warning-ink: var(--callout-nota-text);
@@ -164,74 +166,72 @@
   --stage-contact: #2A2015;              /* contact-shadow tone (three.js) */
 
   /* Editorial serif accent (titles) — system stack, no web-font dependency. */
-  --font-voice: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, Cambria, 'Times New Roman', serif;
+  --font-voice: var(--font-display);
 
   /* Shadows */
-  --shadow-sm:         0 1px 2px rgba(15,31,61,0.06);
-  --shadow-card:       0 2px 10px -4px rgba(15,31,61,0.10);
-  --shadow-card-hover: 0 6px 22px -8px rgba(15,31,61,0.18);
-  --shadow-pop:        0 16px 40px -16px rgba(10,22,40,0.45);
+  --shadow-sm:         0 1px 2px rgba(27,32,41,0.04);
+  --shadow-card:       0 1px 2px rgba(27,32,41,0.04), 0 8px 24px -16px rgba(27,32,41,0.12);
+  --shadow-card-hover: 0 1px 2px rgba(27,32,41,0.05), 0 14px 32px -18px rgba(27,32,41,0.20);
+  --shadow-pop:        0 20px 48px -20px rgba(15,17,21,0.40);
 
   /* Motion */
-  --t-fast: 150ms ease;
-  --t-lift: 200ms ease;
-  --t-fill: 600ms ease;
+  --t-fast: 160ms cubic-bezier(0.25, 1, 0.5, 1);
+  --t-lift: 220ms cubic-bezier(0.25, 1, 0.5, 1);
+  --t-fill: 600ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* ============================================================================
- * Dark mode — automatic. Only the base --color-* tokens are overridden;
- * everything else (the --c-* bridge, Tailwind `zinc` ramp, components) reads
- * through them, so all surfaces flip with no per-component changes.
+ * Modo oscuro — :root.dark. Solo se redefinen los tokens base; el puente
+ * --c-*, la rampa `zinc` de Tailwind y los componentes leen a través de ellos.
  * ========================================================================== */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-page-bg:        #0A1628;
-    --color-surface:        #0F1F3D;
-    --color-surface-subtle: rgba(56,138,221,0.08);
-    --color-border:         rgba(56,138,221,0.15);
-    --color-border-strong:  rgba(56,138,221,0.30);
+:root.dark {
+  color-scheme: dark;
+  --color-page-bg:        #0F1115;
+  --color-surface:        #181B21;
+  --color-surface-subtle: #21252D;
+  --color-border:         #262A32;
+  --color-border-strong:  #363C47;
 
-    --color-text-primary:   #C8E0F8;
-    --color-text-secondary: #7FA9CE;
-    --color-text-muted:     #6E96B8;
+  --color-text-primary:   #ECEFF4;
+  --color-text-secondary: #AAB2C0;
+  --color-text-muted:     #959EAC;
 
-    --color-hero-gradient:  linear-gradient(135deg, #0d2347 0%, #0f3060 35%, #0a3d5c 70%, #062e4a 100%);
+  --color-accent:         #6D9EFF;
+  --color-accent-light:   #16233D;
+  --color-accent-text:    #93B8FF;
+  --color-on-accent:      #0A1428;
 
-    --color-accent:         #378ADD;
-    --color-accent-light:   rgba(56,138,221,0.15);
-    --color-accent-text:    #60A5FA;
+  --color-badge-ok-bg:    #16233D;
+  --color-badge-ok-text:  #93B8FF;
+  --color-badge-wip-bg:   #21252D;
+  --color-badge-wip-text: #959EAC;
 
-    --color-progress-lmgc:  #1D9E75;
+  --color-tool-icon-bg:   #16233D;
+  --color-tool-icon:      #93B8FF;
 
-    --color-badge-ok-bg:    rgba(56,138,221,0.2);
-    --color-badge-ok-text:  #60A5FA;
-    --color-badge-wip-bg:   rgba(255,255,255,0.05);
-    --color-badge-wip-text: #4A7FAA;
+  --callout-nota-bg:     #2B2214;  --callout-nota-border:     #D9A441;  --callout-nota-text:     #F1D59C;
+  --callout-critico-bg:  #2E1716;  --callout-critico-border:  #F07B6E;  --callout-critico-text:  #F6C1BA;
+  --color-success: #3FBF8C;  --color-success-tint: #13291F;  --color-success-text: #8EE0BC;
 
-    --color-tool-icon-bg:   rgba(56,138,221,0.15);
-    --color-tool-icon:      #60A5FA;
+  --c-primary-50:  #131D30;
+  --c-primary-100: #16233D;
+  --c-primary-200: #1F3157;
+  --c-primary-300: #2C4A82;
+  --c-primary-400: #4B7FE6;
+  --c-primary-700: #A9C6FF;
+  --c-primary-900: #C9DBFF;
 
-    --color-success: #1D9E75;  --color-success-tint: rgba(29,158,117,0.15);  --color-success-text: #5FD3AC;
+  --shadow-sm:         0 1px 2px rgba(0,0,0,0.30);
+  --shadow-card:       0 1px 2px rgba(0,0,0,0.30), 0 10px 28px -18px rgba(0,0,0,0.60);
+  --shadow-card-hover: 0 1px 2px rgba(0,0,0,0.30), 0 16px 34px -18px rgba(0,0,0,0.70);
 
-    /* Primary scale tints that are hard-coded above need dark variants */
-    --c-primary-300: #2D5A7A;
-    --c-primary-400: #378ADD;
-    /* Tinted boxes/chips + "primary-700/900" text (competencia, chips) on dark */
-    --c-primary-50:  rgba(56,138,221,0.12);
-    --c-primary-100: rgba(56,138,221,0.18);
-    --c-primary-200: rgba(56,138,221,0.28);
-    --c-primary-700: #7FB3E8;
-    --c-primary-900: #A9CCF0;
-
-    /* 3D stage → warm charcoal in dark mode (fallback: honours the OS unless
-     * an explicit [data-mode="light"] opts out). */
-    --stage-bg:      #1C1A17;
-    --stage-bg-2:    #24211C;
-    --stage-ink:     #E9E2D5;
-    --stage-muted:   #9B9285;
-    --stage-line:    rgba(233,226,213,0.12);
-    --stage-contact: #000000;
-  }
+  /* Escenario 3D → carbón cálido */
+  --stage-bg:      #1C1A17;
+  --stage-bg-2:    #24211C;
+  --stage-ink:     #E9E2D5;
+  --stage-muted:   #9B9285;
+  --stage-line:    rgba(233,226,213,0.12);
+  --stage-contact: #000000;
 }
 
 /* Explicit theme hooks for the 3D "atelier" stage. The stage keeps its own warm

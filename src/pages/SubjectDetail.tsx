@@ -53,67 +53,50 @@ export function SubjectDetail() {
   return (
     <div className="flex-1 flex flex-col pb-20 md:pb-0">
 
-      {/* ── Hero de la materia ─────────────────────────────── */}
-      <div className="bg-gradient-to-br from-neutral-900 to-neutral-700 text-white relative overflow-hidden">
-        <svg aria-hidden className="absolute inset-0 w-full h-full opacity-10 pointer-events-none" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <pattern id="dots-subj" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1.2" fill="white" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#dots-subj)" />
-        </svg>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-8">
-          <div className="flex items-center gap-2 mb-5 text-white/80 text-sm">
-            <Link to="/plan" className="flex items-center gap-1.5 hover:text-white transition-colors">
-              <ArrowLeft weight="bold" className="w-4 h-4" />
-              Plan de Estudios
+      {/* ── Encabezado de la materia (sin banner) ──────────── */}
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 pt-6">
+        <div className="card p-6 sm:p-8 flex flex-col gap-4">
+          <nav className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-zinc-500" aria-label="Ruta">
+            <Link to="/plan" className="inline-flex items-center gap-1.5 hover:text-zinc-900 transition-colors">
+              <ArrowLeft weight="regular" className="w-4 h-4" />
+              Plan de estudios
             </Link>
-            <span>/</span>
-            <span className="text-white/80">{plan.schoolShort}</span>
-            <span>/</span>
-            <span className="text-white font-medium">{period.label}</span>
-          </div>
+            <span className="text-zinc-300" aria-hidden="true">/</span>
+            <span>{plan.schoolShort}</span>
+            <span className="text-zinc-300" aria-hidden="true">/</span>
+            <span className="text-zinc-700">{period.label}</span>
+          </nav>
 
-          <div className="flex flex-wrap items-center gap-2 mb-3">
-            <span className="text-[0.625rem] font-bold uppercase tracking-wider text-white/80 border border-white/30 px-2.5 py-1 rounded-full">
-              {plan.school}
-            </span>
-            {subject.code && (
-              <span className="text-[0.625rem] font-bold font-mono tracking-wider text-white/90 bg-white/15 px-2.5 py-1 rounded-full">
-                {subject.code}
-              </span>
-            )}
-            {subject.hasLab && (
-              <span className="flex items-center gap-1 text-[0.625rem] font-bold bg-teal-400 text-teal-900 px-2.5 py-1 rounded-full">
-                <Flask weight="fill" className="w-3 h-3" /> Laboratorio
-              </span>
-            )}
-          </div>
-
-          <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight leading-none mb-2">
+          <h1 className="font-display font-light text-[2rem] sm:text-[2.6rem] leading-[1.08] tracking-[-0.025em] text-zinc-900 text-balance">
             {subject.name}
           </h1>
-          {(subject.tags ?? []).length > 0 && (
-            <div className="flex flex-wrap gap-1.5 mt-3">
-              {(subject.tags ?? []).map(t => (
-                <span key={t} className="text-[0.625rem] font-semibold text-white/80 bg-white/15 px-2 py-0.5 rounded-full">
-                  {SISTEMA_LABELS[t] ?? t}
-                </span>
-              ))}
-            </div>
-          )}
+
+          <div className="flex flex-wrap items-center gap-2 text-sm">
+            <span className="text-zinc-500">{plan.school}</span>
+            {subject.code && (
+              <span className="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-700">{subject.code}</span>
+            )}
+            {subject.hasLab && (
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-tint text-primary-ink">
+                <Flask weight="regular" className="w-3.5 h-3.5" /> Laboratorio
+              </span>
+            )}
+            {(subject.tags ?? []).map(t => (
+              <span key={t} className="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-700">
+                {SISTEMA_LABELS[t] ?? t}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* ── Contenido ─────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6 w-full">
 
         {/* Accesos rápidos: visor 3D + MedLex (para sistemas corporales) */}
         {primarySistema && (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
+            <motion.div initial={{ opacity: 1, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
               <Link
                 to={`/anatomia-3d?sistema=${primarySistema}`}
                 className="card p-5 flex items-center gap-4 hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200 group"
@@ -130,7 +113,7 @@ export function SubjectDetail() {
                 <ArrowLeft weight="bold" className="w-4 h-4 text-zinc-400 rotate-180 group-hover:text-primary-600 transition-colors" />
               </Link>
             </motion.div>
-            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
+            <motion.div initial={{ opacity: 1, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
               <Link
                 to={`/terminologia?sistema=${primarySistema}`}
                 className="card p-5 flex items-center gap-4 hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200 group"
@@ -152,7 +135,7 @@ export function SubjectDetail() {
 
         {/* Acceso rápido a MedEN (Inglés Médico) */}
         {isIngles && (
-          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
+          <motion.div initial={{ opacity: 1, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
             <Link
               to="/vocabulario?semana=1"
               className="card p-5 flex items-center gap-4 hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200 group"
@@ -174,7 +157,7 @@ export function SubjectDetail() {
         {/* Términos MedLex relacionados */}
         {relatedTerms.length > 0 && (
           <motion.section
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 1, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="card p-6"
@@ -216,7 +199,7 @@ export function SubjectDetail() {
             {/* ── Ficha oficial ─────────────────────────────── */}
             {(content.credits != null || content.teacherHours != null || content.area || content.modality) && (
               <motion.section
-                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.22 }}
+                initial={{ opacity: 1, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.22 }}
                 className="card p-6"
               >
                 <div className="flex items-center gap-2 mb-4">
@@ -246,7 +229,7 @@ export function SubjectDetail() {
             {/* ── Descripción + competencia ─────────────────── */}
             {(content.description || content.competencia) && (
               <motion.section
-                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.26 }}
+                initial={{ opacity: 1, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.26 }}
                 className="card p-6 space-y-4"
               >
                 <div className="flex items-center gap-2">
@@ -270,7 +253,7 @@ export function SubjectDetail() {
             {/* ── Guías de estudio (Topics navegables) ──────── */}
             {subjectTopics.length > 0 && (
               <motion.section
-                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.24 }}
+                initial={{ opacity: 1, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.24 }}
                 className="card p-6"
               >
                 <div className="flex items-center gap-2 mb-4">
@@ -288,7 +271,7 @@ export function SubjectDetail() {
             {/* ── Plan semanal (contenido en curso) ─────────── */}
             {content.semanas && content.semanas.length > 0 && (
               <motion.section
-                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.28 }}
+                initial={{ opacity: 1, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.28 }}
                 className="card p-6"
               >
                 <div className="flex items-center gap-2 mb-4">
@@ -401,7 +384,7 @@ export function SubjectDetail() {
             {/* ── Temario / contenido temático ──────────────── */}
             {content.temario && content.temario.length > 0 && (
               <motion.section
-                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
+                initial={{ opacity: 1, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
                 className="card p-6"
               >
                 <div className="flex items-center gap-2 mb-4">
@@ -431,7 +414,7 @@ export function SubjectDetail() {
             {/* ── Bibliografía ──────────────────────────────── */}
             {content.bibliografia && content.bibliografia.length > 0 && (
               <motion.section
-                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.34 }}
+                initial={{ opacity: 1, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.34 }}
                 className="card p-6"
               >
                 <div className="flex items-center gap-2 mb-4">
@@ -473,7 +456,7 @@ export function SubjectDetail() {
             {/* ── Materiales y lecturas (PDF privados) ──────── */}
             {content.materiales && content.materiales.length > 0 && (
               <motion.section
-                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.36 }}
+                initial={{ opacity: 1, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.36 }}
                 className="card p-6"
               >
                 <div className="flex items-center gap-2 mb-4">
@@ -511,7 +494,7 @@ export function SubjectDetail() {
             {/* ── Recursos digitales ────────────────────────── */}
             {content.recursos && content.recursos.length > 0 && (
               <motion.section
-                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.38 }}
+                initial={{ opacity: 1, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.38 }}
                 className="card p-6"
               >
                 <div className="flex items-center gap-2 mb-4">
@@ -542,7 +525,7 @@ export function SubjectDetail() {
           ].map((sec, i) => (
             <motion.section
               key={sec.title}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 1, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.25 + i * 0.05 }}
               className="card p-6"

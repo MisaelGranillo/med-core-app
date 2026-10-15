@@ -139,12 +139,12 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
-    border-radius: var(--radius-full);
-    font-size: var(--fs-label);
-    font-weight: 700;
-    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--c-primary-fg);
     flex-shrink: 0;
   }
 

@@ -173,7 +173,7 @@ function QuizEngine({ terms, onClose }: { terms: MedLexTerm[]; onClose: () => vo
           </button>
           <button
             onClick={() => window.location.reload()}
-            className="btn-primary bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5"
+            className="btn-primary bg-primary-600 hover:bg-primary-700 text-primary-fg px-5 py-2.5"
           >
             <ArrowCounterClockwise weight="bold" className="w-4 h-4" />
             Intentar de nuevo
