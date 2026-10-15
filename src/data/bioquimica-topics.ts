@@ -4861,4 +4861,258 @@ export const bioquimicaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'bioquimica-adn-estructura-empaquetamiento',
+    title: 'ADN: niveles de estructura y empaquetamiento',
+    subtitle: 'Regla de Chargaff, cadenas antiparalelas, doble hélice y modelos A, B y Z, superenrollamiento, nucleosomas, cromatina y replicación semiconservativa',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🧬',
+    keyPoints: [
+      'ADN = muchos desoxirribonucleótidos en DOS HEBRAS enrolladas (escalera de caracol), unidas por puentes de hidrógeno entre las bases (A, G, C, T).',
+      'Regla de Chargaff: una purina siempre frente a una pirimidina: A=T (2 puentes de H) y G≡C (3), así que A = T y G = C en cantidad.',
+      'Hebras ANTIPARALELAS: el extremo 5′ de una queda frente al 3′ de la otra. La numeración la da la pentosa; los fosfatos unen los nucleótidos.',
+      'Niveles: PRIMARIA (secuencia de nucleótidos) · SECUNDARIA (doble hélice de Watson y Crick) · TERCIARIA (superenrollamiento, topoisomerasas) · CUATERNARIA (cromatina y cromosomas).',
+      'Modelos de doble hélice: ADN-A (más compacto, poca humedad) · ADN-B (fisiológico, dextrógiro, ~10.5 pb por vuelta) · ADN-Z (levógiro, en zigzag).',
+      'Empaquetamiento: doble hélice (2 nm) → nucleosoma (ADN en un octámero de histonas; «collar de perlas», 11 nm) → solenoide (30 nm) → bucles → cromosoma.',
+      'Replicación SEMICONSERVATIVA: cada ADN hijo conserva una hebra original y una nueva.',
+    ],
+    sections: [
+      {
+        id: 'bae-1',
+        number: 1,
+        title: 'Estructura primaria y regla de Chargaff',
+        keyTerms: ['desoxirribonucleótido', 'regla de Chargaff', 'antiparalelas', '5′→3′'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La estructura primaria del ADN es la secuencia de nucleótidos de una cadena: la información genética está en el orden exacto de sus bases. Cada cadena es un esqueleto de azúcar (desoxirribosa) y fosfato, y cada azúcar lleva una base. Por convención la secuencia se escribe de 5′ (fosfato libre) a 3′ (–OH libre).',
+          },
+          {
+            type: 'comparison',
+            title: 'Regla de Chargaff (complementariedad)',
+            left: { title: 'Adenina = Timina', items: ['Purina con pirimidina', '2 puentes de hidrógeno'] },
+            right: { title: 'Guanina ≡ Citosina', items: ['Purina con pirimidina', '3 puentes de hidrógeno: mayor estabilidad'] },
+          },
+          {
+            type: 'note',
+            title: 'Antiparalelas',
+            content: 'Las dos hebras corren en direcciones opuestas: una 5′→3′ y la otra 3′→5′, de modo que el extremo 3′ de una coincide con el 5′ de la otra. Los números 1′ a 5′ son los carbonos de la pentosa; el fosfato une el C3′ de un nucleótido con el C5′ del siguiente.',
+          },
+        ],
+      },
+      {
+        id: 'bae-2',
+        number: 2,
+        title: 'Estructura secundaria: la doble hélice',
+        keyTerms: ['doble hélice', 'Watson y Crick', 'ADN-A', 'ADN-B', 'ADN-Z'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Características (presentación)',
+            items: [
+              'Dos cadenas complementarias y antiparalelas enrolladas alrededor de un eje imaginario.',
+              'Las vueltas se estabilizan por puentes de hidrógeno entre las bases (y por el apilamiento de las bases).',
+              'Explica cómo se almacena la información genética y cómo se duplica.',
+              'Propuesta por Watson y Crick (1953), con los datos de difracción de rayos X de Rosalind Franklin.',
+              'Tiene un surco mayor y un surco menor, donde se unen proteínas que leen el ADN.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Tres modelos de ADN ★',
+            data: {
+              headers: ['Modelo', 'Giro', 'Condiciones', 'Rasgos'],
+              rows: [
+                ['ADN-A', 'Dextrógiro', '~75 % de humedad; requiere Na⁺ o K⁺', 'Más ancho y compacto: ~11 pares por vuelta, ~23 Å de diámetro'],
+                ['ADN-B', 'Dextrógiro', '~92 % de humedad, baja fuerza iónica', 'El más abundante y fisiológico (Watson y Crick): ~10.5 pares por vuelta, ~20 Å de diámetro'],
+                ['ADN-Z', 'LEVÓGIRO', 'Secuencias que alternan purinas y pirimidinas', '~12 pares por vuelta, ~18 Å; el esqueleto azúcar-fosfato sigue un zigzag'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Dextrógira',
+            content: 'La diapositiva dice que la doble hélice «gira en sentido contrario a las agujas del reloj» y «dextrógira o levógira». El ADN-B fisiológico es dextrógiro (gira a la derecha); solo el ADN-Z es levógiro.',
+          },
+        ],
+      },
+      {
+        id: 'bae-3',
+        number: 3,
+        title: 'Estructura terciaria y cuaternaria: empaquetamiento',
+        keyTerms: ['superenrollamiento', 'topoisomerasa', 'histonas', 'nucleosoma', 'solenoide', 'cromatina'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El ADN de una célula humana mide cerca de 2 m y debe caber en un núcleo de unos micrómetros. Primero se superenrolla (estructura terciaria), lo que reduce su longitud; las topoisomerasas (como la topoisomerasa II) cortan y vuelven a unir las hebras para controlar ese superenrollamiento. Después se asocia con proteínas, sobre todo histonas, para formar la cromatina (estructura cuaternaria).',
+          },
+          {
+            type: 'steps',
+            title: 'Del ADN al cromosoma ★',
+            steps: [
+              'Doble hélice: ~2 nm (20 Å) de diámetro.',
+              'Nucleosoma: ~146 pares de bases enrollados casi dos vueltas en un octámero de histonas (2 × H2A, H2B, H3, H4); entre nucleosomas, un tramo de ADN conector (linker) con la histona H1.',
+              '«Collar de perlas»: fibra de nucleosomas de ~11 nm (100 Å).',
+              'Solenoide: la fibra se enrolla en una fibra de cromatina de ~30 nm (300 Å).',
+              'Bucles radiales anclados a un andamio de proteínas no histonas.',
+              'Cromosoma: el máximo de compactación, visible en la división celular (~700–1400 nm).',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Topoisomerasas como diana de fármacos',
+            content: 'Como las células necesitan las topoisomerasas para replicarse, son blancos terapéuticos: las quinolonas (ciprofloxacino) inhiben la ADN girasa (topoisomerasa II) bacteriana, y fármacos antineoplásicos como el etopósido y la doxorrubicina inhiben la topoisomerasa II humana.',
+          },
+        ],
+      },
+      {
+        id: 'bae-4',
+        number: 4,
+        title: 'Replicación semiconservativa',
+        keyTerms: ['replicación', 'semiconservativa', 'molde', 'cebador'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Idea general',
+            steps: [
+              'Las dos hebras se separan localmente (se rompen los puentes de hidrógeno).',
+              'Cada hebra original sirve de molde.',
+              'Se añaden nucleótidos complementarios (A con T, G con C) en dirección 5′→3′.',
+              'Resultan dos moléculas de ADN, cada una con una hebra original y una nueva.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Precisión',
+            content: 'En clase se dijo que el ADN «cede una hebra al ARN» y luego sintetiza la complementaria. En la replicación el ADN se copia a ADN; el ARN solo aporta un pequeño cebador para iniciar. Copiar ADN a ARN es otro proceso: la transcripción.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Herencia y ambiente',
+            content: 'La diabetes tipo 2 ilustra que una carga hereditaria (varios genes) aumenta el riesgo, pero factores externos como la obesidad, el sedentarismo y la dieta deciden si la enfermedad aparece. Predisposición genética no es destino.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-arn-tipos',
+    title: 'ARN: estructura y tipos (ARNm, ARNt, ARNr)',
+    subtitle: 'Diferencias con el ADN, niveles de estructura del ARN, codón y anticodón, abundancia y función de cada tipo, nucleótidos y ATP',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '📜',
+    keyPoints: [
+      'ARN = una hebra, más corta y menos estable que el ADN: el –OH del C2′ de la ribosa facilita su hidrólisis. Bases: A, G, C y U.',
+      'Niveles: PRIMARIA (secuencia) · SECUNDARIA (regiones apareadas consigo misma: tallos y bucles) · TERCIARIA (plegamiento 3D complejo).',
+      'ARNm (5–10 %): lineal, complementario a una porción del ADN; lleva la secuencia de aminoácidos en tripletes llamados CODONES.',
+      'ARNt (~15 %): el más pequeño (~75 nucleótidos), en forma de hoja de trébol; su ANTICODÓN reconoce al codón y lleva el aminoácido correspondiente.',
+      'ARNr (60–80 %): el más abundante; con proteínas forma las subunidades del ribosoma y cataliza el enlace peptídico.',
+      'ADN → (transcripción) → ARN → (traducción) → proteína.',
+      'Purinas y pirimidinas se sintetizan con átomos de aminoácidos (glutamina, aspartato, glicina); el ATP es un nucleótido y el Mg²⁺ lo estabiliza.',
+    ],
+    sections: [
+      {
+        id: 'bat-1',
+        number: 1,
+        title: 'ARN vs ADN',
+        keyTerms: ['ribosa', 'uracilo', 'una hebra', 'hidrólisis'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Diferencias ★',
+            data: {
+              headers: ['Rasgo', 'ADN', 'ARN'],
+              rows: [
+                ['Azúcar', 'Desoxirribosa (H en C2′)', 'Ribosa (–OH en C2′)'],
+                ['Bases', 'A, G, C, T', 'A, G, C, U'],
+                ['Hebras', 'Dos (doble hélice antiparalela)', 'Una, que se pliega sobre sí misma'],
+                ['Longitud', 'Muy larga', 'Más corta'],
+                ['Estabilidad', 'Alta', 'Menor: el –OH en 2′ facilita la hidrólisis'],
+                ['Función', 'Guardar la información', 'Copiar y transportar la información; funciones catalíticas y reguladoras'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Correcciones a las diapositivas del ARN',
+            content: 'Una diapositiva dice que en el ARN el emparejamiento es entre «A y G y dos pirimidinas (T y U)»: el ARN no tiene timina; sus pirimidinas son C y U (A se aparea con U). Otra dice que el ARN es «similar al ADN, con sustitución del azúcar y aminoácidos»: cambia el azúcar y una base (U por T), no aminoácidos. Los nucleótidos libres pueden tener 1, 2 o 3 fosfatos (AMP, ADP, ATP); dentro de la cadena cada uno conserva uno.',
+          },
+        ],
+      },
+      {
+        id: 'bat-2',
+        number: 2,
+        title: 'Niveles de estructura del ARN',
+        keyTerms: ['tallo-bucle', 'estructura secundaria', 'estructura terciaria'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Tres niveles (presentación)',
+            items: [
+              'Primaria: secuencia de bases de sus nucleótidos, unidos por enlaces fosfodiéster; una sola cadena con extremos 5′ y 3′.',
+              'Secundaria: la cadena se pliega y se aparea consigo misma en regiones complementarias (tallos y bucles); esa forma determina su función.',
+              'Terciaria: plegamiento complicado sobre la secundaria que da la forma tridimensional (por ejemplo, la «L» del ARNt).',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'bat-3',
+        number: 3,
+        title: 'Los tres tipos principales de ARN',
+        keyTerms: ['ARNm', 'ARNt', 'ARNr', 'codón', 'anticodón'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Tipo, abundancia y función ★',
+            data: {
+              headers: ['Tipo', 'Abundancia', 'Estructura', 'Función'],
+              rows: [
+                ['ARN mensajero (ARNm)', '5–10 % (el menos abundante)', 'Lineal; complementario a una porción del ADN', 'Lleva con exactitud la secuencia de aminoácidos de una proteína, en tripletes de bases llamados codones'],
+                ['ARN de transferencia (ARNt)', '~15 %', 'El más pequeño (~75 nucleótidos); hoja de trébol', 'Su anticodón se aparea con el codón del ARNm y entrega el aminoácido correcto al ribosoma'],
+                ['ARN ribosomal (ARNr)', '60–80 % (el más abundante)', 'Moléculas grandes con estructura secundaria y terciaria compleja', 'Se ensambla con proteínas en el nucléolo y forma las subunidades del ribosoma (mayor: 3 ARNr; menor: 1 ARNr); cataliza el enlace peptídico'],
+              ],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'Codón vs anticodón',
+            left: { title: 'Codón', items: ['Triplete de bases en el ARNm', 'Especifica un aminoácido o una señal de terminación', 'Ejemplo: AUG (metionina, inicio)'] },
+            right: { title: 'Anticodón', items: ['Triplete complementario en el ARNt', 'Reconoce al codón por apareamiento de bases', 'Ejemplo: UAC (frente a AUG)'] },
+          },
+          {
+            type: 'correlacion',
+            variant: 'mnemotecnia',
+            title: 'Advertencia de examen',
+            content: 'Se escribe «codón» (en el ARNm) y «anticodón» (en el ARNt); un término parecido pero equivocado se califica mal, igual que confundir metamizol (analgésico) con metimazol (antitiroideo). La diapositiva dice que el ARNt «traduce el codón en anticodón»: más bien, su anticodón reconoce al codón.',
+          },
+        ],
+      },
+      {
+        id: 'bat-4',
+        number: 4,
+        title: 'De dónde salen los nucleótidos',
+        keyTerms: ['síntesis de purinas', 'ATP', 'magnesio', 'ácido úrico'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'El cuerpo fabrica sus propias purinas y pirimidinas. Los anillos se construyen con átomos de aminoácidos (glutamina, aspartato y glicina), CO₂ y unidades de un carbono del folato; no dependen de comer ácidos nucleicos. Los nucleótidos con uno, dos o tres fosfatos (AMP, ADP, ATP) también sirven como moneda de energía: el ATP se estabiliza con Mg²⁺. Se estudia en bioenergética.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Purinas y gota',
+            content: 'Al degradarse, las purinas terminan en ácido úrico. Si el urato se acumula (por producción alta o eliminación renal baja), se forman cristales en las articulaciones: gota. Un exceso de carnes rojas, vísceras, mariscos, alcohol y fructosa aumenta el riesgo en personas susceptibles.',
+          },
+        ],
+      },
+    ],
+  },
 ]

@@ -243,7 +243,7 @@ export const uadMedicina: Plan = {
           code: 'BQ01002',
           hasLab: true,
           tags: ['bioquimica'],
-          topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones', 'bioquimica-presion-osmotica-oncotica', 'bioquimica-equilibrio-acido-base', 'bioquimica-glucidos', 'bioquimica-glucidos-clasificacion', 'bioquimica-polisacaridos-fibra', 'bioquimica-glucidos-funcion', 'bioquimica-lipidos-estructura', 'bioquimica-omega-grasas-aceites', 'bioquimica-trigliceridos-fosfolipidos', 'bioquimica-eicosanoides', 'bioquimica-lipidos-funcion-esteroides', 'bioquimica-vitaminas-liposolubles-patologias', 'bioquimica-proteinas-aminoacidos', 'bioquimica-aminoacidos-clasificacion', 'bioquimica-plegamiento-proteico', 'bioquimica-estructura-terciaria-cuaternaria', 'bioquimica-proteinas-clasificacion-funcion', 'bioquimica-enzimas-estructura', 'bioquimica-nitrogeno-ciclo-urea', 'bioquimica-coenzimas-minerales-p450', 'bioquimica-enzimas-mecanismo-clinica', 'bioquimica-biomarcadores-enzimaticos', 'bioquimica-acidos-nucleicos-estructura'],
+          topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones', 'bioquimica-presion-osmotica-oncotica', 'bioquimica-equilibrio-acido-base', 'bioquimica-glucidos', 'bioquimica-glucidos-clasificacion', 'bioquimica-polisacaridos-fibra', 'bioquimica-glucidos-funcion', 'bioquimica-lipidos-estructura', 'bioquimica-omega-grasas-aceites', 'bioquimica-trigliceridos-fosfolipidos', 'bioquimica-eicosanoides', 'bioquimica-lipidos-funcion-esteroides', 'bioquimica-vitaminas-liposolubles-patologias', 'bioquimica-proteinas-aminoacidos', 'bioquimica-aminoacidos-clasificacion', 'bioquimica-plegamiento-proteico', 'bioquimica-estructura-terciaria-cuaternaria', 'bioquimica-proteinas-clasificacion-funcion', 'bioquimica-enzimas-estructura', 'bioquimica-nitrogeno-ciclo-urea', 'bioquimica-coenzimas-minerales-p450', 'bioquimica-enzimas-mecanismo-clinica', 'bioquimica-biomarcadores-enzimaticos', 'bioquimica-acidos-nucleicos-estructura', 'bioquimica-adn-estructura-empaquetamiento', 'bioquimica-arn-tipos'],
           content: {
             area: 'Ciencias Básicas',
             credits: 11,
@@ -303,11 +303,12 @@ export const uadMedicina: Plan = {
               {
                 number: 3,
                 title: 'Enzimas y ácidos nucleicos',
-                topicIds: ['bioquimica-enzimas-estructura', 'bioquimica-nitrogeno-ciclo-urea', 'bioquimica-coenzimas-minerales-p450', 'bioquimica-enzimas-mecanismo-clinica', 'bioquimica-biomarcadores-enzimaticos', 'bioquimica-acidos-nucleicos-estructura'],
+                topicIds: ['bioquimica-enzimas-estructura', 'bioquimica-nitrogeno-ciclo-urea', 'bioquimica-coenzimas-minerales-p450', 'bioquimica-enzimas-mecanismo-clinica', 'bioquimica-biomarcadores-enzimaticos', 'bioquimica-acidos-nucleicos-estructura', 'bioquimica-adn-estructura-empaquetamiento', 'bioquimica-arn-tipos'],
                 temas: [
                   'Clase 1 (impartida): enzimas — apoenzima, cofactor y holoenzima; aminoácidos estructurales, de fijación y catalíticos; sitio activo y especificidad; patologías por cambio de aminoácido; cofactores y coenzimas (vitaminas B); transaminación, desaminación oxidativa, ciclo de la urea e hiperamonemia; β-oxidación',
                   'Clase 2 (impartida): cierre de enzimas — holoenzima vs holoproteína, funciones del cofactor, vitaminas y minerales como cofactores (deficiencias), citocromo P450 e interacciones, complejo enzima-sustrato y especificidad, llave-cerradura vs ajuste inducido, nomenclatura y 6 clases, isoenzimas (CK) y enzimas como biomarcadores',
                   'Clase 3 (impartida): biomarcadores (infarto, páncreas, hígado, próstata); inicio de ácidos nucleicos — ADN y ARN, pentosas, purinas y pirimidinas, nucleósido vs nucleótido, enlaces N-glucosídico y fosfodiéster, pares de bases y temperatura de fusión',
+                  'Clase 4 (impartida): ADN — regla de Chargaff, hebras antiparalelas, niveles de estructura (doble hélice, modelos A/B/Z, superenrollamiento, nucleosomas, cromatina), replicación semiconservativa; ARN — diferencias con el ADN, niveles de estructura, ARNm (codón), ARNt (anticodón) y ARNr',
                   '5. Enzimas: estructura general, clasificación y función',
                   '6. Ácidos nucleicos: estructura general, clasificación y función',
                 ],
@@ -316,6 +317,7 @@ export const uadMedicina: Plan = {
                   { title: 'Bioquímica I — Semana 3, Clase 2', file: 'Bioquimica I - Semana 3 - Clase 2.pdf', nota: 'Coenzimas, minerales, citocromo P450, clasificación y uso clínico de las enzimas.' },
                   { title: 'Bioquímica I — Semana 3, Clase 3 (Unidad 5)', file: 'Bioquimica I - Semana 3 - Clase 3 - Unidad 5.pdf', nota: 'Biomarcadores enzimáticos y actividades.' },
                   { title: 'Bioquímica I — Semana 3, Clase 3 (Unidad 6)', file: 'Bioquimica I - Semana 3 - Clase 3 - Unidad 6.pdf', nota: 'Ácidos nucleicos: estructura.' },
+                  { title: 'Bioquímica I — Semana 3, Clase 4 (Unidad 6)', file: 'Bioquimica I - Semana 3 - Clase 4 - Unidad 6.pdf', nota: 'ADN: niveles y empaquetamiento; tipos de ARN.' },
                 ],
               },
               {
@@ -355,6 +357,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 3 · Clase 2 — Coenzimas, P450 y uso clínico de las enzimas', file: 'Bioquimica I - Semana 3 - Clase 2.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Clase 3 — Biomarcadores enzimáticos', file: 'Bioquimica I - Semana 3 - Clase 3 - Unidad 5.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Clase 3 — Ácidos nucleicos', file: 'Bioquimica I - Semana 3 - Clase 3 - Unidad 6.pdf', kind: 'Clase' },
+              { title: 'Semana 3 · Clase 4 — ADN y ARN', file: 'Bioquimica I - Semana 3 - Clase 4 - Unidad 6.pdf', kind: 'Clase' },
               { title: 'Programa Académico — Bioquímica I y su Laboratorio', file: 'Bioquimica I - Programa.pdf', kind: 'Programa' },
               { title: 'Planeación — Bioquímica I (2025-1)', file: 'Bioquimica I - Planeacion.pdf', kind: 'Programa' },
             ],
