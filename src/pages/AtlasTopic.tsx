@@ -1,28 +1,31 @@
+/* AtlasTopic — Ruta /atlas/:id
+ *
+ * El póster es el protagonista: se muestra grande desde que se entra (sin
+ * menú de modos previo). Debajo, «Practica con este póster» ofrece el quiz
+ * rápido y el ejercicio de recordar sin mirar; mientras se recuerda, el
+ * póster queda cubierto hasta revelarlo. Diseño «Monitor suave» (DESIGN.md). */
+
 import { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import {
   ArrowLeft,
-  Image as ImageIcon,
+  ArrowRight,
   Lightning,
-  BookOpen,
+  PencilSimpleLine,
   CheckCircle,
   ArrowsOut,
+  EyeSlash,
   X,
 } from '@phosphor-icons/react'
 import { atlasTopics, type AtlasTopic as AtlasTopicData } from '../data/atlas-topics'
 import { useAtlasStore } from '../store/atlasStore'
 import { ImageLightbox, DownloadPdfButton } from '../components/ImageLightbox'
+import { ATLAS_CATEGORY_LABELS, MASTERY_LABELS, atlasThumb } from './atlasShared'
 
-const CATEGORY_LABELS: Record<AtlasTopicData['category'], string> = {
-  anatomia: 'Anatomía',
-  histologia: 'Histología',
-  genetica: 'Genética',
-  bioquimica: 'Bioquímica',
-  celular: 'Celular',
-  fisiologia: 'Fisiología',
-}
+type Practice = 'quiz' | 'recall' | null
 
-type StudyMode = 'view' | 'quiz' | 'recall' | null
+const initialQuiz = { index: 0, score: 0, answered: false, selectedIndex: -1, completed: false }
+type QuizState = typeof initialQuiz
 
 export function AtlasTopic() {
   const { id } = useParams<{ id: string }>()
@@ -33,315 +36,252 @@ export function AtlasTopic() {
   const recordQuizAttempt = useAtlasStore((s) => s.recordQuizAttempt)
   const getMastery = useAtlasStore((s) => s.getMastery)
 
-  const [mode, setMode] = useState<StudyMode>(null)
-  const [imageRevealed, setImageRevealed] = useState(false)
-  const [quizState, setQuizState] = useState({
-    index: 0,
-    score: 0,
-    answered: false,
-    selectedIndex: -1,
-    completed: false,
-  })
-  const [toast, setToast] = useState<{ message: string; type: 'success' | 'info' } | null>(
-    null
-  )
+  const [practice, setPractice] = useState<Practice>(null)
+  const [posterHidden, setPosterHidden] = useState(false)
+  const [quizState, setQuizState] = useState<QuizState>(initialQuiz)
+  const [toast, setToast] = useState<string | null>(null)
   const [lightboxOpen, setLightboxOpen] = useState(false)
 
   useEffect(() => {
     if (!topic) navigate('/atlas')
   }, [topic, navigate])
 
+  // Al cambiar de póster (anterior/siguiente) se reinicia la práctica.
   useEffect(() => {
-    if (toast) {
-      const timer = setTimeout(() => setToast(null), 3000)
-      return () => clearTimeout(timer)
-    }
+    setPractice(null)
+    setPosterHidden(false)
+    setQuizState(initialQuiz)
+    window.scrollTo({ top: 0 })
+  }, [id])
+
+  useEffect(() => {
+    if (!toast) return
+    const timer = setTimeout(() => setToast(null), 3000)
+    return () => clearTimeout(timer)
   }, [toast])
 
   if (!topic) return null
 
+  const mastery = getMastery(topic.id)
+  const idx = atlasTopics.findIndex((t) => t.id === topic.id)
+  const prevTopic = idx > 0 ? atlasTopics[idx - 1] : null
+  const nextTopic = idx < atlasTopics.length - 1 ? atlasTopics[idx + 1] : null
+  const relatedTopics = atlasTopics.filter((t) => topic.relatedTopicIds?.includes(t.id))
+
   const handleMarkReviewed = () => {
     recordReview(topic.id)
-    setToast({ message: 'Tema marcado como revisado', type: 'success' })
+    setToast('Póster marcado como revisado')
+  }
+
+  const startPractice = (p: Exclude<Practice, null>) => {
+    setPractice(p)
+    setQuizState(initialQuiz)
+    setPosterHidden(p === 'recall')
+  }
+
+  const closePractice = () => {
+    setPractice(null)
+    setPosterHidden(false)
   }
 
   const handleQuizAnswer = (index: number) => {
     if (quizState.answered) return
-
-    const question = topic.questions[quizState.index]
-    const isCorrect = index === question.correctIndex
-
-    setQuizState((s) => ({
-      ...s,
-      selectedIndex: index,
-      answered: true,
-      score: isCorrect ? s.score + 1 : s.score,
-    }))
+    const isCorrect = index === topic.questions[quizState.index].correctIndex
+    setQuizState((s) => ({ ...s, selectedIndex: index, answered: true, score: isCorrect ? s.score + 1 : s.score }))
   }
 
   const handleQuizNext = () => {
     if (quizState.index < topic.questions.length - 1) {
-      setQuizState((s) => ({
-        ...s,
-        index: s.index + 1,
-        answered: false,
-        selectedIndex: -1,
-      }))
+      setQuizState((s) => ({ ...s, index: s.index + 1, answered: false, selectedIndex: -1 }))
     } else {
       recordQuizAttempt(topic.id, quizState.score, topic.questions.length)
       setQuizState((s) => ({ ...s, completed: true }))
     }
   }
 
-  const handleQuizReset = () => {
-    setQuizState({
-      index: 0,
-      score: 0,
-      answered: false,
-      selectedIndex: -1,
-      completed: false,
-    })
-  }
-
-  const handleRecallSubmit = () => {
+  const handleRecallDone = () => {
     recordReview(topic.id)
-    setImageRevealed(true)
-    setToast({ message: 'Tema revisado. Buena práctica de recall.', type: 'success' })
+    setPosterHidden(false)
+    setToast('Listo: compara lo que escribiste con el póster')
   }
-
-  const currentMastery = getMastery(topic.id)
-  const relatedTopics = topic.relatedTopicIds
-    ? atlasTopics.filter((t) => topic.relatedTopicIds?.includes(t.id))
-    : []
-  const prevIndex = atlasTopics.findIndex((t) => t.id === id) - 1
-  const nextIndex = atlasTopics.findIndex((t) => t.id === id) + 1
-  const prevTopic = prevIndex >= 0 ? atlasTopics[prevIndex] : null
-  const nextTopic = nextIndex < atlasTopics.length ? atlasTopics[nextIndex] : null
 
   return (
-    <div className="flex-1 flex flex-col">
-      {/* Header */}
-      <div className="border-b border-zinc-200 bg-surface">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-          <Link
-            to="/atlas"
-            className="inline-flex items-center gap-1.5 text-zinc-500 hover:text-zinc-900 text-sm mb-4 transition-colors"
-          >
-            <ArrowLeft weight="regular" className="w-4 h-4" />
-            Atlas
-          </Link>
+    <main className="flex-1">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-12 flex flex-col gap-6">
 
-          <div className="grid md:grid-cols-2 gap-6 items-center">
-            <div>
-              <div className="mb-4">
-                <h1 className="font-display font-light text-[2rem] sm:text-[2.6rem] leading-[1.08] tracking-[-0.025em] text-zinc-900 text-balance">{topic.title}</h1>
-                <p className="mt-2 text-base text-zinc-600">{topic.subtitle}</p>
-              </div>
+        {/* ── Encabezado ─────────────────────────────────── */}
+        <header className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div className="min-w-0">
+            <nav className="flex items-center gap-2 text-sm text-zinc-500 mb-3" aria-label="Ruta">
+              <Link to="/atlas" className="inline-flex items-center gap-1.5 hover:text-zinc-900 transition-colors">
+                <ArrowLeft weight="regular" className="w-4 h-4" />
+                Atlas
+              </Link>
+              <span className="text-zinc-300" aria-hidden="true">/</span>
+              <Link to={`/atlas?materia=${topic.category}`} className="hover:text-zinc-900 transition-colors">
+                {ATLAS_CATEGORY_LABELS[topic.category]}
+              </Link>
+            </nav>
+            <h1 className="font-display font-light text-[2rem] sm:text-[2.6rem] leading-[1.08] tracking-[-0.025em] text-zinc-900 text-balance">
+              {topic.title}
+            </h1>
+            <p className="mt-2 text-base text-zinc-600 max-w-[60ch]">{topic.subtitle}</p>
+            <p className="mt-2 text-sm text-zinc-500 flex items-center gap-2 flex-wrap">
+              <span>{topic.questions.length} preguntas</span>
+              <span aria-hidden="true">·</span>
+              <MasteryTag mastery={mastery} />
+            </p>
+          </div>
+          <PosterActions topic={topic} onFullscreen={() => setLightboxOpen(true)} onReviewed={handleMarkReviewed} />
+        </header>
 
-              <div className="flex items-center gap-3 text-sm text-zinc-500">
-                <span>{topic.questions.length} preguntas</span>
-                <span>•</span>
-                <span>{CATEGORY_LABELS[topic.category]}</span>
-              </div>
-            </div>
-
+        {/* ── Póster ─────────────────────────────────────── */}
+        <section aria-label="Póster" className="card p-2 sm:p-3">
+          <div className="relative max-w-4xl mx-auto">
             <button
               type="button"
-              onClick={() => setLightboxOpen(true)}
-              className="hidden md:block h-40 bg-zinc-100 rounded-2xl overflow-hidden flex-shrink-0 cursor-zoom-in group relative"
+              onClick={() => !posterHidden && setLightboxOpen(true)}
+              className={`block w-full rounded-2xl overflow-hidden bg-white ${posterHidden ? 'cursor-default' : 'cursor-zoom-in'} group`}
+              aria-label={posterHidden ? 'Póster oculto mientras recuerdas' : 'Ver póster a pantalla completa'}
+              tabIndex={posterHidden ? -1 : 0}
             >
               <img
                 src={topic.imagePath}
-                alt={topic.title}
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none'
-                }}
+                alt={`Póster: ${topic.title}`}
+                width={2048}
+                height={3072}
+                className={`block w-full h-auto transition-[filter] duration-200 ${posterHidden ? 'blur-2xl' : ''}`}
               />
-              <span className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-colors">
-                <ArrowsOut
-                  weight="bold"
-                  className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity"
-                />
-              </span>
+              {!posterHidden && (
+                <span className="absolute top-3 right-3 inline-flex items-center gap-1.5 bg-black/60 text-white text-xs px-2.5 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity">
+                  <ArrowsOut weight="regular" className="w-3.5 h-3.5" />
+                  Ampliar
+                </span>
+              )}
             </button>
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 py-8 flex-1">
-        {!mode ? (
-          <div className="grid md:grid-cols-3 gap-4 mb-8">
-            <button
-              onClick={() => setMode('view')}
-              className="card card-interactive p-6 hover:shadow-lg transition-all text-left group"
-            >
-              <div className="flex items-start gap-3 mb-3">
-                <div className="p-3 rounded-lg bg-blue-100 text-blue-600 group-hover:bg-blue-200 transition-colors">
-                  <ImageIcon weight="fill" className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-zinc-900">Ver Imagen</h3>
-                  <p className="text-xs text-zinc-500 mt-1">Revisa la imagen anotada</p>
+            {posterHidden && (
+              <div className="absolute inset-0 flex items-start justify-center pt-24 sm:pt-40">
+                <div className="card p-5 sm:p-6 max-w-xs text-center flex flex-col items-center gap-3 mx-4">
+                  <EyeSlash weight="regular" className="w-6 h-6 text-primary" />
+                  <p className="text-[0.9375rem] text-zinc-800">Póster oculto mientras recuerdas</p>
+                  <button
+                    onClick={() => setPosterHidden(false)}
+                    className="text-sm text-primary hover:text-primary-hover"
+                  >
+                    Revelar póster
+                  </button>
                 </div>
               </div>
-            </button>
-
-            <button
-              onClick={() => {
-                setMode('quiz')
-                handleQuizReset()
-              }}
-              className="card card-interactive p-6 hover:shadow-lg transition-all text-left group"
-            >
-              <div className="flex items-start gap-3 mb-3">
-                <div className="p-3 rounded-lg bg-amber-100 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 group-hover:bg-amber-200 dark:bg-amber-500/25 transition-colors">
-                  <Lightning weight="fill" className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-zinc-900">Quiz Rápido</h3>
-                  <p className="text-xs text-zinc-500 mt-1">Prueba tus conocimientos</p>
-                </div>
-              </div>
-            </button>
-
-            <button
-              onClick={() => setMode('recall')}
-              className="card card-interactive p-6 hover:shadow-lg transition-all text-left group"
-            >
-              <div className="flex items-start gap-3 mb-3">
-                <div className="p-3 rounded-lg bg-green-100 dark:bg-green-500/20 text-green-600 dark:text-green-400 group-hover:bg-green-200 dark:bg-green-500/25 transition-colors">
-                  <BookOpen weight="fill" className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-zinc-900">Recall Libre</h3>
-                  <p className="text-xs text-zinc-500 mt-1">Escribe lo que recuerdas</p>
-                </div>
-              </div>
-            </button>
-          </div>
-        ) : (
-          <div className="mb-8">
-            {mode === 'view' && (
-              <ViewMode
-                topic={topic}
-                onReview={handleMarkReviewed}
-                onBack={() => setMode(null)}
-                onOpenImage={() => setLightboxOpen(true)}
-              />
-            )}
-            {mode === 'quiz' && (
-              <QuizMode
-                topic={topic}
-                state={quizState}
-                onAnswer={handleQuizAnswer}
-                onNext={handleQuizNext}
-                onReset={() => {
-                  handleQuizReset()
-                  setMode(null)
-                }}
-              />
-            )}
-            {mode === 'recall' && (
-              <RecallMode
-                topic={topic}
-                onSubmit={handleRecallSubmit}
-                onBack={() => setMode(null)}
-                imageRevealed={imageRevealed}
-                setImageRevealed={setImageRevealed}
-                onOpenImage={() => setLightboxOpen(true)}
-              />
             )}
           </div>
+        </section>
+
+        {/* ── Practicar ──────────────────────────────────── */}
+        <section className="card p-5 sm:p-7 flex flex-col gap-5" aria-labelledby="h-practica">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <h2 id="h-practica" className="font-display text-xl font-normal text-zinc-900">Practica con este póster</h2>
+            {practice && (
+              <button onClick={closePractice} className="inline-flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-900">
+                <X weight="regular" className="w-4 h-4" /> Cerrar práctica
+              </button>
+            )}
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-3">
+            <PracticeChoice
+              active={practice === 'quiz'}
+              onClick={() => startPractice('quiz')}
+              icon={<Lightning weight="regular" className="w-5 h-5" />}
+              title="Quiz rápido"
+              hint={`${topic.questions.length} preguntas de opción múltiple`}
+            />
+            <PracticeChoice
+              active={practice === 'recall'}
+              onClick={() => startPractice('recall')}
+              icon={<PencilSimpleLine weight="regular" className="w-5 h-5" />}
+              title="Recordar sin mirar"
+              hint="Oculta el póster y escribe lo que recuerdas"
+            />
+          </div>
+
+          {practice === 'quiz' && (
+            <QuizPanel
+              topic={topic}
+              state={quizState}
+              onAnswer={handleQuizAnswer}
+              onNext={handleQuizNext}
+              onRestart={() => setQuizState(initialQuiz)}
+            />
+          )}
+          {practice === 'recall' && (
+            <RecallPanel posterHidden={posterHidden} onReveal={() => setPosterHidden(false)} onDone={handleRecallDone} />
+          )}
+        </section>
+
+        {/* ── Anterior / siguiente ───────────────────────── */}
+        {(prevTopic || nextTopic) && (
+          <nav className="grid grid-cols-2 gap-3" aria-label="Pósters vecinos">
+            {prevTopic ? <NeighborLink topic={prevTopic} dir="prev" /> : <span />}
+            {nextTopic ? <NeighborLink topic={nextTopic} dir="next" /> : <span />}
+          </nav>
         )}
 
-        {/* Navigation */}
-        <div className="flex gap-3 mt-12">
-          {prevTopic && (
-            <Link
-              to={`/atlas/${prevTopic.id}`}
-              className="btn-ghost px-4 py-2 flex items-center gap-2 text-sm font-medium"
-            >
-              ← {prevTopic.title}
-            </Link>
-          )}
-          {nextTopic && (
-            <Link
-              to={`/atlas/${nextTopic.id}`}
-              className="btn-ghost px-4 py-2 flex items-center gap-2 text-sm font-medium ml-auto"
-            >
-              {nextTopic.title} →
-            </Link>
-          )}
-        </div>
-
-        {/* PAI Links */}
-        {topic.relatedPai && topic.relatedPai.length > 0 && (
-          <div className="mt-8 pt-8 border-t border-zinc-200">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-lg">📚</span>
-              <h3 className="font-bold text-zinc-900">Estudiar en PAI</h3>
+        {/* ── Relacionados ───────────────────────────────── */}
+        {relatedTopics.length > 0 && (
+          <section className="flex flex-col gap-3" aria-labelledby="h-rel">
+            <h2 id="h-rel" className="font-display text-xl font-normal text-zinc-900 px-1">Pósters relacionados</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+              {relatedTopics.map((t) => (
+                <Link key={t.id} to={`/atlas/${t.id}`} className="card card-interactive p-2 flex flex-col gap-2">
+                  <img
+                    src={atlasThumb(t.imagePath)}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    width={480}
+                    height={720}
+                    className="w-full aspect-[4/3] object-cover object-top rounded-xl bg-white"
+                  />
+                  <span className="px-1.5 pb-1 text-[0.9375rem] text-zinc-900 leading-snug">{t.title}</span>
+                </Link>
+              ))}
             </div>
-            <p className="text-sm text-zinc-500 mb-4">
-              Este tema tiene contenido completo con notas, tablas y mnemotecnia en el PAI.
-            </p>
-            <div className="grid md:grid-cols-2 gap-3">
+          </section>
+        )}
+
+        {/* ── Estudiar en PAI ────────────────────────────── */}
+        {topic.relatedPai && topic.relatedPai.length > 0 && (
+          <section className="flex flex-col gap-3" aria-labelledby="h-pai">
+            <h2 id="h-pai" className="font-display text-xl font-normal text-zinc-900 px-1">Estudiar a fondo</h2>
+            <div className="card divide-y divide-zinc-200 overflow-hidden">
               {topic.relatedPai.map((link) => (
                 <Link
                   key={`${link.modulo}-${link.temaId}`}
                   to={`/estudio/archivo/${link.modulo}/${link.temaId}`}
-                  className="card card-interactive p-4 hover:shadow-md transition-all flex items-center gap-3 border-l-4 border-l-blue-500"
+                  className="flex items-center gap-4 px-5 py-4 hover:bg-zinc-50 transition-colors"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
-                    <span className="text-base">🎓</span>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-zinc-900 text-sm truncate">{link.label}</p>
-                    <p className="text-xs text-zinc-500 capitalize">PAI · {link.modulo.replace(/-/g, ' ')}</p>
-                  </div>
-                  <ArrowLeft weight="bold" className="w-4 h-4 text-zinc-400 rotate-180 flex-shrink-0" />
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-base text-zinc-900 truncate">{link.label}</span>
+                    <span className="block text-sm text-zinc-500 capitalize">PAI · {link.modulo.replace(/-/g, ' ')}</span>
+                  </span>
+                  <ArrowRight weight="regular" className="w-4 h-4 text-zinc-500 flex-shrink-0" />
                 </Link>
               ))}
             </div>
-          </div>
-        )}
-
-        {/* Related Atlas Topics */}
-        {relatedTopics.length > 0 && (
-          <div className="mt-6 pt-6 border-t border-zinc-200">
-            <h3 className="font-bold text-zinc-900 mb-4">Temas Relacionados</h3>
-            <div className="grid md:grid-cols-2 gap-3">
-              {relatedTopics.map((t) => (
-                <Link
-                  key={t.id}
-                  to={`/atlas/${t.id}`}
-                  className="card card-interactive p-4 hover:shadow-md transition-all flex items-center gap-3"
-                >
-                  <span className="text-2xl">{t.emoji}</span>
-                  <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-zinc-900 truncate">{t.title}</p>
-                    <p className="text-xs text-zinc-500">{t.subtitle}</p>
-                  </div>
-                  <ArrowLeft weight="bold" className="w-4 h-4 text-zinc-400 rotate-180" />
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {toast && (
-          <div
-            className={`fixed bottom-6 right-6 rounded-lg px-4 py-3 font-medium text-sm shadow-lg flex items-center gap-2 ${
-              toast.type === 'success'
-                ? 'bg-green-500 text-white'
-                : 'bg-blue-500 text-white'
-            }`}
-          >
-            <CheckCircle weight="fill" className="w-4 h-4" />
-            {toast.message}
-          </div>
+          </section>
         )}
       </div>
+
+      {toast && (
+        <div
+          role="status"
+          className="fixed left-1/2 -translate-x-1/2 z-50 card shadow-pop px-4 py-3 text-sm text-zinc-900 flex items-center gap-2"
+          style={{ bottom: 'calc(5rem + env(safe-area-inset-bottom, 0px))' }}
+        >
+          <CheckCircle weight="fill" className="w-4 h-4 text-primary" />
+          {toast}
+        </div>
+      )}
 
       {lightboxOpen && (
         <ImageLightbox
@@ -351,301 +291,206 @@ export function AtlasTopic() {
           onClose={() => setLightboxOpen(false)}
         />
       )}
-    </div>
+    </main>
   )
 }
 
-function ViewMode({
-  topic,
-  onReview,
-  onBack,
-  onOpenImage,
-}: {
-  topic: (typeof atlasTopics)[0]
-  onReview: () => void
-  onBack: () => void
-  onOpenImage: () => void
-}) {
+/* ── Piezas ──────────────────────────────────────────────── */
+
+function PosterActions({
+  topic, onFullscreen, onReviewed,
+}: { topic: AtlasTopicData; onFullscreen: () => void; onReviewed: () => void }) {
+  const ghost = 'inline-flex items-center justify-center gap-2 h-11 px-4 rounded-2xl border border-zinc-200 bg-surface text-[0.9375rem] text-zinc-800 hover:border-zinc-300 transition-colors disabled:opacity-60'
   return (
-    <div className="space-y-4">
-      <div className="card p-6">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="font-bold text-zinc-900">Imagen del Tema</h3>
-          <button
-            onClick={onBack}
-            className="text-zinc-400 hover:text-zinc-600 transition-colors"
-          >
-            <X weight="bold" className="w-5 h-5" />
-          </button>
-        </div>
-
-        {/* Imagen completa, sin recorte. Click → visor a pantalla completa. */}
-        <button
-          type="button"
-          onClick={onOpenImage}
-          className="relative block w-full max-w-2xl mx-auto rounded-lg overflow-hidden border border-zinc-200 bg-zinc-50 mb-3 cursor-zoom-in group min-h-[8rem]"
-        >
-          <span className="absolute inset-0 flex items-center justify-center text-6xl text-zinc-300">
-            {topic.emoji}
-          </span>
-          <img
-            src={topic.imagePath}
-            alt={`Infografía: ${topic.title}`}
-            className="relative w-full h-auto block"
-            onError={(e) => {
-              e.currentTarget.style.display = 'none'
-            }}
-          />
-          <span className="absolute top-2 right-2 inline-flex items-center gap-1 bg-black/55 text-white text-xs font-medium px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
-            <ArrowsOut weight="bold" className="w-3.5 h-3.5" />
-            Ampliar
-          </span>
-        </button>
-
-        <p className="text-xs text-zinc-400 text-center mb-5">
-          Toca la imagen para verla a tamaño completo
-        </p>
-
-        <div className="grid sm:grid-cols-3 gap-3">
-          <button
-            onClick={onOpenImage}
-            className="btn-ghost w-full flex items-center justify-center gap-2"
-          >
-            <ArrowsOut weight="bold" className="w-4 h-4" />
-            Pantalla completa
-          </button>
-          <DownloadPdfButton
-            src={topic.imagePath}
-            filename={`${topic.id}.pdf`}
-            className="btn-ghost w-full flex items-center justify-center gap-2 disabled:opacity-60"
-          />
-          <button
-            onClick={onReview}
-            className="btn-primary w-full bg-green-600 hover:bg-green-700 flex items-center justify-center gap-2"
-          >
-            <CheckCircle weight="fill" className="w-4 h-4" />
-            Marcar revisado
-          </button>
-        </div>
-      </div>
+    <div className="grid grid-cols-3 gap-2 lg:flex lg:flex-shrink-0">
+      <button onClick={onFullscreen} className={ghost}>
+        <ArrowsOut weight="regular" className="w-4 h-4" />
+        <span className="hidden sm:inline">Pantalla completa</span>
+        <span className="sm:hidden">Ampliar</span>
+      </button>
+      <DownloadPdfButton src={topic.imagePath} filename={`${topic.id}.pdf`} label="PDF" className={ghost} />
+      <button
+        onClick={onReviewed}
+        className="inline-flex items-center justify-center gap-2 h-11 px-4 rounded-2xl bg-primary text-primary-fg hover:bg-primary-hover text-[0.9375rem] transition-colors"
+      >
+        <CheckCircle weight="regular" className="w-4 h-4" />
+        <span className="hidden sm:inline">Marcar revisado</span>
+        <span className="sm:hidden">Revisado</span>
+      </button>
     </div>
   )
 }
 
-function QuizMode({
-  topic,
-  state,
-  onAnswer,
-  onNext,
-  onReset,
+function MasteryTag({ mastery }: { mastery: 0 | 1 | 2 | 3 }) {
+  return (
+    <span className={`inline-flex items-center gap-1.5 ${mastery === 3 ? 'text-primary' : ''}`}>
+      {mastery === 3
+        ? <CheckCircle weight="fill" className="w-4 h-4" />
+        : <span className={`w-2 h-2 rounded-full ${mastery === 0 ? 'bg-zinc-300' : mastery === 1 ? 'bg-zinc-500' : 'bg-primary'}`} aria-hidden="true" />}
+      {MASTERY_LABELS[mastery]}
+    </span>
+  )
+}
+
+function PracticeChoice({
+  active, onClick, icon, title, hint,
+}: { active: boolean; onClick: () => void; icon: React.ReactNode; title: string; hint: string }) {
+  return (
+    <button
+      onClick={onClick}
+      aria-pressed={active}
+      className={`flex items-center gap-4 p-4 rounded-2xl border text-left transition-colors
+        ${active ? 'bg-primary-tint border-primary' : 'bg-surface border-zinc-200 hover:border-zinc-300'}`}
+    >
+      <span className={`w-11 h-11 rounded-2xl flex items-center justify-center flex-shrink-0
+        ${active ? 'bg-primary text-primary-fg' : 'bg-primary-tint text-primary'}`}>
+        {icon}
+      </span>
+      <span className="min-w-0">
+        <span className={`block text-base ${active ? 'text-primary-ink' : 'text-zinc-900'}`}>{title}</span>
+        <span className="block text-sm text-zinc-500">{hint}</span>
+      </span>
+    </button>
+  )
+}
+
+function QuizPanel({
+  topic, state, onAnswer, onNext, onRestart,
 }: {
-  topic: (typeof atlasTopics)[0]
-  state: {
-    index: number
-    score: number
-    answered: boolean
-    selectedIndex: number
-    completed: boolean
-  }
+  topic: AtlasTopicData
+  state: QuizState
   onAnswer: (index: number) => void
   onNext: () => void
-  onReset: () => void
+  onRestart: () => void
 }) {
-  if (state.completed) {
-    const percentage = Math.round((state.score / topic.questions.length) * 100)
-    const masteryLevel =
-      percentage >= 80 ? 'Dominado ✓' : percentage >= 50 ? 'En Progreso' : 'Necesita Repaso'
+  const total = topic.questions.length
 
+  if (state.completed) {
+    const pct = Math.round((state.score / total) * 100)
+    const verdict = pct >= 80 ? 'Dominado' : pct >= 50 ? 'En progreso' : 'Necesita repaso'
     return (
-      <div className="card p-8 text-center max-w-md mx-auto">
-        <div className="text-6xl mb-4">
-          {percentage >= 80 ? '🎉' : percentage >= 50 ? '👍' : '📚'}
+      <div className="rounded-2xl bg-zinc-100 p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-6">
+        <div className="flex-1">
+          <p className="text-sm text-zinc-500">Resultado</p>
+          <p className="font-display font-extralight text-[3.5rem] leading-none tracking-[-0.03em] text-zinc-900 tabular-nums mt-1">
+            {state.score}<span className="text-2xl font-light text-zinc-500 ml-1">/{total}</span>
+          </p>
+          <p className="mt-2 text-base text-zinc-700">{verdict} · {pct} %</p>
         </div>
-        <h3 className="text-2xl font-bold text-zinc-900 mb-2">Quiz Completado</h3>
-        <p className="text-4xl font-bold text-blue-600 mb-4">
-          {state.score}/{topic.questions.length}
-        </p>
-        <p className="text-lg font-semibold text-zinc-600 mb-6">{masteryLevel}</p>
-        <button onClick={onNext} className="btn-primary w-full mb-3">
-          Repetir Quiz
-        </button>
-        <button onClick={onReset} className="btn-ghost w-full">
-          Volver
+        <button onClick={onRestart} className="h-11 px-5 rounded-2xl bg-primary text-primary-fg hover:bg-primary-hover text-[0.9375rem]">
+          Repetir quiz
         </button>
       </div>
     )
   }
 
   const question = topic.questions[state.index]
-  const isAnswered = state.answered
-  const isCorrect =
-    isAnswered && state.selectedIndex === question.correctIndex
+  const answered = state.answered
+  const isCorrect = answered && state.selectedIndex === question.correctIndex
 
   return (
-    <div className="card p-6 max-w-2xl mx-auto">
-      <div className="mb-6">
-        <div className="flex items-center justify-between mb-4">
-          <span className="text-sm font-medium text-zinc-500">
-            Pregunta {state.index + 1} de {topic.questions.length}
-          </span>
-          <span className="text-sm font-medium text-blue-600">
-            {state.score} puntos
-          </span>
-        </div>
-        <div className="w-full h-2 bg-zinc-200 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-blue-500 transition-all"
-            style={{
-              width: `${((state.index + (isAnswered ? 1 : 0)) / topic.questions.length) * 100}%`,
-            }}
-          />
-        </div>
+    <div className="flex flex-col gap-5">
+      <div className="flex items-center gap-4">
+        <span className="text-sm text-zinc-500 whitespace-nowrap">Pregunta {state.index + 1} de {total}</span>
+        <span className="flex-1 h-1.5 rounded-full bg-zinc-100 overflow-hidden">
+          <span className="block h-full bg-primary rounded-full transition-[width] duration-300"
+                style={{ width: `${((state.index + (answered ? 1 : 0)) / total) * 100}%` }} />
+        </span>
+        <span className="text-sm text-zinc-500 tabular-nums">{state.score} ✓</span>
       </div>
 
-      <h3 className="text-lg font-bold text-zinc-900 mb-6">{question.question}</h3>
+      <h3 className="text-lg text-zinc-900 leading-snug">{question.question}</h3>
 
-      <div className="space-y-3 mb-6">
+      <div className="flex flex-col gap-2.5">
         {question.options.map((option, i) => {
-          const isSelected = i === state.selectedIndex
-          const isCorrectOption = i === question.correctIndex
-
-          let bgClass = 'bg-surface hover:bg-zinc-50 border-zinc-200'
-          if (isAnswered) {
-            if (isCorrectOption) {
-              bgClass = 'bg-green-100 dark:bg-green-500/20 border-green-500'
-            } else if (isSelected) {
-              bgClass = 'bg-red-100 border-red-500'
-            }
-          } else if (isSelected) {
-            bgClass = 'bg-blue-100 border-blue-500'
-          }
-
+          const selected = i === state.selectedIndex
+          const correct = i === question.correctIndex
+          let cls = 'bg-surface border-zinc-200 hover:border-zinc-300'
+          if (answered && correct) cls = 'bg-success-tint border-success'
+          else if (answered && selected) cls = 'bg-error-tint border-error'
           return (
             <button
               key={i}
               onClick={() => onAnswer(i)}
-              disabled={isAnswered}
-              className={`w-full p-4 text-left border-2 rounded-lg font-medium transition-all ${bgClass} ${
-                isAnswered ? 'cursor-default' : 'cursor-pointer'
-              }`}
+              disabled={answered}
+              className={`w-full flex items-center gap-3 px-4 py-3.5 text-left border rounded-2xl text-[0.9375rem] text-zinc-900 transition-colors ${cls} ${answered ? 'cursor-default' : ''}`}
             >
-              <div className="flex items-center gap-3">
-                <div
-                  className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${
-                    isCorrectOption && isAnswered
-                      ? 'border-green-500 bg-green-500'
-                      : isSelected && isAnswered
-                        ? 'border-red-500 bg-red-500'
-                        : 'border-zinc-300'
-                  }`}
-                >
-                  {isCorrectOption && isAnswered && (
-                    <CheckCircle weight="fill" className="w-3 h-3 text-white" />
-                  )}
-                  {isSelected && isAnswered && !isCorrectOption && (
-                    <X weight="bold" className="w-3 h-3 text-white" />
-                  )}
-                </div>
-                <span>{option}</span>
-              </div>
+              <span className="w-6 h-6 rounded-full bg-zinc-100 text-zinc-600 text-xs flex items-center justify-center flex-shrink-0">
+                {String.fromCharCode(65 + i)}
+              </span>
+              <span className="flex-1">{option}</span>
+              {answered && correct && <CheckCircle weight="fill" className="w-5 h-5 text-success flex-shrink-0" />}
+              {answered && selected && !correct && <X weight="bold" className="w-4 h-4 text-error flex-shrink-0" />}
             </button>
           )
         })}
       </div>
 
-      {isAnswered && (
-        <div
-          className={`p-4 rounded-lg mb-6 ${
-            isCorrect ? 'bg-green-100 dark:bg-green-500/20 text-green-900' : 'bg-red-100 text-red-900'
-          }`}
-        >
-          <p className="font-semibold mb-2">{isCorrect ? '✓ Correcto' : '✗ Incorrecto'}</p>
-          <p className="text-sm">{question.explanation}</p>
+      {answered && (
+        <div className={`rounded-2xl px-5 py-4 ${isCorrect ? 'bg-success-tint' : 'bg-error-tint'}`}>
+          <p className={`text-sm mb-1 ${isCorrect ? 'text-success-ink' : 'text-error-ink'}`}>{isCorrect ? 'Correcto' : 'Incorrecto'}</p>
+          <p className="text-[0.9375rem] text-zinc-800 leading-relaxed">{question.explanation}</p>
         </div>
       )}
 
-      {isAnswered && (
-        <button onClick={onNext} className="btn-primary w-full">
-          {state.index < topic.questions.length - 1 ? 'Siguiente' : 'Ver Resultado'}
+      {answered && (
+        <button onClick={onNext} className="self-end h-11 px-5 rounded-2xl bg-primary text-primary-fg hover:bg-primary-hover text-[0.9375rem]">
+          {state.index < total - 1 ? 'Siguiente' : 'Ver resultado'}
         </button>
       )}
     </div>
   )
 }
 
-function RecallMode({
-  topic,
-  onSubmit,
-  onBack,
-  imageRevealed,
-  setImageRevealed,
-  onOpenImage,
-}: {
-  topic: (typeof atlasTopics)[0]
-  onSubmit: () => void
-  onBack: () => void
-  imageRevealed: boolean
-  setImageRevealed: (v: boolean) => void
-  onOpenImage: () => void
-}) {
+function RecallPanel({
+  posterHidden, onReveal, onDone,
+}: { posterHidden: boolean; onReveal: () => void; onDone: () => void }) {
   return (
-    <div className="space-y-4">
-      <div className="card p-6">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="font-bold text-zinc-900">Recall Libre</h3>
-          <button
-            onClick={onBack}
-            className="text-zinc-400 hover:text-zinc-600 transition-colors"
-          >
-            <X weight="bold" className="w-5 h-5" />
+    <div className="flex flex-col gap-3">
+      <label htmlFor="recall-text" className="text-[0.9375rem] text-zinc-600">
+        Escribe todo lo que recuerdas del póster: estructuras, colores, relaciones. Después compáralo.
+      </label>
+      <textarea
+        id="recall-text"
+        rows={6}
+        placeholder="Lo que recuerdo…"
+        className="w-full p-4 rounded-2xl border border-zinc-200 bg-surface text-base text-zinc-900 placeholder-zinc-500 resize-y focus:outline-none focus:border-primary"
+      />
+      <div className="flex flex-wrap gap-2 justify-end">
+        {posterHidden && (
+          <button onClick={onReveal} className="h-11 px-4 rounded-2xl border border-zinc-200 bg-surface text-[0.9375rem] text-zinc-800 hover:border-zinc-300">
+            Revelar póster
           </button>
-        </div>
-
-        <textarea
-          placeholder="Escribe todo lo que recuerdas sobre este tema... No hay respuesta correcta o incorrecta, solo practica."
-          className="w-full h-32 p-4 border border-zinc-200 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
-        />
-
-        <button
-          onClick={onSubmit}
-          className="btn-primary w-full bg-green-600 hover:bg-green-700 mb-3"
-        >
-          Completar Recall
+        )}
+        <button onClick={onDone} className="h-11 px-5 rounded-2xl bg-primary text-primary-fg hover:bg-primary-hover text-[0.9375rem]">
+          Terminé: comparar
         </button>
-
-        {!imageRevealed && (
-          <button
-            onClick={() => setImageRevealed(true)}
-            className="btn-ghost w-full"
-          >
-            Revelar Imagen
-          </button>
-        )}
-
-        {imageRevealed && (
-          <button
-            type="button"
-            onClick={onOpenImage}
-            className="relative mt-4 block w-full max-w-2xl mx-auto rounded-lg overflow-hidden border border-zinc-200 bg-zinc-50 cursor-zoom-in group min-h-[8rem]"
-          >
-            <span className="absolute inset-0 flex items-center justify-center text-6xl text-zinc-300">
-              {topic.emoji}
-            </span>
-            <img
-              src={topic.imagePath}
-              alt={`Infografía: ${topic.title}`}
-              className="relative w-full h-auto block"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none'
-              }}
-            />
-            <span className="absolute top-2 right-2 inline-flex items-center gap-1 bg-black/55 text-white text-xs font-medium px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
-              <ArrowsOut weight="bold" className="w-3.5 h-3.5" />
-              Ampliar
-            </span>
-          </button>
-        )}
       </div>
     </div>
+  )
+}
+
+function NeighborLink({ topic, dir }: { topic: AtlasTopicData; dir: 'prev' | 'next' }) {
+  return (
+    <Link
+      to={`/atlas/${topic.id}`}
+      className={`card card-interactive p-3 flex items-center gap-3 min-w-0 ${dir === 'next' ? 'flex-row-reverse text-right' : ''}`}
+    >
+      <img
+        src={atlasThumb(topic.imagePath)}
+        alt=""
+        loading="lazy"
+        decoding="async"
+        width={480}
+        height={720}
+        className="w-14 h-14 rounded-xl object-cover object-top bg-white flex-shrink-0 hidden sm:block"
+      />
+      <span className="min-w-0 flex-1">
+        <span className={`flex items-center gap-1 text-xs text-zinc-500 ${dir === 'next' ? 'justify-end' : ''}`}>
+          {dir === 'prev' ? <><ArrowLeft className="w-3.5 h-3.5" /> Anterior</> : <>Siguiente <ArrowRight className="w-3.5 h-3.5" /></>}
+        </span>
+        <span className="block text-[0.9375rem] text-zinc-900 truncate">{topic.title}</span>
+      </span>
+    </Link>
   )
 }

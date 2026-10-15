@@ -1,189 +1,107 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowRight } from '@phosphor-icons/react'
+/* Atlas — Ruta /atlas
+ *
+ * Cuadrícula de pósters agrupada por materia, en orden fijo (como el plan;
+ * dentro de cada materia, en el orden de las semanas). La miniatura vertical
+ * es la protagonista; debajo, solo el título y el estado. Filtro por materia
+ * con conteo (?materia=anatomia), sin materias vacías. */
+
+import { Link, useSearchParams } from 'react-router-dom'
+import { CheckCircle } from '@phosphor-icons/react'
 import { atlasTopics, type AtlasTopic } from '../data/atlas-topics'
 import { useAtlasStore } from '../store/atlasStore'
+import {
+  ATLAS_CATEGORY_ORDER, ATLAS_CATEGORY_LABELS, MASTERY_LABELS, atlasThumb, type AtlasCategory,
+} from './atlasShared'
 
-type Category = 'todos' | 'anatomia' | 'histologia' | 'genetica' | 'bioquimica' | 'celular' | 'fisiologia'
-
-/* Miniatura de 480 px (scripts/atlas-thumbs.py) para la cuadrícula. */
-const atlasThumb = (path: string) => path.replace(/^\/atlas\/([^/]+)\.(webp|png|jpe?g)$/i, '/atlas/thumbs/$1.webp')
+const GROUPS = ATLAS_CATEGORY_ORDER
+  .map((cat) => ({ cat, topics: atlasTopics.filter((t) => t.category === cat) }))
+  .filter((g) => g.topics.length > 0)
 
 export function Atlas() {
-  const [selectedCategory, setSelectedCategory] = useState<Category>('todos')
+  const [params, setParams] = useSearchParams()
   const getMastery = useAtlasStore((s) => s.getMastery)
 
-  const categories: { id: Category; label: string }[] = [
-    { id: 'todos', label: 'Todos' },
-    { id: 'anatomia', label: 'Anatomía' },
-    { id: 'histologia', label: 'Histología' },
-    { id: 'genetica', label: 'Genética' },
-    { id: 'bioquimica', label: 'Bioquímica' },
-    { id: 'celular', label: 'Celular' },
-    { id: 'fisiologia', label: 'Fisiología' },
-  ]
+  const selected = params.get('materia') as AtlasCategory | null
+  const active = selected && GROUPS.some((g) => g.cat === selected) ? selected : null
+  const visible = active ? GROUPS.filter((g) => g.cat === active) : GROUPS
 
-  const filtered =
-    selectedCategory === 'todos'
-      ? atlasTopics
-      : atlasTopics.filter((t) => t.category === selectedCategory)
+  const setFilter = (cat: AtlasCategory | null) => {
+    setParams(cat ? { materia: cat } : {}, { replace: true })
+  }
 
-  const sorted = [...filtered].sort((a, b) => {
-    const masteryA = getMastery(a.id)
-    const masteryB = getMastery(b.id)
-
-    if (masteryA !== masteryB) {
-      const order = [1, 2, 0, 3]
-      return order.indexOf(masteryA) - order.indexOf(masteryB)
-    }
-
-    return 0
-  })
+  const chip = (on: boolean) =>
+    `inline-flex items-center gap-2 h-10 px-4 rounded-full text-[0.9375rem] whitespace-nowrap transition-colors flex-shrink-0
+     ${on ? 'bg-primary text-primary-fg' : 'bg-surface border border-zinc-200 text-zinc-700 hover:border-zinc-300'}`
 
   return (
-    <div className="flex-1 flex flex-col">
-      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 pt-8">
-        <h1 className="font-display font-light text-[2.25rem] sm:text-[2.75rem] leading-[1.05] tracking-[-0.025em] text-zinc-900">
-          Atlas visual
-        </h1>
-        <p className="mt-2 text-base text-zinc-500">
-          Estudio mediante imágenes anotadas · {atlasTopics.length} temas
-        </p>
-      </div>
+    <main className="flex-1">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-8 pb-12 flex flex-col gap-8">
+        <header>
+          <h1 className="font-display font-light text-[2.25rem] sm:text-[2.75rem] leading-[1.05] tracking-[-0.025em] text-zinc-900">
+            Atlas visual
+          </h1>
+          <p className="mt-2 text-base text-zinc-500">
+            {atlasTopics.length} pósters anotados para repasar con imágenes
+          </p>
+        </header>
 
-      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 py-8">
-        <div className="flex gap-2 mb-8 overflow-x-auto pb-2">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setSelectedCategory(cat.id)}
-              className={`px-4 py-2 rounded-full font-medium text-sm transition-all flex-shrink-0 ${
-                selectedCategory === cat.id
-                  ? 'bg-primary text-primary-fg shadow-sm'
-                  : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
-              }`}
-            >
-              {cat.label}
+        {/* Filtro por materia */}
+        <div className="flex gap-2 overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0 pb-1 scrollbar-hide" role="group" aria-label="Filtrar por materia">
+          <button onClick={() => setFilter(null)} aria-pressed={!active} className={chip(!active)}>
+            Todas <span className={!active ? 'opacity-80' : 'text-zinc-500'}>{atlasTopics.length}</span>
+          </button>
+          {GROUPS.map((g) => (
+            <button key={g.cat} onClick={() => setFilter(g.cat)} aria-pressed={active === g.cat} className={chip(active === g.cat)}>
+              {ATLAS_CATEGORY_LABELS[g.cat]}
+              <span className={active === g.cat ? 'opacity-80' : 'text-zinc-500'}>{g.topics.length}</span>
             </button>
           ))}
         </div>
 
-        {sorted.length === 0 ? (
-          <div className="text-center py-16">
-            <p className="text-zinc-500">No hay temas en esta categoría</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-max">
-            {sorted.map((topic) => (
-              <AtlasCard key={topic.id} topic={topic} mastery={getMastery(topic.id)} />
-            ))}
-          </div>
-        )}
+        {visible.map((g) => (
+          <section key={g.cat} className="flex flex-col gap-4" aria-labelledby={`h-${g.cat}`}>
+            <h2 id={`h-${g.cat}`} className="font-display text-2xl font-light text-zinc-900 flex items-baseline gap-3">
+              {ATLAS_CATEGORY_LABELS[g.cat]}
+              <span className="text-sm text-zinc-500 font-normal">{g.topics.length} pósters</span>
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
+              {g.topics.map((t) => (
+                <PosterCard key={t.id} topic={t} mastery={getMastery(t.id)} />
+              ))}
+            </div>
+          </section>
+        ))}
       </div>
-    </div>
+    </main>
   )
 }
 
-function AtlasCard({
-  topic,
-  mastery,
-}: {
-  topic: AtlasTopic
-  mastery: 0 | 1 | 2 | 3
-}) {
-  const masteryLabels = {
-    0: 'Sin iniciar',
-    1: 'Visto',
-    2: 'En progreso',
-    3: 'Dominado',
-  }
-
-  const masteryColors = {
-    0: 'bg-zinc-200 text-zinc-700',
-    1: 'bg-blue-200 text-blue-700',
-    2: 'bg-amber-200 dark:bg-amber-500/25 text-amber-700 dark:text-amber-300',
-    3: 'bg-green-200 dark:bg-green-500/25 text-green-700 dark:text-green-300',
-  }
-
-  const categoryEmojis: Record<string, string> = {
-    anatomia: '🫀',
-    histologia: '🔬',
-    genetica: '🧬',
-    bioquimica: '⚗️',
-    celular: '🔬',
-    fisiologia: '💊',
-  }
-
+function PosterCard({ topic, mastery }: { topic: AtlasTopic; mastery: 0 | 1 | 2 | 3 }) {
   return (
     <Link
       to={`/atlas/${topic.id}`}
-      className="group card card-interactive p-0 overflow-hidden hover:shadow-lg transition-all flex flex-col h-full"
+      className="group card card-interactive p-2 flex flex-col gap-2.5"
     >
-      <div className="relative h-32 bg-gradient-to-br from-zinc-200 to-zinc-300 flex items-center justify-center overflow-hidden">
+      <span className="block aspect-[3/4] rounded-[14px] overflow-hidden bg-white">
         <img
           src={atlasThumb(topic.imagePath)}
-          alt={topic.title}
+          alt=""
           loading="lazy"
           decoding="async"
           width={480}
           height={720}
-          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
-          onError={(e) => {
-            e.currentTarget.style.display = 'none'
-          }}
+          className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.03]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
-        <span className="absolute inset-0 flex items-center justify-center text-5xl opacity-0 group-hover:opacity-100 transition-opacity">
-          {topic.emoji}
+      </span>
+      <span className="px-1.5 pb-1.5 flex flex-col gap-1">
+        <span className="text-[0.9375rem] leading-snug text-zinc-900 line-clamp-2">{topic.title}</span>
+        <span className={`flex items-center gap-1.5 text-xs ${mastery === 3 ? 'text-primary' : 'text-zinc-500'}`}>
+          {mastery === 3
+            ? <CheckCircle weight="fill" className="w-3.5 h-3.5" />
+            : <span className={`w-1.5 h-1.5 rounded-full ${mastery === 0 ? 'bg-zinc-300' : mastery === 1 ? 'bg-zinc-500' : 'bg-primary'}`} aria-hidden="true" />}
+          {MASTERY_LABELS[mastery]} · {topic.questions.length} preguntas
         </span>
-      </div>
-
-      <div className="p-4 flex flex-col flex-1">
-        <div className="flex items-start gap-2 mb-2">
-          <span className="text-xl">{topic.emoji}</span>
-          <div className="flex-1">
-            <h3 className="font-bold text-sm leading-snug text-zinc-900">
-              {topic.title}
-            </h3>
-          </div>
-        </div>
-
-        <p className="text-xs text-zinc-500 mb-3 flex-1">{topic.subtitle}</p>
-
-        <div className="space-y-2">
-          <div className="flex items-center gap-2 text-xs">
-            <span className="text-zinc-500">
-              {topic.questions.length} preguntas
-            </span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <div className="flex-1 h-1.5 bg-zinc-200 rounded-full overflow-hidden">
-              <div
-                className={`h-full transition-all ${
-                  mastery === 0
-                    ? 'w-0'
-                    : mastery === 1
-                      ? 'w-1/3 bg-primary'
-                      : mastery === 2
-                        ? 'w-2/3 bg-amber-500'
-                        : 'w-full bg-green-500'
-                }`}
-              />
-            </div>
-          </div>
-
-          <span
-            className={`inline-block text-xs font-medium px-2 py-1 rounded-full ${masteryColors[mastery]}`}
-          >
-            {masteryLabels[mastery]}
-          </span>
-        </div>
-
-        <span className="mt-3 w-full flex items-center justify-center gap-1 text-xs font-semibold text-primary-ink">
-          Ver tema <ArrowRight weight="bold" className="w-3 h-3" />
-        </span>
-      </div>
+      </span>
     </Link>
   )
 }

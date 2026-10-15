@@ -82,14 +82,17 @@ export function Navbar() {
               <Link
                 key={path}
                 to={path}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-sm font-medium
+                title={label}
+                aria-label={label}
+                className={`flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 rounded-xl text-sm font-medium
                             transition-all duration-150
                             ${isActive(path)
                               ? 'bg-primary-tint text-primary-ink'
                               : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'}`}
               >
-                <Icon weight={isActive(path) ? 'fill' : 'regular'} className="w-3.5 h-3.5" />
-                {label}
+                <Icon weight={isActive(path) ? 'fill' : 'regular'} className="w-4 h-4 xl:w-3.5 xl:h-3.5" />
+                {/* Entre md y xl solo el icono: con las etiquetas la barra no cabía y la página se desplazaba de lado. */}
+                <span className="hidden xl:inline">{label}</span>
               </Link>
             ))}
           </nav>
@@ -97,7 +100,7 @@ export function Navbar() {
           {/* Search */}
           <form
             onSubmit={handleSearch}
-            className={`flex-1 max-w-sm relative transition-all duration-200 ${
+            className={`flex-1 min-w-0 max-w-sm relative transition-all duration-200 ${
               focused ? 'ring-2 ring-primary/40 rounded-xl' : ''
             }`}
           >
