@@ -84,7 +84,7 @@ function TermCard({ term, expanded, onToggle }: { term: MedEnTerm; expanded: boo
       <div className="flex items-start justify-between gap-2 mb-2">
         <span className="font-bold text-zinc-900 text-lg leading-tight">{term.term}</span>
         <div className="flex items-center gap-1.5 flex-shrink-0">
-          <span className={`text-[0.5625rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md border ${posColor}`}>
+          <span className={`text-xs font-bold px-1.5 py-0.5 rounded-md border ${posColor}`}>
             {POS_LABELS[term.pos]}
           </span>
           {hasDetail && (
@@ -110,7 +110,7 @@ function TermCard({ term, expanded, onToggle }: { term: MedEnTerm; expanded: boo
             <div className="pt-3 mt-3 border-t border-zinc-100 space-y-2.5">
               {term.forms?.map((f, i) => (
                 <div key={i} className="flex items-baseline gap-2 text-xs">
-                  <span className={`text-[0.5rem] font-bold uppercase tracking-wider px-1 py-0.5 rounded border ${POS_COLORS[f.pos] ?? POS_COLORS.article}`}>
+                  <span className={`text-[0.5rem] font-bold px-1 py-0.5 rounded border ${POS_COLORS[f.pos] ?? POS_COLORS.article}`}>
                     {POS_LABELS[f.pos]}
                   </span>
                   <span className="font-semibold text-zinc-800">{f.word}</span>
@@ -286,18 +286,14 @@ export function MedEn() {
   return (
     <main className="flex-1 pb-20 md:pb-0">
       {/* Encabezado */}
-      <section className="bg-surface border-b border-zinc-100">
+      <section>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
-              <div className="inline-flex items-center gap-2 bg-pink-50 border border-pink-200 text-pink-700 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-3">
-                <Translate weight="fill" className="w-3.5 h-3.5" />
-                EnLex · Vocabulario de Inglés Médico
-              </div>
-              <h1 className="text-3xl font-extrabold text-zinc-900 tracking-tight leading-none mb-2">
+              <h1 className="font-display font-light text-[2.25rem] sm:text-[2.75rem] leading-[1.05] tracking-[-0.025em] text-zinc-900 mb-2">
                 EnLex · Vocabulario de Inglés Médico
               </h1>
-              <p className="text-zinc-500 text-sm max-w-[55ch]">
+              <p className="text-zinc-500 text-base max-w-[60ch]">
                 Términos, abreviaturas, derivaciones y verbos frasales de Inglés Médico I. Fuente: clases de Inglés Médico I.
               </p>
               <div className="flex flex-wrap gap-4 mt-4">
@@ -384,7 +380,7 @@ export function MedEn() {
             <button
               onClick={() => setFilterPos('todos')}
               className={`text-xs font-semibold px-3 py-1 rounded-full border transition-all duration-150
-                ${filterPos === 'todos' ? 'bg-zinc-900 text-app border-zinc-900' : 'bg-surface text-zinc-600 border-zinc-200 hover:border-zinc-400'}`}
+                ${filterPos === 'todos' ? 'bg-primary text-primary-fg border-zinc-900' : 'bg-surface text-zinc-600 border-zinc-200 hover:border-zinc-400'}`}
             >
               Todas las categorías
             </button>
@@ -393,7 +389,7 @@ export function MedEn() {
                 key={p}
                 onClick={() => setFilterPos(p)}
                 className={`text-xs font-semibold px-3 py-1 rounded-full border transition-all duration-150
-                  ${filterPos === p ? 'bg-zinc-900 text-app border-zinc-900' : 'bg-surface text-zinc-600 border-zinc-200 hover:border-zinc-400'}`}
+                  ${filterPos === p ? 'bg-primary text-primary-fg border-zinc-900' : 'bg-surface text-zinc-600 border-zinc-200 hover:border-zinc-400'}`}
               >
                 {POS_LABELS[p]}
               </button>

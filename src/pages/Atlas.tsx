@@ -6,6 +6,9 @@ import { useAtlasStore } from '../store/atlasStore'
 
 type Category = 'todos' | 'anatomia' | 'histologia' | 'genetica' | 'bioquimica' | 'celular' | 'fisiologia'
 
+/* Miniatura de 480 px (scripts/atlas-thumbs.py) para la cuadrícula. */
+const atlasThumb = (path: string) => path.replace(/^\/atlas\/([^/]+)\.(webp|png|jpe?g)$/i, '/atlas/thumbs/$1.webp')
+
 export function Atlas() {
   const [selectedCategory, setSelectedCategory] = useState<Category>('todos')
   const getMastery = useAtlasStore((s) => s.getMastery)
@@ -118,8 +121,12 @@ function AtlasCard({
     >
       <div className="relative h-32 bg-gradient-to-br from-zinc-200 to-zinc-300 flex items-center justify-center overflow-hidden">
         <img
-          src={topic.imagePath}
+          src={atlasThumb(topic.imagePath)}
           alt={topic.title}
+          loading="lazy"
+          decoding="async"
+          width={480}
+          height={720}
           className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
           onError={(e) => {
             e.currentTarget.style.display = 'none'

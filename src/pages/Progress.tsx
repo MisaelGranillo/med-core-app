@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Trophy, BookOpen, Lightning, ArrowRight, ArrowCounterClockwise } from '@phosphor-icons/react'
-import { topics } from '../data/topics'
-import { questions } from '../data/quizzes'
+import { topicIndex as topics } from '../data/generated/topicIndex'
 import { TOPIC_COLORS } from '../data/colors'
 import { useProgress } from '../store/useProgress'
 import { ProgressRing } from '../components/ProgressRing'
@@ -15,7 +14,7 @@ const COLOR_RING: Record<string, string> = {
 export function Progress() {
   const { getSectionsRead, getBestScore, getQuizAttempts, resetTopic } = useProgress()
 
-  const totalSections = topics.reduce((a, t) => a + t.sections.length, 0)
+  const totalSections = topics.reduce((a, t) => a + t.sectionCount, 0)
   const totalRead = topics.reduce((a, t) => a + getSectionsRead(t.id).length, 0)
   const globalPct = totalSections > 0 ? Math.round((totalRead / totalSections) * 100) : 0
 
@@ -29,7 +28,7 @@ export function Progress() {
   return (
     <div className="flex-1 max-w-5xl mx-auto w-full px-4 sm:px-6 py-10">
       <div className="mb-8">
-        <h1 className="text-2xl font-extrabold text-zinc-900 tracking-tight mb-1">
+        <h1 className="font-display font-light text-[2.25rem] sm:text-[2.75rem] leading-[1.05] tracking-[-0.025em] text-zinc-900 mb-2">
           Mi Progreso
         </h1>
         <p className="text-zinc-400 text-sm">Seguimiento de secciones leídas y resultados de quiz.</p>
@@ -41,7 +40,7 @@ export function Progress() {
           { label: 'Global', value: globalPct, sub: `${totalRead}/${totalSections} secciones`, ring: true },
           { label: 'Mejor Quiz', value: Math.round(avgBest), sub: 'promedio % temas', ring: true },
           { label: 'Intentos', value: totalAttempts, sub: 'quizzes completados', ring: false },
-          { label: 'Temas', value: topics.filter((t) => getSectionsRead(t.id).length === t.sections.length).length, sub: 'completados', ring: false },
+          { label: 'Temas', value: topics.filter((t) => getSectionsRead(t.id).length === t.sectionCount).length, sub: 'completados', ring: false },
         ].map((stat, i) => (
           <motion.div
             key={stat.label}
@@ -68,16 +67,16 @@ export function Progress() {
         {topics.map((topic, i) => {
           const colors = TOPIC_COLORS[topic.colorKey]
           const read = getSectionsRead(topic.id)
-          const total = topic.sections.length
+          const total = topic.sectionCount
           const pct = Math.round((read.length / total) * 100)
           const best = getBestScore(topic.id)
           const attempts = getQuizAttempts(topic.id)
-          const qCount = questions.filter((q) => q.topicId === topic.id).length
+          const qCount = topic.questionCount
 
           return (
             <motion.div
               key={topic.id}
-              initial={{ opacity: 0, x: -16 }}
+              initial={{ opacity: 1, x: -6 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.06, duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
               className="card p-5"
@@ -185,7 +184,7 @@ export function Progress() {
                           <p className={`text-sm font-bold ${p >= 70 ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-500'}`}>
                             {p}%
                           </p>
-                          <p className="text-[0.625rem] text-zinc-400">
+                          <p className="text-xs text-zinc-400">
                             {new Date(a.date).toLocaleDateString('es-MX', { month: 'short', day: 'numeric' })}
                           </p>
                         </div>

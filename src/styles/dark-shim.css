@@ -1,0 +1,148 @@
+/* Generado: en modo oscuro, los tintes claros de la paleta cruda de Tailwind
+ * (bg-*-50…200, text-*-600…900, border-*-100…300) usados sin variante dark:
+ * pasan a tintes translúcidos y textos claros. :where() deja especificidad
+ * baja para que cualquier dark: explícito siga ganando. */
+:where(.dark) .bg-amber-100{background-color:rgb(245 158 11 / 0.14)}
+:where(.dark) .bg-amber-200{background-color:rgb(245 158 11 / 0.2)}
+:where(.dark) .bg-amber-50{background-color:rgb(245 158 11 / 0.1)}
+:where(.dark) .bg-amber-800{background-color:rgb(245 158 11 / 0.22)}
+:where(.dark) .bg-amber-900{background-color:rgb(245 158 11 / 0.22)}
+:where(.dark) .bg-blue-100{background-color:rgb(59 130 246 / 0.14)}
+:where(.dark) .bg-blue-200{background-color:rgb(59 130 246 / 0.2)}
+:where(.dark) .bg-blue-50{background-color:rgb(59 130 246 / 0.1)}
+:where(.dark) .bg-blue-800{background-color:rgb(59 130 246 / 0.22)}
+:where(.dark) .bg-blue-900{background-color:rgb(59 130 246 / 0.22)}
+:where(.dark) .bg-cyan-100{background-color:rgb(6 182 212 / 0.14)}
+:where(.dark) .bg-cyan-50{background-color:rgb(6 182 212 / 0.1)}
+:where(.dark) .bg-cyan-800{background-color:rgb(6 182 212 / 0.22)}
+:where(.dark) .bg-cyan-900{background-color:rgb(6 182 212 / 0.22)}
+:where(.dark) .bg-emerald-100{background-color:rgb(16 185 129 / 0.14)}
+:where(.dark) .bg-emerald-50{background-color:rgb(16 185 129 / 0.1)}
+:where(.dark) .bg-emerald-800{background-color:rgb(16 185 129 / 0.22)}
+:where(.dark) .bg-emerald-900{background-color:rgb(16 185 129 / 0.22)}
+:where(.dark) .bg-fuchsia-100{background-color:rgb(217 70 239 / 0.14)}
+:where(.dark) .bg-fuchsia-50{background-color:rgb(217 70 239 / 0.1)}
+:where(.dark) .bg-fuchsia-800{background-color:rgb(217 70 239 / 0.22)}
+:where(.dark) .bg-fuchsia-900{background-color:rgb(217 70 239 / 0.22)}
+:where(.dark) .bg-green-100{background-color:rgb(34 197 94 / 0.14)}
+:where(.dark) .bg-green-200{background-color:rgb(34 197 94 / 0.2)}
+:where(.dark) .bg-green-50{background-color:rgb(34 197 94 / 0.1)}
+:where(.dark) .bg-green-800{background-color:rgb(34 197 94 / 0.22)}
+:where(.dark) .bg-green-900{background-color:rgb(34 197 94 / 0.22)}
+:where(.dark) .bg-indigo-100{background-color:rgb(99 102 241 / 0.14)}
+:where(.dark) .bg-indigo-50{background-color:rgb(99 102 241 / 0.1)}
+:where(.dark) .bg-indigo-800{background-color:rgb(99 102 241 / 0.22)}
+:where(.dark) .bg-indigo-900{background-color:rgb(99 102 241 / 0.22)}
+:where(.dark) .bg-lime-100{background-color:rgb(132 204 22 / 0.14)}
+:where(.dark) .bg-lime-50{background-color:rgb(132 204 22 / 0.1)}
+:where(.dark) .bg-lime-800{background-color:rgb(132 204 22 / 0.22)}
+:where(.dark) .bg-lime-900{background-color:rgb(132 204 22 / 0.22)}
+:where(.dark) .bg-orange-100{background-color:rgb(249 115 22 / 0.14)}
+:where(.dark) .bg-orange-50{background-color:rgb(249 115 22 / 0.1)}
+:where(.dark) .bg-orange-800{background-color:rgb(249 115 22 / 0.22)}
+:where(.dark) .bg-orange-900{background-color:rgb(249 115 22 / 0.22)}
+:where(.dark) .bg-pink-100{background-color:rgb(236 72 153 / 0.14)}
+:where(.dark) .bg-pink-50{background-color:rgb(236 72 153 / 0.1)}
+:where(.dark) .bg-pink-800{background-color:rgb(236 72 153 / 0.22)}
+:where(.dark) .bg-pink-900{background-color:rgb(236 72 153 / 0.22)}
+:where(.dark) .bg-purple-100{background-color:rgb(168 85 247 / 0.14)}
+:where(.dark) .bg-purple-50{background-color:rgb(168 85 247 / 0.1)}
+:where(.dark) .bg-purple-800{background-color:rgb(168 85 247 / 0.22)}
+:where(.dark) .bg-purple-900{background-color:rgb(168 85 247 / 0.22)}
+:where(.dark) .bg-red-100{background-color:rgb(239 68 68 / 0.14)}
+:where(.dark) .bg-red-50{background-color:rgb(239 68 68 / 0.1)}
+:where(.dark) .bg-red-800{background-color:rgb(239 68 68 / 0.22)}
+:where(.dark) .bg-red-900{background-color:rgb(239 68 68 / 0.22)}
+:where(.dark) .bg-rose-100{background-color:rgb(244 63 94 / 0.14)}
+:where(.dark) .bg-rose-50{background-color:rgb(244 63 94 / 0.1)}
+:where(.dark) .bg-rose-800{background-color:rgb(244 63 94 / 0.22)}
+:where(.dark) .bg-rose-900{background-color:rgb(244 63 94 / 0.22)}
+:where(.dark) .bg-sky-100{background-color:rgb(14 165 233 / 0.14)}
+:where(.dark) .bg-sky-50{background-color:rgb(14 165 233 / 0.1)}
+:where(.dark) .bg-sky-800{background-color:rgb(14 165 233 / 0.22)}
+:where(.dark) .bg-sky-900{background-color:rgb(14 165 233 / 0.22)}
+:where(.dark) .bg-teal-100{background-color:rgb(20 184 166 / 0.14)}
+:where(.dark) .bg-teal-50{background-color:rgb(20 184 166 / 0.1)}
+:where(.dark) .bg-teal-800{background-color:rgb(20 184 166 / 0.22)}
+:where(.dark) .bg-teal-900{background-color:rgb(20 184 166 / 0.22)}
+:where(.dark) .bg-violet-100{background-color:rgb(139 92 246 / 0.14)}
+:where(.dark) .bg-violet-50{background-color:rgb(139 92 246 / 0.1)}
+:where(.dark) .bg-violet-800{background-color:rgb(139 92 246 / 0.22)}
+:where(.dark) .bg-violet-900{background-color:rgb(139 92 246 / 0.22)}
+:where(.dark) .bg-yellow-100{background-color:rgb(234 179 8 / 0.14)}
+:where(.dark) .bg-yellow-50{background-color:rgb(234 179 8 / 0.1)}
+:where(.dark) .bg-yellow-800{background-color:rgb(234 179 8 / 0.22)}
+:where(.dark) .bg-yellow-900{background-color:rgb(234 179 8 / 0.22)}
+:where(.dark) .border-amber-200{border-color:rgb(245 158 11 / 0.28)}
+:where(.dark) .border-amber-300{border-color:rgb(245 158 11 / 0.28)}
+:where(.dark) .border-blue-200{border-color:rgb(59 130 246 / 0.28)}
+:where(.dark) .border-cyan-200{border-color:rgb(6 182 212 / 0.28)}
+:where(.dark) .border-emerald-100{border-color:rgb(16 185 129 / 0.28)}
+:where(.dark) .border-emerald-200{border-color:rgb(16 185 129 / 0.28)}
+:where(.dark) .border-emerald-300{border-color:rgb(16 185 129 / 0.28)}
+:where(.dark) .border-fuchsia-200{border-color:rgb(217 70 239 / 0.28)}
+:where(.dark) .border-green-200{border-color:rgb(34 197 94 / 0.28)}
+:where(.dark) .border-indigo-200{border-color:rgb(99 102 241 / 0.28)}
+:where(.dark) .border-lime-200{border-color:rgb(132 204 22 / 0.28)}
+:where(.dark) .border-orange-200{border-color:rgb(249 115 22 / 0.28)}
+:where(.dark) .border-pink-200{border-color:rgb(236 72 153 / 0.28)}
+:where(.dark) .border-purple-200{border-color:rgb(168 85 247 / 0.28)}
+:where(.dark) .border-red-200{border-color:rgb(239 68 68 / 0.28)}
+:where(.dark) .border-rose-100{border-color:rgb(244 63 94 / 0.28)}
+:where(.dark) .border-rose-200{border-color:rgb(244 63 94 / 0.28)}
+:where(.dark) .border-sky-200{border-color:rgb(14 165 233 / 0.28)}
+:where(.dark) .border-teal-100{border-color:rgb(20 184 166 / 0.28)}
+:where(.dark) .border-teal-200{border-color:rgb(20 184 166 / 0.28)}
+:where(.dark) .border-violet-200{border-color:rgb(139 92 246 / 0.28)}
+:where(.dark) .border-yellow-200{border-color:rgb(234 179 8 / 0.28)}
+:where(.dark) .text-amber-500{color:#fbbf24}
+:where(.dark) .text-amber-600{color:#fcd34d}
+:where(.dark) .text-amber-700{color:#fcd34d}
+:where(.dark) .text-amber-800{color:#fde68a}
+:where(.dark) .text-blue-500{color:#60a5fa}
+:where(.dark) .text-blue-600{color:#93c5fd}
+:where(.dark) .text-blue-700{color:#93c5fd}
+:where(.dark) .text-blue-800{color:#bfdbfe}
+:where(.dark) .text-blue-900{color:#bfdbfe}
+:where(.dark) .text-cyan-600{color:#67e8f9}
+:where(.dark) .text-cyan-700{color:#67e8f9}
+:where(.dark) .text-cyan-800{color:#a5f3fc}
+:where(.dark) .text-emerald-600{color:#6ee7b7}
+:where(.dark) .text-emerald-700{color:#6ee7b7}
+:where(.dark) .text-emerald-800{color:#a7f3d0}
+:where(.dark) .text-fuchsia-700{color:#f0abfc}
+:where(.dark) .text-fuchsia-800{color:#f5d0fe}
+:where(.dark) .text-green-600{color:#86efac}
+:where(.dark) .text-green-700{color:#86efac}
+:where(.dark) .text-green-800{color:#bbf7d0}
+:where(.dark) .text-green-900{color:#bbf7d0}
+:where(.dark) .text-indigo-600{color:#a5b4fc}
+:where(.dark) .text-indigo-700{color:#a5b4fc}
+:where(.dark) .text-indigo-800{color:#c7d2fe}
+:where(.dark) .text-lime-700{color:#bef264}
+:where(.dark) .text-lime-800{color:#d9f99d}
+:where(.dark) .text-orange-700{color:#fdba74}
+:where(.dark) .text-orange-800{color:#fed7aa}
+:where(.dark) .text-pink-600{color:#f9a8d4}
+:where(.dark) .text-pink-700{color:#f9a8d4}
+:where(.dark) .text-pink-800{color:#fbcfe8}
+:where(.dark) .text-purple-700{color:#d8b4fe}
+:where(.dark) .text-purple-800{color:#e9d5ff}
+:where(.dark) .text-red-500{color:#f87171}
+:where(.dark) .text-red-600{color:#fca5a5}
+:where(.dark) .text-red-700{color:#fca5a5}
+:where(.dark) .text-red-800{color:#fecaca}
+:where(.dark) .text-red-900{color:#fecaca}
+:where(.dark) .text-rose-600{color:#fda4af}
+:where(.dark) .text-rose-700{color:#fda4af}
+:where(.dark) .text-rose-800{color:#fecdd3}
+:where(.dark) .text-sky-700{color:#7dd3fc}
+:where(.dark) .text-sky-800{color:#bae6fd}
+:where(.dark) .text-teal-600{color:#5eead4}
+:where(.dark) .text-teal-700{color:#5eead4}
+:where(.dark) .text-teal-800{color:#99f6e4}
+:where(.dark) .text-violet-600{color:#c4b5fd}
+:where(.dark) .text-violet-700{color:#c4b5fd}
+:where(.dark) .text-violet-800{color:#ddd6fe}
+:where(.dark) .text-yellow-700{color:#fde047}
+:where(.dark) .text-yellow-800{color:#fef08a}

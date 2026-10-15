@@ -10,18 +10,14 @@ import {
 } from '@phosphor-icons/react'
 import type { Icon } from '@phosphor-icons/react'
 import type { TopicColorKey } from '../types'
-import { topics } from '../data/topics'
-import { questions } from '../data/quizzes'
+import { topicIndex as topics } from '../data/generated/topicIndex'
 import { TOPIC_COLORS } from '../data/colors'
 import { getActivePlan, planContextForTopic } from '../data/plans'
 import { useProgress } from '../store/useProgress'
 
 /* ── Índices derivados de datos reales (nivel módulo) ─────────── */
 const topicById = Object.fromEntries(topics.map(t => [t.id, t]))
-const QUESTIONS_BY_TOPIC = questions.reduce<Record<string, number>>((acc, q) => {
-  acc[q.topicId] = (acc[q.topicId] ?? 0) + 1
-  return acc
-}, {})
+const QUESTIONS_BY_TOPIC = Object.fromEntries(topics.map(t => [t.id, t.questionCount]))
 
 const ACTIVE_PLAN = getActivePlan()
 
@@ -53,7 +49,7 @@ const SUBJECT_CARDS: SubjectCard[] = (() => {
         colorKey: subjTopics[0].colorKey,
         temas: subjTopics.length,
         preguntas: subjTopics.reduce((n, t) => n + (QUESTIONS_BY_TOPIC[t.id] ?? 0), 0),
-        totalSections: subjTopics.reduce((n, t) => n + t.sections.length, 0),
+        totalSections: subjTopics.reduce((n, t) => n + t.sectionCount, 0),
       })
     }
   }
@@ -61,7 +57,7 @@ const SUBJECT_CARDS: SubjectCard[] = (() => {
 })()
 
 const ALL_STUDY_TOPIC_IDS = [...new Set(SUBJECT_CARDS.flatMap(s => s.topicIds))]
-const TOTAL_SECTIONS = ALL_STUDY_TOPIC_IDS.reduce((n, id) => n + (topicById[id]?.sections.length ?? 0), 0)
+const TOTAL_SECTIONS = ALL_STUDY_TOPIC_IDS.reduce((n, id) => n + (topicById[id]?.sectionCount ?? 0), 0)
 const REPASO_TOPICS = topics.filter(t => t.id.startsWith('repaso'))
 
 const TOOLS: { name: string; route: string; icon: Icon }[] = [
@@ -85,11 +81,11 @@ export function Home() {
   const continueTopic = (() => {
     for (const s of SUBJECT_CARDS)
       for (const id of s.topicIds)
-        if (getSectionsRead(id).length < (topicById[id]?.sections.length ?? 0)) return topicById[id]
+        if (getSectionsRead(id).length < (topicById[id]?.sectionCount ?? 0)) return topicById[id]
     return topicById[SUBJECT_CARDS[0]?.topicIds[0]] ?? null
   })()
-  const continuePct = continueTopic && continueTopic.sections.length > 0
-    ? Math.round((getSectionsRead(continueTopic.id).length / continueTopic.sections.length) * 100)
+  const continuePct = continueTopic && continueTopic.sectionCount > 0
+    ? Math.round((getSectionsRead(continueTopic.id).length / continueTopic.sectionCount) * 100)
     : 0
   const continueCtx = continueTopic ? planContextForTopic(continueTopic.id) : null
 
@@ -100,7 +96,7 @@ export function Home() {
     const sameSubject = continueCtx
       ? REPASO_TOPICS.find(t => planContextForTopic(t.id)?.subjectId === continueCtx.subjectId)
       : null
-    const unfinished = REPASO_TOPICS.find(t => getSectionsRead(t.id).length < t.sections.length)
+    const unfinished = REPASO_TOPICS.find(t => getSectionsRead(t.id).length < t.sectionCount)
     return sameSubject ?? unfinished ?? REPASO_TOPICS[0]
   })()
   const nextRepasoCtx = nextRepaso ? planContextForTopic(nextRepaso.id) : null

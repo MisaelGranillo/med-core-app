@@ -10,7 +10,7 @@ export function NotFound() {
     <main className="flex-1 flex items-center justify-center px-4 py-24">
       <div className="max-w-md text-center">
         <p className="text-6xl font-extrabold text-primary-600 tracking-tight mb-2">404</p>
-        <h1 className="text-xl font-bold text-zinc-900 mb-2">Página no encontrada</h1>
+        <h1 className="font-display font-light text-[2rem] leading-[1.1] tracking-[-0.02em] text-zinc-900 mb-2">Página no encontrada</h1>
         <p className="text-sm text-zinc-500 mb-1">
           No existe ninguna página en
         </p>

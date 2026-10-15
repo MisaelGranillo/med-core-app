@@ -120,7 +120,7 @@ export function Navbar() {
                   <X weight="bold" className="w-3.5 h-3.5" />
                 </button>
               )}
-              <kbd className="absolute right-3 text-[0.625rem] font-mono text-zinc-400 bg-zinc-200 px-1.5 py-0.5 rounded hidden sm:block">
+              <kbd className="absolute right-3 text-xs font-mono text-zinc-400 bg-zinc-200 px-1.5 py-0.5 rounded hidden sm:block">
                 ⌘K
               </kbd>
             </div>

@@ -96,7 +96,7 @@ function PaiBlock({ b }: { b: Block }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {b.left && (
             <div className="callout callout-info flex-col gap-2">
-              <p className="text-xs font-bold uppercase tracking-wider m-0">{b.left.title}</p>
+              <p className="text-xs font-bold m-0">{b.left.title}</p>
               <ul className="space-y-1.5">
                 {b.left.items.map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-xs">
@@ -109,7 +109,7 @@ function PaiBlock({ b }: { b: Block }) {
           )}
           {b.right && (
             <div className="callout callout-mnemo flex-col gap-2">
-              <p className="text-xs font-bold uppercase tracking-wider m-0">{b.right.title}</p>
+              <p className="text-xs font-bold m-0">{b.right.title}</p>
               <ul className="space-y-1.5">
                 {b.right.items.map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-xs">

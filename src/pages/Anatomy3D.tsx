@@ -215,7 +215,7 @@ export function Anatomy3D() {
                   <span className="flex items-center gap-1.5">
                     <span className="text-sm font-medium text-ink leading-snug">{m.nombre}</span>
                     {m.illustrative && (
-                      <span className="inline-flex items-center flex-shrink-0 text-[0.5625rem] font-semibold px-1 py-px rounded"
+                      <span className="inline-flex items-center flex-shrink-0 text-xs font-semibold px-1 py-px rounded"
                             style={{ background: 'var(--c-warning-tint)', color: 'var(--c-warning-ink)' }}
                             title="Modelo ilustrativo (generado por IA)">IA</span>
                     )}
@@ -223,7 +223,7 @@ export function Anatomy3D() {
                   <span className="flex items-center justify-between gap-2 mt-0.5">
                     <span className="catalog-code" style={{ textTransform: 'none' }}>{m.nombre_en}</span>
                     {disabled
-                      ? <span className="text-[0.625rem] text-faint flex-shrink-0">Próximo</span>
+                      ? <span className="text-xs text-faint flex-shrink-0">Próximo</span>
                       : <span className={`text-xs font-medium flex items-center gap-0.5 flex-shrink-0 ${on ? 'text-primary-ink' : 'text-muted'}`}>
                           {on ? 'Activo' : 'Cargar'} <ArrowRight weight="bold" className="w-3 h-3" />
                         </span>}
@@ -316,7 +316,7 @@ export function Anatomy3D() {
               <h1 className="text-base font-semibold text-ink m-0 leading-tight"
                   style={{ fontFamily: 'var(--font-voice)' }}>{active.nombre}</h1>
               {active.illustrative && (
-                <span className="ml-auto flex-shrink-0 inline-flex items-center gap-1 text-[0.625rem] font-semibold px-1.5 py-0.5 rounded"
+                <span className="ml-auto flex-shrink-0 inline-flex items-center gap-1 text-xs font-semibold px-1.5 py-0.5 rounded"
                       style={{ background: 'var(--c-warning-tint)', color: 'var(--c-warning-ink)' }}>
                   <Warning weight="fill" className="w-3 h-3" /> Ilustrativo
                 </span>

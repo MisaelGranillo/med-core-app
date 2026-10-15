@@ -15,15 +15,14 @@ import {
 } from '@phosphor-icons/react'
 import { findSubject, sistemasDeMateria, libraryUrl } from '../data/plans'
 import { medlexTerms, SISTEMA_LABELS, SISTEMA_COLORS } from '../data/medlex-terms'
-import { topics } from '../data/topics'
-import { questions } from '../data/quizzes'
+import { topicIndex as topics, type TopicSummary } from '../data/generated/topicIndex'
 import { TOPIC_COLORS } from '../data/colors'
 import { useProgress } from '../store/useProgress'
 import type { Topic } from '../types'
 
-const topicById: Record<string, Topic> = Object.fromEntries(topics.map(t => [t.id, t]))
-const resolveTopics = (ids?: string[]): Topic[] => (ids ?? []).map(id => topicById[id]).filter(Boolean)
-const quizCount = (id: string) => questions.filter(q => q.topicId === id).length
+const topicById: Record<string, TopicSummary> = Object.fromEntries(topics.map(t => [t.id, t]))
+const resolveTopics = (ids?: string[]): TopicSummary[] => (ids ?? []).map(id => topicById[id]).filter(Boolean)
+const quizCount = (id: string) => topicById[id]?.questionCount ?? 0
 
 export function SubjectDetail() {
   const { subjectId } = useParams<{ subjectId: string }>()
@@ -165,7 +164,7 @@ export function SubjectDetail() {
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <BookOpenText weight="fill" className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-                <h2 className="font-bold text-zinc-900">Terminología clave</h2>
+                <h2 className="font-display font-normal text-zinc-900 text-xl">Terminología clave</h2>
               </div>
               <Link
                 to={`/terminologia?sistema=${primarySistema}`}
@@ -186,7 +185,7 @@ export function SubjectDetail() {
                   >
                     <p className={`font-bold text-sm font-mono ${sc.text}`}>{term.termino}</p>
                     <p className="text-xs text-zinc-600 mt-0.5">{term.significado}</p>
-                    <p className="text-[0.625rem] text-zinc-400 mt-1">{term.ejemplos.slice(0, 2).join(' · ')}</p>
+                    <p className="text-xs text-zinc-400 mt-1">{term.ejemplos.slice(0, 2).join(' · ')}</p>
                   </Link>
                 )
               })}
@@ -204,7 +203,7 @@ export function SubjectDetail() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <GraduationCap weight="fill" className="w-5 h-5 text-primary-600" />
-                  <h2 className="font-bold text-zinc-900">Ficha oficial UAD</h2>
+                  <h2 className="font-display font-normal text-zinc-900 text-xl">Ficha oficial UAD</h2>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {content.credits != null && (
@@ -234,14 +233,14 @@ export function SubjectDetail() {
               >
                 <div className="flex items-center gap-2">
                   <BookOpen weight="fill" className="w-5 h-5 text-zinc-500" />
-                  <h2 className="font-bold text-zinc-900">Descripción</h2>
+                  <h2 className="font-display font-normal text-zinc-900 text-xl">Descripción</h2>
                 </div>
                 {content.description && (
                   <p className="text-sm text-zinc-600 leading-relaxed">{content.description}</p>
                 )}
                 {content.competencia && (
                   <div className="rounded-xl bg-primary-50 border border-primary-100 p-4">
-                    <p className="flex items-center gap-1.5 text-[0.6875rem] font-bold uppercase tracking-wider text-primary-700 mb-1.5">
+                    <p className="flex items-center gap-1.5 text-[0.6875rem] font-bold text-primary-700 mb-1.5">
                       <Target weight="fill" className="w-3.5 h-3.5" /> Unidad de competencia
                     </p>
                     <p className="text-sm text-primary-900/80 leading-relaxed">{content.competencia}</p>
@@ -258,7 +257,7 @@ export function SubjectDetail() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <GraduationCap weight="fill" className="w-5 h-5 text-primary-600" />
-                  <h2 className="font-bold text-zinc-900">Guías de estudio</h2>
+                  <h2 className="font-display font-normal text-zinc-900 text-xl">Guías de estudio</h2>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {subjectTopics.map(t => (
@@ -276,7 +275,7 @@ export function SubjectDetail() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <CalendarCheck weight="fill" className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
-                  <h2 className="font-bold text-zinc-900">Plan semanal</h2>
+                  <h2 className="font-display font-normal text-zinc-900 text-xl">Plan semanal</h2>
                 </div>
                 <div className="space-y-3">
                   {content.semanas.map(sem => { const weekTopics = resolveTopics(sem.topicIds); return (
@@ -289,7 +288,7 @@ export function SubjectDetail() {
                         {sem.estado === 'adelanto' && (
                           <span
                             title="Contenido tomado del libro de texto, aún no impartido en clase."
-                            className="flex-shrink-0 text-[0.625rem] font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300 bg-amber-100 dark:bg-amber-500/20 border border-amber-300 px-2 py-0.5 rounded-full"
+                            className="flex-shrink-0 text-xs font-bold text-amber-800 dark:text-amber-300 bg-amber-100 dark:bg-amber-500/20 border border-amber-300 px-2 py-0.5 rounded-full"
                           >
                             Adelanto
                           </span>
@@ -304,7 +303,7 @@ export function SubjectDetail() {
                       {sem.temas && sem.temas.length > 0 && (
                         <div className="mt-2.5">
                           {weekTopics.length === 0 && (
-                            <p className="text-[0.625rem] font-bold uppercase tracking-wider text-zinc-400 mb-1.5">
+                            <p className="text-xs font-bold text-zinc-400 mb-1.5">
                               Próximamente
                             </p>
                           )}
@@ -326,7 +325,7 @@ export function SubjectDetail() {
                       )}
                       {weekTopics.length > 0 && (
                         <div className="mt-3">
-                          <p className="text-[0.625rem] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300 mb-1.5">
+                          <p className="text-xs font-bold text-emerald-700 dark:text-emerald-300 mb-1.5">
                             Temas de esta semana
                           </p>
                           <div className="flex flex-wrap gap-2">
@@ -344,7 +343,7 @@ export function SubjectDetail() {
                       )}
                       {sem.fuentes && sem.fuentes.length > 0 && (
                         <div className="mt-3 space-y-1.5">
-                          <p className="text-[0.6875rem] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300">Lecturas</p>
+                          <p className="text-[0.6875rem] font-bold text-emerald-700 dark:text-emerald-300">Lecturas</p>
                           {sem.fuentes.map((f, i) => {
                             const inner = (
                               <>
@@ -389,7 +388,7 @@ export function SubjectDetail() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <ListChecks weight="fill" className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-                  <h2 className="font-bold text-zinc-900">Contenido temático</h2>
+                  <h2 className="font-display font-normal text-zinc-900 text-xl">Contenido temático</h2>
                 </div>
                 <div className="space-y-4">
                   {content.temario.map(unit => (
@@ -419,13 +418,13 @@ export function SubjectDetail() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <Books weight="fill" className="w-5 h-5 text-amber-600 dark:text-amber-400" />
-                  <h2 className="font-bold text-zinc-900">Bibliografía</h2>
+                  <h2 className="font-display font-normal text-zinc-900 text-xl">Bibliografía</h2>
                 </div>
                 <ul className="space-y-2.5">
                   {content.bibliografia.map(ref => (
                     <li key={`${ref.title}-${ref.author ?? ''}`} className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 text-sm">
                       {ref.tipo && (
-                        <span className={`text-[0.5625rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${ref.tipo === 'básica' ? 'bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300' : 'bg-zinc-100 text-zinc-500'}`}>
+                        <span className={`text-xs font-bold px-1.5 py-0.5 rounded ${ref.tipo === 'básica' ? 'bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300' : 'bg-zinc-100 text-zinc-500'}`}>
                           {ref.tipo}
                         </span>
                       )}
@@ -461,13 +460,13 @@ export function SubjectDetail() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <Books weight="fill" className="w-5 h-5 text-rose-600 dark:text-rose-400" />
-                  <h2 className="font-bold text-zinc-900">Materiales y lecturas</h2>
+                  <h2 className="font-display font-normal text-zinc-900 text-xl">Materiales y lecturas</h2>
                 </div>
                 <ul className="divide-y divide-zinc-100">
                   {content.materiales.map(m => (
                     <li key={m.file ?? m.title} className="flex items-center gap-3 py-2.5 first:pt-0 last:pb-0">
                       {m.kind && (
-                        <span className="flex-shrink-0 text-[0.5625rem] font-bold uppercase tracking-wider text-zinc-500 bg-zinc-100 px-1.5 py-0.5 rounded w-20 text-center">
+                        <span className="flex-shrink-0 text-xs font-bold text-zinc-500 bg-zinc-100 px-1.5 py-0.5 rounded w-20 text-center">
                           {m.kind}
                         </span>
                       )}
@@ -499,7 +498,7 @@ export function SubjectDetail() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <LinkSimple weight="bold" className="w-5 h-5 text-teal-600 dark:text-teal-400" />
-                  <h2 className="font-bold text-zinc-900">Recursos digitales</h2>
+                  <h2 className="font-display font-normal text-zinc-900 text-xl">Recursos digitales</h2>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {content.recursos.map(r => (
@@ -532,7 +531,7 @@ export function SubjectDetail() {
             >
               <div className="flex items-center gap-2 mb-3">
                 {sec.icon}
-                <h2 className="font-bold text-zinc-900">{sec.title}</h2>
+                <h2 className="font-display font-normal text-zinc-900 text-xl">{sec.title}</h2>
               </div>
               <div className="rounded-xl bg-zinc-50 border-2 border-dashed border-zinc-200 p-6 text-center">
                 <p className="text-sm text-zinc-400">{sec.msg}</p>
@@ -548,7 +547,7 @@ export function SubjectDetail() {
 function FichaStat({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-xl bg-zinc-50 border border-zinc-100 px-3 py-2.5">
-      <p className="text-[0.625rem] font-bold uppercase tracking-wider text-zinc-400">{label}</p>
+      <p className="text-xs font-bold text-zinc-400">{label}</p>
       <p className="text-sm font-bold text-zinc-900 mt-0.5">{value}</p>
     </div>
   )
@@ -556,9 +555,9 @@ function FichaStat({ label, value }: { label: string; value: string }) {
 
 /* Tarjeta de Topic con progreso + doble acción Estudiar / Quiz (patrón de
  * Progress.tsx). "Estudiar" primero: leer antes de examinarse. */
-function StudyTopicCard({ topic, read }: { topic: Topic; read: number }) {
+function StudyTopicCard({ topic, read }: { topic: TopicSummary; read: number }) {
   const colors = TOPIC_COLORS[topic.colorKey]
-  const total = topic.sections.length
+  const total = topic.sectionCount
   const pct = total > 0 ? Math.round((read / total) * 100) : 0
   const qCount = quizCount(topic.id)
   return (
@@ -574,12 +573,12 @@ function StudyTopicCard({ topic, read }: { topic: Topic; read: number }) {
         <div className="flex-1 h-1.5 bg-zinc-200 rounded-full overflow-hidden">
           <div className={`h-full ${colors.dot} rounded-full transition-all`} style={{ width: `${pct}%` }} />
         </div>
-        <span className="text-[0.625rem] font-semibold text-zinc-400 flex-shrink-0">{read}/{total}</span>
+        <span className="text-xs font-semibold text-zinc-400 flex-shrink-0">{read}/{total}</span>
       </div>
       <div className="flex items-center gap-2">
         <Link
           to={`/topic/${topic.id}`}
-          className="flex-1 flex items-center justify-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-zinc-900 text-app hover:bg-zinc-800 transition-colors"
+          className="flex-1 flex items-center justify-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-primary text-primary-fg hover:bg-primary-hover transition-colors"
         >
           <BookOpen weight="bold" className="w-3.5 h-3.5" /> Estudiar
         </Link>

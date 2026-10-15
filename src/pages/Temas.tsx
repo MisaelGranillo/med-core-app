@@ -11,8 +11,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { GraduationCap, ArrowRight, BookOpen, Archive } from '@phosphor-icons/react'
 import { modules } from '../data/modules'
-import { topics } from '../data/topics'
-import { questions } from '../data/quizzes'
+import { topicIndex as topics, type TopicSummary } from '../data/generated/topicIndex'
 import { TOPIC_COLORS } from '../data/colors'
 import { CATEGORIA_ORDER, CATEGORIA_META } from '../data/categorias'
 import { planContextForTopic } from '../data/plans'
@@ -30,13 +29,13 @@ export function Temas() {
   const { getSectionsRead } = useProgress()
   const [filter, setFilter] = useState<TopicCategoria | 'Todas'>('Todas')
 
-  const countFor = (id: string) => questions.filter(q => q.topicId === id).length
+  const countFor = (id: string) => topics.find(t => t.id === id)?.questionCount ?? 0
 
   // módulo que contiene cada tema (fallback del tag cuando no está en el plan)
   const moduleByTopic: Record<string, (typeof modules)[number]> = {}
   for (const m of modules) for (const id of m.topicIds) if (!moduleByTopic[id]) moduleByTopic[id] = m
 
-  const contextTag = (t: Topic): string => {
+  const contextTag = (t: TopicSummary): string => {
     const ctx = planContextForTopic(t.id)
     if (ctx) return `${subjectShort(ctx.subjectName)}${ctx.semana ? ` · Sem ${ctx.semana}` : ''}`
     const mod = moduleByTopic[t.id]
@@ -53,18 +52,12 @@ export function Temas() {
   return (
     <main className="flex-1 pb-20 md:pb-0">
       {/* Hero */}
-      <section className="bg-surface border-b border-zinc-100">
+      <section>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-          <div className="inline-flex items-center gap-2 bg-primary-50 border border-primary-200
-                          text-primary-700 text-xs font-bold uppercase tracking-widest px-3 py-1.5
-                          rounded-full mb-3">
-            <GraduationCap weight="fill" className="w-3.5 h-3.5" />
-            Temas
-          </div>
-          <h1 className="text-3xl font-extrabold text-zinc-900 tracking-tight leading-none mb-2">
+          <h1 className="font-display font-light text-[2.25rem] sm:text-[2.75rem] leading-[1.05] tracking-[-0.025em] text-zinc-900 mb-2">
             Guías de estudio
           </h1>
-          <p className="text-zinc-500 text-sm max-w-[55ch]">
+          <p className="text-zinc-500 text-base max-w-[60ch]">
             {topics.length} temas en {byCat.length} categorías. Lee la guía y ponte a prueba con el quiz.
           </p>
 
@@ -73,7 +66,7 @@ export function Temas() {
             <button
               onClick={() => setFilter('Todas')}
               className={`text-xs font-semibold px-3 py-1.5 rounded-full transition-colors ${
-                filter === 'Todas' ? 'bg-zinc-900 text-app' : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                filter === 'Todas' ? 'bg-primary text-primary-fg' : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
               }`}
             >
               Todas
@@ -83,7 +76,7 @@ export function Temas() {
                 key={cat}
                 onClick={() => setFilter(cat)}
                 className={`text-xs font-semibold px-3 py-1.5 rounded-full transition-colors inline-flex items-center gap-1.5 ${
-                  filter === cat ? 'bg-zinc-900 text-app' : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                  filter === cat ? 'bg-primary text-primary-fg' : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
                 }`}
               >
                 <span>{CATEGORIA_META[cat].emoji}</span>
@@ -104,8 +97,8 @@ export function Temas() {
             <section key={cat}>
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-xl">{meta.emoji}</span>
-                <h2 className="font-bold text-zinc-900">{cat}</h2>
-                <span className={`text-[0.625rem] font-semibold px-2 py-0.5 rounded-full ${accent.badge}`}>
+                <h2 className="font-display font-normal text-zinc-900 text-xl">{cat}</h2>
+                <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${accent.badge}`}>
                   {temas.length} temas
                 </span>
               </div>
@@ -114,7 +107,7 @@ export function Temas() {
                   const colors = TOPIC_COLORS[t.colorKey]
                   const qCount = countFor(t.id)
                   const read = getSectionsRead(t.id).length
-                  const total = t.sections.length
+                  const total = t.sectionCount
                   const pct = total > 0 ? Math.round((read / total) * 100) : 0
                   return (
                     <motion.div
@@ -133,7 +126,7 @@ export function Temas() {
                       </div>
 
                       {/* tag de materia · semana */}
-                      <span className="text-[0.625rem] font-semibold text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded-full self-start">
+                      <span className="text-xs font-semibold text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded-full self-start">
                         {contextTag(t)}
                       </span>
 
@@ -142,11 +135,11 @@ export function Temas() {
                         <div className="flex-1 h-1.5 bg-zinc-100 rounded-full overflow-hidden">
                           <div className={`h-full ${colors.dot} rounded-full transition-all`} style={{ width: `${pct}%` }} />
                         </div>
-                        <span className="text-[0.625rem] font-semibold text-zinc-400 flex-shrink-0">{read}/{total}</span>
+                        <span className="text-xs font-semibold text-zinc-400 flex-shrink-0">{read}/{total}</span>
                       </div>
 
                       <div className="flex items-center gap-2 mt-auto pt-1">
-                        <span className={`text-[0.625rem] font-semibold px-2 py-0.5 rounded-full ${colors.badge}`}>
+                        <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${colors.badge}`}>
                           {total} secciones{qCount > 0 ? ` · ${qCount} reactivos` : ''}
                         </span>
                       </div>
@@ -155,7 +148,7 @@ export function Temas() {
                       <div className="flex items-center gap-2">
                         <Link
                           to={`/topic/${t.id}`}
-                          className="flex-1 flex items-center justify-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-zinc-900 text-app hover:bg-zinc-800 transition-colors"
+                          className="flex-1 flex items-center justify-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-primary text-primary-fg hover:bg-primary-hover transition-colors"
                         >
                           <BookOpen weight="bold" className="w-3.5 h-3.5" /> Estudiar
                         </Link>

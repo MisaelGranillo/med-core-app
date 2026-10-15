@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "predev": "node scripts/gen-topic-index.mjs",
     "dev": "vite",
+    "prebuild": "node scripts/gen-topic-index.mjs",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "deploy": "npm run build && npx wrangler pages deploy dist --project-name=med-core-app --branch=main",

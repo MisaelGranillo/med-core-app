@@ -78,10 +78,10 @@ function TermCard({ term, onOpen }: { term: MedLexTerm; onOpen: (id: string) => 
           {term.termino}
         </span>
         <div className="flex gap-1.5 flex-shrink-0">
-          <span className={`text-[0.5625rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md border ${TIPO_COLORS[term.tipo]}`}>
+          <span className={`text-xs font-bold px-1.5 py-0.5 rounded-md border ${TIPO_COLORS[term.tipo]}`}>
             {TIPO_LABELS[term.tipo]}
           </span>
-          <span className={`text-[0.5625rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md border ${ORIGEN_COLORS[term.origen]}`}>
+          <span className={`text-xs font-bold px-1.5 py-0.5 rounded-md border ${ORIGEN_COLORS[term.origen]}`}>
             {term.origen === 'griego' ? 'GR' : 'LA'}
           </span>
         </div>
@@ -103,13 +103,13 @@ function TermCard({ term, onOpen }: { term: MedLexTerm; onOpen: (id: string) => 
 
       {/* Sistema tag */}
       <div className="flex items-center justify-between">
-        <span className={`text-[0.625rem] font-bold px-2 py-0.5 rounded-full border ${sc.bg} ${sc.text} ${sc.border}`}>
+        <span className={`text-xs font-bold px-2 py-0.5 rounded-full border ${sc.bg} ${sc.text} ${sc.border}`}>
           {SISTEMA_LABELS[term.sistema] ?? term.sistema}
         </span>
         <Link
           to={`/anatomia-3d?sistema=${term.sistema}`}
           onClick={e => e.stopPropagation()}
-          className="text-[0.625rem] text-zinc-400 hover:text-primary-600 flex items-center gap-1 transition-colors"
+          className="text-xs text-zinc-400 hover:text-primary-600 flex items-center gap-1 transition-colors"
         >
           <Cube weight="fill" className="w-3 h-3" />
           Ver en 3D
@@ -302,19 +302,17 @@ export function Terminologia() {
     <main className="flex-1 pb-20 md:pb-0">
 
       {/* ── Encabezado ──────────────────────────────────────── */}
-      <section className="bg-surface border-b border-zinc-100">
+      <section>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
-              <div className="inline-flex items-center gap-2 bg-indigo-50 dark:bg-indigo-500/15 border border-indigo-200 dark:border-indigo-500/30
-                              text-indigo-700 dark:text-indigo-300 text-xs font-bold uppercase tracking-widest px-3 py-1.5
-                              rounded-full mb-3">
+              <div className="text-sm text-zinc-500 mb-2">
                 Terminología · MedLex
               </div>
-              <h1 className="text-3xl font-extrabold text-zinc-900 tracking-tight leading-none mb-2">
+              <h1 className="font-display font-light text-[2.25rem] sm:text-[2.75rem] leading-[1.05] tracking-[-0.025em] text-zinc-900 mb-2">
                 Términos Médicos
               </h1>
-              <p className="text-zinc-500 text-sm max-w-[55ch]">
+              <p className="text-zinc-500 text-base max-w-[60ch]">
                 Prefijos, sufijos y raíces greco-latinas del lenguaje médico. Fuente: ENP UNAM.
               </p>
               {/* Stats */}
@@ -377,7 +375,7 @@ export function Terminologia() {
                 key={t}
                 onClick={() => setFilterTipo(t)}
                 className={`text-xs font-semibold px-3 py-1 rounded-full border transition-all duration-150
-                  ${filterTipo === t ? 'bg-zinc-900 text-app border-zinc-900' : 'bg-surface text-zinc-600 border-zinc-200 hover:border-zinc-400'}`}
+                  ${filterTipo === t ? 'bg-primary text-primary-fg border-zinc-900' : 'bg-surface text-zinc-600 border-zinc-200 hover:border-zinc-400'}`}
               >
                 {t === 'todos' ? 'Todos los tipos' : TIPO_LABELS[t]}
               </button>
@@ -391,7 +389,7 @@ export function Terminologia() {
                 key={o}
                 onClick={() => setFilterOrigen(o)}
                 className={`text-xs font-semibold px-3 py-1 rounded-full border transition-all duration-150
-                  ${filterOrigen === o ? 'bg-zinc-900 text-app border-zinc-900' : 'bg-surface text-zinc-600 border-zinc-200 hover:border-zinc-400'}`}
+                  ${filterOrigen === o ? 'bg-primary text-primary-fg border-zinc-900' : 'bg-surface text-zinc-600 border-zinc-200 hover:border-zinc-400'}`}
               >
                 {o === 'todos' ? 'Griego + Latino' : o.charAt(0).toUpperCase() + o.slice(1)}
               </button>
@@ -507,13 +505,13 @@ export function Terminologia() {
                   <div>
                     <p className="font-mono font-bold text-2xl text-zinc-900 leading-none mb-2">{activeTerm.termino}</p>
                     <div className="flex gap-1.5">
-                      <span className={`text-[0.5625rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md border ${TIPO_COLORS[activeTerm.tipo]}`}>
+                      <span className={`text-xs font-bold px-1.5 py-0.5 rounded-md border ${TIPO_COLORS[activeTerm.tipo]}`}>
                         {TIPO_LABELS[activeTerm.tipo]}
                       </span>
-                      <span className={`text-[0.5625rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md border ${ORIGEN_COLORS[activeTerm.origen]}`}>
+                      <span className={`text-xs font-bold px-1.5 py-0.5 rounded-md border ${ORIGEN_COLORS[activeTerm.origen]}`}>
                         {activeTerm.origen === 'griego' ? 'Griego' : 'Latino'}
                       </span>
-                      <span className={`text-[0.5625rem] font-bold px-1.5 py-0.5 rounded-md border ${sc.bg} ${sc.text} ${sc.border}`}>
+                      <span className={`text-xs font-bold px-1.5 py-0.5 rounded-md border ${sc.bg} ${sc.text} ${sc.border}`}>
                         {SISTEMA_LABELS[activeTerm.sistema] ?? activeTerm.sistema}
                       </span>
                     </div>
@@ -523,7 +521,7 @@ export function Terminologia() {
                   </button>
                 </div>
                 <p className="text-base font-semibold text-zinc-800 mb-4">{activeTerm.significado}</p>
-                <p className="text-[0.6875rem] font-bold uppercase tracking-widest text-zinc-400 mb-2">Ejemplos</p>
+                <p className="text-[0.6875rem] font-bold text-zinc-400 mb-2">Ejemplos</p>
                 <div className="flex flex-wrap gap-1.5 mb-5">
                   {activeTerm.ejemplos.map((ej, i) => (
                     <span key={i} className="text-xs bg-zinc-100 text-zinc-600 px-2 py-1 rounded-full font-medium">{ej}</span>

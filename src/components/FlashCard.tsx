@@ -51,7 +51,7 @@ export function FlashCard({
             style={{ backfaceVisibility: 'hidden' }}
           >
             <span
-              className={`text-xs font-bold uppercase tracking-widest mb-4 ${colors.text}`}
+              className={`text-xs font-bold mb-4 ${colors.text}`}
             >
               {question.difficulty === 'easy' ? 'Básico' : question.difficulty === 'medium' ? 'Intermedio' : 'Avanzado'}
             </span>
@@ -66,7 +66,7 @@ export function FlashCard({
             className={`absolute inset-0 card flex flex-col items-center justify-center p-8 text-center ${colors.bg}`}
             style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
           >
-            <span className={`text-xs font-bold uppercase tracking-widest mb-3 ${colors.text}`}>
+            <span className={`text-xs font-bold mb-3 ${colors.text}`}>
               Respuesta correcta
             </span>
             <p className="text-xl font-bold text-zinc-900 mb-3">{correctAnswer}</p>

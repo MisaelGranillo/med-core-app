@@ -8,8 +8,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Lightning, ArrowRight, Trophy, BookOpen } from '@phosphor-icons/react'
 import { modules } from '../data/modules'
-import { topics } from '../data/topics'
-import { questions } from '../data/quizzes'
+import { topicIndex as topics, totalQuestionCount } from '../data/generated/topicIndex'
 import { TOPIC_COLORS } from '../data/colors'
 import { useProgress } from '../store/useProgress'
 
@@ -17,8 +16,8 @@ export function QuizCatalog() {
   const { getBestScore } = useProgress()
 
   const topicById = Object.fromEntries(topics.map(t => [t.id, t]))
-  const countFor = (id: string) => questions.filter(q => q.topicId === id).length
-  const totalQuestions = questions.length
+  const countFor = (id: string) => topicById[id]?.questionCount ?? 0
+  const totalQuestions = totalQuestionCount
 
   // Agrupa por módulo, solo temas con quiz disponible.
   const groups = modules
@@ -33,18 +32,12 @@ export function QuizCatalog() {
   return (
     <main className="flex-1 pb-20 md:pb-0">
       {/* Hero */}
-      <section className="bg-surface border-b border-zinc-100">
+      <section>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-          <div className="inline-flex items-center gap-2 bg-primary-50 border border-primary-200
-                          text-primary-700 text-xs font-bold uppercase tracking-widest px-3 py-1.5
-                          rounded-full mb-3">
-            <Lightning weight="fill" className="w-3.5 h-3.5" />
-            Quizzes
-          </div>
-          <h1 className="text-3xl font-extrabold text-zinc-900 tracking-tight leading-none mb-2">
+          <h1 className="font-display font-light text-[2.25rem] sm:text-[2.75rem] leading-[1.05] tracking-[-0.025em] text-zinc-900 mb-2">
             Catálogo de Quizzes
           </h1>
-          <p className="text-zinc-500 text-sm max-w-[55ch]">
+          <p className="text-zinc-500 text-base max-w-[60ch]">
             {totalQuestions} preguntas en {groups.reduce((n, g) => n + g.temas.length, 0)} temas.
             Elige un tema para practicar con flashcards o quiz de opción múltiple.
           </p>
@@ -57,8 +50,8 @@ export function QuizCatalog() {
           <section key={module.id}>
             <div className="flex items-center gap-2 mb-3">
               <span className="text-xl">{module.emoji}</span>
-              <h2 className="font-bold text-zinc-900">{module.title}</h2>
-              <span className="text-[0.625rem] font-semibold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded-full">
+              <h2 className="font-display font-normal text-zinc-900 text-xl">{module.title}</h2>
+              <span className="text-xs font-semibold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded-full">
                 {temas.length} temas
               </span>
             </div>
@@ -83,7 +76,7 @@ export function QuizCatalog() {
                           </h3>
                         </div>
                         {best !== null && (
-                          <span className="flex items-center gap-1 text-[0.5625rem] font-bold text-amber-700 dark:text-amber-300 bg-amber-100 dark:bg-amber-500/20 border border-amber-200 dark:border-amber-500/30 px-1.5 py-0.5 rounded-full flex-shrink-0">
+                          <span className="flex items-center gap-1 text-xs font-bold text-amber-700 dark:text-amber-300 bg-amber-100 dark:bg-amber-500/20 border border-amber-200 dark:border-amber-500/30 px-1.5 py-0.5 rounded-full flex-shrink-0">
                             <Trophy weight="fill" className="w-3 h-3" />
                             {best}%
                           </span>
@@ -99,7 +92,7 @@ export function QuizCatalog() {
                       <div className="flex items-center gap-2">
                         <Link
                           to={`/topic/${t.id}`}
-                          className="flex-1 flex items-center justify-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-zinc-900 text-app hover:bg-zinc-800 transition-colors"
+                          className="flex-1 flex items-center justify-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-primary text-primary-fg hover:bg-primary-hover transition-colors"
                         >
                           <BookOpen weight="bold" className="w-3.5 h-3.5" /> Estudiar
                         </Link>

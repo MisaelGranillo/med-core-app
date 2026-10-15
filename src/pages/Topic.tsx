@@ -12,8 +12,8 @@ import {
   Target,
 } from '@phosphor-icons/react'
 import { modules } from '../data/modules'
-import { topics } from '../data/topics'
-import { questions } from '../data/quizzes'
+import { useContent } from '../data/content'
+import { PageLoading } from '../components/PageLoading'
 import { planContextForTopic } from '../data/plans'
 import { TOPIC_COLORS } from '../data/colors'
 import { useProgress } from '../store/useProgress'
@@ -36,22 +36,24 @@ const COLOR_RING: Record<string, string> = {
 export function Topic() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
-  const topic = topics.find((t) => t.id === id)
+  const content = useContent()
+  const topic = content?.topics.find((t) => t.id === id)
   const { getSectionsRead, markSectionRead, getBestScore } = useProgress()
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [activeSection, setActiveSection] = useState<string | null>(null)
 
   useEffect(() => {
-    if (!topic) navigate('/')
-  }, [topic, navigate])
+    if (content && !topic) navigate('/')
+  }, [content, topic, navigate])
 
+  if (!content) return <PageLoading />
   if (!topic) return null
 
   const colors = TOPIC_COLORS[topic.colorKey]
   const sectionsRead = getSectionsRead(topic.id)
   const pct = Math.round((sectionsRead.length / topic.sections.length) * 100)
   const bestScore = getBestScore(topic.id)
-  const qCount = questions.filter((q) => q.topicId === topic.id).length
+  const qCount = content.questions.filter((q) => q.topicId === topic.id).length
   const module = modules.find((m) => m.topicIds.includes(topic.id))
   const planCtx = planContextForTopic(topic.id)
 

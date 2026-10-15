@@ -11,8 +11,8 @@ import {
   CheckCircle,
   XCircle,
 } from '@phosphor-icons/react'
-import { topics } from '../data/topics'
-import { questions } from '../data/quizzes'
+import { useContent, type Content } from '../data/content'
+import { PageLoading } from '../components/PageLoading'
 import { TOPIC_COLORS } from '../data/colors'
 import { useProgress } from '../store/useProgress'
 import { FlashCard } from '../components/FlashCard'
@@ -25,11 +25,19 @@ function shuffle<T>(arr: T[]): T[] {
   return [...arr].sort(() => Math.random() - 0.5)
 }
 
+/* Espera el contenido completo y después monta la sesión (así los hooks de
+ * QuizSession se llaman siempre en el mismo orden). */
 export function Quiz() {
+  const content = useContent()
+  if (!content) return <PageLoading />
+  return <QuizSession content={content} />
+}
+
+function QuizSession({ content }: { content: Content }) {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
-  const topic = topics.find((t) => t.id === id)
-  const topicQuestions = questions.filter((q) => q.topicId === id)
+  const topic = content.topics.find((t) => t.id === id)
+  const topicQuestions = content.questions.filter((q) => q.topicId === id)
   const colors = topic ? TOPIC_COLORS[topic.colorKey] : TOPIC_COLORS.digestivo
   const { addQuizAttempt, getBestScore } = useProgress()
 
@@ -170,7 +178,7 @@ export function Quiz() {
               </div>
 
               <div className="card p-4 bg-zinc-50">
-                <p className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-3">
+                <p className="text-xs font-bold text-zinc-400 mb-3">
                   Distribución de dificultad
                 </p>
                 <div className="flex gap-2 text-xs">
@@ -255,7 +263,7 @@ export function Quiz() {
                 <div className={`w-20 h-20 rounded-full ${colors.headerBg} flex items-center justify-center mx-auto mb-5`}>
                   <Trophy weight="fill" className="w-10 h-10 text-white" />
                 </div>
-                <h2 className="text-3xl font-extrabold text-zinc-900 tracking-tight mb-1">
+                <h2 className="text-3xl font-display font-normal text-zinc-900 tracking-tight mb-1">
                   {pct}%
                 </h2>
                 <p className="text-zinc-500 text-sm mb-5">

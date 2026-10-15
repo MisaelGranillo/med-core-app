@@ -67,7 +67,7 @@ export function QuizQuestion({
 
       {/* Question */}
       <div className="card px-6 py-5">
-        <span className={`text-xs font-bold uppercase tracking-wider ${colors.text} block mb-2`}>
+        <span className={`text-xs font-bold ${colors.text} block mb-2`}>
           {question.difficulty === 'easy' ? 'Básico' : question.difficulty === 'medium' ? 'Intermedio' : 'Avanzado'}
           {question.type === 'true-false' && ' · Verdadero o Falso'}
         </span>

@@ -73,11 +73,11 @@ export function PAITema() {
               )}
               <div className="flex items-center gap-3 mb-2">
                 <span className="text-3xl">{tema.icono}</span>
-                <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">
+                <span className="text-xs font-bold text-zinc-400">
                   Tema {tema.orden} · {mod.nombre.replace('MÓDULO — ', '')}
                 </span>
               </div>
-              <h1 className="text-2xl md:text-3xl font-extrabold text-zinc-900 tracking-tight leading-tight mb-3">
+              <h1 className="font-display font-light text-[2rem] sm:text-[2.4rem] leading-[1.08] tracking-[-0.025em] text-zinc-900 mb-2">
                 {tema.titulo}
               </h1>
               <p className="text-zinc-500 text-base leading-relaxed border-l-4 border-primary-200 pl-4">
@@ -95,7 +95,7 @@ export function PAITema() {
               <div className="rounded-lg border border-line border-l-[3px] border-l-primary bg-primary-tint p-6">
                 <div className="flex items-center gap-2 mb-4">
                   <Brain weight="fill" className="w-5 h-5 text-primary" />
-                  <h2 className="font-bold text-primary-800">Mnemotecnia</h2>
+                  <h2 className="font-display font-normal text-primary-800 text-xl">Mnemotecnia</h2>
                 </div>
                 <div className="space-y-3">
                   {tema.mnemotecnia.items.map((item, i) => (
@@ -115,12 +115,12 @@ export function PAITema() {
               <div className="rounded-lg border border-line border-l-[3px] border-l-warning bg-warning-tint p-6">
                 <div className="flex items-center gap-2 mb-4">
                   <Star weight="fill" className="w-5 h-5 text-warning" />
-                  <h2 className="font-bold text-warning-ink">Puntos clave para el examen</h2>
+                  <h2 className="font-display font-normal text-warning-ink text-xl">Puntos clave para el examen</h2>
                 </div>
                 <ul className="space-y-2.5">
                   {tema.puntosClave.map((punto, i) => (
                     <li key={i} className="flex items-start gap-2.5 text-sm text-warning-ink">
-                      <span className="w-5 h-5 rounded-full bg-warning/20 text-warning-ink text-[0.625rem] font-bold font-mono
+                      <span className="w-5 h-5 rounded-full bg-warning/20 text-warning-ink text-xs font-bold font-mono
                                        flex items-center justify-center flex-shrink-0 mt-0.5">
                         {i + 1}
                       </span>
@@ -136,7 +136,7 @@ export function PAITema() {
               <div className="rounded-lg border border-line border-l-[3px] border-l-error bg-error-tint p-6">
                 <div className="flex items-center gap-2 mb-3">
                   <WarningCircle weight="fill" className="w-5 h-5 text-error" />
-                  <h2 className="font-bold text-error-ink">Error frecuente</h2>
+                  <h2 className="font-display font-normal text-error-ink text-xl">Error frecuente</h2>
                 </div>
                 <p className="text-sm text-error-ink leading-relaxed">{tema.errorFrecuente}</p>
               </div>
@@ -200,14 +200,14 @@ export function PAITema() {
               {prevTema ? (
                 <Link to={`/estudio/archivo/${slug}/${prevTema.id}`}
                   className="card p-4 hover:shadow-card-hover transition-all group text-left">
-                  <p className="text-[0.625rem] text-zinc-400 uppercase font-bold tracking-wider mb-1">← Anterior</p>
+                  <p className="text-xs text-zinc-400 font-bold mb-1">← Anterior</p>
                   <p className="text-sm font-semibold text-zinc-700 leading-tight line-clamp-2">{prevTema.titulo}</p>
                 </Link>
               ) : <div />}
               {nextTema ? (
                 <Link to={`/estudio/archivo/${slug}/${nextTema.id}`}
                   className="card p-4 hover:shadow-card-hover transition-all group text-right">
-                  <p className="text-[0.625rem] text-zinc-400 uppercase font-bold tracking-wider mb-1">Siguiente →</p>
+                  <p className="text-xs text-zinc-400 font-bold mb-1">Siguiente →</p>
                   <p className="text-sm font-semibold text-zinc-700 leading-tight line-clamp-2">{nextTema.titulo}</p>
                 </Link>
               ) : <div />}
@@ -217,7 +217,7 @@ export function PAITema() {
           {/* Sidebar — índice de temas */}
           <aside className="hidden lg:block">
             <div className="card p-4 sticky top-28">
-              <p className="text-[0.625rem] font-bold text-zinc-400 uppercase tracking-widest mb-3 px-2">
+              <p className="text-xs font-bold text-zinc-400 mb-3 px-2">
                 Temas del módulo
               </p>
               <nav className="space-y-0.5">

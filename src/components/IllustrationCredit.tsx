@@ -14,7 +14,7 @@ export function IllustrationCredit({
   license?: 'pd' | 'ccby'
   className?: string
 }) {
-  const cls = `text-[0.625rem] leading-snug text-zinc-400 ${className}`
+  const cls = `text-xs leading-snug text-zinc-400 ${className}`
   const link = 'underline hover:text-zinc-600'
   return (
     <p className={cls}>

@@ -38,7 +38,7 @@ function SubjectCard({ subject }: { subject: Subject }) {
       <div className="flex items-start justify-between gap-2">
         <h3 className="font-bold text-sm leading-snug text-zinc-900">{subject.name}</h3>
         {subject.hasLab && (
-          <span className="flex items-center gap-1 text-[0.5625rem] bg-teal-100 dark:bg-teal-500/20 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-500/30 px-1.5 py-0.5 rounded-full font-bold uppercase tracking-wide flex-shrink-0">
+          <span className="flex items-center gap-1 text-xs bg-teal-100 dark:bg-teal-500/20 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-500/30 px-1.5 py-0.5 rounded-full font-bold flex-shrink-0">
             <Flask weight="fill" className="w-3 h-3" /> Lab
           </span>
         )}
@@ -47,7 +47,7 @@ function SubjectCard({ subject }: { subject: Subject }) {
       <div className="flex items-center justify-between border-t border-zinc-100 pt-2.5 mt-auto">
         <div className="flex flex-wrap gap-1">
           {(subject.tags ?? []).map(t => (
-            <span key={t} className="text-[0.5625rem] bg-zinc-100 text-zinc-500 px-1.5 py-0.5 rounded-full font-semibold">
+            <span key={t} className="text-xs bg-zinc-100 text-zinc-500 px-1.5 py-0.5 rounded-full font-semibold">
               {SISTEMA_LABELS[t] ?? t}
             </span>
           ))}
@@ -134,16 +134,14 @@ export function Plan() {
     <main className="flex-1 pb-20 md:pb-0">
 
       {/* ── Hero ───────────────────────────────────────────── */}
-      <section className="bg-surface border-b border-zinc-100">
+      <section>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
             <div>
-              <div className="inline-flex items-center gap-2 bg-primary-50 border border-primary-200
-                              text-primary-700 text-xs font-bold uppercase tracking-widest px-3 py-1.5
-                              rounded-full mb-3">
+              <div className="text-sm text-zinc-500 mb-2">
                 {plan.schoolShort} · {plan.school}
               </div>
-              <h1 className="text-3xl font-extrabold text-zinc-900 tracking-tight leading-none mb-2">
+              <h1 className="font-display font-light text-[2.25rem] sm:text-[2.75rem] leading-[1.05] tracking-[-0.025em] text-zinc-900 mb-2">
                 Plan de Estudios
               </h1>
               <p className="text-zinc-500 text-sm max-w-[60ch]">
@@ -175,11 +173,11 @@ export function Plan() {
                 className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold
                              whitespace-nowrap transition-all duration-150 flex-shrink-0
                              ${activeIdx === p.index
-                               ? 'bg-zinc-900 text-app'
+                               ? 'bg-primary text-primary-fg'
                                : 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100'}`}
               >
                 {p.label}
-                <span className={`text-[0.625rem] px-1.5 py-0.5 rounded-full font-bold
+                <span className={`text-xs px-1.5 py-0.5 rounded-full font-bold
                   ${activeIdx === p.index ? 'bg-surface/20 text-white' : 'bg-zinc-100 text-zinc-500'}`}>
                   {p.subjects.length}
                 </span>
@@ -191,7 +189,7 @@ export function Plan() {
 
       {/* ── Grid de materias ─────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={`${plan.id}-${activeIdx}`}
             initial={{ opacity: 0 }}

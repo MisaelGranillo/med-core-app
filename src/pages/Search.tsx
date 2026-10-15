@@ -3,8 +3,8 @@ import { useSearchParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { MagnifyingGlass, ArrowRight } from '@phosphor-icons/react'
 import Fuse from 'fuse.js'
-import { topics } from '../data/topics'
-import { questions } from '../data/quizzes'
+import { useContent, type Content } from '../data/content'
+import { topicIndex } from '../data/generated/topicIndex'
 import { TOPIC_COLORS } from '../data/colors'
 
 interface FlatItem {
@@ -18,7 +18,7 @@ interface FlatItem {
   type: 'section' | 'question'
 }
 
-const buildIndex = (): FlatItem[] => {
+const buildIndex = ({ topics, questions }: Content): FlatItem[] => {
   const items: FlatItem[] = []
 
   for (const topic of topics) {
@@ -72,31 +72,32 @@ const buildIndex = (): FlatItem[] => {
   return items
 }
 
-const flatIndex = buildIndex()
-
-const fuse = new Fuse(flatIndex, {
+/* El índice de búsqueda se construye una vez, cuando llega el contenido. */
+let fuseCache: Fuse<FlatItem> | null = null
+const getFuse = (content: Content) => (fuseCache ??= new Fuse(buildIndex(content), {
   keys: ['content', 'sectionTitle', 'topicTitle'],
   threshold: 0.35,
   includeScore: true,
   minMatchCharLength: 2,
-})
+}))
 
 export function Search() {
   const [params] = useSearchParams()
   const query = params.get('q') ?? ''
   const [inputVal, setInputVal] = useState(query)
+  const content = useContent()
 
   useEffect(() => {
     setInputVal(query)
   }, [query])
 
   const results = useMemo(() => {
-    if (!query.trim()) return []
-    return fuse
+    if (!query.trim() || !content) return []
+    return getFuse(content)
       .search(query.trim())
       .slice(0, 30)
       .filter((r) => r.item.type === 'section')
-  }, [query])
+  }, [query, content])
 
   const grouped = useMemo(() => {
     const map: Record<string, typeof results> = {}
@@ -110,7 +111,7 @@ export function Search() {
   return (
     <div className="flex-1 max-w-4xl mx-auto w-full px-4 sm:px-6 py-10">
       <div className="mb-8">
-        <h1 className="text-2xl font-extrabold text-zinc-900 tracking-tight mb-1">
+        <h1 className="font-display font-light text-[2.25rem] sm:text-[2.75rem] leading-[1.05] tracking-[-0.025em] text-zinc-900 mb-2">
           Búsqueda
         </h1>
         {query && (
@@ -128,7 +129,13 @@ export function Search() {
         </div>
       )}
 
-      {query && results.length === 0 && (
+      {query && !content && (
+        <div className="card p-10 text-center text-zinc-500">
+          <p className="text-sm">Cargando el contenido…</p>
+        </div>
+      )}
+
+      {query && content && results.length === 0 && (
         <div className="card p-10 text-center text-zinc-400">
           <p className="font-semibold text-zinc-600 mb-1">Sin resultados</p>
           <p className="text-sm">
@@ -138,7 +145,7 @@ export function Search() {
       )}
 
       {Object.entries(grouped).map(([topicId, items]) => {
-        const topic = topics.find((t) => t.id === topicId)!
+        const topic = topicIndex.find((t) => t.id === topicId)!
         const colors = TOPIC_COLORS[topic.colorKey as keyof typeof TOPIC_COLORS]
         return (
           <div key={topicId} className="mb-8">
@@ -150,7 +157,7 @@ export function Search() {
 
             <div className="space-y-2">
               {items.map((r, i) => {
-                const section = topics
+                const section = content?.topics
                   .find((t) => t.id === topicId)
                   ?.sections.find((s) => s.id === r.item.sectionId)
 
@@ -167,7 +174,7 @@ export function Search() {
                     >
                       <div className="flex items-start gap-3 flex-1 min-w-0">
                         <span
-                          className={`section-number ${colors.headerBg} flex-shrink-0 mt-0.5`}
+                          className="section-number bg-primary-tint text-primary-ink flex-shrink-0 mt-0.5"
                         >
                           {section?.number ?? '?'}
                         </span>

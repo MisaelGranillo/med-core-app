@@ -21,7 +21,7 @@ export function PAI() {
   return (
     <main className="flex-1 bg-zinc-50">
       {/* Header */}
-      <section className="bg-surface border-b border-zinc-100">
+      <section>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-14">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-primary-50 border border-primary-200 text-primary-700
@@ -29,7 +29,7 @@ export function PAI() {
               <Sparkle weight="fill" className="w-3.5 h-3.5" />
               Estudio · Guías por tema
             </div>
-            <h1 className="text-3xl md:text-4xl font-extrabold text-zinc-900 tracking-tighter leading-tight mb-3">
+            <h1 className="font-display font-light text-[2.25rem] sm:text-[2.75rem] leading-[1.05] tracking-[-0.025em] text-zinc-900 mb-2">
               Guías de Estudio
             </h1>
             <p className="text-zinc-500 text-base leading-relaxed mb-6">
@@ -98,14 +98,14 @@ function ModuloCard({
       {/* Icono + badge de estado */}
       <div className="flex items-start justify-between mb-4">
         <span className="text-3xl">{mod.icono}</span>
-        <span className={`flex items-center gap-1.5 text-[0.625rem] font-bold px-2.5 py-1 rounded-full ${s.bg} ${s.text}`}>
+        <span className={`flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full ${s.bg} ${s.text}`}>
           <span className={`w-1.5 h-1.5 rounded-full ${s.dot}`} />
           {s.label}
         </span>
       </div>
 
       {/* Materia UAD orientativa */}
-      <p className="text-[0.625rem] font-bold text-zinc-400 uppercase tracking-widest mb-1">
+      <p className="text-xs font-bold text-zinc-400 mb-1">
         {mod.uadObjetivo}
       </p>
 
