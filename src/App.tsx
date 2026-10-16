@@ -30,6 +30,7 @@ const EstudioModulo= named(() => import('./pages/PAIModulo'),     'PAIModulo')
 const EstudioTema  = named(() => import('./pages/PAITema'),       'PAITema')
 const Atlas        = named(() => import('./pages/Atlas'),         'Atlas')
 const AtlasTopic   = named(() => import('./pages/AtlasTopic'),    'AtlasTopic')
+const Libreria     = named(() => import('./pages/Libreria'),      'Libreria')
 
 /* Redirige /modulos/:id (LMGC, id en mayúsculas) al nuevo /plan/:subjectId
  * (id en minúsculas), preservando los enlaces antiguos. */
@@ -160,6 +161,7 @@ export default function App() {
               {/* Atlas — Estudio Visual */}
               <Route path="/atlas" element={<Atlas />} />
               <Route path="/atlas/:id" element={<AtlasTopic />} />
+              <Route path="/libreria" element={<Libreria />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

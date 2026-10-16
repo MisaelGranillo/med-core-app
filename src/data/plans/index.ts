@@ -54,6 +54,14 @@ export const LIBRARY_PRIVATE = new Set<string>([
   'ingles-medico-1/Importancia del Ingles en las Ciencias de la Salud.pdf',
   'ingles-medico-1/Medical record keeping for quality patient care.pdf',
   'ingles-medico-1/The role of medical English in healthcare education.pdf',
+  // Librería (libros de ~/Desktop/UAD/Libros que no pertenecen a una materia)
+  'libreria/Gartner - Biologia celular e histologia 7a ed.pdf',
+  'libreria/Dudek - Embriologia 6a ed.pdf',
+  'libreria/Gould - Neuroanatomia 5a ed.pdf',
+  'libreria/Costanzo - Fisiologia 7a ed.pdf',
+  'libreria/Rosenfeld - Farmacologia 6a ed.pdf',
+  'libreria/Aesculap - Catalogo de instrumental quirurgico.pdf',
+  'libreria/BTI - Instrumental quirurgico.pdf',
 ])
 
 /** Key del archivo en R2 (sin barra inicial). */
