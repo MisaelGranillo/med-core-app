@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 12px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.two .mini { text-align: left; padding: 7px 9px; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.3px; }
+.flow { display: flex; align-items: center; gap: 3px; flex-wrap: nowrap; font-size: 10.2px; }
+.flow span { background: #f6f8fc; border-radius: 6px; padding: 4px 7px; white-space: nowrap; }
+.flow i { font-style: normal; color: var(--blue); font-weight: 800; }
+.band { background: var(--navy); color: #fff; border-radius: 8px; padding: 5px 12px; font-weight: 800; font-size: 13px; letter-spacing: .5px; text-transform: uppercase; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Histología</p>
+  <h1>Epitelios Especializados</h1>
+  <p class="tag">Urotelio, glomérulo, vía aérea y alvéolo: cada epitelio, para su trabajo.</p>
+</header>
+
+<div class="band">Aparato urinario</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">1</span>Urotelio <small>— epitelio de transición: se distiende sin dejar pasar la orina</small></div>
+  <div class="flow" style="margin-bottom:8px">
+    <b style="color:var(--red);margin-right:4px">★ Extensión:</b><span>Cálices menores</span><i>→</i><span>cálices mayores</span><i>→</i><span>pelvis renal</span><i>→</i><span>uréteres</span><i>→</i><span>vejiga</span><i>→</i><span>uretra <b>proximal</b></span>
+  </div>
+  <div style="display:flex;gap:12px;align-items:center">
+    <svg viewBox="0 0 420 150" style="width:420px;flex-shrink:0">
+      <g>
+        <!-- vacía -->
+        <rect x="6" y="126" width="190" height="6" fill="#c8242c"/>
+        <g fill="#e9e1f4" stroke="#8a63c0" stroke-width="1.2">
+          <rect x="10" y="106" width="22" height="20" rx="4"/><rect x="34" y="106" width="22" height="20" rx="4"/><rect x="58" y="106" width="22" height="20" rx="4"/><rect x="82" y="106" width="22" height="20" rx="4"/><rect x="106" y="106" width="22" height="20" rx="4"/><rect x="130" y="106" width="22" height="20" rx="4"/><rect x="154" y="106" width="22" height="20" rx="4"/><rect x="178" y="106" width="16" height="20" rx="4"/>
+          <path d="M14 104 l10 -30 l10 30 z M40 104 l10 -30 l10 30 z M66 104 l10 -30 l10 30 z M92 104 l10 -30 l10 30 z M118 104 l10 -30 l10 30 z M144 104 l10 -30 l10 30 z M170 104 l10 -30 l10 30 z"/>
+        </g>
+        <g fill="#d7c9ef" stroke="#5b3b99" stroke-width="1.4"><path d="M8 72 Q34 30 60 72 Z"/><path d="M62 72 Q90 28 118 72 Z"/><path d="M120 72 Q148 30 176 72 Z"/><path d="M178 72 Q190 50 196 72 Z"/></g>
+        <g fill="#5b3b99"><circle cx="28" cy="58" r="3.5"/><circle cx="40" cy="58" r="3.5"/><circle cx="90" cy="56" r="3.5"/><circle cx="148" cy="58" r="3.5"/><circle cx="160" cy="58" r="3.5"/></g>
+        <g fill="#8a63c0"><circle cx="21" cy="116" r="3"/><circle cx="45" cy="116" r="3"/><circle cx="69" cy="116" r="3"/><circle cx="93" cy="116" r="3"/><circle cx="117" cy="116" r="3"/><circle cx="141" cy="116" r="3"/><circle cx="165" cy="116" r="3"/></g>
+        <text x="100" y="146" font-size="11" font-weight="800" fill="#13295b" text-anchor="middle">Vejiga vacía: más capas</text>
+        <!-- llena -->
+        <rect x="224" y="126" width="190" height="6" fill="#c8242c"/>
+        <g fill="#e9e1f4" stroke="#8a63c0" stroke-width="1.2"><rect x="226" y="114" width="46" height="12" rx="4"/><rect x="274" y="114" width="46" height="12" rx="4"/><rect x="322" y="114" width="46" height="12" rx="4"/><rect x="370" y="114" width="42" height="12" rx="4"/></g>
+        <g fill="#d7c9ef" stroke="#5b3b99" stroke-width="1.4"><rect x="226" y="100" width="92" height="13" rx="6"/><rect x="320" y="100" width="92" height="13" rx="6"/></g>
+        <g fill="#5b3b99"><circle cx="262" cy="106" r="3"/><circle cx="282" cy="106" r="3"/><circle cx="366" cy="106" r="3"/></g>
+        <text x="320" y="146" font-size="11" font-weight="800" fill="#13295b" text-anchor="middle">Llena: las células se aplanan</text>
+        <g font-size="10" fill="#4b5567"><text x="226" y="40">Superficiales «en paraguas»:</text><text x="226" y="54">grandes, a menudo binucleadas</text><text x="226" y="74">Intermedias: piriformes</text><text x="226" y="90">Basales: células madre</text></g>
+      </g>
+    </svg>
+    <div style="flex:1">
+      <div class="ilist">
+        <div>{{icon:SquaresFour}}<span><b>Placas uroteliales</b> de uroplaquinas: membrana apical rígida.</span></div>
+        <div>{{icon:Circle}}<span><b>Vesículas fusiformes</b>: reservas de membrana para distenderse.</span></div>
+        <div>{{icon:Lock}}<span><b>Uniones ocluyentes</b> muy desarrolladas.</span></div>
+        <div>{{icon:Hourglass}}<span><b>Recambio lento</b>; se acelera ante lesión.</span></div>
+      </div>
+      <p style="font-size:10px;margin:4px 0 0">Al llenarse no se pierden células: cambia su disposición.</p>
+    </div>
+  </div>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1.1">
+    <div class="ph"><span class="n">2</span>Corpúsculo renal = glomérulo + cápsula de Bowman</div>
+    <svg viewBox="0 0 460 210" style="width:100%;display:block">
+      <defs><marker id="m" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1d2433"/></marker></defs>
+      <g>
+        <path d="M150 30 A 90 90 0 1 0 250 40" fill="#fdf6ee" stroke="#e8912e" stroke-width="5"/>
+        <path d="M250 40 Q 300 70 330 70 L 440 70" fill="none" stroke="#2e9d6b" stroke-width="12" stroke-linecap="round"/>
+        <g fill="none" stroke="#c8242c" stroke-width="5" stroke-linecap="round"><path d="M180 6 C 180 50, 140 60, 150 90 C 160 120, 120 130, 140 150 C 160 170, 200 160, 210 140 C 220 120, 190 100, 210 80 C 230 60, 200 40, 210 6"/></g>
+        <g fill="none" stroke="#8a63c0" stroke-width="2.4"><path d="M146 92 c-8 -4 -8 6 -14 4 M138 150 c-8 4 -4 12 -12 12 M212 140 c8 4 6 12 14 12 M208 80 c8 -4 10 4 16 0"/></g>
+        <text x="160" y="16" font-size="10.5" font-weight="800" fill="#c8242c" text-anchor="end">aferente →</text>
+        <text x="218" y="16" font-size="10.5" font-weight="800" fill="#c8242c">← eferente</text>
+        
+      </g>
+      <g font-size="10.5">
+        <line x1="112" y1="150" x2="70" y2="168" stroke="#1d2433" stroke-width=".9"/><text x="4" y="176" font-weight="800" fill="#b8650f">Hoja parietal</text><text x="4" y="189" fill="#4b5567">plano simple</text>
+        <line x1="128" y1="98" x2="40" y2="70" stroke="#1d2433" stroke-width=".9"/><text x="4" y="52" font-weight="800" fill="#5b3b99">Hoja visceral</text><text x="4" y="65" fill="#4b5567">podocitos y pedicelos</text>
+        <text x="350" y="56" font-weight="800" fill="#2e7d5b">Túbulo proximal</text><text x="350" y="92" fill="#4b5567">cúbico simple con</text><text x="350" y="105" fill="#4b5567">borde en cepillo</text>
+        <text x="300" y="150" font-weight="700" fill="#13295b">~180 L de ultrafiltrado</text><text x="300" y="164" fill="#4b5567">al día; se reabsorbe</text><text x="300" y="177" fill="#4b5567">más del 99 %</text>
+      </g>
+    </svg>
+    <p style="font-size:10.2px;margin:0"><b>Polo vascular</b> (arriba): entra la arteriola aferente y sale la eferente. <b>Polo urinario</b> (derecha): el plano simple cambia a cúbico, inicio del túbulo proximal.</p>
+  </section>
+  <section class="col" style="flex:.9">
+    <section class="panel">
+      <div class="ph"><span class="n">3</span>Barrera de filtración</div>
+      <svg viewBox="0 0 300 84" style="width:100%;display:block">
+        <g font-size="8.6">
+          <rect x="4" y="6" width="110" height="16" rx="3" fill="#f6c9cc"/><g fill="#fff"><rect x="24" y="6" width="8" height="16"/><rect x="56" y="6" width="8" height="16"/><rect x="88" y="6" width="8" height="16"/></g>
+          <rect x="4" y="26" width="110" height="18" rx="3" fill="#d9dee8"/>
+          <g fill="#d7c9ef" stroke="#5b3b99"><rect x="6" y="48" width="18" height="18" rx="5"/><rect x="32" y="48" width="18" height="18" rx="5"/><rect x="58" y="48" width="18" height="18" rx="5"/><rect x="84" y="48" width="18" height="18" rx="5"/></g>
+          <text x="124" y="18" font-weight="800" fill="#c8242c">Endotelio fenestrado</text>
+          <text x="124" y="39" font-weight="800" fill="#13295b">Membrana basal glomerular</text>
+          <text x="124" y="51" fill="#4b5567">colágeno IV · carga negativa</text>
+          <text x="124" y="66" font-weight="800" fill="#5b3b99">Pedicelos de podocitos</text>
+          <text x="124" y="78" fill="#4b5567">ranuras de filtración</text>
+        </g>
+      </svg>
+      <p style="font-size:10px;margin:3px 0 0">Pasan agua, iones y moléculas pequeñas; se frenan células y la albúmina.</p>
+    </section>
+    <section class="panel grow">
+      <div class="ph"><span class="n">4</span>A lo largo de la nefrona</div>
+      <table>
+        <tr><td class="k">Bowman parietal</td><td>Plano simple</td></tr>
+        <tr><td class="k">Túbulo proximal</td><td>Cúbico + borde en cepillo</td></tr>
+        <tr><td class="k">Asa de Henle</td><td>Plano simple</td></tr>
+        <tr><td class="k">Túbulo colector</td><td>Cúbico a cilíndrico</td></tr>
+      </table>
+    </section>
+  </section>
+</div>
+
+<div class="band">Aparato respiratorio</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">5</span>De la tráquea al alvéolo <small>— a menor calibre, epitelio más bajo</small></div>
+  <svg viewBox="0 0 980 92" style="width:100%;display:block">
+    <defs><marker id="r" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1f4f9c"/></marker></defs>
+    <g font-size="11" text-anchor="middle">
+      <rect x="4" y="4" width="700" height="20" rx="6" fill="#e9f0fb"/><text x="354" y="18" font-weight="800" fill="#13295b">PORCIÓN CONDUCTORA · limpia, calienta y humidifica el aire</text>
+      <rect x="712" y="4" width="264" height="20" rx="6" fill="#fde8e9"/><text x="844" y="18" font-weight="800" fill="#c8242c">PORCIÓN RESPIRATORIA · intercambio</text>
+      <rect x="20" y="34" width="190" height="52" rx="8" fill="#f6f8fc"/><text x="115" y="52" font-weight="800" fill="#13295b">Tráquea y bronquios</text><text x="115" y="67" font-size="9.5" fill="#4b5567">pseudoestratificado ciliado</text><text x="115" y="79" font-size="9.5" fill="#4b5567">con caliciformes</text>
+      <line x1="214" y1="60" x2="268" y2="60" stroke="#1f4f9c" stroke-width="2" marker-end="url(#r)"/>
+      <rect x="272" y="34" width="190" height="52" rx="8" fill="#f6f8fc"/><text x="367" y="52" font-weight="800" fill="#13295b">Bronquios menores</text><text x="367" y="67" font-size="9.5" fill="#4b5567">epitelio más bajo</text><text x="367" y="79" font-size="9.5" fill="#4b5567">menos caliciformes</text>
+      <line x1="466" y1="60" x2="520" y2="60" stroke="#1f4f9c" stroke-width="2" marker-end="url(#r)"/>
+      <rect x="524" y="34" width="180" height="52" rx="8" fill="#f6f8fc"/><text x="614" y="52" font-weight="800" fill="#13295b">Bronquiolos</text><text x="614" y="67" font-size="9.5" fill="#4b5567">aparecen las</text><text x="614" y="79" font-size="9.5" fill="#4b5567">células de Club</text>
+      <line x1="708" y1="60" x2="758" y2="60" stroke="#c8242c" stroke-width="2" marker-end="url(#r)"/>
+      <rect x="762" y="34" width="210" height="52" rx="8" fill="#fff6f6" stroke="#f1c9cc"/><text x="867" y="52" font-weight="800" fill="#c8242c">Alvéolos</text><text x="867" y="67" font-size="9.5" fill="#4b5567">plano simple</text><text x="867" y="79" font-size="9.5" fill="#4b5567">neumocitos I y II</text>
+    </g>
+  </svg>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1.05">
+    <div class="ph"><span class="n">6</span>Epitelio respiratorio <small>— tráquea y bronquios</small></div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <svg viewBox="0 0 220 150" style="width:220px;flex-shrink:0">
+        <path d="M6 20 C 20 10, 30 14, 40 8 C 60 18, 80 6, 100 14 C 120 4, 150 16, 170 8 C 190 14, 200 6, 214 12" fill="none" stroke="#9fc3e6" stroke-width="8" opacity=".7"/>
+        <g stroke="#1f4f9c" stroke-width="1.2"><path d="M10 34 v-10 M14 34 v-12 M18 34 v-10 M22 34 v-12 M26 34 v-10 M30 34 v-12 M86 34 v-10 M90 34 v-12 M94 34 v-10 M98 34 v-12 M102 34 v-10 M106 34 v-12 M150 34 v-10 M154 34 v-12 M158 34 v-10 M162 34 v-12 M166 34 v-10 M170 34 v-12 M176 34 v-10 M180 34 v-12 M186 34 v-10 M190 34 v-12 M194 34 v-10 M198 34 v-12 M204 34 v-10 M208 34 v-12"/></g>
+        <g fill="#e2ecf8" stroke="#1f4f9c" stroke-width="1.2"><path d="M6 34 h30 l-6 96 h-18 z"/><path d="M82 34 h30 l-6 96 h-18 z"/><path d="M146 34 h28 l-6 96 h-16 z"/><path d="M176 34 h36 l-6 96 h-24 z"/></g>
+        <path d="M40 34 h36 l-4 40 q-14 20 -28 0 z" fill="#fff" stroke="#2e9d6b" stroke-width="1.4"/><g fill="#9bd3b8"><circle cx="50" cy="48" r="4"/><circle cx="62" cy="46" r="4"/><circle cx="56" cy="58" r="4"/><circle cx="66" cy="60" r="4"/></g>
+        <path d="M44 130 L 58 76 L 72 130 Z" fill="#e2ecf8" stroke="#1f4f9c"/>
+        <path d="M116 34 h26 l-4 40 q-10 20 -18 0 z" fill="#fff" stroke="#2e9d6b" stroke-width="1.4"/><g fill="#9bd3b8"><circle cx="124" cy="48" r="4"/><circle cx="134" cy="52" r="4"/></g>
+        <path d="M118 130 L 128 98 L 138 130 Z" fill="#fde8e9" stroke="#c8242c"/>
+        <g fill="#13295b"><ellipse cx="21" cy="80" rx="5" ry="8"/><ellipse cx="97" cy="96" rx="5" ry="8"/><ellipse cx="160" cy="70" rx="5" ry="8"/><ellipse cx="194" cy="88" rx="5" ry="8"/><ellipse cx="58" cy="112" rx="5" ry="7"/><ellipse cx="128" cy="120" rx="4" ry="6"/></g>
+        <rect x="4" y="130" width="212" height="5" fill="#c8242c"/>
+        <text x="110" y="148" font-size="9.5" font-weight="700" fill="#4b5567" text-anchor="middle">núcleos a distintas alturas, todos en la basal</text>
+      </svg>
+      <div style="flex:1">
+        <p style="font-size:10.3px;margin:0 0 5px">Cilíndrico <b>pseudoestratificado ciliado</b> con caliciformes: parece estratificado sin serlo.</p>
+        <table>
+          <tr><td class="k" style="color:#1f4f9c">Ciliadas</td><td>Desplazan el moco</td></tr>
+          <tr><td class="k" style="color:#2e7d5b">Caliciformes</td><td>Secretan moco</td></tr>
+          <tr><td class="k" style="color:#c8242c">Basales</td><td>Células madre</td></tr>
+        </table>
+        <p style="font-size:10px;margin:5px 0 0"><b>Mucociliar</b>: la partícula queda en el moco y los cilios la sacan. A menor calibre, epitelio más bajo; en bronquiolos, células de <b>Club</b>.</p>
+      </div>
+    </div>
+  </section>
+  <section class="panel" style="flex:.95">
+    <div class="ph"><span class="n">7</span>Alvéolo <small>— plano simple</small></div>
+    <div class="two">
+      <div class="mini"><p class="t">Neumocito I</p><ul class="lst"><li>Muy plano</li><li>Cubre <b>≈ 95 %</b> de la superficie</li><li><b>Intercambio</b> gaseoso</li></ul></div>
+      <div class="mini"><p class="t">Neumocito II</p><ul class="lst"><li>Cúbico</li><li><b>Surfactante</b> (cuerpos lamelares)</li><li><b>Regenera</b> el epitelio</li></ul></div>
+    </div>
+    <div class="sh" style="margin-top:7px">Barrera hematogaseosa <span style="text-transform:none">≈ 0.2 µm</span></div>
+    <svg viewBox="0 0 300 50" style="width:100%;display:block">
+      <g font-size="8" text-anchor="middle">
+        <rect x="4" y="4" width="92" height="22" rx="4" fill="#e2ecf8"/><text x="50" y="19" font-weight="700" fill="#13295b">Neumocito I</text>
+        <rect x="104" y="4" width="92" height="22" rx="4" fill="#d9dee8"/><text x="150" y="19" font-weight="700" fill="#13295b">Basales fusionadas</text>
+        <rect x="204" y="4" width="92" height="22" rx="4" fill="#f6c9cc"/><text x="250" y="19" font-weight="700" fill="#c8242c">Endotelio</text>
+        <text x="50" y="42" fill="#4b5567">aire (O₂ →)</text><text x="250" y="42" fill="#4b5567">sangre (← CO₂)</text>
+      </g>
+    </svg>
+    <p style="font-size:10px;margin:2px 0 0">Los <b>macrófagos alveolares</b> fagocitan partículas. El surfactante baja la tensión superficial.</p>
+  </section>
+</div>
+
+<section class="clin">
+  <div class="ph"><span class="n">8</span>Correlación clínica</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px 14px;font-size:10.2px">
+    <p style="margin:0"><b>Cistitis</b>: se exfolian células en paraguas (disuria, frecuencia, hematuria). <b>E. coli</b> se adhiere con fimbrias.</p>
+    <p style="margin:0"><b>Carcinoma urotelial</b>: multifocal, porque todo el urotelio se expuso a los mismos carcinógenos (tabaco, aminas aromáticas).</p>
+    <p style="margin:0"><b>Diabetes</b>: hiperfiltración y daño de la barrera glomerular → <b>albuminuria</b>.</p>
+    <p style="margin:0"><b>Tabaquismo</b>: pérdida de cilios y <b>metaplasia escamosa</b>.</p>
+    <p style="margin:0"><b>Fibrosis quística</b>: moco espeso que los cilios no movilizan; infecciones y bronquiectasias.</p>
+    <p style="margin:0"><b>Anafilaxia</b>: la histamina daña la barrera alveolar → edema pulmonar agudo.</p>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">9</span>Resumen clave</div>
+  <div class="sum">
+    <div>{{icon:Drop}}<span>Urotelio: de cálices a <b>uretra proximal</b>.</span></div>
+    <div>{{icon:Umbrella}}<span>Células en <b>paraguas</b> enfrentan la orina.</span></div>
+    <div>{{icon:Funnel}}<span>Bowman: parietal <b>plano</b>, visceral <b>podocitos</b>.</span></div>
+    <div>{{icon:Wind}}<span>Vía aérea: <b>pseudoestratificado</b> ciliado.</span></div>
+    <div>{{icon:Sparkle}}<span>Neumocito II: <b>surfactante</b>.</span></div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Histología I (UAD) · Contenido verificado con la presentación y la clase</p>
+</div></body></html>
