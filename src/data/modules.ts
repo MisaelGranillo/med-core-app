@@ -165,9 +165,9 @@ export const modules: Module[] = [
     id: 'bioquimica-uad-s3',
     badge: 'UAD · Bioquímica I — Semana 3',
     title: 'Bioquímica: enzimas y ácidos nucleicos',
-    subtitle: 'Apoenzima y holoenzima, aminoácidos del sitio activo, cofactores y coenzimas (vitaminas B); transaminación, desaminación y ciclo de la urea; minerales, citocromo P450, clasificación de las enzimas y biomarcadores; estructura de los ácidos nucleicos, ADN (niveles y empaquetamiento) y tipos de ARN.',
+    subtitle: 'Apoenzima y holoenzima, aminoácidos del sitio activo, cofactores y coenzimas (vitaminas B); transaminación, desaminación y ciclo de la urea; minerales, citocromo P450, clasificación de las enzimas y biomarcadores; estructura de los ácidos nucleicos, ADN (niveles y empaquetamiento) y tipos de ARN; replicación del ADN, código genético y traducción, y factores que dañan los ácidos nucleicos.',
     emoji: '✂️',
-    topicIds: ['bioquimica-enzimas-estructura', 'bioquimica-nitrogeno-ciclo-urea', 'bioquimica-coenzimas-minerales-p450', 'bioquimica-enzimas-mecanismo-clinica', 'bioquimica-biomarcadores-enzimaticos', 'bioquimica-acidos-nucleicos-estructura', 'bioquimica-adn-estructura-empaquetamiento', 'bioquimica-arn-tipos'],
+    topicIds: ['bioquimica-enzimas-estructura', 'bioquimica-nitrogeno-ciclo-urea', 'bioquimica-coenzimas-minerales-p450', 'bioquimica-enzimas-mecanismo-clinica', 'bioquimica-biomarcadores-enzimaticos', 'bioquimica-acidos-nucleicos-estructura', 'bioquimica-adn-estructura-empaquetamiento', 'bioquimica-arn-tipos', 'bioquimica-replicacion-adn', 'bioquimica-codigo-genetico-traduccion', 'bioquimica-danio-acidos-nucleicos'],
   },
   {
     id: 'histologia-uad-s1',

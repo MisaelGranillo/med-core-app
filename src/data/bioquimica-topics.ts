@@ -5115,4 +5115,412 @@ export const bioquimicaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'bioquimica-replicacion-adn',
+    title: 'Replicación del ADN: modelos y enzimas',
+    subtitle: 'Funciones del ADN, modelos conservativo, semiconservativo y dispersivo, apareamiento con la cadena patrón, helicasa, SSB, primasa, ADN polimerasa, topoisomerasas y ligasa',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🧬',
+    keyPoints: [
+      'Funciones del ADN: almacenar y permitir leer la información; transcripción; síntesis de proteínas (enzimas) y hormonas; replicación celular y formación de tejidos nuevos.',
+      'Tres modelos propuestos: conservativo, SEMICONSERVATIVO y dispersivo. La célula usa el semiconservativo: cada ADN hijo conserva una hebra original.',
+      'Cada hebra separada sirve de molde (cadena patrón); los nucleótidos libres se aparean por complementariedad (A–T, G–C) y la cadena nueva es antiparalela.',
+      'La síntesis va siempre de 5′ a 3′: cada nucleótido nuevo se une al –OH del extremo 3′ de la cadena creciente. Ocurre en pocas horas, con una tasa de error de ~1 × 10⁻⁹.',
+      'Helicasa: rompe los puentes de hidrógeno y abre la horquilla. SSB: estabilizan las hebras sencillas. Primasa: cebador de ARN con el 3′-OH inicial.',
+      'ADN polimerasa: forma los enlaces fosfodiéster; cadena líder continua y cadena retrasada en fragmentos de Okazaki. Topoisomerasas (girasa): alivian la tensión. Ligasa: sella los fragmentos.',
+      'Las topoisomerasas son diana de fármacos: quinolonas (ciprofloxacino) en bacterias y antineoplásicos en células tumorales.',
+    ],
+    sections: [
+      {
+        id: 'brp-1',
+        number: 1,
+        title: 'Para qué sirve el ADN',
+        keyTerms: ['almacenamiento', 'transcripción', 'síntesis de proteínas', 'replicación celular'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Funciones del ADN (presentación)',
+            items: [
+              'Almacenamiento de la información genética y su lectura.',
+              'Transcripción: el ADN es el molde para sintetizar ARN.',
+              'Síntesis de proteínas (incluidas las enzimas) y de hormonas, a través de los ARN que se transcriben.',
+              'Replicación celular y formación de tejidos nuevos.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content:
+              'Todos los seres vivos usan las mismas cuatro bases, y la variación entre individuos y poblaciones (estatura, grupo sanguíneo, susceptibilidad a enfermedades, respuesta a fármacos) depende del orden en que se combinan. Por eso un error en la copia del ADN puede terminar en una enfermedad, y muchos fármacos actúan, para bien o para mal, sobre estas moléculas.',
+          },
+        ],
+      },
+      {
+        id: 'brp-2',
+        number: 2,
+        title: 'Tres modelos de replicación',
+        keyTerms: ['conservativa', 'semiconservativa', 'dispersiva'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Modelos propuestos ★',
+            data: {
+              headers: ['Modelo', 'Qué predice', '¿Es el que ocurre?'],
+              rows: [
+                ['Conservativo', 'Una molécula hija conserva las dos hebras originales y la otra es totalmente nueva', 'No'],
+                ['Semiconservativo', 'Cada molécula hija tiene una hebra original y una nueva', 'Sí'],
+                ['Dispersivo', 'Cada hebra hija mezcla fragmentos viejos y nuevos', 'No'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Características de la replicación (presentación)',
+            items: [
+              'Usa el modelo semiconservativo: una hebra original sirve para sintetizar la nueva.',
+              'Avanza en sentido 5′ → 3′.',
+              'Se separan las dos hebras y se copia todo el ADN.',
+              'Ocurre en pocas horas.',
+              'Tasa de error de aproximadamente 1 × 10⁻⁹ (un error por cada mil millones de nucleótidos).',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Por qué «semi»',
+            content: 'Para entregar una copia fiel, la célula conserva una hebra original como molde y fabrica la complementaria. Sin esa hebra de referencia no habría de dónde copiar.',
+          },
+        ],
+      },
+      {
+        id: 'brp-3',
+        number: 3,
+        title: 'El apareamiento: cadena patrón y cadena nueva',
+        keyTerms: ['cadena patrón', 'molde', 'complementariedad', 'enlace fosfodiéster'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Cómo se copia (presentación)',
+            steps: [
+              'Se separan las dos cadenas; cada una sirve de molde (cadena patrón) para una nueva.',
+              'Las bases de la cadena patrón exponen sus grupos que ceden o reciben puentes de hidrógeno, y los nucleótidos libres se alinean por complementariedad: A con T, G con C.',
+              'La ADN polimerasa une esos nucleótidos con enlaces fosfodiéster.',
+              'Resulta una cadena nueva, complementaria y antiparalela a la patrón.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Por qué 5′ → 3′',
+            content: 'El fosfato del nucleótido que llega se une al –OH del carbono 3′ del último nucleótido de la cadena: por eso la cadena solo puede crecer por su extremo 3′, es decir, en dirección 5′ → 3′. Los nucleótidos llegan fosforilados (trifosfatos) y aportan la energía del enlace.',
+          },
+          {
+            type: 'note',
+            title: 'Ejercicio de clase',
+            content: 'Para complementar una hebra se aplica la regla de Chargaff base por base: A → T, T → A, C → G, G → C. Ojo con la escritura: timina (base del ADN) no es tiamina (vitamina B1).',
+          },
+        ],
+      },
+      {
+        id: 'brp-4',
+        number: 4,
+        title: 'Las enzimas de la horquilla de replicación',
+        keyTerms: ['helicasa', 'SSB', 'primasa', 'ADN polimerasa', 'topoisomerasa', 'girasa', 'ligasa', 'fragmentos de Okazaki'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Quién hace qué ★',
+            data: {
+              headers: ['Enzima o proteína', 'Función'],
+              rows: [
+                ['Helicasa', 'Rompe los puentes de hidrógeno entre las bases y abre la doble hélice; desplaza la horquilla de replicación'],
+                ['Proteínas de unión a cadena sencilla (SSB)', 'Estabilizan las hebras ya separadas para que no vuelvan a aparearse'],
+                ['Primasa', 'Sintetiza un cebador corto de ARN que aporta el primer extremo 3′-OH'],
+                ['ADN polimerasa', 'Añade nucleótidos al extremo 3′ y forma los enlaces fosfodiéster; continua en la cadena líder'],
+                ['Topoisomerasas (la girasa es una topoisomerasa)', 'Cortan y vuelven a unir el ADN para aliviar la tensión y el superenrollamiento por delante de la horquilla'],
+                ['ADN ligasa', 'Une los fragmentos y sella las interrupciones del esqueleto azúcar-fosfato'],
+              ],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'Cadena líder vs cadena retrasada',
+            left: { title: 'Líder', items: ['Su molde permite crecer 5′→3′ hacia la horquilla', 'Síntesis continua'] },
+            right: { title: 'Retrasada', items: ['Crece en sentido contrario a la horquilla', 'Síntesis discontinua en fragmentos de Okazaki que luego sella la ligasa'] },
+          },
+          {
+            type: 'note',
+            title: 'Corrección a la diapositiva',
+            content: 'La diapositiva y la clase atribuyen a la girasa aportar el –OH del carbono 3′ y sintetizar los fragmentos cortos. Ese papel es de la primasa (sintetiza el cebador de ARN que deja el primer 3′-OH). La girasa es una topoisomerasa bacteriana que reduce la tensión de la horquilla.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Topoisomerasas como diana: quinolonas',
+            content: 'Las quinolonas (ciprofloxacino, levofloxacino, moxifloxacino) actúan sobre las topoisomerasas bacterianas (girasa). Un efecto adverso conocido es la tendinopatía con riesgo de rotura del tendón de Aquiles. En clase se insistió en hidratar al paciente y en evitar la sobrecarga física durante el tratamiento.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-codigo-genetico-traduccion',
+    title: 'Código genético y traducción',
+    subtitle: 'Por qué tripletes, 64 codones, inicio y terminación, propiedades del código, codón y anticodón, ARNt como adaptador, ARNr como ribozima y las tres fases de la traducción',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🔤',
+    keyPoints: [
+      'El código genético usa un idioma de 4 letras (A, U, C, G en el ARNm) para escribir 20 aminoácidos.',
+      'Con 2 bases solo habría 4 × 4 = 16 combinaciones, menos que 20 aminoácidos; con 3 bases (triplete o CODÓN) hay 4³ = 64.',
+      '64 codones: 61 codifican aminoácidos y 3 son de terminación (UAA, UAG, UGA). AUG = metionina = codón de inicio.',
+      'Propiedades: tripletes, específico (cada codón un solo significado), degenerado (varios codones por aminoácido: la leucina tiene 6), casi universal, con inicio y final, sin solapamiento.',
+      'Codón en el ARNm; anticodón en el ARNt. El ARNt es el adaptador que lleva el aminoácido correcto.',
+      'ARNr: maquinaria del ribosoma; forma los enlaces peptídicos (ribozima). El ribosoma lee el ARNm de 5′ a 3′.',
+      'Traducción en 3 fases: iniciación (AUG, metionina), elongación (la cadena crece del extremo N al C) y terminación (codón de paro).',
+    ],
+    sections: [
+      {
+        id: 'bcg-1',
+        number: 1,
+        title: 'Un idioma de cuatro letras',
+        keyTerms: ['código genético', 'codón', 'triplete', 'combinaciones'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La información de una proteína está escrita en la secuencia de bases. El ARNm usa cuatro letras (A, U, C, G) y cada «palabra» de tres letras, el codón, corresponde a uno de los 20 aminoácidos o a una señal de terminación. Ese diccionario es el código genético.',
+          },
+          {
+            type: 'table',
+            title: 'Por qué tres bases ★',
+            data: {
+              headers: ['Bases por palabra', 'Combinaciones', '¿Alcanzan para 20 aminoácidos?'],
+              rows: [
+                ['1', '4', 'No'],
+                ['2', '4 × 4 = 16', 'No'],
+                ['3 (triplete)', '4 × 4 × 4 = 64', 'Sí, y sobran'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Precisión',
+            content: 'La diapositiva y la clase dicen que cada palabra «consta de 3 aminoácidos» y que «cada base se codifica por tres aminoácidos». Es al revés: cada palabra (codón) consta de 3 bases y codifica un solo aminoácido.',
+          },
+        ],
+      },
+      {
+        id: 'bcg-2',
+        number: 2,
+        title: 'Los 64 codones y sus propiedades',
+        keyTerms: ['AUG', 'UAA', 'UAG', 'UGA', 'degenerado', 'universal', 'sin solapamiento'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Las cifras del código ★',
+            data: {
+              headers: ['Dato', 'Valor'],
+              rows: [
+                ['Codones posibles', '64'],
+                ['Codifican aminoácidos', '61'],
+                ['Terminación (paro)', '3: UAA, UAG, UGA'],
+                ['Inicio', 'AUG, que además codifica metionina'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Propiedades (presentación)',
+            items: [
+              'Se lee en tripletes, codón por codón.',
+              'Cada codón es específico: significa un solo aminoácido o una sola señal.',
+              'Degenerado: un mismo aminoácido puede estar codificado por más de un codón.',
+              'Misma lectura en (casi) todos los organismos: universal.',
+              'Tiene un inicio y un final.',
+              'No hay solapamiento: cada base pertenece a un solo codón.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Ejemplo: la leucina',
+            content: 'La leucina tiene seis codones: CUU, CUC, CUA, CUG, UUA y UUG. Que varios codones signifiquen lo mismo (degeneración) amortigua el efecto de algunos cambios de una sola base.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'mnemotecnia',
+            title: 'Lo que se pregunta',
+            content: 'No hay que memorizar la tabla de 64. Basta con: AUG = metionina = inicio; UAA, UAG, UGA = paro; 64 = 61 + 3.',
+          },
+        ],
+      },
+      {
+        id: 'bcg-3',
+        number: 3,
+        title: 'Codón, anticodón y los tres ARN en la síntesis de proteínas',
+        keyTerms: ['ARNm', 'ARNt', 'ARNr', 'anticodón', 'ribozima', 'adaptador'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Quién hace qué ★',
+            data: {
+              headers: ['ARN', 'Papel en la síntesis de proteínas'],
+              rows: [
+                ['ARN mensajero (ARNm)', 'Lleva la información: dice qué aminoácido se necesita mediante sus codones'],
+                ['ARN de transferencia o de transporte (ARNt)', 'Adaptador molecular: su anticodón reconoce al codón y transporta el aminoácido libre del citoplasma'],
+                ['ARN ribosomal (ARNr)', 'Maquinaria esencial del ribosoma; funciones estructurales y catalíticas: forma los enlaces peptídicos (actúa como ribozima)'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content:
+              'El ARNm presenta el codón; el ARNt que trae el anticodón complementario entrega su aminoácido; el ribosoma, gracias al ARNr, lo une al anterior. Así se forma la cadena creciente de aminoácidos, el polipéptido. Los ribosomas libres en el citoplasma sintetizan proteínas de uso interno y los unidos al retículo endoplásmico rugoso, proteínas para membranas o para exportar.',
+          },
+          {
+            type: 'note',
+            title: 'Precisiones a la clase',
+            content: 'En clase se dijo que el ARNm «hace la traducción»: el ARNm es el mensaje que se traduce y el ribosoma es quien lo lee. Se recomendó decir ARN «de transporte» (también «de transferencia»), nunca «de traducción». Los sitios del ribosoma son A (aminoacil, entrada del ARNt con su aminoácido), P (peptidil, donde está la cadena creciente) y E (salida); en clase se llamó «adenil» al sitio A. El tamaño del ARNt aparece como ~100 nucleótidos en la diapositiva; los textos dan ~75–90.',
+          },
+        ],
+      },
+      {
+        id: 'bcg-4',
+        number: 4,
+        title: 'Las tres fases de la traducción',
+        keyTerms: ['iniciación', 'elongación', 'terminación', 'metionina', 'GTP'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Fases (presentación)',
+            steps: [
+              'Iniciación: la subunidad menor del ribosoma se une al ARNm en el codón de inicio AUG y llega el ARNt iniciador. El primer aminoácido es siempre la metionina; participan factores de iniciación y se hidroliza GTP.',
+              'Elongación: llegan ARNt sucesivos con sus aminoácidos, se forma un enlace peptídico tras otro y el ribosoma se trasloca. La cadena crece desde el extremo N-terminal hacia el C-terminal.',
+              'Terminación: un codón de paro (UAA, UAG o UGA) detiene la síntesis y se libera el polipéptido.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Dato de la presentación',
+            content: 'En la transcripción, la ARN polimerasa copia unos 30 nucleótidos por segundo de la cadena de ADN, en dirección 5′ → 3′.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Del ADN a la proteína',
+            content: 'Una mutación puede cambiar un codón y con él el aminoácido (anemia falciforme: glutamato → valina en la β-globina) o crear un codón de paro prematuro que trunca la proteína. Entender el código explica por qué algunos cambios de base no tienen efecto (degeneración) y otros sí.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-danio-acidos-nucleicos',
+    title: 'Factores que dañan los ácidos nucleicos',
+    subtitle: 'Radiación, metales, temperatura y pH; alquilantes, inhibidores de topoisomerasa, bleomicina, antimetabolitos, aflatoxina, benzopireno y luz UV; fármacos y farmacovigilancia',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '☢️',
+    keyPoints: [
+      'Factores que afectan los ácidos nucleicos: radiación ionizante, metales pesados, fármacos anticancerígenos, temperatura, acidez y alcalinidad.',
+      'Ciclofosfamida y cisplatino: añaden grupos alquilo o forman enlaces cruzados (sobre todo en N7 de la guanina).',
+      'Doxorrubicina y etopósido: inhiben la topoisomerasa II → roturas de doble hebra.',
+      'Bleomicina: radicales libres con hierro → roturas de hebra sencilla y doble. 5-FU y metotrexato: antimetabolitos que alteran la síntesis de nucleótidos.',
+      'Aflatoxina B1 (Aspergillus, hígado) y benzo[a]pireno (tabaco): aductos voluminosos en la guanina; carcinógenos.',
+      'Luz UV (no ionizante) → dímeros de pirimidina (de timina). Radiación ionizante → roturas de doble hebra y daño oxidativo.',
+      'La talidomida marcó un antes y un después: comités de bioética, fases de investigación y farmacovigilancia.',
+    ],
+    sections: [
+      {
+        id: 'bdn-1',
+        number: 1,
+        title: 'Qué puede alterar un ácido nucleico',
+        keyTerms: ['radiación ionizante', 'metales pesados', 'anticancerígenos', 'temperatura', 'pH'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Factores (presentación)',
+            items: [
+              'Radiación ionizante.',
+              'Metales pesados.',
+              'Fármacos anticancerígenos.',
+              'Temperatura, acidez y alcalinidad.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content:
+              'Aunque la replicación es muy precisa (~1 error por 10⁹ nucleótidos), agentes internos y externos pueden modificar las bases, unir las hebras entre sí o romperlas. Si el daño no se repara, la copia se hereda tal cual a las células hijas: de ahí derivan muchos procesos patológicos.',
+          },
+        ],
+      },
+      {
+        id: 'bdn-2',
+        number: 2,
+        title: 'Agentes, mecanismo y tipo de daño',
+        keyTerms: ['agentes alquilantes', 'enlaces cruzados', 'topoisomerasa II', 'aductos', 'dímeros de pirimidina'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Tabla de la presentación ★',
+            data: {
+              headers: ['Agente', 'Grupo', 'Mecanismo', 'Daño en el ADN', 'Relevancia clínica'],
+              rows: [
+                ['Ciclofosfamida · cisplatino', 'Alquilantes · compuestos de platino', 'Añaden grupos alquilo o forman enlaces cruzados entre las cadenas (sobre todo en N7 de la guanina)', 'Enlaces cruzados intra e intercatenarios; aductos voluminosos', 'Quimioterapia: linfomas, ovario, testículo'],
+                ['Doxorrubicina · etopósido', 'Inhibidores de la topoisomerasa II', 'Se intercalan o se unen al complejo ADN–topoisomerasa II y bloquean la religación', 'Roturas de doble hebra; detención de la horquilla', 'Leucemias, sarcomas, mama'],
+                ['Bleomicina', 'Antibiótico citotóxico', 'Se une al ADN y genera radicales libres de oxígeno con hierro', 'Roturas de hebra sencilla y doble', 'Linfoma de Hodgkin, cáncer de testículo'],
+                ['5-fluorouracilo · metotrexato', 'Antimetabolitos', 'Inhiben enzimas de síntesis de nucleótidos (timidilato sintasa): se incorpora uracilo anómalo', 'Bases modificadas, roturas por escisión, inestabilidad genómica', 'Tumores gastrointestinales, mama; autoinmunes'],
+                ['Aflatoxina B1', 'Micotoxina (Aspergillus)', 'El citocromo P450 hepático la convierte en un epóxido que se une a la guanina', 'Aductos voluminosos en N7-guanina; mutaciones', 'Carcinógeno ambiental: carcinoma hepatocelular'],
+                ['Benzo[a]pireno', 'Hidrocarburo aromático policíclico', 'Del humo del tabaco y la combustión; sus metabolitos se unen covalentemente al ADN', 'Aductos voluminosos en purinas (guanina)', 'Cáncer de pulmón y vejiga'],
+                ['Luz ultravioleta (UV-B, UV-C)', 'Radiación no ionizante', 'Enlaces covalentes entre pirimidinas vecinas de la misma hebra', 'Dímeros de pirimidina (sobre todo de timina)', 'Melanoma y otros cánceres de piel'],
+                ['Radiación ionizante (rayos X, gamma)', 'Radiación ionizante', 'Ioniza directamente el esqueleto o, de forma indirecta, genera radicales hidroxilo por radiólisis del agua', 'Roturas de doble hebra; daño oxidativo (8-oxo-guanina)', 'Radioterapia; accidentes por radiación'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Un mismo blanco, dos usos',
+            content: 'Varios de estos fármacos se usan a propósito para dañar el ADN de las células tumorales, que se dividen rápido; por eso también afectan tejidos sanos de recambio rápido. Su efecto depende del fármaco, la dosis y el contexto clínico.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Protección en radiología',
+            content: 'El personal de radiología usa mandil plomado porque la radiación ionizante daña el ADN, y las gónadas son especialmente sensibles.',
+          },
+        ],
+      },
+      {
+        id: 'bdn-3',
+        number: 3,
+        title: 'Fármacos, dosis y farmacovigilancia',
+        keyTerms: ['talidomida', 'teratógeno', 'farmacovigilancia', 'quinolonas', 'tetraciclinas'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content:
+              'La talidomida se autorizó para las náuseas y el vómito del embarazo y años después se reconoció como teratógena (malformaciones congénitas graves). El caso impulsó los comités de ética y bioética, las fases de la investigación clínica (preclínica en animales y clínica en humanos) y una disciplina hoy central: la farmacovigilancia.',
+          },
+          {
+            type: 'list',
+            title: 'Otros ejemplos comentados en clase',
+            items: [
+              'Quinolonas (ciprofloxacino): actúan sobre las topoisomerasas bacterianas; riesgo de tendinopatía y rotura del tendón de Aquiles.',
+              'Tetraciclinas (doxiciclina): contraindicadas en niños por sus efectos en el desarrollo.',
+              'La dosis importa: un error de dosis (por ejemplo, diez veces la indicada) puede causar una intoxicación grave.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Precisiones',
+            content: 'En clase se mencionaron también la pioglitazona, el etoricoxib y la metoclopramida; no son agentes que dañen directamente la estructura del ADN y no se incluyen como tales. La talidomida es teratógena por su efecto sobre el desarrollo embrionario, no porque «rompa» el ADN. Sobre las tetraciclinas se dieron dos edades (menores de 8 y de 12 años); la contraindicación habitual es en menores de 8 años.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Por qué un antibiótico «selectivo» tiene contraindicaciones',
+            content: 'Aunque un antibiótico se diseña para alcanzar dosis tóxicas solo para la bacteria, su blanco (topoisomerasas, ribosomas) tiene equivalentes humanos. Con dosis altas o uso prolongado el margen se rebasa: por eso existen contraindicaciones por edad y advertencias de uso.',
+          },
+        ],
+      },
+    ],
+  },
 ]
