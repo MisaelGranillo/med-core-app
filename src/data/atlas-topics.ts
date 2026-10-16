@@ -1277,6 +1277,24 @@ export const atlasTopics: AtlasTopic[] = [
       { id: 'bbm-6', question: 'La creatina cinasa pertenece a la clase de las:', options: ['Hidrolasas', 'Transferasas', 'Ligasas', 'Isomerasas'], correctIndex: 1, explanation: 'Transfiere un fosfato (creatina → creatina-fosfato), igual que las transaminasas transfieren grupos amino.', difficulty: 'hard' },
     ],
   },
+  {
+    id: 'bioquimica-replicacion-codigo',
+    title: 'Replicación y código genético',
+    subtitle: 'Horquilla de replicación y sus enzimas, modelos de replicación, los 64 codones y la traducción en el ribosoma',
+    category: 'bioquimica',
+    emoji: '🧬',
+    imagePath: '/atlas/bioquimica-replicacion-codigo.webp',
+    colorKey: 'bioquimica',
+    relatedTopicIds: ['bioquimica-proteinas', 'genetica-dogma-central'],
+    questions: [
+      { id: 'brc-1', question: 'En la horquilla, la cadena que se sintetiza de forma continua es la:', options: ['Retrasada', 'Líder', 'Plantilla', 'Parental'], correctIndex: 1, explanation: 'La líder crece hacia la horquilla; la retrasada se hace en fragmentos de Okazaki.', difficulty: 'easy' },
+      { id: 'brc-2', question: 'El cebador de ARN que inicia cada fragmento lo sintetiza la:', options: ['Helicasa', 'Primasa', 'Ligasa', 'Girasa'], correctIndex: 1, explanation: 'La diapositiva se lo atribuye a la girasa; es la primasa.', difficulty: 'medium' },
+      { id: 'brc-3', question: 'La enzima que sella los fragmentos de Okazaki es la:', options: ['ADN ligasa', 'ADN polimerasa', 'Topoisomerasa', 'SSB'], correctIndex: 0, explanation: 'Une los fragmentos y sella el esqueleto azúcar-fosfato.', difficulty: 'easy' },
+      { id: 'brc-4', question: 'En el modelo semiconservativo, cada ADN hijo tiene:', options: ['Dos hebras nuevas', 'Dos hebras originales', 'Una hebra original y una nueva', 'Fragmentos mezclados'], correctIndex: 2, explanation: 'Es el modelo que ocurre en la célula.', difficulty: 'easy' },
+      { id: 'brc-5', question: 'Según la tabla del código, la leucina tiene:', options: ['1 codón', '2 codones', '4 codones', '6 codones'], correctIndex: 3, explanation: 'CUU, CUC, CUA, CUG, UUA y UUG: el código es degenerado.', difficulty: 'medium' },
+      { id: 'brc-6', question: 'En el ribosoma, el ARNt que sostiene la cadena creciente está en el sitio:', options: ['A', 'P', 'E', 'Ninguno'], correctIndex: 1, explanation: 'A aminoacil (entrada), P peptidil (cadena), E salida.', difficulty: 'hard' },
+    ],
+  },
   // Bioquímica general (anterior a las clases): van después de las láminas verificadas
   {
     id: 'introduccion-bioquimica',

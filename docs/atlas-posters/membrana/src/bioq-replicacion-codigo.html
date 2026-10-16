@@ -1,0 +1,183 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 9px; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.2px; }
+.lst li { margin: 0 0 2px; }
+table.code { border-collapse: separate; border-spacing: 2px; font-size: 9.6px; }
+table.code td { background: #f6f8fc; border-radius: 4px; padding: 1px 5px; white-space: nowrap; border: 0; }
+table.code td b { color: var(--navy); font-weight: 800; margin-right: 2px; }
+table.code th.cb { background: var(--blue-soft); color: var(--navy); text-align: center; font-size: 11px; padding: 2px 6px; border-radius: 4px; }
+table.code th.c3 { background: none; color: var(--muted); font-size: 9.5px; padding: 0 4px; }
+table.code td.go { background: #2e9d6b; color: #fff; } table.code td.go b { color: #fff; }
+table.code td.st { background: #c8242c; color: #fff; } table.code td.st b { color: #fff; }
+table.code td.le { background: #dbe7fb; color: #1f4f9c; font-weight: 700; }
+.legend { display: flex; gap: 12px; font-size: 10px; margin: 5px 0 0; flex-wrap: wrap; }
+.legend span::before { content: ''; display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 4px; vertical-align: -1px; background: var(--c); }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Bioquímica</p>
+  <h1>Replicación y Código Genético</h1>
+  <p class="tag">El ADN se copia a sí mismo y se traduce en proteínas con un código de tres letras.</p>
+</header>
+
+<section class="panel">
+  <div class="ph"><span class="n">1</span>La horquilla de replicación ★ <small>— esquema</small></div>
+  <svg viewBox="0 44 980 222" style="width:100%;display:block">
+    <defs><marker id="ar" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0 0 L14 7 L0 14 z" fill="#2e9d6b"/></marker></defs>
+    <!-- doble hélice parental -->
+    <path d="M660 128 C 720 110, 760 150, 820 128 S 900 110, 970 128" fill="none" stroke="#13295b" stroke-width="5"/>
+    <path d="M660 142 C 720 160, 760 120, 820 142 S 900 160, 970 142" fill="none" stroke="#5b8fd6" stroke-width="5"/>
+    <!-- plantillas abiertas -->
+    <path d="M660 128 L 600 74 L 40 74" fill="none" stroke="#13295b" stroke-width="5"/>
+    <path d="M660 142 L 600 196 L 40 196" fill="none" stroke="#5b8fd6" stroke-width="5"/>
+    <!-- cadena líder -->
+    <line x1="60" y1="90" x2="560" y2="90" stroke="#2e9d6b" stroke-width="5" marker-end="url(#ar)"/>
+    <rect x="60" y="85" width="34" height="10" rx="3" fill="#e8912e"/>
+    <ellipse cx="584" cy="92" rx="26" ry="16" fill="#8a63c0" opacity=".85"/>
+    <!-- cadena retrasada: fragmentos de Okazaki -->
+    <g stroke="#2e9d6b" stroke-width="5" marker-end="url(#ar)">
+      <line x1="560" y1="180" x2="440" y2="180"/>
+      <line x1="420" y1="180" x2="300" y2="180"/>
+      <line x1="280" y1="180" x2="160" y2="180"/>
+    </g>
+    <g fill="#e8912e"><rect x="530" y="175" width="30" height="10" rx="3"/><rect x="390" y="175" width="30" height="10" rx="3"/><rect x="250" y="175" width="30" height="10" rx="3"/></g>
+    <ellipse cx="440" cy="178" rx="24" ry="15" fill="#8a63c0" opacity=".85"/>
+    <circle cx="290" cy="180" r="10" fill="#d9c25a" stroke="#8a6a1a" stroke-width="1.5"/>
+    <!-- helicasa, SSB, topoisomerasa, primasa -->
+    <polygon points="640,112 664,124 664,148 640,160 616,148 616,124" fill="#c8242c"/>
+    <g fill="#7fb3e0" stroke="#3e7fbd"><circle cx="612" cy="196" r="6"/><circle cx="596" cy="196" r="6"/><circle cx="614" cy="74" r="6"/></g>
+    <circle cx="860" cy="135" r="20" fill="#2e9d6b" opacity=".35" stroke="#2e7d5b" stroke-width="2"/>
+    <circle cx="520" cy="214" r="11" fill="#e8912e" stroke="#b8650f" stroke-width="1.5"/>
+    <g font-size="11">
+      <text x="640" y="178" font-weight="800" fill="#c8242c" text-anchor="middle">Helicasa</text>
+      <text x="860" y="104" font-weight="800" fill="#2e7d5b" text-anchor="middle">Topoisomerasa (girasa)</text><text x="860" y="170" fill="#4b5567" text-anchor="middle" font-size="9.5">alivia la tensión</text>
+      <text x="640" y="230" font-weight="800" fill="#3e7fbd">SSB</text>
+      <text x="584" y="60" font-weight="800" fill="#5b3b99" text-anchor="middle">ADN polimerasa</text>
+      <text x="300" y="112" font-weight="800" fill="#2e7d5b">Cadena LÍDER: continua →</text>
+      <text x="200" y="164" font-weight="800" fill="#2e7d5b">Cadena RETRASADA: fragmentos de Okazaki ←</text>
+      <text x="520" y="242" font-weight="800" fill="#b8650f" text-anchor="middle">Primasa</text><text x="520" y="256" fill="#4b5567" text-anchor="middle" font-size="9.5">cebador de ARN</text>
+      <text x="290" y="216" font-weight="800" fill="#8a6a1a" text-anchor="middle">Ligasa</text><text x="290" y="230" fill="#4b5567" text-anchor="middle" font-size="9.5">sella fragmentos</text>
+      <g font-size="10" font-weight="700" fill="#4b5567"><text x="22" y="78">3′</text><text x="22" y="200">5′</text><text x="44" y="94" fill="#2e7d5b">5′</text><text x="566" y="94" fill="#2e7d5b">3′</text><text x="566" y="172" fill="#2e7d5b">5′</text><text x="140" y="184" fill="#2e7d5b">3′</text></g>
+      <text x="930" y="200" fill="#4b5567" font-size="9.5" text-anchor="middle">ADN parental</text>
+    </g>
+  </svg>
+  <p style="font-size:10.2px;margin:2px 0 0">La polimerasa solo añade nucleótidos al <b>–OH del extremo 3′</b>: la cadena crece de <b>5′ a 3′</b>. Por eso una cadena es continua y la otra se hace en fragmentos que luego une la ligasa.</p>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1.1">
+    <div class="ph"><span class="n">2</span>Quién hace qué</div>
+    <table>
+      <tr><td class="k" style="color:#c8242c">Helicasa</td><td>Rompe los puentes de hidrógeno y abre la horquilla</td></tr>
+      <tr><td class="k" style="color:#3e7fbd">SSB</td><td>Estabilizan las hebras sencillas</td></tr>
+      <tr><td class="k" style="color:#b8650f">Primasa</td><td>Cebador de ARN con el primer 3′-OH</td></tr>
+      <tr><td class="k" style="color:#5b3b99">ADN polimerasa</td><td>Añade nucleótidos y forma enlaces fosfodiéster</td></tr>
+      <tr><td class="k" style="color:#2e7d5b">Topoisomerasas</td><td>Cortan y reúnen para aliviar el superenrollamiento</td></tr>
+      <tr><td class="k" style="color:#8a6a1a">Ligasa</td><td>Sella los fragmentos de Okazaki</td></tr>
+    </table>
+    <p style="font-size:9.8px;margin:4px 0 0;color:var(--red);font-weight:700">La diapositiva atribuye a la girasa el 3′-OH: es la primasa.</p>
+  </section>
+  <section class="panel" style="flex:.9">
+    <div class="ph"><span class="n">3</span>Tres modelos</div>
+    <svg viewBox="0 0 330 150" style="width:100%;height:118px;display:block">
+      <g font-size="10.5" text-anchor="middle">
+        <g transform="translate(10,10)"><rect x="0" y="0" width="10" height="90" fill="#13295b"/><rect x="14" y="0" width="10" height="90" fill="#13295b"/><rect x="40" y="0" width="10" height="90" fill="#7fd1a5"/><rect x="54" y="0" width="10" height="90" fill="#7fd1a5"/><text x="32" y="112" font-weight="800" fill="#13295b">Conservativo</text><text x="32" y="126" fill="#c8242c" font-weight="700">✗</text></g>
+        <g transform="translate(128,10)"><rect x="0" y="0" width="10" height="90" fill="#13295b"/><rect x="14" y="0" width="10" height="90" fill="#7fd1a5"/><rect x="40" y="0" width="10" height="90" fill="#13295b"/><rect x="54" y="0" width="10" height="90" fill="#7fd1a5"/><text x="32" y="112" font-weight="800" fill="#2e7d5b">Semiconservativo</text><text x="32" y="126" fill="#2e7d5b" font-weight="800">✓ el real</text></g>
+        <g transform="translate(250,10)"><g><rect x="0" y="0" width="10" height="30" fill="#13295b"/><rect x="0" y="30" width="10" height="30" fill="#7fd1a5"/><rect x="0" y="60" width="10" height="30" fill="#13295b"/></g><g><rect x="14" y="0" width="10" height="30" fill="#7fd1a5"/><rect x="14" y="30" width="10" height="30" fill="#13295b"/><rect x="14" y="60" width="10" height="30" fill="#7fd1a5"/></g><g><rect x="40" y="0" width="10" height="30" fill="#13295b"/><rect x="40" y="30" width="10" height="30" fill="#7fd1a5"/><rect x="40" y="60" width="10" height="30" fill="#7fd1a5"/></g><g><rect x="54" y="0" width="10" height="30" fill="#7fd1a5"/><rect x="54" y="30" width="10" height="30" fill="#13295b"/><rect x="54" y="60" width="10" height="30" fill="#13295b"/></g><text x="32" y="112" font-weight="800" fill="#13295b">Dispersivo</text><text x="32" y="126" fill="#c8242c" font-weight="700">✗</text></g>
+        <text x="165" y="146" font-size="9" fill="#4b5567">azul = hebra original · verde = nueva</text>
+      </g>
+    </svg>
+    <p style="font-size:10px;margin:0">Ocurre en <b>pocas horas</b> con un error de <b>~1 × 10⁻⁹</b>.</p>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">4</span>El código genético <small>— 1.ª base (filas) · 2.ª base (columnas) · 3.ª base (derecha)</small></div>
+  <div style="display:flex;gap:12px;align-items:flex-start">
+    <div><table class="code"><tr><th class="cb"></th><th class="cb">U</th><th class="cb">C</th><th class="cb">A</th><th class="cb">G</th><th class="cb"></th></tr><tr class="grp"><th class="cb" rowspan="4">U</th><td class=""><b>UUU</b> Phe</td><td class=""><b>UCU</b> Ser</td><td class=""><b>UAU</b> Tyr</td><td class=""><b>UGU</b> Cys</td><th class="c3">U</th></tr><tr><td class=""><b>UUC</b> Phe</td><td class=""><b>UCC</b> Ser</td><td class=""><b>UAC</b> Tyr</td><td class=""><b>UGC</b> Cys</td><th class="c3">C</th></tr><tr><td class="le"><b>UUA</b> Leu</td><td class=""><b>UCA</b> Ser</td><td class="st"><b>UAA</b> Paro</td><td class="st"><b>UGA</b> Paro</td><th class="c3">A</th></tr><tr><td class="le"><b>UUG</b> Leu</td><td class=""><b>UCG</b> Ser</td><td class="st"><b>UAG</b> Paro</td><td class=""><b>UGG</b> Trp</td><th class="c3">G</th></tr><tr class="grp"><th class="cb" rowspan="4">C</th><td class="le"><b>CUU</b> Leu</td><td class=""><b>CCU</b> Pro</td><td class=""><b>CAU</b> His</td><td class=""><b>CGU</b> Arg</td><th class="c3">U</th></tr><tr><td class="le"><b>CUC</b> Leu</td><td class=""><b>CCC</b> Pro</td><td class=""><b>CAC</b> His</td><td class=""><b>CGC</b> Arg</td><th class="c3">C</th></tr><tr><td class="le"><b>CUA</b> Leu</td><td class=""><b>CCA</b> Pro</td><td class=""><b>CAA</b> Gln</td><td class=""><b>CGA</b> Arg</td><th class="c3">A</th></tr><tr><td class="le"><b>CUG</b> Leu</td><td class=""><b>CCG</b> Pro</td><td class=""><b>CAG</b> Gln</td><td class=""><b>CGG</b> Arg</td><th class="c3">G</th></tr><tr class="grp"><th class="cb" rowspan="4">A</th><td class=""><b>AUU</b> Ile</td><td class=""><b>ACU</b> Thr</td><td class=""><b>AAU</b> Asn</td><td class=""><b>AGU</b> Ser</td><th class="c3">U</th></tr><tr><td class=""><b>AUC</b> Ile</td><td class=""><b>ACC</b> Thr</td><td class=""><b>AAC</b> Asn</td><td class=""><b>AGC</b> Ser</td><th class="c3">C</th></tr><tr><td class=""><b>AUA</b> Ile</td><td class=""><b>ACA</b> Thr</td><td class=""><b>AAA</b> Lys</td><td class=""><b>AGA</b> Arg</td><th class="c3">A</th></tr><tr><td class="go"><b>AUG</b> Met · inicio</td><td class=""><b>ACG</b> Thr</td><td class=""><b>AAG</b> Lys</td><td class=""><b>AGG</b> Arg</td><th class="c3">G</th></tr><tr class="grp"><th class="cb" rowspan="4">G</th><td class=""><b>GUU</b> Val</td><td class=""><b>GCU</b> Ala</td><td class=""><b>GAU</b> Asp</td><td class=""><b>GGU</b> Gly</td><th class="c3">U</th></tr><tr><td class=""><b>GUC</b> Val</td><td class=""><b>GCC</b> Ala</td><td class=""><b>GAC</b> Asp</td><td class=""><b>GGC</b> Gly</td><th class="c3">C</th></tr><tr><td class=""><b>GUA</b> Val</td><td class=""><b>GCA</b> Ala</td><td class=""><b>GAA</b> Glu</td><td class=""><b>GGA</b> Gly</td><th class="c3">A</th></tr><tr><td class=""><b>GUG</b> Val</td><td class=""><b>GCG</b> Ala</td><td class=""><b>GAG</b> Glu</td><td class=""><b>GGG</b> Gly</td><th class="c3">G</th></tr></table>
+      <div class="legend"><span style="--c:#2e9d6b">AUG: inicio (metionina)</span><span style="--c:#c8242c">UAA · UAG · UGA: paro</span><span style="--c:#dbe7fb">Leucina: 6 codones (degenerado)</span></div>
+    </div>
+    <div style="flex:1;min-width:0">
+      <table>
+        <tr><th>Bases por palabra</th><th>Combinaciones</th></tr>
+        <tr><td class="k">2</td><td>4 × 4 = 16 · no alcanza</td></tr>
+        <tr><td class="k">3 (codón)</td><td>4³ = <b>64</b> · alcanza</td></tr>
+      </table>
+      <p style="font-size:10.2px;margin:6px 0 4px"><b>64 = 61 + 3</b>: 61 codifican aminoácidos, 3 son de paro.</p>
+      <ul class="lst">
+        <li>Tripletes; cada codón es <b>específico</b>.</li>
+        <li><b>Degenerado</b>: varios codones por aminoácido.</li>
+        <li>Casi <b>universal</b>.</li>
+        <li>Con inicio y final; <b>sin solapamiento</b>.</li>
+      </ul>
+      <p style="font-size:9.8px;margin:5px 0 0;color:var(--muted)">No se memoriza la tabla: basta AUG = inicio y los tres de paro.</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">5</span>Traducción: codón, anticodón y ribosoma</div>
+  <div style="display:flex;gap:12px;align-items:center">
+    <svg viewBox="0 0 560 220" style="width:470px;flex-shrink:0">
+      <!-- ribosoma -->
+      <ellipse cx="270" cy="96" rx="190" ry="70" fill="#efe9f9" stroke="#8a63c0" stroke-width="2"/>
+      <ellipse cx="270" cy="178" rx="200" ry="30" fill="#e2d6f6" stroke="#8a63c0" stroke-width="2"/>
+      <!-- ARNm -->
+      <line x1="40" y1="166" x2="520" y2="166" stroke="#c8242c" stroke-width="5"/>
+      <g font-size="11" font-weight="800" fill="#c8242c" text-anchor="middle"><text x="150" y="190">GCU</text><text x="270" y="190">UUU</text><text x="390" y="190">UGA</text><text x="40" y="190" fill="#4b5567" font-size="9.5">5′</text><text x="520" y="190" fill="#4b5567" font-size="9.5">3′</text></g>
+      <!-- sitios -->
+      <g font-size="11" font-weight="800" fill="#5b3b99" text-anchor="middle"><text x="150" y="44">E</text><text x="270" y="44">P</text><text x="390" y="44">A</text></g>
+      <!-- ARNt en P -->
+      <path d="M248 156 L248 110 L292 110 L292 156" fill="none" stroke="#2e9d6b" stroke-width="6"/>
+      <text x="270" y="150" font-size="10" font-weight="800" fill="#2e7d5b" text-anchor="middle">AAA</text>
+      <!-- cadena -->
+      <g fill="#e8912e" stroke="#b8650f"><circle cx="270" cy="96" r="12"/><circle cx="246" cy="76" r="12"/><circle cx="222" cy="58" r="12"/></g>
+      <g font-size="8.5" font-weight="800" fill="#fff" text-anchor="middle"><text x="270" y="99">Phe</text><text x="246" y="79">Ala</text><text x="222" y="61">Met</text></g>
+      <!-- ARNt saliendo en E -->
+      <path d="M128 156 L128 116 L172 116 L172 156" fill="none" stroke="#9bd3b8" stroke-width="6" stroke-dasharray="6 3"/>
+      <g font-size="10">
+        <text x="490" y="120" font-weight="800" fill="#c8242c" text-anchor="end">paro: se libera</text><text x="490" y="133" fill="#c8242c" text-anchor="end">el polipéptido</text>
+        <text x="60" y="66" fill="#b8650f" font-weight="800">Met-Ala-Phe…</text>
+        <text x="270" y="216" fill="#4b5567" text-anchor="middle">ARNm: AUG · GCU · UUU · UGA</text>
+      </g>
+    </svg>
+    <div style="flex:1">
+      <table>
+        <tr><td class="k" style="color:#c8242c">ARNm</td><td>El mensaje: trae los <b>codones</b></td></tr>
+        <tr><td class="k" style="color:#2e7d5b">ARNt</td><td>Adaptador: <b>anticodón</b> + aminoácido</td></tr>
+        <tr><td class="k" style="color:#5b3b99">ARNr</td><td>Ribozima: forma el enlace peptídico</td></tr>
+      </table>
+      <ol style="margin:6px 0 0;padding-left:18px;font-size:10.2px">
+        <li><b>Iniciación</b>: AUG, metionina, GTP.</li>
+        <li><b>Elongación</b>: la cadena crece de N a C.</li>
+        <li><b>Terminación</b>: un codón de paro libera la cadena.</li>
+      </ol>
+      <p style="font-size:9.8px;margin:4px 0 0">Sitios: <b>A</b> aminoacil · <b>P</b> peptidil · <b>E</b> salida.</p>
+    </div>
+  </div>
+</section>
+
+<section class="clin">
+  <div class="ph"><span class="n">6</span>Correlación clínica</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:10.3px">
+    <p style="margin:0"><b>Quinolonas</b> (ciprofloxacino): inhiben las topoisomerasas bacterianas; vigilar tendinopatía y rotura del tendón de Aquiles. <b>Etopósido y doxorrubicina</b> inhiben la topoisomerasa II humana para frenar tumores.</p>
+    <p style="margin:0"><b>Un codón cambiado</b>: GAG → GUG cambia glutamato por valina en la β-globina (anemia falciforme). Si el cambio crea un codón de paro, la proteína queda truncada.</p>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">7</span>Resumen clave</div>
+  <div class="sum">
+    <div>{{icon:Copy}}<span>Replicación <b>semiconservativa</b>.</span></div>
+    <div>{{icon:ArrowRight}}<span>Síntesis siempre <b>5′ → 3′</b>.</span></div>
+    <div>{{icon:Scissors}}<span>Helicasa abre; primasa <b>ceba</b>; ligasa sella.</span></div>
+    <div>{{icon:Hash}}<span>64 = <b>61 + 3</b> de paro.</span></div>
+    <div>{{icon:Play}}<span><b>AUG</b> = metionina = inicio.</span></div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Bioquímica I (UAD) · Semana 3 · Contenido verificado con la presentación y la clase</p>
+</div></body></html>
