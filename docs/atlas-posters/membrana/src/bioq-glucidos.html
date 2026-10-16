@@ -1,0 +1,219 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+.mol text { font-family: 'Inter'; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.two .mini { text-align: left; padding: 7px 9px; }
+.two ul, .lst { margin: 0; padding-left: 15px; font-size: 10.4px; }
+.big { text-align: center; font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; color: var(--navy); font-weight: 700;
+  background: #f6f8fc; border-radius: 8px; padding: 5px; margin: 0 0 6px; }
+.ig { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.ig div { border-radius: 7px; padding: 6px 8px; font-size: 10.2px; }
+.ig b { display: block; font-size: 11.5px; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Bioquímica</p>
+  <h1>Glúcidos</h1>
+  <p class="tag">Misma glucosa, distinto enlace: de ahí salen energía, reserva y fibra.</p>
+</header>
+
+<div class="row">
+  <section class="panel" style="flex:.9">
+    <div class="ph"><span class="n">1</span>Qué es un glúcido</div>
+    <p class="big">(CH₂O)ₙ · C:H:O = 1:2:1</p>
+    <p style="font-size:10.5px">Polihidroxi<b>aldehído</b> o polihidroxi<b>cetona</b>: cadena de carbonos con varios <b>–OH</b> y un <b>C=O</b>.</p>
+    <div class="ilist">
+      <div>{{icon:Drop}}<span>El <b>–OH</b> da solubilidad (puentes de H con el agua), forma anillos y enlaces α/β y permite el reconocimiento por enzimas.</span></div>
+      <div>{{icon:ForkKnife}}<span>Dieta del adulto: <b>40–60 %</b> de ~2000 kcal (lípidos 30–40 %, proteínas 10–15 %).</span></div>
+      <div>{{icon:Lightning}}<span>Glucosa + 6 O₂ → 6 CO₂ + 6 H₂O + <b>~32 ATP</b>.</span></div>
+    </div>
+  </section>
+
+  <section class="panel" style="flex:1.1">
+    <div class="ph"><span class="n">2</span>Aldosa vs cetosa <small>— proyección de Fischer</small></div>
+    <svg class="mol" viewBox="0 0 460 212" style="width:100%;height:190px;display:block">
+      <g font-size="13" font-weight="600" fill="#1d2433" text-anchor="middle">
+        <!-- glucosa -->
+        <text x="110" y="22" fill="#c8242c" font-weight="800">CHO</text>
+        <line x1="110" y1="28" x2="110" y2="178" stroke="#1d2433" stroke-width="1.6"/>
+        <text x="58" y="56">H</text><line x1="68" y1="52" x2="100" y2="52" stroke="#1d2433"/><text x="110" y="56" fill="#fff" stroke="#fff" stroke-width="6">C</text><text x="110" y="56">C</text><line x1="120" y1="52" x2="152" y2="52" stroke="#1d2433"/><text x="170" y="56" fill="#1f4f9c">OH</text>
+        <text x="50" y="88" fill="#1f4f9c">HO</text><line x1="68" y1="84" x2="100" y2="84" stroke="#1d2433"/><text x="110" y="88" fill="#fff" stroke="#fff" stroke-width="6">C</text><text x="110" y="88">C</text><line x1="120" y1="84" x2="152" y2="84" stroke="#1d2433"/><text x="162" y="88">H</text>
+        <text x="58" y="120">H</text><line x1="68" y1="116" x2="100" y2="116" stroke="#1d2433"/><text x="110" y="120" fill="#fff" stroke="#fff" stroke-width="6">C</text><text x="110" y="120">C</text><line x1="120" y1="116" x2="152" y2="116" stroke="#1d2433"/><text x="170" y="120" fill="#1f4f9c">OH</text>
+        <text x="58" y="152">H</text><line x1="68" y1="148" x2="100" y2="148" stroke="#1d2433"/><text x="110" y="152" fill="#fff" stroke="#fff" stroke-width="6">C</text><text x="110" y="152">C</text><line x1="120" y1="148" x2="152" y2="148" stroke="#1d2433"/><text x="170" y="152" fill="#1f4f9c">OH</text>
+        <text x="110" y="192">CH₂OH</text>
+        <text x="110" y="208" font-size="11" fill="#13295b" font-weight="800">D-Glucosa · aldohexosa</text>
+        <!-- fructosa -->
+        <text x="340" y="22">CH₂OH</text>
+        <line x1="340" y1="28" x2="340" y2="178" stroke="#1d2433" stroke-width="1.6"/>
+        <rect x="318" y="40" width="44" height="22" rx="5" fill="#fde8e9"/>
+        <text x="340" y="56" font-weight="800" fill="#c8242c">C=O</text>
+        <text x="280" y="88" fill="#1f4f9c">HO</text><line x1="298" y1="84" x2="330" y2="84" stroke="#1d2433"/><text x="340" y="88" fill="#fff" stroke="#fff" stroke-width="6">C</text><text x="340" y="88">C</text><line x1="350" y1="84" x2="382" y2="84" stroke="#1d2433"/><text x="392" y="88">H</text>
+        <text x="288" y="120">H</text><line x1="298" y1="116" x2="330" y2="116" stroke="#1d2433"/><text x="340" y="120" fill="#fff" stroke="#fff" stroke-width="6">C</text><text x="340" y="120">C</text><line x1="350" y1="116" x2="382" y2="116" stroke="#1d2433"/><text x="400" y="120" fill="#1f4f9c">OH</text>
+        <text x="288" y="152">H</text><line x1="298" y1="148" x2="330" y2="148" stroke="#1d2433"/><text x="340" y="152" fill="#fff" stroke="#fff" stroke-width="6">C</text><text x="340" y="152">C</text><line x1="350" y1="148" x2="382" y2="148" stroke="#1d2433"/><text x="400" y="152" fill="#1f4f9c">OH</text>
+        <text x="340" y="192">CH₂OH</text>
+        <text x="340" y="208" font-size="11" fill="#13295b" font-weight="800">D-Fructosa · cetohexosa</text>
+      </g>
+      <g font-size="10" fill="#c8242c" font-weight="700" text-anchor="middle"><text x="196" y="22">aldehído en C1</text><text x="418" y="56">cetona en C2</text></g>
+    </svg>
+    <p style="font-size:10.3px;margin:4px 0 0">Glucosa, galactosa (–OH del C4 invertido) y fructosa: <b>C₆H₁₂O₆</b>, isómeros. Solo los monosacáridos se clasifican en aldosas y cetosas.</p>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">3</span><span>Forma cíclica de Haworth: <span style="text-transform:none">D/L y α/β</span></span></div>
+  <div style="display:flex;gap:12px;align-items:center">
+    <svg class="mol" viewBox="0 0 470 150" style="width:420px;flex-shrink:0">
+      <g font-size="12" font-weight="600" text-anchor="middle" fill="#1d2433">
+        <!-- alfa -->
+        <path d="M40 70 L80 50 L150 50 L175 75 L140 100 L60 100 Z" fill="#eef4fc" stroke="#13295b" stroke-width="2"/>
+        <path d="M60 100 L140 100" stroke="#13295b" stroke-width="5"/>
+        <text x="152" y="44" fill="#c8242c">O</text>
+        <line x1="175" y1="75" x2="175" y2="112" stroke="#1d2433"/><text x="196" y="122" fill="#c8242c" font-weight="800">OH</text>
+        <line x1="175" y1="75" x2="175" y2="58" stroke="#1d2433"/><text x="175" y="54">H</text>
+        <line x1="80" y1="50" x2="80" y2="22" stroke="#1d2433"/><text x="80" y="18">CH₂OH</text>
+        <text x="88" y="124" font-size="10.5" fill="#4b5567">C1 = carbono anomérico</text>
+        <text x="105" y="148" font-weight="800" fill="#13295b">α-D-glucosa · OH abajo</text>
+        <!-- beta -->
+        <path d="M280 70 L320 50 L390 50 L415 75 L380 100 L300 100 Z" fill="#eef4fc" stroke="#13295b" stroke-width="2"/>
+        <path d="M300 100 L380 100" stroke="#13295b" stroke-width="5"/>
+        <text x="392" y="44" fill="#c8242c">O</text>
+        <line x1="415" y1="75" x2="415" y2="35" stroke="#1d2433"/><text x="420" y="28" fill="#c8242c" font-weight="800">OH</text>
+        <line x1="415" y1="75" x2="415" y2="96" stroke="#1d2433"/><text x="415" y="110">H</text>
+        <line x1="320" y1="50" x2="320" y2="22" stroke="#1d2433"/><text x="320" y="18">CH₂OH</text>
+        <text x="345" y="148" font-weight="800" fill="#13295b">β-D-glucosa · OH arriba</text>
+      </g>
+    </svg>
+    <div class="two" style="flex:1">
+      <div class="mini"><p class="t">D y L</p><ul><li>Se definen en la forma <b>lineal</b> (Fischer).</li><li>Imágenes en espejo (enantiómeros).</li><li>El cuerpo usa la <b>D</b>: los GLUT la reconocen, como un guante a su mano.</li></ul></div>
+      <div class="mini"><p class="t">α y β</p><ul><li>Se definen en la forma <b>cíclica</b> (Haworth).</li><li>–OH del C anomérico abajo = α, arriba = β.</li><li>En agua, los de ≥ 5 C forman anillo; α y β se interconvierten.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">4</span>Clasificación</div>
+    <table>
+      <tr><th>Grupo</th><th>Unidades</th><th>Ejemplos</th></tr>
+      <tr><td class="k">Monosacárido</td><td>1</td><td>Glucosa, fructosa, galactosa, ribosa</td></tr>
+      <tr><td class="k">Disacárido</td><td>2</td><td>Sacarosa, lactosa, maltosa</td></tr>
+      <tr><td class="k">Oligosacárido</td><td>3–10</td><td>Rafinosa; prebióticos</td></tr>
+      <tr><td class="k">Polisacárido</td><td>&gt; 10</td><td>Almidón, glucógeno, celulosa</td></tr>
+    </table>
+    <p style="font-size:10.3px;margin:6px 0 0">Por carbonos: <b>triosa</b> (gliceraldehído) · tetrosa · <b>pentosa</b> (ribosa, desoxirribosa) · <b>hexosa</b> (glucosa, fructosa) · heptosa.</p>
+  </section>
+  <section class="panel" style="flex:1.1">
+    <div class="ph"><span class="n">5</span>Enlace glucosídico y disacáridos ★</div>
+    <svg viewBox="0 0 470 62" style="width:100%;display:block;margin-bottom:4px">
+      <g font-family="Inter" font-size="11" text-anchor="middle">
+        <polygon points="40,10 64,10 76,27 64,44 40,44 28,27" fill="#cfe0f6" stroke="#1f4f9c" stroke-width="1.6"/><text x="52" y="31" font-weight="700" fill="#13295b">Glc</text>
+        <text x="96" y="31" fill="#1d2433">+</text>
+        <polygon points="128,10 152,10 164,27 152,44 128,44 116,27" fill="#cfe0f6" stroke="#1f4f9c" stroke-width="1.6"/><text x="140" y="31" font-weight="700" fill="#13295b">Glc</text>
+        <path d="M180 27 h44 M224 27 l-7 -5 M224 27 l-7 5" stroke="#1d2433" stroke-width="1.6" fill="none"/>
+        <polygon points="262,10 286,10 298,27 286,44 262,44 250,27" fill="#cfe0f6" stroke="#1f4f9c" stroke-width="1.6"/>
+        <text x="315" y="31" font-weight="800" fill="#c8242c">–O–</text>
+        <polygon points="344,10 368,10 380,27 368,44 344,44 332,27" fill="#cfe0f6" stroke="#1f4f9c" stroke-width="1.6"/>
+        <text x="430" y="25" fill="#1f4f9c" font-weight="700">+ H₂O</text><text x="430" y="40" fill="#4b5567" font-size="9.5">condensación</text>
+        <text x="315" y="58" fill="#4b5567" font-size="9.5">maltosa · α(1→4)</text>
+      </g>
+    </svg>
+    <table>
+      <tr><th>Disacárido</th><th>Monosacáridos</th><th>Enlace</th></tr>
+      <tr><td class="k">Sacarosa</td><td>Glucosa + fructosa</td><td>α(1→2) · azúcar de mesa</td></tr>
+      <tr><td class="k">Lactosa</td><td>Galactosa + glucosa</td><td>β(1→4) · leche</td></tr>
+      <tr><td class="k">Maltosa</td><td>Glucosa + glucosa</td><td>α(1→4) · del almidón</td></tr>
+    </table>
+    <p style="font-size:10px;margin:5px 0 0"><b>O</b>-glucosídico: azúcar–azúcar (Golgi) · <b>N</b>-: con nitrógeno (glucoproteínas, nucleótidos) · <b>S</b>-: con azufre.</p>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">6</span>Polisacáridos: todos son glucosa, cambia el enlace</div>
+  <svg viewBox="0 0 980 120" style="width:100%;display:block">
+    <defs><g id="b"><circle r="7" fill="#7fa9e0" stroke="#1f4f9c" stroke-width="1.3"/></g>
+      <g id="r"><circle r="7" fill="#9bd3b8" stroke="#2e7d5b" stroke-width="1.3"/></g></defs>
+    <g font-family="Inter" text-anchor="middle">
+      <!-- amilosa -->
+      <g><use href="#b" x="30" y="40"/><use href="#b" x="46" y="34"/><use href="#b" x="62" y="40"/><use href="#b" x="78" y="46"/><use href="#b" x="94" y="40"/><use href="#b" x="110" y="34"/><use href="#b" x="126" y="40"/><use href="#b" x="142" y="46"/><use href="#b" x="158" y="40"/><use href="#b" x="174" y="34"/><use href="#b" x="190" y="40"/></g>
+      <text x="110" y="78" font-size="12" font-weight="800" fill="#13295b">Amilosa ~15–20 %</text>
+      <text x="110" y="94" font-size="10.5" fill="#4b5567">lineal, helicoidal · α(1→4)</text>
+      <!-- amilopectina -->
+      <g><use href="#b" x="250" y="50"/><use href="#b" x="266" y="50"/><use href="#b" x="282" y="50"/><use href="#b" x="298" y="50"/><use href="#b" x="314" y="50"/><use href="#b" x="330" y="50"/><use href="#b" x="346" y="50"/><use href="#b" x="362" y="50"/><use href="#b" x="378" y="50"/>
+        <use href="#b" x="290" y="36"/><use href="#b" x="300" y="22"/><use href="#b" x="314" y="12"/><use href="#b" x="340" y="36"/><use href="#b" x="352" y="22"/><use href="#b" x="366" y="12"/></g>
+      <text x="314" y="78" font-size="12" font-weight="800" fill="#13295b">Amilopectina ~80 %</text>
+      <text x="314" y="94" font-size="10.5" fill="#4b5567">ramas α(1→6) cada 10–30 glucosas</text>
+      <!-- glucogeno -->
+      <g><use href="#b" x="470" y="50"/><use href="#b" x="486" y="50"/><use href="#b" x="502" y="50"/><use href="#b" x="518" y="50"/><use href="#b" x="534" y="50"/><use href="#b" x="550" y="50"/><use href="#b" x="566" y="50"/>
+        <use href="#b" x="478" y="36"/><use href="#b" x="488" y="22"/><use href="#b" x="502" y="36"/><use href="#b" x="512" y="22"/><use href="#b" x="526" y="36"/><use href="#b" x="536" y="22"/><use href="#b" x="550" y="36"/><use href="#b" x="560" y="22"/><use href="#b" x="574" y="36"/><use href="#b" x="498" y="10"/><use href="#b" x="546" y="10"/></g>
+      <text x="522" y="78" font-size="12" font-weight="800" fill="#13295b">Glucógeno</text>
+      <text x="522" y="94" font-size="10.5" fill="#4b5567">más ramificado · hígado y músculo</text>
+      <!-- celulosa -->
+      <g><use href="#r" x="680" y="26"/><use href="#r" x="696" y="26"/><use href="#r" x="712" y="26"/><use href="#r" x="728" y="26"/><use href="#r" x="744" y="26"/><use href="#r" x="760" y="26"/><use href="#r" x="776" y="26"/><use href="#r" x="792" y="26"/>
+        <use href="#r" x="680" y="44"/><use href="#r" x="696" y="44"/><use href="#r" x="712" y="44"/><use href="#r" x="728" y="44"/><use href="#r" x="744" y="44"/><use href="#r" x="760" y="44"/><use href="#r" x="776" y="44"/><use href="#r" x="792" y="44"/></g>
+      <g stroke="#2e7d5b" stroke-dasharray="2 2"><line x1="688" y1="35" x2="688" y2="35"/><line x1="704" y1="31" x2="704" y2="39"/><line x1="736" y1="31" x2="736" y2="39"/><line x1="768" y1="31" x2="768" y2="39"/></g>
+      <text x="736" y="78" font-size="12" font-weight="800" fill="#2e7d5b">Celulosa</text>
+      <text x="736" y="94" font-size="10.5" fill="#4b5567">cadenas rectas paralelas · β(1→4)</text>
+      <!-- veredicto -->
+      <rect x="850" y="8" width="124" height="96" rx="8" fill="#f6f8fc"/>
+      <text x="912" y="30" font-size="11" font-weight="800" fill="#1f4f9c">α → amilasa</text>
+      <text x="912" y="46" font-size="10" fill="#1d2433">se digiere: glucosa</text>
+      <text x="912" y="72" font-size="11" font-weight="800" fill="#2e7d5b">β → sin celulasa</text>
+      <text x="912" y="88" font-size="10" fill="#1d2433">llega al colon: fibra</text>
+    </g>
+    <text x="490" y="116" font-family="Inter" font-size="10" fill="#4b5567" text-anchor="middle">Glucógeno del hígado: mantiene la glucemia en ayuno · del músculo: solo para su contracción (no libera glucosa a la sangre)</text>
+  </svg>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1.15">
+    <div class="ph"><span class="n">7</span>Índice glucémico <small>— 1 a 100, frente a glucosa</small></div>
+    <div class="ig">
+      <div style="background:#fde8e9"><b style="color:var(--red)">Alto ≥ 70</b>Pan blanco, arroz blanco, papa cocida, donas, melón.</div>
+      <div style="background:#fdf1e1"><b style="color:#b8650f">Medio 55–69</b>Pan integral, pasta, arroz integral, plátano, piña, mango.</div>
+      <div style="background:#e5f4ec"><b style="color:#2e7d5b">Bajo &lt; 55</b>Manzana, pera, naranja, lentejas, nueces, yogur natural, brócoli.</div>
+    </div>
+    <p style="font-size:10.3px;margin:6px 0 0">Sube con el <b>refinamiento</b>, la <b>madurez</b> y la cocción; baja con <b>fibra</b>, grasa y acidez. Simples: pico rápido · complejos: curva plana.</p>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">8</span>Fibra <small>— 20–30 g/día con agua</small></div>
+    <div class="two">
+      <div class="mini"><p class="t">Soluble</p><ul><li>Forma <b>gel</b></li><li>Regula glucosa y colesterol</li><li>Avena, chía, manzana, nopal</li></ul></div>
+      <div class="mini"><p class="t">Insoluble</p><ul><li>Celulosa, lignina</li><li>Aumenta el <b>volumen</b> fecal</li><li>Integrales, verduras de hoja</li></ul></div>
+    </div>
+    <p style="font-size:10px;margin:5px 0 0"><b>Prebiótico</b>: alimento de la microbiota (ajo, cebolla). <b>Probiótico</b>: microorganismo vivo (yogur, kéfir).</p>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">9</span>Glúcidos unidos a otras moléculas <small>— glucocálix, receptores y matriz</small></div>
+  <div class="ilist" style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px 10px">
+    <div>{{icon:Fingerprint}}<span><b>Glucoproteína</b>: reconocimiento, receptores. N-glucosídico en asparagina; O- en serina/treonina.</span></div>
+    <div>{{icon:Brain}}<span><b>Cerebrósido</b>: ceramida + glucosa o galactosa; membranas del tejido nervioso.</span></div>
+    <div>{{icon:Bone}}<span><b>Proteoglucano</b>: glucosaminoglucanos + proteína; matriz del conectivo.</span></div>
+    <div>{{icon:FirstAidKit}}<span><b>Uso médico</b>: heparina (anticoagulante), ácido hialurónico, condroitín sulfato, dextrano.</span></div>
+  </div>
+</section>
+
+<section class="clin">
+  <div class="ph"><span class="n">10</span>Correlación clínica</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;font-size:10.4px">
+    <p style="margin:0"><b>Lactulosa</b> (fructosa + galactosa): no se absorbe, retiene agua en el colon. Laxante y tratamiento de la encefalopatía hepática.</p>
+    <p style="margin:0"><b>Nopal</b> en el diabético: su mucílago disminuye la absorción de glucosa. Medio nopal tierno crudo, no «tortillas de nopal» procesadas.</p>
+    <p style="margin:0"><b>Cetosa ≠ cuerpo cetónico</b>: la fructosa es un azúcar. Los cuerpos cetónicos salen de las grasas y en exceso causan cetoacidosis (aliento afrutado).</p>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">11</span>Resumen clave</div>
+  <div class="sum">
+    <div>{{icon:Hexagon}}<span>Glucosa = <b>aldohexosa</b>; fructosa = cetohexosa.</span></div>
+    <div>{{icon:ArrowsDownUp}}<span>OH anomérico abajo <b>α</b>, arriba <b>β</b>.</span></div>
+    <div>{{icon:LinkSimple}}<span>Sacarosa α(1→2) · lactosa <b>β(1→4)</b>.</span></div>
+    <div>{{icon:Tree}}<span>Amilopectina y glucógeno: ramas <b>α(1→6)</b>.</span></div>
+    <div>{{icon:Leaf}}<span>Celulosa β: <b>fibra</b>, no se digiere.</span></div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Bioquímica I (UAD) · Contenido verificado con la presentación y la clase</p>
+</div></body></html>

@@ -66,7 +66,7 @@ export function AtlasTopic() {
   const idx = atlasTopics.findIndex((t) => t.id === topic.id)
   const prevTopic = idx > 0 ? atlasTopics[idx - 1] : null
   const nextTopic = idx < atlasTopics.length - 1 ? atlasTopics[idx + 1] : null
-  const relatedTopics = atlasTopics.filter((t) => topic.relatedTopicIds?.includes(t.id))
+  const relatedTopics = atlasTopics.filter((t) => t.id !== topic.id && topic.relatedTopicIds?.includes(t.id))
 
   const handleMarkReviewed = () => {
     recordReview(topic.id)

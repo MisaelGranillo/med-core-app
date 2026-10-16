@@ -4,7 +4,7 @@ import type { AtlasTopic } from '../data/atlas-topics'
 export type AtlasCategory = AtlasTopic['category']
 
 /* Orden fijo de las materias en el Atlas (como en el plan de estudios). */
-export const ATLAS_CATEGORY_ORDER: AtlasCategory[] = ['anatomia', 'histologia', 'genetica', 'bioquimica', 'celular', 'fisiologia']
+export const ATLAS_CATEGORY_ORDER: AtlasCategory[] = ['anatomia', 'histologia', 'genetica', 'bioquimica', 'celular', 'fisiologia', 'panorama']
 
 export const ATLAS_CATEGORY_LABELS: Record<AtlasCategory, string> = {
   anatomia: 'Anatomía',
@@ -13,6 +13,7 @@ export const ATLAS_CATEGORY_LABELS: Record<AtlasCategory, string> = {
   bioquimica: 'Bioquímica',
   celular: 'Biología celular',
   fisiologia: 'Fisiología',
+  panorama: 'Panorama de sistemas',
 }
 
 export const MASTERY_LABELS = {

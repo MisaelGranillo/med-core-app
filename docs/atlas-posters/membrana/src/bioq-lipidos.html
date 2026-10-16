@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.three .mini { text-align: left; padding: 7px 9px; }
+.three .mini .t { text-align: center; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.3px; }
+.nt { text-transform: none; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Bioquímica</p>
+  <h1>Lípidos</h1>
+  <p class="tag">Insolubles en agua: reserva de energía, membranas y señales.</p>
+</header>
+
+<div class="row">
+  <section class="panel" style="flex:1.25">
+    <div class="ph"><span class="n">1</span>El ácido graso <small>— 12 a 22 C, anfipático</small></div>
+    <svg viewBox="0 0 520 178" style="width:100%;display:block">
+      <g font-size="11" text-anchor="middle">
+        <!-- anfipático -->
+        <circle cx="34" cy="30" r="20" fill="#1f4f9c"/><text x="34" y="34" fill="#fff" font-weight="800" font-size="10">COOH</text>
+        <polyline points="54,30 70,20 86,30 102,20 118,30 134,20 150,30 166,20 182,30 198,20 214,30" fill="none" stroke="#e8912e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="236" y="34" fill="#4b5567" font-size="10.5">–CH₃</text>
+        <text x="34" y="64" fill="#1f4f9c" font-weight="700" font-size="10.5">hidrofílica</text>
+        <text x="134" y="52" fill="#b8650f" font-weight="700" font-size="10.5">cola (CH₂)ₙ hidrofóbica</text>
+        <!-- micela / bicapa -->
+        <g transform="translate(300,6)">
+          <text x="100" y="12" font-weight="700" fill="#13295b">En agua forman bicapas y micelas</text>
+          <g fill="#1f4f9c"><circle cx="20" cy="30" r="6"/><circle cx="40" cy="30" r="6"/><circle cx="60" cy="30" r="6"/><circle cx="80" cy="30" r="6"/><circle cx="100" cy="30" r="6"/>
+            <circle cx="20" cy="76" r="6"/><circle cx="40" cy="76" r="6"/><circle cx="60" cy="76" r="6"/><circle cx="80" cy="76" r="6"/><circle cx="100" cy="76" r="6"/></g>
+          <g stroke="#e8912e" stroke-width="2.4"><path d="M20 36 v14 M40 36 v14 M60 36 v14 M80 36 v14 M100 36 v14 M20 56 v14 M40 56 v14 M60 56 v14 M80 56 v14 M100 56 v14"/></g>
+          <circle cx="170" cy="53" r="30" fill="none" stroke="#e8912e" stroke-width="10" stroke-dasharray="2 4"/>
+          <circle cx="170" cy="53" r="36" fill="none" stroke="#1f4f9c" stroke-width="7" stroke-dasharray="7 4.2"/>
+          <text x="60" y="100" font-size="10" fill="#4b5567">bicapa</text><text x="170" y="100" font-size="10" fill="#4b5567">micela</text>
+        </g>
+        <!-- saturado / cis / trans -->
+        <line x1="8" y1="110" x2="512" y2="110" stroke="#e6e9f0"/>
+        <polyline points="20,140 36,130 52,140 68,130 84,140 100,130 116,140 132,130 148,140" fill="none" stroke="#13295b" stroke-width="3" stroke-linejoin="round"/>
+        <text x="84" y="164" font-weight="800" fill="#13295b">Saturado</text><text x="84" y="176" font-size="9.5" fill="#4b5567">recto · sólido (mantequilla)</text>
+        <polyline points="190,140 206,130 222,140 238,130 250,148 258,162" fill="none" stroke="#2e7d5b" stroke-width="3" stroke-linejoin="round"/>
+        <line x1="236" y1="135" x2="248" y2="153" stroke="#2e7d5b" stroke-width="3" transform="translate(6,-2)"/>
+        <text x="300" y="138" font-weight="800" fill="#2e7d5b">Cis</text><text x="300" y="152" font-size="9.5" fill="#4b5567">«codo» · líquido</text><text x="300" y="164" font-size="9.5" fill="#4b5567">forma natural</text>
+        <polyline points="360,140 376,130 392,140 408,130 424,140 440,130 456,140 472,130 488,140" fill="none" stroke="#c8242c" stroke-width="3" stroke-linejoin="round"/>
+        <line x1="408" y1="125" x2="424" y2="135" stroke="#c8242c" stroke-width="3"/>
+        <text x="424" y="164" font-weight="800" fill="#c8242c">Trans</text><text x="424" y="176" font-size="9.5" fill="#4b5567">recto · hidrogenación industrial</text>
+      </g>
+    </svg>
+  </section>
+  <section class="panel" style="flex:.75">
+    <div class="ph"><span class="n">2</span>Nomenclatura</div>
+    <table>
+      <tr><th>Ácido graso</th><th>C:dobles</th></tr>
+      <tr><td class="k">Palmítico</td><td>C16:0 · saturado más abundante</td></tr>
+      <tr><td class="k">Esteárico</td><td>C18:0</td></tr>
+      <tr><td class="k">Oleico</td><td>C18:1 · insaturado más abundante</td></tr>
+      <tr><td class="k">Linoleico</td><td>C18:2 (ω-6)</td></tr>
+      <tr><td class="k">α-linolénico</td><td>C18:3 (ω-3)</td></tr>
+      <tr><td class="k">Araquidónico</td><td>C20:4 (≠ araquídico C20:0)</td></tr>
+    </table>
+    <p style="font-size:10px;margin:5px 0 0">Saturados <b>-anoico</b> · insaturados <b>-enoico</b>. Cadena corta &lt; 6 C (butirato, colonocito) · mediana 6–12 (a la porta, sin quilomicrón) · larga &gt; 12.</p>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">3</span>Omega y delta <small>— oleico C18:1: n-9 y Δ9</small></div>
+  <div style="display:flex;gap:12px;align-items:center">
+    <svg viewBox="0 0 560 92" style="width:560px;flex-shrink:0">
+      <g font-size="10" text-anchor="middle">
+        <text x="20" y="54" font-weight="800" fill="#1f4f9c" font-size="11">COOH</text>
+        <polyline points="44,50 70,36 96,50 122,36 148,50 174,36 200,50 226,36 252,50 278,36 304,50 330,36 356,50 382,36 408,50 434,36 460,50 486,36" fill="none" stroke="#1d2433" stroke-width="2"/>
+        <line x1="252" y1="44" x2="278" y2="30" stroke="#c8242c" stroke-width="2.4"/>
+        <text x="512" y="40" font-weight="800" fill="#4b5567" font-size="11">CH₃</text>
+        <g fill="#1f4f9c"><text x="44" y="66">1</text><text x="96" y="66">3</text><text x="148" y="66">5</text><text x="200" y="66">7</text><text x="252" y="66" font-weight="800" fill="#c8242c">9</text><text x="304" y="66">11</text></g>
+        <g fill="#b8650f"><text x="486" y="22">1</text><text x="434" y="22">3</text><text x="382" y="22">5</text><text x="330" y="22">7</text><text x="278" y="22" font-weight="800" fill="#c8242c">9</text></g>
+        <text x="150" y="86" fill="#1f4f9c" font-weight="700">Δ cuenta desde el carboxilo →</text>
+        <text x="420" y="86" fill="#b8650f" font-weight="700">← ω (n) cuenta desde el metilo</text>
+      </g>
+    </svg>
+    <div style="flex:1;font-size:10.4px">
+      <p><b>Esenciales</b>: linoleico (<b>ω-6</b>) y α-linolénico (<b>ω-3</b>). No ponemos dobles enlaces más allá del C9.</p>
+      <p>El oleico (<b>ω-9</b>) <b>no</b> es esencial. ω-3 → EPA y DHA (retina, cerebro); ω-6 → araquidónico.</p>
+      <p style="margin:0"><b>Fuentes</b>: ω-3 sardina, salmón, chía, linaza · ω-6 aceites de soya, maíz, girasol · ω-9 oliva, aguacate.</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">4</span>Lípidos con glicerol y con esfingosina</div>
+  <div class="three">
+    <div class="mini"><p class="t">Triglicérido</p>
+      <svg viewBox="0 0 200 84" style="width:100%;display:block"><g font-size="7.5" text-anchor="middle">
+        <rect x="8" y="8" width="40" height="68" rx="6" fill="#d9c25a"/><text x="28" y="46" font-weight="800" fill="#13295b">glicerol</text>
+        <g fill="#c8242c"><circle cx="58" cy="20" r="4"/><circle cx="58" cy="42" r="4"/><circle cx="58" cy="64" r="4"/></g>
+        <g fill="none" stroke="#e8912e" stroke-width="3" stroke-linejoin="round"><polyline points="62,20 76,14 90,20 104,14 118,20 132,14 146,20 160,14 174,20"/><polyline points="62,42 76,36 90,42 104,36 118,42 132,36 146,42 160,36 174,42"/><polyline points="62,64 76,58 90,64 104,58 118,64 132,58 146,64 160,58 174,64"/></g>
+        <text x="100" y="82" fill="#c8242c">● enlace éster (+ H₂O)</text></g></svg>
+      <ul class="lst"><li>Glicerol + 3 ácidos grasos.</li><li>Reserva anhidra: <b>9 kcal/g</b> (glúcidos y proteínas 4).</li><li>Aislante y protección de órganos.</li></ul></div>
+    <div class="mini"><p class="t">Glicerofosfolípido</p>
+      <svg viewBox="0 0 200 84" style="width:100%;display:block"><g font-size="7.5" text-anchor="middle">
+        <circle cx="26" cy="42" r="18" fill="#1f4f9c"/><text x="26" y="40" fill="#fff" font-weight="700">X</text><text x="26" y="51" fill="#fff" font-size="7">alcohol</text>
+        <circle cx="54" cy="42" r="8" fill="#e8912e"/><text x="54" y="45" fill="#fff" font-size="7" font-weight="800">P</text>
+        <rect x="64" y="22" width="22" height="40" rx="4" fill="#d9c25a"/>
+        <g fill="none" stroke="#e8912e" stroke-width="3" stroke-linejoin="round"><polyline points="86,30 100,24 114,30 128,24 142,30 156,24 170,30 184,24"/><polyline points="86,54 100,48 114,54 128,48 138,60 146,72 160,66 174,72"/></g>
+        <text x="100" y="82" fill="#4b5567">2 AG (uno con doble enlace cis)</text></g></svg>
+      <ul class="lst"><li>Colina: <b>lecitina</b>, la más abundante.</li><li>Etanolamina: cefalina · serina: apoptosis.</li><li>Inositol: IP₃ y DAG · cardiolipina: mitocondria.</li></ul></div>
+    <div class="mini"><p class="t">Esfingolípido</p>
+      <svg viewBox="0 0 200 84" style="width:100%;display:block"><g font-size="7.5" text-anchor="middle">
+        <rect x="4" y="22" width="62" height="40" rx="6" fill="#8a63c0"/><text x="35" y="40" fill="#fff" font-weight="700">esfingosina</text><text x="36" y="53" fill="#fff" font-size="7">aminoalcohol</text>
+        <g fill="none" stroke="#e8912e" stroke-width="3" stroke-linejoin="round"><polyline points="64,30 78,24 92,30 106,24 120,30 134,24 148,30 162,24 176,30"/><polyline points="64,54 78,48 92,54 106,48 120,54 134,48 148,54 162,48 176,54"/></g>
+        <text x="72" y="72" fill="#c8242c">enlace amida</text><text x="130" y="82" fill="#4b5567">= ceramida (+ grupo polar)</text></g></svg>
+      <ul class="lst"><li><b>Esfingomielina</b> (+ fosfocolina): mielina.</li><li>Cerebrósidos, globósidos (ABO) y gangliósidos (ácido siálico).</li></ul></div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">5</span>Eicosanoides <small>— del ácido araquidónico (C20:4) y dónde actúan los fármacos</small></div>
+  <svg viewBox="0 0 980 168" style="width:100%;display:block">
+    <defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1d2433"/></marker></defs>
+    <g font-size="11" text-anchor="middle">
+      <rect x="6" y="62" width="128" height="40" rx="8" fill="#f6f8fc" stroke="#d9dee8"/><text x="70" y="80" font-weight="700" fill="#13295b">Fosfolípidos</text><text x="70" y="94" font-size="9.5" fill="#4b5567">de membrana</text>
+      <line x1="134" y1="82" x2="196" y2="82" stroke="#1d2433" stroke-width="1.6" marker-end="url(#a)"/><text x="165" y="74" font-size="9.5" fill="#c8242c" font-weight="700">fosfolipasa A₂</text>
+      <rect x="198" y="62" width="128" height="40" rx="8" fill="#fdf1e1" stroke="#e8912e"/><text x="262" y="80" font-weight="800" fill="#b8650f">Araquidónico</text><text x="262" y="94" font-size="9.5" fill="#4b5567">ω-6, 20 C</text>
+      <path d="M326 72 C 360 40, 370 32, 400 32" fill="none" stroke="#1d2433" stroke-width="1.6" marker-end="url(#a)"/>
+      <path d="M326 92 C 360 124, 370 132, 400 132" fill="none" stroke="#1d2433" stroke-width="1.6" marker-end="url(#a)"/>
+      <rect x="402" y="14" width="150" height="36" rx="8" fill="#e9f0fb" stroke="#1f4f9c"/><text x="477" y="30" font-weight="800" fill="#13295b">Ciclooxigenasa</text><text x="477" y="43" font-size="9.5" fill="#4b5567">COX-1 · COX-2 → PGH₂</text>
+      <rect x="402" y="114" width="150" height="36" rx="8" fill="#efe9f9" stroke="#8a63c0"/><text x="477" y="130" font-weight="800" fill="#5b3b99">5-Lipoxigenasa</text><text x="477" y="143" font-size="9.5" fill="#4b5567">→ HPETE → LTA₄</text>
+      <line x1="552" y1="32" x2="590" y2="32" stroke="#1d2433" stroke-width="1.6" marker-end="url(#a)"/>
+      <line x1="552" y1="132" x2="590" y2="132" stroke="#1d2433" stroke-width="1.6" marker-end="url(#a)"/>
+      <g font-size="10" text-anchor="start">
+        <text x="596" y="16" font-weight="800" fill="#13295b">Prostaglandinas</text><text x="700" y="16" fill="#4b5567">inflamación, dolor, fiebre; protegen el estómago</text>
+        <text x="596" y="34" font-weight="800" fill="#c8242c">Tromboxano A₂</text><text x="700" y="34" fill="#4b5567">plaqueta: agrega y contrae</text>
+        <text x="596" y="52" font-weight="800" fill="#2e7d5b">Prostaciclina</text><text x="700" y="52" fill="#4b5567">endotelio: antiagrega y dilata</text>
+        <text x="596" y="128" font-weight="800" fill="#5b3b99">Leucotrienos</text><text x="700" y="128" fill="#4b5567">broncoconstricción, alergia, permeabilidad</text>
+        <text x="596" y="146" font-weight="800" fill="#5b3b99">Lipoxinas</text><text x="700" y="146" fill="#4b5567">resolución de la inflamación</text>
+      </g>
+      <!-- fármacos -->
+      <g font-size="9.5" text-anchor="start">
+        <rect x="402" y="62" width="300" height="40" rx="6" fill="#fff6f6" stroke="#f1c9cc"/>
+        <text x="412" y="78" fill="#c8242c" font-weight="800">⊘ Aspirina · AINE · coxibs</text><text x="412" y="93" fill="#4b5567">bloquean la COX (aspirina: irreversible)</text>
+        <rect x="712" y="70" width="262" height="40" rx="6" fill="#fff6f6" stroke="#f1c9cc"/>
+        <text x="722" y="86" fill="#c8242c" font-weight="800">⊘ Montelukast</text><text x="722" y="101" fill="#4b5567">bloquea el receptor de leucotrienos (asma)</text>
+      </g>
+    </g>
+  </svg>
+  <p style="font-size:10.2px;margin:2px 0 0"><b>COX-1</b> constitutiva (estómago, plaqueta, riñón) · <b>COX-2</b> inducible (inflamación). <b>Misoprostol</b> = análogo de PGE₁ que protege la mucosa.</p>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">6</span>Colesterol y hormonas esteroideas</div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <svg viewBox="0 0 170 104" style="width:160px;flex-shrink:0"><g font-size="11" font-weight="800" text-anchor="middle" fill="#13295b">
+        <polygon points="30,52 45,43 60,52 60,70 45,79 30,70" fill="#e9f0fb" stroke="#13295b" stroke-width="1.6"/><text x="45" y="65">A</text>
+        <polygon points="60,52 75,43 90,52 90,70 75,79 60,70" fill="#e9f0fb" stroke="#13295b" stroke-width="1.6"/><text x="75" y="65">B</text>
+        <polygon points="75,43 75,25 90,16 105,25 105,43 90,52" fill="#e9f0fb" stroke="#13295b" stroke-width="1.6"/><text x="90" y="38">C</text>
+        <polygon points="105,25 120,20 128,34 118,46 105,43" fill="#fdf1e1" stroke="#13295b" stroke-width="1.6"/><text x="116" y="37">D</text>
+        <path d="M120 20 l10 -10 l14 4 l10 -8" fill="none" stroke="#1d2433" stroke-width="1.6"/>
+        <line x1="30" y1="70" x2="16" y2="80" stroke="#1d2433" stroke-width="1.6"/><text x="12" y="92" fill="#c8242c">HO</text>
+        <text x="85" y="100" font-size="9" font-weight="600" fill="#4b5567">4 anillos · OH en C3</text></g></svg>
+      <div style="flex:1;font-size:10.2px">
+        <p style="margin:0 0 4px">Colesterol → mitocondria (<b>StAR</b>) → <b>pregnenolona</b> (P450scc) → REL.</p>
+        <table>
+          <tr><td class="k">C21</td><td>Progesterona, cortisol, aldosterona</td></tr>
+          <tr><td class="k">C19</td><td>Testosterona, DHEA</td></tr>
+          <tr><td class="k">C18</td><td>Estradiol (aromatasa)</td></tr>
+        </table>
+        <p style="margin:4px 0 0">También vitamina D y sales biliares.</p>
+      </div>
+    </div>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">7</span>Esfingolipidosis <small>— falta la enzima que lo degrada</small></div>
+    <table>
+      <tr><th>Enfermedad</th><th>Enzima</th><th>Se acumula</th></tr>
+      <tr><td class="k">Tay-Sachs</td><td>Hexosaminidasa A</td><td>GM2 en neuronas</td></tr>
+      <tr><td class="k">Gaucher</td><td>Glucocerebrosidasa</td><td>Glucosilceramida</td></tr>
+      <tr><td class="k">Niemann-Pick</td><td>Esfingomielinasa</td><td>Esfingomielina</td></tr>
+      <tr><td class="k">Fabry</td><td>α-galactosidasa A</td><td>Globósidos</td></tr>
+      <tr><td class="k">Krabbe</td><td>β-galactocerebrosidasa</td><td>Galactocerebrósido</td></tr>
+    </table>
+    <p style="font-size:10px;margin:4px 0 0">El lípido <b>sí</b> se forma, pero no se rompe en el lisosoma.</p>
+  </section>
+</div>
+
+<section class="clin">
+  <div class="ph"><span class="n">8</span>Correlación clínica</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;font-size:10.3px">
+    <p style="margin:0"><b>Grasas trans</b> (margarinas, frituras comerciales): ↑ LDL, ↓ HDL, aterosclerosis. Mejor canola (pocos saturados, ω-3) y no reutilizar el aceite (acroleína).</p>
+    <p style="margin:0"><b>Coxibs e infarto</b>: bloquean la prostaciclina del endotelio pero no el tromboxano de la plaqueta (COX-1): gana la agregación.</p>
+    <p style="margin:0"><b>Síndrome de Reye</b>: no dar aspirina a niños con influenza o varicela; daña la β-oxidación hepática y sube el amonio.</p>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">9</span>Resumen clave</div>
+  <div class="sum">
+    <div>{{icon:LinkSimple}}<span>Lípidos = enlace <b>éster</b>; esfingo = <b>amida</b>.</span></div>
+    <div>{{icon:Fish}}<span>Esenciales: <b>ω-3 y ω-6</b>, no el ω-9.</span></div>
+    <div>{{icon:BatteryFull}}<span>Triglicérido: <b>9 kcal/g</b>, sin agua.</span></div>
+    <div>{{icon:Pill}}<span>Aspirina bloquea la <b>COX</b>.</span></div>
+    <div>{{icon:Hexagon}}<span>Colesterol: 4 anillos → <b>esteroides</b>.</span></div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Bioquímica I (UAD) · Contenido verificado con la presentación y la clase</p>
+</div></body></html>

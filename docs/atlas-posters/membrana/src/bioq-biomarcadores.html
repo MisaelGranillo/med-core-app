@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.org { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.org .mini { text-align: left; padding: 8px 10px; }
+.org .mini .t { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+.org .mini .t svg { width: 20px; height: 20px; color: var(--blue); }
+.lst { margin: 0; padding-left: 15px; font-size: 10.3px; }
+.lst li { margin: 0 0 2px; }
+.ck { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.ck div { border-radius: 7px; padding: 6px; text-align: center; font-size: 10px; background: #f6f8fc; }
+.ck b { display: block; font-size: 13px; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Bioquímica</p>
+  <h1>Biomarcadores Enzimáticos</h1>
+  <p class="tag">Cuando un tejido se lesiona, sus enzimas salen a la sangre: qué, de dónde y cuándo.</p>
+</header>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">1</span>Cómo se elige un biomarcador</div>
+    <div class="ilist">
+      <div>{{icon:MapPin}}<span><b>Selectividad</b>: ¿de qué tejido u órgano proviene?</span></div>
+      <div>{{icon:Target}}<span><b>Especificidad</b>: ¿qué tanto apunta a la enfermedad buscada?</span></div>
+      <div>{{icon:Clock}}<span><b>Ventana</b>: ¿cuándo sube, cuándo llega al pico y cuándo se normaliza?</span></div>
+    </div>
+    <p style="font-size:10.2px;margin:5px 0 0">Su nivel depende de cuánto tejido se dañó y de cuánto tarda en eliminarse (proteólisis, riñón). Se mide en suero, plasma u orina.</p>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">2</span>Creatina cinasa: tres isoenzimas</div>
+    <div class="ck">
+      <div><b style="color:#5b8fd6">CK-MM</b>Músculo esquelético · sube con ejercicio intenso o una inyección IM</div>
+      <div><b style="color:#1f4f9c">CK-MB</b>Miocardio · no es exclusiva del corazón</div>
+      <div><b style="color:#8a63c0">CK-BB</b>Cerebro</div>
+    </div>
+    <p style="font-size:10.2px;margin:6px 0 0"><b>Isoenzimas</b>: misma función, genes distintos (LDH, CK, fosfatasa alcalina, amilasa salival vs pancreática). Las transaminasas <b>no</b> sirven para el infarto.</p>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">3</span>Marcadores de lesión miocárdica ★ <small>— desde el inicio del dolor (escala logarítmica)</small></div>
+  <svg viewBox="0 0 980 274" style="width:100%;display:block">
+<line x1="233.0" y1="20" x2="233.0" y2="266" stroke="#e6e9f0"/>
+<text x="233.0" y="16" font-size="10" fill="#4b5567" text-anchor="middle">1 h</text>
+<line x1="364.4" y1="20" x2="364.4" y2="266" stroke="#e6e9f0"/>
+<text x="364.4" y="16" font-size="10" fill="#4b5567" text-anchor="middle">3 h</text>
+<line x1="447.4" y1="20" x2="447.4" y2="266" stroke="#e6e9f0"/>
+<text x="447.4" y="16" font-size="10" fill="#4b5567" text-anchor="middle">6 h</text>
+<line x1="530.3" y1="20" x2="530.3" y2="266" stroke="#e6e9f0"/>
+<text x="530.3" y="16" font-size="10" fill="#4b5567" text-anchor="middle">12 h</text>
+<line x1="613.3" y1="20" x2="613.3" y2="266" stroke="#e6e9f0"/>
+<text x="613.3" y="16" font-size="10" fill="#4b5567" text-anchor="middle">24 h</text>
+<line x1="696.3" y1="20" x2="696.3" y2="266" stroke="#e6e9f0"/>
+<text x="696.3" y="16" font-size="10" fill="#4b5567" text-anchor="middle">48 h</text>
+<line x1="744.8" y1="20" x2="744.8" y2="266" stroke="#e6e9f0"/>
+<text x="744.8" y="16" font-size="10" fill="#4b5567" text-anchor="middle">3 d</text>
+<line x1="846.2" y1="20" x2="846.2" y2="266" stroke="#e6e9f0"/>
+<text x="846.2" y="16" font-size="10" fill="#4b5567" text-anchor="middle">7 d</text>
+<line x1="929.1" y1="20" x2="929.1" y2="266" stroke="#e6e9f0"/>
+<text x="929.1" y="16" font-size="10" fill="#4b5567" text-anchor="middle">14 d</text>
+<text x="140" y="40" font-size="11" font-weight="800" fill="#8a63c0" text-anchor="end">Copeptina</text>
+<text x="140" y="51" font-size="9" fill="#4b5567" text-anchor="end">descarte rápido</text>
+<rect x="150.0" y="36" width="546.3" height="10" rx="5" fill="#8a63c0" opacity=".22"/>
+<rect x="233.0" y="36" width="380.29999999999995" height="10" rx="5" fill="#8a63c0" opacity=".55"/>
+<rect x="315.9" y="34" width="83.0" height="14" rx="4" fill="#8a63c0"/>
+<text x="140" y="80" font-size="11" font-weight="800" fill="#e8912e" text-anchor="end">Mioglobina</text>
+<text x="140" y="91" font-size="9" fill="#4b5567" text-anchor="end">precoz, poco específica</text>
+<rect x="233.0" y="76" width="380.29999999999995" height="10" rx="5" fill="#e8912e" opacity=".22"/>
+<rect x="364.4" y="76" width="248.89999999999998" height="10" rx="5" fill="#e8912e" opacity=".55"/>
+<rect x="447.4" y="74" width="61.10000000000002" height="14" rx="4" fill="#e8912e"/>
+<text x="140" y="120" font-size="11" font-weight="800" fill="#c8242c" text-anchor="end">Troponina cTnI/T</text>
+<text x="140" y="131" font-size="9" fill="#4b5567" text-anchor="end">estándar de oro</text>
+<rect x="364.4" y="116" width="564.7" height="10" rx="5" fill="#c8242c" opacity=".22"/>
+<rect x="398.9" y="116" width="447.30000000000007" height="10" rx="5" fill="#c8242c" opacity=".55"/>
+<rect x="530.3" y="114" width="83.0" height="14" rx="4" fill="#c8242c"/>
+<text x="140" y="160" font-size="11" font-weight="800" fill="#1f4f9c" text-anchor="end">CK-MB</text>
+<text x="140" y="171" font-size="9" fill="#4b5567" text-anchor="end">útil en reinfarto</text>
+<rect x="364.4" y="156" width="380.4" height="10" rx="5" fill="#1f4f9c" opacity=".22"/>
+<rect x="447.4" y="156" width="248.89999999999998" height="10" rx="5" fill="#1f4f9c" opacity=".55"/>
+<rect x="578.9" y="154" width="34.39999999999998" height="14" rx="4" fill="#1f4f9c"/>
+<text x="140" y="200" font-size="11" font-weight="800" fill="#5b8fd6" text-anchor="end">CK total</text>
+<text x="140" y="211" font-size="9" fill="#4b5567" text-anchor="end">requiere fraccionar</text>
+<rect x="398.9" y="196" width="345.9" height="10" rx="5" fill="#5b8fd6" opacity=".22"/>
+<rect x="495.9" y="196" width="200.39999999999998" height="10" rx="5" fill="#5b8fd6" opacity=".55"/>
+<rect x="530.3" y="194" width="109.70000000000005" height="14" rx="4" fill="#5b8fd6"/>
+<text x="140" y="240" font-size="11" font-weight="800" fill="#7a8496" text-anchor="end">LDH-1</text>
+<text x="140" y="251" font-size="9" fill="#4b5567" text-anchor="end">tardía (histórica)</text>
+<rect x="447.4" y="236" width="481.70000000000005" height="10" rx="5" fill="#7a8496" opacity=".22"/>
+<rect x="530.3" y="236" width="331.9000000000001" height="10" rx="5" fill="#7a8496" opacity=".55"/>
+<rect x="613.3" y="234" width="131.5" height="14" rx="4" fill="#7a8496"/>
+  </svg>
+  <div style="display:flex;gap:16px;font-size:10px;color:var(--muted);margin:2px 0 0 150px">
+    <span><span style="display:inline-block;width:22px;height:8px;border-radius:4px;background:#c8242c;opacity:.22;vertical-align:middle"></span> empieza a subir · se normaliza</span>
+    <span><span style="display:inline-block;width:22px;height:8px;border-radius:4px;background:#c8242c;opacity:.55;vertical-align:middle"></span> elevado</span>
+    <span><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#c8242c;vertical-align:middle"></span> pico</span>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">4</span>Páncreas, hígado y próstata</div>
+  <div class="org">
+    <div class="mini"><p class="t">{{icon:Drop}}Pancreatitis aguda</p><ul class="lst">
+      <li><b>Lipasa</b> ★: elección. Sube 4–8 h, dura 8–14 días; más específica.</li>
+      <li><b>Amilasa</b>: sube 2–12 h pero se normaliza en 3–5 días; también salival.</li></ul></div>
+    <div class="mini"><p class="t">{{icon:FirstAid}}Hígado</p><ul class="lst">
+      <li><b>ALT (TGP)</b>: predominantemente hepática; hepatitis.</li>
+      <li><b>AST (TGO)</b>: hígado, miocardio, músculo. Hepatitis alcohólica: AST/ALT &gt; 2.</li>
+      <li><b>FA + GGT</b>: colestasis; la GGT confirma el origen hepatobiliar.</li></ul></div>
+    <div class="mini"><p class="t">{{icon:GenderMale}}Próstata</p><ul class="lst">
+      <li><b>PSA total</b>: cáncer, hiperplasia, prostatitis o tras instrumentación.</li>
+      <li><b>PSA libre/total</b> bajo: más sospecha de cáncer.</li>
+      <li>La fosfatasa ácida quedó sustituida por el PSA.</li></ul></div>
+  </div>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">5</span>Enzimas séricas <small>— Harper, cuadro 7-2</small></div>
+    <table>
+      <tr><th>Enzima</th><th>Uso</th></tr>
+      <tr><td class="k">Ceruloplasmina</td><td>Enfermedad de Wilson</td></tr>
+      <tr><td class="k">CK</td><td>Trastornos musculares e infarto</td></tr>
+      <tr><td class="k">GGT · LDH-5</td><td>Enfermedades hepáticas</td></tr>
+      <tr><td class="k">Fosfatasa alcalina</td><td>Trastornos óseos y colestasis</td></tr>
+      <tr><td class="k">Amilasa · lipasa</td><td>Pancreatitis aguda</td></tr>
+    </table>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">6</span>Enzimas como herramienta</div>
+    <div class="ilist">
+      <div>{{icon:Syringe}}<span><b>Glucosa oxidasa</b>: tiras reactivas y glucómetros.</span></div>
+      <div>{{icon:Heartbeat}}<span><b>tPA · estreptocinasa</b>: fibrinólisis en el infarto.</span></div>
+      <div>{{icon:Dna}}<span><b>ADN polimerasa termoestable</b>: PCR.</span></div>
+      <div>{{icon:Pill}}<span><b>Reemplazo enzimático</b>: enzimas pancreáticas en fibrosis quística; glucocerebrosidasa en Gaucher.</span></div>
+    </div>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">7</span>Las seis clases de enzimas <small>— clasificación internacional (EC) ★</small></div>
+  <div class="minis" style="grid-template-columns:repeat(6,1fr)">
+    <div class="mini"><p class="t">1 · Oxidorreductasas</p><p class="d">Óxido-reducción (NAD, FAD)</p><p class="d" style="color:var(--blue);margin:0">Alcohol deshidrogenasa</p></div>
+    <div class="mini"><p class="t">2 · Transferasas</p><p class="d">Transfieren un grupo</p><p class="d" style="color:var(--blue);margin:0">Creatina cinasa, transaminasas</p></div>
+    <div class="mini"><p class="t">3 · Hidrolasas</p><p class="d">Rompen con agua</p><p class="d" style="color:var(--blue);margin:0">Amilasa, lipasa, proteasas</p></div>
+    <div class="mini"><p class="t">4 · Liasas</p><p class="d">Sin agua ni oxidación</p><p class="d" style="color:var(--blue);margin:0">Histidina descarboxilasa</p></div>
+    <div class="mini"><p class="t">5 · Isomerasas</p><p class="d">Reordenan la molécula</p><p class="d" style="color:var(--blue);margin:0">Triosafosfato isomerasa</p></div>
+    <div class="mini"><p class="t">6 · Ligasas</p><p class="d">Unen dos moléculas con ATP</p><p class="d" style="color:var(--blue);margin:0">Aminoacil-ARNt sintetasas</p></div>
+  </div>
+</section>
+
+<section class="clin">
+  <div class="ph"><span class="n">8</span>Correlación clínica</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:10.4px">
+    <p style="margin:0">La <b>troponina cardiaca</b> de alta sensibilidad, medida de forma <b>seriada</b>, es el marcador de elección del infarto junto con la clínica y el ECG. Un solo valor temprano normal <b>no lo descarta</b>. La troponina no es una enzima: es una proteína reguladora de la contracción.</p>
+    <p style="margin:0">Ningún marcador basta solo: varias enfermedades elevan la misma enzima y una enfermedad eleva varias. Por eso se piden en <b>perfiles</b> (hepático, pancreático) y se interpretan con la historia clínica y farmacológica.</p>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">9</span>Resumen clave</div>
+  <div class="sum">
+    <div>{{icon:Heart}}<span>Infarto: <b>troponina</b> (dura 7–14 d).</span></div>
+    <div>{{icon:ArrowCounterClockwise}}<span>Reinfarto: <b>CK-MB</b> (normal en 48–72 h).</span></div>
+    <div>{{icon:Lightning}}<span>Más precoz: mioglobina y copeptina.</span></div>
+    <div>{{icon:Drop}}<span>Pancreatitis: <b>lipasa</b>.</span></div>
+    <div>{{icon:FirstAid}}<span>Hígado: <b>ALT</b>; alcohol AST/ALT &gt; 2.</span></div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Bioquímica I (UAD) · Contenido verificado con la presentación y la clase</p>
+</div></body></html>

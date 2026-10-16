@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 15px; }
+.panel, .clin { padding: 13px 14px; }
+.eq { font-size: 10.6px; background: #f6f8fc; border-radius: 6px; padding: 5px 8px; margin: 0 0 5px; }
+.steps { margin: 0; padding-left: 18px; font-size: 10.4px; }
+.steps li { margin: 0 0 3px; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Bioquímica</p>
+  <h1>Nitrógeno y Ciclo de la Urea</h1>
+  <p class="tag">Del grupo amino al amoniaco, y del amoniaco a la urea que sale por la orina.</p>
+</header>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">1</span>Transaminación <small>— aminotransferasas + PLP (B6)</small></div>
+    <svg viewBox="0 0 460 92" style="width:100%;display:block">
+      <defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1d2433"/></marker></defs>
+      <g font-size="11" text-anchor="middle" font-weight="700">
+        <rect x="6" y="8" width="118" height="30" rx="7" fill="#e9f0fb"/><text x="65" y="27" fill="#13295b">α-aminoácido</text>
+        <rect x="6" y="54" width="118" height="30" rx="7" fill="#fdf1e1"/><text x="65" y="73" fill="#b8650f">α-cetoglutarato</text>
+        <rect x="336" y="8" width="118" height="30" rx="7" fill="#fdf1e1"/><text x="395" y="27" fill="#b8650f">α-cetoácido</text>
+        <rect x="336" y="54" width="118" height="30" rx="7" fill="#e9f0fb"/><text x="395" y="73" fill="#13295b">glutamato</text>
+        <path d="M128 23 C 230 23, 230 69, 330 69" fill="none" stroke="#c8242c" stroke-width="2" marker-end="url(#a)"/>
+        <line x1="128" y1="69" x2="330" y2="23" stroke="#9aa4b8" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#a)"/>
+        <text x="230" y="12" fill="#c8242c" font-size="10.5">pasa el –NH₂</text>
+      </g>
+    </svg>
+    <table>
+      <tr><td class="k">ALT (TGP)</td><td>Alanina + α-KG ⇌ piruvato + glutamato</td></tr>
+      <tr><td class="k">AST (TGO)</td><td>Aspartato + α-KG ⇌ oxalacetato + glutamato</td></tr>
+    </table>
+    <p style="font-size:10px;margin:4px 0 0">No se transaminan: lisina, treonina, prolina e hidroxiprolina.</p>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">2</span>Desaminación oxidativa</div>
+    <p class="eq"><b>Glutamato</b> + NAD(P)⁺ → <b>α-cetoglutarato</b> + <b style="color:var(--red)">NH₃</b> + NAD(P)H</p>
+    <p style="font-size:10.4px">La <b>glutamato deshidrogenasa</b> produce la mayor parte del amoniaco del cuerpo. El α-cetoglutarato vuelve a recibir aminos.</p>
+    <div class="sh">Dos formas de llevar nitrógeno al hígado</div>
+    <svg viewBox="0 0 460 92" style="width:100%;display:block">
+      <defs><marker id="b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1d2433"/></marker></defs>
+      <g font-size="10.5" text-anchor="middle">
+        <rect x="4" y="4" width="96" height="84" rx="10" fill="#fde8e9"/><text x="52" y="22" font-weight="800" fill="#c8242c">Músculo</text>
+        <text x="52" y="46" fill="#1d2433">piruvato</text><text x="52" y="72" fill="#1d2433" font-weight="700">alanina</text>
+        <rect x="360" y="4" width="96" height="84" rx="10" fill="#fdf1e1"/><text x="408" y="22" font-weight="800" fill="#b8650f">Hígado</text>
+        <text x="408" y="46" fill="#1d2433">piruvato</text><text x="408" y="72" fill="#1d2433" font-weight="700">→ urea</text>
+        <line x1="104" y1="68" x2="354" y2="68" stroke="#1d2433" stroke-width="1.6" marker-end="url(#b)"/><text x="230" y="62" font-weight="700" fill="#13295b">alanina (sangre)</text>
+        <line x1="354" y1="40" x2="104" y2="40" stroke="#1d2433" stroke-width="1.6" marker-end="url(#b)"/><text x="230" y="34" font-weight="700" fill="#2e7d5b">glucosa (gluconeogénesis)</text>
+        <text x="230" y="86" font-size="9.5" fill="#4b5567">ciclo alanina–glucosa ★</text>
+      </g>
+    </svg>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">3</span>Ciclo de la urea <small>— hígado · 5 enzimas · 3 ATP (4 enlaces de alta energía) por urea</small></div>
+  <svg viewBox="0 0 980 360" style="width:100%;display:block">
+    <defs><marker id="c" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#13295b"/></marker>
+      <marker id="d" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#4b5567"/></marker></defs>
+    <!-- compartimentos -->
+    <rect x="8" y="10" width="330" height="340" rx="22" fill="#fdf1e1" stroke="#e8c48f" stroke-width="1.6"/>
+    <text x="24" y="34" font-size="13" font-weight="800" fill="#b8650f">MITOCONDRIA</text>
+    <text x="356" y="34" font-size="13" font-weight="800" fill="#1f4f9c">CITOSOL</text>
+    <g font-size="12" text-anchor="middle">
+      <!-- entrada -->
+      <rect x="30" y="56" width="180" height="34" rx="8" fill="#fff" stroke="#e8c48f"/><text x="120" y="78" font-weight="700" fill="#1d2433">NH₃ + HCO₃⁻ + 2 ATP</text>
+      <line x1="120" y1="92" x2="120" y2="130" stroke="#13295b" stroke-width="2" marker-end="url(#c)"/>
+      <text x="198" y="112" font-size="10.5" font-weight="800" fill="#c8242c">① CPS-I</text>
+      <rect x="226" y="98" width="104" height="26" rx="6" fill="#fff6f6" stroke="#f1c9cc"/><text x="278" y="115" font-size="9.5" fill="#c8242c" font-weight="700">activador: NAG</text>
+      <rect x="40" y="134" width="160" height="34" rx="8" fill="#13295b"/><text x="120" y="156" font-weight="800" fill="#fff">Carbamoil fosfato</text>
+      <!-- ornitina -> citrulina -->
+      <rect x="40" y="250" width="160" height="34" rx="8" fill="#fff" stroke="#13295b" stroke-width="1.6"/><text x="120" y="272" font-weight="800" fill="#13295b">Ornitina</text>
+      <path d="M200 160 C 270 170, 290 200, 300 214" fill="none" stroke="#13295b" stroke-width="2"/>
+      <path d="M200 267 C 260 260, 290 240, 300 222" fill="none" stroke="#13295b" stroke-width="2"/>
+      <line x1="300" y1="218" x2="438" y2="218" stroke="#13295b" stroke-width="2" marker-end="url(#c)"/>
+      <text x="254" y="208" font-size="10.5" font-weight="800" fill="#c8242c">② OTC</text>
+      <!-- citosol -->
+      <rect x="442" y="200" width="140" height="36" rx="8" fill="#13295b"/><text x="512" y="223" font-weight="800" fill="#fff">Citrulina</text>
+      <path d="M582 210 C 640 180, 650 120, 690 104" fill="none" stroke="#13295b" stroke-width="2" marker-end="url(#c)"/>
+      <text x="676" y="166" font-size="10.5" font-weight="800" fill="#c8242c">③ ASS</text>
+      <text x="676" y="180" font-size="9.5" fill="#4b5567">+ aspartato + ATP</text>
+      <rect x="694" y="80" width="180" height="36" rx="8" fill="#13295b"/><text x="784" y="103" font-weight="800" fill="#fff">Argininosuccinato</text>
+      <line x1="784" y1="118" x2="784" y2="196" stroke="#13295b" stroke-width="2" marker-end="url(#c)"/>
+      <text x="740" y="160" font-size="10.5" font-weight="800" fill="#c8242c">④ ASL</text>
+      <line x1="786" y1="150" x2="880" y2="150" stroke="#4b5567" stroke-width="1.6" marker-end="url(#d)"/>
+      <rect x="884" y="134" width="88" height="32" rx="7" fill="#e5f4ec"/><text x="928" y="148" font-size="10.5" font-weight="800" fill="#2e7d5b">Fumarato</text><text x="928" y="161" font-size="9" fill="#2e7d5b">→ ciclo de Krebs</text>
+      <rect x="704" y="200" width="160" height="36" rx="8" fill="#13295b"/><text x="784" y="223" font-weight="800" fill="#fff">Arginina</text>
+      <path d="M784 238 C 784 300, 600 310, 470 300" fill="none" stroke="#13295b" stroke-width="2"/>
+      <text x="800" y="268" font-size="10.5" font-weight="800" fill="#c8242c" text-anchor="start">⑤ Arginasa (+ H₂O)</text>
+      <line x1="610" y1="306" x2="610" y2="330" stroke="#4b5567" stroke-width="1.6" marker-end="url(#d)"/>
+      <rect x="560" y="326" width="200" height="30" rx="7" fill="#fdf1e1"/><text x="660" y="346" font-size="12" font-weight="800" fill="#b8650f">UREA → sangre → riñón</text>
+      <path d="M470 300 C 380 296, 300 286, 204 270" fill="none" stroke="#13295b" stroke-width="2" marker-end="url(#c)"/>
+      <text x="390" y="284" font-size="9.5" fill="#4b5567">la ornitina regresa a la mitocondria</text>
+    </g>
+  </svg>
+  <p style="font-size:10.2px;margin:2px 0 0">El <b>aspartato</b> aporta el segundo nitrógeno. <b>NAG</b> (N-acetilglutamato, de acetil-CoA + glutamato) es el activador obligatorio de la CPS-I. En el ayuno sube la degradación de proteínas y las enzimas del ciclo aumentan 10–20 veces.</p>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">4</span>Las cinco reacciones ★</div>
+    <ol class="steps">
+      <li>NH₃ + CO₂ + 2 ATP → carbamoil fosfato · <b>CPS-I</b></li>
+      <li>Carbamoil fosfato + ornitina → citrulina · <b>OTC</b></li>
+      <li>Citrulina + aspartato + ATP → argininosuccinato · <b>sintetasa</b></li>
+      <li>Argininosuccinato → arginina + fumarato · <b>liasa</b></li>
+      <li>Arginina + H₂O → urea + ornitina · <b>arginasa</b></li>
+    </ol>
+    <p style="font-size:10px;margin:3px 0 0">1–2 en la mitocondria · 3–5 en el citosol.</p>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">5</span><span>Coenzimas en acción: <span style="text-transform:none">β</span>-oxidación</span></div>
+    <p style="font-size:10.3px;margin:0 0 4px">El ácido graso se activa como acil-CoA (B5, gasta 1 ATP). Cada vuelta en la mitocondria corta <b>2 carbonos</b>:</p>
+    <ol class="steps">
+      <li>Oxidación: FAD → FADH₂ (B2)</li>
+      <li>Hidratación</li>
+      <li>Oxidación: NAD⁺ → NADH (B3)</li>
+      <li>Tiólisis: sale 1 acetil-CoA</li>
+    </ol>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">6</span>Glutamina: el otro transporte</div>
+    <svg viewBox="0 0 460 96" style="width:100%;display:block">
+      <defs><marker id="e" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1d2433"/></marker></defs>
+      <g font-size="10.5" text-anchor="middle">
+        <rect x="4" y="30" width="110" height="36" rx="8" fill="#e9f0fb"/><text x="59" y="52" font-weight="800" fill="#13295b">Glutamina</text>
+        <line x1="116" y1="40" x2="196" y2="18" stroke="#1d2433" stroke-width="1.5" marker-end="url(#e)"/>
+        <line x1="116" y1="56" x2="196" y2="78" stroke="#1d2433" stroke-width="1.5" marker-end="url(#e)"/>
+        <rect x="200" y="2" width="256" height="34" rx="8" fill="#fdf1e1"/><text x="328" y="17" font-weight="800" fill="#b8650f">Hígado: glutaminasa → NH₃</text><text x="328" y="30" font-size="9.5" fill="#4b5567">entra al ciclo de la urea</text>
+        <rect x="200" y="60" width="256" height="34" rx="8" fill="#e5f4ec"/><text x="328" y="75" font-weight="800" fill="#2e7d5b">Riñón: → NH₄⁺ + HCO₃⁻ nuevo</text><text x="328" y="88" font-size="9.5" fill="#4b5567">sale ácido por la orina (ácido-base)</text>
+      </g>
+    </svg>
+    <p style="font-size:10.2px;margin:4px 0 0">El glutamato que queda se transamina a <b>α-cetoglutarato</b> y vuelve a recibir grupos amino.</p>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">7</span>¿Y el esqueleto de carbonos?</div>
+    <table>
+      <tr><th>Destino</th><th>Entra como</th><th>Aminoácidos</th></tr>
+      <tr><td class="k">Glucogénicos</td><td>Piruvato, oxalacetato, fumarato, succinil-CoA, α-KG</td><td>La mayoría</td></tr>
+      <tr><td class="k">Mixtos</td><td>Más de una vía</td><td>Ile, Phe, Tyr, Trp</td></tr>
+      <tr><td class="k">Cetogénicos</td><td>Acetil-CoA, acetoacetato</td><td><b>Leucina y lisina</b></td></tr>
+    </table>
+    <p style="font-size:10.2px;margin:4px 0 0">El <b>fumarato</b> del paso 4 es justo uno de esos puntos de entrada al ciclo de Krebs.</p>
+  </section>
+</div>
+
+<section class="clin">
+  <div class="ph"><span class="n">8</span>Correlación clínica: hiperamonemia</div>
+  <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:12px;font-size:10.4px">
+    <p style="margin:0">La falta de <b>CPS-I u OTC</b> (pasos 1 y 2) da la intoxicación por amoniaco más grave. La deficiencia de <b>OTC</b>, ligada al X, es la más frecuente: el recién nacido se ve sano y a los pocos días tiene vómito, letargo, convulsiones y coma por edema cerebral.</p>
+    <p style="margin:0">ALT y AST son las <b>transaminasas</b> del perfil hepático: la ALT es predominantemente hepática. Pregunta de examen: hiperamonemia = falla de una enzima del ciclo, sobre todo <b>OTC</b>.</p>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">9</span>Resumen clave</div>
+  <div class="sum">
+    <div>{{icon:ArrowsLeftRight}}<span>Transaminasas usan <b>PLP (B6)</b>.</span></div>
+    <div>{{icon:Flask}}<span>GDH: glutamato → <b>NH₃</b>.</span></div>
+    <div>{{icon:ArrowsClockwise}}<span>Ornitina → citrulina → ASA → arginina.</span></div>
+    <div>{{icon:Lightning}}<span>NAG activa la <b>CPS-I</b>.</span></div>
+    <div>{{icon:Warning}}<span>Hiperamonemia: <b>OTC</b> (ligada al X).</span></div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Bioquímica I (UAD) · Contenido verificado con la presentación y la clase</p>
+</div></body></html>
