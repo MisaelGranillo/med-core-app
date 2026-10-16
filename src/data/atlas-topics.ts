@@ -1295,6 +1295,24 @@ export const atlasTopics: AtlasTopic[] = [
       { id: 'brc-6', question: 'En el ribosoma, el ARNt que sostiene la cadena creciente está en el sitio:', options: ['A', 'P', 'E', 'Ninguno'], correctIndex: 1, explanation: 'A aminoacil (entrada), P peptidil (cadena), E salida.', difficulty: 'hard' },
     ],
   },
+  {
+    id: 'bioquimica-danio-adn',
+    title: 'Factores que dañan el ADN',
+    subtitle: 'Mapa de lesiones, alquilantes, inhibidores de topoisomerasa, antimetabolitos, aflatoxina, UV, radiación y talidomida',
+    category: 'bioquimica',
+    emoji: '☢️',
+    imagePath: '/atlas/bioquimica-danio-adn.webp',
+    colorKey: 'bioquimica',
+    relatedTopicIds: ['bioquimica-replicacion-codigo', 'genetica-reparacion-adn'],
+    questions: [
+      { id: 'bda-1', question: 'El cisplatino daña el ADN sobre todo al formar:', options: ['Dímeros de timina', 'Enlaces cruzados en la guanina', 'Roturas por radicales', 'Uracilo anómalo'], correctIndex: 1, explanation: 'Alquilantes y platino enlazan las cadenas, sobre todo en N7 de la guanina.', difficulty: 'easy' },
+      { id: 'bda-2', question: 'Doxorrubicina y etopósido causan roturas de doble hebra al inhibir la:', options: ['Timidilato sintasa', 'Topoisomerasa II', 'ADN ligasa', 'Primasa'], correctIndex: 1, explanation: 'Atrapan el complejo ADN–topoisomerasa II y bloquean la religación.', difficulty: 'medium' },
+      { id: 'bda-3', question: 'La luz UV produce principalmente:', options: ['Aductos voluminosos', 'Dímeros de timina', 'Enlaces cruzados por platino', 'Roturas de doble hebra'], correctIndex: 1, explanation: 'Une pirimidinas vecinas de la misma hebra; riesgo de cáncer de piel.', difficulty: 'easy' },
+      { id: 'bda-4', question: 'El 5-fluorouracilo provoca que entre uracilo al ADN porque inhibe la:', options: ['Topoisomerasa II', 'Timidilato sintasa', 'Helicasa', 'Glicosilasa'], correctIndex: 1, explanation: 'Antimetabolito: altera la síntesis de nucleótidos.', difficulty: 'hard' },
+      { id: 'bda-5', question: 'La aflatoxina B1 se asocia sobre todo con cáncer de:', options: ['Pulmón', 'Hígado', 'Piel', 'Testículo'], correctIndex: 1, explanation: 'El P450 hepático la convierte en un epóxido que forma aductos en la guanina.', difficulty: 'easy' },
+      { id: 'bda-6', question: 'El caso de la talidomida dio origen sobre todo a:', options: ['La radioterapia', 'La farmacovigilancia y los comités de bioética', 'Los antibióticos', 'La quimioterapia'], correctIndex: 1, explanation: 'Teratógeno autorizado para el embarazo; cambió la regulación de fármacos.', difficulty: 'easy' },
+    ],
+  },
   // Bioquímica general (anterior a las clases): van después de las láminas verificadas
   {
     id: 'introduccion-bioquimica',

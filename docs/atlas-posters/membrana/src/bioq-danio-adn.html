@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 11px; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.2px; }
+.lst li { margin: 0 0 2px; }
+.fac { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.fac div { display: flex; gap: 8px; align-items: center; background: #f6f8fc; border-radius: 8px; padding: 7px 9px; font-size: 10.6px; font-weight: 700; color: var(--navy); }
+.fac svg { width: 26px; height: 26px; color: var(--red); flex-shrink: 0; }
+table.ag td { font-size: 10px; }
+table.ag td.k { font-size: 10.4px; }
+.tl { display: flex; align-items: stretch; gap: 4px; }
+.tl div { flex: 1; background: #f6f8fc; border-radius: 7px; padding: 6px 8px; font-size: 10px; }
+.tl b { display: block; font-size: 11px; color: var(--navy); }
+.tl span.ar { flex: 0 0 auto; background: none; padding: 0; align-self: center; color: var(--red); font-weight: 800; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Bioquímica</p>
+  <h1>Factores que Dañan el ADN</h1>
+  <p class="tag">Unir, añadir, romper o sustituir: cada agente deja una lesión distinta.</p>
+</header>
+
+<section class="panel">
+  <div class="ph"><span class="n">1</span>Qué puede alterar un ácido nucleico <small>— presentación</small></div>
+  <div class="fac">
+    <div>{{icon:Radioactive}}Radiación ionizante</div>
+    <div>{{icon:Cube}}Metales pesados</div>
+    <div>{{icon:Pill}}Fármacos anticancerígenos</div>
+    <div>{{icon:Thermometer}}Temperatura, acidez y alcalinidad</div>
+  </div>
+  <p style="font-size:10.2px;margin:7px 0 0">La replicación es muy precisa (~1 error en 10⁹ nucleótidos), pero si una lesión no se repara, la copia se hereda tal cual a las células hijas.</p>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">2</span>El mapa de las lesiones ★ <small>— esquema de una doble hélice</small></div>
+  <svg viewBox="0 40 980 220" style="width:100%;display:block">
+    <!-- hebras -->
+    <line x1="20" y1="90" x2="960" y2="90" stroke="#13295b" stroke-width="7" stroke-linecap="round"/>
+    <line x1="20" y1="170" x2="960" y2="170" stroke="#5b8fd6" stroke-width="7" stroke-linecap="round"/>
+    <!-- pares de bases normales -->
+    <g stroke="#cfd6e4" stroke-width="5"><line x1="40" y1="96" x2="40" y2="164"/><line x1="70" y1="96" x2="70" y2="164"/><line x1="230" y1="96" x2="230" y2="164"/><line x1="380" y1="96" x2="380" y2="164"/><line x1="520" y1="96" x2="520" y2="164"/><line x1="680" y1="96" x2="680" y2="164"/><line x1="940" y1="96" x2="940" y2="164"/></g>
+    <!-- 1 enlace cruzado -->
+    <g><line x1="110" y1="96" x2="110" y2="164" stroke="#cfd6e4" stroke-width="5"/><path d="M128 96 L150 130 L128 164" fill="none" stroke="#e8912e" stroke-width="5"/><circle cx="150" cy="130" r="9" fill="#e8912e"/><text x="150" y="134" font-size="9" font-weight="800" fill="#fff" text-anchor="middle">Pt</text></g>
+    <!-- 2 aducto voluminoso -->
+    <g><line x1="270" y1="96" x2="270" y2="164" stroke="#2e9d6b" stroke-width="5"/><path d="M270 96 l-14 -22 l18 -10 l18 10 l-4 22 z" fill="#2e9d6b" opacity=".85"/><text x="270" y="108" font-size="9" font-weight="800" fill="#2e7d5b" text-anchor="end" dx="-6">G</text></g>
+    <!-- 3 dímero de timina -->
+    <g><rect x="410" y="96" width="18" height="30" rx="3" fill="#e8c43c"/><rect x="438" y="96" width="18" height="30" rx="3" fill="#e8c43c"/><path d="M428 106 h10 M428 114 h10" stroke="#c8242c" stroke-width="3"/><g font-size="9" font-weight="800" fill="#13295b" text-anchor="middle"><text x="419" y="115">T</text><text x="447" y="115">T</text></g><g stroke="#e8c43c" stroke-width="3"><path d="M420 56 l6 14 M433 52 v14 M446 56 l-6 14"/></g></g>
+    <!-- 4 rotura sencilla -->
+    <g><rect x="572" y="80" width="18" height="20" fill="#fff"/><path d="M572 80 l6 10 l-6 10 M590 80 l-6 10 l6 10" stroke="#13295b" stroke-width="3" fill="none"/><circle cx="600" cy="62" r="6" fill="#c8242c" opacity=".7"/><circle cx="614" cy="54" r="4" fill="#c8242c" opacity=".7"/></g>
+    <!-- 5 rotura doble -->
+    <g><rect x="742" y="80" width="18" height="20" fill="#fff"/><rect x="742" y="160" width="18" height="20" fill="#fff"/><path d="M742 80 l6 10 l-6 10 M760 80 l-6 10 l6 10 M742 160 l6 10 l-6 10 M760 160 l-6 10 l6 10" stroke="#13295b" stroke-width="3" fill="none"/></g>
+    <!-- 6 uracilo anómalo -->
+    <g><line x1="870" y1="96" x2="870" y2="164" stroke="#cfd6e4" stroke-width="5"/><rect x="861" y="96" width="18" height="30" rx="3" fill="#8a63c0"/><text x="870" y="115" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">U</text></g>
+    <g font-size="11" text-anchor="middle">
+      <text x="140" y="200" font-weight="800" fill="#b8650f">Enlace cruzado</text><text x="140" y="214" fill="#4b5567">ciclofosfamida</text><text x="140" y="227" fill="#4b5567">cisplatino</text>
+      <text x="290" y="200" font-weight="800" fill="#2e7d5b">Aducto voluminoso</text><text x="290" y="214" fill="#4b5567">aflatoxina B1</text><text x="290" y="227" fill="#4b5567">benzo[a]pireno</text>
+      <text x="433" y="200" font-weight="800" fill="#a0821c">Dímero de timina</text><text x="433" y="214" fill="#4b5567">luz UV-B / UV-C</text>
+      <text x="590" y="200" font-weight="800" fill="#c8242c">Rotura sencilla</text><text x="590" y="214" fill="#4b5567">bleomicina</text><text x="590" y="227" fill="#4b5567">(radicales con hierro)</text>
+      <text x="751" y="200" font-weight="800" fill="#13295b">Rotura doble</text><text x="751" y="214" fill="#4b5567">radiación ionizante</text><text x="751" y="227" fill="#4b5567">doxorrubicina · etopósido</text>
+      <text x="880" y="200" font-weight="800" fill="#5b3b99">Uracilo anómalo</text><text x="880" y="214" fill="#4b5567">5-FU · metotrexato</text>
+      <text x="490" y="252" fill="#4b5567" font-size="10">Si no se repara: la replicación se detiene, la célula muere o la lesión se hereda como mutación</text>
+    </g>
+  </svg>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">3</span>Agente, mecanismo y relevancia <small>— tabla de la presentación</small></div>
+  <table class="ag">
+    <tr><th>Agente</th><th>Grupo</th><th>Mecanismo</th><th>Lesión</th><th>Relevancia</th></tr>
+    <tr><td class="k">Ciclofosfamida · cisplatino</td><td>Alquilantes · platino</td><td>Añaden grupos alquilo o enlazan las cadenas (N7 de la guanina)</td><td>Enlaces cruzados; aductos</td><td>Linfomas, ovario, testículo</td></tr>
+    <tr><td class="k">Doxorrubicina · etopósido</td><td>Inhibidores de topoisomerasa II</td><td>Se intercalan o atrapan el complejo ADN–topo II</td><td>Rotura doble; horquilla detenida</td><td>Leucemias, sarcomas, mama</td></tr>
+    <tr><td class="k">Bleomicina</td><td>Antibiótico citotóxico</td><td>Radicales de oxígeno en presencia de hierro</td><td>Roturas sencilla y doble</td><td>Hodgkin, testículo</td></tr>
+    <tr><td class="k">5-FU · metotrexato</td><td>Antimetabolitos</td><td>Inhiben la timidilato sintasa: entra uracilo al ADN</td><td>Bases modificadas, inestabilidad</td><td>Tubo digestivo, mama, autoinmunes</td></tr>
+    <tr><td class="k">Aflatoxina B1</td><td>Micotoxina (Aspergillus)</td><td>El P450 hepático la vuelve epóxido que ataca la guanina</td><td>Aductos en N7-guanina</td><td>Carcinoma hepatocelular</td></tr>
+    <tr><td class="k">Benzo[a]pireno</td><td>Hidrocarburo aromático policíclico</td><td>Humo del tabaco y combustión; metabolitos reactivos</td><td>Aductos en purinas</td><td>Pulmón y vejiga</td></tr>
+    <tr><td class="k">Luz UV-B / UV-C</td><td>Radiación no ionizante</td><td>Une pirimidinas vecinas de la misma hebra</td><td>Dímeros de pirimidina</td><td>Melanoma y piel</td></tr>
+    <tr><td class="k">Rayos X · gamma</td><td>Radiación ionizante</td><td>Ioniza el esqueleto o genera radicales hidroxilo (radiólisis del agua)</td><td>Rotura doble; 8-oxo-guanina</td><td>Radioterapia; accidentes</td></tr>
+  </table>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">4</span>Un mismo blanco, dos usos</div>
+    <svg viewBox="0 0 420 116" style="width:100%;display:block">
+      <g font-size="10.5" text-anchor="middle">
+        <circle cx="70" cy="46" r="34" fill="#fde8e9" stroke="#c8242c" stroke-width="2"/><g fill="#c8242c"><circle cx="58" cy="38" r="6"/><circle cx="80" cy="42" r="6"/><circle cx="66" cy="58" r="6"/><circle cx="86" cy="60" r="5"/></g>
+        <text x="70" y="98" font-weight="800" fill="#c8242c">Tumor</text><text x="70" y="108" fill="#4b5567" font-size="9">divide rápido: objetivo</text>
+        <path d="M120 46 h60 M180 46 l-7 -5 M180 46 l-7 5" stroke="#13295b" stroke-width="2" fill="none"/><text x="150" y="38" font-size="9.5" font-weight="700" fill="#13295b">fármaco</text>
+        <circle cx="240" cy="46" r="30" fill="#e5f4ec" stroke="#2e9d6b" stroke-width="2"/><text x="240" y="50" font-weight="800" fill="#2e7d5b">sano</text>
+        <text x="330" y="36" fill="#4b5567" font-size="9.5" text-anchor="start" x2="0"><tspan x="290" dy="0">También sufren los tejidos</tspan><tspan x="290" dy="13">de recambio rápido:</tspan><tspan x="290" dy="13">por eso la toxicidad.</tspan></text>
+      </g>
+    </svg>
+    <p style="font-size:10px;margin:2px 0 0">El efecto depende del fármaco, la dosis y el contexto clínico.</p>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">5</span>Antibióticos con «letra pequeña»</div>
+    <ul class="lst">
+      <li><b>Quinolonas</b> (ciprofloxacino): actúan sobre las topoisomerasas bacterianas; vigilar tendinopatía y rotura del tendón de Aquiles.</li>
+      <li><b>Tetraciclinas</b> (doxiciclina): contraindicadas en menores de 8 años.</li>
+      <li>Su blanco tiene equivalentes humanos: con dosis altas o uso prolongado el margen de seguridad se rebasa.</li>
+    </ul>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">6</span>Talidomida: el caso que cambió la regulación</div>
+  <div class="tl">
+    <div><b>Se autoriza</b>Para las náuseas y el vómito del embarazo</div><span class="ar">→</span>
+    <div><b>Malformaciones</b>Se reconoce como teratógena (categoría X)</div><span class="ar">→</span>
+    <div><b>Comités de bioética</b>Ética en la investigación con humanos</div><span class="ar">→</span>
+    <div><b>Fases de estudio</b>Preclínica (animales) y clínica (humanos)</div><span class="ar">→</span>
+    <div><b>Farmacovigilancia</b>Vigilar los efectos tras la comercialización</div>
+  </div>
+  <p style="font-size:9.8px;margin:5px 0 0;color:var(--muted)">Es teratógena por su efecto sobre el desarrollo embrionario, no porque «rompa» el ADN.</p>
+</section>
+
+<section class="clin">
+  <div class="ph"><span class="n">7</span>Correlación clínica</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;font-size:10.2px">
+    <p style="margin:0"><b>Mandil plomado</b>: el personal de radiología se protege porque la radiación ionizante daña el ADN; las gónadas son especialmente sensibles.</p>
+    <p style="margin:0"><b>Sol y piel</b>: la UV forma dímeros de timina; si no se reparan, aumentan el riesgo de melanoma y otros cánceres de piel.</p>
+    <p style="margin:0"><b>Tabaco y alimentos</b>: el benzo[a]pireno del humo y la aflatoxina de granos contaminados dejan aductos en la guanina: pulmón, vejiga e hígado.</p>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">8</span>Resumen clave</div>
+  <div class="sum">
+    <div>{{icon:LinkSimple}}<span>Cisplatino: <b>enlaces cruzados</b>.</span></div>
+    <div>{{icon:Scissors}}<span>Topo II: <b>rotura doble</b>.</span></div>
+    <div>{{icon:Sun}}<span>UV: <b>dímero de timina</b>.</span></div>
+    <div>{{icon:Plant}}<span>Aflatoxina → <b>hígado</b>.</span></div>
+    <div>{{icon:Eye}}<span>Talidomida → <b>farmacovigilancia</b>.</span></div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Bioquímica I (UAD) · Semana 3 · Contenido verificado con la presentación y la clase</p>
+</div></body></html>
