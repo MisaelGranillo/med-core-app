@@ -1,0 +1,202 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 12px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.two .mini { text-align: left; padding: 7px 9px; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.3px; }
+.lst li { margin: 0 0 2px; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Genética</p>
+  <h1>Reparación del ADN y Mutaciones</h1>
+  <p class="tag">Quitar, rellenar y sellar: el guardián del genoma y el freno del cáncer.</p>
+</header>
+
+<div class="row">
+  <section class="panel" style="flex:1.15">
+    <div class="ph"><span class="n">1</span>¿Qué pasa con un ADN dañado?</div>
+    <svg viewBox="0 0 520 170" style="width:100%;display:block">
+      <defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1d2433"/></marker></defs>
+      <g font-size="11" text-anchor="middle">
+        <rect x="6" y="66" width="110" height="38" rx="9" fill="#fde8e9" stroke="#c8242c"/><text x="61" y="84" font-weight="800" fill="#c8242c">ADN dañado</text><text x="61" y="97" font-size="9.5" fill="#4b5567">a diario</text>
+        <path d="M118 78 C 150 40, 160 24, 196 24" fill="none" stroke="#1d2433" stroke-width="1.6" marker-end="url(#a)"/>
+        <line x1="118" y1="85" x2="196" y2="85" stroke="#1d2433" stroke-width="1.6" marker-end="url(#a)"/>
+        <path d="M118 92 C 150 130, 160 146, 196 146" fill="none" stroke="#1d2433" stroke-width="1.6" marker-end="url(#a)"/>
+        <rect x="200" y="6" width="150" height="36" rx="8" fill="#e5f4ec"/><text x="275" y="22" font-weight="800" fill="#2e7d5b">Se repara</text><text x="275" y="35" font-size="9.5" fill="#4b5567">todo sigue normal</text>
+        <rect x="200" y="67" width="150" height="36" rx="8" fill="#f6f8fc"/><text x="275" y="83" font-weight="800" fill="#13295b">No se puede reparar</text><text x="275" y="96" font-size="9.5" fill="#4b5567">→ apoptosis</text>
+        <rect x="200" y="128" width="150" height="36" rx="8" fill="#fff6f6" stroke="#f1c9cc"/><text x="275" y="144" font-weight="800" fill="#c8242c">Fallan los controles</text><text x="275" y="157" font-size="9.5" fill="#4b5567">se divide con el daño</text>
+        <line x1="352" y1="146" x2="402" y2="146" stroke="#c8242c" stroke-width="1.8" marker-end="url(#a)"/>
+        <rect x="406" y="128" width="110" height="36" rx="8" fill="#c8242c"/><text x="461" y="144" font-weight="800" fill="#fff">Mutaciones</text><text x="461" y="157" font-size="9.5" fill="#fff">→ cáncer</text>
+        <text x="461" y="40" font-size="9.5" fill="#4b5567">La célula prefiere</text><text x="461" y="53" font-size="9.5" fill="#4b5567">morir antes que</text><text x="461" y="66" font-size="9.5" fill="#4b5567">propagar el error</text>
+      </g>
+    </svg>
+  </section>
+  <section class="panel" style="flex:.85">
+    <div class="ph"><span class="n">2</span>Origen del daño</div>
+    <div class="two">
+      <div class="mini"><p class="t">Endógeno</p><ul class="lst"><li><b>Radicales libres</b>: electrones no apareados</li><li>Subproducto de la respiración aerobia</li><li>Dañan las bases sin parar</li></ul></div>
+      <div class="mini"><p class="t">Exógeno</p><ul class="lst"><li><b>UV</b>, rayos X y gamma</li><li>Químicos, humo de cigarro</li><li>La radiación ionizante rompe una o <b>ambas</b> cadenas</li></ul></div>
+    </div>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">3</span>La UV y el dímero de timina</div>
+    <svg viewBox="0 0 440 120" style="width:100%;display:block">
+      <g font-size="11" font-weight="800" text-anchor="middle">
+        <rect x="10" y="20" width="420" height="10" rx="5" fill="#5b8fd6"/><rect x="10" y="90" width="420" height="10" rx="5" fill="#5b8fd6"/>
+        <g><rect x="30" y="32" width="26" height="22" rx="4" fill="#e8742e"/><text x="43" y="47" fill="#fff">A</text><rect x="30" y="66" width="26" height="22" rx="4" fill="#e8c43c"/><text x="43" y="81" fill="#13295b">T</text></g>
+        <g><rect x="80" y="32" width="26" height="22" rx="4" fill="#2e9d6b"/><text x="93" y="47" fill="#fff">G</text><rect x="80" y="66" width="26" height="22" rx="4" fill="#8a63c0"/><text x="93" y="81" fill="#fff">C</text></g>
+        <g transform="translate(0,-8)"><rect x="140" y="32" width="26" height="22" rx="4" fill="#e8c43c"/><text x="153" y="47" fill="#13295b">T</text><rect x="174" y="32" width="26" height="22" rx="4" fill="#e8c43c"/><text x="187" y="47" fill="#13295b">T</text><path d="M166 40 h8 M166 46 h8" stroke="#c8242c" stroke-width="2.4"/></g>
+        <g><rect x="140" y="66" width="26" height="22" rx="4" fill="#e8742e" opacity=".5"/><text x="153" y="81" fill="#fff">A</text><rect x="174" y="66" width="26" height="22" rx="4" fill="#e8742e" opacity=".5"/><text x="187" y="81" fill="#fff">A</text></g>
+        <g><rect x="230" y="32" width="26" height="22" rx="4" fill="#8a63c0"/><text x="243" y="47" fill="#fff">C</text><rect x="230" y="66" width="26" height="22" rx="4" fill="#2e9d6b"/><text x="243" y="81" fill="#fff">G</text></g>
+        <g><rect x="280" y="32" width="26" height="22" rx="4" fill="#e8742e"/><text x="293" y="47" fill="#fff">A</text><rect x="280" y="66" width="26" height="22" rx="4" fill="#e8c43c"/><text x="293" y="81" fill="#13295b">T</text></g>
+        <g stroke="#e8c43c" stroke-width="3"><path d="M150 6 l8 10 M170 2 v12 M190 6 l-8 10"/></g>
+        <text x="170" y="116" font-size="10" fill="#c8242c">T–T: distorsiona la hélice y estorba la replicación</text>
+        <text x="370" y="52" font-size="10" font-weight="700" fill="#13295b">Se repara por</text><text x="370" y="66" font-size="10" font-weight="700" fill="#13295b">excisión de</text><text x="370" y="80" font-size="10" font-weight="700" fill="#13295b">nucleótidos</text>
+      </g>
+    </svg>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">4</span>Primera línea: durante la replicación</div>
+    <div class="ilist">
+      <div>{{icon:MagnifyingGlass}}<span>La <b>ADN polimerasa revisa</b> lo que copia: si mete un nucleótido mal apareado (G frente a T), lo quita y pone el correcto.</span></div>
+      <div>{{icon:Eraser}}<span>Lo que se le escapa lo corrige la <b>reparación de mal apareamiento</b>: bases mal apareadas y pequeñas inserciones o deleciones (la polimerasa «resbala»).</span></div>
+      <div>{{icon:ArrowCounterClockwise}}<span><b>Reversión directa</b>: deshace ciertos daños químicos sin quitar nada.</span></div>
+    </div>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">5</span>Quitar → Rellenar → Sellar <small>— las tres enzimas que sí hay que aprender ★</small></div>
+  <svg viewBox="0 0 980 120" style="width:100%;display:block">
+    <defs><marker id="b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1f4f9c"/></marker>
+      <g id="bs"><rect width="20" height="18" rx="3" fill="#7fa9e0"/></g></defs>
+    <g font-size="11" text-anchor="middle">
+      <!-- 0 dañado -->
+      <g transform="translate(14,22)"><rect x="0" y="0" width="190" height="8" rx="4" fill="#13295b"/>
+        <use href="#bs" x="8" y="10"/><use href="#bs" x="34" y="10"/><use href="#bs" x="60" y="10"/><rect x="86" y="10" width="20" height="18" rx="3" fill="#c8242c"/><use href="#bs" x="112" y="10"/><use href="#bs" x="138" y="10"/><use href="#bs" x="164" y="10"/></g>
+      <text x="109" y="74" font-weight="800" fill="#c8242c">Base dañada</text>
+      <line x1="212" y1="40" x2="250" y2="40" stroke="#1f4f9c" stroke-width="2" marker-end="url(#b)"/>
+      <!-- 1 quitar -->
+      <g transform="translate(258,22)"><rect x="0" y="0" width="80" height="8" rx="4" fill="#13295b"/><rect x="110" y="0" width="80" height="8" rx="4" fill="#13295b"/>
+        <use href="#bs" x="8" y="10"/><use href="#bs" x="34" y="10"/><use href="#bs" x="60" y="10"/><use href="#bs" x="112" y="10"/><use href="#bs" x="138" y="10"/><use href="#bs" x="164" y="10"/>
+        <rect x="88" y="-20" width="16" height="16" rx="3" fill="#c8242c" opacity=".55" transform="rotate(20 96 -12)"/><path d="M96 -2 v-0" /></g>
+      <text x="353" y="74" font-weight="800" fill="#13295b">1 · QUITAR</text><text x="353" y="90" font-size="10" fill="#4b5567">Glicosilasa: detecta y</text><text x="353" y="103" font-size="10" fill="#4b5567">quita la base dañada</text>
+      <line x1="456" y1="40" x2="494" y2="40" stroke="#1f4f9c" stroke-width="2" marker-end="url(#b)"/>
+      <!-- 2 rellenar -->
+      <g transform="translate(502,22)"><rect x="0" y="0" width="80" height="8" rx="4" fill="#13295b"/><rect x="80" y="0" width="30" height="8" rx="4" fill="#2e9d6b"/><rect x="110" y="0" width="80" height="8" rx="4" fill="#13295b"/>
+        <use href="#bs" x="8" y="10"/><use href="#bs" x="34" y="10"/><use href="#bs" x="60" y="10"/><rect x="86" y="10" width="20" height="18" rx="3" fill="#2e9d6b"/><use href="#bs" x="112" y="10"/><use href="#bs" x="138" y="10"/><use href="#bs" x="164" y="10"/>
+        <circle cx="110" cy="4" r="5" fill="#fff" stroke="#c8242c" stroke-width="2"/></g>
+      <text x="597" y="74" font-weight="800" fill="#13295b">2 · RELLENAR</text><text x="597" y="90" font-size="10" fill="#4b5567">ADN polimerasa: coloca</text><text x="597" y="103" font-size="10" fill="#4b5567">el nucleótido correcto</text>
+      <line x1="700" y1="40" x2="738" y2="40" stroke="#1f4f9c" stroke-width="2" marker-end="url(#b)"/>
+      <!-- 3 sellar -->
+      <g transform="translate(746,22)"><rect x="0" y="0" width="190" height="8" rx="4" fill="#13295b"/>
+        <use href="#bs" x="8" y="10"/><use href="#bs" x="34" y="10"/><use href="#bs" x="60" y="10"/><use href="#bs" x="86" y="10"/><use href="#bs" x="112" y="10"/><use href="#bs" x="138" y="10"/><use href="#bs" x="164" y="10"/></g>
+      <text x="841" y="74" font-weight="800" fill="#2e7d5b">3 · SELLAR</text><text x="841" y="90" font-size="10" fill="#4b5567">ADN ligasa: cierra la brecha</text><text x="841" y="103" font-size="10" fill="#4b5567">y la hebra queda continua</text>
+    </g>
+  </svg>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">6</span>Excisión: ¿una base o un segmento?</div>
+    <table>
+      <tr><th></th><th>De bases</th><th>De nucleótidos</th></tr>
+      <tr><td class="k">Qué quita</td><td><b>Una</b> base</td><td>Un <b>segmento</b></td></tr>
+      <tr><td class="k">Daño</td><td>Base puntual (uracilo: G–U → G–C)</td><td>Distorsión: dímeros de timina, humo, químicos</td></tr>
+      <tr><td class="k">Enzima</td><td>Glicosilasa</td><td>Complejo de reparación</td></tr>
+    </table>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">7</span>Ruptura de doble cadena</div>
+    <svg viewBox="0 0 440 74" style="width:100%;display:block">
+      <g font-size="10" text-anchor="middle">
+        <g stroke-width="7" stroke-linecap="round"><line x1="10" y1="16" x2="90" y2="16" stroke="#5b8fd6"/><line x1="112" y1="16" x2="200" y2="16" stroke="#5b8fd6"/><line x1="10" y1="36" x2="200" y2="36" stroke="#2e9d6b"/></g>
+        <text x="105" y="58" font-weight="800" fill="#2e7d5b">Recombinación homóloga</text><text x="105" y="71" fill="#4b5567">copia del homólogo: precisa</text>
+        <g stroke-width="7" stroke-linecap="round"><line x1="240" y1="22" x2="320" y2="22" stroke="#5b8fd6"/><line x1="332" y1="22" x2="430" y2="22" stroke="#5b8fd6"/></g>
+        <path d="M322 14 l6 16 M330 14 l-6 16" stroke="#c8242c" stroke-width="2"/>
+        <text x="335" y="58" font-weight="800" fill="#c8242c">Unión de extremos no homólogos</text><text x="335" y="71" fill="#4b5567">pega sin molde: rápida, tosca</text>
+      </g>
+    </svg>
+    <p style="font-size:10px;margin:2px 0 0">La recombinación homóloga usa la misma maquinaria que el <b>crossing over</b> de la meiosis.</p>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:1.2">
+    <div class="ph"><span class="n">8</span>Puntos de control y p53 <small>— en G1 y G2</small></div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <svg viewBox="0 0 200 150" style="width:190px;flex-shrink:0">
+        <g fill="none" stroke-width="22">
+          <path d="M100 25 A 50 50 0 0 1 150 75" stroke="#5b8fd6"/>
+          <path d="M150 75 A 50 50 0 0 1 100 125" stroke="#2e9d6b"/>
+          <path d="M100 125 A 50 50 0 0 1 56 98" stroke="#e8912e"/>
+          <path d="M56 98 A 50 50 0 0 1 100 25" stroke="#c8242c"/>
+        </g>
+        <g font-family="Inter" font-size="11" font-weight="800" fill="#fff" text-anchor="middle"><text x="140" y="44">G1</text><text x="138" y="114">S</text><text x="68" y="122">G2</text><text x="58" y="50">M</text></g>
+        <g><circle cx="100" cy="25" r="11" fill="#fff" stroke="#c8242c" stroke-width="2.4"/><path d="M95 25 l4 4 l6 -8" stroke="#c8242c" stroke-width="2.4" fill="none"/>
+          <circle cx="56" cy="98" r="11" fill="#fff" stroke="#c8242c" stroke-width="2.4"/><path d="M51 98 l4 4 l6 -8" stroke="#c8242c" stroke-width="2.4" fill="none"/></g>
+        <text x="100" y="80" font-family="Inter" font-size="11" font-weight="800" fill="#13295b" text-anchor="middle">CDK +</text><text x="100" y="94" font-family="Inter" font-size="11" font-weight="800" fill="#13295b" text-anchor="middle">ciclinas</text>
+      </svg>
+      <div style="flex:1">
+        <div class="ilist">
+          <div>{{icon:HandPalm}}<span>Ante un daño importante la célula se <b>detiene</b> → <b>repara</b> → si no puede, <b>apoptosis</b>.</span></div>
+          <div>{{icon:ShieldCheck}}<span>En el control de <b>G2</b> destaca <b>p53</b>: verifica que el ADN se replicó bien antes de M.</span></div>
+          <div>{{icon:Lightning}}<span>Las CDK con sus ciclinas hacen avanzar el ciclo por <b>fosforilación</b> (agregar un fosfato activa o inactiva una proteína).</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="panel" style="flex:.8">
+    <div class="ph"><span class="n">9</span>Por qué la hélice resiste</div>
+    <svg viewBox="0 0 280 92" style="width:100%;display:block">
+      <g font-family="Inter" font-size="10.5" text-anchor="middle">
+        <rect x="10" y="10" width="125" height="9" rx="4" fill="#5b8fd6"/><rect x="10" y="72" width="125" height="9" rx="4" fill="#5b8fd6"/>
+        <rect x="30" y="22" width="24" height="18" rx="3" fill="#e8742e"/><text x="42" y="35" fill="#fff" font-weight="800">A</text><rect x="30" y="52" width="24" height="18" rx="3" fill="#e8c43c"/><text x="42" y="65" fill="#13295b" font-weight="800">T</text>
+        <path d="M38 41 v10 M46 41 v10" stroke="#1d2433" stroke-dasharray="2 2"/>
+        <rect x="90" y="22" width="24" height="18" rx="3" fill="#2e9d6b"/><text x="102" y="35" fill="#fff" font-weight="800">G</text><rect x="90" y="52" width="24" height="18" rx="3" fill="#8a63c0"/><text x="102" y="65" fill="#fff" font-weight="800">C</text>
+        <path d="M95 41 v10 M102 41 v10 M109 41 v10" stroke="#1d2433" stroke-dasharray="2 2"/>
+        <text x="210" y="26" font-weight="800" fill="#1f4f9c">Esqueleto fosfodiéster</text><text x="210" y="39" fill="#4b5567">covalente, fuerte</text>
+        <text x="210" y="60" font-weight="800" fill="#13295b">Puentes de H</text><text x="210" y="73" fill="#4b5567" font-size="9.5">A–T: 2 · G–C: 3</text>
+      </g>
+    </svg>
+    <p style="font-size:10px;margin:3px 0 0">Juntos impiden que las bases se desplacen o cambien. Cuando aun así hay daño, entra la reparación.</p>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">10</span>Si no se repara: mutaciones puntuales</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+    <div class="mini"><p class="t">Silenciosa</p><p class="d">Cambia el codón pero codifica el <b>mismo</b> aminoácido: sin efecto.</p></div>
+    <div class="mini"><p class="t">Missense <span style="font-weight:500">(sentido erróneo)</span></p><p class="d">Cambia <b>un aminoácido por otro</b>: efecto variable. Ej.: Glu → Val en la anemia falciforme.</p></div>
+    <div class="mini"><p class="t">Nonsense <span style="font-weight:500">(sin sentido)</span></p><p class="d">Aparece un codón de <b>paro</b> (UAA, UAG, UGA) prematuro: proteína truncada.</p></div>
+  </div>
+  <p style="font-size:10.2px;margin:6px 0 0">La pregunta clave no es solo «¿hubo mutación?», sino «¿cambió el aminoácido?» y «¿ese cambio altera la proteína?».</p>
+</section>
+
+<section class="clin">
+  <div class="ph"><span class="n">11</span>Correlación clínica</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:10.4px">
+    <p style="margin:0">La <b>UV</b> forma dímeros de timina todos los días. Si la excisión de nucleótidos no los repara, se acumulan mutaciones que pueden terminar en <b>cáncer de piel</b>.</p>
+    <p style="margin:0">Los <b>radicales libres</b> del propio metabolismo son un daño continuo. Si los puntos de control fallan y la célula se divide con el ADN dañado, el error se hereda a las hijas.</p>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">12</span>Resumen clave</div>
+  <div class="sum">
+    <div>{{icon:Wrench}}<span><b>Quitar</b> → rellenar → sellar.</span></div>
+    <div>{{icon:Scissors}}<span>Glicosilasa · polimerasa · <b>ligasa</b>.</span></div>
+    <div>{{icon:Sun}}<span>UV → <b>dímero T–T</b> → nucleótidos.</span></div>
+    <div>{{icon:Copy}}<span>Homóloga = <b>con molde</b>.</span></div>
+    <div>{{icon:Stop}}<span>Nonsense = <b>paro</b> prematuro.</span></div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Genética Básica (UAD) · Contenido verificado con la presentación y la clase</p>
+</div></body></html>

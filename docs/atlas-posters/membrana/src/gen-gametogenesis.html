@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 15px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.two .mini { text-align: left; padding: 7px 9px; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.3px; }
+.lst li { margin: 0 0 2px; }
+.pill { display: inline-block; background: var(--red); color: #fff; font-weight: 800; font-size: 9.5px; border-radius: 9px; padding: 1px 8px; margin-right: 4px; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Genética</p>
+  <h1>Gametogénesis y Fecundación</h1>
+  <p class="tag">La meiosis aplicada: un óvulo con tres polares, cuatro espermatozoides y un cigoto 2n.</p>
+</header>
+
+<section class="panel">
+  <div class="ph"><span class="n">1</span>Meiosis ≠ gametogénesis</div>
+  <div style="display:flex;gap:14px;align-items:center">
+    <p style="font-size:10.6px;margin:0;flex:1">La <b>meiosis</b> describe las fases de la división. La <b>gametogénesis</b> aplica esa división a la formación concreta de óvulos (<b>ovogénesis</b>) y espermatozoides (<b>espermatogénesis</b>).</p>
+    <svg viewBox="-24 0 444 70" style="width:444px;flex-shrink:0">
+      <defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1d2433"/></marker></defs>
+      <g font-size="11" text-anchor="middle">
+        <circle cx="40" cy="30" r="24" fill="#fbeee4" stroke="#d29a74" stroke-width="1.6"/><text x="40" y="35" font-weight="800" fill="#13295b">2n</text>
+        <text x="40" y="66" font-size="9.5" fill="#4b5567">célula germinal (46)</text>
+        <line x1="70" y1="30" x2="160" y2="30" stroke="#1d2433" stroke-width="1.6" marker-end="url(#a)"/><text x="115" y="22" font-size="10" font-weight="700" fill="#c8242c">meiosis I + II</text>
+        <g><circle cx="186" cy="18" r="11" fill="#fbeee4" stroke="#d29a74"/><circle cx="214" cy="18" r="11" fill="#fbeee4" stroke="#d29a74"/><circle cx="186" cy="44" r="11" fill="#fbeee4" stroke="#d29a74"/><circle cx="214" cy="44" r="11" fill="#fbeee4" stroke="#d29a74"/></g>
+        <g font-size="9" font-weight="800" fill="#13295b"><text x="186" y="21">n</text><text x="214" y="21">n</text><text x="186" y="47">n</text><text x="214" y="47">n</text></g>
+        <text x="200" y="68" font-size="9.5" fill="#4b5567">gametos (23)</text>
+        <line x1="236" y1="30" x2="290" y2="30" stroke="#1d2433" stroke-width="1.6" marker-end="url(#a)"/><text x="263" y="22" font-size="10" font-weight="700" fill="#2e7d5b">fecundación</text>
+        <circle cx="330" cy="30" r="24" fill="#e5f4ec" stroke="#2e9d6b" stroke-width="1.6"/><text x="330" y="35" font-weight="800" fill="#2e7d5b">2n</text>
+        <text x="330" y="66" font-size="9.5" fill="#4b5567">cigoto (23 + 23 = 46)</text>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">2</span>Ovogénesis <small>— dos pausas, citoplasma desigual</small></div>
+    <svg viewBox="0 0 470 300" style="width:100%;display:block">
+      <defs><marker id="b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1d2433"/></marker>
+        <radialGradient id="ov" cx=".4" cy=".35"><stop offset="0" stop-color="#fff6ef"/><stop offset="1" stop-color="#f4d3bd"/></radialGradient></defs>
+      <g font-size="10.5" text-anchor="middle">
+        <circle cx="90" cy="54" r="40" fill="url(#ov)" stroke="#d29a74" stroke-width="2"/><circle cx="90" cy="54" r="12" fill="#c99ab4"/>
+        <text x="90" y="110" font-weight="800" fill="#13295b">Ovocito primario</text><text x="90" y="123" font-size="9.5" fill="#4b5567">2n</text>
+        <rect x="150" y="30" width="196" height="40" rx="8" fill="#fff6f6" stroke="#f1c9cc"/>
+        <text x="248" y="46" font-weight="800" fill="#c8242c">PAUSA 1 · Profase I (diploteno)</text><text x="248" y="61" font-size="9.5" fill="#4b5567">detenido años, hasta la pubertad</text>
+        <line x1="90" y1="128" x2="90" y2="150" stroke="#1d2433" stroke-width="1.6" marker-end="url(#b)"/><text x="134" y="144" font-size="10" font-weight="700" fill="#13295b">meiosis I</text>
+        <circle cx="90" cy="190" r="34" fill="url(#ov)" stroke="#d29a74" stroke-width="2"/><circle cx="90" cy="190" r="9" fill="#c99ab4"/>
+        <circle cx="138" cy="166" r="9" fill="#f4d3bd" stroke="#d29a74"/>
+        <text x="90" y="240" font-weight="800" fill="#13295b">Ovocito secundario</text><text x="160" y="160" font-size="9.5" fill="#4b5567" text-anchor="start">1.er cuerpo polar</text>
+        <rect x="150" y="196" width="196" height="40" rx="8" fill="#fff6f6" stroke="#f1c9cc"/>
+        <text x="248" y="212" font-weight="800" fill="#c8242c">PAUSA 2 · Metafase II</text><text x="248" y="227" font-size="9.5" fill="#4b5567">~3 h antes de la ovulación</text>
+        <line x1="128" y1="250" x2="360" y2="250" stroke="#1d2433" stroke-width="1.6" marker-end="url(#b)"/><text x="248" y="266" font-size="10" font-weight="700" fill="#13295b">meiosis II</text>
+        <circle cx="408" cy="180" r="34" fill="url(#ov)" stroke="#d29a74" stroke-width="2"/><circle cx="408" cy="180" r="9" fill="#c99ab4"/>
+        <g fill="#f4d3bd" stroke="#d29a74"><circle cx="384" cy="236" r="9"/><circle cx="408" cy="244" r="9"/><circle cx="432" cy="236" r="9"/></g>
+        <text x="408" y="128" font-weight="800" fill="#2e7d5b">1 óvulo útil</text><text x="408" y="270" font-weight="800" fill="#13295b">+ 3 cuerpos polares</text>
+        <text x="400" y="284" font-size="9" fill="#4b5567">se queda el citoplasma</text>
+      </g>
+    </svg>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">3</span>Espermatogénesis <small>— desde la pubertad</small></div>
+    <svg viewBox="0 -14 470 314" style="width:100%;display:block">
+      <defs><marker id="c" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1d2433"/></marker></defs>
+      <g font-size="10.5" text-anchor="middle">
+        <circle cx="60" cy="40" r="20" fill="#e2ecf8" stroke="#5b8fd6" stroke-width="1.6"/><circle cx="60" cy="40" r="8" fill="#3e3a8c"/>
+        <text x="60" y="76" font-weight="800" fill="#13295b">Espermatogonio</text>
+        <line x1="84" y1="40" x2="134" y2="40" stroke="#1d2433" stroke-width="1.6" marker-end="url(#c)"/>
+        <circle cx="166" cy="40" r="24" fill="#e2ecf8" stroke="#5b8fd6" stroke-width="1.6"/><circle cx="166" cy="40" r="9" fill="#3e3a8c"/>
+        <text x="166" y="78" font-weight="800" fill="#13295b">Espermatocito I</text><text x="166" y="91" font-size="9.5" fill="#4b5567">~22 días en profase I</text>
+        <path d="M192 34 C 220 20, 230 18, 250 18" fill="none" stroke="#1d2433" stroke-width="1.6" marker-end="url(#c)"/>
+        <path d="M192 46 C 220 60, 230 62, 250 62" fill="none" stroke="#1d2433" stroke-width="1.6" marker-end="url(#c)"/>
+        <text x="222" y="44" font-size="9.5" font-weight="700" fill="#c8242c">meiosis I</text>
+        <g fill="#e2ecf8" stroke="#5b8fd6" stroke-width="1.4"><circle cx="270" cy="18" r="16"/><circle cx="270" cy="62" r="16"/></g><g fill="#3e3a8c"><circle cx="270" cy="18" r="6"/><circle cx="270" cy="62" r="6"/></g>
+        <text x="270" y="96" font-weight="800" fill="#13295b">Espermatocitos II</text>
+        <g stroke="#1d2433" stroke-width="1.4" fill="none"><path d="M288 14 L330 4" marker-end="url(#c)"/><path d="M288 22 L330 30" marker-end="url(#c)"/><path d="M288 58 L330 50" marker-end="url(#c)"/><path d="M288 66 L330 76" marker-end="url(#c)"/></g>
+        <text x="312" y="44" font-size="9.5" font-weight="700" fill="#c8242c">II</text>
+        <g fill="#e2ecf8" stroke="#5b8fd6" stroke-width="1.2"><circle cx="346" cy="6" r="10"/><circle cx="346" cy="30" r="10"/><circle cx="346" cy="54" r="10"/><circle cx="346" cy="78" r="10"/></g>
+        <g fill="#3e3a8c"><circle cx="346" cy="6" r="4"/><circle cx="346" cy="30" r="4"/><circle cx="346" cy="54" r="4"/><circle cx="346" cy="78" r="4"/></g>
+        <text x="410" y="40" font-weight="800" fill="#13295b">4 espermátides</text><text x="410" y="54" font-size="9.5" fill="#4b5567">haploides</text>
+        <!-- espermiogénesis -->
+        <rect x="10" y="118" width="450" height="1" fill="#e6e9f0"/>
+        <text x="235" y="140" font-weight="800" fill="#c8242c">Espermiogénesis: la espermátide se transforma en espermatozoide</text>
+        <circle cx="64" cy="210" r="30" fill="#e2ecf8" stroke="#5b8fd6" stroke-width="1.6"/><circle cx="64" cy="210" r="12" fill="#3e3a8c"/><text x="64" y="258" font-weight="800" fill="#13295b">Espermátide</text>
+        <line x1="100" y1="210" x2="150" y2="210" stroke="#1d2433" stroke-width="1.6" marker-end="url(#c)"/><text x="125" y="200" font-size="9" fill="#4b5567">pierde</text><text x="125" y="226" font-size="9" fill="#4b5567">citoplasma</text>
+        <g transform="translate(160,210)">
+          <ellipse cx="22" cy="0" rx="22" ry="14" fill="#3e3a8c"/>
+          <path d="M4 -12 Q -6 0 4 12 Q 14 0 4 -12 Z" fill="#c8242c" opacity=".85"/>
+          <rect x="42" y="-6" width="56" height="12" rx="5" fill="#e8912e"/>
+          <path d="M98 0 C 140 -18, 180 18, 220 0 S 260 -12, 288 -2" fill="none" stroke="#5b8fd6" stroke-width="4" stroke-linecap="round"/>
+        </g>
+        <g font-size="10">
+          <line x1="166" y1="198" x2="152" y2="170" stroke="#1d2433" stroke-width=".9"/><text x="150" y="164" font-weight="800" fill="#c8242c">acrosoma</text>
+          <line x1="186" y1="224" x2="186" y2="252" stroke="#1d2433" stroke-width=".9"/><text x="186" y="264" font-weight="800" fill="#13295b">cabeza</text>
+          <line x1="230" y1="204" x2="240" y2="174" stroke="#1d2433" stroke-width=".9"/><text x="252" y="168" font-weight="800" fill="#b8650f">pieza intermedia</text>
+          <line x1="380" y1="214" x2="380" y2="250" stroke="#1d2433" stroke-width=".9"/><text x="380" y="264" font-weight="800" fill="#1f4f9c">cola</text>
+        </g>
+        <text x="235" y="292" font-size="10" fill="#4b5567">Resultado: 4 espermatozoides por cada espermatocito primario</text>
+      </g>
+    </svg>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">4</span>Cara a cara</div>
+  <table>
+    <tr><th></th><th>Ovogénesis</th><th>Espermatogénesis</th></tr>
+    <tr><td class="k">Pausas</td><td><span class="pill">2</span>Profase I hasta la pubertad · metafase II antes de ovular</td><td>Espermatocito primario ~22 días en profase I</td></tr>
+    <tr><td class="k">Inicio</td><td>El ovocito primario espera detenido hasta la pubertad</td><td>Inicia en la <b>pubertad</b></td></tr>
+    <tr><td class="k">Particularidad</td><td>Detención de <b>años</b>: se relaciona con la edad materna</td><td>Túbulos seminíferos y células de <b>Sertoli</b>; regulada por <b>LH</b> y <b>FSH</b></td></tr>
+    <tr><td class="k">Citoplasma</td><td>División <b>desigual</b>: el óvulo se lo queda</td><td>Se <b>reduce</b> en la espermiogénesis</td></tr>
+    <tr><td class="k">Producto</td><td><b>1</b> óvulo + 3 cuerpos polares</td><td><b>4</b> espermatozoides</td></tr>
+  </table>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">5</span>Lo que hace la meiosis en el camino</div>
+    <div class="ilist">
+      <div>{{icon:Shuffle}}<span><b>Profase I</b>: los homólogos se aparean (sinapsis) y hacen <b>crossing over</b> en el <b>paquiteno</b>.</span></div>
+      <div>{{icon:ArrowsOutLineHorizontal}}<span><b>Anafase I</b> separa homólogos; <b>anafase II</b>, cromátidas hermanas.</span></div>
+      <div>{{icon:Prohibit}}<span>Entre meiosis I y II <b>no</b> se replica el ADN; en la profase II no hay crossing over.</span></div>
+    </div>
+    <p style="font-size:9.8px;color:var(--muted);margin:4px 0 0">Profase I: leptoteno → cigoteno → paquiteno → diploteno → diacinesis.</p>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">6</span>Fecundación vs clonación</div>
+    <div class="two">
+      <div class="mini"><p class="t">Fecundación</p><ul class="lst"><li>Une <b>dos gametos</b> haploides</li><li>Con crossing over: <b>variabilidad</b></li><li>Cigoto 2n con mezcla de ambos padres</li></ul></div>
+      <div class="mini"><p class="t">Clonación</p><ul class="lst"><li><b>Núcleo somático</b> → óvulo enucleado</li><li>Conserva la información del donante</li><li><b>Evita</b> el crossing over</li></ul></div>
+    </div>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">7</span>Después de la fecundación <small>— las primeras divisiones son por mitosis</small></div>
+  <svg viewBox="0 0 980 120" style="width:100%;display:block">
+    <defs><marker id="f" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1d2433"/></marker>
+      <radialGradient id="cg" cx=".4" cy=".35"><stop offset="0" stop-color="#fff6ef"/><stop offset="1" stop-color="#f4d3bd"/></radialGradient></defs>
+    <g font-size="11" text-anchor="middle">
+      <circle cx="70" cy="46" r="32" fill="url(#cg)" stroke="#d29a74" stroke-width="2"/><circle cx="70" cy="46" r="8" fill="#8a63c0"/>
+      <text x="70" y="98" font-weight="800" fill="#13295b">Cigoto</text><text x="70" y="112" font-size="9.5" fill="#4b5567">2n = 46</text>
+      <line x1="110" y1="46" x2="160" y2="46" stroke="#1d2433" stroke-width="1.6" marker-end="url(#f)"/>
+      <g fill="url(#cg)" stroke="#d29a74" stroke-width="1.6"><circle cx="190" cy="46" r="20"/><circle cx="228" cy="46" r="20"/></g>
+      <g fill="url(#cg)" stroke="#d29a74" stroke-width="1.4"><circle cx="290" cy="34" r="14"/><circle cx="316" cy="34" r="14"/><circle cx="290" cy="60" r="14"/><circle cx="316" cy="60" r="14"/></g>
+      <text x="255" y="98" font-weight="800" fill="#13295b">Mitosis</text><text x="255" y="112" font-size="9.5" fill="#4b5567">1 → 2 → 4 → 8 …</text>
+      <line x1="342" y1="46" x2="392" y2="46" stroke="#1d2433" stroke-width="1.6" marker-end="url(#f)"/>
+      <g fill="url(#cg)" stroke="#d29a74" stroke-width="1.2"><circle cx="420" cy="34" r="12"/><circle cx="442" cy="28" r="12"/><circle cx="462" cy="40" r="12"/><circle cx="430" cy="54" r="12"/><circle cx="452" cy="60" r="12"/><circle cx="414" cy="56" r="11"/><circle cx="440" cy="44" r="12"/></g>
+      <text x="440" y="98" font-weight="800" fill="#13295b">Mórula</text><text x="440" y="112" font-size="9.5" fill="#4b5567">~12–32 células</text>
+      <line x1="486" y1="46" x2="536" y2="46" stroke="#1d2433" stroke-width="1.6" marker-end="url(#f)"/>
+      <circle cx="590" cy="46" r="40" fill="#eef4fc" stroke="#d29a74" stroke-width="7"/><path d="M562 30 A 34 34 0 0 1 618 30 Q 590 60 562 30 Z" fill="#f4d3bd" stroke="#d29a74"/>
+      <text x="590" y="102" font-weight="800" fill="#13295b">Blastocisto</text><text x="590" y="116" font-size="9.5" fill="#4b5567">con cavidad</text>
+      <g font-size="9.5" text-anchor="start"><line x1="612" y1="34" x2="650" y2="22" stroke="#1d2433" stroke-width=".9"/><text x="654" y="20" font-weight="800" fill="#b8650f">embrioblasto</text><text x="654" y="32" fill="#4b5567">dará el embrión</text>
+        <line x1="626" y1="64" x2="650" y2="76" stroke="#1d2433" stroke-width=".9"/><text x="654" y="76" font-weight="800" fill="#b8650f">trofoblasto</text><text x="654" y="88" fill="#4b5567">anexos (placenta)</text></g>
+      <line x1="760" y1="46" x2="800" y2="46" stroke="#1d2433" stroke-width="1.6" marker-end="url(#f)"/>
+      <rect x="806" y="18" width="166" height="56" rx="10" fill="#f6f8fc"/>
+      <text x="889" y="40" font-weight="800" fill="#13295b">Gastrulación</text><text x="889" y="56" font-size="9.5" fill="#4b5567">→ organogénesis</text>
+      <text x="889" y="98" font-size="9.5" fill="#4b5567">ver «Desarrollo embrionario»</text>
+    </g>
+  </svg>
+</section>
+
+<section class="clin">
+  <div class="ph"><span class="n">8</span>Correlación clínica</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:10.4px">
+    <p style="margin:0">La <b>larga detención</b> del ovocito en profase I (años, hasta la ovulación de cada ciclo) se relaciona con más <b>aneuploidías</b> conforme avanza la <b>edad materna</b>.</p>
+    <p style="margin:0">Si en la anafase los cromosomas no se separan (<b>no disyunción</b>), el gameto queda con uno de más o de menos: así surge, por ejemplo, la <b>trisomía 21</b>.</p>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">9</span>Resumen clave</div>
+  <div class="sum">
+    <div>{{icon:Pause}}<span>Ovocito: pausa en <b>profase I</b> y en <b>metafase II</b>.</span></div>
+    <div>{{icon:Circle}}<span><b>1</b> óvulo + 3 polares.</span></div>
+    <div>{{icon:Users}}<span>Sertoli, LH y FSH: <b>4</b> espermatozoides.</span></div>
+    <div>{{icon:Shuffle}}<span>Crossing over en <b>paquiteno</b>.</span></div>
+    <div>{{icon:Plus}}<span>23 + 23 = cigoto <b>46</b>.</span></div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Genética Básica (UAD) · Contenido verificado con la presentación y la clase</p>
+</div></body></html>
