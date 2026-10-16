@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 15px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.two .mini { text-align: left; padding: 7px 9px; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.3px; }
+.forms { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.forms .mini { padding: 6px 4px; }
+.forms .mini svg { height: 140px; width: 100%; display: block; margin: 2px 0 4px; }
+.forms .mini .t { font-size: 10.2px; }
+.forms .mini .d { font-size: 9.6px; color: var(--blue); font-weight: 600; margin: 0; }
+.props { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.props div { background: #f6f8fc; border-radius: 7px; padding: 7px; text-align: center; font-size: 10px; }
+.props b { display: block; font-size: 11.5px; color: var(--navy); }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Anatomía</p>
+  <h1>Generalidades del Músculo</h1>
+  <p class="tag">Envolturas que transmiten la fuerza, formas que explican la función, nombres que lo describen.</p>
+</header>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">1</span>Qué es un músculo</div>
+    <p style="font-size:10.4px;margin:0 0 7px">Estructura capaz de contraerse y generar movimiento. Cuatro propiedades:</p>
+    <div class="props">
+      <div><b>Excitabilidad</b>responde a estímulos</div>
+      <div><b>Contractilidad</b>se acorta</div>
+      <div><b>Extensibilidad</b>se estira</div>
+      <div><b>Elasticidad</b>recupera su forma</div>
+    </div>
+    <div class="sh" style="margin-top:9px">Tipos de tejido muscular</div>
+    <div class="two">
+      <div class="mini"><p class="t">Estriado</p><ul class="lst"><li><b>Esquelético</b>: voluntario</li><li><b>Cardíaco</b>: involuntario, discos intercalares</li></ul></div>
+      <div class="mini"><p class="t">Liso</p><ul class="lst"><li><b>Involuntario</b></li><li>Vísceras y vasos</li></ul></div>
+    </div>
+  </section>
+  <section class="panel" style="flex:1.1">
+    <div class="ph"><span class="n">2</span>Partes e inserciones</div>
+    <svg viewBox="0 0 480 190" style="width:100%;display:block">
+      <g>
+        <rect x="20" y="20" width="26" height="160" rx="12" fill="#f3e6c8" stroke="#a88a4a" stroke-width="1.6"/>
+        <rect x="420" y="40" width="26" height="140" rx="12" fill="#f3e6c8" stroke="#a88a4a" stroke-width="1.6"/>
+        <path d="M46 70 C 70 60, 92 64, 104 70" stroke="#e8dcc8" stroke-width="10" fill="none"/>
+        <path d="M46 70 L104 70" stroke="#d9cbb0" stroke-width="7" stroke-linecap="round"/>
+        <path d="M104 70 C 160 20, 320 20, 376 90 C 320 150, 160 120, 104 70 Z" fill="#c8242c" opacity=".85"/>
+        <g stroke="#a51d24" stroke-width="1" fill="none"><path d="M130 66 C 200 40, 300 50, 360 88"/><path d="M130 76 C 200 64, 300 76, 360 92"/><path d="M130 84 C 200 96, 300 104, 360 96"/></g>
+        <path d="M376 90 L420 110" stroke="#d9cbb0" stroke-width="7" stroke-linecap="round"/>
+      </g>
+      <g font-size="11" text-anchor="middle">
+        <text x="33" y="14" font-weight="800" fill="#13295b">Hueso</text>
+        <text x="84" y="94" font-weight="800" fill="#b8650f">Tendón</text>
+        <text x="84" y="107" font-size="9.5" fill="#4b5567">no se contrae</text>
+        <text x="240" y="150" font-weight="800" fill="#c8242c">Vientre</text>
+        <text x="240" y="164" font-size="9.5" fill="#4b5567">la parte que se contrae</text>
+        <text x="88" y="40" font-weight="800" fill="#13295b">Origen</text><text x="88" y="53" font-size="9.5" fill="#4b5567">inserción fija</text>
+        <text x="398" y="146" font-weight="800" fill="#13295b">Inserción</text><text x="398" y="158" font-size="9.5" fill="#4b5567">móvil</text>
+      </g>
+    </svg>
+    <p style="font-size:10.2px;margin:2px 0 0">Partes: <b>cabeza, vientre y tendón</b>. Se inserta en hueso, piel, mucosa, aponeurosis o membrana sinovial. Al contraerse acerca la inserción móvil a la fija.</p>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">3</span>Envolturas: cables dentro de cables</div>
+  <div style="display:flex;gap:14px;align-items:center">
+    <svg viewBox="0 0 560 210" style="width:560px;flex-shrink:0">
+      <g>
+        <!-- músculo entero -->
+        <ellipse cx="110" cy="105" rx="92" ry="92" fill="#f6d5d7" stroke="#7a4f9c" stroke-width="5"/>
+        <g fill="#e88a90" stroke="#3e8fcf" stroke-width="2.6">
+          <circle cx="80" cy="70" r="26"/><circle cx="138" cy="66" r="26"/><circle cx="62" cy="126" r="24"/><circle cx="112" cy="116" r="24"/><circle cx="160" cy="118" r="24"/><circle cx="96" cy="166" r="22"/><circle cx="144" cy="164" r="22"/>
+        </g>
+        <!-- fascículo -->
+        <line x1="164" y1="64" x2="270" y2="40" stroke="#1d2433" stroke-dasharray="3 3"/><line x1="164" y1="72" x2="270" y2="170" stroke="#1d2433" stroke-dasharray="3 3"/>
+        <circle cx="330" cy="105" r="66" fill="#f6d5d7" stroke="#3e8fcf" stroke-width="5"/>
+        <g fill="#c8242c" stroke="#2e9d6b" stroke-width="2">
+          <circle cx="306" cy="76" r="15"/><circle cx="342" cy="70" r="15"/><circle cx="372" cy="94" r="15"/><circle cx="292" cy="110" r="15"/><circle cx="328" cy="106" r="15"/><circle cx="362" cy="128" r="15"/><circle cx="310" cy="140" r="15"/><circle cx="342" cy="146" r="13"/>
+        </g>
+        <!-- fibra -->
+        <line x1="380" y1="86" x2="452" y2="60" stroke="#1d2433" stroke-dasharray="3 3"/><line x1="380" y1="102" x2="452" y2="150" stroke="#1d2433" stroke-dasharray="3 3"/>
+        <circle cx="500" cy="105" r="46" fill="#c8242c" stroke="#2e9d6b" stroke-width="5"/>
+        <g fill="#7a1f26"><circle cx="476" cy="84" r="5"/><circle cx="520" cy="80" r="5"/><circle cx="530" cy="124" r="5"/></g>
+        <g fill="#f6b7bb" opacity=".8"><circle cx="490" cy="106" r="4"/><circle cx="504" cy="96" r="4"/><circle cx="506" cy="114" r="4"/><circle cx="494" cy="122" r="4"/><circle cx="516" cy="104" r="4"/></g>
+      </g>
+      <g font-size="11" text-anchor="middle" font-weight="800">
+        <text x="110" y="208" fill="#7a4f9c">Músculo · EPImisio</text>
+        <text x="330" y="190" fill="#3e8fcf">Fascículo · PERImisio</text>
+        <text x="500" y="170" fill="#2e7d5b">Fibra · ENDOmisio</text>
+      </g>
+    </svg>
+    <div style="flex:1">
+      <ol style="margin:0;padding-left:18px;font-size:10.4px">
+        <li style="margin-bottom:4px"><b>Endomisio</b> rodea cada fibra (miocito).</li>
+        <li style="margin-bottom:4px"><b>Perimisio</b> agrupa fibras en fascículos (haces).</li>
+        <li style="margin-bottom:4px"><b>Epimisio</b> envuelve el músculo entero.</li>
+      </ol>
+      <p style="font-size:10.2px;margin:6px 0 0">Las tres conducen vasos y nervios y, en los extremos, se continúan con el <b>tendón</b> o con una <b>aponeurosis</b> (lámina tendinosa ancha): así la fuerza de millones de fibras llega al hueso.</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">4</span>Formas del músculo</div>
+  <div class="forms">
+    <div class="mini"><p class="t">Fusiforme</p>
+      <svg viewBox="0 0 60 100"><line x1="30" y1="2" x2="30" y2="20" stroke="#d9cbb0" stroke-width="5" stroke-linecap="round"/><path d="M30 18 C 46 36, 46 64, 30 82 C 14 64, 14 36, 30 18 Z" fill="#c8242c"/><line x1="30" y1="80" x2="30" y2="98" stroke="#d9cbb0" stroke-width="5" stroke-linecap="round"/></svg><p class="d">Braquial</p></div>
+    <div class="mini"><p class="t">2 cabezas</p>
+      <svg viewBox="0 0 60 100"><line x1="18" y1="2" x2="22" y2="18" stroke="#d9cbb0" stroke-width="4" stroke-linecap="round"/><line x1="42" y1="2" x2="38" y2="18" stroke="#d9cbb0" stroke-width="4" stroke-linecap="round"/><path d="M22 16 C 14 40, 22 64, 30 82 C 38 64, 46 40, 38 16 C 34 30, 26 30, 22 16 Z" fill="#c8242c"/><line x1="30" y1="80" x2="30" y2="98" stroke="#d9cbb0" stroke-width="5" stroke-linecap="round"/></svg><p class="d">Bíceps braquial</p></div>
+    <div class="mini"><p class="t">Digástrico</p>
+      <svg viewBox="0 0 60 100"><path d="M30 4 C 42 16, 42 34, 30 44 C 18 34, 18 16, 30 4 Z" fill="#c8242c"/><line x1="30" y1="42" x2="30" y2="58" stroke="#d9cbb0" stroke-width="5" stroke-linecap="round"/><path d="M30 56 C 42 66, 42 84, 30 96 C 18 84, 18 66, 30 56 Z" fill="#c8242c"/></svg><p class="d">Digástrico</p></div>
+    <div class="mini"><p class="t">Poligástrico</p>
+      <svg viewBox="0 0 60 100"><rect x="16" y="2" width="28" height="96" rx="6" fill="#c8242c"/><g stroke="#f3e6c8" stroke-width="4"><line x1="16" y1="26" x2="44" y2="26"/><line x1="16" y1="50" x2="44" y2="50"/><line x1="16" y1="74" x2="44" y2="74"/></g></svg><p class="d">Recto del abdomen</p></div>
+    <div class="mini"><p class="t">Unipenniforme</p>
+      <svg viewBox="0 0 60 100"><line x1="40" y1="2" x2="40" y2="98" stroke="#d9cbb0" stroke-width="5" stroke-linecap="round"/><g stroke="#c8242c" stroke-width="5" stroke-linecap="round"><line x1="16" y1="20" x2="38" y2="34"/><line x1="16" y1="36" x2="38" y2="50"/><line x1="16" y1="52" x2="38" y2="66"/><line x1="16" y1="68" x2="38" y2="82"/></g></svg><p class="d">Tibial posterior</p></div>
+    <div class="mini"><p class="t">Bipenniforme</p>
+      <svg viewBox="0 0 60 100"><line x1="30" y1="2" x2="30" y2="98" stroke="#d9cbb0" stroke-width="5" stroke-linecap="round"/><g stroke="#c8242c" stroke-width="5" stroke-linecap="round"><line x1="10" y1="18" x2="28" y2="32"/><line x1="10" y1="36" x2="28" y2="50"/><line x1="10" y1="54" x2="28" y2="68"/><line x1="50" y1="18" x2="32" y2="32"/><line x1="50" y1="36" x2="32" y2="50"/><line x1="50" y1="54" x2="32" y2="68"/></g></svg><p class="d">Recto femoral</p></div>
+    <div class="mini"><p class="t">Plano</p>
+      <svg viewBox="0 0 60 100"><path d="M6 10 L54 4 L50 70 L20 96 L6 60 Z" fill="#c8242c"/><g stroke="#a51d24" stroke-width="1.2"><line x1="12" y1="14" x2="30" y2="88"/><line x1="24" y1="10" x2="40" y2="80"/><line x1="38" y1="8" x2="48" y2="66"/></g></svg><p class="d">Oblicuo externo</p></div>
+  </div>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">5</span>Cómo se nombra un músculo</div>
+    <table>
+      <tr><th>Criterio</th><th>Ejemplo</th></tr>
+      <tr><td class="k">Morfología</td><td>Trapecio, romboides</td></tr>
+      <tr><td class="k">Origen / inserción</td><td>Esternocleidomastoideo, estilohioideo</td></tr>
+      <tr><td class="k">Localización</td><td>Tibial posterior, cubital anterior</td></tr>
+      <tr><td class="k">Número de vientres</td><td>Digástrico, bíceps braquial</td></tr>
+      <tr><td class="k">Acción</td><td>Elevador de la escápula, extensor de los dedos</td></tr>
+    </table>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">6</span>TA ↔ clásica <small>— la clásica cuenta en el examen</small></div>
+    <table>
+      <tr><td class="k">Pterigoideo medial / lateral</td><td>Interno / externo</td></tr>
+      <tr><td class="k">Orbicular del ojo</td><td>De los párpados</td></tr>
+      <tr><td class="k">Occipitofrontal</td><td>Cutáneo del cráneo</td></tr>
+      <tr><td class="k">Galea aponeurótica</td><td>Aponeurosis epicraneal</td></tr>
+      <tr><td class="k">Elevador de la escápula</td><td>Angular del omóplato</td></tr>
+      <tr><td class="k">Longísimo · espinoso</td><td>Dorsal largo · epiespinoso</td></tr>
+    </table>
+  </section>
+</div>
+
+<section class="clin">
+  <div class="ph"><span class="n">7</span>Correlación clínica</div>
+  <p style="font-size:10.4px;margin:0">Origen e inserción pueden <b>invertir su papel</b>: en una dominada, la inserción (húmero) queda fija y el tronco sube hacia el brazo. «Origen fijo, inserción móvil» describe el gesto habitual, no una regla absoluta.</p>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">8</span>Resumen clave</div>
+  <div class="sum">
+    <div>{{icon:Lightning}}<span>Excitable, contráctil, extensible y <b>elástico</b>.</span></div>
+    <div>{{icon:Heart}}<span>Cardíaco: estriado pero <b>involuntario</b>.</span></div>
+    <div>{{icon:Circle}}<span>Endo- fibra · peri- fascículo · <b>epi-</b> músculo.</span></div>
+    <div>{{icon:LinkSimple}}<span>Tendón y aponeurosis <b>no se contraen</b>.</span></div>
+    <div>{{icon:Feather}}<span>Bipenniforme: <b>recto femoral</b>.</span></div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Anatomía Humana y Disección I (UAD) · Miología I · Esquemas con fines de estudio</p>
+</div></body></html>

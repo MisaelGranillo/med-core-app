@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 10px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.two .mini { text-align: left; padding: 7px 9px; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.3px; }
+.lst li { margin: 0 0 2px; }
+.mv { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.mv .mini svg { height: 74px; width: 100%; display: block; margin: 2px 0 4px; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Anatomía</p>
+  <h1>Generalidades y Planos</h1>
+  <p class="tag">Todo se describe desde la posición anatómica, aunque el paciente esté acostado.</p>
+</header>
+
+<div class="row">
+  <section class="panel" style="flex:1.15">
+    <div class="ph"><span class="n">1</span>Posición anatómica y planos</div>
+    <svg viewBox="0 0 520 430" style="width:100%;height:380px;display:block">
+      <defs>
+        <g id="body">
+          <circle cx="0" cy="-150" r="24"/>
+          <path d="M-12 -126 h24 v12 h-24 z"/>
+          <path d="M-48 -112 Q0 -122 48 -112 L54 -10 Q40 6 30 8 L22 70 L28 168 Q30 178 18 180 L8 180 L4 74 L-4 74 L-8 180 L-18 180 Q-30 178 -28 168 L-22 70 L-30 8 Q-40 6 -54 -10 Z"/>
+          <path d="M-50 -108 Q-70 -60 -72 0 Q-74 30 -66 48 Q-60 52 -56 46 Q-58 20 -56 -2 Q-54 -50 -44 -80 Z"/>
+          <path d="M50 -108 Q70 -60 72 0 Q74 30 66 48 Q60 52 56 46 Q58 20 56 -2 Q54 -50 44 -80 Z"/>
+        </g>
+      </defs>
+      <!-- figura -->
+      <g transform="translate(150,215)" fill="#f2dccd" stroke="#c99a84" stroke-width="1.6"><use href="#body"/></g>
+      <g transform="translate(150,215)" fill="#c99a84"><circle cx="-62" cy="46" r="3"/><circle cx="62" cy="46" r="3"/></g>
+      <!-- plano mediano (sagital) -->
+      <polygon points="150,30 168,20 168,400 150,410" fill="#c8242c" opacity=".18" stroke="#c8242c" stroke-width="1.4"/>
+      <!-- plano frontal -->
+      <polygon points="40,70 270,70 290,52 60,52" fill="#1f4f9c" opacity=".0"/>
+      <polygon points="58,40 258,40 258,400 58,400" fill="#1f4f9c" opacity=".07" stroke="#1f4f9c" stroke-width="1.2" stroke-dasharray="6 4"/>
+      <!-- plano transversal -->
+      <polygon points="40,232 236,232 270,206 74,206" fill="#2e9d6b" opacity=".2" stroke="#2e9d6b" stroke-width="1.4"/>
+      <g font-size="11">
+        <line x1="170" y1="100" x2="300" y2="78" stroke="#c8242c"/><text x="304" y="74" font-weight="800" fill="#c8242c">Plano mediano (sagital)</text><text x="304" y="88" fill="#4b5567">derecha | izquierda</text><text x="304" y="100" fill="#4b5567">parasagitales: paralelos a él</text>
+        <line x1="258" y1="150" x2="300" y2="150" stroke="#1f4f9c"/><text x="304" y="146" font-weight="800" fill="#1f4f9c">Plano frontal (coronal)</text><text x="304" y="160" fill="#4b5567">anterior | posterior</text>
+        <line x1="266" y1="214" x2="300" y2="222" stroke="#2e9d6b"/><text x="304" y="220" font-weight="800" fill="#2e7d5b">Plano transversal (axial)</text><text x="304" y="234" fill="#4b5567">superior | inferior</text><text x="304" y="246" fill="#4b5567">el de los cortes de TC y RM</text>
+        <text x="304" y="290" font-weight="800" fill="#13295b">Posición anatómica</text>
+        <text x="304" y="306" fill="#4b5567">de pie, mirada al frente, boca cerrada</text>
+        <text x="304" y="320" fill="#4b5567">brazos a los lados, palmas al frente</text>
+        <text x="304" y="334" fill="#4b5567">(antebrazos en supinación)</text>
+        <text x="304" y="348" fill="#4b5567">pies juntos, dirigidos al frente</text>
+        <text x="304" y="378" font-weight="700" fill="#13295b">Los tres planos son perpendiculares;</text>
+        <text x="304" y="392" fill="#4b5567">cualquier otro es oblicuo.</text>
+      </g>
+    </svg>
+  </section>
+  <section class="col" style="flex:.85">
+    <section class="panel">
+      <div class="ph"><span class="n">2</span>Decúbitos</div>
+      <svg viewBox="0 0 300 120" style="width:100%;height:96px;display:block">
+        <g font-size="10.5" text-anchor="middle">
+          <rect x="10" y="30" width="270" height="4" fill="#d9dee8"/>
+          <g fill="#f2dccd" stroke="#c99a84" stroke-width="1.3"><circle cx="30" cy="20" r="8"/><rect x="40" y="14" width="80" height="14" rx="6"/></g><circle cx="30" cy="16" r="1.6" fill="#13295b"/>
+          <text x="75" y="50" font-weight="800" fill="#13295b">Supino</text><text x="75" y="62" fill="#4b5567">boca arriba</text>
+          <g fill="#f2dccd" stroke="#c99a84" stroke-width="1.3"><circle cx="170" cy="22" r="8"/><rect x="180" y="16" width="80" height="14" rx="6"/></g><circle cx="170" cy="27" r="1.6" fill="#13295b"/>
+          <text x="215" y="50" font-weight="800" fill="#13295b">Prono</text><text x="215" y="62" fill="#4b5567">boca abajo</text>
+          <rect x="10" y="100" width="270" height="4" fill="#d9dee8"/>
+          <g fill="#f2dccd" stroke="#c99a84" stroke-width="1.3"><circle cx="90" cy="88" r="8"/><rect x="100" y="84" width="80" height="14" rx="6"/></g>
+          <text x="200" y="88" font-weight="800" fill="#13295b" text-anchor="start">Lateral</text><text x="200" y="100" fill="#4b5567" text-anchor="start">de lado</text>
+        </g>
+      </svg>
+    </section>
+    <section class="panel grow">
+      <div class="ph"><span class="n">3</span>Cómo se estudia</div>
+      <ul class="lst">
+        <li><b>Descriptiva</b> (sistemática): por aparatos y sistemas.</li>
+        <li><b>Topográfica</b> (regional): por capas y relaciones.</li>
+        <li><b>Funcional</b>: forma ↔ función.</li>
+        <li><b>Clínica</b>: aplicada al diagnóstico.</li>
+        <li><b>De superficie y radiológica</b>: en el vivo y en imágenes.</li>
+      </ul>
+      <p style="font-size:10px;margin:5px 0 0">Métodos: disección (y Mesa Anatomage), imagenología, endoscopia. <i>Aná-tomé</i>: «cortar a través».</p>
+    </section>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">4</span>Términos de relación</div>
+  <div style="display:flex;gap:14px;align-items:center">
+    <svg viewBox="0 0 300 180" style="width:260px;flex-shrink:0">
+      <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1d2433"/></marker></defs>
+      <g transform="translate(110,96) scale(.52)" fill="#f2dccd" stroke="#c99a84" stroke-width="2.6"><use href="#body"/></g>
+      <g stroke-width="1.8" font-size="10" font-weight="800">
+        <line x1="110" y1="30" x2="110" y2="6" stroke="#c8242c" marker-end="url(#ar)"/><text x="134" y="14" fill="#c8242c">Superior (craneal)</text>
+        <line x1="110" y1="172" x2="110" y2="178" stroke="#c8242c"/><text x="134" y="176" fill="#c8242c">Inferior (caudal)</text>
+        <line x1="110" y1="96" x2="80" y2="96" stroke="#1f4f9c" marker-end="url(#ar)"/><line x1="110" y1="96" x2="140" y2="96" stroke="#1f4f9c" marker-end="url(#ar)"/>
+        <text x="146" y="92" fill="#1f4f9c">Lateral</text>
+        <line x1="190" y1="80" x2="190" y2="58" stroke="#2e9d6b" marker-end="url(#ar)"/><line x1="190" y1="80" x2="190" y2="120" stroke="#2e9d6b" marker-end="url(#ar)"/>
+        <text x="200" y="62" fill="#2e7d5b">Proximal</text><text x="200" y="124" fill="#2e7d5b">Distal</text><text x="200" y="138" fill="#4b5567" font-weight="500">(solo en miembros)</text>
+      </g>
+    </svg>
+    <div style="flex:1;display:flex;flex-direction:column;gap:6px">
+      <table>
+        <tr><th>Par</th><th>Significado</th></tr>
+        <tr><td class="k">Superior · inferior</td><td>Más cerca de la cabeza · de los pies</td></tr>
+        <tr><td class="k">Anterior · posterior</td><td>Hacia el frente (ventral) · la espalda (dorsal)</td></tr>
+        <tr><td class="k">Medial · lateral</td><td>Más cerca · más lejos del plano mediano</td></tr>
+        <tr><td class="k">Proximal · distal</td><td>Más cerca · más lejos de la raíz del miembro</td></tr>
+        <tr><td class="k">Superficial · profundo</td><td>Más cerca · más lejos de la piel</td></tr>
+      </table>
+      <p style="font-size:10.2px;margin:0;color:var(--red);font-weight:700">Trampa: «proximal» y «distal» son solo para los miembros. En el tronco se dice superior e inferior. El codo es proximal a la muñeca.</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">5</span>Movimientos y su eje</div>
+  <div class="mv">
+    <div class="mini"><p class="t">Flexión · extensión</p>
+      <svg viewBox="0 0 120 74"><g stroke-linecap="round" fill="none"><line x1="30" y1="10" x2="30" y2="44" stroke="#c99a84" stroke-width="9"/><line x1="30" y1="44" x2="64" y2="64" stroke="#c99a84" stroke-width="8"/><path d="M60 26 A 30 30 0 0 1 62 58" stroke="#c8242c" stroke-width="2"/><line x1="30" y1="44" x2="64" y2="18" stroke="#c99a84" stroke-width="8" opacity=".45"/></g><circle cx="30" cy="44" r="4" fill="#13295b"/></svg>
+      <p class="d">Eje <b>latero-lateral</b> · plano sagital. Flexión cierra el ángulo.</p></div>
+    <div class="mini"><p class="t">Abducción · aducción</p>
+      <svg viewBox="0 0 120 74"><circle cx="60" cy="12" r="8" fill="#f2dccd" stroke="#c99a84"/><rect x="50" y="22" width="20" height="44" rx="8" fill="#f2dccd" stroke="#c99a84"/><g stroke-linecap="round"><line x1="52" y1="26" x2="44" y2="66" stroke="#c99a84" stroke-width="7"/><line x1="52" y1="26" x2="14" y2="44" stroke="#c99a84" stroke-width="7" opacity=".5"/></g><path d="M26 58 A 34 34 0 0 1 18 36" stroke="#1f4f9c" stroke-width="2" fill="none"/></svg>
+      <p class="d">Eje <b>antero-posterior</b> · plano frontal. Abducción aleja de la línea media.</p></div>
+    <div class="mini"><p class="t">Rotación medial · lateral</p>
+      <svg viewBox="0 0 120 74"><rect x="52" y="8" width="16" height="58" rx="8" fill="#f2dccd" stroke="#c99a84"/><ellipse cx="60" cy="38" rx="30" ry="9" fill="none" stroke="#2e9d6b" stroke-width="2"/><path d="M88 36 l4 6 l-7 1" fill="none" stroke="#2e9d6b" stroke-width="2"/><line x1="60" y1="2" x2="60" y2="72" stroke="#13295b" stroke-dasharray="3 3"/></svg>
+      <p class="d">Eje <b>longitudinal</b> · plano transversal.</p></div>
+    <div class="mini"><p class="t">Pronación · supinación</p>
+      <svg viewBox="0 0 120 74"><g stroke-linecap="round"><line x1="20" y1="30" x2="92" y2="30" stroke="#c99a84" stroke-width="7"/><line x1="20" y1="44" x2="92" y2="44" stroke="#e2b7a2" stroke-width="7"/></g><path d="M92 22 C 112 26, 112 48, 92 52" fill="none" stroke="#8a63c0" stroke-width="2"/><text x="28" y="66" font-size="9" fill="#4b5567">radio gira sobre cúbito</text></svg>
+      <p class="d">Supinación: palma <b>al frente</b> (la de la posición anatómica).</p></div>
+  </div>
+  <p style="font-size:10.2px;margin:6px 0 0"><b>Inversión · eversión</b>: planta del pie hacia medial · lateral. <b>Circunducción</b>: flexión → abducción → extensión → aducción encadenadas; el miembro dibuja un cono. Solo en articulaciones multiaxiales: <b>hombro y cadera</b>.</p>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1.1">
+    <div class="ph"><span class="n">6</span>Osificación y hueso largo</div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <svg viewBox="0 0 120 230" style="width:80px;height:150px;flex-shrink:0">
+        <g>
+          <path d="M30 20 Q60 0 90 20 Q100 40 84 52 L76 56 L76 174 L84 178 Q100 190 90 210 Q60 230 30 210 Q20 190 36 178 L44 174 L44 56 L36 52 Q20 40 30 20 Z" fill="#f3e6c8" stroke="#a88a4a" stroke-width="1.6"/>
+          <rect x="34" y="50" width="52" height="6" fill="#7fb3e0"/><rect x="34" y="174" width="52" height="6" fill="#7fb3e0"/>
+          <circle cx="60" cy="115" r="9" fill="#c8242c"/><circle cx="60" cy="30" r="6" fill="#e8912e"/><circle cx="60" cy="200" r="6" fill="#e8912e"/>
+        </g>
+      </svg>
+      <div style="flex:1">
+        <table>
+          <tr><td class="k" style="color:#c8242c">Diáfisis</td><td>Cuerpo; centro de osificación <b>primario</b></td></tr>
+          <tr><td class="k" style="color:#b8650f">Epífisis</td><td>Extremos; centros <b>secundarios</b></td></tr>
+          <tr><td class="k" style="color:#1f4f9c">Metáfisis</td><td>Entre ambas: <b>cartílago de crecimiento</b> (fisis)</td></tr>
+        </table>
+        <p style="font-size:10px;margin:5px 0 0">Crece en longitud mientras la fisis está abierta; al cerrarse queda la <b>línea epifisaria</b>.</p>
+      </div>
+    </div>
+    <div class="two" style="margin-top:6px">
+      <div class="mini"><p class="t">Intramembranosa</p><ul class="lst"><li>Directo sobre membrana mesenquimatosa</li><li>Bóveda del cráneo y cara</li></ul></div>
+      <div class="mini"><p class="t">Endocondral</p><ul class="lst"><li>Reemplaza un molde de cartílago hialino</li><li>Huesos largos, base del cráneo, columna</li></ul></div>
+    </div>
+  </section>
+  <section class="col" style="flex:.9">
+    <section class="panel">
+      <div class="ph"><span class="n">7</span>El esqueleto</div>
+      <ul class="lst">
+        <li><b>Axial</b>: cráneo, columna, costillas y esternón.</li>
+        <li><b>Apendicular</b>: cinturas escapular y pélvica + miembros.</li>
+        <li>Por su forma: largos, cortos, planos, irregulares, sesamoideos y neumáticos.</li>
+      </ul>
+    </section>
+    <section class="panel grow">
+      <div class="ph"><span class="n">8</span>TA ↔ clásica</div>
+      <table>
+        <tr><td class="k">Foramen</td><td>Agujero</td></tr>
+        <tr><td class="k">Proceso</td><td>Apófisis</td></tr>
+        <tr><td class="k">Incisura</td><td>Escotadura</td></tr>
+        <tr><td class="k">Concha nasal</td><td>Cornete</td></tr>
+      </table>
+      <p style="font-size:9.8px;margin:4px 0 0">En el examen la forma clásica cuenta como correcta.</p>
+    </section>
+  </section>
+</div>
+
+<section class="clin">
+  <div class="ph"><span class="n">9</span>Correlación clínica</div>
+  <p style="font-size:10.4px;margin:0">Las <b>variaciones anatómicas</b> son la norma estadística y muchas no dan síntomas; una <b>anomalía</b> sí compromete la función. Antes de operar se confirma la anatomía real del paciente en vez de asumir el patrón «de libro».</p>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">10</span>Resumen clave</div>
+  <div class="sum">
+    <div>{{icon:Person}}<span>Posición anatómica: <b>palmas al frente</b>.</span></div>
+    <div>{{icon:Columns}}<span>Sagital · frontal · <b>transversal</b>.</span></div>
+    <div>{{icon:ArrowsDownUp}}<span>Proximal/distal: <b>solo miembros</b>.</span></div>
+    <div>{{icon:ArrowsClockwise}}<span>Circunducción: <b>hombro y cadera</b>.</span></div>
+    <div>{{icon:Bone}}<span>Diáfisis primario · epífisis <b>secundarios</b>.</span></div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Anatomía Humana y Disección I (UAD) · Semana 1 · Esquemas con fines de estudio</p>
+</div></body></html>

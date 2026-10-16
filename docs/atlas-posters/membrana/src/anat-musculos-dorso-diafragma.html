@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 15px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.two .mini { text-align: left; padding: 7px 9px; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.3px; }
+.lst li { margin: 0 0 2px; }
+.rule { text-align: center; font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; color: var(--navy); font-weight: 700; background: #f6f8fc; border-radius: 8px; padding: 6px; margin: 0 0 6px; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Anatomía</p>
+  <h1>Dorso y Diafragma</h1>
+  <p class="tag">Extrínsecos mueven el brazo, intrínsecos la columna; el diafragma, la respiración.</p>
+</header>
+
+<div class="row">
+  <section class="panel" style="flex:1.05">
+    <div class="ph"><span class="n">1</span>Músculos del dorso <small>— vista posterior · esquema</small></div>
+    <svg viewBox="0 0 480 420" style="width:100%;display:block">
+      <!-- silueta -->
+      <path d="M240 10 Q262 10 266 34 Q268 54 256 64 L262 78 Q330 82 380 110 Q404 124 408 160 L414 240 L396 244 L384 170 L364 200 L356 300 Q362 340 350 380 L130 380 Q118 340 124 300 L116 200 L96 170 L84 244 L66 240 L72 160 Q76 124 100 110 Q150 82 218 78 L224 64 Q212 54 214 34 Q218 10 240 10 Z" fill="#f6e1d3" stroke="#c99a84" stroke-width="2"/>
+      <line x1="240" y1="80" x2="240" y2="378" stroke="#a88a4a" stroke-width="3" stroke-dasharray="6 4"/>
+      <!-- lado izquierdo: superficiales -->
+      <path d="M236 70 L236 250 L150 150 L104 112 Q160 86 226 80 Z" fill="#c8242c" opacity=".75"/>
+      <path d="M236 200 L236 360 L134 330 L118 200 L150 160 Z" fill="#8a63c0" opacity=".7"/>
+      <!-- lado derecho: profundos -->
+      <g opacity=".85">
+        <rect x="246" y="90" width="12" height="280" rx="5" fill="#2e9d6b"/>
+        <rect x="262" y="96" width="16" height="276" rx="6" fill="#e8912e"/>
+        <rect x="282" y="110" width="16" height="262" rx="6" fill="#1f4f9c"/>
+      </g>
+      <path d="M246 70 L296 84 L300 100 L248 92 Z" fill="#d9c25a" opacity=".85"/>
+      <g font-size="11">
+        <text x="12" y="20" font-weight="800" fill="#13295b">SUPERFICIALES</text><text x="12" y="34" fill="#4b5567">extrínsecos · mueven el brazo</text>
+        <line x1="170" y1="140" x2="40" y2="100" stroke="#1d2433" stroke-width=".9"/><text x="12" y="80" font-weight="800" fill="#c8242c">Trapecio</text><text x="12" y="94" fill="#4b5567">mueve y fija la escápula</text>
+        <line x1="170" y1="280" x2="108" y2="294" stroke="#1d2433" stroke-width=".9"/><text x="12" y="300" font-weight="800" fill="#5b3b99">Dorsal ancho</text><text x="12" y="314" fill="#4b5567">aduce, extiende y</text><text x="12" y="328" fill="#4b5567">rota medial el brazo</text>
+        <text x="330" y="20" font-weight="800" fill="#13295b">PROFUNDOS</text><text x="330" y="34" fill="#4b5567">intrínsecos · columna</text>
+        <line x1="298" y1="84" x2="380" y2="60" stroke="#1d2433" stroke-width=".9"/><text x="384" y="58" font-weight="800" fill="#a0821c">Esplenios</text>
+        <line x1="290" y1="250" x2="410" y2="270" stroke="#1d2433" stroke-width=".9"/><text x="414" y="266" font-weight="800" fill="#1f4f9c">Iliocostal</text><text x="414" y="279" fill="#4b5567">lateral</text>
+        <line x1="270" y1="300" x2="410" y2="310" stroke="#1d2433" stroke-width=".9"/><text x="414" y="306" font-weight="800" fill="#b8650f">Longísimo</text><text x="414" y="319" fill="#4b5567">(dorsal largo)</text>
+        <line x1="252" y1="350" x2="410" y2="352" stroke="#1d2433" stroke-width=".9"/><text x="414" y="348" font-weight="800" fill="#2e7d5b">Espinoso</text><text x="414" y="361" fill="#4b5567">medial</text>
+        <text x="240" y="400" font-size="10" fill="#4b5567" text-anchor="middle">apófisis espinosas</text>
+      </g>
+    </svg>
+  </section>
+  <section class="col" style="flex:.95">
+    <section class="panel">
+      <div class="ph"><span class="n">2</span>La regla del dorso</div>
+      <p class="rule">Extrínseco → mueve el brazo → ramo <span style="color:var(--red)">anterior</span><br>Intrínseco → mueve la columna → ramo <span style="color:#2e7d5b">posterior</span></p>
+      <table>
+        <tr><th>Plano</th><th>Músculos</th></tr>
+        <tr><td class="k">Superficial</td><td>Trapecio, dorsal ancho</td></tr>
+        <tr><td class="k">Intermedio</td><td>Elevador de la escápula (angular del omóplato), romboides menor y mayor (retraen la escápula), serratos posteriores (respiratorios accesorios)</td></tr>
+        <tr><td class="k">Profundo</td><td>Erectores, esplenios y transversoespinoso</td></tr>
+      </table>
+    </section>
+    <section class="panel grow">
+      <div class="ph"><span class="n">3</span>Los profundos</div>
+      <ul class="lst">
+        <li><b>Erectores</b> (espinotransverso), de <b>lateral a medial</b>: iliocostal, longísimo, espinoso. Enderezan el tronco y controlan su flexión.</li>
+        <li><b>Esplenios</b> de la cabeza y del cuello: extienden y rotan la cabeza.</li>
+        <li><b>Transversoespinoso</b>: semiespinosos, multífidos, rotadores, interespinosos e intertransversos.</li>
+      </ul>
+      <p style="font-size:10px;margin:5px 0 0;color:var(--muted)">Mnemotecnia lateral → medial: <b>I</b>-<b>L</b>-<b>E</b> (iliocostal, longísimo, espinoso).</p>
+    </section>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:1.1">
+    <div class="ph"><span class="n">4</span>Diafragma y sus orificios ★ <small>— vista anterior · esquema</small></div>
+    <svg viewBox="0 0 500 300" style="width:100%;display:block">
+      <!-- columna -->
+      <g fill="#f3e6c8" stroke="#a88a4a" stroke-width="1.4">
+        <rect x="226" y="20" width="48" height="24" rx="5"/><rect x="226" y="48" width="48" height="24" rx="5"/><rect x="226" y="76" width="48" height="24" rx="5"/><rect x="226" y="104" width="48" height="24" rx="5"/><rect x="226" y="132" width="48" height="24" rx="5"/><rect x="226" y="160" width="48" height="24" rx="5"/><rect x="226" y="188" width="48" height="24" rx="5"/><rect x="226" y="216" width="48" height="24" rx="5"/><rect x="226" y="244" width="48" height="24" rx="5"/>
+      </g>
+      <g font-size="9" font-weight="800" fill="#8a6a1a" text-anchor="middle"><text x="250" y="36">T6</text><text x="250" y="92">T8</text><text x="250" y="148">T10</text><text x="250" y="204">T12</text><text x="250" y="260">L1</text></g>
+      <!-- cúpula -->
+      <path d="M30 230 Q60 60 180 70 Q250 80 320 70 Q440 60 470 230 Q440 200 420 230 L330 250 Q300 200 276 250 L224 250 Q200 200 170 250 L80 230 Q60 200 30 230 Z" fill="#c8242c" opacity=".55"/>
+      <path d="M150 92 Q250 60 350 92 Q320 120 250 116 Q180 120 150 92 Z" fill="#f3d9a6" stroke="#b8901f" stroke-width="1.6"/>
+      <!-- orificios -->
+      <circle cx="300" cy="88" r="12" fill="#5b8fd6" stroke="#13295b" stroke-width="2"/>
+      <ellipse cx="226" cy="144" rx="14" ry="10" fill="#e8c43c" stroke="#13295b" stroke-width="2"/>
+      <circle cx="250" cy="206" r="13" fill="#c8242c" stroke="#13295b" stroke-width="2"/>
+      <g stroke="#1d2433" stroke-width=".9"><line x1="312" y1="88" x2="380" y2="40"/><line x1="212" y1="144" x2="110" y2="120"/><line x1="264" y1="206" x2="380" y2="200"/></g>
+      <g font-size="11">
+        <text x="384" y="30" font-weight="800" fill="#1f4f9c">T8 · Vena cava</text><text x="384" y="44" fill="#4b5567">en el centro tendinoso</text><text x="384" y="57" fill="#4b5567">+ frénico derecho</text>
+        <text x="10" y="112" font-weight="800" fill="#a0821c">T10 · Esófago</text><text x="10" y="126" fill="#4b5567">+ nervios vagos</text>
+        <text x="384" y="196" font-weight="800" fill="#c8242c">T12 · Aorta</text><text x="384" y="210" fill="#4b5567">+ conducto torácico</text><text x="384" y="223" fill="#4b5567">el más bajo</text>
+        <text x="250" y="292" font-weight="800" fill="#c8242c" text-anchor="middle" font-size="10">pilares (porción lumbar)</text>
+        <text x="372" y="112" font-size="10" font-weight="700" fill="#8a6a1a">centro tendinoso</text>
+      </g>
+    </svg>
+    <p style="font-size:10.2px;margin:0">Mnemotecnia: vena <b>C</b>ava T<b>8</b> · <b>E</b>sófago T<b>10</b> · <b>A</b>orta T<b>12</b> (8-10-12).</p>
+  </section>
+  <section class="col" style="flex:.9">
+    <section class="panel">
+      <div class="ph"><span class="n">5</span>Porciones (por su origen)</div>
+      <table>
+        <tr><td class="k">Esternal</td><td>Cara posterior del xifoides</td></tr>
+        <tr><td class="k">Costal</td><td>6 últimos cartílagos y 4 últimas costillas</td></tr>
+        <tr><td class="k">Lumbar</td><td>Pilares derecho e izquierdo y ligamentos arqueados</td></tr>
+      </table>
+      <p style="font-size:10px;margin:5px 0 0">Las fibras convergen en el <b>centro tendinoso</b>. Al contraerse la cúpula <b>desciende</b>: es el principal inspirador.</p>
+      <p style="font-size:10px;margin:4px 0 0"><b>Inervación</b>: frénico (C3–C5), motor y sensitivo del centro tendinoso; los intercostales inferiores dan sensibilidad a la periferia.</p>
+    </section>
+    <section class="panel grow">
+      <div class="ph"><span class="n">6</span>Intercostales</div>
+      <svg viewBox="0 0 300 92" style="width:100%;display:block">
+        <path d="M10 20 Q150 4 290 20" fill="none" stroke="#a88a4a" stroke-width="9" stroke-linecap="round"/>
+        <path d="M10 76 Q150 60 290 76" fill="none" stroke="#a88a4a" stroke-width="9" stroke-linecap="round"/>
+        <g stroke="#c8242c" stroke-width="3"><line x1="40" y1="26" x2="60" y2="68"/><line x1="64" y1="24" x2="84" y2="66"/><line x1="88" y1="22" x2="108" y2="64"/><line x1="112" y1="20" x2="132" y2="62"/></g>
+        <g stroke="#1f4f9c" stroke-width="3"><line x1="200" y1="22" x2="180" y2="64"/><line x1="224" y1="24" x2="204" y2="66"/><line x1="248" y1="26" x2="228" y2="68"/><line x1="272" y1="28" x2="252" y2="70"/></g>
+        <g font-family="Inter" font-size="10" text-anchor="middle" font-weight="800"><text x="86" y="90" fill="#c8242c">Externos: elevan</text><text x="226" y="90" fill="#1f4f9c">Internos: descienden</text></g>
+      </svg>
+      <p style="font-size:10px;margin:4px 0 0"><b>Externos</b>: abajo y adelante («manos en los bolsillos») → inspiración. <b>Internos</b>: abajo y atrás → espiración. Nervios intercostales.</p>
+    </section>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">7</span>¿Quién respira? <small>— los músculos de la respiración que van en Miología I</small></div>
+  <table>
+    <tr><th>Papel</th><th>Músculo</th><th>Cómo</th></tr>
+    <tr><td class="k">Inspiración principal</td><td><b>Diafragma</b></td><td>La cúpula desciende y aumenta el volumen torácico</td></tr>
+    <tr><td class="k"></td><td><b>Intercostales externos</b></td><td>Elevan las costillas</td></tr>
+    <tr><td class="k">Inspiración accesoria</td><td>Escalenos</td><td>Elevan la 1.ª y 2.ª costillas</td></tr>
+    <tr><td class="k"></td><td>Serratos posteriores</td><td>Respiratorios accesorios (plano intermedio del dorso)</td></tr>
+    <tr><td class="k">Espiración</td><td>Intercostales internos</td><td>Descienden las costillas</td></tr>
+  </table>
+</section>
+
+<section class="clin">
+  <div class="ph"><span class="n">8</span>Correlación clínica</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:10.4px">
+    <p style="margin:0"><b>«C3-4-5 mantiene vivo el diafragma»</b>: el frénico nace de C3–C5. Una lesión medular por encima de C3 lo paraliza y exige ventilación mecánica; por debajo de C5 lo respeta. El <b>hipo</b> es una contracción espasmódica por irritación del frénico.</p>
+    <p style="margin:0"><b>Lumbalgia mecánica</b>: la sobrecarga de los erectores de la columna es una causa frecuente; fortalecer el core y la musculatura paravertebral es clave para prevenirla y rehabilitarla.</p>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">9</span>Resumen clave</div>
+  <div class="sum">
+    <div>{{icon:HandGrabbing}}<span>Extrínseco: ramo <b>anterior</b>.</span></div>
+    <div>{{icon:Columns}}<span>Erectores: <b>I-L-E</b>, lateral a medial.</span></div>
+    <div>{{icon:Wind}}<span>Diafragma: <b>principal</b> inspirador.</span></div>
+    <div>{{icon:ListNumbers}}<span>Cava T8 · esófago T10 · <b>aorta T12</b>.</span></div>
+    <div>{{icon:Lightning}}<span>Frénico: <b>C3–C5</b>.</span></div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Anatomía Humana y Disección I (UAD) · Miología I · Esquemas con fines de estudio</p>
+</div></body></html>
