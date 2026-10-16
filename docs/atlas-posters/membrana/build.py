@@ -3,6 +3,7 @@
 import re, sys, base64, pathlib, subprocess
 from icons import icon, exists
 from callout import block
+from autocallout import auto
 import json
 HERE = pathlib.Path(__file__).resolve().parent
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
@@ -18,6 +19,7 @@ def build(src, out=None):
                      [tuple(x[:2]) + (tuple(x[2]), x[3]) for x in c.get('left', [])],
                      [tuple(x[:2]) + (tuple(x[2]), x[3]) for x in c.get('right', [])], c.get('rx'))
     s = re.sub(r'<script type="callout">(.*?)</script>', co, s, flags=re.S)
+    s = re.sub(r'<script type="auto3d">(.*?)</script>', lambda m: auto(json.loads(m.group(1))), s, flags=re.S)
     s = re.sub(r'\{\{icon:(\w+)\}\}', lambda m: icon(m.group(1)), s)
     def img(m):
         p = (HERE / m.group(1)).resolve(); ext = p.suffix[1:].replace('jpg', 'jpeg').replace('svg', 'svg+xml')

@@ -1,0 +1,108 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>render</title>
+<style>html,body{margin:0;background:#fff;overflow:hidden}canvas{display:block}</style></head><body>
+<script type="module">
+// Herramienta local (no se publica): renderiza un modelo GLB del visor 3D con estructuras resaltadas,
+// para las láminas del Atlas. Parámetros por query: model, show, hl (regex=color;…), view, pad, w, h.
+import * as THREE from 'three'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
+const q = new URLSearchParams(location.search)
+const W = +(q.get('w') || 1200), H = +(q.get('h') || 1200)
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true, alpha: true })
+renderer.setPixelRatio(1); renderer.setSize(W, H); renderer.setClearColor(0xffffff, 0)
+renderer.outputColorSpace = THREE.SRGBColorSpace
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05
+document.body.appendChild(renderer.domElement)
+const scene = new THREE.Scene()
+scene.add(new THREE.HemisphereLight(0xffffff, 0xb8b2a8, 1.6))
+const key = new THREE.DirectionalLight(0xffffff, 2.2); scene.add(key)
+const fill = new THREE.DirectionalLight(0xffffff, 0.8); scene.add(fill)
+const show = q.get('show') ? new RegExp(q.get('show'), 'i') : null
+const hide = q.get('hide') ? new RegExp(q.get('hide'), 'i') : null
+const hl = (q.get('hl') || '').split(';').filter(Boolean).map(s => { const [r, c] = s.split('='); return [new RegExp(r, 'i'), new THREE.Color('#' + c)] })
+const dim = q.get('dim') === '1'
+const ghost = q.get('ghost') ? new RegExp(q.get('ghost'), 'i') : null
+const nameOf = (o) => (o.userData?.name || o.name || '').replace(/_/g, ' ')
+const draco = new DRACOLoader(); draco.setDecoderPath('/node_modules/three/examples/jsm/libs/draco/')
+const loader = new GLTFLoader(); loader.setDRACOLoader(draco)
+loader.load('/models/' + q.get('model'), (g) => {
+  const root = g.scene
+  const box = new THREE.Box3()
+  root.traverse((o) => {
+    if (!o.isMesh) return
+    const n = nameOf(o)
+    if ((show && !show.test(n)) || (hide && hide.test(n))) { o.visible = false; return }
+    const hit = hl.find(([r]) => r.test(n))
+    const bone = /bone|vertebra|sacrum|coccyx|scapula|clavicle|humerus|radius|ulna|femur|tibia|fibula|patella|carpal|metacarp|phalan|hip|rib|sternum|skull|mandible|maxill|frontal|parietal|occipital|temporal|sphenoid|ethmoid|zygomatic|nasal|lacrimal|palatine|vomer|concha|calcan|talus|navicular|cuboid|cuneiform|metatars|capitate|hamate|lunate|scaphoid|pisiform|triquetr|trapez(ium|oid)\.|atlas|axis/i.test(n)
+    let mat
+    if (hit) mat = new THREE.MeshStandardMaterial({ color: hit[1], roughness: 0.55, metalness: 0 })
+    else if (bone) mat = new THREE.MeshStandardMaterial({ color: 0xeee3cc, roughness: 0.7 })
+    else if (dim) mat = new THREE.MeshStandardMaterial({ color: 0xd9b3a8, roughness: 0.7, transparent: true, opacity: 0.35 })
+    else mat = new THREE.MeshStandardMaterial({ color: /ligament|capsule|tendon|cartil|disc|bursa|sheath|aponeur|retinac/i.test(n) ? 0xd8d4c8 : /arter|vein|nerve/i.test(n) ? 0xffffff : 0xc98a7c, roughness: 0.65, transparent: /arter|vein|nerve/i.test(n), opacity: /arter|vein|nerve/i.test(n) ? 0 : 1 })
+    if (/arter|vein|nerve|bursa|fascia|plexus|cord of|trunk of|divisions of|sheath|septum|canal|triangle|ring|hiatus|opening|recess|overlay|fat pad|arch|network|tract|annulus|vessels|zona orbicularis|labrum/i.test(n)) { o.visible = false; return }
+    if (ghost && ghost.test(n)) { mat.transparent = true; mat.opacity = 0.28; mat.depthWrite = false }
+    o.material = mat
+    o.updateWorldMatrix(true, false)
+    box.expandByObject(o)
+  })
+  scene.add(root)
+  // coxal=1: colorea el hueso coxal por regiones (ilion, isquion, pubis, acetábulo) alrededor del acetábulo
+  if (q.get('coxal') === '1') {
+    root.updateMatrixWorld(true)
+    let lab = null, hip = null
+    root.traverse(o => { if (!o.isMesh) return; const n = nameOf(o); if (/Acetabular labrum/i.test(n)) lab = o; if (/^Hip bone/i.test(n)) hip = o })
+    const lb = new THREE.Box3().setFromObject(lab), ac = lb.getCenter(new THREE.Vector3()), rad = lb.getSize(new THREE.Vector3()).length() * 0.4
+    const g = hip.geometry.index ? hip.geometry.toNonIndexed() : hip.geometry.clone(); hip.geometry = g
+    const pos = g.attributes.position, col = new Float32Array(pos.count * 3), v = new THREE.Vector3()
+    const C = { il: new THREE.Color('#f0a95a'), is: new THREE.Color('#5f8fc9'), pu: new THREE.Color('#72a86a'), ac: new THREE.Color('#d6cfbf') }
+    const t = [new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]
+    for (let i = 0; i < pos.count; i += 3) {  // un color por triángulo: bordes limpios
+      for (let k = 0; k < 3; k++) t[k].fromBufferAttribute(pos, i + k).applyMatrix4(hip.matrixWorld)
+      v.copy(t[0]).add(t[1]).add(t[2]).multiplyScalar(1 / 3)
+      let c = v.y > ac.y + rad * 0.1 ? C.il : (v.z > ac.z ? C.pu : C.is)
+      if (v.distanceTo(ac) < rad) c = C.ac
+      for (let k = 0; k < 3; k++) col.set([c.r, c.g, c.b], (i + k) * 3)
+    }
+    g.setAttribute('color', new THREE.BufferAttribute(col, 3))
+    hip.material = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.6 })
+  }
+  // mirror=1: duplica en espejo las estructuras del lado derecho (.r) respecto a la línea media
+  if (q.get('mirror') === '1') {
+    root.updateMatrixWorld(true)
+    const mid = new THREE.Box3(); const axial = new RegExp(q.get('midline') || 'frontal|occipital|sphenoid|ethmoid|vomer|mandible|sternum|vertebra|sacrum|coccyx', 'i')
+    root.traverse(o => { if (o.isMesh && o.visible && axial.test(nameOf(o))) mid.expandByObject(o) })
+    const x0 = mid.getCenter(new THREE.Vector3()).x
+    const R = new THREE.Matrix4().makeTranslation(x0, 0, 0).multiply(new THREE.Matrix4().makeScale(-1, 1, 1)).multiply(new THREE.Matrix4().makeTranslation(-x0, 0, 0))
+    const add = []
+    root.traverse(o => { if (o.isMesh && o.visible && /\.r\d*\.?$/i.test(nameOf(o).trim()) || (q.get('mirrorall') && new RegExp(q.get('mirrorall'), 'i').test(nameOf(o)))) add.push(o) })
+    const nom = q.get('nomirror') ? new RegExp(q.get('nomirror'), 'i') : null, only = q.get('mirroronly') ? new RegExp(q.get('mirroronly'), 'i') : null
+    for (const o of add) { if (nom && nom.test(nameOf(o))) continue; const c = new THREE.Mesh(o.geometry, o.material); c.name = o.name; c.userData = { name: nameOf(o).replace(/\.r(\d*)\.?$/, '.l$1') }; c.matrixAutoUpdate = false; c.matrix.copy(R).multiply(o.matrixWorld); scene.add(c); c.updateMatrixWorld(true); box.expandByObject(c); if (only && only.test(nameOf(o))) o.visible = false }
+  }
+  const focus = q.get('focus') ? new RegExp(q.get('focus'), 'i') : null
+  const fb = new THREE.Box3(); if (focus) scene.traverse(o => { if (o.isMesh && o.visible && focus.test(nameOf(o))) fb.expandByObject(o) })
+  const b = focus && !fb.isEmpty() ? fb : box
+  const c = b.getCenter(new THREE.Vector3()), s = b.getSize(new THREE.Vector3())
+  const views = { anterior: [0, 0, 1], posterior: [0, 0, -1], lateral: [1, 0, 0], medial: [-1, 0, 0], superior: [0, 1, 0.0001], inferior: [0, -1, 0.0001], 'antlat': [0.6, 0, 0.8], 'postlat': [0.6, 0, -0.8] }
+  const d = new THREE.Vector3(...(views[q.get('view') || 'anterior'] || q.get('view').split(',').map(Number))).normalize()
+  const r = Math.max(s.x, s.y, s.z) * +(q.get('pad') || 0.62)
+  const cam = new THREE.OrthographicCamera(-r * W / H, r * W / H, r, -r, 0.01, 1e5)
+  cam.position.copy(c).addScaledVector(d, r * 10); cam.lookAt(c)
+  if (q.get('roll')) cam.rotateZ(+q.get('roll') * Math.PI / 180)
+  key.position.copy(cam.position).add(new THREE.Vector3(r * 4, r * 6, 0)); fill.position.copy(c).addScaledVector(d, -r * 5).add(new THREE.Vector3(0, -r * 3, 0))
+  renderer.render(scene, cam)
+  // Puntos de rótulo: centro proyectado de los vértices visibles de cada estructura (pts=clave~regex;…)
+  const pts = {}
+  for (const spec of (q.get('pts') || '').split(';').filter(Boolean)) {
+    const [k, rx] = spec.split('~'); const re = new RegExp(rx, 'i'); let sx = 0, sy = 0, nn = 0
+    scene.traverse((o) => {
+      if (!o.isMesh || !o.visible || !re.test(nameOf(o))) return
+      const pos = o.geometry.attributes.position, v = new THREE.Vector3(), step = Math.max(1, Math.floor(pos.count / 4000))
+      for (let i = 0; i < pos.count; i += step) { v.fromBufferAttribute(pos, i).applyMatrix4(o.matrixWorld).project(cam); sx += (v.x + 1) / 2 * W; sy += (1 - v.y) / 2 * H; nn++ }
+    })
+    if (nn) pts[k] = [Math.round(sx / nn), Math.round(sy / nn)]
+  }
+  window.__pts = pts
+  const img = new Image(); img.src = renderer.domElement.toDataURL('image/png'); img.style.display = 'block'
+  img.onload = () => { renderer.domElement.replaceWith(img); document.title = 'done' }
+})
+</script></body></html>

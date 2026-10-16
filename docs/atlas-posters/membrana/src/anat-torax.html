@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+.page { gap: 10px; }
+.three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.three .mini { border-top: 4px solid var(--c); }
+.pieces { display: flex; flex-direction: column; gap: 5px; font-size: 10.4px; }
+.pieces div { display: flex; gap: 8px; align-items: center; }
+.pieces .num { width: 20px; height: 20px; border-radius: 50%; border: 1.4px solid var(--blue); color: var(--blue); font-weight: 800; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Anatomía</p>
+  <h1>Tórax Óseo</h1>
+  <p class="tag">Esternón, costillas y caja torácica: la jaula que protege y ventila.</p>
+</header>
+
+<div class="row">
+  <section class="panel" style="flex:1.45">
+    <div class="ph"><span class="n">1</span>Caja torácica <small>— vista anterior · modelo 3D</small></div>
+    <script type="auto3d">{"img": "ana3d/tx-caja.png", "height": 450, "cw": 600, "ch": 460, "gap": 50, "labels": {"v": ["Costillas verdaderas (1–7)", "vertebroesternales"], "car": ["Cartílagos costales", "unen costilla y esternón"], "f": ["Falsas no flotantes (8–10)", "vertebrocondrales"], "fl": ["Flotantes (11–12)", "extremo anterior libre"], "man": ["Manubrio", "recibe la 1.ª costilla"], "cue": ["Cuerpo del esternón", "3.ª a 6.ª costilla"], "vt": ["Vértebras T1–T12", "(dorsales D1–D12)"]}, "side": {"v": "left", "car": "left", "f": "left", "fl": "left", "man": "right", "cue": "right", "vt": "right"}}</script>
+  </section>
+  <section class="panel" style="flex:.85">
+    <div class="ph"><span class="n">2</span>Clave de color</div>
+    <div class="cards">
+      <div class="card"><span class="sw" style="background:#e8912e"></span><div><p class="t">Manubrio</p><p class="d">Incisura yugular (horquilla esternal) e incisuras claviculares.</p></div></div>
+      <div class="card"><span class="sw" style="background:#58a14f"></span><div><p class="t">Cuerpo del esternón</p><p class="d">Carillas para los cartílagos de la 3.ª a la 6.ª costilla.</p></div></div>
+      <div class="card"><span class="sw" style="background:#e8c84a"></span><div><p class="t">Proceso xifoides</p><p class="d">(Apéndice xifoides): fosita gástrica. No viene en el modelo 3D.</p></div></div>
+      <div class="card"><span class="sw" style="background:#4f86c6"></span><div><p class="t">Costillas verdaderas (1–7)</p><p class="d">Cartílago propio que llega al esternón.</p></div></div>
+      <div class="card"><span class="sw" style="background:#9b7bd0"></span><div><p class="t">Falsas no flotantes (8–10)</p><p class="d">Su cartílago se une al de la 7.ª.</p></div></div>
+      <div class="card"><span class="sw" style="background:#e8674f"></span><div><p class="t">Flotantes (11–12)</p><p class="d">Terminan libres; 1 sola carilla en la cabeza.</p></div></div>
+      <div class="card"><span class="sw" style="background:#c7d0da"></span><div><p class="t">Cartílagos · vértebras</p><p class="d">Cartílagos costales y vértebras T1–T12.</p></div></div>
+    </div>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:1.15">
+    <div class="ph"><span class="n">3</span>Esternón</div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <div style="flex-shrink:0"><script type="auto3d">{"img": "ana3d/tx-esternon.png", "height": 230, "cw": 220, "ch": 240, "L": 110, "gap": 34, "labels": {"iy": ["Incisura", "yugular", [181, 40]], "ic": ["Incisura", "clavicular", [40, 90]], "al": ["Ángulo de Louis", "2.ª costilla", [181, 285]], "cu": ["Cuerpo", "", [181, 620]]}, "side": {"iy": "left", "ic": "left", "al": "left", "cu": "left"}}</script></div>
+      <div style="flex:1">
+        <div class="sh">Articulaciones del esternón</div>
+        <table>
+          <tr><th>Unión</th><th>Nivel</th></tr>
+          <tr><td class="k">Manubrio-esternal (ángulo de Louis)</td><td>2.ª costilla · D3</td></tr>
+          <tr><td class="k">Xifo-esternal</td><td>7.ª costilla · D10</td></tr>
+        </table>
+        <div class="sh" style="margin-top:7px">Tres piezas</div>
+        <div class="pieces">
+          <div><span class="num">1</span><span><b>Manubrio</b>: la parte más ancha, arriba.</span></div>
+          <div><span class="num">2</span><span><b>Cuerpo</b>: la pieza más larga.</span></div>
+          <div><span class="num">3</span><span><b>Xifoides</b>: punta cartilaginosa, abajo.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">4</span>Clasificación de las costillas</div>
+    <div class="three">
+      <div class="mini" style="--c:#4f86c6"><p class="t">Verdaderas</p><p class="d">1–7</p><p class="d" style="margin:0">Cartílago propio al esternón</p></div>
+      <div class="mini" style="--c:#9b7bd0"><p class="t">Falsas</p><p class="d">8–10</p><p class="d" style="margin:0">Al cartílago de la 7.ª</p></div>
+      <div class="mini" style="--c:#e8674f"><p class="t">Flotantes</p><p class="d">11–12</p><p class="d" style="margin:0">Terminan libres</p></div>
+    </div>
+    <table style="margin-top:7px">
+      <tr><th>Grupo</th><th>Costillas</th><th>Unión anterior</th></tr>
+      <tr><td class="k">Verdaderas</td><td>1–7</td><td>Directa (cartílago propio)</td></tr>
+      <tr><td class="k">Falsas</td><td>8–12</td><td>Indirecta o libres</td></tr>
+      <tr><td class="k">— no flotantes</td><td>8–10</td><td>Al cartílago de la 7.ª</td></tr>
+      <tr><td class="k">— flotantes</td><td>11–12</td><td>Terminan libres</td></tr>
+    </table>
+    <p style="font-size:10.2px;margin:5px 0 0">12 pares en total: <b>7 verdaderas · 3 falsas · 2 flotantes</b>.</p>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">5</span>Costilla tipo (3.ª–9.ª) vs especiales <small>— 6.ª costilla vista desde arriba · modelo 3D</small></div>
+  <div style="display:flex;gap:12px;align-items:center">
+    <div style="flex-shrink:0"><script type="auto3d">{"img": "ana3d/tx-costilla.png", "height": 150, "cw": 380, "ch": 170, "L": 20, "gap": 40, "labels": {"cu": ["Cuerpo", "ángulo + surco costal", [470, 30]], "ca": ["Cabeza, cuello y tubérculo", "extremo posterior", [780, 540]], "car": ["Cartílago costal", "extremo anterior", [70, 400]]}, "side": {"cu": "right", "ca": "right", "car": "right"}}</script></div>
+    <table style="flex:1">
+      <tr><th>Parte</th><th>Accidentes</th></tr>
+      <tr><td class="k">Cabeza</td><td>2 carillas + cresta interarticular</td></tr>
+      <tr><td class="k">Cuello</td><td>Tubérculo (tuberosidad)</td></tr>
+      <tr><td class="k">Cuerpo</td><td>Ángulo + surco costal (canal costal)</td></tr>
+      <tr><td class="k">1.ª (especial)</td><td>Ancha y plana; 1 carilla; surcos de a. y v. subclavias; tubérculo del escaleno</td></tr>
+      <tr><td class="k">2.ª</td><td>Tuberosidad del serrato anterior</td></tr>
+      <tr><td class="k">11.ª–12.ª</td><td>1 sola carilla; extremo anterior libre</td></tr>
+    </table>
+  </div>
+</section>
+
+<div class="row">
+  <section class="clin" style="flex:1.1">
+    <div class="ph"><span class="n">6</span>Correlación clínica</div>
+    <p style="font-size:10.4px"><b>Ángulo del esternón (de Louis)</b>: punto palpable que marca la <b>2.ª costilla</b>; desde ahí se cuentan los espacios intercostales para auscultar y para la toracocentesis.</p>
+    <p style="font-size:10.4px;margin:0">Las <b>costillas flotantes (11–12)</b> no se articulan por delante: rara vez se fracturan y su movilidad protege al riñón.</p>
+  </section>
+  <section class="panel" style="flex:.9">
+    <div class="ph"><span class="n">7</span>Nomenclatura TA ↔ clásica</div>
+    <p style="font-size:10.4px;margin:0 0 4px">Proceso xifoides (apéndice xifoides) · incisura yugular (horquilla esternal) · surco costal (canal costal) · vértebras torácicas T1–T12 (dorsales D1–D12).</p>
+    <p style="font-size:10px;margin:0;color:var(--muted)">En el examen, el término clásico del profesor también es válido.</p>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">8</span>Funciones de la caja torácica</div>
+  <div class="ilist" style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px 10px">
+    <div>{{icon:ShieldCheck}}<span><b>Protección</b> de corazón, pulmones y grandes vasos.</span></div>
+    <div>{{icon:Wind}}<span><b>Ventilación</b>: las costillas suben y bajan al respirar.</span></div>
+    <div>{{icon:Barbell}}<span><b>Inserción</b> de músculos respiratorios y del miembro superior.</span></div>
+    <div>{{icon:Anchor}}<span><b>Soporte</b> de la cintura escapular (esternoclavicular).</span></div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">9</span>Resumen clave</div>
+  <div class="sum">
+    <div>{{icon:Heart}}<span>El tórax óseo <b>protege</b> corazón y pulmones.</span></div>
+    <div>{{icon:Stack}}<span>Esternón = <b>manubrio + cuerpo + xifoides</b>.</span></div>
+    <div>{{icon:ListNumbers}}<span><b>12 pares</b>: 7 verdaderas, 3 falsas, 2 flotantes.</span></div>
+    <div>{{icon:Target}}<span><b>Ángulo de Louis</b> = 2.ª costilla (D3).</span></div>
+    <div>{{icon:Wind}}<span>Su movilidad permite la <b>ventilación</b>.</span></div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Atlas · Anatomía Humana y Disección I · UAD · Semana 2 · Modelos 3D: Open 3D Model / Z-Anatomy (CC BY-SA 4.0)</p>
+</div></body></html>

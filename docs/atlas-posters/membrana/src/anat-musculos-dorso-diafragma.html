@@ -18,33 +18,9 @@ svg text { font-family: 'Inter'; }
 
 <div class="row">
   <section class="panel" style="flex:1.05">
-    <div class="ph"><span class="n">1</span>Músculos del dorso <small>— vista posterior · esquema</small></div>
-    <svg viewBox="0 0 480 420" style="width:100%;display:block">
-      <!-- silueta -->
-      <path d="M240 10 Q262 10 266 34 Q268 54 256 64 L262 78 Q330 82 380 110 Q404 124 408 160 L414 240 L396 244 L384 170 L364 200 L356 300 Q362 340 350 380 L130 380 Q118 340 124 300 L116 200 L96 170 L84 244 L66 240 L72 160 Q76 124 100 110 Q150 82 218 78 L224 64 Q212 54 214 34 Q218 10 240 10 Z" fill="#f6e1d3" stroke="#c99a84" stroke-width="2"/>
-      <line x1="240" y1="80" x2="240" y2="378" stroke="#a88a4a" stroke-width="3" stroke-dasharray="6 4"/>
-      <!-- lado izquierdo: superficiales -->
-      <path d="M236 70 L236 250 L150 150 L104 112 Q160 86 226 80 Z" fill="#c8242c" opacity=".75"/>
-      <path d="M236 200 L236 360 L134 330 L118 200 L150 160 Z" fill="#8a63c0" opacity=".7"/>
-      <!-- lado derecho: profundos -->
-      <g opacity=".85">
-        <rect x="246" y="90" width="12" height="280" rx="5" fill="#2e9d6b"/>
-        <rect x="262" y="96" width="16" height="276" rx="6" fill="#e8912e"/>
-        <rect x="282" y="110" width="16" height="262" rx="6" fill="#1f4f9c"/>
-      </g>
-      <path d="M246 70 L296 84 L300 100 L248 92 Z" fill="#d9c25a" opacity=".85"/>
-      <g font-size="11">
-        <text x="12" y="20" font-weight="800" fill="#13295b">SUPERFICIALES</text><text x="12" y="34" fill="#4b5567">extrínsecos · mueven el brazo</text>
-        <line x1="170" y1="140" x2="40" y2="100" stroke="#1d2433" stroke-width=".9"/><text x="12" y="80" font-weight="800" fill="#c8242c">Trapecio</text><text x="12" y="94" fill="#4b5567">mueve y fija la escápula</text>
-        <line x1="170" y1="280" x2="108" y2="294" stroke="#1d2433" stroke-width=".9"/><text x="12" y="300" font-weight="800" fill="#5b3b99">Dorsal ancho</text><text x="12" y="314" fill="#4b5567">aduce, extiende y</text><text x="12" y="328" fill="#4b5567">rota medial el brazo</text>
-        <text x="330" y="20" font-weight="800" fill="#13295b">PROFUNDOS</text><text x="330" y="34" fill="#4b5567">intrínsecos · columna</text>
-        <line x1="298" y1="84" x2="380" y2="60" stroke="#1d2433" stroke-width=".9"/><text x="384" y="58" font-weight="800" fill="#a0821c">Esplenios</text>
-        <line x1="290" y1="250" x2="410" y2="270" stroke="#1d2433" stroke-width=".9"/><text x="414" y="266" font-weight="800" fill="#1f4f9c">Iliocostal</text><text x="414" y="279" fill="#4b5567">lateral</text>
-        <line x1="270" y1="300" x2="410" y2="310" stroke="#1d2433" stroke-width=".9"/><text x="414" y="306" font-weight="800" fill="#b8650f">Longísimo</text><text x="414" y="319" fill="#4b5567">(dorsal largo)</text>
-        <line x1="252" y1="350" x2="410" y2="352" stroke="#1d2433" stroke-width=".9"/><text x="414" y="348" font-weight="800" fill="#2e7d5b">Espinoso</text><text x="414" y="361" fill="#4b5567">medial</text>
-        <text x="240" y="400" font-size="10" fill="#4b5567" text-anchor="middle">apófisis espinosas</text>
-      </g>
-    </svg>
+    <div class="ph"><span class="n">1</span>Músculos del dorso <small>— vista posterior · modelo 3D</small></div>
+    <script type="auto3d">{"img": "ana3d/dorso-post.png", "height": 400, "cw": 470, "ch": 410, "gap": 44, "labels": {"lv": ["Elevador de la escápula", "intermedio"], "rh": ["Romboides", "intermedio · retraen la escápula"], "tr": ["Trapecio", "superficial · XI"], "ld": ["Dorsal ancho", "superficial · toracodorsal"]}, "side": {"lv": "left", "rh": "left", "tr": "right", "ld": "right"}}</script>
+    <p style="font-size:9.8px;color:var(--muted);margin:2px 0 0;text-align:center">Lado derecho: plano superficial. Lado izquierdo: retirado el trapecio, plano intermedio.</p>
   </section>
   <section class="col" style="flex:.95">
     <section class="panel">
@@ -152,5 +128,5 @@ svg text { font-family: 'Inter'; }
   </div>
 </section>
 
-<p class="foot">MedCore · Anatomía Humana y Disección I (UAD) · Miología I · Esquemas con fines de estudio</p>
+<p class="foot">MedCore · Anatomía Humana y Disección I (UAD) · Miología I · Dorso: modelo 3D Open 3D Model / Z-Anatomy (CC BY-SA 4.0) · diafragma: esquema</p>
 </div></body></html>

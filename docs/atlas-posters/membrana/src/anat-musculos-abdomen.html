@@ -19,35 +19,13 @@ td.v { font-size: 10px; }
 
 <div class="row">
   <section class="panel" style="flex:1.05">
-    <div class="ph"><span class="n">1</span>Pared anterolateral <small>— vista anterior · esquema</small></div>
-    <svg viewBox="0 0 480 420" style="width:100%;display:block">
-      <g transform="translate(240,0) scale(.8,1) translate(-240,0)">
-      <path d="M110 20 Q240 0 370 20 L400 120 Q410 220 390 300 Q370 360 330 400 L150 400 Q110 360 90 300 Q70 220 80 120 Z" fill="#f6e1d3" stroke="#c99a84" stroke-width="2"/>
-      <!-- oblicuo externo izq -->
-      <path d="M96 60 L206 110 L206 380 L150 392 Q110 350 96 290 Q82 220 90 130 Z" fill="#c8242c" opacity=".35"/>
-      <g stroke="#a51d24" stroke-width="1.6" opacity=".7"><line x1="100" y1="90" x2="200" y2="170"/><line x1="96" y1="140" x2="200" y2="230"/><line x1="96" y1="190" x2="200" y2="290"/><line x1="100" y1="240" x2="196" y2="340"/></g>
-      <!-- transverso der (horizontal) -->
-      <path d="M274 110 L384 60 L392 130 Q398 220 384 290 Q370 350 330 392 L274 380 Z" fill="#e8912e" opacity=".3"/>
-      <g stroke="#b8650f" stroke-width="1.6" opacity=".7"><line x1="280" y1="150" x2="388" y2="150"/><line x1="280" y1="200" x2="392" y2="200"/><line x1="280" y1="250" x2="388" y2="250"/><line x1="280" y1="300" x2="380" y2="300"/></g>
-      <!-- rectos -->
-      <g fill="#c8242c" stroke="#a51d24" stroke-width="1.4">
-        <rect x="206" y="40" width="30" height="340" rx="10"/><rect x="244" y="40" width="30" height="340" rx="10"/>
-      </g>
-      <g stroke="#f6e1d3" stroke-width="5"><line x1="206" y1="110" x2="236" y2="110"/><line x1="206" y1="170" x2="236" y2="170"/><line x1="206" y1="230" x2="236" y2="230"/><line x1="244" y1="110" x2="274" y2="110"/><line x1="244" y1="170" x2="274" y2="170"/><line x1="244" y1="230" x2="274" y2="230"/></g>
-      <line x1="240" y1="20" x2="240" y2="400" stroke="#f3e6c8" stroke-width="5"/>
-      <!-- piramidal -->
-      <path d="M226 380 L240 330 L254 380 Z" fill="#8a63c0"/>
-      </g>
-      <g font-size="11">
-        <text x="240" y="14" font-size="10" fill="#8a6a1a" text-anchor="middle">xifoides</text>
-        <line x1="240" y1="60" x2="320" y2="30" stroke="#1d2433" stroke-width=".9"/><text x="324" y="30" font-weight="800" fill="#8a6a1a">Línea alba</text>
-        <line x1="226" y1="200" x2="60" y2="44" stroke="#1d2433" stroke-width=".9"/><text x="10" y="24" font-weight="800" fill="#c8242c">Recto del abdomen</text><text x="10" y="37" fill="#4b5567">poligástrico: flexiona</text>
-        <line x1="160" y1="200" x2="104" y2="204" stroke="#1d2433" stroke-width=".9"/><text x="10" y="196" font-weight="800" fill="#a51d24">Oblicuo externo</text><text x="10" y="209" fill="#4b5567">(mayor)</text><text x="10" y="222" fill="#4b5567">abajo y adentro</text>
-        <line x1="312" y1="200" x2="380" y2="204" stroke="#1d2433" stroke-width=".9"/><text x="384" y="196" font-weight="800" fill="#b8650f">Transverso</text><text x="384" y="209" fill="#4b5567">horizontal:</text><text x="384" y="222" fill="#4b5567">faja</text>
-        <line x1="240" y1="360" x2="330" y2="396" stroke="#1d2433" stroke-width=".9"/><text x="334" y="400" font-weight="800" fill="#5b3b99">Piramidal</text><text x="334" y="413" fill="#4b5567" font-size="9.5">(inconstante)</text>
-        <text x="240" y="416" font-size="10" fill="#8a6a1a" text-anchor="middle">sínfisis del pubis</text>
-      </g>
-    </svg>
+    <div class="ph"><span class="n">1</span>Pared anterolateral por capas <small>— modelo 3D</small></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px">
+      <div style="text-align:center"><img src="{{img:ana3d/abd-c.png}}" style="width:100%;max-height:300px;object-fit:contain"><p style="font-size:11px;font-weight:800;color:#c8524f;margin:4px 0 0">1 · Oblicuo externo</p><p style="font-size:9.8px;color:var(--muted);margin:0">superficial · abajo y adentro</p></div>
+      <div style="text-align:center"><img src="{{img:ana3d/abd-b.png}}" style="width:100%;max-height:300px;object-fit:contain"><p style="font-size:11px;font-weight:800;color:#5b3b99;margin:4px 0 0">2 · Oblicuo interno</p><p style="font-size:9.8px;color:var(--muted);margin:0">intermedio · al revés</p></div>
+      <div style="text-align:center"><img src="{{img:ana3d/abd-a.png}}" style="width:100%;max-height:300px;object-fit:contain"><p style="font-size:11px;font-weight:800;color:#b8650f;margin:4px 0 0">3 · Transverso <span style="color:#c8242c">+ recto</span></p><p style="font-size:9.8px;color:var(--muted);margin:0">profundo · horizontal</p></div>
+    </div>
+    <p style="font-size:10.2px;margin:8px 0 0">Lado derecho, vista anterior, de superficial a profundo. En la tercera imagen se ve el <b>recto del abdomen</b> (rojo): arriba queda por delante del transverso y abajo la aponeurosis del transverso pasa <b>por delante</b> del recto. Ese cambio es la <b>línea arqueada (arco de Douglas)</b>.</p>
   </section>
   <section class="col" style="flex:.95">
     <section class="panel">
@@ -166,5 +144,5 @@ td.v { font-size: 10px; }
   </div>
 </section>
 
-<p class="foot">MedCore · Anatomía Humana y Disección I (UAD) · Miología II · Esquemas con fines de estudio</p>
+<p class="foot">MedCore · Anatomía Humana y Disección I (UAD) · Miología II · Modelos 3D: Open 3D Model / Z-Anatomy (CC BY-SA 4.0)</p>
 </div></body></html>

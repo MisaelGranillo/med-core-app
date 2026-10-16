@@ -11,25 +11,7 @@
 <div class="row">
   <section class="panel" style="flex:1.55">
     <div class="ph"><span class="n">1</span>Vista lateral <small>— cada hueso de un color</small></div>
-    <div class="callouts" style="width:640px;height:412px;margin:0 auto">
-      <img src="{{img:ana/craneo-lat.png}}" style="position:absolute;left:100px;top:4px;width:400px">
-      <svg class="lines">
-        <line x1="96" y1="66" x2="190" y2="85"/><circle cx="190" cy="85" r="2.4"/>
-        <line x1="96" y1="178" x2="218" y2="189"/><circle cx="218" cy="189" r="2.4"/>
-        <line x1="96" y1="236" x2="172" y2="207"/><circle cx="172" cy="207" r="2.4"/>
-        <line x1="96" y1="336" x2="190" y2="338"/><circle cx="190" cy="338" r="2.4"/>
-        <line x1="504" y1="66" x2="344" y2="76"/><circle cx="344" cy="76" r="2.4"/>
-        <line x1="504" y1="196" x2="299" y2="203"/><circle cx="299" cy="203" r="2.4"/>
-        <line x1="504" y1="276" x2="435" y2="248"/><circle cx="435" cy="248" r="2.4"/>
-      </svg>
-      <div class="lbl l" style="left:0;top:50px"><b>Frontal</b>impar · frente</div>
-      <div class="lbl l" style="left:0;top:162px"><b>Esfenoides</b>ala mayor</div>
-      <div class="lbl l" style="left:0;top:220px"><b>Etmoides</b>pared de la órbita</div>
-      <div class="lbl l" style="left:0;top:320px"><b>Cara · mandíbula</b>viscerocráneo</div>
-      <div class="lbl r" style="left:510px;top:50px"><b>Parietal</b>par · bóveda</div>
-      <div class="lbl r" style="left:510px;top:180px"><b>Temporal</b>par · aloja el oído</div>
-      <div class="lbl r" style="left:510px;top:260px"><b>Occipital</b>impar · nuca</div>
-    </div>
+    <script type="auto3d">{"img": "ana3d/craneo-lat.png", "gap": 40, "cw": 580, "height": 340, "labels": {"fr": ["Frontal", "impar · frente"], "sp": ["Esfenoides", "ala mayor"], "et": ["Etmoides", "pared de la órbita"], "md": ["Cara · mandíbula", "viscerocráneo"], "pa": ["Parietal", "par · bóveda"], "te": ["Temporal", "par · aloja el oído"], "oc": ["Occipital", "impar · nuca"]}, "ch": 412}</script>
   </section>
 
   <section class="panel" style="flex:1">
@@ -49,31 +31,13 @@
 <div class="row">
   <section class="panel" style="flex:1.4">
     <div class="ph"><span class="n">3</span>Base del cráneo <small>— vista interna, bóveda retirada</small></div>
-    <div class="callouts" style="width:580px;height:402px;margin:0 auto">
-      <img src="{{img:ana/craneo-base.png}}" style="position:absolute;left:110px;top:4px;width:330px">
-      <svg class="lines">
-        <line x1="104" y1="48" x2="223" y2="59"/><circle cx="223" cy="59" r="2.4"/>
-        <line x1="104" y1="178" x2="219" y2="183"/><circle cx="219" cy="183" r="2.4"/>
-        <line x1="104" y1="232" x2="175" y2="218"/><circle cx="175" cy="218" r="2.4"/>
-        <line x1="446" y1="66" x2="275" y2="77"/><circle cx="275" cy="77" r="2.4"/>
-        <line x1="446" y1="156" x2="275" y2="163"/><circle cx="275" cy="163" r="2.4"/>
-        <line x1="446" y1="266" x2="289" y2="270"/><circle cx="289" cy="270" r="2.4"/>
-        <line x1="446" y1="346" x2="279" y2="346"/><circle cx="279" cy="346" r="2.4"/>
-      </svg>
-      <div class="lbl l" style="left:0;top:32px;width:100px"><b>Frontal</b>fosa anterior</div>
-      <div class="lbl l" style="left:0;top:156px;width:100px"><b>Forámenes</b>oval · redondo · espinoso</div>
-      <div class="lbl l" style="left:0;top:216px;width:100px"><b>Temporal</b></div>
-      <div class="lbl r" style="left:452px;top:50px"><b>Lámina cribosa</b>etmoides · I par</div>
-      <div class="lbl r" style="left:452px;top:140px"><b>Silla turca</b>esfenoides · hipófisis</div>
-      <div class="lbl r" style="left:452px;top:250px"><b>Foramen magno</b>occipital</div>
-      <div class="lbl r" style="left:452px;top:330px"><b>Occipital</b>fosa posterior</div>
-    </div>
+    <script type="auto3d">{"img": "ana3d/craneo-base.png", "gap": 34, "labels": {"fr": ["Frontal", "fosa anterior"], "cri": ["Lámina cribosa", "etmoides · I par", [356, 205]], "ov": ["Forámenes", "oval · redondo · espinoso", [238, 425]], "st": ["Silla turca", "esfenoides · hipófisis", [356, 385]], "te": ["Temporal", "", [560, 520]], "fm": ["Foramen magno", "occipital", [352, 610]], "oc": ["Occipital", "fosa posterior", [360, 830]]}, "side": {"fr": "left", "cri": "right", "ov": "left", "st": "right", "te": "right", "fm": "left", "oc": "left"}, "cw": 560, "height": 390, "ch": 402}</script>
   </section>
 
   <div class="col" style="flex:1">
     <section class="panel">
       <div class="ph"><span class="n">4</span>Vista anterior</div>
-      <img src="{{img:ana/craneo-ant.png}}" style="width:100%;max-height:250px;object-fit:contain;display:block">
+      <img src="{{img:ana3d/craneo-ant.png}}" style="width:100%;max-height:250px;object-fit:contain;display:block">
     </section>
     <section class="panel">
       <div class="ph"><span class="n">5</span>Composición</div>
@@ -127,5 +91,5 @@
   <p style="font-size:10px;color:var(--muted);margin:6px 0 0">TA ↔ clásico: foramen (agujero) · foramen magno (agujero occipital) · foramen espinoso (agujero redondo menor). El término clásico del profesor también es válido.</p>
 </section>
 
-<p class="foot">MedCore · Atlas · Anatomía Humana y Disección I · UAD · Semana 1 · Ilustración con fines de estudio</p>
+<p class="foot">MedCore · Atlas · Anatomía Humana y Disección I · UAD · Semana 1 · Modelos 3D: Open 3D Model / Z-Anatomy (CC BY-SA 4.0)</p>
 </div></body></html>

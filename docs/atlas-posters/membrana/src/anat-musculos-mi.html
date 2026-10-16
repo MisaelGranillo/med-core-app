@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
 <style>
 svg text { font-family: 'Inter'; }
-.page { gap: 15px; }
+.page { gap: 12px; }
 .lst { margin: 0; padding-left: 15px; font-size: 10.2px; }
 .lst li { margin: 0 0 2px; }
 td.v { font-size: 10px; }
@@ -16,57 +16,27 @@ td.v { font-size: 10px; }
   <p class="tag">Compartimientos cerrados por fascia: una función, un nervio.</p>
 </header>
 
-<div class="row">
-  <section class="panel" style="flex:1">
-    <div class="ph"><span class="n">1</span>Muslo: tres compartimientos <small>— corte transversal · esquema</small></div>
-    <svg viewBox="0 0 470 280" style="width:100%;display:block">
-      <g transform="translate(150,140)">
-        <circle r="122" fill="#f6e1d3" stroke="#c99a84" stroke-width="2"/>
-        <path d="M0 0 L-104 -64 A 122 122 0 0 1 110 52 Z" fill="#2e9d6b" opacity=".75"/>
-        <path d="M0 0 L-104 -64 A 122 122 0 0 0 -60 106 Z" fill="#8a63c0" opacity=".7"/>
-        <path d="M0 0 L-60 106 A 122 122 0 0 0 110 52 Z" fill="#e8912e" opacity=".7"/>
-        <g stroke="#7a5a3a" stroke-width="3"><line x1="0" y1="0" x2="-104" y2="-64"/><line x1="0" y1="0" x2="110" y2="52"/><line x1="0" y1="0" x2="-60" y2="106"/></g>
-        <circle r="22" fill="#f3e6c8" stroke="#a88a4a" stroke-width="2.4"/><text y="4" font-size="10" font-weight="800" fill="#8a6a1a" text-anchor="middle">fémur</text>
-        <g font-size="11" font-weight="800" fill="#fff" text-anchor="middle"><text x="20" y="-58">ANTERIOR</text><text x="-66" y="34">MEDIAL</text><text x="26" y="86">POSTERIOR</text></g>
-      </g>
-      <g font-size="10.5">
-        <text x="300" y="40" font-weight="800" fill="#2e7d5b">Anterior → femoral</text><text x="300" y="53" fill="#4b5567">cuádriceps, sartorio, iliopsoas</text><text x="300" y="66" fill="#4b5567">extienden la rodilla</text>
-        <text x="300" y="106" font-weight="800" fill="#5b3b99">Medial → obturador</text><text x="300" y="119" fill="#4b5567">pectíneo, aductores, grácil</text><text x="300" y="132" fill="#4b5567">aducen el muslo</text>
-        <text x="300" y="172" font-weight="800" fill="#b8650f">Posterior → ciático</text><text x="300" y="185" fill="#4b5567">bíceps femoral, semitendinoso,</text><text x="300" y="198" fill="#4b5567">semimembranoso (isquiotibiales)</text><text x="300" y="211" fill="#4b5567">flexionan rodilla, extienden cadera</text>
-        <text x="300" y="250" font-size="9.5" fill="#4b5567">La fascia lata manda tabiques</text><text x="300" y="262" font-size="9.5" fill="#4b5567">al fémur y separa los tres.</text>
-      </g>
-    </svg>
-  </section>
-  <section class="panel" style="flex:1">
-    <div class="ph"><span class="n">2</span>Pierna: tres compartimientos <small>— corte transversal · esquema</small></div>
-    <svg viewBox="0 0 470 280" style="width:100%;display:block">
-      <g transform="translate(150,140)">
-        <ellipse rx="118" ry="122" fill="#f6e1d3" stroke="#c99a84" stroke-width="2"/>
-        <path d="M-30 -20 L-20 -120 A 118 122 0 0 1 80 -88 L44 -6 Z" fill="#1f4f9c" opacity=".7"/>
-        <path d="M44 -6 L80 -88 A 118 122 0 0 1 116 20 L60 20 Z" fill="#c8242c" opacity=".65"/>
-        <path d="M-30 -20 L44 -6 L60 20 L116 20 A 118 122 0 0 1 -116 10 Z" fill="#e8c43c" opacity=".55"/>
-        <path d="M-116 10 A 118 122 0 0 0 116 20 L60 60 Q0 74 -70 50 Z" fill="#e8912e" opacity=".6"/>
-        <path d="M-40 -16 Q-30 -46 0 -40 Q16 -30 6 -6 Q-14 6 -40 -16 Z" fill="#f3e6c8" stroke="#a88a4a" stroke-width="2"/>
-        <circle cx="52" cy="6" r="12" fill="#f3e6c8" stroke="#a88a4a" stroke-width="2"/>
-        <g font-size="9" font-weight="800" fill="#8a6a1a" text-anchor="middle"><text x="-16" y="-20">tibia</text><text x="52" y="34">peroné</text></g>
-        <g font-size="10.5" font-weight="800" fill="#fff" text-anchor="middle"><text x="22" y="-70">ANT.</text><text x="88" y="-14">LAT.</text></g>
-        <g font-size="9.5" font-weight="800" fill="#7a5a00" text-anchor="middle"><text x="-40" y="30">post. profundo</text></g>
-        <g font-size="9.5" font-weight="800" fill="#fff" text-anchor="middle"><text x="0" y="98">post. superficial</text></g>
-      </g>
-      <g font-size="10.5">
-        <text x="300" y="34" font-weight="800" fill="#1f4f9c">Anterior → peroneo profundo</text><text x="300" y="47" fill="#4b5567">dorsiflexión; tibial anterior,</text><text x="300" y="60" fill="#4b5567">extensores largos, tercer peroneo</text>
-        <text x="300" y="96" font-weight="800" fill="#c8242c">Lateral → peroneo superficial</text><text x="300" y="109" fill="#4b5567">eversión; peroneos largo y corto</text>
-        <text x="300" y="148" font-weight="800" fill="#b8650f">Posterior → tibial</text><text x="300" y="161" fill="#4b5567">flexión plantar</text>
-        <text x="300" y="180" fill="#4b5567"><tspan font-weight="700">Superficial</tspan>: gastrocnemio + sóleo</text><text x="300" y="193" fill="#4b5567">(tríceps sural), plantar → Aquiles</text>
-        <text x="300" y="212" fill="#4b5567"><tspan font-weight="700">Profundo</tspan>: poplíteo, flexores</text><text x="300" y="225" fill="#4b5567">largos, tibial posterior</text>
-      </g>
-    </svg>
-  </section>
-</div>
+<section class="panel">
+  <div class="ph"><span class="n">1</span>Muslo y pierna: compartimientos y su nervio <small>— color = nervio · modelo 3D</small></div>
+  <div style="display:flex;gap:8px;align-items:flex-start">
+    <div><p style="text-align:center;font-size:10.5px;font-weight:800;color:var(--navy);margin:0 0 2px">Vista anterior</p><script type="auto3d">{"img": "ana3d/mi-anterior.png", "height": 420, "cw": 250, "L": 118, "gap": 37, "side": {"rf": "left", "vl": "left", "vm": "left", "sar": "left", "al": "left", "gr": "left", "ta": "left", "edl": "left", "fl": "left"}, "labels": {"sar": ["Sartorio", ""], "rf": ["Recto femoral", ""], "vl": ["Vasto lateral", ""], "vm": ["Vasto medial", ""], "al": ["Aductor largo", ""], "gr": ["Grácil", ""], "ta": ["Tibial anterior", ""], "edl": ["Extensor largo dedos", ""], "fl": ["Peroneo largo", ""]}}</script></div>
+    <div><p style="text-align:center;font-size:10.5px;font-weight:800;color:var(--navy);margin:0 0 2px">Vista posterior</p><script type="auto3d">{"img": "ana3d/mi-posterior.png", "height": 420, "cw": 250, "L": 0, "gap": 37, "side": {"bf": "right", "st": "right", "sm": "right", "am": "right", "gl": "right", "gm": "right", "so": "right", "fl": "right"}, "labels": {"am": ["Aductor mayor", ""], "bf": ["Bíceps femoral", ""], "st": ["Semitendinoso", ""], "sm": ["Semimembranoso", ""], "gl": ["Gastrocnemio", ""], "so": ["Sóleo", ""], "fl": ["Peroneo largo", ""]}}</script></div>
+    <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:6px;padding-top:18px">
+      <div class="sh">Muslo · la fascia lata lo divide en tres</div>
+      <div class="card"><span class="sw" style="background:#2e9d6b"></span><div><p class="t">Anterior → femoral</p><p class="d">Cuádriceps, sartorio, iliopsoas: extienden la rodilla.</p></div></div>
+      <div class="card"><span class="sw" style="background:#8a63c0"></span><div><p class="t">Medial → obturador</p><p class="d">Pectíneo, aductores, grácil: aducen el muslo.</p></div></div>
+      <div class="card"><span class="sw" style="background:#e8912e"></span><div><p class="t">Posterior → ciático</p><p class="d">Isquiotibiales: flexionan rodilla, extienden cadera.</p></div></div>
+      <div class="sh">Pierna</div>
+      <div class="card"><span class="sw" style="background:#1f4f9c"></span><div><p class="t">Anterior → peroneo profundo</p><p class="d">Tibial anterior, extensores largos, tercer peroneo: dorsiflexión.</p></div></div>
+      <div class="card"><span class="sw" style="background:#c8242c"></span><div><p class="t">Lateral → peroneo superficial</p><p class="d">Peroneos largo y corto: eversión.</p></div></div>
+      <div class="card"><span class="sw" style="background:#d9a52a"></span><div><p class="t">Posterior → tibial</p><p class="d">Tríceps sural (gastrocnemio + sóleo) y plantar → Aquiles; profundos: poplíteo, flexores largos, tibial posterior.</p></div></div>
+    </div>
+  </div>
+</section>
 
 <div class="row">
   <section class="panel" style="flex:1.15">
-    <div class="ph"><span class="n">3</span>Región glútea</div>
+    <div class="ph"><span class="n">2</span>Región glútea</div>
     <table>
       <tr><th>Músculo</th><th>Función</th><th>Nervio</th></tr>
       <tr><td class="k">Glúteo mayor</td><td>Extensor y rotador externo potente de la cadera</td><td class="v">Glúteo inferior</td></tr>
@@ -76,8 +46,8 @@ td.v { font-size: 10px; }
     </table>
   </section>
   <section class="panel" style="flex:.85">
-    <div class="ph"><span class="n">4</span>Rotadores externos <small>— de arriba abajo</small></div>
-    <div class="rot">
+    <div class="ph"><span class="n">3</span>Rotadores externos <small>— de arriba abajo</small></div>
+    <div style="display:flex;gap:10px;align-items:center"><img src="{{img:ana3d/mi-rotadores.png}}" style="height:150px;flex-shrink:0"><div class="rot" style="flex:1">
       <div style="background:#c8242c">1 · Piriforme (piramidal) — la referencia</div>
       <div style="background:#e8912e">2 · Gemelo superior</div>
       <div style="background:#d9a52a">3 · Obturador interno</div>
@@ -85,25 +55,21 @@ td.v { font-size: 10px; }
       <div style="background:#2e9d6b">5 · Cuadrado femoral</div>
       <div style="background:#1f4f9c">6 · Obturador externo (más profundo)</div>
     </div>
+    </div>
     <p style="font-size:10px;margin:5px 0 0">Por encima y por debajo del piriforme salen la arteria y los nervios de la región.</p>
   </section>
 </div>
 
 <div class="row">
   <section class="panel" style="flex:1">
-    <div class="ph"><span class="n">5</span>Pata de ganso ★</div>
+    <div class="ph"><span class="n">4</span>Pata de ganso ★</div>
     <div style="display:flex;gap:10px;align-items:center">
-      <svg viewBox="0 0 170 150" style="width:160px;flex-shrink:0">
-        <path d="M100 150 L100 70 Q100 50 120 46 L150 46 L150 150 Z" fill="#f3e6c8" stroke="#a88a4a" stroke-width="1.6"/>
-        <g fill="none" stroke-width="6" stroke-linecap="round"><path d="M20 4 Q40 80 104 96" stroke="#2e9d6b"/><path d="M50 4 Q60 80 106 104" stroke="#8a63c0"/><path d="M80 4 Q78 80 108 112" stroke="#e8912e"/></g>
-        <circle cx="108" cy="104" r="10" fill="#7fb3e0" opacity=".7"/>
-        <g font-family="Inter" font-size="9" font-weight="800" text-anchor="middle"><text x="20" y="140" fill="#2e7d5b">S</text><text x="50" y="140" fill="#5b3b99">G</text><text x="80" y="140" fill="#b8650f">ST</text><text x="128" y="140" fill="#8a6a1a">tibia</text></g>
-      </svg>
+      <div style="flex-shrink:0"><script type="auto3d">{"img": "ana3d/mi-pata.png", "height": 175, "cw": 150, "L": 0, "gap": 30, "side": {"sar": "right", "gr": "right", "st": "right"}, "labels": {"sar": ["S", ""], "gr": ["G", ""], "st": ["ST", ""]}}</script></div>
       <p style="font-size:10.2px;margin:0">Inserción común en la cara medial superior de la tibia de tres músculos de <b>tres compartimientos</b>: <span style="color:#2e7d5b;font-weight:700">sartorio</span> (anterior), <span style="color:#5b3b99;font-weight:700">grácil</span> (medial) y <span style="color:#b8650f;font-weight:700">semitendinoso</span> (posterior). Comparten la <b>bursa anserina</b>.</p>
     </div>
   </section>
   <section class="panel" style="flex:1">
-    <div class="ph"><span class="n">6</span>Detalles que caen</div>
+    <div class="ph"><span class="n">5</span>Detalles que caen</div>
     <ul class="lst">
       <li><b>Peroneo largo</b>: cruza la planta hasta el 1.er metatarsiano y la cuña medial; <b>peroneo corto</b>: estiloides del 5.º metatarsiano.</li>
       <li><b>Tibial anterior</b>: dorsiflexión e inversión. <b>Tibial posterior</b>: flexión plantar e inversión.</li>
@@ -114,7 +80,7 @@ td.v { font-size: 10px; }
 </div>
 
 <section class="panel">
-  <div class="ph"><span class="n">7</span>Músculos del pie</div>
+  <div class="ph"><span class="n">6</span>Músculos del pie</div>
   <div style="display:flex;gap:12px;align-items:flex-start">
     <table style="flex:1.4">
       <tr><th>Plano plantar</th><th>Músculos</th></tr>
@@ -132,7 +98,7 @@ td.v { font-size: 10px; }
 </section>
 
 <section class="clin">
-  <div class="ph"><span class="n">8</span>Correlación clínica</div>
+  <div class="ph"><span class="n">7</span>Correlación clínica</div>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px 14px;font-size:10.2px">
     <p style="margin:0"><b>Trendelenburg</b>: si falla el glúteo mediano, al apoyar en el lado afectado la pelvis cae hacia el lado sano («marcha de pato»).</p>
     <p style="margin:0"><b>Pie caído</b>: falla el compartimiento anterior (peroneo profundo); no hay dorsiflexión.</p>
@@ -144,7 +110,7 @@ td.v { font-size: 10px; }
 </section>
 
 <section class="panel">
-  <div class="ph"><span class="n">9</span>Resumen clave</div>
+  <div class="ph"><span class="n">8</span>Resumen clave</div>
   <div class="sum">
     <div>{{icon:Circle}}<span>Muslo: femoral · obturador · <b>ciático</b>.</span></div>
     <div>{{icon:ArrowUp}}<span>Pierna anterior: <b>peroneo profundo</b>.</span></div>
@@ -154,5 +120,5 @@ td.v { font-size: 10px; }
   </div>
 </section>
 
-<p class="foot">MedCore · Anatomía Humana y Disección I (UAD) · Miología II · Esquemas con fines de estudio</p>
+<p class="foot">MedCore · Anatomía Humana y Disección I (UAD) · Miología II · Modelos 3D: Open 3D Model / Z-Anatomy (CC BY-SA 4.0)</p>
 </div></body></html>

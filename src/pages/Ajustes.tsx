@@ -134,6 +134,18 @@ export function Ajustes() {
             </a>
             . Cada figura cita su entrada. Algunas fueron adaptadas (recortadas/optimizadas) para su uso en la app.
           </p>
+          <p className="text-[0.9375rem] text-zinc-700 leading-relaxed mt-3">
+            Las láminas de Anatomía del Atlas y el visor 3D usan modelos de Open 3D Model / Z-Anatomy (basados en BodyParts3D) bajo licencia{' '}
+            <a
+              href="https://creativecommons.org/licenses/by-sa/4.0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline underline-offset-2 hover:text-primary-hover"
+            >
+              CC BY-SA 4.0
+            </a>
+            ; las imágenes renderizadas a partir de ellos se comparten con la misma licencia.
+          </p>
         </section>
       </div>
     </main>
