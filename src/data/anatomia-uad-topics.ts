@@ -6,7 +6,7 @@
  *   · PDF 1 "Generalidades de la Anatomía" (temario + conceptos, planos, términos)
  *   · PDF 2 "Huesos de la Cabeza" (cráneo, hueso por hueso)
  *   · PDF 3 "Huesos de la Cara y Hioides"
- * RESPALDO: Moore, Anatomía con orientación clínica (Cap. 1; Cap. 7 Cabeza).
+ * RESPALDO: Moore, Fundamentos de anatomía con orientación clínica, 5.ª ed. (Cap. 1; Cap. 7 Cabeza).
  *
  * NOMENCLATURA (regla MedCore): el término PRINCIPAL es la Terminología
  * Anatómica (TA) internacional; la nomenclatura clásica (la del examen) va ENTRE
