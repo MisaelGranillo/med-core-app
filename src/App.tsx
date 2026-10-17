@@ -31,6 +31,8 @@ const EstudioTema  = named(() => import('./pages/PAITema'),       'PAITema')
 const Atlas        = named(() => import('./pages/Atlas'),         'Atlas')
 const AtlasTopic   = named(() => import('./pages/AtlasTopic'),    'AtlasTopic')
 const Libreria     = named(() => import('./pages/Libreria'),      'Libreria')
+const Patologias   = named(() => import('./pages/Patologias'),    'Patologias')
+const PatologiaDetalle = named(() => import('./pages/Patologias'), 'PatologiaDetalle')
 
 /* Redirige /modulos/:id (LMGC, id en mayúsculas) al nuevo /plan/:subjectId
  * (id en minúsculas), preservando los enlaces antiguos. */
@@ -162,6 +164,8 @@ export default function App() {
               <Route path="/atlas" element={<Atlas />} />
               <Route path="/atlas/:id" element={<AtlasTopic />} />
               <Route path="/libreria" element={<Libreria />} />
+              <Route path="/patologias" element={<Patologias />} />
+              <Route path="/patologias/:id" element={<PatologiaDetalle />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

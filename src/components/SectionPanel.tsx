@@ -83,7 +83,7 @@ function BlockLabel({ text }: { text: string; colorKey?: TopicColorKey }) {
   )
 }
 
-function BlockRenderer({ block, colorKey }: { block: ContentBlock; colorKey: TopicColorKey }) {
+export function BlockRenderer({ block, colorKey }: { block: ContentBlock; colorKey: TopicColorKey }) {
   const colors = TOPIC_COLORS[colorKey]
 
   switch (block.type) {

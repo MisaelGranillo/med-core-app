@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
   ArrowLeft,
@@ -10,6 +10,8 @@ import {
   X,
   CheckCircle,
   Target,
+  Stethoscope,
+  ArrowRight,
 } from '@phosphor-icons/react'
 import { modules } from '../data/modules'
 import { useContent } from '../data/content'
@@ -20,6 +22,7 @@ import { useProgress } from '../store/useProgress'
 import { SectionPanel } from '../components/SectionPanel'
 import { ProgressRing } from '../components/ProgressRing'
 import { IllustrationCredit } from '../components/IllustrationCredit'
+import { patologiasDeTema } from '../data/patologias'
 
 const COLOR_RING: Record<string, string> = {
   // Anatomía
@@ -46,6 +49,17 @@ export function Topic() {
     if (content && !topic) navigate('/')
   }, [content, topic, navigate])
 
+  // /topic/:id#seccion (p. ej., desde una ficha de Patologías): abre y lleva a esa sección.
+  const hashId = useLocation().hash.slice(1)
+  useEffect(() => {
+    if (!topic || !hashId) return
+    const t = window.setTimeout(() => {
+      const el = document.getElementById(`section-${hashId}`)
+      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' })
+    }, 120)
+    return () => window.clearTimeout(t)
+  }, [topic, hashId])
+
   if (!content) return <PageLoading />
   if (!topic) return null
 
@@ -56,6 +70,7 @@ export function Topic() {
   const qCount = content.questions.filter((q) => q.topicId === topic.id).length
   const module = modules.find((m) => m.topicIds.includes(topic.id))
   const planCtx = planContextForTopic(topic.id)
+  const patologias = patologiasDeTema(topic.id)
 
   const scrollToSection = (id: string) => {
     setActiveSection(id)
@@ -274,7 +289,7 @@ export function Topic() {
                   colorKey={topic.colorKey}
                   isRead={sectionsRead.includes(section.id)}
                   onRead={() => markSectionRead(topic.id, section.id)}
-                  defaultOpen={i === 0}
+                  defaultOpen={i === 0 || section.id === hashId}
                 />
               </motion.div>
             </div>
@@ -301,6 +316,32 @@ export function Topic() {
                 ))}
               </ul>
             </motion.div>
+          )}
+
+          {/* Patologías que se apoyan en este tema */}
+          {patologias.length > 0 && (
+            <div className="card p-6 sm:p-8">
+              <div className="flex items-center gap-2.5 mb-4">
+                <Stethoscope weight="regular" className="w-5 h-5 text-primary" />
+                <h3 className="font-display text-xl font-normal text-zinc-900">Patologías relacionadas</h3>
+              </div>
+              <ul className="flex flex-col">
+                {patologias.map((p) => (
+                  <li key={p.id}>
+                    <Link
+                      to={`/patologias/${p.id}`}
+                      className="flex items-center gap-3 -mx-3 px-3 py-2.5 rounded-xl hover:bg-zinc-100 transition-colors group"
+                    >
+                      <span className="flex-1 min-w-0">
+                        <span className="block text-base text-zinc-900">{p.title}</span>
+                        <span className="block text-sm text-zinc-500">{p.ambito} · {p.sesion}</span>
+                      </span>
+                      <ArrowRight weight="bold" className="w-4 h-4 text-zinc-400 group-hover:text-primary flex-shrink-0" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
 
           {/* Quiz CTA */}

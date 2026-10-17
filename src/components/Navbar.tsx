@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import {
   MagnifyingGlass, X, House, BookOpen, Lightning,
-  Cube, BookOpenText, ChartBar, GraduationCap, Image, Translate, Gear, DotsThreeOutline, Books,
+  Cube, BookOpenText, ChartBar, GraduationCap, Image, Translate, Gear, DotsThreeOutline, Books, Stethoscope,
 } from '@phosphor-icons/react'
 import { LogoMark } from './Logo'
 import { AppearanceMenu } from './AppearanceMenu'
@@ -19,6 +19,7 @@ const NAV_ITEMS = [
   { path: '/estudio',     label: 'Temas',        icon: GraduationCap,  mobile: true  },
   { path: '/anatomia',    label: 'Anatomía',     icon: Cube,           mobile: false },
   { path: '/atlas',       label: 'Atlas',        icon: Image,          mobile: true  },
+  { path: '/patologias',  label: 'Patologías',   icon: Stethoscope,    mobile: false },
   { path: '/terminologia',label: 'MedLex',       icon: BookOpenText,   mobile: false },
   { path: '/vocabulario', label: 'EnLex',         icon: Translate,      mobile: false },
   { path: '/libreria',    label: 'Librería',     icon: Books,          mobile: false },
