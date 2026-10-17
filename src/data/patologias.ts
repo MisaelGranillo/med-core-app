@@ -8,8 +8,9 @@
  * (ningún paciente real). */
 
 import type { ContentBlock, Question } from '../types'
+import { FICHAS_MATERIAS } from './patologias-materias'
 
-export type PatoMateria = 'Bioquímica' | 'Anatomía' | 'Histología'
+export type PatoMateria = 'Bioquímica' | 'Genética' | 'Histología' | 'Anatomía'
 
 export interface PatoBase {
   materia: PatoMateria
@@ -34,6 +35,8 @@ export interface PatoSeccion {
 export interface Patologia {
   id: string
   kind: 'ficha' | 'guia'
+  /* Materia con la que se agrupa en el índice (las fichas). */
+  materia?: PatoMateria
   title: string
   aka?: string
   ambito: string
@@ -343,6 +346,7 @@ const GUIA: Patologia = {
 const DESHIDRATACION: Patologia = {
   id: 'deshidratacion-choque-hipovolemico',
   kind: 'ficha',
+  materia: 'Bioquímica',
   title: 'Deshidratación y choque hipovolémico',
   aka: 'Hipovolemia',
   ambito: 'Líquidos y electrolitos',
@@ -560,6 +564,7 @@ const DESHIDRATACION: Patologia = {
 const HOMBRO: Patologia = {
   id: 'luxacion-hombro-manguito-rotador',
   kind: 'ficha',
+  materia: 'Anatomía',
   title: 'Luxación de hombro y lesión del manguito rotador',
   aka: 'Inestabilidad glenohumeral',
   ambito: 'Hombro',
@@ -819,6 +824,7 @@ const HOMBRO: Patologia = {
 const CLAVICULA: Patologia = {
   id: 'fractura-clavicula',
   kind: 'ficha',
+  materia: 'Anatomía',
   title: 'Fractura de clavícula',
   ambito: 'Cintura escapular',
   resumen:
@@ -1030,7 +1036,7 @@ const CLAVICULA: Patologia = {
 }
 
 export const GUIA_CASO = GUIA
-export const FICHAS: Patologia[] = [DESHIDRATACION, HOMBRO, CLAVICULA]
+export const FICHAS: Patologia[] = [DESHIDRATACION, HOMBRO, CLAVICULA, ...FICHAS_MATERIAS]
 export const PATOLOGIAS: Patologia[] = [GUIA, ...FICHAS]
 
 export const patologiaById = (id: string) => PATOLOGIAS.find((p) => p.id === id)

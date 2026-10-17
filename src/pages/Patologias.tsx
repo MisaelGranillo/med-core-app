@@ -14,7 +14,7 @@ import { BlockRenderer } from '../components/SectionPanel'
 import { atlasThumb } from './atlasShared'
 import type { Question } from '../types'
 
-const MATERIAS: PatoMateria[] = ['Bioquímica', 'Histología', 'Anatomía']
+const MATERIAS: PatoMateria[] = ['Bioquímica', 'Genética', 'Histología', 'Anatomía']
 const materiasDe = (p: Patologia) => MATERIAS.filter((m) => p.bases.some((b) => b.materia === m))
 const topicTitle = (id: string) => topicIndex.find((t) => t.id === id)?.title ?? id
 
@@ -31,7 +31,7 @@ export function Patologias() {
           </h1>
           <p className="text-base text-zinc-500 max-w-[62ch]">
             De lo que ya estudiaste a la clínica. Cada ficha enlaza a las secciones de tus temas y resume lo que
-            recomienda la guía de práctica clínica (GPC) mexicana.
+            recomienda la guía de práctica clínica (GPC) mexicana o, si no la hay, un organismo internacional.
           </p>
         </header>
 
@@ -62,38 +62,41 @@ export function Patologias() {
           </ol>
         </Link>
 
-        <section className="flex flex-col gap-4" aria-labelledby="h-fichas">
-          <div className="flex items-baseline justify-between gap-4">
-            <h2 id="h-fichas" className="font-display text-xl font-normal text-zinc-900">Fichas</h2>
-            <span className="text-sm text-zinc-500">{FICHAS.length}</span>
-          </div>
-          <ul className="flex flex-col gap-3">
-            {FICHAS.map((p) => (
-              <li key={p.id}>
-                <Link
-                  to={`/patologias/${p.id}`}
-                  className="card p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4 hover:border-zinc-300 transition-colors group"
-                >
-                  <div className="flex-1 min-w-0 flex flex-col gap-1.5">
-                    <span className="text-sm text-zinc-500">{p.ambito}</span>
-                    <h3 className="font-display text-xl font-normal text-zinc-900 leading-snug">{p.title}</h3>
-                    <p className="text-[0.9375rem] text-zinc-600 leading-relaxed line-clamp-2">{p.resumen}</p>
-                    <div className="flex flex-wrap items-center gap-2 mt-1.5">
-                      {materiasDe(p).map((m) => (
-                        <span key={m} className="text-xs px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-600">{m}</span>
-                      ))}
-                      <span className="text-xs text-zinc-500">{p.fuentes.map((f) => f.codigo.replace(/^GPC /, '')).join(' · ')}</span>
-                    </div>
-                  </div>
-                  <ArrowRight weight="bold" className="hidden sm:block w-5 h-5 text-zinc-400 group-hover:text-primary flex-shrink-0" />
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
+        {MATERIAS.map((m) => {
+          const fichas = FICHAS.filter((p) => p.materia === m)
+          if (!fichas.length) return null
+          const hid = `h-${m.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()}`
+          return (
+            <section key={m} className="flex flex-col gap-3" aria-labelledby={hid}>
+              <div className="flex items-baseline justify-between gap-4">
+                <h2 id={hid} className="font-display text-xl font-normal text-zinc-900">{m}</h2>
+                <span className="text-sm text-zinc-500 tabular-nums">{fichas.length}</span>
+              </div>
+              <ul className="card divide-y divide-zinc-200 overflow-hidden">
+                {fichas.map((p) => (
+                  <li key={p.id}>
+                    <Link
+                      to={`/patologias/${p.id}`}
+                      className="flex items-center gap-4 px-5 sm:px-6 py-4 hover:bg-zinc-50 transition-colors group"
+                    >
+                      <div className="flex-1 min-w-0 flex flex-col gap-1">
+                        <h3 className="text-base sm:text-[1.0625rem] text-zinc-900 leading-snug">{p.title}</h3>
+                        <p className="text-sm text-zinc-600 leading-relaxed line-clamp-2 sm:line-clamp-1">{p.resumen}</p>
+                        <p className="text-xs text-zinc-500">
+                          {p.ambito} · {p.fuentes.map((f) => f.codigo.replace(/^GPC /, '')).join(' · ')}
+                        </p>
+                      </div>
+                      <ArrowRight weight="bold" className="w-4 h-4 text-zinc-400 group-hover:text-primary flex-shrink-0" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        })}
 
         <p className="text-sm text-zinc-500 max-w-[70ch]">
-          Material de estudio. Los tratamientos se resumen como idea general a partir de las GPC y no sustituyen
+          Material de estudio. Los tratamientos se resumen como idea general a partir de las guías y no sustituyen
           la valoración de un médico.
         </p>
       </div>
