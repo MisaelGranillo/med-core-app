@@ -9,6 +9,7 @@
 
 import type { ContentBlock, Question } from '../types'
 import { FICHAS_MATERIAS } from './patologias-materias'
+import { FICHAS_MATERIAS_2 } from './patologias-materias-2'
 
 export type PatoMateria = 'Bioquímica' | 'Genética' | 'Histología' | 'Anatomía'
 
@@ -1036,7 +1037,7 @@ const CLAVICULA: Patologia = {
 }
 
 export const GUIA_CASO = GUIA
-export const FICHAS: Patologia[] = [DESHIDRATACION, HOMBRO, CLAVICULA, ...FICHAS_MATERIAS]
+export const FICHAS: Patologia[] = [DESHIDRATACION, HOMBRO, CLAVICULA, ...FICHAS_MATERIAS, ...FICHAS_MATERIAS_2]
 export const PATOLOGIAS: Patologia[] = [GUIA, ...FICHAS]
 
 export const patologiaById = (id: string) => PATOLOGIAS.find((p) => p.id === id)
