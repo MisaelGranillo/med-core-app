@@ -2,8 +2,8 @@
  *
  * Índice: la guía «Cómo leer un caso clínico» y las fichas. Ficha: secciones
  * con los mismos bloques de los temas, lo ya estudiado (enlaces a la sección
- * exacta de cada tema y a las láminas del Atlas), aclaraciones a lo dicho en
- * clase, caso clínico con preguntas que se responden ahí mismo y las GPC. */
+ * exacta de cada tema y a las láminas del Atlas), caso clínico con preguntas
+ * que se responden ahí mismo y las GPC. */
 
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
@@ -65,7 +65,7 @@ export function Patologias() {
         <section className="flex flex-col gap-4" aria-labelledby="h-fichas">
           <div className="flex items-baseline justify-between gap-4">
             <h2 id="h-fichas" className="font-display text-xl font-normal text-zinc-900">Fichas</h2>
-            <span className="text-sm text-zinc-500">{FICHAS.length} · vistas en sesiones integradoras</span>
+            <span className="text-sm text-zinc-500">{FICHAS.length}</span>
           </div>
           <ul className="flex flex-col gap-3">
             {FICHAS.map((p) => (
@@ -115,7 +115,6 @@ export function PatologiaDetalle() {
   const nav = [
     ...p.sections.map((s) => ({ id: s.id, label: s.title })),
     { id: 'bases', label: 'Lo que ya estudiaste' },
-    ...(p.aclaraciones.length ? [{ id: 'aclaraciones', label: 'Aclaraciones' }] : []),
     { id: 'caso', label: p.caso.titulo },
     { id: 'fuentes', label: 'Fuentes' },
   ]
@@ -135,7 +134,7 @@ export function PatologiaDetalle() {
           </Link>
           <div>
             <p className="text-sm text-zinc-500">
-              {p.ambito} · vista en {p.sesion}
+              {p.ambito} · {materiasDe(p).join(' · ')}
             </p>
             <h1 className="mt-1 font-display font-light text-[2rem] sm:text-[2.6rem] leading-[1.08] tracking-[-0.025em] text-zinc-900 text-balance">
               {p.title}
@@ -191,7 +190,6 @@ export function PatologiaDetalle() {
             ))}
 
             <Bases p={p} />
-            {p.aclaraciones.length > 0 && <Aclaraciones p={p} />}
             <Caso p={p} />
             <Fuentes p={p} />
           </div>
@@ -249,31 +247,6 @@ function Bases({ p }: { p: Patologia }) {
           </div>
         </div>
       )}
-    </section>
-  )
-}
-
-function Aclaraciones({ p }: { p: Patologia }) {
-  return (
-    <section id="pat-aclaraciones" className="card p-5 sm:p-6 flex flex-col gap-4" aria-labelledby="h-aclaraciones">
-      <div>
-        <h2 id="h-aclaraciones" className="font-display text-xl font-normal text-zinc-900">Aclaraciones a la clase</h2>
-        <p className="text-[0.9375rem] text-zinc-500 mt-1">Lo que se dijo de forma imprecisa en la sesión y lo correcto.</p>
-      </div>
-      <ul className="flex flex-col gap-3">
-        {p.aclaraciones.map((a, i) => (
-          <li key={i} className="rounded-2xl bg-zinc-100 p-4 sm:p-5 grid gap-3 md:grid-cols-2">
-            <div className="min-w-0">
-              <p className="text-xs font-medium text-zinc-500 mb-1">En clase</p>
-              <p className="text-[0.9375rem] text-zinc-600 leading-relaxed">{a.enClase}</p>
-            </div>
-            <div className="min-w-0">
-              <p className="text-xs font-medium text-primary-ink mb-1">Lo correcto</p>
-              <p className="text-[0.9375rem] text-zinc-900 leading-relaxed">{a.correcto}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
     </section>
   )
 }
@@ -381,7 +354,7 @@ function Fuentes({ p }: { p: Patologia }) {
         ))}
       </ul>
       <p className="text-sm text-zinc-500">
-        Vista en {p.sesion} (extracurricular). Los casos son ficticios, escritos para practicar.
+        Los casos son ficticios, escritos para practicar.
       </p>
     </section>
   )

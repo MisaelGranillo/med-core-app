@@ -334,7 +334,7 @@ export function Topic() {
                     >
                       <span className="flex-1 min-w-0">
                         <span className="block text-base text-zinc-900">{p.title}</span>
-                        <span className="block text-sm text-zinc-500">{p.ambito} · {p.sesion}</span>
+                        <span className="block text-sm text-zinc-500">{p.ambito}</span>
                       </span>
                       <ArrowRight weight="bold" className="w-4 h-4 text-zinc-400 group-hover:text-primary flex-shrink-0" />
                     </Link>

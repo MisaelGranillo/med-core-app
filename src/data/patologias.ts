@@ -1,11 +1,11 @@
 /* Patologías — fichas que conectan lo estudiado en las materias con la clínica.
  *
- * Piloto a partir de la Sesión integradora 1 (extracurricular): tres fichas y
- * la guía «Cómo leer un caso clínico». Cada ficha enlaza a las secciones de los
- * temas donde está su base (topicId + sectionId), cita la guía de práctica
- * clínica (GPC) mexicana en que se apoya y aclara lo que se dijo de forma
- * imprecisa en clase. El tratamiento se resume como idea general, nunca como
- * indicación. Los casos son escritos para MedCore (ningún paciente real). */
+ * La guía «Cómo leer un caso clínico» y una ficha por patología. Cada ficha
+ * enlaza a las secciones de los temas donde está su base (topicId + sectionId)
+ * y cita la guía de práctica clínica (GPC) mexicana en que se apoya. Solo datos
+ * verificados, sin referencias a lo dicho en clase. El tratamiento se resume
+ * como idea general, nunca como indicación. Los casos son escritos para MedCore
+ * (ningún paciente real). */
 
 import type { ContentBlock, Question } from '../types'
 
@@ -25,11 +25,6 @@ export interface PatoFuente {
   url: string
 }
 
-export interface PatoAclaracion {
-  enClase: string
-  correcto: string
-}
-
 export interface PatoSeccion {
   id: string
   title: string
@@ -43,11 +38,9 @@ export interface Patologia {
   aka?: string
   ambito: string
   resumen: string
-  sesion: string
   sections: PatoSeccion[]
   bases: PatoBase[]
   atlas: { id: string; title: string }[]
-  aclaraciones: PatoAclaracion[]
   caso: { titulo: string; texto: string; preguntas: Question[] }
   fuentes: PatoFuente[]
 }
@@ -80,8 +73,6 @@ const GPC = {
   },
 } satisfies Record<string, PatoFuente>
 
-const SESION_1 = 'Sesión integradora 1'
-
 const q = (
   id: string, topicId: string, question: string, options: string[], correctIndex: number,
   explanation: string, difficulty: Question['difficulty'] = 'medium',
@@ -96,7 +87,6 @@ const GUIA: Patologia = {
   ambito: 'Método',
   resumen:
     'Un caso se desarma en pasos: mirar al paciente, ordenar los datos como en la historia clínica de la NOM-004, separar síntomas de signos y estudios, analizar cada dato por separado y, al final, integrar. Las guías de práctica clínica (GPC) dicen qué buscar en cada paso y cuándo un dato es de alarma.',
-  sesion: SESION_1,
   sections: [
     {
       id: 'g-1',
@@ -105,7 +95,7 @@ const GUIA: Patologia = {
         {
           type: 'paragraph',
           content:
-            'Antes de decir «buenos días» ya se está explorando. Recomendación del tutor: escanear al paciente de forma rápida en cuanto entra. ¿Llega solo o acompañado? ¿Camina bien, cojea, llega en silla? ¿Qué postura tiene? ¿Viene aseado? ¿A qué huele? Todo eso es información clínica.',
+            'Antes de decir «buenos días» ya se está explorando: el paciente se observa de forma rápida en cuanto entra. ¿Llega solo o acompañado? ¿Camina bien, cojea, llega en silla? ¿Qué postura tiene? ¿Viene aseado? ¿A qué huele? Todo eso es información clínica.',
         },
         {
           type: 'list',
@@ -198,7 +188,7 @@ const GUIA: Patologia = {
         {
           type: 'paragraph',
           content:
-            'Método del tutor: tomar cada dato anormal y hacer una lista rápida de lo que lo puede causar. «Cefalea: ¿qué causa cefalea?». «Hipertensión: ¿qué causa hipertensión?». Después se cruzan las listas: el diagnóstico suele estar donde coinciden, y lo que no explica todos los datos se descarta.',
+            'Se toma cada dato anormal y hacer una lista rápida de lo que lo puede causar. «Cefalea: ¿qué causa cefalea?». «Hipertensión: ¿qué causa hipertensión?». Después se cruzan las listas: el diagnóstico suele estar donde coinciden, y lo que no explica todos los datos se descarta.',
         },
         {
           type: 'steps',
@@ -312,7 +302,7 @@ const GUIA: Patologia = {
           variant: 'clinica',
           title: 'Saber referir también es parte del caso',
           content:
-            'Cada GPC trae criterios de referencia a segundo o tercer nivel. En palabras del tutor, «los pacientes no son nuestros»: si no hay mejoría o el problema rebasa lo que se puede resolver, se deriva a quien tenga el conocimiento especializado.',
+            'Cada GPC trae criterios de referencia a segundo o tercer nivel. Si no hay mejoría o el problema rebasa lo que se puede resolver en ese nivel, se deriva a quien tenga el conocimiento especializado.',
         },
       ],
     },
@@ -323,12 +313,6 @@ const GUIA: Patologia = {
     { materia: 'Histología', topicId: 'histologia-biometria-hematica', sectionId: 'hbh-1', label: 'Principios de interpretación', porQue: 'Leer un estudio es comparar con valores de referencia y buscar un patrón, igual que con los signos.' },
   ],
   atlas: [],
-  aclaraciones: [
-    {
-      enClase: 'El paciente puede oler «a manzana» por su «acidez diurética».',
-      correcto: 'El aliento afrutado orienta a cetoacidosis diabética: la acetona, un cuerpo cetónico, se elimina por la respiración.',
-    },
-  ],
   caso: {
     titulo: 'Practica el método',
     texto:
@@ -364,7 +348,6 @@ const DESHIDRATACION: Patologia = {
   ambito: 'Líquidos y electrolitos',
   resumen:
     'Cuando se pierde más líquido del que entra, baja el volumen circulante. El cuerpo compensa con taquicardia y vasoconstricción; si la pérdida sigue, la presión cae y los órganos dejan de recibir suficiente sangre: eso es el choque hipovolémico.',
-  sesion: SESION_1,
   sections: [
     {
       id: 'des-1',
@@ -403,7 +386,7 @@ const DESHIDRATACION: Patologia = {
           variant: 'clinica',
           title: 'La bomba y el tinaco',
           content:
-            'Analogía de la clase: el corazón es la bomba que sube el agua de la cisterna al tinaco. Con menos agua en el sistema, la bomba trabaja más rápido y con más fuerza para mantener la presión (taquicardia). Cuando ya no alcanza, la presión cae aunque los vasos se contraigan (hipotensión).',
+            'Una analogía: el corazón es la bomba que sube el agua de la cisterna al tinaco. Con menos agua en el sistema, la bomba trabaja más rápido y con más fuerza para mantener la presión (taquicardia). Cuando ya no alcanza, la presión cae aunque los vasos se contraigan (hipotensión).',
         },
       ],
     },
@@ -499,7 +482,7 @@ const DESHIDRATACION: Patologia = {
         {
           type: 'note',
           content:
-            'Resumen de lo que recomienda la GPC pediátrica; no es una indicación. No existe una GPC mexicana específica de choque hipovolémico en el adulto, así que esa parte se apoya en la clase y en la fisiología.',
+            'Resumen de lo que recomienda la GPC pediátrica; no es una indicación. No existe una GPC mexicana específica de choque hipovolémico en el adulto, así que esa parte se apoya en la fisiología.',
         },
         {
           type: 'steps',
@@ -547,24 +530,6 @@ const DESHIDRATACION: Patologia = {
     { id: 'bioquimica-acido-base', title: 'Equilibrio ácido-base' },
     { id: 'histologia-sangre', title: 'Sangre y elementos formes' },
   ],
-  aclaraciones: [
-    {
-      enClase: 'El signo del baumanómetro («Chapstick») es de hipocalemia, y el del golpecito en la cara, de hipomagnesemia.',
-      correcto: 'Trousseau (manguito del baumanómetro) y Chvostek (percusión del nervio facial; es el nombre que se oyó como «Chapstick») son signos de hipocalcemia. La hipomagnesemia puede producirlos porque causa hipocalcemia; el potasio bajo no los produce.',
-    },
-    {
-      enClase: 'Con mucho potasio el paciente puede caer en un infarto.',
-      correcto: 'La hiperpotasemia causa arritmias y puede llevar al paro cardiaco. El infarto es otra cosa: necrosis del músculo cardiaco por falta de riego coronario.',
-    },
-    {
-      enClase: 'Cuanto más espesa la sangre, más osmolaridad.',
-      correcto: 'La sangre «espesa» es hemoconcentración: más hematocrito y viscosidad. La osmolaridad depende de los solutos disueltos (sobre todo el sodio); puede subir en la deshidratación, pero no por el espesor. El llenado capilar lento se debe sobre todo al menor volumen y a la vasoconstricción periférica.',
-    },
-    {
-      enClase: 'La turgencia se explora con el «signo del cilindro».',
-      correcto: 'Se conoce como signo del pliegue; la GPC lo registra como turgencia de la piel.',
-    },
-  ],
   caso: {
     titulo: 'Caso clínico',
     texto:
@@ -600,7 +565,6 @@ const HOMBRO: Patologia = {
   ambito: 'Hombro',
   resumen:
     'La glenohumeral es la articulación más móvil del cuerpo y, por eso mismo, la que más se luxa. Su estabilidad depende sobre todo de partes blandas: el rodete, la cápsula, los ligamentos y el manguito rotador.',
-  sesion: SESION_1,
   sections: [
     {
       id: 'hom-1',
@@ -624,6 +588,7 @@ const HOMBRO: Patologia = {
             title: 'Glenohumeral',
             items: [
               'Cabeza del húmero grande sobre una cavidad glenoidea pequeña y poco profunda',
+              'Flexión y extensión, abducción y aducción, rotaciones y circunducción',
               'La sostienen sobre todo partes blandas',
               'Máxima movilidad, mínima estabilidad',
             ],
@@ -651,9 +616,9 @@ const HOMBRO: Patologia = {
         {
           type: 'correlacion',
           variant: 'mnemotecnia',
-          title: 'La «frutita»',
+          title: 'SITS',
           content:
-            'El tutor llama así al manguito rotador para no olvidarlo. Sus cuatro músculos, SITS: Supraespinoso, Infraespinoso, redondo menor (Teres minor) y Subescapular.',
+            'Los cuatro músculos del manguito rotador: Supraespinoso, Infraespinoso, redondo menor (Teres minor) y Subescapular.',
         },
       ],
     },
@@ -813,27 +778,13 @@ const HOMBRO: Patologia = {
     { materia: 'Anatomía', topicId: 'miembro-superior-oseo', sectionId: 'mso-3', label: 'Escápula', porQue: 'Cavidad glenoidea, acromion y coracoides: el «plato» y el techo del hombro.' },
     { materia: 'Anatomía', topicId: 'miembro-superior-oseo', sectionId: 'mso-4', label: 'Húmero', porQue: 'Cabeza y cuello quirúrgico, por donde pasa el nervio axilar.' },
     { materia: 'Anatomía', topicId: 'artrologia-generalidades', sectionId: 'art-2', label: 'Composición de la articulación sinovial', porQue: 'Cápsula, membrana sinovial y ligamentos: los estabilizadores estáticos.' },
-    { materia: 'Anatomía', topicId: 'articulaciones-miembro-inferior', sectionId: 'aminf-1', label: 'Coxofemoral (cadera)', porQue: 'La comparación de la clase: el acetábulo cubre casi toda la cabeza del fémur.' },
+    { materia: 'Anatomía', topicId: 'articulaciones-miembro-inferior', sectionId: 'aminf-1', label: 'Coxofemoral (cadera)', porQue: 'Por comparación: el acetábulo cubre casi toda la cabeza del fémur.' },
     { materia: 'Histología', topicId: 'histologia-cartilago', label: 'Cartílago', porQue: 'Cartílago hialino articular y fibrocartílago, el tejido del rodete glenoideo.' },
   ],
   atlas: [
     { id: 'articulaciones-miembro-superior', title: 'Articulaciones del miembro superior' },
     { id: 'musculos-miembro-superior', title: 'Músculos del miembro superior' },
     { id: 'miembro-superior-oseo', title: 'Miembro superior óseo' },
-  ],
-  aclaraciones: [
-    {
-      enClase: 'El grupo muscular del hombro es el «movimiento rotador».',
-      correcto: 'Es el manguito rotador (manguito de los rotadores): supraespinoso, infraespinoso, redondo menor y subescapular.',
-    },
-    {
-      enClase: 'El hombro hace todos los movimientos, incluida la supinación.',
-      correcto: 'La glenohumeral hace flexión y extensión, abducción y aducción, rotación interna y externa, y circunducción. La supinación es un movimiento del antebrazo (articulaciones radiocubitales).',
-    },
-    {
-      enClase: 'Una fuerza repentina de abajo hacia arriba es la que luxa el hombro; por arriba no hay nada que lo detenga.',
-      correcto: 'Más del 95 % de las luxaciones son anteriores, por rotación externa forzada con el brazo en abducción. Por arriba está el arco coracoacromial, que es uno de los estabilizadores.',
-    },
   ],
   caso: {
     titulo: 'Caso clínico',
@@ -872,7 +823,6 @@ const CLAVICULA: Patologia = {
   ambito: 'Cintura escapular',
   resumen:
     'La clavícula es el único puntal óseo entre el miembro superior y el tronco, y uno de los huesos que más se fracturan. La mayoría se rompe en su tercio medio y consolida con tratamiento conservador.',
-  sesion: SESION_1,
   sections: [
     {
       id: 'cla-1',
@@ -917,7 +867,7 @@ const CLAVICULA: Patologia = {
         {
           type: 'paragraph',
           content:
-            'Analogía de la clase: como en un edificio, la carga se reparte por columnas y trabes hasta las zapatas. En el miembro superior, una fuerza viaja por el antebrazo y el húmero hasta el hombro, y de ahí la clavícula la transmite al esternón. Si la fuerza supera lo que el hueso resiste, se rompe en su punto más débil.',
+            'Como en un edificio, la carga se reparte por columnas y trabes hasta las zapatas. En el miembro superior, una fuerza viaja por el antebrazo y el húmero hasta el hombro, y de ahí la clavícula la transmite al esternón. Si la fuerza supera lo que el hueso resiste, se rompe en su punto más débil.',
         },
         {
           type: 'list',
@@ -1050,12 +1000,6 @@ const CLAVICULA: Patologia = {
     { id: 'miembro-superior-oseo', title: 'Miembro superior óseo' },
     { id: 'articulaciones-miembro-superior', title: 'Articulaciones del miembro superior' },
     { id: 'histologia-cartilago-hueso', title: 'Adiposo, cartílago y hueso' },
-  ],
-  aclaraciones: [
-    {
-      enClase: 'La fuerza llega a la clavícula, no tiene dónde descargarse en el esternón y «por eso va a dislocar».',
-      correcto: 'Lo que se produce es una fractura: el hueso se rompe en su punto más débil, casi siempre el tercio medio. Dislocar (luxar) es que el hueso salga de su articulación; la esternoclavicular se luxa con mucha menos frecuencia.',
-    },
   ],
   caso: {
     titulo: 'Caso clínico',
