@@ -5523,4 +5523,564 @@ export const bioquimicaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'bioquimica-hormonas-concepto-clasificacion',
+    title: 'Hormonas: concepto, clasificación y señalización',
+    subtitle: 'Qué es una hormona; receptores y segundos mensajeros; seis grupos químicos; la estructura predice solubilidad, transporte, receptor y vida media; retroalimentación',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '📡',
+    keyPoints: [
+      'Hormona: molécula activa que producen células o glándulas endocrinas y que actúa sobre células blanco con receptores específicos. La palabra viene del griego «excitar».',
+      'La unión hormona-receptor (ligando-receptor) activa proteínas G, receptores con actividad de cinasa o segundos mensajeros: AMPc, GMPc, Ca²⁺, IP₃ y diacilglicerol.',
+      'Seis grupos: proteicas o polipeptídicas, esteroideas, derivadas de aminoácidos, derivadas de ácidos grasos, factores de crecimiento y citocinas.',
+      'Hidrosolubles (peptídicas, catecolaminas): circulan libres, receptor de membrana, vida media corta. Liposolubles (esteroides, hormonas tiroideas): transportador, receptor intracelular, vida media larga.',
+      'La noradrenalina es una catecolamina derivada de la tirosina con vida media de 2 a 3 minutos: por eso se administra en infusión y se ajusta según la respuesta.',
+      'La secreción se regula sobre todo por retroalimentación negativa; la positiva es excepcional (pico de LH, oxitocina en el parto).',
+    ],
+    sections: [
+      {
+        id: 'bhc-1',
+        number: 1,
+        title: '¿Qué es una hormona?',
+        keyTerms: ['hormona', 'célula blanco', 'receptor', 'ligando'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Hormona',
+            content: 'Molécula biológicamente activa que producen y liberan células o glándulas endocrinas, que en general viaja por la sangre y actúa sobre células blanco que tienen receptores específicos para ella. La palabra viene del griego hormao, «excitar» o «poner en movimiento».',
+          },
+          {
+            type: 'list',
+            title: 'Características',
+            items: [
+              'Es un mensajero químico: lleva una orden de un órgano a otro.',
+              'Actúa en concentraciones muy pequeñas pero produce respuestas grandes.',
+              'Solo responden las células que tienen su receptor; si el receptor está en varios tejidos, el efecto es multiorgánico.',
+              'Su liberación depende de varios estímulos (otras hormonas, nervios, nutrientes, estrés) y se regula por retroalimentación.',
+              'Se mide sobre todo en plasma, es decir, en el compartimento extracelular.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'La hormona y su receptor forman el complejo ligando-receptor. Se parece al complejo enzima-sustrato: la hormona debe encajar en su receptor. Conocer la estructura de la hormona permite anticipar sus propiedades químicas, físicas y biológicas: dónde está su receptor, cómo viaja, cuánto dura y qué pasa cuando falla.',
+          },
+          {
+            type: 'list',
+            title: 'Dónde puede fallar el sistema',
+            items: [
+              'La hormona no se sintetiza o se produce en poca cantidad (hipotiroidismo).',
+              'Se produce en exceso (síndrome de Cushing, hipertiroidismo).',
+              'Se produce pero su estructura no es funcional.',
+              'La hormona es normal pero su receptor no responde (resistencia a la insulina).',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'bhc-2',
+        number: 2,
+        title: 'Receptores y segundos mensajeros',
+        keyTerms: ['proteína G', 'AMPc', 'IP₃', 'diacilglicerol', 'tirosina cinasa', 'receptor nuclear'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Cómo transmite la señal cada tipo de receptor',
+            data: {
+              headers: ['Receptor', 'Dónde', 'Qué activa', 'Ejemplos'],
+              rows: [
+                ['Acoplado a proteína G', 'Membrana', 'Adenilato ciclasa → AMPc → proteína cinasa A; o fosfolipasa C → IP₃ (libera Ca²⁺) y diacilglicerol (proteína cinasa C)', 'Glucagón, adrenalina, TSH, ADH'],
+                ['Con actividad de tirosina cinasa', 'Membrana', 'Se autofosforila y fosforila proteínas en cascada', 'Insulina, factores de crecimiento'],
+                ['Con actividad de guanilato ciclasa', 'Membrana o citoplasma', 'GMPc → proteína cinasa G', 'Péptido natriurético; el óxido nítrico activa la guanilato ciclasa soluble'],
+                ['Intracelular o nuclear', 'Citoplasma o núcleo', 'El complejo hormona-receptor se une al ADN y cambia la transcripción de genes', 'Esteroides, hormonas tiroideas, vitamina D'],
+              ],
+            },
+          },
+          {
+            type: 'definition',
+            title: 'Segundo mensajero',
+            content: 'Molécula intracelular que transmite y amplifica la señal de una hormona que no entra a la célula (el «primer mensajero»): AMPc, GMPc, Ca²⁺, IP₃ y diacilglicerol. El Ca²⁺ suele actuar unido a la calmodulina.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Los receptores de la noradrenalina',
+            content: 'Una misma hormona puede tener varios receptores con efectos distintos. α₁: vasoconstricción y aumento de la presión arterial. α₂: frena la liberación de noradrenalina (por eso los agonistas α₂ centrales bajan la presión). β₁: aumenta la frecuencia y la fuerza del corazón. β₂: relaja el músculo liso bronquial (broncodilatación). β₃: estimula la lipólisis en el tejido adiposo.',
+          },
+        ],
+      },
+      {
+        id: 'bhc-3',
+        number: 3,
+        title: 'Clasificación química',
+        keyTerms: ['polipeptídicas', 'esteroideas', 'aminas', 'eicosanoides', 'factores de crecimiento', 'citocinas'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Los seis grupos (presentación)',
+            data: {
+              headers: ['Grupo', 'Origen', 'Ejemplos'],
+              rows: [
+                ['Proteicas y polipeptídicas', 'Cadenas de aminoácidos', 'Insulina, glucagón, somatostatina, GH, calcitonina, ACTH, oxitocina, ADH, TSH, LH, FSH'],
+                ['Esteroideas', 'Colesterol', 'Cortisol, aldosterona, andrógenos, estrógenos, progesterona; la vitamina D activa es un secoesteroide'],
+                ['Derivadas de aminoácidos (aminas)', 'Tirosina y triptófano', 'Catecolaminas, T₃ y T₄, serotonina, melatonina'],
+                ['Derivadas de ácidos grasos', 'Ácido araquidónico (20 carbonos)', 'Eicosanoides: prostaglandinas, prostaciclinas, tromboxanos, leucotrienos'],
+                ['Factores de crecimiento', 'Proteínas', 'La GH estimula la producción hepática de IGF-1, que media su efecto de crecimiento'],
+                ['Citocinas', 'Proteínas y glucoproteínas', 'Interleucinas (IL-1 a IL-10 en la presentación), interferones, TNF'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Tamaño de algunas hormonas peptídicas',
+            data: {
+              headers: ['Hormona', 'Aminoácidos', 'Nota'],
+              rows: [
+                ['Oxitocina y vasopresina (ADH)', '9', 'Nonapéptidos: péptidos cortos'],
+                ['Insulina', '51', 'Dos cadenas (A de 21 y B de 30) unidas por puentes disulfuro'],
+                ['Hormona del crecimiento', '191', 'Proteína de una sola cadena'],
+                ['FSH, LH, TSH', '—', 'Glucoproteínas: una subunidad α común y una β propia de cada hormona'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Péptido y proteína se distinguen por tamaño: los péptidos son cadenas cortas y las proteínas, largas. El retinol es la vitamina A; su derivado, el ácido retinoico, actúa como una hormona a través de receptores nucleares.',
+          },
+        ],
+      },
+      {
+        id: 'bhc-4',
+        number: 4,
+        title: 'La estructura predice el comportamiento',
+        keyTerms: ['hidrosoluble', 'liposoluble', 'vida media', 'transportador'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Hidrosolubles frente a liposolubles',
+            left: {
+              title: 'Hidrosolubles (peptídicas, catecolaminas)',
+              items: [
+                'Circulan libres en el plasma',
+                'No atraviesan la membrana: receptor de membrana y segundos mensajeros',
+                'Se almacenan en gránulos y se liberan por exocitosis',
+                'Vida media corta (minutos)',
+                'Las peptídicas se destruyen en el tubo digestivo: la insulina se inyecta',
+              ],
+            },
+            right: {
+              title: 'Liposolubles (esteroides, hormonas tiroideas)',
+              items: [
+                'Viajan unidas a proteínas transportadoras',
+                'Atraviesan la membrana: receptor intracelular o nuclear',
+                'Los esteroides no se almacenan: se sintetizan cuando se necesitan',
+                'Vida media larga (horas a días)',
+                'Se absorben por vía oral: prednisona, levotiroxina',
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'La noradrenalina se ajusta minuto a minuto',
+            content: 'La noradrenalina es una catecolamina (amina derivada de la tirosina), hidrosoluble y con vida media de 2 a 3 minutos. En terapia intensiva se administra en infusión continua y la dosis se ajusta según la presión y la frecuencia cardiaca: al bajar la infusión, el efecto disminuye en pocos minutos porque la molécula se elimina rápido.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Por qué los glucocorticoides suben de peso',
+            content: 'Los glucocorticoides como la dexametasona o la prednisona no aumentan el peso porque «se acumulen» por ser lípidos. Lo hacen por sus efectos metabólicos: más apetito, hiperglucemia y resistencia a la insulina, redistribución de la grasa hacia el tronco y la cara, y retención de líquidos.',
+          },
+        ],
+      },
+      {
+        id: 'bhc-5',
+        number: 5,
+        title: 'Retroalimentación y ejes endocrinos',
+        keyTerms: ['retroalimentación negativa', 'retroalimentación positiva', 'eje hipotálamo-hipófisis'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Un eje endocrino',
+            steps: [
+              'El hipotálamo libera una hormona liberadora (por ejemplo, TRH).',
+              'La hipófisis responde con una hormona trófica (TSH).',
+              'La glándula periférica produce la hormona final (T₄ y T₃).',
+              'La hormona final frena al hipotálamo y a la hipófisis: retroalimentación negativa.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Dos tipos de retroalimentación',
+            left: { title: 'Negativa (la más común)', items: ['La respuesta frena el estímulo', 'Mantiene la homeostasis', 'Ejemplo: T₃ y T₄ inhiben la TRH y la TSH'] },
+            right: { title: 'Positiva (excepcional)', items: ['La respuesta amplifica el estímulo', 'Termina en un evento', 'Ejemplos: pico de LH antes de la ovulación, oxitocina durante el parto'] },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Hormona tiroidea para adelgazar',
+            content: 'Algunos productos para bajar de peso contenían triyodotironina (T₃). La hormona externa aumenta el metabolismo, pero por retroalimentación negativa suprime la TSH y la producción propia de la tiroides. Produce taquicardia, arritmias y pérdida de masa muscular y ósea; al suspenderla, el eje tarda en recuperarse y el peso perdido regresa. La hormona tiroidea no debe usarse para adelgazar.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-hormonas-sintesis-transporte',
+    title: 'Síntesis, liberación y transporte de las hormonas',
+    subtitle: 'De preprohormona a hormona activa; exocitosis por Ca²⁺; variabilidad de las hormonas proteicas; esteroidogénesis; proteínas transportadoras, fracción libre y vida media',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '📦',
+    keyPoints: [
+      'Hormonas peptídicas: ADN → ARNm → traducción en el retículo endoplásmico rugoso → preprohormona → prohormona → hormona activa en gránulos de secreción → exocitosis cuando sube el Ca²⁺.',
+      'La proinsulina se corta en insulina y péptido C, que se liberan en la misma cantidad.',
+      'El splicing alternativo y las modificaciones postraduccionales generan variantes de una misma hormona proteica; el laboratorio debe saber cuáles reconoce su método.',
+      'Esteroides: colesterol → (StAR) mitocondria → pregnenolona por la P450scc (desmolasa) → retículo endoplásmico liso; no se almacenan.',
+      'Las hormonas liposolubles viajan unidas a albúmina y globulinas (TBG, SHBG, CBG); solo la fracción libre actúa.',
+      'La vida media depende de la estructura y de la unión a proteínas: minutos para catecolaminas e insulina, días para la T₄.',
+    ],
+    sections: [
+      {
+        id: 'bhs-1',
+        number: 1,
+        title: 'Síntesis de las hormonas peptídicas',
+        keyTerms: ['preprohormona', 'prohormona', 'gránulo de secreción', 'exocitosis', 'Ca²⁺'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Fases (presentación)',
+            steps: [
+              'Síntesis: en el núcleo, el gen se transcribe a ARNm.',
+              'El ARNm se traduce en los ribosomas del retículo endoplásmico rugoso: se forma la preprohormona.',
+              'Encapsulado: se corta el péptido señal (que la dirigió al retículo) y queda la prohormona.',
+              'Almacenamiento: en el aparato de Golgi la prohormona se empaqueta en gránulos de secreción, donde enzimas la cortan en la hormona activa.',
+              'Secreción: un estímulo aumenta el Ca²⁺ intracelular y los gránulos se fusionan con la membrana: exocitosis.',
+            ],
+          },
+          {
+            type: 'definition',
+            title: 'Prohormona',
+            content: 'Precursor inactivo de una hormona que necesita cortes enzimáticos para activarse, igual que un zimógeno. La preprohormona es la prohormona con su péptido señal.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'El péptido C',
+            content: 'La proinsulina se corta en insulina y péptido C, que salen del gránulo en la misma cantidad. Como la insulina inyectada no trae péptido C, medirlo permite saber cuánta insulina produce el propio páncreas.',
+          },
+          {
+            type: 'note',
+            content: 'Las hormonas esteroideas no siguen este camino: no se codifican directamente en un gen ni pasan por preprohormona. Se forman a partir del colesterol mediante enzimas.',
+          },
+        ],
+      },
+      {
+        id: 'bhs-2',
+        number: 2,
+        title: 'Variabilidad de las hormonas proteicas',
+        keyTerms: ['splicing alternativo', 'glicosilación', 'isoformas', 'inmunoensayo'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Por qué una hormona puede circular en varias formas (presentación)',
+            items: [
+              'Splicing alternativo: en el núcleo, el pre-ARNm de un mismo gen puede empalmarse de distintas formas y dar variantes de la hormona (por ejemplo, la GH de 22 y de 20 kDa).',
+              'Modificaciones después de la traducción: glicosilación, unión de dos subunidades (dímeros).',
+              'Unión a proteínas transportadoras o a anticuerpos en la circulación.',
+              'No todas las variantes tienen la misma actividad biológica.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Impacto en el laboratorio',
+            content: 'Un inmunoensayo reconoce la hormona con anticuerpos. El laboratorio debe saber qué variantes moleculares detecta su método, porque de eso depende el valor que reporta.',
+          },
+        ],
+      },
+      {
+        id: 'bhs-3',
+        number: 3,
+        title: 'Síntesis de las hormonas esteroideas',
+        keyTerms: ['colesterol', 'StAR', 'pregnenolona', 'P450scc', '21-hidroxilasa', 'aromatasa'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Generalidades (presentación)',
+            items: [
+              'Todas derivan del colesterol, que llega de la dieta o se sintetiza en el hígado y viaja en LDL a las glándulas.',
+              'Se producen en la corteza suprarrenal y las gónadas (y la placenta).',
+              'No se almacenan: se sintetizan cuando hay estímulo.',
+            ],
+          },
+          {
+            type: 'steps',
+            title: 'Del colesterol a la hormona',
+            steps: [
+              'La proteína StAR lleva el colesterol a la membrana mitocondrial interna.',
+              'La P450scc (CYP11A1, desmolasa) corta la cadena lateral y forma pregnenolona: es el paso limitante.',
+              'La pregnenolona pasa al retículo endoplásmico liso, donde otras enzimas (deshidrogenasas e hidroxilasas del citocromo P450) la modifican.',
+              'Algunas rutas regresan a la mitocondria para el último paso; la hormona terminada sale a la sangre.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Las ramas de la esteroidogénesis',
+            data: {
+              headers: ['Producto', 'Ruta resumida', 'Dónde'],
+              rows: [
+                ['Aldosterona', 'Progesterona → 11-desoxicorticosterona → corticosterona → aldosterona', 'Zona glomerulosa'],
+                ['Cortisol', 'Progesterona → (17α-hidroxilasa) 17-hidroxiprogesterona → (21-hidroxilasa) 11-desoxicortisol → cortisol', 'Zona fasciculada'],
+                ['Andrógenos', '(17,20-liasa) DHEA → androstenediona → testosterona → (5α-reductasa) dihidrotestosterona', 'Zona reticular, células de Leydig'],
+                ['Estrógenos', '(aromatasa) testosterona → estradiol; androstenediona → estrona', 'Ovario, placenta, tejido adiposo'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Cuando falta una enzima',
+            content: 'Si falta la 21-hidroxilasa, la suprarrenal no forma cortisol ni aldosterona y los precursores se desvían a andrógenos: hiperplasia suprarrenal congénita. Las enzimas de síntesis de esteroides son distintas de las CYP del hígado (como CYP3A4 y CYP2D6) que metabolizan fármacos.',
+          },
+        ],
+      },
+      {
+        id: 'bhs-4',
+        number: 4,
+        title: 'Transporte en la sangre',
+        keyTerms: ['proteína transportadora', 'fracción libre', 'TBG', 'SHBG', 'CBG', 'albúmina'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Principales proteínas transportadoras',
+            data: {
+              headers: ['Proteína', 'Transporta', 'Rasgo'],
+              rows: [
+                ['Albúmina', 'Muchas hormonas liposolubles', 'Poca afinidad, mucha capacidad'],
+                ['Globulina transportadora de tiroxina (TBG)', 'T₄ y T₃', 'Alta afinidad'],
+                ['Globulina transportadora de hormonas sexuales (SHBG)', 'Testosterona, estradiol', 'Alta afinidad'],
+                ['Globulina transportadora de corticosteroides (CBG, transcortina)', 'Cortisol', 'Alta afinidad'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Funciones de las proteínas transportadoras',
+            items: [
+              'Facilitan el transporte de moléculas poco solubles en agua.',
+              'Son específicas para su hormona.',
+              'Mientras la hormona está unida, está inactiva; solo la fracción libre entra a la célula y actúa.',
+              'Sirven de reservorio: liberan hormona conforme se usa la fracción libre.',
+              'Prolongan la vida media al proteger a la hormona de la eliminación.',
+              'Casi todas se sintetizan en el hígado.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Hormona total frente a libre',
+            content: 'Los estrógenos (embarazo, anticonceptivos orales) aumentan la TBG y la SHBG. Una embarazada puede tener T₄ total alta con T₄ libre normal y sin hipertiroidismo. Por eso, en las hormonas que viajan unidas, el laboratorio debe distinguir la fracción total de la libre y considerar los fármacos.',
+          },
+        ],
+      },
+      {
+        id: 'bhs-5',
+        number: 5,
+        title: 'Vida media y eliminación',
+        keyTerms: ['vida media', 'eliminación', 'metabolismo hepático'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Vida media',
+            content: 'Tiempo que tarda la concentración de una hormona en la sangre en bajar a la mitad.',
+          },
+          {
+            type: 'list',
+            title: 'De qué depende',
+            items: [
+              'La estructura química (hidrosoluble o liposoluble, tamaño).',
+              'La unión a proteínas transportadoras.',
+              'El metabolismo en el hígado y la eliminación por riñón o bilis.',
+              'Las enzimas que la degradan.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Ejemplos aproximados',
+            data: {
+              headers: ['Hormona', 'Vida media'],
+              rows: [
+                ['Catecolaminas (noradrenalina, adrenalina)', '2–3 minutos'],
+                ['Insulina', 'Unos 5 minutos'],
+                ['Cortisol', 'Alrededor de 1 hora'],
+                ['T₃', 'Alrededor de 1 día'],
+                ['T₄', 'Alrededor de 7 días'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Por qué la levotiroxina va una vez al día',
+            content: 'La T₄ dura unos 7 días en la sangre: basta una dosis diaria y, tras un cambio de dosis, la TSH se vuelve a medir semanas después, cuando la concentración ya se estabilizó.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-hormonas-aminas-citocinas',
+    title: 'Hormonas derivadas de aminoácidos y citocinas',
+    subtitle: 'Triptófano → serotonina y melatonina; tirosina → catecolaminas, hormonas tiroideas y melanina; citocinas e interleucinas',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🌙',
+    keyPoints: [
+      'Las hormonas aminadas derivan de la tirosina y el triptófano; se producen en la médula suprarrenal, la tiroides y la glándula pineal.',
+      'Triptófano → 5-hidroxitriptófano → serotonina → N-acetilserotonina → melatonina.',
+      'La melatonina se libera con la oscuridad y regula el ciclo sueño-vigilia; la luz, incluida la de las pantallas, la frena.',
+      'Tirosina → L-DOPA → dopamina → noradrenalina → adrenalina; también T₃/T₄ y melanina.',
+      'Las catecolaminas son hidrosolubles (receptor de membrana); las hormonas tiroideas son liposolubles (receptor nuclear).',
+      'Las citocinas son proteínas de señalización de las células inmunitarias; algunas se usan como biomarcadores y como blanco de fármacos.',
+    ],
+    sections: [
+      {
+        id: 'bha-1',
+        number: 1,
+        title: 'Hormonas derivadas de aminoácidos',
+        keyTerms: ['tirosina', 'triptófano', 'descarboxilación', 'aminas'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Generalidades (presentación)',
+            items: [
+              'Derivan de aminoácidos, sobre todo tirosina y triptófano.',
+              'Se producen en la médula suprarrenal, la tiroides y la glándula pineal.',
+              'Se forman modificando el aminoácido: al quitarle el grupo carboxilo (descarboxilación) queda el grupo amino, por eso se llaman aminas.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'Dentro de este grupo hay propiedades distintas: las catecolaminas y la serotonina son hidrosolubles y usan receptores de membrana; las hormonas tiroideas son liposolubles, viajan unidas a proteínas y actúan en receptores nucleares.',
+          },
+        ],
+      },
+      {
+        id: 'bha-2',
+        number: 2,
+        title: 'Triptófano: serotonina y melatonina',
+        keyTerms: ['serotonina', 'melatonina', 'glándula pineal', 'ritmo circadiano'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'La ruta (presentación)',
+            steps: [
+              'Triptófano → 5-hidroxitriptófano, por la triptófano hidroxilasa.',
+              '5-hidroxitriptófano → serotonina (5-HT), por la descarboxilasa de aminoácidos aromáticos (con vitamina B₆).',
+              'Serotonina → N-acetilserotonina, por la N-acetiltransferasa.',
+              'N-acetilserotonina → melatonina, por la hidroxiindol-O-metiltransferasa, en la glándula pineal.',
+              'La serotonina se degrada por la monoaminooxidasa (MAO) a ácido 5-hidroxiindolacético, que se elimina en la orina.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Dos hormonas del mismo aminoácido',
+            left: { title: 'Serotonina', items: ['Estado de ánimo, apetito y sueño', 'Motilidad intestinal: la mayor parte del cuerpo está en el intestino', 'Precursora de la melatonina'] },
+            right: { title: 'Melatonina', items: ['Se produce en la glándula pineal', 'Sube cuando oscurece', 'Regula el ciclo sueño-vigilia (ritmo circadiano de 24 horas)'] },
+          },
+          {
+            type: 'paragraph',
+            content: 'El triptófano es un aminoácido esencial: viene de la dieta (huevo, carne, lácteos, nueces). Su presencia en un alimento no basta para inducir sueño; la regulación del sueño depende sobre todo de la luz y del reloj biológico.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Higiene del sueño',
+            content: 'La luz, sobre todo la azul de las pantallas, frena la liberación de melatonina. Por eso se recomienda dejar el celular al menos una hora antes de dormir y dormir en una habitación oscura y sin ruido.',
+          },
+        ],
+      },
+      {
+        id: 'bha-3',
+        number: 3,
+        title: 'Tirosina: catecolaminas, hormonas tiroideas y melanina',
+        keyTerms: ['dopamina', 'noradrenalina', 'adrenalina', 'T₄', 'T₃', 'tirosinasa', 'melanina'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Catecolaminas',
+            steps: [
+              'Tirosina → L-DOPA, por la tirosina hidroxilasa (paso limitante).',
+              'L-DOPA → dopamina, por la DOPA descarboxilasa.',
+              'Dopamina → noradrenalina, por la dopamina β-hidroxilasa.',
+              'Noradrenalina → adrenalina, por la feniletanolamina N-metiltransferasa, sobre todo en la médula suprarrenal.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Los otros derivados',
+            data: {
+              headers: ['Derivado', 'Cómo se forma', 'Función'],
+              rows: [
+                ['T₄ y T₃', 'En la tiroglobulina se yodan residuos de tirosina y se acoplan; la T₄ se convierte en T₃, la forma más activa', 'Regulan el metabolismo de lípidos, glúcidos y proteínas, y el gasto energético'],
+                ['Melanina', 'En el melanocito, la tirosinasa forma DOPA y dopaquinona → eumelanina (café-negra) o, con cisteína, feomelanina (amarillo-rojiza)', 'Color de piel y cabello; protección contra la radiación ultravioleta'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'La tirosina se obtiene de la dieta (queso, soya, cerdo, pollo, pescado) o a partir de la fenilalanina. Participa en la síntesis de neurotransmisores, hormonas tiroideas y melanina.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Cuando falla un paso',
+            content: 'En la enfermedad de Parkinson mueren las neuronas que producen dopamina en la sustancia negra; como la dopamina no cruza la barrera hematoencefálica, se da su precursor, la L-DOPA. En el albinismo falla la tirosinasa y no se forma melanina. En la fenilcetonuria falta la enzima que forma tirosina a partir de la fenilalanina. El hipotiroidismo baja el metabolismo y el hipertiroidismo lo acelera.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Bebidas energéticas',
+            content: 'La cafeína de las bebidas energéticas estimula el sistema simpático: taquicardia, ansiedad e insomnio. Mezcladas con alcohol enmascaran la sensación de intoxicación.',
+          },
+        ],
+      },
+      {
+        id: 'bha-4',
+        number: 4,
+        title: 'Citocinas',
+        keyTerms: ['citocina', 'interleucina', 'TNF', 'interferón', 'cadena γ común'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Citocina',
+            content: 'Proteína o glucoproteína de señalización que producen muchas células, sobre todo las del sistema inmune (neutrófilos, monocitos, macrófagos, linfocitos). Actúa sobre la misma célula, sobre células vecinas o a distancia, a través de receptores específicos.',
+          },
+          {
+            type: 'list',
+            title: 'Familias y funciones',
+            items: [
+              'Interleucinas (IL), interferones, factor de necrosis tumoral (TNF), quimiocinas y factores estimulantes de colonias.',
+              'Regulan la inflamación y la respuesta inmune.',
+              'IL-1, IL-6 y TNF-α actúan sobre el hipotálamo y producen fiebre.',
+              'La IL-6 estimula al hígado a producir proteínas de fase aguda, como la proteína C reactiva.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Receptores compartidos',
+            content: 'Los receptores de IL-2, IL-4, IL-7, IL-9 y IL-15 comparten una misma cadena, la cadena γ común. Una mutación en ella deja sin señal a todas esas interleucinas y causa una inmunodeficiencia combinada grave ligada al X.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Citocinas en la clínica',
+            content: 'Algunas interleucinas se miden como biomarcadores de inflamación (por ejemplo, la IL-6), pero no son diagnósticas por sí solas: se interpretan con la clínica. Varios fármacos biológicos bloquean citocinas, como los anti-TNF y los anti-IL-6 en la artritis reumatoide.',
+          },
+        ],
+      },
+    ],
+  },
 ]

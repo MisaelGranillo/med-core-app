@@ -170,6 +170,14 @@ export const modules: Module[] = [
     topicIds: ['bioquimica-enzimas-estructura', 'bioquimica-nitrogeno-ciclo-urea', 'bioquimica-coenzimas-minerales-p450', 'bioquimica-enzimas-mecanismo-clinica', 'bioquimica-biomarcadores-enzimaticos', 'bioquimica-acidos-nucleicos-estructura', 'bioquimica-adn-estructura-empaquetamiento', 'bioquimica-arn-tipos', 'bioquimica-replicacion-adn', 'bioquimica-codigo-genetico-traduccion', 'bioquimica-danio-acidos-nucleicos'],
   },
   {
+    id: 'bioquimica-uad-s4',
+    badge: 'UAD · Bioquímica I — Semana 4',
+    title: 'Bioquímica: hormonas y bioenergética',
+    subtitle: 'Concepto de hormona, receptores y segundos mensajeros; clasificación química y cómo la estructura predice solubilidad, transporte y vida media; síntesis de hormonas peptídicas y esteroideas, proteínas transportadoras y fracción libre; derivados del triptófano y de la tirosina, y citocinas.',
+    emoji: '📡',
+    topicIds: ['bioquimica-hormonas-concepto-clasificacion', 'bioquimica-hormonas-sintesis-transporte', 'bioquimica-hormonas-aminas-citocinas'],
+  },
+  {
     id: 'histologia-uad-s1',
     badge: 'UAD · Histología I — Semana 1',
     title: 'Histología: célula, microscopía y técnica',

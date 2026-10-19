@@ -665,6 +665,7 @@ const HSC: Patologia = {
     },
   ],
   bases: [
+    { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-sintesis-transporte', sectionId: 'bhs-3', label: 'Síntesis de las hormonas esteroideas', porQue: 'Las ramas de la esteroidogénesis y el papel de la 21-hidroxilasa.' },
     { materia: 'Genética', topicId: 'genetica-errores-metabolismo', sectionId: 'gmet-5', label: 'Hiperplasia suprarrenal congénita', porQue: 'Menos cortisol y aldosterona, más andrógenos.' },
     { materia: 'Genética', topicId: 'genetica-diferenciacion-sexual', sectionId: 'gdsx-5', label: 'Genitales externos: período indiferenciado', porQue: 'Los andrógenos virilizan los genitales externos de una niña 46,XX.' },
     { materia: 'Genética', topicId: 'genetica-dsd', sectionId: 'gdsd-2', label: '¿Cuándo sospechar una DSD?', porQue: 'Los genitales ambiguos al nacer.' },

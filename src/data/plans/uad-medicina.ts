@@ -246,7 +246,7 @@ export const uadMedicina: Plan = {
           code: 'BQ01002',
           hasLab: true,
           tags: ['bioquimica'],
-          topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones', 'bioquimica-presion-osmotica-oncotica', 'bioquimica-equilibrio-acido-base', 'bioquimica-glucidos', 'bioquimica-glucidos-clasificacion', 'bioquimica-polisacaridos-fibra', 'bioquimica-glucidos-funcion', 'bioquimica-lipidos-estructura', 'bioquimica-omega-grasas-aceites', 'bioquimica-trigliceridos-fosfolipidos', 'bioquimica-eicosanoides', 'bioquimica-lipidos-funcion-esteroides', 'bioquimica-vitaminas-liposolubles-patologias', 'bioquimica-proteinas-aminoacidos', 'bioquimica-aminoacidos-clasificacion', 'bioquimica-plegamiento-proteico', 'bioquimica-estructura-terciaria-cuaternaria', 'bioquimica-proteinas-clasificacion-funcion', 'bioquimica-enzimas-estructura', 'bioquimica-nitrogeno-ciclo-urea', 'bioquimica-coenzimas-minerales-p450', 'bioquimica-enzimas-mecanismo-clinica', 'bioquimica-biomarcadores-enzimaticos', 'bioquimica-acidos-nucleicos-estructura', 'bioquimica-adn-estructura-empaquetamiento', 'bioquimica-arn-tipos', 'bioquimica-replicacion-adn', 'bioquimica-codigo-genetico-traduccion', 'bioquimica-danio-acidos-nucleicos'],
+          topicIds: ['bioquimica-metabolismo-digestivo', 'bioquimica-agua-electrolitos', 'bioquimica-agua-osmolaridad-soluciones', 'bioquimica-presion-osmotica-oncotica', 'bioquimica-equilibrio-acido-base', 'bioquimica-glucidos', 'bioquimica-glucidos-clasificacion', 'bioquimica-polisacaridos-fibra', 'bioquimica-glucidos-funcion', 'bioquimica-lipidos-estructura', 'bioquimica-omega-grasas-aceites', 'bioquimica-trigliceridos-fosfolipidos', 'bioquimica-eicosanoides', 'bioquimica-lipidos-funcion-esteroides', 'bioquimica-vitaminas-liposolubles-patologias', 'bioquimica-proteinas-aminoacidos', 'bioquimica-aminoacidos-clasificacion', 'bioquimica-plegamiento-proteico', 'bioquimica-estructura-terciaria-cuaternaria', 'bioquimica-proteinas-clasificacion-funcion', 'bioquimica-enzimas-estructura', 'bioquimica-nitrogeno-ciclo-urea', 'bioquimica-coenzimas-minerales-p450', 'bioquimica-enzimas-mecanismo-clinica', 'bioquimica-biomarcadores-enzimaticos', 'bioquimica-acidos-nucleicos-estructura', 'bioquimica-adn-estructura-empaquetamiento', 'bioquimica-arn-tipos', 'bioquimica-replicacion-adn', 'bioquimica-codigo-genetico-traduccion', 'bioquimica-danio-acidos-nucleicos', 'bioquimica-hormonas-concepto-clasificacion', 'bioquimica-hormonas-sintesis-transporte', 'bioquimica-hormonas-aminas-citocinas'],
           content: {
             area: 'Ciencias Básicas',
             credits: 11,
@@ -328,9 +328,14 @@ export const uadMedicina: Plan = {
               {
                 number: 4,
                 title: 'Hormonas, bioenergética y metabolismo',
+                topicIds: ['bioquimica-hormonas-concepto-clasificacion', 'bioquimica-hormonas-sintesis-transporte', 'bioquimica-hormonas-aminas-citocinas'],
                 temas: [
+                  'Clase 1 (impartida): hormonas — concepto, receptor y segundos mensajeros; clasificación (proteicas, esteroideas, aminas, derivadas de ácidos grasos, factores de crecimiento, citocinas); estructura, solubilidad, transporte y vida media; síntesis de peptídicas (preprohormona → prohormona → exocitosis por Ca²⁺) y esteroideas; proteínas transportadoras; triptófano (serotonina, melatonina) y tirosina (catecolaminas, T₃/T₄, melanina); citocinas',
                   '7. Hormonas: estructura general, clasificación y función',
                   '8. Bioenergética y metabolismo: principios de bioenergética y termodinámica, energía libre en reacciones biológicas, transferencia del grupo fosfato, ATP y su hidrólisis, otros compuestos de alta energía',
+                ],
+                fuentes: [
+                  { title: 'Bioquímica I — Semana 4, Clase 1 (Unidad 7)', file: 'Bioquimica I - Semana 4 - Clase 1 - Unidad 7.pdf', nota: 'Hormonas: estructura, clasificación, síntesis, transporte, aminas y citocinas.' },
                 ],
               },
             ],
@@ -364,6 +369,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 3 · Clase 3 — Ácidos nucleicos', file: 'Bioquimica I - Semana 3 - Clase 3 - Unidad 6.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Clase 4 — ADN y ARN', file: 'Bioquimica I - Semana 3 - Clase 4 - Unidad 6.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Clase 5 — Replicación, código genético y daño al ADN', file: 'Bioquimica I - Semana 3 - Clase 5 - Unidad 6.pdf', kind: 'Clase' },
+              { title: 'Semana 4 · Clase 1 — Hormonas', file: 'Bioquimica I - Semana 4 - Clase 1 - Unidad 7.pdf', kind: 'Clase' },
               { title: 'Programa Académico — Bioquímica I y su Laboratorio', file: 'Bioquimica I - Programa.pdf', kind: 'Programa' },
               { title: 'Planeación — Bioquímica I (2025-1)', file: 'Bioquimica I - Planeacion.pdf', kind: 'Programa' },
             ],

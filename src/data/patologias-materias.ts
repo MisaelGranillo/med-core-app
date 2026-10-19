@@ -766,6 +766,7 @@ const FENILCETONURIA: Patologia = {
     },
   ],
   bases: [
+    { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-aminas-citocinas', sectionId: 'bha-3', label: 'Tirosina: catecolaminas, hormonas tiroideas y melanina', porQue: 'Lo que deja de formarse cuando falta tirosina.' },
     { materia: 'Genética', topicId: 'genetica-errores-metabolismo', sectionId: 'gmet-1', label: 'Tamiz neonatal', porQue: 'Cómo y cuándo se toma la muestra.' },
     { materia: 'Genética', topicId: 'genetica-errores-metabolismo', sectionId: 'gmet-2', label: 'Fenilcetonuria (PKU)', porQue: 'La enzima, la vía bloqueada y la dieta.' },
     { materia: 'Genética', topicId: 'genetica-mendel', sectionId: 'gmen-2', label: 'Las tres leyes', porQue: 'Por qué dos portadores sanos tienen un hijo afectado con probabilidad de 1/4.' },
@@ -905,6 +906,7 @@ const HIPOTIROIDISMO: Patologia = {
     },
   ],
   bases: [
+    { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-aminas-citocinas', sectionId: 'bha-3', label: 'Tirosina: catecolaminas, hormonas tiroideas y melanina', porQue: 'Cómo se forman T₄ y T₃ en la tiroglobulina.' },
     { materia: 'Genética', topicId: 'genetica-errores-metabolismo', sectionId: 'gmet-1', label: 'Tamiz neonatal', porQue: 'Qué enfermedades busca y cuándo se toma la muestra.' },
     { materia: 'Genética', topicId: 'genetica-errores-metabolismo', sectionId: 'gmet-3', label: 'Hipotiroidismo congénito', porQue: 'Disgenesia tiroidea, TSH y levotiroxina.' },
     { materia: 'Genética', topicId: 'genetica-citogenetica-clinica', sectionId: 'gcit-4', label: 'Síndromes por aneuploidía', porQue: 'El síndrome de Down y el de Turner son factores de riesgo.' },
