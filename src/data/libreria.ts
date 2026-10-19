@@ -18,8 +18,11 @@ export const NLM_CLASSES = [
   { code: 'QT', label: 'Fisiología', hint: 'Fisiología humana' },
   { code: 'QU', label: 'Bioquímica', hint: 'Bioquímica, biología celular y molecular' },
   { code: 'QV', label: 'Farmacología', hint: 'Farmacología y terapéutica' },
+  { code: 'QY', label: 'Patología clínica', hint: 'Laboratorio clínico' },
   { code: 'W', label: 'Profesiones de la salud', hint: 'Terminología médica' },
+  { code: 'WG', label: 'Sistema cardiovascular', hint: 'Electrocardiografía y reanimación' },
   { code: 'WL', label: 'Sistema nervioso', hint: 'Neuroanatomía y neurología' },
+  { code: 'WN', label: 'Radiología', hint: 'Radiología e imagenología diagnóstica' },
   { code: 'WO', label: 'Cirugía', hint: 'Cirugía e instrumental quirúrgico' },
   { code: 'WU', label: 'Odontología', hint: 'Odontología e implantología' },
 ] as const
@@ -152,6 +155,24 @@ export const LIBROS: LibroCatalogo[] = [
     formato: 'Libro', clase: 'QV', numero: '18.2', materias: [],
     archivo: { subjectId: 'libreria', file: 'Rosenfeld - Farmacologia 6a ed.pdf' },
   },
+  {
+    id: 'dosispedia-antibioticos', titulo: 'Manual práctico. Antibióticos',
+    autores: ['Rodríguez, Lorenz', 'Farias Monteiro, Laryssa'], asiento: 'Rodríguez',
+    editorial: 'DosisPedia', paginas: 65, idioma: 'Español',
+    formato: 'Manual', clase: 'QV', numero: '350', materias: [],
+    archivo: { subjectId: 'libreria', file: 'DosisPedia - Manual practico Antibioticos.pdf' },
+    nota: 'Familias de antibióticos, espectro y esquemas empíricos por infección.',
+  },
+
+  // ── QY · Patología clínica ───────────────────────────────────────
+  {
+    id: 'dosispedia-laboratorio', titulo: 'Manual práctico. Pruebas de laboratorio',
+    autores: ['DosisPedia'], asiento: 'DosisPedia',
+    editorial: 'DosisPedia', paginas: 78, idioma: 'Español',
+    formato: 'Manual', clase: 'QY', numero: '39', materias: [],
+    archivo: { subjectId: 'libreria', file: 'DosisPedia - Manual practico Pruebas de laboratorio.pdf' },
+    nota: 'Valores de referencia e interpretación: hemograma, química sanguínea, electrolitos, gasometría, uroanálisis y heces.',
+  },
 
   // ── W · Profesiones de la salud (terminología) ───────────────────
   {
@@ -169,6 +190,24 @@ export const LIBROS: LibroCatalogo[] = [
     archivo: { subjectId: 'ingles-medico-1', file: 'Check Your English Vocabulary for Medicine.pdf' },
   },
 
+  // ── WG · Sistema cardiovascular ──────────────────────────────────
+  {
+    id: 'dosispedia-ekg', titulo: 'Manual práctico. EKG',
+    autores: ['DosisPedia'], asiento: 'DosisPedia',
+    editorial: 'DosisPedia', paginas: 40, idioma: 'Español',
+    formato: 'Manual', clase: 'WG', numero: '140', materias: [],
+    archivo: { subjectId: 'libreria', file: 'DosisPedia - Manual practico EKG.pdf' },
+    nota: 'Lectura sistemática del electrocardiograma con casos resueltos.',
+  },
+  {
+    id: 'dosispedia-rcp', titulo: 'Manual práctico. Reanimación cardiopulmonar básica y avanzada',
+    autores: ['Miranda, Félix', 'Rodríguez, Lorenz'], asiento: 'Miranda',
+    editorial: 'DosisPedia', paginas: 37, idioma: 'Español',
+    formato: 'Manual', clase: 'WG', numero: '205', materias: [],
+    archivo: { subjectId: 'libreria', file: 'DosisPedia - Manual practico RCP.pdf' },
+    nota: 'Soporte vital básico y avanzado conforme a las guías de la AHA.',
+  },
+
   // ── WL · Sistema nervioso ────────────────────────────────────────
   {
     id: 'gould-rt-neuroanatomia', titulo: 'Neuroanatomía', serie: 'Serie Revisión de Temas',
@@ -176,6 +215,51 @@ export const LIBROS: LibroCatalogo[] = [
     edicion: '5.ª ed.', editorial: 'Wolters Kluwer', anio: '2015', paginas: 386, idioma: 'Español',
     formato: 'Libro', clase: 'WL', numero: '101', materias: [],
     archivo: { subjectId: 'libreria', file: 'Gould - Neuroanatomia 5a ed.pdf' },
+  },
+
+  // ── WN · Radiología ──────────────────────────────────────────────
+  {
+    id: 'rayospedia-atlas-anatomia', titulo: 'Atlas de anatomía radiológica',
+    autores: ['Rodríguez, Lorenz'], asiento: 'Rodríguez',
+    editorial: 'RayosPedia', paginas: 56, idioma: 'Español',
+    formato: 'Atlas', clase: 'WN', numero: '17', materias: ['anatomia-humana-diseccion-1'],
+    archivo: { subjectId: 'libreria', file: 'RayosPedia - Atlas de anatomia radiologica.pdf' },
+    nota: 'Miembro superior, miembro inferior y esqueleto axial en radiografía.',
+  },
+  {
+    id: 'rayospedia-rm-cerebral', titulo: 'ABC de la resonancia magnética cerebral',
+    autores: ['Rodríguez, Lorenz'], asiento: 'Rodríguez',
+    editorial: 'RayosPedia', paginas: 69, idioma: 'Español',
+    formato: 'Libro', clase: 'WN', numero: '185', materias: [],
+    archivo: { subjectId: 'libreria', file: 'RayosPedia - ABC RM cerebral.pdf' },
+  },
+  {
+    id: 'rayospedia-rx-abdomen', titulo: 'ABC de la radiografía de abdomen',
+    autores: ['Rodríguez, Lorenz'], asiento: 'Rodríguez', marcaObra: 'a',
+    editorial: 'RayosPedia', paginas: 47, idioma: 'Español',
+    formato: 'Libro', clase: 'WN', numero: '200', materias: [],
+    archivo: { subjectId: 'libreria', file: 'RayosPedia - ABC Radiografia de abdomen.pdf' },
+  },
+  {
+    id: 'rayospedia-rx-torax', titulo: 'ABC de la radiografía de tórax',
+    autores: ['Rodríguez, Lorenz'], asiento: 'Rodríguez', marcaObra: 't',
+    editorial: 'RayosPedia', paginas: 65, idioma: 'Español',
+    formato: 'Libro', clase: 'WN', numero: '200', materias: [],
+    archivo: { subjectId: 'libreria', file: 'RayosPedia - ABC Radiografia de torax.pdf' },
+  },
+  {
+    id: 'rayospedia-tc-craneo', titulo: 'ABC de la tomografía de cráneo',
+    autores: ['Rodríguez, Lorenz'], asiento: 'Rodríguez',
+    editorial: 'RayosPedia', paginas: 51, idioma: 'Español',
+    formato: 'Libro', clase: 'WN', numero: '206', materias: [],
+    archivo: { subjectId: 'libreria', file: 'RayosPedia - ABC Tomografia de craneo.pdf' },
+  },
+  {
+    id: 'rayospedia-eco-abdominal', titulo: 'ABC de la ecografía abdominal',
+    autores: ['Rodríguez, Lorenz'], asiento: 'Rodríguez',
+    editorial: 'RayosPedia', paginas: 56, idioma: 'Español',
+    formato: 'Libro', clase: 'WN', numero: '208', materias: [],
+    archivo: { subjectId: 'libreria', file: 'RayosPedia - ABC Ecografia abdominal.pdf' },
   },
 
   // ── WO · Cirugía ─────────────────────────────────────────────────

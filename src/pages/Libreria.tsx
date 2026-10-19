@@ -171,7 +171,7 @@ function Ficha({ libro: l }: { libro: LibroCatalogo }) {
       <Lomo libro={l} />
       <div className="min-w-0 flex-1 flex flex-col gap-1.5 sm:flex-row sm:items-start sm:gap-6">
         <div className="min-w-0 flex-1 flex flex-col gap-1">
-          <span className="sr-only">Signatura {signaturaTexto(l)}.</span>
+          <span className="sr-only">Signatura {signaturaTexto(l).replace(/\.$/, "")}.</span>
           <h3 className="font-display text-[1.1875rem] leading-snug font-normal text-zinc-900 text-balance">
             {l.titulo}
           </h3>

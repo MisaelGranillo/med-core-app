@@ -62,6 +62,16 @@ export const LIBRARY_PRIVATE = new Set<string>([
   'libreria/Rosenfeld - Farmacologia 6a ed.pdf',
   'libreria/Aesculap - Catalogo de instrumental quirurgico.pdf',
   'libreria/BTI - Instrumental quirurgico.pdf',
+  'libreria/DosisPedia - Manual practico Antibioticos.pdf',
+  'libreria/DosisPedia - Manual practico EKG.pdf',
+  'libreria/DosisPedia - Manual practico Pruebas de laboratorio.pdf',
+  'libreria/DosisPedia - Manual practico RCP.pdf',
+  'libreria/RayosPedia - ABC Ecografia abdominal.pdf',
+  'libreria/RayosPedia - ABC RM cerebral.pdf',
+  'libreria/RayosPedia - ABC Radiografia de abdomen.pdf',
+  'libreria/RayosPedia - ABC Radiografia de torax.pdf',
+  'libreria/RayosPedia - ABC Tomografia de craneo.pdf',
+  'libreria/RayosPedia - Atlas de anatomia radiologica.pdf',
 ])
 
 /** Key del archivo en R2 (sin barra inicial). */
