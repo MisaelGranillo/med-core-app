@@ -333,6 +333,7 @@ const CETOACIDOSIS: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-equilibrio-acido-base', sectionId: 'bab-2', label: 'Regulación respiratoria: el CO₂', porQue: 'La respiración de Kussmaul es la compensación respiratoria.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-agua-osmolaridad-soluciones', sectionId: 'bao-6', label: 'Alteraciones: hiper e hipoosmolaridad', porQue: 'La glucosa alta eleva la osmolaridad y deshidrata a las células.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-agua-electrolitos', sectionId: 'bae-5', label: 'Alteraciones de los electrolitos', porQue: 'Por qué el potasio es el electrolito que más se vigila.' },
+    { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-hipofisis-pancreas', sectionId: 'bhe-2', label: 'Islotes de Langerhans', porQue: 'Sin insulina, el glucagón queda sin oposición y el hígado produce glucosa y cuerpos cetónicos.' },
   ],
   atlas: [
     { id: 'bioquimica-acido-base', title: 'Equilibrio ácido-base' },

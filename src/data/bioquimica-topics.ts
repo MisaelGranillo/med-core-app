@@ -6083,4 +6083,625 @@ export const bioquimicaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'bioquimica-hormonas-receptores',
+    title: 'Receptores hormonales y transducción de señales',
+    subtitle: 'Dos dominios y cuatro propiedades del receptor; grupos I y II; canales iónicos, receptores acoplados a proteína G, receptores con actividad enzimática y receptores nucleares',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🔑',
+    keyPoints: [
+      'Un receptor tiene dos dominios: uno reconoce y une a la hormona y otro genera la señal dentro de la célula.',
+      'Propiedades del receptor: alta afinidad, especificidad, saturabilidad y reversibilidad.',
+      'Grupo I (esteroides, hormonas tiroideas, calcitriol, retinoides): lipofílicas, con transportador, vida media larga y receptor intracelular. Grupo II (péptidos, proteínas, glucoproteínas, catecolaminas): hidrofílicas, libres, vida media corta, receptor de membrana y segundos mensajeros.',
+      'Receptores de membrana: canales iónicos, acoplados a proteína G (Gs estimula y Gi inhibe la adenilato ciclasa; Gq activa la fosfolipasa C) y con actividad enzimática.',
+      'Hay 48 receptores nucleares humanos en 6 subfamilias; las de mayor peso clínico son la 1 (tiroides, vitamina D, PPAR, ácido retinoico) y la 3 (esteroides).',
+      'Los receptores nucleares son factores de transcripción: el complejo hormona-receptor se une a elementos de respuesta en el ADN y cambia la expresión de genes.',
+    ],
+    sections: [
+      {
+        id: 'bhr-1',
+        number: 1,
+        title: 'El receptor: dos dominios y cuatro propiedades',
+        keyTerms: ['dominio de reconocimiento', 'dominio de acoplamiento', 'afinidad', 'saturabilidad'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Receptor hormonal',
+            content: 'Proteína de la célula blanco o diana que une a una hormona de forma específica. Tiene dos dominios: el de reconocimiento, que une a la hormona, y el de acoplamiento o señalización, que convierte esa unión en una respuesta dentro de la célula.',
+          },
+          {
+            type: 'list',
+            title: 'Cuatro propiedades',
+            items: [
+              'Afinidad: une a la hormona aun a concentraciones muy bajas (nanomolares o menores).',
+              'Especificidad: distingue a su hormona de moléculas de estructura parecida.',
+              'Saturabilidad: cada célula tiene un número finito de receptores; cuando todos están ocupados, la respuesta ya no aumenta.',
+              'Reversibilidad: la unión no es covalente y la hormona se disocia, lo que permite apagar la señal.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Más dosis no siempre es más efecto',
+            content: 'Cuando los receptores de un fármaco ya están saturados, subir la dosis no aumenta el efecto terapéutico, pero sí los efectos adversos. Es la base del «efecto techo» de algunos medicamentos.',
+          },
+        ],
+      },
+      {
+        id: 'bhr-2',
+        number: 2,
+        title: 'Grupo I y grupo II',
+        keyTerms: ['lipofílica', 'hidrofílica', 'segundo mensajero', 'receptor intracelular'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Clasificación por el sitio del receptor',
+            data: {
+              headers: ['Propiedad', 'Grupo I', 'Grupo II'],
+              rows: [
+                ['Tipos', 'Esteroides, yodotironinas (T₃, T₄), calcitriol, retinoides', 'Polipéptidos, proteínas, glucoproteínas, catecolaminas'],
+                ['Solubilidad', 'Lipofílica', 'Hidrofílica'],
+                ['Proteína transportadora', 'Sí', 'No'],
+                ['Vida media en plasma', 'Larga (horas a días)', 'Corta (minutos)'],
+                ['Receptor', 'Intracelular (citoplasma o núcleo)', 'Membrana plasmática'],
+                ['Mediador', 'Complejo hormona-receptor', 'AMPc, GMPc, Ca²⁺, fosfoinosítidos, cascadas de cinasas'],
+                ['Paso por la membrana', 'La atraviesan', 'No la atraviesan'],
+                ['Almacenamiento', 'No (síntesis cuando se necesitan)', 'En vesículas de secreción'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Las hormonas tiroideas son una excepción parcial: se almacenan unidas a la tiroglobulina dentro del folículo tiroideo.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'La insulina va en la red fría',
+            content: 'La insulina es una proteína (grupo II): el calor, los cambios de pH y algunas sustancias químicas la desnaturalizan y pierde actividad. Los frascos y plumas sin abrir se guardan en refrigeración (2 a 8 °C), sin congelar; el que está en uso suele tolerar la temperatura ambiente durante unas cuatro semanas, según el fabricante.',
+          },
+        ],
+      },
+      {
+        id: 'bhr-3',
+        number: 3,
+        title: 'Canales iónicos',
+        keyTerms: ['canal iónico', 'GABA-A', 'benzodiacepina', 'barbitúrico'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Son proteínas transmembrana que forman un poro. Al unirse el ligando (o al cambiar el voltaje de la membrana) el poro se abre y deja pasar iones como Na⁺, K⁺, Ca²⁺ o Cl⁻. Están formados por varias subunidades (el receptor GABA-A tiene cinco).',
+          },
+          {
+            type: 'comparison',
+            title: 'Dos tipos de canales',
+            left: { title: 'Activados por ligando', items: ['Se abren al unirse un neurotransmisor', 'Receptor nicotínico de acetilcolina (Na⁺)', 'GABA-A (Cl⁻)', 'Receptores de glutamato'] },
+            right: { title: 'Dependientes de voltaje', items: ['Se abren por un cambio del potencial de membrana', 'Canales de Na⁺, K⁺ y Ca²⁺', 'Generan y propagan el potencial de acción'] },
+          },
+          {
+            type: 'table',
+            title: 'Fármacos sobre el receptor GABA-A',
+            data: {
+              headers: ['', 'Benzodiacepinas', 'Barbitúricos'],
+              rows: [
+                ['Ejemplos', 'Alprazolam, diazepam, clonazepam, midazolam', 'Fenobarbital'],
+                ['Sitio de unión', 'Sitio alostérico propio (entre subunidades α y γ)', 'Otro sitio alostérico'],
+                ['Efecto sobre el canal de Cl⁻', 'Más frecuencia de apertura', 'Más duración de la apertura'],
+                ['¿Necesitan GABA?', 'Sí: solo potencian al GABA', 'A dosis altas abren el canal sin GABA'],
+                ['Riesgo en sobredosis', 'Sedación; depresión respiratoria sobre todo si se combinan con alcohol u opioides', 'Depresión respiratoria y cardiovascular grave'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Alcohol y benzodiacepinas',
+            content: 'El alcohol también potencia al receptor GABA-A. Junto con una benzodiacepina, la depresión del sistema nervioso se suma y puede llegar al paro respiratorio. En quien bebe de forma crónica, en cambio, el receptor se adapta (tolerancia cruzada) y la benzodiacepina hace menos efecto a la dosis habitual. El flumazenil bloquea el sitio de las benzodiacepinas y revierte su efecto.',
+          },
+        ],
+      },
+      {
+        id: 'bhr-4',
+        number: 4,
+        title: 'Receptores acoplados a proteína G',
+        keyTerms: ['proteína G', 'Gs', 'Gi', 'Gq', 'β-arrestina'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Cómo se activa la proteína G',
+            steps: [
+              'El receptor tiene siete hélices que cruzan la membrana; al unirse la hormona cambia de forma.',
+              'La proteína G es un heterotrímero (α, β y γ); el receptor activo hace que la subunidad α cambie GDP por GTP.',
+              'La subunidad α-GTP se separa de βγ y activa (o inhibe) a su efector.',
+              'La propia subunidad α hidroliza el GTP a GDP, se reúne con βγ y la señal se apaga.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Principales proteínas G',
+            data: {
+              headers: ['Proteína G', 'Efector', 'Resultado', 'Receptores'],
+              rows: [
+                ['Gs', 'Activa la adenilato ciclasa', '↑ AMPc → proteína cinasa A', 'β-adrenérgicos, glucagón, PTH, TSH, ACTH, LH y FSH'],
+                ['Gi', 'Inhibe la adenilato ciclasa', '↓ AMPc; abre canales de K⁺', 'α₂-adrenérgico, muscarínico M₂'],
+                ['Gq', 'Activa la fosfolipasa C-β', 'IP₃ (libera Ca²⁺) y diacilglicerol (proteína cinasa C)', 'α₁-adrenérgico, muscarínicos M₁ y M₃'],
+                ['Gt (transducina)', 'Activa la fosfodiesterasa de GMPc', '↓ GMPc en la retina', 'Rodopsina'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'De los cinco receptores muscarínicos, M₁, M₃ y M₅ usan Gq y M₂ y M₄ usan Gi.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Salbutamol y desensibilización',
+            content: 'El salbutamol estimula el receptor β₂ (Gs → AMPc) del músculo liso bronquial y produce broncodilatación; el ipratropio y el tiotropio logran lo mismo bloqueando el receptor M₃. Con estimulación repetida, las cinasas de receptores acoplados a proteína G (GRK) fosforilan al receptor, la β-arrestina se une a él y lo retira de la membrana: la respuesta disminuye. Necesitar salbutamol de rescate con mucha frecuencia indica asma mal controlada.',
+          },
+        ],
+      },
+      {
+        id: 'bhr-5',
+        number: 5,
+        title: 'Receptores con actividad enzimática',
+        keyTerms: ['guanilato ciclasa', 'tirosina cinasa', 'JAK-STAT', 'IRS', 'GLUT4'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Cinco tipos',
+            data: {
+              headers: ['Tipo', 'Ligandos', 'Qué controla'],
+              rows: [
+                ['Guanilato ciclasa', 'Péptidos natriuréticos (forma de membrana); óxido nítrico (forma soluble del citoplasma)', 'GMPc: relajación del músculo liso vascular, flujo sanguíneo y presión arterial'],
+                ['Tirosina cinasa intrínseca', 'Insulina, IGF-1, factores de crecimiento epidérmico, derivado de plaquetas y de fibroblastos', 'Metabolismo, crecimiento y proliferación'],
+                ['Asociado a tirosina cinasa (JAK-STAT)', 'Hormona del crecimiento, prolactina, eritropoyetina, muchas citocinas', 'Crecimiento, lactancia, hematopoyesis, respuesta inmune'],
+                ['Serina/treonina cinasa', 'TGF-β y proteínas morfogenéticas óseas', 'Crecimiento y diferenciación celular'],
+                ['Tirosina fosfatasa', 'CD45', 'Activación de linfocitos T y B'],
+              ],
+            },
+          },
+          {
+            type: 'steps',
+            title: 'La señal de la insulina',
+            steps: [
+              'La insulina se une a las subunidades α de su receptor, en el exterior de la membrana.',
+              'Las subunidades β, dentro de la célula, se autofosforilan en residuos de tirosina.',
+              'El receptor fosforila a los sustratos del receptor de insulina (IRS-1 y IRS-2).',
+              'Vía PI3K → Akt: los transportadores GLUT4 suben a la membrana del músculo y del adipocito, entra glucosa y se sintetiza glucógeno.',
+              'Vía Grb2 → Ras → MAP cinasa: crecimiento y proliferación celular.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Resistencia a la insulina',
+            content: 'En la obesidad y la diabetes tipo 2 la insulina se une a su receptor, pero la señal posterior (sobre todo la vía PI3K → Akt) está disminuida: el GLUT4 no sube a la membrana y la glucosa permanece alta en la sangre. El páncreas compensa produciendo más insulina hasta que las células β se agotan.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'El zinc y la insulina',
+            content: 'En las vesículas de la célula β la insulina se guarda como hexámeros unidos a zinc. El zinc estabiliza la hormona almacenada; al liberarse a la sangre, la insulina se disocia en monómeros, que son la forma que activa al receptor.',
+          },
+        ],
+      },
+      {
+        id: 'bhr-6',
+        number: 6,
+        title: 'Receptores nucleares',
+        keyTerms: ['receptor nuclear', 'elemento de respuesta hormonal', 'dedos de zinc', 'HSP90', 'PPAR'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Receptor nuclear',
+            content: 'Factor de transcripción que se activa al unir una hormona liposoluble. En el ser humano hay 48, agrupados en 6 subfamilias. Regulan la diferenciación celular, la apoptosis y el metabolismo, y participan en el cáncer, las enfermedades cardiovasculares y la diabetes.',
+          },
+          {
+            type: 'list',
+            title: 'Dominios (de N- a C-terminal)',
+            items: [
+              'A/B: función de transactivación AF-1, independiente del ligando.',
+              'C: dominio de unión al ADN (DBD), con dos dedos de zinc que reconocen los elementos de respuesta hormonal (HRE).',
+              'D: bisagra, con la señal de localización nuclear.',
+              'E: dominio de unión al ligando (LBD), con la función AF-2, la dimerización y la unión de coactivadores.',
+              'F: extremo variable.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Subfamilias con mayor importancia clínica',
+            data: {
+              headers: ['Subfamilia', 'Receptor', 'Ligando'],
+              rows: [
+                ['1', 'Receptor de hormona tiroidea (TR)', 'T₃'],
+                ['1', 'Receptor de vitamina D (VDR)', '1,25-dihidroxivitamina D₃ (calcitriol)'],
+                ['1', 'Receptor de ácido retinoico (RAR)', 'Ácido retinoico'],
+                ['1', 'PPAR (activado por proliferadores de peroxisomas)', 'Ácidos grasos, eicosanoides, tiazolidinedionas'],
+                ['3', 'Receptor de estrógenos (ER)', '17β-estradiol'],
+                ['3', 'Receptor de progesterona (PR)', 'Progesterona'],
+                ['3', 'Receptor de andrógenos (AR)', 'Testosterona'],
+                ['3', 'Receptor de glucocorticoides (GR)', 'Cortisol'],
+                ['3', 'Receptor de mineralocorticoides (MR)', 'Aldosterona'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Las subfamilias 4, 5 y 6 incluyen sobre todo receptores «huérfanos», cuyo ligando natural no se conoce.',
+          },
+          {
+            type: 'steps',
+            title: 'Del citoplasma al gen',
+            steps: [
+              'La hormona liposoluble atraviesa la membrana plasmática.',
+              'Algunos receptores, como el de glucocorticoides, esperan en el citoplasma unidos a la chaperona HSP90; otros, como el tiroideo, ya están en el núcleo unidos al ADN.',
+              'Al unir la hormona, el receptor suelta la HSP90, forma dímeros y entra al núcleo.',
+              'El complejo se une a su elemento de respuesta en el ADN, recluta coactivadores o correpresores y cambia la transcripción de genes.',
+              'Proteínas de exportación nuclear, como la calreticulina y la exportina 1 (CRM-1), sacan proteínas del núcleo y participan en terminar la señal.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Fármacos que actúan en receptores nucleares',
+            content: 'Subfamilia 1: levotiroxina (se convierte en T₃ y actúa en el TR), calcitriol (VDR) y pioglitazona (agonista del PPARγ que mejora la sensibilidad a la insulina; puede causar retención de líquidos y empeorar la insuficiencia cardiaca). Subfamilia 3: anticonceptivos hormonales (ER y PR), tamoxifeno en el cáncer de mama (ER), espironolactona (bloquea el MR) y glucocorticoides (GR).',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Por qué los glucocorticoides se retiran poco a poco',
+            content: 'Los glucocorticoides actúan en el GR: frenan factores de transcripción proinflamatorios como NF-κB y AP-1 y activan genes antiinflamatorios. Por retroalimentación negativa también suprimen el eje hipotálamo-hipófisis-suprarrenal; con tratamientos de más de tres a cuatro semanas la suprarrenal puede atrofiarse. Si se suspenden de golpe aparece insuficiencia suprarrenal, por eso la dosis se reduce de forma gradual con un esquema individualizado.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Exportina 1 y calreticulina en la enfermedad',
+            content: 'La exportina 1 (CRM-1) está aumentada en varios cánceres, como el de mama y el de páncreas, y saca del núcleo a proteínas supresoras de tumores como p53 y FOXO. En el hiperparatiroidismo secundario de la enfermedad renal, el aumento de calreticulina impide que el receptor de vitamina D frene la expresión del gen de la PTH.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-hormonas-hipofisis-pancreas',
+    title: 'Hipófisis, islotes pancreáticos y respuesta hormonal',
+    subtitle: 'Hormonas de la adenohipófisis y la neurohipófisis; células del islote de Langerhans; qué determina la respuesta a una hormona; hormonas de alarma',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🧭',
+    keyPoints: [
+      'El hipotálamo controla a la hipófisis anterior con hormonas liberadoras; la hipófisis posterior libera ADH y oxitocina, que se sintetizan en el hipotálamo.',
+      'Adenohipófisis: GH, prolactina, ACTH, TSH, LH y FSH.',
+      'Islote de Langerhans: células β (insulina), α (glucagón), δ (somatostatina) y PP (polipéptido pancreático).',
+      'La respuesta a una hormona depende de su concentración libre en la célula blanco y del número, la afinidad y el estado de sus receptores.',
+      'La exposición continua a un agonista reduce el número o la respuesta de los receptores (regulación a la baja, desensibilización): es una base de la tolerancia.',
+      'Hormonas de alarma: catecolaminas, cortisol, glucagón y ADH; elevan la glucosa y sostienen la presión arterial.',
+    ],
+    sections: [
+      {
+        id: 'bhe-1',
+        number: 1,
+        title: 'Hipotálamo e hipófisis',
+        keyTerms: ['adenohipófisis', 'neurohipófisis', 'hormona trófica', 'ADH', 'oxitocina'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Tres niveles de blancos',
+            steps: [
+              'El sistema nervioso central integra estímulos del entorno y los envía al hipotálamo.',
+              'Blanco primario: la hipófisis. El hipotálamo libera hormonas liberadoras hacia la anterior y envía axones a la posterior.',
+              'Blanco secundario: las glándulas periféricas (tiroides, corteza suprarrenal, gónadas).',
+              'Blanco final: los tejidos que responden a la hormona periférica (hígado, músculo, órganos reproductores).',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Hormonas de la adenohipófisis (hipófisis anterior)',
+            data: {
+              headers: ['Hormona', 'Blanco', 'Función'],
+              rows: [
+                ['Somatotropina (GH)', 'Hígado y muchos tejidos', 'Crecimiento y metabolismo; buena parte de su efecto llega a través del IGF-1 hepático'],
+                ['Prolactina (PRL)', 'Glándula mamaria', 'Producción de leche; frena la secreción de gonadotropinas'],
+                ['Corticotropina (ACTH)', 'Corteza suprarrenal', 'Síntesis de glucocorticoides y andrógenos suprarrenales'],
+                ['Tirotropina (TSH)', 'Tiroides', 'Producción y secreción de T₄ y T₃'],
+                ['Luteinizante (LH)', 'Ovario y testículo', 'Ovulación, formación y mantenimiento del cuerpo lúteo; testosterona en las células de Leydig'],
+                ['Foliculoestimulante (FSH)', 'Ovario y testículo', 'Desarrollo del folículo; espermatogénesis a través de las células de Sertoli'],
+              ],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'Hormonas de la neurohipófisis (hipófisis posterior)',
+            left: { title: 'Vasopresina (ADH)', items: ['Péptido de 9 aminoácidos', 'Riñón (receptor V₂): reabsorción de agua en el túbulo colector', 'Arteriolas (receptor V₁): vasoconstricción'] },
+            right: { title: 'Oxitocina', items: ['Péptido de 9 aminoácidos', 'Útero: contracción durante el parto', 'Glándula mamaria: eyección de la leche'] },
+          },
+          {
+            type: 'note',
+            content: 'La ADH y la oxitocina se sintetizan en los núcleos supraóptico y paraventricular del hipotálamo, bajan por los axones y se almacenan en la hipófisis posterior hasta su liberación.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Diabetes insípida central',
+            content: 'Hoy se llama deficiencia de arginina vasopresina. Si el hipotálamo o la hipófisis posterior no liberan ADH (por un traumatismo, una cirugía o un tumor), el riñón no reabsorbe agua: el paciente orina varios litros al día de orina muy diluida y tiene mucha sed. Se trata con desmopresina, un análogo de la ADH.',
+          },
+        ],
+      },
+      {
+        id: 'bhe-2',
+        number: 2,
+        title: 'Islotes de Langerhans',
+        keyTerms: ['célula β', 'célula α', 'somatostatina', 'polipéptido pancreático'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Células del islote',
+            data: {
+              headers: ['Célula', 'Proporción aproximada', 'Hormona', 'Efecto principal'],
+              rows: [
+                ['β', 'La más abundante (50 a 70 %)', 'Insulina', 'Anabólica: entrada de glucosa al músculo y al adipocito (GLUT4), síntesis de glucógeno, lípidos y proteínas'],
+                ['α', '20 a 40 %', 'Glucagón', 'Catabólica, contraria a la insulina: glucogenólisis y gluconeogénesis en el hígado, lipólisis'],
+                ['δ', 'Menos de 10 %', 'Somatostatina', 'Frena localmente la secreción de insulina y glucagón'],
+                ['PP (F)', 'Menos de 5 %', 'Polipéptido pancreático', 'Regula la secreción exocrina del páncreas y la motilidad digestiva'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'La somatostatina también se produce en el hipotálamo, donde inhibe la secreción de GH y de TSH.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Glucagón en la hipoglucemia grave',
+            content: 'Cuando un paciente con diabetes tiene una hipoglucemia grave y no puede comer, se le puede aplicar glucagón intramuscular o intranasal: libera la glucosa almacenada como glucógeno en el hígado. Funciona solo si hay reservas de glucógeno; en el ayuno prolongado o el alcoholismo puede fallar.',
+          },
+        ],
+      },
+      {
+        id: 'bhe-3',
+        number: 3,
+        title: 'Qué determina la respuesta a una hormona',
+        keyTerms: ['hormona libre', 'regulación a la baja', 'desensibilización', 'tolerancia'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos grupos de factores',
+            left: {
+              title: 'Concentración de hormona en la célula blanco',
+              items: [
+                'Ritmo de síntesis y secreción',
+                'Distancia al tejido blanco (dilución en la circulación)',
+                'Afinidad por las proteínas transportadoras: solo la fracción libre actúa',
+                'Conversión de formas poco activas en activas (T₄ → T₃)',
+                'Degradación y eliminación (hígado, riñón)',
+              ],
+            },
+            right: {
+              title: 'Respuesta de la célula blanco',
+              items: [
+                'Número y tipo de receptores',
+                'Regulación al alza o a la baja del receptor',
+                'Desensibilización después del receptor',
+                'Coactivadores, correpresores y enzimas que activan o inactivan la hormona en la célula',
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Tolerancia',
+            content: 'La exposición prolongada a un agonista no aumenta los receptores: los desensibiliza o reduce su número en la membrana (regulación a la baja). Por eso, con el uso crónico de benzodiacepinas u opioides, la misma dosis produce menos efecto. Al suspender el fármaco de golpe, el sistema adaptado queda sin el estímulo y aparece un síndrome de abstinencia; por eso también se retiran de forma gradual.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Por qué se miden las hormonas en sangre',
+            content: 'Los valores de referencia de cada hormona representan lo fisiológico para una población según edad, sexo y momento del día (el cortisol, por ejemplo, es máximo por la mañana). Sin conocer el rango normal no se puede reconocer un valor patológico, y varias hormonas solo se interpretan junto con la hormona que las regula (TSH con T₄ libre).',
+          },
+        ],
+      },
+      {
+        id: 'bhe-4',
+        number: 4,
+        title: 'Hormonas de alarma',
+        keyTerms: ['estrés', 'catecolaminas', 'cortisol', 'glucagón', 'ADH'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Ante un peligro o un estrés intenso',
+            items: [
+              'Catecolaminas (adrenalina y noradrenalina): aumentan la frecuencia cardiaca y la presión, dilatan los bronquios y liberan glucosa.',
+              'Cortisol: gluconeogénesis y menor captación de glucosa en los tejidos periféricos, para asegurar combustible al cerebro.',
+              'Glucagón: libera la glucosa del glucógeno hepático.',
+              'ADH: retiene agua en el riñón para mantener el volumen sanguíneo y la presión.',
+              'Además, la ACTH estimula a la suprarrenal y la aldosterona retiene Na⁺ y agua.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'La insulina, las hormonas sexuales y la hormona tiroidea no forman parte de la respuesta aguda de alarma.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Hiperglucemia por estrés',
+            content: 'En un infarto, una sepsis, una quemadura extensa o después de una cirugía mayor, las hormonas de alarma elevan la glucosa aunque el paciente no tenga diabetes. Se vigila y se corrige porque la hiperglucemia en el paciente hospitalizado se asocia con más infecciones y peor evolución.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-citocinas-fase-aguda',
+    title: 'Citocinas: propiedades, interleucinas y fase aguda',
+    subtitle: 'Pleiotropía, redundancia, sinergia y antagonismo; quimiocinas; citocinas de la inmunidad innata y de la hematopoyesis; secuencia TNF-α → IL-1 → IL-6 y proteínas de fase aguda',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🔥',
+    keyPoints: [
+      'Las citocinas son proteínas o glucoproteínas pequeñas y solubles que actúan de forma autocrina, paracrina o endocrina.',
+      'Propiedades: pleiotropía (una citocina, muchos efectos), redundancia (varias citocinas, un mismo efecto), sinergia y antagonismo.',
+      'Proinflamatorias: IL-1, IL-6 y TNF-α. Inmunorreguladoras: IL-10.',
+      'En una infección aparece primero el TNF-α, después la IL-1 y por último la IL-6, que alcanza su pico hacia las 3 horas.',
+      'La IL-6 induce en el hígado las proteínas de fase aguda (proteína C reactiva, fibrinógeno, haptoglobina, α₁-antitripsina, complemento) y baja la albúmina.',
+      'Otras citocinas dirigen la hematopoyesis: IL-3, IL-5, IL-7, IL-11, GM-CSF, G-CSF y M-CSF.',
+    ],
+    sections: [
+      {
+        id: 'bcf-1',
+        number: 1,
+        title: 'Propiedades de las citocinas',
+        keyTerms: ['pleiotropía', 'redundancia', 'autocrino', 'paracrino', 'quimiocina'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Cómo actúan',
+            items: [
+              'Pleiotropía: una misma citocina actúa sobre distintos tipos de células y produce varios efectos.',
+              'Redundancia: varias citocinas pueden producir la misma respuesta (la IL-1 y la IL-6 causan fiebre).',
+              'Sinergia y antagonismo: una citocina potencia o bloquea la acción de otra.',
+              'Patrón autocrino (sobre la célula que la produjo), paracrino (sobre células vecinas) o endocrino (a distancia, por la sangre).',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'Son proteínas o glucoproteínas solubles en agua. Su estructura depende de la familia: la IL-1 y el TNF están formados sobre todo por láminas β, mientras que la IL-2, la IL-6 y otras forman un haz de cuatro hélices α. Algunas, como el TNF-α, existen también ancladas a la membrana antes de liberarse.',
+          },
+          {
+            type: 'table',
+            title: 'Nomenclatura de las quimiocinas',
+            data: {
+              headers: ['Familia', 'Primeras dos cisteínas', 'Ejemplo'],
+              rows: [
+                ['CXC (α)', 'Separadas por un aminoácido', 'CXCL8 (IL-8): atrae neutrófilos'],
+                ['CC (β)', 'Juntas', 'CCL2: atrae monocitos'],
+                ['C (γ)', 'Solo una cisteína en esa posición', 'XCL1'],
+                ['CX3C (δ)', 'Separadas por tres aminoácidos', 'Fractalcina'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'La fiebre y los AINE',
+            content: 'La IL-1, la IL-6 y el TNF-α llegan al hipotálamo e inducen prostaglandina E₂, que sube el punto de ajuste de la temperatura. Los AINE y el paracetamol bajan la fiebre porque inhiben la ciclooxigenasa y con ello la síntesis de prostaglandinas.',
+          },
+        ],
+      },
+      {
+        id: 'bcf-2',
+        number: 2,
+        title: 'Citocinas de la inmunidad innata',
+        keyTerms: ['IL-1', 'TNF-α', 'IL-6', 'IL-10', 'interferón'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Principales citocinas',
+            data: {
+              headers: ['Citocina', 'Efecto principal', 'Célula productora principal'],
+              rows: [
+                ['IL-1α e IL-1β', 'Proinflamatorias; pirógenos; inducen proteínas de fase aguda', 'Monocitos y macrófagos'],
+                ['TNF-α', 'Proinflamatorio; pirógeno; induce moléculas de adhesión; responsable del choque endotóxico', 'Monocitos y macrófagos'],
+                ['IL-6', 'Proinflamatoria; induce proteínas de fase aguda; regula la hematopoyesis; estimula la producción de inmunoglobulinas', 'Monocitos, macrófagos, linfocitos T, endotelio'],
+                ['IL-10', 'Inmunorreguladora: frena la producción de citocinas proinflamatorias y la expresión de MHC-II en los macrófagos', 'Monocitos, macrófagos, linfocitos T reguladores'],
+                ['IL-12', 'Induce la diferenciación de linfocitos Th1; activa linfocitos T citotóxicos y células NK', 'Monocitos, macrófagos, células dendríticas'],
+                ['IL-18', 'Activa linfocitos T y células NK', 'Macrófagos, células de Kupffer'],
+                ['IFN-α e IFN-β', 'Antivirales, antiproliferativos e inmunomoduladores', 'Leucocitos, fibroblastos, células epiteliales'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'La IL-19, la IL-20 y la IL-22 pertenecen a la familia de la IL-10; actúan sobre todo sobre los epitelios de la piel y el intestino.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Choque séptico',
+            content: 'En una infección grave, la liberación masiva de TNF-α e IL-1 dilata los vasos, aumenta su permeabilidad y activa la coagulación: baja la presión y fallan los órganos. Los interferones, en cambio, se aprovechan como fármacos: el interferón β se usa en la esclerosis múltiple.',
+          },
+        ],
+      },
+      {
+        id: 'bcf-3',
+        number: 3,
+        title: 'Respuesta de fase aguda',
+        keyTerms: ['proteína C reactiva', 'proteínas de fase aguda', 'albúmina', 'pirógeno'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Secuencia ante un estímulo infeccioso',
+            steps: [
+              'TNF-α: es el primero en subir (alrededor de la primera hora).',
+              'IL-1: sube a continuación.',
+              'IL-6: llega al pico hacia las 3 horas.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Acciones de la IL-1 y la IL-6',
+            left: { title: 'IL-1', items: ['Cerebro: fiebre (prostaglandinas) y anorexia', 'Hígado: proteínas de fase aguda', 'Endotelio: proliferación y prostaglandinas', 'Cartílago y hueso: colagenasa y activador del plasminógeno'] },
+            right: { title: 'IL-6', items: ['Hígado: proteínas de fase aguda y menos albúmina', 'Médula ósea: hematopoyesis', 'Linfocitos B: diferenciación en células plasmáticas y producción de inmunoglobulinas', 'Cerebro: fiebre y aumento de ACTH'] },
+          },
+          {
+            type: 'list',
+            title: 'Proteínas de fase aguda',
+            items: [
+              'Aumentan: proteína C reactiva, fibrinógeno, haptoglobina, α₁-antitripsina, componentes del complemento (C3) y amiloide A sérico.',
+              'Disminuyen (fase aguda negativa): albúmina y transferrina.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'La IL-6 aparece en horas, pero los anticuerpos específicos de una primera infección tardan días: la IgM se detecta hacia la primera semana y la IgG después.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Proteína C reactiva y albúmina baja',
+            content: 'La proteína C reactiva sube en pocas horas y baja rápido al resolverse la inflamación, por eso sirve para seguir una infección o una enfermedad inflamatoria; no indica la causa. En un paciente con inflamación activa, la albúmina baja por la propia fase aguda, no solo por desnutrición.',
+          },
+        ],
+      },
+      {
+        id: 'bcf-4',
+        number: 4,
+        title: 'Citocinas de la hematopoyesis',
+        keyTerms: ['factor estimulante de colonias', 'G-CSF', 'IL-7', 'IL-11'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Citocinas que dirigen la formación de células sanguíneas',
+            data: {
+              headers: ['Citocina', 'Efecto', 'Célula productora'],
+              rows: [
+                ['IL-3', 'Hematopoyesis de varias líneas en situaciones de estrés', 'Linfocitos T activados'],
+                ['IL-5', 'Diferenciación, proliferación y activación de eosinófilos', 'Linfocitos Th2'],
+                ['IL-7', 'Maduración de linfocitos T y B', 'Células del estroma de la médula ósea y del timo'],
+                ['IL-11', 'Formación de megacariocitos (plaquetas)', 'Fibroblastos de la médula ósea'],
+                ['GM-CSF', 'Granulocitos y macrófagos', 'Linfocitos T, macrófagos, endotelio'],
+                ['G-CSF', 'Granulocitos (neutrófilos)', 'Fibroblastos, endotelio, monocitos'],
+                ['M-CSF', 'Monocitos y macrófagos', 'Monocitos, macrófagos, fibroblastos'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'G-CSF después de la quimioterapia',
+            content: 'La quimioterapia destruye los precursores de la médula y deja al paciente con pocos neutrófilos (neutropenia) y riesgo de infección grave. El G-CSF recombinante (filgrastim) estimula la médula para que los neutrófilos se recuperen antes.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Agammaglobulinemia ligada al X',
+            content: 'Una mutación del gen BTK impide que maduren los linfocitos B, de modo que casi no hay inmunoglobulinas. Los niños se protegen los primeros meses con los anticuerpos de la madre y, cuando estos se agotan (hacia los 6 meses), presentan infecciones bacterianas respiratorias de repetición. Se trata con inmunoglobulina intravenosa o subcutánea.',
+          },
+        ],
+      },
+    ],
+  },
 ]

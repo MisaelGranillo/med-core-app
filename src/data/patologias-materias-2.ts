@@ -1063,6 +1063,7 @@ const NEUMONIA: Patologia = {
     { materia: 'Histología', topicId: 'histologia-epitelios-respiratorio', sectionId: 'hres-3', label: 'Sistema mucociliar y cambio por calibre', porQue: 'La primera barrera contra los microorganismos inhalados.' },
     { materia: 'Histología', topicId: 'histologia-biometria-hematica', sectionId: 'hbh-3', label: 'Caso 1 — Neumonía bacteriana en un niño', porQue: 'Neutrofilia con bandas, granulaciones tóxicas y cuerpos de Döhle.' },
     { materia: 'Histología', topicId: 'histologia-leucocitos', sectionId: 'hleu-3', label: 'Granulocitos: neutrófilo, eosinófilo, basófilo', porQue: 'El neutrófilo, célula principal del exudado.' },
+    { materia: 'Bioquímica', topicId: 'bioquimica-citocinas-fase-aguda', sectionId: 'bcf-1', label: 'Propiedades de las citocinas', porQue: 'De dónde viene la fiebre y por qué la bajan los antipiréticos.' },
   ],
   atlas: [
     { id: 'histologia-epitelios-especializados', title: 'Epitelios especializados' },

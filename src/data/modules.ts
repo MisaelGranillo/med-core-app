@@ -173,9 +173,9 @@ export const modules: Module[] = [
     id: 'bioquimica-uad-s4',
     badge: 'UAD · Bioquímica I — Semana 4',
     title: 'Bioquímica: hormonas y bioenergética',
-    subtitle: 'Concepto de hormona, receptores y segundos mensajeros; clasificación química y cómo la estructura predice solubilidad, transporte y vida media; síntesis de hormonas peptídicas y esteroideas, proteínas transportadoras y fracción libre; derivados del triptófano y de la tirosina, y citocinas.',
+    subtitle: 'Concepto de hormona, receptores y segundos mensajeros; clasificación química y cómo la estructura predice solubilidad, transporte y vida media; síntesis de hormonas peptídicas y esteroideas, proteínas transportadoras y fracción libre; derivados del triptófano y de la tirosina; receptores de membrana y nucleares; hipófisis e islotes pancreáticos; citocinas y fase aguda.',
     emoji: '📡',
-    topicIds: ['bioquimica-hormonas-concepto-clasificacion', 'bioquimica-hormonas-sintesis-transporte', 'bioquimica-hormonas-aminas-citocinas'],
+    topicIds: ['bioquimica-hormonas-concepto-clasificacion', 'bioquimica-hormonas-sintesis-transporte', 'bioquimica-hormonas-aminas-citocinas', 'bioquimica-hormonas-receptores', 'bioquimica-hormonas-hipofisis-pancreas', 'bioquimica-citocinas-fase-aguda'],
   },
   {
     id: 'histologia-uad-s1',
