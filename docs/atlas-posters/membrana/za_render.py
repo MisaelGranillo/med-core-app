@@ -3,7 +3,7 @@
 import sys, json, urllib.parse
 from render3d import render
 name, spec = sys.argv[1], json.loads(sys.argv[2])
-q = {'model': '../docs/atlas-posters/membrana/za/head-neck.glb', 'w': 1400, 'h': 1400}
+q = {'model': '../docs/atlas-posters/membrana/za/' + spec.pop('model', 'head-neck') + '.glb', 'w': 1400, 'h': 1400}
 for k, v in spec.items():
     if k == 'hl': v = ';'.join(f'{r}={c}' for r, c in v.items())
     if k == 'pts': v = ';'.join(f'{k2}~{r}' for k2, r in v.items())

@@ -21,11 +21,11 @@ td.v { font-size: 10px; }
   <section class="panel" style="flex:1.05">
     <div class="ph"><span class="n">1</span>Pared anterolateral por capas <small>— modelo 3D</small></div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px">
-      <div style="text-align:center"><img src="{{img:ana3d/abd-c.png}}" style="width:100%;max-height:300px;object-fit:contain"><p style="font-size:11px;font-weight:800;color:#c8524f;margin:4px 0 0">1 · Oblicuo externo</p><p style="font-size:9.8px;color:var(--muted);margin:0">superficial · abajo y adentro</p></div>
-      <div style="text-align:center"><img src="{{img:ana3d/abd-b.png}}" style="width:100%;max-height:300px;object-fit:contain"><p style="font-size:11px;font-weight:800;color:#5b3b99;margin:4px 0 0">2 · Oblicuo interno</p><p style="font-size:9.8px;color:var(--muted);margin:0">intermedio · al revés</p></div>
-      <div style="text-align:center"><img src="{{img:ana3d/abd-a.png}}" style="width:100%;max-height:300px;object-fit:contain"><p style="font-size:11px;font-weight:800;color:#b8650f;margin:4px 0 0">3 · Transverso <span style="color:#c8242c">+ recto</span></p><p style="font-size:9.8px;color:var(--muted);margin:0">profundo · horizontal</p></div>
+      <div style="text-align:center"><img src="{{img:ana3d/abd-capa1.png}}" style="width:100%;max-height:290px;object-fit:contain"><p style="font-size:11px;font-weight:800;color:#c8524f;margin:4px 0 0">1 · Oblicuo externo</p><p style="font-size:9.8px;color:var(--muted);margin:0">superficial · abajo y adentro</p></div>
+      <div style="text-align:center"><img src="{{img:ana3d/abd-capa2.png}}" style="width:100%;max-height:290px;object-fit:contain"><p style="font-size:11px;font-weight:800;color:#5b3b99;margin:4px 0 0">2 · Oblicuo interno</p><p style="font-size:9.8px;color:var(--muted);margin:0">intermedio · al revés</p></div>
+      <div style="text-align:center"><img src="{{img:ana3d/abd-capa3.png}}" style="width:100%;max-height:290px;object-fit:contain"><p style="font-size:11px;font-weight:800;color:#b8650f;margin:4px 0 0">3 · Transverso <span style="color:#c8242c">+ recto</span></p><p style="font-size:9.8px;color:var(--muted);margin:0">profundo · horizontal</p></div>
     </div>
-    <p style="font-size:10.2px;margin:8px 0 0">Lado derecho, vista anterior, de superficial a profundo. En la tercera imagen se ve el <b>recto del abdomen</b> (rojo): arriba queda por delante del transverso y abajo la aponeurosis del transverso pasa <b>por delante</b> del recto. Ese cambio es la <b>línea arqueada (arco de Douglas)</b>.</p>
+    <p style="font-size:10.2px;margin:8px 0 0">Vista anterior del tronco, de superficial a profundo; pectorales, serrato y dorsal ancho en gris como referencia. En la tercera imagen, el <b>recto del abdomen</b> (rojo) queda por delante del transverso arriba, y abajo la aponeurosis del transverso pasa <b>por delante</b> del recto: ese cambio es la <b>línea arqueada (arco de Douglas)</b>.</p>
   </section>
   <section class="col" style="flex:.95">
     <section class="panel">
@@ -95,26 +95,20 @@ td.v { font-size: 10px; }
 </section>
 
 <div class="row">
-  <section class="panel" style="flex:1.15">
+  <section class="panel" style="flex:1.6">
     <div class="ph"><span class="n">6</span>Pared posterior</div>
-    <table>
+    <div style="display:flex;gap:12px;align-items:flex-start"><div style="flex:0 0 290px"><script type="auto3d">{"img": "ana3d/abd-post.png", "height": 225, "cw": 290, "L": 4, "gap": 50, "labels": {"ps": ["Psoas mayor", "L1–L4 → trocánter menor"], "ql": ["Cuadrado lumbar", "12.ª costilla → cresta"], "il": ["Ilíaco", "fosa ilíaca"]}, "side": {"ps": "right", "ql": "right", "il": "right", "r12": "right"}}</script></div><div style="flex:1;min-width:0"><table>
       <tr><th>Músculo</th><th>Origen → inserción · función</th><th>Nervio</th></tr>
       <tr><td class="k">Psoas ilíaco</td><td>Lumbares + fosa ilíaca → <b>trocánter menor</b>; flexiona muslo o tronco</td><td class="v">Plexo lumbar L1–L3 / femoral</td></tr>
       <tr><td class="k">Psoas menor</td><td>T12–L1 → eminencia iliopúbica (inconstante)</td><td class="v">Plexo lumbar (L1)</td></tr>
       <tr><td class="k">Cuadrado lumbar</td><td>12.ª costilla y transversas → cresta ilíaca; fija tronco y 12.ª costilla</td><td class="v">Subcostal y plexo lumbar</td></tr>
-    </table>
+    </table></div></div>
   </section>
-  <section class="panel" style="flex:.85">
-    <div class="ph"><span class="n">7</span>Triángulo lumbar de Petit</div>
-    <div style="display:flex;gap:8px;align-items:center">
-      <svg viewBox="0 0 160 130" style="width:150px;flex-shrink:0">
-        <path d="M10 10 L90 10 L60 104 L10 104 Z" fill="#8a63c0" opacity=".7"/>
-        <path d="M150 10 L106 10 L80 104 L150 104 Z" fill="#c8242c" opacity=".55"/>
-        <path d="M62 104 L84 40 L80 104 Z" fill="#f2d7ef" stroke="#13295b" stroke-width="1.6"/>
-        <path d="M4 108 Q80 96 156 108" fill="none" stroke="#a88a4a" stroke-width="7" stroke-linecap="round"/>
-        <g font-family="Inter" font-size="8.5" font-weight="800" text-anchor="middle"><text x="36" y="56" fill="#fff">dorsal</text><text x="36" y="66" fill="#fff">ancho</text><text x="124" y="56" fill="#fff">oblicuo</text><text x="124" y="66" fill="#fff">externo</text><text x="80" y="124" fill="#8a6a1a">cresta ilíaca</text></g>
-      </svg>
-      <ul class="lst">
+  <section class="panel" style="flex:.75">
+    <div class="ph"><span class="n">7</span>Triángulo de Petit <small>— modelo 3D</small></div>
+    <div style="display:flex;flex-direction:column;gap:4px;align-items:center">
+      <script type="auto3d">{"img": "ana3d/abd-petit.png", "height": 200, "cw": 300, "L": 150, "gap": 36, "labels": {"ld": ["Dorsal ancho", "medial"], "io": ["Oblicuo interno", "piso", [190, 470]], "eo": ["Oblicuo externo", "lateral"], "hb": ["Cresta ilíaca", "base"]}, "side": {"ld": "left", "io": "left", "eo": "left", "hb": "left"}}</script>
+      <ul class="lst" style="columns:2;column-gap:14px;align-self:stretch">
         <li>Medial: <b>dorsal ancho</b></li>
         <li>Lateral: <b>oblicuo externo</b></li>
         <li>Piso: oblicuo interno</li>
@@ -144,5 +138,5 @@ td.v { font-size: 10px; }
   </div>
 </section>
 
-<p class="foot">MedCore · Anatomía Humana y Disección I (UAD) · Miología II · Modelos 3D: Open 3D Model / Z-Anatomy (CC BY-SA 4.0)</p>
+<p class="foot">MedCore · Anatomía Humana y Disección I (UAD) · Miología II · Modelos 3D: Z-Anatomy (CC BY-SA 4.0) · vaina del recto: esquema</p>
 </div></body></html>

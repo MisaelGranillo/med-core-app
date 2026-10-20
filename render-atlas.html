@@ -43,6 +43,7 @@ loader.load('/models/' + q.get('model'), (g) => {
     if (ghost && ghost.test(n)) { mat.transparent = true; mat.opacity = 0.28; mat.depthWrite = false }
     if (q.get('dbl') === '1' && !bone) mat.side = THREE.DoubleSide
     if (q.get('poff') && !bone) { mat.polygonOffset = true; mat.polygonOffsetFactor = -q.get('poff'); mat.polygonOffsetUnits = -q.get('poff') }
+    if (q.get('front') && new RegExp(q.get('front'), 'i').test(n)) { mat.polygonOffset = true; const fo = +(q.get('frontoff') || 6); mat.polygonOffsetFactor -= fo; mat.polygonOffsetUnits -= fo }
     o.material = mat
     o.updateWorldMatrix(true, false)
     box.expandByObject(o)
