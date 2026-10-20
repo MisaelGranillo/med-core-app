@@ -146,6 +146,18 @@ export function Ajustes() {
             </a>
             ; las imágenes renderizadas a partir de ellos se comparten con la misma licencia.
           </p>
+          <p className="text-[0.9375rem] text-zinc-700 leading-relaxed mt-3">
+            Algunas láminas de Histología incluyen fotografías y micrografías de{' '}
+            <a
+              href="https://commons.wikimedia.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline underline-offset-2 hover:text-primary-hover"
+            >
+              Wikimedia Commons
+            </a>
+            ; cada lámina cita al autor y la licencia de sus imágenes al pie.
+          </p>
         </section>
       </div>
     </main>

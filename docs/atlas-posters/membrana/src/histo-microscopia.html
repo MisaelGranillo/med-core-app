@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 9px; }
+h1 { font-size: 43px; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.3px; }
+.tej { display: flex; flex-direction: column; gap: 6px; }
+.tej div { display: flex; gap: 10px; align-items: center; border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font-size: 10.4px; }
+.tej svg.ic { width: 26px; height: 26px; color: var(--blue); flex-shrink: 0; }
+.tej b { color: var(--blue); font-size: 11.5px; }
+.tej small { color: var(--muted); }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.steps div { display: flex; gap: 7px; align-items: center; border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; font-size: 10px; }
+.steps span.n2 { background: var(--red); color: #fff; border-radius: 50%; min-width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; }
+.steps b { display: block; font-size: 10.8px; }
+.scale { position: relative; height: 82px; margin: 4px 6px 0; }
+.scale .bar { position: absolute; left: 0; right: 0; top: 34px; height: 8px; border-radius: 4px; background: linear-gradient(90deg, #d5e2f5, #1f4f9c); }
+.scale .pt { position: absolute; top: 0; transform: translateX(-50%); text-align: center; font-size: 10px; width: 150px; }
+.scale .pt b { display: block; font-size: 11px; color: var(--navy); margin-bottom: 9px; }
+.scale .pt i { display: block; width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 2.5px solid var(--navy); margin: 0 auto 8px; }
+.card2 { border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; font-size: 10.2px; }
+.card2 b.t { display: block; font-size: 11.5px; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Histología</p>
+  <h1>Microscopía y Técnica Histológica</h1>
+  <p class="tag">Del tejido al portaobjetos: cómo se ve, se procesa y se tiñe una muestra.</p>
+</header>
+
+<div class="row">
+  <section class="panel" style="flex:.95">
+    <div class="ph"><span class="n">1</span>Los cuatro tejidos básicos</div>
+    <div class="tej">
+      <div>{{icon:SquaresFour}}<span><b>Epitelial</b> <small>· Histología I</small><br>Reviste superficies y forma glándulas.</span></div>
+      <div>{{icon:Graph}}<span><b>Conectivo</b> <small>· Histología I</small><br>Sostiene y une: óseo, cartílago, adiposo, sangre.</span></div>
+      <div>{{icon:Barbell}}<span><b>Muscular</b> <small>· Histología II</small><br>Genera movimiento.</span></div>
+      <div>{{icon:Brain}}<span><b>Nervioso</b> <small>· Histología II</small><br>Recibe y transmite señales.</span></div>
+    </div>
+    <div class="sh" style="margin-top:8px">Capacidad de regeneración ★</div>
+    <table>
+      <tr><td class="k">Epitelial</td><td>Alta</td><td class="k">Muscular</td><td>Limitada</td></tr>
+      <tr><td class="k">Conectivo</td><td>Variable</td><td class="k">Nervioso</td><td>Mínima</td></tr>
+    </table>
+  </section>
+  <section class="panel" style="flex:1.05">
+    <div class="ph"><span class="n">2</span>El microscopio óptico <small>— fotografía</small></div>
+    <script type="auto3d">{"img": "fotos/microscopio.png", "height": 270, "cw": 480, "L": 150, "gap": 36,
+      "labels": {"oc": ["Ocular", "por donde se observa"], "rev": ["Revólver y objetivos", "forman la imagen"], "pla": ["Platina", "lleva la preparación"], "con": ["Condensador", "concentra la luz"], "luz": ["Fuente de luz", ""],
+                 "tubo": ["Cabezal (tubo)", "lleva la imagen al ocular"], "bra": ["Brazo", ""], "tor": ["Tornillos", "macro y micrométrico"]},
+      "side": {"oc": "left", "rev": "left", "pla": "left", "con": "left", "luz": "left", "tubo": "right", "bra": "right", "tor": "right"}}</script>
+    <p style="font-size:10px;margin:2px 0 0">★ El <b>objetivo</b> recoge la luz que atraviesa la muestra; el <b>condensador</b> la enfoca sobre ella.</p>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">3</span>Resolución <small>— cuanto MENOR el número, MEJOR el microscopio</small></div>
+  <div class="scale">
+    <div class="bar"></div>
+    <div class="pt" style="left:4%"><b>0.2 mm</b><i></i>Ojo humano ★<br>referencia</div>
+    <div class="pt" style="left:27%"><b>0.2 µm</b><i></i>Óptico: campo claro, oscuro ★,<br>contraste de fase ★, fluorescencia</div>
+    <div class="pt" style="left:57%"><b>2.5 nm</b><i></i>MEB (barrido)<br>superficie en 3D</div>
+    <div class="pt" style="left:77%"><b>0.2 nm</b><i></i>MET (transmisión)<br>ultraestructura</div>
+    <div class="pt" style="left:96%"><b style="color:var(--red)">50 pm</b><i style="background:var(--red);border-color:var(--red)"></i><span style="color:var(--red);font-weight:700">Fuerza atómica ★</span><br><span style="color:var(--red)">la MAYOR resolución</span></div>
+  </div>
+  <p style="font-size:10px;margin:2px 0 0;text-align:center;color:var(--muted)">Campo oscuro: solo la luz refractada entra al objetivo (fondo negro) · Contraste de fase: células VIVAS sin teñir</p>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">4</span>Técnica histológica <small>— del tejido al portaobjetos</small></div>
+  <div class="steps">
+    <div><span class="n2">1</span><span><b>Obtención</b>biopsia o pieza quirúrgica</span></div>
+    <div><span class="n2">2</span><span><b>Fijación</b>formol al 4–10 %</span></div>
+    <div><span class="n2">3</span><span><b>Deshidratación</b>alcoholes ascendentes</span></div>
+    <div><span class="n2">4</span><span><b>Aclaramiento</b>xilol o tolueno</span></div>
+    <div><span class="n2">5</span><span><b>Inclusión</b>en parafina</span></div>
+    <div><span class="n2">6</span><span><b>Corte</b>microtomo, 5–15 µm</span></div>
+    <div><span class="n2">7</span><span><b>Tinción</b>H&amp;E de rutina</span></div>
+    <div><span class="n2">8</span><span><b>Montaje</b>cubreobjetos</span></div>
+  </div>
+  <p style="font-size:10px;margin:6px 0 0">★ Microscopía electrónica: <b>ultramicrotomo</b> (cortes de 50–150 nm) y fijación con <b>tetróxido de osmio (OsO₄)</b>, que conserva las membranas.</p>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1.05">
+    <div class="ph"><span class="n">5</span>Tinción H&amp;E ★ <small>— micrografía real</small></div>
+    <script type="auto3d">{"img": "fotos/he-endometrio.jpg", "height": 200, "cw": 480, "L": 4, "gap": 44,
+      "labels": {"nuc": ["Núcleo → morado", "hematoxilina · basófilo"], "epi": ["Epitelio cilíndrico", "núcleos alargados en hilera"], "est": ["Estroma → rosa", "eosina · acidófilo"], "eri": ["Eritrocito", "muy eosinófilo (rojo intenso)"]},
+      "side": {"nuc": "right", "epi": "right", "est": "right", "eri": "right"}}</script>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px">
+      <div class="card2"><b class="t" style="color:#4b3aa8">Hematoxilina → azul-morado</b>Colorante <b>básico</b>: tiñe lo <b>basófilo</b> (núcleo, ADN, ARN).</div>
+      <div class="card2"><b class="t" style="color:#c2457a">Eosina → rosa</b>Colorante <b>ácido</b>: tiñe lo <b>acidófilo</b> (citoplasma, colágeno).</div>
+    </div>
+  </section>
+  <section class="panel" style="flex:.95">
+    <div class="ph"><span class="n">6</span>Tinciones especiales y fenómenos</div>
+    <table>
+      <tr><td class="k">Mallory ★</td><td>Tricrómico del tejido conectivo</td></tr>
+      <tr><td class="k">PAS ★</td><td>Glucógeno y polisacáridos</td></tr>
+      <tr><td class="k">Feulgen</td><td>ADN específicamente (estequiométrica)</td></tr>
+      <tr><td class="k">Fucsina-resorcina</td><td>Fibras elásticas</td></tr>
+      <tr><td class="k">OsO₄ ★</td><td>Lípidos y membranas</td></tr>
+      <tr><td class="k">Metacromasia ★</td><td>Tiñe de un color distinto al suyo (azul de toluidina → violeta en mastocitos)</td></tr>
+      <tr><td class="k">Birrefringencia ★</td><td>Desdobla la luz polarizada (colágeno, amiloide)</td></tr>
+    </table>
+  </section>
+</div>
+
+<div class="row">
+  <section class="clin" style="flex:1.1">
+    <div class="ph"><span class="n">7</span>Correlación clínica</div>
+    <p style="font-size:10.2px">La <b>biopsia</b> y la <b>histopatología</b> confirman diagnósticos que la clínica y la imagen solo sugieren; en oncología, distinguir lo benigno de lo maligno depende del patrón histológico.</p>
+    <p style="font-size:10.2px;margin:0">El <b>MET</b> revela la ultraestructura (p. ej., mitocondrias): útil en miopatías mitocondriales y patología renal.</p>
+  </section>
+  <section class="panel" style="flex:.9">
+    <div class="ph"><span class="n">8</span>Método</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;text-align:center">
+      <div class="card2"><b class="t">Inductivo</b>De lo particular a lo general: célula → tejido → órgano (el de esta materia).</div>
+      <div class="card2"><b class="t">Deductivo</b>De lo general a lo particular: órgano → tejido → célula.</div>
+    </div>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">9</span>Origen celular <small>— sopa primordial → ARN (la «chispa») → procariota → eucariota</small></div>
+  <div style="display:flex;gap:18px;align-items:center">
+    <svg viewBox="0 0 520 150" style="width:300px;flex-shrink:0">
+      <rect x="20" y="40" width="150" height="70" rx="35" fill="#cfe8b8" stroke="#6aa84f" stroke-width="3"/>
+      <path d="M50 76 q12 -14 24 0 t24 0 t24 0" fill="none" stroke="#2e7d32" stroke-width="3"/>
+      <text x="95" y="135" font-size="13" font-weight="800" fill="#13295b" text-anchor="middle">Procariota</text>
+      <path d="M195 75 h60 M255 75 l-9 -6 M255 75 l-9 6" stroke="#1f4f9c" stroke-width="3" fill="none"/>
+      <ellipse cx="390" cy="72" rx="118" ry="62" fill="#dbe7fb" stroke="#5b8fd6" stroke-width="3"/>
+      <circle cx="372" cy="72" r="26" fill="#6b5bd6"/><circle cx="378" cy="66" r="6" fill="#2d1f7a"/>
+      <ellipse cx="452" cy="44" rx="20" ry="9" fill="#f2b45c" stroke="#b8650f" stroke-width="1.5"/>
+      <ellipse cx="318" cy="98" rx="18" ry="8" fill="#f2b45c" stroke="#b8650f" stroke-width="1.5"/>
+      <path d="M432 92 q14 -8 28 0 M432 100 q14 -8 28 0" fill="none" stroke="#8a63c0" stroke-width="2"/>
+      <text x="390" y="148" font-size="13" font-weight="800" fill="#13295b" text-anchor="middle">Eucariota</text>
+    </svg>
+    <table style="flex:1">
+      <tr><th>Rasgo</th><th>Procariota</th><th>Eucariota</th></tr>
+      <tr><td class="k">Tamaño</td><td>Pequeña</td><td>Más grande</td></tr>
+      <tr><td class="k">Material genético</td><td>Nucleoide (sin núcleo)</td><td>Núcleo con membrana</td></tr>
+      <tr><td class="k">Organelos membranosos</td><td>No</td><td>Sí (mitocondria, RE, Golgi…)</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">10</span>Resumen clave</div>
+  <div class="sum">
+    <div>{{icon:Eye}}<span>Ojo humano: <b>0.2 mm</b> de resolución.</span></div>
+    <div>{{icon:Atom}}<span><b>Fuerza atómica</b> (50 pm): la mayor resolución.</span></div>
+    <div>{{icon:Flask}}<span>Fijación con <b>formol 4–10 %</b>; inclusión en parafina.</span></div>
+    <div>{{icon:Palette}}<span>H&amp;E: <b>basófilo azul, acidófilo rosa</b>.</span></div>
+    <div>{{icon:ArrowsClockwise}}<span>Regenera: epitelio <b>alta</b>, nervioso <b>mínima</b>.</span></div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Atlas · Histología I · UAD · Semana 1 · Fotos: microscopio, Sarah Greenwood (CC BY 4.0); H&amp;E, Mikael Häggström (CC0) · Wikimedia Commons</p>
+</div></body></html>
