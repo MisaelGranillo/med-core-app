@@ -1313,6 +1313,24 @@ export const atlasTopics: AtlasTopic[] = [
       { id: 'bda-6', question: 'El caso de la talidomida dio origen sobre todo a:', options: ['La radioterapia', 'La farmacovigilancia y los comités de bioética', 'Los antibióticos', 'La quimioterapia'], correctIndex: 1, explanation: 'Teratógeno autorizado para el embarazo; cambió la regulación de fármacos.', difficulty: 'easy' },
     ],
   },
+  {
+    id: 'bioquimica-hormonas',
+    title: 'Hormonas y receptores',
+    subtitle: 'Grupos I y II, cuatro tipos de receptor, proteínas G, eje hipotálamo-hipófisis, islote de Langerhans y citocinas de fase aguda',
+    category: 'bioquimica',
+    emoji: '🔑',
+    imagePath: '/atlas/bioquimica-hormonas.webp',
+    colorKey: 'bioquimica',
+    relatedTopicIds: ['bioquimica-lipidos', 'bioquimica-glucidos'],
+    questions: [
+      { id: 'bho-1', question: 'Una hormona del grupo I (lipofílica) actúa sobre todo a través de:', options: ['AMPc', 'Un canal iónico', 'Un receptor intracelular que cambia la transcripción', 'La fosfolipasa C'], correctIndex: 2, explanation: 'Atraviesa la membrana y el complejo hormona-receptor se une al ADN.', difficulty: 'easy' },
+      { id: 'bho-2', question: 'El receptor de la insulina es un receptor:', options: ['Con actividad de tirosina cinasa', 'Nuclear', 'Acoplado a Gi', 'Canal de Cl⁻'], correctIndex: 0, explanation: 'Se autofosforila y activa IRS → PI3K → Akt, que lleva el GLUT4 a la membrana.', difficulty: 'easy' },
+      { id: 'bho-3', question: 'La proteína Gq produce:', options: ['↑ AMPc', '↓ AMPc', 'GMPc', 'IP₃ (libera Ca²⁺) y diacilglicerol'], correctIndex: 3, explanation: 'Activa la fosfolipasa C-β; Gs sube y Gi baja el AMPc.', difficulty: 'medium' },
+      { id: 'bho-4', question: 'La ADH y la oxitocina se sintetizan en:', options: ['La adenohipófisis', 'El hipotálamo', 'La corteza suprarrenal', 'El páncreas'], correctIndex: 1, explanation: 'Bajan por los axones y se liberan en la neurohipófisis.', difficulty: 'medium' },
+      { id: 'bho-5', question: 'En el islote de Langerhans, las células δ producen:', options: ['Insulina', 'Glucagón', 'Somatostatina', 'Polipéptido pancreático'], correctIndex: 2, explanation: 'La somatostatina frena localmente la secreción de insulina y glucagón.', difficulty: 'easy' },
+      { id: 'bho-6', question: '¿Qué citocina llega a su pico hacia las 3 horas e induce las proteínas de fase aguda?', options: ['TNF-α', 'IL-6', 'IL-10', 'IL-5'], correctIndex: 1, explanation: 'Secuencia TNF-α → IL-1 → IL-6; el hígado sube la PCR y baja la albúmina.', difficulty: 'medium' },
+    ],
+  },
   // Bioquímica general (anterior a las clases): van después de las láminas verificadas
   {
     id: 'introduccion-bioquimica',

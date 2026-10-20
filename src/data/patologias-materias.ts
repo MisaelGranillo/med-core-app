@@ -337,6 +337,7 @@ const CETOACIDOSIS: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-hipofisis-pancreas', sectionId: 'bhe-4', label: 'Hormonas de alarma', porQue: 'Las hormonas contrarreguladoras que elevan la glucosa.' },
   ],
   atlas: [
+    { id: 'bioquimica-hormonas', title: 'Hormonas y receptores' },
     { id: 'bioquimica-acido-base', title: 'Equilibrio ácido-base' },
     { id: 'bioquimica-glucidos', title: 'Glúcidos' },
   ],
@@ -917,6 +918,7 @@ const HIPOTIROIDISMO: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-receptores', sectionId: 'bhr-6', label: 'Receptores nucleares', porQue: 'La levotiroxina se convierte en T₃ y actúa en el receptor nuclear de hormona tiroidea.' },
   ],
   atlas: [
+    { id: 'bioquimica-hormonas', title: 'Hormonas y receptores' },
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },
     { id: 'histologia-cartilago-hueso', title: 'Adiposo, cartílago y hueso' },
   ],

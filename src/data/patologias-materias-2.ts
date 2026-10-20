@@ -676,6 +676,7 @@ const HSC: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-hipofisis-pancreas', sectionId: 'bhe-4', label: 'Hormonas de alarma', porQue: 'Por qué se aumenta la dosis de hidrocortisona en una enfermedad o cirugía.' },
   ],
   atlas: [
+    { id: 'bioquimica-hormonas', title: 'Hormonas y receptores' },
     { id: 'genetica-desarrollo', title: 'Desarrollo embrionario y sexual' },
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },
   ],
