@@ -334,6 +334,7 @@ const CETOACIDOSIS: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-agua-osmolaridad-soluciones', sectionId: 'bao-6', label: 'Alteraciones: hiper e hipoosmolaridad', porQue: 'La glucosa alta eleva la osmolaridad y deshidrata a las células.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-agua-electrolitos', sectionId: 'bae-5', label: 'Alteraciones de los electrolitos', porQue: 'Por qué el potasio es el electrolito que más se vigila.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-hipofisis-pancreas', sectionId: 'bhe-2', label: 'Islotes de Langerhans', porQue: 'Sin insulina, el glucagón queda sin oposición y el hígado produce glucosa y cuerpos cetónicos.' },
+    { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-hipofisis-pancreas', sectionId: 'bhe-4', label: 'Hormonas de alarma', porQue: 'Las hormonas contrarreguladoras que elevan la glucosa.' },
   ],
   atlas: [
     { id: 'bioquimica-acido-base', title: 'Equilibrio ácido-base' },
@@ -913,6 +914,7 @@ const HIPOTIROIDISMO: Patologia = {
     { materia: 'Genética', topicId: 'genetica-citogenetica-clinica', sectionId: 'gcit-4', label: 'Síndromes por aneuploidía', porQue: 'El síndrome de Down y el de Turner son factores de riesgo.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-aminoacidos-clasificacion', sectionId: 'bac-4', label: 'Moléculas que derivan de los aminoácidos', porQue: 'Las hormonas tiroideas se forman a partir de la tirosina.' },
     { materia: 'Histología', topicId: 'histologia-hueso', sectionId: 'hhue-6', label: 'Osificación: intramembranosa vs endocondral', porQue: 'Sin hormona tiroidea se retrasa la maduración ósea.' },
+    { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-receptores', sectionId: 'bhr-6', label: 'Receptores nucleares', porQue: 'La levotiroxina se convierte en T₃ y actúa en el receptor nuclear de hormona tiroidea.' },
   ],
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },
@@ -1051,6 +1053,7 @@ const TURNER: Patologia = {
     { materia: 'Genética', topicId: 'genetica-diferenciacion-sexual', sectionId: 'gdsx-4', label: 'Vía femenina y conductos', porQue: 'El ovario necesita dos X para mantenerse: sin el segundo se forma una gónada en cintilla.' },
     { materia: 'Genética', topicId: 'genetica-cromosomas-herencia', sectionId: 'gher-5', label: 'Bandeo cromosómico y nomenclatura del locus', porQue: 'El bandeo G con el que se hace el cariotipo.' },
     { materia: 'Histología', topicId: 'histologia-hueso', sectionId: 'hhue-7', label: 'Remodelación y regulación', porQue: 'Sin estrógenos se pierde masa ósea.' },
+    { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-hipofisis-pancreas', sectionId: 'bhe-1', label: 'Hipotálamo e hipófisis', porQue: 'La FSH que sube cuando el ovario no responde.' },
   ],
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },

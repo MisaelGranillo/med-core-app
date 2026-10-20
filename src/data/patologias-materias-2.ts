@@ -672,6 +672,8 @@ const HSC: Patologia = {
     { materia: 'Genética', topicId: 'genetica-dsd', sectionId: 'gdsd-3', label: 'Diagnóstico de primera línea', porQue: 'Cariotipo y estudios iniciales.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-lipidos-funcion-esteroides', sectionId: 'bfe-5', label: 'Colesterol y esteroidogénesis', porQue: 'La vía del colesterol al cortisol, la aldosterona y los andrógenos.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-agua-electrolitos', sectionId: 'bae-5', label: 'Alteraciones de los electrolitos', porQue: 'Hiponatremia e hiperpotasemia por falta de aldosterona.' },
+    { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-hipofisis-pancreas', sectionId: 'bhe-1', label: 'Hipotálamo e hipófisis', porQue: 'La ACTH estimula a la suprarrenal; sin cortisol que la frene, sube.' },
+    { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-hipofisis-pancreas', sectionId: 'bhe-4', label: 'Hormonas de alarma', porQue: 'Por qué se aumenta la dosis de hidrocortisona en una enfermedad o cirugía.' },
   ],
   atlas: [
     { id: 'genetica-desarrollo', title: 'Desarrollo embrionario y sexual' },
@@ -786,6 +788,7 @@ const KLINEFELTER: Patologia = {
     { materia: 'Genética', topicId: 'genetica-dsd', sectionId: 'gdsd-5', label: 'Turner y Klinefelter dentro de las DSD', porQue: 'Por qué se considera una diferencia del desarrollo sexual.' },
     { materia: 'Genética', topicId: 'genetica-gametogenesis', sectionId: 'ggam-3', label: 'Espermatogénesis y espermiogénesis', porQue: 'Lo que falla en el testículo.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-lipidos-funcion-esteroides', sectionId: 'bfe-6', label: 'Hormonas esteroideas: función, deficiencia y exceso', porQue: 'La deficiencia de testosterona.' },
+    { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-hipofisis-pancreas', sectionId: 'bhe-1', label: 'Hipotálamo e hipófisis', porQue: 'La LH y la FSH que suben cuando el testículo no responde.' },
   ],
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },

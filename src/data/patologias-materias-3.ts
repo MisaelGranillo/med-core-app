@@ -898,6 +898,7 @@ const PENFIGO: Patologia = {
     { materia: 'Histología', topicId: 'histologia-piel', sectionId: 'hpiel-7', label: 'Correlaciones clínicas de la piel', porQue: 'Pénfigo frente a penfigoide.' },
     { materia: 'Histología', topicId: 'histologia-piel', sectionId: 'hpiel-3', label: 'Epidermis y los cinco estratos', porQue: 'Dónde ocurre la separación.' },
     { materia: 'Histología', topicId: 'histologia-linfocitos', sectionId: 'hlin-2', label: 'Linfocitos B (inmunidad humoral)', porQue: 'Las células que producen los anticuerpos y a las que se dirige el rituximab.' },
+    { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-receptores', sectionId: 'bhr-6', label: 'Receptores nucleares', porQue: 'Por qué la prednisona se reduce poco a poco.' },
   ],
   atlas: [
     { id: 'histologia-piel', title: 'La piel' },
