@@ -1,0 +1,73 @@
+{
+ "src": "base/histologia-cartilago-hueso.webp",
+ "out": "out/cartilago.png",
+ "items": [
+  {
+   "img": "adip-blanco",
+   "box": [
+    82,
+    400,
+    594,
+    572
+   ],
+   "f": [
+    0.5,
+    0.5
+   ],
+   "z": 1.0
+  },
+  {
+   "img": "cart-hialino",
+   "box": [
+    82,
+    834,
+    678,
+    1033
+   ],
+   "f": [
+    0.5,
+    0.6
+   ],
+   "z": 1.3
+  },
+  {
+   "img": "cart-elastico",
+   "box": [
+    726,
+    834,
+    1322,
+    1033
+   ],
+   "f": [
+    0.5,
+    0.5
+   ],
+   "z": 1.0
+  },
+  {
+   "img": "cart-fibro",
+   "box": [
+    1370,
+    834,
+    1966,
+    1033
+   ],
+   "f": [
+    0.5,
+    0.5
+   ],
+   "z": 1.0
+  }
+ ],
+ "foot": {
+  "box": [
+   100,
+   3010,
+   1948,
+   3048
+  ],
+  "size": 19,
+  "font": "/Users/misaelgranillo/Library/Fonts/Inter-VariableFont_opsz,wght.ttf",
+  "text": "MedCore · Atlas · Histología I · UAD · Semana 3 · Micrografías: Berkshire Community College (CC0), Wikimedia Commons · demás figuras: diagramas esquemáticos"
+ }
+}

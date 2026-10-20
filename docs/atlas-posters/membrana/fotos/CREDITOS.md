@@ -4,3 +4,35 @@
 |---|---|---|---|
 | microscopio.png | [Compound Microscope.png](https://commons.wikimedia.org/wiki/File:Compound_Microscope.png) (recortado y reducido) | Sarah Greenwood | CC BY 4.0 |
 | he-endometrio.jpg | [Histology of normal simple columnar epithelium of the endometrium.jpg](https://commons.wikimedia.org/wiki/File:Histology_of_normal_simple_columnar_epithelium_of_the_endometrium.jpg) | Mikael Häggström | CC0 |
+
+## Micrografías de Histología (Wikimedia Commons)
+
+| Archivo | Fuente | Autor | Licencia |
+|---|---|---|---|
+| adip-blanco | [Connective Tissue Adipose (41066513194).jpg](https://commons.wikimedia.org/wiki/File:Connective_Tissue_Adipose_(41066513194).jpg) | Berkshire Community College  Bioscience Image Library | CC0 |
+| bazo | [Histology of Spleen.jpg](https://commons.wikimedia.org/wiki/File:Histology_of_Spleen.jpg) | Bhavya akula | CC BY-SA 4.0 |
+| cart-elastico | [Connective Tissue Elastic Cartilage (41855668211).jpg](https://commons.wikimedia.org/wiki/File:Connective_Tissue_Elastic_Cartilage_(41855668211).jpg) | Berkshire Community College  Bioscience Image Library | CC0 |
+| cart-fibro | [Connective Tissue Fibrocartilage (41140134634).jpg](https://commons.wikimedia.org/wiki/File:Connective_Tissue_Fibrocartilage_(41140134634).jpg) | Berkshire Community College  Bioscience Image Library | CC0 |
+| cart-hialino | [Connective Tissue Hyaline Cartilage (26989336477).jpg](https://commons.wikimedia.org/wiki/File:Connective_Tissue_Hyaline_Cartilage_(26989336477).jpg) | Berkshire Community College  Bioscience Image Library | CC0 |
+| ct-densoirr | [Dense irregular.jpg](https://commons.wikimedia.org/wiki/File:Dense_irregular.jpg) | Echinaceapallida | CC BY-SA 4.0 |
+| ct-elastico | [Connective Tissue Human Elastic Tissue (41813163882).jpg](https://commons.wikimedia.org/wiki/File:Connective_Tissue_Human_Elastic_Tissue_(41813163882).jpg) | Berkshire Community College  Bioscience Image Library | CC0 |
+| ct-laxo | [Connective Tissue Loose Aerolar (41743649122).jpg](https://commons.wikimedia.org/wiki/File:Connective_Tissue_Loose_Aerolar_(41743649122).jpg) | Berkshire Community College  Bioscience Image Library | CC0 |
+| ct-reticular | [Connective Tissue Reticular (40885194065).jpg](https://commons.wikimedia.org/wiki/File:Connective_Tissue_Reticular_(40885194065).jpg) | Berkshire Community College  Bioscience Image Library | CC0 |
+| ep-cilin | [Epithelial Tissues Simple Columnar Epithelium (41723124791).jpg](https://commons.wikimedia.org/wiki/File:Epithelial_Tissues_Simple_Columnar_Epithelium_(41723124791).jpg) | Berkshire Community College  Bioscience Image Library | CC0 |
+| ep-cubest | [Epithelium-cuboidal strat2.jpg](https://commons.wikimedia.org/wiki/File:Epithelium-cuboidal_strat2.jpg) | Echinaceapallida | CC BY-SA 4.0 |
+| ep-cubico | [Epithelial Tissues Simple Cuboidal Epithelium (41681552782).jpg](https://commons.wikimedia.org/wiki/File:Epithelial_Tissues_Simple_Cuboidal_Epithelium_(41681552782).jpg) | Berkshire Community College  Bioscience Image Library | CC0 |
+| ep-estrat | [Epithelial Tissues Stratified Squamous Epithelium (41994232802).jpg](https://commons.wikimedia.org/wiki/File:Epithelial_Tissues_Stratified_Squamous_Epithelium_(41994232802).jpg) | Berkshire Community College  Bioscience Image Library | CC0 |
+| ep-plano | [Epithelial Tissues Simple Squamous Epithelium (frog) (27847646938).jpg](https://commons.wikimedia.org/wiki/File:Epithelial_Tissues_Simple_Squamous_Epithelium_(frog)_(27847646938).jpg) | Berkshire Community College  Bioscience Image Library | CC0 |
+| ep-trans | [Epithelial Tissues Transitional (41850592732).jpg](https://commons.wikimedia.org/wiki/File:Epithelial_Tissues_Transitional_(41850592732).jpg) | Berkshire Community College  Bioscience Image Library | CC0 |
+| ep-trans2 | [Epithelial Tissues Transitional (27025226037).jpg](https://commons.wikimedia.org/wiki/File:Epithelial_Tissues_Transitional_(27025226037).jpg) | Berkshire Community College  Bioscience Image Library | CC0 |
+| lin-ganglio | [Normal Lymph Node.jpg](https://commons.wikimedia.org/wiki/File:Normal_Lymph_Node.jpg) | Ed Uthman, MD | CC BY-SA 2.0 |
+| lin-timo | [Thymic corpuscle.jpg](https://commons.wikimedia.org/wiki/File:Thymic_corpuscle.jpg) | Nephron | CC BY-SA 3.0 |
+| piel | [Normal Epidermis and Dermis with Intradermal Nevus 10x-cropped.JPG](https://commons.wikimedia.org/wiki/File:Normal_Epidermis_and_Dermis_with_Intradermal_Nevus_10x-cropped.JPG) | Normal_Epidermis_and_Dermis_with_Intradermal_Nevus_10x.JPG: | Public domain |
+| resp-pseudo | [Epithelial Tissues Pseudostratified Columnar Epithelium (26915091897).jpg](https://commons.wikimedia.org/wiki/File:Epithelial_Tissues_Pseudostratified_Columnar_Epithelium_(26915091897).jpg) | Berkshire Community College  Bioscience Image Library | CC0 |
+| san-banda | [Band form neutrophil in Wright stained PBS microscopy.jpg](https://commons.wikimedia.org/wiki/File:Band_form_neutrophil_in_Wright_stained_PBS_microscopy.jpg) | Ajay Kumar Chaurasiya | CC BY-SA 4.0 |
+| san-baso | [Базофіли.jpg](https://commons.wikimedia.org/wiki/File:Базофіли.jpg) | Makysm | CC0 |
+| san-eosino | [Blood-eosinophil2.jpg](https://commons.wikimedia.org/wiki/File:Blood-eosinophil2.jpg) | Echinaceapallida | CC BY-SA 4.0 |
+| san-linfo | [Blood-lymphocyte1.jpg](https://commons.wikimedia.org/wiki/File:Blood-lymphocyte1.jpg) | Echinaceapallida | CC BY-SA 4.0 |
+| san-mono | [Blood-monocyte2.jpg](https://commons.wikimedia.org/wiki/File:Blood-monocyte2.jpg) | Echinaceapallida | CC BY-SA 4.0 |
+| san-neutro | [Blood-neutrophil1.jpg](https://commons.wikimedia.org/wiki/File:Blood-neutrophil1.jpg) | Echinaceapallida | CC BY-SA 4.0 |
+| tendon | [Tendon - very high mag.jpg](https://commons.wikimedia.org/wiki/File:Tendon_-_very_high_mag.jpg) | Nephron | CC BY-SA 3.0 |

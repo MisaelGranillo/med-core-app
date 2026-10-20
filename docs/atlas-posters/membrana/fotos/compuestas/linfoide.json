@@ -1,0 +1,136 @@
+{
+ "src": "base/histologia-linfoide-hematopoyesis.webp",
+ "out": "out/linfoide.png",
+ "items": [],
+ "cells": [
+  {
+   "img": "lin-timo",
+   "src": [
+    900,
+    1350,
+    900
+   ],
+   "c": [
+    383,
+    1622
+   ],
+   "d": 302,
+   "erase": [
+    62,
+    1452,
+    532,
+    1796
+   ],
+   "labels": [
+    {
+     "t": "Corpúsculo",
+     "s": "de Hassall",
+     "p": [
+      760,
+      1000
+     ],
+     "at": [
+      215,
+      1540
+     ]
+    },
+    {
+     "t": "Timocitos",
+     "s": "linfocitos T",
+     "p": [
+      260,
+      1950
+     ],
+     "at": [
+      215,
+      1720
+     ]
+    }
+   ]
+  },
+  {
+   "img": "lin-ganglio",
+   "src": [
+    924,
+    762,
+    760
+   ],
+   "c": [
+    1355,
+    1622
+   ],
+   "d": 318,
+   "erase": [
+    1050,
+    1452,
+    1575,
+    1820
+   ],
+   "labels": [
+    {
+     "t": "Cápsula",
+     "s": "",
+     "p": [
+      1090,
+      135
+     ],
+     "at": [
+      1180,
+      1500
+     ]
+    },
+    {
+     "t": "Folículos",
+     "s": "corteza · B",
+     "p": [
+      330,
+      520
+     ],
+     "at": [
+      1180,
+      1640
+     ]
+    }
+   ]
+  },
+  {
+   "img": "bazo",
+   "src": [
+    370,
+    395,
+    235
+   ],
+   "c": [
+    222,
+    2080
+   ],
+   "d": 268,
+   "erase": [
+    66,
+    1925,
+    378,
+    2215
+   ],
+   "labels": []
+  }
+ ],
+ "foot": {
+  "box": [
+   100,
+   3010,
+   1948,
+   3048
+  ],
+  "size": 19,
+  "font": "/Users/misaelgranillo/Library/Fonts/Inter-VariableFont_opsz,wght.ttf",
+  "text": "MedCore · Atlas · Histología I · UAD · Semana 4 · Micrografías: Nephron (CC BY-SA 3.0), Ed Uthman (CC BY-SA 2.0), Bhavya akula (CC BY-SA 4.0) · ilustraciones: NIAID NIH BioART (dominio público)"
+ },
+ "erase_extra": [
+  [
+   1500,
+   1742,
+   1665,
+   1820
+  ]
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "src": "base/histologia-conectivo.webp",
+ "out": "out/conectivo.png",
+ "items": [
+  {
+   "img": "ct-laxo",
+   "box": [
+    82,
+    1652,
+    678,
+    1902
+   ],
+   "f": [
+    0.5,
+    0.5
+   ],
+   "z": 1.0
+  },
+  {
+   "img": "tendon",
+   "box": [
+    726,
+    1652,
+    1322,
+    1902
+   ],
+   "f": [
+    0.5,
+    0.5
+   ],
+   "z": 1.0
+  },
+  {
+   "img": "ct-densoirr",
+   "box": [
+    1370,
+    1652,
+    1966,
+    1902
+   ],
+   "f": [
+    0.5,
+    0.5
+   ],
+   "z": 1.0
+  },
+  {
+   "img": "ct-elastico",
+   "box": [
+    82,
+    2082,
+    678,
+    2332
+   ],
+   "f": [
+    0.5,
+    0.5
+   ],
+   "z": 1.0
+  },
+  {
+   "img": "ct-reticular",
+   "box": [
+    726,
+    2082,
+    1322,
+    2332
+   ],
+   "f": [
+    0.5,
+    0.5
+   ],
+   "z": 1.0
+  }
+ ],
+ "foot": {
+  "box": [
+   100,
+   3010,
+   1948,
+   3048
+  ],
+  "size": 18,
+  "font": "/Users/misaelgranillo/Library/Fonts/Inter-VariableFont_opsz,wght.ttf",
+  "text": "MedCore · Histología I · UAD · Semana 3 · Fibroblasto y macrófago: NIAID BioART (dominio público) · Micrografías: Berkshire Community College (CC0), Nephron (CC BY-SA 3.0), Echinaceapallida (CC BY-SA 4.0)"
+ }
+}

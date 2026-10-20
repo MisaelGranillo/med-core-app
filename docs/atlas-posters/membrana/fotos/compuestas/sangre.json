@@ -1,0 +1,113 @@
+{
+ "src": "base/histologia-sangre.webp",
+ "out": "out/sangre.png",
+ "items": [],
+ "cells": [
+  {
+   "img": "san-neutro",
+   "c": [
+    251,
+    1608
+   ],
+   "d": 228,
+   "src": [
+    390,
+    330,
+    150
+   ],
+   "erase": [
+    101,
+    1488,
+    401,
+    1728
+   ]
+  },
+  {
+   "img": "san-linfo",
+   "c": [
+    638,
+    1608
+   ],
+   "d": 228,
+   "src": [
+    1085,
+    755,
+    140
+   ],
+   "erase": [
+    488,
+    1488,
+    788,
+    1728
+   ]
+  },
+  {
+   "img": "san-mono",
+   "c": [
+    1024,
+    1608
+   ],
+   "d": 228,
+   "src": [
+    288,
+    172,
+    50
+   ],
+   "erase": [
+    874,
+    1488,
+    1174,
+    1728
+   ]
+  },
+  {
+   "img": "san-eosino",
+   "c": [
+    1410,
+    1608
+   ],
+   "d": 228,
+   "src": [
+    1180,
+    630,
+    175
+   ],
+   "erase": [
+    1260,
+    1488,
+    1560,
+    1728
+   ]
+  },
+  {
+   "img": "san-baso",
+   "c": [
+    1796,
+    1608
+   ],
+   "d": 228,
+   "src": [
+    1040,
+    862,
+    215
+   ],
+   "erase": [
+    1646,
+    1488,
+    1946,
+    1728
+   ]
+  }
+ ],
+ "foot": {
+  "box": [
+   100,
+   3010,
+   1948,
+   3048
+  ],
+  "size": 19,
+  "font": "/Users/misaelgranillo/Library/Fonts/Inter-VariableFont_opsz,wght.ttf",
+  "text": "MedCore · Atlas · Histología I · UAD · Semana 4 · Frotis: Echinaceapallida (CC BY-SA 4.0), Makysm (CC0), Wikimedia Commons · demás ilustraciones: NIAID NIH BioART (dominio público)"
+ }
+}
