@@ -33,7 +33,7 @@ loader.load('/models/' + q.get('model'), (g) => {
     const n = nameOf(o)
     if ((show && !show.test(n)) || (hide && hide.test(n))) { o.visible = false; return }
     const hit = hl.find(([r]) => r.test(n))
-    const bone = /bone|vertebra|sacrum|coccyx|scapula|clavicle|humerus|radius|ulna|femur|tibia|fibula|patella|carpal|metacarp|phalan|hip|rib|sternum|skull|mandible|maxill|frontal|parietal|occipital|temporal|sphenoid|ethmoid|zygomatic|nasal|lacrimal|palatine|vomer|concha|calcan|talus|navicular|cuboid|cuneiform|metatars|capitate|hamate|lunate|scaphoid|pisiform|triquetr|trapez(ium|oid)\.|atlas|axis/i.test(n)
+    const bone = !/muscle|masseter|platysma|bucinator|aponeurosis|levator|depressor|orbicularis/i.test(n) && /incisor|canine|premolar|molar|tooth|bone|vertebra|sacrum|coccyx|scapula|clavicle|humerus|radius|ulna|femur|tibia|fibula|patella|carpal|metacarp|phalan|hip|rib|sternum|skull|mandible|maxill|frontal|parietal|occipital|temporal|sphenoid|ethmoid|zygomatic|nasal|lacrimal|palatine|vomer|concha|calcan|talus|navicular|cuboid|cuneiform|metatars|capitate|hamate|lunate|scaphoid|pisiform|triquetr|trapez(ium|oid)\.|atlas|axis/i.test(n)
     let mat
     if (hit) mat = new THREE.MeshStandardMaterial({ color: hit[1], roughness: 0.55, metalness: 0 })
     else if (bone) mat = new THREE.MeshStandardMaterial({ color: 0xeee3cc, roughness: 0.7 })
@@ -41,6 +41,8 @@ loader.load('/models/' + q.get('model'), (g) => {
     else mat = new THREE.MeshStandardMaterial({ color: /ligament|capsule|tendon|cartil|disc|bursa|sheath|aponeur|retinac/i.test(n) ? 0xd8d4c8 : /arter|vein|nerve/i.test(n) ? 0xffffff : 0xc98a7c, roughness: 0.65, transparent: /arter|vein|nerve/i.test(n), opacity: /arter|vein|nerve/i.test(n) ? 0 : 1 })
     if (/arter|vein|nerve|bursa|fascia|plexus|cord of|trunk of|divisions of|sheath|septum|canal|triangle|ring|hiatus|opening|recess|overlay|fat pad|arch|network|tract|annulus|vessels|zona orbicularis|labrum/i.test(n)) { o.visible = false; return }
     if (ghost && ghost.test(n)) { mat.transparent = true; mat.opacity = 0.28; mat.depthWrite = false }
+    if (q.get('dbl') === '1' && !bone) mat.side = THREE.DoubleSide
+    if (q.get('poff') && !bone) { mat.polygonOffset = true; mat.polygonOffsetFactor = -q.get('poff'); mat.polygonOffsetUnits = -q.get('poff') }
     o.material = mat
     o.updateWorldMatrix(true, false)
     box.expandByObject(o)
