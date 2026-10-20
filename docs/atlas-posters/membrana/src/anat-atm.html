@@ -9,10 +9,10 @@
 
 <div class="row">
   <section class="panel" style="flex:1.6">
-    <div class="ph"><span class="n">1</span>Vista lateral <small>— boca abierta</small></div>
-    <script type="callout">{"img":"ana/atm.png","w":1024,"h":1070,"height":470,"L":130,"cw":580,"ch":480,
-      "left":[["Hueso temporal","fosa mandibular",[180,190],50],["Disco articular","2 compartimentos",[410,395],140],["Cápsula articular","lig. temporomandibular",[285,470],215],["Cabeza (cóndilo)","de la mandíbula",[370,500],285],["Mandíbula","",[560,820],390]],
-      "right":[]}</script>
+    <div class="ph"><span class="n">1</span>Vista lateral <small>— modelo 3D · boca cerrada</small></div>
+    <script type="auto3d">{"img": "ana3d/atm-zoom.png", "height": 300, "cw": 580, "L": 140, "gap": 40, "labels": {"tem": ["Hueso temporal", "fosa mandibular", [947, 467]], "emi": ["Eminencia articular", "", [457, 677]], "disc": ["Disco articular", "2 compartimentos", [702, 688]], "con": ["Cabeza (cóndilo)", "de la mandíbula", [714, 790]], "est": ["Proceso estiloides", "", [796, 900]], "man": ["Mandíbula", "rama", [481, 1050]]}, "side": {"emi": "left", "man": "left", "con": "left", "tem": "right", "disc": "right", "est": "right"}}</script>
+    <div class="sh" style="margin-top:4px">Ubicación y ligamentos laterales</div>
+    <script type="auto3d">{"img": "ana3d/atm-lat.png", "height": 165, "cw": 580, "L": 150, "gap": 34, "labels": {"lig": ["Lig. temporomandibular", "refuerzo lateral (cápsula)"], "sty": ["Lig. estilomandibular", "posterior"]}, "side": {"lig": "right", "sty": "right"}}</script>
   </section>
 
   <section class="panel" style="flex:1">
@@ -29,13 +29,13 @@
 </div>
 
 <div class="row">
-  <section class="panel" style="flex:1">
+  <section class="panel" style="flex:2">
     <div class="ph"><span class="n">3</span>Ligamentos</div>
-    <div class="cards">
+    <div style="display:flex;gap:10px;align-items:center"><div style="flex:0 0 360px"><script type="auto3d">{"img": "ana3d/atm-med.png", "height": 240, "cw": 360, "L": 130, "gap": 40, "labels": {"sph": ["Esfenomandibular", "medial"], "sty": ["Estilomandibular", "posterior"], "cap": ["Cápsula", ""]}, "side": {"sph": "left", "sty": "left", "cap": "left"}}</script><p style="font-size:9.6px;color:var(--muted);margin:0;text-align:center">Vista medial: mandíbula transparente</p></div><div style="flex:1;min-width:0"><div class="cards">
       <div class="card"><span class="ico">{{icon:NumberCircleOne}}</span><div><p class="t">Temporomandibular</p><p class="d">Refuerzo lateral principal.</p></div></div>
       <div class="card"><span class="ico">{{icon:NumberCircleTwo}}</span><div><p class="t">Esfenomandibular</p><p class="d">(Esfenomaxilar) medial.</p></div></div>
       <div class="card"><span class="ico">{{icon:NumberCircleThree}}</span><div><p class="t">Estilomandibular</p><p class="d">(Estilomaxilar) posterior.</p></div></div>
-    </div>
+    </div></div></div>
   </section>
   <section class="panel" style="flex:1.3">
     <div class="ph"><span class="n">4</span>Movimientos y músculos</div>
@@ -80,5 +80,5 @@
   </div>
 </section>
 
-<p class="foot">MedCore · Atlas · Anatomía Humana y Disección I · UAD · Semana 3 · Ilustración con fines de estudio</p>
+<p class="foot">MedCore · Atlas · Anatomía Humana y Disección I · UAD · Semana 3 · Modelo 3D: Z-Anatomy (CC BY-SA 4.0)</p>
 </div></body></html>

@@ -85,6 +85,12 @@ loader.load('/models/' + q.get('model'), (g) => {
   const fb = new THREE.Box3(); if (focus) scene.traverse(o => { if (o.isMesh && o.visible && focus.test(nameOf(o))) fb.expandByObject(o) })
   const b = focus && !fb.isEmpty() ? fb : box
   const c = b.getCenter(new THREE.Vector3()), s = b.getSize(new THREE.Vector3())
+  // clip=1: corte sagital en la línea media del foco (se ve la cara de corte desde +x)
+  if (q.get('clip')) {
+    renderer.localClippingEnabled = true
+    const pl = new THREE.Plane(new THREE.Vector3(-1, 0, 0), c.x + (+q.get('clipoff') || 0))
+    scene.traverse(o => { if (o.isMesh && o.material) { o.material.clippingPlanes = [pl]; o.material.side = THREE.DoubleSide } })
+  }
   const views = { anterior: [0, 0, 1], posterior: [0, 0, -1], lateral: [1, 0, 0], medial: [-1, 0, 0], superior: [0, 1, 0.0001], inferior: [0, -1, 0.0001], 'antlat': [0.6, 0, 0.8], 'postlat': [0.6, 0, -0.8] }
   const d = new THREE.Vector3(...(views[q.get('view') || 'anterior'] || q.get('view').split(',').map(Number))).normalize()
   const r = Math.max(s.x, s.y, s.z) * +(q.get('pad') || 0.62)
