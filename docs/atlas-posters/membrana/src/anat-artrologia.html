@@ -1,7 +1,9 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
 <style>
 .six { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.six .mini img { height: 150px; max-width: 100%; object-fit: contain; display: block; margin: 4px auto 6px; }
+.six .fig { position: relative; height: 170px; margin: 4px 0 6px; }
+.six .fig img.r { height: 170px; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; }
+.six .fig img.s { position: absolute; right: 2px; bottom: 0; width: 62px; height: 62px; object-fit: contain; background: #fff; border: 1px solid #dfe3eb; border-radius: 6px; padding: 3px; }
 .six .ax { display: inline-block; font-size: 9.5px; font-weight: 800; color: #fff; border-radius: 9px; padding: 1px 8px; margin: 0 0 4px; }
 .six .ex { font-size: 10px; color: var(--blue); font-weight: 600; margin: 0; }
 </style>
@@ -50,14 +52,14 @@
 </section>
 
 <section class="panel">
-  <div class="ph"><span class="n">2</span>Articulaciones sinoviales por su forma <small>— TA (clásico)</small></div>
+  <div class="ph"><span class="n">2</span>Articulaciones sinoviales por su forma <small>— TA (clásico) · ejemplo real en 3D y esquema de la forma</small></div>
   <div class="six">
-    <div class="mini"><p class="t">Esferoidea (enartrosis)</p><img src="{{img:ana/art-esf.png}}"><span class="ax" style="background:#8a63c0">Multiaxial</span><p class="ex">Hombro · cadera</p></div>
-    <div class="mini"><p class="t">Condílea (elipsoidal)</p><img src="{{img:ana/art-cond.png}}"><span class="ax" style="background:#5ba24f">Biaxial</span><p class="ex">Muñeca (radiocarpiana)</p></div>
-    <div class="mini"><p class="t">Selar (encaje recíproco)</p><img src="{{img:ana/art-selar.png}}"><span class="ax" style="background:#e8912e">Biaxial</span><p class="ex">Pulgar (trapeciometacarpiana)</p></div>
-    <div class="mini"><p class="t">Plana (artrodia)</p><img src="{{img:ana/art-plana.png}}"><span class="ax" style="background:#4f86c6">Deslizamiento</span><p class="ex">Tarsometatarsianas · cigapofisarias</p></div>
-    <div class="mini"><p class="t">Troclear (gínglimo)</p><img src="{{img:ana/art-troc.png}}"><span class="ax" style="background:#3a9d8f">Uniaxial · bisagra</span><p class="ex">Codo (húmero-cubital)</p></div>
-    <div class="mini"><p class="t">Trocoide (pivote)</p><img src="{{img:ana/art-trocoide.png}}"><span class="ax" style="background:#d85c86">Uniaxial · rotación</span><p class="ex">Radiocubital proximal · atlantoaxial</p></div>
+    <div class="mini"><p class="t">Esferoidea (enartrosis)</p><div class="fig"><img class="r" src="{{img:ana3d/art-esf.png}}"><img class="s" src="{{img:ana/art-esf.png}}"></div><span class="ax" style="background:#8a63c0">Multiaxial</span><p class="ex">Hombro · cadera</p></div>
+    <div class="mini"><p class="t">Condílea (elipsoidal)</p><div class="fig"><img class="r" src="{{img:ana3d/art-cond.png}}"><img class="s" src="{{img:ana/art-cond.png}}"></div><span class="ax" style="background:#5ba24f">Biaxial</span><p class="ex">Muñeca (radiocarpiana)</p></div>
+    <div class="mini"><p class="t">Selar (encaje recíproco)</p><div class="fig"><img class="r" src="{{img:ana3d/art-sel.png}}"><img class="s" src="{{img:ana/art-selar.png}}"></div><span class="ax" style="background:#e8912e">Biaxial</span><p class="ex">Pulgar (trapeciometacarpiana)</p></div>
+    <div class="mini"><p class="t">Plana (artrodia)</p><div class="fig"><img class="r" src="{{img:ana3d/art-plana.png}}"><img class="s" src="{{img:ana/art-plana.png}}"></div><span class="ax" style="background:#4f86c6">Deslizamiento</span><p class="ex">Tarsometatarsianas · cigapofisarias</p></div>
+    <div class="mini"><p class="t">Troclear (gínglimo)</p><div class="fig"><img class="r" src="{{img:ana3d/art-troc.png}}"><img class="s" src="{{img:ana/art-troc.png}}"></div><span class="ax" style="background:#3a9d8f">Uniaxial · bisagra</span><p class="ex">Codo (húmero-cubital)</p></div>
+    <div class="mini"><p class="t">Trocoide (pivote)</p><div class="fig"><img class="r" src="{{img:ana3d/art-trocoide.png}}"><img class="s" src="{{img:ana/art-trocoide.png}}"></div><span class="ax" style="background:#d85c86">Uniaxial · rotación</span><p class="ex">Radiocubital proximal · atlantoaxial</p></div>
   </div>
 </section>
 
@@ -119,5 +121,5 @@
   </div>
 </section>
 
-<p class="foot">MedCore · Atlas · Anatomía Humana y Disección I · UAD · Semana 3 · Ilustración con fines de estudio</p>
+<p class="foot">MedCore · Atlas · Anatomía Humana y Disección I · UAD · Semana 3 · Modelos 3D: Z-Anatomy (CC BY-SA 4.0) · esquemas con fines de estudio</p>
 </div></body></html>

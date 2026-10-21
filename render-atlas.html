@@ -84,7 +84,18 @@ loader.load('/models/' + q.get('model'), (g) => {
   const focus = q.get('focus') ? new RegExp(q.get('focus'), 'i') : null
   const fb = new THREE.Box3(); if (focus) scene.traverse(o => { if (o.isMesh && o.visible && focus.test(nameOf(o))) fb.expandByObject(o) })
   const b = focus && !fb.isEmpty() ? fb : box
-  const c = b.getCenter(new THREE.Vector3()), s = b.getSize(new THREE.Vector3())
+  let c = b.getCenter(new THREE.Vector3()), s = b.getSize(new THREE.Vector3())
+  // joint=A~B: centra en el punto de contacto entre las mallas A y B; jr = radio relativo al tamaño de A
+  if (q.get('joint')) {
+    const [ra, rb] = q.get('joint').split('~').map(x => new RegExp(x, 'i'))
+    const samp = (re) => { const out = []; scene.traverse(o => { if (!o.isMesh || !o.visible || !re.test(nameOf(o))) return
+      const pos = o.geometry.attributes.position, st = Math.max(1, Math.floor(pos.count / 2500))
+      for (let i = 0; i < pos.count; i += st) out.push(new THREE.Vector3().fromBufferAttribute(pos, i).applyMatrix4(o.matrixWorld)) }); return out }
+    const A = samp(ra), B = samp(rb); let best = Infinity, pa, pb
+    for (const u of A) for (const v of B) { const d = u.distanceToSquared(v); if (d < best) { best = d; pa = u; pb = v } }
+    const ba = new THREE.Box3().setFromPoints(A).getSize(new THREE.Vector3())
+    c = pa.clone().add(pb).multiplyScalar(0.5); const R = Math.max(ba.x, ba.y, ba.z) * +(q.get('jr') || 0.3); s = new THREE.Vector3(R, R, R)
+  }
   // clip=1: corte sagital en la línea media del foco (se ve la cara de corte desde +x)
   if (q.get('clip')) {
     renderer.localClippingEnabled = true
