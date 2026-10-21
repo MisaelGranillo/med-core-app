@@ -1,0 +1,28 @@
+{
+ "src": "base/genetica-cromosomas-cariotipo.webp",
+ "out": "out/cariotipo.png",
+ "items": [
+  {
+   "img": "kario",
+   "box": [
+    50,
+    1478,
+    1160,
+    2205
+   ],
+   "fit": "contain"
+  }
+ ],
+ "texts": [
+  {
+   "box": [
+    538,
+    1440,
+    1160,
+    1475
+   ],
+   "size": 22,
+   "text": "— 46,XY · cariograma real con bandeo G (NHGRI, dominio público)"
+  }
+ ]
+}

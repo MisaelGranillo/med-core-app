@@ -36,3 +36,14 @@
 | san-mono | [Blood-monocyte2.jpg](https://commons.wikimedia.org/wiki/File:Blood-monocyte2.jpg) | Echinaceapallida | CC BY-SA 4.0 |
 | san-neutro | [Blood-neutrophil1.jpg](https://commons.wikimedia.org/wiki/File:Blood-neutrophil1.jpg) | Echinaceapallida | CC BY-SA 4.0 |
 | tendon | [Tendon - very high mag.jpg](https://commons.wikimedia.org/wiki/File:Tendon_-_very_high_mag.jpg) | Nephron | CC BY-SA 3.0 |
+
+## Imágenes de Genética (Wikimedia Commons)
+
+| Archivo | Fuente | Autor | Licencia |
+|---|---|---|---|
+| mit6 | [Mitosis (261 13) Pressed; root meristem of onion (cells in prophase, metaphase, anaphase, telophase).jpg](https://commons.wikimedia.org/wiki/File:Mitosis_(261_13)_Pressed;_root_meristem_of_onion_(cells_in_prophase,_metaphase,_anaphase,_telophase).jpg) | Doc. RNDr. Josef Reischig, CSc. | CC BY-SA 3.0 |
+| t21 | [21 trisomy - Down syndrome.png](https://commons.wikimedia.org/wiki/File:21_trisomy_-_Down_syndrome.png) | U.S. Department of Energy Human Genome Program. | Public domain |
+| zigoto | [Zygote1.jpg](https://commons.wikimedia.org/wiki/File:Zygote1.jpg) | Niña Sesina | CC BY-SA 4.0 |
+| ocho | [Embryo, 8 cells.jpg](https://commons.wikimedia.org/wiki/File:Embryo,_8_cells.jpg) | ekem, Courtesy: RWJMS IVF Program | Public domain |
+| blasto2 | [Human blastocyst.jpg](https://commons.wikimedia.org/wiki/File:Human_blastocyst.jpg) | Mr. J. Conaghan | Public domain |
+| kario | [Human male karyotpe high resolution.jpg](https://commons.wikimedia.org/wiki/File:Human_male_karyotpe_high_resolution.jpg) | Courtesy: National Human Genome Research Institute | Public domain |

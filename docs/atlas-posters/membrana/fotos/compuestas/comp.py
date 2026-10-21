@@ -12,8 +12,13 @@ for it in spec['items']:
     x0, y0, x1, y1 = it['box']; W, H = x1 - x0, y1 - y0
     ph = Image.open(os.path.join(os.path.dirname(sys.argv[1]), 'sel') + '/' + it['img'] + '.jpg').convert('RGB')
     if 'crop' in it: ph = ph.crop(tuple(int(v * s) for v, s in zip(it['crop'], (ph.width, ph.height, ph.width, ph.height))))
-    z = it.get('z', 1.0); k = max(W / ph.width, H / ph.height) * z
-    ph = ph.resize((max(W, round(ph.width * k)), max(H, round(ph.height * k))), Image.LANCZOS)
+    if it.get('fit') == 'contain':
+        k = min(W / ph.width, H / ph.height); ph = ph.resize((round(ph.width * k), round(ph.height * k)), Image.LANCZOS)
+        bg = Image.new('RGB', (W, H), 'white'); bg.paste(ph, ((W - ph.width) // 2, (H - ph.height) // 2)); ph = bg; it.setdefault('inset', False)
+        k = 1; z = 1
+    else:
+        z = it.get('z', 1.0); k = max(W / ph.width, H / ph.height) * z
+    if k != 1: ph = ph.resize((max(W, round(ph.width * k)), max(H, round(ph.height * k))), Image.LANCZOS)
     fx, fy = it.get('f', [0.5, 0.5]); cx, cy = fx * ph.width, fy * ph.height
     l = int(min(max(cx - W / 2, 0), ph.width - W)); t = int(min(max(cy - H / 2, 0), ph.height - H))
     ph = ph.crop((l, t, l + W, t + H))
@@ -50,6 +55,10 @@ for c in spec.get('cells', []):
         if L.get('s'): d.text((lx - d.textlength(L['s'], font=fr) if right else lx, ly + 2), L['s'], font=fr, fill=(29, 36, 51))
         x0 = lx + 6 if right else lx - 6
         d.line([(x0, ly - 6), (px, py)], fill=(34, 34, 34), width=2); d.ellipse((px - 4, py - 4, px + 4, py + 4), fill=(34, 34, 34))
+for t in spec.get('texts', []):
+    x0, y0, x1, y1 = t['box']; d = ImageDraw.Draw(P); d.rectangle((x0, y0, x1, y1), fill=tuple(t.get('bg', [255, 255, 255])))
+    FT = '/Users/misaelgranillo/Library/Fonts/Inter-VariableFont_opsz,wght.ttf'; fo = ImageFont.truetype(FT, t.get('size', 22)); fo.set_variation_by_name(t.get('weight', 'Regular'))
+    d.text((x0, y0 + (y1 - y0 - t.get('size', 22)) / 2 - 2), t['text'], font=fo, fill=tuple(t.get('color', [75, 85, 103])))
 f = spec.get('foot')
 if f:
     x0, y0, x1, y1 = f['box']; ImageDraw.Draw(P).rectangle((x0, y0, x1, y1), fill='white')

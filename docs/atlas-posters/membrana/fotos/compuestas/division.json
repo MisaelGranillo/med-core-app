@@ -1,0 +1,129 @@
+{
+ "src": "base/genetica-division-celular.webp",
+ "out": "out/division.png",
+ "items": [
+  {
+   "img": "f-profase",
+   "box": [
+    91,
+    1014,
+    413,
+    1292
+   ],
+   "f": [
+    0.5,
+    0.5
+   ],
+   "z": 1.0,
+   "inset_s": 0.33,
+   "inset_pos": "br"
+  },
+  {
+   "img": "f-metafase",
+   "box": [
+    477,
+    1014,
+    799,
+    1292
+   ],
+   "f": [
+    0.5,
+    0.5
+   ],
+   "z": 1.0,
+   "inset_s": 0.33,
+   "inset_pos": "br"
+  },
+  {
+   "img": "f-anafase",
+   "box": [
+    863,
+    1014,
+    1185,
+    1292
+   ],
+   "f": [
+    0.5,
+    0.5
+   ],
+   "z": 1.0,
+   "inset_s": 0.33,
+   "inset_pos": "br"
+  },
+  {
+   "img": "f-telofase",
+   "box": [
+    1249,
+    1014,
+    1571,
+    1292
+   ],
+   "f": [
+    0.5,
+    0.5
+   ],
+   "z": 1.0,
+   "inset_s": 0.33,
+   "inset_pos": "br"
+  },
+  {
+   "img": "f-citocinesis",
+   "box": [
+    1635,
+    1014,
+    1957,
+    1292
+   ],
+   "f": [
+    0.5,
+    0.5
+   ],
+   "z": 1.0,
+   "inset_s": 0.33,
+   "inset_pos": "br"
+  }
+ ],
+ "foot": {
+  "box": [
+   100,
+   3010,
+   1948,
+   3048
+  ],
+  "size": 19,
+  "font": "/Users/misaelgranillo/Library/Fonts/Inter-VariableFont_opsz,wght.ttf",
+  "text": "MedCore · Atlas · Genética Básica · UAD · Semana 3 · Fases: micrografías de meristemo de raíz de cebolla, Josef Reischig (CC BY-SA 3.0) · diagramas esquemáticos"
+ },
+ "erase_extra": [
+  [
+   91,
+   998,
+   413,
+   1014
+  ],
+  [
+   477,
+   998,
+   799,
+   1014
+  ],
+  [
+   863,
+   998,
+   1185,
+   1014
+  ],
+  [
+   1249,
+   998,
+   1571,
+   1014
+  ],
+  [
+   1635,
+   998,
+   1957,
+   1014
+  ]
+ ]
+}

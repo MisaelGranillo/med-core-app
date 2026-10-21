@@ -1,0 +1,75 @@
+{
+ "src": "base/genetica-desarrollo.webp",
+ "out": "out/desarrollo.png",
+ "items": [],
+ "cells": [
+  {
+   "img": "zigoto",
+   "src": [
+    700,
+    565,
+    420
+   ],
+   "c": [
+    182,
+    462
+   ],
+   "d": 128,
+   "erase": [
+    112,
+    392,
+    252,
+    532
+   ]
+  },
+  {
+   "img": "ocho",
+   "src": [
+    318,
+    232,
+    150
+   ],
+   "c": [
+    412,
+    462
+   ],
+   "d": 128,
+   "erase": [
+    338,
+    392,
+    486,
+    532
+   ]
+  },
+  {
+   "img": "blasto2",
+   "src": [
+    123,
+    123,
+    118
+   ],
+   "c": [
+    905,
+    465
+   ],
+   "d": 166,
+   "erase": [
+    815,
+    366,
+    992,
+    550
+   ]
+  }
+ ],
+ "foot": {
+  "box": [
+   100,
+   3010,
+   1948,
+   3048
+  ],
+  "size": 19,
+  "font": "/Users/misaelgranillo/Library/Fonts/Inter-VariableFont_opsz,wght.ttf",
+  "text": "MedCore · Atlas · Genética Básica · UAD · Semana 4 · Fotos FIV: Niña Sesina (CC BY-SA 4.0), RWJMS IVF Program y J. Conaghan (dominio público) · diagramas esquemáticos"
+ }
+}

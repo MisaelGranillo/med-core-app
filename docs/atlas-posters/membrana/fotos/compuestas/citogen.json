@@ -1,0 +1,28 @@
+{
+ "src": "base/genetica-citogenetica-tamiz.webp",
+ "out": "out/citogen.png",
+ "items": [
+  {
+   "img": "t21",
+   "box": [
+    1150,
+    2335,
+    1960,
+    2545
+   ],
+   "fit": "contain",
+   "r": 0
+  }
+ ],
+ "foot": {
+  "box": [
+   100,
+   3010,
+   1948,
+   3048
+  ],
+  "size": 19,
+  "font": "/Users/misaelgranillo/Library/Fonts/Inter-VariableFont_opsz,wght.ttf",
+  "text": "MedCore · Atlas · Genética Básica · UAD · Semana 4 · Cariotipo de trisomía 21: U.S. DOE Human Genome Program (dominio público) · diagramas esquemáticos"
+ }
+}
