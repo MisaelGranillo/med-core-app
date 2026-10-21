@@ -1,5 +1,9 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
 <style>
+.frm { position: relative; height: 150px; margin: 4px 0 4px; }
+.frm img { height: 150px; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; }
+.frm .sv { position: absolute; right: 0; bottom: 0; width: 34px; height: 56px; background: #fff; border: 1px solid #dfe3eb; border-radius: 5px; padding: 2px; }
+.frm .sv svg { width: 100% !important; height: 100% !important; max-height: none !important; margin: 0 !important; display: block; }
 svg text { font-family: 'Inter'; }
 .page { gap: 15px; }
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
@@ -39,27 +43,8 @@ svg text { font-family: 'Inter'; }
     </div>
   </section>
   <section class="panel" style="flex:1.1">
-    <div class="ph"><span class="n">2</span>Partes e inserciones</div>
-    <svg viewBox="0 0 480 190" style="width:100%;display:block">
-      <g>
-        <rect x="20" y="20" width="26" height="160" rx="12" fill="#f3e6c8" stroke="#a88a4a" stroke-width="1.6"/>
-        <rect x="420" y="40" width="26" height="140" rx="12" fill="#f3e6c8" stroke="#a88a4a" stroke-width="1.6"/>
-        <path d="M46 70 C 70 60, 92 64, 104 70" stroke="#e8dcc8" stroke-width="10" fill="none"/>
-        <path d="M46 70 L104 70" stroke="#d9cbb0" stroke-width="7" stroke-linecap="round"/>
-        <path d="M104 70 C 160 20, 320 20, 376 90 C 320 150, 160 120, 104 70 Z" fill="#c8242c" opacity=".85"/>
-        <g stroke="#a51d24" stroke-width="1" fill="none"><path d="M130 66 C 200 40, 300 50, 360 88"/><path d="M130 76 C 200 64, 300 76, 360 92"/><path d="M130 84 C 200 96, 300 104, 360 96"/></g>
-        <path d="M376 90 L420 110" stroke="#d9cbb0" stroke-width="7" stroke-linecap="round"/>
-      </g>
-      <g font-size="11" text-anchor="middle">
-        <text x="33" y="14" font-weight="800" fill="#13295b">Hueso</text>
-        <text x="84" y="94" font-weight="800" fill="#b8650f">Tendón</text>
-        <text x="84" y="107" font-size="9.5" fill="#4b5567">no se contrae</text>
-        <text x="240" y="150" font-weight="800" fill="#c8242c">Vientre</text>
-        <text x="240" y="164" font-size="9.5" fill="#4b5567">la parte que se contrae</text>
-        <text x="88" y="40" font-weight="800" fill="#13295b">Origen</text><text x="88" y="53" font-size="9.5" fill="#4b5567">inserción fija</text>
-        <text x="398" y="146" font-weight="800" fill="#13295b">Inserción</text><text x="398" y="158" font-size="9.5" fill="#4b5567">móvil</text>
-      </g>
-    </svg>
+    <div class="ph"><span class="n">2</span>Partes e inserciones <small>— bíceps braquial · modelo 3D</small></div>
+    <script type="auto3d">{"img": "ana3d/mf-partes.png", "height": 300, "cw": 530, "L": 140, "gap": 44, "labels": {"ori": ["Origen", "coracoides y supraglenoideo", [480, 135]], "ten": ["Tendón", "no se contrae", [560, 260]], "vie": ["Vientre", "la parte que se contrae", [640, 640]], "ins": ["Inserción", "tuberosidad del radio", [770, 1230]], "hu": ["Húmero", "", [712, 520]], "esc": ["Escápula", "", [380, 330]]}, "side": {"ori": "left", "ten": "left", "esc": "left", "vie": "right", "ins": "right", "hu": "right"}}</script>
     <p style="font-size:10.2px;margin:2px 0 0">Partes: <b>cabeza, vientre y tendón</b>. Se inserta en hueso, piel, mucosa, aponeurosis o membrana sinovial. Al contraerse acerca la inserción móvil a la fija.</p>
   </section>
 </div>
@@ -104,22 +89,22 @@ svg text { font-family: 'Inter'; }
 </section>
 
 <section class="panel">
-  <div class="ph"><span class="n">4</span>Formas del músculo</div>
+  <div class="ph"><span class="n">4</span>Formas del músculo <small>— músculo real en 3D y esquema de la forma</small></div>
   <div class="forms">
     <div class="mini"><p class="t">Fusiforme</p>
-      <svg viewBox="0 0 60 100"><line x1="30" y1="2" x2="30" y2="20" stroke="#d9cbb0" stroke-width="5" stroke-linecap="round"/><path d="M30 18 C 46 36, 46 64, 30 82 C 14 64, 14 36, 30 18 Z" fill="#c8242c"/><line x1="30" y1="80" x2="30" y2="98" stroke="#d9cbb0" stroke-width="5" stroke-linecap="round"/></svg><p class="d">Braquial</p></div>
+      <div class="frm"><img src="{{img:ana3d/mf-fusi.png}}"><div class="sv"><svg viewBox="0 0 60 100"><line x1="30" y1="2" x2="30" y2="20" stroke="#d9cbb0" stroke-width="5" stroke-linecap="round"/><path d="M30 18 C 46 36, 46 64, 30 82 C 14 64, 14 36, 30 18 Z" fill="#c8242c"/><line x1="30" y1="80" x2="30" y2="98" stroke="#d9cbb0" stroke-width="5" stroke-linecap="round"/></svg></div></div><p class="d">Braquial</p></div>
     <div class="mini"><p class="t">2 cabezas</p>
-      <svg viewBox="0 0 60 100"><line x1="18" y1="2" x2="22" y2="18" stroke="#d9cbb0" stroke-width="4" stroke-linecap="round"/><line x1="42" y1="2" x2="38" y2="18" stroke="#d9cbb0" stroke-width="4" stroke-linecap="round"/><path d="M22 16 C 14 40, 22 64, 30 82 C 38 64, 46 40, 38 16 C 34 30, 26 30, 22 16 Z" fill="#c8242c"/><line x1="30" y1="80" x2="30" y2="98" stroke="#d9cbb0" stroke-width="5" stroke-linecap="round"/></svg><p class="d">Bíceps braquial</p></div>
+      <div class="frm"><img src="{{img:ana3d/mf-bic.png}}"><div class="sv"><svg viewBox="0 0 60 100"><line x1="18" y1="2" x2="22" y2="18" stroke="#d9cbb0" stroke-width="4" stroke-linecap="round"/><line x1="42" y1="2" x2="38" y2="18" stroke="#d9cbb0" stroke-width="4" stroke-linecap="round"/><path d="M22 16 C 14 40, 22 64, 30 82 C 38 64, 46 40, 38 16 C 34 30, 26 30, 22 16 Z" fill="#c8242c"/><line x1="30" y1="80" x2="30" y2="98" stroke="#d9cbb0" stroke-width="5" stroke-linecap="round"/></svg></div></div><p class="d">Bíceps braquial</p></div>
     <div class="mini"><p class="t">Digástrico</p>
-      <svg viewBox="0 0 60 100"><path d="M30 4 C 42 16, 42 34, 30 44 C 18 34, 18 16, 30 4 Z" fill="#c8242c"/><line x1="30" y1="42" x2="30" y2="58" stroke="#d9cbb0" stroke-width="5" stroke-linecap="round"/><path d="M30 56 C 42 66, 42 84, 30 96 C 18 84, 18 66, 30 56 Z" fill="#c8242c"/></svg><p class="d">Digástrico</p></div>
+      <div class="frm"><img src="{{img:ana3d/mf-dig.png}}"><div class="sv"><svg viewBox="0 0 60 100"><path d="M30 4 C 42 16, 42 34, 30 44 C 18 34, 18 16, 30 4 Z" fill="#c8242c"/><line x1="30" y1="42" x2="30" y2="58" stroke="#d9cbb0" stroke-width="5" stroke-linecap="round"/><path d="M30 56 C 42 66, 42 84, 30 96 C 18 84, 18 66, 30 56 Z" fill="#c8242c"/></svg></div></div><p class="d">Digástrico</p></div>
     <div class="mini"><p class="t">Poligástrico</p>
-      <svg viewBox="0 0 60 100"><rect x="16" y="2" width="28" height="96" rx="6" fill="#c8242c"/><g stroke="#f3e6c8" stroke-width="4"><line x1="16" y1="26" x2="44" y2="26"/><line x1="16" y1="50" x2="44" y2="50"/><line x1="16" y1="74" x2="44" y2="74"/></g></svg><p class="d">Recto del abdomen</p></div>
+      <div class="frm"><img src="{{img:ana3d/mf-poli.png}}"><div class="sv"><svg viewBox="0 0 60 100"><rect x="16" y="2" width="28" height="96" rx="6" fill="#c8242c"/><g stroke="#f3e6c8" stroke-width="4"><line x1="16" y1="26" x2="44" y2="26"/><line x1="16" y1="50" x2="44" y2="50"/><line x1="16" y1="74" x2="44" y2="74"/></g></svg></div></div><p class="d">Recto del abdomen</p></div>
     <div class="mini"><p class="t">Unipenniforme</p>
-      <svg viewBox="0 0 60 100"><line x1="40" y1="2" x2="40" y2="98" stroke="#d9cbb0" stroke-width="5" stroke-linecap="round"/><g stroke="#c8242c" stroke-width="5" stroke-linecap="round"><line x1="16" y1="20" x2="38" y2="34"/><line x1="16" y1="36" x2="38" y2="50"/><line x1="16" y1="52" x2="38" y2="66"/><line x1="16" y1="68" x2="38" y2="82"/></g></svg><p class="d">Tibial posterior</p></div>
+      <div class="frm"><img src="{{img:ana3d/mf-uni.png}}"><div class="sv"><svg viewBox="0 0 60 100"><line x1="40" y1="2" x2="40" y2="98" stroke="#d9cbb0" stroke-width="5" stroke-linecap="round"/><g stroke="#c8242c" stroke-width="5" stroke-linecap="round"><line x1="16" y1="20" x2="38" y2="34"/><line x1="16" y1="36" x2="38" y2="50"/><line x1="16" y1="52" x2="38" y2="66"/><line x1="16" y1="68" x2="38" y2="82"/></g></svg></div></div><p class="d">Tibial posterior</p></div>
     <div class="mini"><p class="t">Bipenniforme</p>
-      <svg viewBox="0 0 60 100"><line x1="30" y1="2" x2="30" y2="98" stroke="#d9cbb0" stroke-width="5" stroke-linecap="round"/><g stroke="#c8242c" stroke-width="5" stroke-linecap="round"><line x1="10" y1="18" x2="28" y2="32"/><line x1="10" y1="36" x2="28" y2="50"/><line x1="10" y1="54" x2="28" y2="68"/><line x1="50" y1="18" x2="32" y2="32"/><line x1="50" y1="36" x2="32" y2="50"/><line x1="50" y1="54" x2="32" y2="68"/></g></svg><p class="d">Recto femoral</p></div>
+      <div class="frm"><img src="{{img:ana3d/mf-bip.png}}"><div class="sv"><svg viewBox="0 0 60 100"><line x1="30" y1="2" x2="30" y2="98" stroke="#d9cbb0" stroke-width="5" stroke-linecap="round"/><g stroke="#c8242c" stroke-width="5" stroke-linecap="round"><line x1="10" y1="18" x2="28" y2="32"/><line x1="10" y1="36" x2="28" y2="50"/><line x1="10" y1="54" x2="28" y2="68"/><line x1="50" y1="18" x2="32" y2="32"/><line x1="50" y1="36" x2="32" y2="50"/><line x1="50" y1="54" x2="32" y2="68"/></g></svg></div></div><p class="d">Recto femoral</p></div>
     <div class="mini"><p class="t">Plano</p>
-      <svg viewBox="0 0 60 100"><path d="M6 10 L54 4 L50 70 L20 96 L6 60 Z" fill="#c8242c"/><g stroke="#a51d24" stroke-width="1.2"><line x1="12" y1="14" x2="30" y2="88"/><line x1="24" y1="10" x2="40" y2="80"/><line x1="38" y1="8" x2="48" y2="66"/></g></svg><p class="d">Oblicuo externo</p></div>
+      <div class="frm"><img src="{{img:ana3d/mf-plano.png}}"><div class="sv"><svg viewBox="0 0 60 100"><path d="M6 10 L54 4 L50 70 L20 96 L6 60 Z" fill="#c8242c"/><g stroke="#a51d24" stroke-width="1.2"><line x1="12" y1="14" x2="30" y2="88"/><line x1="24" y1="10" x2="40" y2="80"/><line x1="38" y1="8" x2="48" y2="66"/></g></svg></div></div><p class="d">Oblicuo externo</p></div>
   </div>
 </section>
 
@@ -164,5 +149,5 @@ svg text { font-family: 'Inter'; }
   </div>
 </section>
 
-<p class="foot">MedCore · Anatomía Humana y Disección I (UAD) · Miología I · Esquemas con fines de estudio</p>
+<p class="foot">MedCore · Anatomía Humana y Disección I (UAD) · Miología I · Modelos 3D: Z-Anatomy (CC BY-SA 4.0) · esquemas con fines de estudio</p>
 </div></body></html>
