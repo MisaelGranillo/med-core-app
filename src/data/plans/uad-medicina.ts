@@ -515,7 +515,80 @@ export const uadMedicina: Plan = {
             ],
           },
         },
-        { id: 'embriologia-1', name: 'Embriología I', code: 'EM01004', tags: ['anatomia'] },
+        {
+          id: 'embriologia-1',
+          name: 'Embriología I',
+          code: 'EM01004',
+          tags: ['anatomia'],
+          topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis'],
+          content: {
+            area: 'Ciencias Básicas',
+            credits: 8,
+            teacherHours: 64,
+            independentHours: 64,
+            modality: 'Virtual',
+            description:
+              'Origen y desarrollo intrauterino normal de los tejidos, órganos, aparatos y sistemas del cuerpo humano, y los factores que lo alteran. Seriación subsecuente: Embriología II. Evaluación semanal: examen 40 %, proyecto integrador 30 % y caso clínico 30 %; la calificación final es el promedio de las 4 semanas y se promueve con ≥ 70.',
+            competencia:
+              'Conoce el origen y desarrollo intrauterino normal de los diversos tejidos, órganos, aparatos y sistemas que conforman el cuerpo humano con sentido de respeto y responsabilidad; diferencia los factores de riesgo que inciden sobre el mismo; descubre estrategias para disminuir la frecuencia de nacimientos con alteraciones ya sean ambientales, cromosómicas o genéticas.',
+            semanas: [
+              {
+                number: 1,
+                title: 'Fundamentos de embriología',
+                topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis'],
+                temas: [
+                  'Clase 1 (impartida): panorama del desarrollo temprano — periodos embrionario y fetal, fecundación en la ampolla, segmentación (mórula, blastocisto), implantación, disco bilaminar y gastrulación (tres capas germinales); embarazo ectópico y molar',
+                  'Clase 1 (impartida): gametogénesis y células germinales primordiales; diploide/haploide, euploidía y aneuploidía; fases de la mitosis y de la meiosis I y II',
+                  'Clase 1 (impartida): ovogénesis — ovogonia → ovocito primario (detenido en diploteno) → ovocito secundario (detenido en metafase II); número de ovocitos; folículos primordial, primario, secundario y de Graaf; FSH y pico de LH',
+                  '1. Planografía y terminología; gametogénesis (meiosis, espermatogénesis y espermiogénesis, ovogénesis); ciclo sexual femenino (ciclo ovárico y ciclo menstrual)',
+                ],
+                fuentes: [
+                  { title: 'Embriología I — Semana 1, Clase 1', file: 'Embriologia I - Semana 1 - Clase 1.pdf', nota: 'Desarrollo temprano, cromosomas, mitosis, meiosis y ovogénesis.' },
+                ],
+              },
+              {
+                number: 2,
+                title: 'Primeras semanas del desarrollo',
+                temas: [
+                  '2. Fecundación y primera semana; segmentación; implantación; segunda semana (disco bilaminar, trofoblasto, decidua); tercera semana (disco trilaminar); cuarta a octava semana: organogénesis, derivados ectodérmicos, mesodérmicos y endodérmicos, aspecto externo del embrión',
+                ],
+              },
+              {
+                number: 3,
+                title: 'Periodo fetal, membranas fetales y placenta; cabeza y cuello',
+                temas: [
+                  '3. Características del primer, segundo y tercer trimestre; amnios y cordón umbilical; placenta: estructura, funciones y circulación prenatal',
+                  '4. Arcos, bolsas y hendiduras faríngeas; regulación molecular del desarrollo facial; lengua, glándula tiroidea, cara, segmento intermaxilar, paladar secundario, fosas nasales y dientes',
+                ],
+              },
+              {
+                number: 4,
+                title: 'Sistema esquelético y muscular',
+                temas: [
+                  '5. Origen y desarrollo; cavidades corporales, cavidad pericárdica, membranas serosas, mesenterio dorsal y ventral',
+                ],
+              },
+            ],
+            bibliografia: [
+              { title: 'Embriología I', author: 'Guerrero', editorial: 'LBS', year: '2023', tipo: 'básica' },
+              { title: 'Embriología médica', author: 'Langman (Sadler)', editorial: 'The Point', year: '2017', tipo: 'básica', file: 'Langman - Embriologia Medica.pdf' },
+              { title: 'Embriología (Serie Revisión de Temas)', author: 'Dudek', editorial: 'Lippincott', year: '2015', tipo: 'básica', file: 'Dudek - Embriologia.pdf' },
+              { title: 'Embriología clínica', author: 'Moore', editorial: 'Elsevier Saunders', tipo: 'complementaria', file: 'Moore - Embriologia Clinica 9a ed.pdf' },
+            ],
+            materiales: [
+              { title: 'Semana 1 · Clase 1 — Desarrollo temprano, mitosis, meiosis y ovogénesis', file: 'Embriologia I - Semana 1 - Clase 1.pdf', kind: 'Clase' },
+              { title: 'Programa Académico — Embriología I (2026-1)', file: 'Embriologia I - Programa.pdf', kind: 'Programa' },
+              { title: 'Planeación didáctica — Embriología I', file: 'Embriologia I - Planeacion.pdf', kind: 'Programa' },
+            ],
+            recursos: [
+              { label: 'Acland Anatomy', url: 'https://aclandanatomy.com/' },
+              { label: 'Bates Visual Guide', url: 'https://batesvisualguide.com/' },
+              { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },
+              { label: '5-Minute Consult', url: 'https://5minuteconsult.com' },
+              { label: 'OVID®', url: 'https://www.ovid.com/' },
+            ],
+          },
+        },
         {
           id: 'ingles-medico-1',
           name: 'Inglés Médico I',

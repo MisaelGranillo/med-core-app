@@ -178,6 +178,14 @@ export const modules: Module[] = [
     topicIds: ['bioquimica-hormonas-concepto-clasificacion', 'bioquimica-hormonas-sintesis-transporte', 'bioquimica-hormonas-aminas-citocinas', 'bioquimica-hormonas-receptores', 'bioquimica-hormonas-hipofisis-pancreas', 'bioquimica-citocinas-fase-aguda', 'bioquimica-bioenergetica-termodinamica', 'bioquimica-atp-transferencia-fosfato', 'bioquimica-compuestos-alta-energia'],
   },
   {
+    id: 'embriologia-uad-s1',
+    badge: 'UAD · Embriología I — Semana 1',
+    title: 'Embriología: fundamentos',
+    subtitle: 'Periodos del desarrollo, de la fecundación a la gastrulación; gametogénesis, cromosomas, mitosis y meiosis; ovogénesis y desarrollo folicular.',
+    emoji: '🌱',
+    topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis'],
+  },
+  {
     id: 'histologia-uad-s1',
     badge: 'UAD · Histología I — Semana 1',
     title: 'Histología: célula, microscopía y técnica',

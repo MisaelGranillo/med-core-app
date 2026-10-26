@@ -69,6 +69,7 @@ export type TopicCategoria =
   | 'Genética'
   | 'Histología'
   | 'Bioquímica'
+  | 'Embriología'
   | 'Terminología médica'
   | 'Gramática médica'
   | 'Comunicación clínica'
@@ -121,6 +122,7 @@ export type TopicColorKey =
   | 'genetica'
   | 'histologia'
   | 'bioquimica'
+  | 'embriologia'
 
 export interface Module {
   id: string
