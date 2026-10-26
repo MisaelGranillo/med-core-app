@@ -346,6 +346,7 @@ const DM2: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-glucidos', sectionId: 'bgl-2', label: 'La glucosa y sus destinos', porQue: 'A dónde va la glucosa cuando la insulina funciona.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-polisacaridos-fibra', sectionId: 'bpf-5', label: 'Glucógeno: la reserva animal', porQue: 'La insulina estimula su síntesis en hígado y músculo.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-presion-osmotica-oncotica', sectionId: 'bpo-2', label: 'Estados clínicos hiper e hipoosmolares', porQue: 'La glucosa muy alta eleva la osmolaridad del plasma.' },
+    { materia: 'Bioquímica', topicId: 'bioquimica-compuestos-alta-energia', sectionId: 'bce-5', label: 'Ejercicio, AMPK y GLUT4', porQue: 'Por qué el ejercicio hace entrar glucosa al músculo aunque haya resistencia a la insulina.' },
   ],
   atlas: [
     { id: 'bioquimica-hormonas', title: 'Hormonas y receptores' },

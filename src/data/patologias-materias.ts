@@ -165,6 +165,7 @@ const INFARTO: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-enzimas-mecanismo-clinica', sectionId: 'bmc-4', label: 'Isoenzimas y biomarcadores', porQue: 'Por qué la CK-MB es más específica del corazón que la CK total.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-lipidos-funcion-esteroides', sectionId: 'bfe-5', label: 'Colesterol y esteroidogénesis', porQue: 'El colesterol que forma la placa de ateroma.' },
     { materia: 'Histología', topicId: 'histologia-medula-hematopoyesis', sectionId: 'hmed-2', label: 'Hemostasia', porQue: 'Adhesión y agregación plaquetaria: el trombo que ocluye la coronaria.' },
+    { materia: 'Bioquímica', topicId: 'bioquimica-atp-transferencia-fosfato', sectionId: 'bft-4', label: 'Carga energética', porQue: 'Qué le pasa a la célula cuando la isquemia agota el ATP.' },
   ],
   atlas: [
     { id: 'bioquimica-biomarcadores', title: 'Biomarcadores enzimáticos' },
@@ -335,6 +336,7 @@ const CETOACIDOSIS: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-agua-electrolitos', sectionId: 'bae-5', label: 'Alteraciones de los electrolitos', porQue: 'Por qué el potasio es el electrolito que más se vigila.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-hipofisis-pancreas', sectionId: 'bhe-2', label: 'Islotes de Langerhans', porQue: 'Sin insulina, el glucagón queda sin oposición y el hígado produce glucosa y cuerpos cetónicos.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-hipofisis-pancreas', sectionId: 'bhe-4', label: 'Hormonas de alarma', porQue: 'Las hormonas contrarreguladoras que elevan la glucosa.' },
+    { materia: 'Bioquímica', topicId: 'bioquimica-bioenergetica-termodinamica', sectionId: 'bbt-4', label: 'Convergencia en acetil-CoA', porQue: 'El acetil-CoA que no cabe en el ciclo de Krebs se desvía a cuerpos cetónicos.' },
   ],
   atlas: [
     { id: 'bioquimica-hormonas', title: 'Hormonas y receptores' },
@@ -1204,6 +1206,7 @@ const ANEMIA: Patologia = {
     { materia: 'Histología', topicId: 'histologia-biometria-hematica', sectionId: 'hbh-2', label: 'Valores de referencia y su significado', porQue: 'Cómo leer VCM, HCM y ADE.' },
     { materia: 'Histología', topicId: 'histologia-medula-hematopoyesis', sectionId: 'hmed-4', label: 'Hematopoyesis: HSC y las dos líneas', porQue: 'De dónde salen los eritrocitos.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-coenzimas-minerales-p450', sectionId: 'bcm-3', label: 'Minerales como cofactores', porQue: 'El hierro en la hemoglobina, la mioglobina y los citocromos.' },
+    { materia: 'Bioquímica', topicId: 'bioquimica-bioenergetica-termodinamica', sectionId: 'bbt-5', label: 'Hierro: de férrico a ferroso', porQue: 'Por qué el hierro se absorbe como Fe²⁺ y conviene tomarlo con vitamina C.' },
   ],
   atlas: [
     { id: 'histologia-biometria-hematica', title: 'Biometría hemática' },

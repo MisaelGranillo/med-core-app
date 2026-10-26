@@ -6704,4 +6704,684 @@ export const bioquimicaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'bioquimica-bioenergetica-termodinamica',
+    title: 'Bioenergética y termodinámica',
+    subtitle: 'Leyes de la termodinámica en biología, energía libre (ΔG), reacciones exergónicas y endergónicas, catabolismo y anabolismo, convergencia en acetil-CoA',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '⚡',
+    keyPoints: [
+      'BIOENERGÉTICA: rama de la bioquímica que estudia de forma cuantitativa la transferencia y el uso de la energía en los sistemas biológicos, con los principios de la termodinámica.',
+      '1.ª LEY: la energía no se crea ni se destruye, solo se transforma (ΔU = Q + W). El ser humano no crea energía: la obtiene de su entorno (los alimentos).',
+      '2.ª LEY: en todo proceso espontáneo la entropía (desorden) del universo aumenta. El ser vivo es un sistema abierto que gasta energía para mantener su orden.',
+      'EXERGÓNICA: ΔG < 0, espontánea, libera energía (catabolismo) ★ · ENDERGÓNICA: ΔG > 0, no espontánea, requiere energía (anabolismo).',
+      'CATABOLISMO: degradativo, oxidativo, exergónico, produce ATP, NADH y FADH₂ · ANABOLISMO: sintético, reductivo, endergónico, consume ATP y NADPH.',
+      'Glúcidos, lípidos y proteínas convergen en ACETIL-CoA → ciclo de Krebs → cadena respiratoria → ≈ 30–32 ATP por glucosa.',
+    ],
+    sections: [
+      {
+        id: 'bbt-1',
+        number: 1,
+        title: 'Bioenergética y mapa metabólico',
+        keyTerms: ['bioenergética', 'termodinámica', 'ruta metabólica'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Bioenergética',
+            content: 'Rama de la bioquímica que estudia la transferencia y la utilización de la energía en los sistemas biológicos: el estudio cuantitativo de los cambios de energía de las reacciones bioquímicas, con los principios básicos de la termodinámica.',
+          },
+          {
+            type: 'list',
+            title: 'Las cuatro grandes áreas del metabolismo',
+            items: [
+              'Glúcidos: glucólisis, gluconeogénesis, glucogenogénesis, glucogenólisis y vía de las pentosas fosfato.',
+              'Lípidos: β-oxidación, lipogénesis, cetogénesis y síntesis de colesterol.',
+              'Proteínas y aminoácidos: proteólisis, transaminación, desaminación y ciclo de la urea.',
+              'Ácidos nucleicos: síntesis y degradación de purinas y pirimidinas.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Dónde ocurre cada proceso',
+            data: {
+              headers: ['Compartimento', 'Procesos principales'],
+              rows: [
+                ['Mitocondria', 'Oxidación del piruvato, ciclo de Krebs, fosforilación oxidativa, β-oxidación de ácidos grasos, catabolismo de aminoácidos'],
+                ['Citosol', 'Glucólisis, parte de la gluconeogénesis, vía de las pentosas fosfato, síntesis de ácidos grasos y de nucleótidos'],
+                ['Núcleo', 'Replicación del ADN, síntesis de ARNt y ARNm (el nucléolo sintetiza ARNr)'],
+                ['Retículo endoplásmico', 'Síntesis de lípidos y transporte intracelular'],
+                ['Ribosomas', 'Síntesis de proteínas'],
+                ['Aparato de Golgi', 'Maduración de glucoproteínas y de otros componentes de membrana'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Cinco tipos de reacciones químicas en la célula',
+            items: [
+              'Oxidación-reducción (p. ej., piruvato ⇄ lactato).',
+              'Formación o ruptura de enlaces carbono-carbono (p. ej., la aldolasa en la glucólisis).',
+              'Reordenamientos internos, isomerizaciones y eliminaciones (p. ej., glucosa-6-fosfato → fructosa-6-fosfato).',
+              'Transferencia de grupo (p. ej., la hexocinasa transfiere un fosfato del ATP a la glucosa).',
+              'Reacciones de radicales libres.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'bbt-2',
+        number: 2,
+        title: 'Leyes de la termodinámica en biología',
+        keyTerms: ['primera ley', 'segunda ley', 'entropía', 'sistema abierto'],
+        blocks: [
+          {
+            type: 'formula',
+            title: 'Primera ley: conservación de la energía',
+            formula: 'ΔU = Q + W',
+            description: 'La energía total del universo permanece constante: no se crea ni se destruye, solo se transforma. ΔU es el cambio de energía interna, Q el calor y W el trabajo.',
+          },
+          {
+            type: 'paragraph',
+            content: 'Las plantas (autótrofas) usan la energía solar para fabricar nutrientes por fotosíntesis. Los animales (heterótrofos) obtienen la energía química de los alimentos y la transforman en ATP, trabajo y calor. Al comer pan, el almidón se hidroliza a glucosa (6 carbonos); en la glucólisis cada glucosa se rompe en dos piruvatos (3 carbonos cada uno) y parte de la energía de sus enlaces queda disponible para la célula.',
+          },
+          {
+            type: 'definition',
+            title: 'Segunda ley: entropía',
+            content: 'En todo proceso espontáneo la entropía (S), es decir, el desorden total del universo, aumenta. El ser vivo es un sistema abierto que intercambia materia y energía con su entorno: toma energía de los nutrientes y la usa para mantener su orden, aunque al hacerlo libera calor y aumenta el desorden del entorno.',
+          },
+          {
+            type: 'list',
+            title: 'En qué gasta energía el organismo para no desordenarse',
+            items: [
+              'Mantener el orden de sus moléculas, células y tejidos.',
+              'Trabajo mecánico (contracción muscular).',
+              'Gradientes de concentración e impulsos eléctricos (transporte activo, impulso nervioso).',
+              'Producción de calor para conservar la temperatura corporal.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'La vida no viola la segunda ley',
+            content: 'Formar enlaces covalentes y construir estructuras ordenadas va «en contra» del desorden, por eso requiere energía. La célula lo logra porque acopla esa síntesis a procesos que liberan más energía (y entropía) hacia el entorno. Cuando el organismo muere y deja de obtener energía, se descompone: el desorden gana.',
+          },
+        ],
+      },
+      {
+        id: 'bbt-3',
+        number: 3,
+        title: 'Energía libre: reacciones exergónicas y endergónicas',
+        keyTerms: ['energía libre de Gibbs', 'exergónica', 'endergónica', 'ΔG′°'],
+        blocks: [
+          {
+            type: 'formula',
+            title: 'Energía libre de Gibbs',
+            formula: 'ΔG = ΔH − TΔS',
+            description: 'ΔG es la energía disponible para realizar trabajo. Su signo indica si una reacción ocurre de forma espontánea. ΔH es el cambio de entalpía (calor), T la temperatura absoluta y ΔS el cambio de entropía.',
+          },
+          {
+            type: 'comparison',
+            title: 'El signo de ΔG',
+            left: {
+              title: 'Exergónica (ΔG < 0)',
+              items: [
+                'ΔG negativo',
+                'Espontánea, favorable',
+                'Libera energía',
+                'Los productos tienen menos energía libre que los reactivos',
+                'Típica del catabolismo',
+              ],
+            },
+            right: {
+              title: 'Endergónica (ΔG > 0)',
+              items: [
+                'ΔG positivo',
+                'No espontánea',
+                'Requiere energía',
+                'Los productos tienen más energía libre que los reactivos',
+                'Típica del anabolismo',
+              ],
+            },
+          },
+          {
+            type: 'definition',
+            title: 'ΔG′° (energía libre estándar bioquímica)',
+            content: 'Valor de ΔG medido en condiciones estándar (25 °C, concentraciones 1 M, pH 7). Sirve para comparar reacciones. La ΔG real de la célula depende de las concentraciones reales de reactivos y productos, y puede ser muy distinta: la hidrólisis del ATP tiene ΔG′° = −30.5 kJ/mol, pero en la célula su ΔG real es de −50 a −65 kJ/mol.',
+          },
+          {
+            type: 'paragraph',
+            content: 'Una reacción endergónica puede ocurrir si se ACOPLA a otra exergónica más grande: la suma de ambas tiene ΔG negativo. Este es el papel del ATP: su hidrólisis aporta la energía que impulsa la biosíntesis, la contracción y el transporte activo.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'mnemotecnia',
+            title: 'EXergónica = EXpulsa energía',
+            content: 'La reacción EXergónica «saca» energía al entorno, así que el sistema queda con menos: ΔG negativo. La ENDergónica la «mete»: ΔG positivo. Si se duda del signo, conviene recordar que todo lo espontáneo (como una pelota que rueda cuesta abajo) pierde energía libre.',
+          },
+        ],
+      },
+      {
+        id: 'bbt-4',
+        number: 4,
+        title: 'Catabolismo, anabolismo y convergencia en acetil-CoA',
+        keyTerms: ['catabolismo', 'anabolismo', 'acetil-CoA', 'respiración celular'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos caras del metabolismo',
+            left: {
+              title: 'Catabolismo («lisis»)',
+              items: [
+                'Degradativo y oxidativo',
+                'Exergónico (ΔG < 0)',
+                'Glúcidos, lípidos y proteínas → CO₂, H₂O y NH₃',
+                'Produce ATP y coenzimas reducidas (NADH, FADH₂)',
+                'Sus productos intermedios son materia prima del anabolismo',
+              ],
+            },
+            right: {
+              title: 'Anabolismo («génesis»)',
+              items: [
+                'Sintético y reductivo',
+                'Endergónico (ΔG > 0)',
+                'Aminoácidos, monosacáridos, ácidos grasos y bases → proteínas, polisacáridos, lípidos y ácidos nucleicos',
+                'Consume ATP y NADPH',
+                'Sus productos son, a su vez, sustrato del catabolismo',
+              ],
+            },
+          },
+          {
+            type: 'steps',
+            title: 'Del alimento al ATP',
+            steps: [
+              'Los glúcidos se digieren a monosacáridos; la glucosa entra a la glucólisis (citosol) y forma piruvato.',
+              'Los lípidos liberan ácidos grasos, que se degradan por β-oxidación (mitocondria).',
+              'Las proteínas liberan aminoácidos, que pierden su grupo amino (transaminación y desaminación) y dejan su esqueleto de carbono.',
+              'Las tres vías convergen en ACETIL-CoA, una molécula de 2 carbonos.',
+              'El acetil-CoA se oxida en el ciclo de Krebs (matriz mitocondrial) y genera NADH y FADH₂.',
+              'NADH y FADH₂ ceden sus electrones a la cadena respiratoria (membrana mitocondrial interna); la fosforilación oxidativa produce la mayor parte del ATP: ≈ 30–32 ATP por glucosa.',
+            ],
+          },
+          {
+            type: 'formula',
+            title: 'Respiración celular (ecuación global)',
+            formula: 'C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O + energía (≈ 30–32 ATP)',
+            description: 'La oxidación completa de una glucosa. Es exergónica: la energía que no queda en el ATP se libera como calor.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Cetoacidosis diabética',
+            content: 'Sin insulina (diabetes tipo 1, o tipo 2 descompensada), la glucosa no entra a las células y el organismo se comporta como en ayuno: hay lipólisis masiva y los ácidos grasos llegan al hígado, donde la β-oxidación genera tanto acetil-CoA que no cabe en el ciclo de Krebs. El exceso se desvía a cuerpos cetónicos (acetoacetato y β-hidroxibutirato), ácidos que liberan H⁺ y producen acidosis metabólica con anión gap elevado.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Ayuno prolongado e inanición',
+            content: 'En el ayuno, el glucógeno hepático se agota en unas 24 horas; después la glucosa se fabrica por gluconeogénesis (a partir de aminoácidos, glicerol y lactato) y la grasa se moviliza. Con los días, el cerebro usa cada vez más cuerpos cetónicos, lo que ahorra proteína. Cuando se agota la grasa, el organismo degrada masivamente las proteínas de músculo y órganos: es la fase final de la inanición.',
+          },
+        ],
+      },
+      {
+        id: 'bbt-5',
+        number: 5,
+        title: 'Aplicaciones en la práctica médica',
+        keyTerms: ['recordatorio de 24 horas', 'hierro ferroso', 'DMT1'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Recordatorio de 24 horas',
+            content: 'Entrevista en la que el paciente relata todo lo que comió y bebió el día anterior, con cantidades. Permite estimar la energía y los macronutrientes que consume y detectar omisiones; es útil en pacientes con diabetes u obesidad.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Hierro: de férrico a ferroso',
+            content: 'El hierro no hemo de la dieta llega sobre todo como férrico (Fe³⁺). Para absorberse en el duodeno debe reducirse a ferroso (Fe²⁺), que entra al enterocito por el transportador DMT1. Por eso el sulfato ferroso se indica de preferencia en ayunas y acompañado de vitamina C (o jugo de cítricos), que mantiene el hierro reducido; el té, el café, el calcio y los antiácidos disminuyen su absorción.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-atp-transferencia-fosfato',
+    title: 'ATP y transferencia del grupo fosfato',
+    subtitle: 'Fosfato y REDOX, cinasas y Mg²⁺, estructura e hidrólisis del ATP, ciclo ATP-ADP, carga energética y síntesis de ATP',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '🔋',
+    keyPoints: [
+      'La célula transfiere energía por dos vías: TRANSFERENCIA DE GRUPOS FOSFATO (ATP, GTP) y reacciones REDOX (coenzimas NADH, NADPH, FADH₂).',
+      'Las CINASAS transfieren un fosfato del ATP a un aceptor y requieren Mg²⁺ (o Mn²⁺). Unos 500 genes (≈ 2 % del genoma) codifican proteína cinasas; la hexocinasa fosforila la glucosa a glucosa-6-fosfato.',
+      'ATP = adenina + ribosa + 3 fosfatos (α, β, γ) unidos por enlaces FOSFOANHÍDRIDO. Hidrólisis a ADP + Pi: ΔG′° = −30.5 kJ/mol (−7.3 kcal/mol); ΔG real en la célula de −50 a −65 kJ/mol ★',
+      'Por qué libera tanta energía: menor REPULSIÓN de cargas, ESTABILIZACIÓN POR RESONANCIA del Pi y mejor HIDRATACIÓN de los productos.',
+      'CARGA ENERGÉTICA = ([ATP] + ½[ADP]) / ([ATP] + [ADP] + [AMP]); normal 0.80–0.95. Alta → anabolismo; baja → catabolismo.',
+      'El ATP se forma por FOSFORILACIÓN OXIDATIVA (mitocondria, con O₂, la vía principal) y por FOSFORILACIÓN A NIVEL DE SUSTRATO (glucólisis, ciclo de Krebs, sin O₂).',
+    ],
+    sections: [
+      {
+        id: 'bft-1',
+        number: 1,
+        title: 'Dos formas de transferir energía',
+        keyTerms: ['grupo fosfato', 'REDOX', 'fosforilación de proteínas'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Fosfatos y electrones',
+            left: {
+              title: 'Transferencia de grupos fosfato',
+              items: [
+                'Un donante (p. ej., ATP) cede un fosfato a un aceptor',
+                'Nucleósidos trifosfato: ATP (el principal), GTP, UTP, CTP',
+                'Cambia el nivel de energía y la conformación del aceptor',
+              ],
+            },
+            right: {
+              title: 'Reacciones REDOX',
+              items: [
+                'Se transfieren electrones (a menudo con H⁺)',
+                'Coenzimas transportadoras: NADH, NADPH, FADH₂',
+                'Los electrones de los nutrientes acaban en la cadena respiratoria',
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Por qué el fosfato sirve para transferir energía',
+            items: [
+              'Un átomo de fósforo unido a cuatro oxígenos en disposición tetraédrica; a pH 7 tiene cargas negativas que lo hacen reactivo.',
+              'En el ATP los fosfatos se unen por enlaces anhídrido fosfórico (fosfoanhídrido), cuya hidrólisis libera mucha energía libre.',
+              'Es el nexo entre los procesos que producen energía (catabolismo) y los que la consumen (trabajo y biosíntesis).',
+              'El ATP es el donante inmediato: se usa en cuanto se forma y no funciona como almacén.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'La fosforilación de proteínas es una forma de regulación: al recibir un fosfato, la proteína cambia de conformación y de actividad (se activa o se inhibe). Los aminoácidos que se fosforilan con más frecuencia son SERINA, TREONINA y TIROSINA, que forman un enlace éster con el fosfato a través de su grupo hidroxilo.',
+          },
+        ],
+      },
+      {
+        id: 'bft-2',
+        number: 2,
+        title: 'Cinasas y el papel del magnesio',
+        keyTerms: ['cinasa', 'Mg²⁺', 'adenilato cinasa', 'nucleósido difosfato cinasa'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Cinasa (quinasa)',
+            content: 'Enzima que transfiere un grupo fosfato desde un nucleósido trifosfato (casi siempre ATP) a un aceptor. Muchas se nombran por su sustrato: la hexocinasa fosforila hexosas, como la glucosa a glucosa-6-fosfato. Cerca de 500 genes (≈ 2 % del genoma humano) codifican proteína cinasas.',
+          },
+          {
+            type: 'paragraph',
+            content: 'Las cinasas requieren Mg²⁺ (o Mn²⁺). El ATP tiene cuatro cargas negativas a pH 7; el Mg²⁺ se coordina con los oxígenos de los fosfatos β y γ, neutraliza parte de esa carga y orienta el fosfato terminal en el sitio activo. Por eso el sustrato real de la mayoría de las cinasas es el complejo Mg-ATP.',
+          },
+          {
+            type: 'table',
+            title: 'Cinasas que conviene conocer',
+            data: {
+              headers: ['Enzima', 'Reacción o función'],
+              rows: [
+                ['Hexocinasa', 'Glucosa + ATP → glucosa-6-fosfato + ADP (primer paso de la glucólisis)'],
+                ['Adenilato cinasa', 'ATP + AMP ⇄ 2 ADP: repone y equilibra los nucleótidos de adenina'],
+                ['Nucleósido difosfato cinasa', 'ATP + NDP ⇄ ADP + NTP: conecta el ATP con GTP, UTP y CTP (en citosol y mitocondria)'],
+                ['Proteína cinasa A (PKA)', 'Se activa por AMPc; regula el metabolismo de los glúcidos (p. ej., degradación del glucógeno)'],
+                ['Otras proteína cinasas', 'Tirosina cinasas, cinasas dependientes de ciclinas, de Ca²⁺-calmodulina, caseína cinasa'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Otros nucleótidos trifosfato',
+            items: [
+              'UTP: síntesis de polisacáridos (forma UDP-glucosa para el glucógeno).',
+              'CTP: síntesis de lípidos (fosfolípidos).',
+              'GTP: síntesis de proteínas y señalización por proteínas G.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Inhibidores de tirosina cinasa',
+            content: 'En la leucemia mieloide crónica, el cromosoma Filadelfia produce la proteína de fusión BCR-ABL, una tirosina cinasa siempre activa que hace proliferar a las células. El imatinib ocupa su sitio de unión al ATP y la bloquea; fue el primer fármaco diseñado contra una cinasa específica.',
+          },
+        ],
+      },
+      {
+        id: 'bft-3',
+        number: 3,
+        title: 'Estructura e hidrólisis del ATP',
+        keyTerms: ['ATP', 'enlace fosfoanhídrido', 'ATPasa', 'pirofosfato'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El ATP (adenosín trifosfato) es un nucleótido: ADENINA + RIBOSA + tres FOSFATOS llamados α, β y γ (del más cercano a la ribosa al más lejano). El fosfato α se une a la ribosa por un enlace éster; α-β y β-γ son enlaces FOSFOANHÍDRIDO. La hidrólisis del enlace terminal (γ) la catalizan las ATPasas.',
+          },
+          {
+            type: 'formula',
+            title: 'Hidrólisis del ATP',
+            formula: 'ATP + H₂O → ADP + Pi    ΔG′° = −30.5 kJ/mol (−7.3 kcal/mol)',
+            description: 'En la célula, con las concentraciones reales de ATP, ADP y Pi, la ΔG real es de −50 a −65 kJ/mol.',
+          },
+          {
+            type: 'table',
+            title: 'Por qué la hidrólisis es tan favorable',
+            data: {
+              headers: ['Factor', 'Qué ocurre'],
+              rows: [
+                ['Menor repulsión electrostática', 'A pH 7 el ATP tiene 4 cargas negativas muy cercanas; al separar el Pi la repulsión disminuye'],
+                ['Estabilización por resonancia', 'El Pi libre tiene varias formas resonantes equivalentes que no tiene cuando forma parte del ATP'],
+                ['Estabilización por hidratación', 'El agua solvata al ADP y al Pi mejor que al ATP'],
+                ['Ionización', 'El ADP libera un H⁺, que pasa a un medio con poca concentración de H⁺ (pH 7)'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Otras hidrólisis de nucleótidos de adenina',
+            data: {
+              headers: ['Reacción', 'ΔG′° (kJ/mol)', 'Importancia'],
+              rows: [
+                ['ATP → ADP + Pi', '−30.5', 'La reacción habitual del trabajo celular'],
+                ['ATP → AMP + PPi', '−45.6', 'Activación de ácidos grasos y aminoácidos; síntesis de ADN y ARN'],
+                ['PPi → 2 Pi', '−19.2', 'La pirofosfatasa elimina el PPi y hace irreversible la reacción anterior'],
+                ['ADP → AMP + Pi', '−32.8', 'También es un enlace fosfoanhídrido'],
+                ['AMP → adenosina + Pi', '−14.2', 'Es un enlace éster: libera mucho menos'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'AMP y AMPc no son lo mismo',
+            content: 'El AMP cíclico (AMPc) es otra molécula: lo forma la adenilato ciclasa a partir del ATP y funciona como segundo mensajero (activa la PKA). El AMP «lineal» es el producto de la hidrólisis del ATP o del ADP.',
+          },
+        ],
+      },
+      {
+        id: 'bft-4',
+        number: 4,
+        title: 'Ciclo ATP-ADP y carga energética',
+        keyTerms: ['ciclo ATP-ADP', 'carga energética', 'Atkinson'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'El ciclo ATP-ADP',
+            steps: [
+              'El catabolismo de los nutrientes (glúcidos, grasas, proteínas → CO₂, H₂O, NH₃) libera energía.',
+              'Esa energía se usa para fosforilar el ADP: ADP + Pi → ATP.',
+              'El ATP se hidroliza para hacer trabajo biológico: contracción muscular, impulso nervioso, transporte activo y biosíntesis (anabolismo).',
+              'El ADP + Pi resultantes vuelven a recargarse en el catabolismo. El ATP se recicla continuamente; no se acumula.',
+            ],
+          },
+          {
+            type: 'formula',
+            title: 'Carga energética (Atkinson)',
+            formula: 'CE = ([ATP] + ½[ADP]) / ([ATP] + [ADP] + [AMP])',
+            description: 'Vale 0 si todo el nucleótido está como AMP y 1 si todo está como ATP. En la mayoría de las células oscila entre 0.80 y 0.95.',
+          },
+          {
+            type: 'comparison',
+            title: 'La carga energética decide la ruta',
+            left: {
+              title: 'Carga alta (mucho ATP)',
+              items: [
+                'Se inhiben las vías que generan ATP (catabolismo)',
+                'Se activan las vías que consumen ATP (anabolismo)',
+                'La célula almacena y sintetiza',
+              ],
+            },
+            right: {
+              title: 'Carga baja (mucho ADP y AMP)',
+              items: [
+                'Se activan las vías que generan ATP (catabolismo)',
+                'Se frenan las vías que consumen ATP',
+                'El AMP elevado activa la AMPK, el sensor de energía de la célula',
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Isquemia: cuando cae el ATP',
+            content: 'Sin oxígeno (infarto, evento vascular cerebral) la fosforilación oxidativa se detiene y la carga energética se desploma. La bomba Na⁺/K⁺-ATPasa deja de funcionar, entran Na⁺ y agua y la célula se hincha (edema celular). Si la falta de ATP se prolonga, el daño se vuelve irreversible.',
+          },
+        ],
+      },
+      {
+        id: 'bft-5',
+        number: 5,
+        title: 'Cómo se sintetiza el ATP',
+        keyTerms: ['fosforilación oxidativa', 'fosforilación a nivel de sustrato', 'ATP sintasa'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos mecanismos',
+            left: {
+              title: 'Fosforilación oxidativa',
+              items: [
+                'Membrana mitocondrial interna',
+                'Acoplada a la cadena de transporte de electrones; el O₂ es el aceptor final',
+                'La enzima es la ATP sintasa',
+                'Aeróbica; produce la mayor parte del ATP',
+              ],
+            },
+            right: {
+              title: 'Fosforilación a nivel de sustrato',
+              items: [
+                'Citosol (glucólisis) y matriz mitocondrial (ciclo de Krebs)',
+                'Un compuesto rico en energía transfiere su fosfato directo al ADP',
+                'Ejemplos: 1,3-bisfosfoglicerato y fosfoenolpiruvato en la glucólisis; succinil-CoA en el ciclo de Krebs',
+                'No requiere O₂: es la fuente de ATP en anaerobiosis',
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Alcohol, hipoglucemia y deshidratación',
+            content: 'El hígado oxida el etanol con la alcohol deshidrogenasa y la aldehído deshidrogenasa, que reducen NAD⁺ a NADH. El exceso de NADH desvía el piruvato a lactato y frena la gluconeogénesis, por lo que beber en ayunas puede causar hipoglucemia. Además, el etanol inhibe la liberación de hormona antidiurética (vasopresina): el riñón elimina más agua y aparece la deshidratación de la «cruda».',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bioquimica-compuestos-alta-energia',
+    title: 'Compuestos de alta energía y fosfocreatina',
+    subtitle: 'Potencial de transferencia de fosfato, estado de oxidación del carbono, NADH, NADPH, FAD y coenzima A, sistema de la fosfocreatina y creatina en la resistencia a la insulina',
+    colorKey: 'bioquimica',
+    categoria: 'Bioquímica',
+    emoji: '💪',
+    keyPoints: [
+      'Hay compuestos con ΔG′° de hidrólisis más negativo que el ATP: FOSFOENOLPIRUVATO (−61.9 kJ/mol), 1,3-BISFOSFOGLICERATO (−49.3) y FOSFOCREATINA (−43.0). Pueden fosforilar ADP ★',
+      'El ATP (−30.5) tiene un valor INTERMEDIO: recibe fosfatos de los compuestos de alta energía y los dona a aceptores de baja energía como la glucosa (→ glucosa-6-fosfato, −13.8).',
+      'Cuantos más enlaces C–H tiene un carbono (más reducido), más energía libera al oxidarse: metano −820 kJ/mol → CO₂ 0.',
+      'NADH: catabolismo, lleva electrones a la cadena respiratoria · NADPH: anabolismo y defensa antioxidante · FAD/FMN: flavoproteínas · COENZIMA A: transporta grupos acilo por un enlace tioéster.',
+      'CREATINA CINASA: fosfocreatina + ADP + H⁺ ⇄ creatina + ATP. La fosfocreatina es un amortiguador y una lanzadera de energía en músculo, corazón y cerebro.',
+      'El ejercicio activa la AMPK, que lleva GLUT4 a la membrana del músculo SIN necesitar insulina. El músculo esquelético es ≈ 40 % de la masa corporal y capta la mayor parte de la glucosa después de comer.',
+    ],
+    sections: [
+      {
+        id: 'bce-1',
+        number: 1,
+        title: 'Potencial de transferencia del grupo fosfato',
+        keyTerms: ['fosfoenolpiruvato', '1,3-bisfosfoglicerato', 'fosfocreatina', 'compuesto de alta energía'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La energía se transporta en la célula de dos formas que difunden rápido: por transferencia de grupos fosfato (ATP, GTP) y por transferencia de electrones (NADH, NADPH). Además, algunas coenzimas transportan grupos funcionales, como acetilo o metilo. Los compuestos de ALTA ENERGÍA son aquellos cuya hidrólisis libera una cantidad elevada de energía libre.',
+          },
+          {
+            type: 'table',
+            title: 'Energía libre estándar de hidrólisis',
+            data: {
+              headers: ['Compuesto', 'ΔG′° (kJ/mol)', 'ΔG′° (kcal/mol)', 'Dónde aparece'],
+              rows: [
+                ['Fosfoenolpiruvato', '−61.9', '−14.8', 'Glucólisis: la piruvato cinasa lo usa para formar ATP'],
+                ['Carbamoil fosfato', '−51.4', '−12.3', 'Ciclo de la urea y síntesis de pirimidinas'],
+                ['1,3-Bisfosfoglicerato', '−49.3', '−11.8', 'Glucólisis: la fosfoglicerato cinasa lo usa para formar ATP'],
+                ['Fosfocreatina', '−43.0', '−10.3', 'Reserva rápida de fosfato en músculo y cerebro'],
+                ['Acetil-CoA (tioéster)', '−31.4', '−7.5', 'Entrada al ciclo de Krebs'],
+                ['ATP → ADP + Pi', '−30.5', '−7.3', 'Moneda energética'],
+                ['Glucosa-1-fosfato', '−20.9', '−5.0', 'Metabolismo del glucógeno'],
+                ['Fructosa-6-fosfato', '−15.9', '−3.8', 'Glucólisis'],
+                ['Glucosa-6-fosfato', '−13.8', '−3.3', 'Primer producto de la hexocinasa'],
+                ['Glicerol-1-fosfato', '−9.2', '−2.2', 'Síntesis de triacilgliceroles y fosfolípidos'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'Un fosfato pasa espontáneamente de un compuesto con ΔG′° más negativo a uno menos negativo. Por eso el fosfoenolpiruvato y el 1,3-bisfosfoglicerato pueden fosforilar al ADP (fosforilación a nivel de sustrato), y el ATP puede fosforilar a la glucosa. Que el ATP tenga un valor INTERMEDIO es lo que le permite funcionar como intermediario universal, recibiendo y donando fosfatos.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'El ATP del músculo dura muy poco',
+            content: 'La cantidad de ATP que hay en el músculo alcanza para mantener la contracción durante apenas un segundo. Por eso necesita regenerarlo de inmediato, primero desde la fosfocreatina y después desde la glucólisis y la fosforilación oxidativa.',
+          },
+        ],
+      },
+      {
+        id: 'bce-2',
+        number: 2,
+        title: 'Estado de oxidación del carbono',
+        keyTerms: ['oxidación', 'reducción', 'enlace C–H'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Del carbono más reducido al más oxidado',
+            data: {
+              headers: ['Compuesto', 'Fórmula', 'Enlaces C–H', 'ΔG′° de oxidación (kJ/mol)'],
+              rows: [
+                ['Metano', 'CH₄', '4', '−820'],
+                ['Metanol', 'CH₃OH', '3', '−703'],
+                ['Formaldehído', 'HCHO', '2', '−523'],
+                ['Ácido fórmico', 'HCOOH', '1', '−285'],
+                ['Dióxido de carbono', 'CO₂', '0', '0'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'Cuanto más REDUCIDO está un carbono (más enlaces C–H), más energía libera al oxidarse hasta CO₂. Oxidar un nutriente consiste en extraerle electrones; esos electrones los captan coenzimas transportadoras (NAD⁺, FAD) y los llevan a la cadena respiratoria, donde su energía se usa para formar ATP.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Por qué la grasa rinde más que la glucosa',
+            content: 'Los ácidos grasos son cadenas casi totalmente reducidas (–CH₂–), mientras que la glucosa ya tiene un oxígeno en cada carbono. Por eso la grasa aporta unas 9 kcal/g y los glúcidos unas 4 kcal/g. Una glucosa (6 C) produce ≈ 30–32 ATP; un palmitato (16 C), ≈ 106 ATP. El tejido adiposo es la reserva de energía más eficiente del cuerpo.',
+          },
+        ],
+      },
+      {
+        id: 'bce-3',
+        number: 3,
+        title: 'Coenzimas transportadoras',
+        keyTerms: ['NADH', 'NADPH', 'FAD', 'coenzima A', 'tioéster'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Transportadores de electrones y de grupos',
+            data: {
+              headers: ['Coenzima', 'Qué transporta', 'Uso principal'],
+              rows: [
+                ['NAD⁺ / NADH', 'Un ion hidruro (2 e⁻ + 1 H⁺)', 'Catabolismo (glucólisis, β-oxidación, ciclo de Krebs); cede sus electrones a la cadena respiratoria'],
+                ['NADP⁺ / NADPH', 'Un ion hidruro (2 e⁻ + 1 H⁺)', 'Anabolismo (síntesis de ácidos grasos y colesterol) y regeneración del glutatión antioxidante; se produce sobre todo en la vía de las pentosas fosfato'],
+                ['FAD / FADH₂ y FMN / FMNH₂', '2 e⁻ + 2 H⁺', 'Forman parte de flavoproteínas, a las que están fuertemente unidas (p. ej., la succinato deshidrogenasa)'],
+                ['Coenzima A', 'Grupos acilo y acetilo (enlace tioéster)', 'Acil-CoA en la oxidación y síntesis de ácidos grasos; acetil-CoA en el ciclo de Krebs'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'La coenzima A contiene ácido pantoténico (vitamina B5) y un grupo tiol (–SH) por el que se une a los grupos acilo formando un enlace TIOÉSTER. Su hidrólisis es muy favorable (acetil-CoA: ΔG′° = −31.4 kJ/mol) porque el producto, un carboxilato, se estabiliza por resonancia mucho más que el tioéster original. La formación de acil-CoA a partir de un ácido graso requiere hidrolizar ATP.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Pelagra: falta de NAD⁺',
+            content: 'El NAD⁺ y el NADP⁺ se fabrican a partir de la niacina (vitamina B3) y, en menor medida, del triptófano. Su deficiencia causa pelagra, con las «tres D»: dermatitis en zonas expuestas al sol, diarrea y demencia. Se asocia con dietas basadas en maíz no nixtamalizado y con el alcoholismo.',
+          },
+        ],
+      },
+      {
+        id: 'bce-4',
+        number: 4,
+        title: 'Sistema de la fosfocreatina',
+        keyTerms: ['creatina cinasa', 'fosfocreatina', 'lanzadera de energía', 'creatinina'],
+        blocks: [
+          {
+            type: 'formula',
+            title: 'Reacción de la creatina cinasa (CK)',
+            formula: 'Fosfocreatina + ADP + H⁺ ⇄ Creatina + ATP',
+            description: 'Es reversible. En reposo, con ATP abundante, se forma fosfocreatina; durante el esfuerzo intenso, la fosfocreatina regenera ATP de inmediato.',
+          },
+          {
+            type: 'list',
+            title: 'Dos funciones',
+            items: [
+              'AMORTIGUADOR de energía: mantiene constante el ATP en los primeros segundos de una contracción intensa o de actividad neuronal rápida.',
+              'LANZADERA de energía: una CK mitocondrial forma fosfocreatina con el ATP recién sintetizado; la fosfocreatina difunde hasta las miofibrillas y las bombas iónicas, donde otra CK la convierte de nuevo en ATP.',
+              'Tejidos que más la usan: músculo esquelético, miocardio y cerebro.',
+            ],
+          },
+          {
+            type: 'steps',
+            title: 'Origen y destino de la creatina',
+            steps: [
+              'Riñón: arginina + glicina → guanidinoacetato.',
+              'Hígado: el guanidinoacetato se metila (donante S-adenosilmetionina) y forma creatina.',
+              'La creatina viaja por la sangre y la captan músculo y cerebro, donde se fosforila a fosfocreatina.',
+              'Una pequeña fracción se cicla espontáneamente cada día a CREATININA, que se elimina por la orina.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Creatinina y CK en el laboratorio',
+            content: 'La creatinina se produce a un ritmo casi constante, proporcional a la masa muscular, y la eliminan los riñones; por eso su valor en sangre sirve para estimar la tasa de filtración glomerular. La CK tiene isoenzimas: CK-MM (músculo), CK-MB (corazón) y CK-BB (cerebro). Una CK muy elevada indica daño muscular, como en la rabdomiólisis.',
+          },
+        ],
+      },
+      {
+        id: 'bce-5',
+        number: 5,
+        title: 'Creatina, ejercicio y resistencia a la insulina',
+        keyTerms: ['AMPK', 'GLUT4', 'resistencia a la insulina', 'prediabetes'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Caso de clase: mujer de 48 años con obesidad central, dislipidemia y antecedente familiar de diabetes tipo 2. Glucosa en ayuno de 112 mg/dL, insulina en ayuno de 18 µUI/mL, HbA1c de 6.1 % y HOMA-IR elevado. Se indica restricción calórica moderada, entrenamiento de fuerza y creatina monohidratada.',
+          },
+          {
+            type: 'steps',
+            title: 'Cómo el ejercicio mejora la captación de glucosa',
+            steps: [
+              'La contracción muscular consume ATP y aumentan el ADP y el AMP (baja la carga energética).',
+              'El AMP elevado activa la AMPK, el sensor de energía de la célula.',
+              'La AMPK y la propia contracción llevan los transportadores GLUT4 desde vesículas internas a la membrana del miocito, de forma INDEPENDIENTE de la insulina.',
+              'Entra glucosa al músculo aunque la vía de la insulina (receptor → IRS-1 → PI3K → Akt) esté alterada.',
+            ],
+          },
+          {
+            type: 'list',
+            title: 'Por qué el músculo es el tejido diana',
+            items: [
+              'Es ≈ 40 % de la masa corporal.',
+              'Capta la mayor parte de la glucosa que entra a los tejidos por efecto de la insulina después de comer (del orden de 70–80 %).',
+              'El entrenamiento de fuerza aumenta la masa muscular y, con ella, la capacidad de retirar glucosa de la sangre.',
+              'La creatina aumenta la fosfocreatina, permite entrenar con más intensidad y, en estudios, combinada con ejercicio aumentó el contenido de GLUT4. Sin ejercicio no tiene ese efecto.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Criterios de prediabetes',
+            content: 'Se diagnostica prediabetes con glucosa en ayuno de 100–125 mg/dL (glucosa alterada en ayuno), glucosa de 140–199 mg/dL a las 2 horas de una carga oral de 75 g, o HbA1c de 5.7–6.4 %. La paciente del caso cumple dos criterios. El ejercicio y la pérdida de peso reducen el riesgo de progresar a diabetes tipo 2.',
+          },
+        ],
+      },
+    ],
+  },
 ]
