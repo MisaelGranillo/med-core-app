@@ -186,6 +186,22 @@ export const modules: Module[] = [
     topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis'],
   },
   {
+    id: 'humanistica-uad-s3',
+    badge: 'UAD · Medicina Humanística — Semana 3',
+    title: 'Medicina Humanística: la relación médico-paciente',
+    subtitle: 'Alteridad y el problema del otro; Alter Ego y Alter Tú; momentos de la relación según Laín Entralgo; modelos de Szasz-Hollender, Veatch y Emanuel; ética, profesionalismo, comunicación no verbal y proxémica.',
+    emoji: '🤝',
+    topicIds: ['humanistica-alteridad-rmp', 'humanistica-modelos-rmp', 'humanistica-etica-comunicacion'],
+  },
+  {
+    id: 'humanistica-uad-s4',
+    badge: 'UAD · Medicina Humanística — Semana 4',
+    title: 'Medicina Humanística: perfiles patológicos',
+    subtitle: 'Causalidad y determinantes de la salud; carga de la enfermedad en México; obesidad, diabetes e hipertensión desde la medicina del estilo de vida; medicina tradicional y síndromes de filiación cultural.',
+    emoji: '🌿',
+    topicIds: ['humanistica-causalidad-determinantes', 'humanistica-estilos-vida-cronicas', 'humanistica-sindromes-filiacion-cultural'],
+  },
+  {
     id: 'histologia-uad-s1',
     badge: 'UAD · Histología I — Semana 1',
     title: 'Histología: célula, microscopía y técnica',

@@ -8,6 +8,7 @@ import { geneticaQuestions } from './genetica-quizzes'
 import { histologiaQuestions } from './histologia-quizzes'
 import { bioquimicaQuestions } from './bioquimica-quizzes'
 import { embriologiaQuestions } from './embriologia-quizzes'
+import { humanisticaQuestions } from './humanistica-quizzes'
 
 const anatomyQuestions: Question[] = [
   // ─── APARATO DIGESTIVO ──────────────────────────────────────────────
@@ -563,4 +564,4 @@ const anatomyQuestions: Question[] = [
   },
 ]
 
-export const questions: Question[] = [...anatomyQuestions, ...newQuestions, ...anatomiaUadQuestions, ...inglesUadQuestions, ...inglesAdelantoQuestions, ...inglesProyectoS2Questions, ...geneticaQuestions, ...histologiaQuestions, ...bioquimicaQuestions, ...embriologiaQuestions]
+export const questions: Question[] = [...anatomyQuestions, ...newQuestions, ...anatomiaUadQuestions, ...inglesUadQuestions, ...inglesAdelantoQuestions, ...inglesProyectoS2Questions, ...geneticaQuestions, ...histologiaQuestions, ...bioquimicaQuestions, ...embriologiaQuestions, ...humanisticaQuestions]
