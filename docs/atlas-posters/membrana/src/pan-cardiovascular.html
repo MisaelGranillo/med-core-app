@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 10px; }
+.hero { flex: 1 1 auto !important; }
+.row.hero > section, section.hero { display: flex; flex-direction: column; }
+.row.hero > section > .callouts, section.hero > .callouts { margin: auto !important; }
+.row.hero > .col > .grow { flex: 1; }
+.page > .foot { margin-top: 0; }
+.lst { margin: 0; padding-left: 16px; font-size: 12.8px; line-height: 1.4; }
+.lst li { margin: 0 0 3px; }
+.lst li { margin: 0 0 2px; }
+table td { font-size: 12.4px; padding: 6px 7px; }
+th { font-size: 10.5px; }
+.card .t { font-size: 13px; } .card .d { font-size: 12px; }
+.sum div { font-size: 12px; }
+.page > section, .page > div.row { }
+.ph { font-size: 15px; }
+.steps { display: flex; align-items: stretch; gap: 4px; }
+.steps div { flex: 1; background: #f6f8fc; border-radius: 7px; padding: 8px 9px; font-size: 12px; }
+.steps b { display: block; font-size: 13px; color: var(--navy); }
+.steps span.ar { flex: 0 0 auto; background: none; padding: 0; align-self: center; color: var(--red); font-weight: 800; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.cap { font-size: 9.6px; color: var(--muted); margin: 0; text-align: center; }
+</style>
+</head><body><div class="page">
+<header>
+  <p class="eyebrow">MedCore — Atlas de Aparatos y Sistemas</p>
+  <h1>Sistema Cardiovascular</h1>
+  <p class="tag">Una bomba doble con su propio marcapasos, en serie con dos circuitos.</p>
+</header>
+<section class="panel hero">
+  <div class="ph"><span class="n">1</span>Exterior <small>— vista anterior · modelo 3D</small></div>
+  <div style="display:flex;gap:14px;align-items:center"><div style="flex:0 0 570px"><script type="auto3d">{"img": "ana3d/car-ant.png", "height": 500, "cw": 570, "gap": 40, "labels": {"vcs": ["Vena cava superior", ""], "tp": ["Tronco pulmonar", ""], "aa": ["Aorta ascendente", ""], "ai": ["Aurícula izquierda", "orejuela"], "ad": ["Aurícula derecha", ""], "vd": ["Ventrículo derecho", ""], "vi": ["Ventrículo izquierdo", "forma el ápex"], "vci": ["Vena cava inferior", ""]}, "side": {"vcs": "left", "tp": "left", "aa": "left", "ai": "left", "ad": "left", "vd": "left", "vi": "left", "vci": "left"}, "L": 150}</script></div><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:8px;justify-content:center"><div><div class="sh">Dos circulaciones</div><ul class="lst"><li><b>Menor</b>: VD → tronco pulmonar → pulmones → venas pulmonares → AI.</li><li><b>Mayor</b>: VI → aorta → tejidos → venas cavas → AD.</li><li>Las arterias pulmonares llevan sangre <b>pobre</b> en O₂.</li></ul></div><div><div class="sh">Cifras</div><table><tr><td class="k">Gasto cardiaco</td><td>≈ 5 L/min = FC × VS</td></tr><tr><td class="k">FC en reposo</td><td>60–100 lpm</td></tr><tr><td class="k">Volumen sistólico</td><td>≈ 70 mL</td></tr><tr><td class="k">PA óptima</td><td>&lt; 120/80 mmHg</td></tr></table></div></div></div>
+</section>
+<section class="panel hero">
+  <div class="ph"><span class="n">2</span>Interior <small>— corte frontal · modelo 3D</small></div>
+  <div style="display:flex;gap:14px;align-items:center"><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:8px;justify-content:center"><div><div class="sh">Sistema de conducción</div><ul class="lst"><li><b>Nodo sinusal</b>: marcapasos, 60–100 lpm.</li><li>Aurículas: <b>onda P</b>.</li><li><b>Nodo AV</b>: retrasa ≈ 0.1 s; PR 0.12–0.20 s.</li><li>Haz de His, ramas y <b>Purkinje</b>: QRS &lt; 0.12 s.</li><li>Repolarización ventricular: <b>onda T</b>.</li></ul></div></div><div style="flex:0 0 580px"><script type="auto3d">{"img": "ana3d/car-cut.png", "height": 450, "cw": 580, "gap": 40, "labels": {"ao": ["Aorta", ""], "vao": ["Válvula aórtica", "semilunar"], "ad": ["Aurícula derecha", ""], "tri": ["Válvula tricúspide", "AV derecha"], "mit": ["Válvula mitral", "AV izquierda"], "vi": ["Ventrículo izquierdo", "pared más gruesa"], "pap": ["Músculo papilar", "y cuerdas tendinosas"]}, "side": {"ao": "right", "vao": "right", "ad": "right", "tri": "right", "mit": "right", "vi": "right", "pap": "right"}, "L": 0}</script></div></div>
+</section>
+<section class="clin">
+  <div class="ph"><span class="n">3</span>Correlación clínica</div>
+  <div class="two" style="font-size:12.6px"><p style="margin:0"><b>Infarto</b>: la descendente anterior irriga la pared anterior y el septo; su oclusión da el infarto más extenso.</p><p style="margin:0"><b>Ruidos</b>: S1 = cierre de mitral y tricúspide (inicio de la sístole); S2 = cierre de aórtica y pulmonar.</p></div>
+</section>
+<section class="panel">
+  <div class="ph"><span class="n">4</span>Resumen clave</div>
+  <div class="sum"><div>{{icon:Heartbeat}}<span>Marcapasos: <b>nodo sinusal</b>.</span></div><div>{{icon:Gauge}}<span>GC = <b>FC × VS</b>.</span></div><div>{{icon:Lightning}}<span>P · QRS · <b>T</b>.</span></div><div>{{icon:Drop}}<span>Venas pulmonares: <b>O₂</b>.</span></div><div>{{icon:Target}}<span>S1 = <b>AV</b> · S2 = semilunares.</span></div></div>
+</section>
+<p class="foot">MedCore · Atlas · Panorama · Modelos 3D: Z-Anatomy (CC BY-SA 4.0)</p>
+</div></body></html>

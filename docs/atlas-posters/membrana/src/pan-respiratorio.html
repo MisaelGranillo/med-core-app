@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 10px; }
+.hero { flex: 1 1 auto !important; }
+.row.hero > section, section.hero { display: flex; flex-direction: column; }
+.row.hero > section > .callouts, section.hero > .callouts { margin: auto !important; }
+.row.hero > .col > .grow { flex: 1; }
+.page > .foot { margin-top: 0; }
+.lst { margin: 0; padding-left: 16px; font-size: 12.8px; line-height: 1.4; }
+.lst li { margin: 0 0 3px; }
+.lst li { margin: 0 0 2px; }
+table td { font-size: 12.4px; padding: 6px 7px; }
+th { font-size: 10.5px; }
+.card .t { font-size: 13px; } .card .d { font-size: 12px; }
+.sum div { font-size: 12px; }
+.page > section, .page > div.row { }
+.ph { font-size: 15px; }
+.steps { display: flex; align-items: stretch; gap: 4px; }
+.steps div { flex: 1; background: #f6f8fc; border-radius: 7px; padding: 8px 9px; font-size: 12px; }
+.steps b { display: block; font-size: 13px; color: var(--navy); }
+.steps span.ar { flex: 0 0 auto; background: none; padding: 0; align-self: center; color: var(--red); font-weight: 800; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.cap { font-size: 9.6px; color: var(--muted); margin: 0; text-align: center; }
+</style>
+</head><body><div class="page">
+<header>
+  <p class="eyebrow">MedCore — Atlas de Aparatos y Sistemas</p>
+  <h1>Aparato Respiratorio</h1>
+  <p class="tag">Una vía que conduce el aire y un epitelio de 0.5 µm donde se intercambian los gases.</p>
+</header>
+<section class="panel hero">
+  <div class="ph"><span class="n">1</span>Vías respiratorias y pulmones <small>— vista anterior · modelo 3D</small></div>
+  <div style="display:flex;gap:14px;align-items:center"><div style="flex:0 0 560px"><script type="auto3d">{"img": "ana3d/res-ant.png", "height": 530, "cw": 560, "gap": 40, "labels": {"far": ["Faringe", ""], "lar": ["Laringe", "cartílago tiroides"], "tra": ["Tráquea", "C6 → T4–T5"], "lsd": ["Lóbulo superior", "pulmón derecho"], "lmd": ["Lóbulo medio", "solo el derecho"], "lid": ["Lóbulo inferior", "pulmón derecho"], "lsi": ["Lóbulo superior", "pulmón izquierdo"], "lii": ["Lóbulo inferior", "pulmón izquierdo"]}, "side": {"far": "left", "lar": "left", "tra": "left", "lsd": "left", "lmd": "left", "lid": "left", "lsi": "left", "lii": "left"}, "L": 150}</script></div><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:8px;justify-content:center"><div><div class="sh">Dos porciones</div><table><tr><td class="k">Conductora</td><td>Nariz → bronquiolos terminales: conduce, calienta, humedece y filtra</td></tr><tr><td class="k">Respiratoria</td><td>Bronquiolos respiratorios → alvéolos: hematosis</td></tr></table></div><div><div class="sh">Mecánica</div><ul class="lst"><li><b>Inspiración</b> (activa): diafragma (frénico, C3–C5) e intercostales externos.</li><li><b>Espiración</b> en reposo: pasiva, por retracción elástica.</li></ul></div></div></div>
+</section>
+<section class="panel hero">
+  <div class="ph"><span class="n">2</span>Árbol bronquial <small>— modelo 3D</small></div>
+  <div style="display:flex;gap:14px;align-items:center"><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:8px;justify-content:center"><div><div class="sh">Volúmenes del adulto</div><table><tr><td class="k">Corriente</td><td>≈ 500 mL</td></tr><tr><td class="k">Reserva inspiratoria</td><td>≈ 3000 mL</td></tr><tr><td class="k">Reserva espiratoria</td><td>≈ 1100 mL</td></tr><tr><td class="k">Residual</td><td>≈ 1200 mL</td></tr><tr><td class="k">Capacidad pulmonar total</td><td>≈ 6000 mL</td></tr></table></div><div><div class="sh">Hematosis</div><ul class="lst"><li>O₂ y CO₂ cruzan por difusión una barrera de ≈ 0.5 µm.</li><li>El CO₂ viaja sobre todo como <b>bicarbonato</b> (≈ 70 %).</li><li>Derecho: 3 lóbulos y 10 segmentos; izquierdo: 2 lóbulos y língula.</li></ul></div></div><div style="flex:0 0 510px"><script type="auto3d">{"img": "ana3d/res-arbol.png", "height": 380, "cw": 510, "gap": 46, "labels": {"tra": ["Tráquea", ""], "bp": ["Bronquio principal", "izquierdo"], "bl": ["Bronquio lobar", ""], "bs": ["Bronquio segmentario", ""]}, "side": {"tra": "right", "bp": "right", "bl": "right", "bs": "right"}, "L": 0}</script></div></div>
+</section>
+<section class="clin">
+  <div class="ph"><span class="n">3</span>Correlación clínica</div>
+  <div class="two" style="font-size:12.6px"><p style="margin:0"><b>Cuerpo extraño</b>: el bronquio principal derecho es más corto, ancho y vertical; ahí se aloja con más frecuencia.</p><p style="margin:0"><b>Neumotórax</b>: entra aire al espacio pleural, se pierde la presión negativa y el pulmón se colapsa.</p></div>
+</section>
+<section class="panel">
+  <div class="ph"><span class="n">4</span>Resumen clave</div>
+  <div class="sum"><div>{{icon:Wind}}<span>Derecho: <b>3 lóbulos</b>.</span></div><div>{{icon:Target}}<span>Cuerpo extraño → <b>bronquio derecho</b>.</span></div><div>{{icon:Lightning}}<span>Diafragma: <b>C3–C5</b>.</span></div><div>{{icon:Drop}}<span>Corriente ≈ <b>500 mL</b>.</span></div><div>{{icon:Atom}}<span>CO₂ como <b>HCO₃⁻</b>.</span></div></div>
+</section>
+<p class="foot">MedCore · Atlas · Panorama · Modelos 3D: Z-Anatomy (CC BY-SA 4.0)</p>
+</div></body></html>

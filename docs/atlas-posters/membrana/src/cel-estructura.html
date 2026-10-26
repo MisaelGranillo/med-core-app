@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 10px; }
+.hero { flex: 1 1 auto !important; }
+.row.hero > section, section.hero { display: flex; flex-direction: column; }
+.row.hero > section > .callouts, section.hero > .callouts { margin: auto !important; }
+.row.hero > .col > .grow { flex: 1; }
+.page > .foot { margin-top: 0; }
+.lst { margin: 0; padding-left: 16px; font-size: 12.8px; line-height: 1.4; }
+.lst li { margin: 0 0 3px; }
+.lst li { margin: 0 0 2px; }
+table td { font-size: 12.4px; padding: 6px 7px; }
+th { font-size: 10.5px; }
+.card .t { font-size: 13px; } .card .d { font-size: 12px; }
+.sum div { font-size: 12px; }
+.page > section, .page > div.row { }
+.ph { font-size: 15px; }
+.steps { display: flex; align-items: stretch; gap: 4px; }
+.steps div { flex: 1; background: #f6f8fc; border-radius: 7px; padding: 8px 9px; font-size: 12px; }
+.steps b { display: block; font-size: 13px; color: var(--navy); }
+.steps span.ar { flex: 0 0 auto; background: none; padding: 0; align-self: center; color: var(--red); font-weight: 800; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.cap { font-size: 9.6px; color: var(--muted); margin: 0; text-align: center; }
+</style>
+</head><body><div class="page">
+<header>
+  <p class="eyebrow">MedCore — Atlas de la Célula</p>
+  <h1>Estructura de la Célula</h1>
+  <p class="tag">Cada organelo es un compartimento con su tarea.</p>
+</header>
+<section class="panel hero">
+  <div class="ph"><span class="n">1</span>Célula animal <small>— ilustración</small></div>
+  <script type="auto3d">{"img": "fotos/celula.png", "height": 420, "cw": 955, "gap": 38, "labels": {"mem": ["Membrana plasmática", ""], "gol": ["Aparato de Golgi", "modifica y empaca"], "rel": ["RE liso", "lípidos, detoxificación"], "nuc": ["Nucléolo", "ARN ribosomal"], "fla": ["Flagelo", ""], "per": ["Peroxisoma", ""], "env": ["Envoltura nuclear", "doble membrana con poros"], "rer": ["RE rugoso", "ribosomas: proteínas"], "mit": ["Mitocondria", "ATP"], "cen": ["Centrosoma", "2 centriolos"], "cit": ["Citoplasma", ""], "ves": ["Vesícula secretora", "exocitosis"]}, "side": {"mem": "left", "gol": "left", "rel": "left", "nuc": "left", "fla": "left", "per": "right", "env": "right", "rer": "right", "mit": "right", "cen": "right", "cit": "right", "ves": "right"}, "L": 145}</script>
+</section>
+<section class="panel">
+  <div class="ph"><span class="n">2</span>Ruta de una proteína de secreción</div>
+  <div class="steps"><div><b>Núcleo</b>El gen se transcribe a ARNm</div><span class="ar">→</span><div><b>RE rugoso</b>Los ribosomas la sintetizan; se pliega</div><span class="ar">→</span><div><b>Vesícula</b>Viaja al Golgi</div><span class="ar">→</span><div><b>Golgi</b>Cara cis → trans: glucosilación y empaque</div><span class="ar">→</span><div><b>Vesícula secretora</b>Exocitosis en la membrana</div></div>
+</section>
+<div class="row">
+<section class="panel" style="flex:1.15">
+  <div class="ph"><span class="n">3</span>Organelos</div>
+  <table><tr><th>Organelo</th><th>Función</th></tr><tr><td class="k">Núcleo</td><td>Guarda el ADN; transcripción</td></tr><tr><td class="k">Ribosomas</td><td>Síntesis de proteínas</td></tr><tr><td class="k">RE rugoso</td><td>Proteínas de secreción y de membrana</td></tr><tr><td class="k">RE liso</td><td>Lípidos, detoxificación, depósito de Ca²⁺</td></tr><tr><td class="k">Golgi</td><td>Modifica, clasifica y empaca</td></tr><tr><td class="k">Lisosomas</td><td>Digestión con hidrolasas ácidas</td></tr><tr><td class="k">Mitocondrias</td><td>Fosforilación oxidativa; ADN propio</td></tr><tr><td class="k">Peroxisomas</td><td>Oxidan ácidos grasos; degradan H₂O₂</td></tr></table>
+</section>
+<section class="col" style="flex:.85"><section class="panel">
+  <div class="ph"><span class="n">4</span>Eucariota frente a procariota</div>
+  <table><tr><th></th><th>Eucariota</th><th>Procariota</th></tr><tr><td class="k">Núcleo</td><td>Con envoltura</td><td>Nucleoide</td></tr><tr><td class="k">Organelos</td><td>Membranosos</td><td>No</td></tr><tr><td class="k">Ribosomas</td><td>80S</td><td>70S</td></tr><tr><td class="k">Tamaño</td><td>10–100 µm</td><td>1–10 µm</td></tr></table>
+</section><section class="panel grow">
+  <div class="ph"><span class="n">5</span>Citoesqueleto</div>
+  <ul class="lst"><li><b>Microtúbulos</b> (tubulina): huso mitótico, cilios, transporte.</li><li><b>Actina</b>: forma, movimiento, contracción.</li><li><b>Intermedios</b>: resistencia mecánica (queratina).</li></ul>
+</section></section>
+</div>
+<section class="clin">
+  <div class="ph"><span class="n">6</span>Correlación clínica</div>
+  <div class="two" style="font-size:12.6px"><p style="margin:0"><b>Enfermedades lisosomales</b> (Gaucher, Tay-Sachs): falta una hidrolasa y el sustrato se acumula dentro del lisosoma.</p><p style="margin:0"><b>Enfermedades mitocondriales</b>: el ADN mitocondrial se hereda por vía materna; afectan sobre todo músculo y cerebro.</p></div>
+</section>
+<section class="panel">
+  <div class="ph"><span class="n">7</span>Resumen clave</div>
+  <div class="sum"><div>{{icon:Dna}}<span>Núcleo: <b>ADN</b>.</span></div><div>{{icon:Cube}}<span>RER: <b>proteínas</b>.</span></div><div>{{icon:Lightning}}<span>Mitocondria: <b>ATP</b>.</span></div><div>{{icon:Bug}}<span>Lisosoma: <b>digestión</b>.</span></div><div>{{icon:ArrowsClockwise}}<span>Microtúbulos: <b>huso</b>.</span></div></div>
+</section>
+<p class="foot">MedCore · Atlas · Célula · Ilustración: Mariana Ruiz (LadyofHats), dominio público, sin rótulos originales</p>
+</div></body></html>

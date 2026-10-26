@@ -47,3 +47,11 @@
 | ocho | [Embryo, 8 cells.jpg](https://commons.wikimedia.org/wiki/File:Embryo,_8_cells.jpg) | ekem, Courtesy: RWJMS IVF Program | Public domain |
 | blasto2 | [Human blastocyst.jpg](https://commons.wikimedia.org/wiki/File:Human_blastocyst.jpg) | Mr. J. Conaghan | Public domain |
 | kario | [Human male karyotpe high resolution.jpg](https://commons.wikimedia.org/wiki/File:Human_male_karyotpe_high_resolution.jpg) | Courtesy: National Human Genome Research Institute | Public domain |
+
+## Ilustraciones de Aparatos y sistemas y de la Célula (Wikimedia Commons)
+
+| Archivo | Fuente | Autor | Licencia |
+|---|---|---|---|
+| femenino.jpg | [Blausen 0400 FemaleReproSystem 02.png](https://commons.wikimedia.org/wiki/File:Blausen_0400_FemaleReproSystem_02.png) (recortada, sin rótulos) | BruceBlaus (Blausen Medical) | CC BY 3.0 |
+| celula.png | [Animal cell structure en.svg](https://commons.wikimedia.org/wiki/File:Animal_cell_structure_en.svg) (sin rótulos) | Mariana Ruiz (LadyofHats) | Dominio público |
+| membrana.png | [Cell membrane detailed diagram en.svg](https://commons.wikimedia.org/wiki/File:Cell_membrane_detailed_diagram_en.svg) (sin rótulos) | Mariana Ruiz (LadyofHats) | Dominio público |

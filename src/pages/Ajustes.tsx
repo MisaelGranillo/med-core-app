@@ -147,7 +147,7 @@ export function Ajustes() {
             ; las imágenes renderizadas a partir de ellos se comparten con la misma licencia.
           </p>
           <p className="text-[0.9375rem] text-zinc-700 leading-relaxed mt-3">
-            Algunas láminas de Histología incluyen fotografías y micrografías de{' '}
+            Algunas láminas incluyen fotografías, micrografías e ilustraciones de{' '}
             <a
               href="https://commons.wikimedia.org"
               target="_blank"

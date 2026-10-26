@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 10px; }
+.hero { flex: 1 1 auto !important; }
+.row.hero > section, section.hero { display: flex; flex-direction: column; }
+.row.hero > section > .callouts, section.hero > .callouts { margin: auto !important; }
+.row.hero > .col > .grow { flex: 1; }
+.page > .foot { margin-top: 0; }
+.lst { margin: 0; padding-left: 16px; font-size: 12.8px; line-height: 1.4; }
+.lst li { margin: 0 0 3px; }
+.lst li { margin: 0 0 2px; }
+table td { font-size: 12.4px; padding: 6px 7px; }
+th { font-size: 10.5px; }
+.card .t { font-size: 13px; } .card .d { font-size: 12px; }
+.sum div { font-size: 12px; }
+.page > section, .page > div.row { }
+.ph { font-size: 15px; }
+.steps { display: flex; align-items: stretch; gap: 4px; }
+.steps div { flex: 1; background: #f6f8fc; border-radius: 7px; padding: 8px 9px; font-size: 12px; }
+.steps b { display: block; font-size: 13px; color: var(--navy); }
+.steps span.ar { flex: 0 0 auto; background: none; padding: 0; align-self: center; color: var(--red); font-weight: 800; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.cap { font-size: 9.6px; color: var(--muted); margin: 0; text-align: center; }
+</style>
+</head><body><div class="page">
+<header>
+  <p class="eyebrow">MedCore — Atlas de Aparatos y Sistemas</p>
+  <h1>Aparato Urinario</h1>
+  <p class="tag">Dos riñones que filtran 180 L al día y devuelven casi todo a la sangre.</p>
+</header>
+<section class="panel hero">
+  <div class="ph"><span class="n">1</span>Riñones y vías urinarias <small>— vista anterior · modelo 3D</small></div>
+  <div style="display:flex;gap:14px;align-items:center"><div style="flex:0 0 560px"><script type="auto3d">{"img": "ana3d/uri-ant.png", "height": 620, "cw": 560, "gap": 44, "labels": {"sup": ["Glándula suprarrenal", ""], "rid": ["Riñón", "T12–L3 · retroperitoneal"], "pel": ["Pelvis renal", ""], "ao": ["Aorta abdominal", ""], "vci": ["Vena cava inferior", ""], "ure": ["Uréter", "≈ 25–30 cm"], "vej": ["Vejiga", ""], "uret": ["Uretra", ""]}, "side": {"sup": "left", "rid": "left", "pel": "left", "ao": "left", "vci": "left", "ure": "left", "vej": "left", "uret": "left"}, "L": 160}</script></div><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:8px;justify-content:center"><div><div class="sh">La nefrona</div><ul class="lst"><li><b>Corpúsculo</b> (glomérulo + cápsula de Bowman): filtra el plasma.</li><li><b>Túbulo proximal</b>: reabsorbe ≈ 65 % del Na⁺ y del agua, toda la glucosa y los aminoácidos.</li><li><b>Asa de Henle</b>: crea el gradiente para concentrar la orina.</li><li><b>Distal y colector</b>: ajuste fino; aldosterona (Na⁺) y ADH (agua).</li><li>≈ 1 millón de nefronas por riñón.</li></ul></div><div><div class="sh">Cifras</div><table><tr><td class="k">Flujo renal</td><td>≈ 20–25 % del gasto cardiaco</td></tr><tr><td class="k">Filtración glomerular</td><td>≈ 125 mL/min (≈ 180 L/día)</td></tr><tr><td class="k">Orina</td><td>≈ 1–2 L/día</td></tr></table></div></div></div>
+</section>
+<section class="panel">
+  <div class="ph"><span class="n">2</span>Sistema renina-angiotensina-aldosterona</div>
+  <div class="steps"><div><b>↓ Presión o Na⁺</b>La detecta el aparato yuxtaglomerular</div><span class="ar">→</span><div><b>Renina</b>Angiotensinógeno → angiotensina I</div><span class="ar">→</span><div><b>ECA (pulmón)</b>Angiotensina I → II</div><span class="ar">→</span><div><b>Angiotensina II</b>Vasoconstricción, sed, ADH</div><span class="ar">→</span><div><b>Aldosterona</b>Reabsorbe Na⁺ y agua; excreta K⁺</div></div>
+</section>
+<div class="row">
+<section class="panel" style="flex:1">
+  <div class="ph"><span class="n">3</span>Funciones del riñón</div>
+  <ul class="lst"><li>Excreta urea, creatinina y fármacos.</li><li>Regula agua, electrolitos y equilibrio ácido-base.</li><li>Endocrino: <b>eritropoyetina</b>, <b>calcitriol</b> y renina.</li><li>Gluconeogénesis en el ayuno prolongado.</li></ul>
+</section>
+<section class="clin" style="flex:1">
+  <div class="ph"><span class="n">4</span>Correlación clínica</div>
+  <p style="font-size:12.6px">Los <b>IECA</b> y los <b>ARA-II</b> bajan la presión bloqueando este sistema.</p><p style="font-size:12.6px;margin:0">Un <b>cálculo</b> se atora en los estrechamientos del uréter: unión pieloureteral, cruce de los vasos ilíacos y entrada a la vejiga.</p>
+</section>
+</div>
+<section class="panel">
+  <div class="ph"><span class="n">5</span>Resumen clave</div>
+  <div class="sum"><div>{{icon:Drop}}<span>FG ≈ <b>125 mL/min</b>.</span></div><div>{{icon:Target}}<span>Proximal: <b>65 %</b> del Na⁺.</span></div><div>{{icon:Key}}<span>ADH → <b>agua</b>.</span></div><div>{{icon:Lightning}}<span>Angiotensina II: <b>vasoconstricción</b>.</span></div><div>{{icon:Heartbeat}}<span>EPO y <b>calcitriol</b>.</span></div></div>
+</section>
+<p class="foot">MedCore · Atlas · Panorama · Modelos 3D: Z-Anatomy (CC BY-SA 4.0)</p>
+</div></body></html>

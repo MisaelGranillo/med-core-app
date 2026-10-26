@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 10px; }
+.hero { flex: 1 1 auto !important; }
+.row.hero > section, section.hero { display: flex; flex-direction: column; }
+.row.hero > section > .callouts, section.hero > .callouts { margin: auto !important; }
+.row.hero > .col > .grow { flex: 1; }
+.page > .foot { margin-top: 0; }
+.lst { margin: 0; padding-left: 16px; font-size: 12.8px; line-height: 1.4; }
+.lst li { margin: 0 0 3px; }
+.lst li { margin: 0 0 2px; }
+table td { font-size: 12.4px; padding: 6px 7px; }
+th { font-size: 10.5px; }
+.card .t { font-size: 13px; } .card .d { font-size: 12px; }
+.sum div { font-size: 12px; }
+.page > section, .page > div.row { }
+.ph { font-size: 15px; }
+.steps { display: flex; align-items: stretch; gap: 4px; }
+.steps div { flex: 1; background: #f6f8fc; border-radius: 7px; padding: 8px 9px; font-size: 12px; }
+.steps b { display: block; font-size: 13px; color: var(--navy); }
+.steps span.ar { flex: 0 0 auto; background: none; padding: 0; align-self: center; color: var(--red); font-weight: 800; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.cap { font-size: 9.6px; color: var(--muted); margin: 0; text-align: center; }
+</style>
+</head><body><div class="page">
+<header>
+  <p class="eyebrow">MedCore — Atlas de Aparatos y Sistemas</p>
+  <h1>Sistema Nervioso</h1>
+  <p class="tag">Cada región tiene su tarea: por eso la clínica localiza la lesión.</p>
+</header>
+<section class="panel hero">
+  <div class="ph"><span class="n">1</span>Lóbulos del hemisferio <small>— vista lateral · modelo 3D</small></div>
+  <div style="display:flex;gap:14px;align-items:center"><div style="flex:0 0 600px"><script type="auto3d">{"img": "ana3d/ner-lat.png", "height": 400, "cw": 600, "gap": 36, "labels": {"pos": ["Giro poscentral", "somatosensorial"], "pre": ["Giro precentral", "motor primario"], "fr": ["Frontal", ""], "pa": ["Parietal", ""], "oc": ["Occipital", ""], "te": ["Temporal", ""], "tr": ["Tronco encefálico", ""], "cb": ["Cerebelo", ""]}, "side": {"pos": "left", "pre": "left", "fr": "left", "pa": "left", "oc": "left", "te": "left", "tr": "left", "cb": "left"}, "L": 145}</script></div><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:8px;justify-content:center"><div><div class="sh">Qué hace cada lóbulo</div><table><tr><td class="k">Frontal</td><td>Movimiento, lenguaje expresivo (Broca), planeación</td></tr><tr><td class="k">Parietal</td><td>Sensibilidad, orientación espacial</td></tr><tr><td class="k">Temporal</td><td>Audición, comprensión (Wernicke), memoria</td></tr><tr><td class="k">Occipital</td><td>Visión</td></tr><tr><td class="k">Cerebelo</td><td>Coordinación y equilibrio</td></tr></table></div></div></div>
+</section>
+<section class="panel hero">
+  <div class="ph"><span class="n">2</span>Cara medial <small>— corte sagital · modelo 3D</small></div>
+  <div style="display:flex;gap:14px;align-items:center"><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:8px;justify-content:center"><div><div class="sh">Sistema nervioso autónomo</div><table><tr><th></th><th>Simpático</th><th>Parasimpático</th></tr><tr><td class="k">Origen</td><td>T1–L2</td><td>III, VII, IX, X; S2–S4</td></tr><tr><td class="k">Posganglionar</td><td>Noradrenalina</td><td>Acetilcolina</td></tr><tr><td class="k">Efecto</td><td>Lucha o huida</td><td>Reposo y digestión</td></tr></table></div><div><div class="sh">Tronco e hipotálamo</div><ul class="lst"><li>Tronco: centros respiratorio y cardiovascular; pares III–XII.</li><li>Hipotálamo: temperatura, hambre, sed; controla la hipófisis.</li></ul></div></div><div style="flex:0 0 600px"><script type="auto3d">{"img": "ana3d/ner-med.png", "height": 400, "cw": 600, "gap": 30, "labels": {"cin": ["Giro del cíngulo", ""], "cc": ["Cuerpo calloso", ""], "ta": ["Tálamo", ""], "pin": ["Epífisis (pineal)", ""], "hy": ["Hipotálamo", ""], "hip": ["Hipófisis", ""], "mes": ["Mesencéfalo", ""], "pon": ["Puente", ""], "cb": ["Cerebelo", ""], "bul": ["Bulbo raquídeo", ""]}, "side": {"cin": "right", "cc": "right", "ta": "right", "pin": "right", "hy": "right", "hip": "right", "mes": "right", "pon": "right", "cb": "right", "bul": "right"}, "L": 0}</script></div></div>
+</section>
+<section class="clin">
+  <div class="ph"><span class="n">3</span>Correlación clínica</div>
+  <div class="two" style="font-size:12.6px"><p style="margin:0"><b>EVC de la arteria cerebral media izquierda</b>: debilidad de cara y brazo derechos y, por estar el lenguaje en ese hemisferio en la mayoría, afasia.</p><p style="margin:0"><b>Lesión cerebelosa</b>: ataxia del mismo lado, temblor de intención y marcha inestable.</p></div>
+</section>
+<section class="panel">
+  <div class="ph"><span class="n">4</span>Resumen clave</div>
+  <div class="sum"><div>{{icon:Brain}}<span>Precentral: <b>motor</b>.</span></div><div>{{icon:Target}}<span>Poscentral: <b>sensitivo</b>.</span></div><div>{{icon:Eye}}<span>Occipital: <b>visión</b>.</span></div><div>{{icon:Scales}}<span>Cerebelo: <b>coordinación</b>.</span></div><div>{{icon:Lightning}}<span>Simpático: <b>T1–L2</b>.</span></div></div>
+</section>
+<p class="foot">MedCore · Atlas · Panorama · Modelos 3D: Z-Anatomy (CC BY-SA 4.0)</p>
+</div></body></html>

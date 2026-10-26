@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 10px; }
+.hero { flex: 1 1 auto !important; }
+.row.hero > section, section.hero { display: flex; flex-direction: column; }
+.row.hero > section > .callouts, section.hero > .callouts { margin: auto !important; }
+.row.hero > .col > .grow { flex: 1; }
+.page > .foot { margin-top: 0; }
+.lst { margin: 0; padding-left: 16px; font-size: 12.8px; line-height: 1.4; }
+.lst li { margin: 0 0 3px; }
+.lst li { margin: 0 0 2px; }
+table td { font-size: 12.4px; padding: 6px 7px; }
+th { font-size: 10.5px; }
+.card .t { font-size: 13px; } .card .d { font-size: 12px; }
+.sum div { font-size: 12px; }
+.page > section, .page > div.row { }
+.ph { font-size: 15px; }
+.steps { display: flex; align-items: stretch; gap: 4px; }
+.steps div { flex: 1; background: #f6f8fc; border-radius: 7px; padding: 8px 9px; font-size: 12px; }
+.steps b { display: block; font-size: 13px; color: var(--navy); }
+.steps span.ar { flex: 0 0 auto; background: none; padding: 0; align-self: center; color: var(--red); font-weight: 800; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.cap { font-size: 9.6px; color: var(--muted); margin: 0; text-align: center; }
+</style>
+</head><body><div class="page">
+<header>
+  <p class="eyebrow">MedCore — Atlas de la Célula</p>
+  <h1>Membrana Celular</h1>
+  <p class="tag">Una bicapa fluida con proteínas que deciden qué entra y qué sale.</p>
+</header>
+<section class="panel hero">
+  <div class="ph"><span class="n">1</span>Modelo de mosaico fluido <small>— Singer y Nicolson, 1972 · ilustración</small></div>
+  <script type="auto3d">{"img": "fotos/membrana.png", "height": 300, "cw": 955, "gap": 26, "labels": {"can": ["Proteína de canal", ""], "col": ["Colesterol", ""], "cab": ["Cabeza hidrofílica", "fosfato"], "gll": ["Glucolípido", ""], "per": ["Proteína periférica", ""], "glp": ["Glucoproteína", "glucocáliz"], "pin": ["Proteína integral", ""], "col2": ["Colas hidrofóbicas", "ácidos grasos"], "hel": ["Proteína transmembrana", "hélice α"], "cit": ["Citoesqueleto", ""]}, "side": {"can": "left", "col": "left", "cab": "left", "gll": "left", "per": "left", "glp": "left", "pin": "left", "col2": "left", "hel": "left", "cit": "left"}, "L": 200}</script>
+</section>
+<div class="row">
+<section class="panel" style="flex:1">
+  <div class="ph"><span class="n">2</span>Componentes</div>
+  <table><tr><th>Componente</th><th>Función</th></tr><tr><td class="k">Fosfolípidos</td><td>Bicapa: cabezas al agua, colas hacia dentro</td></tr><tr><td class="k">Colesterol</td><td>Regula la fluidez</td></tr><tr><td class="k">Proteínas integrales</td><td>Canales, transportadores, receptores</td></tr><tr><td class="k">Proteínas periféricas</td><td>Señalización, anclaje al citoesqueleto</td></tr><tr><td class="k">Glucocáliz</td><td>Reconocimiento celular, grupos sanguíneos</td></tr></table>
+</section>
+<section class="panel" style="flex:1.1">
+  <div class="ph"><span class="n">3</span>Transporte</div>
+  <table><tr><th>Tipo</th><th>Energía</th><th>Ejemplo</th></tr><tr><td class="k">Difusión simple</td><td>No</td><td>O₂, CO₂, esteroides</td></tr><tr><td class="k">Difusión facilitada</td><td>No</td><td>GLUT, canales iónicos</td></tr><tr><td class="k">Ósmosis</td><td>No</td><td>Agua por acuaporinas</td></tr><tr><td class="k">Activo primario</td><td>ATP directo</td><td>Bomba Na⁺/K⁺: 3 Na⁺ fuera, 2 K⁺ dentro</td></tr><tr><td class="k">Activo secundario</td><td>Gradiente de Na⁺</td><td>SGLT1: Na⁺ y glucosa</td></tr></table>
+</section>
+</div>
+<div class="row">
+<section class="panel" style="flex:1">
+  <div class="ph"><span class="n">4</span>Gradientes que mantiene la membrana</div>
+  <table><tr><th>Ion</th><th>Fuera</th><th>Dentro</th></tr><tr><td class="k">Na⁺</td><td>≈ 142 mM</td><td>≈ 10–14 mM</td></tr><tr><td class="k">K⁺</td><td>≈ 4 mM</td><td>≈ 140 mM</td></tr><tr><td class="k">Ca²⁺</td><td>≈ 2.5 mM</td><td>≈ 0.0001 mM</td></tr><tr><td class="k">Cl⁻</td><td>≈ 105 mM</td><td>≈ 5–10 mM</td></tr></table><p style="font-size:12.2px;margin:6px 0 0">Potencial de reposo de la neurona: <b>≈ −70 mV</b> (dentro negativo).</p>
+</section>
+<section class="panel" style="flex:1">
+  <div class="ph"><span class="n">5</span>Transporte en vesículas</div>
+  <ul class="lst"><li><b>Fagocitosis</b>: partículas grandes (macrófagos, neutrófilos).</li><li><b>Pinocitosis</b>: líquido extracelular.</li><li><b>Endocitosis mediada por receptor</b>: vesículas con clatrina; así entra el LDL.</li><li><b>Exocitosis</b>: secreción de hormonas y neurotransmisores.</li></ul>
+</section>
+</div>
+<section class="clin">
+  <div class="ph"><span class="n">6</span>Correlación clínica</div>
+  <div class="two" style="font-size:12.6px"><p style="margin:0"><b>Fibrosis quística</b>: falla el canal de Cl⁻ CFTR; las secreciones se vuelven espesas en pulmón y páncreas.</p><p style="margin:0"><b>Hipercolesterolemia familiar</b>: falla el receptor de LDL; el colesterol no entra a las células y se acumula en la sangre.</p></div>
+</section>
+<section class="panel">
+  <div class="ph"><span class="n">7</span>Resumen clave</div>
+  <div class="sum"><div>{{icon:Drop}}<span>Bicapa <b>anfipática</b>.</span></div><div>{{icon:Gauge}}<span>Colesterol: <b>fluidez</b>.</span></div><div>{{icon:Lightning}}<span>Na⁺/K⁺: <b>3 fuera, 2 dentro</b>.</span></div><div>{{icon:Key}}<span>Facilitada: <b>sin ATP</b>.</span></div><div>{{icon:Lock}}<span>CFTR: canal de <b>Cl⁻</b>.</span></div></div>
+</section>
+<p class="foot">MedCore · Atlas · Célula · Ilustración: Mariana Ruiz (LadyofHats), dominio público, sin rótulos originales</p>
+</div></body></html>

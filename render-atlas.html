@@ -31,7 +31,7 @@ loader.load('/models/' + q.get('model'), (g) => {
   root.traverse((o) => {
     if (!o.isMesh) return
     const n = nameOf(o)
-    if ((show && !show.test(n)) || (hide && hide.test(n))) { o.visible = false; return }
+    if ((show && !show.test(n)) || (hide && hide.test(n))) { o.userData.__hid = true; o.material = new THREE.MeshBasicMaterial({ visible: false }); return }
     const hit = hl.find(([r]) => r.test(n))
     const bone = !/muscle|masseter|platysma|bucinator|aponeurosis|levator|depressor|orbicularis/i.test(n) && /incisor|canine|premolar|molar|tooth|bone|vertebra|sacrum|coccyx|scapula|clavicle|humerus|radius|ulna|femur|tibia|fibula|patella|carpal|metacarp|phalan|hip|rib|sternum|skull|mandible|maxill|frontal|parietal|occipital|temporal|sphenoid|ethmoid|zygomatic|nasal|lacrimal|palatine|vomer|concha|calcan|talus|navicular|cuboid|cuneiform|metatars|capitate|hamate|lunate|scaphoid|pisiform|triquetr|trapez(ium|oid)\.|atlas|axis/i.test(n)
     let mat
@@ -39,7 +39,7 @@ loader.load('/models/' + q.get('model'), (g) => {
     else if (bone) mat = new THREE.MeshStandardMaterial({ color: 0xeee3cc, roughness: 0.7 })
     else if (dim) mat = new THREE.MeshStandardMaterial({ color: 0xd9b3a8, roughness: 0.7, transparent: true, opacity: 0.35 })
     else mat = new THREE.MeshStandardMaterial({ color: /ligament|capsule|tendon|cartil|disc|bursa|sheath|aponeur|retinac/i.test(n) ? 0xd8d4c8 : /arter|vein|nerve/i.test(n) ? 0xffffff : 0xc98a7c, roughness: 0.65, transparent: /arter|vein|nerve/i.test(n), opacity: /arter|vein|nerve/i.test(n) ? 0 : 1 })
-    if (/arter|vein|nerve|bursa|fascia|plexus|cord of|trunk of|divisions of|sheath|septum|canal|triangle|ring|hiatus|opening|recess|overlay|fat pad|arch|network|tract|annulus|vessels|zona orbicularis|labrum/i.test(n)) { o.visible = false; return }
+    if (/arter|vein|nerve|bursa|fascia|plexus|cord of|trunk of|divisions of|sheath|septum|canal|triangle|ring|hiatus|opening|recess|overlay|fat pad|arch|network|tract|annulus|vessels|zona orbicularis|labrum/i.test(n)) { o.userData.__hid = true; o.material = new THREE.MeshBasicMaterial({ visible: false }); return }
     if (ghost && ghost.test(n)) { mat.transparent = true; mat.opacity = 0.28; mat.depthWrite = false }
     if (q.get('dbl') === '1' && !bone) mat.side = THREE.DoubleSide
     if (q.get('poff') && !bone) { mat.polygonOffset = true; mat.polygonOffsetFactor = -q.get('poff'); mat.polygonOffsetUnits = -q.get('poff') }
@@ -73,22 +73,22 @@ loader.load('/models/' + q.get('model'), (g) => {
   if (q.get('mirror') === '1') {
     root.updateMatrixWorld(true)
     const mid = new THREE.Box3(); const axial = new RegExp(q.get('midline') || 'frontal|occipital|sphenoid|ethmoid|vomer|mandible|sternum|vertebra|sacrum|coccyx', 'i')
-    root.traverse(o => { if (o.isMesh && o.visible && axial.test(nameOf(o))) mid.expandByObject(o) })
+    root.traverse(o => { if (o.isMesh && o.visible && !o.userData.__hid && axial.test(nameOf(o))) mid.expandByObject(o) })
     const x0 = mid.getCenter(new THREE.Vector3()).x
     const R = new THREE.Matrix4().makeTranslation(x0, 0, 0).multiply(new THREE.Matrix4().makeScale(-1, 1, 1)).multiply(new THREE.Matrix4().makeTranslation(-x0, 0, 0))
     const add = []
-    root.traverse(o => { if (o.isMesh && o.visible && /\.r\d*\.?$/i.test(nameOf(o).trim()) || (q.get('mirrorall') && new RegExp(q.get('mirrorall'), 'i').test(nameOf(o)))) add.push(o) })
+    root.traverse(o => { if (o.isMesh && o.visible && !o.userData.__hid && /\.r\d*\.?$/i.test(nameOf(o).trim()) || (q.get('mirrorall') && new RegExp(q.get('mirrorall'), 'i').test(nameOf(o)))) add.push(o) })
     const nom = q.get('nomirror') ? new RegExp(q.get('nomirror'), 'i') : null, only = q.get('mirroronly') ? new RegExp(q.get('mirroronly'), 'i') : null
     for (const o of add) { if (nom && nom.test(nameOf(o))) continue; const c = new THREE.Mesh(o.geometry, o.material); c.name = o.name; c.userData = { name: nameOf(o).replace(/\.r(\d*)\.?$/, '.l$1') }; c.matrixAutoUpdate = false; c.matrix.copy(R).multiply(o.matrixWorld); scene.add(c); c.updateMatrixWorld(true); box.expandByObject(c); if (only && only.test(nameOf(o))) o.visible = false }
   }
   const focus = q.get('focus') ? new RegExp(q.get('focus'), 'i') : null
-  const fb = new THREE.Box3(); if (focus) scene.traverse(o => { if (o.isMesh && o.visible && focus.test(nameOf(o))) fb.expandByObject(o) })
+  const fb = new THREE.Box3(); if (focus) scene.traverse(o => { if (o.isMesh && o.visible && !o.userData.__hid && focus.test(nameOf(o))) fb.expandByObject(o) })
   const b = focus && !fb.isEmpty() ? fb : box
   let c = b.getCenter(new THREE.Vector3()), s = b.getSize(new THREE.Vector3())
   // joint=A~B: centra en el punto de contacto entre las mallas A y B; jr = radio relativo al tamaño de A
   if (q.get('joint')) {
     const [ra, rb] = q.get('joint').split('~').map(x => new RegExp(x, 'i'))
-    const samp = (re) => { const out = []; scene.traverse(o => { if (!o.isMesh || !o.visible || !re.test(nameOf(o))) return
+    const samp = (re) => { const out = []; scene.traverse(o => { if (!o.isMesh || !o.visible || o.userData.__hid || !re.test(nameOf(o))) return
       const pos = o.geometry.attributes.position, st = Math.max(1, Math.floor(pos.count / 2500))
       for (let i = 0; i < pos.count; i += st) out.push(new THREE.Vector3().fromBufferAttribute(pos, i).applyMatrix4(o.matrixWorld)) }); return out }
     const A = samp(ra), B = samp(rb); let best = Infinity, pa, pb
@@ -99,7 +99,8 @@ loader.load('/models/' + q.get('model'), (g) => {
   // clip=1: corte sagital en la línea media del foco (se ve la cara de corte desde +x)
   if (q.get('clip')) {
     renderer.localClippingEnabled = true
-    const pl = new THREE.Plane(new THREE.Vector3(-1, 0, 0), c.x + (+q.get('clipoff') || 0))
+    const ax = q.get('clip') === 'z' ? 'z' : 'x'; const nrm = ax === 'z' ? new THREE.Vector3(0, 0, -1) : new THREE.Vector3(-1, 0, 0)
+    const pl = new THREE.Plane(nrm, c[ax] + (+q.get('clipoff') || 0))
     scene.traverse(o => { if (o.isMesh && o.material) { o.material.clippingPlanes = [pl]; o.material.side = THREE.DoubleSide } })
   }
   const views = { anterior: [0, 0, 1], posterior: [0, 0, -1], lateral: [1, 0, 0], medial: [-1, 0, 0], superior: [0, 1, 0.0001], inferior: [0, -1, 0.0001], 'antlat': [0.6, 0, 0.8], 'postlat': [0.6, 0, -0.8] }
@@ -115,7 +116,7 @@ loader.load('/models/' + q.get('model'), (g) => {
   for (const spec of (q.get('pts') || '').split(';').filter(Boolean)) {
     const [k, rx] = spec.split('~'); const re = new RegExp(rx, 'i'); let sx = 0, sy = 0, nn = 0
     scene.traverse((o) => {
-      if (!o.isMesh || !o.visible || !re.test(nameOf(o))) return
+      if (!o.isMesh || !o.visible || o.userData.__hid || !re.test(nameOf(o))) return
       const pos = o.geometry.attributes.position, v = new THREE.Vector3(), step = Math.max(1, Math.floor(pos.count / 4000))
       for (let i = 0; i < pos.count; i += step) { v.fromBufferAttribute(pos, i).applyMatrix4(o.matrixWorld).project(cam); sx += (v.x + 1) / 2 * W; sy += (1 - v.y) / 2 * H; nn++ }
     })

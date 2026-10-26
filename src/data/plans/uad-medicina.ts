@@ -377,10 +377,10 @@ export const uadMedicina: Plan = {
               { title: 'Planeación — Bioquímica I (2025-1)', file: 'Bioquimica I - Planeacion.pdf', kind: 'Programa' },
             ],
             recursos: [
-              { label: 'Atlas MedCore — Introducción a la bioquímica', url: '/atlas/introduccion-bioquimica' },
+              { label: 'Atlas MedCore — Glúcidos', url: '/atlas/bioquimica-glucidos' },
               { label: 'Atlas MedCore — Bioenergética', url: '/atlas/bioenergetica' },
-              { label: 'Atlas MedCore — Proteínas y enzimas', url: '/atlas/proteinas-enzimas' },
-              { label: 'Atlas MedCore — Macromoléculas: ADN y ARN', url: '/atlas/macromoleculas-adn-arn' },
+              { label: 'Atlas MedCore — Aminoácidos y proteínas', url: '/atlas/bioquimica-proteinas' },
+              { label: 'Atlas MedCore — Replicación y código genético', url: '/atlas/bioquimica-replicacion-codigo' },
               { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },
               { label: 'OVID®', url: 'https://www.ovid.com/' },
             ],
