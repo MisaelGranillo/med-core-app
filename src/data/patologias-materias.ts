@@ -166,10 +166,12 @@ const INFARTO: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-lipidos-funcion-esteroides', sectionId: 'bfe-5', label: 'Colesterol y esteroidogénesis', porQue: 'El colesterol que forma la placa de ateroma.' },
     { materia: 'Histología', topicId: 'histologia-medula-hematopoyesis', sectionId: 'hmed-2', label: 'Hemostasia', porQue: 'Adhesión y agregación plaquetaria: el trombo que ocluye la coronaria.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-atp-transferencia-fosfato', sectionId: 'bft-4', label: 'Carga energética', porQue: 'Qué le pasa a la célula cuando la isquemia agota el ATP.' },
+    { materia: 'Histología', topicId: 'histologia-introduccion', sectionId: 'hint-3', label: 'Capacidad regenerativa por tejido', porQue: 'Los cardiomiocitos no se dividen: el músculo muerto se reemplaza por cicatriz fibrosa.' },
   ],
   atlas: [
     { id: 'bioquimica-biomarcadores', title: 'Biomarcadores enzimáticos' },
     { id: 'bioquimica-lipidos', title: 'Lípidos' },
+    { id: 'histologia-introduccion', title: 'Introducción a la histología' },
   ],
   caso: {
     titulo: 'Caso clínico',
@@ -342,6 +344,7 @@ const CETOACIDOSIS: Patologia = {
     { id: 'bioquimica-hormonas', title: 'Hormonas y receptores' },
     { id: 'bioquimica-acido-base', title: 'Equilibrio ácido-base' },
     { id: 'bioquimica-glucidos', title: 'Glúcidos' },
+    { id: 'bioenergetica', title: 'Bioenergética y ATP' },
   ],
   caso: {
     titulo: 'Caso clínico',
@@ -652,11 +655,14 @@ const DOWN: Patologia = {
     { materia: 'Genética', topicId: 'genetica-gametogenesis', sectionId: 'ggam-2', label: 'Ovogénesis', porQue: 'Por qué el ovocito pasa años detenido en la meiosis I.' },
     { materia: 'Genética', topicId: 'genetica-cromosomas-cariotipo', sectionId: 'gcro-5', label: 'Cariotipo humano', porQue: 'El estudio que confirma el diagnóstico.' },
     { materia: 'Histología', topicId: 'histologia-medula-hematopoyesis', sectionId: 'hmed-6', label: 'Correlación clínica: leucemia y otras alteraciones', porQue: 'El mayor riesgo de leucemia en el síndrome de Down.' },
+    { materia: 'Embriología', topicId: 'embriologia-cromosomas-division', sectionId: 'ecd-4', label: 'Meiosis y no disyunción', porQue: 'Un par que no se separa en la meiosis I materna deja un gameto con dos cromosomas 21.' },
+    { materia: 'Embriología', topicId: 'embriologia-ovogenesis', sectionId: 'eov-1', label: 'Ovogénesis antes del nacimiento', porQue: 'El ovocito pasa décadas detenido en profase I: por eso el riesgo crece con la edad materna.' },
   ],
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },
     { id: 'genetica-cromosomas-cariotipo', title: 'Cromosomas, cariotipo y bandeo' },
     { id: 'genetica-gametogenesis', title: 'Gametogénesis y fecundación' },
+    { id: 'embriologia-desarrollo-temprano', title: 'Desarrollo temprano' },
   ],
   caso: {
     titulo: 'Caso clínico',
@@ -1058,11 +1064,13 @@ const TURNER: Patologia = {
     { materia: 'Genética', topicId: 'genetica-cromosomas-herencia', sectionId: 'gher-5', label: 'Bandeo cromosómico y nomenclatura del locus', porQue: 'El bandeo G con el que se hace el cariotipo.' },
     { materia: 'Histología', topicId: 'histologia-hueso', sectionId: 'hhue-7', label: 'Remodelación y regulación', porQue: 'Sin estrógenos se pierde masa ósea.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-hipofisis-pancreas', sectionId: 'bhe-1', label: 'Hipotálamo e hipófisis', porQue: 'La FSH que sube cuando el ovario no responde.' },
+    { materia: 'Embriología', topicId: 'embriologia-cromosomas-division', sectionId: 'ecd-2', label: 'Número de cromosomas', porQue: 'Euploidía y aneuploidía: 45,X es la única monosomía completa compatible con la vida.' },
   ],
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },
     { id: 'genetica-desarrollo', title: 'Desarrollo embrionario y sexual' },
     { id: 'genetica-cromosomas-cariotipo', title: 'Cromosomas, cariotipo y bandeo' },
+    { id: 'embriologia-desarrollo-temprano', title: 'Desarrollo temprano' },
   ],
   caso: {
     titulo: 'Caso clínico',

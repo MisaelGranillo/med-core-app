@@ -790,11 +790,13 @@ const KLINEFELTER: Patologia = {
     { materia: 'Genética', topicId: 'genetica-gametogenesis', sectionId: 'ggam-3', label: 'Espermatogénesis y espermiogénesis', porQue: 'Lo que falla en el testículo.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-lipidos-funcion-esteroides', sectionId: 'bfe-6', label: 'Hormonas esteroideas: función, deficiencia y exceso', porQue: 'La deficiencia de testosterona.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-hipofisis-pancreas', sectionId: 'bhe-1', label: 'Hipotálamo e hipófisis', porQue: 'La LH y la FSH que suben cuando el testículo no responde.' },
+    { materia: 'Embriología', topicId: 'embriologia-cromosomas-division', sectionId: 'ecd-4', label: 'Meiosis y no disyunción', porQue: 'El cromosoma X adicional procede de una no disyunción en la meiosis materna o paterna.' },
   ],
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },
     { id: 'genetica-cromosomas-cariotipo', title: 'Cromosomas, cariotipo y bandeo' },
     { id: 'genetica-gametogenesis', title: 'Gametogénesis y fecundación' },
+    { id: 'embriologia-desarrollo-temprano', title: 'Desarrollo temprano' },
   ],
   caso: {
     titulo: 'Caso clínico',
@@ -1460,10 +1462,12 @@ const QUEMADURAS: Patologia = {
     { materia: 'Histología', topicId: 'histologia-epitelial', sectionId: 'hepi-8', label: 'Nutrición del epitelio y glándulas', porQue: 'El epitelio es avascular y se nutre por difusión.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-presion-osmotica-oncotica', sectionId: 'bpo-7', label: 'Fuerzas de Starling', porQue: 'La fuga de plasma y el edema del paciente quemado.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-presion-osmotica-oncotica', sectionId: 'bpo-8', label: 'Cristaloides, coloides y tonicidad', porQue: 'Las soluciones de la reanimación.' },
+    { materia: 'Histología', topicId: 'histologia-introduccion', sectionId: 'hint-3', label: 'Capacidad regenerativa por tejido', porQue: 'El epitelio regenera: las quemaduras superficiales cierran solas; las profundas dejan cicatriz.' },
   ],
   atlas: [
     { id: 'histologia-piel', title: 'La piel' },
     { id: 'histologia-epitelio', title: 'Tejido epitelial' },
+    { id: 'histologia-introduccion', title: 'Introducción a la histología' },
   ],
   caso: {
     titulo: 'Caso clínico',

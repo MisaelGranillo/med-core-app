@@ -347,10 +347,13 @@ const DM2: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-polisacaridos-fibra', sectionId: 'bpf-5', label: 'Glucógeno: la reserva animal', porQue: 'La insulina estimula su síntesis en hígado y músculo.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-presion-osmotica-oncotica', sectionId: 'bpo-2', label: 'Estados clínicos hiper e hipoosmolares', porQue: 'La glucosa muy alta eleva la osmolaridad del plasma.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-compuestos-alta-energia', sectionId: 'bce-5', label: 'Ejercicio, AMPK y GLUT4', porQue: 'Por qué el ejercicio hace entrar glucosa al músculo aunque haya resistencia a la insulina.' },
+    { materia: 'Medicina Humanística', topicId: 'humanistica-estilos-vida-cronicas', sectionId: 'hev-2', label: 'Diabetes tipo 2 y medicina del estilo de vida', porQue: 'Los seis pilares del estilo de vida y la definición de remisión.' },
   ],
   atlas: [
     { id: 'bioquimica-hormonas', title: 'Hormonas y receptores' },
     { id: 'bioquimica-glucidos', title: 'Glúcidos' },
+    { id: 'bioenergetica', title: 'Bioenergética y ATP' },
+    { id: 'medicina-humanistica', title: 'Medicina Humanística' },
   ],
   caso: {
     titulo: 'Caso clínico',

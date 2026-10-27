@@ -13,7 +13,7 @@ import { FICHAS_MATERIAS_2 } from './patologias-materias-2'
 import { FICHAS_MATERIAS_3 } from './patologias-materias-3'
 import { FICHAS_MATERIAS_4 } from './patologias-materias-4'
 
-export type PatoMateria = 'Bioquímica' | 'Genética' | 'Histología' | 'Anatomía'
+export type PatoMateria = 'Bioquímica' | 'Genética' | 'Histología' | 'Anatomía' | 'Embriología' | 'Medicina Humanística'
 
 export interface PatoBase {
   materia: PatoMateria
@@ -531,11 +531,13 @@ const DESHIDRATACION: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-equilibrio-acido-base', sectionId: 'bab-5', label: 'Los cuatro trastornos ácido-base', porQue: 'Diarrea → acidosis metabólica; vómito → alcalosis metabólica.' },
     { materia: 'Histología', topicId: 'histologia-sangre', sectionId: 'hsan-2', label: 'Plasma: composición', porQue: 'La hemoconcentración es menos plasma para los mismos eritrocitos.' },
     { materia: 'Histología', topicId: 'histologia-biometria-hematica', sectionId: 'hbh-2', label: 'Valores de referencia y su significado', porQue: 'El hematocrito alto de un paciente deshidratado.' },
+    { materia: 'Medicina Humanística', topicId: 'humanistica-sindromes-filiacion-cultural', sectionId: 'hsf-4', label: 'Susto y caída de mollera', porQue: 'La «mollera caída» que describen las familias es la fontanela hundida de la deshidratación.' },
   ],
   atlas: [
     { id: 'agua-electrolitos-osmolaridad', title: 'Agua, electrolitos y osmolaridad' },
     { id: 'bioquimica-acido-base', title: 'Equilibrio ácido-base' },
     { id: 'histologia-sangre', title: 'Sangre y elementos formes' },
+    { id: 'medicina-humanistica', title: 'Medicina Humanística' },
   ],
   caso: {
     titulo: 'Caso clínico',

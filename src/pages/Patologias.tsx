@@ -14,7 +14,7 @@ import { BlockRenderer } from '../components/SectionPanel'
 import { atlasThumb } from './atlasShared'
 import type { Question } from '../types'
 
-const MATERIAS: PatoMateria[] = ['Bioquímica', 'Genética', 'Histología', 'Anatomía']
+const MATERIAS: PatoMateria[] = ['Bioquímica', 'Genética', 'Histología', 'Anatomía', 'Embriología', 'Medicina Humanística']
 const materiasDe = (p: Patologia) => MATERIAS.filter((m) => p.bases.some((b) => b.materia === m))
 const topicTitle = (id: string) => topicIndex.find((t) => t.id === id)?.title ?? id
 

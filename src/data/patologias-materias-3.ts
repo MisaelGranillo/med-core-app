@@ -512,10 +512,12 @@ const TRISOMIAS: Patologia = {
     { materia: 'Genética', topicId: 'genetica-citogenetica-clinica', sectionId: 'gcit-3', label: 'Anomalías estructurales', porQue: 'La translocación robertsoniana.' },
     { materia: 'Genética', topicId: 'genetica-mitosis-meiosis', sectionId: 'gmm-4', label: 'Mitosis vs meiosis', porQue: 'La no disyunción.' },
     { materia: 'Genética', topicId: 'genetica-cromosomas-cariotipo', sectionId: 'gcro-4', label: 'Clasificación por el centrómero', porQue: 'El 13 es acrocéntrico y por eso participa en translocaciones robertsonianas.' },
+    { materia: 'Embriología', topicId: 'embriologia-cromosomas-division', sectionId: 'ecd-4', label: 'Meiosis y no disyunción', porQue: 'La no disyunción en la meiosis produce gametos con un cromosoma de más.' },
   ],
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },
     { id: 'genetica-cromosomas-cariotipo', title: 'Cromosomas, cariotipo y bandeo' },
+    { id: 'embriologia-desarrollo-temprano', title: 'Desarrollo temprano' },
   ],
   caso: {
     titulo: 'Caso clínico',
