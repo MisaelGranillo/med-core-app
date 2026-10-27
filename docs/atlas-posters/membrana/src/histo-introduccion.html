@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 8px; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.8px; line-height: 1.32; }
+.lst li { margin: 0 0 2px; }
+table td { font-size: 10.6px; padding: 3px 6px; }
+.four { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; }
+.tis { border-radius: 10px; overflow: hidden; border: 1px solid #e6e9f0; background: #fff; display: flex; flex-direction: column; }
+.tis .img { position: relative; }
+.tis .img img { width: 100%; aspect-ratio: 1.02; object-fit: cover; display: block; }
+.tis .img .mini { position: absolute; bottom: 6px; right: 6px; display: flex; gap: 4px; }
+.tis .img .mini > div { background: #fff; border-radius: 7px; padding: 3px 3px 1px; box-shadow: 0 1px 4px rgba(0,0,0,.25); }
+.tis .img .mini span { display: block; text-align: center; font-size: 9px; font-weight: 800; color: #13295b; }
+.tis .img .mini img { width: 60px; height: 60px; aspect-ratio: auto; border-radius: 5px; }
+.tis .hd { padding: 6px 9px 2px; font-weight: 800; font-size: 14px; }
+.tis .bd { padding: 0 9px 8px; font-size: 10.4px; line-height: 1.32; color: var(--ink); }
+.tis .bd p { margin: 0 0 3px; }
+.tis .k { font-weight: 700; color: var(--navy); }
+.meter { display: flex; gap: 3px; margin: 3px 0 2px; }
+.meter i { flex: 1; height: 7px; border-radius: 3px; background: #e6e9f0; }
+.badge { display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: .4px; border-radius: 9px; padding: 1px 7px; margin-left: 6px; vertical-align: 2px; }
+.steps { display: grid; grid-template-columns: repeat(6, 1fr); gap: 5px; }
+.steps div { background: #f6f8fc; border-radius: 7px; padding: 5px 6px; font-size: 9.8px; line-height: 1.25; text-align: center; }
+.steps b { display: block; color: var(--navy); font-size: 10.6px; }
+.map { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; }
+.map div { border-radius: 8px; padding: 6px 8px; font-size: 10px; line-height: 1.3; background: #eef7f2; }
+.map b { display: block; color: #1d6b49; font-size: 11px; margin-bottom: 2px; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Histología</p>
+  <h1>Introducción a la histología</h1>
+  <p class="tag">Histos (tejido) + logos (estudio): cuatro tejidos básicos forman todo el cuerpo.</p>
+</header>
+
+<section class="panel">
+  <div class="ph"><span class="n">1</span>Niveles de organización <small>— la histología une la anatomía (estructura) con la fisiología (función)</small></div>
+  <svg viewBox="0 0 980 92" style="width:100%;display:block">
+    <defs><marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2e7d5b"/></marker>
+    <marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#c2571a"/></marker></defs>
+    <g font-size="11.5" text-anchor="middle">
+      <g font-weight="800">
+        <path d="M10 18 h150 l18 22 l-18 22 h-150 l18 -22 z" fill="#e9f0fb"/><text x="94" y="45" fill="#1f4f9c">Célula</text>
+        <path d="M168 18 h150 l18 22 l-18 22 h-150 l18 -22 z" fill="#d9ecdf"/><text x="252" y="45" fill="#1d6b49">Tejido</text>
+        <path d="M326 18 h150 l18 22 l-18 22 h-150 l18 -22 z" fill="#f6e3d6"/><text x="410" y="45" fill="#c2571a">Órgano</text>
+        <path d="M484 18 h150 l18 22 l-18 22 h-150 l18 -22 z" fill="#f3dde3"/><text x="568" y="45" fill="#9b4d6a">Sistema</text>
+        <path d="M642 18 h150 l18 22 l-18 22 h-150 l18 -22 z" fill="#e5e1f2"/><text x="726" y="45" fill="#6a4c9c">Organismo</text>
+      </g>
+      <path d="M40 76 h740" stroke="#2e7d5b" stroke-width="1.6" marker-end="url(#a1)"/><text x="420" y="88" fill="#2e7d5b" font-size="10.5" font-weight="700">método INDUCTIVO: de lo particular a lo general (el de esta materia)</text>
+      <path d="M800 10 v0" />
+      <g text-anchor="start" font-size="10.3">
+        <text x="828" y="28" fill="#13295b" font-weight="800">Tejido</text>
+        <text x="828" y="42" fill="#4b5567">células semejantes +</text>
+        <text x="828" y="55" fill="#4b5567">matriz extracelular que</text>
+        <text x="828" y="68" fill="#4b5567">cumplen una función</text>
+      </g>
+    </g>
+  </svg>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">2</span>Los cuatro tejidos básicos</div>
+  <div class="four">
+    <div class="tis">
+      <div class="img"><img src="{{img:fotos/compuestas/sel/ep-estrat.jpg}}" alt=""></div>
+      <div class="hd" style="color:#1f4f9c">Epitelial<span class="badge" style="background:#e9f0fb;color:#1f4f9c">HISTOLOGÍA I</span></div>
+      <div class="bd">
+        <p>Células muy unidas, casi sin matriz, sobre una <span class="k">membrana basal</span>; sin vasos.</p>
+        <p><span class="k">Función:</span> reviste superficies y forma glándulas.</p>
+        <p><span class="k">Origen:</span> las tres capas germinales.</p>
+        <p><span class="k">Regeneración:</span> ALTA</p>
+        <div class="meter"><i style="background:#2e9d6b"></i><i style="background:#2e9d6b"></i><i style="background:#2e9d6b"></i><i style="background:#2e9d6b"></i></div>
+        <p style="color:var(--muted);font-size:9.6px">Foto: epitelio plano estratificado</p>
+      </div>
+    </div>
+    <div class="tis">
+      <div class="img"><img src="{{img:fotos/compuestas/sel/ct-laxo.jpg}}" alt=""></div>
+      <div class="hd" style="color:#1d6b49">Conectivo<span class="badge" style="background:#e3f2ea;color:#1d6b49">HISTOLOGÍA I</span></div>
+      <div class="bd">
+        <p>Pocas células dispersas en abundante <span class="k">matriz extracelular</span> (fibras + sustancia fundamental).</p>
+        <p><span class="k">Función:</span> sostiene y une. Incluye adiposo, cartílago, hueso, sangre y linfático.</p>
+        <p><span class="k">Origen:</span> mesodermo (mesénquima).</p>
+        <p><span class="k">Regeneración:</span> variable</p>
+        <div class="meter"><i style="background:#8bc34a"></i><i style="background:#8bc34a"></i><i style="background:#8bc34a"></i><i></i></div>
+        <p style="color:var(--muted);font-size:9.6px">Foto: conectivo laxo (areolar)</p>
+      </div>
+    </div>
+    <div class="tis">
+      <div class="img"><img src="{{img:fotos/tej/esqueletico.jpg}}" alt="">
+        <div class="mini"><div><img src="{{img:fotos/tej/cardiaco.jpg}}" alt=""><span>cardíaco</span></div><div><img src="{{img:fotos/tej/liso.jpg}}" alt=""><span>liso</span></div></div>
+      </div>
+      <div class="hd" style="color:#c8242c">Muscular<span class="badge" style="background:#fbe3e4;color:#c8242c">HISTOLOGÍA II</span></div>
+      <div class="bd">
+        <p>Células alargadas (fibras) con proteínas contráctiles. <span class="k">Esquelético</span> (estriado, voluntario), <span class="k">cardíaco</span> (estriado, discos intercalares) y <span class="k">liso</span>.</p>
+        <p><span class="k">Función:</span> genera movimiento.</p>
+        <p><span class="k">Origen:</span> mesodermo.</p>
+        <p><span class="k">Regeneración:</span> LIMITADA</p>
+        <div class="meter"><i style="background:#e8912e"></i><i style="background:#e8912e"></i><i></i><i></i></div>
+      </div>
+    </div>
+    <div class="tis">
+      <div class="img"><img src="{{img:fotos/tej/neurona.jpg}}" alt="" style="object-position:40% 50%"></div>
+      <div class="hd" style="color:#6a4c9c">Nervioso<span class="badge" style="background:#efe9f7;color:#6a4c9c">HISTOLOGÍA II</span></div>
+      <div class="bd">
+        <p><span class="k">Neuronas</span> (cuerpo, dendritas y axón) y células de <span class="k">glía</span> que las sostienen.</p>
+        <p><span class="k">Función:</span> recibe y transmite señales.</p>
+        <p><span class="k">Origen:</span> ectodermo (tubo y cresta neural).</p>
+        <p><span class="k">Regeneración:</span> MÍNIMA</p>
+        <div class="meter"><i style="background:#c8242c"></i><i></i><i></i><i></i></div>
+        <p style="color:var(--muted);font-size:9.6px">Foto: neurona motora de la médula espinal</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1.05">
+    <div class="ph"><span class="n">3</span>Capacidad de regeneración ★</div>
+    <svg viewBox="0 0 470 132" style="width:100%;display:block">
+      <g font-size="11">
+        <text x="0" y="20" font-weight="800" fill="#1f4f9c">Epitelial</text><rect x="90" y="8" width="300" height="16" rx="5" fill="#2e9d6b"/><text x="398" y="20" fill="#2e7d5b" font-weight="800">ALTA</text>
+        <text x="0" y="50" font-weight="800" fill="#1d6b49">Conectivo</text><rect x="90" y="38" width="210" height="16" rx="5" fill="#8bc34a"/><text x="308" y="50" fill="#5b8a1f" font-weight="800">VARIABLE</text>
+        <text x="0" y="80" font-weight="800" fill="#c8242c">Muscular</text><rect x="90" y="68" width="120" height="16" rx="5" fill="#e8912e"/><text x="218" y="80" fill="#c2571a" font-weight="800">LIMITADA</text>
+        <text x="0" y="110" font-weight="800" fill="#6a4c9c">Nervioso</text><rect x="90" y="98" width="40" height="16" rx="5" fill="#c8242c"/><text x="138" y="110" fill="#c8242c" font-weight="800">MÍNIMA</text>
+      </g>
+    </svg>
+    <p style="font-size:10.6px;margin:2px 0 0">Depende de que el tejido conserve células que se dividen. El epitelio tiene células madre en mitosis constante; los <b>cardiomiocitos</b> y las <b>neuronas maduras</b> ya no se dividen.</p>
+  </section>
+  <section class="clin" style="flex:.95">
+    <div class="ph"><span class="n">4</span>Correlación clínica</div>
+    <ul class="lst">
+      <li><b>Infarto de miocardio</b>: los cardiomiocitos muertos no se reponen; el hueco se llena de <b>cicatriz fibrosa</b> (conectivo) que no se contrae.</li>
+      <li><b>Evento vascular cerebral</b>: las neuronas perdidas no se reemplazan y la glía forma una cicatriz (gliosis): secuelas permanentes.</li>
+      <li><b>Piel y mucosas</b> cicatrizan rápido; por la misma división constante, la mayoría de los cánceres son <b>carcinomas</b> (de origen epitelial).</li>
+    </ul>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:1.1">
+    <div class="ph"><span class="n">5</span>Del tejido al diagnóstico: histopatología</div>
+    <div class="steps">
+      <div><b>Biopsia</b>muestra de tejido</div>
+      <div><b>Fijación</b>formol: detiene la autólisis</div>
+      <div><b>Inclusión</b>parafina</div>
+      <div><b>Corte</b>micrótomo, pocas micras</div>
+      <div><b>Tinción</b>H&amp;E: núcleos morados, citoplasma rosa</div>
+      <div><b>Diagnóstico</b>patrón benigno o maligno</div>
+    </div>
+    <p style="font-size:10.4px;margin:6px 0 0">La biopsia confirma lo que la clínica y la imagen solo sugieren: la histología es la base de la <b>anatomía patológica</b>.</p>
+  </section>
+  <section class="panel" style="flex:.9">
+    <div class="ph"><span class="n">6</span>Origen celular</div>
+    <p style="font-size:10.4px;margin:0 0 4px">Sopa primordial → <b>ARN</b> (primera molécula que se autorreplica) → <b>procariota</b> → <b>eucariota</b>.</p>
+    <table>
+      <tr><th></th><th>Procariota</th><th>Eucariota</th></tr>
+      <tr><td class="k">Tamaño</td><td>Pequeña</td><td>Más grande</td></tr>
+      <tr><td class="k">ADN</td><td>Nucleoide, sin envoltura</td><td>Núcleo con envoltura</td></tr>
+      <tr><td class="k">Organelos</td><td>Sin membranosos</td><td>Mitocondrias, RE, Golgi…</td></tr>
+    </table>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">7</span>Epitelial frente a conectivo <small>— los dos tejidos de Histología I</small></div>
+  <table>
+    <tr><th>Característica</th><th>Tejido epitelial</th><th>Tejido conectivo</th></tr>
+    <tr><td class="k">Células</td><td>Abundantes y muy juntas, con uniones (estrechas, adherentes, desmosomas)</td><td>Escasas y dispersas (fibroblastos, adipocitos, macrófagos, mastocitos…)</td></tr>
+    <tr><td class="k">Matriz extracelular</td><td>Casi nula</td><td>Abundante: fibras (colágeno, elásticas, reticulares) + sustancia fundamental</td></tr>
+    <tr><td class="k">Vasos sanguíneos</td><td>No tiene: se nutre por difusión desde el conectivo</td><td>Sí (excepto el cartílago)</td></tr>
+    <tr><td class="k">Polaridad</td><td>Dominio apical, lateral y basal sobre la membrana basal</td><td>No polarizado</td></tr>
+    <tr><td class="k">Ejemplos</td><td>Epidermis, mucosa intestinal, glándulas</td><td>Dermis, tendón, grasa, cartílago, hueso, sangre</td></tr>
+  </table>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">8</span>Mapa de Histología I en el Atlas</div>
+  <div class="map">
+    <div><b>Semana 1 · la célula y el microscopio</b>Microscopía y técnica histológica; tinciones; la célula.</div>
+    <div><b>Semana 2 · tejido epitelial</b>Clasificación, polaridad y uniones; glándulas; epitelios especializados; la piel.</div>
+    <div><b>Semana 3 · tejido conectivo</b>Matriz y células; variedades; adiposo, cartílago y hueso.</div>
+    <div><b>Semana 4 · sangre y linfoide</b>Elementos formes; órganos linfoides y hematopoyesis; biometría hemática.</div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Histología I (UAD) · Semana 1 · Micrografías: Berkshire Community College Bioscience Image Library (CC0); músculo liso: Juan Carlos Fonseca Mata (CC BY-SA 4.0) · diagramas esquemáticos</p>
+</div></body></html>
