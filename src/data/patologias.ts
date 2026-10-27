@@ -12,6 +12,7 @@ import { FICHAS_MATERIAS } from './patologias-materias'
 import { FICHAS_MATERIAS_2 } from './patologias-materias-2'
 import { FICHAS_MATERIAS_3 } from './patologias-materias-3'
 import { FICHAS_MATERIAS_4 } from './patologias-materias-4'
+import { FICHAS_MATERIAS_5 } from './patologias-materias-5'
 
 export type PatoMateria = 'Bioquímica' | 'Genética' | 'Histología' | 'Anatomía' | 'Embriología' | 'Medicina Humanística'
 
@@ -1041,7 +1042,7 @@ const CLAVICULA: Patologia = {
 }
 
 export const GUIA_CASO = GUIA
-export const FICHAS: Patologia[] = [DESHIDRATACION, HOMBRO, CLAVICULA, ...FICHAS_MATERIAS, ...FICHAS_MATERIAS_2, ...FICHAS_MATERIAS_3, ...FICHAS_MATERIAS_4]
+export const FICHAS: Patologia[] = [DESHIDRATACION, HOMBRO, CLAVICULA, ...FICHAS_MATERIAS, ...FICHAS_MATERIAS_2, ...FICHAS_MATERIAS_3, ...FICHAS_MATERIAS_4, ...FICHAS_MATERIAS_5]
 export const PATOLOGIAS: Patologia[] = [GUIA, ...FICHAS]
 
 export const patologiaById = (id: string) => PATOLOGIAS.find((p) => p.id === id)
