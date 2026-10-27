@@ -56,3 +56,4 @@
 | celula.png | [Animal cell structure en.svg](https://commons.wikimedia.org/wiki/File:Animal_cell_structure_en.svg) (sin rótulos) | Mariana Ruiz (LadyofHats) | Dominio público |
 | membrana.png | [Cell membrane detailed diagram en.svg](https://commons.wikimedia.org/wiki/File:Cell_membrane_detailed_diagram_en.svg) (sin rótulos) | Mariana Ruiz (LadyofHats) | Dominio público |
 | fildes.jpg | [The Doctor Luke Fildes crop.jpg](https://commons.wikimedia.org/wiki/File:The_Doctor_Luke_Fildes_crop.jpg) — *The Doctor* (1891), Tate | Luke Fildes | Dominio público |
+| graaf.jpg | [Graafian Follicle, Human Ovary (3595817584).jpg](https://commons.wikimedia.org/wiki/File:Graafian_Follicle,_Human_Ovary_(3595817584).jpg) | Ed Uthman | CC BY 2.0 |

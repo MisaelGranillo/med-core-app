@@ -17,7 +17,7 @@ export interface AtlasTopic {
   id: string
   title: string
   subtitle: string
-  category: 'anatomia' | 'bioquimica' | 'celular' | 'fisiologia' | 'histologia' | 'genetica' | 'humanistica' | 'panorama'
+  category: 'anatomia' | 'bioquimica' | 'celular' | 'fisiologia' | 'histologia' | 'genetica' | 'embriologia' | 'humanistica' | 'panorama'
   emoji: string
   imagePath: string
   colorKey: string
@@ -1385,6 +1385,24 @@ export const atlasTopics: AtlasTopic[] = [
       { id: 'gde-4', question: 'La hormona que hace regresar los conductos de Müller es la:', options: ['Testosterona', 'AMH', 'DHT', 'Estradiol'], correctIndex: 1, explanation: 'Las células de Sertoli producen AMH; la testosterona mantiene Wolff.', difficulty: 'medium' },
       { id: 'gde-5', question: '46,XY con testosterona normal y DHT baja sugiere déficit de:', options: ['21-hidroxilasa', 'AMH', '5α-reductasa', 'SRY'], correctIndex: 2, explanation: 'La 5α-reductasa convierte testosterona en DHT, que masculiniza los genitales externos.', difficulty: 'hard' },
       { id: 'gde-6', question: 'En la semana 6 del desarrollo aparecen:', options: ['Los radios digitales', 'Los dedos libres', 'Los arcos faríngeos', 'Las muescas entre dedos'], correctIndex: 0, explanation: '4 arcos + corazón · 5 cabeza · 6 radios · 7 muescas · 8 dedos libres.', difficulty: 'medium' },
+    ],
+  },
+  // ── Embriología I UAD · Semana 1 ─────────────────────────────────────
+  {
+    id: 'embriologia-desarrollo-temprano',
+    title: 'Desarrollo temprano',
+    subtitle: 'Primera semana (fecundación, segmentación, blastocisto, implantación), disco bilaminar, gastrulación y capas germinales, mitosis, meiosis, ovogénesis y folículo de Graaf',
+    category: 'embriologia',
+    emoji: '🌱',
+    imagePath: '/atlas/embriologia-desarrollo-temprano.webp',
+    colorKey: 'embriologia',
+    questions: [
+      { id: 'edt-a1', question: '¿Dónde ocurre con mayor frecuencia la fecundación?', options: ['Istmo', 'Útero', 'Ampolla de la trompa', 'Ovario'], correctIndex: 2, explanation: 'Después, el cigoto avanza por la trompa mientras se segmenta.', difficulty: 'easy' },
+      { id: 'edt-a2', question: '¿Alrededor de qué día se forma el blastocisto?', options: ['Día 1', 'Día 5', 'Día 14', 'Día 21'], correctIndex: 1, explanation: 'La mórula aparece hacia el día 3 y la implantación inicia entre los días 5 y 6.', difficulty: 'easy' },
+      { id: 'edt-a3', question: 'El disco bilaminar de la segunda semana está formado por:', options: ['Epiblasto e hipoblasto', 'Ectodermo y endodermo', 'Citotrofoblasto y sincitiotrofoblasto', 'Amnios y corion'], correctIndex: 0, explanation: 'El citotrofoblasto y el sincitiotrofoblasto son capas del trofoblasto.', difficulty: 'easy' },
+      { id: 'edt-a4', question: 'El sistema nervioso y la epidermis derivan del:', options: ['Mesodermo', 'Endodermo', 'Trofoblasto', 'Ectodermo'], correctIndex: 3, explanation: 'El mesodermo forma músculo, hueso y aparato urogenital; el endodermo, el revestimiento digestivo y respiratorio.', difficulty: 'easy' },
+      { id: 'edt-a5', question: '¿En qué subetapa de la profase I ocurre el entrecruzamiento?', options: ['Leptoteno', 'Paquiteno', 'Diploteno', 'Cigoteno'], correctIndex: 1, explanation: 'En el cigoteno se aparean los homólogos y en el diploteno quedan unidos por los quiasmas.', difficulty: 'medium' },
+      { id: 'edt-a6', question: '¿En qué fase se libera el ovocito en la ovulación?', options: ['Diploteno de la profase I', 'Anafase I', 'Metafase II', 'Telofase II'], correctIndex: 2, explanation: 'Completa la meiosis II solo si es fecundado; el ovocito primario se detiene en diploteno.', difficulty: 'medium' },
     ],
   },
   // ── Medicina Humanística UAD · Semanas 1, 3 y 4 ──────────────────────

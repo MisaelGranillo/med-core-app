@@ -581,6 +581,7 @@ export const uadMedicina: Plan = {
               { title: 'Planeación didáctica — Embriología I', file: 'Embriologia I - Planeacion.pdf', kind: 'Programa' },
             ],
             recursos: [
+              { label: 'Atlas MedCore — Desarrollo temprano', url: '/atlas/embriologia-desarrollo-temprano' },
               { label: 'Acland Anatomy', url: 'https://aclandanatomy.com/' },
               { label: 'Bates Visual Guide', url: 'https://batesvisualguide.com/' },
               { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },
