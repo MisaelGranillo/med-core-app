@@ -55,3 +55,4 @@
 | femenino.jpg | [Blausen 0400 FemaleReproSystem 02.png](https://commons.wikimedia.org/wiki/File:Blausen_0400_FemaleReproSystem_02.png) (recortada, sin rótulos) | BruceBlaus (Blausen Medical) | CC BY 3.0 |
 | celula.png | [Animal cell structure en.svg](https://commons.wikimedia.org/wiki/File:Animal_cell_structure_en.svg) (sin rótulos) | Mariana Ruiz (LadyofHats) | Dominio público |
 | membrana.png | [Cell membrane detailed diagram en.svg](https://commons.wikimedia.org/wiki/File:Cell_membrane_detailed_diagram_en.svg) (sin rótulos) | Mariana Ruiz (LadyofHats) | Dominio público |
+| fildes.jpg | [The Doctor Luke Fildes crop.jpg](https://commons.wikimedia.org/wiki/File:The_Doctor_Luke_Fildes_crop.jpg) — *The Doctor* (1891), Tate | Luke Fildes | Dominio público |

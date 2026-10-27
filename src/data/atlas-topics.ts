@@ -17,7 +17,7 @@ export interface AtlasTopic {
   id: string
   title: string
   subtitle: string
-  category: 'anatomia' | 'bioquimica' | 'celular' | 'fisiologia' | 'histologia' | 'genetica' | 'panorama'
+  category: 'anatomia' | 'bioquimica' | 'celular' | 'fisiologia' | 'histologia' | 'genetica' | 'humanistica' | 'panorama'
   emoji: string
   imagePath: string
   colorKey: string
@@ -1385,6 +1385,24 @@ export const atlasTopics: AtlasTopic[] = [
       { id: 'gde-4', question: 'La hormona que hace regresar los conductos de Müller es la:', options: ['Testosterona', 'AMH', 'DHT', 'Estradiol'], correctIndex: 1, explanation: 'Las células de Sertoli producen AMH; la testosterona mantiene Wolff.', difficulty: 'medium' },
       { id: 'gde-5', question: '46,XY con testosterona normal y DHT baja sugiere déficit de:', options: ['21-hidroxilasa', 'AMH', '5α-reductasa', 'SRY'], correctIndex: 2, explanation: 'La 5α-reductasa convierte testosterona en DHT, que masculiniza los genitales externos.', difficulty: 'hard' },
       { id: 'gde-6', question: 'En la semana 6 del desarrollo aparecen:', options: ['Los radios digitales', 'Los dedos libres', 'Los arcos faríngeos', 'Las muescas entre dedos'], correctIndex: 0, explanation: '4 arcos + corazón · 5 cabeza · 6 radios · 7 muescas · 8 dedos libres.', difficulty: 'medium' },
+    ],
+  },
+  // ── Medicina Humanística UAD · Semanas 1, 3 y 4 ──────────────────────
+  {
+    id: 'medicina-humanistica',
+    title: 'Medicina Humanística',
+    subtitle: 'Humanismo médico, modelo biopsicosocial, origen de la vida, hominización, relación médico-paciente, modelos de relación, proxémica, determinantes de la salud, estilo de vida y síndromes de filiación cultural',
+    category: 'humanistica',
+    emoji: '🤝',
+    imagePath: '/atlas/medicina-humanistica.webp',
+    colorKey: 'humanistica',
+    questions: [
+      { id: 'mhu-1', question: 'Llamar a un paciente «el de la cama 20» es un ejemplo de:', options: ['Tacto médico', 'Despersonalización', 'Alteridad', 'Modelo deliberativo'], correctIndex: 1, explanation: 'El paciente deja de ser reconocido como persona y se vuelve una cama o un expediente.', difficulty: 'easy' },
+      { id: 'mhu-2', question: '¿Qué obtuvieron Miller y Urey en 1953?', options: ['Una célula viva', 'Aminoácidos y otros compuestos orgánicos', 'ADN', 'Bacterias'], correctIndex: 1, explanation: 'Mostraron que las moléculas orgánicas pueden formarse de manera natural; no crearon vida.', difficulty: 'medium' },
+      { id: 'mhu-3', question: 'En el paradigma del Alter Tú, el médico:', options: ['Cosifica al paciente', 'Instituye un diálogo silencioso', 'Se reconoce como «el otro del otro»', 'Proyecta sus deseos en el paciente'], correctIndex: 2, explanation: 'El paciente es sujeto y la comunicación es intersubjetiva; las otras opciones describen el Alter Ego.', difficulty: 'medium' },
+      { id: 'mhu-4', question: 'Un paciente en coma corresponde al modelo de Szasz-Hollender:', options: ['Participación mutua', 'Orientación-cooperación', 'Deliberativo', 'Actividad-pasividad'], correctIndex: 3, explanation: 'El médico actúa por el paciente, que no puede responsabilizarse (prototipo madre-hijo).', difficulty: 'easy' },
+      { id: 'mhu-5', question: 'Los cuatro componentes del campo de salud de Lalonde son:', options: ['Biología humana, medio ambiente, estilo de vida y atención a la salud', 'Agente, huésped, ambiente y vector', 'Kinésica, proxémica, paralenguaje y simbólica', 'Nutrición, sueño, estrés y redes'], correctIndex: 0, explanation: 'Lalonde lo publicó en 1974.', difficulty: 'medium' },
+      { id: 'mhu-6', question: 'Una «mollera caída» con diarrea y ojos hundidos sugiere:', options: ['Hidrocefalia', 'Deshidratación', 'Meningitis', 'Fractura de cráneo'], correctIndex: 1, explanation: 'La fontanela anterior se hunde cuando el lactante pierde líquidos; nunca debe sacudirse al bebé.', difficulty: 'medium' },
     ],
   },
 ]

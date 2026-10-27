@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 8px; }
+.lst { margin: 0; padding-left: 15px; font-size: 11px; line-height: 1.33; }
+.lst li { margin: 0 0 2px; }
+table td { font-size: 10.6px; padding: 3px 6px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.box { border-radius: 8px; padding: 7px 9px; font-size: 10.9px; line-height: 1.32; }
+.box b.t { display: block; font-size: 12px; margin-bottom: 2px; }
+.paint { position: relative; border-radius: 9px; overflow: hidden; }
+.paint img { width: 100%; display: block; }
+.paint .cap { position: absolute; left: 0; right: 0; bottom: 0; background: linear-gradient(transparent, rgba(10,14,30,.9)); color: #fff; font-size: 10px; line-height: 1.3; padding: 22px 10px 7px; }
+.paint .cap b { color: #ffd98a; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.chip { border-radius: 12px; padding: 2px 7px; font-size: 9.8px; font-weight: 600; }
+.sfc { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; }
+.sfc .c { border: 1px solid #e6e9f0; border-radius: 8px; padding: 5px 7px; font-size: 10px; line-height: 1.28; background: #fff; }
+.sfc .c .h { display: flex; align-items: center; gap: 6px; font-weight: 800; color: var(--navy); font-size: 12px; margin-bottom: 3px; }
+.sfc .c .h .ic { width: 20px; height: 20px; color: #6a4c9c; }
+.sfc .c .k { color: #6a4c9c; font-weight: 700; }
+.sfc .c .al { margin-top: 3px; color: var(--red); font-weight: 600; }
+.pil { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; }
+.pil div { display: flex; gap: 6px; align-items: center; font-size: 10.4px; line-height: 1.25; }
+.pil .ic { width: 24px; height: 24px; color: #2e7d5b; flex-shrink: 0; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Medicina Humanística</p>
+  <h1>Medicina Humanística</h1>
+  <p class="tag">Antes de ser médicos somos personas: la medicina como práctica humana, social y cultural.</p>
+</header>
+
+<div class="row">
+  <section class="panel" style="flex:.7;padding:7px">
+    <div class="paint">
+      <img src="{{img:fotos/fildes.jpg}}" alt="">
+      <div class="cap"><b>The Doctor</b> (Luke Fildes, 1891). Sin tecnología que ofrecer, el médico acompaña toda la noche a la niña enferma: la relación médico-paciente como núcleo de la medicina.</div>
+    </div>
+  </section>
+  <section class="panel" style="flex:1.3">
+    <div class="ph"><span class="n">1</span>Humanismo médico</div>
+    <p style="font-size:10.9px"><b>Humanidades médicas</b>: campo interdisciplinario que estudia los contextos, experiencias y problemas de la medicina y forma la identidad del médico. Áreas: historia, filosofía de la ciencia médica, encuentro médico-paciente-cuidador, sufrimiento en el arte y la literatura.</p>
+    <div class="two" style="margin-top:5px">
+      <div class="box" style="background:#fdf1ec"><b class="t" style="color:#c2571a">Deshumanización</b>Pérdida de lo humano en la atención. Para Ruy Pérez Tamayo también es del <b>sistema</b> que sobrecarga al médico.</div>
+      <div class="box" style="background:#fbeef0"><b class="t" style="color:#c8242c">Despersonalización</b>El paciente se vuelve expediente o cama: «el de la cama 20».</div>
+    </div>
+    <ul class="lst" style="margin-top:6px">
+      <li><b>Médico humanista</b>: comprensión y compasión, afrontar el dolor y la muerte, respeto a la dignidad, la historia y las decisiones del paciente.</li>
+      <li><b>Tacto</b>: comunicar lo difícil con empatía y respeto (no es tocar).</li>
+      <li>Ante creencias (p. ej., rechazo de transfusión): <b>explicar</b> riesgos y beneficios, no imponer.</li>
+    </ul>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:.72">
+    <div class="ph"><span class="n">2</span>Modelo biopsicosocial <small>— Engel, 1977</small></div>
+    <svg viewBox="0 0 300 150" style="width:100%;display:block;max-height:108px">
+      <g font-size="11.5" text-anchor="middle" font-weight="800">
+        <circle cx="112" cy="55" r="50" fill="#c8242c" fill-opacity=".15" stroke="#c8242c" stroke-width="1.5"/>
+        <circle cx="188" cy="55" r="50" fill="#1f4f9c" fill-opacity=".15" stroke="#1f4f9c" stroke-width="1.5"/>
+        <circle cx="150" cy="99" r="50" fill="#2e7d5b" fill-opacity=".15" stroke="#2e7d5b" stroke-width="1.5"/>
+        <text x="92" y="40" fill="#c8242c">Biológico</text>
+        <text x="204" y="40" fill="#1f4f9c" font-size="10.5">Psicológico</text>
+        <text x="150" y="128" fill="#2e7d5b">Social</text>
+        <text x="150" y="76" fill="#13295b" font-size="10">Persona</text>
+      </g>
+    </svg>
+    <p style="font-size:10.2px;margin:2px 0 0"><b>Biológico</b>: genes, agentes, lesiones · <b>psicológico</b>: emociones, conducta · <b>social</b>: normas, clase, condiciones de vida. Ser humano: <b>animal racional</b> (Aristóteles) y <b>animal simbólico</b> (Cassirer). Ocho dimensiones: de la física a la espiritual.</p>
+  </section>
+  <section class="panel" style="flex:1.28">
+    <div class="ph"><span class="n">3</span>Origen de la vida</div>
+    <table>
+      <tr><th>Teoría</th><th>Idea</th><th>Situación</th></tr>
+      <tr><td class="k">Creacionismo</td><td>Creación divina</td><td>Creencia, no hipótesis científica</td></tr>
+      <tr><td class="k">Generación espontánea</td><td>Vida desde materia inerte</td><td>Refutada: <b>Redi</b> (1668), <b>Spallanzani</b>, <b>Pasteur</b> (cuello de cisne, 1861)</td></tr>
+      <tr><td class="k">Biogénesis</td><td>Todo ser vivo viene de otro</td><td>Continuidad, no primer origen</td></tr>
+      <tr><td class="k">Panspermia</td><td>Llegó del espacio (Arrhenius)</td><td>Sin confirmar</td></tr>
+      <tr><td class="k">Evolución química ★</td><td>H₂O, CH₄, NH₃, H₂ + energía → «sopa primitiva» (Oparin 1924, Haldane 1929)</td><td><b>Miller y Urey (1953)</b>: aminoácidos, no vida</td></tr>
+    </table>
+    
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">4</span>Hominización <small>— varias especies convivieron; no es una fila de reemplazos</small></div>
+  <svg viewBox="0 0 980 172" style="width:100%;display:block">
+<g font-size="11.5">
+<line x1="237" y1="4" x2="237" y2="150" stroke="#e3e7ef"/><text x="237" y="164" text-anchor="middle" fill="#4b5567" font-size="10.5">4 Ma</text>
+<line x1="272" y1="4" x2="272" y2="150" stroke="#e3e7ef"/><text x="272" y="164" text-anchor="middle" fill="#4b5567" font-size="10.5">3 Ma</text>
+<line x1="321" y1="4" x2="321" y2="150" stroke="#e3e7ef"/><text x="321" y="164" text-anchor="middle" fill="#4b5567" font-size="10.5">2 Ma</text>
+<line x1="404" y1="4" x2="404" y2="150" stroke="#e3e7ef"/><text x="404" y="164" text-anchor="middle" fill="#4b5567" font-size="10.5">1 Ma</text>
+<line x1="488" y1="4" x2="488" y2="150" stroke="#e3e7ef"/><text x="488" y="164" text-anchor="middle" fill="#4b5567" font-size="10.5">500 mil</text>
+<line x1="598" y1="4" x2="598" y2="150" stroke="#e3e7ef"/><text x="598" y="164" text-anchor="middle" fill="#4b5567" font-size="10.5">200 mil</text>
+<line x1="682" y1="4" x2="682" y2="150" stroke="#e3e7ef"/><text x="682" y="164" text-anchor="middle" fill="#4b5567" font-size="10.5">100 mil</text>
+<line x1="766" y1="4" x2="766" y2="150" stroke="#e3e7ef"/><text x="766" y="164" text-anchor="middle" fill="#4b5567" font-size="10.5">50 mil</text>
+<line x1="876" y1="4" x2="876" y2="150" stroke="#e3e7ef"/><text x="876" y="164" text-anchor="middle" fill="#4b5567" font-size="10.5">20 mil</text>
+<line x1="960" y1="4" x2="960" y2="150" stroke="#e3e7ef"/><text x="960" y="164" text-anchor="middle" fill="#4b5567" font-size="10.5">hoy</text>
+<text x="202" y="17" text-anchor="end" font-weight="700" font-style="italic" fill="#13295b">Ardipithecus ramidus</text>
+<rect x="223" y="6" width="8" height="14" rx="7.5" fill="#8a6a1a"/>
+<text x="234" y="17" text-anchor="start" fill="#4b5567" font-size="10.5">«Ardi», Etiopía</text>
+<text x="202" y="35" text-anchor="end" font-weight="700" font-style="italic" fill="#13295b">Australopithecus anamensis</text>
+<rect x="231" y="24" width="12" height="14" rx="7.5" fill="#b8650f"/>
+<text x="249" y="35" text-anchor="start" fill="#4b5567" font-size="10.5">Kenia; tibia bípeda</text>
+<text x="202" y="53" text-anchor="end" font-weight="700" font-style="italic" fill="#13295b">Australopithecus afarensis</text>
+<rect x="240" y="42" width="36" height="14" rx="7.5" fill="#c2571a"/>
+<text x="282" y="53" text-anchor="start" fill="#4b5567" font-size="10.5">«Lucy», Etiopía</text>
+<text x="202" y="71" text-anchor="end" font-weight="700" font-style="italic" fill="#13295b">Homo habilis</text>
+<rect x="299" y="60" width="65" height="14" rx="7.5" fill="#2e7d5b"/>
+<text x="370" y="71" text-anchor="start" fill="#4b5567" font-size="10.5">herramientas de piedra</text>
+<text x="202" y="89" text-anchor="end" font-weight="700" font-style="italic" fill="#13295b">Homo erectus / ergaster</text>
+<rect x="327" y="78" width="344" height="14" rx="7.5" fill="#1f4f9c"/>
+<text x="677" y="89" text-anchor="start" fill="#4b5567" font-size="10.5">fuego; sale de África</text>
+<text x="202" y="107" text-anchor="end" font-weight="700" font-style="italic" fill="#13295b">Homo antecessor</text>
+<rect x="417" y="96" width="17" height="14" rx="7.5" fill="#5b8fd6"/>
+<text x="440" y="107" text-anchor="start" fill="#4b5567" font-size="10.5">Atapuerca</text>
+<text x="202" y="125" text-anchor="end" font-weight="700" font-style="italic" fill="#13295b">Homo neanderthalensis</text>
+<rect x="515" y="114" width="278" height="14" rx="7.5" fill="#6a4c9c"/>
+<text x="799" y="125" text-anchor="start" fill="#4b5567" font-size="10.5">entierros; se cruzó con sapiens</text>
+<text x="202" y="143" text-anchor="end" font-weight="700" font-style="italic" fill="#13295b">Homo sapiens</text>
+<rect x="550" y="132" width="410" height="14" rx="7.5" fill="#c8242c"/>
+<text x="544" y="143" text-anchor="end" fill="#4b5567" font-size="10.5">Jebel Irhoud (≈ 300 mil años) → todo el planeta</text>
+<text x="8" y="164" fill="#98a1b3" font-size="9.5">escala logarítmica (años antes del presente)</text>
+</g></svg>
+
+  <p style="font-size:10.6px;margin:2px 0 0">Reino Animalia → Mammalia → Primates → Hominidae → <i>Homo</i> → <i>Homo sapiens</i> («<i>H. sapiens sapiens</i>»). No descendemos de los simios actuales: compartimos antepasados. <b>Humanización</b>: cuidado de los muertos (entierro de «Mtoto», Kenia, ≈ 78,000 años).</p>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1.05">
+    <div class="ph"><span class="n">5</span>La relación médico-paciente y el otro</div>
+    <svg viewBox="0 0 440 112" style="width:100%;display:block;max-height:96px">
+      <defs><marker id="m1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#c8242c"/></marker>
+      <marker id="m2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2e7d5b"/></marker></defs>
+      <g font-size="10.5" text-anchor="middle">
+        <text x="105" y="12" font-weight="800" fill="#c8242c">ALTER EGO</text>
+        <circle cx="45" cy="55" r="24" fill="#13295b"/><text x="45" y="59" fill="#fff" font-weight="700">Yo</text>
+        <rect x="140" y="36" width="50" height="38" rx="4" fill="#e3e7ef"/><text x="165" y="59" fill="#4b5567" font-weight="700">objeto</text>
+        <path d="M71 55 h64" stroke="#c8242c" stroke-width="2" marker-end="url(#m1)"/>
+        <text x="105" y="98" fill="#4b5567" font-size="9.5">el médico proyecta y cosifica</text>
+        <text x="105" y="110" fill="#4b5567" font-size="9.5">«diálogo silencioso»</text>
+        <text x="330" y="12" font-weight="800" fill="#2e7d5b">ALTER TÚ</text>
+        <circle cx="265" cy="55" r="24" fill="#13295b"/><text x="265" y="59" fill="#fff" font-weight="700">Yo</text>
+        <circle cx="395" cy="55" r="24" fill="#2e7d5b"/><text x="395" y="59" fill="#fff" font-weight="700">Tú</text>
+        <path d="M291 48 h76" stroke="#2e7d5b" stroke-width="2" marker-end="url(#m2)"/><path d="M369 62 h-76" stroke="#2e7d5b" stroke-width="2" marker-end="url(#m2)"/>
+        <text x="330" y="98" fill="#4b5567" font-size="9.5">encuentro intersubjetivo: el médico</text>
+        <text x="330" y="110" fill="#4b5567" font-size="9.5">es «el otro del otro»</text>
+      </g>
+    </svg>
+    <p style="font-size:10.6px;margin:4px 0 3px"><b>Alteridad</b>: cambiar la propia perspectiva por la del otro (Sousa). <b>Dussel</b>: pensar desde la exterioridad del oprimido; <b>Levinas</b>: lo absolutamente otro.</p>
+    <div class="chips">
+      <span class="chip" style="background:#fbeef0;color:#c8242c">afectivo</span><span class="chip" style="background:#e9f0fb;color:#1f4f9c">cognoscitivo · diagnóstico</span><span class="chip" style="background:#e8f5ee;color:#2e7d5b">operativo · tratamiento</span><span class="chip" style="background:#f2edf8;color:#6a4c9c">ético</span><span class="chip" style="background:#fdf1ec;color:#c2571a">histórico-social</span>
+    </div>
+    <p style="font-size:10.4px;margin:5px 0 0">Momentos de la RMP según <b>Laín Entralgo</b>. Motivos del médico: ego <b>adiuvans</b> (ayuda), <b>sapiens</b> (saber), <b>fungens</b> (funcionario), <b>cupiens</b> (lucro).</p>
+  </section>
+  <section class="panel" style="flex:.95">
+    <div class="ph"><span class="n">6</span>Modelos de relación</div>
+    <table>
+      <tr><th>Szasz-Hollender</th><th>Uso</th><th>Prototipo</th></tr>
+      <tr><td class="k">Actividad-pasividad</td><td>Coma, urgencia, anestesia</td><td>Madre-hijo</td></tr>
+      <tr><td class="k">Orientación-cooperación</td><td>Infección aguda</td><td>Padre-hijo</td></tr>
+      <tr><td class="k">Participación mutua</td><td>Enfermedad crónica</td><td>Adulto-adulto</td></tr>
+    </table>
+    <svg viewBox="0 0 400 86" style="width:100%;display:block;margin-top:4px"><g font-size="10.5"><text x="0" y="10" fill="#4b5567" font-size="9.5">Emanuel y Emanuel</text><text x="215" y="10" fill="#1f4f9c" font-size="9.5" font-weight="700">autonomía</text><text x="320" y="10" fill="#c2571a" font-size="9.5" font-weight="700">beneficencia</text><text x="0" y="27" font-weight="800" fill="#13295b">Paternalista</text><text x="88" y="27" fill="#4b5567" font-size="9.5">guardián</text><rect x="215" y="17" width="22" height="13" rx="3" fill="#1f4f9c"/><rect x="320" y="17" width="76" height="13" rx="3" fill="#e8912e"/><text x="0" y="44" font-weight="800" fill="#13295b">Informativo</text><text x="88" y="44" fill="#4b5567" font-size="9.5">técnico experto</text><rect x="215" y="34" width="88" height="13" rx="3" fill="#1f4f9c"/><rect x="320" y="34" width="19" height="13" rx="3" fill="#e8912e"/><text x="0" y="61" font-weight="800" fill="#13295b">Interpretativo</text><text x="88" y="61" fill="#4b5567" font-size="9.5">consejero</text><rect x="215" y="51" width="66" height="13" rx="3" fill="#1f4f9c"/><rect x="320" y="51" width="38" height="13" rx="3" fill="#e8912e"/><text x="0" y="78" font-weight="800" fill="#13295b">Deliberativo</text><text x="88" y="78" fill="#4b5567" font-size="9.5">amigo o maestro</text><rect x="215" y="68" width="44" height="13" rx="3" fill="#1f4f9c"/><rect x="320" y="68" width="57" height="13" rx="3" fill="#e8912e"/></g></svg>
+  </section>
+</div>
+
+<div class="row">
+<section class="panel" style="flex:.78">
+    <div class="ph"><span class="n">7</span>Proxémica <small>— Edward T. Hall</small></div>
+    <svg viewBox="0 0 300 150" style="width:100%;display:block;max-height:112px">
+      <g font-size="10" text-anchor="middle">
+        <circle cx="150" cy="150" r="146" fill="#f6f8fc" stroke="#d9dee8"/>
+        <circle cx="150" cy="150" r="106" fill="#e9f0fb" stroke="#c9d6ee"/>
+        <circle cx="150" cy="150" r="66" fill="#d7e4f8" stroke="#a9c0e6"/>
+        <circle cx="150" cy="150" r="30" fill="#5b8fd6"/>
+        <text x="150" y="133" fill="#fff" font-weight="800" font-size="9.5">íntima</text><text x="150" y="144" fill="#fff" font-size="8.5">≤ 45 cm</text>
+        <text x="150" y="98" fill="#13295b" font-weight="800">personal</text><text x="150" y="110" fill="#4b5567" font-size="9">45 cm – 1.2 m</text>
+        <text x="150" y="58" fill="#13295b" font-weight="800">social</text><text x="150" y="70" fill="#4b5567" font-size="9">1.2 – 3.6 m</text>
+        <text x="150" y="20" fill="#13295b" font-weight="800">pública</text><text x="150" y="32" fill="#4b5567" font-size="9">&gt; 3.6 m</text>
+      </g>
+    </svg>
+    <p style="font-size:10.2px;margin:3px 0 0">Explorar entra en la distancia <b>íntima</b>: explicar y pedir permiso. No verbal: <b>kinésica</b>, <b>paralenguaje</b>, <b>simbólica</b>.</p>
+  </section>
+<section class="panel" style="flex:1.12">
+    <div class="ph"><span class="n">8</span>Determinantes de la salud</div>
+    <div>
+      <div>
+        <svg viewBox="0 0 220 132" style="width:100%;display:block;max-height:92px">
+          <g font-size="10" text-anchor="middle" font-weight="700">
+            <rect x="4" y="4" width="104" height="58" rx="8" fill="#fbeef0"/><text x="56" y="28" fill="#c8242c">Biología</text><text x="56" y="42" fill="#c8242c">humana</text>
+            <rect x="112" y="4" width="104" height="58" rx="8" fill="#e8f5ee"/><text x="164" y="28" fill="#2e7d5b">Medio</text><text x="164" y="42" fill="#2e7d5b">ambiente</text>
+            <rect x="4" y="70" width="104" height="58" rx="8" fill="#fdf1ec"/><text x="56" y="94" fill="#c2571a">Estilo</text><text x="56" y="108" fill="#c2571a">de vida</text>
+            <rect x="112" y="70" width="104" height="58" rx="8" fill="#e9f0fb"/><text x="164" y="94" fill="#1f4f9c">Atención</text><text x="164" y="108" fill="#1f4f9c">a la salud</text>
+            <circle cx="110" cy="66" r="24" fill="#13295b"/><text x="110" y="70" fill="#fff" font-size="10.5">Salud</text>
+          </g>
+        </svg>
+        <p style="font-size:9.8px;margin:2px 0 0;text-align:center;color:var(--muted)">Campo de salud de Lalonde (1974)</p>
+      </div>
+      <ul class="lst" style="font-size:10.4px">
+        <li>Causa <b>necesaria</b> (<i>M. tuberculosis</i>), <b>suficiente</b> o <b>factor de riesgo</b>.</li>
+                <li><b>Koch-Henle</b> (infecciosas) · <b>Bradford Hill</b> (no infecciosas).</li>
+        <li><b>Sociales</b>: dónde se nace, vive, trabaja y envejece.</li>
+        <li><b>AVISA</b> = muerte prematura + discapacidad.</li>
+      </ul>
+    </div>
+  </section>
+<section class="panel" style="flex:1.1">
+    <div class="ph"><span class="n">9</span>Estilo de vida</div>
+    <div class="pil">
+      <div>{{icon:ForkKnife}}<span><b>Nutrición</b>: plato, dieta mediterránea</span></div>
+      <div>{{icon:PersonSimpleWalk}}<span><b>Actividad</b>: 150–300 min/sem + fuerza</span></div>
+      <div>{{icon:Moon}}<span><b>Sueño</b>: 7–9 h de calidad</span></div>
+      <div>{{icon:Brain}}<span><b>Estrés</b>: mindfulness, relajación</span></div>
+      <div>{{icon:UsersThree}}<span><b>Redes</b>: la soledad duplica el riesgo de DM2</span></div>
+      <div>{{icon:Cigarette}}<span><b>Sustancias</b>: sin tabaco ni alcohol</span></div>
+    </div>
+    <ul class="lst" style="margin-top:6px;font-size:10.5px">
+      <li><b>Remisión DM2</b>: HbA1c &lt; 6.5 % ≥ 3 meses sin fármacos.</li>
+      <li><b>HAS</b> ≥ 140/90: ≈ 30 % de los adultos; <b>43 %</b> no lo sabe.</li>
+      
+    </ul>
+  </section>
+</div>
+
+<section class="clin" >
+    <div class="ph"><span class="n">10</span>Síndromes de filiación cultural <small>— DSM-5: «conceptos culturales de angustia»</small></div>
+    <div class="sfc">
+      <div class="c"><div class="h">{{icon:Eye}}Mal de ojo</div><span class="k">Creencia:</span> «vista fuerte», envidia.<br>Llanto, fiebre, diarrea.<div class="al">Descartar infección y deshidratación.</div></div>
+      <div class="c"><div class="h">{{icon:ForkKnife}}Empacho</div><span class="k">Creencia:</span> comida «pegada»; sobada y purga.<div class="al">Greta y azarcón: intoxicación por plomo.</div></div>
+      <div class="c"><div class="h">{{icon:Ghost}}Susto</div><span class="k">Creencia:</span> pérdida del alma o «sombra» por una impresión.<div class="al">Explorar ansiedad, trauma, pérdida de peso.</div></div>
+      <div class="c"><div class="h">{{icon:Baby}}Caída de mollera</div><span class="k">Creencia:</span> la fontanela «se cae» tras un golpe.<div class="al">Es deshidratación. Nunca sacudir al bebé.</div></div>
+    </div>
+    <p style="font-size:10.4px;margin:6px 0 0">Medicina tradicional: equilibrio <b>frío-calor</b>, herbolaria, temazcal, limpias. Respetar la creencia y explicar los <b>signos de alarma</b> en lenguaje sencillo.</p>
+  </section>
+
+
+<p class="foot">MedCore · Medicina Humanística (UAD) · Semanas 1, 3 y 4 · Pintura: Luke Fildes, <i>The Doctor</i> (1891), dominio público · diagramas esquemáticos</p>
+</div></body></html>
