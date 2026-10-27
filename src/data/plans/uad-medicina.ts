@@ -863,7 +863,7 @@ export const uadMedicina: Plan = {
           id: 'medicina-humanistica',
           name: 'Medicina Humanística',
           code: 'MH01007',
-          topicIds: ['humanistica-alteridad-rmp', 'humanistica-modelos-rmp', 'humanistica-etica-comunicacion', 'humanistica-causalidad-determinantes', 'humanistica-estilos-vida-cronicas', 'humanistica-sindromes-filiacion-cultural'],
+          topicIds: ['humanistica-humanismo-medico', 'humanistica-origen-vida-hombre', 'humanistica-alteridad-rmp', 'humanistica-modelos-rmp', 'humanistica-etica-comunicacion', 'humanistica-causalidad-determinantes', 'humanistica-estilos-vida-cronicas', 'humanistica-sindromes-filiacion-cultural'],
           content: {
             area: 'Ciencias Sociomédicas',
             credits: 4,
@@ -878,8 +878,14 @@ export const uadMedicina: Plan = {
               {
                 number: 1,
                 title: 'Introducción a las humanidades',
+                topicIds: ['humanistica-humanismo-medico', 'humanistica-origen-vida-hombre'],
                 temas: [
+                  'Clase 1 (impartida, 28 sep): humanismo y humanidades médicas; deshumanización y despersonalización; perfil del médico humanista, creencias del paciente y tacto; modelo biopsicosocial',
+                  'Clase 1 (impartida, 28 sep): teorías del origen de la vida (creacionismo, generación espontánea, biogénesis, panspermia, evolución química) y Miller-Urey; clasificación del ser humano, hominización y humanización',
                   '1. Origen y evolución de la vida; origen del hombre; relación corporeidad-herramienta-naturaleza; unidad anatomo-psico-social; relación dialéctica entre esferas anatómicas y psíquicas; desarrollo biológico y desarrollo humano',
+                ],
+                fuentes: [
+                  { title: 'Medicina Humanística — Semana 1, Clase 1', file: 'Medicina Humanistica - Semana 1 - Clase 1.pdf', nota: 'Humanismo médico; origen de la vida y del ser humano.' },
                 ],
               },
               {
@@ -925,6 +931,7 @@ export const uadMedicina: Plan = {
               { title: 'Colección bibliográfica UAD en OVID® (190 recursos)', author: 'UAD', year: '2017', tipo: 'básica' },
             ],
             materiales: [
+              { title: 'Semana 1 · Clase 1 — Humanismo médico y origen de la vida y del hombre', file: 'Medicina Humanistica - Semana 1 - Clase 1.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Sesión 1 — La relación médico-paciente y la alteridad', file: 'Medicina Humanistica - Semana 3 - Sesion 1.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Sesión 2 — Elementos y modelos de la RMP', file: 'Medicina Humanistica - Semana 3 - Sesion 2.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Sesión 3 — Ética, comunicación y proxémica', file: 'Medicina Humanistica - Semana 3 - Sesion 3.pdf', kind: 'Clase' },

@@ -1,8 +1,366 @@
 import type { Topic } from '../types'
 
-// Medicina Humanística (UAD · MH01007) — Semana 3 (la relación médico-paciente,
+// Medicina Humanística (UAD · MH01007) — Semana 1 (Clase 1: humanismo médico,
+// origen de la vida y del ser humano), Semana 3 (la relación médico-paciente,
 // sesiones 1–3) y Semana 4 (perfiles patológicos, sesiones 1–3).
 export const humanisticaTopics: Topic[] = [
+  {
+    id: 'humanistica-humanismo-medico',
+    title: 'Humanismo médico y humanidades médicas',
+    subtitle: 'Qué estudia la Medicina Humanística, humanismo y humanidades médicas, deshumanización y despersonalización, perfil del médico humanista, creencias del paciente y tacto, modelo biopsicosocial',
+    colorKey: 'humanistica',
+    categoria: 'Medicina humanística',
+    emoji: '🫶',
+    keyPoints: [
+      'HUMANIDADES MÉDICAS: campo interdisciplinario que explora los contextos, experiencias y problemas de la medicina y contribuye a la identidad profesional del médico.',
+      'HUMANISMO: forma de vida que pone el énfasis en lo específicamente humano; cobra fuerza en épocas de crisis.',
+      'Para Ruy Pérez Tamayo la deshumanización no es solo del médico: también es del sistema de salud que lo sobrecarga.',
+      'DESPERSONALIZACIÓN: el paciente se vuelve expediente, cama o enfermedad («el de la cama 20») ★',
+      'TACTO médico: sensibilidad para comunicar información difícil con empatía y respeto (no es tocar).',
+      'MODELO BIOPSICOSOCIAL: la salud resulta de la interacción de lo biológico, lo psicológico y lo social.',
+    ],
+    sections: [
+      {
+        id: 'hhm-1',
+        number: 1,
+        title: 'Humanismo y humanidades médicas',
+        keyTerms: ['humanismo', 'humanidades médicas', 'ethos'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Humanidades médicas',
+            content: 'Campo interdisciplinario y multidisciplinario que explora los contextos, las experiencias y los problemas críticos de la medicina y de la atención de la salud, y que contribuye a formar la identidad profesional del médico. Surgen como respuesta a una medicina cada vez más tecnológica; como disciplina académica se establecieron en el Instituto Karolinska de Estocolmo a finales de los años noventa.',
+          },
+          {
+            type: 'list',
+            title: 'Áreas de las humanidades médicas',
+            items: [
+              'Historia de la medicina.',
+              'Filosofía de la ciencia médica.',
+              'El encuentro médico-paciente-cuidador.',
+              'Comprensión del sufrimiento y la enfermedad, también a través del arte y la literatura.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'El HUMANISMO es una forma de vida que valora lo específicamente humano y promueve lo que permite su desarrollo. Suele cobrar fuerza en épocas de crisis. Todos los humanismos ponen al ser humano como fin y valor superior, pero explican de distinto modo su dignidad: el RENACENTISTA por su capacidad de elegir y realizarse, el CRISTIANO por su filiación divina y el ATEO por su autonomía y responsabilidad.',
+          },
+          {
+            type: 'comparison',
+            title: 'Humanidades antiguas y contemporáneas',
+            left: { title: 'Antiguas', items: ['Antigüedad clásica y Renacimiento', 'Gramática, retórica y poética'] },
+            right: { title: 'Contemporáneas (desde el s. XIX)', items: ['Estudian los valores', 'Sociología, antropología, psicología e historia'] },
+          },
+          {
+            type: 'note',
+            title: 'Ethos',
+            content: 'Forma de ser, modo de vida o proyecto de vida. Desde esta mirada, el cuidado de la salud es también un proyecto moral.',
+          },
+        ],
+      },
+      {
+        id: 'hhm-2',
+        number: 2,
+        title: 'Deshumanización y el médico humanista',
+        keyTerms: ['deshumanización', 'despersonalización', 'médico humanista'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos fallas distintas',
+            left: {
+              title: 'Deshumanización',
+              items: [
+                'Pérdida de la dimensión humana de la atención',
+                'Ruy Pérez Tamayo: no es solo culpa del médico; también del sistema de salud que lo sobrecarga',
+              ],
+            },
+            right: {
+              title: 'Despersonalización',
+              items: [
+                'El paciente deja de ser reconocido como persona',
+                'Se vuelve un expediente, una cama o una enfermedad: «el de la cama 20»',
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Perfil del médico humanista: portador, conocedor y aplicador de valores humanos',
+            items: [
+              'Comprensión y compasión.',
+              'Capacidad para afrontar el dolor y la muerte.',
+              'Cuidado en la atención.',
+              'Respeto a la dignidad, la historia y las decisiones del paciente.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Idea clave',
+            content: 'Antes de ser médicos somos personas, y el paciente tiene una historia de vida que debe reconocerse. La relación médico-paciente es una de las principales formas en que se expresa el humanismo médico.',
+          },
+        ],
+      },
+      {
+        id: 'hhm-3',
+        number: 3,
+        title: 'Creencias del paciente y tacto',
+        keyTerms: ['tacto', 'autonomía', 'objeción de conciencia'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Tacto médico',
+            content: 'No significa tocar: es la sensibilidad para comunicar al paciente información difícil de manera empática y respetuosa. La práctica médica es un acto humano y moral que requiere conocimientos, responsabilidad, comunicación y respeto.',
+          },
+          {
+            type: 'paragraph',
+            content: 'Las creencias religiosas, culturales o personales influyen en las decisiones de salud. El médico debe conocerlas para comunicarse con respeto y evitar confrontaciones innecesarias. Su responsabilidad es EXPLICAR riesgos, beneficios y consecuencias, no imponer una decisión. La objeción de conciencia del propio médico se estudia en bioética.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Testigos de Jehová y transfusión',
+            content: 'Los Testigos de Jehová rechazan la transfusión de sangre total y de sus componentes principales; el uso de algunas fracciones y técnicas de ahorro de sangre queda a la conciencia de cada persona. En un adulto capaz, la decisión informada se respeta y se documenta en el consentimiento; se planean alternativas (hierro, eritropoyetina, recuperación de sangre en cirugía) desde antes del procedimiento.',
+          },
+        ],
+      },
+      {
+        id: 'hhm-4',
+        number: 4,
+        title: 'Dimensiones del ser humano y modelo biopsicosocial',
+        keyTerms: ['modelo biopsicosocial', 'animal racional', 'animal simbólico'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Qué es lo humano',
+            left: { title: 'Animal racional (Aristóteles)', items: ['Capaz de pensamiento abstracto'] },
+            right: { title: 'Animal simbólico (Ernst Cassirer)', items: ['Capaz de lenguaje y de pensamiento artístico, místico y religioso'] },
+          },
+          {
+            type: 'list',
+            title: 'Dimensiones de la persona',
+            items: [
+              'Neurofisiológica o física.',
+              'Cognitivo-psicológica.',
+              'Afectivo-emocional.',
+              'Comunicativa y expresiva.',
+              'Social.',
+              'Vocacional y profesional.',
+              'Ético-moral.',
+              'Espiritual o anímica.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Modelo biopsicosocial (George Engel, 1977)',
+            data: {
+              headers: ['Componente', 'Incluye'],
+              rows: [
+                ['Biológico', 'Genética, virus, bacterias, alteraciones orgánicas o estructurales'],
+                ['Psicológico', 'Cognición, emociones, conducta, actitudes'],
+                ['Social', 'Normas, valores, presiones sociales, condiciones de vida, clase social'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Un mismo diagnóstico, dos pacientes',
+            content: 'Dos personas con la misma diabetes tipo 2 pueden evolucionar muy distinto: una tiene apoyo familiar y acceso a alimentos frescos; la otra vive sola, con depresión y trabaja turnos nocturnos. El modelo biopsicosocial explica por qué la misma receta no basta y por qué preguntar por la vida del paciente es parte de la clínica.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'humanistica-origen-vida-hombre',
+    title: 'Origen de la vida y del ser humano',
+    subtitle: 'Teorías del origen de la vida (creacionismo, generación espontánea, biogénesis, panspermia, evolución química), Miller y Urey, clasificación del ser humano, hominización y humanización',
+    colorKey: 'humanistica',
+    categoria: 'Medicina humanística',
+    emoji: '🦴',
+    keyPoints: [
+      'La GENERACIÓN ESPONTÁNEA (vida a partir de materia inerte) fue refutada por REDI (1668), SPALLANZANI y PASTEUR (matraz de cuello de cisne, 1861).',
+      'BIOGÉNESIS: la vida procede de vida preexistente · PANSPERMIA (Arrhenius): la vida o sus precursores llegaron del espacio.',
+      'EVOLUCIÓN QUÍMICA (Oparin, Haldane): en la Tierra primitiva, gases simples (H₂O, CH₄, NH₃, H₂) y energía formaron moléculas orgánicas («sopa primitiva») ★',
+      'MILLER Y UREY (1953): con descargas eléctricas sobre esos gases obtuvieron aminoácidos; no crearon vida, pero mostraron que las moléculas orgánicas pueden formarse así.',
+      'Ser humano: Animalia → mamíferos → primates → homínidos → género Homo → Homo sapiens (el hombre moderno, «Homo sapiens sapiens» en la nomenclatura tradicional).',
+      'Neandertales y Homo sapiens SÍ se cruzaron. El cuidado de los muertos (entierros rituales) es una señal de humanización.',
+    ],
+    sections: [
+      {
+        id: 'hov-1',
+        number: 1,
+        title: 'Teorías sobre el origen de la vida',
+        keyTerms: ['creacionismo', 'generación espontánea', 'biogénesis', 'panspermia'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El universo surgió con el Big Bang hace unos 13,800 millones de años. Tras una era de la radiación vino la era de la materia: al expandirse y enfriarse, la materia se organizó. La vida necesitó un sustrato material y condiciones físicas y químicas adecuadas en la Tierra primitiva.',
+          },
+          {
+            type: 'table',
+            title: 'Cinco explicaciones',
+            data: {
+              headers: ['Teoría', 'Propuesta', 'Situación'],
+              rows: [
+                ['Creacionismo', 'El universo y la vida se originan por un acto de creación divina', 'Creencia religiosa o filosófica, no hipótesis científica'],
+                ['Generación espontánea', 'La vida surge de la materia inerte', 'Refutada experimentalmente'],
+                ['Biogénesis', 'Todo ser vivo procede de otro ser vivo', 'Explica la continuidad de la vida, no su primer origen'],
+                ['Panspermia', 'La vida o sus precursores llegaron del espacio en meteoritos (Arrhenius)', 'Ni confirmada ni descartada; traslada el problema a otro lugar'],
+                ['Evolución química', 'Moléculas simples formaron moléculas orgánicas cada vez más complejas', 'La explicación científica más aceptada'],
+              ],
+            },
+          },
+          {
+            type: 'steps',
+            title: 'Los experimentos que refutaron la generación espontánea',
+            steps: [
+              'Francesco Redi (1668): la carne en frascos cubiertos no tuvo larvas; las larvas venían de las moscas.',
+              'Lazzaro Spallanzani (siglo XVIII): el caldo hervido y sellado no se llenaba de microorganismos; el abierto, sí.',
+              'Louis Pasteur (1861): en el matraz de cuello de cisne el caldo hervido seguía estéril aunque el aire entraba; al romper el cuello y llegar el polvo, se contaminaba.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'De Pasteur a la esterilización',
+            content: 'Si los microorganismos no nacen de la nada sino que llegan del ambiente, se puede impedir su llegada. Esa idea fundó la asepsia y la antisepsia (Lister aplicó el ácido fénico en cirugía poco después) y la esterilización de material, que hoy evitan las infecciones del sitio quirúrgico.',
+          },
+        ],
+      },
+      {
+        id: 'hov-2',
+        number: 2,
+        title: 'Evolución química y el experimento de Miller y Urey',
+        keyTerms: ['evolución química', 'Oparin', 'sopa primitiva', 'Miller y Urey'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'La propuesta de Oparin y Haldane',
+            steps: [
+              'La atmósfera primitiva contenía vapor de agua, metano (CH₄), amoníaco (NH₃) e hidrógeno (H₂), sin oxígeno libre.',
+              'La radiación ultravioleta, las descargas eléctricas y el calor volcánico aportaron energía.',
+              'Se formaron moléculas orgánicas simples que se acumularon en los mares: la «sopa primitiva».',
+              'Esas moléculas se organizaron en estructuras más complejas; por ejemplo, los lípidos forman micelas y vesículas en el agua.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'Alexandr Oparin publicó su propuesta en 1924 y J. B. S. Haldane llegó a una idea semejante en 1929, de manera independiente. En 1953, Stanley Miller y Harold Urey hicieron circular esos gases en un sistema cerrado con vapor de agua y descargas eléctricas; al condensar los productos encontraron aminoácidos y otros compuestos orgánicos.',
+          },
+          {
+            type: 'note',
+            title: 'Lo que el experimento demostró y lo que no',
+            content: 'Miller y Urey mostraron que las moléculas orgánicas pueden formarse de manera natural a partir de sustancias simples. No crearon vida ni una célula: el paso de las moléculas a los primeros seres vivos sigue en estudio.',
+          },
+        ],
+      },
+      {
+        id: 'hov-3',
+        number: 3,
+        title: 'El ser humano como problema y su clasificación',
+        keyTerms: ['antropología', 'Homo sapiens', 'taxonomía'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Formas de estudiar al ser humano',
+            items: [
+              'Filosóficas: idealismo platónico (prioridad de las ideas) y realismo aristotélico (la realidad existe y puede conocerse).',
+              'Antropología física: características biológicas.',
+              'Antropología cultural: culturas y formas de vida.',
+              'Antropología filosófica: qué es el ser humano y qué significa ser persona.',
+              'Paleoantropología: evolución humana a partir de fósiles.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Dos explicaciones del origen humano',
+            left: { title: 'Religiosa o creacionista', items: ['Acción divina', 'Se apoya en textos sagrados, revelación o dogma', 'No se somete a prueba'] },
+            right: { title: 'Científica', items: ['Proceso natural', 'Evidencias fósiles, genéticas, arqueológicas y lingüísticas', 'Sus hipótesis se revisan ante nuevos hallazgos'] },
+          },
+          {
+            type: 'steps',
+            title: 'Clasificación biológica',
+            steps: [
+              'Reino Animalia.',
+              'Vertebrados.',
+              'Clase Mammalia (mamíferos).',
+              'Orden Primates.',
+              'Familia Hominidae (homínidos).',
+              'Género Homo.',
+              'Especie Homo sapiens; el humano moderno se llama tradicionalmente Homo sapiens sapiens.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Parentesco, no descendencia',
+            content: 'El ser humano no desciende de los chimpancés ni de los gorilas actuales: comparte con ellos antepasados comunes.',
+          },
+        ],
+      },
+      {
+        id: 'hov-4',
+        number: 4,
+        title: 'Hominización',
+        keyTerms: ['hominización', 'bipedestación', 'Lucy', 'neandertal'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Principales homínidos',
+            data: {
+              headers: ['Especie', 'Antigüedad aproximada', 'Rasgos y hallazgos'],
+              rows: [
+                ['Ardipithecus ramidus', '≈ 4.4 millones de años', 'Etiopía; bipedestación probable pero parcial («Ardi»)'],
+                ['Australopithecus anamensis', '≈ 4.2–3.8 millones de años', 'Kenia; la forma de la tibia indica bipedestación'],
+                ['Australopithecus afarensis', '≈ 3.9–2.9 millones de años', '«Lucy» (Etiopía); bípeda, brazos largos, cerebro pequeño'],
+                ['Homo habilis', '≈ 2.4–1.4 millones de años', 'África; asociado a herramientas de piedra («hombre hábil»)'],
+                ['Homo erectus / ergaster', '≈ 1.9 millones de años en adelante', 'Sale de África hacia Asia; fuego y herramientas elaboradas; niño de Turkana, hombre de Pekín'],
+                ['Homo antecessor', '≈ 800,000 años', 'Atapuerca, España'],
+                ['Homo neanderthalensis', '≈ 400,000–40,000 años', 'Europa; cerebro grande; entierros intencionales; se cruzó con Homo sapiens'],
+                ['Homo sapiens', '≈ 300,000 años', 'Origen africano (Jebel Irhoud); restos de Skhul y Cro-Magnon'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'La hominización no fue una fila de especies que se reemplazaron una a otra: varias convivieron y algunas relaciones siguen en estudio. Las poblaciones con rasgos más favorables al entorno sobrevivieron y se reprodujeron más.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Llevamos ADN neandertal',
+            content: 'Las personas con ascendencia no africana conservan alrededor de 1–2 % de ADN neandertal, prueba de que ambas especies se cruzaron y tuvieron descendencia fértil. Algunas de esas variantes influyen hoy en rasgos de la inmunidad y la piel.',
+          },
+        ],
+      },
+      {
+        id: 'hov-5',
+        number: 5,
+        title: 'Humanización',
+        keyTerms: ['humanización', 'ritos funerarios', 'poblamiento de América'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El cuidado de los muertos se interpreta como señal de humanización: muestra reconocimiento del difunto, vida simbólica y creencias sobre la muerte. Los neandertales enterraban a sus muertos, a veces con herramientas o huesos. El entierro ritual más antiguo conocido en África es el de «Mtoto», un niño de Kenia, de hace unos 78,000 años.',
+          },
+          {
+            type: 'list',
+            title: 'Otras ideas de la clase',
+            items: [
+              'Friedrich Engels: el trabajo tuvo un papel central en la transformación del simio en ser humano (perspectiva materialista dialéctica).',
+              'La migración forma parte de la historia humana.',
+              'Poblamiento de América: la teoría más aceptada es la llegada por el estrecho de Bering durante las glaciaciones; las rutas por el Pacífico son hipótesis debatidas.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Cuidar al que ya no puede cuidarse',
+            content: 'Algunos fósiles de homínidos muestran fracturas o enfermedades que la persona solo pudo sobrevivir si otros la alimentaron y protegieron durante meses. El cuidado del enfermo, base de la medicina, es tan antiguo como lo humano.',
+          },
+        ],
+      },
+    ],
+  },
   {
     id: 'humanistica-alteridad-rmp',
     title: 'La relación médico-paciente y la alteridad',

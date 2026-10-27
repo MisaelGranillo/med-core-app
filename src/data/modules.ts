@@ -186,6 +186,14 @@ export const modules: Module[] = [
     topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis'],
   },
   {
+    id: 'humanistica-uad-s1',
+    badge: 'UAD · Medicina Humanística — Semana 1',
+    title: 'Medicina Humanística: introducción a las humanidades',
+    subtitle: 'Humanismo y humanidades médicas, despersonalización, tacto y modelo biopsicosocial; teorías del origen de la vida, Miller-Urey, hominización y humanización.',
+    emoji: '🫶',
+    topicIds: ['humanistica-humanismo-medico', 'humanistica-origen-vida-hombre'],
+  },
+  {
     id: 'humanistica-uad-s3',
     badge: 'UAD · Medicina Humanística — Semana 3',
     title: 'Medicina Humanística: la relación médico-paciente',
