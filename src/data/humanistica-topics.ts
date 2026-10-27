@@ -252,6 +252,12 @@ export const humanisticaTopics: Topic[] = [
             title: 'Lo que el experimento demostró y lo que no',
             content: 'Miller y Urey mostraron que las moléculas orgánicas pueden formarse de manera natural a partir de sustancias simples. No crearon vida ni una célula: el paso de las moléculas a los primeros seres vivos sigue en estudio.',
           },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Teoría endosimbiótica',
+            content: 'Las mitocondrias descienden de bacterias que fueron englobadas por una célula ancestral y se quedaron a vivir en simbiosis con ella (teoría endosimbiótica, defendida por Lynn Margulis). Por eso tienen membrana doble y su propio ADN circular, que en el ser humano se hereda por vía materna.',
+          },
         ],
       },
       {
@@ -404,6 +410,21 @@ export const humanisticaTopics: Topic[] = [
             type: 'paragraph',
             content: 'Desde la Antigüedad, Aristóteles y Galeno destacaron el papel de la mano en lo humano. La bipedestación liberó las manos y permitió fabricar herramientas: el cuerpo mismo funcionó como la primera herramienta en la hominización. En medicina, el estetoscopio, el microscopio o la inteligencia artificial son extensiones de los sentidos del médico.',
           },
+          {
+            type: 'note',
+            title: 'El cuerpo del médico también es herramienta',
+            content: 'La palpación, la percusión y la auscultación son formas de contacto corporal con las que el médico obtiene información y se relaciona con el paciente; por eso cuidan su comodidad e intimidad. La inteligencia artificial puede apoyar, pero no sustituye el juicio ni la responsabilidad clínica.',
+          },
+          {
+            type: 'paragraph',
+            content: 'La naturaleza tiene dimensiones física, biológica y social: también vivimos en entornos familiares y comunitarios. Corrientes antiguas como los cínicos, los epicúreos y los estoicos reflexionaron sobre cómo vivir en equilibrio con ella.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Una Salud',
+            content: 'El enfoque «Una Salud» (One Health), que promueven la OMS, la FAO, la Organización Mundial de Sanidad Animal y el PNUMA, reconoce que la salud humana, la animal y la del ambiente están unidas. Muchas enfermedades emergentes, como la rabia o la influenza aviar, pasan de los animales al ser humano.',
+          },
         ],
       },
       {
@@ -431,7 +452,7 @@ export const humanisticaTopics: Topic[] = [
           {
             type: 'definition',
             title: 'Emmanuel Levinas (1906–1995): el «rostro»',
-            content: 'El rostro del otro no es solo su apariencia: expresa su vulnerabilidad y su dependencia, y apela a nuestra responsabilidad. Su primera palabra es un mandato: «No matarás». Es el rostro del pobre, la viuda, el huérfano y el extranjero; para el médico, el del paciente «por el que yo puedo todo y a quien todo debo». De ese encuentro surge una responsabilidad asimétrica.',
+            content: 'El rostro del otro no es solo su apariencia: expresa su vulnerabilidad y su dependencia, y apela a nuestra responsabilidad. Su primera palabra es un mandato: «No matarás». Es el rostro del pobre, la viuda, el huérfano y el extranjero; para el médico, el del paciente «por el que yo puedo todo y a quien todo debo». De ese encuentro surge una responsabilidad asimétrica. La alteridad se entiende como igualdad en la diferencia: el otro es distinto de mí, pero igual en dignidad.',
           },
           {
             type: 'list',
@@ -657,6 +678,12 @@ export const humanisticaTopics: Topic[] = [
             title: 'Terapias complementarias',
             content: 'Prácticas como la meditación o la atención plena pueden ayudar como complemento (por ejemplo, en el dolor y la ansiedad de pacientes con cáncer), pero nunca sustituyen el diagnóstico y el tratamiento de la enfermedad orgánica.',
           },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'La medicina no es una ciencia exacta',
+            content: 'Un mismo médico puede medir distinto en dos ocasiones (variabilidad intraobservador) y dos médicos pueden discrepar (variabilidad interobservador). Por eso se estandarizan la toma de signos vitales, las mediciones y la historia clínica. También la indicación debe ser precisa: «cada 8 horas» no es lo mismo que «con cada comida», porque los intervalos entre comidas no son iguales.',
+          },
         ],
       },
       {
@@ -668,6 +695,19 @@ export const humanisticaTopics: Topic[] = [
           {
             type: 'paragraph',
             content: 'A la unidad biopsicosocial se ha agregado una cuarta dimensión: la ESPIRITUALIDAD (sentido, propósito, conexión, paz, esperanza), religiosa o secular. Se asocia con la salud mental, en sentido positivo (bienestar) y negativo (depresión, ansiedad, adicción), y a través de ella con la salud física: enfermedad cardiovascular, cáncer y mortalidad.',
+          },
+          {
+            type: 'table',
+            title: 'Necesidades humanas desde una visión integral',
+            data: {
+              headers: ['Necesidades', 'Ejemplos'],
+              rows: [
+                ['Biológicas', 'Alimento, agua, aire, luz, sueño, eliminación, movimiento, actividad sexual'],
+                ['Psicológicas', 'Conocimiento, diálogo, recreación, reconocimiento, autonomía'],
+                ['Socioculturales', 'Comunicación, participación, pertenencia; valores culturales, éticos y estéticos'],
+                ['Espirituales', 'Significado y propósito, conexión, bienestar, paz y esperanza'],
+              ],
+            },
           },
           {
             type: 'definition',
