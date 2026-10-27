@@ -791,6 +791,7 @@ const KLINEFELTER: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-lipidos-funcion-esteroides', sectionId: 'bfe-6', label: 'Hormonas esteroideas: función, deficiencia y exceso', porQue: 'La deficiencia de testosterona.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-hipofisis-pancreas', sectionId: 'bhe-1', label: 'Hipotálamo e hipófisis', porQue: 'La LH y la FSH que suben cuando el testículo no responde.' },
     { materia: 'Embriología', topicId: 'embriologia-cromosomas-division', sectionId: 'ecd-4', label: 'Meiosis y no disyunción', porQue: 'El cromosoma X adicional procede de una no disyunción en la meiosis materna o paterna.' },
+    { materia: 'Embriología', topicId: 'embriologia-espermatogenesis', sectionId: 'esp-2', label: 'Sertoli, Leydig y control hormonal', porQue: 'Por qué la falla testicular eleva la FSH y la LH y causa azoospermia.' },
   ],
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },

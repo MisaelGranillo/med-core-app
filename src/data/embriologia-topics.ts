@@ -1,7 +1,8 @@
 import type { Topic } from '../types'
 
-// Embriología I (UAD · EM01004) — Semana 1, Clase 1: panorama del desarrollo
-// temprano, cromosomas, mitosis y meiosis, y ovogénesis.
+// Embriología I (UAD · EM01004) — Semana 1, Clases 1–2: panorama del desarrollo
+// temprano, cromosomas, mitosis y meiosis, ovogénesis, espermatogénesis y
+// anomalías cromosómicas numéricas.
 export const embriologiaTopics: Topic[] = [
   {
     id: 'embriologia-desarrollo-temprano',
@@ -425,7 +426,7 @@ export const embriologiaTopics: Topic[] = [
           },
           {
             type: 'paragraph',
-            content: 'La gran mayoría de los ovocitos no llega a ovularse: degenera por ATRESIA. Desde la pubertad, cada mes empiezan a madurar de 15 a 20 folículos, pero normalmente solo uno alcanza la ovulación.',
+            content: 'La gran mayoría de los ovocitos no llega a ovularse: degenera por ATRESIA. Desde la pubertad, cada mes empiezan a madurar de 15 a 20 folículos, pero normalmente solo uno alcanza la ovulación. Cuando se agotan los folículos llega la menopausia, que se diagnostica tras 12 meses consecutivos sin menstruación.',
           },
           {
             type: 'correlacion',
@@ -512,6 +513,343 @@ export const embriologiaTopics: Topic[] = [
             variant: 'mnemotecnia',
             title: 'Primario en PROfase, secundario en METAfase',
             content: 'PRImario se detiene en PRofase I (diploteno); SEcundario se detiene en metafase II. La segunda detención solo se rompe con la llegada del espermatozoide.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-espermatogenesis',
+    title: 'Espermatogénesis y espermiogénesis',
+    subtitle: 'De la espermatogonia al espermatozoide, células de Sertoli y de Leydig, eje hipotálamo-hipófisis-testículo, temperatura testicular y partes del espermatozoide',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '🧬',
+    keyPoints: [
+      'La espermatogénesis comienza en la PUBERTAD (la ovogénesis, antes del nacimiento) y ocurre en los TÚBULOS SEMINÍFEROS ★',
+      'Espermatogonia A → espermatogonia B → espermatocito primario → (meiosis I) espermatocito secundario → (meiosis II) espermátides → (espermiogénesis) espermatozoide.',
+      'Dura unos 74 días; la profase I del espermatocito primario, unos 22 días. Se producen unos 300 millones de espermatozoides al día.',
+      'SERTOLI: sostiene, nutre y protege; responde a FSH y testosterona · LEYDIG: produce testosterona por estímulo de la LH.',
+      'ESPERMIOGÉNESIS: no es división; forma el acrosoma, condensa el núcleo (protaminas), forma la cola y elimina el citoplasma.',
+      'Los testículos funcionan 2–3 °C por debajo de la temperatura corporal: la criptorquidia y el varicocele alteran la espermatogénesis.',
+    ],
+    sections: [
+      {
+        id: 'esp-1',
+        number: 1,
+        title: 'De la espermatogonia a la espermátide',
+        keyTerms: ['espermatogonia', 'espermatocito', 'espermátide', 'túbulo seminífero'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Secuencia',
+            steps: [
+              'Al nacer, las células germinales primordiales están en los cordones sexuales del testículo.',
+              'En la pubertad, los cordones adquieren luz y forman los túbulos seminíferos; las células germinales originan espermatogonias tipo A.',
+              'Las espermatogonias A se dividen por mitosis; la última división produce espermatogonias tipo B.',
+              'Las tipo B se dividen y forman espermatocitos primarios, que entran en meiosis I (con una profase de unos 22 días).',
+              'La meiosis I produce dos espermatocitos secundarios (haploides, con cromosomas de dos cromátidas).',
+              'La meiosis II produce cuatro espermátides.',
+              'Por espermiogénesis, las espermátides se transforman en espermatozoides, que maduran y se almacenan en el epidídimo.',
+            ],
+          },
+          {
+            type: 'list',
+            title: 'Datos para recordar',
+            items: [
+              'Todo el proceso dura unos 74 días.',
+              'Se producen unos 300 millones de espermatozoides al día.',
+              'Las células hijas de una misma espermatogonia permanecen unidas por puentes citoplasmáticos hasta el final.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Espermatogénesis frente a ovogénesis',
+            left: {
+              title: 'Espermatogénesis',
+              items: ['Comienza en la pubertad y continúa toda la vida', '1 espermatocito primario → 4 espermatozoides funcionales', 'Gametos con X o con Y', 'Sin detenciones de años en la meiosis'],
+            },
+            right: {
+              title: 'Ovogénesis',
+              items: ['Comienza antes del nacimiento', '1 ovocito primario → 1 gameto funcional + cuerpos polares', 'Gametos siempre con X', 'Detenida en profase I y después en metafase II'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'esp-2',
+        number: 2,
+        title: 'Células de Sertoli, de Leydig y control hormonal',
+        keyTerms: ['Sertoli', 'Leydig', 'testosterona', 'inhibina', 'GnRH'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos células del testículo',
+            left: {
+              title: 'Sertoli (dentro del túbulo)',
+              items: ['Sostienen, protegen y nutren a las células germinales', 'Fagocitan el citoplasma residual de las espermátides', 'Liberan a los espermatozoides a la luz', 'Responden a la FSH y a la testosterona; producen inhibina'],
+            },
+            right: {
+              title: 'Leydig (en el intersticio)',
+              items: ['Entre los túbulos seminíferos', 'Producen testosterona', 'Se estimulan por la LH'],
+            },
+          },
+          {
+            type: 'steps',
+            title: 'Eje hipotálamo-hipófisis-testículo',
+            steps: [
+              'El hipotálamo libera GnRH.',
+              'La GnRH estimula a la hipófisis anterior para liberar FSH y LH.',
+              'La LH estimula a las células de Leydig a producir testosterona.',
+              'La FSH, junto con la testosterona, actúa sobre las células de Sertoli y mantiene la espermatogénesis.',
+              'La inhibina de las células de Sertoli frena la secreción de FSH (retroalimentación negativa); la testosterona frena la GnRH y la LH.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Testosterona externa e infertilidad',
+            content: 'La testosterona o los esteroides anabólicos administrados desde fuera suprimen la LH y la FSH por retroalimentación negativa. Sin FSH ni testosterona dentro del testículo, la espermatogénesis se detiene y puede aparecer azoospermia, aunque el nivel de testosterona en sangre sea alto.',
+          },
+        ],
+      },
+      {
+        id: 'esp-3',
+        number: 3,
+        title: 'Espermiogénesis y partes del espermatozoide',
+        keyTerms: ['espermiogénesis', 'acrosoma', 'protaminas', 'pieza intermedia'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Espermiogénesis',
+            content: 'Transformación de la espermátide (célula redonda) en espermatozoide. No es una división celular: es un proceso de diferenciación.',
+          },
+          {
+            type: 'list',
+            title: 'Cambios',
+            items: [
+              'Formación del ACROSOMA a partir del aparato de Golgi; contiene enzimas (acrosina, hialuronidasa) para atravesar las cubiertas del ovocito.',
+              'Condensación del núcleo: las histonas se sustituyen por PROTAMINAS y el ADN se compacta.',
+              'Formación del cuello, la pieza intermedia y la cola (flagelo).',
+              'Las mitocondrias se agrupan en espiral en la pieza intermedia y aportan ATP para el movimiento.',
+              'Se elimina casi todo el citoplasma, que fagocitan las células de Sertoli.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Partes del espermatozoide',
+            data: {
+              headers: ['Parte', 'Contenido', 'Función'],
+              rows: [
+                ['Cabeza', 'Núcleo compacto y acrosoma', 'Aporta el ADN paterno; penetra las cubiertas del ovocito'],
+                ['Cuello', 'Centriolo', 'Une la cabeza con la cola'],
+                ['Pieza intermedia', 'Mitocondrias', 'Energía para el movimiento'],
+                ['Cola (flagelo)', 'Axonema', 'Movilidad'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'esp-4',
+        number: 4,
+        title: 'Temperatura testicular y alteraciones',
+        keyTerms: ['criptorquidia', 'varicocele', 'oligospermia', 'azoospermia'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Los testículos se ubican en el escroto porque la espermatogénesis requiere una temperatura de 2–3 °C por debajo de la corporal. Todo lo que eleve su temperatura o altere su circulación puede reducir la producción de espermatozoides.',
+          },
+          {
+            type: 'table',
+            title: 'Términos clínicos',
+            data: {
+              headers: ['Término', 'Significado'],
+              rows: [
+                ['Criptorquidia', 'Uno o ambos testículos no descienden al escroto'],
+                ['Varicocele', 'Dilatación de las venas del plexo pampiniforme; aumenta la temperatura testicular'],
+                ['Oligospermia', 'Cantidad reducida de espermatozoides en el semen'],
+                ['Azoospermia', 'Ausencia de espermatozoides en el semen'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Criptorquidia: corregir antes del año y medio',
+            content: 'El testículo que no desciende está expuesto a la temperatura abdominal: su espermatogénesis se daña y su riesgo de cáncer testicular es mayor. Si no ha descendido a los 6 meses de edad, se recomienda bajarlo quirúrgicamente (orquidopexia), idealmente antes de los 18 meses.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-anomalias-numericas',
+    title: 'Anomalías cromosómicas numéricas y síndrome de Down',
+    subtitle: 'No disyunción, trisomías y monosomías, frecuencia en abortos y defectos congénitos, síndrome de Down (mecanismos, clínica y edad materna), Edwards y Patau',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '🔢',
+    keyPoints: [
+      'NO DISYUNCIÓN: un par de homólogos (meiosis I) o de cromátidas (meiosis II) no se separa → gametos con 24 o 22 cromosomas → cigoto con 47 (trisomía) o 45 (monosomía) ★',
+      'Las anomalías cromosómicas causan alrededor del 10 % de los defectos congénitos mayores; las mutaciones de un gen, otro 8 %.',
+      'Cerca del 50 % de las concepciones termina en aborto espontáneo y la mitad de esos embriones tiene una anomalía cromosómica: unas 25 % de todas las concepciones.',
+      'DOWN (trisomía 21): no disyunción ≈ 95 % (sobre todo materna), translocación ≈ 4 %, mosaicismo ≈ 1 %.',
+      'Riesgo de Down por edad materna: 1/2000 antes de los 25 años, 1/300 a los 35, 1/100 a los 40.',
+      'EDWARDS = trisomía 18 · PATAU = trisomía 13 · KLINEFELTER = 47,XXY · TURNER = 45,X · TRIPLE X = 47,XXX.',
+    ],
+    sections: [
+      {
+        id: 'ean-1',
+        number: 1,
+        title: 'No disyunción',
+        keyTerms: ['no disyunción', 'trisomía', 'monosomía', 'aneuploidía'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Cómo se produce una trisomía',
+            steps: [
+              'En la meiosis I un par de homólogos no se separa (o en la meiosis II, un par de cromátidas hermanas).',
+              'Un gameto recibe los dos cromosomas (24) y otro ninguno (22).',
+              'Si el gameto con 24 se une a uno normal (23), el cigoto tiene 47: TRISOMÍA.',
+              'Si el gameto con 22 se une a uno normal, el cigoto tiene 45: MONOSOMÍA.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Euploidía y aneuploidía',
+            left: {
+              title: 'Euploidía',
+              items: ['Múltiplo exacto de n (23)', 'Diploidía (2n = 46): el estado NORMAL de las células somáticas', 'Triploidía (3n = 69): anormal; casi nunca compatible con la vida'],
+            },
+            right: {
+              title: 'Aneuploidía',
+              items: ['Número que no es múltiplo de 23', 'Trisomía: un cromosoma de más (47)', 'Monosomía: un cromosoma de menos (45)'],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Puede afectar autosomas o cromosomas sexuales',
+            content: 'La no disyunción de los cromosomas sexuales produce 45,X (Turner), 47,XXY (Klinefelter) o 47,XXX (triple X). Las monosomías de autosomas no son compatibles con la vida.',
+          },
+        ],
+      },
+      {
+        id: 'ean-2',
+        number: 2,
+        title: 'Frecuencia: abortos y defectos congénitos',
+        keyTerms: ['aborto espontáneo', 'defectos congénitos', 'trisomía 16'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Cifras para recordar',
+            data: {
+              headers: ['Dato', 'Valor'],
+              rows: [
+                ['Defectos congénitos mayores por anomalías cromosómicas', '≈ 10 %'],
+                ['Defectos congénitos mayores por mutaciones de un gen', '≈ 8 %'],
+                ['Concepciones que terminan en aborto espontáneo', '≈ 50 %'],
+                ['De esos abortos, con anomalía cromosómica mayor', '≈ 50 % (≈ 25 % de todas las concepciones)'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'En los productos de aborto espontáneo las anomalías más frecuentes son la monosomía 45,X, la triploidía y la trisomía 16, que no son compatibles con el desarrollo completo. Por eso muchos abortos del primer trimestre son, en realidad, una selección natural de embriones con errores cromosómicos.',
+          },
+          {
+            type: 'table',
+            title: 'Síndromes por aneuploidía',
+            data: {
+              headers: ['Síndrome', 'Cariotipo'],
+              rows: [
+                ['Down', '47,XX o XY,+21'],
+                ['Edwards', '47,+18'],
+                ['Patau', '47,+13'],
+                ['Klinefelter', '47,XXY'],
+                ['Triple X', '47,XXX'],
+                ['Turner', '45,X (la única monosomía completa compatible con la vida)'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'ean-3',
+        number: 3,
+        title: 'Síndrome de Down',
+        keyTerms: ['trisomía 21', 'translocación', 'mosaicismo', 'edad materna'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Mecanismos',
+            data: {
+              headers: ['Mecanismo', 'Frecuencia', 'Qué ocurre'],
+              rows: [
+                ['No disyunción meiótica', '≈ 95 %', 'Trisomía libre (47 cromosomas); en ≈ 75 % de estos casos el error ocurre en la formación del ovocito'],
+                ['Translocación', '≈ 4 %', 'El cromosoma 21 extra está unido a otro (13, 14, 15 o 21); el cariotipo puede tener 46 cromosomas'],
+                ['Mosaicismo', '≈ 1 %', 'Solo una parte de las células tiene trisomía 21; el cuadro suele ser más leve'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Rasgos clínicos',
+            items: [
+              'Fisuras palpebrales oblicuas hacia arriba, pliegues epicánticos y cara aplanada.',
+              'Macroglosia relativa y pliegue palmar único.',
+              'Hipotonía y discapacidad intelectual de grado variable.',
+              'Cardiopatías congénitas (sobre todo defectos de los cojinetes endocárdicos).',
+              'Más riesgo de leucemia, infecciones, hipotiroidismo y Alzheimer de inicio temprano.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Riesgo según la edad materna',
+            data: {
+              headers: ['Edad de la madre', 'Riesgo aproximado'],
+              rows: [
+                ['Menos de 25 años', '1 en 2000'],
+                ['35 años', '1 en 300'],
+                ['40 años', '1 en 100'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Por qué importa saber el mecanismo',
+            content: 'En la trisomía libre por no disyunción el riesgo de repetición es bajo y depende sobre todo de la edad materna. En la translocación, uno de los padres puede ser portador balanceado sano, y el riesgo en embarazos futuros es mucho mayor. Por eso todo niño con síndrome de Down necesita un cariotipo, no solo el diagnóstico clínico.',
+          },
+        ],
+      },
+      {
+        id: 'ean-4',
+        number: 4,
+        title: 'Edwards, Patau y diagnóstico prenatal',
+        keyTerms: ['Edwards', 'Patau', 'holoprosencefalia', 'amniocentesis'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos trisomías graves',
+            left: {
+              title: 'Edwards (trisomía 18)',
+              items: ['Micrognatia y occipucio prominente', 'Puños cerrados con dedos superpuestos', 'Anomalías renales y cardiacas', 'Malformaciones esqueléticas'],
+            },
+            right: {
+              title: 'Patau (trisomía 13)',
+              items: ['Holoprosencefalia', 'Labio y paladar hendidos', 'Microftalmia, anoftalmia o coloboma', 'Polidactilia y sordera'],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'Ante un riesgo cromosómico alto, el cariotipo fetal puede obtenerse por amniocentesis (líquido amniótico, en general a partir de la semana 15) o por biopsia de vellosidades coriales. Son estudios invasivos con un riesgo pequeño de pérdida del embarazo, por lo que se ofrecen después de un tamizaje y con asesoría genética.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'También cuenta la salud paterna',
+            content: 'La edad paterna avanzada se asocia sobre todo con mutaciones nuevas de un solo gen, porque las espermatogonias se dividen durante toda la vida y acumulan errores de copia. La edad materna, en cambio, pesa más en las aneuploidías.',
           },
         ],
       },

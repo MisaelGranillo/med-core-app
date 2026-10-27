@@ -657,6 +657,7 @@ const DOWN: Patologia = {
     { materia: 'Histología', topicId: 'histologia-medula-hematopoyesis', sectionId: 'hmed-6', label: 'Correlación clínica: leucemia y otras alteraciones', porQue: 'El mayor riesgo de leucemia en el síndrome de Down.' },
     { materia: 'Embriología', topicId: 'embriologia-cromosomas-division', sectionId: 'ecd-4', label: 'Meiosis y no disyunción', porQue: 'Un par que no se separa en la meiosis I materna deja un gameto con dos cromosomas 21.' },
     { materia: 'Embriología', topicId: 'embriologia-ovogenesis', sectionId: 'eov-1', label: 'Ovogénesis antes del nacimiento', porQue: 'El ovocito pasa décadas detenido en profase I: por eso el riesgo crece con la edad materna.' },
+    { materia: 'Embriología', topicId: 'embriologia-anomalias-numericas', sectionId: 'ean-3', label: 'Síndrome de Down', porQue: 'Los tres mecanismos (no disyunción, translocación, mosaicismo) y el riesgo por edad materna.' },
   ],
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },
@@ -1065,6 +1066,7 @@ const TURNER: Patologia = {
     { materia: 'Histología', topicId: 'histologia-hueso', sectionId: 'hhue-7', label: 'Remodelación y regulación', porQue: 'Sin estrógenos se pierde masa ósea.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-hipofisis-pancreas', sectionId: 'bhe-1', label: 'Hipotálamo e hipófisis', porQue: 'La FSH que sube cuando el ovario no responde.' },
     { materia: 'Embriología', topicId: 'embriologia-cromosomas-division', sectionId: 'ecd-2', label: 'Número de cromosomas', porQue: 'Euploidía y aneuploidía: 45,X es la única monosomía completa compatible con la vida.' },
+    { materia: 'Embriología', topicId: 'embriologia-anomalias-numericas', sectionId: 'ean-2', label: 'Frecuencia en abortos', porQue: 'La monosomía 45,X es de las anomalías más frecuentes en los abortos del primer trimestre.' },
   ],
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },

@@ -181,9 +181,9 @@ export const modules: Module[] = [
     id: 'embriologia-uad-s1',
     badge: 'UAD · Embriología I — Semana 1',
     title: 'Embriología: fundamentos',
-    subtitle: 'Periodos del desarrollo, de la fecundación a la gastrulación; gametogénesis, cromosomas, mitosis y meiosis; ovogénesis y desarrollo folicular.',
+    subtitle: 'Periodos del desarrollo, de la fecundación a la gastrulación; gametogénesis, cromosomas, mitosis y meiosis; ovogénesis y desarrollo folicular; espermatogénesis; anomalías cromosómicas numéricas y síndrome de Down.',
     emoji: '🌱',
-    topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis'],
+    topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis', 'embriologia-espermatogenesis', 'embriologia-anomalias-numericas'],
   },
   {
     id: 'humanistica-uad-s1',

@@ -520,7 +520,7 @@ export const uadMedicina: Plan = {
           name: 'Embriología I',
           code: 'EM01004',
           tags: ['anatomia'],
-          topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis'],
+          topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis', 'embriologia-espermatogenesis', 'embriologia-anomalias-numericas'],
           content: {
             area: 'Ciencias Básicas',
             credits: 8,
@@ -535,15 +535,19 @@ export const uadMedicina: Plan = {
               {
                 number: 1,
                 title: 'Fundamentos de embriología',
-                topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis'],
+                topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis', 'embriologia-espermatogenesis', 'embriologia-anomalias-numericas'],
                 temas: [
                   'Clase 1 (impartida): panorama del desarrollo temprano — periodos embrionario y fetal, fecundación en la ampolla, segmentación (mórula, blastocisto), implantación, disco bilaminar y gastrulación (tres capas germinales); embarazo ectópico y molar',
                   'Clase 1 (impartida): gametogénesis y células germinales primordiales; diploide/haploide, euploidía y aneuploidía; fases de la mitosis y de la meiosis I y II',
                   'Clase 1 (impartida): ovogénesis — ovogonia → ovocito primario (detenido en diploteno) → ovocito secundario (detenido en metafase II); número de ovocitos; folículos primordial, primario, secundario y de Graaf; FSH y pico de LH',
+                  'Clase 2 (impartida): repaso de ovogénesis; espermatogénesis (espermatogonias → espermatocitos → espermátides), células de Sertoli y de Leydig, eje GnRH-FSH-LH, temperatura testicular; espermiogénesis y partes del espermatozoide',
+                  'Clase 2 (impartida): no disyunción, trisomías y monosomías; anomalías cromosómicas en abortos y defectos congénitos; síndrome de Down (no disyunción, translocación, mosaicismo; edad materna), Edwards y Patau',
                   '1. Planografía y terminología; gametogénesis (meiosis, espermatogénesis y espermiogénesis, ovogénesis); ciclo sexual femenino (ciclo ovárico y ciclo menstrual)',
                 ],
                 fuentes: [
                   { title: 'Embriología I — Semana 1, Clase 1', file: 'Embriologia I - Semana 1 - Clase 1.pdf', nota: 'Desarrollo temprano, cromosomas, mitosis, meiosis y ovogénesis.' },
+                  { title: 'Embriología I — Semana 1, Clase 2 (a)', file: 'Embriologia I - Semana 1 - Clase 2a.pdf', nota: 'Ovogénesis, espermatogénesis y espermiogénesis.' },
+                  { title: 'Embriología I — Semana 1, Clase 2 (b)', file: 'Embriologia I - Semana 1 - Clase 2b.pdf', nota: 'Anomalías cromosómicas numéricas y síndrome de Down.' },
                 ],
               },
               {
@@ -577,6 +581,8 @@ export const uadMedicina: Plan = {
             ],
             materiales: [
               { title: 'Semana 1 · Clase 1 — Desarrollo temprano, mitosis, meiosis y ovogénesis', file: 'Embriologia I - Semana 1 - Clase 1.pdf', kind: 'Clase' },
+              { title: 'Semana 1 · Clase 2 (a) — Ovogénesis y espermatogénesis', file: 'Embriologia I - Semana 1 - Clase 2a.pdf', kind: 'Clase' },
+              { title: 'Semana 1 · Clase 2 (b) — Anomalías cromosómicas y síndrome de Down', file: 'Embriologia I - Semana 1 - Clase 2b.pdf', kind: 'Clase' },
               { title: 'Programa Académico — Embriología I (2026-1)', file: 'Embriologia I - Programa.pdf', kind: 'Programa' },
               { title: 'Planeación didáctica — Embriología I', file: 'Embriologia I - Planeacion.pdf', kind: 'Programa' },
             ],
