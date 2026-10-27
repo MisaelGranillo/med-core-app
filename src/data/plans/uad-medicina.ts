@@ -870,7 +870,7 @@ export const uadMedicina: Plan = {
           id: 'medicina-humanistica',
           name: 'Medicina Humanística',
           code: 'MH01007',
-          topicIds: ['humanistica-humanismo-medico', 'humanistica-origen-vida-hombre', 'humanistica-alteridad-rmp', 'humanistica-modelos-rmp', 'humanistica-etica-comunicacion', 'humanistica-causalidad-determinantes', 'humanistica-estilos-vida-cronicas', 'humanistica-sindromes-filiacion-cultural'],
+          topicIds: ['humanistica-humanismo-medico', 'humanistica-origen-vida-hombre', 'humanistica-corporeidad', 'humanistica-unidad-biopsicosocial', 'humanistica-alteridad-rmp', 'humanistica-modelos-rmp', 'humanistica-etica-comunicacion', 'humanistica-causalidad-determinantes', 'humanistica-estilos-vida-cronicas', 'humanistica-sindromes-filiacion-cultural'],
           content: {
             area: 'Ciencias Sociomédicas',
             credits: 4,
@@ -885,14 +885,18 @@ export const uadMedicina: Plan = {
               {
                 number: 1,
                 title: 'Introducción a las humanidades',
-                topicIds: ['humanistica-humanismo-medico', 'humanistica-origen-vida-hombre'],
+                topicIds: ['humanistica-humanismo-medico', 'humanistica-origen-vida-hombre', 'humanistica-corporeidad', 'humanistica-unidad-biopsicosocial'],
                 temas: [
                   'Clase 1 (impartida, 28 sep): humanismo y humanidades médicas; deshumanización y despersonalización; perfil del médico humanista, creencias del paciente y tacto; modelo biopsicosocial',
                   'Clase 1 (impartida, 28 sep): teorías del origen de la vida (creacionismo, generación espontánea, biogénesis, panspermia, evolución química) y Miller-Urey; clasificación del ser humano, hominización y humanización',
+                  'Clase 2 (impartida, 29 sep): relación corporeidad-herramienta-naturaleza; el cuerpo en Zubiri, Levinas, Marcel, Sartre, Merleau-Ponty y Ricoeur',
+                  'Clase 2 (impartida, 29 sep): unidad anatomo-psico-social — modelo biomédico, Engel y el modelo biopsicosocial, factores biológicos, psicológicos y socioculturales, tarea del médico, espiritualidad y psiconeuroinmunología',
                   '1. Origen y evolución de la vida; origen del hombre; relación corporeidad-herramienta-naturaleza; unidad anatomo-psico-social; relación dialéctica entre esferas anatómicas y psíquicas; desarrollo biológico y desarrollo humano',
                 ],
                 fuentes: [
                   { title: 'Medicina Humanística — Semana 1, Clase 1', file: 'Medicina Humanistica - Semana 1 - Clase 1.pdf', nota: 'Humanismo médico; origen de la vida y del ser humano.' },
+                  { title: 'Medicina Humanística — Semana 1, Clase 2 (a)', file: 'Medicina Humanistica - Semana 1 - Clase 2a.pdf', nota: 'Relación corporeidad-herramienta-naturaleza.' },
+                  { title: 'Medicina Humanística — Semana 1, Clase 2 (b)', file: 'Medicina Humanistica - Semana 1 - Clase 2b.pdf', nota: 'Unidad anatomo-psico-social.' },
                 ],
               },
               {
@@ -939,6 +943,8 @@ export const uadMedicina: Plan = {
             ],
             materiales: [
               { title: 'Semana 1 · Clase 1 — Humanismo médico y origen de la vida y del hombre', file: 'Medicina Humanistica - Semana 1 - Clase 1.pdf', kind: 'Clase' },
+              { title: 'Semana 1 · Clase 2 (a) — Corporeidad, herramienta y naturaleza', file: 'Medicina Humanistica - Semana 1 - Clase 2a.pdf', kind: 'Clase' },
+              { title: 'Semana 1 · Clase 2 (b) — Unidad anatomo-psico-social', file: 'Medicina Humanistica - Semana 1 - Clase 2b.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Sesión 1 — La relación médico-paciente y la alteridad', file: 'Medicina Humanistica - Semana 3 - Sesion 1.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Sesión 2 — Elementos y modelos de la RMP', file: 'Medicina Humanistica - Semana 3 - Sesion 2.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Sesión 3 — Ética, comunicación y proxémica', file: 'Medicina Humanistica - Semana 3 - Sesion 3.pdf', kind: 'Clase' },

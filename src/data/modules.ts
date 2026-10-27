@@ -189,9 +189,9 @@ export const modules: Module[] = [
     id: 'humanistica-uad-s1',
     badge: 'UAD · Medicina Humanística — Semana 1',
     title: 'Medicina Humanística: introducción a las humanidades',
-    subtitle: 'Humanismo y humanidades médicas, despersonalización, tacto y modelo biopsicosocial; teorías del origen de la vida, Miller-Urey, hominización y humanización.',
+    subtitle: 'Humanismo y humanidades médicas, despersonalización, tacto y modelo biopsicosocial; teorías del origen de la vida, Miller-Urey, hominización y humanización; corporeidad y unidad anatomo-psico-social.',
     emoji: '🫶',
-    topicIds: ['humanistica-humanismo-medico', 'humanistica-origen-vida-hombre'],
+    topicIds: ['humanistica-humanismo-medico', 'humanistica-origen-vida-hombre', 'humanistica-corporeidad', 'humanistica-unidad-biopsicosocial'],
   },
   {
     id: 'humanistica-uad-s3',
