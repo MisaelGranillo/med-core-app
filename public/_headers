@@ -13,3 +13,17 @@
 /assets/*
   ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
+
+# Descargas del taller (/taller/descargas): estáticos que cambian poco, caché de
+# un día. Pages ya sirve los archivos existentes tal cual; los que falten caen
+# en public/taller/descargas/404.html, nunca en index.html.
+/taller/descargas/*
+  ! Cache-Control
+  Cache-Control: public, max-age=86400
+
+# Los .pdf ya salen como application/pdf (Pages lo infiere por la extensión) y se
+# pueden abrir en el navegador. No se usa una regla «*.pdf» porque también se
+# aplicaría al 404 de un archivo que no existe. El ZIP se nombra explícitamente.
+/taller/descargas/Taller_Autoestudio_Todo.zip
+  Content-Type: application/zip
+  Content-Disposition: attachment

@@ -33,6 +33,12 @@ const AtlasTopic   = named(() => import('./pages/AtlasTopic'),    'AtlasTopic')
 const Libreria     = named(() => import('./pages/Libreria'),      'Libreria')
 const Patologias   = named(() => import('./pages/Patologias'),    'Patologias')
 const PatologiaDetalle = named(() => import('./pages/Patologias'), 'PatologiaDetalle')
+// Taller de autoestudio estratégico: cada página del taller es su propio chunk.
+const TallerLayout      = named(() => import('./pages/taller/TallerLayout'),      'TallerLayout')
+const TallerInicio      = named(() => import('./pages/taller/TallerInicio'),      'TallerInicio')
+const TallerDescargas   = named(() => import('./pages/taller/TallerDescargas'),   'TallerDescargas')
+const TallerProximamente= named(() => import('./pages/taller/TallerProximamente'),'TallerProximamente')
+const TALLER_SLUGS = ['semana', 'planificador', 'matriz', 'instrucciones', 'prompts', 'markdown', 'guia', 'revision']
 
 /* Redirige /modulos/:id (LMGC, id en mayúsculas) al nuevo /plan/:subjectId
  * (id en minúsculas), preservando los enlaces antiguos. */
@@ -142,6 +148,12 @@ export default function App() {
               <Route path="/vocabulario" element={<MedEn />} />
               {/* Ajustes — preferencias (tamaño de texto) */}
               <Route path="/ajustes" element={<Ajustes />} />
+              {/* Taller de autoestudio estratégico */}
+              <Route path="/taller" element={<TallerLayout />}>
+                <Route index element={<TallerInicio />} />
+                <Route path="descargas" element={<TallerDescargas />} />
+                {TALLER_SLUGS.map(s => <Route key={s} path={s} element={<TallerProximamente />} />)}
+              </Route>
               {/* Plan de estudios (capa curricular enchufable) */}
               <Route path="/plan" element={<Plan />} />
               <Route path="/plan/:subjectId" element={<SubjectDetail />} />

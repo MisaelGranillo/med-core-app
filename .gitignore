@@ -5,3 +5,6 @@ dist/
 *.local
 docs/atlas-fuentes/
 src/data/generated/
+
+# Paquetes de entrada (solo se versionan las copias en public/)
+_entrada/

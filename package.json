@@ -6,7 +6,7 @@
   "scripts": {
     "predev": "node scripts/gen-topic-index.mjs",
     "dev": "vite",
-    "prebuild": "node scripts/gen-topic-index.mjs",
+    "prebuild": "node scripts/gen-topic-index.mjs && node scripts/check-taller-descargas.ts",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "deploy": "npm run build && npx wrangler pages deploy dist --project-name=med-core-app --branch=main",

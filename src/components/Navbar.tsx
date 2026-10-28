@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import {
   MagnifyingGlass, X, House, BookOpen, Lightning,
-  Cube, BookOpenText, ChartBar, GraduationCap, Image, Translate, Gear, DotsThreeOutline, Books, Stethoscope,
+  Cube, BookOpenText, ChartBar, GraduationCap, Image, Translate, Gear, DotsThreeOutline, Books, Stethoscope, ChalkboardTeacher,
 } from '@phosphor-icons/react'
 import { LogoMark } from './Logo'
 import { AppearanceMenu } from './AppearanceMenu'
@@ -26,6 +26,9 @@ const NAV_ITEMS = [
   { path: '/quiz',        label: 'Quizzes',      icon: Lightning,      mobile: true  },
   { path: '/progress',    label: 'Progreso',     icon: ChartBar,       mobile: false },
   { path: '/ajustes',     label: 'Ajustes',      icon: Gear,           mobile: false },
+  // Solo en «Más» (móvil): la barra de escritorio no tiene espacio para otro icono;
+  // en escritorio el taller se abre desde Herramientas en Inicio.
+  { path: '/taller',      label: 'Taller',       icon: ChalkboardTeacher, mobile: false, soloMas: true },
 ] as const
 
 const MOBILE_ITEMS = NAV_ITEMS.filter(n => n.mobile)
@@ -80,7 +83,7 @@ export function Navbar() {
 
           {/* Navegación principal — desktop */}
           <nav className="hidden md:flex items-center gap-0.5 flex-shrink-0">
-            {NAV_ITEMS.filter(n => n.path !== '/').map(({ path, label, icon: Icon }) => (
+            {NAV_ITEMS.filter(n => n.path !== '/' && !('soloMas' in n)).map(({ path, label, icon: Icon }) => (
               <Link
                 key={path}
                 to={path}
