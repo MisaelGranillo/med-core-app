@@ -40,7 +40,10 @@ const TallerDescargas   = named(() => import('./pages/taller/TallerDescargas'), 
 const TallerProximamente= named(() => import('./pages/taller/TallerProximamente'),'TallerProximamente')
 const TallerSemana      = named(() => import('./pages/taller/TallerSemana'),      'TallerSemana')
 const TallerPlanificador= named(() => import('./pages/taller/TallerPlanificador'),'TallerPlanificador')
-const TALLER_SLUGS = ['matriz', 'instrucciones', 'prompts', 'markdown', 'guia', 'revision']
+const TallerMatriz      = named(() => import('./pages/taller/TallerMatriz'),      'TallerMatriz')
+const TallerInstrucciones = named(() => import('./pages/taller/TallerInstrucciones'), 'TallerInstrucciones')
+const TallerPrompts     = named(() => import('./pages/taller/TallerPrompts'),     'TallerPrompts')
+const TALLER_SLUGS = ['markdown', 'guia', 'revision']
 
 /* Redirige /modulos/:id (LMGC, id en mayúsculas) al nuevo /plan/:subjectId
  * (id en minúsculas), preservando los enlaces antiguos. */
@@ -156,6 +159,9 @@ export default function App() {
                 <Route path="descargas" element={<TallerDescargas />} />
                 <Route path="semana" element={<TallerSemana />} />
                 <Route path="planificador" element={<TallerPlanificador />} />
+                <Route path="matriz" element={<TallerMatriz />} />
+                <Route path="instrucciones" element={<TallerInstrucciones />} />
+                <Route path="prompts" element={<TallerPrompts />} />
                 {TALLER_SLUGS.map(s => <Route key={s} path={s} element={<TallerProximamente />} />)}
               </Route>
               {/* Plan de estudios (capa curricular enchufable) */}
