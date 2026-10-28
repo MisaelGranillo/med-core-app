@@ -27,6 +27,15 @@ const HORAS_INICIO = Array.from({ length: FRANJAS }, (_, i) => minDe(i))
 /** Día de hoy con lunes = 0, para abrir la vista móvil en el día actual. */
 const hoyDia = () => (new Date().getDay() + 6) % 7
 
+/** Título del evento en el calendario: «Materia: acción» si hay ambas (sin
+ *  repetir la materia si la acción ya empieza con ella). */
+function tituloEvento(b: Bloque): string {
+  const titulo = b.titulo.trim(), accion = b.accion.trim()
+  if (!accion) return titulo || nombreCategoria(b.categoria)
+  if (!titulo || accion.toLowerCase().startsWith(titulo.toLowerCase())) return accion
+  return `${titulo}: ${accion}`
+}
+
 function duracionTexto(min: number): string {
   const h = Math.floor(min / 60), m = min % 60
   return h && m ? `${h} h ${m} min` : h ? `${h} h` : `${m} min`
@@ -147,8 +156,8 @@ export function TallerPlanificador() {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(fechaInicio)) { setAviso('Elige una fecha de inicio válida.'); return }
     const eventos: EventoSemanal[] = elegidos.map(b => ({
       id: b.id,
-      titulo: b.accion.trim() || b.titulo.trim() || nombreCategoria(b.categoria),
-      descripcion: [nombreCategoria(b.categoria), b.accion.trim() && b.titulo.trim() ? b.titulo.trim() : ''].filter(Boolean).join(' · '),
+      titulo: tituloEvento(b),
+      descripcion: nombreCategoria(b.categoria),
       categoria: nombreCategoria(b.categoria),
       dia: b.dia!, inicioMin: b.inicio!, finMin: b.inicio! + b.duracion,
     }))
