@@ -7,14 +7,14 @@ export const TALLER = {
   resumen: 'Planea tu estudio de Medicina como si dirigieras una empresa: propósito, presupuesto de tiempo, sistema y herramientas.',
   publico: 'Estudiantes de Medicina General, UAD Virtual',
   /** Fecha y hora del taller, p. ej. «Sábado 7 de noviembre de 2026, 10:00 h (Ciudad de México)». */
-  fecha: '',
+  fecha: 'Viernes 30 de octubre de 2026, 19:30 h (UTC-6, hora del centro de México)',
   /** Modalidad, p. ej. «En línea por Zoom». */
   modalidad: '',
   duracion: '2 horas',
   regla: 'Todo funciona con un celular y una cuenta de Google gratuita.',
   enlaces: {
     /** Enlace de Google Docs terminado en /copy, que crea una copia del cuaderno en la cuenta de quien lo abre. */
-    copiaCuadernoGoogleDocs: '',
+    copiaCuadernoGoogleDocs: 'https://docs.google.com/document/d/1ofFOYrtxBDOLkk69r8OjCR0pKoPPzvZh9yf719VAOyg/copy',
     /** Presentación del taller en Canva (enlace de solo lectura). */
     presentacionCanva: '',
   },
