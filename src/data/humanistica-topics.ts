@@ -1,7 +1,7 @@
 import type { Topic } from '../types'
 
 // Medicina Humanística (UAD · MH01007) — Semana 1 (Clase 1: humanismo médico,
-// origen de la vida y del ser humano), Semana 3 (la relación médico-paciente,
+// origen de la vida y del ser humano; Clase 2: corporeidad y unidad biopsicosocial), Semana 3 (la relación médico-paciente,
 // sesiones 1–3) y Semana 4 (perfiles patológicos, sesiones 1–3).
 export const humanisticaTopics: Topic[] = [
   {
@@ -252,6 +252,12 @@ export const humanisticaTopics: Topic[] = [
             title: 'Lo que el experimento demostró y lo que no',
             content: 'Miller y Urey mostraron que las moléculas orgánicas pueden formarse de manera natural a partir de sustancias simples. No crearon vida ni una célula: el paso de las moléculas a los primeros seres vivos sigue en estudio.',
           },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Teoría endosimbiótica',
+            content: 'Las mitocondrias descienden de bacterias que fueron englobadas por una célula ancestral y se quedaron a vivir en simbiosis con ella (teoría endosimbiótica, defendida por Lynn Margulis). Por eso tienen membrana doble y su propio ADN circular, que en el ser humano se hereda por vía materna.',
+          },
         ],
       },
       {
@@ -356,6 +362,363 @@ export const humanisticaTopics: Topic[] = [
             variant: 'clinica',
             title: 'Cuidar al que ya no puede cuidarse',
             content: 'Algunos fósiles de homínidos muestran fracturas o enfermedades que la persona solo pudo sobrevivir si otros la alimentaron y protegieron durante meses. El cuidado del enfermo, base de la medicina, es tan antiguo como lo humano.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'humanistica-corporeidad',
+    title: 'Corporeidad, herramienta y naturaleza',
+    subtitle: 'El cuerpo vivido como mediador con el mundo; las herramientas como extensión del cuerpo; el cuerpo en Zubiri, Levinas, Marcel, Sartre, Merleau-Ponty y Ricoeur',
+    colorKey: 'humanistica',
+    categoria: 'Medicina humanística',
+    emoji: '🖐️',
+    keyPoints: [
+      'CORPOREIDAD: la experiencia vivida del propio cuerpo, no solo el cuerpo como objeto físico; a través de él percibimos, sentimos, nos comunicamos y construimos identidad.',
+      'El cuerpo media entre el individuo y la NATURALEZA; las HERRAMIENTAS lo extienden, desde la mano y la piedra tallada hasta el estetoscopio y la inteligencia artificial.',
+      'ZUBIRI: el cuerpo como «soma», con función organizadora, configuradora y somática · LEVINAS: el «rostro» del otro, que exige responsabilidad ★',
+      'MARCEL: cuerpo vivido y encarnado («mi cuerpo en tanto que mío») · SARTRE: cuerpo para mí, cuerpo para el otro y cuerpo conocido por el otro.',
+      'MERLEAU-PONTY: el cuerpo como «carne», nuestro medio general para tener un mundo · RICOEUR: el cuerpo y la acción; cuerpo identificado, capacitado y agradecido.',
+      'Para la medicina: el paciente no «tiene» un cuerpo enfermo; es una persona que vive su enfermedad en su cuerpo.',
+    ],
+    sections: [
+      {
+        id: 'hcp-1',
+        number: 1,
+        title: 'Corporeidad, herramienta y naturaleza',
+        keyTerms: ['corporeidad', 'herramienta', 'naturaleza', 'fenomenología'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Corporeidad',
+            content: 'Experiencia vivida del cuerpo, no solo como objeto físico, sino como totalidad que actúa y es consciente. A través del cuerpo las personas perciben, sienten, se comunican y construyen su identidad. Integra lo físico, lo cognitivo y lo emocional, y también significados culturales y éticos.',
+          },
+          {
+            type: 'table',
+            title: 'Los tres términos de la relación',
+            data: {
+              headers: ['Término', 'Idea central'],
+              rows: [
+                ['Corporeidad', 'El cuerpo vivido es el vehículo con el que se experimenta la realidad, en un espacio y un tiempo concretos (fenomenología, de Husserl a Merleau-Ponty)'],
+                ['Herramienta', 'Extensión del cuerpo que potencia su acción sobre el entorno; con ella el ser humano crea una «segunda naturaleza» cultural'],
+                ['Naturaleza', 'El entorno del que formamos parte; la relación con ella requiere equilibrio, y su pérdida (urbanización, sedentarismo) afecta la salud'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'Desde la Antigüedad, Aristóteles y Galeno destacaron el papel de la mano en lo humano. La bipedestación liberó las manos y permitió fabricar herramientas: el cuerpo mismo funcionó como la primera herramienta en la hominización. En medicina, el estetoscopio, el microscopio o la inteligencia artificial son extensiones de los sentidos del médico.',
+          },
+          {
+            type: 'note',
+            title: 'El cuerpo del médico también es herramienta',
+            content: 'La palpación, la percusión y la auscultación son formas de contacto corporal con las que el médico obtiene información y se relaciona con el paciente; por eso cuidan su comodidad e intimidad. La inteligencia artificial puede apoyar, pero no sustituye el juicio ni la responsabilidad clínica.',
+          },
+          {
+            type: 'paragraph',
+            content: 'La naturaleza tiene dimensiones física, biológica y social: también vivimos en entornos familiares y comunitarios. Corrientes antiguas como los cínicos, los epicúreos y los estoicos reflexionaron sobre cómo vivir en equilibrio con ella.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Una Salud',
+            content: 'El enfoque «Una Salud» (One Health), que promueven la OMS, la FAO, la Organización Mundial de Sanidad Animal y el PNUMA, reconoce que la salud humana, la animal y la del ambiente están unidas. Muchas enfermedades emergentes, como la rabia o la influenza aviar, pasan de los animales al ser humano.',
+          },
+        ],
+      },
+      {
+        id: 'hcp-2',
+        number: 2,
+        title: 'Zubiri, Levinas y Marcel',
+        keyTerms: ['soma', 'rostro', 'cuerpo vivido', 'encarnación'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Xavier Zubiri (1898–1983): el cuerpo como «soma»',
+            data: {
+              headers: ['Función', 'Qué hace'],
+              rows: [
+                ['Organizadora', 'Organiza el sistema entero a partir de sus propiedades físico-químicas'],
+                ['Configuradora', 'Configura materialmente al sistema total como figura'],
+                ['Somática', 'Es el fundamento material de «estar» físicamente presente en la realidad como sistema psico-orgánico'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'Para Zubiri el cuerpo es una estructura dinámica, constitutivamente abierta al mundo; recupera el enfoque psicosomático para entender la unidad humana.',
+          },
+          {
+            type: 'definition',
+            title: 'Emmanuel Levinas (1906–1995): el «rostro»',
+            content: 'El rostro del otro no es solo su apariencia: expresa su vulnerabilidad y su dependencia, y apela a nuestra responsabilidad. Su primera palabra es un mandato: «No matarás». Es el rostro del pobre, la viuda, el huérfano y el extranjero; para el médico, el del paciente «por el que yo puedo todo y a quien todo debo». De ese encuentro surge una responsabilidad asimétrica. La alteridad se entiende como igualdad en la diferencia: el otro es distinto de mí, pero igual en dignidad.',
+          },
+          {
+            type: 'list',
+            title: 'Gabriel Marcel (1889–1973): cuerpo vivido y encarnación',
+            items: [
+              'Mi cuerpo en tanto que mío: no lo tengo como un objeto, lo soy.',
+              'El significado del sentir.',
+              'Mi cuerpo como ser-en-el-mundo.',
+              'El cuerpo como señal de existencia.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'hcp-3',
+        number: 3,
+        title: 'Sartre y Merleau-Ponty',
+        keyTerms: ['cuerpo para sí', 'cuerpo para otro', 'intersubjetividad', 'carne'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Jean-Paul Sartre (1905–1980): tres dimensiones del cuerpo («El ser y la nada»)',
+            data: {
+              headers: ['Dimensión', 'Idea'],
+              rows: [
+                ['Cuerpo para mí', 'Existo mi cuerpo: es mi punto de vista sobre el mundo; las cosas existen «a distancia de mí»'],
+                ['Cuerpo para el otro', 'El cuerpo del otro se me presenta como un objeto, con utilidad o resistencia'],
+                ['Mi cuerpo conocido por el otro', 'Los demás me conocen como cuerpo, y yo existo para mí como conocido por otros'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'Sartre concentra su concepción del cuerpo en el encuentro entre personas: la INTERSUBJETIVIDAD. La dificultad no es unir la conciencia con el propio cuerpo, sino con el cuerpo de los otros.',
+          },
+          {
+            type: 'definition',
+            title: 'Maurice Merleau-Ponty (1908–1961): el cuerpo como «carne»',
+            content: 'El cuerpo humano es una forma (Gestalt), modulada como forma humana: «el cuerpo es nuestro medio general para tener un mundo». No es un mero mecanismo, sino una estructura de sentido, que conserva su mundo incluso cuando la base anatómica se altera.',
+          },
+          {
+            type: 'list',
+            title: 'Seis puntos de su reflexión sobre el cuerpo',
+            items: [
+              'El cuerpo como objeto según la fisiología mecanicista.',
+              'La experiencia del cuerpo según la psicología clásica.',
+              'La espacialidad del cuerpo propio y la motricidad.',
+              'La síntesis del cuerpo propio.',
+              'El cuerpo como ser sexuado.',
+              'El cuerpo como expresión y palabra.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'El miembro fantasma',
+            content: 'Tras una amputación, muchas personas siguen sintiendo el miembro que ya no está, e incluso dolor en él. Merleau-Ponty usó este fenómeno para mostrar que el cuerpo vivido no coincide con el cuerpo anatómico: el «esquema corporal» persiste aunque la base física cambie.',
+          },
+        ],
+      },
+      {
+        id: 'hcp-4',
+        number: 4,
+        title: 'Ricoeur: el cuerpo y la acción',
+        keyTerms: ['acto voluntario', 'cuerpo identificado', 'cuerpo capacitado', 'cuerpo agradecido'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Paul Ricoeur (1913–2005)',
+            items: [
+              'El cuerpo y la conciencia son una unidad que existe antes de la formación del yo.',
+              'El cuerpo es el órgano de la acción.',
+              'Lo voluntario y lo involuntario están entrelazados.',
+              'La necesidad, la emoción y el hábito solo tienen sentido en relación con una voluntad que los solicita, motiva y afecta.',
+            ],
+          },
+          {
+            type: 'steps',
+            title: 'Los tres momentos del acto voluntario',
+            steps: ['«Yo quiero»: yo me decido.', '«Yo muevo mi cuerpo».', '«Yo consiento».'],
+          },
+          {
+            type: 'table',
+            title: 'El cuerpo reconocido',
+            data: {
+              headers: ['Cuerpo', 'Significado'],
+              rows: [
+                ['Identificado', 'El cuerpo como objeto en el mundo, distinto de las cosas: propio y único'],
+                ['Capacitado', 'Lugar y medio de las capacidades lingüísticas, activas, narrativas y responsivas de la persona, en su mezcla de poder y no poder'],
+                ['Agradecido', 'El cuerpo que se vive con otros: en el amor, la amistad, la fraternidad; cuerpo-expresión, cuerpo-gesto'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'El cuerpo en la consulta',
+            content: 'La enfermedad cambia la manera en que el paciente vive su cuerpo: lo que antes «podía» (caminar, trabajar, cuidar a otros) ahora no puede. Preguntar qué actividades ha perdido o qué teme perder ayuda a entender su sufrimiento más allá del diagnóstico, y orienta la rehabilitación hacia lo que para él es importante.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'humanistica-unidad-biopsicosocial',
+    title: 'Unidad anatomo-psico-social: del modelo biomédico al biopsicosocial',
+    subtitle: 'Modelo biomédico y sus límites, Engel y el modelo biopsicosocial, jerarquía de sistemas, factores biológicos, psicológicos y socioculturales, tarea del médico, espiritualidad y psiconeuroinmunología',
+    colorKey: 'humanistica',
+    categoria: 'Medicina humanística',
+    emoji: '🧩',
+    keyPoints: [
+      'MODELO BIOMÉDICO: explica la enfermedad solo por desviaciones de variables biológicas medibles; deja fuera lo psicológico, lo social y la conducta.',
+      'George L. ENGEL (1913–1999) propuso en 1977 el MODELO BIOPSICOSOCIAL, basado en la teoría de sistemas: niveles de organización integrados e interdependientes.',
+      'En la jerarquía de sistemas, la PERSONA es el nivel más alto de la jerarquía orgánica y el más bajo de la jerarquía social.',
+      'FACTORES BIOLÓGICOS: genes, células, órganos y sistemas · PSICOLÓGICOS: conciencia de sí, autocrítica, autocontrol, pensamiento y valor ético de los actos · SOCIOCULTURALES: todo lo aprendido en la historia de la humanidad ★',
+      'El biopsicosocial es un modelo CIENTÍFICO: explica por qué unas personas viven como «enfermedad» lo que otras viven como «problemas de vida».',
+      'Hoy se habla de unidad biopsicosocial y ESPIRITUAL; la espiritualidad influye en la salud mental y física (psiconeuroinmunología).',
+    ],
+    sections: [
+      {
+        id: 'hbs-1',
+        number: 1,
+        title: 'Modelo biomédico',
+        keyTerms: ['modelo biomédico', 'biología molecular', 'reduccionismo'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Modelo biomédico',
+            content: 'Modelo dominante de la enfermedad, con la biología molecular como disciplina básica. Asume que la enfermedad se explica por completo por desviaciones de la norma en variables biológicas (somáticas) medibles, y no deja lugar a las dimensiones sociales, psicológicas y conductuales.',
+          },
+          {
+            type: 'paragraph',
+            content: 'En este modelo, la tarea del médico se centra en estudios clínicos y de laboratorio para probar sus hipótesis diagnósticas. Sin embargo, una persona se ve afectada también por presión social, normas culturales, valores familiares y experiencias personales, que influyen en sus decisiones y en su salud.',
+          },
+          {
+            type: 'note',
+            title: 'Una idea antigua',
+            content: 'La medicina hipocrática ya relacionaba la enfermedad con el ambiente, la alimentación y el modo de vida de cada persona, no solo con el cuerpo aislado.',
+          },
+        ],
+      },
+      {
+        id: 'hbs-2',
+        number: 2,
+        title: 'Engel y el modelo biopsicosocial',
+        keyTerms: ['Engel', 'teoría de sistemas', 'jerarquía', 'persona'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'En 1977, el psiquiatra e internista George L. Engel publicó en la revista Science la necesidad de un nuevo modelo médico que integrara lo biológico, lo psicológico y lo social. Se apoyó en la teoría de sistemas: cada nivel de organización es un todo y a la vez parte de un nivel mayor, y los cambios en uno repercuten en los demás.',
+          },
+          {
+            type: 'steps',
+            title: 'Jerarquía de sistemas (de menor a mayor)',
+            steps: [
+              'Partículas subatómicas → átomos → moléculas → organelos → células → tejidos → órganos y sistemas → sistema nervioso.',
+              'PERSONA (experiencia y conducta): el nivel más alto de la jerarquía orgánica y el más bajo de la jerarquía social.',
+              'Dos personas → familia → comunidad → cultura y subcultura → sociedad y nación → biosfera.',
+            ],
+          },
+          {
+            type: 'list',
+            title: 'Características del ser humano como ser biopsicosocial',
+            items: [
+              'No puede desligarse de su esencia como organismo vivo y sintiente.',
+              'Puede evolucionar, adaptarse al mundo y transformarlo.',
+              'Es una criatura gregaria que no puede subsistir sola.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'hbs-3',
+        number: 3,
+        title: 'Los tres factores',
+        keyTerms: ['factores biológicos', 'factores psicológicos', 'factores socioculturales'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Definiciones para memorizar',
+            data: {
+              headers: ['Factor', 'Definición', 'Variables'],
+              rows: [
+                ['Biológicos', 'Permiten que el ser humano sea un elemento viviente con todos los procesos que le son propios: genes, células, órganos y sistemas', 'Genética, funcionamiento fisiológico, estructura, afectaciones externas e internas'],
+                ['Psicológicos', 'Permiten que el ser humano tenga conciencia de sí mismo, con capacidad autocrítica y de autocontrol, estructuración del pensamiento y valor ético de sus actos', 'Creencias, conceptos de salud y enfermedad, hábitos de vida, repertorio emocional'],
+                ['Socioculturales', 'Todo lo aprendido por el ser humano durante la antropogénesis y la historia de la humanidad', 'Interacciones personales, familiares y grupales; contexto comunitario, cultural y macrosocial'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Las emociones también enferman',
+            content: 'El estrés crónico (por ira, duelo, violencia o pobreza) mantiene activado el eje hipotálamo-hipófisis-suprarrenal y el sistema simpático: sube el cortisol, se altera la respuesta inmune y aumenta el riesgo de hipertensión, infecciones y descontrol de la diabetes. Primero se descarta la enfermedad orgánica, pero ignorar lo emocional deja el tratamiento incompleto.',
+          },
+        ],
+      },
+      {
+        id: 'hbs-4',
+        number: 4,
+        title: 'La tarea del médico',
+        keyTerms: ['modelo científico', 'sufrimiento', 'cooperación del paciente'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'El modelo biopsicosocial es un modelo científico',
+            items: [
+              'Explica por qué algunas personas viven como «enfermedad» condiciones que otras consideran «problemas de vida», sean reacciones emocionales o síntomas somáticos.',
+              'La necesidad del paciente es aliviar la angustia que atribuye, correcta o incorrectamente, a la enfermedad.',
+            ],
+          },
+          {
+            type: 'steps',
+            title: 'Tarea del médico',
+            steps: [
+              'Averiguar cómo y qué siente o ha estado sintiendo y experimentando el paciente.',
+              'Formular hipótesis sobre esos sentimientos y experiencias: el «por qué» y el «para qué».',
+              'Obtener la cooperación del paciente para aliviar el sufrimiento o corregir los trastornos que contribuyen al sufrimiento o la discapacidad.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Terapias complementarias',
+            content: 'Prácticas como la meditación o la atención plena pueden ayudar como complemento (por ejemplo, en el dolor y la ansiedad de pacientes con cáncer), pero nunca sustituyen el diagnóstico y el tratamiento de la enfermedad orgánica.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'La medicina no es una ciencia exacta',
+            content: 'Un mismo médico puede medir distinto en dos ocasiones (variabilidad intraobservador) y dos médicos pueden discrepar (variabilidad interobservador). Por eso se estandarizan la toma de signos vitales, las mediciones y la historia clínica. También la indicación debe ser precisa: «cada 8 horas» no es lo mismo que «con cada comida», porque los intervalos entre comidas no son iguales.',
+          },
+        ],
+      },
+      {
+        id: 'hbs-5',
+        number: 5,
+        title: 'Espiritualidad y salud',
+        keyTerms: ['espiritualidad', 'psiconeuroinmunología', 'eje intestino-cerebro'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'A la unidad biopsicosocial se ha agregado una cuarta dimensión: la ESPIRITUALIDAD (sentido, propósito, conexión, paz, esperanza), religiosa o secular. Se asocia con la salud mental, en sentido positivo (bienestar) y negativo (depresión, ansiedad, adicción), y a través de ella con la salud física: enfermedad cardiovascular, cáncer y mortalidad.',
+          },
+          {
+            type: 'table',
+            title: 'Necesidades humanas desde una visión integral',
+            data: {
+              headers: ['Necesidades', 'Ejemplos'],
+              rows: [
+                ['Biológicas', 'Alimento, agua, aire, luz, sueño, eliminación, movimiento, actividad sexual'],
+                ['Psicológicas', 'Conocimiento, diálogo, recreación, reconocimiento, autonomía'],
+                ['Socioculturales', 'Comunicación, participación, pertenencia; valores culturales, éticos y estéticos'],
+                ['Espirituales', 'Significado y propósito, conexión, bienestar, paz y esperanza'],
+              ],
+            },
+          },
+          {
+            type: 'definition',
+            title: 'Psiconeuroinmunología',
+            content: 'Disciplina que estudia cómo se comunican la mente, el sistema nervioso, el sistema endocrino y el sistema inmune (la impulsó Robert Ader a partir de sus experimentos de los años setenta). Explica por qué el estrés y las emociones modifican la respuesta inmune y el curso de las enfermedades.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'El eje microbiota-intestino-cerebro',
+            content: 'La microbiota intestinal se comunica con el sistema nervioso central por el nervio vago, por metabolitos (como los ácidos grasos de cadena corta) y por señales inmunes. Se relaciona con la respuesta al estrés, el estado de ánimo y la conducta alimentaria: otro ejemplo de que lo biológico y lo psicológico no se separan.',
           },
         ],
       },
