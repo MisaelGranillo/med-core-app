@@ -70,7 +70,7 @@ export function Navbar() {
   return (
     <>
       {/* ── Top bar (desktop) ────────────────────────────── */}
-      <header className="sticky top-0 z-40 bg-surface border-b border-zinc-200" style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}>
+      <header className="print:hidden sticky top-0 z-40 bg-surface border-b border-zinc-200" style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center gap-3">
 
           {/* Logo MedCore */}
@@ -162,7 +162,7 @@ export function Navbar() {
         </div>
       )}
       <nav
-        className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-surface border-t border-zinc-200"
+        className="print:hidden fixed bottom-0 left-0 right-0 z-40 md:hidden bg-surface border-t border-zinc-200"
         style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       >
         <div className="grid grid-cols-5 h-16 max-w-lg mx-auto">

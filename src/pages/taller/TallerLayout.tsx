@@ -16,7 +16,7 @@ export function TallerLayout() {
   return (
     <main className="flex-1 min-w-0">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-4 sm:pt-6">
-        <nav aria-label="Herramientas del taller" className="min-w-0">
+        <nav aria-label="Herramientas del taller" className="min-w-0 print:hidden">
           <ul className="flex gap-2 overflow-x-auto md:flex-wrap md:overflow-visible pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 [scrollbar-width:none]">
             <li className="flex-shrink-0">
               <NavLink to="/taller" end className={({ isActive }) => `${base} ${isActive ? activo : normal}`}>

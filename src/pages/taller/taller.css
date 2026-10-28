@@ -1,0 +1,26 @@
+/* Colores de categoría del planificador del taller. Cada categoría define
+ * fondo, texto y línea para tema claro y oscuro; «Estudio (roca grande)» usa
+ * el acento para destacar. */
+.taller-cat { background: var(--cat-bg); color: var(--cat-ink); border: 1px solid var(--cat-line); }
+
+.cat-clases        { --cat-bg: #ECE7FB; --cat-ink: #4B2E9E; --cat-line: #D3C8F5; }
+.cat-trabajo       { --cat-bg: #E6E9EE; --cat-ink: #3A4352; --cat-line: #CDD3DC; }
+.cat-sueno         { --cat-bg: #E1E6F5; --cat-ink: #2C3A66; --cat-line: #C4CDEA; }
+.cat-traslados     { --cat-bg: #FBEFD9; --cat-ink: #7A4B00; --cat-line: #F0D9AC; }
+.cat-familia       { --cat-bg: #FBE4EA; --cat-ink: #8A1F3D; --cat-line: #F2C5D2; }
+.cat-estudio       { --cat-bg: var(--color-accent); --cat-ink: var(--color-on-accent); --cat-line: var(--color-accent); }
+.cat-estudio-corto { --cat-bg: var(--color-accent-light); --cat-ink: var(--c-primary-ink); --cat-line: #B9CDF7; }
+.cat-revision      { --cat-bg: #DDF2EE; --cat-ink: #0F5B4F; --cat-line: #B8E2DA; }
+.cat-otro          { --cat-bg: var(--color-surface-subtle); --cat-ink: var(--color-text-secondary); --cat-line: var(--color-border); }
+
+.dark .cat-clases        { --cat-bg: #231D3A; --cat-ink: #CFC3FA; --cat-line: #3A2F63; }
+.dark .cat-trabajo       { --cat-bg: #23272F; --cat-ink: #C9D0DB; --cat-line: #353B46; }
+.dark .cat-sueno         { --cat-bg: #1A2034; --cat-ink: #BFC9EC; --cat-line: #2C3556; }
+.dark .cat-traslados     { --cat-bg: #33270F; --cat-ink: #F2D49B; --cat-line: #4E3C17; }
+.dark .cat-familia       { --cat-bg: #361A22; --cat-ink: #F5BFCD; --cat-line: #552A36; }
+.dark .cat-estudio-corto { --cat-line: #2A4373; }
+.dark .cat-revision      { --cat-bg: #12302B; --cat-ink: #A6E3D6; --cat-line: #1F4A42; }
+
+@media print {
+  .taller-cat { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
