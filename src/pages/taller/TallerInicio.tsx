@@ -74,7 +74,7 @@ export function TallerInicio() {
             className="self-start inline-flex items-center gap-2 min-h-[44px] px-4 rounded-2xl bg-primary text-primary-fg text-[0.9375rem] hover:bg-primary-hover transition-colors duration-150"
           >
             <CalendarPlus weight="bold" className="w-[18px] h-[18px]" aria-hidden="true" />
-            Agregar las sesiones a mi Google Calendar
+            Agregar a mi Google Calendar
             <span className="sr-only">(se abre en una pestaña nueva)</span>
           </a>
         )}
