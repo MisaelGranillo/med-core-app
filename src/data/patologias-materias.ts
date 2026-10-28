@@ -658,6 +658,7 @@ const DOWN: Patologia = {
     { materia: 'Embriología', topicId: 'embriologia-cromosomas-division', sectionId: 'ecd-4', label: 'Meiosis y no disyunción', porQue: 'Un par que no se separa en la meiosis I materna deja un gameto con dos cromosomas 21.' },
     { materia: 'Embriología', topicId: 'embriologia-ovogenesis', sectionId: 'eov-1', label: 'Ovogénesis antes del nacimiento', porQue: 'El ovocito pasa décadas detenido en profase I: por eso el riesgo crece con la edad materna.' },
     { materia: 'Embriología', topicId: 'embriologia-anomalias-numericas', sectionId: 'ean-3', label: 'Síndrome de Down', porQue: 'Los tres mecanismos (no disyunción, translocación, mosaicismo) y el riesgo por edad materna.' },
+    { materia: 'Embriología', topicId: 'embriologia-anomalias-estructurales', sectionId: 'eae-3', label: 'Translocación robertsoniana', porQue: 'El ≈ 4 % de los casos por translocación: por eso se pide cariotipo a los padres.' },
   ],
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },
@@ -785,6 +786,7 @@ const FENILCETONURIA: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-aminoacidos-clasificacion', sectionId: 'bac-3', label: 'Esenciales y destino del esqueleto carbonado', porQue: 'La fenilalanina es esencial: no puede quitarse por completo de la dieta.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-aminoacidos-clasificacion', sectionId: 'bac-4', label: 'Moléculas que derivan de los aminoácidos', porQue: 'De la tirosina salen la melanina y las catecolaminas.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-enzimas-estructura', sectionId: 'bez-5', label: 'Cofactores y coenzimas', porQue: 'La tetrahidrobiopterina es el cofactor de la enzima.' },
+    { materia: 'Embriología', topicId: 'embriologia-anomalias-estructurales', sectionId: 'eae-6', label: 'Mutaciones génicas y patrones de herencia', porQue: 'Herencia autosómica recesiva y errores innatos del metabolismo.' },
   ],
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },
@@ -1067,6 +1069,7 @@ const TURNER: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-hipofisis-pancreas', sectionId: 'bhe-1', label: 'Hipotálamo e hipófisis', porQue: 'La FSH que sube cuando el ovario no responde.' },
     { materia: 'Embriología', topicId: 'embriologia-cromosomas-division', sectionId: 'ecd-2', label: 'Número de cromosomas', porQue: 'Euploidía y aneuploidía: 45,X es la única monosomía completa compatible con la vida.' },
     { materia: 'Embriología', topicId: 'embriologia-anomalias-numericas', sectionId: 'ean-2', label: 'Frecuencia en abortos', porQue: 'La monosomía 45,X es de las anomalías más frecuentes en los abortos del primer trimestre.' },
+    { materia: 'Embriología', topicId: 'embriologia-anomalias-numericas', sectionId: 'ean-5', label: 'Klinefelter y Turner', porQue: 'Mecanismos de la monosomía X, disgenesia gonadal y rasgos clínicos.' },
   ],
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },

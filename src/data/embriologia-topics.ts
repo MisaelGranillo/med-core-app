@@ -1,8 +1,8 @@
 import type { Topic } from '../types'
 
-// Embriología I (UAD · EM01004) — Semana 1, Clases 1–2: panorama del desarrollo
-// temprano, cromosomas, mitosis y meiosis, ovogénesis, espermatogénesis y
-// anomalías cromosómicas numéricas.
+// Embriología I (UAD · EM01004) — Semana 1, Clases 1–3: panorama del desarrollo
+// temprano, cromosomas, mitosis y meiosis, ovogénesis, espermatogénesis,
+// anomalías cromosómicas numéricas y estructurales, ciclo ovárico y ovulación.
 export const embriologiaTopics: Topic[] = [
   {
     id: 'embriologia-desarrollo-temprano',
@@ -686,7 +686,7 @@ export const embriologiaTopics: Topic[] = [
   {
     id: 'embriologia-anomalias-numericas',
     title: 'Anomalías cromosómicas numéricas y síndrome de Down',
-    subtitle: 'No disyunción, trisomías y monosomías, frecuencia en abortos y defectos congénitos, síndrome de Down (mecanismos, clínica y edad materna), Edwards y Patau',
+    subtitle: 'No disyunción, trisomías y monosomías, frecuencia en abortos y defectos congénitos, síndrome de Down (mecanismos, clínica y edad materna), Edwards y Patau, Klinefelter y Turner',
     colorKey: 'embriologia',
     categoria: 'Embriología',
     emoji: '🔢',
@@ -842,6 +842,23 @@ export const embriologiaTopics: Topic[] = [
             },
           },
           {
+            type: 'table',
+            title: 'Las tres trisomías principales, de mayor a menor frecuencia y supervivencia',
+            data: {
+              headers: ['Trisomía', 'Frecuencia', 'Supervivencia', 'Patrón de anomalías'],
+              rows: [
+                ['Down (21)', 'Según la edad materna: 1/2000 a 1/100', 'La mayor de las tres', 'Craneofaciales y sistémicas'],
+                ['Edwards (18)', '≈ 1 de cada 5000 recién nacidos', '≈ 85 % de los fetos se pierde entre la semana 10 y el término; los nacidos vivos suelen morir antes de los 2 meses; ≈ 5 % vive más de un año', 'Más SISTÉMICAS: micrognatia, anomalías renales, sindactilia, malformaciones esqueléticas'],
+                ['Patau (13)', '≈ 1 de cada 20 000 nacidos vivos', 'Más del 90 % muere en el primer mes; ≈ 5 % vive más de un año', 'Más CRANEOFACIALES: holoprosencefalia (fusión variable de los hemisferios), defectos oculares, labio y paladar hendidos, sordera'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Lo que comparten',
+            content: 'Las tres trisomías suelen tener cardiopatía y anomalías del oído (por ejemplo, orejas de implantación baja). En Down son típicas la comunicación interauricular e interventricular; en Edwards y Patau las cardiopatías graves son la principal causa de la baja supervivencia.',
+          },
+          {
             type: 'paragraph',
             content: 'Ante un riesgo cromosómico alto, el cariotipo fetal puede obtenerse por amniocentesis (líquido amniótico, en general a partir de la semana 15) o por biopsia de vellosidades coriales. Son estudios invasivos con un riesgo pequeño de pérdida del embarazo, por lo que se ofrecen después de un tamizaje y con asesoría genética.',
           },
@@ -850,6 +867,544 @@ export const embriologiaTopics: Topic[] = [
             variant: 'dato',
             title: 'También cuenta la salud paterna',
             content: 'La edad paterna avanzada se asocia sobre todo con mutaciones nuevas de un solo gen, porque las espermatogonias se dividen durante toda la vida y acumulan errores de copia. La edad materna, en cambio, pesa más en las aneuploidías.',
+          },
+        ],
+      },
+      {
+        id: 'ean-5',
+        number: 5,
+        title: 'Klinefelter y Turner',
+        keyTerms: ['Klinefelter', 'Turner', 'cuerpo de Barr', 'disgenesia gonadal', 'cuello alado'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos aneuploidías de los cromosomas sexuales',
+            left: {
+              title: 'Klinefelter (47,XXY)',
+              items: [
+                'Trisomía; solo en varones porque siempre hay un Y',
+                'Causa más frecuente: no disyunción de los homólogos XX',
+                'Cuerpo de Barr presente en ≈ 80 % (un X inactivado)',
+                'Esterilidad por hialinización de los túbulos seminíferos y atrofia testicular; a veces ginecomastia',
+                'Variantes con más X (48,XXXY): a más X, más afectación cognitiva',
+                '≈ 1 de cada 500 varones',
+              ],
+            },
+            right: {
+              title: 'Turner (45,X)',
+              items: [
+                'Única monosomía completa compatible con la vida, aunque ≈ 98 % de los fetos 45,X se aborta',
+                '≈ 55 % de las pacientes tiene monosomía X sin cuerpo de Barr; en ≈ 80 % de ellas la no disyunción ocurrió en el gameto del padre',
+                'El resto: anomalías estructurales del X o mosaicismo por no disyunción mitótica (cuadro más leve)',
+                'Disgenesia gonadal (ovarios ausentes o en cintilla) y esterilidad',
+                'Talla baja, cuello alado, linfedema de manos y pies, tórax amplio con mamilas separadas',
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Amenorrea primaria con FSH alta',
+            content: 'Una adolescente con talla baja, cuello alado y sin desarrollo mamario que no ha menstruado sugiere Turner: sin ovarios no hay estrógenos, y la FSH y la LH suben porque falta la retroalimentación negativa. El cariotipo confirma el diagnóstico.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-anomalias-estructurales',
+    title: 'Anomalías cromosómicas estructurales y mutaciones génicas',
+    subtitle: 'Estructura del cromosoma, alteraciones balanceadas y desbalanceadas, translocación robertsoniana, microdeleciones (Cri du chat, Angelman, Prader-Willi, Miller-Dieker, DiGeorge), X frágil, herencia autosómica dominante y recesiva, mosaicismo y errores innatos del metabolismo',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '✂️',
+    keyPoints: [
+      'Cromosoma: brazo corto «p», brazo largo «q», centrómero, bandas y telómeros. «22q11» se lee: cromosoma 22, brazo largo, región 1, banda 1.',
+      'BALANCEADAS (inversiones, translocaciones recíprocas): sin pérdida ni ganancia relevante de material, sin fenotipo alterado · DESBALANCEADAS (deleciones, duplicaciones): pérdida o ganancia de material, fenotipo alterado ★',
+      'ROBERTSONIANA: fusión de dos cromosomas acrocéntricos (13, 14, 15, 21 y 22). El portador suele ser sano, pero puede tener hijos con trisomía o monosomía (≈ 4 % de los casos de Down).',
+      'Microdeleciones: CRI DU CHAT 5p · ANGELMAN 15q11-13 materno · PRADER-WILLI 15q11-13 paterno · MILLER-DIEKER 17p13 · DIGEORGE 22q11 ★',
+      'X FRÁGIL: más de 200 repeticiones CGG en el gen FMR1 (Xq27); portadores con 55 a 200. Segunda causa genética de discapacidad intelectual, después del Down.',
+      'Herencia AUTOSÓMICA DOMINANTE: un alelo basta, 50 % de los hijos afectados · RECESIVA: padres portadores, 25 % afectados, 50 % portadores y 25 % sin el alelo ★',
+    ],
+    sections: [
+      {
+        id: 'eae-1',
+        number: 1,
+        title: 'Estructura y nomenclatura del cromosoma',
+        keyTerms: ['brazo p', 'brazo q', 'centrómero', 'bandas', 'telómeros'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Partes de un cromosoma en metafase',
+            items: [
+              'Dos CROMÁTIDAS HERMANAS unidas por el CENTRÓMERO.',
+              'El centrómero divide cada cromátida en un BRAZO CORTO (p, de petit) y un BRAZO LARGO (q).',
+              'Con tinciones especiales cada brazo muestra BANDAS claras y oscuras, que se numeran por regiones.',
+              'En los extremos están los TELÓMEROS.',
+            ],
+          },
+          {
+            type: 'definition',
+            title: 'Cómo se lee una localización',
+            content: 'Número del cromosoma + brazo + región + banda. «5p» es el brazo corto del cromosoma 5; «22q11» es el cromosoma 22, brazo largo, región 1, banda 1; «15q11-13» abarca de la banda 11 a la 13 del brazo largo del cromosoma 15.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Telómeros y vida celular',
+            content: 'Los telómeros se acortan un poco en cada división celular; cuando se agotan, la célula deja de dividirse. Es la base de la teoría de la capacidad replicativa finita de la célula, una de las teorías determinísticas del envejecimiento que se estudian en Medicina Humanística.',
+          },
+        ],
+      },
+      {
+        id: 'eae-2',
+        number: 2,
+        title: 'Alteraciones balanceadas y desbalanceadas',
+        keyTerms: ['deleción', 'duplicación', 'inversión', 'translocación recíproca', 'entrecruzamiento desigual'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Las anomalías estructurales suelen derivar de la rotura de uno o más cromosomas durante la división celular, con una redistribución anómala del material entre cromosomas. Se clasifican según si cambia o no la cantidad de material genético.',
+          },
+          {
+            type: 'comparison',
+            title: 'Dos grandes grupos',
+            left: {
+              title: 'Balanceadas',
+              items: [
+                'No hay pérdida ni ganancia relevante de material genético',
+                'INVERSIÓN: un segmento se rompe y se reinserta girado en el mismo cromosoma',
+                'TRANSLOCACIÓN RECÍPROCA: dos cromosomas intercambian segmentos',
+                'El portador no suele tener fenotipo alterado, pero sus gametos pueden quedar desbalanceados',
+              ],
+            },
+            right: {
+              title: 'Desbalanceadas',
+              items: [
+                'Hay pérdida o ganancia de material genético',
+                'DELECIÓN: se pierde un segmento',
+                'DUPLICACIÓN: un segmento aparece dos veces',
+                'Pueden dar un fenotipo alterado',
+              ],
+            },
+          },
+          {
+            type: 'steps',
+            title: 'Entrecruzamiento desigual',
+            steps: [
+              'En la meiosis los cromosomas homólogos se alinean alelo con alelo.',
+              'Si se alinean desplazados, el entrecruzamiento ocurre entre segmentos que no se corresponden.',
+              'Resultado: un cromosoma gana material (duplicación) y su homólogo lo pierde (deleción).',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'eae-3',
+        number: 3,
+        title: 'Translocación robertsoniana',
+        keyTerms: ['translocación robertsoniana', 'cromosomas acrocéntricos', 'trisomía parcial', 'portador balanceado'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Los cromosomas 13, 14, 15, 21 y 22 son acrocéntricos (el centrómero está casi en un extremo) y tienden a agruparse durante la meiosis. Dos de ellos pueden fusionarse por sus centrómeros: es la translocación robertsoniana.',
+          },
+          {
+            type: 'steps',
+            title: 'Del portador a la descendencia',
+            steps: [
+              'El portador tiene 45 cromosomas, pero conserva casi todo el material: es una translocación balanceada y suele ser sano.',
+              'Al formar sus gametos, el cromosoma fusionado puede repartirse de manera desequilibrada.',
+              'Un gameto puede llevar material de más o de menos del cromosoma involucrado.',
+              'Tras la fecundación se origina una trisomía o una monosomía (completa o parcial).',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Down por translocación',
+            content: 'Alrededor del 4 % de los casos de síndrome de Down se deben a una translocación robertsoniana, casi siempre entre el 21 y el 14, el 15, el 13 u otro 21. La trisomía 13 (Patau) también puede originarse así. Si uno de los padres es portador balanceado, el riesgo de repetición es alto, y puede descubrirse por abortos de repetición o por un primer hijo afectado.',
+          },
+        ],
+      },
+      {
+        id: 'eae-4',
+        number: 4,
+        title: 'Microdeleciones',
+        keyTerms: ['Cri du chat', 'Angelman', 'Prader-Willi', 'Miller-Dieker', 'DiGeorge', 'cresta neural'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Una deleción pequeña, que abarca solo unos cuantos genes contiguos, puede pasar inadvertida en un cariotipo convencional y aun así producir un síndrome. Comparten con frecuencia discapacidad intelectual, microcefalia, hipotonía y cardiopatía congénita; cada uno tiene además un rasgo distintivo.',
+          },
+          {
+            type: 'table',
+            title: 'Síndromes por deleción',
+            data: {
+              headers: ['Síndrome', 'Región', 'Rasgos distintivos'],
+              rows: [
+                ['Cri du chat («maullido de gato»)', 'Brazo corto del 5 (5p)', 'Llanto agudo como maullido de gato, microcefalia, discapacidad intelectual, cardiopatía congénita'],
+                ['Angelman', '15q11-13 del cromosoma MATERNO', 'Discapacidad intelectual, no hablan, desarrollo motor deficiente, periodos espontáneos y prolongados de risa'],
+                ['Prader-Willi', '15q11-13 del cromosoma PATERNO', 'Hipotonía, obesidad, discapacidad intelectual, hipogonadismo y criptorquidia'],
+                ['Miller-Dieker', '17p13', 'Lisencefalia (corteza con pocas circunvoluciones), retraso del desarrollo, convulsiones, anomalías cardiacas y faciales'],
+                ['DiGeorge', '22q11', 'Defectos del paladar, cardiopatía troncoconal (tracto de salida), retraso del lenguaje, problemas de aprendizaje, trastorno parecido a la esquizofrenia'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Misma región, dos síndromes',
+            content: 'Angelman y Prader-Willi afectan la misma región del cromosoma 15. Cuál aparece depende de si la deleción está en el cromosoma heredado de la madre (Angelman) o del padre (Prader-Willi), porque en esa región solo se expresa una de las dos copias según su origen (impronta genómica).',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Cresta neural: corazón y cara a la vez',
+            content: 'Miller-Dieker y DiGeorge comparten defectos cardiacos y craneofaciales porque afectan a las células de la cresta neural, que forman estructuras de la cara y del tracto de salida del corazón (aorta y arteria pulmonar). En DiGeorge las paratiroides pueden faltar o ser pequeñas: sin paratohormona baja el calcio, y la hipocalcemia puede causar convulsiones en el recién nacido. En Miller-Dieker las convulsiones se deben a la lisencefalia.',
+          },
+        ],
+      },
+      {
+        id: 'eae-5',
+        number: 5,
+        title: 'Sitios frágiles: síndrome de X frágil',
+        keyTerms: ['sitio frágil', 'repeticiones CGG', 'FMR1', 'Xq27', 'premutación'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Sitio frágil',
+            content: 'Región cromosómica que tiende a separarse o romperse durante ciertas manipulaciones celulares. Muchos se deben a la repetición de una secuencia de tres nucleótidos, como citosina-guanina-guanina (CGG).',
+          },
+          {
+            type: 'table',
+            title: 'Repeticiones CGG en el gen FMR1',
+            data: {
+              headers: ['Número de repeticiones', 'Situación'],
+              rows: [
+                ['6 a 54', 'Normal'],
+                ['55 a 200', 'Portador (premutación): no tiene el síndrome, pero la repetición puede crecer al pasar a la descendencia'],
+                ['Más de 200', 'Mutación completa: síndrome de X frágil; el brazo largo del X (Xq27) se ve adelgazado'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Rasgos clínicos',
+            items: [
+              'Discapacidad intelectual.',
+              'Pabellones auriculares grandes y mandíbula prominente.',
+              'Testículos grandes.',
+              'Es la segunda causa genética de discapacidad intelectual, después del síndrome de Down.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Por qué afecta más a los varones',
+            content: 'El varón tiene un solo cromosoma X: si ese X lleva la mutación completa, no hay otra copia que compense. Las mujeres también pueden tener el síndrome, pero suele ser más leve porque tienen un segundo X, en parte activo.',
+          },
+        ],
+      },
+      {
+        id: 'eae-6',
+        number: 6,
+        title: 'Mutaciones génicas y patrones de herencia',
+        keyTerms: ['herencia autosómica dominante', 'herencia autosómica recesiva', 'mosaicismo', 'errores innatos del metabolismo'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Muchos defectos congénitos se deben al cambio de un solo gen; se calcula que causan alrededor del 8 % de las malformaciones humanas. Las mutaciones pueden ocurrir en una célula somática o en la línea germinal mientras el embrión se desarrolla.',
+          },
+          {
+            type: 'comparison',
+            title: 'Patrones de herencia mendeliana',
+            left: {
+              title: 'Autosómica dominante',
+              items: [
+                'Un solo alelo alterado basta para tener la enfermedad',
+                'El progenitor que lo transmite está afectado (no es solo portador)',
+                'Riesgo teórico: 50 % de los hijos afectados',
+              ],
+            },
+            right: {
+              title: 'Autosómica recesiva',
+              items: [
+                'Se necesitan los dos alelos alterados',
+                'Típicamente ambos padres son portadores sanos',
+                'Riesgo teórico: 25 % afectados, 50 % portadores, 25 % sin el alelo',
+              ],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'Dónde ocurre la mutación',
+            left: {
+              title: 'Célula somática',
+              items: ['La persona muestra MOSAICISMO: unas células con la mutación y otras sin ella'],
+            },
+            right: {
+              title: 'Línea germinal',
+              items: ['MOSAICISMO DE LÍNEA GERMINAL: el progenitor no expresa la anomalía (sus células somáticas son normales), pero puede transmitirla a varios de sus hijos'],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Errores innatos del metabolismo',
+            items: [
+              'FENILCETONURIA: no se metaboliza la fenilalanina.',
+              'HOMOCISTINURIA: no se metaboliza la homocisteína.',
+              'GALACTOSEMIA: no se metaboliza la galactosa.',
+              'Sin diagnóstico oportuno y dieta adecuada, el compuesto se acumula y produce discapacidad intelectual de grado variable.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Por eso existe el tamiz neonatal',
+            content: 'El tamiz metabólico neonatal (gotas de sangre del talón en los primeros días de vida) busca, entre otras, fenilcetonuria y galactosemia. Detectarlas antes de que haya síntomas permite iniciar la dieta a tiempo y evitar el daño neurológico.',
+          },
+        ],
+      },
+      {
+        id: 'eae-7',
+        number: 7,
+        title: 'Integración: casos clínicos',
+        keyTerms: ['casos clínicos', 'hipogonadismo hipergonadotrópico', 'amenorrea primaria'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'De la pista clínica al diagnóstico',
+            data: {
+              headers: ['Caso', 'Pistas clave', 'Diagnóstico', 'Tipo de alteración'],
+              rows: [
+                ['Recién nacido, madre de 39 años', 'Hipotonía, cara plana, pliegue palmar único, soplo por defecto del tabique auriculoventricular', 'Trisomía 21 (Down), 47 cromosomas', 'Numérica: no disyunción meiótica, sobre todo en la meiosis I materna; factor de riesgo: edad materna'],
+                ['Lactante de 2 meses', 'Llanto agudo como maullido, microcefalia, hipotonía, retraso del crecimiento', 'Cri du chat', 'Estructural: deleción del brazo corto del 5 (5p)'],
+                ['Adolescente de 15 años', 'Amenorrea primaria, talla baja, cuello alado, tórax ancho, sin desarrollo mamario', 'Turner, 45,X', 'Numérica (monosomía X); viable, aunque ≈ 98 % de los fetos 45,X se abortan'],
+                ['Adolescente varón de 16 años', 'Talla alta, extremidades largas, problemas de aprendizaje, poco vello facial, testículos pequeños', 'Klinefelter, 47,XXY', 'Numérica: ganancia de un X por no disyunción meiótica'],
+                ['Recién nacido', 'Micrognatia, orejas de implantación baja, puños cerrados con dedos sobrepuestos, cardiopatía grave', 'Edwards (trisomía 18)', 'Numérica'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'LH y FSH altas con hormonas sexuales bajas',
+            content: 'En Klinefelter y en Turner el hipotálamo y la hipófisis funcionan: hay GnRH, LH y FSH, pero la gónada no responde (testículo atrófico con túbulos hialinizados; ovario en cintilla). Baja la testosterona o el estradiol y, sin retroalimentación negativa, LH y FSH suben: hipogonadismo hipergonadotrópico. Por eso faltan los caracteres sexuales secundarios.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'El tamaño del soplo engaña',
+            content: 'En una comunicación interventricular, un defecto pequeño suele producir un soplo más intenso que uno grande, porque la sangre pasa a gran velocidad por un orificio estrecho. Un soplo débil o ausente no descarta una cardiopatía importante.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-ciclo-ovarico',
+    title: 'Ciclo ovárico y ovulación',
+    subtitle: 'Primera semana del desarrollo (inicio): eje hipotálamo-hipófisis-ovario, fases del ciclo ovárico, teca interna y granulosa, pico de LH y ovulación, cuerpo lúteo y transporte del ovocito',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '🥚',
+    keyPoints: [
+      'GnRH del hipotálamo → células gonadótropas de la adenohipófisis: pulsos RÁPIDOS liberan LH; pulsos LENTOS liberan FSH ★',
+      'Ciclo ovárico: fase FOLICULAR, OVULATORIA, LÚTEA y luteólisis o menstruación; ocurre a la par del ciclo endometrial.',
+      'Cada ciclo se reclutan 15 a 20 folículos primordiales; normalmente solo uno llega a folículo de Graaf (≈ 25 mm).',
+      'Dos células: la TECA INTERNA hace andrógenos (por LH) y la GRANULOSA los convierte en estrógenos con AROMATASA (por FSH) ★',
+      'Pico de LH: factor promotor de la maduración (termina la meiosis I; el ovocito se detiene en metafase II), luteinización, prostaglandinas y colagenasa → ovulación ★',
+      'El cuerpo lúteo produce sobre todo PROGESTERONA → endometrio en fase secretora. La fecundación ocurre casi siempre en la AMPOLLA; el cigoto llega al útero en 3 a 4 días.',
+    ],
+    sections: [
+      {
+        id: 'eco-1',
+        number: 1,
+        title: 'Eje hipotálamo-hipófisis-ovario',
+        keyTerms: ['GnRH', 'adenohipófisis', 'gonadótropas', 'LH', 'FSH'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Tres niveles',
+            steps: [
+              'HIPOTÁLAMO: secreta hormona liberadora de gonadotropinas (GnRH) en pulsos.',
+              'LÓBULO ANTERIOR DE LA HIPÓFISIS (adenohipófisis): sus células gonadótropas responden a la GnRH y liberan LH y FSH.',
+              'GÓNADAS: en la mujer, los ovarios; las mismas gonadotropinas actúan sobre el testículo en el varón.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'La frecuencia del pulso decide',
+            data: {
+              headers: ['Pulsos de GnRH', 'Gonadotropina que predomina'],
+              rows: [
+                ['Rápidos', 'LH (hormona luteinizante)'],
+                ['Lentos', 'FSH (hormona foliculoestimulante)'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Un patrón que se repite',
+            content: 'Muchas hormonas siguen el esquema hipotálamo → hipófisis → órgano blanco: gónadas, tiroides o glándula suprarrenal. Los estrógenos del propio folículo son la señal que acelera los pulsos de GnRH y provoca el pico de LH.',
+          },
+        ],
+      },
+      {
+        id: 'eco-2',
+        number: 2,
+        title: 'Fases del ciclo ovárico y maduración folicular',
+        keyTerms: ['fase folicular', 'fase lútea', 'folículo primario', 'antro', 'folículo de Graaf'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Fases del ciclo ovárico',
+            items: [
+              'Fase FOLICULAR.',
+              'Fase OVULATORIA.',
+              'Fase LÚTEA.',
+              'LUTEÓLISIS y MENSTRUACIÓN: dos fenómenos distintos que ocurren casi al mismo tiempo; uno desencadena al otro.',
+            ],
+          },
+          {
+            type: 'steps',
+            title: 'Del folículo primordial al de Graaf',
+            steps: [
+              'Al nacer hay unos 600 000 a 800 000 ovocitos primarios, cada uno en un folículo primordial.',
+              'Desde la pubertad, cada mes la FSH recluta 15 a 20 folículos primordiales; normalmente solo uno completa su maduración.',
+              'FOLÍCULO PRIMARIO: las células foliculares pasan de planas a cúbicas y proliferan en varias capas (células de la granulosa).',
+              'FOLÍCULO SECUNDARIO: la granulosa secreta líquido que forma el antro folicular.',
+              'FOLÍCULO DE GRAAF (maduro o terciario): el antro crece hasta un diámetro de unos 25 mm.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'eco-3',
+        number: 3,
+        title: 'Teca interna y granulosa: los estrógenos',
+        keyTerms: ['teca interna', 'granulosa', 'aromatasa', 'estradiol', 'moco cervical'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Modelo de dos células',
+            steps: [
+              'La TECA INTERNA (vascularizada, secretora de esteroides) responde a niveles bajos de LH y produce androstenediona y testosterona.',
+              'Los andrógenos pasan a la GRANULOSA.',
+              'Por estímulo de la FSH, la granulosa sintetiza AROMATASA, que convierte los andrógenos en estrona y estradiol 17β.',
+            ],
+          },
+          {
+            type: 'list',
+            title: 'Efectos de los estrógenos',
+            items: [
+              'El ENDOMETRIO entra en fase folicular o PROLIFERATIVA: aumenta de grosor.',
+              'El MOCO CERVICAL se vuelve más fluido y menos ácido (pH ≈ 7.2–7.5) cerca de la ovulación, lo que facilita el paso de los espermatozoides; el resto del tiempo la vagina es ácida.',
+              'El aumento de estrógenos estimula al hipotálamo a liberar pulsos rápidos de GnRH: se produce el PICO DE LH.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'El moco cervical como signo de fertilidad',
+            content: 'En los días cercanos a la ovulación el moco cervical se vuelve transparente, elástico y filante (como clara de huevo). Algunos métodos de conocimiento de la fertilidad se basan en observar este cambio para identificar los días fértiles.',
+          },
+        ],
+      },
+      {
+        id: 'eco-4',
+        number: 4,
+        title: 'Pico de LH y ovulación',
+        keyTerms: ['pico de LH', 'factor promotor de la maduración', 'prostaglandinas', 'colagenasa', 'estigma', 'corona radiada'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Acciones del pico de LH',
+            items: [
+              'Eleva el FACTOR PROMOTOR DE LA MADURACIÓN: el ovocito primario completa la meiosis I (se vuelve ovocito secundario) e inicia la meiosis II.',
+              'El ovocito se detiene en METAFASE II unas 3 horas antes de la ovulación, y así se libera.',
+              'Estimula la producción de PROGESTERONA en la granulosa y la teca interna (LUTEINIZACIÓN).',
+              'Aumenta las PROSTAGLANDINAS, que contraen el músculo liso de la pared ovárica.',
+              'Aumenta la actividad de la COLAGENASA, que digiere las fibras de colágeno alrededor del folículo.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'En la superficie del ovario aparece una pequeña zona avascular, el ESTIGMA, por donde sale el ovocito. Sale rodeado de células del CÚMULO OÓFORO, que al quedar libres con él se llaman CORONA RADIADA: la primera barrera que debe atravesar el espermatozoide. El resto de la granulosa y la teca permanece en el ovario.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: '¿Puede liberarse más de un ovocito?',
+            content: 'Normalmente se libera un solo ovocito, de un solo ovario, y el ovario que ovula alterna sin un orden fijo. Con fármacos inductores de la ovulación (reproducción asistida o tratamiento de la anovulación, por ejemplo en el síndrome de ovario poliquístico) pueden madurar varios folículos y liberarse dos o más ovocitos, lo que aumenta la probabilidad de un embarazo múltiple.',
+          },
+        ],
+      },
+      {
+        id: 'eco-5',
+        number: 5,
+        title: 'Fase lútea: el cuerpo lúteo',
+        keyTerms: ['luteinización', 'células luteínicas', 'cuerpo lúteo', 'progesterona', 'fase secretora'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Formación del cuerpo lúteo',
+            steps: [
+              'Por la LH, las células de la granulosa que quedan y las de la teca interna se vascularizan.',
+              'Adquieren un pigmento amarillo: son las CÉLULAS LUTEÍNICAS («lúteo» = amarillo).',
+              'En conjunto forman el CUERPO LÚTEO.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'El endometrio sigue al ovario',
+            left: {
+              title: 'Antes de la ovulación',
+              items: ['Estrógenos de los folículos', 'Endometrio en fase folicular o PROLIFERATIVA'],
+            },
+            right: {
+              title: 'Después de la ovulación',
+              items: ['Cuerpo lúteo: algo de estrógenos y sobre todo PROGESTERONA', 'Endometrio en fase progestacional o SECRETORA, listo para una posible implantación'],
+            },
+          },
+          {
+            type: 'note',
+            title: 'La «hormona del embarazo»',
+            content: 'La progesterona prepara el útero para recibir al embrión; por eso se le conoce como la hormona del embarazo.',
+          },
+        ],
+      },
+      {
+        id: 'eco-6',
+        number: 6,
+        title: 'Transporte del ovocito',
+        keyTerms: ['fimbrias', 'infundíbulo', 'ampolla', 'istmo', 'fecundación'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Partes de la trompa uterina (de lateral a medial)',
+            items: [
+              'FIMBRIAS: prolongaciones del borde; solo un par de ellas une la trompa con el ovario.',
+              'INFUNDÍBULO: la porción más ancha, en forma de embudo.',
+              'AMPOLLA: región amplia; sitio más frecuente de la fecundación.',
+              'ISTMO: la porción más estrecha, unida a la pared del útero.',
+            ],
+          },
+          {
+            type: 'steps',
+            title: 'Captación del ovocito',
+            steps: [
+              'La trompa no está pegada al ovario: necesita acercarse.',
+              'Contracciones PERISTÁLTICAS de la trompa la aproximan al ovario.',
+              'Las FIMBRIAS barren la superficie ovárica y captan al ovocito.',
+              'En la AMPOLLA suele encontrarse con el espermatozoide; el ovocito fecundado llega a la cavidad uterina en unos 3 a 4 días, mientras se segmenta.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Cuando el embrión no llega',
+            content: 'Si el transporte por la trompa se retrasa o se bloquea (por ejemplo, por cicatrices de una infección pélvica), el embrión puede implantarse fuera del útero. La trompa, y en especial la ampolla, es el sitio más frecuente del embarazo ectópico.',
           },
         ],
       },

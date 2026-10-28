@@ -532,6 +532,7 @@ const GALACTOSEMIA: Patologia = {
     { materia: 'Genética', topicId: 'genetica-mendel', sectionId: 'gmen-2', label: 'Las tres leyes', porQue: 'Herencia autosómica recesiva.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-glucidos-clasificacion', sectionId: 'bgc-5', label: 'Disacáridos', porQue: 'La lactosa es glucosa + galactosa.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-glucidos-clasificacion', sectionId: 'bgc-3', label: 'Monosacáridos', porQue: 'La galactosa difiere de la glucosa solo en el carbono 4.' },
+    { materia: 'Embriología', topicId: 'embriologia-anomalias-estructurales', sectionId: 'eae-6', label: 'Mutaciones génicas y patrones de herencia', porQue: 'Herencia autosómica recesiva y errores innatos del metabolismo.' },
   ],
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },
@@ -792,6 +793,7 @@ const KLINEFELTER: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-hipofisis-pancreas', sectionId: 'bhe-1', label: 'Hipotálamo e hipófisis', porQue: 'La LH y la FSH que suben cuando el testículo no responde.' },
     { materia: 'Embriología', topicId: 'embriologia-cromosomas-division', sectionId: 'ecd-4', label: 'Meiosis y no disyunción', porQue: 'El cromosoma X adicional procede de una no disyunción en la meiosis materna o paterna.' },
     { materia: 'Embriología', topicId: 'embriologia-espermatogenesis', sectionId: 'esp-2', label: 'Sertoli, Leydig y control hormonal', porQue: 'Por qué la falla testicular eleva la FSH y la LH y causa azoospermia.' },
+    { materia: 'Embriología', topicId: 'embriologia-anomalias-numericas', sectionId: 'ean-5', label: 'Klinefelter y Turner', porQue: 'No disyunción de los X, cuerpo de Barr y túbulos seminíferos hialinizados.' },
   ],
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },
@@ -1735,6 +1737,7 @@ const CADERA: Patologia = {
     { materia: 'Anatomía', topicId: 'hueso-coxal', sectionId: 'cox-5', label: 'Acetábulo', porQue: 'La otra mitad de la articulación.' },
     { materia: 'Anatomía', topicId: 'musculos-cadera-muslo', sectionId: 'mcm-3', label: 'Rotadores externos', porQue: 'Los músculos que dejan el miembro en rotación externa.' },
     { materia: 'Histología', topicId: 'histologia-hueso', sectionId: 'hhue-7', label: 'Remodelación y regulación', porQue: 'La osteoporosis que debilita el cuello femoral.' },
+    { materia: 'Medicina Humanística', topicId: 'humanistica-envejecimiento', sectionId: 'hen-3', label: 'Etapas de la vejez y cambios asociados', porQue: 'Menos masa muscular y ósea, y el círculo vicioso del miedo a caer.' },
   ],
   atlas: [
     { id: 'miembro-inferior-oseo', title: 'Miembro inferior óseo' },

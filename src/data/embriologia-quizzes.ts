@@ -1,7 +1,8 @@
 import type { Question } from '../types'
 
-// Embriología I — Semana 1, Clases 1–2: desarrollo temprano, cromosomas, mitosis,
-// meiosis, ovogénesis, espermatogénesis y anomalías cromosómicas numéricas.
+// Embriología I — Semana 1, Clases 1–3: desarrollo temprano, cromosomas, mitosis,
+// meiosis, ovogénesis, espermatogénesis, anomalías cromosómicas numéricas y
+// estructurales, ciclo ovárico y ovulación.
 export const embriologiaQuestions: Question[] = [
   // ── Panorama del desarrollo temprano ──
   {
@@ -427,5 +428,175 @@ export const embriologiaQuestions: Question[] = [
     options: ['Un estudio de sangre materna sin riesgo', 'Un estudio invasivo con un pequeño riesgo de pérdida del embarazo', 'Un ultrasonido', 'Una prueba que se hace al nacer'],
     correctIndex: 1, difficulty: 'medium',
     explanation: 'Se ofrece después de un tamizaje y con asesoría genética.',
+  },
+  // ── Anomalías cromosómicas estructurales y mutaciones génicas (Clase 3) ──
+  {
+    id: 'emb-aeq-q1', topicId: 'embriologia-anomalias-estructurales', type: 'multiple-choice',
+    question: 'En la nomenclatura cromosómica, el brazo corto se designa con la letra:',
+    options: ['q', 'p', 'c', 't'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'p (de petit) es el brazo corto y q el largo; «5p» es el brazo corto del cromosoma 5.',
+  },
+  {
+    id: 'emb-aeq-q2', topicId: 'embriologia-anomalias-estructurales', type: 'multiple-choice',
+    question: '¿Cuál es una alteración estructural BALANCEADA?',
+    options: ['Deleción', 'Duplicación', 'Translocación recíproca', 'Microdeleción'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: 'En las balanceadas (inversiones y translocaciones recíprocas) no se pierde ni se gana material relevante; deleciones y duplicaciones son desbalanceadas.',
+  },
+  {
+    id: 'emb-aeq-q3', topicId: 'embriologia-anomalias-estructurales', type: 'multiple-choice',
+    question: 'Las translocaciones robertsonianas ocurren sobre todo entre los cromosomas:',
+    options: ['1, 2, 3 y X', '13, 14, 15, 21 y 22', '5, 15, 17 y 22', 'X e Y'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Son acrocéntricos y tienden a agruparse durante la meiosis; por esta vía se origina ≈ 4 % de los casos de Down.',
+  },
+  {
+    id: 'emb-aeq-q4', topicId: 'embriologia-anomalias-estructurales', type: 'multiple-choice',
+    question: 'Lactante con llanto agudo parecido al maullido de un gato, microcefalia e hipotonía. ¿Qué alteración se sospecha?',
+    options: ['Deleción del brazo corto del cromosoma 5', 'Microdeleción 22q11', 'Trisomía 18', 'Deleción 17p13'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'Síndrome de Cri du chat: anomalía estructural (deleción 5p).',
+  },
+  {
+    id: 'emb-aeq-q5', topicId: 'embriologia-anomalias-estructurales', type: 'multiple-choice',
+    question: 'La microdeleción 15q11-13 en el cromosoma de origen MATERNO produce el síndrome de:',
+    options: ['Prader-Willi', 'DiGeorge', 'Angelman', 'Miller-Dieker'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Si la deleción está en el cromosoma paterno, el síndrome es Prader-Willi.',
+  },
+  {
+    id: 'emb-aeq-q6', topicId: 'embriologia-anomalias-estructurales', type: 'multiple-choice',
+    question: 'Hipotonía, obesidad, discapacidad intelectual, hipogonadismo y criptorquidia por deleción paterna en 15q11-13 corresponden a:',
+    options: ['Angelman', 'Cri du chat', 'X frágil', 'Prader-Willi'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'Angelman, en cambio, cursa con ausencia de lenguaje y periodos prolongados de risa.',
+  },
+  {
+    id: 'emb-aeq-q7', topicId: 'embriologia-anomalias-estructurales', type: 'multiple-choice',
+    question: '¿Qué síndrome por microdeleción se caracteriza por lisencefalia?',
+    options: ['Miller-Dieker (17p13)', 'Patau', 'DiGeorge (22q11)', 'Angelman'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'La lisencefalia es una corteza con pocas circunvoluciones; se acompaña de retraso del desarrollo y convulsiones.',
+  },
+  {
+    id: 'emb-aeq-q8', topicId: 'embriologia-anomalias-estructurales', type: 'multiple-choice',
+    question: 'En el síndrome de DiGeorge, las convulsiones del recién nacido se explican por:',
+    options: ['Lisencefalia', 'Hipocalcemia por paratiroides ausentes o pequeñas', 'Hipoglucemia', 'Exceso de calcitonina'],
+    correctIndex: 1, difficulty: 'hard',
+    explanation: 'Sin paratohormona baja el calcio. La calcitonina también baja el calcio, así que su falta no explicaría la hipocalcemia.',
+  },
+  {
+    id: 'emb-aeq-q9', topicId: 'embriologia-anomalias-estructurales', type: 'multiple-choice',
+    question: 'El síndrome de X frágil se presenta cuando el gen FMR1 tiene:',
+    options: ['Menos de 55 repeticiones CGG', 'Entre 55 y 200 repeticiones CGG', 'Más de 200 repeticiones CGG', 'Una deleción en 15q'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Con 55 a 200 la persona es portadora (premutación); el gen está en Xq27.',
+  },
+  {
+    id: 'emb-aeq-q10', topicId: 'embriologia-anomalias-estructurales', type: 'multiple-choice',
+    question: 'Si ambos padres son portadores sanos de una enfermedad autosómica recesiva, la probabilidad teórica de que un hijo esté afectado es:',
+    options: ['50 %', '100 %', '0 %', '25 %'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'Además, 50 % serán portadores y 25 % no heredarán el alelo. En la dominante, el riesgo es de 50 %.',
+  },
+  {
+    id: 'emb-aeq-q11', topicId: 'embriologia-anomalias-estructurales', type: 'multiple-choice',
+    question: 'El mosaicismo de línea germinal explica que:',
+    options: ['Un progenitor sin la anomalía la transmita a varios hijos', 'Todas las células del cuerpo tengan la mutación', 'La mutación solo afecte al hígado', 'Se produzca una trisomía'],
+    correctIndex: 0, difficulty: 'hard',
+    explanation: 'Sus células somáticas son normales, pero parte de sus gametos lleva la mutación.',
+  },
+  {
+    id: 'emb-aeq-q12', topicId: 'embriologia-anomalias-estructurales', type: 'multiple-choice',
+    question: 'Varón de 16 años, alto, con testículos pequeños, poco vello facial, testosterona baja y LH y FSH altas. ¿Qué cariotipo se espera?',
+    options: ['45,X', '47,XY,+21', '46,XY,del(5p)', '47,XXY'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'Klinefelter: la hipófisis responde, pero el testículo atrófico no (hipogonadismo hipergonadotrópico).',
+  },
+  // ── Ciclo ovárico y ovulación (Clase 3) ──
+  {
+    id: 'emb-coq-q1', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: 'Los pulsos RÁPIDOS de GnRH favorecen la liberación de:',
+    options: ['FSH', 'LH', 'Prolactina', 'Oxitocina'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Los pulsos lentos favorecen la FSH; los estrógenos aceleran los pulsos y provocan el pico de LH.',
+  },
+  {
+    id: 'emb-coq-q2', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: 'Por estímulo de la LH, las células de la teca interna producen:',
+    options: ['Estradiol', 'Solo progesterona', 'Androstenediona y testosterona', 'Aromatasa'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Esos andrógenos pasan a la granulosa, que los convierte en estrógenos.',
+  },
+  {
+    id: 'emb-coq-q3', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: '¿Qué enzima de la granulosa, inducida por la FSH, convierte los andrógenos en estrógenos?',
+    options: ['Aromatasa', 'Colagenasa', '5-alfa reductasa', 'Hialuronidasa'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'Produce estrona y estradiol 17β.',
+  },
+  {
+    id: 'emb-coq-q4', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: '¿Cuántos folículos primordiales se reclutan en cada ciclo?',
+    options: ['Uno', 'Dos o tres', 'Unos 400', 'De 15 a 20'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'Normalmente solo uno completa la maduración hasta folículo de Graaf.',
+  },
+  {
+    id: 'emb-coq-q5', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: 'El folículo de Graaf alcanza un diámetro aproximado de:',
+    options: ['2 mm', '25 mm', '8 cm', '0.1 mm'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'También se llama folículo maduro o terciario.',
+  },
+  {
+    id: 'emb-coq-q6', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: 'El factor promotor de la maduración, que aumenta con el pico de LH, permite que el ovocito:',
+    options: ['Complete la meiosis I e inicie la meiosis II', 'Se implante', 'Forme el antro', 'Termine la meiosis II'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'La meiosis II solo termina si hay fecundación.',
+  },
+  {
+    id: 'emb-coq-q7', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: '¿En qué fase se libera el ovocito al ovular?',
+    options: ['Profase I (diploteno)', 'Anafase I', 'Telofase II', 'Metafase II'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'Se detiene en metafase II unas 3 horas antes de la ovulación.',
+  },
+  {
+    id: 'emb-coq-q8', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: '¿Qué sustancias contraen el músculo liso de la pared ovárica durante la ovulación?',
+    options: ['Colagenasa', 'Progesterona', 'Prostaglandinas', 'Aromatasa'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'La colagenasa, en cambio, digiere las fibras de colágeno que rodean al folículo.',
+  },
+  {
+    id: 'emb-coq-q9', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: 'Las células del cúmulo oóforo que salen junto con el ovocito forman:',
+    options: ['La teca externa', 'La corona radiada', 'El cuerpo lúteo', 'La zona pelúcida'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'Es la primera barrera que atraviesa el espermatozoide.',
+  },
+  {
+    id: 'emb-coq-q10', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: 'El cuerpo lúteo produce sobre todo:',
+    options: ['FSH', 'Testosterona', 'GnRH', 'Progesterona'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'La progesterona lleva el endometrio a la fase progestacional o secretora.',
+  },
+  {
+    id: 'emb-coq-q11', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: '¿Cuál es el sitio más frecuente de la fecundación?',
+    options: ['Ampolla de la trompa uterina', 'Istmo de la trompa', 'Cavidad uterina', 'Superficie del ovario'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'El ovocito fecundado llega a la cavidad uterina en unos 3 a 4 días.',
+  },
+  {
+    id: 'emb-coq-q12', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: 'Cerca de la ovulación, los estrógenos vuelven el moco cervical:',
+    options: ['Espeso y más ácido', 'Ausente', 'Más fluido y menos ácido', 'Hemorrágico'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Con un pH cercano a 7.2–7.5 facilita el paso y la supervivencia de los espermatozoides.',
   },
 ]

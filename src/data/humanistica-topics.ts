@@ -1,7 +1,8 @@
 import type { Topic } from '../types'
 
 // Medicina Humanística (UAD · MH01007) — Semana 1 (Clase 1: humanismo médico,
-// origen de la vida y del ser humano; Clase 2: corporeidad y unidad biopsicosocial), Semana 3 (la relación médico-paciente,
+// origen de la vida y del ser humano; Clase 2: corporeidad y unidad biopsicosocial;
+// Clase 3: relación dialéctica mente-cuerpo, desarrollo humano y envejecimiento), Semana 3 (la relación médico-paciente,
 // sesiones 1–3) y Semana 4 (perfiles patológicos, sesiones 1–3).
 export const humanisticaTopics: Topic[] = [
   {
@@ -182,7 +183,7 @@ export const humanisticaTopics: Topic[] = [
       'BIOGÉNESIS: la vida procede de vida preexistente · PANSPERMIA (Arrhenius): la vida o sus precursores llegaron del espacio.',
       'EVOLUCIÓN QUÍMICA (Oparin, Haldane): en la Tierra primitiva, gases simples (H₂O, CH₄, NH₃, H₂) y energía formaron moléculas orgánicas («sopa primitiva») ★',
       'MILLER Y UREY (1953): con descargas eléctricas sobre esos gases obtuvieron aminoácidos; no crearon vida, pero mostraron que las moléculas orgánicas pueden formarse así.',
-      'Ser humano: Animalia → mamíferos → primates → homínidos → género Homo → Homo sapiens (el hombre moderno, «Homo sapiens sapiens» en la nomenclatura tradicional).',
+      'Ser humano: Animalia → mamíferos → primates → homínidos → género Homo → Homo sapiens. El hombre moderno se clasifica, biológica y paleoantropológicamente, en la subespecie HOMO SAPIENS SAPIENS ★',
       'Neandertales y Homo sapiens SÍ se cruzaron. El cuidado de los muertos (entierros rituales) es una señal de humanización.',
     ],
     sections: [
@@ -719,6 +720,723 @@ export const humanisticaTopics: Topic[] = [
             variant: 'dato',
             title: 'El eje microbiota-intestino-cerebro',
             content: 'La microbiota intestinal se comunica con el sistema nervioso central por el nervio vago, por metabolitos (como los ácidos grasos de cadena corta) y por señales inmunes. Se relaciona con la respuesta al estrés, el estado de ánimo y la conducta alimentaria: otro ejemplo de que lo biológico y lo psicológico no se separan.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'humanistica-dialectica-mente-cuerpo',
+    title: 'Relación dialéctica entre las esferas anatómica y psíquica',
+    subtitle: 'Dialéctica, dualismo cartesiano y problema mente-cuerpo, monismo, dualismo y emergentismo, monismo materialista y cerebro moral, desarrollo moral de Kohlberg, lo social, lo sociológico y lo antropológico',
+    colorKey: 'humanistica',
+    categoria: 'Medicina humanística',
+    emoji: '☯️',
+    keyPoints: [
+      'RELACIÓN DIALÉCTICA entre las esferas anatómica y psíquica: interacción recíproca entre el cuerpo y los procesos mentales, emocionales y espirituales, donde cada esfera influye y se ve influida por las demás ★',
+      'DESCARTES (s. XVII), dualismo cartesiano: res infinita (Dios; atributo, la perfección), res cogitans (alma; el pensamiento) y res extensa (cuerpo; la extensión). Situaba el alma en la glándula pineal.',
+      'Posturas ante el problema mente-cuerpo: MONISMO (fisicalismo, idealismo, monismo neutral), DUALISMO (de sustancias, de propiedades) y EMERGENTISMO ★',
+      'MONISMO MATERIALISTA: la mente es el producto fisiológico del encéfalo ★',
+      'KOHLBERG, 3 niveles con 2 etapas cada uno: PRECONVENCIONAL (obediencia y castigo; interés propio), CONVENCIONAL (conformidad interpersonal; orden social), POSTCONVENCIONAL (contrato social; principios éticos universales) ★',
+      'LO SOCIAL: relaciones, interacciones y estructuras · LO SOCIOLÓGICO: cómo se relaciona el ser humano con las dinámicas de un grupo · LO ANTROPOLÓGICO: el ser humano desde la diversidad cultural ★',
+    ],
+    sections: [
+      {
+        id: 'hdm-1',
+        number: 1,
+        title: 'La relación dialéctica',
+        keyTerms: ['dialéctica', 'interacción recíproca', 'esfera anatómica', 'esfera psíquica'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Relación dialéctica entre las esferas anatómica y psíquica',
+            content: 'Describe la interacción recíproca entre el cuerpo y los procesos mentales, emocionales y espirituales, donde cada esfera influye y se ve influida por las demás para favorecer el desarrollo integral del ser humano. Es una relación estructural.',
+          },
+          {
+            type: 'paragraph',
+            content: 'La dialéctica tiene una larga historia. En el pensamiento griego era un juego de argumento y contraargumento en el que cada respuesta se apoya en la anterior. Hegel la planteó como tesis y antítesis (con su analogía del amo y el esclavo), y Marx dijo haber «puesto de pie» la filosofía hegeliana con la secuencia tesis-antítesis-síntesis. No toda interacción recíproca es dialéctica: lo es cuando el intercambio construye algo nuevo y transforma a quienes participan.',
+          },
+          {
+            type: 'comparison',
+            title: 'Las dos esferas',
+            left: {
+              title: 'Esfera anatómica',
+              items: ['El cuerpo: sentidos, fisiología, morfología, anatomía', 'Desde el mecanicismo, entendida como una máquina que se descompone y hay que arreglar'],
+            },
+            right: {
+              title: 'Esfera psíquica',
+              items: ['Alma: voluntad, mente, emociones, sentimientos', 'Espíritu: conciencia, intuición, comunión', 'El estudio se centra en el pensamiento; emociones y conciencia tienen instrumentos clínicos de evaluación'],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Para el examen',
+            content: 'En clase se indicó que solo se pregunta lo que se explicó en clase y en el video de integración, con un número parecido de preguntas por tema (unas cinco en el banco de cada uno). El formato típico es una definición textual con varias opciones de término.',
+          },
+        ],
+      },
+      {
+        id: 'hdm-2',
+        number: 2,
+        title: 'Descartes y el problema mente-cuerpo',
+        keyTerms: ['dualismo cartesiano', 'cogito', 'res cogitans', 'res extensa', 'glándula pineal', 'mecanicismo'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Con el «pienso, luego existo» (cogito, ergo sum), René Descartes (siglo XVII) separó la mente del cuerpo. En su dualismo, la mente es pensamiento y carece de extensión espacial, mientras que el cuerpo es extensión física. El cuerpo quedó sometido a las leyes de la física, la química y la biología; el pensamiento, a otras leyes. De ahí nace el problema mente-cuerpo: si son dos sustancias distintas, ¿cómo se relacionan?',
+          },
+          {
+            type: 'table',
+            title: 'Las tres sustancias de Descartes',
+            data: {
+              headers: ['Sustancia', 'Qué es', 'Atributo esencial'],
+              rows: [
+                ['Res infinita', 'Dios: la sustancia en sentido estricto', 'La perfección'],
+                ['Res cogitans', 'El alma o mente (sustancia creada)', 'El pensamiento'],
+                ['Res extensa', 'El cuerpo (sustancia creada)', 'La extensión'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'Descartes aspiraba a expresar toda la naturaleza en fórmulas matemáticas (de ahí el plano cartesiano) y vio al cuerpo humano como una máquina: es el MECANICISMO. Situó en la GLÁNDULA PINEAL el centro sensorio y el recinto del alma, porque ahí, pensaba, convergía toda la información de los sentidos. Mucho antes, Galeno ya había planteado la localización de los fenómenos psíquicos en estructuras cerebrales.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'La glándula pineal hoy',
+            content: 'La pineal secreta melatonina según el ciclo luz-oscuridad. Su precursor es la serotonina, que a su vez se forma a partir del triptófano, un aminoácido esencial de la dieta. En la depresión estacional, frecuente en países con inviernos de pocas horas de luz, se usa la fototerapia (exposición a luz intensa).',
+          },
+        ],
+      },
+      {
+        id: 'hdm-3',
+        number: 3,
+        title: 'Posturas ante el problema mente-cuerpo',
+        keyTerms: ['monismo', 'fisicalismo', 'idealismo', 'monismo neutral', 'dualismo', 'emergentismo'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Principales posturas filosóficas',
+            data: {
+              headers: ['Postura', 'Qué sostiene', 'Variantes'],
+              rows: [
+                ['MONISMO', 'Existe una sola realidad unificadora', 'FISICALISMO: la mente es materia organizada de manera particular · IDEALISMO: solo existe el pensamiento; la materia es una representación mental · MONISMO NEUTRAL: mente y materia son aspectos de una esencia distinta de ambas'],
+                ['DUALISMO', 'Mente y cuerpo son entidades separadas', 'DE SUSTANCIAS: la mente es una sustancia distinta que no sigue las leyes físicas · DE PROPIEDADES: los estados mentales son propiedades fundamentales junto con las propiedades físicas'],
+                ['EMERGENTISMO', 'Los estados mentales surgen del cerebro, pero poseen propiedades irreductibles con efectos causales reales en la experiencia humana', 'La mente «emerge» de la conectividad neuronal'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'El debate actual va más allá del dualismo y del materialismo clásico: incorpora hallazgos de las neurociencias, las ciencias cognitivas, la física cuántica y la inteligencia artificial, con implicaciones para la identidad personal, la responsabilidad moral y el desarrollo de sistemas artificiales con estados mentales.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Por qué importa en salud mental',
+            content: 'Mientras la mente se pensó como algo ajeno al cuerpo, la enfermedad mental quedó fuera de la medicina y su estudio avanzó despacio. Entender que el cerebro es el sustrato de la mente permitió tratar la depresión o la psicosis como problemas de salud, sin reducir a la persona a su cerebro.',
+          },
+        ],
+      },
+      {
+        id: 'hdm-4',
+        number: 4,
+        title: 'Monismo materialista y cerebro moral',
+        keyTerms: ['monismo materialista', 'lóbulo frontal', 'Phineas Gage', 'psicología', 'psiquiatría'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Monismo materialista',
+            content: 'Todo existe independientemente de la conciencia de quien lo piensa, y la mente es el producto fisiológico del encéfalo. («La mente es el producto fisiológico del encéfalo»: verdadero.)',
+          },
+          {
+            type: 'list',
+            title: 'Estructuras relacionadas con decidir entre lo bueno y lo malo',
+            items: [
+              'Lóbulo frontal, región orbitaria.',
+              'Lóbulo frontal, cara dorsolateral.',
+              'Cíngulo anterior.',
+              'Lóbulo temporal.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'historia',
+            title: 'Phineas Gage y Elliot',
+            content: 'En 1848 una barra de hierro atravesó el lóbulo frontal del trabajador ferroviario Phineas Gage. Sobrevivió, pero cambiaron su carácter y su juicio. Más de un siglo después, el neurólogo Antonio Damasio describió a «Elliot», que tras una cirugía en la región orbitofrontal conservó su inteligencia pero perdió la capacidad de tomar decisiones. Casos así sustentan que el razonamiento moral tiene un sustrato cerebral.',
+          },
+          {
+            type: 'comparison',
+            title: 'Psicología y psiquiatría',
+            left: {
+              title: 'Psicología',
+              items: ['Ciencia con método y objeto de estudio propios', 'Psicoterapias y psicoanálisis', 'No prescribe medicamentos'],
+            },
+            right: {
+              title: 'Psiquiatría',
+              items: ['Especialidad médica con una concepción orgánica del cuerpo', 'También hace psicoterapia y psicoanálisis', 'Puede indicar tratamiento farmacológico'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hdm-5',
+        number: 5,
+        title: 'Desarrollo moral de Kohlberg',
+        keyTerms: ['Kohlberg', 'preconvencional', 'convencional', 'postconvencional'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Lawrence Kohlberg, psicólogo, estudió el desarrollo del razonamiento moral en niños y lo extendió hasta la edad adulta. Lo organizó en tres niveles, cada uno con dos etapas.',
+          },
+          {
+            type: 'table',
+            title: 'Niveles y etapas',
+            data: {
+              headers: ['Nivel', 'Etapa', 'Qué guía el juicio'],
+              rows: [
+                ['1. PRECONVENCIONAL (infancia): consecuencias personales', '1. Obediencia y castigo', '«Está mal si me castigan»; la autoridad tiene razón porque tiene poder (no pegar para que no me regañen)'],
+                ['', '2. Interés propio e intercambio instrumental', 'Lo correcto es lo que me beneficia; «te ayudo si tú me ayudas»'],
+                ['2. CONVENCIONAL (adolescencia y muchos adultos): normas sociales y orden', '3. Conformidad interpersonal', 'Ser «bueno» según las expectativas del grupo; importa la aprobación social (fumar porque los amigos fuman)'],
+                ['', '4. Mantenimiento del orden social', 'Cumplir leyes y deberes para que la sociedad funcione; la moral se basa en reglas y autoridad legítima'],
+                ['3. POSTCONVENCIONAL (no todos llegan): principios éticos abstractos', '5. Contrato social', 'Las leyes son acuerdos modificables para proteger derechos; se evalúa si una norma es justa'],
+                ['', '6. Principios éticos universales', 'Justicia, igualdad y dignidad humana; puede implicar desobedecer leyes injustas'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'El desarrollo moral no depende solo de la edad. Hay adultos que siguen razonando en el nivel preconvencional por el contexto en que crecieron («no lo hago porque me pegan» o «porque así lo dijo mi papá»): el desarrollo biológico y el moral no siempre avanzan juntos.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: '¿En qué nivel razona el médico?',
+            content: 'En clase se comentó que los estudiantes de medicina y los médicos suelen quedarse en el nivel convencional, porque la práctica se rige por guías de práctica clínica, algoritmos y medicina basada en evidencia. Razonar en el nivel postconvencional no significa ignorar la evidencia, sino poder juzgar si una norma protege los derechos y la dignidad del paciente.',
+          },
+        ],
+      },
+      {
+        id: 'hdm-6',
+        number: 6,
+        title: 'Lo social, lo sociológico y lo antropológico',
+        keyTerms: ['lo social', 'lo sociológico', 'lo antropológico', 'neuroteología'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La dialéctica entre las esferas anatómica y psíquica se expresa en tres conceptos cercanos pero distintos.',
+          },
+          {
+            type: 'table',
+            title: 'Definiciones para memorizar',
+            data: {
+              headers: ['Concepto', 'Definición'],
+              rows: [
+                ['LO SOCIAL', 'Conjunto de relaciones, interacciones y estructuras que conforman la vida en sociedad, incluyendo cultura, instituciones y normas compartidas'],
+                ['LO SOCIOLÓGICO', 'Forma en que se relaciona el ser humano con las distintas dinámicas sociales y culturales de un grupo social'],
+                ['LO ANTROPOLÓGICO', 'Comprensión del ser humano desde el enfoque de la diversidad cultural y los procesos que dan forma a la sociedad contemporánea, considerando la migración, la identidad étnica, los derechos humanos y la globalización'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Así se pregunta',
+            content: 'En clase se explicó el formato: se da la definición completa y se pide elegir si es lo social, lo sociológico o lo antropológico. Las imágenes de las diapositivas (mapas cerebrales) solo ilustran; se evalúa la definición.',
+          },
+          {
+            type: 'table',
+            title: 'Espiritualidad y cerebro (neuroteología)',
+            data: {
+              headers: ['Componente', 'Región asociada'],
+              rows: [
+                ['El «químico de Dios»', 'Tallo cerebral; serotonina'],
+                ['El «lugar de Dios»', 'Lóbulo temporal'],
+                ['Los virtuosos espirituales (monjes, ministros; meditación)', 'Lóbulos parietales'],
+                ['La biología de la creencia', 'Todo el cerebro; efectos en la salud y la enfermedad'],
+                ['Experiencias cercanas a la muerte', 'Lóbulo frontal'],
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'humanistica-desarrollo-humano',
+    title: 'Desarrollo biológico y desarrollo humano',
+    subtitle: 'Ciclo vital, crecimiento y desarrollo, ámbitos y etapas del desarrollo humano, principios de Baltes, etapas cognitivas de Piaget y etapas psicosociales de Erikson',
+    colorKey: 'humanistica',
+    categoria: 'Medicina humanística',
+    emoji: '📈',
+    keyPoints: [
+      'CICLO VITAL HUMANO: proceso de crecimiento y desarrollo que atraviesan las personas desde el nacimiento hasta la muerte ★',
+      'CRECIMIENTO: cuantitativo, continuo, secuencial, universal e irreversible (proliferación celular) · DESARROLLO: cualitativo; varía con el grupo social, la cultura y el género ★',
+      'Ámbitos del desarrollo: FÍSICO (cuerpo y cerebro, sentidos, motricidad, salud), COGNOSCITIVO (aprendizaje, atención, memoria, lenguaje, pensamiento, creatividad) y PSICOSOCIAL (emociones, personalidad, relaciones) ★',
+      'BALTES, 7 principios: dura toda la vida; es multidimensional; multidireccional; cambia la influencia de biología y cultura; redistribuye recursos; muestra plasticidad; depende del contexto histórico y cultural ★',
+      'PIAGET: sensoriomotora (0–2 años), preoperacional (2–7), operaciones concretas (7–11) y operaciones formales (desde los 11).',
+      'ERIKSON: 8 estadios, cada uno con edad, crisis, relaciones significativas y fuerza básica o virtud ★',
+    ],
+    sections: [
+      {
+        id: 'hdh-1',
+        number: 1,
+        title: 'Ciclo vital: crecimiento y desarrollo',
+        keyTerms: ['ciclo vital', 'crecimiento biológico', 'desarrollo', 'desarrollo biológico'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Ciclo vital humano',
+            content: 'Proceso de crecimiento y desarrollo que atraviesan las personas desde el nacimiento hasta la muerte. Tiene dos componentes que no son lo mismo: el crecimiento y el desarrollo.',
+          },
+          {
+            type: 'comparison',
+            title: 'Crecimiento y desarrollo',
+            left: {
+              title: 'Crecimiento biológico',
+              items: [
+                'Combinación de eventos desde el nivel bioquímico y biofísico hasta el orgánico, que da como resultado la producción íntegra del organismo',
+                'Proceso por el que el ser humano aumenta su tamaño y sus capacidades hasta alcanzar la madurez',
+                'CUANTITATIVO (peso y talla)',
+                'CONTINUO, SECUENCIAL (no se salta etapas), UNIVERSAL (igual para todos) e IRREVERSIBLE',
+                'Se caracteriza por la proliferación celular',
+              ],
+            },
+            right: {
+              title: 'Desarrollo',
+              items: [
+                'Proceso CUALITATIVO',
+                'Incluye cambios físicos, funcionales, emocionales y sociales',
+                'Sus características varían según la diversidad de grupos sociales y culturales y las diferencias de género',
+                'DESARROLLO BIOLÓGICO: cambios físicos, orgánicos y celulares desde la fecundación hasta la muerte',
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'Crecimiento y desarrollo pueden parecer un binomio, pero son fenómenos distintos que no siempre evolucionan de manera sincrónica: un adulto con pleno crecimiento biológico puede seguir razonando con una moral preconvencional.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Cada sistema crece a su ritmo',
+            content: 'Las curvas de crecimiento por sistemas muestran que el sistema nervioso crece muy rápido y se acerca a su tamaño adulto hacia los 5 o 6 años, mientras que el aparato genital casi no crece hasta la pubertad. Por eso la estimulación en los primeros años es tan importante, y la consulta del niño sano vigila peso y talla en sus percentiles: las desviaciones señalan sobrepeso, desnutrición o subcrecimiento.',
+          },
+        ],
+      },
+      {
+        id: 'hdh-2',
+        number: 2,
+        title: 'Ámbitos y etapas del desarrollo humano',
+        keyTerms: ['desarrollo físico', 'desarrollo cognoscitivo', 'desarrollo psicosocial', 'dirección cefalocaudal'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Ámbitos del desarrollo humano',
+            data: {
+              headers: ['Ámbito', 'Definición'],
+              rows: [
+                ['Desarrollo FÍSICO', 'Crecimiento del cuerpo y el cerebro, que incluye las pautas de cambio de las capacidades sensoriales, las habilidades motrices y la salud'],
+                ['Desarrollo COGNOSCITIVO', 'Pauta de cambio de los procesos mentales: aprendizaje, atención, memoria, lenguaje, pensamiento, razonamiento y creatividad'],
+                ['Desarrollo PSICOSOCIAL', 'Pauta de cambio de las emociones, la personalidad y las relaciones sociales'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'La dirección general del desarrollo es CEFALOCAUDAL: primero maduran las funciones neuromusculares de la cabeza y después las del tronco y las extremidades (el bebé sostiene la cabeza, luego se rueda, gatea, se endereza y se pone de pie). El ritmo es rápido en los dos primeros años y de nuevo a partir de la pubertad. Usar andaderas no salta ninguna de estas etapas.',
+          },
+          {
+            type: 'table',
+            title: 'Etapas del desarrollo humano',
+            data: {
+              headers: ['Etapa', 'Edad aproximada', 'Rasgos'],
+              rows: [
+                ['Prenatal', 'Concepción–nacimiento', 'Formación de órganos y sistemas; desarrollo embrionario y fetal; alta sensibilidad a factores ambientales'],
+                ['Primera infancia', '0–2/3 años', 'Crecimiento físico acelerado; desarrollo motor básico (gateo, marcha); lenguaje inicial y vínculos afectivos'],
+                ['Infancia temprana', '2–6 años', 'Lenguaje y pensamiento simbólico; más autonomía; juego cooperativo'],
+                ['Niñez', '6–11/12 años', 'Pensamiento lógico concreto; importancia del grupo de pares; avances cognitivos y sociales'],
+                ['Adolescencia', '11/12–18/20 años', 'Pubertad y madurez sexual; construcción de la identidad; pensamiento abstracto'],
+                ['Adultez temprana', '18/20–40 años', 'Independencia, relaciones estables y proyectos de vida; máximo rendimiento físico'],
+                ['Adultez media', '40–65 años', 'Cambios físicos graduales; mayor estabilidad laboral y familiar'],
+                ['Adultez tardía o vejez', '60/65 años en adelante', 'Envejecimiento físico y cognitivo; adaptación a nuevas condiciones y roles'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Las edades cambian según el autor',
+            content: 'En la misma clase aparecieron dos clasificaciones (por ejemplo, la vejez desde los 60 o desde los 65 años). Se aclaró que no se pregunta en qué año empieza una etapa: lo importante es qué la caracteriza.',
+          },
+        ],
+      },
+      {
+        id: 'hdh-3',
+        number: 3,
+        title: 'Principios del desarrollo de Baltes',
+        keyTerms: ['Baltes', 'ciclo vital', 'plasticidad', 'multidireccional'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Los 7 principios del enfoque del ciclo vital (Paul B. Baltes)',
+            steps: [
+              'El desarrollo dura toda la vida.',
+              'El desarrollo es multidimensional.',
+              'El desarrollo es multidireccional.',
+              'La influencia relativa de la biología y la cultura cambia con el ciclo vital.',
+              'El desarrollo implica modificar la distribución de los recursos.',
+              'El desarrollo muestra plasticidad.',
+              'El contexto histórico y cultural influye en el desarrollo.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Plasticidad: también en el adulto',
+            content: 'El cerebro adulto sigue formando y reforzando conexiones cuando se le exige: aprender, practicar y estudiar activamente (no solo escuchar) aprovecha esa plasticidad neuronal a cualquier edad.',
+          },
+        ],
+      },
+      {
+        id: 'hdh-4',
+        number: 4,
+        title: 'Etapas cognitivas de Piaget',
+        keyTerms: ['Piaget', 'sensoriomotora', 'preoperacional', 'operaciones concretas', 'operaciones formales'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Desarrollo cognitivo',
+            data: {
+              headers: ['Etapa', 'Edad', 'Características', 'Competencias clave'],
+              rows: [
+                ['SENSORIOMOTORA', '0–2 años', 'Conoce por la interacción física con el entorno y la repetición de acciones; desarrolla la permanencia del objeto; pensamiento egocéntrico', 'Conducta orientada a metas; permanencia de los objetos'],
+                ['PREOPERACIONAL', '2–7 años', 'Usa el lenguaje y los símbolos; juego simbólico; clasificación y lógica básica; pensamiento intuitivo y egocéntrico', 'Pensamiento = símbolos e imágenes mentales; lenguaje; conceptos numéricos básicos'],
+                ['OPERACIONES CONCRETAS', '7–11 años', 'Pensamiento lógico y organizado, ligado a situaciones concretas; relaciones de causa y efecto; razonamiento social', 'Seriación, clasificación y conservación; pensamiento sobre fenómenos y objetos reales'],
+                ['OPERACIONES FORMALES', 'Desde los 11 años', 'Razonamiento abstracto, hipotético y deductivo; reflexión sobre conceptos morales y éticos; autopercepción, planificación y decisiones complejas', 'Pensamiento abstracto: lógica y razonamiento'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Explicar según la etapa',
+            content: 'A un niño de 5 años (etapa preoperacional) se le explica un procedimiento con palabras simples, objetos y juego; un adolescente (operaciones formales) ya puede razonar sobre riesgos, hipótesis y consecuencias, y conviene incluirlo en las decisiones.',
+          },
+        ],
+      },
+      {
+        id: 'hdh-5',
+        number: 5,
+        title: 'Etapas psicosociales de Erikson',
+        keyTerms: ['Erikson', 'crisis psicosocial', 'relaciones significativas', 'virtud'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Los 8 estadios',
+            data: {
+              headers: ['Estadio', 'Etapa', 'Edad', 'Crisis', 'Relaciones significativas', 'Fuerza básica (virtud)'],
+              rows: [
+                ['I', 'Infancia temprana', '0–18 meses', 'Confianza vs. desconfianza', 'Madre', 'Esperanza y fe'],
+                ['II', 'Infancia tardía', '18 meses–3 años', 'Autonomía vs. vergüenza', 'Padres', 'Voluntad y determinación'],
+                ['III', 'Niñez temprana', '3–6 años', 'Iniciativa vs. culpa', 'Familia', 'Propósito y finalidad'],
+                ['IV', 'Edad escolar', '6–12 años', 'Laboriosidad vs. inferioridad', 'Vecindario y escuela', 'Competencia'],
+                ['V', 'Adolescencia', '13–18 años', 'Identidad vs. confusión', 'Grupos y modelos de roles', 'Fidelidad y lealtad'],
+                ['VI', 'Adultez temprana', '19–40 años', 'Intimidad vs. aislamiento', 'Colegas y amigos', 'Amor'],
+                ['VII', 'Adultez', '45–60 años', 'Productividad vs. estancamiento', 'Hogar y compañeros de trabajo', 'Cuidado'],
+                ['VIII', 'Edad avanzada', '60 años o más', 'Integridad vs. desesperación', 'Los seres humanos, «los míos»', 'Sabiduría'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Así se pregunta',
+            content: 'En clase se señaló que de Erikson se pregunta el estadio, la etapa, la edad, la crisis, las relaciones significativas y la fuerza básica o virtud.',
+          },
+          {
+            type: 'list',
+            title: 'Ejemplos de clase',
+            items: [
+              'Autonomía vs. vergüenza: a un niño de 2 años le pesa que le digan «le voy a decir a tu papá».',
+              'Iniciativa vs. culpa: «¿lo hago o no lo hago? Si lo hago, me van a regañar».',
+              'Laboriosidad vs. inferioridad: el niño aprende que el esfuerzo da resultados.',
+              'Productividad vs. estancamiento: la «crisis de los 40», al evaluar lo logrado y el futuro.',
+              'Integridad vs. desesperación: revisar la propia vida y afrontar la mortalidad; la virtud es la sabiduría.',
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'humanistica-envejecimiento',
+    title: 'Envejecimiento: construcción social y formas de envejecer',
+    subtitle: 'Definición de vejez, pirámides poblacionales de México, teorías estocásticas y determinísticas, etapas de la vejez, cambios físicos y cognitivos, tipos y modelos de vejez, envejecimiento exitoso, saludable, activo, frágil y patológico, ageísmo y Plan de Madrid',
+    colorKey: 'humanistica',
+    categoria: 'Medicina humanística',
+    emoji: '🧓',
+    keyPoints: [
+      'VEJEZ: proceso continuo, heterogéneo, universal e irreversible que determina una pérdida progresiva de la capacidad de adaptación. El envejecimiento es una CONSTRUCCIÓN SOCIAL ★',
+      'Teorías ESTOCÁSTICAS (cambios al azar, modificados por el ambiente): genéticas, mutación genética, radicales libres, error catastrófico, uniones cruzadas, productos de desecho, inmunológicas · DETERMINÍSTICAS (solo dos): capacidad replicativa finita de la célula y evolutivas ★',
+      'Tipos de envejecimiento: BIOLÓGICO, PSICOLÓGICO, SOCIAL y FUNCIONAL (mantener la independencia en la vida diaria) ★',
+      'Modelo DEFICITARIO (enfermedad, improductividad, decadencia) vs. modelo de DESARROLLO (una etapa más, segunda etapa de libertad, tiempo de humanización) ★',
+      'EXITOSO (Rowe: bajo riesgo de enfermar, alta actividad física y mental) · SALUDABLE (se construye mucho antes de los 60) · ACTIVO (OMS, 2002): optimizar las oportunidades de SALUD, PARTICIPACIÓN y SEGURIDAD ★',
+      'AGEÍSMO (edadismo): prejuicio o discriminación por la edad.',
+    ],
+    sections: [
+      {
+        id: 'hen-1',
+        number: 1,
+        title: 'La vejez como construcción social',
+        keyTerms: ['vejez', 'construcción social', 'pirámide poblacional', 'adultez tardía'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Vejez',
+            content: 'Proceso continuo, heterogéneo, universal e irreversible que determina una pérdida progresiva de la capacidad de adaptación. Es un fenómeno extremadamente variable, influido por factores del contexto genético, social e histórico, cargado de afectos y sentimientos que se construyen durante el ciclo vital y están permeados por la cultura y las tradiciones. Por eso no es claro precisar su inicio por la edad cronológica, y tiene mayor estructuración desde lo individual y lo social: el envejecimiento es una CONSTRUCCIÓN SOCIAL.',
+          },
+          {
+            type: 'paragraph',
+            content: 'Las pirámides de población de México lo ilustran. La de 1974 era una pirámide de base amplia; la de 2010 empezó a perder esa forma. Las proyecciones indican que en 2030 la mayor proporción de la población tendrá entre 20 y 60 años, y en 2050 entre 45 y 70, con menos niños por la baja de la natalidad. Cada vez menos personas en edad productiva sostendrán a más personas mayores: uno de los grandes retos económicos, familiares y de salud.',
+          },
+          {
+            type: 'list',
+            title: 'Aspectos importantes de la adultez tardía',
+            items: [
+              'REFLEXIÓN sobre la vida: evaluación de logros y experiencias.',
+              'PÉRDIDA: afrontar la muerte de seres queridos y la propia mortalidad.',
+              'SALUD: manejo de enfermedades y mantenimiento de la independencia.',
+              'ACTIVIDADES SOCIALES: participación en grupos y actividades recreativas.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Los casos de clase',
+            content: 'María (75 años, se recuperó de un infarto, hace ejercicio y tiene redes de apoyo), Lucy (70 años, vive en una residencia, se considera independiente y alegre) y Manuel (65 años, triste, apático y con una visión negativa de la vejez) muestran que la edad no basta para entender cómo se envejece. Se aclaró que los casos ilustran el tema y no se preguntan como tales.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'historia',
+            title: 'Prepararse para morir',
+            content: 'En la Edad Media circulaban manuales del ars moriendi («el arte de morir») para preparar a las personas ante la muerte. Hoy esa preparación tiene forma clínica y legal: hablar en familia, planear los cuidados al final de la vida y, en México, dejar por escrito una voluntad anticipada.',
+          },
+        ],
+      },
+      {
+        id: 'hen-2',
+        number: 2,
+        title: 'Teorías del envejecimiento',
+        keyTerms: ['teorías estocásticas', 'teorías determinísticas', 'radicales libres', 'capacidad replicativa finita'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos grupos de teorías',
+            left: {
+              title: 'Estocásticas',
+              items: [
+                'Atribuyen los cambios a variaciones que se presentan en forma aleatoria (al azar) y se expresan con cálculos matemáticos',
+                'Están modificadas por los factores ambientales que rodean al organismo',
+                'Son muchas, y la mayoría tiene base genética',
+              ],
+            },
+            right: {
+              title: 'Determinísticas',
+              items: [
+                'Incorporan posturas que limitan las variables conocidas',
+                'Pueden replicarse cada vez que se busca el fenómeno',
+                'Solo hay dos',
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Cuáles son',
+            data: {
+              headers: ['Estocásticas', 'Determinísticas'],
+              rows: [
+                ['Teorías genéticas (regulación génica, diferenciación terminal, inestabilidad genómica)', 'Teoría de la capacidad replicativa finita de la célula: el código genético programa cuándo la célula deja de dividirse'],
+                ['Teoría de la mutación genética', 'Teorías evolutivas, que también se inspiran en la capacidad replicativa'],
+                ['Teoría de los radicales libres', ''],
+                ['Teoría del error catastrófico', ''],
+                ['Teoría de las uniones cruzadas de estructuras celulares', ''],
+                ['Teoría de la acumulación de productos de desecho', ''],
+                ['Teorías inmunológicas', ''],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'El límite de Hayflick',
+            content: 'En 1961 Leonard Hayflick observó que las células humanas normales en cultivo solo se dividen un número limitado de veces antes de detenerse. El acortamiento de los telómeros en cada división es uno de los mecanismos de ese límite: la base de la teoría de la capacidad replicativa finita.',
+          },
+        ],
+      },
+      {
+        id: 'hen-3',
+        number: 3,
+        title: 'Etapas de la vejez y cambios asociados',
+        keyTerms: ['prevejez', 'vejez temprana', 'vejez media', 'vejez tardía', 'cambios cognitivos'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Tres periodos de capacidad en la vejez (OMS)',
+            items: [
+              'Un periodo de capacidad relativamente alta y estable.',
+              'Un periodo de capacidad disminuida.',
+              'Un periodo de pérdida significativa de la capacidad.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Etapas de la vejez',
+            data: {
+              headers: ['Etapa', 'Qué la caracteriza', 'Hacia dónde se orienta la atención'],
+              rows: [
+                ['1. Prevejez', 'Fase previa, no bien definida, con indicios de futuros cambios; suele iniciar tras la jubilación y exige reorientar la rutina', 'Adaptarse a nuevos hábitos y actividades'],
+                ['2. Vejez temprana', 'Niveles altos y estables de capacidad física y mental', 'Mantener esas capacidades, vigilar factores de riesgo y controlar a tiempo las enfermedades'],
+                ['3. Vejez media', 'Deterioro de las capacidades; es probable que aparezcan enfermedades', 'Minimizar el efecto de las enfermedades sobre la capacidad general'],
+                ['4. Vejez tardía', 'Pérdidas significativas de la capacidad, o alta probabilidad de tenerlas', 'Cuidados a largo plazo que respeten derechos, libertades y dignidad'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Cambios físicos (no iguales para todos)',
+            items: [
+              'Disminución de la masa muscular, de la fuerza y de la función musculoesquelética.',
+              'Disminución de la densidad ósea, con más riesgo de fracturas.',
+              'Cambios del cartílago articular que aumentan la susceptibilidad de los tejidos.',
+              'Empeoramiento de los sentidos, sobre todo la vista y el oído.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'Los cambios cognitivos incluyen fallos de memoria, menor velocidad de procesamiento y dificultad para atender varias tareas a la vez. Influyen la situación socioeconómica, las enfermedades crónicas, el uso de medicamentos y el estilo de vida; ayudan la actividad intelectual (psicopedagogía en la tercera edad) y la psicología geriátrica.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'El círculo vicioso del miedo a caer',
+            content: 'Por miedo a caerse, la persona mayor hace menos ejercicio; sin ejercicio pierde más masa muscular y equilibrio, y el riesgo de caída y fractura aumenta. Romper el círculo con actividad física adaptada y un hogar seguro (escaleras despejadas, buena luz) es parte del tratamiento.',
+          },
+        ],
+      },
+      {
+        id: 'hen-4',
+        number: 4,
+        title: 'Tipos y modelos de vejez',
+        keyTerms: ['envejecimiento biológico', 'envejecimiento funcional', 'modelo deficitario', 'modelo de desarrollo'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Tipos de envejecimiento (OMS)',
+            data: {
+              headers: ['Tipo', 'Qué abarca'],
+              rows: [
+                ['BIOLÓGICO', 'Cambios físicos del cuerpo: menor masa muscular y ósea, peor función sensorial, más riesgo de enfermedades crónicas'],
+                ['PSICOLÓGICO', 'Cambios en la mente y las emociones: memoria, atención, estado de ánimo'],
+                ['SOCIAL', 'Cambios en roles, relaciones y entorno: jubilación, muerte de familiares y amigos, menos actividades sociales'],
+                ['FUNCIONAL', 'Capacidad de mantener la independencia y realizar las actividades de la vida diaria; depende de los otros tres y de la nutrición, el ejercicio y el acceso a la atención médica'],
+              ],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'Modelos de vejez',
+            left: {
+              title: 'Modelo deficitario',
+              items: ['Enfermedad', 'Vida sedentaria', 'Improductividad', 'Etapa de ruptura, de involución, vacía de contenido', 'Etapa de decadencia'],
+            },
+            right: {
+              title: 'Modelo de desarrollo',
+              items: ['Una etapa más de la vida', 'Desarrollo biográfico e histórico', 'Actividad', 'Encuentro con una segunda etapa de libertad', 'Un tiempo de humanización'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hen-5',
+        number: 5,
+        title: 'Formas de envejecer y niveles de cuidado',
+        keyTerms: ['envejecimiento exitoso', 'envejecimiento saludable', 'envejecimiento activo', 'envejecimiento frágil', 'envejecimiento patológico'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Cinco formas de envejecer',
+            data: {
+              headers: ['Forma', 'Definición', 'Cuidados'],
+              rows: [
+                ['EXITOSO (Rowe)', 'Habilidad para mantenerse en bajo riesgo de enfermar, con alto nivel de actividad física y mental; buena salud, independencia y autonomía', 'Estilo de vida saludable, controles médicos regulares, apoyo emocional y social si se requiere'],
+                ['SALUDABLE (OMS, 1998, según la presentación)', 'Etapa que comienza mucho antes de los 60 años; solo se logra con hábitos y estilos de vida saludables desde edades tempranas y prevención temprana de enfermedades y discapacidades', 'Educar para envejecer desde la juventud'],
+                ['ACTIVO', 'Mantener la independencia y la participación en actividades significativas', 'Evaluar y seguir la capacidad funcional, ejercicio personalizado, adaptar el entorno, acceso a servicios de apoyo'],
+                ['FRÁGIL', 'Mayor vulnerabilidad a la discapacidad y la dependencia; requiere cuidados más intensivos y personalizados', 'Evaluar y manejar riesgos, plan de atención individualizado, ayuda en actividades de la vida diaria, apoyo emocional y social'],
+                ['PATOLÓGICO', 'Enfermedades o discapacidades que limitan significativamente la vida independiente; requiere cuidados especializados de alta intensidad', 'Atención médica y de enfermería especializada, terapia física y ocupacional, apoyo emocional y social en equipo'],
+              ],
+            },
+          },
+          {
+            type: 'steps',
+            title: 'Autocuidado: el «arcoíris de la atención»',
+            steps: [
+              'Autocuidado y autoatención de la propia persona mayor.',
+              'Atención informal de familiares y cuidadores.',
+              'Atención domiciliaria con personal especializado.',
+              'Atención institucional especializada.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'El envejecimiento patológico se atiende en equipo: geriatría, enfermería geriátrica, licenciatura en gerontología, trabajo social, fisioterapia, terapia ocupacional y psicología, más otras especialidades (cardiología, neurología, traumatología, reumatología) según el caso.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'La definición actual de la OMS',
+            content: 'En su Informe mundial sobre el envejecimiento y la salud (2015), la OMS define el envejecimiento saludable como el proceso de fomentar y mantener la capacidad funcional que permite el bienestar en la vejez. El foco ya no es la ausencia de enfermedad, sino lo que la persona puede hacer.',
+          },
+        ],
+      },
+      {
+        id: 'hen-6',
+        number: 6,
+        title: 'Ageísmo, envejecimiento activo y Plan de Madrid',
+        keyTerms: ['ageísmo', 'envejecimiento activo', 'Plan de Madrid', 'determinantes del envejecimiento activo'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Ageísmo (edadismo)',
+            content: 'Prejuicio o discriminación basada en la edad; por ejemplo, decidir que alguien debe dejar su trabajo o su cargo solo por ser mayor.',
+          },
+          {
+            type: 'definition',
+            title: 'Envejecimiento activo (OMS, 2002)',
+            content: 'Proceso de optimización de las oportunidades de salud, participación y seguridad con el fin de mejorar la calidad de vida a medida que las personas envejecen. Permite realizar el potencial de bienestar físico, social y mental a lo largo de todo el ciclo de vida y participar en la sociedad según las necesidades, deseos y capacidades, con protección, seguridad y cuidados cuando se necesita asistencia. «Activo» se refiere a una participación continua en aspectos sociales, económicos, culturales, espirituales y cívicos, no solo a estar físicamente activo o seguir trabajando.',
+          },
+          {
+            type: 'paragraph',
+            content: 'En 2002, la II Asamblea Mundial sobre el Envejecimiento, celebrada en Madrid, adoptó el Plan de Acción Internacional de Madrid y asumió el concepto de envejecimiento activo propuesto por la OMS. Sus determinantes no dependen solo de la persona: también del entorno y de las políticas sociales y de salud.',
+          },
+          {
+            type: 'table',
+            title: 'Determinantes del envejecimiento activo',
+            data: {
+              headers: ['Determinante', 'Ejemplos'],
+              rows: [
+                ['Entorno físico', 'Ámbito urbano o rural, vivienda, prevención de lesiones'],
+                ['Económicos', 'Ingresos, trabajo, protección social'],
+                ['Conductuales', 'Actividad física, alimentación sana, dejar el tabaco, controlar problemas por alcohol, uso correcto de la medicación'],
+                ['Sociales', 'Educación y alfabetización, derechos humanos, apoyo social, prevención de la violencia y el abuso del anciano'],
+                ['Personales', 'Biología y genética, capacidad de adaptación'],
+                ['Sanidad y servicios sociales', 'Promoción de la salud, prevención de enfermedades, atención primaria, cuidados a largo plazo'],
+                ['Transversales', 'GÉNERO y CULTURA, que atraviesan a todos los demás'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Más allá del diagnóstico',
+            content: 'El plan de atención de una persona mayor considera, además de sus enfermedades, su vivienda, sus apoyos, su economía, sus hábitos, su autonomía y su posibilidad de participar en la comunidad. Olvidar una dosis, por ejemplo, es un problema conductual que se resuelve con estrategias de adherencia, no con otro fármaco.',
           },
         ],
       },

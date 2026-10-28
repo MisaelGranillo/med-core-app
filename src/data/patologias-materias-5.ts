@@ -126,6 +126,7 @@ const ECTOPICO: Patologia = {
     { materia: 'Embriología', topicId: 'embriologia-desarrollo-temprano', sectionId: 'edt-3', label: 'Primera semana', porQue: 'El recorrido del cigoto por la trompa y la implantación en los días 5–6.' },
     { materia: 'Embriología', topicId: 'embriologia-desarrollo-temprano', sectionId: 'edt-4', label: 'Segunda semana', porQue: 'El sincitiotrofoblasto invade el tejido donde se implanta, sea o no el útero.' },
     { materia: 'Histología', topicId: 'histologia-epitelial-polaridad', sectionId: 'hpol-2', label: 'Cilios del dominio apical', porQue: 'Los cilios de la trompa ayudan a mover el cigoto; si se dañan, el transporte se retrasa.' },
+    { materia: 'Embriología', topicId: 'embriologia-ciclo-ovarico', sectionId: 'eco-6', label: 'Transporte del ovocito', porQue: 'Fecundación en la ampolla y llegada al útero en 3 a 4 días: si el transporte falla, el embrión se implanta en la trompa.' },
   ],
   atlas: [
     { id: 'embriologia-desarrollo-temprano', title: 'Desarrollo temprano' },
