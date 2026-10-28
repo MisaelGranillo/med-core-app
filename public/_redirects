@@ -2,5 +2,9 @@
 /lmgc        /modulos     302
 /lmgc/*      /modulos/:splat  302
 
-# SPA fallback — todas las rutas no encontradas sirven index.html
-/*   /index.html   200
+# SPA fallback: NO se declara aquí. Cloudflare Pages ignora `/* /index.html 200`
+# ("Infinite loop detected…") y, al no existir un 404.html en la raíz, ya sirve
+# index.html para cualquier ruta sin archivo (modo SPA nativo).
+# Excepción: public/assets/404.html hace que /assets/* inexistentes respondan 404
+# (Pages usa el 404.html más cercano) en vez de index.html — un chunk que aún se
+# está propagando tras un deploy falla limpio en lugar de cachearse como HTML.

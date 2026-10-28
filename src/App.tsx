@@ -1,15 +1,15 @@
-import React, { lazy, Suspense, useEffect } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom'
 import { Navbar } from './components/Navbar'
 import { paiModulos } from './data/pai'
 import { useSettings, scaleValue, useThemeSync } from './store/useSettings'
+import { lazyWithRetry } from './utils/lazyWithRetry'
 
 /* Routes are lazy-loaded so each page + its heavy data (topics, quizzes,
  * anatomy meshes) only ships when navigated to — keeps the initial bundle
- * small for a fast first paint. */
-const named = <T extends Record<string, React.ComponentType<unknown>>>(
-  loader: () => Promise<T>, key: keyof T,
-) => lazy(() => loader().then(m => ({ default: m[key] })))
+ * small for a fast first paint. lazyWithRetry recarga una vez si un chunk
+ * falla (p. ej. justo después de un deploy). */
+const named = lazyWithRetry
 
 const Home         = named(() => import('./pages/Home'),          'Home')
 const Topic        = named(() => import('./pages/Topic'),         'Topic')

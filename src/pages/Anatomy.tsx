@@ -5,10 +5,10 @@
  * descargar el bundle 3D (pesado) hasta que se entra a la sección. El antiguo
  * visor plano se retiró; su componente queda en el repo pero sin cablear. */
 
-import { lazy, Suspense } from 'react'
+import { Suspense } from 'react'
+import { lazyWithRetry } from '../utils/lazyWithRetry'
 
-const Viewer3D = lazy(() =>
-  import('./Anatomy3D').then(m => ({ default: m.Anatomy3D })))
+const Viewer3D = lazyWithRetry(() => import('./Anatomy3D'), 'Anatomy3D')
 
 function ViewerFallback() {
   return (

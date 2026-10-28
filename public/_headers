@@ -1,0 +1,15 @@
+# Cloudflare Pages aplica las reglas por ruta de la petición, en orden; si dos
+# reglas fijan la misma cabecera, los valores se concatenan — por eso /assets/*
+# primero la quita (`! Cache-Control`) y luego pone la suya.
+# Las respuestas 404 siempre salen con `no-store` (Pages lo fuerza), así que un
+# chunk ausente nunca queda cacheado.
+
+# HTML y demás: revalidar siempre. Cubre /, /index.html y las rutas SPA
+# (/topic/:id…), que Pages sirve con index.html bajo la ruta pedida.
+/*
+  Cache-Control: no-cache
+
+# Bundles de Vite con hash en el nombre: inmutables.
+/assets/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
