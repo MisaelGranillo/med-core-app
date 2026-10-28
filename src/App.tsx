@@ -37,13 +37,14 @@ const PatologiaDetalle = named(() => import('./pages/Patologias'), 'PatologiaDet
 const TallerLayout      = named(() => import('./pages/taller/TallerLayout'),      'TallerLayout')
 const TallerInicio      = named(() => import('./pages/taller/TallerInicio'),      'TallerInicio')
 const TallerDescargas   = named(() => import('./pages/taller/TallerDescargas'),   'TallerDescargas')
-const TallerProximamente= named(() => import('./pages/taller/TallerProximamente'),'TallerProximamente')
 const TallerSemana      = named(() => import('./pages/taller/TallerSemana'),      'TallerSemana')
 const TallerPlanificador= named(() => import('./pages/taller/TallerPlanificador'),'TallerPlanificador')
 const TallerMatriz      = named(() => import('./pages/taller/TallerMatriz'),      'TallerMatriz')
 const TallerInstrucciones = named(() => import('./pages/taller/TallerInstrucciones'), 'TallerInstrucciones')
 const TallerPrompts     = named(() => import('./pages/taller/TallerPrompts'),     'TallerPrompts')
-const TALLER_SLUGS = ['markdown', 'guia', 'revision']
+const TallerMarkdown    = named(() => import('./pages/taller/TallerMarkdown'),    'TallerMarkdown')
+const TallerGuia        = named(() => import('./pages/taller/TallerGuia'),        'TallerGuia')
+const TallerRevision    = named(() => import('./pages/taller/TallerRevision'),    'TallerRevision')
 
 /* Redirige /modulos/:id (LMGC, id en mayúsculas) al nuevo /plan/:subjectId
  * (id en minúsculas), preservando los enlaces antiguos. */
@@ -162,7 +163,9 @@ export default function App() {
                 <Route path="matriz" element={<TallerMatriz />} />
                 <Route path="instrucciones" element={<TallerInstrucciones />} />
                 <Route path="prompts" element={<TallerPrompts />} />
-                {TALLER_SLUGS.map(s => <Route key={s} path={s} element={<TallerProximamente />} />)}
+                <Route path="markdown" element={<TallerMarkdown />} />
+                <Route path="guia" element={<TallerGuia />} />
+                <Route path="revision" element={<TallerRevision />} />
               </Route>
               {/* Plan de estudios (capa curricular enchufable) */}
               <Route path="/plan" element={<Plan />} />
