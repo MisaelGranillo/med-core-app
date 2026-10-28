@@ -5,7 +5,7 @@
  * y enlaces salen de taller.config.ts. */
 
 import { Link } from 'react-router-dom'
-import { ArrowRight, ArrowSquareOut, DeviceMobile, DownloadSimple, FileDoc, Presentation } from '@phosphor-icons/react'
+import { ArrowRight, ArrowSquareOut, CalendarPlus, DeviceMobile, DownloadSimple, FileDoc, Presentation } from '@phosphor-icons/react'
 import type { Icon } from '@phosphor-icons/react'
 import { TALLER } from './taller.config'
 import { HERRAMIENTAS } from './taller.herramientas'
@@ -66,6 +66,18 @@ export function TallerInicio() {
             <dd className="text-zinc-900">{TALLER.publico}</dd>
           </div>
         </dl>
+        {TALLER.enlaces.calendarioTaller && (
+          <a
+            href={TALLER.enlaces.calendarioTaller}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="self-start inline-flex items-center gap-2 min-h-[44px] px-4 rounded-2xl bg-primary text-primary-fg text-[0.9375rem] hover:bg-primary-hover transition-colors duration-150"
+          >
+            <CalendarPlus weight="bold" className="w-[18px] h-[18px]" aria-hidden="true" />
+            Agregar las sesiones a mi Google Calendar
+            <span className="sr-only">(se abre en una pestaña nueva)</span>
+          </a>
+        )}
         <p className="flex items-start gap-3 rounded-2xl bg-surface-2 px-4 py-3 text-[0.9375rem] text-zinc-800 max-w-[60ch]">
           <DeviceMobile weight="regular" className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
           <span><span className="font-medium">Regla del taller:</span> {TALLER.regla}</span>
