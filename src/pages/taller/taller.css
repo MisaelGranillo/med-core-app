@@ -1,0 +1,48 @@
+/* Colores de categoría del planificador del taller. Cada categoría define
+ * fondo, texto y línea para tema claro y oscuro; «Estudio (roca grande)» usa
+ * el acento para destacar. */
+.taller-cat { background: var(--cat-bg); color: var(--cat-ink); border: 1px solid var(--cat-line); }
+
+.cat-clases        { --cat-bg: #ECE7FB; --cat-ink: #4B2E9E; --cat-line: #D3C8F5; }
+.cat-trabajo       { --cat-bg: #E6E9EE; --cat-ink: #3A4352; --cat-line: #CDD3DC; }
+.cat-sueno         { --cat-bg: #E1E6F5; --cat-ink: #2C3A66; --cat-line: #C4CDEA; }
+.cat-traslados     { --cat-bg: #FBEFD9; --cat-ink: #7A4B00; --cat-line: #F0D9AC; }
+.cat-familia       { --cat-bg: #FBE4EA; --cat-ink: #8A1F3D; --cat-line: #F2C5D2; }
+.cat-estudio       { --cat-bg: var(--color-accent); --cat-ink: var(--color-on-accent); --cat-line: var(--color-accent); }
+.cat-estudio-corto { --cat-bg: var(--color-accent-light); --cat-ink: var(--c-primary-ink); --cat-line: #B9CDF7; }
+.cat-revision      { --cat-bg: #DDF2EE; --cat-ink: #0F5B4F; --cat-line: #B8E2DA; }
+.cat-otro          { --cat-bg: var(--color-surface-subtle); --cat-ink: var(--color-text-secondary); --cat-line: var(--color-border); }
+
+.dark .cat-clases        { --cat-bg: #231D3A; --cat-ink: #CFC3FA; --cat-line: #3A2F63; }
+.dark .cat-trabajo       { --cat-bg: #23272F; --cat-ink: #C9D0DB; --cat-line: #353B46; }
+.dark .cat-sueno         { --cat-bg: #1A2034; --cat-ink: #BFC9EC; --cat-line: #2C3556; }
+.dark .cat-traslados     { --cat-bg: #33270F; --cat-ink: #F2D49B; --cat-line: #4E3C17; }
+.dark .cat-familia       { --cat-bg: #361A22; --cat-ink: #F5BFCD; --cat-line: #552A36; }
+.dark .cat-estudio-corto { --cat-line: #2A4373; }
+.dark .cat-revision      { --cat-bg: #12302B; --cat-ink: #A6E3D6; --cat-line: #1F4A42; }
+
+@media print {
+  .taller-cat { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* Vista previa del laboratorio .md: estilos legibles para el HTML saneado. */
+.md-vista { color: var(--color-text-primary); line-height: 1.65; overflow-wrap: anywhere; }
+.md-vista > * + * { margin-top: 0.75em; }
+.md-vista h1 { font-family: var(--font-display, inherit); font-weight: 300; font-size: 1.75rem; line-height: 1.15; }
+.md-vista h2 { font-weight: 500; font-size: 1.25rem; margin-top: 1.25em; }
+.md-vista h3 { font-weight: 500; font-size: 1.0625rem; margin-top: 1em; }
+.md-vista ul { list-style: disc; padding-left: 1.4em; }
+.md-vista ol { list-style: decimal; padding-left: 1.4em; }
+.md-vista li + li { margin-top: 0.25em; }
+.md-vista strong { font-weight: 600; }
+.md-vista blockquote { border: 1px solid var(--color-border); background: var(--color-surface-subtle); border-radius: 0.75rem; padding: 0.5em 0.9em; color: var(--color-text-secondary); }
+.md-vista code { font-size: 0.9em; background: var(--color-surface-subtle); border-radius: 0.375rem; padding: 0.1em 0.35em; }
+.md-vista pre { background: var(--color-surface-subtle); border-radius: 0.75rem; padding: 0.75em; overflow-x: auto; }
+.md-vista pre code { background: none; padding: 0; }
+.md-vista hr { border: 0; border-top: 1px solid var(--color-border); }
+.md-vista a { color: var(--color-accent); text-decoration: underline; }
+.md-vista .md-tabla { overflow-x: auto; }
+.md-vista table { border-collapse: collapse; width: 100%; font-size: 0.9375rem; }
+.md-vista th, .md-vista td { border: 1px solid var(--color-border); padding: 0.4em 0.6em; text-align: left; vertical-align: top; }
+.md-vista th { background: var(--color-surface-subtle); font-weight: 500; }
+.md-vista input[type="checkbox"] { margin-right: 0.4em; }

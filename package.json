@@ -6,19 +6,22 @@
   "scripts": {
     "predev": "node scripts/gen-topic-index.mjs",
     "dev": "vite",
-    "prebuild": "node scripts/gen-topic-index.mjs",
+    "prebuild": "node scripts/gen-topic-index.mjs && node scripts/check-taller-descargas.ts",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "deploy": "npm run build && npx wrangler pages deploy dist --project-name=med-core-app --branch=main",
     "library:add": "node scripts/library.mjs add",
-    "library:check": "node scripts/library.mjs check"
+    "library:check": "node scripts/library.mjs check",
+    "test": "vitest run"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.5",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
+    "dompurify": "^3.2.4",
     "framer-motion": "^11.1.7",
     "fuse.js": "^7.0.0",
+    "marked": "^14.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^6.22.3",
@@ -34,6 +37,7 @@
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5",
-    "vite": "^5.2.11"
+    "vite": "^5.2.11",
+    "vitest": "^2.1.9"
   }
 }

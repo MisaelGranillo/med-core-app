@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import {
   MagnifyingGlass, X, House, BookOpen, Lightning,
-  Cube, BookOpenText, ChartBar, GraduationCap, Image, Translate, Gear, DotsThreeOutline, Books, Stethoscope,
+  Cube, BookOpenText, ChartBar, GraduationCap, Image, Translate, Gear, DotsThreeOutline, Books, Stethoscope, ChalkboardTeacher,
 } from '@phosphor-icons/react'
 import { LogoMark } from './Logo'
 import { AppearanceMenu } from './AppearanceMenu'
@@ -26,6 +26,9 @@ const NAV_ITEMS = [
   { path: '/quiz',        label: 'Quizzes',      icon: Lightning,      mobile: true  },
   { path: '/progress',    label: 'Progreso',     icon: ChartBar,       mobile: false },
   { path: '/ajustes',     label: 'Ajustes',      icon: Gear,           mobile: false },
+  // Solo en «Más» (móvil): la barra de escritorio no tiene espacio para otro icono;
+  // en escritorio el taller se abre desde Herramientas en Inicio.
+  { path: '/taller',      label: 'Taller',       icon: ChalkboardTeacher, mobile: false, soloMas: true },
 ] as const
 
 const MOBILE_ITEMS = NAV_ITEMS.filter(n => n.mobile)
@@ -67,7 +70,7 @@ export function Navbar() {
   return (
     <>
       {/* ── Top bar (desktop) ────────────────────────────── */}
-      <header className="sticky top-0 z-40 bg-surface border-b border-zinc-200" style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}>
+      <header className="print:hidden sticky top-0 z-40 bg-surface border-b border-zinc-200" style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center gap-3">
 
           {/* Logo MedCore */}
@@ -80,7 +83,7 @@ export function Navbar() {
 
           {/* Navegación principal — desktop */}
           <nav className="hidden md:flex items-center gap-0.5 flex-shrink-0">
-            {NAV_ITEMS.filter(n => n.path !== '/').map(({ path, label, icon: Icon }) => (
+            {NAV_ITEMS.filter(n => n.path !== '/' && !('soloMas' in n)).map(({ path, label, icon: Icon }) => (
               <Link
                 key={path}
                 to={path}
@@ -159,7 +162,7 @@ export function Navbar() {
         </div>
       )}
       <nav
-        className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-surface border-t border-zinc-200"
+        className="print:hidden fixed bottom-0 left-0 right-0 z-40 md:hidden bg-surface border-t border-zinc-200"
         style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       >
         <div className="grid grid-cols-5 h-16 max-w-lg mx-auto">

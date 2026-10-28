@@ -6,7 +6,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import {
   GraduationCap, PencilSimple, ArrowRight, Books, Translate,
-  BookOpen, MapTrifold, Cube, Exam,
+  BookOpen, MapTrifold, Cube, Exam, ChalkboardTeacher,
 } from '@phosphor-icons/react'
 import type { Icon } from '@phosphor-icons/react'
 import type { TopicColorKey } from '../types'
@@ -68,6 +68,7 @@ const TOOLS: { name: string; route: string; icon: Icon }[] = [
   { name: 'MedLex',      route: '/terminologia', icon: BookOpen },
   { name: 'Plan',        route: '/plan',         icon: Books },
   { name: 'Anatomía 3D', route: '/anatomia',     icon: Cube },
+  { name: 'Taller',      route: '/taller',       icon: ChalkboardTeacher },
 ]
 
 export function Home() {
