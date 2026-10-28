@@ -9,7 +9,7 @@ export const TALLER = {
   /** Fecha y hora del taller, p. ej. «Sábado 7 de noviembre de 2026, 10:00 h (Ciudad de México)». */
   fecha: 'Viernes 30 de octubre de 2026, 19:30 h (UTC-6, hora del centro de México)',
   /** Modalidad, p. ej. «En línea por Zoom». */
-  modalidad: '',
+  modalidad: 'En línea por Google Meet',
   duracion: '2 horas',
   regla: 'Todo funciona con un celular y una cuenta de Google gratuita.',
   enlaces: {
