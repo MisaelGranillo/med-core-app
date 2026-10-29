@@ -23,7 +23,7 @@ export const NLM_CLASSES = [
   { code: 'WG', label: 'Sistema cardiovascular', hint: 'Electrocardiografía y reanimación' },
   { code: 'WL', label: 'Sistema nervioso', hint: 'Neuroanatomía y neurología' },
   { code: 'WN', label: 'Radiología', hint: 'Radiología e imagenología diagnóstica' },
-  { code: 'WO', label: 'Cirugía', hint: 'Cirugía e instrumental quirúrgico' },
+  { code: 'WO', label: 'Cirugía', hint: 'Cirugía, anestesia e instrumental quirúrgico' },
   { code: 'WU', label: 'Odontología', hint: 'Odontología e implantología' },
 ] as const
 
@@ -140,6 +140,14 @@ export const LIBROS: LibroCatalogo[] = [
     archivo: { subjectId: 'bioquimica-1', file: 'Harper - Bioquimica Ilustrada 30a ed.pdf' },
   },
   {
+    // El PDF no trae la página legal: año según los catálogos bibliotecarios (ISBN 978-84-282-1667-8).
+    id: 'nelson-lehninger-bioquimica', titulo: 'Lehninger. Principios de bioquímica',
+    autores: ['Nelson, David L.', 'Cox, Michael M.'], asiento: 'Nelson',
+    edicion: '7.ª ed.', editorial: 'Ediciones Omega', anio: '2019', paginas: 1235, idioma: 'Español',
+    formato: 'Libro', clase: 'QU', numero: '4', materias: ['bioquimica-1'],
+    archivo: { subjectId: 'libreria', file: 'Nelson - Lehninger Principios de bioquimica 7a ed.pdf' },
+  },
+  {
     id: 'lieberman-rt-bioquimica', titulo: 'Bioquímica, biología molecular y genética', serie: 'Serie Revisión de Temas',
     autores: ['Lieberman, Michael A.', 'Ricer, Rick'], asiento: 'Lieberman',
     edicion: '6.ª ed.', editorial: 'Wolters Kluwer', anio: '2015', paginas: 461, idioma: 'Español',
@@ -148,6 +156,34 @@ export const LIBROS: LibroCatalogo[] = [
   },
 
   // ── QV · Farmacología ────────────────────────────────────────────
+  {
+    id: 'brunton-goodman-gilman', titulo: 'Goodman & Gilman. Las bases farmacológicas de la terapéutica',
+    autores: ['Brunton, Laurence L.', 'Hilal-Dandan, Randa', 'Knollmann, Björn C.'], asiento: 'Brunton',
+    edicion: '13.ª ed.', editorial: 'McGraw-Hill', anio: '2019', paginas: 1441, idioma: 'Español',
+    formato: 'Libro', clase: 'QV', numero: '4', materias: [],
+    archivo: { subjectId: 'libreria', file: 'Brunton - Goodman y Gilman Bases farmacologicas 13a ed.pdf' },
+  },
+  {
+    id: 'golan-principios-farmacologia', titulo: 'Principios de farmacología: bases fisiopatológicas del tratamiento farmacológico',
+    autores: ['Golan, David E.', 'Tashjian, Armen H.', 'Armstrong, Ehrin J.', 'Armstrong, April W.'], asiento: 'Golan',
+    edicion: '3.ª ed.', editorial: 'Wolters Kluwer', anio: '2012', paginas: 972, idioma: 'Español',
+    formato: 'Libro', clase: 'QV', numero: '4', materias: [],
+    archivo: { subjectId: 'libreria', file: 'Golan - Principios de farmacologia 3a ed.pdf' },
+  },
+  {
+    id: 'katzung-farmacologia', titulo: 'Farmacología básica y clínica',
+    autores: ['Katzung, Bertram G.'], asiento: 'Katzung',
+    edicion: '14.ª ed.', editorial: 'McGraw-Hill', anio: '2019', paginas: 1265, idioma: 'Español',
+    formato: 'Libro', clase: 'QV', numero: '4', materias: [],
+    archivo: { subjectId: 'libreria', file: 'Katzung - Farmacologia basica y clinica 14a ed.pdf' },
+  },
+  {
+    id: 'whalen-lir-farmacologia', titulo: 'Farmacología', serie: 'Lippincott Illustrated Reviews',
+    autores: ['Whalen, Karen'], asiento: 'Whalen',
+    edicion: '7.ª ed.', editorial: 'Wolters Kluwer', anio: '2019', paginas: 1187, idioma: 'Español',
+    formato: 'Libro', clase: 'QV', numero: '18.2', materias: [],
+    archivo: { subjectId: 'libreria', file: 'Whalen - Farmacologia LIR 7a ed.pdf' },
+  },
   {
     id: 'rosenfeld-rt-farmacologia', titulo: 'Farmacología', serie: 'Serie Revisión de Temas',
     autores: ['Rosenfeld, Gary C.', 'Loose, David S.'], asiento: 'Rosenfeld',
@@ -270,6 +306,13 @@ export const LIBROS: LibroCatalogo[] = [
     formato: 'Catálogo', clase: 'WO', numero: '162', materias: [],
     archivo: { subjectId: 'libreria', file: 'Aesculap - Catalogo de instrumental quirurgico.pdf' },
     nota: 'Bisturís, pinzas, tijeras, separadores y demás instrumental de cirugía general.',
+  },
+  {
+    id: 'urman-anestesia-bolsillo', titulo: 'Anestesia de bolsillo',
+    autores: ['Urman, Richard D.', 'Ehrenfeld, Jesse M.'], asiento: 'Urman',
+    edicion: '3.ª ed.', editorial: 'Wolters Kluwer', anio: '2018', paginas: 388, idioma: 'Español',
+    formato: 'Manual', clase: 'WO', numero: '200', materias: [],
+    archivo: { subjectId: 'libreria', file: 'Urman - Anestesia de bolsillo 3a ed.pdf' },
   },
 
   // ── WU · Odontología ─────────────────────────────────────────────
