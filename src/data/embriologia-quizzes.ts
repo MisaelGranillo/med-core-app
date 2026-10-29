@@ -1,8 +1,8 @@
 import type { Question } from '../types'
 
-// Embriología I — Semana 1, Clases 1–3: desarrollo temprano, cromosomas, mitosis,
+// Embriología I — Semana 1, Clases 1–4: desarrollo temprano, cromosomas, mitosis,
 // meiosis, ovogénesis, espermatogénesis, anomalías cromosómicas numéricas y
-// estructurales, ciclo ovárico y ovulación.
+// estructurales, ciclos ovárico y endometrial, fecundación y primera semana.
 export const embriologiaQuestions: Question[] = [
   // ── Panorama del desarrollo temprano ──
   {
@@ -598,5 +598,145 @@ export const embriologiaQuestions: Question[] = [
     options: ['Espeso y más ácido', 'Ausente', 'Más fluido y menos ácido', 'Hemorrágico'],
     correctIndex: 2, difficulty: 'medium',
     explanation: 'Con un pH cercano a 7.2–7.5 facilita el paso y la supervivencia de los espermatozoides.',
+  },
+  {
+    id: 'emb-coq-q13', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: 'Si no hay embarazo, el cuerpo lúteo degenera y forma:',
+    options: ['El cuerpo albicans', 'El folículo de Graaf', 'El cuerpo lúteo del embarazo', 'El estigma'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'Pierde el pigmento amarillo y queda una cicatriz blanquecina y fibrosa.',
+  },
+  {
+    id: 'emb-coq-q14', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: '¿Qué hormona mantiene viable el cuerpo lúteo al inicio del embarazo?',
+    options: ['FSH', 'hCG', 'Oxitocina', 'Prolactina'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'La gonadotropina coriónica humana, secretada por el sincitiotrofoblasto.',
+  },
+  {
+    id: 'emb-coq-q15', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: 'El cuerpo lúteo del embarazo secreta progesterona hasta aproximadamente:',
+    options: ['La segunda semana', 'El final del primer mes', 'El final del cuarto mes', 'El parto'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Después la placenta asume la producción de progesterona; extirparlo antes del cuarto mes puede provocar la pérdida del embarazo.',
+  },
+  {
+    id: 'emb-coq-q16', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: '¿Qué capa del endometrio se desprende durante la menstruación?',
+    options: ['La basal', 'El miometrio', 'El perimetrio', 'La funcional'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'La capa funcional (compacta y esponjosa) se pierde; la basal permanece y la regenera.',
+  },
+  {
+    id: 'emb-coq-q17', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: 'La fase endometrial que dirige la progesterona del cuerpo lúteo es la:',
+    options: ['Proliferativa', 'Secretora', 'Menstrual', 'Folicular'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'También se llama progestacional; el endometrio se vuelve receptivo para la implantación.',
+  },
+  {
+    id: 'emb-coq-q18', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: 'Mujer de 21 años con ciclos de 28 días; su menstruación empezó hace 10 días. ¿En qué fase del ciclo ovárico está?',
+    options: ['Lútea', 'Menstrual', 'Folicular', 'Ovulatoria'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Al día 10 madura el folículo dominante y predominan los estrógenos; el endometrio está en fase proliferativa.',
+  },
+  {
+    id: 'emb-coq-q19', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: 'La caída de progesterona que desencadena la menstruación se debe a:',
+    options: ['La luteólisis', 'El pico de LH', 'La aparición del folículo dominante', 'El aumento de hCG'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'Sin hCG, el cuerpo lúteo degenera; por eso luteólisis y menstruación ocurren casi al mismo tiempo.',
+  },
+  {
+    id: 'emb-coq-q20', topicId: 'embriologia-ciclo-ovarico', type: 'multiple-choice',
+    question: '¿Por qué no se recomienda el método del ritmo como único método anticonceptivo?',
+    options: ['Porque el ovocito vive varios meses', 'Porque la ovulación siempre ocurre el día 1', 'Porque los estrógenos impiden la fecundación', 'Porque la duración del ciclo y el día de la ovulación varían'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'La ventana fértil es una estimación; los espermatozoides además sobreviven varios días en el moco cervical.',
+  },
+  {
+    id: 'emb-feq-q1', topicId: 'embriologia-fecundacion', type: 'multiple-choice',
+    question: '¿Dónde ocurre con más frecuencia la fecundación?',
+    options: ['En la ampolla de la trompa uterina', 'En la cavidad uterina', 'En el ovario', 'En el istmo de la trompa'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'La ampolla es la región amplia de la trompa, entre el infundíbulo y el istmo.',
+  },
+  {
+    id: 'emb-feq-q2', topicId: 'embriologia-fecundacion', type: 'multiple-choice',
+    question: 'De los 200 a 300 millones de espermatozoides depositados, ¿cuántos llegan al sitio de la fecundación?',
+    options: ['Unos 30 millones', 'De 300 a 500', 'Uno solo', 'Unos 3 000'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Y normalmente solo uno fecunda al ovocito.',
+  },
+  {
+    id: 'emb-feq-q3', topicId: 'embriologia-fecundacion', type: 'multiple-choice',
+    question: 'La capacitación espermática consiste en:',
+    options: ['Liberar acrosina en la zona pelúcida', 'Fusionar los pronúcleos', 'Retirar la cubierta de glucoproteínas y proteínas del plasma seminal sobre el acrosoma', 'Formar el segundo cuerpo polar'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Dura unas 7 horas, sobre todo en la trompa, y permite cruzar la corona radiada.',
+  },
+  {
+    id: 'emb-feq-q4', topicId: 'embriologia-fecundacion', type: 'multiple-choice',
+    question: 'La reacción acrosómica se desencadena al unirse el espermatozoide a:',
+    options: ['La corona radiada', 'La membrana del ovocito', 'El moco cervical', 'La proteína ZP3 de la zona pelúcida'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'La unión a ZP3 induce la exocitosis del acrosoma y la liberación de acrosina.',
+  },
+  {
+    id: 'emb-feq-q5', topicId: 'embriologia-fecundacion', type: 'multiple-choice',
+    question: 'La enzima del acrosoma que permite penetrar la zona pelúcida es la:',
+    options: ['Acrosina', 'Aromatasa', 'Colagenasa', 'Telomerasa'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'Junto con sustancias semejantes a la tripsina.',
+  },
+  {
+    id: 'emb-feq-q6', topicId: 'embriologia-fecundacion', type: 'multiple-choice',
+    question: '¿Qué mecanismo evita la polispermia?',
+    options: ['La capacitación', 'Las reacciones cortical y de zona', 'El pico de LH', 'La compactación'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Los gránulos corticales modifican la zona pelúcida para que no entren otros espermatozoides.',
+  },
+  {
+    id: 'emb-feq-q7', topicId: 'embriologia-fecundacion', type: 'multiple-choice',
+    question: 'Un ovocito fecundado por dos espermatozoides da un producto:',
+    options: ['Haploide', 'Diploide normal', 'Triploide (69 cromosomas)', 'Monosómico'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'La polispermia es el origen de la mola hidatiforme parcial.',
+  },
+  {
+    id: 'emb-feq-q8', topicId: 'embriologia-fecundacion', type: 'multiple-choice',
+    question: '¿Por qué los pronúcleos replican su ADN antes de formar el cigoto?',
+    options: ['Para eliminar el cromosoma Y', 'Para formar la zona pelúcida', 'Para producir hCG', 'Para que el cigoto tenga 46 cromosomas de dos cromátidas'],
+    correctIndex: 3, difficulty: 'hard',
+    explanation: 'Así el cigoto queda listo para la primera división de la segmentación.',
+  },
+  {
+    id: 'emb-feq-q9', topicId: 'embriologia-fecundacion', type: 'multiple-choice',
+    question: '¿Qué determina el sexo cromosómico del nuevo individuo?',
+    options: ['El cromosoma X o Y que aporta el espermatozoide', 'El ovocito, que aporta un X o un Y', 'La implantación', 'La progesterona'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'El ovocito siempre aporta un X; el espermatozoide, un X o un Y.',
+  },
+  {
+    id: 'emb-feq-q10', topicId: 'embriologia-fecundacion', type: 'multiple-choice',
+    question: 'Hacia el día 3 tras la fecundación, la mórula de 16 a 32 células experimenta:',
+    options: ['La eclosión', 'La compactación', 'La implantación', 'La gastrulación'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Se separan la masa celular interna (embrioblasto) y la externa (trofoblasto).',
+  },
+  {
+    id: 'emb-feq-q11', topicId: 'embriologia-fecundacion', type: 'multiple-choice',
+    question: 'Para implantarse, el blastocisto primero debe:',
+    options: ['Formar el disco trilaminar', 'Completar la meiosis II', 'Salir de la zona pelúcida (eclosión)', 'Llegar al ovario'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Sin eclosión no puede establecer contacto con el endometrio.',
+  },
+  {
+    id: 'emb-feq-q12', topicId: 'embriologia-fecundacion', type: 'multiple-choice',
+    question: 'La capa del trofoblasto que invade el endometrio y secreta hCG es el:',
+    options: ['Citotrofoblasto', 'Epiblasto', 'Hipoblasto', 'Sincitiotrofoblasto'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'Capa externa, sin límites celulares; la hCG mantiene el cuerpo lúteo.',
   },
 ]

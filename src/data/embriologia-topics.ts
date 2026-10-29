@@ -1,8 +1,9 @@
 import type { Topic } from '../types'
 
-// Embriología I (UAD · EM01004) — Semana 1, Clases 1–3: panorama del desarrollo
+// Embriología I (UAD · EM01004) — Semana 1, Clases 1–4: panorama del desarrollo
 // temprano, cromosomas, mitosis y meiosis, ovogénesis, espermatogénesis,
-// anomalías cromosómicas numéricas y estructurales, ciclo ovárico y ovulación.
+// anomalías cromosómicas numéricas y estructurales, ciclos ovárico y endometrial,
+// fecundación y primera semana del desarrollo.
 export const embriologiaTopics: Topic[] = [
   {
     id: 'embriologia-desarrollo-temprano',
@@ -1203,8 +1204,8 @@ export const embriologiaTopics: Topic[] = [
   },
   {
     id: 'embriologia-ciclo-ovarico',
-    title: 'Ciclo ovárico y ovulación',
-    subtitle: 'Primera semana del desarrollo (inicio): eje hipotálamo-hipófisis-ovario, fases del ciclo ovárico, teca interna y granulosa, pico de LH y ovulación, cuerpo lúteo y transporte del ovocito',
+    title: 'Ciclo ovárico, ciclo endometrial y ovulación',
+    subtitle: 'Eje hipotálamo-hipófisis-ovario, fases del ciclo ovárico, teca interna y granulosa, pico de LH y ovulación, cuerpo lúteo (luteólisis o embarazo), transporte del ovocito, ciclo endometrial, ventana fértil y casos clínicos',
     colorKey: 'embriologia',
     categoria: 'Embriología',
     emoji: '🥚',
@@ -1215,6 +1216,8 @@ export const embriologiaTopics: Topic[] = [
       'Dos células: la TECA INTERNA hace andrógenos (por LH) y la GRANULOSA los convierte en estrógenos con AROMATASA (por FSH) ★',
       'Pico de LH: factor promotor de la maduración (termina la meiosis I; el ovocito se detiene en metafase II), luteinización, prostaglandinas y colagenasa → ovulación ★',
       'El cuerpo lúteo produce sobre todo PROGESTERONA → endometrio en fase secretora. La fecundación ocurre casi siempre en la AMPOLLA; el cigoto llega al útero en 3 a 4 días.',
+      'Sin embarazo: máximo a los ≈ 9 días (7–10) → LUTEÓLISIS → CUERPO ALBICANS → cae la progesterona → menstruación · Con embarazo: la hCG del SINCITIOTROFOBLASTO mantiene el cuerpo lúteo hasta el final del 4.º mes ★',
+      'Ciclo endometrial (28 días; 21–35 normal): fases MENSTRUAL (3–8 días; se pierde la capa FUNCIONAL, queda la BASAL), PROLIFERATIVA (estrógenos), SECRETORA (progesterona) y GESTACIONAL ★',
     ],
     sections: [
       {
@@ -1405,6 +1408,394 @@ export const embriologiaTopics: Topic[] = [
             variant: 'clinica',
             title: 'Cuando el embrión no llega',
             content: 'Si el transporte por la trompa se retrasa o se bloquea (por ejemplo, por cicatrices de una infección pélvica), el embrión puede implantarse fuera del útero. La trompa, y en especial la ampolla, es el sitio más frecuente del embarazo ectópico.',
+          },
+        ],
+      },
+      {
+        id: 'eco-7',
+        number: 7,
+        title: 'Destino del cuerpo lúteo: luteólisis o embarazo',
+        keyTerms: ['luteólisis', 'cuerpo albicans', 'hCG', 'cuerpo lúteo del embarazo', 'sincitiotrofoblasto'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos caminos',
+            left: {
+              title: 'Sin embarazo',
+              items: [
+                'El cuerpo lúteo alcanza su máximo desarrollo unos 9 días después de la ovulación (7 a 10)',
+                'Sin el estímulo de la hCG degenera: LUTEÓLISIS',
+                'Pierde el pigmento amarillo y se vuelve una cicatriz blanquecina y fibrosa: el CUERPO ALBICANS',
+                'Caen la progesterona y los estrógenos: el endometrio se vuelve isquémico y se desprende (menstruación)',
+              ],
+            },
+            right: {
+              title: 'Con embarazo',
+              items: [
+                'Al implantarse, el SINCITIOTROFOBLASTO secreta gonadotropina coriónica humana (hCG)',
+                'La hCG mantiene viable el cuerpo lúteo: es el CUERPO LÚTEO DEL EMBARAZO',
+                'Sigue creciendo: al final del 3.er mes puede ocupar entre un tercio y la mitad del ovario',
+                'Secreta progesterona hasta el final del 4.º mes; después la placenta asume esa función',
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Luteólisis y menstruación van juntas',
+            content: 'La luteólisis provoca la caída de la progesterona, y esa caída desencadena la menstruación: por eso ambos fenómenos ocurren casi al mismo tiempo. El cuerpo albicans tarda meses en desintegrarse; sus restos los eliminan células fagocíticas y algunos dejan una pequeña cicatriz en el ovario.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'La hCG en la clínica',
+            content: 'La hCG es la hormona que detectan las pruebas de embarazo: las cualitativas responden si hay o no embarazo y las cuantitativas miden su concentración. Alcanza niveles detectables hacia el final de la segunda semana después de la fecundación y sus cifras más altas en los primeros dos meses. Si el cuerpo lúteo es insuficiente o se extirpa antes del cuarto mes, falta progesterona y el embarazo puede perderse.',
+          },
+        ],
+      },
+      {
+        id: 'eco-8',
+        number: 8,
+        title: 'Ciclo endometrial',
+        keyTerms: ['capa funcional', 'capa basal', 'fase menstrual', 'fase proliferativa', 'fase secretora', 'fase gestacional'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El endometrio cambia en un ciclo que dura en promedio 28 días (de 21 a 35 se considera normal) y que depende de las hormonas del ovario. El primer día del sangrado menstrual es el día 1 del ciclo.',
+          },
+          {
+            type: 'comparison',
+            title: 'Capas del endometrio',
+            left: {
+              title: 'Capa funcional',
+              items: ['Capa compacta (más externa) y capa esponjosa', 'Se desprende en cada menstruación', 'Es donde ocurre la implantación'],
+            },
+            right: {
+              title: 'Capa basal',
+              items: ['No se pierde en la menstruación', 'A partir de ella se regenera la capa funcional en cada ciclo'],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Fases del ciclo endometrial',
+            data: {
+              headers: ['Fase', 'Qué pasa en el endometrio', 'Hormona que manda'],
+              rows: [
+                ['MENSTRUAL (3 a 8 días)', 'La capa funcional se vuelve isquémica, se adelgaza y se desprende: sangrado', 'Caída de progesterona y estrógenos'],
+                ['PROLIFERATIVA (o folicular)', 'Se reconstruye y aumenta de grosor', 'Estrógenos de los folículos en maduración'],
+                ['SECRETORA (o progestacional)', 'Más gruesa, secretora y receptiva para una posible implantación', 'Progesterona del cuerpo lúteo'],
+                ['GESTACIONAL', 'Si hay implantación, se adapta para sostener al embrión', 'Progesterona del cuerpo lúteo del embarazo, mantenido por la hCG'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Dos ciclos en paralelo (ciclo de 28 días)',
+            data: {
+              headers: ['Días', 'Ovario', 'Endometrio'],
+              rows: [
+                ['1 a 5', 'Fase folicular temprana; caen las hormonas del cuerpo lúteo anterior', 'Menstrual'],
+                ['6 a 13', 'Fase folicular: un folículo dominante produce estrógenos', 'Proliferativa'],
+                ['14', 'Pico de LH y ovulación', 'Fin de la proliferativa'],
+                ['15 a 28', 'Fase lútea: cuerpo lúteo y progesterona', 'Secretora'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'No confundir',
+            content: 'Fase folicular y fase lútea son nombres del ciclo OVÁRICO; fase proliferativa y fase secretora son del ciclo ENDOMETRIAL. Ocurren al mismo tiempo y los conectan los estrógenos y la progesterona.',
+          },
+        ],
+      },
+      {
+        id: 'eco-9',
+        number: 9,
+        title: 'Ventana fértil y casos clínicos',
+        keyTerms: ['ventana fértil', 'moco cervical', 'dolor ovulatorio', 'método del ritmo'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Qué hace fértiles a esos días',
+            items: [
+              'En un ciclo regular de 28 días la ovulación ocurre en promedio el día 14; la clase usó los días 12 a 16 como ventana de mayor fertilidad.',
+              'Desde unos 5 a 6 días antes de la ovulación, los estrógenos producen un moco cervical abundante, transparente, fluido y elástico (como clara de huevo) y alcalino, en el que los espermatozoides sobreviven.',
+              'La LH es la hormona clave de la ovulación; su pico está precedido por el aumento de estrógenos.',
+              'Si no se fecunda, el ovocito degenera en la trompa en unas 24 horas.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Es una estimación',
+            content: 'La ventana fértil cambia con la duración de cada ciclo, y un ciclo puede variar de un mes a otro. Por eso el método del ritmo por sí solo no se recomienda para evitar un embarazo: se acompaña de otro método.',
+          },
+          {
+            type: 'table',
+            title: 'Casos de la clase',
+            data: {
+              headers: ['Caso', 'Ovario', 'Hormona', 'Endometrio'],
+              rows: [
+                ['21 años, día 10 de un ciclo de 28', 'Fase folicular; destaca un folículo dominante', 'Estrógenos (por FSH y LH)', 'Proliferativa'],
+                ['23 años, día 14, dolor leve en hipogastrio y moco claro y elástico', 'Ovulación: se rompe el folículo de Graaf', 'Pico de LH', 'Fin de la proliferativa'],
+                ['20 años con menstruación normal; sin fecundación en el ciclo previo', 'El cuerpo lúteo degeneró en cuerpo albicans', 'Caen progesterona y estrógenos', 'Menstrual: se desprende la capa funcional'],
+                ['24 años que desea embarazo, ciclos de 28 días', 'Ovulación hacia el día 14 (ventana 12 a 16)', 'LH, precedida por estrógenos', 'Proliferativa → secretora'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Dolor de la ovulación: leve, no intenso',
+            content: 'La rotura del folículo es un pequeño traumatismo de la pared del ovario y puede causar un dolor leve en el hipogastrio o un ligero manchado a mitad del ciclo. No le ocurre a todas las mujeres. Un dolor intenso o un sangrado abundante no se atribuyen a la ovulación sin estudiarlos, porque pueden indicar un problema como un embarazo ectópico.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-fecundacion',
+    title: 'Fecundación y primera semana del desarrollo',
+    subtitle: 'Recorrido de los espermatozoides, capacitación, reacción acrosómica (ZP3), fusión y bloqueo de la polispermia, pronúcleos y cigoto, segmentación, mórula y blastocisto, eclosión, implantación y hCG, inicio de la segunda semana',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '🧫',
+    keyPoints: [
+      'De 200 a 300 millones de espermatozoides depositados, solo 300 a 500 llegan a la AMPOLLA y uno fecunda ★',
+      'Tres pasos: CAPACITACIÓN (≈ 7 h; permite cruzar la corona radiada) → REACCIÓN ACROSÓMICA (al unirse a ZP3; acrosina y enzimas semejantes a la tripsina; cruza la zona pelúcida) → FUSIÓN de membranas ★',
+      'Al entrar el espermatozoide, el ovocito responde con REACCIONES CORTICAL Y DE ZONA (bloquean la POLISPERMIA), termina la MEIOSIS II y se activa metabólicamente ★',
+      'Los pronúcleos replican su ADN y forman el CIGOTO. Resultados: número DIPLOIDE (46), SEXO cromosómico (X o Y del espermatozoide) e inicio de la SEGMENTACIÓN ★',
+      'Mórula (día 3; 16–32 células; COMPACTACIÓN: embrioblasto y trofoblasto) → blastocisto (día 5) → ECLOSIÓN de la zona pelúcida → implantación (días 5.5–6) ★',
+      'El SINCITIOTROFOBLASTO invade el endometrio y secreta hCG; en el hipoblasto, Cerberus y Lefty-1 marcan la región craneal.',
+    ],
+    sections: [
+      {
+        id: 'efe-1',
+        number: 1,
+        title: 'Del depósito a la ampolla',
+        keyTerms: ['ampolla', 'moco cervical', 'contracciones uterinas', 'motilidad'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Cuántos llegan',
+            steps: [
+              'Se depositan de 200 a 300 millones de espermatozoides en el aparato genital femenino.',
+              'Solo cerca del 1 % entra al cuello uterino, donde puede sobrevivir muchas horas gracias al moco cervical alcalino; la vagina, en cambio, es ácida.',
+              'Solo de 300 a 500 llegan al sitio de la fecundación: la AMPOLLA de la trompa uterina.',
+              'Normalmente, uno solo fecunda al ovocito.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'El paso del cuello a la trompa depende sobre todo de las contracciones del útero y de la trompa, además del movimiento propio del espermatozoide. Puede tardar desde 30 minutos hasta 6 días: no porque el trayecto sea lento, sino porque los espermatozoides pueden esperar en el moco cervical, que aparece unos 5 a 6 días antes de la ovulación. Al ovular, recuperan su motilidad y nadan hacia la ampolla.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Por qué importa el momento de la relación sexual',
+            content: 'Como los espermatozoides sobreviven varios días en el moco cervical y el ovocito solo unas 24 horas, una relación sexual unos días antes de la ovulación puede terminar en embarazo. Por eso la ventana fértil incluye los días previos a la ovulación.',
+          },
+        ],
+      },
+      {
+        id: 'efe-2',
+        number: 2,
+        title: 'Capacitación espermática',
+        keyTerms: ['capacitación', 'plasma seminal', 'región acrosómica', 'corona radiada'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Capacitación',
+            content: 'Periodo de acondicionamiento del espermatozoide dentro del aparato reproductor femenino, sobre todo en la trompa uterina; dura unas 7 horas. Se retira una capa de glucoproteínas y proteínas del plasma seminal que cubre la membrana de la región acrosómica.',
+          },
+          {
+            type: 'list',
+            title: 'Qué permite',
+            items: [
+              'Solo el espermatozoide capacitado pasa libremente entre las células de la CORONA RADIADA: el primer filtro del ovocito.',
+              'Deja la región acrosómica libre para la reacción acrosómica.',
+              'Un espermatozoide recién eyaculado no puede fecundar: primero tiene que capacitarse.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Qué lleva el plasma seminal',
+            content: 'Glucoproteínas, fructosa como fuente de energía, sustancias antibacterianas y proteínas que primero coagulan y después licúan el semen.',
+          },
+        ],
+      },
+      {
+        id: 'efe-3',
+        number: 3,
+        title: 'Reacción acrosómica y zona pelúcida',
+        keyTerms: ['reacción acrosómica', 'ZP3', 'acrosina', 'zona pelúcida'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Cómo cruza la zona pelúcida',
+            steps: [
+              'El espermatozoide se une a la zona pelúcida; la unión la media el ligando ZP3, una proteína de la zona.',
+              'Esa unión induce la REACCIÓN ACROSÓMICA: la membrana acrosómica externa se fusiona con la membrana plasmática del espermatozoide y el contenido del acrosoma sale por exocitosis.',
+              'Se liberan enzimas como la ACROSINA y sustancias semejantes a la tripsina, que abren paso a través de la zona pelúcida.',
+              'Queda expuesta la membrana acrosómica interna y el espermatozoide llega a la membrana del ovocito.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'No confundir',
+            left: {
+              title: 'Capacitación',
+              items: ['Ocurre en el aparato reproductor femenino, sobre todo en la trompa', 'Retira la cubierta del plasma seminal', 'Permite cruzar la corona radiada'],
+            },
+            right: {
+              title: 'Reacción acrosómica',
+              items: ['Ocurre al unirse a la zona pelúcida (ZP3)', 'Libera las enzimas del acrosoma', 'Permite cruzar la zona pelúcida'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'efe-4',
+        number: 4,
+        title: 'Fusión de membranas y bloqueo de la polispermia',
+        keyTerms: ['fusión de membranas', 'reacción cortical', 'reacción de zona', 'polispermia', 'triploidía'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La adhesión inicial entre el espermatozoide y el ovocito la median en parte las integrinas del ovocito y sus ligandos en el espermatozoide (desintegrinas). Después se fusionan las membranas de ambas células y entran al ovocito la cabeza, la pieza intermedia y la cola del espermatozoide.',
+          },
+          {
+            type: 'list',
+            title: 'Las tres respuestas del ovocito',
+            items: [
+              'REACCIONES CORTICAL Y DE ZONA: los gránulos corticales liberan su contenido y modifican la zona pelúcida, que ya no deja pasar a otros espermatozoides. Así se evita la POLISPERMIA.',
+              'Reanuda y termina la SEGUNDA DIVISIÓN MEIÓTICA.',
+              'ACTIVACIÓN METABÓLICA: los cambios celulares y moleculares que ponen en marcha la embriogénesis temprana.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Cuando entran dos espermatozoides',
+            content: 'La polispermia agrega juegos extra de cromosomas: un ovocito fecundado por dos espermatozoides es triploide (69 cromosomas) y no es viable. Es el origen de la mola hidatiforme parcial, en la que prolifera el trofoblasto y hay poco tejido embrionario. En la mola completa, en cambio, el ovocito no tiene material genético propio y todo el contenido genético es paterno.',
+          },
+        ],
+      },
+      {
+        id: 'efe-5',
+        number: 5,
+        title: 'Pronúcleos y cigoto',
+        keyTerms: ['pronúcleo femenino', 'pronúcleo masculino', 'cigoto', 'número diploide', 'sexo cromosómico'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Del ovocito al cigoto',
+            steps: [
+              'El ovocito secundario termina la meiosis II: se forma el óvulo maduro y un segundo cuerpo polar. Su material genético forma el PRONÚCLEO FEMENINO.',
+              'El espermatozoide pierde la cola y la pieza intermedia; su cabeza crece y forma el PRONÚCLEO MASCULINO.',
+              'Ambos pronúcleos, haploides, REPLICAN su ADN.',
+              'Su material se reúne en la primera célula del nuevo individuo: el CIGOTO.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Por qué replican antes de unirse',
+            content: 'Si los pronúcleos se unieran sin replicar, habría 46 cromosomas de una sola cromátida. Al replicar primero, el cigoto queda con 46 cromosomas de dos cromátidas, listos para la primera división.',
+          },
+          {
+            type: 'table',
+            title: 'Resultados de la fecundación',
+            data: {
+              headers: ['Resultado', 'Qué significa'],
+              rows: [
+                ['Se restablece el número diploide', '46 cromosomas: 23 de la madre y 23 del padre'],
+                ['Se determina el sexo cromosómico', 'Lo decide el espermatozoide, que aporta un X o un Y'],
+                ['Inicia la segmentación', 'Comienzan las divisiones del cigoto'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Si no hay fecundación',
+            content: 'El ovocito secundario sigue detenido en metafase II y degenera en unas 24 horas después de la ovulación. Casi siempre lo hace dentro de la misma trompa: normalmente no llega a la cavidad uterina.',
+          },
+        ],
+      },
+      {
+        id: 'efe-6',
+        number: 6,
+        title: 'Segmentación, mórula y blastocisto',
+        keyTerms: ['blastómeras', 'mórula', 'compactación', 'blastocisto', 'eclosión'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Cronología aproximada',
+            data: {
+              headers: ['Tiempo tras la fecundación', 'Etapa'],
+              rows: [
+                ['≈ 30 horas', 'Primera segmentación: dos células (blastómeras)'],
+                ['Después', 'Cuatro y ocho blastómeras, mientras avanza por la trompa'],
+                ['Día 3', 'MÓRULA de 16 a 32 células; COMPACTACIÓN'],
+                ['Día 5', 'BLASTOCISTO'],
+                ['Días 5.5 a 6', 'Eclosión de la zona pelúcida e inicio de la implantación'],
+              ],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'La compactación separa dos grupos',
+            left: {
+              title: 'Masa celular interna (embrioblasto)',
+              items: ['Forma los tejidos del embrión', 'En el blastocisto se agrupa en un polo: el POLO EMBRIONARIO'],
+            },
+            right: {
+              title: 'Masa celular externa (trofoblasto)',
+              items: ['Forma la parte fetal de la placenta', 'En el blastocisto rodea la cavidad: el BLASTOCELE'],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'La eclosión',
+            content: 'Hasta el día 5 el blastocisto sigue dentro de la zona pelúcida. Para implantarse tiene que salir de ella (eclosión): si no lo logra, no puede tocar el endometrio. Es uno de los mecanismos que se estudian cuando una pareja tiene dificultad para concebir.',
+          },
+        ],
+      },
+      {
+        id: 'efe-7',
+        number: 7,
+        title: 'Implantación e inicio de la segunda semana',
+        keyTerms: ['implantación', 'citotrofoblasto', 'sincitiotrofoblasto', 'hCG', 'epiblasto', 'hipoblasto', 'Cerberus', 'Lefty-1'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Implantación (hacia la mitad del día 5 al día 6)',
+            steps: [
+              'El blastocisto se orienta con el polo embrionario hacia el endometrio.',
+              'Ligandos de la superficie del trofoblasto se unen a receptores del endometrio.',
+              'El trofoblasto se divide en dos capas e invade el endometrio.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Las dos capas del trofoblasto',
+            left: {
+              title: 'Citotrofoblasto',
+              items: ['Capa interna, de células individuales', 'Más cerca del embrioblasto'],
+            },
+            right: {
+              title: 'Sincitiotrofoblasto',
+              items: ['Capa externa, sin límites entre células', 'Invade el endometrio', 'Secreta hCG, que mantiene el cuerpo lúteo'],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'Al iniciar la segunda semana, el embrioblasto forma dos láminas: el EPIBLASTO (arriba, en los esquemas) y el HIPOBLASTO (abajo). Un grupo de células del hipoblasto expresa genes como CERBERUS y LEFTY-1, que marcan la futura región craneal. Los ejes cráneo-caudal, dorso-ventral e izquierda-derecha se establecen más adelante.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Prueba de embarazo',
+            content: 'Las pruebas de embarazo detectan la hCG del sincitiotrofoblasto. Las cualitativas (sí o no) son confiables a partir del final de la segunda semana o el inicio de la tercera después de la fecundación, cuando hay suficiente hormona; las cuantitativas miden su concentración en sangre.',
           },
         ],
       },

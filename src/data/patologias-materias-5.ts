@@ -126,6 +126,7 @@ const ECTOPICO: Patologia = {
     { materia: 'Embriología', topicId: 'embriologia-desarrollo-temprano', sectionId: 'edt-3', label: 'Primera semana', porQue: 'El recorrido del cigoto por la trompa y la implantación en los días 5–6.' },
     { materia: 'Embriología', topicId: 'embriologia-desarrollo-temprano', sectionId: 'edt-4', label: 'Segunda semana', porQue: 'El sincitiotrofoblasto invade el tejido donde se implanta, sea o no el útero.' },
     { materia: 'Histología', topicId: 'histologia-epitelial-polaridad', sectionId: 'hpol-2', label: 'Cilios del dominio apical', porQue: 'Los cilios de la trompa ayudan a mover el cigoto; si se dañan, el transporte se retrasa.' },
+    { materia: 'Embriología', topicId: 'embriologia-fecundacion', sectionId: 'efe-7', label: 'Implantación e inicio de la segunda semana', porQue: 'El trofoblasto invade el tejido donde se implanta y el sincitiotrofoblasto secreta la β-hCG que se mide en el diagnóstico.' },
     { materia: 'Embriología', topicId: 'embriologia-ciclo-ovarico', sectionId: 'eco-6', label: 'Transporte del ovocito', porQue: 'Fecundación en la ampolla y llegada al útero en 3 a 4 días: si el transporte falla, el embrión se implanta en la trompa.' },
   ],
   atlas: [
@@ -255,6 +256,7 @@ const MOLA: Patologia = {
     { materia: 'Embriología', topicId: 'embriologia-desarrollo-temprano', sectionId: 'edt-3', label: 'Partes del blastocisto', porQue: 'El trofoblasto, la capa que prolifera en la mola, forma la parte fetal de la placenta.' },
     { materia: 'Embriología', topicId: 'embriologia-desarrollo-temprano', sectionId: 'edt-4', label: 'Segunda semana: citotrofoblasto y sincitiotrofoblasto', porQue: 'El sincitiotrofoblasto es el que produce la hCG.' },
     { materia: 'Embriología', topicId: 'embriologia-cromosomas-division', sectionId: 'ecd-2', label: 'Número de cromosomas', porQue: 'La mola parcial es triploide: una euploidía anormal (3n = 69).' },
+    { materia: 'Embriología', topicId: 'embriologia-fecundacion', sectionId: 'efe-4', label: 'Fusión de membranas y bloqueo de la polispermia', porQue: 'Un ovocito fecundado por dos espermatozoides es triploide: el origen de la mola parcial.' },
     { materia: 'Histología', topicId: 'histologia-introduccion', sectionId: 'hint-4', label: 'Método y aplicaciones diagnósticas', porQue: 'El diagnóstico definitivo de la mola es histopatológico.' },
   ],
   atlas: [
