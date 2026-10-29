@@ -68,3 +68,10 @@
 |---|---|---|---|
 | anom/down-cariotipo.jpg | [Down Syndrome Karyotype.png](https://commons.wikimedia.org/wiki/File:Down_Syndrome_Karyotype.png) (reducida; la palabra «or» se cubre con «o» en la lámina) | Courtesy: National Human Genome Research Institute | Dominio público |
 | anom/klinefelter-metafase.jpg | [Human karyotype (259 30) Karyotype Human 47,XXY (Klinefelter).jpg](https://commons.wikimedia.org/wiki/File:Human_karyotype_(259_30)_Karyotype_Human_47,XXY_(Klinefelter).jpg) (recortada) | Doc. RNDr. Josef Reischig, CSc. | CC BY-SA 3.0 |
+
+## Lámina Mente, desarrollo y envejecimiento (Wikimedia Commons)
+
+| Archivo | Fuente | Autor | Licencia |
+|---|---|---|---|
+| mh2/descartes-pineal.jpg | [Descartes diagram.png](https://commons.wikimedia.org/wiki/File:Descartes_diagram.png) (fondo blanco, JPEG) — *Tratado del hombre* (1664) | René Descartes | Dominio público |
+| mh2/gage-craneo.jpg | [Phineas gage - 1868 skull diagram.jpg](https://commons.wikimedia.org/wiki/File:Phineas_gage_-_1868_skull_diagram.jpg) | John M. Harlow (1868) | Dominio público |

@@ -1458,4 +1458,23 @@ export const atlasTopics: AtlasTopic[] = [
       { id: 'mhu-6', question: 'Una «mollera caída» con diarrea y ojos hundidos sugiere:', options: ['Hidrocefalia', 'Deshidratación', 'Meningitis', 'Fractura de cráneo'], correctIndex: 1, explanation: 'La fontanela anterior se hunde cuando el lactante pierde líquidos; nunca debe sacudirse al bebé.', difficulty: 'medium' },
     ],
   },
+  {
+    id: 'humanistica-mente-ciclo-vital',
+    title: 'Mente, desarrollo y envejecimiento',
+    subtitle: 'Relación dialéctica, Descartes y el problema mente-cuerpo, monismo, dualismo y emergentismo, cerebro moral, Kohlberg, lo social, lo sociológico y lo antropológico, crecimiento y desarrollo, Baltes, Piaget, Erikson, teorías y formas del envejecimiento',
+    category: 'humanistica',
+    emoji: '🧓',
+    imagePath: '/atlas/humanistica-mente-ciclo-vital.webp',
+    colorKey: 'humanistica',
+    relatedTopicIds: ['medicina-humanistica'],
+    questions: [
+      { id: 'mhc-1', question: '«Interacción recíproca entre el cuerpo y los procesos mentales, emocionales y espirituales, donde cada esfera influye y se ve influida por las demás» define:', options: ['El dualismo cartesiano', 'El monismo materialista', 'La relación dialéctica entre las esferas anatómica y psíquica', 'El emergentismo'], correctIndex: 2, explanation: 'Es la definición del panel 1: una relación recíproca que favorece el desarrollo integral del ser humano.', difficulty: 'easy' },
+      { id: 'mhc-2', question: 'Para Descartes, el atributo esencial de la res extensa (el cuerpo) es:', options: ['La extensión', 'El pensamiento', 'La perfección', 'La voluntad'], correctIndex: 0, explanation: 'Res infinita: perfección · res cogitans: pensamiento · res extensa: extensión.', difficulty: 'medium' },
+      { id: 'mhc-3', question: '«Los estados mentales surgen del cerebro, pero tienen propiedades irreductibles con efectos causales reales» corresponde al:', options: ['Idealismo', 'Emergentismo', 'Dualismo de sustancias', 'Fisicalismo'], correctIndex: 1, explanation: 'El emergentismo: la mente «emerge» de la conectividad neuronal.', difficulty: 'medium' },
+      { id: 'mhc-4', question: 'Seguir una norma para ser «bueno» ante el grupo y obtener su aprobación corresponde, en Kohlberg, a la etapa:', options: ['Obediencia y castigo', 'Contrato social', 'Principios éticos universales', 'Conformidad interpersonal'], correctIndex: 3, explanation: 'Etapa 3, dentro del nivel convencional (normas del grupo).', difficulty: 'medium' },
+      { id: 'mhc-5', question: 'En Erikson, la crisis de la adolescencia y su virtud son:', options: ['Intimidad vs. aislamiento; amor', 'Identidad vs. confusión; fidelidad', 'Laboriosidad vs. inferioridad; competencia', 'Integridad vs. desesperación; sabiduría'], correctIndex: 1, explanation: 'Estadio V, 13–18 años; relaciones significativas: grupos y modelos de roles.', difficulty: 'medium' },
+      { id: 'mhc-6', question: 'Las únicas dos teorías determinísticas del envejecimiento son:', options: ['Radicales libres y error catastrófico', 'Uniones cruzadas y productos de desecho', 'Inmunológicas y genéticas', 'Capacidad replicativa finita de la célula y evolutivas'], correctIndex: 3, explanation: 'Todas las demás son estocásticas: cambios al azar modificados por el ambiente.', difficulty: 'medium' },
+      { id: 'mhc-7', question: 'El envejecimiento activo (OMS, 2002) optimiza las oportunidades de:', options: ['Salud, participación y seguridad', 'Trabajo, ingreso y vivienda', 'Ejercicio, dieta y sueño', 'Memoria, atención y lenguaje'], correctIndex: 0, explanation: 'Los tres pilares del panel 13; lo asumió el Plan de Acción Internacional de Madrid.', difficulty: 'easy' },
+    ],
+  },
 ]

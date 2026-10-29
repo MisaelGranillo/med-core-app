@@ -1003,6 +1003,7 @@ export const uadMedicina: Plan = {
             ],
             recursos: [
               { label: 'Atlas MedCore — Medicina Humanística', url: '/atlas/medicina-humanistica' },
+              { label: 'Atlas MedCore — Mente, desarrollo y envejecimiento', url: '/atlas/humanistica-mente-ciclo-vital' },
               { label: 'Determinantes sociales de la salud — OPS', url: 'https://www.paho.org/es/temas/determinantes-sociales-salud' },
               { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },
               { label: '5-Minute Consult', url: 'https://5minuteconsult.com' },

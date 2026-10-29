@@ -1745,6 +1745,7 @@ const CADERA: Patologia = {
     { id: 'miembro-inferior-oseo', title: 'Miembro inferior óseo' },
     { id: 'articulaciones-miembro-inferior', title: 'Articulación coxofemoral (cadera)' },
     { id: 'hueso-coxal', title: 'Hueso coxal' },
+    { id: 'humanistica-mente-ciclo-vital', title: 'Mente, desarrollo y envejecimiento' },
   ],
   caso: {
     titulo: 'Caso clínico',

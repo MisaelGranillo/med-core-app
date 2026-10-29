@@ -1,0 +1,278 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 5px; padding-top: 14px; }
+h1 { font-size: 43px; }
+.panel { padding: 8px 10px; }
+.ph { margin: 0 0 6px; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.8px; line-height: 1.32; }
+.lst li { margin: 0 0 2px; }
+table td { font-size: 10.3px; padding: 2px 6px; line-height: 1.28; }
+table th { padding: 2px 6px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+.three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+.box { border-radius: 8px; padding: 6px 8px; font-size: 10.5px; line-height: 1.3; }
+.box b.t { display: block; font-size: 11.5px; margin-bottom: 2px; }
+.def { background: #f4f1fa; border: 1px solid #e2daf0; border-radius: 8px; padding: 6px 9px; font-size: 10.9px; line-height: 1.33; }
+.def b.t { color: #6a4c9c; }
+.fig { display: flex; gap: 9px; align-items: flex-start; }
+.fig img { border-radius: 6px; border: 1px solid #e3e7ef; display: block; flex-shrink: 0; }
+.cap { font-size: 9.4px; color: var(--muted); line-height: 1.25; margin-top: 3px; }
+.post { border-radius: 8px; padding: 5px 7px; font-size: 10.2px; line-height: 1.28; }
+.post .h { font-weight: 800; font-size: 12px; margin-bottom: 3px; letter-spacing: .3px; }
+.post .v { margin: 0 0 3px; }
+.post .v b { color: inherit; }
+.ages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
+.ages div { border-radius: 7px; padding: 5px 7px; font-size: 10px; line-height: 1.26; }
+.ages div b { display: block; font-size: 11px; }
+.formas { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; }
+.formas div { border-radius: 7px; padding: 5px 6px; font-size: 9.9px; line-height: 1.26; color: #1d2433; }
+.formas div b { display: block; font-size: 11px; margin-bottom: 1px; }
+.pil3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; text-align: center; }
+.pil3 div { border-radius: 8px; padding: 5px 4px; font-size: 10.6px; font-weight: 700; }
+.pil3 .ic { width: 24px; height: 24px; display: block; margin: 0 auto 2px; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.chip { border-radius: 11px; padding: 2px 7px; font-size: 9.8px; font-weight: 600; background: #eef1f6; color: var(--navy); }
+.bal { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 10px; }
+.bal div { display: flex; gap: 6px; align-items: baseline; font-size: 10.5px; line-height: 1.25; }
+.bal div span.n { background: #2e7d5b; color: #fff; border-radius: 50%; width: 17px; height: 17px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; }
+.star { color: var(--red); font-weight: 800; }
+.erk td.k { white-space: normal; width: 34%; }
+.erk td.k small { display: block; font-weight: 500; color: var(--muted); font-size: 9.6px; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Medicina Humanística</p>
+  <h1>Mente, desarrollo y envejecimiento</h1>
+  <p class="tag">Del problema mente-cuerpo al ciclo vital: cómo se desarrolla y cómo envejece la persona.</p>
+</header>
+
+<div class="row">
+  <section class="panel" style="flex:1.08">
+    <div class="ph"><span class="n">1</span>Relación dialéctica <span class="star">★</span></div>
+    <div class="def"><b class="t">Relación dialéctica entre las esferas anatómica y psíquica:</b> interacción recíproca entre el cuerpo y los procesos mentales, emocionales y espirituales, donde cada esfera influye y se ve influida por las demás para favorecer el desarrollo integral del ser humano.</div>
+    <div class="two" style="margin-top:6px">
+      <div class="box" style="background:#fbeef0"><b class="t" style="color:#c8242c">Esfera anatómica</b>El cuerpo: sentidos, fisiología, morfología. El mecanicismo la ve como una máquina que se descompone.</div>
+      <div class="box" style="background:#e9f0fb"><b class="t" style="color:#1f4f9c">Esfera psíquica</b>Alma: voluntad, mente, emociones. Espíritu: conciencia, intuición, comunión.</div>
+    </div>
+    <p style="font-size:10.2px;margin:4px 0 0"><b>Hegel</b>: tesis y antítesis · <b>Marx</b>: tesis, antítesis, síntesis.</p>
+  </section>
+  <section class="panel" style="flex:.92">
+    <div class="ph"><span class="n">2</span>Descartes <small>— «pienso, luego existo» (s. XVII)</small></div>
+    <div class="fig">
+      <div style="width:100px"><img src="{{img:fotos/mh2/descartes-pineal.jpg}}" style="width:100px" alt=""><div class="cap">Ojos → <b>glándula pineal</b> (1664).</div></div>
+      <div style="flex:1;min-width:0">
+        <table>
+          <tr><th>Sustancia</th><th>Qué es</th><th>Atributo</th></tr>
+          <tr><td class="k">Res infinita</td><td>Dios</td><td>Perfección</td></tr>
+          <tr><td class="k">Res cogitans</td><td>Alma o mente</td><td>Pensamiento</td></tr>
+          <tr><td class="k">Res extensa</td><td>Cuerpo</td><td>Extensión</td></tr>
+        </table>
+        <ul class="lst" style="margin-top:5px">
+          <li><b>Dualismo</b>: nace el <b>problema mente-cuerpo</b>. <b>Mecanicismo</b>: el cuerpo como máquina.</li>
+          <li>La <b>pineal</b>, «recinto del alma», hoy: <b>melatonina</b> (triptófano → serotonina).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:1.12">
+    <div class="ph"><span class="n">3</span>Posturas ante el problema mente-cuerpo <span class="star">★</span></div>
+    <div class="three">
+      <div class="post" style="background:#fdf1ec;color:#8a3d10">
+        <div class="h">MONISMO</div>
+        <p class="v">Una sola realidad.</p>
+        <p class="v"><b>Fisicalismo</b>: la mente es materia organizada.</p>
+        <p class="v"><b>Idealismo</b>: solo existe el pensamiento.</p>
+        <p class="v" style="margin:0"><b>Monismo neutral</b>: mente y materia son aspectos de una tercera esencia.</p>
+      </div>
+      <div class="post" style="background:#e9f0fb;color:#1f3f7a">
+        <div class="h">DUALISMO</div>
+        <p class="v">Mente y cuerpo, entidades separadas.</p>
+        <p class="v"><b>De sustancias</b>: la mente no sigue las leyes físicas.</p>
+        <p class="v" style="margin:0"><b>De propiedades</b>: lo mental es una propiedad fundamental junto a lo físico.</p>
+      </div>
+      <div class="post" style="background:#e8f5ee;color:#1f5c40">
+        <div class="h">EMERGENTISMO</div>
+        <p class="v">Lo mental <b>surge del cerebro</b>, pero tiene propiedades irreductibles con efectos causales reales.</p>
+        <p class="v" style="margin:0">La mente «emerge» de la conectividad neuronal.</p>
+      </div>
+    </div>
+  </section>
+  <section class="panel" style="flex:.88">
+    <div class="ph"><span class="n">4</span>Cerebro moral</div>
+    <div class="fig">
+      <div style="width:66px"><img src="{{img:fotos/mh2/gage-craneo.jpg}}" style="width:66px" alt=""><div class="cap">Cráneo de Phineas Gage (Harlow, 1868).</div></div>
+      <div style="flex:1;min-width:0">
+        <div class="def" style="padding:5px 8px"><b class="t">Monismo materialista ★</b> la mente es el producto fisiológico del encéfalo.</div>
+        <ul class="lst" style="margin-top:4px">
+          <li>Decidir entre bien y mal: lóbulo <b>frontal</b> (orbitario y dorsolateral), <b>cíngulo anterior</b> y lóbulo <b>temporal</b>.</li>
+          <li><b>Gage</b> (1848): una barra atraviesa su lóbulo frontal; cambian su carácter y su juicio.</li>
+          <li><b>Psiquiatría</b> (médica) puede indicar fármacos; la <b>psicología</b>, no.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">5</span>Desarrollo moral de Kohlberg <span class="star">★</span></div>
+    <svg viewBox="0 0 560 136" style="width:100%;display:block">
+      <g font-size="9.8" text-anchor="middle">
+        <rect x="0" y="108" width="185" height="1.6" fill="#b8650f"/><text x="92" y="121" fill="#b8650f" font-weight="800" font-size="10.5">PRECONVENCIONAL</text><text x="92" y="132" fill="#4b5567" font-size="9.6">consecuencias para mí</text>
+        <rect x="186" y="108" width="185" height="1.6" fill="#1f4f9c"/><text x="278" y="121" fill="#1f4f9c" font-weight="800" font-size="10.5">CONVENCIONAL</text><text x="278" y="132" fill="#4b5567" font-size="9.6">normas del grupo</text>
+        <rect x="372" y="108" width="185" height="1.6" fill="#2e7d5b"/><text x="464" y="121" fill="#2e7d5b" font-weight="800" font-size="10.5">POSTCONVENCIONAL</text><text x="464" y="132" fill="#4b5567" font-size="9.6">principios; no todos llegan</text>
+        <g fill="#fff" font-weight="700">
+          <rect x="0" y="74" width="92" height="30" rx="4" fill="#e8912e"/>
+          <text x="46" y="87">1 Obediencia</text><text x="46" y="99">y castigo</text>
+          <rect x="93" y="61" width="92" height="43" rx="4" fill="#e8912e"/>
+          <text x="139" y="74">2 Interés propio</text><text x="139" y="86">e intercambio</text>
+          <rect x="186" y="48" width="92" height="56" rx="4" fill="#1f4f9c"/>
+          <text x="232" y="61">3 Conformidad</text><text x="232" y="73">interpersonal</text>
+          <rect x="279" y="35" width="92" height="69" rx="4" fill="#1f4f9c"/>
+          <text x="325" y="48">4 Mantener el</text><text x="325" y="60">orden social</text>
+          <rect x="372" y="22" width="92" height="82" rx="4" fill="#2e7d5b"/>
+          <text x="418" y="35">5 Contrato</text><text x="418" y="47">social</text>
+          <rect x="465" y="9" width="92" height="95" rx="4" fill="#2e7d5b"/>
+          <text x="511" y="22">6 Principios</text><text x="511" y="34">éticos universales</text>
+        </g>
+      </g>
+    </svg>
+    <p style="font-size:10.2px;margin:3px 0 0">No pegar «para que no me regañen» (1) · fumar porque los amigos fuman (3). <b>No depende solo de la edad</b>.</p>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">6</span>Tres conceptos <span class="star">★</span></div>
+    <div style="display:flex;flex-direction:column;gap:5px">
+      <div class="box" style="background:#fdf1ec"><b style="color:#c2571a">Lo social:</b> Relaciones, interacciones y estructuras de la vida en sociedad: cultura, instituciones, normas compartidas.</div>
+      <div class="box" style="background:#e9f0fb"><b style="color:#1f4f9c">Lo sociológico:</b> Cómo se relaciona el ser humano con las dinámicas sociales y culturales de un grupo.</div>
+      <div class="box" style="background:#e8f5ee"><b style="color:#2e7d5b">Lo antropológico:</b> El ser humano desde la diversidad cultural: migración, identidad étnica, derechos humanos, globalización.</div>
+    </div>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:1.25">
+    <div class="ph"><span class="n">7</span>Ciclo vital: crecer no es desarrollarse <span class="star">★</span></div>
+    <div class="two">
+      <div class="box" style="background:#fbeef0"><b class="t" style="color:#c8242c">Crecimiento</b><b>Cuantitativo</b> (peso y talla). Continuo, secuencial, universal e irreversible; proliferación celular.</div>
+      <div class="box" style="background:#f2edf8"><b class="t" style="color:#6a4c9c">Desarrollo</b><b>Cualitativo</b>: cambios físicos, funcionales, emocionales y sociales; varía con la cultura y el género.</div>
+    </div>
+    <table style="margin-top:5px">
+      <tr><th>Ámbito</th><th>Pauta de cambio</th></tr>
+      <tr><td class="k">Físico</td><td>Cuerpo y cerebro, sentidos, motricidad, salud; dirección <b>cefalocaudal</b></td></tr>
+      <tr><td class="k">Cognoscitivo</td><td>Aprendizaje, atención, memoria, lenguaje, pensamiento, creatividad</td></tr>
+      <tr><td class="k">Psicosocial</td><td>Emociones, personalidad y relaciones sociales</td></tr>
+    </table>
+  </section>
+  <section class="panel" style="flex:.75">
+    <div class="ph"><span class="n">8</span>Principios de Baltes <span class="star">★</span></div>
+    <div class="bal">
+      <div><span class="n">1</span><span>Dura <b>toda la vida</b></span></div>
+      <div><span class="n">2</span><span>Es <b>multidimensional</b></span></div>
+      <div><span class="n">3</span><span>Es <b>multidireccional</b></span></div>
+      <div><span class="n">4</span><span>Cambia el peso de la <b>biología y la cultura</b></span></div>
+      <div><span class="n">5</span><span>Redistribuye los <b>recursos</b></span></div>
+      <div><span class="n">6</span><span>Muestra <b>plasticidad</b></span></div>
+      <div style="grid-column:1/3"><span class="n">7</span><span>Influye el <b>contexto histórico y cultural</b></span></div>
+    </div>
+    <p style="font-size:10.2px;margin:5px 0 0">La plasticidad sigue en el adulto: estudiar activamente refuerza conexiones.</p>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">9</span>Piaget y Erikson <small>— desarrollo cognitivo y psicosocial</small></div>
+  <svg viewBox="0 0 980 46" style="width:100%;display:block">
+    <g font-size="11" text-anchor="middle">
+      <rect x="0" y="4" width="150" height="26" rx="5" fill="#e8912e"/>
+      <rect x="152" y="4" width="250" height="26" rx="5" fill="#c2571a"/>
+      <rect x="404" y="4" width="200" height="26" rx="5" fill="#1f4f9c"/>
+      <rect x="606" y="4" width="374" height="26" rx="5" fill="#6a4c9c"/>
+      <g fill="#fff" font-weight="700">
+        <text x="75" y="21">Sensoriomotora</text>
+        <text x="277" y="21">Preoperacional: símbolos, lenguaje</text>
+        <text x="504" y="21">Operaciones concretas</text>
+        <text x="793" y="21">Operaciones formales: pensamiento abstracto e hipotético</text>
+      </g>
+      <g fill="#4b5567" font-size="10">
+        <text x="2" y="43" text-anchor="start">0–2 años · permanencia del objeto</text>
+        <text x="277" y="43">2–7 años · juego simbólico, egocentrismo</text>
+        <text x="504" y="43">7–11 años · conservación, seriación</text>
+        <text x="793" y="43">desde los 11 años · lógica, ética, planificación</text>
+      </g>
+    </g>
+  </svg>
+  <div class="two" style="gap:10px;margin-top:4px">
+    <table class="erk">
+      <tr><th>Erikson ★ · edad</th><th>Crisis</th><th>Relaciones</th><th>Virtud</th></tr>
+      <tr><td class="k">I · Infancia temprana<small>0–18 meses</small></td><td>Confianza vs. desconfianza</td><td>Madre</td><td><b>Esperanza y fe</b></td></tr>
+      <tr><td class="k">II · Infancia tardía<small>18 meses–3 años</small></td><td>Autonomía vs. vergüenza</td><td>Padres</td><td><b>Voluntad</b></td></tr>
+      <tr><td class="k">III · Niñez temprana<small>3–6 años</small></td><td>Iniciativa vs. culpa</td><td>Familia</td><td><b>Propósito</b></td></tr>
+      <tr><td class="k">IV · Edad escolar<small>6–12 años</small></td><td>Laboriosidad vs. inferioridad</td><td>Vecindario y escuela</td><td><b>Competencia</b></td></tr>
+    </table>
+    <table class="erk">
+      <tr><th>Erikson ★ · edad</th><th>Crisis</th><th>Relaciones</th><th>Virtud</th></tr>
+      <tr><td class="k">V · Adolescencia<small>13–18 años</small></td><td>Identidad vs. confusión</td><td>Grupos y modelos de roles</td><td><b>Fidelidad</b></td></tr>
+      <tr><td class="k">VI · Adultez temprana<small>19–40 años</small></td><td>Intimidad vs. aislamiento</td><td>Colegas y amigos</td><td><b>Amor</b></td></tr>
+      <tr><td class="k">VII · Adultez<small>45–60 años</small></td><td>Productividad vs. estancamiento</td><td>Hogar y compañeros de trabajo</td><td><b>Cuidado</b></td></tr>
+      <tr><td class="k">VIII · Edad avanzada<small>60 años o más</small></td><td>Integridad vs. desesperación</td><td>Los seres humanos, «los míos»</td><td><b>Sabiduría</b></td></tr>
+    </table>
+  </div>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1.05">
+    <div class="ph"><span class="n">10</span>Vejez y teorías del envejecimiento <span class="star">★</span></div>
+    <div class="def"><b class="t">Vejez:</b> proceso continuo, heterogéneo, universal e irreversible que determina una pérdida progresiva de la capacidad de adaptación. Su inicio no se precisa por la edad: el envejecimiento es una <b>construcción social</b>.</div>
+    <div class="two" style="margin-top:6px">
+      <div class="box" style="background:#fdf1ec"><b class="t" style="color:#c2571a">Estocásticas</b>Al azar y modificadas por el ambiente: genéticas, mutación, radicales libres, error catastrófico, uniones cruzadas, desechos, inmunológicas.</div>
+      <div class="box" style="background:#e9f0fb"><b class="t" style="color:#1f4f9c">Determinísticas (solo 2)</b>Capacidad replicativa finita de la célula (límite de Hayflick, telómeros) y teorías evolutivas.</div>
+    </div>
+  </section>
+  <section class="panel" style="flex:.95">
+    <div class="ph"><span class="n">11</span>Etapas, tipos y modelos</div>
+    <div class="ages">
+      <div style="background:#eef1f6"><b>Prevejez</b>Tras la jubilación; reorientar la rutina</div>
+      <div style="background:#e8f5ee"><b>Temprana</b>Capacidad alta y estable</div>
+      <div style="background:#fdf6e3"><b>Media</b>Deterioro; aparecen enfermedades</div>
+      <div style="background:#fbeef0"><b>Tardía</b>Pérdidas significativas; cuidados largos</div>
+    </div>
+    <p style="font-size:10.3px;margin:5px 0 4px">Tipos (OMS): <b>biológico</b>, <b>psicológico</b>, <b>social</b> y <b>funcional</b> (independencia en la vida diaria).</p>
+    <div class="two">
+      <div class="box" style="background:#fbeef0;padding:4px 7px"><b class="t" style="color:#c8242c">Modelo deficitario</b>Enfermedad, improductividad, decadencia</div>
+      <div class="box" style="background:#e8f5ee;padding:4px 7px"><b class="t" style="color:#2e7d5b">Modelo de desarrollo</b>Una etapa más, segunda libertad, humanización</div>
+    </div>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:1.1">
+    <div class="ph"><span class="n">12</span>Formas de envejecer <span class="star">★</span></div>
+    <div class="formas">
+      <div style="background:#d8efe2"><b>Exitoso</b>Rowe: bajo riesgo de enfermar, alta actividad física y mental</div>
+      <div style="background:#e5f3ea"><b>Saludable</b>Se construye mucho antes de los 60, con hábitos desde joven</div>
+      <div style="background:#eef5e4"><b>Activo</b>Independencia y participación en actividades significativas</div>
+      <div style="background:#fdf1e0"><b>Frágil</b>Vulnerable a discapacidad y dependencia</div>
+      <div style="background:#fbe3e5"><b>Patológico</b>Enfermedad que limita la vida independiente</div>
+    </div>
+    <p style="font-size:10.2px;margin:5px 0 0">OMS 2015: envejecimiento saludable es fomentar y mantener la <b>capacidad funcional</b>. <b>Ageísmo</b> (edadismo): prejuicio o discriminación por la edad.</p>
+  </section>
+  <section class="panel" style="flex:.9">
+    <div class="ph"><span class="n">13</span>Envejecimiento activo <small>— OMS 2002, Plan de Madrid</small></div>
+    <div class="pil3">
+      <div style="background:#fbeef0;color:#c8242c">{{icon:Heartbeat}}Salud</div>
+      <div style="background:#e9f0fb;color:#1f4f9c">{{icon:UsersThree}}Participación</div>
+      <div style="background:#e8f5ee;color:#2e7d5b">{{icon:ShieldCheck}}Seguridad</div>
+    </div>
+    <p style="font-size:10.2px;margin:5px 0 4px">Optimizar esas tres oportunidades para mejorar la calidad de vida al envejecer. Determinantes:</p>
+    <div class="chips">
+      <span class="chip">entorno físico</span><span class="chip">económicos</span><span class="chip">conductuales</span><span class="chip">sociales</span><span class="chip">personales</span><span class="chip">sanidad y servicios sociales</span><span class="chip" style="background:#f2edf8;color:#6a4c9c">transversales: género y cultura</span>
+    </div>
+  </section>
+</div>
+
+<p class="foot">MedCore · Medicina Humanística (UAD) · ★ temas señalados para el examen · Dominio público: R. Descartes, <i>Tratado del hombre</i> (1664); J. M. Harlow, cráneo de Phineas Gage (1868)</p>
+</div></body></html>
