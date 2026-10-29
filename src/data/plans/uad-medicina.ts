@@ -594,6 +594,7 @@ export const uadMedicina: Plan = {
             ],
             recursos: [
               { label: 'Atlas MedCore — Desarrollo temprano', url: '/atlas/embriologia-desarrollo-temprano' },
+              { label: 'Atlas MedCore — Anomalías cromosómicas', url: '/atlas/embriologia-anomalias-cromosomicas' },
               { label: 'Acland Anatomy', url: 'https://aclandanatomy.com/' },
               { label: 'Bates Visual Guide', url: 'https://batesvisualguide.com/' },
               { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },

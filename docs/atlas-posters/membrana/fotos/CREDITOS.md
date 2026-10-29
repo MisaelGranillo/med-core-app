@@ -61,3 +61,10 @@
 | tej/cardiaco.jpg | [Muscle Tissue Intercalated Discs in Cardiac Muscle (41931906821).jpg](https://commons.wikimedia.org/wiki/File:Muscle_Tissue_Intercalated_Discs_in_Cardiac_Muscle_(41931906821).jpg) | Berkshire Community College Bioscience Image Library | CC0 |
 | tej/liso.jpg | [Smooth muscle - histology.jpg](https://commons.wikimedia.org/wiki/File:Smooth_muscle_-_histology.jpg) | Juan Carlos Fonseca Mata | CC BY-SA 4.0 |
 | tej/neurona.jpg | [Nervous Tissue Spinal Cord Motor Neuron (41850850692).jpg](https://commons.wikimedia.org/wiki/File:Nervous_Tissue_Spinal_Cord_Motor_Neuron_(41850850692).jpg) | Berkshire Community College Bioscience Image Library | CC0 |
+
+## Lámina Anomalías cromosómicas (Wikimedia Commons)
+
+| Archivo | Fuente | Autor | Licencia |
+|---|---|---|---|
+| anom/down-cariotipo.jpg | [Down Syndrome Karyotype.png](https://commons.wikimedia.org/wiki/File:Down_Syndrome_Karyotype.png) (reducida; la palabra «or» se cubre con «o» en la lámina) | Courtesy: National Human Genome Research Institute | Dominio público |
+| anom/klinefelter-metafase.jpg | [Human karyotype (259 30) Karyotype Human 47,XXY (Klinefelter).jpg](https://commons.wikimedia.org/wiki/File:Human_karyotype_(259_30)_Karyotype_Human_47,XXY_(Klinefelter).jpg) (recortada) | Doc. RNDr. Josef Reischig, CSc. | CC BY-SA 3.0 |

@@ -537,6 +537,7 @@ const GALACTOSEMIA: Patologia = {
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },
     { id: 'bioquimica-glucidos', title: 'Glúcidos' },
+    { id: 'embriologia-anomalias-cromosomicas', title: 'Anomalías cromosómicas' },
   ],
   caso: {
     titulo: 'Caso clínico',
@@ -800,6 +801,7 @@ const KLINEFELTER: Patologia = {
     { id: 'genetica-cromosomas-cariotipo', title: 'Cromosomas, cariotipo y bandeo' },
     { id: 'genetica-gametogenesis', title: 'Gametogénesis y fecundación' },
     { id: 'embriologia-desarrollo-temprano', title: 'Desarrollo temprano' },
+    { id: 'embriologia-anomalias-cromosomicas', title: 'Anomalías cromosómicas' },
   ],
   caso: {
     titulo: 'Caso clínico',

@@ -665,6 +665,7 @@ const DOWN: Patologia = {
     { id: 'genetica-cromosomas-cariotipo', title: 'Cromosomas, cariotipo y bandeo' },
     { id: 'genetica-gametogenesis', title: 'Gametogénesis y fecundación' },
     { id: 'embriologia-desarrollo-temprano', title: 'Desarrollo temprano' },
+    { id: 'embriologia-anomalias-cromosomicas', title: 'Anomalías cromosómicas' },
   ],
   caso: {
     titulo: 'Caso clínico',
@@ -791,6 +792,7 @@ const FENILCETONURIA: Patologia = {
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },
     { id: 'bioquimica-proteinas', title: 'Aminoácidos y proteínas' },
+    { id: 'embriologia-anomalias-cromosomicas', title: 'Anomalías cromosómicas' },
   ],
   caso: {
     titulo: 'Caso clínico',
@@ -1076,6 +1078,7 @@ const TURNER: Patologia = {
     { id: 'genetica-desarrollo', title: 'Desarrollo embrionario y sexual' },
     { id: 'genetica-cromosomas-cariotipo', title: 'Cromosomas, cariotipo y bandeo' },
     { id: 'embriologia-desarrollo-temprano', title: 'Desarrollo temprano' },
+    { id: 'embriologia-anomalias-cromosomicas', title: 'Anomalías cromosómicas' },
   ],
   caso: {
     titulo: 'Caso clínico',

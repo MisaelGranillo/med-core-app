@@ -520,6 +520,7 @@ const TRISOMIAS: Patologia = {
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },
     { id: 'genetica-cromosomas-cariotipo', title: 'Cromosomas, cariotipo y bandeo' },
     { id: 'embriologia-desarrollo-temprano', title: 'Desarrollo temprano' },
+    { id: 'embriologia-anomalias-cromosomicas', title: 'Anomalías cromosómicas' },
   ],
   caso: {
     titulo: 'Caso clínico',

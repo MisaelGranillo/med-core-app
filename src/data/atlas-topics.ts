@@ -1423,6 +1423,23 @@ export const atlasTopics: AtlasTopic[] = [
       { id: 'edt-a6', question: '¿En qué fase se libera el ovocito en la ovulación?', options: ['Diploteno de la profase I', 'Anafase I', 'Metafase II', 'Telofase II'], correctIndex: 2, explanation: 'Completa la meiosis II solo si es fecundado; el ovocito primario se detiene en diploteno.', difficulty: 'medium' },
     ],
   },
+  {
+    id: 'embriologia-anomalias-cromosomicas',
+    title: 'Anomalías cromosómicas',
+    subtitle: 'Numéricas y estructurales, no disyunción y edad materna, cariotipo 47,+21, Down, Edwards y Patau, Klinefelter y Turner, translocación robertsoniana, microdeleciones, X frágil y herencia mendeliana',
+    category: 'embriologia',
+    emoji: '🧬',
+    imagePath: '/atlas/embriologia-anomalias-cromosomicas.webp',
+    colorKey: 'embriologia',
+    questions: [
+      { id: 'eac-a1', question: 'Un gameto con 24 cromosomas que se une a uno normal produce:', options: ['Una monosomía (45)', 'Una trisomía (47)', 'Una triploidía (69)', 'Un cariotipo normal'], correctIndex: 1, explanation: 'La no disyunción deja un gameto con 24 y otro con 22; el de 22 origina una monosomía.', difficulty: 'easy' },
+      { id: 'eac-a2', question: '¿Qué trisomía es más craneofacial, con holoprosencefalia y labio y paladar hendidos?', options: ['Edwards (18)', 'Down (21)', 'Patau (13)', 'Klinefelter'], correctIndex: 2, explanation: 'Edwards es más sistémica: micrognatia, dedos sobrepuestos, anomalías renales.', difficulty: 'medium' },
+      { id: 'eac-a3', question: 'En Klinefelter y Turner, las gonadotropinas están:', options: ['Bajas', 'Normales', 'Ausentes', 'Altas'], correctIndex: 3, explanation: 'La gónada no responde y falta la retroalimentación negativa: hipogonadismo hipergonadotrópico.', difficulty: 'medium' },
+      { id: 'eac-a4', question: 'El portador de una translocación robertsoniana 14;21 suele:', options: ['Ser sano, con 45 cromosomas', 'Tener síndrome de Down', 'Tener 47 cromosomas', 'Ser estéril siempre'], correctIndex: 0, explanation: 'Es balanceado; su descendencia puede tener Down por translocación.', difficulty: 'hard' },
+      { id: 'eac-a5', question: 'La microdeleción 22q11 corresponde al síndrome de:', options: ['Cri du chat', 'DiGeorge', 'Angelman', 'Miller-Dieker'], correctIndex: 1, explanation: '5p: Cri du chat · 15q11-13: Angelman o Prader-Willi · 17p13: Miller-Dieker.', difficulty: 'easy' },
+      { id: 'eac-a6', question: 'Dos padres portadores de una enfermedad autosómica recesiva tienen, por cada hijo, un riesgo de enfermedad de:', options: ['100 %', '50 %', '25 %', '0 %'], correctIndex: 2, explanation: 'Además, 50 % serán portadores; en la herencia dominante el riesgo es de 50 %.', difficulty: 'easy' },
+    ],
+  },
   // ── Medicina Humanística UAD · Semanas 1, 3 y 4 ──────────────────────
   {
     id: 'medicina-humanistica',
