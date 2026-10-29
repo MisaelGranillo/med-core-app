@@ -1,0 +1,350 @@
+{
+  "version": "2026-10-29",
+  "blocks": [
+    {
+      "id": "energia",
+      "title": "Tu mejor hora",
+      "intro": "Cuándo funciona mejor tu cabeza para lo difícil.",
+      "items": [
+        {
+          "id": "e1",
+          "type": "single",
+          "q": "Si mañana tuvieras el día libre, ¿a qué hora despertarías sin alarma?",
+          "opts": [
+            [
+              "m",
+              "Antes de las 7:00"
+            ],
+            [
+              "t",
+              "Entre 7:00 y 9:00"
+            ],
+            [
+              "n",
+              "Después de las 9:00"
+            ]
+          ]
+        },
+        {
+          "id": "e2",
+          "type": "single",
+          "q": "¿A qué hora del día entiendes mejor un tema nuevo?",
+          "opts": [
+            [
+              "m",
+              "Mañana"
+            ],
+            [
+              "t",
+              "Tarde"
+            ],
+            [
+              "n",
+              "Noche"
+            ]
+          ]
+        },
+        {
+          "id": "e3",
+          "type": "single",
+          "q": "Cuando estudias después de las 21:00, normalmente:",
+          "opts": [
+            [
+              "m",
+              "Me cuesta mucho concentrarme"
+            ],
+            [
+              "t",
+              "Rindo, pero menos que de día"
+            ],
+            [
+              "n",
+              "Es cuando mejor rindo"
+            ]
+          ]
+        },
+        {
+          "id": "e4",
+          "type": "multi",
+          "q": "¿En qué horarios tienes realmente tiempo para estudiar?",
+          "hint": "Marca todos los que apliquen.",
+          "opts": [
+            [
+              "m",
+              "Mañana"
+            ],
+            [
+              "t",
+              "Tarde"
+            ],
+            [
+              "n",
+              "Noche"
+            ],
+            [
+              "w",
+              "Fines de semana"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tiempo",
+      "title": "Tus tipos de tiempo",
+      "intro": "Horas aproximadas por semana de cada tipo.",
+      "items": [
+        {
+          "id": "t1",
+          "type": "hours",
+          "q": "Bloques largos y tranquilos (50 minutos o más sin interrupciones)",
+          "tool": "Estudio activo: explicar sin mirar, casos clínicos"
+        },
+        {
+          "id": "t2",
+          "type": "hours",
+          "q": "Huecos cortos de 10 a 25 minutos",
+          "tool": "Flashcards en el celular"
+        },
+        {
+          "id": "t3",
+          "type": "hours",
+          "q": "Traslados o tiempo con las manos ocupadas",
+          "tool": "Audio de Gemini Notebook y repaso en voz alta"
+        },
+        {
+          "id": "t4",
+          "type": "hours",
+          "q": "Tiempo con interrupciones frecuentes (niños, trabajo, casa)",
+          "tool": "Quiz corto que se pausa y se retoma"
+        }
+      ]
+    },
+    {
+      "id": "estrategias",
+      "title": "Tus estrategias",
+      "intro": "Con qué frecuencia haces cada cosa cuando estudias.",
+      "items": [
+        {
+          "id": "s1",
+          "type": "freq",
+          "kind": "p",
+          "q": "Releer apuntes o el libro",
+          "short": "releer"
+        },
+        {
+          "id": "s2",
+          "type": "freq",
+          "kind": "p",
+          "q": "Subrayar o resaltar",
+          "short": "subrayar"
+        },
+        {
+          "id": "s3",
+          "type": "freq",
+          "kind": "p",
+          "q": "Copiar o pasar en limpio resúmenes",
+          "short": "copiar resúmenes"
+        },
+        {
+          "id": "s4",
+          "type": "freq",
+          "kind": "p",
+          "q": "Ver videos o clases completas sin pausar para preguntarte",
+          "short": "ver videos completos"
+        },
+        {
+          "id": "s5",
+          "type": "freq",
+          "kind": "a",
+          "q": "Explicar un tema en voz alta o por escrito sin mirar",
+          "short": "explicar sin mirar"
+        },
+        {
+          "id": "s6",
+          "type": "freq",
+          "kind": "a",
+          "q": "Responder preguntas de práctica o quizzes",
+          "short": "hacer quizzes"
+        },
+        {
+          "id": "s7",
+          "type": "freq",
+          "kind": "a",
+          "q": "Repasar con flashcards en varios días",
+          "short": "flashcards espaciadas"
+        },
+        {
+          "id": "s8",
+          "type": "freq",
+          "kind": "a",
+          "q": "Resolver casos clínicos o enseñarle el tema a alguien",
+          "short": "casos clínicos"
+        }
+      ]
+    },
+    {
+      "id": "regulacion",
+      "title": "Cómo te autorregulas",
+      "intro": "Qué tan cierto es cada enunciado para ti hoy.",
+      "items": [
+        {
+          "id": "r1",
+          "type": "agree",
+          "q": "Sé exactamente qué tema de cada materia me cuesta más."
+        },
+        {
+          "id": "r2",
+          "type": "agree",
+          "q": "Antes de un examen compruebo lo que sé con preguntas, no releyendo."
+        },
+        {
+          "id": "r3",
+          "type": "agree",
+          "q": "Planeo mi semana de estudio por adelantado."
+        },
+        {
+          "id": "r4",
+          "type": "agree",
+          "q": "Cada semana reviso si cumplí lo planeado y ajusto."
+        },
+        {
+          "id": "r5",
+          "type": "agree",
+          "q": "Cuando siento que ya me lo sé, lo compruebo explicándolo sin mirar."
+        },
+        {
+          "id": "r6",
+          "type": "agree",
+          "q": "Reparto el estudio de una materia en varios días en lugar de concentrarlo."
+        }
+      ]
+    },
+    {
+      "id": "formato",
+      "title": "Tu formato preferido",
+      "intro": "No suma puntos. Sirve para elegir cómo entrar a un tema nuevo.",
+      "items": [
+        {
+          "id": "f1",
+          "type": "multi",
+          "q": "Para empezar un tema nuevo, lo que más disfrutas es:",
+          "hint": "Marca hasta dos.",
+          "max": 2,
+          "opts": [
+            [
+              "vis",
+              "Diagramas, esquemas o imágenes"
+            ],
+            [
+              "aud",
+              "Escuchar una explicación o un audio"
+            ],
+            [
+              "txt",
+              "Leer un texto bien escrito"
+            ],
+            [
+              "pra",
+              "Ir directo a ejercicios o casos"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "scales": {
+    "hours": {
+      "opts": [
+        [
+          0,
+          "0"
+        ],
+        [
+          1.5,
+          "1 a 2 h"
+        ],
+        [
+          4,
+          "3 a 5 h"
+        ],
+        [
+          8,
+          "6 a 10 h"
+        ],
+        [
+          12,
+          "Más de 10 h"
+        ]
+      ]
+    },
+    "freq": {
+      "opts": [
+        [
+          0,
+          "Nunca"
+        ],
+        [
+          1,
+          "A veces"
+        ],
+        [
+          2,
+          "Seguido"
+        ],
+        [
+          3,
+          "Casi siempre"
+        ]
+      ]
+    },
+    "agree": {
+      "opts": [
+        [
+          0,
+          "Nada"
+        ],
+        [
+          1,
+          "Poco"
+        ],
+        [
+          2,
+          "Bastante"
+        ],
+        [
+          3,
+          "Totalmente"
+        ]
+      ]
+    }
+  },
+  "energyLabels": {
+    "m": "Mañana",
+    "t": "Tarde",
+    "n": "Noche",
+    "x": "Sin una hora clara"
+  },
+  "energyWindow": {
+    "m": "antes del mediodía",
+    "t": "entre las 14:00 y las 19:00",
+    "n": "después de las 19:00",
+    "x": "en el horario en que tengas más energía ese día"
+  },
+  "formatLabels": {
+    "vis": "diagramas e imágenes",
+    "aud": "audio o explicación oral",
+    "txt": "lectura",
+    "pra": "ejercicios y casos"
+  },
+  "sources": [
+    [
+      "Pashler, McDaniel, Rohrer y Bjork (2008). Learning styles: Concepts and evidence. Psychological Science in the Public Interest, 9(3), 105-119.",
+      "https://doi.org/10.1111/j.1539-6053.2009.01038.x"
+    ],
+    [
+      "Roediger y Karpicke (2006). Test-enhanced learning. Psychological Science, 17(3), 249-255.",
+      "https://doi.org/10.1111/j.1467-9280.2006.01693.x"
+    ]
+  ]
+}

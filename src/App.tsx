@@ -38,6 +38,7 @@ const TallerLayout      = named(() => import('./pages/taller/TallerLayout'),    
 const TallerInicio      = named(() => import('./pages/taller/TallerInicio'),      'TallerInicio')
 const TallerDescargas   = named(() => import('./pages/taller/TallerDescargas'),   'TallerDescargas')
 const TallerSemana      = named(() => import('./pages/taller/TallerSemana'),      'TallerSemana')
+const TallerPerfil      = named(() => import('./pages/taller/TallerPerfil'),      'TallerPerfil')
 const TallerPlanificador= named(() => import('./pages/taller/TallerPlanificador'),'TallerPlanificador')
 const TallerMatriz      = named(() => import('./pages/taller/TallerMatriz'),      'TallerMatriz')
 const TallerInstrucciones = named(() => import('./pages/taller/TallerInstrucciones'), 'TallerInstrucciones')
@@ -159,13 +160,14 @@ export default function App() {
                 <Route index element={<TallerInicio />} />
                 <Route path="descargas" element={<TallerDescargas />} />
                 <Route path="semana" element={<TallerSemana />} />
+                <Route path="perfil" element={<TallerPerfil />} />
                 <Route path="planificador" element={<TallerPlanificador />} />
                 <Route path="matriz" element={<TallerMatriz />} />
                 <Route path="instrucciones" element={<TallerInstrucciones />} />
                 <Route path="prompts" element={<TallerPrompts />} />
                 <Route path="markdown" element={<TallerMarkdown />} />
-                <Route path="guia" element={<TallerGuia />} />
                 <Route path="revision" element={<TallerRevision />} />
+                <Route path="guia" element={<TallerGuia />} />
               </Route>
               {/* Plan de estudios (capa curricular enchufable) */}
               <Route path="/plan" element={<Plan />} />

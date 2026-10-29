@@ -22,7 +22,7 @@ export function EncabezadoHerramienta({ bloque, titulo, children }: { bloque: st
 
 /** Estado del guardado local y botón para borrar los datos de la herramienta,
  *  con confirmación en línea (sin cuadros de diálogo del navegador). */
-export function DatosLocales({ disponible, onBorrar }: { disponible: boolean; onBorrar: () => void }) {
+export function DatosLocales({ disponible, onBorrar, etiqueta = 'Borrar mis datos' }: { disponible: boolean; onBorrar: () => void; etiqueta?: string }) {
   const [confirmando, setConfirmando] = useState(false)
   return (
     <div className="flex flex-wrap items-center gap-3 print:hidden">
@@ -43,7 +43,7 @@ export function DatosLocales({ disponible, onBorrar }: { disponible: boolean; on
       ) : (
         <button type="button" className={btnSecundario} onClick={() => setConfirmando(true)}>
           <Trash weight="regular" className="w-[18px] h-[18px]" aria-hidden="true" />
-          Borrar mis datos
+          {etiqueta}
         </button>
       )}
     </div>
