@@ -148,7 +148,7 @@ export function PatologiaDetalle() {
           <div className="flex flex-wrap gap-2">
             {p.fuentes.map((f) => (
               <a
-                key={f.codigo}
+                key={f.url}
                 href={f.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -345,7 +345,7 @@ function Fuentes({ p }: { p: Patologia }) {
       <h2 id="h-fuentes" className="font-display text-xl font-normal text-zinc-900">Fuentes</h2>
       <ul className="flex flex-col gap-2">
         {p.fuentes.map((f) => (
-          <li key={f.codigo}>
+          <li key={f.url}>
             <a href={f.url} target="_blank" rel="noopener noreferrer" className="group inline-flex items-start gap-2 text-[0.9375rem] leading-relaxed">
               <span>
                 <span className="text-zinc-900 group-hover:text-primary">{f.codigo}</span>
