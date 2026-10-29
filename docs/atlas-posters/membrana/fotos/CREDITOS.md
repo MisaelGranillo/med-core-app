@@ -75,3 +75,9 @@
 |---|---|---|---|
 | mh2/descartes-pineal.jpg | [Descartes diagram.png](https://commons.wikimedia.org/wiki/File:Descartes_diagram.png) (fondo blanco, JPEG) — *Tratado del hombre* (1664) | René Descartes | Dominio público |
 | mh2/gage-craneo.jpg | [Phineas gage - 1868 skull diagram.jpg](https://commons.wikimedia.org/wiki/File:Phineas_gage_-_1868_skull_diagram.jpg) | John M. Harlow (1868) | Dominio público |
+
+## Lámina Ciclo ovárico y fecundación (Wikimedia Commons)
+
+| Archivo | Fuente | Autor | Licencia |
+|---|---|---|---|
+| fec/cigoto-pronucleos.jpg | [Zygote1.jpg](https://commons.wikimedia.org/wiki/File:Zygote1.jpg) (recortada y reducida) | Niña Sesina | CC BY-SA 4.0 |

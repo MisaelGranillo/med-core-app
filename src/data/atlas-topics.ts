@@ -1442,6 +1442,24 @@ export const atlasTopics: AtlasTopic[] = [
   },
   // ── Medicina Humanística UAD · Semanas 1, 3 y 4 ──────────────────────
   {
+    id: 'embriologia-ciclo-fecundacion',
+    title: 'Ciclo ovárico y fecundación',
+    subtitle: 'Eje hipotálamo-hipófisis-ovario, maduración folicular, modelo de dos células, pico de LH, ciclo de 28 días (hormonas, ovario y endometrio), cuerpo lúteo, fecundación en tres fases, cigoto y primera semana hasta la implantación',
+    category: 'embriologia',
+    emoji: '🥚',
+    imagePath: '/atlas/embriologia-ciclo-fecundacion.webp',
+    colorKey: 'embriologia',
+    relatedTopicIds: ['embriologia-desarrollo-temprano', 'genetica-gametogenesis'],
+    questions: [
+      { id: 'ecf-a1', question: 'En el gráfico de 28 días, ¿qué hormona alcanza su pico justo antes de la ovulación?', options: ['La LH', 'La progesterona', 'La hCG', 'La FSH en su punto más bajo'], correctIndex: 0, explanation: 'El pico de LH, precedido por el aumento de estrógenos, desencadena la ovulación hacia el día 14.', difficulty: 'easy' },
+      { id: 'ecf-a2', question: 'En el modelo de dos células, la aromatasa de la granulosa depende de:', options: ['La LH', 'La FSH', 'La progesterona', 'La hCG'], correctIndex: 1, explanation: 'La teca interna hace andrógenos por la LH; la granulosa los convierte en estrógenos con aromatasa por la FSH.', difficulty: 'medium' },
+      { id: 'ecf-a3', question: 'La curva de progesterona es máxima durante la fase endometrial:', options: ['Menstrual', 'Proliferativa', 'Secretora', 'Folicular'], correctIndex: 2, explanation: 'La secreta el cuerpo lúteo, que llega a su máximo unos 9 días después de la ovulación.', difficulty: 'medium' },
+      { id: 'ecf-a4', question: 'En el panel de fecundación, la fase 2 (reacción acrosómica) se desencadena al unirse el espermatozoide a:', options: ['La corona radiada', 'La membrana del ovocito', 'El moco cervical', 'La proteína ZP3 de la zona pelúcida'], correctIndex: 3, explanation: 'La unión a ZP3 libera acrosina y enzimas semejantes a la tripsina.', difficulty: 'medium' },
+      { id: 'ecf-a5', question: 'La foto del panel 9 muestra dos pronúcleos. ¿Qué hacen antes de formar el cigoto?', options: ['Replican su ADN', 'Pierden la zona pelúcida', 'Se implantan', 'Forman la mórula'], correctIndex: 0, explanation: 'Así el cigoto queda con 46 cromosomas de dos cromátidas, listo para la segmentación.', difficulty: 'medium' },
+      { id: 'ecf-a6', question: 'En la línea de la primera semana, ¿qué ocurre entre el blastocisto (día 5) y la implantación?', options: ['La compactación', 'La eclosión de la zona pelúcida', 'La reacción acrosómica', 'La primera segmentación'], correctIndex: 1, explanation: 'Sin salir de la zona pelúcida, el blastocisto no puede tocar el endometrio.', difficulty: 'easy' },
+    ],
+  },
+  {
     id: 'medicina-humanistica',
     title: 'Medicina Humanística',
     subtitle: 'Humanismo médico, modelo biopsicosocial, origen de la vida, hominización, relación médico-paciente, modelos de relación, proxémica, determinantes de la salud, estilo de vida y síndromes de filiación cultural',

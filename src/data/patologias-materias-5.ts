@@ -132,6 +132,7 @@ const ECTOPICO: Patologia = {
   atlas: [
     { id: 'embriologia-desarrollo-temprano', title: 'Desarrollo temprano' },
     { id: 'histologia-epitelio', title: 'Tejido epitelial' },
+    { id: 'embriologia-ciclo-fecundacion', title: 'Ciclo ovárico y fecundación' },
   ],
   caso: {
     titulo: 'Caso clínico',
@@ -262,6 +263,7 @@ const MOLA: Patologia = {
   atlas: [
     { id: 'embriologia-desarrollo-temprano', title: 'Desarrollo temprano' },
     { id: 'histologia-introduccion', title: 'Introducción a la histología' },
+    { id: 'embriologia-ciclo-fecundacion', title: 'Ciclo ovárico y fecundación' },
   ],
   caso: {
     titulo: 'Caso clínico',
