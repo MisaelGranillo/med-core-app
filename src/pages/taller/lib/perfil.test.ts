@@ -27,7 +27,7 @@ describe('calcularPerfil', () => {
     expect(p.passive).toBe(12)
     expect(p.active).toBe(0)
     expect([p.activeIdx, p.passiveIdx]).toEqual([0, 100])
-    expect(p.stratLabel).toBe('Repaso pasivo predominante')
+    expect(p.stratLabel).toBe('Predomina el estudio pasivo')
     expect(p.recs[0]).toMatchObject({ w: 22, title: 'Cambia una relectura por un quiz' })
     expect(titulos(p).slice(1)).toEqual(['Instala la revisión semanal de 20 minutos', 'Planea la semana antes de que empiece'])
     expect(p.habit.kind).toBe('p') // en empate, una pasiva (igual que la referencia)
@@ -40,7 +40,7 @@ describe('calcularPerfil', () => {
       e: ['t', 't', 't'], e4: ['t'], t: [8, 4, 0, 0],
       s: [0, 0, 0, 0, 3, 3, 3, 3], r: [3, 3, 3, 3, 3, 3],
     }))
-    expect(p.stratLabel).toBe('Recuperación activa como base')
+    expect(p.stratLabel).toBe('Ya estudias de forma activa')
     expect(p.activeIdx).toBe(100)
     expect([p.regIdx, p.regLabel]).toEqual([100, 'Alta'])
     expect(p.habit.kind).toBe('a')
@@ -68,7 +68,7 @@ describe('calcularPerfil', () => {
     }))
     expect(p.energy).toBe('n')
     expect(p.mismatch).toBe(true)
-    expect(p.recs[0]).toMatchObject({ w: 9, title: 'Protege al menos un bloque en tu mejor hora (noche)', tag: 'Bloque 3' })
+    expect(p.recs[0]).toMatchObject({ w: 9, title: 'Protege al menos un bloque en tu mejor hora (noche)', tag: 'Cuaderno, bloque 3' })
     expect(encabezado(p).titulo).toBe('Rindes mejor en la noche')
   })
 
@@ -78,7 +78,7 @@ describe('calcularPerfil', () => {
       s: [2, 2, 2, 2, 2, 2, 2, 2], r: [2, 2, 2, 2, 2, 2],
     }))
     expect([p.passive, p.active]).toEqual([8, 8])
-    expect(p.stratLabel).toBe('En transición hacia lo activo')
+    expect(p.stratLabel).toBe('A medio camino hacia lo activo')
     expect([p.regIdx, p.regLabel]).toEqual([67, 'En construcción'])
     expect(p.totalH).toBe(16)
     expect(p.mainTime.id).toBe('t1')
@@ -93,10 +93,11 @@ describe('perfilMarkdown', () => {
       s: [3, 2, 1, 0, 0, 1, 0, 1], r: [0, 1, 2, 0, 1, 3], f1: ['vis', 'pra'],
     }))
     const md = perfilMarkdown(p, '2026-10-30')
-    expect(md.startsWith('# Mi perfil de estudio\n\nFecha: 2026-10-30\n\nRindes mejor en la noche. Tiempo principal: tiempo con interrupciones · Repaso pasivo predominante.')).toBe(true)
-    expect(md).toContain('| Huecos cortos | 6 a 10 h | Flashcards en el celular |')
+    expect(md.startsWith('# Mi perfil de estudio\n\nFecha: 2026-10-30\n\nRindes mejor en la noche. Lo que más tienes: ratos con interrupciones · Predomina el estudio pasivo.')).toBe(true)
+    expect(md).toContain('| Ratos cortos | 6 a 10 h | Para repasar con flashcards |')
     expect(md).toContain('1. **Cambia una relectura por un quiz.**')
     expect(md).toContain('- diagramas e imágenes, ejercicios y casos (como puerta de entrada')
+    expect(md).toContain('- Predomina el estudio pasivo: pasas mucho tiempo en el gimnasio')
     expect(md).not.toMatch(/—/)
   })
 })

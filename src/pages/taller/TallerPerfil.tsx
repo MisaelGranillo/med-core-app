@@ -7,12 +7,12 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { CalendarBlank, Copy, DownloadSimple, Printer } from '@phosphor-icons/react'
+import { Barbell, CalendarBlank, Copy, DownloadSimple, Printer } from '@phosphor-icons/react'
 import { useAlmacenLocal } from './lib/almacen'
 import { descargarTexto, hoyIso } from './lib/archivos'
 import { copiarTexto } from './lib/portapapeles'
 import {
-  DATOS, PREGUNTAS, TIEMPO_CORTO, calcularPerfil, encabezado, etiquetaHoras, mayuscula, minuscula,
+  ANALOGIA_INTRO, DATOS, ESTRATEGIA_EXPLICA, ORGANIZACION_EXPLICA, PREGUNTAS, TIEMPO_CORTO, TIEMPO_USO, calcularPerfil, encabezado, etiquetaHoras, mayuscula, minuscula,
   opcionesDe, perfilMarkdown, respondida, type Perfil, type Pregunta, type Respuestas,
 } from './lib/perfil'
 import { Aviso, DatosLocales, EncabezadoHerramienta, btnPrimario, btnSecundario } from './ui/comun'
@@ -97,7 +97,7 @@ export function TallerPerfil() {
     <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-6 pb-12 flex flex-col gap-6">
       <div className="flex flex-col gap-6 print:hidden">
         <EncabezadoHerramienta bloque="Bloque 2 · Tu punto de partida" titulo="Test de perfil de estudio">
-          <p>Responde pensando en una semana normal de este semestre, no en la ideal. Al final verás cuándo rindes mejor, qué tipo de tiempo tienes, qué tan activas son tus estrategias y tres acciones concretas para la próxima semana.</p>
+          <p>Responde pensando en una semana normal de este semestre, no en la ideal. No hay respuestas buenas ni malas. Al final verás a qué hora rindes mejor, qué tipo de tiempo libre tienes, qué tan activa es tu forma de estudiar y tres acciones concretas para la próxima semana.</p>
           <ul className="flex flex-wrap gap-2 text-sm" aria-label="Datos del test">
             {['23 preguntas', '5 a 6 minutos', 'No se envía a ningún lado'].map(t => (
               <li key={t} className="rounded-full bg-surface-2 text-zinc-800 px-3 py-1">{t}</li>
@@ -195,6 +195,16 @@ function Medidor({ etiqueta, valor, max, suave, sufijo }: { etiqueta: string; va
 const etiquetaCard = 'text-xs uppercase tracking-[0.08em] text-zinc-500'
 const valorCard = 'text-[1.375rem] font-semibold leading-tight text-zinc-900'
 
+/** La línea de la analogía del gimnasio al pie de cada tarjeta. */
+function Gimnasio({ children }: { children: string }) {
+  return (
+    <p className="mt-auto pt-2 border-t border-zinc-200 text-sm text-zinc-600 flex items-start gap-2">
+      <Barbell weight="regular" className="w-[18px] h-[18px] mt-0.5 text-primary flex-shrink-0" aria-hidden="true" />
+      <span><span className="sr-only">En el gimnasio: </span>{children}</span>
+    </p>
+  )
+}
+
 function Resultado({ perfil: r, refHead, aviso, onCopiar, onDescargar }: {
   perfil: Perfil; refHead: React.RefObject<HTMLDivElement | null>; aviso: string
   onCopiar: (md: string) => void; onDescargar: (md: string) => void
@@ -210,44 +220,65 @@ function Resultado({ perfil: r, refHead, aviso, onCopiar, onDescargar }: {
         <p className="opacity-90">{subtitulo}</p>
       </div>
 
+      <p className="text-zinc-700 max-w-[65ch]">{ANALOGIA_INTRO}</p>
+
       <div className="grid sm:grid-cols-2 gap-3">
         <div className="card p-4 flex flex-col gap-2">
-          <p className={etiquetaCard}>Mejor hora</p>
+          <p className={etiquetaCard}>1 · Tu mejor hora</p>
           <p className={valorCard}>{E}</p>
-          <p className="text-sm text-zinc-600">Pon tus rocas grandes {DATOS.energyWindow[r.energy]}.{r.mismatch ? ' Tu tiempo libre cae en otro horario: protege al menos un bloque en tu mejor hora.' : ''}</p>
+          <p className="text-sm text-zinc-700">
+            {r.energy === 'x'
+              ? 'No hay una hora en que rindas claramente mejor. Deja lo más difícil para el momento del día en que te sientas con más energía.'
+              : `Es cuando tu cabeza tiene más energía. Guarda para ese momento (${DATOS.energyWindow[r.energy]}) lo más difícil: temas nuevos o complicados.`}
+          </p>
+          {r.mismatch && <p className="text-sm text-primary-ink">Ojo: casi nunca tienes tiempo libre a esa hora. Intenta apartar aunque sea un bloque a la semana en ese horario.</p>}
+          <Gimnasio>Lo pesado se levanta cuando tienes más fuerza.</Gimnasio>
         </div>
+
         <div className="card p-4 flex flex-col gap-2">
-          <p className={etiquetaCard}>Tiempo por semana</p>
-          <p className={valorCard}>Unas {Math.round(r.totalH)} h</p>
+          <p className={etiquetaCard}>2 · Tu tiempo</p>
+          <p className={valorCard}>Unas {Math.round(r.totalH)} h a la semana</p>
           <div className="flex flex-col gap-1.5">
             {r.timeItems.map(t => <Medidor key={t.id} etiqueta={mayuscula(TIEMPO_CORTO[t.id])} valor={t.h} max={12} suave={t.id !== r.mainTime.id} sufijo={etiquetaHoras(t.h)} />)}
           </div>
-          <p className="text-sm text-zinc-600">Herramienta principal: {minuscula(r.mainTime.tool ?? '')}.</p>
+          <p className="text-sm text-zinc-700">
+            {r.totalH > 0
+              ? `Lo que más tienes son ${TIEMPO_CORTO[r.mainTime.id]}: úsalos ${TIEMPO_USO[r.mainTime.id]}.`
+              : 'No marcaste tiempo para estudiar. Empieza por encontrar un rato fijo, aunque sea corto.'}
+          </p>
+          <Gimnasio>No todo ejercicio necesita una hora: unas sentadillas caben en 10 minutos.</Gimnasio>
         </div>
+
         <div className="card p-4 flex flex-col gap-2">
-          <p className={etiquetaCard}>Estrategias</p>
-          <p className={valorCard}>{r.activeIdx}/100 activo</p>
+          <p className={etiquetaCard}>3 · Cómo estudias</p>
+          <p className={valorCard}>{r.activeIdx} de 100 en estudio activo</p>
           <div className="flex flex-col gap-1.5">
-            <Medidor etiqueta="Activas" valor={r.active} max={12} sufijo={String(r.activeIdx)} />
-            <Medidor etiqueta="Pasivas" valor={r.passive} max={12} suave sufijo={String(r.passiveIdx)} />
+            <Medidor etiqueta="Activo" valor={r.active} max={12} sufijo={String(r.activeIdx)} />
+            <Medidor etiqueta="Pasivo" valor={r.passive} max={12} suave sufijo={String(r.passiveIdx)} />
           </div>
-          <p className="text-sm text-zinc-600">{r.stratLabel}.</p>
+          <p className="text-sm text-zinc-700"><b className="font-medium text-zinc-900">{r.stratLabel}.</b> {ESTRATEGIA_EXPLICA[r.stratLabel]}</p>
+          <p className="text-sm text-zinc-600"><b className="font-medium text-zinc-800">Pasivo</b>: releer, subrayar, resumir, ver videos. <b className="font-medium text-zinc-800">Activo</b>: sacar la información de tu memoria (explicar sin mirar, quizzes, flashcards, casos). El activo cuesta más, y por eso se queda.</p>
+          <Gimnasio>Releer es ver a alguien levantar pesas; contestar un quiz es levantarlas tú.</Gimnasio>
         </div>
+
         <div className="card p-4 flex flex-col gap-2">
-          <p className={etiquetaCard}>Autorregulación</p>
-          <p className={valorCard}>{r.regIdx}/100 · {r.regLabel}</p>
-          <p className="text-sm text-zinc-600">Punto más débil: «{r.weakestReg.q.replace(/\.$/, '')}».</p>
+          <p className={etiquetaCard}>4 · Cómo organizas tu estudio</p>
+          <p className={valorCard}>{r.regIdx} de 100 · {r.regLabel}</p>
+          <p className="text-sm text-zinc-700">{ORGANIZACION_EXPLICA[r.regLabel]}</p>
+          <p className="text-sm text-zinc-700">Lo que más te falta: «{r.weakestReg.q.replace(/\.$/, '')}».</p>
+          <Gimnasio>Un buen entrenador anota, mide y cambia la rutina cuando no funciona.</Gimnasio>
         </div>
       </div>
 
       <div className="card p-4 sm:p-5 flex flex-col gap-3">
         <h3 className="font-medium text-zinc-900">Tus tres acciones para la próxima semana</h3>
+        <p className="text-sm text-zinc-600">Empieza por la primera: es la que más puede mejorar tus resultados.</p>
         <ol className="list-decimal pl-5 flex flex-col gap-3 marker:font-semibold marker:text-primary-ink">
           {r.recs.map(x => (
             <li key={x.title}>
               <b className="block font-medium text-zinc-900">{x.title}</b>
-              <span className="text-sm text-zinc-600">{x.body}</span>{' '}
-              <span className="text-xs font-mono text-primary-ink">{x.tag}</span>
+              <span className="text-sm text-zinc-700">{x.body}</span>
+              <span className="block text-xs text-primary-ink mt-0.5">Te ayuda: {x.tag}</span>
             </li>
           ))}
         </ol>
@@ -265,24 +296,20 @@ function Resultado({ perfil: r, refHead, aviso, onCopiar, onDescargar }: {
 
       <div className="card p-4 sm:p-5 flex flex-col gap-3">
         <h3 className="font-medium text-zinc-900">Tu experimento de dos semanas</h3>
-        <p className="text-sm text-zinc-600">Elige dos temas de dificultad parecida de la misma materia. A los 7 días haz un quiz de ambos sin mirar.</p>
-        <div className="grid sm:grid-cols-2 gap-2.5">
-          <div className="rounded-xl bg-surface-2 p-3 flex flex-col gap-1 text-sm">
-            <span className="text-zinc-500">Tema A · como estudias hoy</span>
-            <b className="font-medium text-zinc-900">{mayuscula(r.habit.short ?? '')}</b>
-          </div>
-          <div className="rounded-xl bg-primary-tint p-3 flex flex-col gap-1 text-sm">
-            <span className="text-zinc-600">Tema B · recuperación activa</span>
-            <b className="font-medium text-primary-ink">{mayuscula(r.tryActive.short ?? '')}</b>
-          </div>
-        </div>
+        <p className="text-sm text-zinc-700">Para comprobar en ti mismo qué funciona mejor:</p>
+        <ol className="list-decimal pl-5 flex flex-col gap-1.5 text-sm text-zinc-700 marker:text-primary-ink">
+          <li>Elige dos temas parecidos de la misma materia.</li>
+          <li><b className="font-medium text-zinc-900">Tema A</b>: estúdialo como siempre ({r.habit.short}).</li>
+          <li><b className="font-medium text-primary-ink">Tema B</b>: estúdialo poniéndote a prueba ({r.tryActive.short}).</li>
+          <li>A los 7 días, contesta un quiz de los dos sin ver apuntes y compara tus resultados.</li>
+        </ol>
         <p className="text-sm text-zinc-600">Que decidan los datos, no la sensación de haber estudiado.</p>
       </div>
 
       <div className="card p-4 sm:p-5 flex flex-col gap-2">
-        <h3 className="font-medium text-zinc-900">Tu formato preferido</h3>
-        <p className="text-zinc-800">Te gusta empezar con {r.fmt.join(' y ')}. Úsalo como puerta de entrada al tema; después cierra el material y recupéralo de memoria.</p>
-        <p className="text-sm text-zinc-600">El contenido decide el formato más que la preferencia: anatomía e histología se aprenden con imágenes, la terminología recitando y la clínica con casos.</p>
+        <h3 className="font-medium text-zinc-900">Cómo te gusta empezar un tema</h3>
+        <p className="text-zinc-800">Te gusta empezar con {r.fmt.join(' y ')}. Úsalo como puerta de entrada al tema; después cierra el material y trata de recordarlo sin verlo.</p>
+        <p className="text-sm text-zinc-600">Aun así, el tema manda más que el gusto: anatomía e histología se aprenden con imágenes, la terminología repitiéndola y la clínica con casos.</p>
       </div>
 
       <div className="card p-4 sm:p-5 flex flex-col gap-3 print:hidden">

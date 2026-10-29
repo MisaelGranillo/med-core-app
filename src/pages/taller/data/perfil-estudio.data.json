@@ -1,10 +1,10 @@
 {
-  "version": "2026-10-29",
+  "version": "2026-10-29b",
   "blocks": [
     {
       "id": "energia",
       "title": "Tu mejor hora",
-      "intro": "Cuándo funciona mejor tu cabeza para lo difícil.",
+      "intro": "Todos tenemos horas del día en que la cabeza funciona mejor. Aquí buscamos la tuya.",
       "items": [
         {
           "id": "e1",
@@ -28,7 +28,7 @@
         {
           "id": "e2",
           "type": "single",
-          "q": "¿A qué hora del día entiendes mejor un tema nuevo?",
+          "q": "¿En qué momento del día te cuesta menos entender un tema nuevo?",
           "opts": [
             [
               "m",
@@ -47,7 +47,7 @@
         {
           "id": "e3",
           "type": "single",
-          "q": "Cuando estudias después de las 21:00, normalmente:",
+          "q": "Si estudias después de las 9 de la noche, ¿cómo te va?",
           "opts": [
             [
               "m",
@@ -66,8 +66,8 @@
         {
           "id": "e4",
           "type": "multi",
-          "q": "¿En qué horarios tienes realmente tiempo para estudiar?",
-          "hint": "Marca todos los que apliquen.",
+          "q": "¿En qué horarios tienes de verdad tiempo para estudiar?",
+          "hint": "Marca todos los que apliquen. Piensa en tu semana real, con trabajo y familia.",
           "opts": [
             [
               "m",
@@ -92,149 +92,153 @@
     {
       "id": "tiempo",
       "title": "Tus tipos de tiempo",
-      "intro": "Horas aproximadas por semana de cada tipo.",
+      "intro": "No todo el tiempo libre sirve igual. En una semana normal, ¿cuántas horas tienes de cada tipo? Suma los ratos aunque estén separados.",
       "items": [
         {
           "id": "t1",
           "type": "hours",
-          "q": "Bloques largos y tranquilos (50 minutos o más sin interrupciones)",
-          "tool": "Estudio activo: explicar sin mirar, casos clínicos"
+          "q": "Ratos largos y tranquilos, de 50 minutos o más, sin interrupciones",
+          "tool": "Estudio activo: explicar sin mirar, casos clínicos",
+          "hint": "Por ejemplo: la mañana del sábado o la noche, cuando todos ya duermen."
         },
         {
           "id": "t2",
           "type": "hours",
-          "q": "Huecos cortos de 10 a 25 minutos",
-          "tool": "Flashcards en el celular"
+          "q": "Ratos cortos de 10 a 25 minutos",
+          "tool": "Flashcards en el celular",
+          "hint": "Por ejemplo: esperando en una fila, en el descanso del trabajo o antes de dormir."
         },
         {
           "id": "t3",
           "type": "hours",
-          "q": "Traslados o tiempo con las manos ocupadas",
-          "tool": "Audio de Gemini Notebook y repaso en voz alta"
+          "q": "Tiempo en que no puedes leer, pero sí escuchar",
+          "tool": "Audio de Gemini Notebook y repaso en voz alta",
+          "hint": "Por ejemplo: manejando, en el transporte, lavando trastes o haciendo ejercicio."
         },
         {
           "id": "t4",
           "type": "hours",
-          "q": "Tiempo con interrupciones frecuentes (niños, trabajo, casa)",
-          "tool": "Quiz corto que se pausa y se retoma"
+          "q": "Tiempo en que estudias, pero te interrumpen seguido",
+          "tool": "Quiz corto que se pausa y se retoma",
+          "hint": "Por ejemplo: con los niños cerca, en el trabajo o mientras atiendes la casa."
         }
       ]
     },
     {
       "id": "estrategias",
-      "title": "Tus estrategias",
-      "intro": "Con qué frecuencia haces cada cosa cuando estudias.",
+      "title": "Cómo estudias",
+      "intro": "Cuando te sientas a estudiar, ¿qué tan seguido haces cada cosa? No hay respuestas buenas ni malas: responde lo que haces, no lo que crees que deberías hacer.",
       "items": [
         {
           "id": "s1",
           "type": "freq",
           "kind": "p",
-          "q": "Releer apuntes o el libro",
+          "q": "Volver a leer tus apuntes o el libro",
           "short": "releer"
         },
         {
           "id": "s2",
           "type": "freq",
           "kind": "p",
-          "q": "Subrayar o resaltar",
+          "q": "Subrayar o marcar con resaltador",
           "short": "subrayar"
         },
         {
           "id": "s3",
           "type": "freq",
           "kind": "p",
-          "q": "Copiar o pasar en limpio resúmenes",
+          "q": "Hacer resúmenes o pasar tus apuntes en limpio",
           "short": "copiar resúmenes"
         },
         {
           "id": "s4",
           "type": "freq",
           "kind": "p",
-          "q": "Ver videos o clases completas sin pausar para preguntarte",
+          "q": "Ver videos o clases grabadas de corrido, sin detenerte a comprobar si entendiste",
           "short": "ver videos completos"
         },
         {
           "id": "s5",
           "type": "freq",
           "kind": "a",
-          "q": "Explicar un tema en voz alta o por escrito sin mirar",
+          "q": "Cerrar el libro y explicar el tema con tus palabras, en voz alta o por escrito",
           "short": "explicar sin mirar"
         },
         {
           "id": "s6",
           "type": "freq",
           "kind": "a",
-          "q": "Responder preguntas de práctica o quizzes",
+          "q": "Contestar preguntas de práctica o quizzes",
           "short": "hacer quizzes"
         },
         {
           "id": "s7",
           "type": "freq",
           "kind": "a",
-          "q": "Repasar con flashcards en varios días",
+          "q": "Repasar con tarjetas de pregunta y respuesta (flashcards) en días distintos",
           "short": "flashcards espaciadas"
         },
         {
           "id": "s8",
           "type": "freq",
           "kind": "a",
-          "q": "Resolver casos clínicos o enseñarle el tema a alguien",
+          "q": "Resolver casos clínicos o enseñarle el tema a otra persona",
           "short": "casos clínicos"
         }
       ]
     },
     {
       "id": "regulacion",
-      "title": "Cómo te autorregulas",
-      "intro": "Qué tan cierto es cada enunciado para ti hoy.",
+      "title": "Cómo organizas tu estudio",
+      "intro": "¿Qué tan cierta es cada frase para ti hoy?",
       "items": [
         {
           "id": "r1",
           "type": "agree",
-          "q": "Sé exactamente qué tema de cada materia me cuesta más."
+          "q": "Sé qué tema de cada materia es el que más me cuesta."
         },
         {
           "id": "r2",
           "type": "agree",
-          "q": "Antes de un examen compruebo lo que sé con preguntas, no releyendo."
+          "q": "Antes de un examen me pongo a prueba con preguntas, en vez de solo releer."
         },
         {
           "id": "r3",
           "type": "agree",
-          "q": "Planeo mi semana de estudio por adelantado."
+          "q": "Planeo mi semana de estudio antes de que empiece."
         },
         {
           "id": "r4",
           "type": "agree",
-          "q": "Cada semana reviso si cumplí lo planeado y ajusto."
+          "q": "Al final de cada semana reviso si cumplí lo que planeé y lo ajusto."
         },
         {
           "id": "r5",
           "type": "agree",
-          "q": "Cuando siento que ya me lo sé, lo compruebo explicándolo sin mirar."
+          "q": "Cuando siento que ya me sé un tema, lo compruebo explicándolo sin ver mis apuntes."
         },
         {
           "id": "r6",
           "type": "agree",
-          "q": "Reparto el estudio de una materia en varios días en lugar de concentrarlo."
+          "q": "Estudio cada materia un poco en varios días, en lugar de todo de golpe."
         }
       ]
     },
     {
       "id": "formato",
-      "title": "Tu formato preferido",
-      "intro": "No suma puntos. Sirve para elegir cómo entrar a un tema nuevo.",
+      "title": "Cómo te gusta empezar un tema",
+      "intro": "Esta parte no suma puntos. Solo dice por dónde te gusta entrar a un tema nuevo.",
       "items": [
         {
           "id": "f1",
           "type": "multi",
-          "q": "Para empezar un tema nuevo, lo que más disfrutas es:",
-          "hint": "Marca hasta dos.",
+          "q": "Cuando empiezas un tema nuevo, ¿qué disfrutas más?",
+          "hint": "Elige hasta dos.",
           "max": 2,
           "opts": [
             [
               "vis",
-              "Diagramas, esquemas o imágenes"
+              "Ver diagramas, esquemas o imágenes"
             ],
             [
               "aud",
@@ -258,7 +262,7 @@
       "opts": [
         [
           0,
-          "0"
+          "Nada"
         ],
         [
           1.5,
