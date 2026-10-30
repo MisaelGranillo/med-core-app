@@ -1072,6 +1072,7 @@ const TURNER: Patologia = {
     { materia: 'Embriología', topicId: 'embriologia-cromosomas-division', sectionId: 'ecd-2', label: 'Número de cromosomas', porQue: 'Euploidía y aneuploidía: 45,X es la única monosomía completa compatible con la vida.' },
     { materia: 'Embriología', topicId: 'embriologia-anomalias-numericas', sectionId: 'ean-2', label: 'Frecuencia en abortos', porQue: 'La monosomía 45,X es de las anomalías más frecuentes en los abortos del primer trimestre.' },
     { materia: 'Embriología', topicId: 'embriologia-anomalias-numericas', sectionId: 'ean-5', label: 'Klinefelter y Turner', porQue: 'Mecanismos de la monosomía X, disgenesia gonadal y rasgos clínicos.' },
+    { materia: 'Embriología', topicId: 'embriologia-infertilidad-reproduccion', sectionId: 'eir-5', label: 'Insuficiencia ovárica primaria', porQue: 'El ovario en cintilla de Turner es una causa genética de insuficiencia ovárica y de amenorrea primaria.' },
   ],
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },
@@ -1373,6 +1374,7 @@ const OSTEOPOROSIS: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-lipidos-funcion-esteroides', sectionId: 'bfe-6', label: 'Hormonas esteroideas: función, deficiencia y exceso', porQue: 'Los estrógenos y el exceso de glucocorticoides.' },
     { materia: 'Anatomía', topicId: 'columna-vertebral', sectionId: 'col-5', label: 'Vértebras lumbares', porQue: 'El cuerpo vertebral que se aplasta en la fractura por compresión.' },
     { materia: 'Anatomía', topicId: 'miembro-inferior-oseo', sectionId: 'minf-2', label: 'Fémur: epífisis superior', porQue: 'Cuello y región trocantérica: la fractura de cadera.' },
+    { materia: 'Embriología', topicId: 'embriologia-infertilidad-reproduccion', sectionId: 'eir-7', label: 'Amenorrea y menopausia', porQue: 'La caída de estrógenos en la menopausia acelera la pérdida de densidad ósea.' },
   ],
   atlas: [
     { id: 'histologia-cartilago-hueso', title: 'Adiposo, cartílago y hueso' },

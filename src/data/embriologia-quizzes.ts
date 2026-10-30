@@ -1,8 +1,9 @@
 import type { Question } from '../types'
 
-// Embriología I — Semana 1, Clases 1–4: desarrollo temprano, cromosomas, mitosis,
+// Embriología I — Semana 1, Clases 1–5: desarrollo temprano, cromosomas, mitosis,
 // meiosis, ovogénesis, espermatogénesis, anomalías cromosómicas numéricas y
-// estructurales, ciclos ovárico y endometrial, fecundación y primera semana.
+// estructurales, ciclos ovárico y endometrial, fecundación y primera semana;
+// infertilidad, reproducción asistida y salud reproductiva.
 export const embriologiaQuestions: Question[] = [
   // ── Panorama del desarrollo temprano ──
   {
@@ -738,5 +739,89 @@ export const embriologiaQuestions: Question[] = [
     options: ['Citotrofoblasto', 'Epiblasto', 'Hipoblasto', 'Sincitiotrofoblasto'],
     correctIndex: 3, difficulty: 'easy',
     explanation: 'Capa externa, sin límites celulares; la hCG mantiene el cuerpo lúteo.',
+  },
+  {
+    id: 'emb-irq-q1', topicId: 'embriologia-infertilidad-reproduccion', type: 'multiple-choice',
+    question: 'La ausencia total de espermatozoides en el eyaculado se llama:',
+    options: ['Azoospermia', 'Oligozoospermia', 'Astenozoospermia', 'Teratozoospermia'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'Oligozoospermia es concentración baja; astenozoospermia, poca motilidad.',
+  },
+  {
+    id: 'emb-irq-q2', topicId: 'embriologia-infertilidad-reproduccion', type: 'multiple-choice',
+    question: 'Una causa femenina frecuente de infertilidad por oclusión de las trompas es:',
+    options: ['El síndrome de Turner', 'La enfermedad pélvica inflamatoria', 'El hipotiroidismo congénito', 'La menopausia'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'Las cicatrices de la infección obstruyen la trompa; también las cirugías.',
+  },
+  {
+    id: 'emb-irq-q3', topicId: 'embriologia-infertilidad-reproduccion', type: 'multiple-choice',
+    question: 'El citrato de clomifeno induce la ovulación porque:',
+    options: ['Sustituye a la progesterona', 'Destruye el cuerpo lúteo', 'Bloquea la retroalimentación de los estrógenos en el hipotálamo y aumenta la FSH', 'Contiene hCG'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Al subir la GnRH y la FSH maduran folículos; puede madurar más de uno.',
+  },
+  {
+    id: 'emb-irq-q4', topicId: 'embriologia-infertilidad-reproduccion', type: 'multiple-choice',
+    question: 'En la ICSI:',
+    options: ['Se transfieren varios embriones a la trompa', 'Se congela el semen', 'Se estimula el ovario con clomifeno', 'Se inyecta un espermatozoide en el citoplasma del ovocito'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'Útil en oligozoospermia grave o azoospermia; no corrige la causa genética.',
+  },
+  {
+    id: 'emb-irq-q5', topicId: 'embriologia-infertilidad-reproduccion', type: 'multiple-choice',
+    question: 'La primera persona nacida por fecundación in vitro (1978) fue:',
+    options: ['Louise Brown', 'Dolly', 'Robert Edwards', 'Patrick Steptoe'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'Edwards (fisiólogo) y Steptoe (ginecólogo) lideraron el equipo; Edwards recibió el Nobel en 2010.',
+  },
+  {
+    id: 'emb-irq-q6', topicId: 'embriologia-infertilidad-reproduccion', type: 'multiple-choice',
+    question: '¿Cuál es el principal riesgo de transferir varios embriones?',
+    options: ['Mola hidatiforme', 'Embarazo múltiple, con parto pretérmino y peso bajo', 'Insuficiencia ovárica', 'Amenorrea primaria'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'La mayoría de los resultados adversos de la reproducción asistida se deben a los embarazos múltiples.',
+  },
+  {
+    id: 'emb-irq-q7', topicId: 'embriologia-infertilidad-reproduccion', type: 'multiple-choice',
+    question: 'En la insuficiencia ovárica primaria se espera:',
+    options: ['FSH baja y AMH alta', 'Estradiol alto', 'FSH elevada, estradiol bajo y AMH baja', 'LH baja y progesterona alta'],
+    correctIndex: 2, difficulty: 'hard',
+    explanation: 'Sin folículos el ovario no responde: la FSH sube y la AMH, que hacen las granulosas de los folículos pequeños, baja.',
+  },
+  {
+    id: 'emb-irq-q8', topicId: 'embriologia-infertilidad-reproduccion', type: 'multiple-choice',
+    question: 'El estrógeno que predomina durante el embarazo es el:',
+    options: ['Estradiol', 'Estrona', 'Etinilestradiol', 'Estriol'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'Estradiol en la edad reproductiva, estriol en el embarazo y estrona en la posmenopausia.',
+  },
+  {
+    id: 'emb-irq-q9', topicId: 'embriologia-infertilidad-reproduccion', type: 'multiple-choice',
+    question: 'En el SOMP (antes síndrome de ovario poliquístico), los pulsos rápidos de GnRH producen:',
+    options: ['Exceso de LH, que estimula a la teca a producir andrógenos', 'Exceso de FSH y más aromatasa', 'Falta total de andrógenos', 'Ovulaciones más frecuentes'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'Con FSH relativamente baja hay poca aromatasa y predominan los andrógenos.',
+  },
+  {
+    id: 'emb-irq-q10', topicId: 'embriologia-infertilidad-reproduccion', type: 'multiple-choice',
+    question: 'Adolescente de 15 años con mamas y vello púbico desarrollados que nunca ha menstruado. Tiene:',
+    options: ['Amenorrea secundaria', 'Amenorrea primaria', 'Menopausia precoz', 'Un ciclo normal'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Sin menarca a los 15 años con caracteres sexuales secundarios; un ejemplo es el himen imperforado.',
+  },
+  {
+    id: 'emb-irq-q11', topicId: 'embriologia-infertilidad-reproduccion', type: 'multiple-choice',
+    question: 'La menopausia se confirma tras:',
+    options: ['3 meses sin menstruar', '6 meses sin menstruar', '12 meses consecutivos sin menstruar', 'Un bochorno'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: 'Si la función del ovario se pierde antes de los 40 años, se trata de insuficiencia ovárica primaria.',
+  },
+  {
+    id: 'emb-irq-q12', topicId: 'embriologia-infertilidad-reproduccion', type: 'multiple-choice',
+    question: 'El plano que divide al embrión en derecha e izquierda es el:',
+    options: ['Frontal', 'Transversal', 'Coronal', 'Sagital'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'Frontal o coronal: anterior y posterior. Transversal: superior e inferior.',
   },
 ]

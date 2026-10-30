@@ -1031,6 +1031,7 @@ const DCP: Patologia = {
     { materia: 'Histología', topicId: 'histologia-epitelios-respiratorio', sectionId: 'hres-3', label: 'Sistema mucociliar y cambio por calibre', porQue: 'El transporte que falla.' },
     { materia: 'Histología', topicId: 'histologia-epitelios-respiratorio', sectionId: 'hres-2', label: 'Epitelio respiratorio y sus células', porQue: 'Las células ciliadas de la vía aérea.' },
     { materia: 'Genética', topicId: 'genetica-gametogenesis', sectionId: 'ggam-3', label: 'Espermatogénesis y espermiogénesis', porQue: 'El flagelo del espermatozoide.' },
+    { materia: 'Embriología', topicId: 'embriologia-infertilidad-reproduccion', sectionId: 'eir-1', label: 'Infertilidad: causas masculinas y femeninas', porQue: 'En el varón con Kartagener el flagelo no se mueve; la ICSI permite usar esos espermatozoides.' },
   ],
   atlas: [
     { id: 'histologia-epitelios-especializados', title: 'Epitelios especializados' },

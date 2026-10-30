@@ -520,7 +520,7 @@ export const uadMedicina: Plan = {
           name: 'Embriología I',
           code: 'EM01004',
           tags: ['anatomia'],
-          topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis', 'embriologia-espermatogenesis', 'embriologia-anomalias-numericas', 'embriologia-anomalias-estructurales', 'embriologia-ciclo-ovarico', 'embriologia-fecundacion'],
+          topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis', 'embriologia-espermatogenesis', 'embriologia-anomalias-numericas', 'embriologia-anomalias-estructurales', 'embriologia-ciclo-ovarico', 'embriologia-fecundacion', 'embriologia-infertilidad-reproduccion'],
           content: {
             area: 'Ciencias Básicas',
             credits: 8,
@@ -535,7 +535,7 @@ export const uadMedicina: Plan = {
               {
                 number: 1,
                 title: 'Fundamentos de embriología',
-                topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis', 'embriologia-espermatogenesis', 'embriologia-anomalias-numericas', 'embriologia-anomalias-estructurales', 'embriologia-ciclo-ovarico', 'embriologia-fecundacion'],
+                topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis', 'embriologia-espermatogenesis', 'embriologia-anomalias-numericas', 'embriologia-anomalias-estructurales', 'embriologia-ciclo-ovarico', 'embriologia-fecundacion', 'embriologia-infertilidad-reproduccion'],
                 temas: [
                   'Clase 1 (impartida): panorama del desarrollo temprano — periodos embrionario y fetal, fecundación en la ampolla, segmentación (mórula, blastocisto), implantación, disco bilaminar y gastrulación (tres capas germinales); embarazo ectópico y molar',
                   'Clase 1 (impartida): gametogénesis y células germinales primordiales; diploide/haploide, euploidía y aneuploidía; fases de la mitosis y de la meiosis I y II',
@@ -546,6 +546,8 @@ export const uadMedicina: Plan = {
                   'Clase 3 (impartida): primera semana del desarrollo (inicio) — eje GnRH-LH-FSH, ciclo ovárico, teca interna y granulosa (aromatasa), pico de LH y ovulación, cuerpo lúteo y progesterona, transporte del ovocito',
                   'Clase 4 (impartida): destino del cuerpo lúteo (cuerpo albicans o cuerpo lúteo del embarazo por hCG); ciclo endometrial (capas funcional y basal; fases menstrual, proliferativa, secretora y gestacional); ventana fértil y casos clínicos',
                   'Clase 4 (impartida): fecundación — capacitación, reacción acrosómica (ZP3, acrosina), fusión y bloqueo de la polispermia, pronúcleos y cigoto; segmentación, mórula, blastocisto, eclosión e implantación (sincitiotrofoblasto y hCG); epiblasto, hipoblasto, Cerberus y Lefty-1',
+                  'Clase 5 (impartida): infertilidad masculina y femenina, gametos anormales, clomifeno, FIV, ICSI y diagnóstico preimplantacional; insuficiencia ovárica primaria, SOMP (antes SOP), amenorrea, menopausia y anticoncepción; planos y ejes embrionarios',
+                  'Examen de la semana: etapas del folículo, granulosa y teca, FSH y LH, luteinización y cuerpo lúteo, hCG y pruebas de embarazo, resultados de la fecundación, blastómeras, mórula, embrioblasto y trofoblasto',
                   '1. Planografía y terminología; gametogénesis (meiosis, espermatogénesis y espermiogénesis, ovogénesis); ciclo sexual femenino (ciclo ovárico y ciclo menstrual)',
                 ],
                 fuentes: [
@@ -555,6 +557,7 @@ export const uadMedicina: Plan = {
                   { title: 'Embriología I — Semana 1, Clase 3 (a)', file: 'Embriologia I - Semana 1 - Clase 3a.pdf', nota: 'Anomalías cromosómicas numéricas y estructurales, mutaciones y casos clínicos.' },
                   { title: 'Embriología I — Semana 1, Clase 3 (b)', file: 'Embriologia I - Semana 1 - Clase 3b.pdf', nota: 'Primera semana: ciclo ovárico y ovulación.' },
                   { title: 'Embriología I — Semana 1, Clase 4', file: 'Embriologia I - Semana 1 - Clase 4.pdf', nota: 'Cuerpo lúteo, ciclo endometrial, fecundación, segmentación e implantación; casos clínicos.' },
+                  { title: 'Embriología I — Semana 1, Clase 5', file: 'Embriologia I - Semana 1 - Clase 5.pdf', nota: 'Infertilidad, reproducción asistida, SOMP, amenorrea, menopausia, anticoncepción y planos embrionarios.' },
                 ],
               },
               {
@@ -593,6 +596,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 1 · Clase 3 (a) — Anomalías estructurales y mutaciones', file: 'Embriologia I - Semana 1 - Clase 3a.pdf', kind: 'Clase' },
               { title: 'Semana 1 · Clase 3 (b) — Ciclo ovárico y ovulación', file: 'Embriologia I - Semana 1 - Clase 3b.pdf', kind: 'Clase' },
               { title: 'Semana 1 · Clase 4 — Ciclo endometrial y fecundación', file: 'Embriologia I - Semana 1 - Clase 4.pdf', kind: 'Clase' },
+              { title: 'Semana 1 · Clase 5 — Infertilidad y reproducción asistida', file: 'Embriologia I - Semana 1 - Clase 5.pdf', kind: 'Clase' },
               { title: 'Programa Académico — Embriología I (2026-1)', file: 'Embriologia I - Programa.pdf', kind: 'Programa' },
               { title: 'Planeación didáctica — Embriología I', file: 'Embriologia I - Planeacion.pdf', kind: 'Programa' },
             ],

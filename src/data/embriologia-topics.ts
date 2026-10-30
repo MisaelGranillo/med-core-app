@@ -1,9 +1,10 @@
 import type { Topic } from '../types'
 
-// Embriología I (UAD · EM01004) — Semana 1, Clases 1–4: panorama del desarrollo
+// Embriología I (UAD · EM01004) — Semana 1, Clases 1–5: panorama del desarrollo
 // temprano, cromosomas, mitosis y meiosis, ovogénesis, espermatogénesis,
 // anomalías cromosómicas numéricas y estructurales, ciclos ovárico y endometrial,
-// fecundación y primera semana del desarrollo.
+// fecundación y primera semana del desarrollo; infertilidad, reproducción asistida,
+// salud reproductiva y planos y ejes embrionarios.
 export const embriologiaTopics: Topic[] = [
   {
     id: 'embriologia-desarrollo-temprano',
@@ -1796,6 +1797,369 @@ export const embriologiaTopics: Topic[] = [
             variant: 'clinica',
             title: 'Prueba de embarazo',
             content: 'Las pruebas de embarazo detectan la hCG del sincitiotrofoblasto. Las cualitativas (sí o no) son confiables a partir del final de la segunda semana o el inicio de la tercera después de la fecundación, cuando hay suficiente hormona; las cuantitativas miden su concentración en sangre.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-infertilidad-reproduccion',
+    title: 'Infertilidad, reproducción asistida y salud reproductiva',
+    subtitle: 'Infertilidad masculina y femenina, gametos anormales, inducción de la ovulación, fecundación in vitro, ICSI y diagnóstico preimplantacional, insuficiencia ovárica primaria, SOMP (antes SOP), amenorrea, menopausia, anticoncepción, planos y ejes embrionarios',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '🧪',
+    keyPoints: [
+      'La infertilidad afecta al 14–15 % de las parejas; la causa puede ser masculina, femenina o de ambos.',
+      'Varón: OLIGOZOOSPERMIA (concentración baja), ASTENOZOOSPERMIA (poca motilidad), AZOOSPERMIA (sin espermatozoides). Mujer: oclusión tubárica (enfermedad pélvica inflamatoria), moco cervical hostil, anovulación.',
+      'FIV: estimulación ovárica → punción folicular → fecundación en el laboratorio → cultivo → transferencia. ICSI: se inyecta un espermatozoide en el ovocito. 1978: Louise Brown (Edwards y Steptoe).',
+      'Insuficiencia ovárica primaria: antes de los 40 años, amenorrea u oligomenorrea de más de 4 meses, FSH > 25 UI/L, estradiol bajo y AMH baja.',
+      'SOMP (síndrome ovárico metabólico poliendocrino, antes síndrome de ovario poliquístico): pulsos rápidos de GnRH → más LH → la teca hace más andrógenos; resistencia a la insulina; principal causa de anovulación crónica.',
+      'Planos: SAGITAL (derecha e izquierda), FRONTAL o coronal (anterior y posterior), TRANSVERSAL (superior e inferior). Ejes: cráneo-caudal, dorso-ventral (BMP, SHH) e izquierda-derecha.',
+    ],
+    sections: [
+      {
+        id: 'eir-1',
+        number: 1,
+        title: 'Infertilidad: causas masculinas y femeninas',
+        keyTerms: ['oligozoospermia', 'azoospermia', 'astenozoospermia', 'oclusión tubárica', 'anovulación'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos orígenes, a veces combinados',
+            left: {
+              title: 'Factor masculino',
+              items: [
+                'Pocos espermatozoides, poca motilidad o ambas cosas',
+                'Se considera fecundo un semen con 20 a 50 millones de espermatozoides por mililitro (en un eyaculado de 2 a 6 mL)',
+                'OLIGOZOOSPERMIA: concentración baja (por debajo de unos 15 millones/mL)',
+                'AZOOSPERMIA: no hay espermatozoides en el eyaculado',
+                'ASTENOZOOSPERMIA: motilidad disminuida',
+              ],
+            },
+            right: {
+              title: 'Factor femenino',
+              items: [
+                'Oclusión de las trompas, casi siempre por enfermedad pélvica inflamatoria o por cirugías',
+                'Moco cervical hostil a los espermatozoides',
+                'Respuesta inmunitaria contra los espermatozoides',
+                'Ausencia de ovulación (anovulación) u ovulación infrecuente',
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Gametos anormales',
+            items: [
+              'Hasta el 10 % de los espermatozoides tiene defectos visibles: cabeza o cola anormales, formas gigantes o enanas, espermatozoides unidos. Suelen moverse mal y es probable que no fecunden.',
+              'Un folículo puede tener dos o tres ovocitos (posible origen de gemelos o trillizos), aunque suelen degenerar antes de madurar.',
+              'Un ovocito con dos o tres núcleos muere antes de llegar a la madurez.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Síndrome de Kartagener y fertilidad',
+            content: 'Es una forma de discinesia ciliar primaria, de herencia autosómica recesiva: sinusitis, bronquiectasias y situs inversus. El flagelo del espermatozoide tiene la misma estructura que un cilio, así que en el varón la motilidad puede estar muy disminuida o ausente. La ICSI permite usar esos espermatozoides, porque no necesitan nadar hasta el ovocito.',
+          },
+        ],
+      },
+      {
+        id: 'eir-2',
+        number: 2,
+        title: 'Ovulación e inducción de la ovulación',
+        keyTerms: ['mittelschmerz', 'temperatura basal', 'citrato de clomifeno', 'embarazo múltiple'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Signos de la ovulación',
+            items: [
+              'MITTELSCHMERZ («dolor intermedio»): dolor leve hacia la mitad del ciclo, que algunas mujeres perciben.',
+              'La temperatura basal sube un poco después de ovular; se registra para identificar los días fértiles.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'Algunas mujeres no ovulan porque producen poca gonadotropina. En ellas se pueden usar fármacos que estimulan la liberación de FSH y LH. El más conocido es el CITRATO DE CLOMIFENO: bloquea la retroalimentación negativa de los estrógenos en el hipotálamo, aumenta la GnRH y con ella la FSH, y así induce la ovulación. También se usa para estimular el ovario antes de una fecundación in vitro.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Embarazo múltiple',
+            content: 'Los inductores de la ovulación suelen hacer que maduren y se liberen varios ovocitos: la probabilidad de un embarazo múltiple llega a ser hasta 10 veces mayor que sin ellos. Por eso se usan con vigilancia ecográfica y hormonal.',
+          },
+        ],
+      },
+      {
+        id: 'eir-3',
+        number: 3,
+        title: 'Fecundación in vitro (FIV)',
+        keyTerms: ['fecundación in vitro', 'punción folicular', 'transferencia embrionaria', 'Louise Brown', 'genes HOX'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Cómo se llegó a la FIV',
+            items: [
+              'Siglo XX: la embriología experimental y molecular estudia qué controla el desarrollo (inducción embrionaria, gradientes morfogenéticos) y descubre genes del desarrollo como los HOX, gracias en buena parte a la mosca Drosophila.',
+              'Las primeras fecundaciones fuera del cuerpo se lograron en animales (conejo, ratón).',
+              'Décadas de 1950 y 1960: primeros intentos en humanos, con problemas para mantener vivos los gametos y lograr la implantación.',
+              '25 de julio de 1978: nace en el Reino Unido Louise Brown, la primera persona concebida por FIV, gracias al equipo de Robert Edwards (fisiólogo) y Patrick Steptoe (ginecólogo). Edwards recibió el Premio Nobel de Medicina en 2010.',
+              'Décadas de 1980 y 1990: hormonas para estimular la ovulación, mejores medios de cultivo y congelación de embriones.',
+            ],
+          },
+          {
+            type: 'steps',
+            title: 'Pasos de la FIV',
+            steps: [
+              'ESTIMULACIÓN OVÁRICA con gonadotropinas (FSH y LH), vigilada con ultrasonido y hormonas.',
+              'PUNCIÓN FOLICULAR: se aspiran los ovocitos justo antes de la ovulación, cuando están en las últimas etapas de la meiosis I.',
+              'Preparación del semen y FECUNDACIÓN en un medio de cultivo.',
+              'CULTIVO EMBRIONARIO hasta etapas tempranas, a menudo hasta blastocisto.',
+              'TRANSFERENCIA del embrión a la cavidad uterina y prueba de embarazo después.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Éxito por intento según la edad de la mujer (cifras orientativas)',
+            data: {
+              headers: ['Edad', 'Embarazo por intento'],
+              rows: [
+                ['Menos de 35 años', '≈ 30 %'],
+                ['35 a 37 años', '≈ 25 %'],
+                ['38 a 40 años', '≈ 17 %'],
+                ['Más de 40 años', 'menos de 5 %'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Riesgos de la reproducción asistida',
+            content: 'Para aumentar la probabilidad de éxito se llegaron a transferir varios embriones, lo que eleva mucho el riesgo de embarazo múltiple, sobre todo en mujeres jóvenes. Los embarazos múltiples explican la mayor parte de los resultados adversos: parto pretérmino (antes de las 37 semanas), peso bajo al nacer (menos de 2500 g) y muy bajo (menos de 1500 g). Por eso hoy se tiende a transferir menos embriones. También se ha descrito una frecuencia algo mayor de defectos congénitos.',
+          },
+        ],
+      },
+      {
+        id: 'eir-4',
+        number: 4,
+        title: 'ICSI y diagnóstico genético preimplantacional',
+        keyTerms: ['ICSI', 'microinyección', 'microdeleciones del cromosoma Y', 'biopsia de blastómera'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos formas de fecundar en el laboratorio',
+            left: {
+              title: 'FIV convencional',
+              items: ['Se ponen juntos los ovocitos y muchos espermatozoides', 'El espermatozoide tiene que penetrar por sí mismo'],
+            },
+            right: {
+              title: 'ICSI (inyección intracitoplasmática)',
+              items: ['Se inyecta un solo espermatozoide en el citoplasma del ovocito', 'Útil en oligozoospermia grave o azoospermia (los espermatozoides pueden obtenerse del testículo)'],
+            },
+          },
+          {
+            type: 'note',
+            title: 'La ICSI no corrige la causa',
+            content: 'Algunas infertilidades masculinas se deben a microdeleciones del cromosoma Y. Con la ICSI esa alteración puede pasar a los hijos varones, por eso se ofrece asesoramiento genético. También se ha descrito una frecuencia algo mayor de defectos congénitos que con la FIV convencional.',
+          },
+          {
+            type: 'paragraph',
+            content: 'En el DIAGNÓSTICO GENÉTICO PREIMPLANTACIONAL se toma una o pocas células de un embrión temprano y se analiza su ADN (por ejemplo, ampliándolo con la reacción en cadena de la polimerasa) para buscar alteraciones cromosómicas o genéticas antes de transferirlo. Es costoso y no garantiza un recién nacido sano.',
+          },
+        ],
+      },
+      {
+        id: 'eir-5',
+        number: 5,
+        title: 'Insuficiencia ovárica primaria',
+        keyTerms: ['insuficiencia ovárica primaria', 'FSH elevada', 'hormona antimülleriana', 'estradiol', 'estriol', 'estrona'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Insuficiencia ovárica primaria',
+            content: 'Pérdida de la función del ovario antes de los 40 años. Se le llamaba menopausia prematura o falla ovárica precoz. En la mayoría de los casos no se encuentra la causa; se conocen causas genéticas (por ejemplo, el síndrome de Turner o la premutación del X frágil), autoinmunes, metabólicas y tratamientos como la quimioterapia.',
+          },
+          {
+            type: 'list',
+            title: 'Criterios diagnósticos',
+            items: [
+              'Edad menor de 40 años.',
+              'Amenorrea u oligomenorrea de más de 4 meses.',
+              'FSH elevada (> 25 UI/L); tradicionalmente en dos mediciones con un mes de intervalo.',
+              'Estradiol bajo (hipoestrogenismo).',
+              'Hormona antimülleriana (AMH) BAJA: la producen las células de la granulosa de los folículos pequeños, así que refleja cuántos folículos quedan.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Tres estrógenos',
+            data: {
+              headers: ['Estrógeno', 'Cuándo predomina'],
+              rows: [
+                ['Estradiol', 'Edad reproductiva (es el que se mide en la insuficiencia ovárica)'],
+                ['Estriol', 'Embarazo'],
+                ['Estrona', 'Menopausia y posmenopausia'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'eir-6',
+        number: 6,
+        title: 'Síndrome ovárico metabólico poliendocrino (SOMP)',
+        keyTerms: ['SOMP', 'síndrome de ovario poliquístico', 'hiperandrogenismo', 'resistencia a la insulina', 'SHBG'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Es el nuevo nombre del síndrome de ovario poliquístico (SOP), adoptado por consenso internacional en 2026: muchas pacientes no tienen quistes, y el trastorno es endocrino y metabólico además de ovárico. Combina disfunción ovulatoria, hiperandrogenismo y, a menudo, ovarios con muchos folículos pequeños. Es la principal causa de anovulación crónica y de infertilidad por anovulación.',
+          },
+          {
+            type: 'steps',
+            title: 'Fisiopatología',
+            steps: [
+              'El hipotálamo libera pulsos de GnRH más rápidos: la hipófisis secreta más LH que FSH.',
+              'El exceso de LH estimula la teca interna (hiperplasia tecal): se producen más andrógenos.',
+              'Con FSH relativamente baja hay menos aromatasa: los andrógenos no se convierten en estrógenos y los folículos no maduran (atresia).',
+              'La resistencia a la insulina causa hiperinsulinemia compensatoria; la insulina estimula a la teca y reduce la SHBG del hígado, con lo que sube la testosterona libre.',
+            ],
+          },
+          {
+            type: 'list',
+            title: 'Cuadro clínico',
+            items: [
+              'Trastorno menstrual en cerca del 90 %: oligomenorrea o amenorrea por oligo o anovulación.',
+              'Hiperandrogenismo: hirsutismo (≈ 60 %), acné, alopecia de patrón androgénico.',
+              'Obesidad y acantosis nigricans, signos de resistencia a la insulina.',
+              'Infertilidad, aunque no todas las pacientes son infértiles.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Por qué ayudan el ejercicio y la metformina',
+            content: 'El músculo es uno de los tejidos que más glucosa consume. El ejercicio, sobre todo de fuerza, mejora la sensibilidad a la insulina, igual que la metformina y una alimentación con menos azúcares. Al bajar la insulina bajan los andrógenos, y los ciclos y la ovulación pueden mejorar. El manejo se individualiza según lo que busque cada paciente.',
+          },
+        ],
+      },
+      {
+        id: 'eir-7',
+        number: 7,
+        title: 'Amenorrea y menopausia',
+        keyTerms: ['amenorrea primaria', 'amenorrea secundaria', 'menopausia', 'perimenopausia', 'síndrome climatérico'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Amenorrea: ausencia de menstruación',
+            data: {
+              headers: ['Tipo', 'Definición', 'Ejemplos'],
+              rows: [
+                ['PRIMARIA', 'Sin menarca a los 15 años con caracteres sexuales secundarios, o a los 13 años sin ellos', 'Himen imperforado (con caracteres sexuales); síndrome de Turner (sin ellos)'],
+                ['SECUNDARIA', 'Sin menstruación más de 3 meses si los ciclos eran regulares, o 6 meses si eran irregulares', 'Embarazo (lo primero que se descarta), SOMP, causas hipotalámicas'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Definiciones alrededor de la menopausia',
+            data: {
+              headers: ['Término', 'Qué es'],
+              rows: [
+                ['MENOPAUSIA', 'Última menstruación; se confirma tras 12 meses seguidos sin menstruar, sin otra causa'],
+                ['PERIMENOPAUSIA', 'Transición que empieza con los cambios del ciclo y termina un año después de la última menstruación'],
+                ['POSMENOPAUSIA', 'Desde la última menstruación en adelante; la temprana abarca los primeros 5 años'],
+                ['SÍNDROME CLIMATÉRICO', 'Conjunto de signos y síntomas de la perimenopausia y la posmenopausia temprana'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Antes de los 40 años no es menopausia natural',
+            content: 'La menopausia natural ocurre en promedio alrededor de los 50 años. Si la función del ovario se pierde antes de los 40, se trata de una insuficiencia ovárica primaria.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Lo que hacen los estrógenos',
+            content: 'Al caer los estrógenos aparecen bochornos, sudoración nocturna, cambios del sueño y del ánimo, síntomas genitourinarios y pérdida de densidad mineral ósea, que aumenta el riesgo de osteoporosis y fracturas.',
+          },
+        ],
+      },
+      {
+        id: 'eir-8',
+        number: 8,
+        title: 'Métodos anticonceptivos',
+        keyTerms: ['anticonceptivos hormonales', 'DIU de cobre', 'métodos de barrera', 'vasectomía', 'oclusión tubaria', 'anticoncepción de emergencia'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Clasificación',
+            data: {
+              headers: ['Grupo', 'Métodos', 'Cómo actúan'],
+              rows: [
+                ['Temporales hormonales', 'Píldoras, parche, anillo vaginal, inyecciones, implantes, DIU hormonal', 'Inhiben la ovulación (frenan FSH y LH), espesan el moco cervical y modifican el endometrio'],
+                ['Temporales no hormonales', 'DIU de cobre', 'El cobre es tóxico para los espermatozoides y dificulta la fecundación'],
+                ['De barrera', 'Preservativo masculino o femenino, diafragma, capuchón cervical', 'Impiden que los espermatozoides lleguen al útero; el preservativo además protege de infecciones de transmisión sexual'],
+                ['Definitivos', 'Vasectomía; oclusión tubaria (salpingoclasia)', 'Interrumpen el paso de los espermatozoides por el conducto deferente o el encuentro de los gametos en la trompa'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Anticoncepción de emergencia',
+            items: [
+              'Levonorgestrel en una sola dosis: es más eficaz cuanto antes se tome; se usa hasta 72 horas después de la relación (y con menor eficacia hasta 120).',
+              'Acetato de ulipristal: modulador del receptor de progesterona, útil hasta 120 horas (5 días).',
+              'DIU de cobre: colocado hasta 5 días después; es el método de emergencia más eficaz.',
+              'Actúan sobre todo retrasando o impidiendo la ovulación; no interrumpen un embarazo ya implantado.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Mifepristona',
+            content: 'Es un antiprogestágeno. En dosis bajas solo se usa como anticonceptivo de emergencia en algunos países; en dosis mayores, después de la implantación, interrumpe el embarazo, porque bloquea la progesterona que lo sostiene.',
+          },
+          {
+            type: 'note',
+            title: 'Vasectomía',
+            content: 'No es eficaz de inmediato: quedan espermatozoides en la vía seminal, así que se usa otro método hasta que un espermiograma confirme la azoospermia.',
+          },
+        ],
+      },
+      {
+        id: 'eir-9',
+        number: 9,
+        title: 'Planos y ejes embrionarios',
+        keyTerms: ['plano sagital', 'plano frontal', 'plano transversal', 'eje cráneo-caudal', 'eje dorso-ventral', 'eje izquierda-derecha', 'Sonic hedgehog'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Planos (igual que en el adulto)',
+            data: {
+              headers: ['Plano', 'Divide en', 'Sirve para ver'],
+              rows: [
+                ['SAGITAL', 'Derecha e izquierda', 'Tubo neural, notocorda, plegamiento cefalocaudal, corazón primitivo'],
+                ['FRONTAL (coronal)', 'Anterior y posterior', 'Cavidades corporales, desarrollo del corazón y del encéfalo, relación entre tórax y abdomen'],
+                ['TRANSVERSAL', 'Superior e inferior', 'Cortes histológicos, ecografía obstétrica, desarrollo del diafragma y de las cavidades'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Ejes del embrión',
+            data: {
+              headers: ['Eje', 'Qué define', 'Si falla'],
+              rows: [
+                ['CRÁNEO-CAUDAL', 'Cabeza y cola; empieza a fijarse al final de la primera semana (Cerberus y Lefty-1 en el hipoblasto)', 'Defectos del tubo neural, sirenomelia'],
+                ['DORSO-VENTRAL', 'Espalda y vientre; lo controlan gradientes de moléculas como BMP y Sonic hedgehog (SHH)', 'Alteraciones de la organización del tubo neural y del cuerpo'],
+                ['IZQUIERDA-DERECHA', 'Lateralidad: asimetría del corazón y posición de las vísceras', 'Situs inversus, heterotaxia'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Para el examen de la semana',
+            content: 'Se señalaron como base: qué distingue a cada etapa del folículo (primordial, primario y siguientes), cómo se forman las células de la granulosa, las gonadotropinas FSH y LH y sobre qué células actúan, la luteinización y el cuerpo lúteo, la hCG y las pruebas de embarazo, qué pasa con el ovocito si no hay fecundación (degenera en unas 24 horas), los resultados de la fecundación, las blastómeras, la mórula, y embrioblasto contra trofoblasto.',
           },
         ],
       },
