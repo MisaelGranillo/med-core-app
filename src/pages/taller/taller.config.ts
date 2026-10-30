@@ -16,7 +16,7 @@ export const TALLER = {
     /** Enlace de Google Docs terminado en /copy, que crea una copia del cuaderno en la cuenta de quien lo abre. */
     copiaCuadernoGoogleDocs: 'https://docs.google.com/document/d/1ofFOYrtxBDOLkk69r8OjCR0pKoPPzvZh9yf719VAOyg/copy',
     /** Presentación del taller en Canva (enlace de solo lectura). */
-    presentacionCanva: 'https://canva.link/g4c8al6wyc7bbyr',
+    presentacionCanva: 'https://canva.link/c3b378iw7yxt7so',
     /** Calendario compartido de Google con las sesiones del taller (enlace para agregarlo). */
     calendarioTaller: 'https://calendar.app.google/uiUPpPLfLQh3XnEU8',
   },
