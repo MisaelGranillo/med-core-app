@@ -3,6 +3,7 @@ import type { Question } from '../types'
 // Medicina Humanística — Semana 1 (Clases 1–3), Semana 3 (relación médico-paciente)
 // y Semana 4 (perfiles patológicos y síndromes de filiación cultural).
 // ★ en la explicación = tema que el profesor señaló como pregunta de examen.
+// «★ Examen Semana 1.» = pregunta tomada del examen real de la Semana 1 (respuesta verificada con la clase).
 export const humanisticaQuestions: Question[] = [
   // ── Humanismo médico y humanidades médicas (Semana 1, Clase 1) ──
   {
@@ -89,6 +90,48 @@ export const humanisticaQuestions: Question[] = [
     correctIndex: 2, difficulty: 'medium',
     explanation: 'Buscan recuperar lo humano en la formación y la práctica clínica.',
   },
+  {
+    id: 'mh-humq-q13', topicId: 'humanistica-humanismo-medico', type: 'true-false',
+    question: 'Debido a la despersonalización de la medicina y a que se ve al paciente como un expediente clínico, se habla de la deshumanización de la medicina.',
+    options: ['Verdadero', 'Falso'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. Verdadero. La despersonalización cosifica al paciente («el de la cama 20») y es una de las razones por las que se habla de deshumanización de la medicina.',
+  },
+  {
+    id: 'mh-humq-q14', topicId: 'humanistica-humanismo-medico', type: 'true-false',
+    question: 'El humanismo es un movimiento históricamente recurrente que adquiere fuerza en los tiempos de paz, en los que se mantiene el orden establecido.',
+    options: ['Verdadero', 'Falso'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: '★ Examen Semana 1. Falso. El humanismo adquiere fuerza en los tiempos de CRISIS: cada vez que hay una crisis, se recurre a él.',
+  },
+  {
+    id: 'mh-humq-q15', topicId: 'humanistica-humanismo-medico', type: 'multiple-choice',
+    question: 'Las humanidades médicas promueven las siguientes capacidades humanamente significativas, EXCEPTO:',
+    options: ['Comprensión y compasión', 'Afrontamiento del dolor y la muerte', 'Cuidado y compasión', 'Hedonismo y malestar'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. El hedonismo (buscar el placer como fin) no forma parte del perfil del médico humanista; sí la comprensión, la compasión, el cuidado y la capacidad de afrontar el dolor y la muerte.',
+  },
+  {
+    id: 'mh-humq-q16', topicId: 'humanistica-humanismo-medico', type: 'multiple-choice',
+    question: 'Fueron introducidas en la enseñanza de las ciencias de la salud con la aspiración de hacer la práctica médica más compasiva y humana:',
+    options: ['Las humanidades médicas', 'Las viejas humanidades', 'Las humanidades éticas', 'Las humanidades contemporáneas'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. Las humanidades médicas tuvieron su auge entre 2000 y 2005, después de establecerse como disciplina en el Instituto Karolinska.',
+  },
+  {
+    id: 'mh-humq-q17', topicId: 'humanistica-humanismo-medico', type: 'true-false',
+    question: 'Solo el humanismo ateo considera al ser humano como el fin y el valor superior.',
+    options: ['Verdadero', 'Falso'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: '★ Examen Semana 1. Falso. TODOS los humanismos ponen al ser humano como fin y valor superior; difieren en cómo fundamentan su dignidad: el renacentista por su capacidad de elegir, el cristiano por su filiación divina y el ateo por su autonomía y responsabilidad.',
+  },
+  {
+    id: 'mh-humq-q18', topicId: 'humanistica-humanismo-medico', type: 'true-false',
+    question: 'Los humanismos cristianos valoran al ser humano por su filiación divina.',
+    options: ['Verdadero', 'Falso'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. Verdadero. El humanismo cristiano fundamenta la dignidad humana en que el ser humano es hijo de Dios.',
+  },
   // ── Origen de la vida y del ser humano (Semana 1, Clase 1) ──
   {
     id: 'mh-oriq-q1', topicId: 'humanistica-origen-vida-hombre', type: 'multiple-choice',
@@ -173,6 +216,20 @@ export const humanisticaQuestions: Question[] = [
     options: ['Llegada por el Atlántico desde Europa', 'Origen independiente en América', 'Llegada por el estrecho de Bering durante las glaciaciones', 'Panspermia'],
     correctIndex: 2, difficulty: 'easy',
     explanation: 'Las rutas por el Pacífico se consideran hipótesis debatidas.',
+  },
+  {
+    id: 'mh-oriq-q13', topicId: 'humanistica-origen-vida-hombre', type: 'multiple-choice',
+    question: 'En la evolución del Homo sapiens, «Lucy», representante de Australopithecus afarensis, se considera el antecedente directo de:',
+    options: ['Los primates', 'Homo sapiens', 'Homo habilis', 'Los neandertales'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: '★ Examen Semana 1. En clase, A. afarensis se presentó como el antecedente directo de Homo habilis, el primer miembro del género Homo; la relación exacta entre ambas especies sigue en estudio. El fósil se encontró en la región de Afar, Etiopía (en el examen la especie apareció escrita «aferensis»).',
+  },
+  {
+    id: 'mh-oriq-q14', topicId: 'humanistica-origen-vida-hombre', type: 'multiple-choice',
+    question: 'El experimento de Stanley Miller apoyó que el origen de la vida pudo darse por:',
+    options: ['Generación espontánea', 'Panspermia', 'Creacionismo', 'Evolución química'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. Miller y Urey obtuvieron aminoácidos a partir de gases simples y descargas eléctricas, como proponían Oparin y Haldane. No crearon vida: mostraron que las moléculas orgánicas pueden formarse así. La diapositiva y el examen dicen 1950; el experimento se publicó en 1953.',
   },
   // ── Corporeidad, herramienta y naturaleza (Semana 1, Clase 2) ──
   {
@@ -259,6 +316,41 @@ export const humanisticaQuestions: Question[] = [
     correctIndex: 2, difficulty: 'medium',
     explanation: 'Sitúa al individuo en un espacio y un tiempo concretos a través de su cuerpo.',
   },
+  {
+    id: 'mh-corq-q13', topicId: 'humanistica-corporeidad', type: 'multiple-choice',
+    question: 'En la concepción de Paul Ricoeur, el cuerpo se relaciona con:',
+    options: ['La acción', 'La no acción', 'La paz', 'La física'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. Para Ricoeur el cuerpo es el órgano de la acción; el acto voluntario tiene tres momentos: «yo quiero», «yo muevo mi cuerpo» y «yo consiento».',
+  },
+  {
+    id: 'mh-corq-q14', topicId: 'humanistica-corporeidad', type: 'multiple-choice',
+    question: 'En la concepción de Maurice Merleau-Ponty se incluye lo siguiente, EXCEPTO:',
+    options: ['Cuerpo como ser sexuado', 'Cuerpo como objeto sagrado', 'Cuerpo como expresión y palabra', 'Cuerpo como objeto según la fisiología mecanicista'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: '★ Examen Semana 1. Sus seis puntos de reflexión son: el cuerpo según la fisiología mecanicista, la experiencia del cuerpo en la psicología clásica, la espacialidad y la motricidad, la síntesis del cuerpo propio, el cuerpo como ser sexuado y el cuerpo como expresión y palabra.',
+  },
+  {
+    id: 'mh-corq-q15', topicId: 'humanistica-corporeidad', type: 'multiple-choice',
+    question: 'Jean-Paul Sartre centra su concepción del cuerpo humano en:',
+    options: ['El encuentro interhumano, la intersubjetividad', 'La distancia', 'El diálogo', 'La objetividad'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: '★ Examen Semana 1. Para Sartre la dificultad no es unir la conciencia con el propio cuerpo, sino con el cuerpo de los otros.',
+  },
+  {
+    id: 'mh-corq-q16', topicId: 'humanistica-corporeidad', type: 'multiple-choice',
+    question: 'Gabriel Marcel considera que el cuerpo es:',
+    options: ['Señal vivida', 'Señal comunicativa', 'Señal de existencia', 'Señales radiales'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. Marcel habla de «mi cuerpo en tanto que mío», del significado del sentir, del cuerpo como ser-en-el-mundo y del cuerpo como señal de existencia.',
+  },
+  {
+    id: 'mh-corq-q17', topicId: 'humanistica-corporeidad', type: 'multiple-choice',
+    question: 'En la concepción de Merleau-Ponty, la Gestalt hace referencia a:',
+    options: ['La estructura', 'El ser sexuado', 'El pensamiento', 'La forma: el cuerpo modulado como forma humana'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: '★ Examen Semana 1. Gestalt significa «forma»: el cuerpo humano es una forma modulada como forma humana, «nuestro medio general para tener un mundo».',
+  },
   // ── Unidad anatomo-psico-social (Semana 1, Clase 2) ──
   {
     id: 'mh-bpsq-q1', topicId: 'humanistica-unidad-biopsicosocial', type: 'multiple-choice',
@@ -343,6 +435,69 @@ export const humanisticaQuestions: Question[] = [
     options: ['Psicológicos', 'Biológicos', 'Socioculturales', 'Espirituales'],
     correctIndex: 1, difficulty: 'easy',
     explanation: '★ Señalado en clase como pregunta de examen, junto con las definiciones de los factores psicológicos y socioculturales.',
+  },
+  {
+    id: 'mh-bpsq-q13', topicId: 'humanistica-unidad-biopsicosocial', type: 'multiple-choice',
+    question: 'Personaje que relacionó primero las tres esferas del ser humano como causa de enfermedades:',
+    options: ['Aristóteles', 'Hipócrates', 'Arquímedes', 'Sócrates'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. Hipócrates es el antecedente de la idea de que la enfermedad no depende de una sola dimensión aislada.',
+  },
+  {
+    id: 'mh-bpsq-q14', topicId: 'humanistica-unidad-biopsicosocial', type: 'multiple-choice',
+    question: 'Son características del ser humano como ser biopsicosocial, EXCEPTO:',
+    options: ['No puede desligarse de su esencia como organismo viviente', 'Puede evolucionar, adaptarse al mundo y transformarlo', 'Es una criatura gregaria que no puede subsistir solo', 'Posee un comportamiento ermitaño y aislacionista'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. El ser humano es gregario: no puede subsistir solo.',
+  },
+  {
+    id: 'mh-bpsq-q15', topicId: 'humanistica-unidad-biopsicosocial', type: 'true-false',
+    question: 'El modelo dominante de enfermedad hoy en día es el biomédico, y su disciplina científica básica es la biología molecular.',
+    options: ['Verdadero', 'Falso'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. Verdadero. Es la definición con la que Engel presenta el modelo biomédico.',
+  },
+  {
+    id: 'mh-bpsq-q16', topicId: 'humanistica-unidad-biopsicosocial', type: 'multiple-choice',
+    question: 'Son esferas del ser humano, EXCEPTO:',
+    options: ['Biológica', 'Material', 'Social', 'Psicológica'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. Las tres esferas son la biológica, la psicológica y la social.',
+  },
+  {
+    id: 'mh-bpsq-q17', topicId: 'humanistica-unidad-biopsicosocial', type: 'multiple-choice',
+    question: 'Modelo en el que la tarea del médico es formular explicaciones (hipótesis) de los sentimientos y experiencias del paciente, el «por qué» y el «para qué»:',
+    options: ['Modelo biomédico', 'Modelo espiritual', 'Modelo biopsicosocial', 'Modelo psicológico'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: '★ Examen Semana 1. En el modelo biopsicosocial el médico primero obtiene del paciente sus sentimientos y experiencias, y después formula hipótesis sobre ellos.',
+  },
+  {
+    id: 'mh-bpsq-q18', topicId: 'humanistica-unidad-biopsicosocial', type: 'multiple-choice',
+    question: 'Asume que la enfermedad se explica completamente por desviaciones de la norma de variables biológicas (somáticas) medibles, sin lugar para las dimensiones sociales, psicológicas y conductuales:',
+    options: ['Modelo biomédico', 'Modelo biopsicosocial', 'Modelo anatomoclínico', 'Modelo fisiopatológico'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. Es el reduccionismo del modelo biomédico que Engel criticó en 1977.',
+  },
+  {
+    id: 'mh-bpsq-q19', topicId: 'humanistica-unidad-biopsicosocial', type: 'multiple-choice',
+    question: 'Modelo que permite explicar por qué algunas personas viven como «enfermedad» condiciones que otras consideran simplemente «problemas de vida», sean reacciones emocionales o síntomas somáticos:',
+    options: ['Modelo biopsicosocial', 'Modelo psicosocial', 'Modelo mente-cuerpo', 'Modelo biomédico'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: '★ Examen Semana 1. Por eso se considera un modelo científico: explica algo que el biomédico no puede.',
+  },
+  {
+    id: 'mh-bpsq-q20', topicId: 'humanistica-unidad-biopsicosocial', type: 'true-false',
+    question: 'En la jerarquía de niveles de organización, la persona es el nivel más alto de la jerarquía orgánica y, al mismo tiempo, la unidad más baja de la jerarquía social.',
+    options: ['Verdadero', 'Falso'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: '★ Examen Semana 1. Verdadero. Por encima de la persona siguen la familia, la comunidad, la cultura, la sociedad y la biosfera.',
+  },
+  {
+    id: 'mh-bpsq-q21', topicId: 'humanistica-unidad-biopsicosocial', type: 'multiple-choice',
+    question: 'Factores que permiten que el ser humano tenga conciencia de sí mismo, capacidad autocrítica y de autocontrol, estructuración del pensamiento y valor ético de sus actos:',
+    options: ['Factores biológicos', 'Factores demográficos', 'Factores psicológicos', 'Factores socioculturales'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. Los biológicos son genes, células, órganos y sistemas; los socioculturales, todo lo aprendido en la historia de la humanidad.',
   },
   // ── Relación dialéctica entre las esferas anatómica y psíquica (Semana 1, Clase 3) ──
   {
@@ -429,6 +584,13 @@ export const humanisticaQuestions: Question[] = [
     correctIndex: 0, difficulty: 'medium',
     explanation: '★ Formato de examen indicado en clase.',
   },
+  {
+    id: 'mh-dmcq-q13', topicId: 'humanistica-dialectica-mente-cuerpo', type: 'multiple-choice',
+    question: 'La esfera psíquica hace referencia a la mente. Considerar que la mente es el producto fisiológico del encéfalo representa una postura:',
+    options: ['Dualista', 'Monista materialista', 'Monista espiritual'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. El monismo materialista reconoce una sola realidad, la materia: la mente es lo que hace el encéfalo.',
+  },
   // ── Desarrollo biológico y desarrollo humano (Semana 1, Clase 3) ──
   {
     id: 'mh-dhuq-q1', topicId: 'humanistica-desarrollo-humano', type: 'multiple-choice',
@@ -514,6 +676,34 @@ export const humanisticaQuestions: Question[] = [
     correctIndex: 2, difficulty: 'hard',
     explanation: '★ Estadio IV, edad escolar (6–12 años).',
   },
+  {
+    id: 'mh-dhuq-q13', topicId: 'humanistica-desarrollo-humano', type: 'multiple-choice',
+    question: 'Pauta de cambio de las emociones, la personalidad y las relaciones sociales:',
+    options: ['Desarrollo físico', 'Desarrollo cognoscitivo', 'Desarrollo de la mente', 'Desarrollo psicosocial'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. Los tres ámbitos del desarrollo son el físico, el cognoscitivo y el psicosocial.',
+  },
+  {
+    id: 'mh-dhuq-q14', topicId: 'humanistica-desarrollo-humano', type: 'multiple-choice',
+    question: 'Proceso de crecimiento del cuerpo y el cerebro, que incluye las pautas de cambio de las capacidades sensoriales, las habilidades motrices y la salud:',
+    options: ['Desarrollo físico', 'Desarrollo cognoscitivo', 'Desarrollo psicosocial', 'Desarrollo de la mente'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. El cognoscitivo abarca aprendizaje, atención, memoria, lenguaje y pensamiento; el psicosocial, emociones, personalidad y relaciones.',
+  },
+  {
+    id: 'mh-dhuq-q15', topicId: 'humanistica-desarrollo-humano', type: 'multiple-choice',
+    question: 'Proceso de crecimiento y desarrollo que atraviesan las personas desde el nacimiento hasta su muerte:',
+    options: ['Desarrollo', 'Crecimiento', 'Ciclo vital humano', 'Ciclo de duelo'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. El ciclo vital incluye tanto el crecimiento (cuantitativo) como el desarrollo (cualitativo).',
+  },
+  {
+    id: 'mh-dhuq-q16', topicId: 'humanistica-desarrollo-humano', type: 'multiple-choice',
+    question: 'Proceso cualitativo en el que las características pueden ser propias de la diversidad de grupos sociales y culturales, así como de diferencias de género:',
+    options: ['El crecimiento biológico', 'El desarrollo', 'El desarrollo celular', 'El desarrollo comunitario'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: '★ Examen Semana 1. Es la definición de «el desarrollo» en la diapositiva; el crecimiento, en cambio, es cuantitativo. En el examen las opciones fueron desarrollo social, celular, biológico y comunitario, sin la opción «desarrollo» a secas.',
+  },
   // ── Envejecimiento (Semana 1, Clase 3) ──
   {
     id: 'mh-envq-q1', topicId: 'humanistica-envejecimiento', type: 'multiple-choice',
@@ -598,6 +788,27 @@ export const humanisticaQuestions: Question[] = [
     options: ['El envejecimiento prematuro', 'Una rama de la geriatría', 'Un programa de la OMS', 'El prejuicio o la discriminación basada en la edad'],
     correctIndex: 3, difficulty: 'easy',
     explanation: 'Por ejemplo, decidir que alguien debe dejar su cargo solo por ser mayor.',
+  },
+  {
+    id: 'mh-envq-q13', topicId: 'humanistica-envejecimiento', type: 'multiple-choice',
+    question: 'Proceso de optimización de las oportunidades de salud, participación y seguridad, con el fin de mejorar la calidad de vida a medida que las personas envejecen:',
+    options: ['Envejecimiento patológico', 'Envejecimiento activo', 'Neurobiología del envejecimiento', 'Sociología del envejecimiento'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. Es la definición de la OMS (2002), retomada en el Plan de Acción de Madrid.',
+  },
+  {
+    id: 'mh-envq-q14', topicId: 'humanistica-envejecimiento', type: 'true-false',
+    question: 'El envejecimiento es una construcción social.',
+    options: ['Verdadero', 'Falso'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: '★ Examen Semana 1. Verdadero. No hay un momento cronológico único en que se entra a la vejez; su concepción depende de lo individual, lo social y la cultura.',
+  },
+  {
+    id: 'mh-envq-q15', topicId: 'humanistica-envejecimiento', type: 'multiple-choice',
+    question: 'Teorías del envejecimiento en las que el genoma es el principal protagonista y se incluyen fenómenos ambientales del entorno celular como responsables de la homeostasis celular:',
+    options: ['Teorías determinísticas', 'Teoría de la complejidad', 'Teorías estocásticas', 'Teoría social del envejecimiento'],
+    correctIndex: 2, difficulty: 'hard',
+    explanation: '★ Examen Semana 1. Describe las teorías GENÉTICAS, que en la clasificación vista en clase pertenecen a las ESTOCÁSTICAS: cambios aleatorios modificados por el ambiente. Que se mencione el genoma no las vuelve determinísticas; las determinísticas son la capacidad replicativa finita y las evolutivas.',
   },
   // ── La relación médico-paciente y la alteridad ──
   {

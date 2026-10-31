@@ -30,7 +30,7 @@ export const humanisticaTopics: Topic[] = [
           {
             type: 'definition',
             title: 'Humanidades médicas',
-            content: 'Campo interdisciplinario y multidisciplinario que explora los contextos, las experiencias y los problemas críticos de la medicina y de la atención de la salud, y que contribuye a formar la identidad profesional del médico. Surgen como respuesta a una medicina cada vez más tecnológica; como disciplina académica se establecieron en el Instituto Karolinska de Estocolmo a finales de los años noventa.',
+            content: 'Campo interdisciplinario y multidisciplinario que explora los contextos, las experiencias y los problemas críticos de la medicina y de la atención de la salud, y que contribuye a formar la identidad profesional del médico. Surgen como respuesta a una medicina cada vez más tecnológica; como disciplina académica se establecieron en el Instituto Karolinska de Estocolmo a finales de los años noventa. Se introdujeron en la enseñanza de las ciencias de la salud con la aspiración de hacer la práctica médica más compasiva y humana.',
           },
           {
             type: 'list',
@@ -318,7 +318,7 @@ export const humanisticaTopics: Topic[] = [
               rows: [
                 ['Ardipithecus ramidus', '≈ 4.4 millones de años', 'Etiopía; bipedestación probable pero parcial («Ardi»)'],
                 ['Australopithecus anamensis', '≈ 4.2–3.8 millones de años', 'Kenia; la forma de la tibia indica bipedestación'],
-                ['Australopithecus afarensis', '≈ 3.9–2.9 millones de años', '«Lucy» (Etiopía); bípeda, brazos largos, cerebro pequeño'],
+                ['Australopithecus afarensis', '≈ 3.9–2.9 millones de años', '«Lucy» (Etiopía); bípeda, brazos largos, cerebro pequeño; se considera antecedente directo de Homo habilis'],
                 ['Homo habilis', '≈ 2.4–1.4 millones de años', 'África; asociado a herramientas de piedra («hombre hábil»)'],
                 ['Homo erectus / ergaster', '≈ 1.9 millones de años en adelante', 'Sale de África hacia Asia; fuego y herramientas elaboradas; niño de Turkana, hombre de Pekín'],
                 ['Homo antecessor', '≈ 800,000 años', 'Atapuerca, España'],
@@ -603,7 +603,7 @@ export const humanisticaTopics: Topic[] = [
         blocks: [
           {
             type: 'paragraph',
-            content: 'En 1977, el psiquiatra e internista George L. Engel publicó en la revista Science la necesidad de un nuevo modelo médico que integrara lo biológico, lo psicológico y lo social. Se apoyó en la teoría de sistemas: cada nivel de organización es un todo y a la vez parte de un nivel mayor, y los cambios en uno repercuten en los demás.',
+            content: 'Hipócrates fue de los primeros en relacionar las tres esferas del ser humano con las causas de la enfermedad. En 1977, el psiquiatra e internista George L. Engel publicó en la revista Science la necesidad de un nuevo modelo médico que integrara lo biológico, lo psicológico y lo social. Se apoyó en la teoría de sistemas: cada nivel de organización es un todo y a la vez parte de un nivel mayor, y los cambios en uno repercuten en los demás.',
           },
           {
             type: 'steps',
