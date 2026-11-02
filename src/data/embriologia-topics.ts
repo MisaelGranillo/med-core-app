@@ -2529,7 +2529,7 @@ export const embriologiaTopics: Topic[] = [
             type: 'correlacion',
             variant: 'clinica',
             title: 'Prevención',
-            content: 'Se administra inmunoglobulina anti-D (ROGAM; en clase se llamó «vacuna») a las 28 semanas de gestación y dentro de las 72 horas posteriores al parto, para que la madre no desarrolle anticuerpos contra los eritrocitos fetales.',
+            content: 'Se administra inmunoglobulina anti-D (RhoGAM; en clase se llamó «vacuna») a las 28 semanas de gestación y dentro de las 72 horas posteriores al parto, para que la madre no desarrolle anticuerpos contra los eritrocitos fetales.',
           },
           {
             type: 'note',

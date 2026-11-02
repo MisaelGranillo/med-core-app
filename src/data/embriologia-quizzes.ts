@@ -947,7 +947,7 @@ export const embriologiaQuestions: Question[] = [
   },
   {
     id: 'emb-ssq-q18', topicId: 'embriologia-segunda-semana', type: 'multiple-choice',
-    question: 'En la incompatibilidad Rh, ¿cuándo se aplicó la inmunoglobulina anti-D (ROGAM) según la clase?',
+    question: 'En la incompatibilidad Rh, ¿cuándo se aplicó la inmunoglobulina anti-D (RhoGAM) según la clase?',
     options: ['Solo al nacer el bebé', 'A las 12 semanas', 'A las 28 semanas y dentro de las 72 h posparto', 'Antes de la concepción'],
     correctIndex: 2, difficulty: 'medium',
     explanation: 'Evita que la madre Rh negativo desarrolle anticuerpos contra eritrocitos fetales Rh positivo.',
