@@ -4,7 +4,8 @@ import type { Topic } from '../types'
 // temprano, cromosomas, mitosis y meiosis, ovogénesis, espermatogénesis,
 // anomalías cromosómicas numéricas y estructurales, ciclos ovárico y endometrial,
 // fecundación y primera semana del desarrollo; infertilidad, reproducción asistida,
-// salud reproductiva y planos y ejes embrionarios.
+// salud reproductiva y planos y ejes embrionarios. Semana 2, Clase 1: segunda
+// semana del desarrollo (días 8–13) y clínica de la implantación.
 export const embriologiaTopics: Topic[] = [
   {
     id: 'embriologia-desarrollo-temprano',
@@ -2160,6 +2161,380 @@ export const embriologiaTopics: Topic[] = [
             type: 'note',
             title: 'Para el examen de la semana',
             content: 'Se señalaron como base: qué distingue a cada etapa del folículo (primordial, primario y siguientes), cómo se forman las células de la granulosa, las gonadotropinas FSH y LH y sobre qué células actúan, la luteinización y el cuerpo lúteo, la hCG y las pruebas de embarazo, qué pasa con el ovocito si no hay fecundación (degenera en unas 24 horas), los resultados de la fecundación, las blastómeras, la mórula, y embrioblasto contra trofoblasto.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-segunda-semana',
+    title: 'Segunda semana del desarrollo e implantación',
+    subtitle: 'Semen y trayecto espermático; días 8, 9, 11–12 y 13: trofoblasto, disco bilaminar, cavidad amniótica, etapa lacunar, circulación uteroplacentaria, mesodermo extraembrionario, vellosidades primarias y saco vitelino definitivo; tolerancia inmunológica, embarazo ectópico, placenta previa, mola hidatiforme e incompatibilidad Rh',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '🪺',
+    keyPoints: [
+      'Semen: pH 7.2–7.7, 2–6 mL por eyaculación, 50–150 millones/mL; oligospermia por debajo de 15 millones/mL. La VESICULASA coagula el semen y después se licúa.',
+      'DÍA 8: el trofoblasto se divide en CITOTROFOBLASTO (interno, mononucleado) y SINCITIOTROFOBLASTO (externo, multinucleado, invasor); el embrioblasto forma el disco BILAMINAR (epiblasto + hipoblasto) y aparece la CAVIDAD AMNIÓTICA.',
+      'DÍA 9 (ETAPA LACUNAR): coágulo de fibrina en el sitio de entrada, MEMBRANA DE HEUSER (del hipoblasto) que delimita el SACO VITELINO PRIMITIVO, y LAGUNAS en el sincitiotrofoblasto.',
+      'DÍAS 11–12: el sincitio erosiona capilares maternos (SINUSOIDES) → CIRCULACIÓN UTEROPLACENTARIA; MESODERMO EXTRAEMBRIONARIO (somático y esplácnico) y CAVIDAD CORIÓNICA; REACCIÓN DECIDUAL.',
+      'DÍA 13: VELLOSIDADES PRIMARIAS (columnas de citotrofoblasto cubiertas de sincitio), PEDÍCULO DE FIJACIÓN, QUISTES EXOCELÓMICOS y SACO VITELINO DEFINITIVO.',
+      'Clínica de la implantación: ECTÓPICO (2 % de los embarazos; 95 % tubárico, 80 % de estos en la ampolla), PLACENTA PREVIA, MOLA completa (genoma paterno) y parcial (triploide) con hCG muy alta, e incompatibilidad Rh (anti-D a las 28 semanas y en las 72 h posparto).',
+    ],
+    sections: [
+      {
+        id: 'ess-1',
+        number: 1,
+        title: 'Del semen a la ampolla',
+        keyTerms: ['semen', 'vesiculasa', 'oligospermia', 'capacitación', 'reacción acrosómica'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Trayecto en el aparato reproductor masculino',
+            steps: [
+              'Túbulos seminíferos, donde ocurre la espermatogénesis.',
+              'Túbulos rectos y red testicular.',
+              'Conductos eferentes.',
+              'Epidídimo: maduración y almacenamiento.',
+              'Conducto deferente y conductos eyaculadores.',
+              'Uretra y exterior.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Características del semen',
+            data: {
+              headers: ['Parámetro', 'Valor'],
+              rows: [
+                ['pH', '7.2 a 7.7 (alcalino)'],
+                ['Volumen por eyaculación', '2 a 6 mL'],
+                ['Concentración', '50 a 150 millones/mL (variable; desde unos 20 millones/mL se considera fértil)'],
+                ['Oligospermia', 'Menos de 15 millones/mL'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Funciones del semen',
+            items: [
+              'Protege y nutre a los espermatozoides (fructosa, aminoácidos).',
+              'Neutraliza en parte la acidez de la vagina gracias a su pH alcalino.',
+              'Facilita la movilidad de los espermatozoides.',
+              'Primero coagula, por acción de una proteína llamada VESICULASA, y después se licúa para que los espermatozoides avancen.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Repaso de la fecundación',
+            content: 'De 200 a 300 millones de espermatozoides depositados, menos de 300 llegan a la AMPOLLA de la trompa y normalmente uno fecunda. Siguen los pasos ya vistos en «Fecundación y primera semana del desarrollo»: capacitación (≈ 7 horas, en la trompa) → cruce de la corona radiada → reacción acrosómica al unirse a ZP3 (acrosina y enzimas semejantes a la tripsina) → fusión de membranas → reacciones cortical y de zona → pronúcleos y cigoto → mórula (día 3) → blastocisto (día 5) → eclosión e inicio de la implantación (días 5.5–6).',
+          },
+        ],
+      },
+      {
+        id: 'ess-2',
+        number: 2,
+        title: 'Día 8: trofoblasto en dos capas y disco bilaminar',
+        keyTerms: ['citotrofoblasto', 'sincitiotrofoblasto', 'epiblasto', 'hipoblasto', 'disco bilaminar', 'cavidad amniótica', 'amnioblastos'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Las dos capas del trofoblasto',
+            left: {
+              title: 'Citotrofoblasto',
+              items: ['Capa INTERNA', 'Células individuales, mononucleadas, con membrana propia', 'Se divide y aporta células al sincitio'],
+            },
+            right: {
+              title: 'Sincitiotrofoblasto',
+              items: ['Capa EXTERNA', 'Masa multinucleada: las células pierden sus membranas y se fusionan', 'Invade el endometrio y produce hCG'],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'Las dos capas del embrioblasto: disco bilaminar',
+            left: {
+              title: 'Epiblasto',
+              items: ['Células cilíndricas altas', 'Junto a él aparece la cavidad amniótica'],
+            },
+            right: {
+              title: 'Hipoblasto',
+              items: ['Células cuboides pequeñas', 'Mira hacia la cavidad del blastocisto (blastocele)'],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'Dentro del epiblasto aparece un espacio pequeño, la CAVIDAD AMNIÓTICA, revestida por AMNIOBLASTOS; será el espacio del líquido amniótico. En este momento hay dos cavidades: la amniótica, junto al epiblasto, y el blastocele. El endometrio junto al sitio de implantación está edematoso y muy vascularizado, con glándulas grandes y tortuosas que secretan abundante glucógeno y moco.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Trampa de examen',
+            content: 'La cavidad amniótica y el disco bilaminar NO existen en la primera semana: aparecen en la segunda, hacia el día 8, cuando la implantación ya empezó. Y la hCG la produce el SINCITIOTROFOBLASTO, no el citotrofoblasto.',
+          },
+        ],
+      },
+      {
+        id: 'ess-3',
+        number: 3,
+        title: 'Día 9: etapa lacunar',
+        keyTerms: ['coágulo de fibrina', 'membrana de Heuser', 'membrana exocelómica', 'saco vitelino primitivo', 'lagunas trofoblásticas'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Qué cambia',
+            items: [
+              'El blastocisto se hunde más en el endometrio y el orificio de entrada se cierra con un COÁGULO DE FIBRINA, que limita el sangrado.',
+              'Células del hipoblasto proliferan y migran por la cara interna del citotrofoblasto: forman la MEMBRANA EXOCELÓMICA (de HEUSER).',
+              'La membrana de Heuser delimita la CAVIDAD EXOCELÓMICA, también llamada SACO VITELINO PRIMITIVO (el antiguo blastocele).',
+              'En el sincitiotrofoblasto aparecen VACUOLAS que se fusionan en espacios mayores: las LAGUNAS trofoblásticas o sincitiales.',
+            ],
+          },
+          {
+            type: 'definition',
+            title: 'Etapa lacunar',
+            content: 'Nombre que recibe el día 9 del desarrollo por la aparición de las lagunas en el sincitiotrofoblasto.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Sangrado de implantación',
+            content: 'La penetración del blastocisto en el endometrio puede acompañarse de un sangrado leve alrededor de la fecha esperada de la menstruación. Puede confundirse con una regla escasa y alterar el cálculo de la edad gestacional.',
+          },
+        ],
+      },
+      {
+        id: 'ess-4',
+        number: 4,
+        title: 'Días 11–12: circulación uteroplacentaria y mesodermo extraembrionario',
+        keyTerms: ['sinusoides maternos', 'circulación uteroplacentaria', 'mesodermo extraembrionario', 'cavidad coriónica', 'reacción decidual'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Cómo entra la sangre materna',
+            steps: [
+              'El sincitiotrofoblasto invade más a fondo el estroma endometrial.',
+              'Erosiona la pared de los capilares maternos, que se congestionan y dilatan: son los SINUSOIDES MATERNOS.',
+              'Las lagunas sincitiales se comunican con los sinusoides y la sangre materna entra al sistema lacunar.',
+              'Así comienza la CIRCULACIÓN UTEROPLACENTARIA.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'Entre el citotrofoblasto y la membrana de Heuser aparece el MESODERMO EXTRAEMBRIONARIO, un tejido conectivo laxo y fino. En su interior se forman espacios cuyos tabiques se rompen y se unen en una sola gran cavidad: la CAVIDAD EXTRAEMBRIONARIA o CORIÓNICA. El disco bilaminar mide apenas 0.1 a 0.2 mm.',
+          },
+          {
+            type: 'comparison',
+            title: 'El mesodermo extraembrionario queda en dos hojas',
+            left: {
+              title: 'Somático',
+              items: ['Recubre el citotrofoblasto y el amnios'],
+            },
+            right: {
+              title: 'Esplácnico',
+              items: ['Recubre el saco vitelino'],
+            },
+          },
+          {
+            type: 'definition',
+            title: 'Reacción decidual',
+            content: 'Las células del estroma endometrial, antes alargadas, se vuelven poliédricas y acumulan glucógeno y lípidos (células deciduales); el espacio entre ellas se llena de líquido extravasado y el tejido queda edematoso y muy vascularizado. Empieza alrededor del sitio de implantación y después se extiende a todo el endometrio.',
+          },
+        ],
+      },
+      {
+        id: 'ess-5',
+        number: 5,
+        title: 'Día 13: vellosidades primarias y saco vitelino definitivo',
+        keyTerms: ['vellosidades primarias', 'placa coriónica', 'pedículo de fijación', 'quistes exocelómicos', 'saco vitelino definitivo'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Estructuras del día 13',
+            items: [
+              'VELLOSIDADES PRIMARIAS: columnas de citotrofoblasto que crecen hacia el espesor del sincitiotrofoblasto y quedan cubiertas por él.',
+              'PLACA CORIÓNICA: el mesodermo extraembrionario somático que reviste al citotrofoblasto por dentro de la cavidad coriónica.',
+              'PEDÍCULO DE FIJACIÓN: puente de mesodermo extraembrionario que une al embrión (y su amnios) con el trofoblasto; de él se formará el cordón umbilical.',
+              'SACO VITELINO DEFINITIVO (secundario): el saco primitivo se remodela, se desprenden porciones de él (QUISTES EXOCELÓMICOS, temporales, que se reabsorben o se incorporan a los tejidos vecinos) y queda una cavidad más pequeña.',
+            ],
+          },
+          {
+            type: 'list',
+            title: 'Funciones del saco vitelino vistas en clase',
+            items: [
+              'Más adelante alberga a las células germinales primordiales.',
+              'Forma algunas de las primeras células sanguíneas.',
+              'Aporta nutrición temprana mientras el sistema vascular del embrión no está completo.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'Las vellosidades siguen madurando: primarias → secundarias → terciarias. Unas llegan hasta la capa citotrofoblástica externa y fijan el tejido (vellosidades DE ANCLAJE); otras, más pequeñas, flotan en los espacios intervellosos llenos de sangre materna (vellosidades LIBRES o flotantes) y son las que hacen la mayor parte del intercambio materno-embrionario.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'La implantación no es solo fijación',
+            content: 'Además de anclar al embrión, la implantación permite la invasión del endometrio, el establecimiento de la circulación uteroplacentaria y el inicio de la placenta. Por eso, si hay fecundación pero falla la implantación (al final de la primera semana e inicio de la segunda), no se establece el embarazo y la menstruación llega normal.',
+          },
+        ],
+      },
+      {
+        id: 'ess-6',
+        number: 6,
+        title: 'Cronología de la segunda semana',
+        keyTerms: ['día 8', 'día 9', 'días 11–12', 'día 13'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Resumen por día',
+            data: {
+              headers: ['Día', 'Eventos principales'],
+              rows: [
+                ['8', 'Citotrofoblasto y sincitiotrofoblasto; epiblasto e hipoblasto (disco bilaminar); cavidad amniótica'],
+                ['9', 'Coágulo de fibrina; membrana de Heuser; saco vitelino primitivo; lagunas (etapa lacunar)'],
+                ['11–12', 'Sinusoides maternos y circulación uteroplacentaria; mesodermo extraembrionario y cavidad coriónica; reacción decidual'],
+                ['13', 'Vellosidades primarias; placa coriónica; pedículo de fijación; quistes exocelómicos y saco vitelino definitivo'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Lo que sigue',
+            content: 'La tercera semana inicia con la gastrulación (formación de las tres capas germinales), la notocorda y la neurulación.',
+          },
+        ],
+      },
+      {
+        id: 'ess-7',
+        number: 7,
+        title: 'Rechazo inmunológico y embarazo',
+        keyTerms: ['tolerancia materna', 'inmunidad celular', 'inmunidad humoral', 'anticuerpos antiespermatozoides', 'barrera hematotesticular', 'prostaglandinas'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El embrión recibe cerca del 50 % de su genoma del padre, así que el sistema inmunitario materno podría reconocerlo como extraño. Durante el embarazo la respuesta se ajusta: la inmunidad MEDIADA POR CÉLULAS se atenúa y la HUMORAL (por anticuerpos) adquiere más peso. Ninguna desaparece; cambia el equilibrio, y con él la susceptibilidad a algunas infecciones.',
+          },
+          {
+            type: 'comparison',
+            title: 'Enfermedades autoinmunitarias en el embarazo',
+            left: {
+              title: 'Pueden mejorar',
+              items: ['Esclerosis múltiple', 'Artritis reumatoide', 'Predomina el componente celular, que se atenúa'],
+            },
+            right: {
+              title: 'Pueden empeorar',
+              items: ['Lupus eritematoso sistémico', 'Predomina el componente humoral (anticuerpos), que se acentúa'],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Otros escenarios',
+            items: [
+              'ANTICUERPOS ANTIESPERMATOZOIDES: los produce con más frecuencia la mujer, pero también el varón si se rompe la BARRERA HEMATOTESTICULAR; marcan y destruyen a los espermatozoides (causa de infertilidad).',
+              'INFECCIONES (cervicovaginitis, corioamnionitis, infecciones urinarias complicadas): aumentan las PROSTAGLANDINAS, que contraen el músculo liso del miometrio.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Infección y parto pretérmino',
+            content: 'Como las prostaglandinas contraen el miometrio, una infección no tratada durante el embarazo eleva el riesgo de contracciones, pérdida gestacional o parto pretérmino. Por eso se buscan y tratan a tiempo las infecciones vaginales y urinarias de la embarazada.',
+          },
+        ],
+      },
+      {
+        id: 'ess-8',
+        number: 8,
+        title: 'Implantación anómala: embarazo ectópico y placenta previa',
+        keyTerms: ['embarazo ectópico', 'tubárico', 'bolsa de Douglas', 'ovárico primario', 'placenta previa', 'orificio cervical interno'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La implantación normal ocurre en la pared ANTERIOR o POSTERIOR del cuerpo del útero, que puede nutrir, distenderse y contener al embrión. Fuera de ese sitio el embarazo casi nunca se consolida.',
+          },
+          {
+            type: 'table',
+            title: 'Localizaciones del embarazo ectópico',
+            data: {
+              headers: ['Localización', 'Frecuencia y detalle'],
+              rows: [
+                ['Tubárico', 'Hasta 95 % de los ectópicos; 80 % de ellos en la AMPOLLA, donde ocurre la fecundación'],
+                ['Intersticial', '≈ 0.2 %; porción de la trompa que atraviesa la pared uterina'],
+                ['Abdominal', '≈ 1.4 %; sobre todo en la bolsa rectouterina (de Douglas), también en peritoneo intestinal u omento'],
+                ['Ovárico primario', '≈ 0.2 %; en el ovario mismo'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Sospecha de embarazo ectópico',
+            content: 'Representa cerca del 2 % de los embarazos y hasta el 9 % de las muertes relacionadas con la gestación. Se sospecha con prueba de embarazo positiva y ÚTERO VACÍO en el primer ultrasonido, a veces con una masa anexial. Muchos se descubren al romperse el saco gestacional (casi siempre hacia el segundo mes): dolor abdominal intenso y sangrado, una urgencia por hemorragia materna grave.',
+          },
+          {
+            type: 'definition',
+            title: 'Placenta previa',
+            content: 'La implantación ocurre cerca del ORIFICIO CERVICAL INTERNO y la placenta se desarrolla cubriendo el cuello uterino. Se relaciona con cicatrices de cesáreas previas.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Manejo de la placenta previa',
+            content: 'Es una de las principales causas de sangrado en la segunda mitad del embarazo. Una vez identificada se evitan los tactos vaginales, porque pueden desprender la placenta y provocar hemorragia, y el embarazo se resuelve por cesárea.',
+          },
+        ],
+      },
+      {
+        id: 'ess-9',
+        number: 9,
+        title: 'Mola hidatiforme e incompatibilidad Rh',
+        keyTerms: ['mola completa', 'mola parcial', 'triploidía', 'hCG', 'mola invasiva', 'coriocarcinoma', 'incompatibilidad Rh', 'inmunoglobulina anti-D'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'En la MOLA HIDATIFORME el trofoblasto prolifera de forma anormal: hay mucho tejido placentario y escaso o ningún tejido embrionario. Mola hidatiforme designa el tejido anómalo; embarazo molar, a la gestación que lo presenta.',
+          },
+          {
+            type: 'comparison',
+            title: 'Mola completa contra mola parcial',
+            left: {
+              title: 'Mola completa',
+              items: [
+                'Ovocito SIN material genético',
+                'Un espermatozoide aporta su genoma, que se duplica: todo es PATERNO',
+                'Solo tejido trofoblástico, sin embrión',
+              ],
+            },
+            right: {
+              title: 'Mola parcial',
+              items: [
+                'Ovocito con su genética normal',
+                'Fallan las reacciones cortical y de zona: entran DOS espermatozoides',
+                'TRIPLOIDÍA (tres juegos de cromosomas), predominio paterno',
+                'Algo de tejido embrionario, no viable',
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Cómo se sospecha y por qué se extirpa',
+            content: 'El tejido trofoblástico produce hCG en exceso: vómitos intensos y repetidos, y un útero más grande que la edad gestacional (p. ej., embarazo de 12 semanas con útero de 20). El ultrasonido muestra el tejido anómalo. Al resolverlo se extirpa todo el tejido trofoblástico y se vigila que no queden restos, porque puede persistir e invadir: MOLA INVASIVA (invasión local) o CORIOCARCINOMA (maligno, con metástasis a pulmones y cerebro).',
+          },
+          {
+            type: 'definition',
+            title: 'Incompatibilidad Rh',
+            content: 'Respuesta inmunitaria de una madre Rh negativo contra los eritrocitos de un feto Rh positivo, que se desencadena cuando la sangre fetal entra en contacto con la materna (hemorragias obstétricas o el parto).',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Prevención',
+            content: 'Se administra inmunoglobulina anti-D (ROGAM; en clase se llamó «vacuna») a las 28 semanas de gestación y dentro de las 72 horas posteriores al parto, para que la madre no desarrolle anticuerpos contra los eritrocitos fetales.',
+          },
+          {
+            type: 'note',
+            title: 'Gemelos',
+            content: 'Dicigóticos: dos ovocitos fecundados por dos espermatozoides distintos. Monocigóticos: un solo cigoto cuyas células se separan en una etapa temprana. Un embarazo gemelar ectópico es poco frecuente y, si ocurre, suele perderse antes.',
           },
         ],
       },

@@ -186,6 +186,14 @@ export const modules: Module[] = [
     topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis', 'embriologia-espermatogenesis', 'embriologia-anomalias-numericas', 'embriologia-anomalias-estructurales', 'embriologia-ciclo-ovarico', 'embriologia-fecundacion', 'embriologia-infertilidad-reproduccion'],
   },
   {
+    id: 'embriologia-uad-s2',
+    badge: 'UAD · Embriología I — Semana 2',
+    title: 'Embriología: primeras semanas del desarrollo',
+    subtitle: 'Segunda semana (días 8–13): citotrofoblasto y sincitiotrofoblasto, disco bilaminar, cavidad amniótica, etapa lacunar, circulación uteroplacentaria, mesodermo extraembrionario, vellosidades primarias y saco vitelino definitivo; tolerancia inmunológica, embarazo ectópico, placenta previa, mola hidatiforme e incompatibilidad Rh.',
+    emoji: '🪺',
+    topicIds: ['embriologia-segunda-semana'],
+  },
+  {
     id: 'humanistica-uad-s1',
     badge: 'UAD · Medicina Humanística — Semana 1',
     title: 'Medicina Humanística: introducción a las humanidades',
