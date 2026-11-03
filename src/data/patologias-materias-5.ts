@@ -131,6 +131,7 @@ const ECTOPICO: Patologia = {
     { materia: 'Embriología', topicId: 'embriologia-segunda-semana', sectionId: 'ess-8', label: 'Implantación anómala: embarazo ectópico y placenta previa', porQue: 'Dónde se implanta normalmente el blastocisto, las localizaciones del ectópico y cuándo se sospecha.' },
   ],
   atlas: [
+    { id: 'embriologia-segunda-semana', title: 'Segunda semana e implantación' },
     { id: 'embriologia-desarrollo-temprano', title: 'Desarrollo temprano' },
     { id: 'histologia-epitelio', title: 'Tejido epitelial' },
     { id: 'embriologia-ciclo-fecundacion', title: 'Ciclo ovárico y fecundación' },
@@ -264,6 +265,7 @@ const MOLA: Patologia = {
     { materia: 'Embriología', topicId: 'embriologia-segunda-semana', sectionId: 'ess-9', label: 'Mola hidatiforme e incompatibilidad Rh', porQue: 'Mola completa contra parcial, cómo se sospecha y por qué se extirpa todo el tejido trofoblástico.' },
   ],
   atlas: [
+    { id: 'embriologia-segunda-semana', title: 'Segunda semana e implantación' },
     { id: 'embriologia-desarrollo-temprano', title: 'Desarrollo temprano' },
     { id: 'histologia-introduccion', title: 'Introducción a la histología' },
     { id: 'embriologia-ciclo-fecundacion', title: 'Ciclo ovárico y fecundación' },

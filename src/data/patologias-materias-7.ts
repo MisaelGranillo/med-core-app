@@ -101,6 +101,7 @@ const PLACENTA_PREVIA: Patologia = {
     { materia: 'Embriología', topicId: 'embriologia-fecundacion', sectionId: 'efe-7', label: 'Implantación e inicio de la segunda semana', porQue: 'La implantación normal ocurre en la pared anterior o posterior del cuerpo del útero, lejos del cuello.' },
   ],
   atlas: [
+    { id: 'embriologia-segunda-semana', title: 'Segunda semana e implantación' },
     { id: 'embriologia-desarrollo-temprano', title: 'Desarrollo temprano' },
     { id: 'aparato-reproductor', title: 'Aparato Reproductor' },
   ],
@@ -221,6 +222,7 @@ const RH: Patologia = {
     { materia: 'Histología', topicId: 'histologia-sangre', sectionId: 'hsan-6', label: 'Eritropoyesis, EPO y grupos sanguíneos', porQue: 'La hemólisis estimula la eritropoyesis compensatoria en hígado y bazo.' },
   ],
   atlas: [
+    { id: 'embriologia-segunda-semana', title: 'Segunda semana e implantación' },
     { id: 'histologia-sangre', title: 'Sangre y elementos formes' },
     { id: 'genetica-mendel', title: 'Conceptos base y leyes de Mendel' },
   ],

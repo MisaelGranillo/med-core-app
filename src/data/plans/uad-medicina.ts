@@ -611,6 +611,7 @@ export const uadMedicina: Plan = {
               { label: 'Atlas MedCore — Gametogénesis y fecundación', url: '/atlas/genetica-gametogenesis' },
               { label: 'Atlas MedCore — Anomalías cromosómicas', url: '/atlas/embriologia-anomalias-cromosomicas' },
               { label: 'Atlas MedCore — Ciclo ovárico y fecundación', url: '/atlas/embriologia-ciclo-fecundacion' },
+              { label: 'Atlas MedCore — Segunda semana e implantación', url: '/atlas/embriologia-segunda-semana' },
               { label: 'Acland Anatomy', url: 'https://aclandanatomy.com/' },
               { label: 'Bates Visual Guide', url: 'https://batesvisualguide.com/' },
               { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },
