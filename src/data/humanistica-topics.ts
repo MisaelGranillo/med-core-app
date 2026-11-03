@@ -2,7 +2,8 @@ import type { Topic } from '../types'
 
 // Medicina Humanística (UAD · MH01007) — Semana 1 (Clase 1: humanismo médico,
 // origen de la vida y del ser humano; Clase 2: corporeidad y unidad biopsicosocial;
-// Clase 3: relación dialéctica mente-cuerpo, desarrollo humano y envejecimiento), Semana 3 (la relación médico-paciente,
+// Clase 3: relación dialéctica mente-cuerpo, desarrollo humano y envejecimiento), Semana 2
+// (Clase 1: cultura, orden cultural, indicadores e interculturalidad), Semana 3 (la relación médico-paciente,
 // sesiones 1–3) y Semana 4 (perfiles patológicos, sesiones 1–3).
 export const humanisticaTopics: Topic[] = [
   {
@@ -1437,6 +1438,590 @@ export const humanisticaTopics: Topic[] = [
             variant: 'clinica',
             title: 'Más allá del diagnóstico',
             content: 'El plan de atención de una persona mayor considera, además de sus enfermedades, su vivienda, sus apoyos, su economía, sus hábitos, su autonomía y su posibilidad de participar en la comunidad. Olvidar una dosis, por ejemplo, es un problema conductual que se resuelve con estrategias de adherencia, no con otro fármaco.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'humanistica-cultura-concepto',
+    title: 'La cultura: concepto, autores y cerebro',
+    subtitle: 'Cómo se posibilita la cultura, evolución histórica del concepto, definiciones de Tylor, Boas y otros autores, rasgos de la cultura, cerebro y cultura, sistemas de herencia y modelo CNIS',
+    colorKey: 'humanistica',
+    categoria: 'Medicina humanística',
+    emoji: '🎭',
+    keyPoints: [
+      'La pregunta no es «qué es» sino «cómo se POSIBILITA» la cultura: desde horizontes de comprensión filosófico, ANTROPOLÓGICO (el del curso), sociológico y psicológico. Todas las conductas generan cultura.',
+      'TYLOR (1871): la cultura es «ese TODO COMPLEJO que incluye conocimientos, creencias, arte, moral, derecho, costumbres» y demás hábitos ADQUIRIDOS por el ser humano como miembro de una sociedad',
+      'BOAS: totalidad de reacciones y actividades mentales y físicas del grupo y del individuo, en relación con el ambiente, con otros grupos, con su propio grupo y consigo mismo; defendió el RELATIVISMO CULTURAL',
+      'La cultura es SIMBÓLICA, CONVENCIONAL, APRENDIDA, REPRODUCIDA SOCIALMENTE, ADAPTATIVA y DINÁMICA, con componentes ideológicos y de poder.',
+      'Tres sistemas de herencia: GENÉTICA (plantillas moleculares), EPIGENÉTICA (estados regulatorios) y NEUROBIOLÓGICA CULTURAL (arquitecturas neuronales moldeadas por la experiencia)',
+      'La transmisión cultural es VERTICAL (cuidado, apego, contexto compartido) y HORIZONTAL (pares, instituciones y rituales).',
+    ],
+    sections: [
+      {
+        id: 'hcu-1',
+        number: 1,
+        title: 'Cómo se posibilita la cultura',
+        keyTerms: ['horizontes de comprensión', 'evolucionismo cultural', 'relativismo cultural'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La Unidad 2 busca identificar y relacionar el entorno cultural con la práctica médica. Su punto de partida no es definir la cultura, sino preguntar cómo se POSIBILITA: desde qué horizonte de comprensión se mira. El curso usa el horizonte ANTROPOLÓGICO. La idea central es que todas las conductas generan cultura.',
+          },
+          {
+            type: 'list',
+            title: 'Horizontes de comprensión',
+            items: ['Filosófico.', 'Antropológico (el que se usa en el curso).', 'Sociológico.', 'Psicológico.'],
+          },
+          {
+            type: 'table',
+            title: 'Evolución histórica del concepto de cultura',
+            data: {
+              headers: ['Época', 'Idea de cultura', 'Referentes'],
+              rows: [
+                ['Antigüedad clásica (Roma)', 'Cultivo del espíritu', 'Cicerón'],
+                ['Ilustración', 'Progreso y civilización', 'Ilustrados europeos'],
+                ['Romanticismo', 'Espíritu del pueblo; diversidad', 'Herder'],
+                ['Siglo XIX', 'Evolucionismo cultural', 'Tylor, Morgan'],
+                ['Siglo XX', 'Relativismo y simbolismo; múltiples escuelas', 'Boas, Kroeber, Lévi-Strauss'],
+                ['Actualidad', 'Concepto polisémico, global y dinámico', 'UNESCO y antropología contemporánea'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Toda expresión es cultura',
+            content: 'La música clásica, la tambora, la banda sinaloense, el jazz, la bossa nova y el reguetón expresan realidades culturales concretas, guste o no cada una. El «espíritu del pueblo» del Romanticismo produce también estereotipos, como el charro presentado como «lo mexicano».',
+          },
+        ],
+      },
+      {
+        id: 'hcu-2',
+        number: 2,
+        title: 'Tylor y Boas',
+        keyTerms: ['todo complejo', 'relativismo cultural', 'Tylor', 'Boas'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Edward B. Tylor (1871): la definición clásica',
+            content: '«La cultura o civilización, en sentido etnográfico amplio, es ese TODO COMPLEJO que incluye el conocimiento, las creencias, el arte, la moral, el derecho, las costumbres y cualesquiera otros hábitos y capacidades ADQUIRIDOS por el hombre en cuanto MIEMBRO DE UNA SOCIEDAD».',
+          },
+          {
+            type: 'paragraph',
+            content: 'Tylor usa «cultura» como sinónimo de «civilización». Esa equivalencia tuvo un lado oscuro: los pueblos considerados «incivilizados» quedaban como pueblos «sin cultura», y esa idea se usó para justificar la esclavitud. La cultura tampoco se reduce al folclor (la danza del venado o la de los viejitos son solo una parte).',
+          },
+          {
+            type: 'definition',
+            title: 'Franz Boas: la cultura como totalidad',
+            content: 'Totalidad de las reacciones y actividades mentales y físicas que caracterizan la conducta de los individuos de un grupo social, colectiva e individualmente, en relación con su AMBIENTE NATURAL, con OTROS GRUPOS, con MIEMBROS DEL MISMO GRUPO y de CADA INDIVIDUO HACIA SÍ MISMO. Incluye también los productos de esas actividades.',
+          },
+          {
+            type: 'list',
+            title: 'Lo que aporta Boas',
+            items: [
+              'Cada persona genera cultura también para sí misma, y cada familia genera la suya.',
+              'La cultura incluye la relación hombre-naturaleza: alimento, refugio, utensilios, clima (la ropa gruesa de Toluca frente a la ropa ligera de Acapulco).',
+              'RELATIVISMO CULTURAL: cada cultura se entiende en su propio contexto, no con la lente de otra.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Relativismo en el hospital',
+            content: 'Juzgar la cultura de enfermería desde la cultura médica, o al revés, produce interpretaciones erróneas. Lo mismo ocurre con el paciente: sus decisiones se entienden desde su contexto, no desde el del médico.',
+          },
+        ],
+      },
+      {
+        id: 'hcu-3',
+        number: 3,
+        title: 'Otras definiciones y síntesis',
+        keyTerms: ['funcionalismo', 'modelos culturales', 'red de símbolos', 'materialismo cultural', 'enfermería transcultural'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Autores y su idea de cultura',
+            data: {
+              headers: ['Autor', 'Idea clave'],
+              rows: [
+                ['Bronislaw Malinowski', 'Conjunto integral material, social y simbólico para satisfacer NECESIDADES básicas y derivadas; base del FUNCIONALISMO'],
+                ['Ruth Benedict', 'Configuración coherente de comportamientos: MODELOS CULTURALES («Patterns of Culture», 1934)'],
+                ['Robert Lowie', 'SUMA TOTAL de lo que el individuo adquiere de su sociedad; legado del pasado transmitido por educación formal e informal'],
+                ['Ralph Linton', 'Conocimientos, actitudes y PATRONES CONDUCTUALES compartidos y transmitidos'],
+                ['Alfred Radcliffe-Brown', 'RELACIONES SOCIALES RECURRENTES que forman la ESTRUCTURA SOCIAL; la cultura se adapta para mantener la coherencia del sistema'],
+                ['Raymond Firth', 'El SIGNIFICADO como eje central, con un elemento moral'],
+                ['Ernst Cassirer', 'SISTEMA SIMBÓLICO: el ser humano pasa de «animal racional» a «ANIMAL SIMBÓLICO»'],
+                ['Kroeber y Kluckhohn (1952)', 'PATRONES EXPLÍCITOS E IMPLÍCITOS transmitidos mediante símbolos; su núcleo son las IDEAS TRADICIONALES y sus VALORES'],
+                ['Claude Lévi-Strauss', 'Sistema de signos y símbolos que revela PATRONES UNIVERSALES del pensamiento'],
+                ['Clifford Geertz (1973)', 'SIGNIFICADOS COMPARTIDOS: la cultura es una RED DE SÍMBOLOS que funciona como un TEXTO que se lee e interpreta'],
+                ['Raymond Williams', 'Proceso integral, dinámico y plural, material y simbólico: «ESTRUCTURAS DEL SENTIR»'],
+                ['Madeleine Leininger', 'Conocimiento aprendido y transmitido que guía a un grupo de forma pautada: ENFERMERÍA TRANSCULTURAL'],
+                ['Marvin Harris', 'SISTEMA ADAPTATIVO a las condiciones materiales y ecológicas: MATERIALISMO CULTURAL'],
+                ['Stuart Hall', 'Campo dinámico de SIGNIFICADOS, IDENTIDAD y PODER: negociación, conflicto y resistencia'],
+                ['Cecil Helman', 'Pautas explícitas e implícitas HEREDADAS para ver el mundo, vivirlo emocionalmente y relacionarse con otros, con lo sobrenatural y con la naturaleza'],
+                ['Ángel Díaz de Rada', 'REGLAS CONVENCIONALES con las que las personas dan forma a su acción social'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Ejemplos para fijar a los autores',
+            items: [
+              'Malinowski: el Día de Muertos, patrimonio cultural inmaterial de la humanidad (UNESCO).',
+              'Benedict: el Día de Muertos es un modelo cultural propio; Halloween es otro que se ha ido filtrando, un proceso de interculturalidad.',
+              'Linton: las familias obesogénicas comparten un patrón conductual.',
+              'Radcliffe-Brown: el sistema de salud es una expresión cultural de la estructura social.',
+              'Geertz: sin una perspectiva cultural compartida hay ruptura en la comunicación, también entre médico y paciente.',
+              'Williams: la respuesta a «¿cómo me siento?» es cultural.',
+            ],
+          },
+          {
+            type: 'definition',
+            title: 'Síntesis: qué es la cultura',
+            content: 'Un proceso SIMBÓLICO, CONVENCIONAL, APRENDIDO, REPRODUCIDO SOCIALMENTE, ADAPTATIVO y DINÁMICO, con componentes IDEOLÓGICOS y DE PODER.',
+          },
+          {
+            type: 'comparison',
+            title: 'Lectura estructural-funcional',
+            left: { title: 'Estructura', items: ['Patrón estable de relaciones sociales'] },
+            right: { title: 'Función', items: ['Lo que aporta cada práctica a la estabilidad del sistema'] },
+          },
+          {
+            type: 'paragraph',
+            content: 'Desde esta lectura, las expresiones culturales solo se entienden dentro de su estructura y su función: se analizan por su papel en el orden social, no por su utilidad individual.',
+          },
+        ],
+      },
+      {
+        id: 'hcu-4',
+        number: 4,
+        title: 'Cerebro y cultura',
+        keyTerms: ['WEIRD', 'sesgo etnocéntrico', 'herencia neurobiológica cultural', 'CNIS', 'engrama'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Humano anatómicamente moderno frente a neandertal',
+            data: {
+              headers: ['Homo sapiens', 'Neandertal'],
+              rows: [
+                ['Desarrollo ontogenético LENTO', 'Desarrollo más acelerado'],
+                ['ALTRICIALIDAD extrema: la cría depende mucho tiempo de sus cuidadores', 'Altricialidad menos acentuada'],
+                ['NEUROPLASTICIDAD intensa y PERIODO CRÍTICO largo', 'Neuroplasticidad más relajada y periodo crítico más corto'],
+                ['Comportamiento flexible y permeable al ambiente', 'Comportamiento menos maleable'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'Ambos tenían un cerebro de alto costo metabólico y lateralizado, y los neandertales ya producían cultura (por ejemplo, el culto a los muertos). Lo que distingue al Homo sapiens es una infancia larga y un cerebro muy moldeable por el ambiente: la cultura se inscribe en él.',
+          },
+          {
+            type: 'comparison',
+            title: 'Dos enfoques de la neurociencia',
+            left: {
+              title: 'Tradicional',
+              items: [
+                'Asume principios cerebrales universales',
+                'Estudia sobre todo poblaciones WEIRD (occidentales, educadas, industrializadas, ricas y democráticas)',
+                'Sobregeneraliza; riesgo de SESGO ETNOCÉNTRICO',
+              ],
+            },
+            right: {
+              title: 'Culturalmente sensible',
+              items: [
+                'Interacción bidireccional cerebro-cultura',
+                'Diversifica las poblaciones estudiadas',
+                'Interpreta los hallazgos en su contexto; intervenciones culturalmente relevantes',
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Tres sistemas de herencia',
+            data: {
+              headers: ['Sistema', 'Qué se transmite'],
+              rows: [
+                ['Genético', 'Plantillas moleculares'],
+                ['Epigenético', 'Estados regulatorios'],
+                ['Neurobiológico cultural', 'Arquitecturas neuronales funcionales moldeadas por la experiencia'],
+              ],
+            },
+          },
+          {
+            type: 'steps',
+            title: 'Modelo CNIS (sistemas de herencia neurobiológica cultural): cuatro procesos',
+            steps: [
+              'Neuroplasticidad dependiente y esperada de la experiencia: las experiencias culturales y emocionales forman ENGRAMAS en la corteza prefrontal y en los sistemas hipocampo-corticales.',
+              'Estabilización: las redes se consolidan, junto con ajustes neuromoduladores y del eje hipotálamo-hipófisis-suprarrenal, en estados estables que funcionan como conocimientos previos predictivos («priors»).',
+              'Transmisión VERTICAL (cuidado, apego, contexto compartido) y HORIZONTAL (pares, instituciones y rituales que sincronizan patrones neuronales).',
+              'Retroalimentación y reconsolidación: la actualización continua da flexibilidad y a la vez conserva los patrones heredados.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Por qué cuesta cambiar hábitos',
+            content: 'Los hábitos de alimentación, actividad o consumo se aprenden desde la infancia y quedan consolidados en redes neuronales. Por eso cambiar el estilo de vida a los 60 años es difícil: no basta con informar al paciente; ayuda apoyarse en su familia, su comunidad y sus rituales, que son los canales por los que esos patrones se transmiten.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'humanistica-cultura-salud-orden',
+    title: 'Cultura, salud y orden cultural',
+    subtitle: 'Cultura y atención médica (caso de la circuncisión «Sunna»), la cultura como sistema ideacional, niveles de análisis de Rojas Soriano, modelos biomédico, biopsicosocial e intercultural, hipótesis Gaia, los tres órdenes de Viniegra y medicina supresora frente a estimulante',
+    colorKey: 'humanistica',
+    categoria: 'Medicina humanística',
+    emoji: '🌎',
+    keyPoints: [
+      'La cultura, como entramado de significados y cosmovisiones, se expresa en el cuidado, la enfermedad, la curación y la muerte: es elemento central del proceso SALUD-ENFERMEDAD-ATENCIÓN.',
+      'Para analizar la relación cultura-enfermedad-medicina, la cultura se entiende como SISTEMA IDEACIONAL: ideas, conceptos, reglas y significados compartidos; lo que los sujetos APRENDEN.',
+      'Niveles de análisis de RAÚL ROJAS SORIANO: 1) unicausal y biomédico; 2) multicausal (historia natural de la enfermedad, Leavell y Clark); 3) BIOPSICOSOCIAL Y CULTURAL (historia natural y sociocultural del proceso salud-enfermedad)',
+      'En el modelo intercultural el paciente es ALTERIDAD, el médico necesita COMPETENCIA CULTURAL y la relación médico-paciente es ESENCIAL; la causalidad incluye el INDETERMINISMO CULTURAL.',
+      'VINIEGRA: órdenes físico-químico, biológico y cultural; el orden cultural pasa por los momentos EGOCÉNTRICO, ETNOCÉNTRICO y ANTROPOCÉNTRICO',
+      'Medicina SUPRESORA (enfermedad como anomalía ajena; lucro, mercantilización, medicalización) frente a ESTIMULANTE (trastorno de la armonía interior; atiende pacientes, no enfermedades; vis medicatrix naturae)',
+    ],
+    sections: [
+      {
+        id: 'hcs-1',
+        number: 1,
+        title: 'Cultura y atención médica: un caso',
+        keyTerms: ['mutilación genital femenina', 'Declaración de Budapest', 'comité de ética en investigación'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Una antropóloga que trabaja para el DIF con una comunidad de inmigrantes nigerianos musulmanes en una zona rural de Quintana Roo busca integrarla a la sociedad mexicana sin que pierda su cultura islámica. La comunidad practica la circuncisión «Sunna», conocida en Occidente como MUTILACIÓN GENITAL FEMENINA: la extirpación, por lo general violenta, del clítoris.',
+          },
+          {
+            type: 'paragraph',
+            content: 'La Asociación Médica Mundial condenó esta práctica en la Declaración de Budapest (1993), igual que la participación de médicos en ella; la OMS también la condena. Tras negociar con el líder religioso se propone un ritual modificado en un hospital del IMSS: una incisión menor con anestesia local, sin extirpación, mientras el líder realiza el rito religioso. Después, la antropóloga quiere convertir la experiencia en su tesis doctoral.',
+          },
+          {
+            type: 'note',
+            title: 'Práctica o investigación',
+            content: 'Una investigación se diseña primero, la aprueba el comité de ética en investigación y solo después se realiza. Convertir en investigación una práctica ya hecha es mala práctica. El caso muestra, además, que los procesos culturales y la atención a la salud están vinculados: hay que conocer y respetar las creencias de pacientes y comunidades.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Lo que dice la OMS',
+            content: 'La OMS clasifica la mutilación genital femenina como una violación de los derechos humanos de niñas y mujeres, sin ningún beneficio para la salud; causa dolor, hemorragia, infecciones, problemas urinarios y complicaciones en el parto. Se opone también a su «medicalización», es decir, a que la realice personal de salud.',
+          },
+        ],
+      },
+      {
+        id: 'hcs-2',
+        number: 2,
+        title: 'Niveles de análisis cultura-salud-enfermedad-atención',
+        keyTerms: ['sistema ideacional', 'interculturalidad en salud', 'Rojas Soriano', 'Leavell y Clark', 'indeterminismo cultural'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La cultura, como entramado de significados y cosmovisiones (matriz epistémica), se expresa en las prácticas de cuidado, enfermedad, curación y muerte; por eso es un elemento central del proceso salud-enfermedad-atención. Las sociedades actuales son MULTICULTURALES: en un mismo territorio conviven distintas formas de concebir la salud y distintas prácticas curativas. El ENFOQUE INTERCULTURAL EN SALUD propone un diálogo horizontal entre ellas y el respeto a las medicinas tradicionales y complementarias.',
+          },
+          {
+            type: 'definition',
+            title: 'La cultura como sistema ideacional',
+            content: 'Para analizar la relación triádica cultura-enfermedad-medicina, la cultura se entiende como un sistema de ideas compartidas, articuladas en conceptos, reglas y significados. Se refiere a lo que los sujetos APRENDEN, no solo a lo que hacen y fabrican.',
+          },
+          {
+            type: 'steps',
+            title: 'Los tres niveles de análisis (Raúl Rojas Soriano)',
+            steps: [
+              'Primer nivel: modelo UNICAUSAL y BIOMÉDICO.',
+              'Segundo nivel: modelo MULTICAUSAL, asociado a la HISTORIA NATURAL DE LA ENFERMEDAD de Leavell y Clark y sus niveles de prevención.',
+              'Tercer nivel: modelo BIOPSICOSOCIAL Y CULTURAL: amplía a Leavell y Clark hacia la historia natural Y SOCIOCULTURAL del PROCESO SALUD-ENFERMEDAD, no solo de la enfermedad.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Tres modelos comparados',
+            data: {
+              headers: ['Dimensión', 'Biomédico', 'Biopsicosocial', 'Biopsicosocial y cultural (intercultural)'],
+              rows: [
+                ['Enfermedad', 'Exclusivamente biológica', 'Integración biológica, psicológica y social', 'Biológica, psicológica, social y espiritual, en un contexto cultural'],
+                ['Causalidad', 'Lineal', 'Circular, multicausal', 'Circular, multicausal, con INDETERMINISMO CULTURAL'],
+                ['Paciente', 'Receptor pasivo', 'Participante activo', 'ALTERIDAD y diversidad cultural'],
+                ['Médico', 'Técnico observador', 'Profesional participante y empático', 'COMPETENCIA CULTURAL'],
+                ['Relación médico-paciente', 'Secundaria', 'Fundamental y terapéutica', 'ESENCIAL, culturalmente empática y contextual'],
+                ['Ser humano', 'Organismo biológico', 'Persona integral con contexto social', 'Unidad bio-psico-social-espiritual culturalmente determinada'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Indeterminismo cultural',
+            content: 'Dos pacientes con hipertensión pueden recibir el mismo fármaco, pero lo que comen, cómo entienden su enfermedad y si toman o no el tratamiento dependen de su contexto cultural. Las recomendaciones, y en la práctica la efectividad del tratamiento, cambian de uno a otro.',
+          },
+        ],
+      },
+      {
+        id: 'hcs-3',
+        number: 3,
+        title: 'El orden cultural según Viniegra',
+        keyTerms: ['hipótesis Gaia', 'Antropoceno', 'orden cultural', 'egocéntrico', 'etnocéntrico', 'antropocéntrico'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Hipótesis Gaia',
+            content: 'Propuesta por James Lovelock y Lynn Margulis en los años setenta: la Tierra funciona como un sistema AUTORREGULADO, una especie de superorganismo en el que suelo, agua, atmósfera y seres vivos interactúan para mantener las condiciones de la vida. Se emparenta con el enfoque actual de «Una sola salud» (One Health), que une la salud humana, animal y ambiental.',
+          },
+          {
+            type: 'paragraph',
+            content: 'El ANTROPOCENO designa la época en que la acción humana transforma y daña el planeta, ubicada aproximadamente desde 1950. No es una época geológica oficial: en 2024 la Unión Internacional de Ciencias Geológicas rechazó formalizarla, aunque el término se usa ampliamente.',
+          },
+          {
+            type: 'paragraph',
+            content: 'Leonardo Viniegra Velázquez («El orden cultural, la enfermedad y el cuidado de la salud», Boletín Médico del Hospital Infantil de México, 2017) separa, para poder analizarla, la vida entendida de forma holista en tres órdenes.',
+          },
+          {
+            type: 'table',
+            title: 'Los tres órdenes',
+            data: {
+              headers: ['Orden', 'Contenido'],
+              rows: [
+                ['Físico-químico', 'La materia y la energía; el origen de la vida'],
+                ['Biológico', 'De la biosfera a las partículas subatómicas, con la persona al centro'],
+                ['Cultural', 'Tres momentos: EGOCÉNTRICO (me preocupo por mí: alimento, refugio, vestido), ETNOCÉNTRICO (me preocupo por mi comunidad: familia, clan) y ANTROPOCÉNTRICO (me preocupo por el ser humano en su totalidad)'],
+              ],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'Orden cultural y poder',
+            left: {
+              title: 'Lo que organiza el orden cultural',
+              items: [
+                'Preservación de la integridad y protección contra la intemperie',
+                'Sexualidad, reproducción y crianza',
+                'Alimentación: el paso «de lo crudo a lo cocido»',
+                'Convivencia, comunicación, educación, autonomía, vida digna, diversión y ocio',
+              ],
+            },
+            right: {
+              title: 'Cómo aparece el poder',
+              items: [
+                'Campos de acción social con tendencias que interactúan',
+                'Intereses de grupos: cosmovisiones, creencias, valores, derechos, riquezas, oficios',
+                'Conflictos de intereses entre grupos',
+                'Origen en una relación desigual',
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hcs-4',
+        number: 4,
+        title: 'Medicina supresora y medicina estimulante',
+        keyTerms: ['medicina supresora', 'medicina estimulante', 'medicalización', 'vis medicatrix naturae', 'bien vivir'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos visiones de la enfermedad',
+            left: {
+              title: 'Extrínseca o exógena',
+              items: ['Anomalía extraña o adversidad ajena a la naturaleza humana', 'Termina tratándose como una entidad autónoma del organismo'],
+            },
+            right: {
+              title: 'Intrínseca o endógena',
+              items: ['Trastorno de la armonía interna o del flujo de energía vital'],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'En el campo de la salud, el orden cultural también obliga a esclarecer qué es una vida digna, grata, plena o serena (el «bien vivir») y advierte sobre la MEDICALIZACIÓN de la vida: convertir procesos vitales en asuntos médicos.',
+          },
+          {
+            type: 'table',
+            title: 'Supresora frente a estimulante',
+            data: {
+              headers: ['Medicina supresora', 'Medicina estimulante'],
+              rows: [
+                ['Enfermedad como anomalía extraña o adversidad ajena', 'Enfermedad como trastorno de la armonía interior'],
+                ['Intereses de lucro; mercantilización de la vida', 'Humanismo médico'],
+                ['«Deshumanización» de la medicina', 'Atiende pacientes, no enfermedades'],
+                ['Medicalización que controla mentes y cuerpos infundiendo temor', 'Tratamiento según la particularidad del paciente: VIS MEDICATRIX NATURAE (la fuerza curativa de la naturaleza, desde Hipócrates)'],
+                ['Ejemplo: la medicina occidental', 'Ejemplos: homeopatía, psicoterapia, acupuntura, hipnosis (medicinas alternativas y complementarias)'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Coexisten',
+            content: 'Viniegra no afirma que una sea mejor: señala que ambas coexisten. Hace un paralelo con la educación: el aprendizaje PASIVO consume información; el ACTIVO la elabora y genera ideas nuevas.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Clasificar no es validar',
+            content: 'La clasificación de Viniegra describe dos maneras de entender la enfermedad, no la eficacia de cada práctica. La psicoterapia, por ejemplo, tiene evidencia sólida en varios trastornos; la homeopatía, en cambio, no ha mostrado efectos superiores al placebo en las revisiones sistemáticas. Al decidir un tratamiento, el respeto por la cultura del paciente convive con la evidencia.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'humanistica-indicadores-interculturalidad',
+    title: 'Indicadores del proceso salud-enfermedad e interculturalidad',
+    subtitle: 'Siete tipos de indicadores para caracterizar la relación cultura-enfermedad-atención, curso de vida, indicadores negativos y positivos; iceberg cultural, definición y principios de la interculturalidad, flor de la identidad e interculturalidad en salud',
+    colorKey: 'humanistica',
+    categoria: 'Medicina humanística',
+    emoji: '🧊',
+    keyPoints: [
+      'Siete tipos de indicadores: NIVEL DE VIDA (ONU y OCDE), SALUD, RECURSOS Y ACTIVIDADES PARA LA SALUD, ECONÓMICO-SOCIALES, POSITIVOS del nivel de salud, FUNCIONAMIENTO INTERNO DE LA FAMILIA y RENDIMIENTO SOCIAL',
+      'Los indicadores de salud clásicos (esperanza de vida, mortalidad general e infantil) son NEGATIVOS: miden enfermedad y muerte. Los POSITIVOS miden salud, como días trabajados o asistencia escolar.',
+      'Los indicadores deben diferenciarse por etapa del CURSO DE VIDA; los cambios en el ambiente pueden bajar el umbral de discapacidad.',
+      'ICEBERG CULTURAL: cultura SUPERFICIAL (lo visible), BAJO LA SUPERFICIE (reglas tácitas, formas de pensar) y PROFUNDA (reglas inconscientes, formas de sentir)',
+      'INTERCULTURALIDAD: proceso de convivencia abierta, horizontal, incluyente, respetuosa y sinérgica entre personas, grupos e instituciones culturalmente diversos',
+      'Cuatro principios: RECONOCIMIENTO de la diversidad, RESPETO a las diferencias, RELACIONES EQUITATIVAS y ENRIQUECIMIENTO MUTUO',
+    ],
+    sections: [
+      {
+        id: 'hii-1',
+        number: 1,
+        title: 'Indicadores y curso de vida',
+        keyTerms: ['indicadores', 'curso de vida', 'capacidad funcional', 'umbral de discapacidad'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Siete tipos de indicadores de la relación cultura-enfermedad-atención',
+            items: [
+              'Nivel de vida (ONU y OCDE).',
+              'Salud.',
+              'Recursos y actividades para la salud.',
+              'Económico-sociales.',
+              'Positivos del nivel de salud.',
+              'Funcionamiento interno de la familia.',
+              'Rendimiento social.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'La economía de la salud reúne los cuidados de la salud, la industria de la salud y los servicios de soporte; para este análisis interesan sobre todo los cuidados. Los indicadores sirven como una «radiografía» de la cultura y la salud de una región, más allá del folclor.',
+          },
+          {
+            type: 'table',
+            title: 'Capacidad funcional a lo largo del curso de vida',
+            data: {
+              headers: ['Etapa', 'Objetivo'],
+              rows: [
+                ['Infancia y juventud', 'Crecimiento y desarrollo'],
+                ['Vida adulta', 'Mantener el nivel máximo de funcionalidad'],
+                ['Adulto mayor', 'Mantener la independencia y prevenir la discapacidad'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'Existe un UMBRAL DE DISCAPACIDAD, y los cambios en el ambiente pueden bajarlo: una rampa, un transporte accesible o una red de apoyo hacen que la misma capacidad funcional alcance para vivir con independencia. Por eso los indicadores deben diferenciarse por etapa del curso de vida.',
+          },
+        ],
+      },
+      {
+        id: 'hii-2',
+        number: 2,
+        title: 'Qué mide cada grupo de indicadores',
+        keyTerms: ['indicadores negativos', 'indicadores positivos', 'nivel de vida', 'rendimiento social'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Nivel de vida',
+            left: {
+              title: 'ONU',
+              items: ['Salud y condiciones demográficas', 'Alimentación y nutrición', 'Educación y alfabetización', 'Trabajo y empleo', 'Consumo y ahorro', 'Transporte, vivienda y vestido', 'Recreación, seguridad social y libertades humanas'],
+            },
+            right: {
+              title: 'OCDE',
+              items: ['Enseñanza como oportunidad de autorrealización', 'Salud: riesgo de enfermar y repercusión en el bienestar', 'Empleo y satisfacción laboral', 'Tiempo libre', 'Situación del consumidor', 'Medio ambiente: vivienda y contaminación', 'Seguridad, justicia, posición social y desigualdades'],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Los demás grupos',
+            data: {
+              headers: ['Grupo', 'Ejemplos'],
+              rows: [
+                ['De salud (NEGATIVOS: miden enfermedad y muerte)', 'Esperanza de vida al nacer, tasa de mortalidad general, tasa de mortalidad infantil, razón de mortalidad proporcional'],
+                ['Recursos y actividades para la salud (capacidad potencial de dar servicios)', 'Agua potable y alcantarillado, gasto en salud por habitante, camas por 1 000 habitantes, habitantes por médico, partos con asistencia médica, consultas prenatales, niños vacunados'],
+                ['Económico-sociales', 'PIB por habitante, población económicamente activa, población urbana y rural, natalidad, analfabetismo, escolaridad, proteínas y calorías por habitante, habitantes por cuarto'],
+                ['POSITIVOS del nivel de salud (miden salud y capacidad productiva)', 'Días trabajados frente a días hábiles, incapacidades temporales o permanentes, asistencia escolar de menores de 15 años, desempleo y subempleo'],
+                ['Funcionamiento interno de la familia', 'Divorcio y separación, aborto, madres trabajadoras con hijos preescolares, familias monoparentales, ancianos que reciben servicios, personas que viven solas'],
+                ['Rendimiento social', 'Porcentaje con aptitud física e intelectual normal, menores con crecimiento normal, adultos con peso óptimo para su estatura'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Dónde buscar los datos de una región',
+            content: 'Para caracterizar la salud de una región sirven el Tablero de Indicadores de Salud de México de FUNSALUD, el INEGI (censos, natalidad, mortalidad) y la Secretaría de Salud. Comparar indicadores negativos (mortalidad) con positivos (asistencia escolar, días trabajados) da una imagen más completa que cualquiera de los dos por separado.',
+          },
+        ],
+      },
+      {
+        id: 'hii-3',
+        number: 3,
+        title: 'El iceberg cultural',
+        keyTerms: ['iceberg cultural', 'cultura superficial', 'cultura profunda', 'árbol intercultural'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Tres niveles de la cultura',
+            data: {
+              headers: ['Nivel', 'Qué es', 'Ejemplos'],
+              rows: [
+                ['Superficial o manifiesta (lo visible)', 'Hechos que se reconocen FÁCILMENTE', 'Comida, banderas, festividades, moda, música, bailes, juegos'],
+                ['Bajo la superficie', 'REGLAS TÁCITAS y formas de PENSAR; toma tiempo reconocerlas', 'Estilos de comunicación: gestos, contacto visual, espacio personal, tono de voz, manejo de las emociones'],
+                ['Profunda', 'REGLAS INCONSCIENTES y formas de SENTIR; solo se reconocen al familiarizarse con la cultura', 'Cortesía y amistad; actitudes hacia la muerte, el trabajo y la autoridad; nociones de individualidad, tiempo, pasado y futuro; religión, matrimonio y crianza'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'El ÁRBOL INTERCULTURAL resume la misma idea: sus raíces son la cultura, la identidad, las actitudes, las creencias, los valores, el lenguaje y el comportamiento no verbal; su tronco, la diversidad cultural sustentada en los derechos humanos; sus frutos, la responsabilidad, la resiliencia, la competencia comunicativa, la convivencia y la reflexividad.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Llegar a la cultura profunda del paciente',
+            content: 'Decir que alguien «ya me conoce» significa que entró a la cultura profunda. Con el paciente pasa lo mismo: lo que piensa sobre la muerte, la autoridad del médico o la familia no se ve en la primera consulta; se descubre preguntando e interactuando con él y con su comunidad.',
+          },
+        ],
+      },
+      {
+        id: 'hii-4',
+        number: 4,
+        title: 'Interculturalidad',
+        keyTerms: ['interculturalidad', 'principios de la interculturalidad', 'flor de la identidad', 'interculturalidad en salud'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Interculturalidad',
+            content: 'PROCESO DE CONVIVENCIA en el que personas, grupos e instituciones con características culturales y posiciones diversas conviven y se relacionan de manera ABIERTA, HORIZONTAL, INCLUYENTE, RESPETUOSA y SINÉRGICA en un contexto compartido. En ella subyace el reconocimiento del otro como ser digno de ejercer todos sus derechos, y la diversidad se valora como riqueza.',
+          },
+          {
+            type: 'steps',
+            title: 'Cuatro principios básicos',
+            steps: ['Reconocimiento de la diversidad.', 'Respeto a las diferencias.', 'Relaciones equitativas.', 'Enriquecimiento mutuo.'],
+          },
+          {
+            type: 'paragraph',
+            content: 'La FLOR DE LA IDENTIDAD CULTURAL es una herramienta para explorar las dimensiones de la identidad personal y colectiva: etnia, género, clase, tipo de familia, barrio, región rural o urbana, aficiones, nacionalidad, estado civil, enfermedades o discapacidades, profesión, religión, constitución física, edad, estudios e idioma.',
+          },
+          {
+            type: 'definition',
+            title: 'Interculturalidad en salud',
+            content: 'Enfoque que promueve, dentro de los servicios de salud, una interacción respetuosa, horizontal y sin jerarquías entre culturas, con dignidad, derechos humanos y reconocimiento de la diversidad. Integra saberes, prácticas y valores, sobre todo en la atención de población indígena o multicultural.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'El hospital como espacio intercultural',
+            content: 'En un hospital conviven la cultura médica, la de enfermería, la del personal de apoyo y la de cada paciente. Aplicar los cuatro principios significa, por ejemplo, preguntar al paciente cómo explica su enfermedad, negociar el plan de tratamiento en lugar de imponerlo y aceptar prácticas tradicionales que no le causen daño.',
           },
         ],
       },

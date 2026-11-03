@@ -202,6 +202,14 @@ export const modules: Module[] = [
     topicIds: ['humanistica-humanismo-medico', 'humanistica-origen-vida-hombre', 'humanistica-corporeidad', 'humanistica-unidad-biopsicosocial', 'humanistica-dialectica-mente-cuerpo', 'humanistica-desarrollo-humano', 'humanistica-envejecimiento'],
   },
   {
+    id: 'humanistica-uad-s2',
+    badge: 'UAD · Medicina Humanística — Semana 2',
+    title: 'Medicina Humanística: entorno cultural de la medicina',
+    subtitle: 'Cómo se posibilita la cultura; Tylor, Boas y otros autores; cerebro y cultura y sistemas de herencia; niveles de análisis de Rojas Soriano; orden cultural y medicina supresora y estimulante de Viniegra; indicadores del proceso salud-enfermedad; iceberg cultural e interculturalidad.',
+    emoji: '🎭',
+    topicIds: ['humanistica-cultura-concepto', 'humanistica-cultura-salud-orden', 'humanistica-indicadores-interculturalidad'],
+  },
+  {
     id: 'humanistica-uad-s3',
     badge: 'UAD · Medicina Humanística — Semana 3',
     title: 'Medicina Humanística: la relación médico-paciente',

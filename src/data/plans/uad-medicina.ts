@@ -893,7 +893,7 @@ export const uadMedicina: Plan = {
           id: 'medicina-humanistica',
           name: 'Medicina Humanística',
           code: 'MH01007',
-          topicIds: ['humanistica-humanismo-medico', 'humanistica-origen-vida-hombre', 'humanistica-corporeidad', 'humanistica-unidad-biopsicosocial', 'humanistica-dialectica-mente-cuerpo', 'humanistica-desarrollo-humano', 'humanistica-envejecimiento', 'humanistica-alteridad-rmp', 'humanistica-modelos-rmp', 'humanistica-etica-comunicacion', 'humanistica-causalidad-determinantes', 'humanistica-estilos-vida-cronicas', 'humanistica-sindromes-filiacion-cultural'],
+          topicIds: ['humanistica-humanismo-medico', 'humanistica-origen-vida-hombre', 'humanistica-corporeidad', 'humanistica-unidad-biopsicosocial', 'humanistica-dialectica-mente-cuerpo', 'humanistica-desarrollo-humano', 'humanistica-envejecimiento', 'humanistica-cultura-concepto', 'humanistica-cultura-salud-orden', 'humanistica-indicadores-interculturalidad', 'humanistica-alteridad-rmp', 'humanistica-modelos-rmp', 'humanistica-etica-comunicacion', 'humanistica-causalidad-determinantes', 'humanistica-estilos-vida-cronicas', 'humanistica-sindromes-filiacion-cultural'],
           content: {
             area: 'Ciencias Sociomédicas',
             credits: 4,
@@ -928,8 +928,15 @@ export const uadMedicina: Plan = {
               {
                 number: 2,
                 title: 'Entorno cultural de la medicina en México',
+                topicIds: ['humanistica-cultura-concepto', 'humanistica-cultura-salud-orden', 'humanistica-indicadores-interculturalidad'],
                 temas: [
-                  '2. Cultura de la región y su relación con la medicina; la eficacia simbólica en el proceso salud-enfermedad y la terapéutica; conceptos de salud, enfermedad, muerte y práctica médica',
+                  'Clase 1 (impartida, 2 nov): cultura de la región y su relación con la medicina — cómo se posibilita la cultura, Tylor, Boas y otros autores, cerebro y cultura, sistemas de herencia y modelo CNIS',
+                  'Clase 1 (impartida, 2 nov): niveles de análisis cultura-salud-enfermedad-atención (Rojas Soriano), modelos biomédico, biopsicosocial e intercultural; orden cultural y medicina supresora y estimulante (Viniegra); indicadores del proceso salud-enfermedad; iceberg cultural e interculturalidad',
+                  'Clase 2 (pendiente): proceso salud-enfermedad — conceptos de salud, enfermedad, muerte y práctica médica; interculturalidad en salud',
+                  'Clase 3 (pendiente): eficacia simbólica en el proceso salud-enfermedad y la terapéutica — representación social de la enfermedad, enfermedad y padecer, competencia cultural',
+                ],
+                fuentes: [
+                  { title: 'Medicina Humanística — Semana 2, Clase 1', file: 'Medicina Humanistica - Semana 2 - Clase 1.pdf', nota: 'Cultura de la región y su relación con la medicina.' },
                 ],
               },
               {
@@ -972,6 +979,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 1 · Clase 2 (a) — Corporeidad, herramienta y naturaleza', file: 'Medicina Humanistica - Semana 1 - Clase 2a.pdf', kind: 'Clase' },
               { title: 'Semana 1 · Clase 2 (b) — Unidad anatomo-psico-social', file: 'Medicina Humanistica - Semana 1 - Clase 2b.pdf', kind: 'Clase' },
               { title: 'Semana 1 · Clase 3 — Dialéctica mente-cuerpo, desarrollo humano y envejecimiento', file: 'Medicina Humanistica - Semana 1 - Clase 3.pdf', kind: 'Clase' },
+              { title: 'Semana 2 · Clase 1 — Cultura de la región y su relación con la medicina', file: 'Medicina Humanistica - Semana 2 - Clase 1.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Sesión 1 — La relación médico-paciente y la alteridad', file: 'Medicina Humanistica - Semana 3 - Sesion 1.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Sesión 2 — Elementos y modelos de la RMP', file: 'Medicina Humanistica - Semana 3 - Sesion 2.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Sesión 3 — Ética, comunicación y proxémica', file: 'Medicina Humanistica - Semana 3 - Sesion 3.pdf', kind: 'Clase' },
