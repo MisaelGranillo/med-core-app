@@ -81,3 +81,10 @@
 | Archivo | Fuente | Autor | Licencia |
 |---|---|---|---|
 | fec/cigoto-pronucleos.jpg | [Zygote1.jpg](https://commons.wikimedia.org/wiki/File:Zygote1.jpg) (recortada y reducida) | Niña Sesina | CC BY-SA 4.0 |
+
+## Modelos 3D de Embriología
+
+| Uso | Fuente | Autor | Licencia |
+|---|---|---|---|
+| Útero, trompas y ovarios (láminas de Embriología) | [3D Reference Organs — Uterus, Ovary y Fallopian tube, Female](https://humanatlas.io) (Visible Human femenino; NIH 3D 3DPX-020996 y relacionados) | HuBMAP / Human Reference Atlas | CC BY 4.0 |
+| Cigoto, segmentación, blastocisto y días 8–13 | Modelos procedurales propios (`emb3d/*.py`) | MedCore | — |

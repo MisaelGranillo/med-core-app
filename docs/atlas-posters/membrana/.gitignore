@@ -2,3 +2,6 @@ build/
 ana/
 ana3d/
 za/
+emb3d/*.glb
+emb3d/hra/
+emb3d/__pycache__/

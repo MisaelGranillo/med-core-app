@@ -20,3 +20,22 @@ cuello y primeras costillas más los músculos de cabeza, cara, cuello y nuca, s
 (`.o*`, `.e*`) ni las etiquetas (`.j`). Las vistas se renderizan con
 `python3 za_render.py <nombre> '<json>'` (claves: show, hide, ghost, hl, view, focus, pad, pts, dbl, poff).
 `dbl=1` dibuja los músculos por ambas caras y `poff` los adelanta para que el hueso no los atraviese.
+
+## Embriología (Human Reference Atlas + modelos propios)
+
+Z-Anatomy no trae órganos femeninos ni embriones. Para las láminas de Embriología:
+
+- **Útero, trompas y ovarios**: órganos de referencia del Visible Human femenino del Human Reference Atlas
+  (HuBMAP / NIH 3D, CC BY 4.0), segmentados (fondo, cuerpo, cuernos, segmento inferior, orificio cervical
+  interno; ampolla, istmo, infundíbulo y fimbrias). Se descargan a `emb3d/hra/` (no se versiona) desde
+  `https://cdn.humanatlas.io/digital-objects/ref-organ/<órgano>/latest/assets/3d-vh-f-<órgano>.glb`
+  (`uterus-female`, `ovary-female-left|right`, `fallopian-tube-female-left|right`) y se unen con
+  `Blender -b --python emb3d/combine.py` en `emb3d/utero-anexos.glb`.
+- **Embriones**: modelos propios, procedurales, cortados a la mitad (resta booleana con un cubo):
+  `emb3d/cleave.py` (cigoto a eclosión), `emb3d/blasto.py` (blastocisto) y `emb3d/implant.py`
+  (días 8, 9, 11–12 y 13 dentro de un bloque de endometrio). Las lagunas, vellosidades y sinusoides se
+  restan una por una (restar un objeto que junta piezas encimadas rompe el booleano) y las superficies
+  irregulares se remallan por vóxeles antes de restar.
+- Las vistas se renderizan con `python3 emb_render.py <nombre> '<json>'` (mismas claves que `za_render.py`
+  más `model`); los colores van por nombre de pieza en `hl`, y en las láminas los puntos de los rótulos se
+  fijan a mano sobre el recorte (las piezas huecas tienen el centroide en medio de la cavidad).
