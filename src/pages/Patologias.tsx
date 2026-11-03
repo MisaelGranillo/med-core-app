@@ -1,16 +1,18 @@
 /* Patologías — Rutas /patologias y /patologias/:id
  *
- * Índice: la guía «Cómo leer un caso clínico» y las fichas. Ficha: secciones
+ * Índice: la guía «Cómo leer un caso clínico» y las fichas en orden alfabético, con
+ * búsqueda y filtros por aparato o sistema y por materia (?q=, ?sistema=, ?materia=). Ficha: secciones
  * con los mismos bloques de los temas, lo ya estudiado (enlaces a la sección
  * exacta de cada tema y a las láminas del Atlas), caso clínico con preguntas
  * que se responden ahí mismo y las GPC. */
 
-import { useEffect, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
-import { ArrowLeft, ArrowRight, ArrowSquareOut, CheckCircle, XCircle, Stethoscope, ListChecks } from '@phosphor-icons/react'
+import { useEffect, useMemo, useState } from 'react'
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
+import { ArrowLeft, ArrowRight, ArrowSquareOut, CheckCircle, XCircle, Stethoscope, ListChecks, MagnifyingGlass, X } from '@phosphor-icons/react'
 import { FICHAS, GUIA_CASO, patologiaById, type PatoMateria, type Patologia } from '../data/patologias'
 import { topicIndex } from '../data/generated/topicIndex'
 import { BlockRenderer } from '../components/SectionPanel'
+import { SISTEMAS, SISTEMAS_DE, type Sistema } from '../data/patologias-sistemas'
 import { atlasThumb } from './atlasShared'
 import type { Question } from '../types'
 
@@ -20,11 +22,60 @@ const topicTitle = (id: string) => topicIndex.find((t) => t.id === id)?.title ??
 
 /* ── Índice ─────────────────────────────────────────────────────── */
 
+const fold = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
+const ORDENADAS = [...FICHAS].sort((a, b) => a.title.localeCompare(b.title, 'es'))
+const sistemasDe = (p: Patologia): Sistema[] => SISTEMAS_DE[p.id] ?? []
+const textos = (v: unknown): string[] =>
+  typeof v === 'string' ? [v] : Array.isArray(v) ? v.flatMap(textos) : v && typeof v === 'object' ? Object.values(v).flatMap(textos) : []
+/* Tres niveles de búsqueda: nombre y sinónimo, resumen y ámbito, y todo el contenido de la ficha. */
+const INDICE = new Map(ORDENADAS.map((p) => [p.id, [
+  fold([p.title, p.aka ?? ''].join(' ')),
+  fold([p.ambito, p.resumen, p.materia ?? '', ...sistemasDe(p)].join(' ')),
+  fold(textos(p.sections).join(' ')),
+]]))
+const nivel = (id: string, terms: string[]) => {
+  const [nombre, resumen, cuerpo] = INDICE.get(id)!
+  if (terms.every((t) => nombre.includes(t))) return 0
+  const todo = `${nombre} ${resumen}`
+  if (terms.every((t) => todo.includes(t))) return 1
+  return terms.every((t) => `${todo} ${cuerpo}`.includes(t)) ? 2 : -1
+}
+const FILTRO_MATERIA = MATERIAS.map((m) => ({ id: m, count: FICHAS.filter((p) => p.materia === m).length })).filter((m) => m.count > 0)
+const FILTRO_SISTEMA = SISTEMAS.map((s) => ({ id: s, count: FICHAS.filter((p) => sistemasDe(p).includes(s)).length })).filter((s) => s.count > 0)
+
+const chip = (on: boolean) =>
+  `inline-flex items-center gap-2 h-9 px-3.5 rounded-full text-sm whitespace-nowrap transition-colors flex-shrink-0
+   ${on ? 'bg-primary text-primary-fg' : 'bg-surface border border-zinc-200 text-zinc-700 hover:border-zinc-300'}`
+
 export function Patologias() {
   const guia = GUIA_CASO
+  const [params, setParams] = useSearchParams()
+  const q = params.get('q') ?? ''
+  const materia = FILTRO_MATERIA.find((m) => m.id === params.get('materia'))?.id ?? null
+  const sistema = FILTRO_SISTEMA.find((s) => s.id === params.get('sistema'))?.id ?? null
+
+  const set = (key: 'q' | 'materia' | 'sistema', value: string | null) => {
+    const next = new URLSearchParams(params)
+    if (value) next.set(key, value)
+    else next.delete(key)
+    setParams(next, { replace: true })
+  }
+
+  const fichas = useMemo(() => {
+    const terms = fold(q.trim()).split(/\s+/).filter(Boolean)
+    return ORDENADAS
+      .filter((p) => (!materia || p.materia === materia) && (!sistema || sistemasDe(p).includes(sistema)))
+      .map((p) => ({ p, n: terms.length ? nivel(p.id, terms) : 0 }))
+      .filter((x) => x.n >= 0)
+      .sort((a, b) => a.n - b.n)
+      .map((x) => x.p)
+  }, [q, materia, sistema])
+
+  const filtrando = Boolean(q || materia || sistema)
+
   return (
     <main className="flex-1">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-8 pb-12 flex flex-col gap-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-8 pb-12 flex flex-col gap-7">
         <header className="flex flex-col gap-2">
           <h1 className="font-display font-light text-[2.25rem] sm:text-[2.75rem] leading-[1.05] tracking-[-0.025em] text-zinc-900">
             Patologías
@@ -37,63 +88,107 @@ export function Patologias() {
 
         <Link
           to={`/patologias/${guia.id}`}
-          className="card p-6 sm:p-8 grid gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] hover:border-zinc-300 transition-colors group"
+          className="card px-5 py-4 flex items-center gap-4 hover:border-zinc-300 transition-colors group"
         >
-          <div className="flex flex-col gap-3 min-w-0">
-            <span className="inline-flex items-center gap-2 text-sm text-primary-ink">
-              <ListChecks weight="regular" className="w-5 h-5" />
-              Empieza aquí
-            </span>
-            <h2 className="font-display text-[1.75rem] font-light leading-tight text-zinc-900 text-balance">{guia.title}</h2>
-            <p className="text-[0.9375rem] text-zinc-600 leading-relaxed">{guia.resumen}</p>
-            <span className="mt-auto inline-flex items-center gap-1.5 text-[0.9375rem] font-medium text-primary group-hover:text-primary-hover">
-              Abrir la guía <ArrowRight weight="bold" className="w-4 h-4" />
-            </span>
+          <span className="w-10 h-10 rounded-full bg-primary-tint text-primary-ink flex items-center justify-center flex-shrink-0">
+            <ListChecks weight="regular" className="w-5 h-5" />
+          </span>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm text-primary-ink">Empieza aquí</p>
+            <h2 className="text-base sm:text-[1.0625rem] text-zinc-900 leading-snug">{guia.title}</h2>
           </div>
-          <ol className="flex flex-col gap-2 min-w-0" aria-label="Pasos de la guía">
-            {guia.sections.map((s, i) => (
-              <li key={s.id} className="flex items-center gap-3 text-[0.9375rem] text-zinc-700">
-                <span className="w-6 h-6 rounded-full bg-primary-tint text-primary-ink text-xs font-medium flex items-center justify-center flex-shrink-0">
-                  {i + 1}
-                </span>
-                <span className="leading-snug">{s.title}</span>
-              </li>
-            ))}
-          </ol>
+          <ArrowRight weight="bold" className="w-4 h-4 text-zinc-400 group-hover:text-primary flex-shrink-0" />
         </Link>
 
-        {MATERIAS.map((m) => {
-          const fichas = FICHAS.filter((p) => p.materia === m)
-          if (!fichas.length) return null
-          const hid = `h-${m.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()}`
-          return (
-            <section key={m} className="flex flex-col gap-3" aria-labelledby={hid}>
-              <div className="flex items-baseline justify-between gap-4">
-                <h2 id={hid} className="font-display text-xl font-normal text-zinc-900">{m}</h2>
-                <span className="text-sm text-zinc-500 tabular-nums">{fichas.length}</span>
-              </div>
-              <ul className="card divide-y divide-zinc-200 overflow-hidden">
-                {fichas.map((p) => (
-                  <li key={p.id}>
-                    <Link
-                      to={`/patologias/${p.id}`}
-                      className="flex items-center gap-4 px-5 sm:px-6 py-4 hover:bg-zinc-50 transition-colors group"
-                    >
-                      <div className="flex-1 min-w-0 flex flex-col gap-1">
-                        <h3 className="text-base sm:text-[1.0625rem] text-zinc-900 leading-snug">{p.title}</h3>
-                        <p className="text-sm text-zinc-600 leading-relaxed line-clamp-2 sm:line-clamp-1">{p.resumen}</p>
-                        <p className="text-xs text-zinc-500">
-                          {p.ambito} · {p.fuentes.map((f) => f.codigo.replace(/^GPC /, '')).join(' · ')}
-                        </p>
-                      </div>
-                      <ArrowRight weight="bold" className="w-4 h-4 text-zinc-400 group-hover:text-primary flex-shrink-0" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )
-        })}
+        <div className="flex flex-col gap-3">
+          <label className="relative block">
+            <span className="sr-only">Buscar una patología</span>
+            <MagnifyingGlass className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-400 pointer-events-none" />
+            <input
+              type="search"
+              value={q}
+              onChange={(e) => set('q', e.target.value || null)}
+              placeholder="Nombre, sinónimo, síntoma u órgano"
+              className="w-full h-12 pl-12 pr-11 rounded-full bg-surface border border-zinc-200 text-[0.9375rem] text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-primary [&::-webkit-search-cancel-button]:hidden"
+            />
+            {q && (
+              <button
+                type="button"
+                onClick={() => set('q', null)}
+                aria-label="Borrar búsqueda"
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full flex items-center justify-center text-zinc-500 hover:bg-zinc-100"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
+          </label>
+
+          <div className="flex flex-col gap-2">
+            <p className="text-xs text-zinc-500">Aparato o sistema</p>
+            <div className="flex gap-2 overflow-x-auto sm:flex-wrap -mx-4 px-4 sm:mx-0 sm:px-0 pb-1 scrollbar-hide" role="group" aria-label="Filtrar por aparato o sistema">
+              <button onClick={() => set('sistema', null)} aria-pressed={!sistema} className={chip(!sistema)}>Todos</button>
+              {FILTRO_SISTEMA.map((f) => (
+                <button key={f.id} onClick={() => set('sistema', sistema === f.id ? null : f.id)} aria-pressed={sistema === f.id} className={chip(sistema === f.id)}>
+                  {f.id}
+                  <span className={sistema === f.id ? 'opacity-80' : 'text-zinc-500'}>{f.count}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <p className="text-xs text-zinc-500">Materia</p>
+            <div className="flex gap-2 overflow-x-auto sm:flex-wrap -mx-4 px-4 sm:mx-0 sm:px-0 pb-1 scrollbar-hide" role="group" aria-label="Filtrar por materia">
+              <button onClick={() => set('materia', null)} aria-pressed={!materia} className={chip(!materia)}>Todas</button>
+              {FILTRO_MATERIA.map((f) => (
+                <button key={f.id} onClick={() => set('materia', materia === f.id ? null : f.id)} aria-pressed={materia === f.id} className={chip(materia === f.id)}>
+                  {f.id}
+                  <span className={materia === f.id ? 'opacity-80' : 'text-zinc-500'}>{f.count}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <section className="flex flex-col gap-3" aria-labelledby="h-fichas">
+          <div className="flex items-baseline justify-between gap-4">
+            <h2 id="h-fichas" className="font-display text-xl font-normal text-zinc-900">
+              {filtrando ? `${fichas.length} de ${FICHAS.length} fichas` : `${FICHAS.length} fichas`}
+            </h2>
+            {filtrando && (
+              <button onClick={() => setParams({}, { replace: true })} className="text-sm text-primary hover:text-primary-hover">
+                Quitar filtros
+              </button>
+            )}
+          </div>
+
+          {fichas.length === 0 ? (
+            <p className="card p-8 text-center text-zinc-500">
+              Ninguna ficha coincide{q ? ` con «${q}»` : ''}{sistema ? ` en ${sistema}` : ''}{materia ? ` (${materia})` : ''}.
+            </p>
+          ) : (
+            <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {fichas.map((p) => (
+                <li key={p.id} className="min-w-0">
+                  <Link
+                    to={`/patologias/${p.id}`}
+                    className="card h-full p-4 flex flex-col gap-1.5 hover:border-zinc-300 transition-colors group"
+                  >
+                    <h3 className="text-[0.9375rem] text-zinc-900 leading-snug group-hover:text-primary-ink">{p.title}</h3>
+                    {p.aka && <p className="text-xs text-zinc-500 leading-snug line-clamp-1">{p.aka}</p>}
+                    <p className="text-sm text-zinc-600 leading-relaxed line-clamp-2">{p.resumen}</p>
+                    <div className="mt-auto pt-2 flex flex-wrap gap-1.5">
+                      {sistemasDe(p).map((s) => (
+                        <span key={s} className="text-[0.75rem] px-2 py-0.5 rounded-full bg-zinc-100 text-zinc-600">{s}</span>
+                      ))}
+                      <span className="text-[0.75rem] px-2 py-0.5 rounded-full bg-primary-tint text-primary-ink">{p.materia}</span>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
 
         <p className="text-sm text-zinc-500 max-w-[70ch]">
           Material de estudio. Los tratamientos se resumen como idea general a partir de las guías y no sustituyen

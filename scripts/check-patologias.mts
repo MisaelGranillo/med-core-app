@@ -3,10 +3,12 @@
 import { PATOLOGIAS } from '../src/data/patologias'
 import { topics } from '../src/data/topics'
 import { atlasTopics } from '../src/data/atlas-topics'
+import { SISTEMAS_DE } from '../src/data/patologias-sistemas'
 const T = new Map(topics.map(t => [t.id, t]))
 const A = new Map(atlasTopics.map(a => [a.id, a]))
 let n = 0
 for (const p of PATOLOGIAS) {
+  if (p.kind === 'ficha' && !SISTEMAS_DE[p.id]?.length) { console.log('SISTEMA?', p.id); n++ }
   for (const b of p.bases ?? []) {
     const t = T.get(b.topicId)
     if (!t) { console.log('TOPIC?', p.id, b.topicId); n++; continue }
