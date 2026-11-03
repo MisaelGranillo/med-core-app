@@ -1656,6 +1656,7 @@ const LUMBALGIA: Patologia = {
     },
   ],
   bases: [
+    { materia: 'Embriología', topicId: 'embriologia-tercera-semana', sectionId: 'ets-5', label: 'Formación de la notocorda', porQue: 'El núcleo pulposo del disco intervertebral es el remanente de la notocorda; su protrusión es la hernia de disco.' },
     { materia: 'Anatomía', topicId: 'columna-vertebral', sectionId: 'col-5', label: 'Vértebras lumbares', porQue: 'Los cuerpos que más carga soportan.' },
     { materia: 'Anatomía', topicId: 'articulaciones-columna', sectionId: 'acol-2', label: 'Entre los cuerpos vertebrales', porQue: 'Disco intervertebral y ligamentos longitudinales: dónde se hernia el disco.' },
     { materia: 'Anatomía', topicId: 'articulaciones-columna', sectionId: 'acol-3', label: 'Entre los arcos vertebrales', porQue: 'Las articulaciones cigapofisarias, fuente frecuente de dolor mecánico.' },

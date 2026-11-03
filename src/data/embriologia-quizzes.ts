@@ -3,7 +3,8 @@ import type { Question } from '../types'
 // Embriología I — Semana 1, Clases 1–5: desarrollo temprano, cromosomas, mitosis,
 // meiosis, ovogénesis, espermatogénesis, anomalías cromosómicas numéricas y
 // estructurales, ciclos ovárico y endometrial, fecundación y primera semana;
-// infertilidad, reproducción asistida y salud reproductiva.
+// infertilidad, reproducción asistida y salud reproductiva. Semana 2, Clases 1–2:
+// segunda semana e implantación; tercera semana y gastrulación.
 export const embriologiaQuestions: Question[] = [
   // ── Panorama del desarrollo temprano ──
   {
@@ -951,5 +952,89 @@ export const embriologiaQuestions: Question[] = [
     options: ['Solo al nacer el bebé', 'A las 12 semanas', 'A las 28 semanas y dentro de las 72 h posparto', 'Antes de la concepción'],
     correctIndex: 2, difficulty: 'medium',
     explanation: 'Evita que la madre Rh negativo desarrolle anticuerpos contra eritrocitos fetales Rh positivo.',
+  },
+  {
+    id: 'emb-tsq-q1', topicId: 'embriologia-tercera-semana', type: 'multiple-choice',
+    question: '¿Qué capa del disco bilaminar es la fuente de las tres capas germinales?',
+    options: ['El hipoblasto', 'El epiblasto', 'El citotrofoblasto', 'El mesodermo extraembrionario'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'Las células del epiblasto se invaginan por la línea primitiva y forman endodermo, mesodermo y ectodermo.',
+  },
+  {
+    id: 'emb-tsq-q2', topicId: 'embriologia-tercera-semana', type: 'multiple-choice',
+    question: '¿Cuándo aparece la línea primitiva?',
+    options: ['Día 8', 'Día 13', 'Días 15–16', 'Final de la cuarta semana'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: 'Aparece como una ranura en el epiblasto; en su extremo cefálico están el nodo y la fosita primitivos.',
+  },
+  {
+    id: 'emb-tsq-q3', topicId: 'embriologia-tercera-semana', type: 'multiple-choice',
+    question: 'Durante la invaginación, las PRIMERAS células que atraviesan la línea primitiva:',
+    options: ['Desplazan al hipoblasto y forman el endodermo', 'Forman el ectodermo', 'Forman la notocorda', 'Forman el mesodermo intermedio'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'Las siguientes se colocan entre epiblasto y endodermo (mesodermo) y las que se quedan en la superficie forman el ectodermo.',
+  },
+  {
+    id: 'emb-tsq-q4', topicId: 'embriologia-tercera-semana', type: 'multiple-choice',
+    question: '¿Qué hace el FGF8 para que las células del epiblasto puedan invaginarse?',
+    options: ['Activa la E-cadherina', 'Forma la membrana de Heuser', 'Induce la secreción de hCG', 'Suprime la E-cadherina'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'Sin la E-cadherina que las mantiene unidas, las células quedan libres; el FGF8 también induce BRACHYURY, que especifica el mesodermo.',
+  },
+  {
+    id: 'emb-tsq-q5', topicId: 'embriologia-tercera-semana', type: 'multiple-choice',
+    question: 'Estructura del extremo cefálico formada por ectodermo y endodermo unidos, sin mesodermo, que marca el sitio de la futura boca:',
+    options: ['Placa precordal', 'Membrana cloacal', 'Membrana orofaríngea', 'Nodo primitivo'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: 'La membrana cloacal tiene la misma composición pero está en el extremo caudal; la placa precordal es mesodermo.',
+  },
+  {
+    id: 'emb-tsq-q6', topicId: 'embriologia-tercera-semana', type: 'multiple-choice',
+    question: 'La notocorda se forma con células que migran por:',
+    options: ['El nodo primitivo, hacia cefálico por la línea media', 'La región caudal de la línea primitiva', 'El borde del disco hacia el amnios', 'El hipoblasto hacia el saco vitelino'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'Primero forman el proceso notocordal, luego la placa notocordal y finalmente la notocorda definitiva.',
+  },
+  {
+    id: 'emb-tsq-q7', topicId: 'embriologia-tercera-semana', type: 'multiple-choice',
+    question: '¿Qué comunica temporalmente el conducto neuroentérico?',
+    options: ['El amnios con el corion', 'La cavidad amniótica con el saco vitelino', 'El saco vitelino con la alantoides', 'La cloaca con el exterior'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Se abre durante la formación de la notocorda, cuando la placa notocordal se intercala en el endodermo.',
+  },
+  {
+    id: 'emb-tsq-q8', topicId: 'embriologia-tercera-semana', type: 'multiple-choice',
+    question: 'El remanente de la notocorda en el adulto es:',
+    options: ['El anillo fibroso', 'El ligamento amarillo', 'La médula espinal', 'El núcleo pulposo'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'Queda en el centro de los discos intervertebrales; también hay restos en el ligamento apical del diente del axis.',
+  },
+  {
+    id: 'emb-tsq-q9', topicId: 'embriologia-tercera-semana', type: 'multiple-choice',
+    question: 'Según el mapa del destino, las células que migran por la región MEDIA de la línea primitiva forman el mesodermo intermedio, que origina:',
+    options: ['La musculatura esquelética', 'El aparato urogenital', 'La notocorda', 'La pared corporal'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Paraxial: músculo, hueso, cartílago · intermedio: urogenital · placa lateral: pared corporal y vísceras.',
+  },
+  {
+    id: 'emb-tsq-q10', topicId: 'embriologia-tercera-semana', type: 'multiple-choice',
+    question: '¿Por qué el desarrollo del embrión es cefalocaudal?',
+    options: ['Porque la notocorda crece de caudal a cefálico', 'Porque la región caudal se diferencia primero', 'Porque la región cefálica termina de migrar a mitad de la 3.ª semana y la caudal al final de la 4.ª', 'Porque la línea primitiva aparece en el extremo cefálico'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Mientras la cabeza ya se diferencia, la gastrulación sigue en la región caudal.',
+  },
+  {
+    id: 'emb-tsq-q11', topicId: 'embriologia-tercera-semana', type: 'multiple-choice',
+    question: 'Una vellosidad terciaria se distingue de la secundaria porque:',
+    options: ['Tiene capilares en su núcleo de mesodermo', 'No tiene sincitio', 'Es solo de citotrofoblasto', 'Flota libre en la cavidad coriónica'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'Primaria: citotrofoblasto y sincitio · secundaria: entra el mesodermo · terciaria (final de la 3.ª semana): aparecen capilares.',
+  },
+  {
+    id: 'emb-tsq-q12', topicId: 'embriologia-tercera-semana', type: 'multiple-choice',
+    question: 'Un recién nacido tiene una masa sacrococcígea con tejido nervioso, cartílago y epitelio. ¿Qué falla explica el hallazgo?',
+    options: ['Regresión temprana de la línea primitiva', 'Falta de mesodermo caudal', 'Ausencia de la notocorda', 'Persistencia de restos de la línea primitiva'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'Son células pluripotenciales que forman un teratoma sacrococcígeo; la regresión temprana causa lo contrario, la disgenesia caudal.',
   },
 ]

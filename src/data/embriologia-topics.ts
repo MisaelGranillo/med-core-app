@@ -5,7 +5,8 @@ import type { Topic } from '../types'
 // anomalías cromosómicas numéricas y estructurales, ciclos ovárico y endometrial,
 // fecundación y primera semana del desarrollo; infertilidad, reproducción asistida,
 // salud reproductiva y planos y ejes embrionarios. Semana 2, Clase 1: segunda
-// semana del desarrollo (días 8–13) y clínica de la implantación.
+// semana del desarrollo (días 8–13) y clínica de la implantación. Clase 2: tercera
+// semana (gastrulación, notocorda, mapa del destino) y su clínica.
 export const embriologiaTopics: Topic[] = [
   {
     id: 'embriologia-desarrollo-temprano',
@@ -2540,6 +2541,322 @@ export const embriologiaTopics: Topic[] = [
             type: 'note',
             title: 'Gemelos',
             content: 'Dicigóticos: dos ovocitos fecundados por dos espermatozoides distintos. Monocigóticos: un solo cigoto cuyas células se separan en una etapa temprana. Un embarazo gemelar ectópico es poco frecuente y, si ocurre, suele perderse antes.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-tercera-semana',
+    title: 'Tercera semana: gastrulación y disco trilaminar',
+    subtitle: 'Línea primitiva, nodo e invaginación; FGF8, E-cadherina y BRACHYURY; membranas orofaríngea y cloacal y placa precordal; notocorda y alantoides; mapa del destino; crecimiento cefalocaudal; vellosidades secundarias y terciarias; holoprosencefalia, disgenesia caudal y teratoma sacrococcígeo',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '🧬',
+    keyPoints: [
+      'Tres eventos de la tercera semana: GASTRULACIÓN, formación de la NOTOCORDA y NEURULACIÓN. El EPIBLASTO es la fuente de las tres capas germinales.',
+      'Días 15–16: aparece la LÍNEA PRIMITIVA en el epiblasto, con el NODO PRIMITIVO y la FOSITA PRIMITIVA en su extremo cefálico; marca los ejes cefálico-caudal y derecho-izquierdo.',
+      'INVAGINACIÓN: células del epiblasto migran a la línea, toman forma de matraz y se deslizan por debajo. Las primeras forman el ENDODERMO, las siguientes el MESODERMO y las que quedan en la superficie, el ECTODERMO.',
+      'El FGF8 suprime la E-CADHERINA y libera a las células para invaginarse; también induce BRACHYURY, que especifica el mesodermo.',
+      'La NOTOCORDA se forma con células que migran por el nodo hacia cefálico por la línea media; su remanente en el adulto es el NÚCLEO PULPOSO.',
+      'Desarrollo CEFALOCAUDAL: la región cefálica termina de migrar a mitad de la 3.ª semana y la caudal al final de la 4.ª. Vellosidad TERCIARIA (con capilares) al final de la 3.ª semana.',
+    ],
+    sections: [
+      {
+        id: 'ets-1',
+        number: 1,
+        title: 'Panorama y punto de partida',
+        keyTerms: ['gastrulación', 'notocorda', 'neurulación', 'gástrula', 'cresta neural'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Al final de la segunda semana el embrión es un DISCO BILAMINAR: epiblasto hacia la cavidad amniótica e hipoblasto hacia el saco vitelino, sostenido por el mesodermo extraembrionario (somático sobre el amnios y el citotrofoblasto, esplácnico o visceral sobre el saco vitelino) y rodeado por el trofoblasto. En la tercera semana se convierte en un DISCO TRILAMINAR, también llamado GÁSTRULA.',
+          },
+          {
+            type: 'list',
+            title: 'Tres eventos de la tercera semana',
+            items: [
+              'Gastrulación: formación de las tres capas germinales.',
+              'Formación de la notocorda, que induce el esqueleto axial.',
+              'Neurulación: formación del tubo neural, inicio del sistema nervioso.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Derivados de cada capa (adelanto)',
+            data: {
+              headers: ['Capa', 'Algunos derivados'],
+              rows: [
+                ['Ectodermo', 'Lo que nos pone en contacto con el exterior: sistema nervioso central y periférico, epidermis, glándulas sebáceas, sudoríparas y mamarias, partes de los órganos de los sentidos, esmalte dental'],
+                ['Mesodermo', 'Músculo, tendones, cartílago, hueso, aparato urogenital, células sanguíneas y parte de los vasos; es la capa con más derivados'],
+                ['Endodermo', 'Epitelio del tubo digestivo y del aparato respiratorio, y glándulas anexas al digestivo'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'La «cuarta capa»',
+            content: 'La CRESTA NEURAL nace del ectodermo y forma tantos derivados que se le considera una cuarta capa germinal; es clave para el esqueleto de la cara (viscerocráneo) y para estructuras del corazón.',
+          },
+          {
+            type: 'list',
+            title: 'Repaso de la implantación: cuatro fases',
+            items: ['Eclosión: salida de la zona pelúcida.', 'Aposición: ligandos del blastocisto frente a receptores del endometrio receptivo.', 'Adhesión.', 'Invasión, a cargo del sincitiotrofoblasto.'],
+          },
+        ],
+      },
+      {
+        id: 'ets-2',
+        number: 2,
+        title: 'Línea primitiva e invaginación',
+        keyTerms: ['línea primitiva', 'nodo primitivo', 'fosita primitiva', 'invaginación', 'células en matraz'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Vista desde arriba, del disco solo se ve el epiblasto. Hacia los días 15–16 aparece en él una ranura, la LÍNEA PRIMITIVA, que se hace más profunda. En su extremo cefálico hay una pequeña elevación, el NODO PRIMITIVO, rodeada por una depresión, la FOSITA PRIMITIVA. La línea sirve de referencia para ubicar los extremos cefálico y caudal y los lados derecho e izquierdo, y el nodo dirige la gastrulación con múltiples señales.',
+          },
+          {
+            type: 'steps',
+            title: 'Invaginación: cómo se forman las capas',
+            steps: [
+              'Células del epiblasto migran hacia la línea primitiva, de LATERAL a MEDIAL y hacia el extremo cefálico.',
+              'Toman forma de matraz, se desprenden del epiblasto y se deslizan por debajo de él.',
+              'Las primeras desplazan al hipoblasto y forman el ENDODERMO embrionario.',
+              'Otras se colocan entre el epiblasto y el endodermo: forman el MESODERMO.',
+              'Las que permanecen en el epiblasto forman el ECTODERMO.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'Las células del mesodermo migran en sentido lateral y craneal hasta rebasar el borde del disco y contactar con el mesodermo extraembrionario que cubre el saco vitelino y el amnios.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'La única capa nueva',
+            content: 'El ectodermo y el endodermo se forman sobre capas que ya existían (epiblasto e hipoblasto). El MESODERMO es la única capa que se forma «de cero» durante la gastrulación; por eso las fallas de la línea primitiva afectan sobre todo derivados mesodérmicos.',
+          },
+        ],
+      },
+      {
+        id: 'ets-3',
+        number: 3,
+        title: 'Control molecular de la gastrulación',
+        keyTerms: ['FGF8', 'E-cadherina', 'SNAIL', 'BRACHYURY'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Cómo se liberan las células',
+            steps: [
+              'Las células de la propia línea primitiva sintetizan FGF8 (factor de crecimiento de fibroblastos 8); las del epiblasto tienen su receptor.',
+              'El FGF8 actúa sobre el núcleo y suprime la E-CADHERINA, la proteína de unión que mantiene a las células del epiblasto unidas como un epitelio.',
+              'Sin E-cadherina, las células quedan libres para invaginarse.',
+              'El FGF8 también induce el factor de transcripción BRACHYURY, que especifica el mesodermo.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'ets-4',
+        number: 4,
+        title: 'Membranas orofaríngea y cloacal y placa precordal',
+        keyTerms: ['membrana orofaríngea', 'placa precordal', 'membrana cloacal', 'prosencéfalo'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Tres estructuras del disco trilaminar',
+            data: {
+              headers: ['Estructura', 'Ubicación', 'Composición', 'Futuro'],
+              rows: [
+                ['Membrana orofaríngea', 'Extremo cefálico', 'Ectodermo y endodermo unidos, sin mesodermo', 'Sitio de la cavidad oral; separa la boca primitiva del intestino'],
+                ['Placa precordal', 'Entre la membrana orofaríngea y el extremo de la notocorda', 'Mesodermo (las primeras células que migran por el nodo hacia cefálico)', 'Límite craneal de la notocorda; induce el prosencéfalo'],
+                ['Membrana cloacal', 'Extremo caudal', 'Ectodermo y endodermo unidos, sin mesodermo', 'Comunicación del tubo digestivo con el exterior'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'El PROSENCÉFALO es la vesícula superior del tubo neural y formará los hemisferios cerebrales; le siguen el mesencéfalo y el rombencéfalo, que se continúa con la médula espinal.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Por qué importan las membranas',
+            content: 'La membrana orofaríngea y la cloacal son los dos únicos sitios donde el ectodermo y el endodermo quedan pegados sin mesodermo entre ellos. Más adelante se rompen para abrir la boca y el ano; si la membrana anal no se perfora queda un ano imperforado, una de las malformaciones que se buscan en la exploración del recién nacido.',
+          },
+        ],
+      },
+      {
+        id: 'ets-5',
+        number: 5,
+        title: 'Formación de la notocorda',
+        keyTerms: ['células prenotocordales', 'proceso notocordal', 'placa notocordal', 'conducto neuroentérico', 'notocorda definitiva', 'alantoides'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Secuencia',
+            steps: [
+              'CÉLULAS PRENOTOCORDALES migran por el nodo primitivo hacia el extremo cefálico, limitadas a la LÍNEA MEDIA, hasta la placa precordal.',
+              'Forman el PROCESO NOTOCORDAL, un cordón sólido que después adquiere una luz (canal notocordal).',
+              'Sus células se intercalan en el endodermo y forman la PLACA NOTOCORDAL.',
+              'Se abre temporalmente el CONDUCTO NEUROENTÉRICO, que comunica la cavidad amniótica con el saco vitelino.',
+              'La placa notocordal prolifera, se desprende del endodermo y forma un cordón sólido: la NOTOCORDA DEFINITIVA.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'La notocorda definitiva queda debajo del tubo neural y es un centro de señalización: induce la columna vertebral (esqueleto axial) y el engrosamiento del ectodermo que formará el tubo neural.',
+          },
+          {
+            type: 'definition',
+            title: 'Alantoides (divertículo alantoentérico)',
+            content: 'Aparece hacia el día 16 en la pared posterior del saco vitelino y se extiende hacia el pedículo de fijación. Se relaciona con la cloaca, de la que derivan la vejiga, la uretra y parte del conducto anal.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'La notocorda en el adulto',
+            content: 'Su remanente es el NÚCLEO PULPOSO de los discos intervertebrales, rodeado por el anillo fibroso; también quedan restos en el ligamento apical del diente del axis. Cuando el núcleo pulposo protruye a través del anillo se produce la hernia de disco, causa frecuente de lumbalgia con dolor irradiado a la pierna.',
+          },
+        ],
+      },
+      {
+        id: 'ets-6',
+        number: 6,
+        title: 'Mapa del destino',
+        keyTerms: ['mapa del destino', 'mesodermo paraxial', 'mesodermo intermedio', 'placa lateral', 'SNAIL'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El sitio por donde migra cada célula al atravesar el nodo o la línea primitiva determina en qué se convierte.',
+          },
+          {
+            type: 'table',
+            title: 'Región de migración y destino',
+            data: {
+              headers: ['Por dónde migra', 'Qué forma', 'Derivados'],
+              rows: [
+                ['Región craneal del nodo', 'Placa precordal y notocorda', 'Inducción del prosencéfalo y del esqueleto axial'],
+                ['Bordes laterales del nodo y extremo craneal de la línea', 'Mesodermo PARAXIAL', 'Músculo, hueso, cartílago, tendones y ligamentos'],
+                ['Región media de la línea', 'Mesodermo INTERMEDIO', 'Aparato urogenital'],
+                ['Región caudal de la línea', 'Mesodermo de la PLACA LATERAL', 'Pared corporal; junto con ectodermo y endodermo, vísceras como el tubo digestivo'],
+                ['Región más caudal de la línea', 'Mesodermo extraembrionario', 'Segunda fuente; la primera fue el hipoblasto (saco vitelino primitivo)'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Derecha e izquierda',
+            content: 'El factor de transcripción SNAIL se restringe al mesodermo de la placa lateral DERECHA y probablemente regula los genes que establecen ese lado.',
+          },
+        ],
+      },
+      {
+        id: 'ets-7',
+        number: 7,
+        title: 'Crecimiento del disco: patrón cefalocaudal',
+        keyTerms: ['regresión de la línea primitiva', 'cefalocaudal'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Cuándo termina la migración',
+            data: {
+              headers: ['Región', 'Termina de migrar e inicia la diferenciación'],
+              rows: [
+                ['Cefálica', 'Mitad de la tercera semana'],
+                ['Caudal', 'Final de la cuarta semana'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'La invaginación y la migración continúan hasta el final de la cuarta semana; después la línea primitiva hace REGRESIÓN: se acorta y desaparece. Por ese desfase el desarrollo es CEFALOCAUDAL: las estructuras craneales se diferencian mientras la gastrulación sigue en la región caudal. El patrón se mantiene durante todo el periodo embrionario y cerca de la primera mitad del fetal (la cabeza va adelante, y los miembros superiores se forman antes que los inferiores).',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'El desfase en la clínica',
+            content: 'Una falla tardía de la gastrulación compromete sobre todo lo caudal (columna lumbosacra, riñones, genitales, miembros inferiores) y respeta la cabeza, que ya se había formado. Es la lógica de la disgenesia caudal.',
+          },
+        ],
+      },
+      {
+        id: 'ets-8',
+        number: 8,
+        title: 'Desarrollo del trofoblasto',
+        keyTerms: ['vellosidad secundaria', 'vellosidad terciaria', 'sistema capilar velloso', 'cápsula citotrofoblástica', 'vellosidades troncales', 'espacios intervellosos'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Maduración de las vellosidades',
+            data: {
+              headers: ['Vellosidad', 'Cuándo', 'Qué tiene'],
+              rows: [
+                ['Primaria', 'Desde el día 13, inicio de la 3.ª semana', 'Núcleo de citotrofoblasto cubierto por sincitio'],
+                ['Secundaria', 'Durante la 3.ª semana', 'Entra mesodermo extraembrionario al núcleo'],
+                ['Terciaria (definitiva)', 'Final de la 3.ª semana', 'Aparecen capilares en el núcleo de mesodermo'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'Los capilares de las vellosidades terciarias forman el SISTEMA CAPILAR VELLOSO, que se conecta con los de la placa coriónica y del pedículo de fijación y luego con la circulación intraembrionaria. Son vasos del embrión, no de la madre. Así, cuando el corazón empieza a latir en la cuarta semana, ya puede llevar nutrientes y oxígeno.',
+          },
+          {
+            type: 'list',
+            title: 'Fijación al endometrio',
+            items: [
+              'CÁPSULA CITOTROFOBLÁSTICA EXTERNA: rodea todo el trofoblasto y fija con firmeza el saco coriónico al endometrio.',
+              'Vellosidades TRONCALES o de anclaje: van de la placa coriónica a la DECIDUA BASAL, la zona donde se formará la placenta.',
+              'Vellosidades LIBRES o terminales (flotantes): ramas laterales de las troncales; ahí ocurre el intercambio.',
+              'ESPACIOS INTERVELLOSOS: los espacios entre vellosidades, llenos de sangre materna; son las antiguas lagunas del sincitio.',
+              'Días 19–20: el embrión cuelga de la cápsula por un PEDÍCULO DE FIJACIÓN delgado, futuro cordón umbilical.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'ets-9',
+        number: 9,
+        title: 'Clínica de la gastrulación',
+        keyTerms: ['teratógeno', 'holoprosencefalia', 'hipotelorismo', 'disgenesia caudal', 'sirenomelia', 'teratoma sacrococcígeo'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La gastrulación, y todo el periodo embrionario (semanas 3 a 8), es muy sensible a los TERATÓGENOS: agentes, casi siempre externos, que alteran el desarrollo de los órganos, como la radiación, el tabaco, el alcohol, algunas drogas y fármacos. El riesgo es mayor porque a esa edad muchas mujeres aún no saben que están embarazadas.',
+          },
+          {
+            type: 'definition',
+            title: 'Holoprosencefalia',
+            content: 'Dosis altas de alcohol matan células de la región ANTERIOR DE LA LÍNEA MEDIA del disco, que según el mapa del destino forman el área óptica y el encéfalo anterior. El resultado es una falta de estructuras craneofaciales de la línea media: prosencéfalo pequeño, ventrículos laterales fusionados en uno solo y ojos muy juntos (HIPOTELORISMO). La cara va de un hipotelorismo leve a la falta de huesos nasales con labio y paladar hendidos, una probóscide en lugar de nariz, anoftalmia o un ojo único.',
+          },
+          {
+            type: 'table',
+            title: 'Formas de holoprosencefalia',
+            data: {
+              headers: ['Forma', 'Separación de los hemisferios', 'Pronóstico'],
+              rows: [
+                ['Alobar', 'Ninguna: un solo ventrículo', 'La más grave; la mayoría no sobrevive el primer año'],
+                ['Semilobar', 'Solo en la parte posterior', 'Intermedio'],
+                ['Lobar', 'Casi completa; fusión solo en una parte de los lóbulos frontales', 'Las formas leves pueden llegar a la edad adulta'],
+              ],
+            },
+          },
+          {
+            type: 'definition',
+            title: 'Disgenesia caudal (sirenomelia)',
+            content: 'Se forma poco mesodermo en la región caudal, por ejemplo cuando la línea primitiva hace regresión antes de tiempo. Afecta miembros inferiores (hipoplasia y fusión, en «cola de sirena»), vértebras lumbosacras, riñones (agenesia renal), ano (imperforado) y genitales. Se asocia con DIABETES MATERNA descontrolada. La agenesia renal bilateral la hace, en general, incompatible con la vida.',
+          },
+          {
+            type: 'definition',
+            title: 'Teratoma sacrococcígeo',
+            content: 'El escenario contrario: restos de la línea primitiva persisten en la región sacrococcígea. Son células PLURIPOTENCIALES que forman tumores con tejidos de las tres capas (músculo, cartílago, hueso, pelo, dientes, tejido nervioso). Otra fuente son células germinales primordiales que no llegaron a la cresta urogenital. Es el tumor congénito más frecuente del recién nacido (≈ 1 de cada 35 000 a 40 000 nacimientos) y predomina en niñas. Se trata con cirugía, a veces en varios tiempos.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Dos casos que se resuelven con la línea primitiva',
+            content: 'Un embrión con cabeza normal y malformaciones caudales graves sugiere una regresión temprana de la línea primitiva: falta MESODERMO, y se nota más abajo porque esa región se forma después. Un recién nacido con una masa sacrococcígea que contiene tejido nervioso, cartílago y epitelio sugiere lo contrario: la línea primitiva persistió y dejó células pluripotenciales.',
           },
         ],
       },
