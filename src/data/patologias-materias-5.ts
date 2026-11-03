@@ -128,6 +128,7 @@ const ECTOPICO: Patologia = {
     { materia: 'Histología', topicId: 'histologia-epitelial-polaridad', sectionId: 'hpol-2', label: 'Cilios del dominio apical', porQue: 'Los cilios de la trompa ayudan a mover el cigoto; si se dañan, el transporte se retrasa.' },
     { materia: 'Embriología', topicId: 'embriologia-fecundacion', sectionId: 'efe-7', label: 'Implantación e inicio de la segunda semana', porQue: 'El trofoblasto invade el tejido donde se implanta y el sincitiotrofoblasto secreta la β-hCG que se mide en el diagnóstico.' },
     { materia: 'Embriología', topicId: 'embriologia-ciclo-ovarico', sectionId: 'eco-6', label: 'Transporte del ovocito', porQue: 'Fecundación en la ampolla y llegada al útero en 3 a 4 días: si el transporte falla, el embrión se implanta en la trompa.' },
+    { materia: 'Embriología', topicId: 'embriologia-segunda-semana', sectionId: 'ess-8', label: 'Implantación anómala: embarazo ectópico y placenta previa', porQue: 'Dónde se implanta normalmente el blastocisto, las localizaciones del ectópico y cuándo se sospecha.' },
   ],
   atlas: [
     { id: 'embriologia-desarrollo-temprano', title: 'Desarrollo temprano' },
@@ -259,6 +260,8 @@ const MOLA: Patologia = {
     { materia: 'Embriología', topicId: 'embriologia-cromosomas-division', sectionId: 'ecd-2', label: 'Número de cromosomas', porQue: 'La mola parcial es triploide: una euploidía anormal (3n = 69).' },
     { materia: 'Embriología', topicId: 'embriologia-fecundacion', sectionId: 'efe-4', label: 'Fusión de membranas y bloqueo de la polispermia', porQue: 'Un ovocito fecundado por dos espermatozoides es triploide: el origen de la mola parcial.' },
     { materia: 'Histología', topicId: 'histologia-introduccion', sectionId: 'hint-4', label: 'Método y aplicaciones diagnósticas', porQue: 'El diagnóstico definitivo de la mola es histopatológico.' },
+    { materia: 'Embriología', topicId: 'embriologia-segunda-semana', sectionId: 'ess-2', label: 'Día 8: trofoblasto en dos capas y disco bilaminar', porQue: 'El sincitiotrofoblasto, la capa externa del trofoblasto, es el que produce la hCG.' },
+    { materia: 'Embriología', topicId: 'embriologia-segunda-semana', sectionId: 'ess-9', label: 'Mola hidatiforme e incompatibilidad Rh', porQue: 'Mola completa contra parcial, cómo se sospecha y por qué se extirpa todo el tejido trofoblástico.' },
   ],
   atlas: [
     { id: 'embriologia-desarrollo-temprano', title: 'Desarrollo temprano' },
