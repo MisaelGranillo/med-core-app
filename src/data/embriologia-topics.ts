@@ -2465,6 +2465,11 @@ export const embriologiaTopics: Topic[] = [
             },
           },
           {
+            type: 'note',
+            title: 'Sobre las cifras',
+            content: 'Los porcentajes de las localizaciones poco frecuentes son los de la presentación de clase. En las series clínicas, el embarazo intersticial suele representar entre el 2 y el 4 % de los embarazos ectópicos, más de lo que indica la diapositiva. Lo constante en todas las fuentes es que la gran mayoría son tubáricos y, de ellos, la mayor parte ocurre en la ampolla.',
+          },
+          {
             type: 'correlacion',
             variant: 'clinica',
             title: 'Sospecha de embarazo ectópico',
