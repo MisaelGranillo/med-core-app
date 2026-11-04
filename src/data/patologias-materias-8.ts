@@ -95,6 +95,7 @@ const TERATOMA: Patologia = {
     { materia: 'Embriología', topicId: 'embriologia-periodo-embrionario', sectionId: 'epe-9', label: 'Endodermo', porQue: 'Las células germinales primordiales nacen en la pared del saco vitelino y migran a las gónadas; las que se pierden pueden formar teratomas.' },
   ],
   atlas: [
+    { id: 'embriologia-tercera-semana', title: 'Tercera semana y periodo embrionario' },
     { id: 'embriologia-desarrollo-temprano', title: 'Desarrollo temprano' },
   ],
   caso: {
@@ -205,6 +206,7 @@ const HOLOPROSENCEFALIA: Patologia = {
     { materia: 'Embriología', topicId: 'embriologia-anomalias-numericas', sectionId: 'ean-4', label: 'Edwards, Patau y diagnóstico prenatal', porQue: 'La trisomía 13 es la causa cromosómica más frecuente.' },
   ],
   atlas: [
+    { id: 'embriologia-tercera-semana', title: 'Tercera semana y periodo embrionario' },
     { id: 'embriologia-anomalias-cromosomicas', title: 'Anomalías cromosómicas' },
   ],
   caso: {
@@ -297,6 +299,7 @@ const HERPES_ZOSTER: Patologia = {
     { materia: 'Embriología', topicId: 'embriologia-periodo-embrionario', sectionId: 'epe-4', label: 'Células de la cresta neural', porQue: 'Los ganglios sensitivos, donde el virus queda latente, derivan de la cresta neural.' },
   ],
   atlas: [
+    { id: 'embriologia-tercera-semana', title: 'Tercera semana y periodo embrionario' },
     { id: 'sistema-nervioso', title: 'Sistema Nervioso' },
     { id: 'histologia-piel', title: 'La piel' },
   ],
@@ -391,6 +394,7 @@ const NEUROBLASTOMA: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-aminas-citocinas', sectionId: 'bha-3', label: 'Tirosina: catecolaminas, hormonas tiroideas y melanina', porQue: 'El tumor produce catecolaminas; sus metabolitos (VMA y HVA) se miden en orina.' },
   ],
   atlas: [
+    { id: 'embriologia-tercera-semana', title: 'Tercera semana y periodo embrionario' },
     { id: 'bioquimica-hormonas', title: 'Hormonas y receptores' },
   ],
   caso: {
@@ -484,6 +488,7 @@ const GASTROSQUISIS: Patologia = {
     { materia: 'Anatomía', topicId: 'musculos-pared-abdominal', sectionId: 'mpab-2', label: 'Anterolateral (5 músculos)', porQue: 'Los músculos de la pared abdominal vienen de células de los somitas que migran a la hoja somática.' },
   ],
   atlas: [
+    { id: 'embriologia-tercera-semana', title: 'Tercera semana y periodo embrionario' },
     { id: 'musculos-pared-abdominal', title: 'Pared abdominal' },
   ],
   caso: {

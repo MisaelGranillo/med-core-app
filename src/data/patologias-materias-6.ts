@@ -689,6 +689,7 @@ const TUBO_NEURAL: Patologia = {
     { materia: 'Genética', topicId: 'genetica-organogenesis', sectionId: 'gorg-6', label: 'Correlación: el período crítico', porQue: 'Los órganos son más vulnerables mientras se forman, en el periodo embrionario.' },
   ],
   atlas: [
+    { id: 'embriologia-tercera-semana', title: 'Tercera semana y periodo embrionario' },
     { id: 'genetica-desarrollo', title: 'Desarrollo embrionario y sexual' },
   ],
   caso: {

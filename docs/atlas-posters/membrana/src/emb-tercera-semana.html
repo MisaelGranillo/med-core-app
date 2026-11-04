@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 7px; padding-top: 12px; }
+h1 { font-size: 42px; }
+.panel { padding: 8px 10px; }
+.ph { margin: 0 0 5px; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.5px; line-height: 1.3; }
+.lst li { margin: 0 0 2px; }
+table td { font-size: 10.1px; padding: 2px 6px; line-height: 1.26; }
+table th { padding: 2px 6px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+.box { border-radius: 8px; padding: 5px 8px; font-size: 10.2px; line-height: 1.28; }
+.box b.t { display: block; font-size: 11.2px; margin-bottom: 1px; }
+.cards3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.cards3 .c { border: 1px solid #e6e9f0; border-radius: 8px; padding: 5px 7px; font-size: 9.9px; line-height: 1.27; }
+.cards3 .c b.t { display: block; font-size: 11.1px; color: var(--navy); margin-bottom: 2px; }
+.star { color: var(--red); font-weight: 800; }
+.lbl { font-size: 9.9px; } .lbl b { font-size: 10.5px; }
+.cuts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; align-items: end; }
+.cut { text-align: center; font-size: 10px; line-height: 1.25; color: var(--muted); }
+.cut img { width: 100%; display: block; margin-bottom: 3px; }
+.cut b { display: block; color: var(--navy); font-size: 11.2px; }
+.leg { display: flex; flex-wrap: wrap; gap: 3px 11px; font-size: 9.7px; justify-content: center; margin-top: 5px; }
+.leg span { display: inline-flex; align-items: center; gap: 4px; }
+.leg i { width: 12px; height: 10px; border-radius: 3px; display: inline-block; border: 1px solid rgba(0,0,0,.15); }
+.der td.k { white-space: normal; }
+.note { font-size: 10.1px; margin: 4px 0 0; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Embriología</p>
+  <h1>Tercera semana y periodo embrionario</h1>
+  <p class="tag">Del disco bilaminar al embrión: gastrulación, neurulación y lo que forma cada capa.</p>
+</header>
+
+<div class="row">
+  <section class="panel" style="flex:1.08">
+    <div class="ph"><span class="n">1</span>Gastrulación <span class="star">★</span> <small>— disco cortado a la altura de la línea primitiva</small></div>
+    <script type="auto3d">{"img": "ana3d/emb-disco3.png", "height": 240, "cw": 440, "ch": 250, "gap": 30, "L": 8, "labels": {"nod": ["Nodo primitivo", "con la fosita", [575, 385]], "lin": ["Línea primitiva", "días 15–16", [470, 500]], "mat": ["Células en matraz", "se invaginan", [394, 600]], "ect": ["Ectodermo", "", [120, 520]], "mes": ["Mesodermo", "la única capa nueva", [200, 650]], "end": ["Endodermo", "desplaza al hipoblasto", [240, 780]]}, "side": {"nod": "right", "lin": "right", "mat": "right", "ect": "right", "mes": "right", "end": "right"}}</script>
+    <ul class="lst">
+      <li>El <b>epiblasto</b> es la fuente de las <b>tres capas</b>. Sus células migran a la línea primitiva, de lateral a medial, toman forma de matraz y se deslizan por debajo.</li>
+      <li>Las primeras forman el <b>endodermo</b>, las siguientes el <b>mesodermo</b> y las que se quedan arriba, el <b>ectodermo</b>.</li>
+      <li>El <b>FGF8</b> de la línea suprime la <b>E-cadherina</b> y las libera; también induce <b>BRACHYURY</b>, que especifica el mesodermo.</li>
+    </ul>
+  </section>
+  <section class="panel" style="flex:.92">
+    <div class="ph"><span class="n">2</span>Mapa del destino</div>
+    <table>
+      <tr><th>Migra por</th><th>Forma</th></tr>
+      <tr><td>Región craneal del nodo</td><td><b>Placa precordal</b> y <b>notocorda</b></td></tr>
+      <tr><td>Bordes del nodo y extremo craneal de la línea</td><td>Mesodermo <b>paraxial</b></td></tr>
+      <tr><td>Región media de la línea</td><td>Mesodermo <b>intermedio</b></td></tr>
+      <tr><td>Región caudal</td><td>Mesodermo de la <b>placa lateral</b></td></tr>
+      <tr><td>Región más caudal</td><td>Mesodermo extraembrionario</td></tr>
+    </table>
+    <div class="two" style="margin-top:5px">
+      <div class="box" style="background:#f2edf8"><b class="t" style="color:#6a4c9c">Notocorda</b>Células del nodo hacia cefálico por la línea media. Induce el tubo neural y la columna; su resto es el <b>núcleo pulposo</b>.</div>
+      <div class="box" style="background:#eef3f8"><b class="t" style="color:#13295b">Sin mesodermo</b><b>Membrana orofaríngea</b> (futura boca) y <b>membrana cloacal</b> (futuro ano): ectodermo y endodermo pegados.</div>
+    </div>
+    <p class="note">Desarrollo <b>cefalocaudal</b>: la región cefálica termina de migrar a mitad de la 3.ª semana; la caudal, al final de la 4.ª.</p>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">3</span>Neurulación: tres cortes transversales <span class="star">★</span></div>
+  <div class="cuts">
+    <div class="cut"><img src="{{img:ana3d/emb-neur1.png}}" alt=""><b>Placa neural</b>La notocorda induce el engrosamiento del ectodermo</div>
+    <div class="cut"><img src="{{img:ana3d/emb-neur2.png}}" alt=""><b>Pliegues y surco neural</b>Los bordes se elevan; en sus crestas está la cresta neural</div>
+    <div class="cut"><img src="{{img:ana3d/emb-neur3.png}}" alt=""><b>Tubo neural cerrado</b>El somita se divide en esclerotoma y dermomiotoma</div>
+  </div>
+  <div class="leg">
+    <span><i style="background:#9ec3ea"></i>Ectodermo superficial</span>
+    <span><i style="background:#3f6fb5"></i>Placa y tubo neural</span>
+    <span><i style="background:#7cc36b"></i>Cresta neural</span>
+    <span><i style="background:#8e44ad"></i>Notocorda</span>
+    <span><i style="background:#e8912e"></i>Mesodermo paraxial</span>
+    <span><i style="background:#f0b37e"></i>Esclerotoma</span>
+    <span><i style="background:#d9762c"></i>Dermomiotoma</span>
+    <span><i style="background:#b5651d"></i>Intermedio</span>
+    <span><i style="background:#f3c6cc"></i>Placa lateral somática</span>
+    <span><i style="background:#e48896"></i>Esplácnica</span>
+    <span><i style="background:#f2c94c"></i>Endodermo</span>
+    <span><i style="background:#c8242c"></i>Aorta dorsal</span>
+  </div>
+  <p class="note" style="text-align:center">Entre las dos hojas de la placa lateral queda el <b>celoma intraembrionario</b> (día 17).</p>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:.78">
+    <div class="ph"><span class="n">4</span>Embrión del día 22 <small>— vista dorsal</small></div>
+    <script type="auto3d">{"img": "ana3d/emb-emb22.png", "height": 262, "cw": 320, "ch": 268, "gap": 34, "L": 100, "labels": {"npc": ["Neuroporo craneal", "cierra el día 25", [253, 120]], "plc": ["Pliegue neural", "", [330, 240]], "tub": ["Tubo neural", "cerrado al centro", [253, 560]], "som": ["Somitas", "3 pares por día", [337, 640]], "npd": ["Neuroporo caudal", "cierra el día 28", [253, 940]]}, "side": {"npc": "left", "tub": "left", "npd": "left", "plc": "right", "som": "right"}}</script>
+    <p class="note">El cierre empieza en la región cervical (5.º somita) y avanza hacia ambos extremos. Primer par de somitas: día 20; 42–44 pares al final de la 5.ª semana.</p>
+  </section>
+  <section class="panel" style="flex:1.22">
+    <div class="ph"><span class="n">5</span>Mesodermo: qué forma cada parte <span class="star">★</span></div>
+    <table>
+      <tr><th>Parte</th><th>Derivados</th></tr>
+      <tr><td class="k">Esclerotoma</td><td>Vértebras y costillas, cartílago y tendones</td></tr>
+      <tr><td class="k">Miotoma</td><td>Músculo esquelético; las células ventrolaterales forman la pared abdominal y las extremidades</td></tr>
+      <tr><td class="k">Dermatoma</td><td>Dermis de la espalda; cada uno conserva la inervación de su segmento</td></tr>
+      <tr><td class="k">Intermedio</td><td>Sistema urogenital: pronefros → mesonefros → <b>metanefros</b> (riñón definitivo) y gónadas</td></tr>
+      <tr><td class="k">Hoja somática</td><td>Pared corporal, extremidades (hueso y tejido conectivo), esternón, serosas parietales</td></tr>
+      <tr><td class="k">Hoja esplácnica</td><td>Pared del tubo intestinal, serosas viscerales</td></tr>
+      <tr><td class="k">Hemangioblastos</td><td>Sangre y vasos: islotes del saco vitelino (3.ª semana) → región aortogonadomesonéfrica → hígado (2.º–7.º mes) → médula ósea</td></tr>
+    </table>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">6</span>Derivados de las capas germinales <span class="star">★</span> <small>— lo que más se pregunta</small></div>
+  <table class="der">
+    <tr><th>Neuroectodermo</th><th>Ectodermo superficial</th><th>Cresta neural</th><th>Endodermo</th></tr>
+    <tr>
+      <td>Encéfalo y médula espinal · retina · neurohipófisis</td>
+      <td>Epidermis, pelo y uñas · glándulas de la piel y mamarias · adenohipófisis · esmalte · cristalino · epitelio sensitivo de nariz y oído</td>
+      <td>Ganglios sensitivos · neuronas simpáticas y entéricas · Schwann · médula suprarrenal · melanocitos · esqueleto de la cara · tracto de salida del corazón</td>
+      <td>Epitelio digestivo y respiratorio · vejiga y uretra · cavidad timpánica · parénquima de tiroides, paratiroides, hígado y páncreas · estroma de timo y amígdalas</td>
+    </tr>
+  </table>
+</section>
+
+<section class="clin">
+  <div class="ph"><span class="n">7</span>Correlación clínica</div>
+  <div class="cards3">
+    <div class="c"><b class="t">Holoprosencefalia</b>El alcohol daña la línea media anterior del disco: hemisferios sin dividir e hipotelorismo.</div>
+    <div class="c"><b class="t">Disgenesia caudal</b>La línea primitiva se retira antes de tiempo: falta mesodermo caudal (miembros fusionados, agenesia renal). Diabetes materna.</div>
+    <div class="c"><b class="t">Teratoma sacrococcígeo</b>Restos de la línea primitiva: tejidos de las tres capas. Tumor más frecuente del recién nacido.</div>
+    <div class="c"><b class="t">Defectos del tubo neural</b>Anencefalia (neuroporo craneal) y espina bífida (caudal). Ácido fólico desde antes de concebir.</div>
+    <div class="c"><b class="t">Gastrosquisis</b>Los pliegues laterales no cierran la pared: intestino fuera, sin membrana, a la derecha del ombligo.</div>
+    <div class="c"><b class="t">Herpes zóster</b>El virus latente en un ganglio sensitivo sale por su nervio: vesículas en franja sobre un dermatoma.</div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Embriología I (UAD) · Semana 2, clases 2 y 3 · ★ temas clave · Modelos 3D propios, simplificados y no a escala</p>
+</div></body></html>
