@@ -3,7 +3,8 @@ import type { Topic } from '../types'
 // Medicina Humanística (UAD · MH01007) — Semana 1 (Clase 1: humanismo médico,
 // origen de la vida y del ser humano; Clase 2: corporeidad y unidad biopsicosocial;
 // Clase 3: relación dialéctica mente-cuerpo, desarrollo humano y envejecimiento), Semana 2
-// (Clase 1: cultura, orden cultural, indicadores e interculturalidad), Semana 3 (la relación médico-paciente,
+// (Clase 1: cultura, orden cultural, indicadores e interculturalidad; Clase 2: salud,
+// enfermedad, muerte y práctica médica), Semana 3 (la relación médico-paciente,
 // sesiones 1–3) y Semana 4 (perfiles patológicos, sesiones 1–3).
 export const humanisticaTopics: Topic[] = [
   {
@@ -2022,6 +2023,519 @@ export const humanisticaTopics: Topic[] = [
             variant: 'clinica',
             title: 'El hospital como espacio intercultural',
             content: 'En un hospital conviven la cultura médica, la de enfermería, la del personal de apoyo y la de cada paciente. Aplicar los cuatro principios significa, por ejemplo, preguntar al paciente cómo explica su enfermedad, negociar el plan de tratamiento en lugar de imponerlo y aceptar prácticas tradicionales que no le causen daño.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'humanistica-salud-concepto',
+    title: 'El concepto de salud',
+    subtitle: 'Qué es frente a cómo se posibilita la salud; experiencia hermenéutica y sentido originario (Gadamer); una sola salud; evolución histórica del concepto, de Alcmeón a la OMS, Terris y San Martín; visión normativa y neutralista; estilos de vida; contextos ideal y de uso',
+    colorKey: 'humanistica',
+    categoria: 'Medicina humanística',
+    emoji: '🌱',
+    keyPoints: [
+      'La pregunta del curso no es «qué es la salud» (una definición) sino «cómo se POSIBILITA la salud»; lo mismo vale para la enfermedad, la muerte y el acto médico.',
+      'GADAMER: la salud está en un ESTADO OCULTO; solo nos damos cuenta de ella cuando la perdemos. Su sentido originario es un modo de ser y existir en el mundo, el «olvido de uno mismo».',
+      'UNA SOLA SALUD (One Health) integra la salud humana, la animal y la ambiental ★',
+      'MILTON TERRIS: la salud tiene grados y dos polos: OBJETIVO (capacidad de funcionamiento) y SUBJETIVO (sensación de bienestar) ★',
+      'Visión NORMATIVA: salud y enfermedad están cargadas de valoración · Visión NEUTRALISTA: son una cuestión científico-empírica, sin juicios de valor ★',
+      'CONTEXTO IDEAL de la salud: utópico, filosófico-antropológico, económico-político y sociológico · CONTEXTO DE USO: económico-político, de los pacientes, médico-asistencial y sociológico ★',
+    ],
+    sections: [
+      {
+        id: 'hsa-1',
+        number: 1,
+        title: 'La pregunta correcta y un caso ético',
+        keyTerms: ['posibilitación', 'autonomía', 'veracidad', 'escala de valores'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos preguntas distintas',
+            left: { title: '¿Qué es la salud?', items: ['Pide una DEFINICIÓN: «la salud es…»'] },
+            right: { title: '¿Cómo se posibilita la salud?', items: ['Pregunta cómo se hace posible', 'La salud es una experiencia humana que cada quien interpreta según su momento de vida'] },
+          },
+          {
+            type: 'paragraph',
+            content: 'La misma distinción se aplica a la enfermedad, la muerte y el acto médico, y aparece en el examen: distinguir la definición de la posibilitación.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'El paciente que asiente pero no quiere',
+            content: 'Un joven indígena de 25 años con osteosarcoma de la pierna y metástasis pulmonares tiene indicada una amputación para prolongar su vida. Su padre, jefe de la comunidad, la acepta y el joven asiente; en privado le dice al cirujano que no la quiere, porque no desea vivir con discapacidad. La decisión es del paciente, que es adulto y autónomo; el médico no puede mentirle a la familia («hubo problemas médicos») porque le debe veracidad, y necesita conocer la escala de valores del paciente, que es parte de su cultura.',
+          },
+        ],
+      },
+      {
+        id: 'hsa-2',
+        number: 2,
+        title: 'La experiencia de la salud',
+        keyTerms: ['ser-sano', 'estar-sano', 'saberse-sano', 'estado oculto de la salud', 'Gadamer', 'praxis'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Tres dimensiones de la experiencia hermenéutica de la salud',
+            data: {
+              headers: ['Dimensión', 'Qué expresa'],
+              rows: [
+                ['Ser-sano', '«Lo que se muestra en sí misma»: el estado vivido'],
+                ['Estar-sano', '«Esto que así se muestra en sí misma»: la conducta que se ve, con días buenos y días malos'],
+                ['Saberse-sano', '«Estar en lo que se muestra en sí misma»: un proceso metacognitivo; una persona con diabetes controlada puede saberse sana'],
+              ],
+            },
+          },
+          {
+            type: 'definition',
+            title: 'Estado oculto de la salud (Gadamer)',
+            content: 'Nos damos cuenta de la salud solo cuando la perdemos, al enfermar. Su SENTIDO ORIGINARIO es un modo de ser y existir del ser-en-el-mundo, con todo su conjunto de relaciones: la salud es el «olvido de uno mismo».',
+          },
+          {
+            type: 'list',
+            title: 'Componentes de la experiencia',
+            items: ['Historicidad.', 'Estar arrojado (eyecto) al mundo.', 'El acontecer.', 'La finitud: la conciencia de que la vida termina.'],
+          },
+          {
+            type: 'paragraph',
+            content: 'La salud es también PRAXIS, una práctica transformadora: hacer salud cambia la manera de vivir.',
+          },
+        ],
+      },
+      {
+        id: 'hsa-3',
+        number: 3,
+        title: 'Evolución histórica del concepto',
+        keyTerms: ['Alcmeón', 'humores', 'medio interno', 'homeostasis', 'Leriche', 'Dubos', 'Terris', 'San Martín'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Autores y su idea de salud ★',
+            data: {
+              headers: ['Autor', 'Idea clave'],
+              rows: [
+                ['Alcmeón de Crotona', 'La enfermedad nace en el individuo como desarmonía o desequilibrio de la physis; causas internas'],
+                ['Hipócrates', 'Cuatro humores (sangre, flema, bilis amarilla y bilis negra): salud es su equilibrio; enfermedad, su mezcla inarmónica'],
+                ['Galeno', 'Retoma los humores y explica las epidemias por MIASMAS, emanaciones del aire que alteran su equilibrio'],
+                ['Claude Bernard', 'Constancia del MEDIO INTERNO'],
+                ['Walter Cannon', 'Acuña HOMEOSTASIS: los mecanismos que mantienen constante el medio interno'],
+                ['W. H. Perkins', 'Equilibrio relativo de forma y función, por ajuste dinámico ante las fuerzas que tienden a alterarlo'],
+                ['OMS', '«Estado de completo bienestar físico, mental y social, y no solamente la ausencia de afecciones o enfermedades»'],
+                ['René Leriche', '«La vida en el silencio de los órganos»'],
+                ['René Dubos', 'Estado de ADAPTACIÓN al medio y capacidad de funcionar'],
+                ['Milton Terris', 'Bienestar más CAPACIDAD DE FUNCIONAMIENTO; la salud tiene grados y dos polos'],
+                ['Congreso de Médicos y Biólogos de Lengua Catalana', 'Una manera de vivir AUTÓNOMA, SOLIDARIA Y GOZOSA'],
+                ['Joseph Matarazzo', 'SALUD CONDUCTUAL: responsabilidad individual y peso de los factores psíquicos'],
+                ['Hernán San Martín', 'Proceso DINÁMICO salud-enfermedad: histórico, cambia con la época, la cultura y las condiciones de vida'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Sobre la definición de la OMS',
+            content: 'En clase se presentó como «estado dinámico de completo bienestar físico, mental, emocional, espiritual y social». La Constitución de la OMS, vigente desde 1948, dice solo «físico, mental y social»; las palabras «dinámico», «emocional» y «espiritual» son ampliaciones posteriores que se han propuesto, pero no forman parte de la definición oficial.',
+          },
+          {
+            type: 'comparison',
+            title: 'Los dos polos de Milton Terris ★',
+            left: { title: 'Polo objetivo', items: ['Capacidad de funcionamiento', 'Se detecta en distintos grados'] },
+            right: { title: 'Polo subjetivo', items: ['Sensación de bienestar', 'Los «días buenos y días malos»'] },
+          },
+          {
+            type: 'paragraph',
+            content: 'Para San Martín la salud es un PUNTO DE ENCUENTRO dentro de un sistema de signos, significados y prácticas: entre el individuo, el ambiente y la organización social, y entre lo público, lo privado y la comunidad.',
+          },
+        ],
+      },
+      {
+        id: 'hsa-4',
+        number: 4,
+        title: 'Normativa o neutralista; una sola salud y estilos de vida',
+        keyTerms: ['visión normativa', 'visión neutralista', 'una sola salud', 'estilo de vida'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos visiones de la salud y la enfermedad ★',
+            left: { title: 'Normativa', items: ['Conceptos CARGADOS DE VALORACIÓN: lo deseable, lo útil, lo bueno', 'No se puede decidir objetivamente si algo es salud o enfermedad'] },
+            right: { title: 'Neutralista', items: ['NO hace falta recurrir a juicios de valor', 'Salud y enfermedad son una cuestión científico-empírica'] },
+          },
+          {
+            type: 'definition',
+            title: 'Una sola salud (One Health) ★',
+            content: 'Enfoque que integra la salud HUMANA, la ANIMAL y la AMBIENTAL (ecológica). Se emparenta con la salud planetaria y la salud global. Definir la salud es difícil porque depende de contextos diferentes, parte de presupuestos distintos y resume las aspiraciones e ideales del estado de vida que se desea alcanzar.',
+          },
+          {
+            type: 'list',
+            title: 'Estilo de vida: los seis ámbitos de la medicina del estilo de vida',
+            items: ['Actividad física.', 'Control del estrés.', 'Relaciones interpersonales.', 'Higiene del sueño.', 'Consumo de sustancias (tabaco, alcohol, cafeína).', 'Alimentación saludable.'],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Una sola salud en la consulta',
+            content: 'Una diarrea en un niño de zona rural puede venir del agua, de los animales de traspatio o de los alimentos; las zoonosis, la resistencia a los antibióticos por su uso en animales y la contaminación del agua son ejemplos de por qué la salud humana no se separa de la animal ni de la ambiental.',
+          },
+        ],
+      },
+      {
+        id: 'hsa-5',
+        number: 5,
+        title: 'Contextos de la salud',
+        keyTerms: ['contexto ideal', 'contexto de uso', 'dolencia'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Contexto ideal de la salud ★',
+            data: {
+              headers: ['Contexto', 'Qué destaca'],
+              rows: [
+                ['Ideal o utópico', 'Ideas de felicidad plena y calidad integral de vida'],
+                ['Filosófico y antropológico', 'Concepción global del ser humano; la salud es su estado más propio'],
+                ['Económico y político', 'La salud como bien económico'],
+                ['Sociológico', 'La salud se configura por la sociedad como un todo integrado'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Contexto de uso de la salud ★',
+            data: {
+              headers: ['Contexto', 'Qué destaca'],
+              rows: [
+                ['Económico y político', 'Financiación, costo de las enfermedades, oferta y demanda, eficiencia de los servicios'],
+                ['De los pacientes', 'Personas que se sienten enfermas en su cultura y su entorno (familia, escuela, institución); su concepto primario es la DOLENCIA'],
+                ['Médico-asistencial', 'Actividad y necesidades de los profesionales; curativo y pragmático'],
+                ['Sociológico', 'Comprender la sociedad en conjunto y actuar sobre ella'],
+              ],
+            },
+          },
+          {
+            type: 'steps',
+            title: 'Cómo cambió el concepto con cada época',
+            steps: [
+              'Enfermedades infectocontagiosas: salud como AUSENCIA de enfermedad o invalidez.',
+              'Desarrollo del psicoanálisis: salud como BIENESTAR físico, mental y social.',
+              'Desarrollo de la ecología: salud como EQUILIBRIO con el entorno y adaptación.',
+              'Predominio de las enfermedades crónicas.',
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'humanistica-enfermedad-proceso',
+    title: 'Enfermedad y proceso salud-enfermedad',
+    subtitle: 'Definiciones de enfermedad (Canguilhem, Hesslow, Boorse, De Vito, Scadding, San Martín, Sadegh-Zadeh, Rossi); convención y construcción social; enfoques de Canguilhem y conducta de enfermedad de Mechanic; multicausalidad; Rojas Soriano, Leavell y Clark, horizonte clínico, salud positiva y zona neutra',
+    colorKey: 'humanistica',
+    categoria: 'Medicina humanística',
+    emoji: '🩺',
+    keyPoints: [
+      'BOORSE: la enfermedad es un estado natural, libre de valoración (teoría bioestadística) · CANGUILHEM y DE VITO: concepto valorativo · HESSLOW: niega un concepto general de enfermedad.',
+      'Que un diagnóstico sea una CONVENCIÓN (criterios que se acuerdan) no lo vuelve una construcción social; la RESPUESTA social a la enfermedad sí lo es.',
+      '«La INCAPACIDAD DEL ESTADO para atender la salud contribuyó a reconocer el origen MULTICAUSAL de la enfermedad» ★',
+      'Los perfiles de salud y enfermedad se explican por el CONTEXTO HISTÓRICO, el MODO DE PRODUCCIÓN y las CLASES SOCIALES.',
+      'HORIZONTE CLÍNICO (Leavell y Clark): la línea entre la etapa asintomática y la sintomática; la prevención se apoya en diagnóstico oportuno y tratamiento temprano.',
+      'ZONA NEUTRA: el punto del proceso en que no se distingue lo normal de lo patológico.',
+    ],
+    sections: [
+      {
+        id: 'hep-1',
+        number: 1,
+        title: 'Qué es la enfermedad, según cada autor',
+        keyTerms: ['Canguilhem', 'Boorse', 'teoría bioestadística', 'Hesslow', 'Scadding', 'lógica difusa'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Definiciones de enfermedad',
+            data: {
+              headers: ['Autor', 'Idea clave'],
+              rows: [
+                ['Georges Canguilhem', 'Estado anormal o patológico que predispone a un resultado adverso; concepto VALORATIVO y convencional'],
+                ['Germund Hesslow', 'NIEGA un concepto general de enfermedad: no hay teoría biomédica ni leyes generales que la definan'],
+                ['Christopher Boorse', 'Estado NATURAL, libre de valoración: TEORÍA BIOESTADÍSTICA, una función disminuida respecto de lo típico para la edad y el sexo'],
+                ['De Vito', 'Basada en JUICIOS DE VALOR: la sociedad impone las reglas para designar lo patológico'],
+                ['J. G. Scadding', 'La enfermedad se entiende por CONVENCIONES: los criterios diagnósticos se acuerdan y cambian'],
+                ['Hernán San Martín', 'DESEQUILIBRIO ECOLÓGICO; no tiene sentido fuera del ser humano como unidad bio-psico-social y espiritual'],
+                ['Kazem Sadegh-Zadeh', 'La enfermedad como concepto de LÓGICA DIFUSA («fuzzy disease»): se tiene en grados'],
+                ['Rossi', 'La enfermedad depende de lo INDIVIDUAL; la salud participa de lo COLECTIVO'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Convención no es construcción social',
+            content: 'Que los criterios de diabetes se fijen por consenso no significa que la diabetes sea una «construcción social»: es una alteración real del metabolismo de la glucosa. Lo que sí es construcción social es la respuesta a la enfermedad: ir al médico, a una limpia o a que «truenen el cuerito».',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Criterios que cambian',
+            content: 'La hipertensión es un buen ejemplo de enfermedad definida por convención: el valor de corte ha cambiado con las guías, y un mismo paciente puede pasar de «normal» a «hipertenso» sin que su presión haya cambiado. Eso no vuelve irreal el daño que la presión alta causa a las arterias.',
+          },
+        ],
+      },
+      {
+        id: 'hep-2',
+        number: 2,
+        title: 'Enfoques y conducta de enfermedad',
+        keyTerms: ['enfoque ontológico', 'enfoque dinámico', 'enfoque social', 'conducta de enfermedad', 'Mechanic'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Tres enfoques de la enfermedad (Canguilhem, «Lo normal y lo patológico»)',
+            items: [
+              'ONTOLÓGICO: ¿la enfermedad existe en sí misma o solo en el cuerpo del enfermo?',
+              'DINÁMICO: alteración de los mecanismos de regulación homeostática.',
+              'SOCIAL: la enfermedad como construcción social.',
+            ],
+          },
+          {
+            type: 'list',
+            title: 'Conducta de enfermedad (David Mechanic): cuatro formas de entenderla',
+            items: [
+              'Disposición estable de la persona a responder a la enfermedad.',
+              'Resultado de la interacción entre variables personales y sociales.',
+              'Consecuencia de la estructura y organización del sistema sanitario.',
+              'Resultado del proceso de atribución en torno a la salud y la enfermedad.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'hep-3',
+        number: 3,
+        title: 'Multicausalidad y determinantes',
+        keyTerms: ['multicausalidad', 'factores de riesgo', 'modo de producción', 'clases sociales'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Pregunta de examen ★',
+            content: '«La incapacidad del Estado para atender la salud contribuyó a reconocer el origen multicausal de la enfermedad»: reconocer muchas causas sirvió también para justificar que el Estado se limitara a la prevención y la promoción.',
+          },
+          {
+            type: 'paragraph',
+            content: 'El MODELO MULTICAUSAL busca identificar factores de riesgo o determinantes. Los perfiles diferenciales de salud y enfermedad de una población se explican por su CONTEXTO HISTÓRICO, su MODO DE PRODUCCIÓN y sus CLASES SOCIALES; con esos tres elementos se caracteriza la región en el proyecto integrador.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Misma enfermedad, distinto perfil',
+            content: 'La tuberculosis y la diabetes complicada no se distribuyen al azar: se concentran donde hay hacinamiento, trabajo precario y poco acceso a servicios. El mismo bacilo o la misma glucosa alta producen perfiles distintos según la clase social y el modo de vida de cada grupo.',
+          },
+        ],
+      },
+      {
+        id: 'hep-4',
+        number: 4,
+        title: 'El proceso salud-enfermedad',
+        keyTerms: ['dialéctica', 'tríada ecológica', 'historia natural', 'horizonte clínico', 'salud positiva', 'zona neutra'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El proceso salud-enfermedad es una DIALÉCTICA (salud, enfermedad, salud): un fenómeno individual y colectivo con componentes biológicos, sociales, ideológicos y espirituales. Raúl Rojas Soriano lo analiza en tres niveles: el modelo unicausal, el multicausal y el de las relaciones internas del proceso (lo cultural y lo intercultural).',
+          },
+          {
+            type: 'definition',
+            title: 'Horizonte clínico',
+            content: 'En la historia natural y social de la enfermedad de LEAVELL Y CLARK, que parte de la tríada ecológica (agente, huésped y ambiente) y de la exposición al riesgo, es la línea que separa la etapa asintomática de la sintomática. Un diagnóstico tardío ya cruzó una parte de la historia natural; por eso la prevención se apoya en el DIAGNÓSTICO OPORTUNO y el TRATAMIENTO TEMPRANO.',
+          },
+          {
+            type: 'comparison',
+            title: 'Los dos extremos del proceso',
+            left: { title: 'Salud positiva', items: ['Bienestar elevado y capacidad de funcionamiento', 'Se mantiene con defensa, fomento, protección, promoción y prevención'] },
+            right: { title: 'Pérdida de salud', items: ['Deterioro progresivo', 'Termina en la muerte prematura: toda muerte por enfermedad lo es'] },
+          },
+          {
+            type: 'paragraph',
+            content: 'Entre ambos está la ZONA NEUTRA, donde no se distingue lo normal de lo patológico: la persona no está ni sana ni enferma. La protección, la promoción y la prevención también se aplican a quien ya está enfermo, por ejemplo para evitar las complicaciones de la diabetes.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'humanistica-muerte-practica',
+    title: 'La muerte y la práctica médica',
+    subtitle: 'Definiciones de muerte, estado y evento (Trueba), muerte encefálica, signos clínicos y fenómenos cadavéricos, duelo, ars moriendi y cuidados paliativos; práctica médica: dimensiones, physis y techné, acto médico y lex artis, lo médico y lo social, consejo médico',
+    colorKey: 'humanistica',
+    categoria: 'Medicina humanística',
+    emoji: '🕯️',
+    keyPoints: [
+      'TRUEBA GUTIÉRREZ: la muerte como ESTADO y la muerte como EVENTO (el morir): «una cosa es la muerte y otra el morir».',
+      'MUERTE ENCEFÁLICA: cese irreversible de las funciones de TODO el encéfalo, incluido el TALLO cerebral, comprobado con pruebas neurológicas y estudios como el EEG sin actividad.',
+      'Fenómenos cadavéricos: ALGOR (enfriamiento), RIGOR (rigidez), LIVOR (livideces) y deshidratación.',
+      'Duelo en cuatro fases: aturdimiento, anhelo y búsqueda, desorganización y desesperación, y reorganización.',
+      '«El ARTE de la medicina surge de la PHYSIS y de la TECHNÉ» ★',
+      '«La explicación de lo médico por lo social» comprende el rol del paciente y del médico, la fisonomía de la institución médica, el régimen hospitalario y la personificación del paciente como objeto ★',
+    ],
+    sections: [
+      {
+        id: 'hmp-1',
+        number: 1,
+        title: 'Qué es la muerte',
+        keyTerms: ['finitud', 'muerte como estado', 'muerte como evento', 'muerte encefálica'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La conciencia de la finitud se vincula con la experiencia de la muerte. La autoconciencia y la conciencia de la muerte son producto de la evolución que configuró al Homo sapiens, y se expresan desde muy temprano en el culto a los ancestros y en los rituales funerarios.',
+          },
+          {
+            type: 'list',
+            title: 'Definiciones',
+            items: [
+              'Cesación o término de la vida; separación del cuerpo y el alma.',
+              'Cese de las funciones respiratoria y circulatoria, o cese irreversible de todas las funciones encefálicas, incluido el tallo.',
+              'Para la ciencia médica: el límite en que la función orgánica ya no sostiene la homeostasis.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Dos niveles (Trueba Gutiérrez)',
+            left: { title: 'La muerte como estado', items: ['El estar muerto'] },
+            right: { title: 'La muerte como evento', items: ['El morir: el proceso, el acto de morir'] },
+          },
+          {
+            type: 'definition',
+            title: 'Muerte encefálica',
+            content: 'Cese irreversible de las funciones de TODO el encéfalo, incluido el tallo cerebral. En México, la Ley General de Salud (art. 343 y 344) reconoce la pérdida de la vida por muerte encefálica o paro cardiaco irreversible; la muerte encefálica se determina por ausencia completa y permanente de conciencia, de respiración espontánea y de reflejos del tallo, y se corrobora con un electroencefalograma sin actividad eléctrica cerebral o una angiografía que muestre ausencia de circulación cerebral.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Por qué importa en la clínica',
+            content: 'El diagnóstico de muerte encefálica permite retirar el soporte que ya no beneficia al paciente y es la condición para la donación de órganos de donante fallecido. No debe confundirse con el estado vegetativo, en el que el tallo cerebral sigue funcionando y hay respiración espontánea.',
+          },
+        ],
+      },
+      {
+        id: 'hmp-2',
+        number: 2,
+        title: 'Diagnóstico de la muerte',
+        keyTerms: ['signos negativos de vida', 'algor mortis', 'rigor mortis', 'livor mortis'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Signos negativos de vida (diagnóstico clínico)',
+            items: [
+              'Ausencia de pulsos periféricos y de latido cardiaco.',
+              'Ausencia de movimientos respiratorios.',
+              'Inconsciencia, sin movimientos voluntarios ni reflejos (por ejemplo, el corneal).',
+              'Sin respuesta a estímulos dolorosos.',
+              'Midriasis paralítica y cianosis.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Fenómenos cadavéricos (signos positivos de muerte)',
+            data: {
+              headers: ['Fenómeno', 'Qué ocurre'],
+              rows: [
+                ['Algor mortis', 'Enfriamiento, de alrededor de 1 °C por hora, hasta igualar la temperatura ambiente'],
+                ['Rigor mortis', 'Rigidez que aparece tras unas horas de flacidez; empieza en la mandíbula y el cuello y desciende al tronco y las extremidades'],
+                ['Livor mortis', 'Livideces: coloración rojo-violácea en las zonas declives, por la sangre que se acumula por gravedad'],
+                ['Deshidratación', 'Pérdida progresiva de peso, más notable en los lactantes'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'hmp-3',
+        number: 3,
+        title: 'Duelo, ars moriendi y cuidados paliativos',
+        keyTerms: ['duelo', 'ars moriendi', 'cuidados paliativos', 'tanatología'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La salud se comprende también desde la experiencia de la muerte (el «misterio de la salud»). En la escala de Elison se pasa de la salud al descontento, el malestar, la inadaptación, la enfermedad y la muerte.',
+          },
+          {
+            type: 'steps',
+            title: 'Las cuatro fases del duelo',
+            steps: [
+              'Aturdimiento o shock: incredulidad; funciona como mecanismo protector.',
+              'Anhelo y búsqueda: urgencia de recuperar lo perdido, irritabilidad, autorreproche.',
+              'Desorganización y desesperación: tristeza profunda, apatía.',
+              'Reorganización: nuevos patrones de vida y nuevos vínculos.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'Hay duelo ante cualquier pérdida: la salud, una mascota, una amistad o un objeto, no solo ante la muerte. El ARS MORIENDI medieval era el arte de prepararse para morir, en un contexto religioso. Para Gadamer la muerte es una etapa del ciclo del devenir y el perecer, y hace falta desmitificar la vida y la muerte. Hoy el ars moriendi se expresa en los CUIDADOS PALIATIVOS y la tanatología: «ayudemos a morir enseñando cómo vivir».',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Los primeros contactos con la muerte',
+            content: 'El estudiante de medicina se encuentra con la muerte primero como muerte celular y después en la disección de cadáveres. Reconocer esa experiencia ayuda a acompañar más tarde a pacientes y familias en el duelo, que no es una enfermedad sino una respuesta normal a la pérdida; solo cuando se complica y se prolonga requiere atención especializada.',
+          },
+        ],
+      },
+      {
+        id: 'hmp-4',
+        number: 4,
+        title: 'La práctica médica: physis, techné y acto médico',
+        keyTerms: ['práctica médica', 'tradición médica', 'physis', 'techné', 'frónesis', 'acto médico', 'lex artis'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Práctica médica',
+            content: 'Ejercicio profesional por el que los médicos autorizados diagnostican, tratan y previenen enfermedades, integrando conocimientos científicos, habilidades técnicas y principios éticos. Desde Hipócrates, para saber de medicina hay que conocer lo que es el ser humano.',
+          },
+          {
+            type: 'list',
+            title: 'Cuatro dimensiones que convergen en ella',
+            items: [
+              'El mundo de la vida.',
+              'La TRADICIÓN MÉDICA: normas, costumbres, creencias, instituciones y formas de vida del quehacer médico; es el horizonte histórico de la conciencia médica.',
+              'La racionalidad médica: el uso de la razón en la medicina.',
+              'El juicio clínico.',
+            ],
+          },
+          {
+            type: 'definition',
+            title: 'Physis y techné ★',
+            content: 'PHYSIS (naturaleza) fue el problema central de los primeros filósofos griegos, que buscaban el ARCHÉ o principio de las cosas. TECHNÉ es el conocimiento del cambio y la variabilidad; por eso la medicina es un ARTE y no una simple técnica. La PRAXIS son los principios de acción que transforman el entorno y la FRÓNESIS, el razonamiento práctico. «El arte de la medicina surge de la physis y de la techné».',
+          },
+          {
+            type: 'definition',
+            title: 'Acto médico',
+            content: 'Conjunto de acciones, desde un diagnóstico simple hasta la cirugía más compleja, con una sobrecarga de riesgos y sin elementos que garanticen un resultado exacto. Sus dimensiones son la médica, la espiritual (comunicación), la volitiva (decisiones), la afectiva, la social (relación médico-paciente) y la religiosa. Lo configuran la PROFESIONALIDAD, la EJECUCIÓN TÍPICA y la LEX ARTIS: la tradición médica más la cultura habitual de trabajo.',
+          },
+        ],
+      },
+      {
+        id: 'hmp-5',
+        number: 5,
+        title: 'Lo médico y lo social',
+        keyTerms: ['lo médico por lo social', 'encuentro con el otro', 'consejo médico', 'tres universos'],
+        blocks: [
+          {
+            type: 'list',
+            title: '«La explicación de lo médico por lo social» comprende el papel de la profesión médica en ★',
+            items: ['El rol del paciente y el del médico.', 'La fisonomía de la institución médica.', 'El régimen hospitalario.', 'La personificación del paciente como objeto.'],
+          },
+          {
+            type: 'comparison',
+            title: 'Dos salidas de la práctica médica',
+            left: { title: 'Relación con el otro', items: ['Confrontación: el médico «sabe»', '«Sigue el tratamiento o no te quejes»'] },
+            right: { title: 'Encuentro con el otro', items: ['Enfoque hipocrático', 'Acompañar y aconsejar al que sufre'] },
+          },
+          {
+            type: 'paragraph',
+            content: 'El acto médico se concreta en el MÉTODO CLÍNICO y la ENTREVISTA CLÍNICA. El CONSEJO MÉDICO, en clave aristotélica, es un consejo amistoso que expresa el deseo del bien y de lo justo, con buen juicio y compasión; el médico humanista genera cordialidad, confianza, reciprocidad y un diálogo sencillo. La práctica médica tiene tres universos: ONTOLÓGICO (la experiencia), EPISTEMOLÓGICO (cómo conocemos) y ÉTICO (el ethos, con la proáiresis y la frónesis).',
+          },
+          {
+            type: 'note',
+            title: 'Sin psicologizar la medicina',
+            content: 'Para Federico Ortiz Quezada no se trata de llenar la práctica médica de contenidos sociales hasta psicologizarla y desvirtuarla: los contenidos filosóficos apoyan la comprensión, pero no sustituyen el conocimiento científico.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Del «no te quejes» al encuentro',
+            content: 'Ante un paciente que no toma su tratamiento, la relación de confrontación lo regaña; el encuentro pregunta por qué. A menudo hay razones concretas, como el costo, los efectos adversos o una creencia sobre el medicamento, que se pueden resolver juntos.',
           },
         ],
       },
