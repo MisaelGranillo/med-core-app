@@ -76,4 +76,9 @@ export const SISTEMAS_DE: Record<string, Sistema[]> = {
   'enfermedad-hemolitica-rh': ['Reproductor y embarazo', 'Sangre'],
   'sindrome-ovarico-metabolico-poliendocrino': ['Reproductor y embarazo', 'Endocrino y metabolismo'],
   'insuficiencia-ovarica-primaria': ['Reproductor y embarazo', 'Endocrino y metabolismo'],
+  'teratoma-sacrococcigeo': ['Reproductor y embarazo'],
+  'holoprosencefalia': ['Nervioso', 'Genética y cromosomas'],
+  'herpes-zoster': ['Piel', 'Nervioso', 'Inmunidad e infecciones'],
+  'neuroblastoma': ['Nervioso', 'Endocrino y metabolismo'],
+  'gastrosquisis': ['Digestivo', 'Reproductor y embarazo'],
 }

@@ -9,7 +9,7 @@ import type { Patologia, PatoFuente } from './patologias'
 const F = {
   tubario: { codigo: 'GPC IMSS-182-09', titulo: 'Diagnóstico y tratamiento de embarazo tubario', url: 'https://www.imss.gob.mx/sites/all/statics/guiasclinicas/182GER.pdf' },
   acog: { codigo: 'ACOG 2018', titulo: 'ACOG Practice Bulletin No. 193: Tubal ectopic pregnancy. Obstet Gynecol. 2018;131(3):e91–e103', url: 'https://doi.org/10.1097/AOG.0000000000002560' },
-  etg: { codigo: 'GPC SS-228-09', titulo: 'Diagnóstico y tratamiento de la enfermedad trofoblástica gestacional', url: 'https://www.cenetec-difusion.com/CMGPC/S-228-09/ER.pdf' },
+  etg: { codigo: 'GPC SS-228-09', titulo: 'Diagnóstico y tratamiento de la enfermedad trofoblástica gestacional', url: 'https://dcs.uqroo.mx/paginas/guiasclinicas/gpc/docs/SS-228-09-ER.pdf' },
   figo: { codigo: 'FIGO 2021', titulo: 'Update on the diagnosis and management of gestational trophoblastic disease. Int J Gynaecol Obstet. 2021;155(Suppl 1):86–93', url: 'https://doi.org/10.1002/ijgo.13877' },
 } satisfies Record<string, PatoFuente>
 
