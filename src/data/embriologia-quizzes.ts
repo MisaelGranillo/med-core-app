@@ -4,7 +4,8 @@ import type { Question } from '../types'
 // meiosis, ovogénesis, espermatogénesis, anomalías cromosómicas numéricas y
 // estructurales, ciclos ovárico y endometrial, fecundación y primera semana;
 // infertilidad, reproducción asistida y salud reproductiva. Semana 2, Clases 1–2:
-// segunda semana e implantación; tercera semana y gastrulación.
+// segunda semana e implantación; tercera semana y gastrulación. Clase 3: periodo
+// embrionario y derivados de las capas germinales.
 export const embriologiaQuestions: Question[] = [
   // ── Panorama del desarrollo temprano ──
   {
@@ -1036,5 +1037,117 @@ export const embriologiaQuestions: Question[] = [
     options: ['Regresión temprana de la línea primitiva', 'Falta de mesodermo caudal', 'Ausencia de la notocorda', 'Persistencia de restos de la línea primitiva'],
     correctIndex: 3, difficulty: 'medium',
     explanation: 'Son células pluripotenciales que forman un teratoma sacrococcígeo; la regresión temprana causa lo contrario, la disgenesia caudal.',
+  },
+  {
+    id: 'emb-peq-q1', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: '¿Qué semanas comprende el periodo embrionario?',
+    options: ['De la 1.ª a la 4.ª', 'De la 3.ª a la 8.ª', 'De la 8.ª a la 12.ª', 'De la 9.ª al nacimiento'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'Es la organogénesis; del final de la 8.ª semana al nacimiento es el periodo fetal.',
+  },
+  {
+    id: 'emb-peq-q2', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: '¿Cuál de estos deriva del ECTODERMO SUPERFICIAL?',
+    options: ['La retina', 'La médula espinal', 'El esmalte dental', 'La neurohipófisis'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: '★ Retina, médula y neurohipófisis vienen del neuroectodermo (tubo neural).',
+  },
+  {
+    id: 'emb-peq-q3', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: 'El lóbulo anterior de la hipófisis (adenohipófisis) deriva del:',
+    options: ['Ectodermo superficial', 'Tubo neural', 'Endodermo', 'Mesodermo'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: '★ La neurohipófisis, en cambio, viene del tubo neural.',
+  },
+  {
+    id: 'emb-peq-q4', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: '¿Qué induce la formación de la placa neural?',
+    options: ['El saco vitelino', 'La membrana cloacal', 'El mesodermo intermedio', 'La notocorda y el mesodermo precordal'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'Inducen el engrosamiento del ectodermo que tienen encima.',
+  },
+  {
+    id: 'emb-peq-q5', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: 'El cierre del tubo neural empieza en:',
+    options: ['El extremo craneal', 'La región cervical, a nivel del 5.º somita', 'El extremo caudal', 'La región lumbosacra'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Desde ahí avanza hacia cefálico y caudal.',
+  },
+  {
+    id: 'emb-peq-q6', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: 'El neuroporo POSTERIOR se cierra hacia el:',
+    options: ['Día 28', 'Día 20', 'Día 25', 'Día 35'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'El anterior cierra hacia el día 25 (18–20 somitas); el posterior, hacia el 28 (25 somitas).',
+  },
+  {
+    id: 'emb-peq-q7', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: 'La anencefalia se debe a una falla en el cierre del:',
+    options: ['Neuroporo posterior', 'Surco neural lumbar', 'Neuroporo anterior', 'Conducto vitelino'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: 'La falla caudal produce espina bífida, sobre todo lumbosacra.',
+  },
+  {
+    id: 'emb-peq-q8', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: 'A una mujer SIN antecedentes que planea embarazarse se le recomienda ácido fólico:',
+    options: ['5 mg diarios solo en el tercer trimestre', '4 mg diarios solo durante la lactancia', 'Solo si se confirma un defecto en el ultrasonido', '400 µg diarios desde antes de la concepción y durante el embarazo'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'Con un hijo previo afectado la dosis es de 4 mg (la GPC mexicana indica 5 mg).',
+  },
+  {
+    id: 'emb-peq-q9', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: 'Las células de la cresta neural que migran por la RUTA DORSAL forman:',
+    options: ['Melanocitos', 'Células de Schwann', 'Neuronas simpáticas', 'Médula suprarrenal'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: '★ Las otras opciones son derivados de la ruta ventral.',
+  },
+  {
+    id: 'emb-peq-q10', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: '¿Cuál NO es derivado de la cresta neural?',
+    options: ['Ganglios sensitivos', 'La retina', 'La médula suprarrenal', 'El tracto de salida del corazón'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: '★ La retina viene del neuroectodermo (vesícula óptica).',
+  },
+  {
+    id: 'emb-peq-q11', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: 'La placoda ÓTICA se invagina y forma:',
+    options: ['El cristalino', 'La retina', 'La vesícula ótica, para la audición y el equilibrio', 'El epitelio nasal'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: '«Ótica» se refiere al oído; la placoda del cristalino forma el cristalino.',
+  },
+  {
+    id: 'emb-peq-q12', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: 'El primer par de somitas aparece el día:',
+    options: ['17', '25', '28', '20'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'Se forman unos 3 pares por día y al final de la 5.ª semana hay 42 a 44 pares.',
+  },
+  {
+    id: 'emb-peq-q13', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: 'Las vértebras y las costillas derivan del:',
+    options: ['Esclerotoma', 'Dermatoma', 'Miotoma', 'Mesodermo intermedio'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: '★ El miotoma forma músculo y el dermatoma, la dermis de la espalda.',
+  },
+  {
+    id: 'emb-peq-q14', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: 'El mesodermo INTERMEDIO forma principalmente:',
+    options: ['La pared corporal', 'El sistema urogenital', 'Las vértebras', 'El tubo intestinal'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: '★ Pronefros, mesonefros, metanefros (riñón definitivo) y gónadas.',
+  },
+  {
+    id: 'emb-peq-q15', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: 'La hoja ESPLÁCNICA de la placa lateral forma:',
+    options: ['La dermis de las extremidades', 'El esternón', 'La pared del tubo intestinal y las serosas viscerales', 'El peritoneo parietal'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: '★ La hoja somática forma la pared corporal, las extremidades y las serosas parietales.',
+  },
+  {
+    id: 'emb-peq-q16', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: '¿Cuál es un derivado del ENDODERMO?',
+    options: ['La epidermis', 'El cristalino', 'El músculo esquelético', 'El parénquima del hígado y del páncreas'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: '★ También el epitelio digestivo y respiratorio, la tiroides y las paratiroides.',
   },
 ]

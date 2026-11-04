@@ -520,7 +520,7 @@ export const uadMedicina: Plan = {
           name: 'Embriología I',
           code: 'EM01004',
           tags: ['anatomia'],
-          topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis', 'embriologia-espermatogenesis', 'embriologia-anomalias-numericas', 'embriologia-anomalias-estructurales', 'embriologia-ciclo-ovarico', 'embriologia-fecundacion', 'embriologia-infertilidad-reproduccion', 'embriologia-segunda-semana', 'embriologia-tercera-semana'],
+          topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis', 'embriologia-espermatogenesis', 'embriologia-anomalias-numericas', 'embriologia-anomalias-estructurales', 'embriologia-ciclo-ovarico', 'embriologia-fecundacion', 'embriologia-infertilidad-reproduccion', 'embriologia-segunda-semana', 'embriologia-tercera-semana', 'embriologia-periodo-embrionario'],
           content: {
             area: 'Ciencias Básicas',
             credits: 8,
@@ -563,15 +563,17 @@ export const uadMedicina: Plan = {
               {
                 number: 2,
                 title: 'Primeras semanas del desarrollo',
-                topicIds: ['embriologia-segunda-semana', 'embriologia-tercera-semana'],
+                topicIds: ['embriologia-segunda-semana', 'embriologia-tercera-semana', 'embriologia-periodo-embrionario'],
                 temas: [
                   'Clase 1 (impartida): repaso del trayecto espermático, semen (pH, volumen, concentración, vesiculasa) y fecundación; segunda semana — día 8 (citotrofoblasto y sincitiotrofoblasto, disco bilaminar, cavidad amniótica), día 9 (etapa lacunar, membrana de Heuser, saco vitelino primitivo), días 11–12 (sinusoides maternos, circulación uteroplacentaria, mesodermo extraembrionario, cavidad coriónica, reacción decidual) y día 13 (vellosidades primarias, pedículo de fijación, saco vitelino definitivo); rechazo inmunológico, embarazo ectópico, placenta previa, mola hidatiforme e incompatibilidad Rh; casos clínicos',
                   'Clase 2 (impartida): tercera semana — gastrulación (línea primitiva, nodo, invaginación, FGF8, E-cadherina y BRACHYURY), membranas orofaríngea y cloacal y placa precordal, notocorda y alantoides, mapa del destino, crecimiento cefalocaudal y desarrollo del trofoblasto (vellosidades secundarias y terciarias); teratógenos, holoprosencefalia, disgenesia caudal y teratoma sacrococcígeo',
+                  'Clase 3 (impartida): de la tercera a la octava semana, periodo embrionario — derivados del ectodermo (neuroectodermo, ectodermo superficial, placodas), neurulación y neuroporos, defectos del tubo neural y ácido fólico, cresta neural; mesodermo paraxial (somitas: esclerotoma, miotoma y dermatoma), intermedio y de la placa lateral; sangre y vasos; endodermo y tubo intestinal',
                   '2. Fecundación y primera semana; segmentación; implantación; segunda semana (disco bilaminar, trofoblasto, decidua); tercera semana (disco trilaminar); cuarta a octava semana: organogénesis, derivados ectodérmicos, mesodérmicos y endodérmicos, aspecto externo del embrión',
                 ],
                 fuentes: [
                   { title: 'Embriología I — Semana 2, Clase 1', file: 'Embriologia I - Semana 2 - Clase 1.pdf', nota: 'Fecundación, primera y segunda semanas del desarrollo; implantación anómala, mola hidatiforme y casos clínicos.' },
                   { title: 'Embriología I — Semana 2, Clase 2', file: 'Embriologia I - Semana 2 - Clase 2.pdf', nota: 'Tercera semana del desarrollo: disco germinal trilaminar y gastrulación.' },
+                  { title: 'Embriología I — Semana 2, Clase 3', file: 'Embriologia I - Semana 2 - Clase 3.pdf', nota: 'De la tercera a la octava semanas: el periodo embrionario.' },
                 ],
               },
               {
@@ -606,6 +608,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 1 · Clase 5 — Infertilidad y reproducción asistida', file: 'Embriologia I - Semana 1 - Clase 5.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 1 — Fecundación, primera y segunda semanas del desarrollo', file: 'Embriologia I - Semana 2 - Clase 1.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 2 — Tercera semana: disco germinal trilaminar', file: 'Embriologia I - Semana 2 - Clase 2.pdf', kind: 'Clase' },
+              { title: 'Semana 2 · Clase 3 — Periodo embrionario: semanas 3 a 8', file: 'Embriologia I - Semana 2 - Clase 3.pdf', kind: 'Clase' },
               { title: 'Programa Académico — Embriología I (2026-1)', file: 'Embriologia I - Programa.pdf', kind: 'Programa' },
               { title: 'Planeación didáctica — Embriología I', file: 'Embriologia I - Planeacion.pdf', kind: 'Programa' },
             ],

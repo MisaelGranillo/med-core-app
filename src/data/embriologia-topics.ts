@@ -6,7 +6,8 @@ import type { Topic } from '../types'
 // fecundación y primera semana del desarrollo; infertilidad, reproducción asistida,
 // salud reproductiva y planos y ejes embrionarios. Semana 2, Clase 1: segunda
 // semana del desarrollo (días 8–13) y clínica de la implantación. Clase 2: tercera
-// semana (gastrulación, notocorda, mapa del destino) y su clínica.
+// semana (gastrulación, notocorda, mapa del destino) y su clínica. Clase 3: periodo
+// embrionario (semanas 3–8) y derivados de las capas germinales.
 export const embriologiaTopics: Topic[] = [
   {
     id: 'embriologia-desarrollo-temprano',
@@ -2857,6 +2858,391 @@ export const embriologiaTopics: Topic[] = [
             variant: 'clinica',
             title: 'Dos casos que se resuelven con la línea primitiva',
             content: 'Un embrión con cabeza normal y malformaciones caudales graves sugiere una regresión temprana de la línea primitiva: falta MESODERMO, y se nota más abajo porque esa región se forma después. Un recién nacido con una masa sacrococcígea que contiene tejido nervioso, cartílago y epitelio sugiere lo contrario: la línea primitiva persistió y dejó células pluripotenciales.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-periodo-embrionario',
+    title: 'Periodo embrionario: derivados de las capas germinales',
+    subtitle: 'Semanas 3 a 8: ectodermo (neuroectodermo, ectodermo superficial, placodas), neurulación y neuroporos, defectos del tubo neural y ácido fólico, cresta neural; mesodermo paraxial (somitas), intermedio y de la placa lateral; sangre y vasos; endodermo y tubo intestinal',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '🌿',
+    keyPoints: [
+      'PERIODO EMBRIONARIO u organogénesis: semanas 3 a 8; al final de la octava los principales sistemas ya están establecidos.',
+      'ECTODERMO: NEUROECTODERMO (encéfalo, médula espinal, retina, neurohipófisis), ECTODERMO SUPERFICIAL (epidermis, pelo, uñas, glándulas de la piel y mamarias, adenohipófisis, esmalte, cristalino, epitelio sensitivo de nariz y oído) y CRESTA NEURAL ★',
+      'Neurulación: el cierre empieza en la región cervical (5.º somita) y avanza en ambas direcciones; el NEUROPORO ANTERIOR cierra el día 25 y el POSTERIOR el día 28.',
+      'Somitas: primer par el día 20, unos 3 pares por día, 42–44 pares al final de la 5.ª semana. ESCLEROTOMA: vértebras y costillas · MIOTOMA: músculo · DERMATOMA: dermis de la espalda ★',
+      'Mesodermo INTERMEDIO: sistema urogenital (pronefros, mesonefros, metanefros y gónadas) · PLACA LATERAL: hoja somática (pared corporal, extremidades, serosas parietales) y esplácnica (pared intestinal, serosas viscerales) ★',
+      'ENDODERMO: epitelio del tubo digestivo y del aparato respiratorio, vejiga y uretra; parénquima de tiroides, paratiroides, hígado y páncreas; estroma reticular de timo y amígdalas ★',
+    ],
+    sections: [
+      {
+        id: 'epe-1',
+        number: 1,
+        title: 'El periodo embrionario y el ectodermo',
+        keyTerms: ['organogénesis', 'neuroectodermo', 'ectodermo superficial', 'adenohipófisis', 'neurohipófisis'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El PERIODO EMBRIONARIO u ORGANOGÉNESIS va de la tercera a la octava semana: las tres capas germinales se diferencian en tejidos y órganos, y al final de la octava semana los principales sistemas están establecidos y el aspecto externo del embrión es reconocible. Lo esencial es saber qué deriva de cada capa.',
+          },
+          {
+            type: 'paragraph',
+            content: 'El ECTODERMO forma lo que nos pone en contacto con el exterior y se divide en tres: NEUROECTODERMO, ECTODERMO SUPERFICIAL y CÉLULAS DE LA CRESTA NEURAL.',
+          },
+          {
+            type: 'comparison',
+            title: 'Derivados del ectodermo ★',
+            left: {
+              title: 'Neuroectodermo (tubo neural)',
+              items: ['Encéfalo y médula espinal', 'Retina (desde la vesícula óptica)', 'Lóbulo posterior de la hipófisis (neurohipófisis)'],
+            },
+            right: {
+              title: 'Ectodermo superficial',
+              items: ['Epidermis, pelo y uñas', 'Glándulas de la piel y glándulas mamarias', 'Lóbulo anterior de la hipófisis (adenohipófisis)', 'Esmalte dental', 'Epitelio sensitivo de nariz y oído interno', 'Cristalino'],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Dos lóbulos, dos orígenes',
+            content: 'La hipófisis tiene doble origen ectodérmico: la ADENOHIPÓFISIS viene del ectodermo superficial del techo de la boca primitiva y la NEUROHIPÓFISIS, del tubo neural.',
+          },
+        ],
+      },
+      {
+        id: 'epe-2',
+        number: 2,
+        title: 'Neurulación',
+        keyTerms: ['placa neural', 'pliegues neurales', 'surco neural', 'tubo neural', 'neuroporos', 'vesículas cerebrales'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Del ectodermo al tubo neural',
+            steps: [
+              'La NOTOCORDA y el mesodermo precordal inducen el engrosamiento del ectodermo que tienen encima: la PLACA NEURAL (neuroectodermo).',
+              'Sus bordes se elevan y forman los PLIEGUES NEURALES; entre ellos queda el SURCO NEURAL.',
+              'Los pliegues se acercan a la línea media y se fusionan: se forma el TUBO NEURAL.',
+              'La fusión empieza en la región cervical, a nivel del QUINTO SOMITA, y avanza hacia cefálico y hacia caudal.',
+              'Mientras termina el cierre, los extremos quedan abiertos a la cavidad amniótica por los NEUROPOROS.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Cierre de los neuroporos',
+            data: {
+              headers: ['Neuroporo', 'Cierre'],
+              rows: [
+                ['Anterior (craneal)', 'Día 25, etapa de 18 a 20 somitas'],
+                ['Posterior (caudal)', 'Día 28, etapa de 25 somitas'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'Cerrado el tubo, su extremo craneal se dilata en tres VESÍCULAS CEREBRALES PRIMARIAS en la cuarta semana: PROSENCÉFALO (cerebro anterior), MESENCÉFALO (medio) y ROMBENCÉFALO (posterior); la porción caudal, más estrecha, forma la médula espinal. En la quinta semana aparecen las vesículas secundarias.',
+          },
+        ],
+      },
+      {
+        id: 'epe-3',
+        number: 3,
+        title: 'Defectos del tubo neural y ácido fólico',
+        keyTerms: ['anencefalia', 'espina bífida', 'espina bífida oculta', 'ácido fólico', 'polaridad celular planar'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos defectos del cierre',
+            left: { title: 'Anencefalia', items: ['Falla el cierre del NEUROPORO ANTERIOR', 'La mayor parte del encéfalo no se forma', 'Incompatible con la vida'] },
+            right: { title: 'Espina bífida', items: ['Falla el cierre CAUDAL', 'Sobre todo lumbosacra', 'Grados variables de compromiso neurológico'] },
+          },
+          {
+            type: 'paragraph',
+            content: 'En la ESPINA BÍFIDA OCULTA el defecto queda cubierto por piel, a veces señalado por un mechón de pelo o una pequeña protuberancia, y suele no causar compromiso neurológico. En los defectos abiertos puede haber estructuras expuestas y daño neurológico; en casos seleccionados se considera la cirugía intrauterina.',
+          },
+          {
+            type: 'list',
+            title: 'Factores asociados',
+            items: [
+              'Mutaciones en la vía de POLARIDAD CELULAR PLANAR (genes VANGL), que orienta a las células durante la convergencia y extensión que alarga y cierra el tubo.',
+              'Genes que establecen la línea media (en clase se mencionaron ZIC3 y LEFTY1).',
+              'Algunos anticonvulsivos, como el ácido valproico.',
+              'Deficiencia de folato.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Ácido fólico: cuánto y desde cuándo',
+            content: 'Sin antecedentes: 400 µg diarios desde al menos un mes (en clase, tres meses) antes de la concepción y durante el embarazo. Con un embarazo o hijo previo afectado: 4 000 µg (4 mg) diarios desde un mes antes de intentar el embarazo y durante el primer trimestre; la GPC mexicana de control prenatal indica 5 mg en las pacientes de alto riesgo. Como el tubo neural se cierra hacia el día 28, a menudo antes de que se sepa del embarazo, la suplementación tiene que empezar antes de concebir.',
+          },
+        ],
+      },
+      {
+        id: 'epe-4',
+        number: 4,
+        title: 'Células de la cresta neural',
+        keyTerms: ['cresta neural', 'ruta ventral', 'ruta dorsal', 'melanocitos', 'tracto de salida', 'neuroblastoma'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Las CÉLULAS DE LA CRESTA NEURAL nacen en los bordes de los pliegues neurales; al cerrarse el tubo quedan en su techo y desde ahí migran por todo el embrión. Por la amplitud de sus derivados se les llama la «cuarta capa germinal».',
+          },
+          {
+            type: 'comparison',
+            title: 'Dos rutas en el tronco ★',
+            left: {
+              title: 'Ruta ventral (por la mitad anterior de cada somita)',
+              items: ['Ganglios sensitivos (de la raíz dorsal)', 'Neuronas simpáticas', 'Neuronas entéricas', 'Células de Schwann', 'Células de la médula suprarrenal (adrenalina y noradrenalina)'],
+            },
+            right: {
+              title: 'Ruta dorsal (por la dermis)',
+              items: ['Melanocitos de la piel', 'Melanocitos de los folículos pilosos'],
+            },
+          },
+          {
+            type: 'list',
+            title: 'En la cabeza y el corazón',
+            items: [
+              'Huesos y cartílagos de la cara y del cráneo (esqueleto craneofacial) y estructuras de los arcos faríngeos.',
+              'Neuronas de ganglios craneales, glía y melanocitos.',
+              'El TRACTO DE SALIDA del corazón, que separa la aorta de la arteria pulmonar.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Cara y corazón juntos',
+            content: 'Como la cresta neural forma a la vez la cara y el tracto de salida cardiaco, sus alteraciones suelen combinar defectos craneofaciales y cardiopatías, como en la deleción 22q11.2. De sus derivados nacen también tumores: el MELANOMA (melanocitos) y el NEUROBLASTOMA (sistema nervioso simpático y médula suprarrenal), uno de los tumores sólidos más frecuentes de la infancia.',
+          },
+        ],
+      },
+      {
+        id: 'epe-5',
+        number: 5,
+        title: 'Placodas',
+        keyTerms: ['placoda ótica', 'vesícula ótica', 'placoda del cristalino', 'placoda nasal'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Las PLACODAS son engrosamientos localizados del ectodermo superficial de la región cefálica.',
+          },
+          {
+            type: 'table',
+            title: 'Placodas y sus derivados',
+            data: {
+              headers: ['Placoda', 'Qué forma'],
+              rows: [
+                ['Ótica (oído)', 'Se invagina y forma la VESÍCULA ÓTICA: estructuras de la audición y el equilibrio'],
+                ['Del cristalino', 'Se invagina y en la quinta semana forma el CRISTALINO, que enfoca las imágenes'],
+                ['Nasal', 'Epitelio sensitivo de la nariz'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Óptica no es ótica',
+            content: '«Ótica» se refiere al oído; «óptica», a la vista. La retina no viene de una placoda: se forma del neuroectodermo, a partir de la vesícula óptica que sale del encéfalo. En clase ambos términos se usaron de forma intercambiable en algunos momentos.',
+          },
+        ],
+      },
+      {
+        id: 'epe-6',
+        number: 6,
+        title: 'Mesodermo paraxial: somitas',
+        keyTerms: ['somitómeros', 'somitas', 'esclerotoma', 'miotoma', 'dermatoma', 'dermomiotoma'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Hacia el día 17 el mesodermo se organiza en PARAXIAL, INTERMEDIO y de la PLACA LATERAL. El paraxial se segmenta primero en SOMITÓMEROS: en la cabeza se quedan así (los somitómeros 1 a 7 forman el mesénquima y la musculatura de la cabeza), y desde la región occipital hacia caudal se organizan en SOMITAS, bloques a ambos lados del tubo neural y la notocorda.',
+          },
+          {
+            type: 'table',
+            title: 'Cronología de los somitas',
+            data: {
+              headers: ['Momento', 'Somitas'],
+              rows: [
+                ['Día 20', 'Primer par, en la región occipital'],
+                ['Cada día', 'Unos 3 pares nuevos, en sentido craneocaudal'],
+                ['Final de la 5.ª semana', '42 a 44 pares: 4 occipitales, 8 cervicales, 12 torácicos, 5 lumbares, 5 sacros y 8–10 coccígeos'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'El primer par occipital y los últimos 5 a 7 coccígeos desaparecen; el resto forma el esqueleto axial. Como aparecen a un ritmo constante, el número de somitas sirve para estimar la edad del embrión.',
+          },
+          {
+            type: 'table',
+            title: 'Qué forma cada parte del somita ★',
+            data: {
+              headers: ['Parte', 'Derivados'],
+              rows: [
+                ['ESCLEROTOMA (región medial)', 'Sus células vuelven a ser mesenquimatosas y rodean el tubo neural y la notocorda: VÉRTEBRAS y COSTILLAS, cartílago y tendones'],
+                ['MIOTOMA', 'Músculo esquelético segmentario; las células ventrolaterales migran a la placa lateral y forman los músculos de la pared abdominal (oblicuos y transverso) y casi todos los de las extremidades'],
+                ['DERMATOMA', 'Dermis, sobre todo la de la espalda'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Los dermatomas en la clínica',
+            content: 'Cada miotoma y dermatoma conserva la inervación de su segmento de origen aunque sus células migren. Por eso existen los DERMATOMAS como mapa de la piel: una compresión medular o radicular causa pérdida de sensibilidad en un dermatoma concreto, y en el HERPES ZÓSTER las vesículas dolorosas aparecen en franja siguiendo el dermatoma del ganglio donde se reactivó el virus.',
+          },
+        ],
+      },
+      {
+        id: 'epe-7',
+        number: 7,
+        title: 'Mesodermo intermedio y de la placa lateral',
+        keyTerms: ['nefrotomas', 'cordón nefrógeno', 'pronefros', 'mesonefros', 'metanefros', 'celoma intraembrionario', 'hoja somática', 'hoja esplácnica'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El MESODERMO INTERMEDIO forma el SISTEMA UROGENITAL. En las regiones cervical y torácica alta se segmenta en NEFROTOMAS; más abajo forma una masa continua, el CORDÓN NEFRÓGENO. De él salen tres sistemas renales sucesivos: el PRONEFROS (temporal), el MESONEFROS (temporal; parte de él forma conductos genitales masculinos) y el METANEFROS, que es el riñón definitivo. También forma las GÓNADAS.',
+          },
+          {
+            type: 'paragraph',
+            content: 'Hacia el día 17 aparece en la PLACA LATERAL una hendidura, el CELOMA o cavidad intraembrionaria, que la divide en dos hojas.',
+          },
+          {
+            type: 'table',
+            title: 'Las dos hojas de la placa lateral ★',
+            data: {
+              headers: ['Hoja', 'Junto a', 'Derivados'],
+              rows: [
+                ['SOMÁTICA o parietal', 'Ectodermo', 'Pared corporal; dermis de la pared y las extremidades; huesos y tejido conectivo de las extremidades y el esternón; peritoneo parietal y capas parietales de pleura y pericardio'],
+                ['ESPLÁCNICA o visceral', 'Endodermo', 'Pared del tubo intestinal; peritoneo visceral y capas viscerales de las serosas alrededor de pulmones y corazón'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'Con los pliegues laterales, el disco plano se dobla como un «taquito»: sus bordes se acercan y se fusionan en la línea media y cierran la pared ventral del cuerpo, a la vez que el plegamiento cefalocaudal.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Cuando la pared no cierra',
+            content: 'Si los pliegues laterales no se fusionan bien, la pared abdominal queda abierta: en la GASTROSQUISIS las asas intestinales salen sin cubierta, a un lado del ombligo. Se detecta en el ultrasonido prenatal y requiere cirugía al nacer.',
+          },
+        ],
+      },
+      {
+        id: 'epe-8',
+        number: 8,
+        title: 'Sangre y vasos',
+        keyTerms: ['vasculogénesis', 'angiogénesis', 'islotes sanguíneos', 'hemangioblasto', 'VEGF', 'región aortogonadomesonéfrica'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos formas de hacer vasos',
+            left: { title: 'Vasculogénesis', items: ['Vasos nuevos a partir de células precursoras (angioblastos)', 'Así se forman la aorta dorsal y las venas cardinales'] },
+            right: { title: 'Angiogénesis', items: ['Vasos nuevos que brotan de vasos ya existentes'] },
+          },
+          {
+            type: 'paragraph',
+            content: 'En la tercera semana aparecen ISLOTES SANGUÍNEOS en la pared del saco vitelino, formados por HEMANGIOBLASTOS, precursores comunes de vasos y células sanguíneas. Los hemangioblastos centrales dan células troncales hematopoyéticas; los periféricos, angioblastos que forman el endotelio, estimulados por el VEGF del mesodermo vecino. Esta primera sangre es transitoria.',
+          },
+          {
+            type: 'steps',
+            title: 'Hematopoyesis definitiva',
+            steps: [
+              'Las células troncales definitivas nacen del mesodermo que rodea la aorta, junto al mesonefros: la REGIÓN AORTOGONADOMESONÉFRICA.',
+              'Colonizan el HÍGADO, principal órgano hematopoyético del segundo al séptimo mes.',
+              'Hacia el séptimo mes colonizan la MÉDULA ÓSEA, el tejido hematopoyético definitivo.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'epe-9',
+        number: 9,
+        title: 'Endodermo',
+        keyTerms: ['intestino primitivo', 'membrana bucofaríngea', 'conducto vitelino', 'membrana cloacal', 'proctodeo', 'parénquima'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El ENDODERMO cubre la cara ventral del embrión y forma el techo del saco vitelino. Con el plegamiento queda incorporado como el TUBO INTESTINAL PRIMITIVO, que tiene tres partes.',
+          },
+          {
+            type: 'table',
+            title: 'Intestino primitivo',
+            data: {
+              headers: ['Porción', 'Límite o comunicación'],
+              rows: [
+                ['Anterior', 'Membrana bucofaríngea, que se rompe en la 4.ª semana y comunica la boca primitiva (estomodeo, ectodérmico) con el intestino'],
+                ['Medio', 'Comunicado con el saco vitelino por el CONDUCTO VITELINO'],
+                ['Posterior', 'Membrana cloacal, que se rompe en la 7.ª semana y abre el ano; la parte inferior del conducto anal viene del proctodeo (ectodérmico)'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Derivados del endodermo ★',
+            items: [
+              'Revestimiento epitelial del tubo digestivo, del aparato respiratorio, de la vejiga y la uretra, de la cavidad timpánica y la trompa auditiva (de Eustaquio).',
+              'PARÉNQUIMA (tejido funcional) de tiroides, paratiroides, hígado y páncreas.',
+              'ESTROMA RETICULAR de las amígdalas y el timo.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'Hacia la quinta semana el conducto vitelino, la alantoides y los vasos umbilicales quedan reunidos en la región umbilical. El SACO VITELINO nutre al embrión muy temprano, forma las primeras células sanguíneas y alberga en su pared posterior las CÉLULAS GERMINALES PRIMORDIALES, que migran después a las gónadas.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'El conducto vitelino que no desaparece',
+            content: 'Si el conducto vitelino persiste en parte, queda el DIVERTÍCULO DE MECKEL en el íleon, la anomalía congénita más frecuente del tubo digestivo. La mayoría no da síntomas, pero puede sangrar o inflamarse y simular una apendicitis.',
+          },
+        ],
+      },
+      {
+        id: 'epe-10',
+        number: 10,
+        title: 'Resumen: derivados y cronología',
+        keyTerms: ['derivados de las capas germinales'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Derivados de las capas germinales ★',
+            data: {
+              headers: ['Capa', 'Derivados principales'],
+              rows: [
+                ['Neuroectodermo', 'Encéfalo, médula espinal, retina, neurohipófisis'],
+                ['Ectodermo superficial', 'Epidermis, pelo, uñas, glándulas de la piel y mamarias, adenohipófisis, esmalte, cristalino, epitelio sensitivo de nariz y oído'],
+                ['Cresta neural', 'Ganglios sensitivos, neuronas simpáticas y entéricas, células de Schwann, médula suprarrenal, melanocitos, esqueleto craneofacial, tracto de salida cardiaco'],
+                ['Mesodermo paraxial', 'Somitas: vértebras y costillas, músculo esquelético, dermis de la espalda'],
+                ['Mesodermo intermedio', 'Riñones (pronefros, mesonefros, metanefros) y gónadas'],
+                ['Placa lateral somática', 'Pared corporal, extremidades (hueso y tejido conectivo), esternón, serosas parietales'],
+                ['Placa lateral esplácnica', 'Pared del tubo intestinal, serosas viscerales'],
+                ['Mesodermo (hemangioblastos)', 'Células sanguíneas y vasos'],
+                ['Endodermo', 'Epitelio digestivo y respiratorio, vejiga, uretra, cavidad timpánica; parénquima de tiroides, paratiroides, hígado y páncreas; estroma de timo y amígdalas'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Cronología',
+            data: {
+              headers: ['Momento', 'Evento'],
+              rows: [
+                ['Día 16', 'Alantoides'],
+                ['Día 17', 'Mesodermo paraxial, intermedio y placa lateral; inicio del celoma'],
+                ['Día 20', 'Primer par de somitas'],
+                ['3.ª semana', 'Islotes sanguíneos en el saco vitelino'],
+                ['Día 25', 'Cierre del neuroporo anterior'],
+                ['Día 28', 'Cierre del neuroporo posterior'],
+                ['4.ª semana', 'Vesículas cerebrales primarias; ruptura de la membrana bucofaríngea'],
+                ['5.ª semana', 'Vesículas secundarias; cristalino; 42–44 pares de somitas'],
+                ['7.ª semana', 'Ruptura de la membrana cloacal'],
+                ['8.ª semana', 'Principales sistemas establecidos'],
+              ],
+            },
           },
         ],
       },

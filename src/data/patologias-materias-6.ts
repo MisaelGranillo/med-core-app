@@ -279,6 +279,7 @@ const DELECION_22Q: Patologia = {
     },
   ],
   bases: [
+    { materia: 'Embriología', topicId: 'embriologia-periodo-embrionario', sectionId: 'epe-4', label: 'Células de la cresta neural', porQue: 'La cresta neural forma la cara y el tracto de salida cardiaco: por eso el síndrome combina rasgos faciales y cardiopatía.' },
     { materia: 'Embriología', topicId: 'embriologia-anomalias-estructurales', sectionId: 'eae-4', label: 'Microdeleciones', porQue: 'DiGeorge en la tabla de síndromes por deleción y la cresta neural como origen común de corazón y cara.' },
     { materia: 'Embriología', topicId: 'embriologia-anomalias-estructurales', sectionId: 'eae-1', label: 'Estructura y nomenclatura del cromosoma', porQue: '«22q11» se lee: cromosoma 22, brazo largo, región 1, banda 1.' },
     { materia: 'Histología', topicId: 'histologia-linfoide-primarios', sectionId: 'hlp-5', label: 'Correlación clínica', porQue: 'La aplasia o hipoplasia del timo deja una inmunodeficiencia de linfocitos T desde el nacimiento.' },
@@ -679,6 +680,8 @@ const TUBO_NEURAL: Patologia = {
     },
   ],
   bases: [
+    { materia: 'Embriología', topicId: 'embriologia-periodo-embrionario', sectionId: 'epe-2', label: 'Neurulación', porQue: 'Placa, pliegues y tubo neural; el neuroporo anterior cierra el día 25 y el posterior el día 28.' },
+    { materia: 'Embriología', topicId: 'embriologia-periodo-embrionario', sectionId: 'epe-3', label: 'Defectos del tubo neural y ácido fólico', porQue: 'Anencefalia por falla del neuroporo anterior, espina bífida por falla caudal, y las dosis de ácido fólico.' },
     { materia: 'Genética', topicId: 'genetica-teratogenesis', sectionId: 'gter-6', label: 'Correlación clínica', porQue: 'Suplementar folato por el riesgo de defectos del tubo neural y vigilar los fármacos de riesgo.' },
     { materia: 'Genética', topicId: 'genetica-teratogenesis', sectionId: 'gter-3', label: 'Teratógenos farmacológicos ★', porQue: 'El ácido valproico produce defectos del cierre del tubo neural.' },
     { materia: 'Genética', topicId: 'genetica-teratogenesis', sectionId: 'gter-4', label: 'Teratógenos físicos ★', porQue: 'La hipertermia también se asocia a defectos del tubo neural.' },

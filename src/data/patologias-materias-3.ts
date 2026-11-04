@@ -662,6 +662,7 @@ const MELANOMA: Patologia = {
     },
   ],
   bases: [
+    { materia: 'Embriología', topicId: 'embriologia-periodo-embrionario', sectionId: 'epe-4', label: 'Células de la cresta neural', porQue: 'Los melanocitos vienen de la cresta neural por la ruta dorsal.' },
     { materia: 'Histología', topicId: 'histologia-piel', sectionId: 'hpiel-5', label: 'Las cuatro poblaciones celulares', porQue: 'El melanocito del estrato basal.' },
     { materia: 'Histología', topicId: 'histologia-piel', sectionId: 'hpiel-6', label: 'Unión dermoepidérmica y membrana basal', porQue: 'La barrera que el melanoma cruza al volverse invasor.' },
     { materia: 'Histología', topicId: 'histologia-piel', sectionId: 'hpiel-7', label: 'Correlaciones clínicas de la piel', porQue: 'La regla ABCDE y la biopsia.' },

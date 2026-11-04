@@ -189,9 +189,9 @@ export const modules: Module[] = [
     id: 'embriologia-uad-s2',
     badge: 'UAD · Embriología I — Semana 2',
     title: 'Embriología: primeras semanas del desarrollo',
-    subtitle: 'Segunda semana (días 8–13): citotrofoblasto y sincitiotrofoblasto, disco bilaminar, cavidad amniótica, etapa lacunar, circulación uteroplacentaria, mesodermo extraembrionario, vellosidades primarias y saco vitelino definitivo; tolerancia inmunológica, embarazo ectópico, placenta previa, mola hidatiforme e incompatibilidad Rh. Tercera semana: gastrulación, notocorda, mapa del destino, crecimiento cefalocaudal y vellosidades terciarias; holoprosencefalia, disgenesia caudal y teratoma sacrococcígeo.',
+    subtitle: 'Segunda semana (días 8–13): citotrofoblasto y sincitiotrofoblasto, disco bilaminar, cavidad amniótica, etapa lacunar, circulación uteroplacentaria, mesodermo extraembrionario, vellosidades primarias y saco vitelino definitivo; tolerancia inmunológica, embarazo ectópico, placenta previa, mola hidatiforme e incompatibilidad Rh. Tercera semana: gastrulación, notocorda, mapa del destino, crecimiento cefalocaudal y vellosidades terciarias; holoprosencefalia, disgenesia caudal y teratoma sacrococcígeo. Periodo embrionario: neurulación, cresta neural, somitas y derivados de las tres capas.',
     emoji: '🪺',
-    topicIds: ['embriologia-segunda-semana', 'embriologia-tercera-semana'],
+    topicIds: ['embriologia-segunda-semana', 'embriologia-tercera-semana', 'embriologia-periodo-embrionario'],
   },
   {
     id: 'humanistica-uad-s1',
