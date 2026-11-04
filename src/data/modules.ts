@@ -205,9 +205,9 @@ export const modules: Module[] = [
     id: 'humanistica-uad-s2',
     badge: 'UAD · Medicina Humanística — Semana 2',
     title: 'Medicina Humanística: entorno cultural de la medicina',
-    subtitle: 'Cómo se posibilita la cultura; Tylor, Boas y otros autores; cerebro y cultura y sistemas de herencia; niveles de análisis de Rojas Soriano; orden cultural y medicina supresora y estimulante de Viniegra; indicadores del proceso salud-enfermedad; iceberg cultural e interculturalidad; conceptos de salud, enfermedad y muerte, proceso salud-enfermedad y práctica médica.',
+    subtitle: 'Cómo se posibilita la cultura; Tylor, Boas y otros autores; cerebro y cultura y sistemas de herencia; niveles de análisis de Rojas Soriano; orden cultural y medicina supresora y estimulante de Viniegra; indicadores del proceso salud-enfermedad; iceberg cultural e interculturalidad; conceptos de salud, enfermedad y muerte, proceso salud-enfermedad y práctica médica; eficacia simbólica, padecer y competencia cultural.',
     emoji: '🎭',
-    topicIds: ['humanistica-cultura-concepto', 'humanistica-cultura-salud-orden', 'humanistica-indicadores-interculturalidad', 'humanistica-salud-concepto', 'humanistica-enfermedad-proceso', 'humanistica-muerte-practica'],
+    topicIds: ['humanistica-cultura-concepto', 'humanistica-cultura-salud-orden', 'humanistica-indicadores-interculturalidad', 'humanistica-salud-concepto', 'humanistica-enfermedad-proceso', 'humanistica-muerte-practica', 'humanistica-eficacia-simbolica', 'humanistica-padecer-competencia-cultural'],
   },
   {
     id: 'humanistica-uad-s3',

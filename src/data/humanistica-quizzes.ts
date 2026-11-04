@@ -1,6 +1,6 @@
 import type { Question } from '../types'
 
-// Medicina Humanística — Semana 1 (Clases 1–3), Semana 2 (Clase 1: cultura e interculturalidad; Clase 2: salud, enfermedad, muerte y práctica médica), Semana 3 (relación médico-paciente)
+// Medicina Humanística — Semana 1 (Clases 1–3), Semana 2 (Clase 1: cultura e interculturalidad; Clase 2: salud, enfermedad, muerte y práctica médica; Clase 3: eficacia simbólica y competencia cultural), Semana 3 (relación médico-paciente)
 // y Semana 4 (perfiles patológicos y síndromes de filiación cultural).
 // ★ en la explicación = tema que el profesor señaló como pregunta de examen.
 // «★ Examen Semana 1.» = pregunta tomada del examen real de la Semana 1 (respuesta verificada con la clase).
@@ -1317,6 +1317,175 @@ export const humanisticaQuestions: Question[] = [
     options: ['Físico, químico y biológico', 'Unicausal, multicausal y relacional', 'Médico, social y religioso', 'Ontológico, epistemológico y ético'],
     correctIndex: 3, difficulty: 'medium',
     explanation: 'El ético abarca el ethos, la proáiresis y la frónesis.',
+  },
+  // ── Eficacia simbólica, padecer y competencia cultural (Semana 2, Clase 3) ──
+  {
+    id: 'mh-esq-q1', topicId: 'humanistica-eficacia-simbolica', type: 'multiple-choice',
+    question: '«Capacidad de un símbolo para generar efectos reales en la vida de las personas a partir del significado que se le atribuye» es la definición de:',
+    options: ['Efecto placebo', 'Eficacia simbólica', 'Competencia cultural', 'Eficacia causal'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: '★ Una calavera con huesos cruzados condiciona una acción: alejarse del peligro.',
+  },
+  {
+    id: 'mh-esq-q2', topicId: 'humanistica-eficacia-simbolica', type: 'multiple-choice',
+    question: 'Para James George Frazer («La rama dorada»), magia, religión y ciencia son:',
+    options: ['Formas de enfermedad', 'Contradicciones que se excluyen', 'Explicaciones sucesivas de la realidad', 'Sistemas médicos'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Cada una explica la realidad en su momento histórico; la magia no desaparece.',
+  },
+  {
+    id: 'mh-esq-q3', topicId: 'humanistica-eficacia-simbolica', type: 'multiple-choice',
+    question: 'En el modelo de Saussure, la imagen acústica o sensorial del signo es el:',
+    options: ['Significante', 'Significado', 'Símbolo', 'Referente'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'El significado es el concepto; el enlace entre ambos es arbitrario.',
+  },
+  {
+    id: 'mh-esq-q4', topicId: 'humanistica-eficacia-simbolica', type: 'multiple-choice',
+    question: '¿Cuál es una característica del SÍMBOLO y no del signo?',
+    options: ['Puede tener significado natural', 'Algunos los entienden los animales', 'Para entenderlo basta con conocerlo', 'Hay que conocerlo e interpretarlo'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'El símbolo es una convención exclusivamente humana y no existe sin signo.',
+  },
+  {
+    id: 'mh-esq-q5', topicId: 'humanistica-eficacia-simbolica', type: 'multiple-choice',
+    question: 'El símbolo de la medicina es:',
+    options: ['El caduceo de Mercurio, con alas y dos serpientes', 'La vara de Esculapio, con una serpiente', 'La balanza', 'La cruz roja'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'El caduceo de Mercurio es símbolo del comercio, aunque a menudo se usa por error.',
+  },
+  {
+    id: 'mh-esq-q6', topicId: 'humanistica-eficacia-simbolica', type: 'multiple-choice',
+    question: 'Para Lévi-Strauss, la eficacia simbólica es una «propiedad inductora» entre estructuras homólogas de tres niveles del ser vivo:',
+    options: ['Procesos orgánicos, psiquismo inconsciente y pensamiento reflexivo', 'Célula, tejido y órgano', 'Individuo, familia y comunidad', 'Signo, símbolo y mito'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: '★ La analizó en el canto de un chamán durante un parto difícil.',
+  },
+  {
+    id: 'mh-esq-q7', topicId: 'humanistica-eficacia-simbolica', type: 'multiple-choice',
+    question: '¿Cuál NO forma parte del complejo chamanístico?',
+    options: ['La creencia del curador en su técnica', 'La creencia del enfermo en el curador', 'El consenso de la opinión colectiva', 'Una relación causal comprobada entre el rito y la curación'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: '★ La situación es un fenómeno de consenso; por eso no es eficacia causal.',
+  },
+  {
+    id: 'mh-esq-q8', topicId: 'humanistica-eficacia-simbolica', type: 'multiple-choice',
+    question: 'Según Lévi-Strauss, el relato en la cura chamánica sirve para:',
+    options: ['Restituir una experiencia real', 'Diagnosticar la enfermedad', 'Reemplazar el tratamiento', 'Calcular el pronóstico'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'Para quien lo comparte, el mito corresponde a una realidad objetiva.',
+  },
+  {
+    id: 'mh-esq-q9', topicId: 'humanistica-eficacia-simbolica', type: 'multiple-choice',
+    question: 'La eficacia simbólica NO es eficacia causal porque:',
+    options: ['Siempre produce resultados predecibles', 'Opera por la fe, la creencia y la interpretación compartida de símbolos', 'Depende solo del fármaco', 'No tiene efectos reales'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: '★ No hay una relación directa de causa y efecto; la palabra por sí sola no cura.',
+  },
+  {
+    id: 'mh-esq-q10', topicId: 'humanistica-eficacia-simbolica', type: 'multiple-choice',
+    question: 'El paciente que presenta efectos adversos porque cree que los tendrá experimenta un efecto:',
+    options: ['Placebo', 'Terapéutico', 'Nocebo', 'Simbólico causal'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: 'Puede ser dañino y afectar la adherencia al tratamiento.',
+  },
+  {
+    id: 'mh-esq-q11', topicId: 'humanistica-eficacia-simbolica', type: 'multiple-choice',
+    question: 'Una sustancia sin propiedades activas que tiene efecto terapéutico porque el paciente cree que es eficaz es un:',
+    options: ['Nocebo', 'Fármaco homeopático', 'Antagonista', 'Placebo'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'Fabrizio Benedetti estudió la fisiología de estos efectos en la relación médico-paciente.',
+  },
+  {
+    id: 'mh-esq-q12', topicId: 'humanistica-eficacia-simbolica', type: 'multiple-choice',
+    question: 'Para la eficacia simbólica se necesita sobre todo:',
+    options: ['Un laboratorio clínico', 'Un fármaco con dosis exacta', 'Un sistema de símbolos compartido en un contexto cultural', 'Una cirugía'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Se media por el habla, el recuerdo narrado, la confianza y la creencia compartida.',
+  },
+  {
+    id: 'mh-pcq-q1', topicId: 'humanistica-padecer-competencia-cultural', type: 'multiple-choice',
+    question: 'El proceso fisiopatológico o enfermedad objetiva corresponde a:',
+    options: ['Illness (padecer)', 'Disease (enfermedad)', 'Sickness (malestar)', 'Dolencia'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'Illness es el estado subjetivo; sickness, las acciones y conductas del enfermo en la sociedad.',
+  },
+  {
+    id: 'mh-pcq-q2', topicId: 'humanistica-padecer-competencia-cultural', type: 'multiple-choice',
+    question: '«Sickness» (malestar) se refiere a:',
+    options: ['El estado subjetivo del individuo', 'La lesión anatómica', 'Las acciones y comportamientos del enfermo en la sociedad', 'El diagnóstico de laboratorio'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Es la dimensión social de estar enfermo.',
+  },
+  {
+    id: 'mh-pcq-q3', topicId: 'humanistica-padecer-competencia-cultural', type: 'multiple-choice',
+    question: 'El plano de las interpretaciones y significados personales del padecer se instrumenta mediante:',
+    options: ['El relato patográfico personal', 'La historia clínica tradicional', 'Los estudios de laboratorio', 'La exploración física'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'El plano de las molestias o síntomas se instrumenta con la historia clínica.',
+  },
+  {
+    id: 'mh-pcq-q4', topicId: 'humanistica-padecer-competencia-cultural', type: 'multiple-choice',
+    question: 'En el modelo de constelación del padecer de Morse y Johnson, la etapa en que el paciente reconoce la enfermedad y acepta que es real es la de:',
+    options: ['Incertidumbre', 'Esfuerzo por recuperarse', 'Recuperación del bienestar', 'Interrupción'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'Orden: incertidumbre, interrupción, esfuerzo por recuperarse y recuperación del bienestar.',
+  },
+  {
+    id: 'mh-pcq-q5', topicId: 'humanistica-padecer-competencia-cultural', type: 'multiple-choice',
+    question: '¿Cuál NO es un punto de la dimensión cultural de la enfermedad?',
+    options: ['Su tipificación y definición', 'La dosis del medicamento', 'La significación social atribuida', 'Los contextos terapéuticos para disolverla'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Son tres puntos: tipificación, significación social y contextos terapéuticos.',
+  },
+  {
+    id: 'mh-pcq-q6', topicId: 'humanistica-padecer-competencia-cultural', type: 'multiple-choice',
+    question: 'En la medicina tradicional mexicana, la salud es el resultado de:',
+    options: ['El equilibrio entre fuerzas frías y calientes', 'El correcto funcionamiento de los órganos', 'La fuerza vital en sustancias diluidas', 'El balance energético de los cristales'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'La biomedicina entiende la salud como el correcto funcionamiento del cuerpo; la homeopatía habla de fuerza vital.',
+  },
+  {
+    id: 'mh-pcq-q7', topicId: 'humanistica-padecer-competencia-cultural', type: 'multiple-choice',
+    question: 'El nivel de interpretación que se refiere a los símbolos y significados sociales del padecimiento es el:',
+    options: ['Nivel sígnico', 'Nivel anatómico', 'Nivel simbólico', 'Nivel bioquímico'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'El nivel sígnico son los signos y síntomas corporales de la biomedicina.',
+  },
+  {
+    id: 'mh-pcq-q8', topicId: 'humanistica-padecer-competencia-cultural', type: 'multiple-choice',
+    question: 'La habilidad para interactuar y negociar con grupos culturalmente diversos, con respeto y eficacia, es la:',
+    options: ['Conciencia cultural', 'Medicina tradicional', 'Eficacia simbólica', 'Competencia cultural'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: '★ Reconoce que la verdad es plural y relativa y que la diversidad puede ser fuente de riqueza.',
+  },
+  {
+    id: 'mh-pcq-q9', topicId: 'humanistica-padecer-competencia-cultural', type: 'multiple-choice',
+    question: 'Reconocer y examinar los propios prejuicios y sesgos hacia otras culturas corresponde a la:',
+    options: ['Conciencia cultural', 'Habilidad cultural', 'Sensibilidad cultural', 'Encuentro cultural'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: '★ Es preguntarse «¿desde dónde me relaciono con el otro?».',
+  },
+  {
+    id: 'mh-pcq-q10', topicId: 'humanistica-padecer-competencia-cultural', type: 'multiple-choice',
+    question: 'Ajustar un tratamiento a un paciente que ayuna en el Ramadán es un ejemplo de:',
+    options: ['Conocimiento cultural sin aplicación', 'Habilidades culturales', 'Deseo cultural', 'Medicalización'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: '★ Es aplicar el conocimiento cultural en una intervención apropiada a la perspectiva del paciente.',
+  },
+  {
+    id: 'mh-pcq-q11', topicId: 'humanistica-padecer-competencia-cultural', type: 'multiple-choice',
+    question: 'La competencia cultural tiene como objetivo:',
+    options: ['Que el médico se vuelva médico tradicional', 'Sustituir la biomedicina', 'Comprender la lógica del otro para dialogar con él', 'Evitar a los pacientes de otras culturas'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: '★ Se trata de entrar en diálogo y enriquecerse mutuamente.',
+  },
+  {
+    id: 'mh-pcq-q12', topicId: 'humanistica-padecer-competencia-cultural', type: 'multiple-choice',
+    question: 'El modelo de competencia cultural que representa en círculos a la sociedad global, la comunidad, la familia y la persona, con dominios culturales en sectores, es el de:',
+    options: ['Morse y Johnson', 'Lévi-Strauss', 'Martínez Cortés', 'Larry Purnell'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'Sus dominios incluyen comunicación, familia, nutrición, espiritualidad y prácticas de salud, entre otros.',
   },
   // ── La relación médico-paciente y la alteridad ──
   {

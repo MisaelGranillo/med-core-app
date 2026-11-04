@@ -4,7 +4,8 @@ import type { Topic } from '../types'
 // origen de la vida y del ser humano; Clase 2: corporeidad y unidad biopsicosocial;
 // Clase 3: relación dialéctica mente-cuerpo, desarrollo humano y envejecimiento), Semana 2
 // (Clase 1: cultura, orden cultural, indicadores e interculturalidad; Clase 2: salud,
-// enfermedad, muerte y práctica médica), Semana 3 (la relación médico-paciente,
+// enfermedad, muerte y práctica médica; Clase 3: eficacia simbólica, padecer y
+// competencia cultural), Semana 3 (la relación médico-paciente,
 // sesiones 1–3) y Semana 4 (perfiles patológicos, sesiones 1–3).
 export const humanisticaTopics: Topic[] = [
   {
@@ -2536,6 +2537,346 @@ export const humanisticaTopics: Topic[] = [
             variant: 'clinica',
             title: 'Del «no te quejes» al encuentro',
             content: 'Ante un paciente que no toma su tratamiento, la relación de confrontación lo regaña; el encuentro pregunta por qué. A menudo hay razones concretas, como el costo, los efectos adversos o una creencia sobre el medicamento, que se pueden resolver juntos.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'humanistica-eficacia-simbolica',
+    title: 'Eficacia simbólica',
+    subtitle: 'Definición; magia, religión y ciencia (Frazer); signo y símbolo (Saussure); Lévi-Strauss, la cura chamánica y el complejo chamanístico; la eficacia simbólica no es causal; placebo y nocebo',
+    colorKey: 'humanistica',
+    categoria: 'Medicina humanística',
+    emoji: '🪶',
+    keyPoints: [
+      'EFICACIA SIMBÓLICA: capacidad de un símbolo para generar efectos reales en la vida de las personas a partir del significado que se le atribuye ★',
+      'FRAZER («La rama dorada»): magia, religión y ciencia son explicaciones sucesivas de la realidad.',
+      'SIGNO: significado natural o convencional, entidad simple, basta conocerlo · SÍMBOLO: solo convencional, exclusivamente humano, hay que conocerlo e interpretarlo; no hay símbolo sin signo.',
+      'LÉVI-STRAUSS: la eficacia simbólica es una «PROPIEDAD INDUCTORA» entre estructuras homólogas de distintos niveles del ser vivo: procesos orgánicos, psiquismo inconsciente y pensamiento reflexivo ★',
+      'COMPLEJO CHAMANÍSTICO: creencia del curador en su técnica, creencia del enfermo en el curador y consenso de la opinión colectiva ★',
+      'La eficacia simbólica NO es eficacia causal: opera por la fe, la creencia y la interpretación compartida de símbolos en un contexto cultural ★',
+    ],
+    sections: [
+      {
+        id: 'hes-1',
+        number: 1,
+        title: 'Qué es la eficacia simbólica',
+        keyTerms: ['eficacia simbólica', 'Frazer', 'magia', 'religión', 'ciencia'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Eficacia simbólica ★',
+            content: 'Capacidad de un símbolo para generar efectos reales en la vida de las personas a partir del significado que se le atribuye. Una calavera con dos huesos cruzados no se lee como Día de Muertos ni como bandera pirata en una puerta: se lee como PELIGRO, y condiciona una acción.',
+          },
+          {
+            type: 'paragraph',
+            content: 'James George FRAZER, en «La rama dorada», propuso que la MAGIA, la RELIGIÓN y la CIENCIA son explicaciones sucesivas de la realidad, cada una propia de su momento histórico, aunque la magia no desaparece. La ciencia también tiene sus «dogmas», como aceptar un resultado solo si la significancia estadística es p < 0.05.',
+          },
+          {
+            type: 'list',
+            title: 'Pares que ordenan el tema',
+            items: ['Realidad e irrealidad.', 'Lo biológico y lo mítico.', 'Lo exterior y lo interior.', 'Significado y significante.', 'Forma y contenido.', 'Signo y símbolo.'],
+          },
+          {
+            type: 'note',
+            title: 'Somos seres integrales',
+            content: 'La necesidad de creer es humana. Por eso un paciente puede atribuir su curación a la ciencia y a Dios a la vez, y por eso persisten conductas de riesgo aunque se tenga la información: no decidimos solo con datos.',
+          },
+        ],
+      },
+      {
+        id: 'hes-2',
+        number: 2,
+        title: 'Signo y símbolo',
+        keyTerms: ['Saussure', 'significante', 'significado', 'signo', 'símbolo', 'vara de Esculapio'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Para Ferdinand de SAUSSURE, el signo lingüístico une un SIGNIFICANTE (la imagen acústica o sensorial) y un SIGNIFICADO (el concepto, la idea), con un enlace ARBITRARIO entre ambos.',
+          },
+          {
+            type: 'table',
+            title: 'Signo frente a símbolo',
+            data: {
+              headers: ['Signo', 'Símbolo'],
+              rows: [
+                ['Significado natural o convencional', 'Solo significado convencional'],
+                ['Algunos los entienden los animales (el rojo de la coralillo)', 'Convención exclusivamente humana'],
+                ['Para entenderlo basta con conocerlo', 'Hay que conocerlo e INTERPRETARLO'],
+                ['Entidad simple', 'Entidad compleja: síntesis de signos'],
+                ['Se reconoce de inmediato por su imagen sensorial', 'Requiere asociación de ideas'],
+                ['Puede existir sin el símbolo', 'No existe símbolo sin signo'],
+                ['Señala algo concreto', 'Significado más amplio y menos concreto'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'El símbolo de la medicina',
+            content: 'El símbolo de la medicina es la VARA DE ESCULAPIO: un bastón con UNA serpiente. El caduceo de Mercurio (Hermes), con alas y dos serpientes, es símbolo del comercio, aunque a menudo se usa por error en instituciones de salud. Distinguirlos exige interpretar el símbolo, no solo reconocerlo.',
+          },
+        ],
+      },
+      {
+        id: 'hes-3',
+        number: 3,
+        title: 'Lévi-Strauss y la cura chamánica',
+        keyTerms: ['Lévi-Strauss', 'propiedad inductora', 'complejo chamanístico', 'relato', 'mito'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'La eficacia simbólica según Claude Lévi-Strauss ★',
+            content: '«Consistiría precisamente en esta “propiedad inductora” que poseerían, unas con respecto a otras, ciertas estructuras formalmente homólogas capaces de constituirse, con materiales diferentes, en diferentes niveles del ser vivo: procesos orgánicos, psiquismo inconsciente, pensamiento reflexivo» (Antropología estructural). La analiza en el canto de un chamán que ayuda a una mujer en un parto difícil: una curación por la palabra.',
+          },
+          {
+            type: 'list',
+            title: 'El complejo chamanístico: tres creencias ★',
+            items: [
+              'La creencia del curador en la eficacia de sus técnicas.',
+              'La creencia del enfermo en el poder del curador.',
+              'La confianza y las exigencias de la opinión colectiva: la situación es un fenómeno de CONSENSO.',
+            ],
+          },
+          {
+            type: 'list',
+            title: 'Cómo actúa el relato',
+            items: [
+              'El RELATO contribuye a restituir una experiencia real.',
+              'El MITO corresponde, para quien lo comparte, a una realidad objetiva.',
+              'La cura induce una transformación orgánica: una reorganización estructural en el psiquismo inconsciente.',
+              'Media entre la cura y la enfermedad a través del habla, el recuerdo narrado, la confianza en el acto del curador y la creencia en un sistema de símbolos compartido.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'hes-4',
+        number: 4,
+        title: 'No es eficacia causal: placebo y nocebo',
+        keyTerms: ['eficacia causal', 'placebo', 'nocebo', 'relación médico-paciente'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Eficacia simbólica terapéutica ★',
+            content: 'Capacidad de los símbolos y rituales para generar efectos transformadores en la vida de las personas a través de la fe, la creencia y la interpretación compartida de significados, en un contexto cultural. NO es eficacia causal: no hay una relación directa de causa y efecto en la que una acción produzca un resultado predecible. La palabra por sí sola no cura.',
+          },
+          {
+            type: 'comparison',
+            title: 'Placebo y nocebo',
+            left: { title: 'Placebo', items: ['Sustancia o procedimiento sin propiedades activas', 'Puede tener efecto terapéutico cuando el paciente cree que es eficaz'] },
+            right: { title: 'Nocebo', items: ['El paciente presenta efectos adversos o síntomas porque cree que ocurrirán', 'Puede ser dañino y afectar la adherencia'] },
+          },
+          {
+            type: 'paragraph',
+            content: 'Fabrizio Benedetti estudió la fisiología de la relación médico-paciente: las palabras, los rituales y el contexto de la consulta activan mecanismos cerebrales medibles, por ejemplo de analgesia. Las prácticas religiosas y espirituales también se asocian con la actividad de redes cerebrales específicas.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'La palabra del médico también actúa',
+            content: 'Leer en voz alta todos los efectos adversos posibles sin contexto aumenta su aparición (nocebo); explicar con confianza para qué sirve un tratamiento mejora la respuesta y la adherencia. No se trata de engañar al paciente, sino de cuidar cómo se comunica la información verdadera.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'humanistica-padecer-competencia-cultural',
+    title: 'Padecer, sistemas médicos y competencia cultural',
+    subtitle: 'Enfermedad, padecer y malestar (disease, illness, sickness); padecer médico de Martínez Cortés; modelo de constelación del padecer; dimensión cultural de la enfermedad y sistemas médicos; competencia cultural, sus dimensiones y el modelo de Purnell; competencias interculturales y atención centrada en el paciente',
+    colorKey: 'humanistica',
+    categoria: 'Medicina humanística',
+    emoji: '🤲',
+    keyPoints: [
+      'ENFERMEDAD (disease): proceso fisiopatológico objetivo · PADECER (illness): estado subjetivo que percibe el individuo · MALESTAR (sickness): acciones y comportamientos del enfermo en la sociedad.',
+      'Padecer médico (Fernando Martínez Cortés): datos subjetivos y objetivos de lo que el paciente siente, le molesta, inquieta, preocupa o duele; dos planos: el de los síntomas (historia clínica) y el de sus significados (relato patográfico).',
+      'Modelo de constelación del padecer (Morse y Johnson): incertidumbre, interrupción, esfuerzo por recuperarse y recuperación del bienestar.',
+      'Dimensión cultural de la enfermedad: su tipificación, la significación social que se le atribuye y los contextos terapéuticos para disolverla o atenuarla.',
+      'COMPETENCIA CULTURAL: habilidad para interactuar y negociar con grupos culturalmente diversos con respeto y eficacia; dimensiones: conocimiento, conciencia, habilidades interpersonales y actitudes abiertas ★',
+      'No se trata de volverse médico tradicional, sino de comprender la lógica del otro para dialogar con él.',
+    ],
+    sections: [
+      {
+        id: 'hpc-1',
+        number: 1,
+        title: 'Enfermedad, padecer y malestar',
+        keyTerms: ['disease', 'illness', 'sickness', 'padecer médico', 'relato patográfico'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Tres caras de estar enfermo',
+            data: {
+              headers: ['Término', 'Qué es'],
+              rows: [
+                ['Enfermedad (disease)', 'Proceso fisiopatológico o enfermedad objetiva'],
+                ['Padecer (illness)', 'Mal, dolencia o estado subjetivo que percibe el individuo'],
+                ['Malestar (sickness)', 'Disfunción social: acciones y comportamientos del enfermo en la sociedad'],
+              ],
+            },
+          },
+          {
+            type: 'definition',
+            title: 'Padecer médico (Fernando Martínez Cortés)',
+            content: 'Conjunto de datos subjetivos y objetivos relacionados con lo que el paciente siente, lo que le molesta, le inquieta, le preocupa o le duele.',
+          },
+          {
+            type: 'comparison',
+            title: 'Dos planos del padecer',
+            left: { title: 'Plano de las molestias o síntomas', items: ['Comprender signos y síntomas para diagnosticar y tratar', 'Se instrumenta con la HISTORIA CLÍNICA'] },
+            right: { title: 'Plano de las interpretaciones y significados', items: ['Qué significa el padecer para quien lo vive', 'Se instrumenta con el RELATO PATOGRÁFICO personal'] },
+          },
+          {
+            type: 'paragraph',
+            content: 'Para Cardoso y colaboradores, el padecimiento integra las ideas, experiencias, creencias, esperanzas, miedos y actitudes de la persona sobre la salud y su enfermedad; su relación con la medicina y los médicos; cómo vive sus redes de apoyo y su religiosidad, y lo que piensa sobre el costo de la enfermedad y su tratamiento.',
+          },
+          {
+            type: 'steps',
+            title: 'Modelo de constelación del padecer (Morse y Johnson)',
+            steps: [
+              'Incertidumbre: la persona percibe o sospecha signos y síntomas.',
+              'Interrupción: reconoce la enfermedad y acepta que es real.',
+              'Esfuerzo por recuperarse: busca dar sentido a lo que vive.',
+              'Recuperación del bienestar: recobra el control de sí y sus relaciones anteriores.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Preguntar qué significa',
+            content: 'Preguntar «¿a qué le atribuye su dolor de cabeza?» o «¿qué teme que sea?» explora el plano de los significados, que la consulta apresurada suele omitir. Un mismo síntoma puede vivirse como algo pasajero o como presagio de un cáncer, y eso cambia lo que el paciente hará con las indicaciones.',
+          },
+        ],
+      },
+      {
+        id: 'hpc-2',
+        number: 2,
+        title: 'Dimensión cultural y sistemas médicos',
+        keyTerms: ['dimensión cultural', 'nivel sígnico', 'nivel simbólico', 'sistemas médicos', 'frío y caliente'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Puntos de la dimensión cultural de la enfermedad',
+            items: [
+              'La tipificación y definición de las enfermedades (¿infecciosa?, ¿crónica?).',
+              'La significación social que se les atribuye: no es lo mismo una gripe que un cáncer.',
+              'Los contextos terapéuticos orientados a disolverlas o atenuarlas.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Dos planos de interpretación de las dolencias',
+            left: { title: 'Nivel sígnico', items: ['Signos y síntomas corporales', 'Los indicadores patológicos de la biomedicina'] },
+            right: { title: 'Nivel simbólico', items: ['Los símbolos y significados sociales del padecimiento', 'Sistemas populares o alternativos'] },
+          },
+          {
+            type: 'definition',
+            title: 'Sistemas médicos',
+            content: 'Conjunto de representaciones y prácticas, formas de atención, técnicas y tecnologías involucradas en el acto de curación y tratamiento de la enfermedad.',
+          },
+          {
+            type: 'table',
+            title: 'Sistemas médicos y sus teorías',
+            data: {
+              headers: ['Sistema', 'Teoría de la aflicción', 'Práctica curativa'],
+              rows: [
+                ['Biomedicina (medicina occidental)', 'Anatómica, fisiológica, infecciosa', 'Cirugía y medicamentos'],
+                ['Homeopatía', 'Fuerza vital fuera de balance', 'Sustancias en muy baja concentración'],
+                ['Naturopatía', 'Estado debilitado del cuerpo', 'Dietas, limpiezas y remedios naturales'],
+                ['New Age (cristales, aromas, sonido, reiki)', 'Ruptura del balance energético', 'Materiales y manipulaciones para reequilibrar la energía'],
+                ['Medicina tradicional mexicana', 'Desequilibrio entre fuerzas FRÍAS y CALIENTES', 'Herbolaria, limpias, sobadas y ritos'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            title: 'Sobre la homeopatía',
+            content: 'Sus diluciones son tan altas que no queda sustancia activa; en las revisiones sistemáticas su efecto no supera al placebo. Que el paciente reporte mejoría ilustra la eficacia simbólica, no un efecto farmacológico.',
+          },
+        ],
+      },
+      {
+        id: 'hpc-3',
+        number: 3,
+        title: 'Competencia cultural',
+        keyTerms: ['competencia cultural', 'conciencia cultural', 'conocimiento cultural', 'habilidades culturales', 'deseo cultural', 'sensibilidad cultural', 'Purnell'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Competencia cultural ★',
+            content: 'Habilidad y capacidad para interactuar y negociar con grupos culturalmente diversos, comunicándose de forma respetuosa y eficaz de acuerdo con las múltiples identidades de los participantes, fomentando actitudes de respeto, tolerancia, diálogo y enriquecimiento mutuo, constatando que la verdad es plural y relativa y que la diversidad puede ser fuente de riqueza.',
+          },
+          {
+            type: 'table',
+            title: 'Dimensiones de la competencia cultural ★',
+            data: {
+              headers: ['Dimensión', 'Qué implica'],
+              rows: [
+                ['Conocimiento cultural', 'Conocer las características, valores, creencias, historia y normas de otras culturas, y factores como el poder, la pobreza y la inequidad'],
+                ['Conciencia cultural', 'Reconocer y examinar los propios prejuicios y sesgos para no proyectar nuestras normas: «¿desde dónde me relaciono con el otro?»'],
+                ['Habilidades interpersonales o culturales', 'Captar cómo el paciente percibe su situación y desarrollar intervenciones culturalmente apropiadas; empatía, escucha activa y adaptabilidad'],
+                ['Actitudes abiertas', 'Mentalidad receptiva, respeto y curiosidad por las prácticas y creencias de otros'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Otros aspectos que se profundizan',
+            items: [
+              'ENCUENTRO cultural: la interacción y convivencia con personas de otras procedencias, que permite refinar las propias creencias.',
+              'DESEO cultural: la apertura y flexibilidad del médico para aceptar diferencias, encontrar similitudes y aprender de otros.',
+              'SENSIBILIDAD cultural: relaciones entre iguales basadas en confianza, aceptación, respeto, facilitación y negociación, con una comunicación transcultural eficiente.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'El modelo de competencia cultural de LARRY PURNELL representa en círculos concéntricos a la sociedad global, la comunidad, la familia y la persona, y en sus sectores los dominios culturales: comunicación, familia, trabajo, ecología biocultural, comportamientos de riesgo, nutrición, embarazo, rituales de muerte, espiritualidad y prácticas de salud, entre otros.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Competencia cultural en la consulta',
+            content: 'Saber qué significa el ayuno del Ramadán permite ajustar los horarios de un medicamento; saber que en algunas culturas evitar el contacto visual es respeto evita interpretarlo como desinterés. Ante un mito como «la insulina deja ciego», se explica que lo que daña la retina es la diabetes mal controlada y que la insulina a tiempo la protege.',
+          },
+        ],
+      },
+      {
+        id: 'hpc-4',
+        number: 4,
+        title: 'Competencias interculturales y atención centrada en el paciente',
+        keyTerms: ['competencias interculturales', 'atención centrada en el paciente', 'servicio social'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Las competencias interculturales comprenden',
+            items: [
+              'Identificar la singularidad cultural de la población usuaria de los servicios de salud.',
+              'Respetar sus expectativas, expresiones y prácticas en torno al proceso salud-enfermedad-atención.',
+              'Comunicarse de forma eficiente y asertiva.',
+              'Comprender cómo percibe la población la causalidad y el riesgo.',
+              'Conocer los marcos filosóficos, científicos y culturales de otros modelos y prácticas terapéuticas que usa la población.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Lo que hacen bien los curanderos',
+            content: 'Usan un lenguaje sencillo y de fácil comprensión. Competencia cultural no es volverse médico tradicional, sino comprender su lógica para dialogar con ellos y con sus pacientes.',
+          },
+          {
+            type: 'steps',
+            title: 'Atención centrada en el paciente',
+            steps: [
+              'Explorar la DOLENCIA (sentimientos, ideas, función, expectativas) y la ENFERMEDAD (historia y examen físico).',
+              'Entender a la persona como un todo.',
+              'Elaborar un proyecto común: problemas, objetivos, roles y decisiones conjuntas.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Antes de llegar al servicio social',
+            content: 'Conviene investigar la comunidad antes de llegar: su historia, su organización y el diagnóstico de salud que hicieron pasantes anteriores. Ya ahí, convivir fuera del consultorio e identificar a los líderes comunitarios abre la puerta a la confianza que ningún tratamiento consigue por sí solo.',
           },
         ],
       },

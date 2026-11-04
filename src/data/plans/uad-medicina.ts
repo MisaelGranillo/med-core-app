@@ -901,7 +901,7 @@ export const uadMedicina: Plan = {
           id: 'medicina-humanistica',
           name: 'Medicina Humanística',
           code: 'MH01007',
-          topicIds: ['humanistica-humanismo-medico', 'humanistica-origen-vida-hombre', 'humanistica-corporeidad', 'humanistica-unidad-biopsicosocial', 'humanistica-dialectica-mente-cuerpo', 'humanistica-desarrollo-humano', 'humanistica-envejecimiento', 'humanistica-cultura-concepto', 'humanistica-cultura-salud-orden', 'humanistica-indicadores-interculturalidad', 'humanistica-salud-concepto', 'humanistica-enfermedad-proceso', 'humanistica-muerte-practica', 'humanistica-alteridad-rmp', 'humanistica-modelos-rmp', 'humanistica-etica-comunicacion', 'humanistica-causalidad-determinantes', 'humanistica-estilos-vida-cronicas', 'humanistica-sindromes-filiacion-cultural'],
+          topicIds: ['humanistica-humanismo-medico', 'humanistica-origen-vida-hombre', 'humanistica-corporeidad', 'humanistica-unidad-biopsicosocial', 'humanistica-dialectica-mente-cuerpo', 'humanistica-desarrollo-humano', 'humanistica-envejecimiento', 'humanistica-cultura-concepto', 'humanistica-cultura-salud-orden', 'humanistica-indicadores-interculturalidad', 'humanistica-salud-concepto', 'humanistica-enfermedad-proceso', 'humanistica-muerte-practica', 'humanistica-eficacia-simbolica', 'humanistica-padecer-competencia-cultural', 'humanistica-alteridad-rmp', 'humanistica-modelos-rmp', 'humanistica-etica-comunicacion', 'humanistica-causalidad-determinantes', 'humanistica-estilos-vida-cronicas', 'humanistica-sindromes-filiacion-cultural'],
           content: {
             area: 'Ciencias Sociomédicas',
             credits: 4,
@@ -936,16 +936,17 @@ export const uadMedicina: Plan = {
               {
                 number: 2,
                 title: 'Entorno cultural de la medicina en México',
-                topicIds: ['humanistica-cultura-concepto', 'humanistica-cultura-salud-orden', 'humanistica-indicadores-interculturalidad', 'humanistica-salud-concepto', 'humanistica-enfermedad-proceso', 'humanistica-muerte-practica'],
+                topicIds: ['humanistica-cultura-concepto', 'humanistica-cultura-salud-orden', 'humanistica-indicadores-interculturalidad', 'humanistica-salud-concepto', 'humanistica-enfermedad-proceso', 'humanistica-muerte-practica', 'humanistica-eficacia-simbolica', 'humanistica-padecer-competencia-cultural'],
                 temas: [
                   'Clase 1 (impartida, 2 nov): cultura de la región y su relación con la medicina — cómo se posibilita la cultura, Tylor, Boas y otros autores, cerebro y cultura, sistemas de herencia y modelo CNIS',
                   'Clase 1 (impartida, 2 nov): niveles de análisis cultura-salud-enfermedad-atención (Rojas Soriano), modelos biomédico, biopsicosocial e intercultural; orden cultural y medicina supresora y estimulante (Viniegra); indicadores del proceso salud-enfermedad; iceberg cultural e interculturalidad',
                   'Clase 2 (impartida, 3 nov): conceptos de salud (Gadamer, una sola salud, evolución histórica, Terris, visión normativa y neutralista, contextos ideal y de uso), enfermedad (definiciones por autor, Canguilhem, Mechanic, multicausalidad) y proceso salud-enfermedad (Leavell y Clark, horizonte clínico); muerte (Trueba, muerte encefálica, fenómenos cadavéricos, duelo, ars moriendi) y práctica médica (physis y techné, acto médico, lex artis, lo médico y lo social)',
-                  'Clase 3 (pendiente): eficacia simbólica en el proceso salud-enfermedad y la terapéutica — representación social de la enfermedad, enfermedad y padecer, competencia cultural',
+                  'Clase 3 (impartida, 4 nov): eficacia simbólica (Frazer, signo y símbolo, Lévi-Strauss y el complejo chamanístico, placebo y nocebo); representación social de la enfermedad (disease, illness, sickness), padecer médico, constelación del padecer y sistemas médicos; competencia cultural, modelo de Purnell, competencias interculturales y atención centrada en el paciente',
                 ],
                 fuentes: [
                   { title: 'Medicina Humanística — Semana 2, Clase 1', file: 'Medicina Humanistica - Semana 2 - Clase 1.pdf', nota: 'Cultura de la región y su relación con la medicina.' },
                   { title: 'Medicina Humanística — Semana 2, Clase 2', file: 'Medicina Humanistica - Semana 2 - Clase 2.pdf', nota: 'Salud, enfermedad, muerte y práctica médica.' },
+                  { title: 'Medicina Humanística — Semana 2, Clase 3', file: 'Medicina Humanistica - Semana 2 - Clase 3.pdf', nota: 'Eficacia simbólica y competencia cultural.' },
                 ],
               },
               {
@@ -990,6 +991,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 1 · Clase 3 — Dialéctica mente-cuerpo, desarrollo humano y envejecimiento', file: 'Medicina Humanistica - Semana 1 - Clase 3.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 1 — Cultura de la región y su relación con la medicina', file: 'Medicina Humanistica - Semana 2 - Clase 1.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 2 — Salud, enfermedad, muerte y práctica médica', file: 'Medicina Humanistica - Semana 2 - Clase 2.pdf', kind: 'Clase' },
+              { title: 'Semana 2 · Clase 3 — Eficacia simbólica y competencia cultural', file: 'Medicina Humanistica - Semana 2 - Clase 3.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Sesión 1 — La relación médico-paciente y la alteridad', file: 'Medicina Humanistica - Semana 3 - Sesion 1.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Sesión 2 — Elementos y modelos de la RMP', file: 'Medicina Humanistica - Semana 3 - Sesion 2.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Sesión 3 — Ética, comunicación y proxémica', file: 'Medicina Humanistica - Semana 3 - Sesion 3.pdf', kind: 'Clase' },
