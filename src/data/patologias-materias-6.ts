@@ -16,6 +16,11 @@ const F = {
   q22Guia: { codigo: 'J Pediatr 2011', titulo: 'Practical guidelines for managing patients with 22q11.2 deletion syndrome. J Pediatr. 2011;159(2):332–339', url: 'https://doi.org/10.1016/j.jpeds.2011.02.039' },
   q22Medline: { codigo: 'MedlinePlus Genetics', titulo: '22q11.2 deletion syndrome. Biblioteca Nacional de Medicina (NIH, EE. UU.)', url: 'https://medlineplus.gov/genetics/condition/22q112-deletion-syndrome/' },
   pws: { codigo: 'Mol Genet Genomic Med 2019', titulo: 'A multidisciplinary approach to the clinical management of Prader–Willi syndrome. Mol Genet Genomic Med. 2019;7(3):e514', url: 'https://doi.org/10.1002/mgg3.514' },
+  pwsGR: { codigo: 'GeneReviews', titulo: 'Prader-Willi syndrome. GeneReviews (NCBI, Biblioteca Nacional de Medicina, EE. UU.)', url: 'https://www.ncbi.nlm.nih.gov/books/NBK1330/' },
+  pwsHolm: { codigo: 'Pediatrics 1993', titulo: 'Prader-Willi syndrome: consensus diagnostic criteria. Pediatrics. 1993;91(2):398–402', url: 'https://doi.org/10.1542/peds.91.2.398' },
+  pwsGunay: { codigo: 'Pediatrics 2001', titulo: 'The changing purpose of Prader-Willi syndrome clinical diagnostic criteria and proposed revised criteria. Pediatrics. 2001;108(5):e92', url: 'https://doi.org/10.1542/peds.108.5.e92' },
+  pwsMiller: { codigo: 'Am J Med Genet A 2011', titulo: 'Nutritional phases in Prader-Willi syndrome. Am J Med Genet A. 2011;155(5):1040–1049', url: 'https://doi.org/10.1002/ajmg.a.33951' },
+  pwsFda: { codigo: 'FDA 2025', titulo: 'VYKAT XR (diazoxide choline), información para prescribir. Administración de Alimentos y Medicamentos (EE. UU.)', url: 'https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/216665s000lbl.pdf' },
   as: { codigo: 'Mol Genet Genomic Med 2022', titulo: 'A multidisciplinary approach and consensus statement to establish standards of care for Angelman syndrome. Mol Genet Genomic Med. 2022;10(3):e1843', url: 'https://doi.org/10.1002/mgg3.1843' },
   pwsMedline: { codigo: 'MedlinePlus Genetics', titulo: 'Prader-Willi syndrome. Biblioteca Nacional de Medicina (NIH, EE. UU.)', url: 'https://medlineplus.gov/genetics/condition/prader-willi-syndrome/' },
   asMedline: { codigo: 'MedlinePlus Genetics', titulo: 'Angelman syndrome. Biblioteca Nacional de Medicina (NIH, EE. UU.)', url: 'https://medlineplus.gov/genetics/condition/angelman-syndrome/' },
@@ -393,6 +398,143 @@ const PRADER_ANGELMAN: Patologia = {
       ],
     },
     {
+      id: 'pwa-4',
+      title: 'Prader-Willi a fondo: criterios de Holm y cuándo pedir la prueba',
+      blocks: [
+        {
+          type: 'list',
+          items: [
+            'Descrito en 1956 por Andrea Prader, Alexis Labhart y Heinrich Willi.',
+            'Prevalencia estimada de 1 en 10 000 a 1 en 30 000; afecta a ambos sexos y a todas las poblaciones.',
+            'Casi siempre es esporádico: la deleción y la disomía suelen ser de novo, con riesgo de repetición en hermanos menor de 1 %.',
+          ],
+        },
+        {
+          type: 'list',
+          title: 'Criterios de Holm (1993): mayores, 1 punto cada uno',
+          items: [
+            'Hipotonía central neonatal e infantil con succión débil, que mejora con la edad',
+            'Problemas de alimentación en el lactante, con poca ganancia de peso',
+            'Ganancia de peso rápida entre los 12 meses y los 6 años, con obesidad central',
+            'Rasgos faciales característicos',
+            'Hipogonadismo: genitales hipoplásicos, pubertad tardía o incompleta, infertilidad',
+            'Retraso global del desarrollo antes de los 6 años; después, discapacidad intelectual leve a moderada o problemas de aprendizaje',
+            'Hiperfagia, búsqueda de comida, obsesión por la comida',
+            'Deleción 15q11-q13 u otra alteración de la región, incluida la disomía materna',
+          ],
+        },
+        {
+          type: 'list',
+          title: 'Menores, 0.5 puntos cada uno',
+          items: [
+            'Movimientos fetales disminuidos, o letargo y llanto débil en el lactante',
+            'Problemas de conducta: berrinches, terquedad, conducta obsesivo-compulsiva, robo de comida, mentiras',
+            'Trastornos del sueño o apnea del sueño',
+            'Talla baja para su familia a los 15 años',
+            'Hipopigmentación',
+            'Manos y pies pequeños',
+            'Manos estrechas con borde cubital recto',
+            'Esotropía, miopía',
+            'Saliva espesa y viscosa',
+            'Defectos de articulación del lenguaje',
+            'Rascado de la piel',
+          ],
+        },
+        {
+          type: 'list',
+          title: 'De apoyo, sin puntos',
+          items: [
+            'Umbral alto al dolor y vómito disminuido',
+            'Inestabilidad de la temperatura',
+            'Escoliosis o cifosis; osteoporosis',
+            'Adrenarquia temprana',
+            'Habilidad inusual con rompecabezas',
+            'Estudios neuromusculares normales',
+          ],
+        },
+        {
+          type: 'note',
+          content: 'Puntaje para el diagnóstico clínico: hasta los 3 años, 5 puntos, de los cuales 4 de criterios mayores; de los 3 años a la edad adulta, 8 puntos, de los cuales al menos 5 de criterios mayores. Los rasgos faciales son cara o diámetro bifrontal estrecho, ojos almendrados, boca que se ve pequeña con labio superior delgado y comisuras hacia abajo (y dolicocefalia en el lactante).',
+        },
+        {
+          type: 'table',
+          title: 'Hoy: los hallazgos que bastan para pedir la metilación (Gunay-Aygun, 2001)',
+          data: {
+            headers: ['Edad', 'Hallazgos'],
+            rows: [
+              ['Nacimiento a 2 años', 'Hipotonía con succión débil'],
+              ['2 a 6 años', 'Hipotonía con antecedente de succión débil y retraso global del desarrollo'],
+              ['6 a 12 años', 'Lo anterior más comer en exceso, con obesidad central si no se controla'],
+              ['13 años a adulto', 'Discapacidad intelectual leve, comer en exceso con obesidad central, hipogonadismo hipotalámico o conducta típica'],
+            ],
+          },
+        },
+        {
+          type: 'correlacion',
+          variant: 'dato',
+          title: 'Los criterios ya no confirman: sirven para sospechar',
+          content:
+            'Los criterios de Holm se hicieron cuando la prueba genética no estaba disponible. Hoy el diagnóstico se confirma con el análisis de metilación del 15q11-q13, que detecta más del 99 % de los casos. Como algunos pacientes confirmados no alcanzan el puntaje, se usan criterios más sencillos por edad para no retrasar la prueba.',
+        },
+      ],
+    },
+    {
+      id: 'pwa-5',
+      title: 'Prader-Willi: fases de la alimentación, conducta y riesgos',
+      blocks: [
+        {
+          type: 'steps',
+          title: 'Fases de la alimentación (Miller, 2011; edades medianas)',
+          steps: [
+            'Fase 0, antes de nacer: movimientos fetales disminuidos y menor peso al nacer.',
+            'Fase 1a, 0 a 9 meses: hipotonía, dificultad para alimentarse y poco apetito.',
+            'Fase 1b, 9 a 25 meses: mejora la alimentación y crece de forma adecuada.',
+            'Fase 2a, 2.1 a 4.5 años: el peso sube sin que aumenten el apetito ni las calorías.',
+            'Fase 2b, 4.5 a 8 años: aumenta el apetito, pero todavía se siente lleno.',
+            'Fase 3, de los 8 años a la edad adulta: hiperfagia; rara vez se siente lleno.',
+            'Fase 4, edad adulta: en algunos el apetito deja de ser insaciable.',
+          ],
+        },
+        {
+          type: 'comparison',
+          title: 'Perfil cognitivo y conductual',
+          left: {
+            title: 'Fortalezas frecuentes',
+            items: [
+              'Memoria a largo plazo',
+              'Comprensión lectora',
+              'Organización perceptiva y relaciones espaciales; habilidad con rompecabezas',
+            ],
+          },
+          right: {
+            title: 'Dificultades frecuentes',
+            items: [
+              'Memoria a corto plazo y seguir indicaciones',
+              'Habilidades sociales',
+              'Berrinches, terquedad, conducta obsesiva, robo de comida',
+              'Somnolencia diurna',
+            ],
+          },
+        },
+        {
+          type: 'list',
+          items: [
+            'La obesidad y sus complicaciones (diabetes mellitus, apnea del sueño, problemas cardiovasculares y articulares) son la principal causa de enfermedad y muerte.',
+            'En los niños, las muertes se deben sobre todo a infecciones respiratorias y otras enfermedades febriles; en los adultos, a problemas cardiovasculares por obesidad, causas gástricas o apnea del sueño.',
+            'El atragantamiento causa cerca del 8 % de las muertes.',
+            'Escoliosis en 40 a 80 %; estrabismo en 60 a 70 %; osteopenia y osteoporosis con riesgo de fracturas.',
+          ],
+        },
+        {
+          type: 'correlacion',
+          variant: 'clinica',
+          title: 'Un abdomen que no duele y no vomita',
+          content:
+            'Después de un atracón puede haber dilatación aguda del estómago y necrosis gástrica, que puede ser mortal. El umbral alto al dolor y el vómito raro hacen que no se reconozca a tiempo. Ante distensión abdominal, malestar o vómito en una persona con Prader-Willi se busca de inmediato una causa grave.',
+        },
+      ],
+    },
+    {
       id: 'pwa-3',
       title: 'Tratamiento: la idea general',
       blocks: [
@@ -402,10 +544,12 @@ const PRADER_ANGELMAN: Patologia = {
           left: {
             title: 'Prader-Willi',
             items: [
-              'Control estricto del acceso a la comida, dieta y ejercicio',
+              'Control estricto del acceso a la comida, dieta y ejercicio, desde el diagnóstico',
               'Hormona de crecimiento, con polisomnografía antes de iniciarla y a las 8–10 semanas',
-              'Atención urológica de la criptorquidia',
+              'Diazóxido de colina para la hiperfagia (aprobado por la FDA en 2025, desde los 4 años), con vigilancia de la glucosa',
+              'Atención urológica de la criptorquidia; reemplazo de hormonas sexuales según el caso',
               'Vigilancia endocrina: hipotiroidismo central e insuficiencia suprarrenal',
+              'Vigilancia de escoliosis y de la densidad ósea; rehabilitación y ortesis si se necesitan',
             ],
           },
           right: {
@@ -421,6 +565,10 @@ const PRADER_ANGELMAN: Patologia = {
         {
           type: 'note',
           content: 'Ninguno tiene cura. El riesgo de que se repita en otro hijo es bajo si la causa fue una deleción o una disomía de novo; es mayor si la madre porta una variante de UBE3A o hay un defecto de impronta heredable. Por eso se precisa el mecanismo y se ofrece asesoramiento genético.',
+        },
+        {
+          type: 'note',
+          content: 'Prader-Willi en el adulto: con diagnóstico temprano y manejo multidisciplinario mejora mucho el pronóstico, pero la falta de saciedad no desaparece. La mayoría necesita supervisión de por vida; el entorno que mejor controla la conducta y el peso es una vivienda con apoyo donde el acceso a la comida está restringido, y suelen trabajar en empleo protegido.',
         },
       ],
     },
@@ -454,9 +602,18 @@ const PRADER_ANGELMAN: Patologia = {
       q('pat-pwa-5', 'prader-willi-angelman', 'Si la misma deleción estuviera en el cromosoma materno, ¿qué cuadro se esperaría?',
         ['Prader-Willi igual', 'Ningún síntoma', 'Síndrome de Turner', 'Angelman: sin lenguaje, ataxia, epilepsia y risa frecuente'], 3,
         'Faltaría UBE3A materno, la única copia activa en las neuronas.'),
+      q('pat-pwa-6', 'prader-willi-angelman', 'Con los criterios de Holm, ¿cuántos puntos se necesitan después de los 3 años?',
+        ['5 puntos, 4 de criterios mayores', '8 puntos, al menos 5 de criterios mayores', '8 puntos, sin importar el tipo', '10 puntos, 6 de criterios mayores'], 1,
+        'Hasta los 3 años bastan 5 puntos (4 mayores). Cada criterio mayor vale 1 punto y cada menor 0.5. Hoy el diagnóstico se confirma con metilación.'),
+      q('pat-pwa-7', 'prader-willi-angelman', 'A los 9 años el niño se queja de malestar abdominal tras comer a escondidas, sin vómito ni dolor intenso. ¿Qué se hace?',
+        ['Esperar: si no vomita, no es grave', 'Dar un laxante y observar en casa', 'Buscar de inmediato dilatación o necrosis gástrica', 'Indicar ayuno y revalorar en una semana'], 2,
+        'El umbral alto al dolor y el vómito raro ocultan la dilatación gástrica aguda, que puede ser mortal.'),
+      q('pat-pwa-8', 'prader-willi-angelman', 'En la fase 2a de la alimentación (2 a 4.5 años), ¿qué ocurre?',
+        ['El peso sube sin que aumenten el apetito ni las calorías', 'Hiperfagia; nunca se siente lleno', 'Mala succión y poco apetito', 'El apetito deja de ser insaciable'], 0,
+        'Por eso la restricción calórica se planea antes de que aparezca la hiperfagia (fase 3, hacia los 8 años).'),
     ],
   },
-  fuentes: [F.pws, F.as, F.pwsMedline, F.asMedline],
+  fuentes: [F.pws, F.pwsGR, F.pwsHolm, F.pwsGunay, F.pwsMiller, F.pwsFda, F.as, F.pwsMedline, F.asMedline],
 }
 
 const CRI_DU_CHAT: Patologia = {
