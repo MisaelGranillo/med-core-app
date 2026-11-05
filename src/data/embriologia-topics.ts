@@ -2866,7 +2866,7 @@ export const embriologiaTopics: Topic[] = [
   {
     id: 'embriologia-periodo-embrionario',
     title: 'Periodo embrionario: derivados de las capas germinales',
-    subtitle: 'Semanas 3 a 8: ectodermo (neuroectodermo, ectodermo superficial, placodas), neurulación y neuroporos, defectos del tubo neural y ácido fólico, cresta neural; mesodermo paraxial (somitas), intermedio y de la placa lateral; sangre y vasos; endodermo y tubo intestinal',
+    subtitle: 'Semanas 3 a 8: ectodermo (neuroectodermo, ectodermo superficial, placodas), neurulación y neuroporos, defectos del tubo neural y ácido fólico, cresta neural; mesodermo paraxial (somitas), intermedio y de la placa lateral; sangre, vasos y hemangiomas; endodermo y tubo intestinal; aspecto externo del segundo mes; teratógenos y medicamentos en el embarazo',
     colorKey: 'embriologia',
     categoria: 'Embriología',
     emoji: '🌿',
@@ -3145,7 +3145,7 @@ export const embriologiaTopics: Topic[] = [
           },
           {
             type: 'paragraph',
-            content: 'En la tercera semana aparecen ISLOTES SANGUÍNEOS en la pared del saco vitelino, formados por HEMANGIOBLASTOS, precursores comunes de vasos y células sanguíneas. Los hemangioblastos centrales dan células troncales hematopoyéticas; los periféricos, angioblastos que forman el endotelio, estimulados por el VEGF del mesodermo vecino. Esta primera sangre es transitoria.',
+            content: 'En la tercera semana aparecen ISLOTES SANGUÍNEOS en la pared del saco vitelino, formados por HEMANGIOBLASTOS, precursores comunes de vasos y células sanguíneas; el FGF2 (factor de crecimiento de fibroblastos 2) induce a esas células a diferenciarse en hemangioblastos. Los hemangioblastos centrales dan células troncales hematopoyéticas; los periféricos, angioblastos que forman el endotelio, estimulados por el VEGF del mesodermo vecino. Esta primera sangre es transitoria.',
           },
           {
             type: 'steps',
@@ -3155,6 +3155,12 @@ export const embriologiaTopics: Topic[] = [
               'Colonizan el HÍGADO, principal órgano hematopoyético del segundo al séptimo mes.',
               'Hacia el séptimo mes colonizan la MÉDULA ÓSEA, el tejido hematopoyético definitivo.',
             ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Hemangiomas capilares',
+            content: 'Son agrupaciones anómalas y muy densas de capilares; compiten con el teratoma sacrococcígeo como el tumor más frecuente del recién nacido (el Langman los estima en cerca de 10 % de los nacimientos; los estudios recientes del hemangioma infantil, en 4 a 5 %). Aparecen sobre todo en la cara y la cabeza. Los LOCALIZADOS suelen crecer unos meses y luego involucionar solos; los DIFUSOS dan más complicaciones (ulceración, cicatrices, obstrucción de la vía aérea en los mandibulares) y son los que se tratan. En estas lesiones se expresa con intensidad el IGF2 (factor de crecimiento 2 parecido a la insulina), que podría promover el crecimiento anómalo de los vasos.',
           },
         ],
       },
@@ -3198,6 +3204,11 @@ export const embriologiaTopics: Topic[] = [
             variant: 'clinica',
             title: 'El conducto vitelino que no desaparece',
             content: 'Si el conducto vitelino persiste en parte, queda el DIVERTÍCULO DE MECKEL en el íleon, la anomalía congénita más frecuente del tubo digestivo. La mayoría no da síntomas, pero puede sangrar o inflamarse y simular una apendicitis.',
+          },
+          {
+            type: 'note',
+            title: 'Alantoides y uraco',
+            content: 'La alantoides aparece hacia el día 16 y participa en la formación de la cloaca, de la que derivan la vejiga, la uretra y parte del conducto anal. Su porción que va de la vejiga al ombligo se oblitera y forma el URACO, que en el adulto queda como el LIGAMENTO UMBILICAL MEDIO, entre la vejiga y la pared abdominal.',
           },
         ],
       },
@@ -3243,6 +3254,81 @@ export const embriologiaTopics: Topic[] = [
                 ['8.ª semana', 'Principales sistemas establecidos'],
               ],
             },
+          },
+          {
+            type: 'note',
+            title: 'Estructuras con doble origen',
+            content: 'La PIEL tiene epidermis ECTODÉRMICA y dermis MESODÉRMICA (la de la espalda viene del dermatoma). El PULMÓN tiene epitelio ENDODÉRMICO, pero su tejido conectivo, cartílago y músculo liso son MESODÉRMICOS. Los VASOS se forman del mesodermo esplácnico y el RIÑÓN, del mesodermo intermedio.',
+          },
+        ],
+      },
+      {
+        id: 'epe-11',
+        number: 11,
+        title: 'Aspecto externo durante el segundo mes',
+        keyTerms: ['longitud cefalocaudal', 'yemas de las extremidades', 'radios digitales', 'apoptosis interdigital'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Al final de la cuarta semana, con unos 28 somitas, lo más visible del embrión son los SOMITAS y los ARCOS FARÍNGEOS. En el segundo mes contar somitas se vuelve difícil, así que la edad se estima con la LONGITUD CEFALOCAUDAL (LCC): la distancia del vértex del cráneo al punto medio entre los ápices de las nalgas, en milímetros. El aspecto cambia por el crecimiento de la cabeza y la formación de las extremidades, la cara, los oídos, la nariz y los ojos.',
+          },
+          {
+            type: 'table',
+            title: 'Longitud cefalocaudal y edad',
+            data: {
+              headers: ['LCC (mm)', 'Edad aproximada'],
+              rows: [
+                ['5–8', '5 semanas'],
+                ['10–14', '6 semanas'],
+                ['17–22', '7 semanas'],
+                ['28–30', '8 semanas'],
+              ],
+            },
+          },
+          {
+            type: 'steps',
+            title: 'Formación de las extremidades',
+            steps: [
+              'Inicio de la quinta semana: aparecen las YEMAS de las extremidades superiores, dorsales a la protuberancia pericárdica, del 4.º somita cervical a los primeros torácicos; por eso las inerva el plexo braquial.',
+              'Poco después aparecen las inferiores, justo por debajo del cordón umbilical, a la altura de los somitas lumbares y sacros superiores.',
+              'El extremo distal se aplana y una constricción lo separa del segmento proximal.',
+              'Aparecen cuatro surcos radiales (RADIOS) que separan cinco zonas: los futuros dedos, primero en la mano y luego en el pie.',
+              'Las células entre los radios mueren por APOPTOSIS, mediada sobre todo por las proteínas morfogenéticas óseas (BMP), y los dedos se separan.',
+              'Una segunda constricción divide la parte proximal: se reconocen los tres segmentos de la extremidad adulta.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Para qué sirve la LCC',
+            content: 'La longitud cefalocaudal medida por ultrasonido en el primer trimestre es la forma más exacta de fechar un embarazo. Y si la apoptosis interdigital falla, los dedos quedan unidos: es la SINDACTILIA, una de las malformaciones más frecuentes de las extremidades.',
+          },
+        ],
+      },
+      {
+        id: 'epe-12',
+        number: 12,
+        title: 'Teratógenos y medicamentos en el embarazo',
+        keyTerms: ['periodo de susceptibilidad', 'teratógenos', 'automedicación', 'herbolaria'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El periodo embrionario es el más sensible a los teratógenos, sobre todo las semanas 3 y 4, cuando se forman las capas y empiezan los órganos; muchas mujeres aún no saben que están embarazadas. Por eso se evitan el alcohol, el tabaco, las drogas y la AUTOMEDICACIÓN.',
+          },
+          {
+            type: 'list',
+            title: 'Puntos prácticos',
+            items: [
+              'Algunas plantas son abortivas o inducen contracciones: el té de RUDA es el ejemplo clásico. Cualquier herbolaria durante el embarazo debe consultarse con el médico.',
+              'El PARACETAMOL es el analgésico de elección en el embarazo, a la dosis eficaz más baja y por el menor tiempo.',
+              'Los AINE (ibuprofeno, naproxeno, clonixinato de lisina) se evitan desde la semana 20, porque pueden disminuir el líquido amniótico y cerrar antes de tiempo el conducto arterioso del feto.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Preguntar siempre',
+            content: 'En México es común tomar medicamentos o tés sin receta. En toda consulta de una mujer en edad reproductiva conviene preguntar si puede estar embarazada antes de indicar un fármaco, y en toda embarazada, qué medicamentos, remedios y tés está tomando.',
           },
         ],
       },

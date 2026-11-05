@@ -5,7 +5,8 @@ import type { Question } from '../types'
 // estructurales, ciclos ovárico y endometrial, fecundación y primera semana;
 // infertilidad, reproducción asistida y salud reproductiva. Semana 2, Clases 1–2:
 // segunda semana e implantación; tercera semana y gastrulación. Clase 3: periodo
-// embrionario y derivados de las capas germinales.
+// embrionario y derivados de las capas germinales. Clase 4: sangre y vasos,
+// aspecto externo del segundo mes y teratógenos.
 export const embriologiaQuestions: Question[] = [
   // ── Panorama del desarrollo temprano ──
   {
@@ -1149,5 +1150,61 @@ export const embriologiaQuestions: Question[] = [
     options: ['La epidermis', 'El cristalino', 'El músculo esquelético', 'El parénquima del hígado y del páncreas'],
     correctIndex: 3, difficulty: 'easy',
     explanation: '★ También el epitelio digestivo y respiratorio, la tiroides y las paratiroides.',
+  },
+  {
+    id: 'emb-peq-q17', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: '¿Qué molécula induce a las células de los islotes sanguíneos a diferenciarse en hemangioblastos?',
+    options: ['VEGF', 'FGF2', 'BRACHYURY', 'SHH'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'El VEGF regula después la formación de los vasos a partir de los angioblastos.',
+  },
+  {
+    id: 'emb-peq-q18', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: 'Los primeros lechos vasculares que forma la vasculogénesis son:',
+    options: ['La aorta dorsal y las venas cardinales', 'Las arterias coronarias', 'Los capilares del pulmón', 'Las venas umbilicales y la porta'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'Después se remodelan y dan origen al resto de los vasos.',
+  },
+  {
+    id: 'emb-peq-q19', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: 'Los hemangiomas capilares DIFUSOS se distinguen de los localizados porque:',
+    options: ['Siempre son malignos', 'Nunca aparecen en la cara', 'Dan más complicaciones, como ulceración u obstrucción de la vía aérea', 'Desaparecen antes de nacer'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Los localizados suelen involucionar solos; los difusos son los que se tratan.',
+  },
+  {
+    id: 'emb-peq-q20', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: 'Un embrión con una longitud cefalocaudal de 10 a 14 mm tiene aproximadamente:',
+    options: ['5 semanas', '8 semanas', '7 semanas', '6 semanas'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: '5–8 mm: 5 semanas · 10–14: 6 · 17–22: 7 · 28–30: 8.',
+  },
+  {
+    id: 'emb-peq-q21', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: '¿Cuándo aparecen las yemas de las extremidades superiores?',
+    options: ['Al inicio de la quinta semana', 'En la tercera semana', 'En la octava semana', 'En el tercer mes'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'Las inferiores aparecen poco después, por debajo del cordón umbilical.',
+  },
+  {
+    id: 'emb-peq-q22', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: 'Los dedos se separan porque las células entre los radios digitales:',
+    options: ['Se fusionan', 'Mueren por apoptosis', 'Se convierten en cartílago', 'Migran al tronco'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'La apoptosis interdigital la median sobre todo las BMP; si falla, se produce sindactilia.',
+  },
+  {
+    id: 'emb-peq-q23', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: 'El remanente de la alantoides en el adulto es:',
+    options: ['El ligamento redondo del hígado', 'El divertículo de Meckel', 'El ligamento umbilical medio (uraco)', 'El ligamento arterioso'],
+    correctIndex: 2, difficulty: 'hard',
+    explanation: 'Va de la vejiga al ombligo.',
+  },
+  {
+    id: 'emb-peq-q24', topicId: 'embriologia-periodo-embrionario', type: 'multiple-choice',
+    question: '¿Cuál analgésico se EVITA desde la semana 20 del embarazo?',
+    options: ['Paracetamol', 'Ninguno', 'Todos por igual', 'Clonixinato de lisina'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'Es un AINE: puede disminuir el líquido amniótico y cerrar antes de tiempo el conducto arterioso; el paracetamol es el de elección.',
   },
 ]
