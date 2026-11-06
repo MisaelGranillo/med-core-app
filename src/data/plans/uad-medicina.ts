@@ -520,7 +520,7 @@ export const uadMedicina: Plan = {
           name: 'Embriología I',
           code: 'EM01004',
           tags: ['anatomia'],
-          topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis', 'embriologia-espermatogenesis', 'embriologia-anomalias-numericas', 'embriologia-anomalias-estructurales', 'embriologia-ciclo-ovarico', 'embriologia-fecundacion', 'embriologia-infertilidad-reproduccion', 'embriologia-segunda-semana', 'embriologia-tercera-semana', 'embriologia-periodo-embrionario'],
+          topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis', 'embriologia-espermatogenesis', 'embriologia-anomalias-numericas', 'embriologia-anomalias-estructurales', 'embriologia-ciclo-ovarico', 'embriologia-fecundacion', 'embriologia-infertilidad-reproduccion', 'embriologia-segunda-semana', 'embriologia-tercera-semana', 'embriologia-periodo-embrionario', 'embriologia-ejes-corporales', 'embriologia-regulacion-molecular'],
           content: {
             area: 'Ciencias Básicas',
             credits: 8,
@@ -563,12 +563,13 @@ export const uadMedicina: Plan = {
               {
                 number: 2,
                 title: 'Primeras semanas del desarrollo',
-                topicIds: ['embriologia-segunda-semana', 'embriologia-tercera-semana', 'embriologia-periodo-embrionario'],
+                topicIds: ['embriologia-segunda-semana', 'embriologia-tercera-semana', 'embriologia-periodo-embrionario', 'embriologia-ejes-corporales', 'embriologia-regulacion-molecular'],
                 temas: [
                   'Clase 1 (impartida): repaso del trayecto espermático, semen (pH, volumen, concentración, vesiculasa) y fecundación; segunda semana — día 8 (citotrofoblasto y sincitiotrofoblasto, disco bilaminar, cavidad amniótica), día 9 (etapa lacunar, membrana de Heuser, saco vitelino primitivo), días 11–12 (sinusoides maternos, circulación uteroplacentaria, mesodermo extraembrionario, cavidad coriónica, reacción decidual) y día 13 (vellosidades primarias, pedículo de fijación, saco vitelino definitivo); rechazo inmunológico, embarazo ectópico, placenta previa, mola hidatiforme e incompatibilidad Rh; casos clínicos',
                   'Clase 2 (impartida): tercera semana — gastrulación (línea primitiva, nodo, invaginación, FGF8, E-cadherina y BRACHYURY), membranas orofaríngea y cloacal y placa precordal, notocorda y alantoides, mapa del destino, crecimiento cefalocaudal y desarrollo del trofoblasto (vellosidades secundarias y terciarias); teratógenos, holoprosencefalia, disgenesia caudal y teratoma sacrococcígeo',
                   'Clase 3 (impartida): de la tercera a la octava semana, periodo embrionario — derivados del ectodermo (neuroectodermo, ectodermo superficial, placodas), neurulación y neuroporos, defectos del tubo neural y ácido fólico, cresta neural; mesodermo paraxial (somitas: esclerotoma, miotoma y dermatoma), intermedio y de la placa lateral; sangre y vasos; endodermo y tubo intestinal',
                   'Clase 4 (impartida): repaso de sangre y vasos (FGF2, hemangioblastos, vasculogénesis y angiogénesis, hematopoyesis) y del endodermo; hemangiomas capilares; aspecto externo del segundo mes (longitud cefalocaudal, yemas de las extremidades, radios y apoptosis interdigital); teratógenos y medicamentos en el embarazo; ejercicios de derivados de las capas germinales',
+                  'Clase 5 (impartida): establecimiento de los ejes corporales — anteroposterior (EVA, Cerberus, LEFTY1, NODAL), nodo como organizador (FGF8, BRACHYURY), dorsoventral (BMP4, cordina, noggina, folistatina, goosecoid), TBXT y disgenesia caudal, izquierda-derecha (serotonina, LEFTY2, PITX2); situs inversus, heterotaxia, dextrocardia, Kartagener y ZIC3; regulación molecular del ectodermo, la cresta neural, los somitas y los vasos',
                   '2. Fecundación y primera semana; segmentación; implantación; segunda semana (disco bilaminar, trofoblasto, decidua); tercera semana (disco trilaminar); cuarta a octava semana: organogénesis, derivados ectodérmicos, mesodérmicos y endodérmicos, aspecto externo del embrión',
                 ],
                 fuentes: [
@@ -576,6 +577,8 @@ export const uadMedicina: Plan = {
                   { title: 'Embriología I — Semana 2, Clase 2', file: 'Embriologia I - Semana 2 - Clase 2.pdf', nota: 'Tercera semana del desarrollo: disco germinal trilaminar y gastrulación.' },
                   { title: 'Embriología I — Semana 2, Clase 3', file: 'Embriologia I - Semana 2 - Clase 3.pdf', nota: 'De la tercera a la octava semanas: el periodo embrionario.' },
                   { title: 'Embriología I — Semana 2, Clase 4', file: 'Embriologia I - Semana 2 - Clase 4.pdf', nota: 'Hemangiomas, aspecto externo del segundo mes y repaso de derivados.' },
+                  { title: 'Embriología I — Semana 2, Clase 5 (a)', file: 'Embriologia I - Semana 2 - Clase 5a.pdf', nota: 'Establecimiento de los ejes corporales y defectos de la lateralidad.' },
+                  { title: 'Embriología I — Semana 2, Clase 5 (b)', file: 'Embriologia I - Semana 2 - Clase 5b.pdf', nota: 'Regulación molecular del periodo embrionario.' },
                 ],
               },
               {
@@ -612,6 +615,8 @@ export const uadMedicina: Plan = {
               { title: 'Semana 2 · Clase 2 — Tercera semana: disco germinal trilaminar', file: 'Embriologia I - Semana 2 - Clase 2.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 3 — Periodo embrionario: semanas 3 a 8', file: 'Embriologia I - Semana 2 - Clase 3.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 4 — Segundo mes y repaso de derivados', file: 'Embriologia I - Semana 2 - Clase 4.pdf', kind: 'Clase' },
+              { title: 'Semana 2 · Clase 5 (a) — Ejes corporales', file: 'Embriologia I - Semana 2 - Clase 5a.pdf', kind: 'Clase' },
+              { title: 'Semana 2 · Clase 5 (b) — Regulación molecular', file: 'Embriologia I - Semana 2 - Clase 5b.pdf', kind: 'Clase' },
               { title: 'Programa Académico — Embriología I (2026-1)', file: 'Embriologia I - Programa.pdf', kind: 'Programa' },
               { title: 'Planeación didáctica — Embriología I', file: 'Embriologia I - Planeacion.pdf', kind: 'Programa' },
             ],

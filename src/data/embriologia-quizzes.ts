@@ -6,7 +6,8 @@ import type { Question } from '../types'
 // infertilidad, reproducción asistida y salud reproductiva. Semana 2, Clases 1–2:
 // segunda semana e implantación; tercera semana y gastrulación. Clase 3: periodo
 // embrionario y derivados de las capas germinales. Clase 4: sangre y vasos,
-// aspecto externo del segundo mes y teratógenos.
+// aspecto externo del segundo mes y teratógenos. Clase 5: ejes corporales y
+// regulación molecular.
 export const embriologiaQuestions: Question[] = [
   // ── Panorama del desarrollo temprano ──
   {
@@ -1206,5 +1207,175 @@ export const embriologiaQuestions: Question[] = [
     options: ['Paracetamol', 'Ninguno', 'Todos por igual', 'Clonixinato de lisina'],
     correctIndex: 3, difficulty: 'medium',
     explanation: 'Es un AINE: puede disminuir el líquido amniótico y cerrar antes de tiempo el conducto arterioso; el paracetamol es el de elección.',
+  },
+  // ── Establecimiento de los ejes corporales ──
+  {
+    id: 'emb-ejq-q1', topicId: 'embriologia-ejes-corporales', type: 'multiple-choice',
+    question: '¿En qué orden se establecen los ejes corporales?',
+    options: ['Izquierda-derecha, dorsoventral, anteroposterior', 'Anteroposterior, dorsoventral, izquierda-derecha', 'Dorsoventral, izquierda-derecha, anteroposterior', 'Los tres al mismo tiempo'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'Los ejes A-P y D-V se establecen antes que el I-D.',
+  },
+  {
+    id: 'emb-ejq-q2', topicId: 'embriologia-ejes-corporales', type: 'multiple-choice',
+    question: 'CERBERUS y LEFTY1 definen el extremo craneal porque:',
+    options: ['Activan a BMP4', 'Forman la línea primitiva', 'Antagonizan a NODAL', 'Inducen a PITX2'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'En el extremo caudal no están, así que NODAL persiste y mantiene la línea primitiva.',
+  },
+  {
+    id: 'emb-ejq-q3', topicId: 'embriologia-ejes-corporales', type: 'multiple-choice',
+    question: '¿Cuál de estos genes NO expresa el endodermo visceral anterior?',
+    options: ['OTX2', 'LIM1', 'HESX1', 'PITX2'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'PITX2 pertenece a la cascada del lado izquierdo, no a la formación de la cabeza.',
+  },
+  {
+    id: 'emb-ejq-q4', topicId: 'embriologia-ejes-corporales', type: 'multiple-choice',
+    question: 'El FGF8 permite que las células del epiblasto se desplacen porque:',
+    options: ['Hace que pierdan la E-cadherina', 'Inhibe a NODAL', 'Las convierte en notocorda', 'Activa a la cordina'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'La E-cadherina mantiene unidas las células epiteliales. El FGF8 también induce NODAL y controla la especificación del mesodermo.',
+  },
+  {
+    id: 'emb-ejq-q5', topicId: 'embriologia-ejes-corporales', type: 'multiple-choice',
+    question: '¿Qué factor de transcripción activa a cordina, noggina y folistatina?',
+    options: ['BRACHYURY', 'Goosecoid', 'PAX1', 'MAD3'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Estas tres proteínas inhiben a BMP4, y así dorsalizan el mesodermo craneal.',
+  },
+  {
+    id: 'emb-ejq-q6', topicId: 'embriologia-ejes-corporales', type: 'multiple-choice',
+    question: '¿Cuál de estas estructuras viene del mesodermo VENTRALIZADO por BMP4?',
+    options: ['Notocorda', 'Somitas', 'Riñones', 'Somitómeras'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'La ventralización forma riñones, sangre y mesodermo de la pared corporal. Las otras tres vienen del mesodermo dorsalizado.',
+  },
+  {
+    id: 'emb-ejq-q7', topicId: 'embriologia-ejes-corporales', type: 'multiple-choice',
+    question: 'Recién nacido con miembros inferiores fusionados, agenesia renal, ano imperforado y vértebras lumbosacras fusionadas. ¿Qué gen se vincula con este cuadro?',
+    options: ['ZIC3', 'PITX2', 'PROX1', 'TBXT'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'Es disgenesia caudal: falta mesodermo caudal. También se asocia con diabetes materna descontrolada.',
+  },
+  {
+    id: 'emb-ejq-q8', topicId: 'embriologia-ejes-corporales', type: 'multiple-choice',
+    question: '¿Cuál es el gen maestro del lado izquierdo?',
+    options: ['PITX2', 'SHH', 'LEFTY1', 'OTX2'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'Se expresa en el lado izquierdo del corazón, el estómago y el primordio intestinal.',
+  },
+  {
+    id: 'emb-ejq-q9', topicId: 'embriologia-ejes-corporales', type: 'multiple-choice',
+    question: 'En el eje izquierda-derecha, la serotonina alta en el lado izquierdo:',
+    options: ['Bloquea a PITX2', 'Ayuda a restringir NODAL a ese lado', 'Induce el situs inversus', 'Forma el nodo primitivo'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Actúa por medio del factor de transcripción MAD3.',
+  },
+  {
+    id: 'emb-ejq-q10', topicId: 'embriologia-ejes-corporales', type: 'multiple-choice',
+    question: 'Un paciente con heterotaxia y bilateralidad izquierda tiene característicamente:',
+    options: ['Asplenia', 'Hipoplasia esplénica', 'Poliesplenia', 'Bazo normal'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'La bilateralidad derecha se asocia con asplenia o hipoplasia esplénica.',
+  },
+  {
+    id: 'emb-ejq-q11', topicId: 'embriologia-ejes-corporales', type: 'multiple-choice',
+    question: 'Adulto con situs inversus completo, sinusitis crónica y bronquiectasias. ¿Qué explica el cuadro?',
+    options: ['El uso de antidepresivos de su madre', 'Una mutación de TBXT', 'Una deficiencia de BMP4', 'Cilios defectuosos (síndrome de Kartagener)'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'Es una discinesia ciliar primaria, una enfermedad genética. Se presenta en cerca del 20 % de los pacientes con situs inversus completo.',
+  },
+  {
+    id: 'emb-ejq-q12', topicId: 'embriologia-ejes-corporales', type: 'multiple-choice',
+    question: 'Mutación del gen ZIC3, en el cromosoma X, con cardiopatía grave y onfalocele. ¿Qué cuadro es?',
+    options: ['Heterotaxia ligada al X', 'Disgenesia caudal', 'Situs solitus', 'Síndrome de Kartagener'],
+    correctIndex: 0, difficulty: 'hard',
+    explanation: 'ZIC3 es uno de los genes de la línea media, junto con SHH y LEFTY1.',
+  },
+  // ── Regulación molecular del periodo embrionario ──
+  {
+    id: 'emb-rmq-q1', topicId: 'embriologia-regulacion-molecular', type: 'multiple-choice',
+    question: 'Una concentración INTERMEDIA de BMP4 en el ectodermo forma:',
+    options: ['Epidermis', 'Cresta neural', 'Placa neural', 'Notocorda'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'Muy baja forma placa neural; alta, epidermis.',
+  },
+  {
+    id: 'emb-rmq-q2', topicId: 'embriologia-regulacion-molecular', type: 'multiple-choice',
+    question: 'Si se protege al ectodermo de la BMP, su «estado por omisión» es:',
+    options: ['Epidermis', 'Mesodermo', 'Tejido neural', 'Endodermo'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Noggina y cordina regulan la concentración de BMP.',
+  },
+  {
+    id: 'emb-rmq-q3', topicId: 'embriologia-regulacion-molecular', type: 'multiple-choice',
+    question: '¿Qué factor promueve la MIGRACIÓN de las células de la cresta neural?',
+    options: ['PAX1', 'FOXD3', 'SNAIL', 'SLUG'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'SNAIL y FOXD3 las especifican; SLUG promueve su migración desde el neuroectodermo.',
+  },
+  {
+    id: 'emb-rmq-q4', topicId: 'embriologia-regulacion-molecular', type: 'multiple-choice',
+    question: 'El reloj de segmentación de los somitas depende de:',
+    options: ['La expresión cíclica de NOTCH y WNT', 'El PAX1 y el PAX3', 'El VEGF', 'La serotonina'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'NOTCH se acumula donde se formará el siguiente somita y disminuye cuando este se establece.',
+  },
+  {
+    id: 'emb-rmq-q5', topicId: 'embriologia-regulacion-molecular', type: 'multiple-choice',
+    question: '¿Cuál es la distribución correcta de los gradientes que fijan los límites de los somitas?',
+    options: ['Ácido retinoico caudal; FGF8 y WNT3A craneales', 'Ácido retinoico craneal; FGF8 y WNT3A caudales', 'Los tres craneales', 'Los tres caudales'],
+    correctIndex: 1, difficulty: 'hard',
+    explanation: 'Los dos gradientes se superponen y controlan el reloj de segmentación.',
+  },
+  {
+    id: 'emb-rmq-q6', topicId: 'embriologia-regulacion-molecular', type: 'multiple-choice',
+    question: 'Noggina y SHH, de la notocorda y el piso del tubo neural, inducen al esclerotoma, cuyas células expresan:',
+    options: ['MYF5', 'NT-3', 'PAX1', 'MYOD'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'PAX1 inicia los genes que forman cartílago y hueso de las vértebras.',
+  },
+  {
+    id: 'emb-rmq-q7', topicId: 'embriologia-regulacion-molecular', type: 'multiple-choice',
+    question: '¿Qué gen marca la región del dermomiotoma?',
+    options: ['PAX1', 'EFNB2', 'PITX2', 'PAX3'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'Lo regulan las proteínas WNT del tubo neural dorsal.',
+  },
+  {
+    id: 'emb-rmq-q8', topicId: 'embriologia-regulacion-molecular', type: 'multiple-choice',
+    question: 'Los precursores del músculo PRIMAXIAL se generan por la expresión de:',
+    options: ['MYF5', 'NT-3', 'SLUG', 'PROX1'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'WNT del tubo neural dorsal induce MYF5 en la porción dorsomedial del somita.',
+  },
+  {
+    id: 'emb-rmq-q9', topicId: 'embriologia-regulacion-molecular', type: 'multiple-choice',
+    question: '¿Cuál es un músculo ABAXIAL?',
+    options: ['Intercostal', 'Oblicuo externo del abdomen', 'Músculo de la espalda', 'Ninguno de estos'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Los abaxiales vienen de células que salen del somita hacia la hoja somática de la placa lateral.',
+  },
+  {
+    id: 'emb-rmq-q10', topicId: 'embriologia-regulacion-molecular', type: 'multiple-choice',
+    question: '¿Qué señal, secretada por el tubo neural dorsal, induce la formación de dermis?',
+    options: ['PDGF', 'FGF2', 'NT-3', 'VEGF'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Actúa sobre la porción media del epitelio dorsal del somita.',
+  },
+  {
+    id: 'emb-rmq-q11', topicId: 'embriologia-regulacion-molecular', type: 'multiple-choice',
+    question: 'La diferencia entre vasculogénesis y angiogénesis es que la angiogénesis:',
+    options: ['Forma los primeros vasos', 'Ocurre solo en el adulto', 'Forma células sanguíneas', 'Forma vasos por gemación de vasos ya existentes'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'En la vasculogénesis, las células endoteliales se unen y forman los primeros vasos. Ambas dependen del VEGF.',
+  },
+  {
+    id: 'emb-rmq-q12', topicId: 'embriologia-regulacion-molecular', type: 'multiple-choice',
+    question: '¿Cuál pareja de gen y destino es correcta?',
+    options: ['EFNB2: arterias', 'EPHB4: vasos linfáticos', 'PROX1: venas', 'EFNB2: venas'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'EFNB2 determina arterias, EPHB4 venas y PROX1 vasos linfáticos.',
   },
 ]

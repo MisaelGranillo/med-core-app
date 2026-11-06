@@ -7,7 +7,8 @@ import type { Topic } from '../types'
 // salud reproductiva y planos y ejes embrionarios. Semana 2, Clase 1: segunda
 // semana del desarrollo (días 8–13) y clínica de la implantación. Clase 2: tercera
 // semana (gastrulación, notocorda, mapa del destino) y su clínica. Clase 3: periodo
-// embrionario (semanas 3–8) y derivados de las capas germinales.
+// embrionario (semanas 3–8) y derivados de las capas germinales. Clase 4: sangre y vasos,
+// segundo mes y teratógenos. Clase 5: ejes corporales y regulación molecular.
 export const embriologiaTopics: Topic[] = [
   {
     id: 'embriologia-desarrollo-temprano',
@@ -3329,6 +3330,510 @@ export const embriologiaTopics: Topic[] = [
             variant: 'clinica',
             title: 'Preguntar siempre',
             content: 'En México es común tomar medicamentos o tés sin receta. En toda consulta de una mujer en edad reproductiva conviene preguntar si puede estar embarazada antes de indicar un fármaco, y en toda embarazada, qué medicamentos, remedios y tés está tomando.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-ejes-corporales',
+    title: 'Establecimiento de los ejes corporales',
+    subtitle: 'Ejes anteroposterior, dorsoventral e izquierda-derecha; endodermo visceral anterior, NODAL, el nodo como organizador, BMP4 y sus inhibidores, TBXT y disgenesia caudal; serotonina, PITX2 y defectos de la lateralidad: situs inversus, heterotaxia, dextrocardia y síndrome de Kartagener',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '🧭',
+    keyPoints: [
+      'Orden de establecimiento: ANTEROPOSTERIOR, luego DORSOVENTRAL y al final IZQUIERDA-DERECHA.',
+      'Eje A-P: el ENDODERMO VISCERAL ANTERIOR (EVA) expresa OTX2, LIM1 y HESX1; CERBERUS y LEFTY1 antagonizan a NODAL en el extremo craneal. Donde NODAL queda libre se establece el extremo caudal y se mantiene la línea primitiva.',
+      'El NODO es el ORGANIZADOR. El FGF8 quita la E-cadherina, induce NODAL y controla la especificación del mesodermo por BRACHYURY (TBXT).',
+      'Eje D-V: BMP4 y FGF VENTRALIZAN el mesodermo (riñones, sangre, pared corporal). CORDINA, NOGGINA y FOLISTATINA, activadas por GOOSECOID, inhiben a BMP4 y DORSALIZAN el mesodermo craneal (notocorda, somitas, somitómeras).',
+      'La deficiencia de TBXT acorta el eje embrionario: DISGENESIA CAUDAL (sirenomelia) ★',
+      'Eje I-D: serotonina alta en el lado izquierdo → NODAL solo a la izquierda → LEFTY2 → PITX2, GEN MAESTRO del lado izquierdo. SHH, LEFTY1 y ZIC3 son los genes de la línea media.',
+      'SITUS INVERSUS: espejo completo, por lo general sin problemas de salud. HETEROTAXIA: posición discordante; 90 % con cardiopatía compleja. Bilateralidad izquierda = POLIESPLENIA; derecha = ASPLENIA.',
+      'Cerca del 20 % de los pacientes con situs inversus completo tienen SÍNDROME DE KARTAGENER, por cilios defectuosos.',
+    ],
+    sections: [
+      {
+        id: 'eje-1',
+        number: 1,
+        title: 'Los tres ejes y su orden',
+        keyTerms: ['eje anteroposterior', 'eje dorsoventral', 'eje izquierda-derecha'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Los ejes corporales orientan al embrión: indican dónde se formará cada región y cada órgano. Empiezan a establecerse muy temprano, quizá desde las fases tardías de la mórula o del blastocisto. Importan en clínica porque un error en esta etapa produce anomalías de todo el cuerpo.',
+          },
+          {
+            type: 'table',
+            title: 'Ejes en orden de aparición',
+            data: {
+              headers: ['Orden', 'Eje', 'Qué define', 'Moléculas principales'],
+              rows: [
+                ['1.º', 'ANTEROPOSTERIOR (craneocaudal)', 'Cabeza y región caudal', 'OTX2, LIM1, HESX1, CERBERUS, LEFTY1, NODAL'],
+                ['2.º', 'DORSOVENTRAL', 'Dorso y vientre', 'BMP4, FGF, cordina, noggina, folistatina, goosecoid'],
+                ['3.º', 'IZQUIERDA-DERECHA', 'Lateralidad y posición asimétrica de los órganos', 'Serotonina, NODAL, LEFTY2, PITX2'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'eje-2',
+        number: 2,
+        title: 'Eje anteroposterior: EVA, Cerberus y NODAL',
+        keyTerms: ['endodermo visceral anterior', 'OTX2', 'LIM1', 'HESX1', 'CERBERUS', 'LEFTY1', 'NODAL'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'En la etapa de blastocisto este eje ya queda establecido. Células del extremo craneal de la capa endodérmica (hipoblasto) del disco bilaminar forman el ENDODERMO VISCERAL ANTERIOR (EVA) y migran hacia lo que será la región cefálica.',
+          },
+          {
+            type: 'comparison',
+            title: 'La misma molécula decide los dos extremos',
+            left: {
+              title: 'Extremo craneal',
+              items: [
+                'El EVA expresa OTX2, LIM1 y HESX1, esenciales para formar la cabeza',
+                'CERBERUS y LEFTY1 antagonizan a NODAL',
+                'Sin NODAL activo se define el polo cefálico',
+              ],
+            },
+            right: {
+              title: 'Extremo caudal',
+              items: [
+                'No hay Cerberus ni LEFTY1',
+                'Persiste la expresión de NODAL, miembro de la familia TGF-β',
+                'NODAL establece y mantiene la línea primitiva',
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'eje-3',
+        number: 3,
+        title: 'El nodo como organizador',
+        keyTerms: ['organizador', 'FGF8', 'E-cadherina', 'BRACHYURY', 'TBXT'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El nodo primitivo se considera el ORGANIZADOR porque sus señales coordinan los ejes y la especificación de los tejidos. Las células del nodo y de la línea primitiva secretan FGF8.',
+          },
+          {
+            type: 'table',
+            title: 'Tres funciones del FGF8',
+            data: {
+              headers: ['Acción', 'Resultado'],
+              rows: [
+                ['Quita la E-cadherina', 'Las células del epiblasto se separan y se desplazan hacia la línea primitiva'],
+                ['Induce NODAL', 'Se establece y mantiene la línea primitiva'],
+                ['Controla la especificación del mesodermo', 'Por medio del factor de transcripción BRACHYURY (TBXT)'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Una vez formada la línea primitiva, NODAL activa varios genes que forman el mesodermo dorsal y ventral y las estructuras del eje craneocaudal.',
+          },
+        ],
+      },
+      {
+        id: 'eje-4',
+        number: 4,
+        title: 'Eje dorsoventral: BMP4 y sus inhibidores',
+        keyTerms: ['ventralización', 'dorsalización', 'BMP4', 'cordina', 'noggina', 'folistatina', 'goosecoid', 'HNF-3β'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La BMP4 se secreta en todo el disco embrionario y, junto con el FGF, ventraliza el mesodermo. Todo el mesodermo se ventralizaría si no fuera porque en el nodo se expresan genes que la inhiben.',
+          },
+          {
+            type: 'comparison',
+            title: 'Ventralizar o dorsalizar',
+            left: {
+              title: 'VENTRALIZACIÓN (regiones central y caudal)',
+              items: [
+                'Señal: BMP4 + FGF',
+                'Riñones (mesodermo intermedio)',
+                'Sangre',
+                'Mesodermo de la pared corporal (placa lateral)',
+              ],
+            },
+            right: {
+              title: 'DORSALIZACIÓN (región craneal)',
+              items: [
+                'Señal: cordina (CHRD), noggina (NOG) y folistatina inhiben a BMP4',
+                'Las activa el factor de transcripción GOOSECOID (GSC)',
+                'Notocorda, somitas y somitómeras',
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Otros puntos',
+            items: [
+              'Más tarde, cordina, noggina y folistatina se expresan en la notocorda y participan en la inducción neural de la región craneal.',
+              'GOOSECOID regula el desarrollo de la cabeza: su exceso o déficit en animales de laboratorio causa malformaciones craneales graves, incluidas duplicaciones parecidas a las de ciertos gemelos unidos.',
+              'HNF-3β (factor nuclear de hepatocitos 3β, hoy llamado FOXA2) mantiene el nodo e induce después el prosencéfalo y el mesencéfalo. Sin él no hay gastrulación apropiada ni esas estructuras.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'eje-5',
+        number: 5,
+        title: 'TBXT y disgenesia caudal',
+        keyTerms: ['TBXT', 'T-box', 'disgenesia caudal', 'sirenomelia'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El gen TBXT codifica a BRACHYURY, un factor de transcripción cuyo dominio de unión al ADN se llama caja T (T-box). Se expresa en el nodo, en las células precursoras de la notocorda y en la notocorda. Es esencial para la migración celular por la línea primitiva y regula la formación del mesodermo dorsal en las regiones central y caudal.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Disgenesia caudal (sirenomelia)',
+            content: 'La ausencia de TBXT acorta el eje embrionario, y el acortamiento depende del momento en que falta la proteína. Se manifiesta con hipoplasia y fusión de los miembros inferiores, anomalías renales que pueden llegar a la agenesia, anomalías genitales, ano imperforado y fusión de vértebras lumbosacras. Esta relación con TBXT se describió en modelos animales; en la clínica, el factor de riesgo más conocido es la diabetes materna descontrolada.',
+          },
+        ],
+      },
+      {
+        id: 'eje-6',
+        number: 6,
+        title: 'Eje izquierda-derecha: serotonina y PITX2',
+        keyTerms: ['serotonina', 'MAD3', 'LEFTY2', 'PITX2', 'genes de la línea media', 'ZIC3', 'cilios del nodo'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'La cascada del lado izquierdo',
+            steps: [
+              'El FGF8 de la línea primitiva y del nodo induce NODAL.',
+              'Las concentraciones altas de serotonina (5-HT) en el lado izquierdo aumentan el factor de transcripción MAD3, que restringe NODAL al lado izquierdo del nodo.',
+              'NODAL, en el mesodermo de la placa lateral izquierda, inicia una cascada que incluye a LEFTY2.',
+              'Aumenta PITX2, el GEN MAESTRO del lado izquierdo.',
+            ],
+          },
+          {
+            type: 'list',
+            title: 'Puntos clave',
+            items: [
+              'PITX2 codifica un factor de transcripción con caja homeótica (homeobox), que da a las células su identidad de posición. Se expresa en el lado izquierdo del corazón, el estómago y el primordio intestinal.',
+              'Si PITX2 se expresa en el lado derecho (expresión ectópica) aparecen defectos de lateralidad como situs inversus y dextrocardia.',
+              'GENES DE LA LÍNEA MEDIA: SHH, LEFTY1 y ZIC3. Impiden que NODAL se extienda al lado derecho.',
+              'Por qué la cascada inicia a la izquierda aún no se conoce con certeza. Se propone que los CILIOS del nodo crean un gradiente de NODAL hacia la izquierda, o que lo hacen las uniones gap mediante el transporte de iones pequeños.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'eje-7',
+        number: 7,
+        title: 'Situs solitus, situs inversus y dextrocardia',
+        keyTerms: ['situs solitus', 'situs inversus totalis', 'dextrocardia'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Disposición de los órganos',
+            data: {
+              headers: ['Condición', 'Qué es', 'Consecuencia'],
+              rows: [
+                ['SITUS SOLITUS', 'Posición normal: ápice cardiaco a la izquierda, pulmón derecho con 3 lóbulos e izquierdo con 2, hígado a la derecha, bazo a la izquierda', 'Normal'],
+                ['SITUS INVERSUS TOTALIS', 'Todos los órganos invertidos, en espejo', 'Mismos órganos con la misma función; riesgo apenas mayor de cardiopatía. Su descendencia tiene más riesgo de defectos de lateralidad'],
+                ['SITUS AMBIGUUS (heterotaxia)', 'Posición discordante de los órganos, sin espejo completo', 'Muchas anomalías asociadas, sobre todo cardiacas'],
+                ['DEXTROCARDIA', 'Ápice del corazón orientado a la derecha', 'Aislada o junto con otros defectos de lateralidad'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Una apendicitis del lado izquierdo',
+            content: 'El situs inversus totalis se presenta en alrededor de 1 de cada 10 000 personas y puede pasar años sin detectarse, hasta que aparece en un estudio de imagen. No requiere reubicar los órganos, porque funcionan normalmente. El problema es diagnóstico: una apendicitis o una colecistitis duelen en un sitio inesperado, y eso puede retrasar la atención.',
+          },
+          {
+            type: 'note',
+            content: 'El corazón tiene más lateralidad que cualquier otro órgano, y quizá por eso es el más vulnerable cuando se altera la vía izquierda-derecha.',
+          },
+        ],
+      },
+      {
+        id: 'eje-8',
+        number: 8,
+        title: 'Heterotaxia y síndrome de Kartagener',
+        keyTerms: ['heterotaxia', 'isomerismo', 'poliesplenia', 'asplenia', 'ZIC3', 'síndrome de Kartagener'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'En la HETEROTAXIA falla el establecimiento del eje izquierda-derecha. Uno o más órganos quedan invertidos, puede haber ISOMERISMOS (por ejemplo, ambas aurículas con el mismo aspecto) e inversiones (ventrículos en disposición inversa). Más que un espejo completo, parece haber un predominio bilateral de un lado.',
+          },
+          {
+            type: 'table',
+            title: 'El bazo refleja el predominio',
+            data: {
+              headers: ['Patrón', 'Qué se repite', 'Bazo'],
+              rows: [
+                ['BILATERALIDAD IZQUIERDA', 'Rasgos del lado izquierdo', 'POLIESPLENIA'],
+                ['BILATERALIDAD DERECHA', 'Rasgos del lado derecho', 'ASPLENIA o hipoplasia esplénica'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Qué acompaña a la heterotaxia',
+            items: [
+              'Cerca del 90 % tiene defectos cardiacos congénitos complejos.',
+              'Malformaciones de la línea media: defectos del cierre del tubo neural, paladar hendido y atresia anal.',
+              'Mutaciones de ZIC3, factor de transcripción de dedo de zinc del cromosoma X: heterotaxia ligada al X, con defectos del tubo neural, anomalías de las extremidades, onfalocele y, en casi todos, malformaciones cardiacas graves.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Síndrome de Kartagener',
+            content: 'Alrededor del 20 % de los pacientes con situs inversus completo desarrolla bronquiectasias y sinusitis crónica por cilios defectuosos: el moco no avanza hacia la faringe. Es una forma de discinesia ciliar primaria, una enfermedad genética de herencia autosómica recesiva. Se explica por el mismo mecanismo de los ejes: si los cilios del nodo no funcionan, la lateralidad queda al azar, y cerca de la mitad de estos pacientes tiene situs inversus.',
+          },
+        ],
+      },
+      {
+        id: 'eje-9',
+        number: 9,
+        title: 'Serotonina y antidepresivos en el embarazo',
+        keyTerms: ['ISRS', 'serotonina', 'riesgo-beneficio'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La alteración de la señalización de serotonina puede producir situs inversus, dextrocardia, malformaciones cardiacas y heterotaxia. Por eso se ha estudiado a los inhibidores selectivos de la recaptura de serotonina (ISRS: fluoxetina, paroxetina, sertralina, escitalopram, citalopram), primera línea para la depresión y la ansiedad.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Qué tan real es el riesgo',
+            content: 'Estudios epidemiológicos previos asociaron a los ISRS con más malformaciones cardiacas. En un estudio de casi 950 000 embarazos (NEJM, 2014), esa asociación casi desapareció al considerar la depresión de la madre: el riesgo relativo ajustado fue de 1.06 (IC 95 %: 0.93–1.22). La decisión se toma de forma individual, valorando el riesgo de la depresión no tratada, y la paciente no debe suspender ni cambiar el medicamento por su cuenta.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-regulacion-molecular',
+    title: 'Regulación molecular del periodo embrionario',
+    subtitle: 'Destino del ectodermo según BMP4 y cresta neural (PAX3, SNAIL, FOXD3, SLUG); reloj de segmentación y gradientes de los somitas; PAX1, PAX3, MYF5, MYOD y NT-3; FGF2, VEGF, PDGF, PROX1, EFNB2 y EPHB4 en la formación de vasos',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '🧬',
+    keyPoints: [
+      'ECTODERMO según BMP4: muy baja = PLACA NEURAL; intermedia = CRESTA NEURAL; alta = EPIDERMIS. Sin BMP, el ectodermo se vuelve tejido neural por omisión.',
+      'Cresta neural: BMP4 intermedia + FGF + WNT inducen PAX3 (borde de la placa neural). SNAIL y FOXD3 la especifican; SLUG promueve su migración.',
+      'Somitas: el RELOJ de segmentación es la expresión cíclica de NOTCH y WNT. Los LÍMITES los fijan los gradientes de ácido retinoico (alto en cráneo) y FGF8 + WNT3A (altos en la región caudal).',
+      'Diferenciación del somita: PAX1 = esclerotoma · PAX3 = dermomiotoma · MYF5 = músculo primaxial · MYOD = sobre todo músculo abaxial · NT-3 = dermis.',
+      'Vasos: FGF2 induce HEMANGIOBLASTOS; VEGF lleva de angioblasto a célula endotelial. VASCULOGÉNESIS: vasos primitivos por coalescencia. ANGIOGÉNESIS: gemación de vasos ya existentes ★',
+      'PDGF y TGF-β maduran los vasos · PROX1: vasos linfáticos · EFNB2: arterias · EPHB4: venas.',
+    ],
+    sections: [
+      {
+        id: 'erm-1',
+        number: 1,
+        title: 'Destino del ectodermo según BMP4',
+        keyTerms: ['BMP4', 'estado por omisión', 'placa neural', 'región limítrofe', 'ectodermo superficial'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El destino de todo el ectodermo depende de la concentración de BMP, regulada por noggina y cordina. Si se protege al ectodermo de la BMP, su «estado por omisión» es convertirse en tejido neural.',
+          },
+          {
+            type: 'table',
+            title: 'Una molécula, tres destinos',
+            data: {
+              headers: ['Región', 'BMP4', 'Destino'],
+              rows: [
+                ['Placa neural', 'Muy baja', 'Ectodermo neural'],
+                ['Región limítrofe', 'Intermedia', 'Cresta neural'],
+                ['Ectodermo superficial', 'Alta', 'Epidermis'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'erm-2',
+        number: 2,
+        title: 'Formación de la cresta neural',
+        keyTerms: ['PAX3', 'SNAIL', 'FOXD3', 'SLUG', 'WNT'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Dos olas de factores de transcripción',
+            steps: [
+              'En la región limítrofe coinciden BMP4 en concentración intermedia, FGF y proteínas WNT.',
+              'Primera ola: inducen PAX3 y otros factores que «determinan» el borde de la placa neural.',
+              'Segunda ola: SNAIL y FOXD3 especifican las células de la cresta neural.',
+              'SLUG promueve su migración desde el neuroectodermo.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'Las BMP, otros miembros de la familia TGF-β y los FGF regulan la migración, proliferación y diferenciación de la cresta neural. En animales de laboratorio, sus concentraciones anómalas se han vinculado con defectos craneofaciales.',
+          },
+        ],
+      },
+      {
+        id: 'erm-3',
+        number: 3,
+        title: 'Formación de los somitas: reloj y límites',
+        keyTerms: ['reloj de segmentación', 'NOTCH', 'WNT', 'ácido retinoico', 'FGF8', 'WNT3A'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Los somitas se forman a partir del mesodermo paraxial presomítico, que al inicio no está segmentado. Dos mecanismos actúan a la vez y conviene distinguirlos.',
+          },
+          {
+            type: 'comparison',
+            title: 'Reloj o límites',
+            left: {
+              title: 'RELOJ DE SEGMENTACIÓN',
+              items: [
+                'Expresión cíclica de las vías NOTCH y WNT en el mesodermo presomítico',
+                'NOTCH se acumula donde se formará el siguiente somita y disminuye al establecerse',
+                'El aumento de NOTCH activa genes de patrones segmentarios',
+              ],
+            },
+            right: {
+              title: 'LÍMITES DE CADA SOMITA',
+              items: [
+                'Ácido retinoico: alto en la región craneal, baja hacia caudal',
+                'FGF8 + WNT3A: altos en la región caudal, bajan hacia craneal',
+                'Estos gradientes superpuestos controlan el reloj y la vía de NOTCH',
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'erm-4',
+        number: 4,
+        title: 'Diferenciación de los somitas',
+        keyTerms: ['esclerotoma', 'PAX1', 'dermomiotoma', 'PAX3', 'MYF5', 'MYOD', 'NT-3', 'primaxial', 'abaxial'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Las señales para diferenciar al somita vienen de las estructuras que lo rodean: notocorda, tubo neural, epidermis y mesodermo de la placa lateral.',
+          },
+          {
+            type: 'table',
+            title: 'Señal, gen y destino',
+            data: {
+              headers: ['Porción del somita', 'Señal y origen', 'Gen', 'Destino'],
+              rows: [
+                ['Ventromedial', 'Noggina y SHH (notocorda y piso del tubo neural)', 'PAX1', 'ESCLEROTOMA: cartílago y hueso de las vértebras'],
+                ['Dermomiotoma', 'WNT (tubo neural dorsal)', 'PAX3', 'Marca la región del dermomiotoma'],
+                ['Dorsomedial', 'WNT (tubo neural dorsal)', 'MYF5', 'Precursores del músculo PRIMAXIAL'],
+                ['Dorsolateral', 'WNT (epidermis) y BMP4, quizá FGF (placa lateral)', 'MYOD', 'Precursores musculares, sobre todo ABAXIALES'],
+                ['Porción media del epitelio dorsal', 'NT-3 (tubo neural dorsal)', '—', 'DERMIS'],
+              ],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'Músculo primaxial y abaxial',
+            left: {
+              title: 'PRIMAXIAL',
+              items: [
+                'Sus células permanecen en la región del somita',
+                'Músculos de la espalda e intercostales',
+                'Algunos de la cintura de las extremidades',
+              ],
+            },
+            right: {
+              title: 'ABAXIAL',
+              items: [
+                'Sus células salen del somita hacia la hoja somática de la placa lateral',
+                'Oblicuos externo e interno y transverso del abdomen',
+                'La mayor parte de los músculos de las extremidades',
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'La misma lógica sigue la dermis: las células que permanecen en el somita forman la dermis de la espalda; las que migran a la placa lateral, la de la pared corporal y las extremidades.',
+          },
+        ],
+      },
+      {
+        id: 'erm-5',
+        number: 5,
+        title: 'Formación de vasos sanguíneos',
+        keyTerms: ['FGF2', 'hemangioblasto', 'HOXB5', 'FLK1', 'VEGF', 'vasculogénesis', 'angiogénesis', 'PDGF'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Del mesodermo al vaso',
+            steps: [
+              'El FGF2 actúa sobre células del mesodermo y las convierte en hemangioblastos, en los islotes sanguíneos.',
+              'Los del centro del islote dan células troncales hematopoyéticas; los de la periferia, angioblastos.',
+              'El VEGF, secretado por el mesodermo circundante, induce a los angioblastos a formar células endoteliales. Su señal pudiera implicar a HOXB5, que aumenta FLK1, el receptor del VEGF.',
+              'VASCULOGÉNESIS: las células endoteliales se unen y forman los primeros vasos, los lechos primarios (aorta dorsal y venas cardinales).',
+              'ANGIOGÉNESIS: nuevos vasos por gemación de los ya existentes, proceso regulado por VEGF.',
+              'El PDGF y el TGF-β maduran y modelan la vasculatura hasta el patrón del adulto.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'erm-6',
+        number: 6,
+        title: 'Arterias, venas y vasos linfáticos',
+        keyTerms: ['SHH', 'NOTCH', 'EFNB2', 'EPHB4', 'PROX1'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La determinación de arterias, venas y sistema linfático ocurre poco después de la inducción de los angioblastos. La SHH de la notocorda induce al mesénquima circundante a expresar VEGF, y este activa la vía de NOTCH.',
+          },
+          {
+            type: 'table',
+            title: 'Gen y destino',
+            data: {
+              headers: ['Gen', 'Destino', 'Detalle'],
+              rows: [
+                ['EFNB2 (efrina B2)', 'ARTERIAS', 'Lo activa NOTCH; suprime el destino venoso'],
+                ['EPHB4', 'VENAS', 'Gen específico de las venas'],
+                ['PROX1', 'VASOS LINFÁTICOS', 'Factor de transcripción con homeodominio; parece ser el gen maestro'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'El crecimiento de los vasos sigue patrones: no es aleatorio y parece usar factores guía parecidos a los del sistema nervioso.',
+          },
+        ],
+      },
+      {
+        id: 'erm-7',
+        number: 7,
+        title: 'Mapa de moléculas por proceso',
+        keyTerms: ['repaso', 'moléculas'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Repaso integrador',
+            data: {
+              headers: ['Proceso', 'Moléculas', 'Resultado'],
+              rows: [
+                ['Eje A-P', 'OTX2, LIM1, HESX1, CERBERUS, LEFTY1, NODAL', 'Extremos craneal y caudal'],
+                ['Línea primitiva y mesodermo', 'FGF8, NODAL, BRACHYURY/TBXT', 'Migración y especificación del mesodermo'],
+                ['Eje D-V', 'BMP4, FGF, CHRD, NOG, folistatina, GSC', 'Ventralización y dorsalización'],
+                ['Eje I-D', 'Serotonina, MAD3, NODAL, LEFTY2, PITX2', 'Identidad del lado izquierdo'],
+                ['Línea media', 'SHH, LEFTY1, ZIC3', 'Evitan NODAL en el lado derecho'],
+                ['Ectodermo', 'BMP4, FGF, WNT, PAX3, SNAIL, FOXD3, SLUG', 'Tejido neural, cresta neural y epidermis'],
+                ['Somitas', 'NOTCH, WNT, ácido retinoico, FGF8, WNT3A', 'Reloj y límites'],
+                ['Derivados del somita', 'PAX1, PAX3, MYF5, MYOD, NT-3', 'Esclerotoma, dermomiotoma, músculo y dermis'],
+                ['Sangre y vasos', 'FGF2, FLK1, VEGF, PDGF, TGF-β', 'Hemangioblastos, endotelio y maduración'],
+                ['Identidad vascular', 'EFNB2, EPHB4, PROX1', 'Arterias, venas y linfáticos'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Prioridad de estudio: el resultado final de cada molécula y el momento del desarrollo, más que cada paso intermedio. La mayoría de estos eventos ocurre entre la tercera y la cuarta semanas.',
           },
         ],
       },
