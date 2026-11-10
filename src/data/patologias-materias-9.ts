@@ -115,6 +115,7 @@ const HDC: Patologia = {
   atlas: [
     { id: 'musculos-dorso-diafragma', title: 'Dorso y diafragma' },
     { id: 'aparato-respiratorio', title: 'Aparato Respiratorio' },
+    { id: 'embriologia-cavidades-corporales', title: 'Tubo intestinal y cavidades corporales' },
   ],
   caso: {
     titulo: 'Caso clínico',
@@ -218,6 +219,7 @@ const ONFALOCELE: Patologia = {
   atlas: [
     { id: 'musculos-pared-abdominal', title: 'Pared abdominal' },
     { id: 'embriologia-anomalias-cromosomicas', title: 'Anomalías cromosómicas' },
+    { id: 'embriologia-cavidades-corporales', title: 'Tubo intestinal y cavidades corporales' },
   ],
   caso: {
     titulo: 'Caso clínico',
@@ -327,6 +329,7 @@ const MECKEL: Patologia = {
   atlas: [
     { id: 'aparato-digestivo', title: 'Aparato Digestivo' },
     { id: 'embriologia-tercera-semana', title: 'Tercera semana y periodo embrionario' },
+    { id: 'embriologia-cavidades-corporales', title: 'Tubo intestinal y cavidades corporales' },
   ],
   caso: {
     titulo: 'Caso clínico',
@@ -529,6 +532,7 @@ const EXTROFIA: Patologia = {
   atlas: [
     { id: 'aparato-urinario', title: 'Aparato Urinario' },
     { id: 'hueso-coxal', title: 'Hueso coxal' },
+    { id: 'embriologia-cavidades-corporales', title: 'Tubo intestinal y cavidades corporales' },
   ],
   caso: {
     titulo: 'Caso clínico',

@@ -1494,7 +1494,25 @@ export const atlasTopics: AtlasTopic[] = [
       { id: 'ets-a5', question: 'En el tercer corte, la parte del somita que rodea el tubo neural y la notocorda y forma vértebras y costillas es el:', options: ['Dermomiotoma', 'Esclerotoma', 'Mesodermo intermedio', 'Celoma'], correctIndex: 1, explanation: 'El dermomiotoma forma la dermis de la espalda y el músculo.', difficulty: 'medium' },
       { id: 'ets-a6', question: 'En la tabla de derivados, ¿cuál viene del ectodermo superficial?', options: ['La retina', 'La médula suprarrenal', 'El páncreas', 'La adenohipófisis'], correctIndex: 3, explanation: 'La retina y la neurohipófisis son neuroectodermo; la médula suprarrenal, cresta neural; el páncreas, endodermo.', difficulty: 'medium' },
     ],
+  },  {
+    id: 'embriologia-cavidades-corporales',
+    title: 'Tubo intestinal y cavidades corporales',
+    subtitle: 'Plegamiento lateral en tres cortes (somatopleura, esplacnopleura, celoma y mesenterio dorsal), plegamiento cefalocaudal y mesenterios, cavidades pleurales y pericárdica, diafragma por componentes (C3–C5), cronología y defectos: gastrosquisis, onfalocele, hernia diafragmática, ectopia cordis, extrofia vesical y divertículo de Meckel',
+    category: 'embriologia',
+    emoji: '🫁',
+    imagePath: '/atlas/embriologia-cavidades-corporales.webp',
+    colorKey: 'embriologia',
+    relatedTopicIds: ['embriologia-cavidades-corporales', 'embriologia-periodo-embrionario'],
+    questions: [
+      { id: 'ecc-a1', question: 'En el primer corte del panel 1, la hoja rosa claro de la placa lateral, junto con el ectodermo que la cubre, forma la:', options: ['Esplacnopleura', 'Somatopleura', 'Notocorda', 'Membrana cloacal'], correctIndex: 1, explanation: 'La hoja esplácnica, con el endodermo, forma la esplacnopleura.', difficulty: 'easy' },
+      { id: 'ecc-a2', question: 'En el tercer corte, la estructura rosa que une el intestino a la pared posterior y lleva sus vasos es el:', options: ['Tabique transverso', 'Conducto vitelino', 'Mesenterio dorsal', 'Pericardio fibroso'], correctIndex: 2, explanation: 'El mesenterio ventral solo existe a nivel del esófago terminal, el estómago y el duodeno proximal.', difficulty: 'easy' },
+      { id: 'ecc-a3', question: 'En el corte del tórax, el anillo morado que rodea al corazón y lleva los nervios frénicos viene de las:', options: ['Membranas pleuroperitoneales', 'Yemas pulmonares', 'Somitas cervicales', 'Membranas pleuropericárdicas'], correctIndex: 3, explanation: 'Forman el pericardio fibroso y separan la cavidad pericárdica de las pleurales.', difficulty: 'medium' },
+      { id: 'ecc-a4', question: 'En el diafragma visto desde abajo, la región morada ventral que forma el tendón central viene del:', options: ['Tabique transverso', 'Mesenterio del esófago', 'Reborde de la pared corporal', 'Somita C3'], correctIndex: 0, explanation: 'El mesenterio del esófago forma los pilares y el músculo llega de los somitas C3–C5.', difficulty: 'medium' },
+      { id: 'ecc-a5', question: 'En el panel 6, el defecto con las asas cubiertas por una membrana y el cordón insertado en el saco es:', options: ['Gastrosquisis', 'Hernia diafragmática', 'Onfalocele', 'Extrofia vesical'], correctIndex: 2, explanation: 'Es una falla del retorno de las asas tras la herniación fisiológica; la gastrosquisis no tiene cubierta.', difficulty: 'easy' },
+      { id: 'ecc-a6', question: 'Según la cronología, ¿cuándo cierran la pared ventral los pliegues laterales?', options: ['Final de la 3.ª semana', 'Final de la 4.ª semana', 'Semana 7', 'Semanas 10 a 12'], correctIndex: 1, explanation: 'Las asas regresan al abdomen en las semanas 10 a 12, tras la herniación fisiológica.', difficulty: 'medium' },
+    ],
   },
+
   {
     id: 'medicina-humanistica',
     title: 'Medicina Humanística',

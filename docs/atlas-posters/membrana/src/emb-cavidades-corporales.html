@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 7px; padding-top: 12px; }
+h1 { font-size: 42px; }
+.panel { padding: 8px 10px; }
+.ph { margin: 0 0 5px; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.4px; line-height: 1.3; }
+.lst li { margin: 0 0 2px; }
+table td { font-size: 10px; padding: 2px 6px; line-height: 1.25; }
+table th { padding: 2px 6px; }
+.box { border-radius: 8px; padding: 5px 8px; font-size: 10.1px; line-height: 1.28; }
+.box b.t { display: block; font-size: 11.1px; margin-bottom: 1px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.cards4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.cards4 .c { border: 1px solid #e6e9f0; border-radius: 8px; padding: 5px 7px; font-size: 9.8px; line-height: 1.27; }
+.cards4 .c b.t { display: block; font-size: 11px; color: var(--navy); margin-bottom: 2px; }
+.star { color: var(--red); font-weight: 800; }
+.cuts { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 10px; align-items: end; }
+.cut { text-align: center; font-size: 10px; line-height: 1.25; color: var(--muted); }
+.cut img { display: block; margin: 0 auto 3px; max-width: 100%; }
+.cut b.h { display: block; color: var(--navy); font-size: 11.2px; }
+.leg { display: flex; flex-wrap: wrap; gap: 3px 11px; font-size: 9.7px; justify-content: center; margin-top: 5px; }
+.leg span { display: inline-flex; align-items: center; gap: 4px; }
+.leg i { width: 12px; height: 10px; border-radius: 3px; display: inline-block; border: 1px solid rgba(0,0,0,.15); }
+.note { font-size: 10px; margin: 4px 0 0; }
+.defs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.defs .d { text-align: center; font-size: 10px; line-height: 1.26; }
+.defs .d img { height: 205px; display: block; margin: 0 auto 3px; }
+.defs .d b.h { display: block; font-size: 11.2px; color: var(--navy); }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Embriología</p>
+  <h1>Tubo intestinal y cavidades corporales</h1>
+  <p class="tag">Cómo se cierra el cuerpo, cómo se separan las cavidades y de dónde sale el diafragma.</p>
+</header>
+
+<section class="panel">
+  <div class="ph"><span class="n">1</span>Plegamiento lateral: tres cortes transversales <span class="star">★</span></div>
+  <div class="cuts">
+    <div class="cut"><img src="{{img:ana3d/emb-neur3.png}}" style="height:118px" alt=""><b class="h">Final de la 3.ª semana</b>El celoma separa la hoja <b>somática</b> (con el ectodermo: somatopleura) de la <b>esplácnica</b> (con el endodermo: esplacnopleura)</div>
+    <div class="cut"><img src="{{img:ana3d/emb-pleg2.png}}" style="height:178px" alt=""><b class="h">Los pliegues descienden</b>La somatopleura crece hacia ventral; el endodermo se curva y sigue abierto al saco vitelino</div>
+    <div class="cut"><img src="{{img:ana3d/emb-pleg3.png}}" style="height:178px" alt=""><b class="h">Final de la 4.ª semana</b>La pared ventral se cierra; el intestino cuelga del <b>mesenterio dorsal</b> dentro de la cavidad peritoneal</div>
+  </div>
+  <div class="leg">
+    <span><i style="background:#9ec3ea"></i>Ectodermo</span>
+    <span><i style="background:#3f6fb5"></i>Tubo neural</span>
+    <span><i style="background:#c8242c"></i>Notocorda</span>
+    <span><i style="background:#e8912e"></i>Somita</span>
+    <span><i style="background:#b5651d"></i>Mesodermo intermedio</span>
+    <span><i style="background:#f3c6cc"></i>Hoja somática (parietal)</span>
+    <span><i style="background:#e48896"></i>Hoja esplácnica (visceral) y mesenterio</span>
+    <span><i style="background:#f2c94c"></i>Endodermo</span>
+    <span><i style="background:#b8202a"></i>Aortas dorsales</span>
+  </div>
+  <p class="note" style="text-align:center">El espacio blanco entre las dos hojas es el <b>celoma intraembrionario</b>. Cada pliegue lateral lleva ectodermo, hoja parietal y células de los somitas; la pared queda abierta solo en el pedículo de fijación (futuro cordón).</p>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:.95">
+    <div class="ph"><span class="n">2</span>Plegamiento cefalocaudal y mesenterios</div>
+    <ul class="lst">
+      <li>El crecimiento del <b>tubo neural</b> dobla los extremos: el embrión se mete en la cavidad amniótica y una parte del saco vitelino queda dentro como <b>intestino anterior, medio y posterior</b>.</li>
+      <li>Día 22: intestinos anterior y posterior, tubo cardiaco y cavidad pericárdica ventrales. Día 28: los tres segmentos definidos.</li>
+      <li>El intestino medio sigue unido al saco por el <b>conducto vitelino</b>, que degenera en el 2.º–3.er mes. Si persiste junto al íleon: <b>divertículo de Meckel</b>.</li>
+    </ul>
+    <table style="margin-top:5px">
+      <tr><th></th><th>Mesenterio dorsal</th><th>Mesenterio ventral</th></tr>
+      <tr><td><b>Extensión</b></td><td>Del esófago inferior a la cloaca</td><td>Esófago terminal, estómago y duodeno proximal</td></tr>
+      <tr><td><b>Origen</b></td><td>Las dos hojas alrededor del tubo</td><td><b>Tabique transverso</b></td></tr>
+      <tr><td><b>Función</b></td><td>Fija el tubo; paso de vasos, nervios y linfáticos</td><td>Se relaciona con el hígado</td></tr>
+    </table>
+  </section>
+  <section class="panel" style="flex:1.05">
+    <div class="ph"><span class="n">3</span>Cavidades pleurales y pericárdica <small>— corte del tórax</small></div>
+    <script type="auto3d">{"img": "ana3d/emb-torax.png", "height": 222, "cw": 450, "ch": 230, "gap": 30, "L": 112, "labels": {"col": ["Columna", "", [700, 230]], "eso": ["Esófago", "", [676, 462]], "pul": ["Pulmón", "en la cavidad pleural", [300, 700]], "par": ["Pared torácica", "", [110, 980]], "aor": ["Aorta", "", [794, 436]], "fre": ["Nervio frénico", "C3–C5", [980, 790]], "per": ["Pericardio fibroso", "membranas pleuropericárdicas", [990, 1000]], "cor": ["Corazón", "", [700, 880]]}, "side": {"col": "left", "eso": "left", "pul": "left", "par": "left", "aor": "right", "fre": "right", "per": "right", "cor": "right"}}</script>
+    <ul class="lst">
+      <li>El <b>tabique transverso</b> separa tórax y abdomen solo en parte: quedan los <b>conductos pericardioperitoneales</b>.</li>
+      <li>Las yemas pulmonares crecen en ellos (caudolateral) y los convierten en <b>cavidades pleurales</b>.</li>
+      <li>Los <b>pliegues pleuropericárdicos</b> (con nervios frénicos y venas cardinales comunes) se fusionan: separan pleuras y pericardio y forman el <b>pericardio fibroso</b>.</li>
+    </ul>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:1.1">
+    <div class="ph"><span class="n">4</span>Diafragma: de dónde viene cada parte <span class="star">★</span> <small>— vista inferior</small></div>
+    <script type="auto3d">{"img": "ana3d/emb-diafragma.png", "height": 172, "cw": 480, "ch": 182, "gap": 30, "L": 150, "labels": {"tab": ["Tabique transverso", "tendón central", [460, 300]], "mpp": ["Membrana pleuroperitoneal", "cierra el conducto", [300, 640]], "par": ["Pared corporal", "músculo periférico", [70, 560]], "vci": ["Vena cava inferior", "", [894, 320]], "mes": ["Mesenterio del esófago", "pilares", [760, 760]], "eso": ["Esófago", "", [700, 666]], "aor": ["Aorta", "", [700, 900]]}, "side": {"tab": "left", "mpp": "left", "par": "left", "vci": "right", "mes": "right", "eso": "right", "aor": "right"}}</script>
+    <ul class="lst">
+      <li>Semanas 4 a 8. Las membranas pleuroperitoneales se fusionan en la <b>7.ª semana</b> con el mesenterio del esófago y el tabique transverso.</li>
+      <li>El músculo viene de los somitas <b>C3–C5</b> y lo inerva el <b>frénico</b> (C3–C5): el diafragma empieza en el cuello y desciende. Por eso su irritación duele en el hombro.</li>
+    </ul>
+  </section>
+  <section class="panel" style="flex:.9">
+    <div class="ph"><span class="n">5</span>Cronología</div>
+    <table>
+      <tr><th>Momento</th><th>Evento</th></tr>
+      <tr><td>Final de la 3.ª semana</td><td>Aparece el celoma intraembrionario</td></tr>
+      <tr><td>Días 25 y 28</td><td>Cierran los neuroporos craneal y caudal</td></tr>
+      <tr><td><b class="h">Final de la 4.ª semana</b></td><td>Los pliegues laterales cierran la pared ventral</td></tr>
+      <tr><td>Semanas 4 a 8</td><td>Se forma el diafragma; la 7.ª, fusión de las membranas pleuroperitoneales</td></tr>
+      <tr><td><b>Semanas 6 a 10</b></td><td>Herniación umbilical fisiológica del intestino medio</td></tr>
+      <tr><td><b>Semanas 10 a 12</b></td><td>Las asas regresan al abdomen</td></tr>
+      <tr><td>2.º–3.er mes</td><td>Degenera el conducto vitelino</td></tr>
+    </table>
+    <div class="two" style="margin-top:5px">
+      <div class="box" style="background:#fdf0f2"><b class="t" style="color:#b8202a">Somatopleura</b>Hoja somática + ectodermo: pared corporal, serosas parietales</div>
+      <div class="box" style="background:#fff7e0"><b class="t" style="color:#9a6a00">Esplacnopleura</b>Hoja esplácnica + endodermo: pared intestinal, serosas viscerales</div>
+    </div>
+  </section>
+</div>
+
+<section class="clin">
+  <div class="ph"><span class="n">6</span>Correlación clínica: defectos de la pared y del diafragma <span class="star">★</span></div>
+  <div class="defs">
+    <div class="d"><img src="{{img:ana3d/emb-gastrosquisis.png}}" alt=""><b class="h">Gastrosquisis</b>Falla del <b>cierre</b> de la pared: asas a la derecha del cordón, <b>sin cubierta</b>, dañadas por el líquido amniótico. ≈ 3.5/10 000; madres menores de 20 años; rara vez cromosómica.</div>
+    <div class="d"><img src="{{img:ana3d/emb-onfalocele.png}}" alt=""><b class="h">Onfalocele</b>Falla del <b>retorno</b> de las asas tras la herniación fisiológica: en el ombligo, <b>cubierto por amnios</b>, puede contener hígado. ≈ 2.5/10 000; 15 % con anomalía cromosómica.</div>
+  </div>
+  <div class="cards4" style="margin-top:6px">
+    <div class="c"><b class="t">Hernia diafragmática</b>≈ 1 de cada 2 000; 85–90 % izquierda (posterolateral). Hipoplasia pulmonar; abdomen excavado y ruidos intestinales en el tórax.</div>
+    <div class="c"><b class="t">Ectopia cordis y Cantrell</b>Falla del cierre torácico: corazón fuera del tórax. Puede extenderse al esternón, diafragma, pericardio y abdomen.</div>
+    <div class="c"><b class="t">Extrofia vesical</b>Falla del cierre pélvico: vejiga expuesta y epispadias. La cloacal expone también el recto.</div>
+    <div class="c"><b class="t">Divertículo de Meckel</b>Resto del conducto vitelino en el íleon. En niños, sangrado rectal indoloro por mucosa gástrica ectópica.</div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Embriología I (UAD) · Semana 3, clase 1 · ★ temas clave · Modelos 3D propios, simplificados y no a escala</p>
+</div></body></html>

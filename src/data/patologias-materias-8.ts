@@ -491,6 +491,7 @@ const GASTROSQUISIS: Patologia = {
   atlas: [
     { id: 'embriologia-tercera-semana', title: 'Tercera semana y periodo embrionario' },
     { id: 'musculos-pared-abdominal', title: 'Pared abdominal' },
+    { id: 'embriologia-cavidades-corporales', title: 'Tubo intestinal y cavidades corporales' },
   ],
   caso: {
     titulo: 'Caso clínico',

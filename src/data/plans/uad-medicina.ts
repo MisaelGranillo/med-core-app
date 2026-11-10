@@ -633,6 +633,7 @@ export const uadMedicina: Plan = {
               { label: 'Atlas MedCore — Ciclo ovárico y fecundación', url: '/atlas/embriologia-ciclo-fecundacion' },
               { label: 'Atlas MedCore — Segunda semana e implantación', url: '/atlas/embriologia-segunda-semana' },
               { label: 'Atlas MedCore — Tercera semana y periodo embrionario', url: '/atlas/embriologia-tercera-semana' },
+              { label: 'Atlas MedCore — Tubo intestinal y cavidades corporales', url: '/atlas/embriologia-cavidades-corporales' },
               { label: 'Acland Anatomy', url: 'https://aclandanatomy.com/' },
               { label: 'Bates Visual Guide', url: 'https://batesvisualguide.com/' },
               { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },
