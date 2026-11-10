@@ -35,7 +35,9 @@ Z-Anatomy no trae órganos femeninos ni embriones. Para las láminas de Embriolo
   `emb3d/cleave.py` (cigoto a eclosión), `emb3d/blasto.py` (blastocisto) y `emb3d/implant.py`
   (días 8, 9, 11–12 y 13 dentro de un bloque de endometrio). `emb3d/tercera.py` hace el disco trilaminar, los cortes de la
   neurulación y el embrión del día 22; `emb3d/cavidades.py`, los cortes del plegamiento lateral, el tórax, el
-  diafragma por componentes y la gastrosquisis y el onfalocele. Las lagunas, vellosidades y sinusoides se
+  diafragma por componentes y la gastrosquisis y el onfalocele.
+- **Periodo fetal**: la lámina usa gráficos SVG en lugar de modelos 3D; `python3 fetal_svg.py ana` los genera
+  (`ana/fetal-*.svg`) con los datos de la tabla de la clase y un esquema aproximado de percentiles. Las lagunas, vellosidades y sinusoides se
   restan una por una (restar un objeto que junta piezas encimadas rompe el booleano) y las superficies
   irregulares se remallan por vóxeles antes de restar.
 - Las vistas se renderizan con `python3 emb_render.py <nombre> '<json>'` (mismas claves que `za_render.py`

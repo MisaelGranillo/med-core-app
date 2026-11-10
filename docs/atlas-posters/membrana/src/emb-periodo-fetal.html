@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+.page { gap: 16px; padding-top: 16px; }
+h1 { font-size: 44px; }
+.panel { padding: 11px 13px; }
+.ph { margin: 0 0 8px; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.9px; line-height: 1.3; }
+.lst li { margin: 0 0 2px; }
+table td { font-size: 10.5px; padding: 2px 6px; line-height: 1.25; }
+table th { padding: 2px 6px; }
+.star { color: var(--red); font-weight: 800; }
+.note { font-size: 10.5px; margin: 4px 0 0; }
+.tl { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative; margin-top: 4px; }
+.tl::before { content: ''; position: absolute; left: 8px; right: 8px; top: 13px; height: 4px; border-radius: 2px; background: linear-gradient(90deg, #9ec3ea, #3f6fb5 45%, #e48896 75%, #c8242c); }
+.tl .st { position: relative; padding: 32px 6px 0; font-size: 10.5px; line-height: 1.27; }
+.tl .st::before { content: ''; position: absolute; top: 8px; left: 8px; width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 3px solid var(--navy); }
+.tl .st b.h { display: block; font-size: 12px; color: var(--navy); margin-bottom: 2px; }
+.tl .st ul { margin: 0; padding-left: 13px; }
+.charts { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; align-items: end; justify-items: center; }
+.charts img { display: block; width: 100%; max-width: 340px; }
+.cap { text-align: center; font-size: 10.2px; color: var(--muted); margin-top: 2px; }
+.box { border-radius: 8px; padding: 6px 8px; font-size: 10.6px; line-height: 1.28; }
+.box b.t { display: block; font-size: 11.1px; margin-bottom: 1px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.mile { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; }
+.mile div { text-align: center; border: 1px solid #e6e9f0; border-radius: 8px; padding: 7px 3px; font-size: 10.2px; line-height: 1.2; }
+.mile b { display: block; font-size: 15px; color: var(--red); }
+.cards4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.cards4 .c { border: 1px solid #e6e9f0; border-radius: 8px; padding: 6px 8px; font-size: 10.3px; line-height: 1.27; }
+.cards4 .c b.t { display: block; font-size: 11px; color: var(--navy); margin-bottom: 2px; }
+.pct { display: grid; grid-template-columns: 390px 1fr; gap: 8px; align-items: center; }
+.pct img { width: 390px; display: block; }
+.dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%; color: #fff; font-size: 8.5px; font-weight: 800; text-align: center; line-height: 14px; margin-right: 3px; }
+.flow { display: flex; align-items: stretch; gap: 5px; flex-wrap: nowrap; margin-top: 4px; }
+.flow .f { flex: 1; border-radius: 8px; padding: 6px 7px; font-size: 10.6px; line-height: 1.25; text-align: center; }
+.flow .f b { display: block; font-size: 12px; }
+.flow .ar { color: var(--muted); font-size: 18px; font-weight: 800; align-self: center; }
+.cards2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.cards2 .c { border: 1px solid #e6e9f0; border-radius: 8px; padding: 6px 8px; font-size: 10.3px; line-height: 1.27; background: #fff; }
+.cards2 .c b.t { display: block; font-size: 11.2px; color: var(--navy); margin-bottom: 2px; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Embriología</p>
+  <h1>Periodo fetal</h1>
+  <p class="tag">Del tercer mes al nacimiento: cómo crece el feto, cómo se calcula su edad y cuándo no crece lo suficiente.</p>
+</header>
+
+<section class="panel">
+  <div class="ph"><span class="n">1</span>Línea del tiempo <small>— de la 9.ª semana al nacimiento</small></div>
+  <div class="tl">
+    <div class="st"><b class="h">Mes 3 (sem 9–12)</b><ul><li>Ojos a ventral, orejas a su sitio</li><li>Centros de osificación primarios</li><li>Sexo visible: tubérculo genital</li><li>Las asas regresan al abdomen</li></ul></div>
+    <div class="st"><b class="h">Meses 4–5</b><ul><li>LCC ≈ 15 cm al final del 5.º</li><li>Peso aún &lt; 500 g</li><li><b>Lanugo</b>, cejas y pelo</li><li>La madre siente los movimientos</li></ul></div>
+    <div class="st"><b class="h">Mes 6</b><ul><li>Piel rojiza y arrugada</li><li>Pulmón y SNC inmaduros: nacer es muy difícil de sobrevivir</li><li>Inicia el surfactante</li></ul></div>
+    <div class="st"><b class="h">Meses 7–8</b><ul><li>6.5–7 meses: LCC ≈ 25 cm, ≈ 1 100 g</li><li>Supervivencia ≈ 90 %</li><li>Grasa subcutánea: contornos redondos</li></ul></div>
+    <div class="st"><b class="h">Mes 9 y nacimiento</b><ul><li>Surfactante alto (sem 34–36)</li><li><b>Vérnix caseosa</b></li><li>3 000–3 400 g · LCC 36 cm · LVT 50 cm</li><li>Testículos en el escroto</li></ul></div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="ph"><span class="n">2</span>Cómo crece <span class="star">★</span> <small>— datos de la tabla de la clase (puntos medios)</small></div>
+  <div class="charts">
+    <div><img src="{{img:ana/fetal-lcc.svg}}" alt=""><p class="cap">La <b>longitud</b> crece más en los meses 3, 4 y 5</p></div>
+    <div><img src="{{img:ana/fetal-peso.svg}}" alt=""><p class="cap">El <b>peso</b>, en los últimos 2–2.5 meses: ≈ 50 % del peso al nacer</p></div>
+    <div><img src="{{img:ana/fetal-cabeza.svg}}" alt="" style="max-width:270px"><p class="cap">La <b>cabeza</b> crece primero y luego el cuerpo la alcanza</p></div>
+  </div>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1.05">
+    <div class="ph"><span class="n">3</span>Fecha probable de parto <span class="star">★</span></div>
+    <div class="two">
+      <div class="box" style="background:#eef3f8"><b class="t" style="color:#13295b">Desde la FUR</b>Primer día de la última regla <b>+ 280 días</b> = 40 semanas. Lo habitual.</div>
+      <div class="box" style="background:#f2edf8"><b class="t" style="color:#6a4c9c">Desde la fecundación</b>Fecundación <b>+ 266 días</b> = 38 semanas. Los 14 días de diferencia son la fase previa a la ovulación.</div>
+    </div>
+    <img src="{{img:ana/fetal-eg.svg}}" alt="" style="display:block;width:100%;margin-top:6px">
+    <ul class="lst" style="margin-top:3px">
+      <li>La mayoría nace en los <b>10 a 14 días</b> alrededor de la fecha probable.</li>
+      <li>Confunden el cálculo los ciclos irregulares y el <b>sangrado de implantación</b> (≈ 14 días tras la fecundación).</li>
+    </ul>
+    <div class="ph" style="margin-top:6px">Hitos funcionales <small>— semana</small></div>
+    <div class="mile">
+      <div><b>7</b>Papilas gustativas</div><div><b>10</b>Deglución</div><div><b>14–16</b>Movimientos respiratorios</div><div><b>24</b>Succión</div><div><b>24–26</b>Oye sonidos</div><div><b>28</b>Ojos sensibles a la luz</div>
+    </div>
+  </section>
+  <section class="panel" style="flex:.95">
+    <div class="ph"><span class="n">4</span>Ultrasonido y tercer mes</div>
+    <table>
+      <tr><th>Semanas</th><th>Medición</th></tr>
+      <tr><td><b>7 a 14</b></td><td><b>Longitud cefalocaudal</b>: la más precisa para fechar</td></tr>
+      <tr><td><b>16 a 30</b></td><td>Diámetro biparietal y circunferencia cefálica (cráneo)</td></tr>
+      <tr><td></td><td><b>Circunferencia abdominal</b>: la primera que cae en la restricción</td></tr>
+      <tr><td></td><td>Longitud del fémur (hueso largo)</td></tr>
+    </table>
+    <p class="note">Ninguna medida sola basta: se combinan entre sí y con la FUR.</p>
+    <div class="two" style="margin-top:6px">
+      <div class="box" style="background:#eef3f8"><b class="t" style="color:#13295b">Osificación (semana 12)</b>Centros primarios en la <b>diáfisis</b> de huesos largos (endocondral, sobre cartílago hialino) y en el cráneo (intramembranosa, sin molde). Los secundarios, en las epífisis, después.</div>
+      <div class="box" style="background:#fdf0f2"><b class="t" style="color:#b8202a">Sexo por ultrasonido (semana 12)</b><b>Tubérculo genital</b> recto respecto a la columna: femenino. Elevado unos <b>30°</b>: masculino.</div>
+    </div>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">5</span>Peso bajo, PEG y restricción del crecimiento <span class="star">★</span></div>
+  <div class="pct">
+    <div><img src="{{img:ana/fetal-pct.svg}}" alt=""><p class="cap">Esquema aproximado de percentiles de peso al nacer</p></div>
+    <div>
+      <table>
+        <tr><th>Término</th><th>Definición</th><th>¿Usa la edad?</th></tr>
+        <tr><td><b>Peso bajo al nacer</b></td><td>Menos de 2 500 g</td><td>No</td></tr>
+        <tr><td><b>PEG</b></td><td>Peso menor al percentil 10 para su edad</td><td>Sí</td></tr>
+        <tr><td><b>RCIU</b></td><td>No alcanza su potencial de crecimiento (peso o circunferencia abdominal &lt; p10, o cae de su curva); ≈ 1 de cada 10</td><td>Sí</td></tr>
+      </table>
+      <p class="note"><span class="dot" style="background:#e8912e">A</span>35 sem, 2 300 g: <b>peso bajo</b>, pero adecuado para su edad &nbsp; <span class="dot" style="background:#c8242c">B</span>40 sem, 2 300 g: <b>peso bajo y PEG</b> &nbsp; <span class="dot" style="background:#2e8b57">C</span>40 sem, 3 500 g: normal</p>
+      <div class="three" style="margin-top:5px">
+        <div class="box" style="background:#fdf0f2"><b class="t" style="color:#b8202a">Causas</b>Insuficiencia placentaria, hipertensión, cromosomopatías, infecciones (rubéola, CMV, toxoplasma, sífilis), tabaco y alcohol, embarazo múltiple</div>
+        <div class="box" style="background:#fff7e0"><b class="t" style="color:#9a6a00">Al nacer</b>Asfixia, aspiración de meconio, hipoglucemia, hipocalcemia, policitemia</div>
+        <div class="box" style="background:#eef3f8"><b class="t" style="color:#13295b">Hipótesis de Barker</b>En la adultez: obesidad, hipertensión, colesterol alto, enfermedad cardiovascular, diabetes tipo 2</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="row">
+  <section class="panel" style="flex:1.1">
+    <div class="ph"><span class="n">6</span>Quién controla el crecimiento</div>
+    <div class="flow">
+      <div class="f" style="background:#eef3f8"><b style="color:#13295b">Antes de nacer</b>Los tejidos fetales producen <b style="display:inline;font-size:inherit">IGF-1</b>: mitogénico y anabólico</div>
+      <span class="ar">→</span>
+      <div class="f" style="background:#fff7e0"><b style="color:#9a6a00">Después de nacer</b>GH → su receptor (GHR) → se produce IGF-1</div>
+      <span class="ar">→</span>
+      <div class="f" style="background:#e9f6ee"><b style="color:#1f7a4a">IGF-1</b>hace crecer los tejidos</div>
+    </div>
+    <ul class="lst" style="margin-top:6px">
+      <li>Mutaciones del gen <b>IGF1</b>: restricción del crecimiento intrauterino que persiste después de nacer.</li>
+      <li><b>Enanismo tipo Laron</b>: falla el <b>receptor</b> de la GH. La GH está alta pero no actúa y no se produce IGF-1: talla baja intensa y, a veces, escleróticas azules. Dar GH no sirve.</li>
+    </ul>
+  </section>
+  <section class="clin" style="flex:.9">
+    <div class="ph"><span class="n">7</span>Correlación clínica</div>
+    <div class="cards2">
+      <div class="c"><b class="t">Restricción del crecimiento</b>Doppler de la arteria umbilical; esteroides si nacerá entre las semanas 24 y 34. Aspirina desde las semanas 12–16 en embarazos de riesgo.</div>
+      <div class="c"><b class="t">Dificultad respiratoria del prematuro</b>Falta surfactante: quejido, tiraje, vidrio esmerilado. Esteroides prenatales, CPAP y surfactante.</div>
+      <div class="c"><b class="t">Presentación del feto</b>Cefálica, la esperada. Transversa que persiste: cesárea. Podálica: suele ser cesárea; antes puede intentarse la versión cefálica externa.</div>
+      <div class="c"><b class="t">¿Siete u ocho meses?</b>Es mito que el de ocho meses sobreviva peor: la supervivencia mejora con cada semana.</div>
+    </div>
+  </section>
+</div>
+
+<p class="foot">MedCore · Embriología I (UAD) · Semana 3, clase 2 · ★ temas clave · Gráficos con los datos de la clase; percentiles en esquema aproximado</p>
+</div></body></html>

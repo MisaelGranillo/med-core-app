@@ -1511,7 +1511,25 @@ export const atlasTopics: AtlasTopic[] = [
       { id: 'ecc-a5', question: 'En el panel 6, el defecto con las asas cubiertas por una membrana y el cordón insertado en el saco es:', options: ['Gastrosquisis', 'Hernia diafragmática', 'Onfalocele', 'Extrofia vesical'], correctIndex: 2, explanation: 'Es una falla del retorno de las asas tras la herniación fisiológica; la gastrosquisis no tiene cubierta.', difficulty: 'easy' },
       { id: 'ecc-a6', question: 'Según la cronología, ¿cuándo cierran la pared ventral los pliegues laterales?', options: ['Final de la 3.ª semana', 'Final de la 4.ª semana', 'Semana 7', 'Semanas 10 a 12'], correctIndex: 1, explanation: 'Las asas regresan al abdomen en las semanas 10 a 12, tras la herniación fisiológica.', difficulty: 'medium' },
     ],
+  },  {
+    id: 'embriologia-periodo-fetal',
+    title: 'Periodo fetal',
+    subtitle: 'Línea del tiempo del tercer mes al nacimiento, curvas de longitud y peso, proporción de la cabeza, fecha probable de parto y clasificación por edad gestacional, hitos funcionales, ultrasonido, osificación y tubérculo genital, peso bajo al nacer, PEG y RCIU con esquema de percentiles, IGF-1 y hormona del crecimiento',
+    category: 'embriologia',
+    emoji: '👶',
+    imagePath: '/atlas/embriologia-periodo-fetal.webp',
+    colorKey: 'embriologia',
+    relatedTopicIds: ['embriologia-periodo-fetal'],
+    questions: [
+      { id: 'epf-a1', question: 'En las curvas del panel 2, la zona sombreada de la gráfica de longitud marca que la longitud crece más en los meses:', options: ['1 y 2', '3, 4 y 5', '6 y 7', '8 y 9'], correctIndex: 1, explanation: 'El peso, en cambio, aumenta más en los últimos 2 a 2.5 meses.', difficulty: 'easy' },
+      { id: 'epf-a2', question: 'Según las barras del panel 2, al nacer la cabeza representa cerca de:', options: ['La mitad de la LCC', 'Un tercio de la LVT', 'Un cuarto de la LVT', 'Un décimo de la LVT'], correctIndex: 2, explanation: 'Al inicio del tercer mes es cerca de la mitad de la LCC y al inicio del quinto, un tercio de la LVT.', difficulty: 'medium' },
+      { id: 'epf-a3', question: 'En la barra de edad gestacional del panel 3, ¿a partir de qué semana el embarazo es postérmino?', options: ['37', '39', '41', '42'], correctIndex: 3, explanation: 'De 41 a 41 6/7 es término tardío; antes de 37, pretérmino.', difficulty: 'medium' },
+      { id: 'epf-a4', question: 'En el esquema de percentiles, el punto B (40 semanas, 2 300 g) se clasifica como:', options: ['Peso bajo al nacer y pequeño para la edad gestacional', 'Peso bajo pero adecuado para su edad', 'Normal', 'Grande para la edad gestacional'], correctIndex: 0, explanation: 'Está por debajo de 2 500 g y del percentil 10. El punto A (35 semanas, 2 300 g) es peso bajo pero adecuado para su edad.', difficulty: 'medium' },
+      { id: 'epf-a5', question: 'Según el panel 4, ¿qué medida por ultrasonido se usa entre las semanas 7 y 14?', options: ['Longitud del fémur', 'Longitud cefalocaudal', 'Circunferencia abdominal', 'Diámetro biparietal'], correctIndex: 1, explanation: 'De la semana 16 a la 30 se combinan el diámetro biparietal, las circunferencias y el fémur.', difficulty: 'easy' },
+      { id: 'epf-a6', question: 'En el panel 6, el enanismo tipo Laron se debe a una falla de:', options: ['El gen IGF1', 'La placenta', 'La hipófisis', 'El receptor de la hormona del crecimiento'], correctIndex: 3, explanation: 'La GH está alta pero no actúa, así que no se produce IGF-1.', difficulty: 'medium' },
+    ],
   },
+
 
   {
     id: 'medicina-humanistica',

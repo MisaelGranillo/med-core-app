@@ -86,4 +86,6 @@ export const SISTEMAS_DE: Record<string, Sistema[]> = {
   'diverticulo-meckel': ['Digestivo'],
   'heterotaxia': ['Cardiovascular', 'Genética y cromosomas', 'Sangre'],
   'extrofia-vesical': ['Reproductor y embarazo', 'Musculoesquelético'],
+  'restriccion-crecimiento-intrauterino': ['Reproductor y embarazo'],
+  'sdr-prematuro': ['Respiratorio'],
 }
