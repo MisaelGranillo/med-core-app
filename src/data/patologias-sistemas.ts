@@ -81,4 +81,9 @@ export const SISTEMAS_DE: Record<string, Sistema[]> = {
   'herpes-zoster': ['Piel', 'Nervioso', 'Inmunidad e infecciones'],
   'neuroblastoma': ['Nervioso', 'Endocrino y metabolismo'],
   'gastrosquisis': ['Digestivo', 'Reproductor y embarazo'],
+  'hernia-diafragmatica-congenita': ['Respiratorio', 'Digestivo'],
+  'onfalocele': ['Digestivo', 'Genética y cromosomas'],
+  'diverticulo-meckel': ['Digestivo'],
+  'heterotaxia': ['Cardiovascular', 'Genética y cromosomas', 'Sangre'],
+  'extrofia-vesical': ['Reproductor y embarazo', 'Musculoesquelético'],
 }
