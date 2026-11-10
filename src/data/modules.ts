@@ -194,6 +194,14 @@ export const modules: Module[] = [
     topicIds: ['embriologia-segunda-semana', 'embriologia-tercera-semana', 'embriologia-periodo-embrionario', 'embriologia-ejes-corporales', 'embriologia-regulacion-molecular'],
   },
   {
+    id: 'embriologia-uad-s3',
+    badge: 'UAD · Embriología I — Semana 3',
+    title: 'Embriología: cavidades corporales y periodo fetal',
+    subtitle: 'Celoma intraembrionario, plegamiento, mesenterios, cavidades pleurales y pericárdica, diafragma; defectos de la pared ventral (gastrosquisis, onfalocele, extrofias) y hernias diafragmáticas.',
+    emoji: '🫁',
+    topicIds: ['embriologia-cavidades-corporales'],
+  },
+  {
     id: 'humanistica-uad-s1',
     badge: 'UAD · Medicina Humanística — Semana 1',
     title: 'Medicina Humanística: introducción a las humanidades',

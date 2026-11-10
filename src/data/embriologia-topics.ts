@@ -9,6 +9,7 @@ import type { Topic } from '../types'
 // semana (gastrulación, notocorda, mapa del destino) y su clínica. Clase 3: periodo
 // embrionario (semanas 3–8) y derivados de las capas germinales. Clase 4: sangre y vasos,
 // segundo mes y teratógenos. Clase 5: ejes corporales y regulación molecular.
+// Semana 3, Clase 1: tubo intestinal y cavidades corporales.
 export const embriologiaTopics: Topic[] = [
   {
     id: 'embriologia-desarrollo-temprano',
@@ -3834,6 +3835,285 @@ export const embriologiaTopics: Topic[] = [
           {
             type: 'note',
             content: 'Prioridad de estudio: el resultado final de cada molécula y el momento del desarrollo, más que cada paso intermedio. La mayoría de estos eventos ocurre entre la tercera y la cuarta semanas.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-cavidades-corporales',
+    title: 'Tubo intestinal y cavidades corporales',
+    subtitle: 'Celoma intraembrionario, somatopleura y esplacnopleura; plegamiento lateral y cefalocaudal; mesenterios y serosas; tabique transverso, cavidades pleurales y pericárdica; diafragma (C3–C5); defectos de la pared ventral (ectopia cordis, gastrosquisis, onfalocele, extrofias) y hernias diafragmáticas',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '🫁',
+    keyPoints: [
+      'Final de la 3.ª semana: en el mesodermo de la placa lateral aparece el CELOMA INTRAEMBRIONARIO. SOMATOPLEURA = hoja somática + ectodermo (pared corporal); ESPLACNOPLEURA = hoja esplácnica + endodermo (pared intestinal).',
+      'Los PLIEGUES LATERALES (ectodermo, hoja parietal y células de los somitas) cierran la pared ventral al FINAL DE LA 4.ª SEMANA ★; el plegamiento CEFALOCAUDAL incorpora el tubo intestinal (anterior, medio y posterior).',
+      'Mesenterio DORSAL: del esófago inferior a la cloaca. Mesenterio VENTRAL: solo esófago terminal, estómago y duodeno proximal; viene del TABIQUE TRANSVERSO.',
+      'Los PLIEGUES PLEUROPERICÁRDICOS (con nervios frénicos y venas cardinales comunes) separan pleuras y pericardio y forman el PERICARDIO FIBROSO.',
+      'DIAFRAGMA, semanas 4 a 8: tabique transverso (tendón central), membranas pleuroperitoneales, mesenterio del esófago (pilares) y músculo de los somitas C3–C5, inervado por el FRÉNICO (C3–C5) ★',
+      'GASTROSQUISIS: falla del cierre, a la derecha del cordón, asas SIN cubierta. ONFALOCELE: falla del RETORNO tras la herniación fisiológica (semanas 6 a 10), asas CUBIERTAS por amnios, 15 % con anomalía cromosómica ★',
+      'Hernia diafragmática congénita: ≈ 1 de cada 2 000; 85–90 % del lado IZQUIERDO; su gravedad está en la HIPOPLASIA PULMONAR ★',
+    ],
+    sections: [
+      {
+        id: 'ecc-1',
+        number: 1,
+        title: 'Celoma intraembrionario: somatopleura y esplacnopleura',
+        keyTerms: ['celoma intraembrionario', 'somatopleura', 'esplacnopleura', 'hoja parietal', 'hoja visceral'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Al final de la tercera semana el mesodermo intraembrionario se divide en paraxial (somitómeras y somitas), intermedio (sistema urogenital) y de la placa lateral. En la placa lateral aparecen pequeños espacios que confluyen en una cavidad continua, el CELOMA INTRAEMBRIONARIO o cavidad corporal primitiva. Más tarde se subdivide en cavidad pericárdica, pleurales y abdominopélvica.',
+          },
+          {
+            type: 'table',
+            title: 'Las dos hojas de la placa lateral',
+            data: {
+              headers: ['Asociación', 'Componentes', 'Destino'],
+              rows: [
+                ['SOMATOPLEURA', 'Hoja parietal (somática) + ectodermo suprayacente', 'Pared corporal; hoja parietal de las serosas'],
+                ['ESPLACNOPLEURA', 'Hoja visceral (esplácnica) + endodermo subyacente', 'Pared del tubo intestinal; hoja visceral de las serosas'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Regla: «somato» es cuerpo y pared; «esplacno» es víscera.',
+          },
+        ],
+      },
+      {
+        id: 'ecc-2',
+        number: 2,
+        title: 'Plegamiento lateral y cefalocaudal',
+        keyTerms: ['pliegues laterales', 'plegamiento cefalocaudal', 'intestino anterior', 'intestino medio', 'intestino posterior', 'conducto vitelino'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos plegamientos simultáneos',
+            left: {
+              title: 'LATERAL (corte transversal)',
+              items: [
+                'Los lados del embrión crecen hacia ventral durante la cuarta semana',
+                'Cada pliegue tiene ectodermo, hoja parietal de la placa lateral y células de los somitas adyacentes',
+                'Se fusionan en la línea media: la pared ventral cierra al final de la cuarta semana',
+                'A la vez, el endodermo se pliega y forma el tubo intestinal',
+              ],
+            },
+            right: {
+              title: 'CEFALOCAUDAL (corte sagital)',
+              items: [
+                'Lo impulsa sobre todo el crecimiento del tubo neural',
+                'El embrión se incorpora a la cavidad amniótica',
+                'Parte del saco vitelino queda dentro: intestino ANTERIOR, MEDIO y POSTERIOR',
+                'El tubo cardiaco y la cavidad pericárdica quedan en posición ventral (día 22)',
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Lo que no cierra',
+            items: [
+              'La pared ventral cierra por completo salvo en el pedículo de fijación, el futuro cordón umbilical.',
+              'El tubo intestinal cierra salvo la unión del intestino medio con el saco vitelino: el CONDUCTO VITELINO u onfalomesentérico, que degenera entre el segundo y el tercer mes.',
+              'Si persiste un segmento junto al íleon queda el DIVERTÍCULO DE MECKEL; si contiene mucosa gástrica, el ácido puede ulcerar e incluso perforar.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'El cierre del tubo neural (neuroporo anterior hacia el día 25 y posterior hacia el día 28) y el cierre de la pared corporal ocurren en la misma época, pero son eventos distintos.',
+          },
+        ],
+      },
+      {
+        id: 'ecc-3',
+        number: 3,
+        title: 'Mesenterios y membranas serosas',
+        keyTerms: ['mesenterio dorsal', 'mesenterio ventral', 'tabique transverso', 'peritoneo parietal', 'peritoneo visceral'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Dorsal y ventral',
+            data: {
+              headers: ['', 'Mesenterio dorsal', 'Mesenterio ventral'],
+              rows: [
+                ['Extensión', 'Del extremo inferior del esófago a la región cloacal del intestino posterior', 'Solo esófago terminal, estómago y duodeno proximal'],
+                ['Origen', 'Fusión de las hojas parietal y visceral alrededor del tubo', 'Adelgazamiento del tabique transverso'],
+                ['Función', 'Fija el tubo a la pared posterior; paso de vasos, nervios y linfáticos', 'Une ese segmento a la pared ventral; se relaciona con el hígado'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'La hoja parietal de las serosas recubre las paredes de las cavidades peritoneal, pleural y pericárdica; la hoja visceral cubre los órganos abdominales, los pulmones y el corazón.',
+          },
+        ],
+      },
+      {
+        id: 'ecc-4',
+        number: 4,
+        title: 'Cavidades pleurales y pericárdica',
+        keyTerms: ['tabique transverso', 'conductos pericardioperitoneales', 'yemas pulmonares', 'pliegues pleuropericárdicos', 'pericardio fibroso'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El TABIQUE TRANSVERSO es un bloque de mesodermo entre la cavidad torácica y el pedículo del saco vitelino; forma el tejido conectivo del hígado y el sostén del diafragma. No separa por completo tórax y abdomen: a cada lado del intestino anterior quedan los CONDUCTOS PERICARDIOPERITONEALES.',
+          },
+          {
+            type: 'steps',
+            title: 'Cómo se separan',
+            steps: [
+              'Las yemas pulmonares crecen en sentido caudolateral dentro de los conductos pericardioperitoneales, que se convierten en las cavidades pleurales.',
+              'Aparecen los PLIEGUES PLEUROPERICÁRDICOS, que llevan las venas cardinales comunes y los nervios frénicos.',
+              'Se adelgazan y forman las MEMBRANAS PLEUROPERICÁRDICAS, que se fusionan entre sí y con la raíz de los pulmones.',
+              'Queda la cavidad pericárdica definitiva, separada de las pleurales; las membranas forman el PERICARDIO FIBROSO.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'Las cavidades pleurales siguen comunicadas con la peritoneal hasta que se forma el diafragma. Las venas cardinales comunes de los pliegues contribuyen a la vena cava SUPERIOR; la vena cava inferior se forma de varios sistemas venosos.',
+          },
+        ],
+      },
+      {
+        id: 'ecc-5',
+        number: 5,
+        title: 'Formación del diafragma',
+        keyTerms: ['membranas pleuroperitoneales', 'tendón central', 'pilares', 'mesenterio del esófago', 'C3–C5', 'nervio frénico'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Entre la cuarta y la octava semanas se cierran los conductos pericardioperitoneales. Los pliegues pleuroperitoneales crecen hacia la línea media, se adelgazan en MEMBRANAS PLEUROPERITONEALES y en la séptima semana se fusionan con el mesenterio del esófago y con el tabique transverso.',
+          },
+          {
+            type: 'table',
+            title: 'Componentes del diafragma',
+            data: {
+              headers: ['Componente', 'Qué forma'],
+              rows: [
+                ['Tabique transverso', 'Tendón central'],
+                ['Membranas pleuroperitoneales', 'Completan el tendón central y dan el andamiaje de tejido conectivo para las células musculares'],
+                ['Mesenterio del esófago', 'Pilares del diafragma'],
+                ['Somitas cervicales C3–C5', 'Musculatura'],
+                ['Reborde de la pared corporal', 'Músculo de la periferia'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Por qué el diafragma duele en el hombro',
+            content: 'El diafragma empieza a desarrollarse en la región cervical y desciende después, llevándose su nervio: el FRÉNICO, de C3 a C5 («C3, 4 y 5 mantienen vivo al diafragma»). Por eso la irritación del diafragma (sangre o pus debajo de él) puede sentirse como dolor en el hombro, la piel que inervan esos mismos segmentos.',
+          },
+        ],
+      },
+      {
+        id: 'ecc-6',
+        number: 6,
+        title: 'Defectos de la pared ventral: tórax y pelvis',
+        keyTerms: ['ectopia cordis', 'pentalogía de Cantrell', 'extrofia vesical', 'epispadias', 'extrofia cloacal'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Ocurren cuando uno o ambos pliegues laterales no avanzan hacia ventral o no se fusionan en la línea media. Lo que queda expuesto depende de la región.',
+          },
+          {
+            type: 'table',
+            title: 'Según la región',
+            data: {
+              headers: ['Región', 'Qué queda expuesto', 'Defecto'],
+              rows: [
+                ['Tórax', 'Corazón', 'ECTOPIA CORDIS'],
+                ['Abdomen', 'Asas intestinales', 'GASTROSQUISIS'],
+                ['Pelvis', 'Vejiga, o vejiga y recto', 'EXTROFIA VESICAL o CLOACAL'],
+              ],
+            },
+          },
+          {
+            type: 'definition',
+            title: 'Pentalogía de Cantrell',
+            content: 'Defecto del cierre que va del extremo caudal del esternón a la parte superior del abdomen. Su descripción clásica reúne cinco defectos: de la pared abdominal supraumbilical (onfalocele), del esternón inferior, de la parte anterior del diafragma, del pericardio diafragmático y malformaciones intracardiacas; con frecuencia hay ectopia cordis. El onfalocele aquí es secundario: la cavidad abdominal queda pequeña y las asas no pueden regresar.',
+          },
+          {
+            type: 'comparison',
+            title: 'Extrofias',
+            left: {
+              title: 'VESICAL (menos grave)',
+              items: ['Solo la vejiga queda expuesta', 'En el varón, epispadias: falta de fusión del dorso del pene'],
+            },
+            right: {
+              title: 'CLOACAL (más grave)',
+              items: ['Quedan expuestos vejiga y recto, derivados de la cloaca', 'Puede afectar a los genitales'],
+            },
+          },
+        ],
+      },
+      {
+        id: 'ecc-7',
+        number: 7,
+        title: 'Gastrosquisis y onfalocele',
+        keyTerms: ['gastrosquisis', 'onfalocele', 'herniación umbilical fisiológica', 'alfa-fetoproteína', 'vólvulo'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Entre las semanas 6 y 10 el intestino medio crece más rápido que el abdomen y se hernia de forma normal hacia el cordón umbilical (HERNIACIÓN UMBILICAL FISIOLÓGICA). Hacia las semanas 10 a 12 regresa a la cavidad abdominal.',
+          },
+          {
+            type: 'table',
+            title: 'Diferencias clave',
+            data: {
+              headers: ['', 'GASTROSQUISIS', 'ONFALOCELE'],
+              rows: [
+                ['Mecanismo', 'Falla del CIERRE de la pared abdominal', 'Falla del RETORNO de las asas tras la herniación fisiológica'],
+                ['Sitio', 'A la derecha del cordón umbilical', 'En el ombligo, en continuidad con el cordón'],
+                ['Cubierta', 'Ninguna: asas expuestas al líquido amniótico', 'Saco cubierto por una reflexión del amnios'],
+                ['Frecuencia', '≈ 3.5 por 10 000; más en madres menores de 20 años', '≈ 2.5 por 10 000'],
+                ['Asociaciones', 'Sin anomalías cromosómicas; otros defectos en 15 % (cardiacos en 5 %)', 'Anomalías cromosómicas en 15 %; defectos cardiacos y del tubo neural; mortalidad alta'],
+                ['Riesgo propio', 'Daño de las asas por el líquido amniótico y vólvulo', 'Depende de las malformaciones asociadas'],
+                ['Diagnóstico', 'Ultrasonido y AFP elevada en suero materno', 'Ultrasonido y AFP elevada'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'El pronóstico lo cambia lo que acompaña',
+            content: 'La gastrosquisis se vigila con ultrasonido, el nacimiento se planea en un hospital con cirugía pediátrica y las asas se reintegran después de nacer; la mayoría tiene buen pronóstico. En el onfalocele, el pronóstico depende de la anomalía cromosómica o cardiaca asociada, por eso se ofrece estudio genético y ecocardiograma fetal.',
+          },
+        ],
+      },
+      {
+        id: 'ecc-8',
+        number: 8,
+        title: 'Hernias diafragmáticas',
+        keyTerms: ['hernia diafragmática congénita', 'hipoplasia pulmonar', 'hernia paraesternal', 'hernia esofágica'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Causas',
+            items: [
+              'Falla de la migración de las células musculares hacia una membrana pleuroperitoneal: queda una zona débil por donde pasan órganos abdominales al tórax.',
+              'Falta de longitud del intestino anterior, que mantiene al estómago en el tórax.',
+              'HERNIA ESOFÁGICA: acortamiento congénito del esófago distal.',
+            ],
+          },
+          {
+            type: 'list',
+            title: 'Puntos clave',
+            items: [
+              'Es de las malformaciones más frecuentes del recién nacido: cerca de 1 de cada 2 000.',
+              'Entre 85 y 90 % de los defectos graves son del lado IZQUIERDO, por donde las células musculares invaden peor; el hígado protege el lado derecho.',
+              'Pueden pasar estómago, intestino, hígado y bazo. Comprimen el pulmón en desarrollo y causan HIPOPLASIA PULMONAR, la causa principal de muerte.',
+              'Las hernias PARAESTERNALES, entre las porciones esternal y costal, son pequeñas y pueden descubrirse hasta la vida adulta.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Un recién nacido que no respira bien',
+            content: 'Dificultad respiratoria al nacer, ruidos intestinales (borborigmos) en el tórax, abdomen excavado y ruidos respiratorios disminuidos, casi siempre a la izquierda. Muchas se detectan antes en el ultrasonido prenatal.',
           },
         ],
       },

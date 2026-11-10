@@ -485,6 +485,7 @@ const GASTROSQUISIS: Patologia = {
   ],
   bases: [
     { materia: 'Embriología', topicId: 'embriologia-periodo-embrionario', sectionId: 'epe-7', label: 'Mesodermo intermedio y de la placa lateral', porQue: 'La hoja somática y los pliegues laterales cierran la pared ventral; si no se fusionan, queda el defecto.' },
+    { materia: 'Embriología', topicId: 'embriologia-cavidades-corporales', sectionId: 'ecc-7', label: 'Gastrosquisis y onfalocele', porQue: 'La gastrosquisis es una falla del cierre de los pliegues laterales; el onfalocele, una falla del retorno de las asas tras la herniación fisiológica.' },
     { materia: 'Anatomía', topicId: 'musculos-pared-abdominal', sectionId: 'mpab-2', label: 'Anterolateral (5 músculos)', porQue: 'Los músculos de la pared abdominal vienen de células de los somitas que migran a la hoja somática.' },
   ],
   atlas: [

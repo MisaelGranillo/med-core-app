@@ -520,7 +520,7 @@ export const uadMedicina: Plan = {
           name: 'Embriología I',
           code: 'EM01004',
           tags: ['anatomia'],
-          topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis', 'embriologia-espermatogenesis', 'embriologia-anomalias-numericas', 'embriologia-anomalias-estructurales', 'embriologia-ciclo-ovarico', 'embriologia-fecundacion', 'embriologia-infertilidad-reproduccion', 'embriologia-segunda-semana', 'embriologia-tercera-semana', 'embriologia-periodo-embrionario', 'embriologia-ejes-corporales', 'embriologia-regulacion-molecular'],
+          topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis', 'embriologia-espermatogenesis', 'embriologia-anomalias-numericas', 'embriologia-anomalias-estructurales', 'embriologia-ciclo-ovarico', 'embriologia-fecundacion', 'embriologia-infertilidad-reproduccion', 'embriologia-segunda-semana', 'embriologia-tercera-semana', 'embriologia-periodo-embrionario', 'embriologia-ejes-corporales', 'embriologia-regulacion-molecular', 'embriologia-cavidades-corporales'],
           content: {
             area: 'Ciencias Básicas',
             credits: 8,
@@ -584,9 +584,14 @@ export const uadMedicina: Plan = {
               {
                 number: 3,
                 title: 'Periodo fetal, membranas fetales y placenta; cabeza y cuello',
+                topicIds: ['embriologia-cavidades-corporales'],
                 temas: [
+                  'Clase 1 (impartida): tubo intestinal y cavidades corporales — celoma intraembrionario, somatopleura y esplacnopleura, plegamiento lateral y cefalocaudal, mesenterios, tabique transverso, cavidades pleurales y pericárdica, diafragma (C3–C5); ectopia cordis y pentalogía de Cantrell, gastrosquisis, onfalocele, extrofias y hernias diafragmáticas',
                   '3. Características del primer, segundo y tercer trimestre; amnios y cordón umbilical; placenta: estructura, funciones y circulación prenatal',
                   '4. Arcos, bolsas y hendiduras faríngeas; regulación molecular del desarrollo facial; lengua, glándula tiroidea, cara, segmento intermaxilar, paladar secundario, fosas nasales y dientes',
+                ],
+                fuentes: [
+                  { title: 'Embriología I — Semana 3, Clase 1', file: 'Embriologia I - Semana 3 - Clase 1.pdf', nota: 'El tubo intestinal y las cavidades corporales.' },
                 ],
               },
               {
@@ -617,6 +622,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 2 · Clase 4 — Segundo mes y repaso de derivados', file: 'Embriologia I - Semana 2 - Clase 4.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 5 (a) — Ejes corporales', file: 'Embriologia I - Semana 2 - Clase 5a.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 5 (b) — Regulación molecular', file: 'Embriologia I - Semana 2 - Clase 5b.pdf', kind: 'Clase' },
+              { title: 'Semana 3 · Clase 1 — Tubo intestinal y cavidades corporales', file: 'Embriologia I - Semana 3 - Clase 1.pdf', kind: 'Clase' },
               { title: 'Programa Académico — Embriología I (2026-1)', file: 'Embriologia I - Programa.pdf', kind: 'Programa' },
               { title: 'Planeación didáctica — Embriología I', file: 'Embriologia I - Planeacion.pdf', kind: 'Programa' },
             ],
@@ -962,11 +968,12 @@ export const uadMedicina: Plan = {
                 title: 'La relación médico-paciente',
                 topicIds: ['humanistica-alteridad-rmp', 'humanistica-modelos-rmp', 'humanistica-etica-comunicacion'],
                 temas: [
-                  'Sesión 1 (impartida, 12 oct): definición e historia de la RMP; alteridad, otredad, mismidad e ipseidad; el problema del otro (Laín Entralgo); paradigmas Alter Ego y Alter Tú; Dussel y Levinas; motivos del paciente y del médico (ego adiuvans, sapiens, fungens, cupiens)',
-                  'Sesión 2 (impartida, 13 oct): estructura y momentos de la RMP según Laín Entralgo; modelos de Watzlawick, Szasz-Hollender, Leary, Veatch y Emanuel; medicina centrada en el paciente y en la persona, la familia y la comunidad',
-                  'Sesión 3 (impartida, 14 oct): implicaciones éticas (código de bioética, decálogos de derechos y obligaciones, profesionalismo) y sociales (rebelión del sujeto, rol del enfermo); satisfacción con la medicina alópata y la tradicional; comunicación no verbal, ergonomía y proxémica',
+                  'Clase 1 (impartida, 9 nov): definición e historia de la RMP; atención domiciliaria y tecnología; sucesos de la aparición del problema del otro; autores de la alteridad; transmodernidad; alteridad, otredad, mismidad e ipseidad; el problema del otro (Laín Entralgo); paradigmas Alter Ego y Alter Tú; Dussel y Levinas; motivos del paciente y del médico (ego adiuvans, sapiens, fungens, cupiens)',
+                  'Sesión 2 (material de apoyo): estructura y momentos de la RMP según Laín Entralgo; modelos de Watzlawick, Szasz-Hollender, Leary, Veatch y Emanuel; medicina centrada en el paciente y en la persona, la familia y la comunidad',
+                  'Sesión 3 (material de apoyo): implicaciones éticas (código de bioética, decálogos de derechos y obligaciones, profesionalismo) y sociales (rebelión del sujeto, rol del enfermo); satisfacción con la medicina alópata y la tradicional; comunicación no verbal, ergonomía y proxémica',
                 ],
                 fuentes: [
+                  { title: 'Medicina Humanística — Semana 3, Clase 1', file: 'Medicina Humanistica - Semana 3 - Clase 1.pdf', nota: 'Historia de la RMP y alteridad (presentación de la clase).' },
                   { title: 'Medicina Humanística — Semana 3, Sesión 1', file: 'Medicina Humanistica - Semana 3 - Sesion 1.pdf', nota: 'La RMP y la alteridad.' },
                   { title: 'Medicina Humanística — Semana 3, Sesión 2', file: 'Medicina Humanistica - Semana 3 - Sesion 2.pdf', nota: 'Elementos y modelos de la RMP.' },
                   { title: 'Medicina Humanística — Semana 3, Sesión 3', file: 'Medicina Humanistica - Semana 3 - Sesion 3.pdf', nota: 'Ética, comunicación y proxémica.' },
@@ -1000,6 +1007,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 2 · Clase 1 — Cultura de la región y su relación con la medicina', file: 'Medicina Humanistica - Semana 2 - Clase 1.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 2 — Salud, enfermedad, muerte y práctica médica', file: 'Medicina Humanistica - Semana 2 - Clase 2.pdf', kind: 'Clase' },
               { title: 'Semana 2 · Clase 3 — Eficacia simbólica y competencia cultural', file: 'Medicina Humanistica - Semana 2 - Clase 3.pdf', kind: 'Clase' },
+              { title: 'Semana 3 · Clase 1 — Historia de la RMP y alteridad', file: 'Medicina Humanistica - Semana 3 - Clase 1.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Sesión 1 — La relación médico-paciente y la alteridad', file: 'Medicina Humanistica - Semana 3 - Sesion 1.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Sesión 2 — Elementos y modelos de la RMP', file: 'Medicina Humanistica - Semana 3 - Sesion 2.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Sesión 3 — Ética, comunicación y proxémica', file: 'Medicina Humanistica - Semana 3 - Sesion 3.pdf', kind: 'Clase' },

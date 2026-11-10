@@ -1,6 +1,6 @@
 import type { Question } from '../types'
 
-// Medicina Humanística — Semana 1 (Clases 1–3), Semana 2 (Clase 1: cultura e interculturalidad; Clase 2: salud, enfermedad, muerte y práctica médica; Clase 3: eficacia simbólica y competencia cultural), Semana 3 (relación médico-paciente)
+// Medicina Humanística — Semana 1 (Clases 1–3), Semana 2 (Clase 1: cultura e interculturalidad; Clase 2: salud, enfermedad, muerte y práctica médica; Clase 3: eficacia simbólica y competencia cultural), Semana 3 (relación médico-paciente; Clase 1 impartida el 9 nov)
 // y Semana 4 (perfiles patológicos y síndromes de filiación cultural).
 // ★ en la explicación = tema que el profesor señaló como pregunta de examen.
 // «★ Examen Semana 1.» = pregunta tomada del examen real de la Semana 1 (respuesta verificada con la clase).
@@ -1571,6 +1571,62 @@ export const humanisticaQuestions: Question[] = [
     options: ['Que la información técnica basta', 'Que los pacientes valoran la honestidad, la información clara y que se les acompañe', 'Que es mejor hablar con la familia que con el paciente', 'Que la empatía consume demasiado tiempo'],
     correctIndex: 1, difficulty: 'easy',
     explanation: 'La falta de información genera pérdida de control; a veces basta con acompañar y escuchar.',
+  },
+  {
+    id: 'mh-altq-q13', topicId: 'humanistica-alteridad-rmp', type: 'multiple-choice',
+    question: '«Suele asociarse a la idea de sí mismo, pero se encuentra entre el ser en sí y el ser para sí». Es la definición de:',
+    options: ['Ipseidad', 'Mismidad', 'Otredad', 'Alteridad'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: '★ La mismidad es permanencia, estabilidad, concordancia, continuidad y corporalidad; la ipseidad, cambio, inestabilidad, discordancia, discontinuidad e intersubjetividad.',
+  },
+  {
+    id: 'mh-altq-q14', topicId: 'humanistica-alteridad-rmp', type: 'multiple-choice',
+    question: 'Son sucesos importantes para la aparición del problema del otro, EXCEPTO:',
+    options: ['La secularización de la existencia del hombre occidental en la Baja Edad Media y el Renacimiento', 'La invención de la imprenta', 'El auge histórico del nominalismo en los siglos XV y XVI', 'El descubrimiento de la soledad del hombre en el mundo'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: '★ El cuarto suceso es la importancia de la individualidad.',
+  },
+  {
+    id: 'mh-altq-q15', topicId: 'humanistica-alteridad-rmp', type: 'multiple-choice',
+    question: 'Nuevo paradigma cultural y social que supera y dialoga con la modernidad y la posmodernidad, y promueve la integración intercultural y el empoderamiento de culturas no occidentales:',
+    options: ['Analéctica', 'Posmodernidad', 'Transmodernidad', 'Paradigma del Alter Ego'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: '★ Lo propone Enrique Dussel; incluye a las comunidades indígenas y a las culturas china, hindú, musulmana y africanas.',
+  },
+  {
+    id: 'mh-altq-q16', topicId: 'humanistica-alteridad-rmp', type: 'multiple-choice',
+    question: 'Para Krotz, la alteridad es:',
+    options: ['La complementariedad', 'Una forma de coexistencia', 'La igualdad entre el yo y el otro', 'La experiencia de lo extraño'],
+    correctIndex: 3, difficulty: 'hard',
+    explanation: '★ Laing habla de complementariedad; Carrasquilla, de forma de coexistencia; Arruda, de igualdad entre el yo y el otro.',
+  },
+  {
+    id: 'mh-altq-q17', topicId: 'humanistica-alteridad-rmp', type: 'multiple-choice',
+    question: 'Comprender las emociones del otro sin absorberlas se llama:',
+    options: ['Ecpatía', 'Empatía', 'Analéctica', 'Ipseidad'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: '★ Es la concepción de González, resaltada en la presentación.',
+  },
+  {
+    id: 'mh-altq-q18', topicId: 'humanistica-alteridad-rmp', type: 'multiple-choice',
+    question: 'Permanencia, estabilidad, concordancia, continuidad y corporalidad caracterizan a la:',
+    options: ['Ipseidad', 'Mismidad', 'Alteridad', 'Otredad'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'La alteridad, en cambio, se asocia con empatía, diálogo e identidad.',
+  },
+  {
+    id: 'mh-altq-q19', topicId: 'humanistica-alteridad-rmp', type: 'multiple-choice',
+    question: 'Para Carrasquilla, la alteridad es:',
+    options: ['Formas de descubrirse', 'Experiencia de lo extraño', 'Forma de coexistencia', 'Sentido social'],
+    correctIndex: 2, difficulty: 'hard',
+    explanation: '★ Formas de descubrirse es de Buber y sentido social, de Tellez; las tres aparecen en negritas en la presentación.',
+  },
+  {
+    id: 'mh-altq-q20', topicId: 'humanistica-alteridad-rmp', type: 'multiple-choice',
+    question: '«El otro ya no es un no-ser, imagen de imperfección, sino un tú, y el conocimiento y la verdad no se alcanzan huyendo del otro en un plano ideal metafísico, sino en el encuentro con el otro en este mundo». Corresponde al paradigma:',
+    options: ['Alter Ego', 'Del diálogo silencioso', 'Biomédico', 'Alter Tú'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: '★ En el Alter Ego el paciente es proyección del médico y la alteridad se anula.',
   },
   // ── Elementos y modelos de la relación médico-paciente ──
   {

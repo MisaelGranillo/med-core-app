@@ -7,7 +7,7 @@ import type { Question } from '../types'
 // segunda semana e implantación; tercera semana y gastrulación. Clase 3: periodo
 // embrionario y derivados de las capas germinales. Clase 4: sangre y vasos,
 // aspecto externo del segundo mes y teratógenos. Clase 5: ejes corporales y
-// regulación molecular.
+// regulación molecular. Semana 3, Clase 1: tubo intestinal y cavidades corporales.
 export const embriologiaQuestions: Question[] = [
   // ── Panorama del desarrollo temprano ──
   {
@@ -1377,5 +1377,90 @@ export const embriologiaQuestions: Question[] = [
     options: ['EFNB2: arterias', 'EPHB4: vasos linfáticos', 'PROX1: venas', 'EFNB2: venas'],
     correctIndex: 0, difficulty: 'medium',
     explanation: 'EFNB2 determina arterias, EPHB4 venas y PROX1 vasos linfáticos.',
+  },
+  // ── Tubo intestinal y cavidades corporales ──
+  {
+    id: 'emb-ccq-q1', topicId: 'embriologia-cavidades-corporales', type: 'multiple-choice',
+    question: 'La SOMATOPLEURA está formada por:',
+    options: ['Hoja visceral de la placa lateral y endodermo', 'Hoja parietal de la placa lateral y ectodermo', 'Mesodermo paraxial y ectodermo', 'Notocorda y endodermo'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'La esplacnopleura es la hoja visceral con el endodermo, y forma la pared intestinal.',
+  },
+  {
+    id: 'emb-ccq-q2', topicId: 'embriologia-cavidades-corporales', type: 'multiple-choice',
+    question: '¿Cuándo termina de cerrarse la pared ventral del cuerpo?',
+    options: ['Día 17', 'Al final de la tercera semana', 'Al final de la cuarta semana', 'En la octava semana'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: 'Los pliegues laterales se fusionan en la línea media, salvo en el pedículo de fijación.',
+  },
+  {
+    id: 'emb-ccq-q3', topicId: 'embriologia-cavidades-corporales', type: 'multiple-choice',
+    question: '¿De dónde deriva el mesenterio VENTRAL?',
+    options: ['Del mesodermo paraxial', 'De la notocorda', 'De las membranas pleuroperitoneales', 'Del tabique transverso'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'Solo existe a nivel del esófago terminal, el estómago y el duodeno proximal.',
+  },
+  {
+    id: 'emb-ccq-q4', topicId: 'embriologia-cavidades-corporales', type: 'multiple-choice',
+    question: 'Las membranas pleuropericárdicas forman:',
+    options: ['El pericardio fibroso', 'El tendón central del diafragma', 'Los pilares del diafragma', 'La pleura visceral'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'Llevan los nervios frénicos y las venas cardinales comunes, y separan las cavidades pleurales de la pericárdica.',
+  },
+  {
+    id: 'emb-ccq-q5', topicId: 'embriologia-cavidades-corporales', type: 'multiple-choice',
+    question: 'Las yemas pulmonares crecen dentro de:',
+    options: ['El tabique transverso', 'Los conductos pericardioperitoneales', 'La cavidad amniótica', 'El mesenterio dorsal'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Esos conductos se convierten en las cavidades pleurales.',
+  },
+  {
+    id: 'emb-ccq-q6', topicId: 'embriologia-cavidades-corporales', type: 'multiple-choice',
+    question: 'Los pilares del diafragma se forman a partir de:',
+    options: ['El tabique transverso', 'Los somitas torácicos', 'El mesenterio del esófago', 'El pericardio fibroso'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'El tendón central viene del tabique transverso y las membranas pleuroperitoneales; el músculo, de los somitas C3–C5.',
+  },
+  {
+    id: 'emb-ccq-q7', topicId: 'embriologia-cavidades-corporales', type: 'multiple-choice',
+    question: 'El músculo del diafragma y su nervio provienen de los segmentos:',
+    options: ['T1–T4', 'L1–L2', 'C1–C2', 'C3–C5'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'Por eso la irritación diafragmática puede sentirse como dolor en el hombro.',
+  },
+  {
+    id: 'emb-ccq-q8', topicId: 'embriologia-cavidades-corporales', type: 'multiple-choice',
+    question: 'Ultrasonido: asas intestinales flotando libres a la DERECHA del cordón, sin membrana que las cubra. ¿Qué es?',
+    options: ['Gastrosquisis', 'Onfalocele', 'Extrofia vesical', 'Hernia diafragmática'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'Falla el cierre de la pared abdominal; las asas quedan expuestas al líquido amniótico.',
+  },
+  {
+    id: 'emb-ccq-q9', topicId: 'embriologia-cavidades-corporales', type: 'multiple-choice',
+    question: 'El onfalocele se debe a:',
+    options: ['Falla del cierre de los pliegues laterales', 'Falla del retorno de las asas tras la herniación fisiológica', 'Persistencia del conducto vitelino', 'Falla de la migración muscular al diafragma'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'La herniación fisiológica ocurre entre las semanas 6 y 10; las asas deben volver hacia las semanas 10 a 12.',
+  },
+  {
+    id: 'emb-ccq-q10', topicId: 'embriologia-cavidades-corporales', type: 'multiple-choice',
+    question: '¿Cuál defecto se asocia con anomalías cromosómicas en cerca del 15 % de los casos?',
+    options: ['Gastrosquisis', 'Divertículo de Meckel', 'Onfalocele', 'Hernia paraesternal'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'También con defectos cardiacos y del tubo neural; la gastrosquisis no se asocia con anomalías cromosómicas.',
+  },
+  {
+    id: 'emb-ccq-q11', topicId: 'embriologia-cavidades-corporales', type: 'multiple-choice',
+    question: 'Recién nacido con dificultad respiratoria, borborigmos en el hemitórax izquierdo y abdomen excavado. ¿Qué amenaza más su vida?',
+    options: ['El vólvulo', 'La infección del saco', 'La anemia', 'La hipoplasia pulmonar'],
+    correctIndex: 3, difficulty: 'hard',
+    explanation: 'Es una hernia diafragmática: las vísceras en el tórax impiden que el pulmón crezca. El 85–90 % son izquierdas.',
+  },
+  {
+    id: 'emb-ccq-q12', topicId: 'embriologia-cavidades-corporales', type: 'multiple-choice',
+    question: 'En un varón con extrofia vesical se espera además:',
+    options: ['Epispadias', 'Criptorquidia bilateral', 'Hipospadias', 'Ectopia cordis'],
+    correctIndex: 0, difficulty: 'hard',
+    explanation: 'Es la falta de fusión del dorso del pene. La extrofia cloacal es más grave y expone también el recto.',
   },
 ]
