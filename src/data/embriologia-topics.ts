@@ -9,7 +9,7 @@ import type { Topic } from '../types'
 // semana (gastrulación, notocorda, mapa del destino) y su clínica. Clase 3: periodo
 // embrionario (semanas 3–8) y derivados de las capas germinales. Clase 4: sangre y vasos,
 // segundo mes y teratógenos. Clase 5: ejes corporales y regulación molecular.
-// Semana 3, Clase 1: tubo intestinal y cavidades corporales.
+// Semana 3, Clase 1: tubo intestinal y cavidades corporales. Clase 2: periodo fetal.
 export const embriologiaTopics: Topic[] = [
   {
     id: 'embriologia-desarrollo-temprano',
@@ -4114,6 +4114,306 @@ export const embriologiaTopics: Topic[] = [
             variant: 'clinica',
             title: 'Un recién nacido que no respira bien',
             content: 'Dificultad respiratoria al nacer, ruidos intestinales (borborigmos) en el tórax, abdomen excavado y ruidos respiratorios disminuidos, casi siempre a la izquierda. Muchas se detectan antes en el ultrasonido prenatal.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-periodo-fetal',
+    title: 'Periodo fetal: del tercer mes al nacimiento',
+    subtitle: 'Crecimiento en longitud y peso, LCC y LVT, cambios del tercer mes al noveno, hitos funcionales, fecha probable de parto y edad gestacional, mediciones por ultrasonido, peso bajo al nacer, PEG y RCIU, hipótesis de Barker, IGF-1, hormona del crecimiento y enanismo tipo Laron',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '👶',
+    keyPoints: [
+      'PERIODO FETAL: de la 9.ª semana al nacimiento. Predominan la maduración de tejidos y órganos y el crecimiento rápido del cuerpo.',
+      'La LONGITUD crece más en los meses 3, 4 y 5; el PESO, en los últimos 2 a 2.5 meses, cuando se gana cerca del 50 % del peso al nacer ★',
+      'Semana 12: centros de osificación primarios, sexo valorable por ultrasonido (tubérculo genital) y retorno de las asas al abdomen.',
+      'Quinto mes: lanugo y la madre percibe los movimientos. Al nacer: 3 000–3 400 g, LCC ≈ 36 cm y LVT ≈ 50 cm.',
+      'FECHA PROBABLE DE PARTO: FUR + 280 días (40 semanas) o fecundación + 266 días (38 semanas) ★',
+      'Ultrasonido: LCC en las semanas 7 a 14; diámetro biparietal, circunferencias cefálica y abdominal y longitud del fémur en las semanas 16 a 30.',
+      'PESO BAJO AL NACER: menos de 2 500 g sin importar la edad gestacional · PEG: peso menor al percentil 10 para su edad · RCIU: no alcanza su crecimiento óptimo ★',
+      'Crecimiento: IGF-1 antes de nacer; después, la hormona del crecimiento por su receptor (GHR). Mutación del GHR: enanismo tipo Laron.',
+    ],
+    sections: [
+      {
+        id: 'epf-1',
+        number: 1,
+        title: 'Qué es y cómo se mide',
+        keyTerms: ['periodo fetal', 'LCC', 'LVT', 'proporción de la cabeza'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El periodo fetal va de la novena semana al nacimiento. En el periodo embrionario se establecen los órganos; en el fetal maduran y el cuerpo crece rápido. La edad del feto se correlaciona con la LONGITUD CEFALOCAUDAL (LCC, de la coronilla a las nalgas) o la LONGITUD VÉRTICE-TALÓN (LVT), en centímetros.',
+          },
+          {
+            type: 'table',
+            title: 'Crecimiento aproximado',
+            data: {
+              headers: ['Semanas', 'LCC', 'Peso'],
+              rows: [
+                ['9–12', '5–8 cm', '10–45 g'],
+                ['13–16', '9–14 cm', '60–200 g'],
+                ['17–20', '15–19 cm', '250–450 g'],
+                ['21–24', '20–23 cm', '500–820 g'],
+                ['25–28', '24–27 cm', '900–1 300 g'],
+                ['29–32', '28–30 cm', '1 400–2 100 g'],
+                ['33–36', '31–34 cm', '2 200–2 900 g'],
+                ['37–38', '35–36 cm', '3 000–3 400 g'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'La cabeza crece primero',
+            items: [
+              'Al inicio del tercer mes: cerca de la MITAD de la LCC.',
+              'Al inicio del quinto mes: cerca de un TERCIO de la LVT.',
+              'Al nacer: cerca de un CUARTO de la LVT; el cráneo tiene la mayor circunferencia del cuerpo.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'epf-2',
+        number: 2,
+        title: 'Tercer mes (semanas 9 a 12)',
+        keyTerms: ['centros de osificación primarios', 'tubérculo genital', 'retorno de las asas'],
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'La cara se modela: los ojos pasan de lateral a ventral y los pabellones auriculares se acercan a su posición definitiva.',
+              'Las extremidades alcanzan su longitud proporcional.',
+              'Semana 12: CENTROS DE OSIFICACIÓN PRIMARIOS en huesos largos (en la diáfisis) y en el cráneo. Los secundarios, en las epífisis, aparecen después.',
+              'Genitales externos: hacia la semana 12 el sexo puede verse por ultrasonido según el TUBÉRCULO GENITAL: recto respecto a la columna, femenino; elevado unos 30°, masculino.',
+              'Las asas intestinales, herniadas hacia el cordón desde la sexta semana, regresan al abdomen hacia la semana 12.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Dos formas de osificación',
+            left: { title: 'INTRAMEMBRANOSA', items: ['El hueso se forma directo del mesénquima', 'Sin molde de cartílago', 'Huesos planos del cráneo'] },
+            right: { title: 'ENDOCONDRAL', items: ['Sobre un molde de cartílago hialino', 'Centro primario en la diáfisis, con collar perióstico', 'Huesos largos'] },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Si las asas no regresan',
+            content: 'Si el intestino no vuelve al abdomen hacia la semana 12 queda un ONFALOCELE, cubierto por amnios en la base del cordón. La gastrosquisis, en cambio, es una falla del cierre de la pared.',
+          },
+        ],
+      },
+      {
+        id: 'epf-3',
+        number: 3,
+        title: 'Cuarto y quinto mes (semanas 13 a 20)',
+        keyTerms: ['lanugo', 'movimientos fetales'],
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'El feto se alarga rápido: al final de la primera mitad del embarazo la LCC es de unos 15 cm.',
+              'El peso aumenta poco: al final del quinto mes todavía es menor de 500 g.',
+              'Lo cubre un vello fino, el LANUGO; se ven las cejas y el pelo de la cabeza.',
+              'La piel es rojiza y arrugada porque falta tejido conectivo y grasa debajo.',
+              'Durante el QUINTO MES la madre empieza a percibir los movimientos del feto.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'epf-4',
+        number: 4,
+        title: 'Del sexto mes al nacimiento',
+        keyTerms: ['surfactante', 'vérnix caseosa', 'grasa subcutánea'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Cambios por etapa',
+            data: {
+              headers: ['Etapa', 'Qué ocurre'],
+              rows: [
+                ['Sexto mes', 'Nacer es muy difícil de sobrevivir: los sistemas respiratorio y nervioso aún no maduran ni se coordinan'],
+                ['6.5 a 7 meses', 'LCC ≈ 25 cm y ≈ 1 100 g; la supervivencia al nacer llega a cerca de 90 %'],
+                ['Últimos 2 a 2.5 meses', 'Se gana cerca del 50 % del peso al nacer; la grasa subcutánea redondea los contornos'],
+                ['Final del embarazo', 'La piel se cubre de VÉRNIX CASEOSA, sustancia lipídica blanquecina de las glándulas sebáceas que la protege'],
+                ['Nacimiento', '3 000–3 400 g, LCC ≈ 36 cm, LVT ≈ 50 cm; caracteres sexuales definidos y testículos en el escroto'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'El SURFACTANTE evita que los alvéolos se colapsen al espirar. Los neumocitos tipo II empiezan a producirlo hacia el final del sexto mes, y la producción aumenta mucho al final del embarazo (semanas 34 a 36); por eso la madurez pulmonar marca la supervivencia del prematuro.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: '¿Sobrevive mejor el de siete meses que el de ocho?',
+            content: 'Es una creencia popular, pero no es cierto: la supervivencia y la madurez aumentan con cada semana de gestación. Un recién nacido de ocho meses tiene, en general, mejor pronóstico que uno de siete.',
+          },
+        ],
+      },
+      {
+        id: 'epf-5',
+        number: 5,
+        title: 'Hitos funcionales',
+        keyTerms: ['deglución', 'movimientos respiratorios', 'succión'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Cuándo aparece cada función',
+            data: {
+              headers: ['Función', 'Semana'],
+              rows: [
+                ['Papilas gustativas', '7'],
+                ['Deglución', '10'],
+                ['Movimientos respiratorios', '14–16'],
+                ['Movimientos de succión', '24'],
+                ['Percibe algunos sonidos', '24–26'],
+                ['Ojos sensibles a la luz', '28'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'La sensibilidad a la luz empieza antes de nacer, pero la visión de colores y de movimiento sigue madurando después.',
+          },
+        ],
+      },
+      {
+        id: 'epf-6',
+        number: 6,
+        title: 'Fecha probable de parto y edad gestacional',
+        keyTerms: ['FUR', 'fecha probable de parto', 'prematuro', 'término', 'postérmino', 'Leopold'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Dos formas de calcularla',
+            left: { title: 'Desde la FUR', items: ['Primer día de la última regla + 280 días', '= 40 semanas', 'Es lo habitual, porque la fecundación casi nunca se conoce'] },
+            right: { title: 'Desde la fecundación', items: ['Fecundación + 266 días', '= 38 semanas', 'Los 14 días de diferencia son la fase previa a la ovulación'] },
+          },
+          {
+            type: 'list',
+            title: 'Puntos clave',
+            items: [
+              'La mayoría nace en los 10 a 14 días alrededor de la fecha probable.',
+              'Dificultan el cálculo los ciclos irregulares (por ejemplo, en el SOMP) y el SANGRADO DE IMPLANTACIÓN, hacia los 14 días tras la fecundación, que puede confundirse con una regla.',
+              'Por eso se combina la FUR con la altura uterina, el ultrasonido y las características del feto.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Clasificación por edad gestacional',
+            data: {
+              headers: ['Categoría', 'Semanas'],
+              rows: [
+                ['Prematuro (pretérmino)', 'Antes de 37'],
+                ['Término temprano', '37 a 38 6/7'],
+                ['Término completo', '39 a 40 6/7'],
+                ['Término tardío', '41 a 41 6/7'],
+                ['Postérmino', '42 o más'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Presentación del feto',
+            content: 'Las maniobras de Leopold valoran la presentación al final del embarazo. Lo esperado es la CEFÁLICA. La TRANSVERSA que persiste se resuelve por cesárea. La PODÁLICA suele terminar en cesárea, aunque antes puede intentarse la versión cefálica externa y en casos seleccionados se acepta el parto vaginal.',
+          },
+        ],
+      },
+      {
+        id: 'epf-7',
+        number: 7,
+        title: 'Mediciones por ultrasonido',
+        keyTerms: ['longitud cefalocaudal', 'diámetro biparietal', 'circunferencia abdominal', 'longitud del fémur'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Qué se mide según la edad',
+            data: {
+              headers: ['Semanas', 'Medición', 'Qué refleja'],
+              rows: [
+                ['7 a 14', 'Longitud cefalocaudal', 'La más precisa para fechar el embarazo'],
+                ['16 a 30', 'Diámetro biparietal y circunferencia cefálica', 'Crecimiento del cráneo'],
+                ['16 a 30', 'Circunferencia abdominal', 'Órganos abdominales y reservas; la primera que cae en la restricción del crecimiento'],
+                ['16 a 30', 'Longitud del fémur', 'Crecimiento de un hueso largo'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Una sola medida no basta: se combinan entre sí y con la FUR. Calcular bien la edad importa sobre todo si la madre tiene una pelvis pequeña o el feto un defecto congénito.',
+          },
+        ],
+      },
+      {
+        id: 'epf-8',
+        number: 8,
+        title: 'Peso bajo, PEG y restricción del crecimiento',
+        keyTerms: ['peso bajo al nacer', 'pequeño para la edad gestacional', 'RCIU', 'hipótesis de Barker'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'No son sinónimos',
+            data: {
+              headers: ['Término', 'Definición', '¿Usa la edad gestacional?'],
+              rows: [
+                ['PESO BAJO AL NACER', 'Menos de 2 500 g', 'No: muchos son simplemente prematuros'],
+                ['PEQUEÑO PARA LA EDAD GESTACIONAL (PEG)', 'Peso menor al percentil 10 para su edad', 'Sí'],
+                ['RESTRICCIÓN DEL CRECIMIENTO INTRAUTERINO (RCIU)', 'No alcanzó su crecimiento intrauterino óptimo; ≈ 1 de cada 10', 'Sí'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Causas de RCIU',
+            items: [
+              'Anomalías cromosómicas y teratógenos.',
+              'Infecciones congénitas: rubéola, citomegalovirus, toxoplasmosis y sífilis.',
+              'Enfermedad materna (hipertensión, nefropatía, cardiopatía), mala nutrición y nivel socioeconómico bajo.',
+              'Tabaco, alcohol y otras drogas.',
+              'Insuficiencia placentaria y embarazo múltiple.',
+            ],
+          },
+          {
+            type: 'steps',
+            title: 'Por qué la placenta insuficiente frena el crecimiento',
+            steps: [
+              'El feto crece y necesita más nutrientes y oxígeno.',
+              'La placenta no alcanza a cubrir esa demanda.',
+              'El feto prioriza el encéfalo, el corazón y otros órganos vitales.',
+              'Músculo, grasa y hueso reciben menos: el crecimiento se restringe.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Riesgos de la RCIU',
+            left: { title: 'Al nacer', items: ['Problemas neurológicos', 'Malformaciones (si la causa es cromosómica o teratógena)', 'Aspiración de meconio', 'Hipoglucemia e hipocalcemia', 'Síndrome de dificultad respiratoria'] },
+            right: { title: 'En la adultez (hipótesis de Barker)', items: ['Obesidad', 'Hipertensión', 'Hipercolesterolemia', 'Enfermedad cardiovascular', 'Diabetes tipo 2'] },
+          },
+        ],
+      },
+      {
+        id: 'epf-9',
+        number: 9,
+        title: 'Regulación del crecimiento: IGF-1 y hormona del crecimiento',
+        keyTerms: ['IGF-1', 'hormona del crecimiento', 'receptor de GH', 'enanismo tipo Laron'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Antes y después de nacer',
+            left: { title: 'Fetal: IGF-1', items: ['Factor tipo 1 de crecimiento parecido a la insulina', 'Lo expresan los tejidos fetales; sus niveles se correlacionan con el crecimiento', 'Acción mitogénica (división celular) y anabólica (síntesis)', 'Mutaciones del gen IGF1: RCIU que persiste después de nacer'] },
+            right: { title: 'Posnatal: hormona del crecimiento', items: ['La GH se une a su receptor (GHR)', 'Activa una vía de señalización', 'Aumenta la síntesis y secreción de IGF-1', 'IGF-1 hace crecer los tejidos'] },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Enanismo tipo Laron',
+            content: 'Mutaciones del RECEPTOR de la hormona del crecimiento: la GH está alta pero no actúa, y no se produce IGF-1. Causa talla baja intensa y, en ocasiones, escleróticas azules. Por eso dar hormona de crecimiento no sirve.',
           },
         ],
       },

@@ -7,7 +7,7 @@ import type { Question } from '../types'
 // segunda semana e implantación; tercera semana y gastrulación. Clase 3: periodo
 // embrionario y derivados de las capas germinales. Clase 4: sangre y vasos,
 // aspecto externo del segundo mes y teratógenos. Clase 5: ejes corporales y
-// regulación molecular. Semana 3, Clase 1: tubo intestinal y cavidades corporales.
+// regulación molecular. Semana 3, Clase 1: tubo intestinal y cavidades corporales. Clase 2: periodo fetal.
 export const embriologiaQuestions: Question[] = [
   // ── Panorama del desarrollo temprano ──
   {
@@ -1462,5 +1462,103 @@ export const embriologiaQuestions: Question[] = [
     options: ['Epispadias', 'Criptorquidia bilateral', 'Hipospadias', 'Ectopia cordis'],
     correctIndex: 0, difficulty: 'hard',
     explanation: 'Es la falta de fusión del dorso del pene. La extrofia cloacal es más grave y expone también el recto.',
+  },
+  // ── Periodo fetal ──
+  {
+    id: 'emb-pfq-q1', topicId: 'embriologia-periodo-fetal', type: 'multiple-choice',
+    question: '¿Cuándo empieza el periodo fetal?',
+    options: ['En la 3.ª semana', 'En la 9.ª semana', 'En el 4.º mes', 'En la 12.ª semana'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'Termina con el nacimiento; predominan la maduración y el crecimiento.',
+  },
+  {
+    id: 'emb-pfq-q2', topicId: 'embriologia-periodo-fetal', type: 'multiple-choice',
+    question: '¿En qué etapa aumenta más el PESO del feto?',
+    options: ['Meses 3, 4 y 5', 'Semanas 9 a 12', 'Últimos 2 a 2.5 meses', 'Quinto mes'], correctIndex: 2, difficulty: 'easy',
+    explanation: 'En ese tiempo se gana cerca del 50 % del peso al nacer; la longitud crece más en los meses 3 a 5.',
+  },
+  {
+    id: 'emb-pfq-q3', topicId: 'embriologia-periodo-fetal', type: 'multiple-choice',
+    question: 'Al inicio del tercer mes, la cabeza representa cerca de:',
+    options: ['Un cuarto de la LVT', 'Un tercio de la LVT', 'Un décimo de la LCC', 'La mitad de la LCC'], correctIndex: 3, difficulty: 'medium',
+    explanation: 'Al inicio del quinto mes es un tercio de la LVT y al nacer, un cuarto.',
+  },
+  {
+    id: 'emb-pfq-q4', topicId: 'embriologia-periodo-fetal', type: 'multiple-choice',
+    question: 'Hacia la semana 12, ¿qué estructura permite valorar el sexo por ultrasonido?',
+    options: ['El tubérculo genital', 'El conducto vitelino', 'La alantoides', 'El seno urogenital'], correctIndex: 0, difficulty: 'medium',
+    explanation: 'Elevado unos 30° respecto a la columna sugiere sexo masculino; recto, femenino.',
+  },
+  {
+    id: 'emb-pfq-q5', topicId: 'embriologia-periodo-fetal', type: 'multiple-choice',
+    question: 'En un hueso largo, el centro de osificación primario aparece en:',
+    options: ['La epífisis', 'La diáfisis', 'El cartílago articular', 'El periostio de la epífisis'], correctIndex: 1, difficulty: 'easy',
+    explanation: 'Los centros secundarios aparecen después en las epífisis.',
+  },
+  {
+    id: 'emb-pfq-q6', topicId: 'embriologia-periodo-fetal', type: 'multiple-choice',
+    question: 'El vello fino que cubre al feto desde el quinto mes se llama:',
+    options: ['Vérnix caseosa', 'Meconio', 'Lanugo', 'Vello terminal'], correctIndex: 2, difficulty: 'easy',
+    explanation: 'La vérnix caseosa es la sustancia lipídica blanquecina que cubre la piel al final del embarazo.',
+  },
+  {
+    id: 'emb-pfq-q7', topicId: 'embriologia-periodo-fetal', type: 'multiple-choice',
+    question: 'FUR: 1 de marzo. Con la regla de los 280 días, la fecha probable de parto cae hacia:',
+    options: ['El 1 de noviembre', 'El 22 de noviembre', 'El 15 de noviembre', 'El 6 de diciembre'], correctIndex: 3, difficulty: 'hard',
+    explanation: '280 días después del 1 de marzo es el 6 de diciembre (40 semanas). Desde la fecundación se suman 266 días.',
+  },
+  {
+    id: 'emb-pfq-q8', topicId: 'embriologia-periodo-fetal', type: 'multiple-choice',
+    question: 'Si se conoce la fecha de fecundación, ¿cuántos días se suman para la fecha probable de parto?',
+    options: ['266', '280', '294', '252'], correctIndex: 0, difficulty: 'medium',
+    explanation: 'Son 38 semanas; desde la FUR se suman 280 días (40 semanas).',
+  },
+  {
+    id: 'emb-pfq-q9', topicId: 'embriologia-periodo-fetal', type: 'multiple-choice',
+    question: 'Un embarazo se considera postérmino a partir de:',
+    options: ['37 semanas', '42 semanas', '39 semanas', '41 semanas'], correctIndex: 1, difficulty: 'medium',
+    explanation: 'De 41 a 41 6/7 es término tardío; antes de 37 es pretérmino.',
+  },
+  {
+    id: 'emb-pfq-q10', topicId: 'embriologia-periodo-fetal', type: 'multiple-choice',
+    question: '¿Qué medida es la más útil para fechar el embarazo entre las semanas 7 y 14?',
+    options: ['Longitud del fémur', 'Diámetro biparietal', 'Longitud cefalocaudal', 'Circunferencia abdominal'], correctIndex: 2, difficulty: 'easy',
+    explanation: 'De la semana 16 a la 30 se usan el diámetro biparietal, las circunferencias cefálica y abdominal y el fémur.',
+  },
+  {
+    id: 'emb-pfq-q11', topicId: 'embriologia-periodo-fetal', type: 'multiple-choice',
+    question: 'Recién nacido de 35 semanas que pesa 2 300 g, en el percentil 50 para su edad. ¿Cómo se clasifica?',
+    options: ['Pequeño para la edad gestacional', 'Con RCIU', 'Normal en todos los sentidos', 'Peso bajo al nacer, adecuado para su edad'], correctIndex: 3, difficulty: 'hard',
+    explanation: 'El peso bajo al nacer (menos de 2 500 g) no toma en cuenta la edad; PEG exige estar por debajo del percentil 10.',
+  },
+  {
+    id: 'emb-pfq-q12', topicId: 'embriologia-periodo-fetal', type: 'multiple-choice',
+    question: 'Un recién nacido es pequeño para la edad gestacional cuando su peso está por debajo del:',
+    options: ['Percentil 10 para su edad', 'Percentil 50', 'Valor de 2 500 g', 'Percentil 90'], correctIndex: 0, difficulty: 'easy',
+    explanation: 'Considera la edad gestacional, a diferencia del peso bajo al nacer.',
+  },
+  {
+    id: 'emb-pfq-q13', topicId: 'embriologia-periodo-fetal', type: 'multiple-choice',
+    question: 'Según la hipótesis de Barker, la restricción del crecimiento intrauterino aumenta en la adultez el riesgo de:',
+    options: ['Asma', 'Diabetes tipo 2 y enfermedad cardiovascular', 'Cáncer de piel', 'Osteoartrosis'], correctIndex: 1, difficulty: 'medium',
+    explanation: 'También de obesidad, hipertensión e hipercolesterolemia.',
+  },
+  {
+    id: 'emb-pfq-q14', topicId: 'embriologia-periodo-fetal', type: 'multiple-choice',
+    question: 'Talla baja intensa con hormona de crecimiento alta e IGF-1 bajo. ¿Qué está alterado?',
+    options: ['La hipófisis', 'El gen IGF1 materno', 'El receptor de la hormona del crecimiento (enanismo tipo Laron)', 'La placenta'], correctIndex: 2, difficulty: 'hard',
+    explanation: 'La GH no puede actuar sin su receptor, así que no se produce IGF-1.',
+  },
+  {
+    id: 'emb-pfq-q15', topicId: 'embriologia-periodo-fetal', type: 'multiple-choice',
+    question: 'El surfactante evita que los alvéolos se colapsen. Su producción aumenta mucho hacia las semanas:',
+    options: ['12 a 14', '20 a 22', '26 a 28', '34 a 36'], correctIndex: 3, difficulty: 'medium',
+    explanation: 'Los neumocitos tipo II empiezan a producirlo hacia el final del sexto mes.',
+  },
+  {
+    id: 'emb-pfq-q16', topicId: 'embriologia-periodo-fetal', type: 'multiple-choice',
+    question: '¿En qué mes suele percibir la madre los movimientos fetales?',
+    options: ['Quinto', 'Tercero', 'Séptimo', 'Segundo'], correctIndex: 0, difficulty: 'easy',
+    explanation: 'Coincide con el crecimiento rápido en longitud de los meses 4 y 5.',
   },
 ]
