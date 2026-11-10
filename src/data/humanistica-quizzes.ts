@@ -1,6 +1,6 @@
 import type { Question } from '../types'
 
-// Medicina Humanística — Semana 1 (Clases 1–3), Semana 2 (Clase 1: cultura e interculturalidad; Clase 2: salud, enfermedad, muerte y práctica médica; Clase 3: eficacia simbólica y competencia cultural), Semana 3 (relación médico-paciente; Clase 1 impartida el 9 nov)
+// Medicina Humanística — Semana 1 (Clases 1–3), Semana 2 (Clase 1: cultura e interculturalidad; Clase 2: salud, enfermedad, muerte y práctica médica; Clase 3: eficacia simbólica y competencia cultural), Semana 3 (relación médico-paciente; Clases 1 y 2 impartidas el 9 y 10 nov)
 // y Semana 4 (perfiles patológicos y síndromes de filiación cultural).
 // ★ en la explicación = tema que el profesor señaló como pregunta de examen.
 // «★ Examen Semana 1.» = pregunta tomada del examen real de la Semana 1 (respuesta verificada con la clase).
@@ -1712,6 +1712,76 @@ export const humanisticaQuestions: Question[] = [
     options: ['Atender solo la enfermedad', 'Incluir al paciente y su familia en la toma de decisiones', 'Dejar las decisiones al médico', 'Prescindir de la comunicación'],
     correctIndex: 1, difficulty: 'easy',
     explanation: 'Considera los valores, objetivos y preferencias del paciente además de la evidencia científica.',
+  },
+  {
+    id: 'mh-modq-q13', topicId: 'humanistica-modelos-rmp', type: 'multiple-choice',
+    question: '«Proceso interpersonal, intersubjetivo y que enfrenta en una relación dinámica al paciente, que se reconoce por lo menos socialmente como tal, con el médico». Es la definición de:',
+    options: ['La relación médico-paciente', 'El acto médico', 'La alteridad', 'El momento ético'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: '★ Es la definición de Vázquez Martínez; la de Laín Entralgo la describe como interacción que constituye el núcleo de la medicina.',
+  },
+  {
+    id: 'mh-modq-q14', topicId: 'humanistica-modelos-rmp', type: 'multiple-choice',
+    question: 'En el modelo conceptual de la RMP, el ENCUENTRO con el otro se asocia con:',
+    options: ['La confrontación', 'El acompañamiento', 'La automatización', 'La racionalidad técnica'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: '★ La relación con el otro se asocia con confrontación, especialización, automatización y racionalidad técnica.',
+  },
+  {
+    id: 'mh-modq-q15', topicId: 'humanistica-modelos-rmp', type: 'multiple-choice',
+    question: '«La configuración cognoscitiva de una relación cuasi diádica entre el médico y el enfermo» es la definición del:',
+    options: ['Tratamiento', 'Momento ético', 'Diagnóstico médico', 'Pronóstico'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: '★ El diagnóstico surge de la interacción entre dos personas inmersas en una cultura, no es un acto individual del médico.',
+  },
+  {
+    id: 'mh-modq-q16', topicId: 'humanistica-modelos-rmp', type: 'multiple-choice',
+    question: 'Son supuestos de la concepción clásica del diagnóstico, EXCEPTO:',
+    options: ['Objetivación del paciente para nombrar la enfermedad', 'Tipificación de la enfermedad', 'Inducción lógica', 'El sentido que el paciente da a su enfermedad'],
+    correctIndex: 3, difficulty: 'hard',
+    explanation: '★ Ese sentido corresponde a las operaciones coejecutivas, no a la concepción clásica.',
+  },
+  {
+    id: 'mh-modq-q17', topicId: 'humanistica-modelos-rmp', type: 'multiple-choice',
+    question: 'Según Laín Entralgo, el tratamiento se considera un acto social y el alta es:',
+    options: ['Un juicio que devuelve al enfermo a la sociedad como hombre sano', 'Un trámite administrativo', 'Un acto individual del médico', 'El inicio del momento cognoscitivo'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: '★ Al prescribir, el médico también propone un plan de vida.',
+  },
+  {
+    id: 'mh-modq-q18', topicId: 'humanistica-modelos-rmp', type: 'multiple-choice',
+    question: 'Los componentes esenciales de la acción terapéutica son:',
+    options: ['El diagnóstico, el pronóstico y el alta', 'El médico, el tratamiento y el paciente', 'La mirada, la palabra y el silencio', 'La familia, la sociedad y el Estado'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: '★ El tratamiento puede ser farmacológico, quirúrgico o higiénico-dietético.',
+  },
+  {
+    id: 'mh-modq-q19', topicId: 'humanistica-modelos-rmp', type: 'multiple-choice',
+    question: 'En los modelos de comunicación, la relación DIRECTIVA orientada al paciente corresponde al modelo:',
+    options: ['Autoritario', 'Democrático', 'Paternalista', 'Deliberativo'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: '★ Directiva orientada a la enfermedad: autoritario. Facilitadora: democrático (enfermedad) y deliberativo (paciente).',
+  },
+  {
+    id: 'mh-modq-q20', topicId: 'humanistica-modelos-rmp', type: 'multiple-choice',
+    question: 'El éxito diagnóstico y terapéutico requiere que converjan:',
+    options: ['Solo los conocimientos técnicos', 'La tecnología y la especialización', 'El seguro médico y la institución', 'Los conocimientos teóricos, los técnicos y la comunicación médico-paciente'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: '★ La capacidad técnica sola no garantiza la atención.',
+  },
+  {
+    id: 'mh-modq-q21', topicId: 'humanistica-modelos-rmp', type: 'multiple-choice',
+    question: 'En el modelo de Veatch del «médico como socio», basado en confianza e igualdad y en una comunidad de intereses y metas, se habla del modelo:',
+    options: ['De colegas', 'Ingenieril', 'Sacerdotal', 'Contractual'],
+    correctIndex: 0, difficulty: 'hard',
+    explanation: '★ En el contractual el médico comparte responsabilidades y el paciente conserva la decisión final.',
+  },
+  {
+    id: 'mh-modq-q22', topicId: 'humanistica-modelos-rmp', type: 'multiple-choice',
+    question: 'Según las críticas a los modelos de Emanuel, el paternalista solo se justifica:',
+    options: ['En las enfermedades crónicas', 'En urgencias, cuando el tiempo para informar es vital', 'Cuando el paciente tiene valores claros', 'En la consulta externa'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: '★ Fuera de la urgencia no se puede asumir que médico y paciente comparten valores.',
   },
   // ── Ética, comunicación y proxémica ──
   {

@@ -3144,25 +3144,33 @@ export const humanisticaTopics: Topic[] = [
   {
     id: 'humanistica-modelos-rmp',
     title: 'Elementos y modelos de la relación médico-paciente',
-    subtitle: 'Estructura según Laín Entralgo (momentos afectivo, cognoscitivo, operativo, ético e histórico-social); modelos de Watzlawick, Szasz-Hollender, Leary, Veatch y Emanuel; medicina centrada en el paciente',
+    subtitle: 'Estructura según Laín Entralgo, relación y encuentro con el otro, momentos afectivo, cognoscitivo, operativo, ético e histórico-social; diagnóstico y tratamiento; modelos de comunicación; modelos de Watzlawick, Szasz-Hollender, Leary, Veatch y Emanuel y sus críticas; medicina centrada en el paciente y en la persona',
     colorKey: 'humanistica',
     categoria: 'Medicina humanística',
     emoji: '🩺',
     keyPoints: [
-      'Laín Entralgo distingue en la RMP su FIN, su MODO de convivencia, su VÍNCULO y su COMUNICACIÓN.',
+      'La RMP es un proceso INTERPERSONAL e INTERSUBJETIVO que enfrenta en una relación dinámica al paciente con el médico, cada uno reconocido como tal ★',
+      'Laín Entralgo distingue en la RMP su FIN, su MODO de convivencia, su VÍNCULO y su COMUNICACIÓN ★',
       'El modo combina operaciones OBJETIVANTES (diagnóstico y tratamiento) y COEJECUTIVAS (convivir con el sentido que la enfermedad tiene para el paciente).',
       'Recursos de comunicación: la mirada, la palabra y el silencio, el contacto manual y la relación instrumental.',
-      'Momentos: AFECTIVO (amistad médica, transferencia) · COGNOSCITIVO (diagnóstico) · OPERATIVO (tratamiento) · ÉTICO · HISTÓRICO-SOCIAL.',
+      'Momentos: AFECTIVO (amistad médica, transferencia) · COGNOSCITIVO (diagnóstico) · OPERATIVO (tratamiento) · ÉTICO · HISTÓRICO-SOCIAL ★',
+      'El diagnóstico es «la configuración cognoscitiva de una relación cuasi diádica entre el médico y el enfermo»; el tratamiento es un ACTO SOCIAL y el alta, un JUICIO ★',
+      'Modelos de comunicación: relación DIRECTIVA (autoritario hacia la enfermedad, paternalista hacia el paciente) o FACILITADORA (democrático y deliberativo).',
       'Szasz-Hollender: ACTIVIDAD-PASIVIDAD (coma, urgencia) · ORIENTACIÓN-COOPERACIÓN (infección aguda) · PARTICIPACIÓN MUTUA (enfermedad crónica) ★',
-      'Emanuel: PATERNALISTA (guardián) · INFORMATIVO (técnico) · INTERPRETATIVO (consejero) · DELIBERATIVO (amigo o maestro).',
+      'Emanuel: PATERNALISTA (guardián) · INFORMATIVO (técnico) · INTERPRETATIVO (consejero) · DELIBERATIVO (amigo o maestro). Autonomía y beneficencia van en sentido inverso; no hay modelos puros ★',
     ],
     sections: [
       {
         id: 'hmo-1',
         number: 1,
         title: 'Estructura de la relación según Laín Entralgo',
-        keyTerms: ['operaciones objetivantes', 'operaciones coejecutivas', 'diagnóstico transubjetivo'],
+        keyTerms: ['operaciones objetivantes', 'operaciones coejecutivas', 'diagnóstico transubjetivo', 'intersubjetivo'],
         blocks: [
+          {
+            type: 'definition',
+            title: 'La RMP como proceso (Vázquez Martínez)',
+            content: 'Proceso interpersonal, intersubjetivo y que enfrenta en una relación dinámica al paciente, que se reconoce por lo menos socialmente como tal, con el médico, a quien también se reconoce como tal.',
+          },
           {
             type: 'list',
             title: 'Cuatro aspectos de la estructura',
@@ -3192,8 +3200,26 @@ export const humanisticaTopics: Topic[] = [
         ],
       },
       {
-        id: 'hmo-2',
+        id: 'hmo-6',
         number: 2,
+        title: 'Relación con el otro y encuentro con el otro',
+        keyTerms: ['confrontación', 'acompañamiento', 'práctica médica'],
+        blocks: [
+          {
+            type: 'comparison',
+            title: 'Modelo conceptual de la RMP',
+            left: { title: 'RELACIÓN con el otro', items: ['Confrontación', 'La empujan la especialización, la automatización, la racionalidad técnica y la ciencia moderna', 'Puede reducir al paciente a su biología'] },
+            right: { title: 'ENCUENTRO con el otro', items: ['Acompañamiento', 'Toma en cuenta normas, costumbres, creencias y formas de vida', 'Ayudar y aconsejar al sufriente'] },
+          },
+          {
+            type: 'paragraph',
+            content: 'En el centro está la PRÁCTICA MÉDICA, que exige comprensión, colaboración, responsabilidad y solidaridad: saberse en el mundo y estar en el mundo. Las dos perspectivas aparecen en la práctica; el encuentro es la que reconoce a la persona que vive la enfermedad.',
+          },
+        ],
+      },
+      {
+        id: 'hmo-2',
+        number: 3,
         title: 'Los momentos de la relación',
         keyTerms: ['momento afectivo', 'momento cognoscitivo', 'momento operativo', 'transferencia'],
         blocks: [
@@ -3222,8 +3248,75 @@ export const humanisticaTopics: Topic[] = [
         ],
       },
       {
+        id: 'hmo-7',
+        number: 4,
+        title: 'El diagnóstico y el tratamiento a detalle',
+        keyTerms: ['relación cuasi diádica', 'concepción clásica del diagnóstico', 'acto social', 'plan de vida', 'consejo'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Diagnóstico médico',
+            content: '«La configuración cognoscitiva de una relación cuasi diádica entre el médico y el enfermo». No es un acto individual del médico que nombra lo que padece el enfermo, sino una interacción entre dos personas inmersas en una cultura, impregnada por el concepto de salud y enfermedad de su época.',
+          },
+          {
+            type: 'list',
+            title: 'Supuestos de la concepción clásica del diagnóstico',
+            items: [
+              'Objetivación del paciente para nombrar la enfermedad.',
+              'Tipificación de la enfermedad desde un enfoque anatomoclínico, fisiopatológico o etiopatológico.',
+              'Inducción lógica.',
+            ],
+          },
+          {
+            type: 'list',
+            title: 'Momento operativo',
+            items: [
+              'El tratamiento comienza realmente antes de que se instituya formalmente.',
+              'Al prescribir, el médico puede recrear o remodelar la vida del paciente: indica un tratamiento y un PLAN DE VIDA.',
+              'El tratamiento es un ACTO SOCIAL y el alta, un JUICIO que devuelve al enfermo a la sociedad con la designación de hombre sano.',
+              'Componentes esenciales de la acción terapéutica: el médico, el tratamiento (farmacológico, quirúrgico, higiénico-dietético) y el paciente.',
+              'El consuelo y el consejo son parte del tratamiento. Aconsejar exige conocer al paciente y su contexto; con Gadamer: relaciones yo-yo, tú-yo y yo-nosotros.',
+            ],
+          },
+          {
+            type: 'list',
+            title: 'Momento histórico-social: lo que hoy pesa en la relación',
+            items: [
+              'Tecnología y especialización; atención repartida entre muchos especialistas.',
+              'Factores económicos y de acceso; seguros.',
+              'Pacientes más informados y exigentes; judicialización de la medicina.',
+              'Inteligencia artificial.',
+              'Riesgos: despersonalización, desconfianza, frustración e insatisfacción.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'hmo-8',
+        number: 5,
+        title: 'Práctica clínica y humanismo: la comunicación',
+        keyTerms: ['relación directiva', 'relación facilitadora', 'modelo autoritario', 'modelo democrático'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Las experiencias del paciente influyen en el resultado de la comunicación: las positivas refuerzan su integridad; las negativas, su vulnerabilidad. El ÉXITO DIAGNÓSTICO Y TERAPÉUTICO requiere que converjan los conocimientos teóricos, los conocimientos técnicos y la comunicación médico-paciente.',
+          },
+          {
+            type: 'table',
+            title: 'Modelos de comunicación',
+            data: {
+              headers: ['', 'Orientada a la enfermedad', 'Orientada al paciente'],
+              rows: [
+                ['Relación DIRECTIVA', 'Modelo AUTORITARIO', 'Modelo PATERNALISTA'],
+                ['Relación FACILITADORA', 'Modelo DEMOCRÁTICO', 'Modelo DELIBERATIVO'],
+              ],
+            },
+          },
+        ],
+      },
+      {
         id: 'hmo-3',
-        number: 3,
+        number: 6,
         title: 'Modelos de relación médico-paciente',
         keyTerms: ['Szasz-Hollender', 'Watzlawick', 'Leary', 'Veatch'],
         blocks: [
@@ -3261,10 +3354,10 @@ export const humanisticaTopics: Topic[] = [
             data: {
               headers: ['Modelo', 'Imagen del médico', 'Idea central'],
               rows: [
-                ['Ingenieril', 'Mecánico', 'Presenta hechos sin valores; el paciente decide'],
-                ['Sacerdotal', 'Sacerdote', 'Produce el bien y no daña; conduce al paciente hacia el bien'],
-                ['De colegas', 'Colega', 'Confianza e igualdad; metas comunes'],
-                ['Contractual', 'Socio', 'Comparte responsabilidades; el paciente conserva la decisión final'],
+                ['Ingenieril', 'Mecánico', 'Hechos y no valores: presenta los datos y el paciente decide; suspende sus juicios de valor y protege la libertad personal'],
+                ['Sacerdotal', 'Sacerdote', 'Produce el bien y no daña; preserva la dignidad; conduce hacia el bien y mantiene sus promesas'],
+                ['De colegas', 'Socio', 'Confianza e igualdad; comunidad de intereses y metas; dice la verdad'],
+                ['Contractual', 'Comparte responsabilidades', 'El paciente conserva la decisión final; el médico negocia valores y obligaciones y preserva la dignidad individual'],
               ],
             },
           },
@@ -3272,7 +3365,7 @@ export const humanisticaTopics: Topic[] = [
       },
       {
         id: 'hmo-4',
-        number: 4,
+        number: 7,
         title: 'Los cuatro modelos de Emanuel y Emanuel',
         keyTerms: ['paternalista', 'informativo', 'interpretativo', 'deliberativo', 'autonomía'],
         blocks: [
@@ -3298,8 +3391,33 @@ export const humanisticaTopics: Topic[] = [
         ],
       },
       {
+        id: 'hmo-9',
+        number: 8,
+        title: 'Críticas a los modelos de Emanuel',
+        keyTerms: ['no hay modelos puros'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Límites de cada modelo',
+            data: {
+              headers: ['Modelo', 'Crítica'],
+              rows: [
+                ['Paternalista', 'Justificable solo en urgencias, cuando el tiempo para informar es vital; fuera de ellas no se puede asumir que médico y paciente tengan los mismos valores'],
+                ['Informativo', 'El paciente valora la eficiencia técnica pero rechaza al médico distante; perpetúa la especialización y la práctica impersonal'],
+                ['Interpretativo', 'Es difícil que el médico no imponga sus valores; el paciente con valores poco claros acepta la imposición y el modelo se vuelve paternalista'],
+                ['Deliberativo', 'Es cuestionable que el médico juzgue los valores del paciente; los valores del médico no deben distorsionar la decisión'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'No hay modelos puros: el médico adopta tendencias según el escenario (urgencias, consulta externa, hospitalización, enfermedad crónica, paciente terminal o recién nacido).',
+          },
+        ],
+      },
+      {
         id: 'hmo-5',
-        number: 5,
+        number: 9,
         title: 'Modelos centrados en la persona',
         keyTerms: ['medicina centrada en el paciente', 'modelo biopsicosocial', 'medicina familiar'],
         blocks: [
@@ -3321,6 +3439,26 @@ export const humanisticaTopics: Topic[] = [
           {
             type: 'paragraph',
             content: 'La medicina centrada en la persona, la familia y la comunidad parte de las necesidades, potencialidades y relaciones de cada una: busca comprender a la persona en su contexto familiar, social y biográfico y encontrar un terreno común con el médico para manejar el problema. La medicina familiar y comunitaria se encarga del cuidado general con este enfoque.',
+          },
+          {
+            type: 'list',
+            title: 'Principios de la atención centrada en el paciente y la familia',
+            items: [
+              'Tratar a las personas con respeto y dignidad.',
+              'Compartir información completa e imparcial con los pacientes y sus familias.',
+              'Alentar y apoyar su participación en el cuidado y la toma de decisiones.',
+              'Colaborar entre pacientes, familiares y proveedores.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Medicina basada en evidencia y medicina centrada en el paciente',
+            left: { title: 'Basada en evidencia', items: ['Generalización', 'Anclada en la investigación', 'Decisiones regulatorias (eficacia)', 'Resultados para el paciente promedio', 'Análisis de semejanzas y agregación de casos', 'Ensayo clínico; autoridad del médico'] },
+            right: { title: 'Centrada en el paciente', items: ['Personalización', 'Anclada en la práctica', 'Decisiones clínicas (efectividad)', 'Resultados para cada paciente', 'Análisis de diferencias y desagregación en subgrupos', 'Mayor valor a la observación y a las preferencias del paciente'] },
+          },
+          {
+            type: 'note',
+            content: 'Se integran en la investigación orientada al paciente: combina observación y experimento, busca el beneficio del paciente individual y aplica rápido los resultados.',
           },
         ],
       },

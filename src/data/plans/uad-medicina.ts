@@ -974,12 +974,13 @@ export const uadMedicina: Plan = {
                 topicIds: ['humanistica-alteridad-rmp', 'humanistica-modelos-rmp', 'humanistica-etica-comunicacion'],
                 temas: [
                   'Clase 1 (impartida, 9 nov): definición e historia de la RMP; atención domiciliaria y tecnología; sucesos de la aparición del problema del otro; autores de la alteridad; transmodernidad; alteridad, otredad, mismidad e ipseidad; el problema del otro (Laín Entralgo); paradigmas Alter Ego y Alter Tú; Dussel y Levinas; motivos del paciente y del médico (ego adiuvans, sapiens, fungens, cupiens)',
-                  'Sesión 2 (material de apoyo): estructura y momentos de la RMP según Laín Entralgo; modelos de Watzlawick, Szasz-Hollender, Leary, Veatch y Emanuel; medicina centrada en el paciente y en la persona, la familia y la comunidad',
+                  'Clase 2 (impartida, 10 nov): relación y encuentro con el otro; estructura y momentos de la RMP según Laín Entralgo; diagnóstico y tratamiento como acto social; modelos de comunicación; modelos de Watzlawick, Szasz-Hollender, Leary, Veatch y Emanuel; medicina centrada en el paciente y en la persona, la familia y la comunidad',
                   'Sesión 3 (material de apoyo): implicaciones éticas (código de bioética, decálogos de derechos y obligaciones, profesionalismo) y sociales (rebelión del sujeto, rol del enfermo); satisfacción con la medicina alópata y la tradicional; comunicación no verbal, ergonomía y proxémica',
                 ],
                 fuentes: [
                   { title: 'Medicina Humanística — Semana 3, Clase 1', file: 'Medicina Humanistica - Semana 3 - Clase 1.pdf', nota: 'Historia de la RMP y alteridad (presentación de la clase).' },
                   { title: 'Medicina Humanística — Semana 3, Sesión 1', file: 'Medicina Humanistica - Semana 3 - Sesion 1.pdf', nota: 'La RMP y la alteridad.' },
+                  { title: 'Medicina Humanística — Semana 3, Clase 2', file: 'Medicina Humanistica - Semana 3 - Clase 2.pdf', nota: 'Elementos y modelos de la RMP (presentación de la clase).' },
                   { title: 'Medicina Humanística — Semana 3, Sesión 2', file: 'Medicina Humanistica - Semana 3 - Sesion 2.pdf', nota: 'Elementos y modelos de la RMP.' },
                   { title: 'Medicina Humanística — Semana 3, Sesión 3', file: 'Medicina Humanistica - Semana 3 - Sesion 3.pdf', nota: 'Ética, comunicación y proxémica.' },
                 ],
@@ -1014,6 +1015,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 2 · Clase 3 — Eficacia simbólica y competencia cultural', file: 'Medicina Humanistica - Semana 2 - Clase 3.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Clase 1 — Historia de la RMP y alteridad', file: 'Medicina Humanistica - Semana 3 - Clase 1.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Sesión 1 — La relación médico-paciente y la alteridad', file: 'Medicina Humanistica - Semana 3 - Sesion 1.pdf', kind: 'Clase' },
+              { title: 'Semana 3 · Clase 2 — Elementos y modelos de la RMP', file: 'Medicina Humanistica - Semana 3 - Clase 2.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Sesión 2 — Elementos y modelos de la RMP', file: 'Medicina Humanistica - Semana 3 - Sesion 2.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Sesión 3 — Ética, comunicación y proxémica', file: 'Medicina Humanistica - Semana 3 - Sesion 3.pdf', kind: 'Clase' },
               { title: 'Semana 4 · Sesión 1 — Causalidad, determinantes y obesidad', file: 'Medicina Humanistica - Semana 4 - Sesion 1.pdf', kind: 'Clase' },
