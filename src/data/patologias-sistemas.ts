@@ -88,4 +88,6 @@ export const SISTEMAS_DE: Record<string, Sistema[]> = {
   'extrofia-vesical': ['Reproductor y embarazo', 'Musculoesquelético'],
   'restriccion-crecimiento-intrauterino': ['Reproductor y embarazo'],
   'sdr-prematuro': ['Respiratorio'],
+  'preeclampsia': ['Reproductor y embarazo', 'Cardiovascular'],
+  'acretismo-placentario': ['Reproductor y embarazo'],
 }

@@ -641,6 +641,7 @@ export const uadMedicina: Plan = {
               { label: 'Atlas MedCore — Tercera semana y periodo embrionario', url: '/atlas/embriologia-tercera-semana' },
               { label: 'Atlas MedCore — Tubo intestinal y cavidades corporales', url: '/atlas/embriologia-cavidades-corporales' },
               { label: 'Atlas MedCore — Periodo fetal', url: '/atlas/embriologia-periodo-fetal' },
+              { label: 'Atlas MedCore — Placenta y membranas fetales', url: '/atlas/embriologia-placenta' },
               { label: 'Acland Anatomy', url: 'https://aclandanatomy.com/' },
               { label: 'Bates Visual Guide', url: 'https://batesvisualguide.com/' },
               { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },

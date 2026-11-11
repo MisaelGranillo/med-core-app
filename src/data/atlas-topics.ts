@@ -1528,7 +1528,25 @@ export const atlasTopics: AtlasTopic[] = [
       { id: 'epf-a5', question: 'Según el panel 4, ¿qué medida por ultrasonido se usa entre las semanas 7 y 14?', options: ['Longitud del fémur', 'Longitud cefalocaudal', 'Circunferencia abdominal', 'Diámetro biparietal'], correctIndex: 1, explanation: 'De la semana 16 a la 30 se combinan el diámetro biparietal, las circunferencias y el fémur.', difficulty: 'easy' },
       { id: 'epf-a6', question: 'En el panel 6, el enanismo tipo Laron se debe a una falla de:', options: ['El gen IGF1', 'La placenta', 'La hipófisis', 'El receptor de la hormona del crecimiento'], correctIndex: 3, explanation: 'La GH está alta pero no actúa, así que no se produce IGF-1.', difficulty: 'medium' },
     ],
+  },  {
+    id: 'embriologia-placenta',
+    title: 'Placenta y membranas fetales',
+    subtitle: 'Útero al tercer mes con deciduas, corion frondoso y leve y amnios; corte de la placenta con vellosidades, espacios intervellosos, tabiques, arterias espirales y venas; arteria espiral remodelada y sin remodelar (preeclampsia); vellosidad temprana y madura; placenta a término; deciduas, cordón y correlación clínica',
+    category: 'embriologia',
+    emoji: '🩸',
+    imagePath: '/atlas/embriologia-placenta.webp',
+    colorKey: 'embriologia',
+    relatedTopicIds: ['embriologia-placenta'],
+    questions: [
+      { id: 'epl-a1', question: 'En el útero del panel 1, la capa café sobre el corion frondoso, que forma la porción materna de la placenta, es la:', options: ['Decidua capsular', 'Decidua parietal', 'Decidua basal', 'Placa coriónica'], correctIndex: 2, explanation: 'La placenta es el corion frondoso (fetal) más la decidua basal (materna).', difficulty: 'easy' },
+      { id: 'epl-a2', question: 'En el panel 1, la decidua que cubre el saco coriónico del lado opuesto a la placenta (polo abembrionario) es la:', options: ['Decidua capsular', 'Decidua basal', 'Decidua parietal', 'Corion frondoso'], correctIndex: 0, explanation: 'Se distiende, degenera y se fusiona con la parietal, y la cavidad uterina desaparece.', difficulty: 'medium' },
+      { id: 'epl-a3', question: 'En el corte del panel 2, ¿qué ocupa los espacios intervellosos?', options: ['Sangre fetal', 'Sangre materna', 'Líquido amniótico', 'Tejido conectivo'], correctIndex: 1, explanation: 'Entra por las arterias espirales y sale por las venas endometriales; la sangre fetal va dentro de los capilares de las vellosidades.', difficulty: 'easy' },
+      { id: 'epl-a4', question: 'En el panel 3, la arteria con pared muscular gruesa y luz estrecha representa:', options: ['Una arteria normal al término', 'La vena umbilical', 'Un capilar fetal', 'Una arteria espiral sin remodelar, como en la preeclampsia'], correctIndex: 3, explanation: 'Si el citotrofoblasto no la transforma, llega poca sangre a la placenta.', difficulty: 'medium' },
+      { id: 'epl-a5', question: 'En el panel 4, ¿qué capa falta en la vellosidad madura?', options: ['El sincitiotrofoblasto', 'Los capilares fetales', 'El citotrofoblasto', 'El tejido conectivo'], correctIndex: 2, explanation: 'Desde el cuarto mes desaparece el citotrofoblasto y la barrera se adelgaza.', difficulty: 'medium' },
+      { id: 'epl-a6', question: 'En el panel 5, la cara materna de la placenta a término muestra:', options: ['El cordón y los vasos coriónicos', '15 a 20 cotiledones', 'El amnios liso', 'La vena umbilical'], correctIndex: 1, explanation: 'La cara fetal es lisa, con el amnios, el cordón y los vasos coriónicos.', difficulty: 'easy' },
+    ],
   },
+
 
 
   {
