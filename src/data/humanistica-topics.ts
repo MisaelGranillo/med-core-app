@@ -3472,23 +3472,73 @@ export const humanisticaTopics: Topic[] = [
     categoria: 'Medicina humanística',
     emoji: '⚖️',
     keyPoints: [
+      'Según quién ejerce el control: MUTUAL o deliberativo (ambos alto), PATERNALISTA (médico alto), CONSUMISTA o informativo (paciente alto) y AUSENTE (ambos bajo). El enfoque SISTÉMICO integra a la familia.',
       'En cuanto acto humano, la relación médica es un ACTO MORAL. La regla de oro del arte de curar es el BIEN DEL PACIENTE.',
-      'Código de bioética para el personal de salud: dignidad y derechos humanos, inclusión, calidad y seguridad, justicia y equidad, consentimiento informado e integridad.',
+      'Código de bioética para el personal de salud: OCHO PILARES (principios bioéticos, atención centrada en la persona, responsabilidades del equipo, educación, protección de datos, investigación, salud comunitaria y ambiental, problemáticas complejas).',
       'PROFESIONALISMO: integridad, competencia y altruismo; los intereses del paciente por encima de los propios.',
       'Rol del enfermo (Parsons): queda libre de sus obligaciones sociales y no es culpable de su enfermedad, pero debe querer sanar y buscar ayuda competente.',
-      'Insatisfacción del paciente: discriminación, espera larga, consulta breve, falta de amabilidad y lenguaje médico incomprensible.',
+      'Insatisfacción del paciente: 53 % por comunicación deficiente, 35 % por esperas prolongadas y 12 % por el trato del personal de apoyo.',
       'Comunicación no verbal: KINÉSICA (movimientos, gestos, mirada), PROXÉMICA (uso del espacio), PARALENGUAJE (tono, ritmo, pausas) y SIMBÓLICA ★',
+      'ERGONOMÍA: «la ciencia que estudia cómo adecuar la relación del ser humano con su entorno laboral» ★',
+      'Proxémica (Hall): espacio ÍNTIMO, PERSONAL (46–120 cm), SOCIAL (120–360 cm) y PÚBLICO (más de 360 cm).',
     ],
     sections: [
       {
-        id: 'hec-1',
+        id: 'hec-5',
         number: 1,
+        title: 'Modelos según quién ejerce el control',
+        keyTerms: ['mutual', 'paternalista', 'consumista', 'ausente', 'sistémico'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Control del médico y del paciente',
+            data: {
+              headers: ['', 'Control del paciente ALTO', 'Control del paciente BAJO'],
+              rows: [
+                ['Control del médico ALTO', 'MUTUAL o deliberativo: ambos participan y deciden', 'PATERNALISTA: el médico dirige y decide'],
+                ['Control del médico BAJO', 'CONSUMISTA o informativo: el paciente decide y el médico informa', 'AUSENTE: la relación queda a la deriva'],
+              ],
+            },
+          },
+          {
+            type: 'paragraph',
+            content: 'El enfoque SISTÉMICO va más allá de la pareja médico-paciente: comprende el contexto sociofamiliar, considera los valores individuales y familiares y ayuda a la familia a participar en el cuidado; la responsabilidad moral se comparte entre médico, paciente y familia.',
+          },
+          {
+            type: 'list',
+            title: 'Paradojas',
+            items: [
+              'No todos los pacientes quieren el mismo tipo de relación, ni la misma cantidad de información, ni tomar las decisiones.',
+              'Los pacientes más participativos controlan mejor su enfermedad, aunque a veces se sienten menos satisfechos («fricción amigable»).',
+              'Una misma persona puede preferir estilos distintos según sus circunstancias.',
+              'Hay poca correspondencia entre lo que los pacientes desean y lo que los médicos ofrecen; es más difícil cambiar las prácticas del médico que las expectativas del paciente.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'hec-1',
+        number: 2,
         title: 'Implicaciones éticas',
         keyTerms: ['acto moral', 'código de bioética', 'consentimiento informado'],
         blocks: [
           {
             type: 'paragraph',
             content: 'Para Laín Entralgo, aceptar la condición de médico es adquirir una «segunda naturaleza» hecha de hábitos MENTALES, OPERATIVOS y ESTIMATIVOS (de valoración) para ejercer la medicina. También la forma en que el paciente vive y reacciona a su enfermedad es un acto moral.',
+          },
+          {
+            type: 'list',
+            title: 'Los ocho pilares del código de bioética para el personal de salud (2022)',
+            items: [
+              'Principios bioéticos.',
+              'Atención centrada en la persona.',
+              'Responsabilidades del equipo de salud.',
+              'Educación y formación.',
+              'Protección de datos.',
+              'Investigación en salud e integridad científica.',
+              'Salud comunitaria y ambiental.',
+              'Problemáticas complejas en la atención e investigación.',
+            ],
           },
           {
             type: 'list',
@@ -3543,6 +3593,22 @@ export const humanisticaTopics: Topic[] = [
           },
           {
             type: 'list',
+            title: 'Obligaciones de los pacientes (las que menos se difunden)',
+            items: [
+              'Acudir a revisión médica periódica y ser corresponsables de su salud.',
+              'Tratar con respeto y dignidad al personal de salud.',
+              'Dar información completa y veraz, y comunicar de inmediato cualquier complicación.',
+              'Cumplir las indicaciones y los trámites de la atención.',
+              'Evitar la automedicación y el uso irracional de antibióticos.',
+              'Acudir con profesionales titulados y certificados; cuidar las instalaciones.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'Los decálogos forman parte de la LEX ARTIS médica: pueden invocarse en una queja. Con menores de edad se busca su ASENTIMIENTO según su edad y comprensión, pero deciden los padres o tutores. Las lesiones por violencia, como las de arma de fuego, se notifican a la autoridad.',
+          },
+          {
+            type: 'list',
             title: 'Obligaciones del profesional (extracto)',
             items: [
               'Trato digno e información integral a pacientes, familiares y cuidadores.',
@@ -3557,7 +3623,7 @@ export const humanisticaTopics: Topic[] = [
       },
       {
         id: 'hec-2',
-        number: 2,
+        number: 3,
         title: 'Profesionalismo médico',
         keyTerms: ['profesionalismo', 'altruismo', 'confidencialidad', 'ética maximalista'],
         blocks: [
@@ -3595,13 +3661,21 @@ export const humanisticaTopics: Topic[] = [
       },
       {
         id: 'hec-3',
-        number: 3,
+        number: 4,
         title: 'Implicaciones sociales e importancia de la relación',
         keyTerms: ['rebelión del sujeto', 'rol del enfermo', 'satisfacción'],
         blocks: [
           {
             type: 'paragraph',
             content: 'La relación médica es constitutivamente social. Para Laín Entralgo, su crisis es consecuencia de la «REBELIÓN DEL SUJETO»: la reacción de las personas contra la objetivación y la injusticia de la asistencia médica, y contra la idea de que la enfermedad deja al paciente en situación de incompetencia moral.',
+          },
+          {
+            type: 'list',
+            items: [
+              'La rebelión del sujeto surge contra la COSIFICACIÓN del paciente: reclama que se reconozcan su dignidad, emociones, creencias, cultura y estilo de vida. El sujeto recupera su subjetividad mediante una ética para la vida que conlleve cambio social.',
+              'El SISTEMA DE SALUD es el TERCERO EN DISCORDIA: accesibilidad, recursos, tiempos de espera y organización condicionan el encuentro aunque el médico sea competente.',
+              '«El médico que quiero ser» frente a «el médico que me dejan ser»: inseguridad laboral, consultas saturadas, agotamiento y burnout.',
+            ],
           },
           {
             type: 'list',
@@ -3621,7 +3695,7 @@ export const humanisticaTopics: Topic[] = [
               items: ['Buen trato del médico', 'Entrega de medicamentos', 'Instalaciones limpias', 'Explicaciones claras en lenguaje sencillo'],
             },
             right: {
-              title: 'Genera insatisfacción',
+              title: 'Genera insatisfacción (53 % comunicación, 35 % espera, 12 % personal de apoyo)',
               items: ['Discriminación', 'Espera prolongada y consulta breve', 'Falta de amabilidad', 'Lenguaje médico incomprensible y explicaciones insuficientes', 'Escasez de medicamentos'],
             },
           },
@@ -3634,8 +3708,36 @@ export const humanisticaTopics: Topic[] = [
         ],
       },
       {
+        id: 'hec-6',
+        number: 5,
+        title: 'Comunicación clínica y cultura',
+        keyTerms: ['comunicación clínica', 'cultura profunda', 'metacognición'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Comunicación clínica',
+            content: 'Cualquier comunicación oral o escrita, por distintos medios, entre profesionales de la salud, pacientes y familiares.',
+          },
+          {
+            type: 'comparison',
+            title: 'El iceberg cultural',
+            left: { title: 'Cultura superficial (visible)', items: ['Comida, banderas, festivales', 'Música, moda, bailes', 'Feriados y juegos'] },
+            right: { title: 'Cultura profunda (oculta)', items: ['Reglas y estilos de comunicación', 'Gestos, contacto visual, espacio personal y tacto', 'Tono de voz, manejo de emociones, patrones de conversación'] },
+          },
+          {
+            type: 'list',
+            title: 'Habilidades comunicativas del médico',
+            items: [
+              'ESCUCHAR y HABLAR: escucha activa; hablar con pacientes y familiares durante la exploración.',
+              'LEER y ESCRIBIR: textos biomédicos y sociales; redactar la historia clínica.',
+              'PENSAR: ampliar el marco del proceso salud-enfermedad; METACOGNICIÓN, tomar conciencia de cómo se aprende.',
+            ],
+          },
+        ],
+      },
+      {
         id: 'hec-4',
-        number: 4,
+        number: 6,
         title: 'Comunicación, ergonomía y proxémica',
         keyTerms: ['comunicación no verbal', 'kinésica', 'proxémica', 'paralenguaje', 'ergonomía'],
         blocks: [
@@ -3663,15 +3765,56 @@ export const humanisticaTopics: Topic[] = [
             content: 'Estudio de cómo las personas usan y estructuran el espacio inmediato en sus relaciones. Hall describió cuatro distancias: íntima (hasta ≈ 45 cm), personal (≈ 45 cm a 1.2 m), social (≈ 1.2 a 3.6 m) y pública (más de 3.6 m).',
           },
           {
+            type: 'table',
+            title: 'Distancias proxémicas',
+            data: {
+              headers: ['Espacio', 'Distancia', 'Uso'],
+              rows: [
+                ['ÍNTIMO', 'Hasta ≈ 45 cm (la diapositiva marca 15 a 45 cm)', 'Personas de gran confianza; la exploración física entra aquí'],
+                ['PERSONAL', '46 a 120 cm', 'Conversación habitual'],
+                ['SOCIAL', '120 a 360 cm', 'Personas con quienes no hay amistad'],
+                ['PÚBLICO', 'Más de 360 cm', 'Dirigirse a un grupo; no sirve para dar malas noticias'],
+              ],
+            },
+          },
+          {
             type: 'definition',
             title: 'Ergonomía',
-            content: 'Ciencia que estudia cómo adecuar la relación del ser humano con su entorno de trabajo. En la consulta incluye la disposición del escritorio, la silla y la pantalla para no interponer barreras entre médico y paciente.',
+            content: 'La ciencia que estudia cómo adecuar la relación del ser humano con su entorno laboral. En la consulta incluye la disposición del escritorio, la silla y la pantalla para no interponer barreras entre médico y paciente.',
           },
           {
             type: 'correlacion',
             variant: 'clinica',
             title: 'La exploración física invade la distancia íntima',
             content: 'Auscultar o palpar obliga a entrar en la distancia íntima del paciente. Por eso conviene explicar antes qué se va a hacer, pedir permiso, cuidar la privacidad y contar con un acompañante cuando la exploración es sensible.',
+          },
+        ],
+      },
+      {
+        id: 'hec-7',
+        number: 7,
+        title: 'Ergonomía a detalle',
+        keyTerms: ['ergonomía biométrica', 'ergonomía cognitiva', 'mecánica corporal'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Tipos de ergonomía',
+            data: {
+              headers: ['Tipo', 'Se enfoca en'],
+              rows: [
+                ['Biométrica', 'Antropometría, dimensiones corporales, postura y biomecánica'],
+                ['Ambiental', 'Carga visual, alumbrado, ruido y condiciones ambientales'],
+                ['Cognitiva', 'Percepción, carga mental, interfaces de comunicación y biorritmos'],
+                ['Preventiva', 'Seguridad, salud y confort; esfuerzo y fatiga muscular'],
+                ['Correctiva', 'Evaluación, análisis e investigación ergonómica; enseñanza'],
+                ['De la concepción', 'Diseño ergonómico de productos, sistemas y entornos'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Mecánica corporal al movilizar pacientes',
+            items: ['Espalda recta y piernas flexionadas.', 'Pies separados y carga cerca del cuerpo.', 'Presas firmes, contrapeso del cuerpo y uso de apoyos.'],
           },
         ],
       },

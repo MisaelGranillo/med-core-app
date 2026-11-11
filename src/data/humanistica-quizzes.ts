@@ -1,6 +1,6 @@
 import type { Question } from '../types'
 
-// Medicina Humanística — Semana 1 (Clases 1–3), Semana 2 (Clase 1: cultura e interculturalidad; Clase 2: salud, enfermedad, muerte y práctica médica; Clase 3: eficacia simbólica y competencia cultural), Semana 3 (relación médico-paciente; Clases 1 y 2 impartidas el 9 y 10 nov)
+// Medicina Humanística — Semana 1 (Clases 1–3), Semana 2 (Clase 1: cultura e interculturalidad; Clase 2: salud, enfermedad, muerte y práctica médica; Clase 3: eficacia simbólica y competencia cultural), Semana 3 (relación médico-paciente; Clases 1 a 3 impartidas del 9 al 11 nov)
 // y Semana 4 (perfiles patológicos y síndromes de filiación cultural).
 // ★ en la explicación = tema que el profesor señaló como pregunta de examen.
 // «★ Examen Semana 1.» = pregunta tomada del examen real de la Semana 1 (respuesta verificada con la clase).
@@ -1867,6 +1867,76 @@ export const humanisticaQuestions: Question[] = [
     options: ['Los honorarios', 'Adecuar el entorno de trabajo, como la disposición del escritorio y la pantalla', 'El diagnóstico diferencial', 'La farmacología'],
     correctIndex: 1, difficulty: 'easy',
     explanation: 'Evita barreras físicas entre médico y paciente.',
+  },
+  {
+    id: 'mh-ecoq-q13', topicId: 'humanistica-etica-comunicacion', type: 'multiple-choice',
+    question: '«La ciencia que estudia cómo adecuar la relación del ser humano con su entorno laboral» es la definición de:',
+    options: ['Ergonomía', 'Proxémica', 'Kinésica', 'Paralenguaje'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: '★ El profesor la señaló expresamente como pregunta de examen.',
+  },
+  {
+    id: 'mh-ecoq-q14', topicId: 'humanistica-etica-comunicacion', type: 'multiple-choice',
+    question: 'Cuando el control del médico es BAJO y el del paciente es ALTO, el modelo es:',
+    options: ['Paternalista', 'Consumista o informativo', 'Mutual', 'Ausente'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Ambos alto: mutual o deliberativo. Médico alto: paternalista. Ambos bajo: ausente.',
+  },
+  {
+    id: 'mh-ecoq-q15', topicId: 'humanistica-etica-comunicacion', type: 'multiple-choice',
+    question: 'Cuando ni el médico ni el paciente ejercen control, la relación queda «a la deriva». Es el modelo:',
+    options: ['Sistémico', 'Mutual', 'Ausente', 'Consumista'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'El sistémico, en cambio, integra a la familia y comparte la responsabilidad moral.',
+  },
+  {
+    id: 'mh-ecoq-q16', topicId: 'humanistica-etica-comunicacion', type: 'multiple-choice',
+    question: 'El enfoque que integra el contexto sociofamiliar y comparte la responsabilidad moral entre médico, paciente y familia es el:',
+    options: ['Paternalista', 'Consumista', 'Ausente', 'Sistémico'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'Considera los valores individuales y familiares.',
+  },
+  {
+    id: 'mh-ecoq-q17', topicId: 'humanistica-etica-comunicacion', type: 'multiple-choice',
+    question: 'Según la gráfica de la clase, el principal motivo de insatisfacción del paciente es:',
+    options: ['La comunicación deficiente (53 %)', 'Las esperas prolongadas (35 %)', 'El trato del personal de apoyo (12 %)', 'La facturación'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'La comunicación pesa más que la espera o el trato del personal.',
+  },
+  {
+    id: 'mh-ecoq-q18', topicId: 'humanistica-etica-comunicacion', type: 'multiple-choice',
+    question: 'Es uno de los ocho pilares del código de bioética para el personal de salud (2022):',
+    options: ['Medicina defensiva', 'Protección de datos', 'Secreto industrial', 'Productividad institucional'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'También salud comunitaria y ambiental, investigación e integridad científica, educación y formación.',
+  },
+  {
+    id: 'mh-ecoq-q19', topicId: 'humanistica-etica-comunicacion', type: 'multiple-choice',
+    question: 'Es una OBLIGACIÓN del paciente, según el decálogo:',
+    options: ['Recibir una segunda opinión', 'Trato digno', 'Evitar la automedicación y el uso irracional de antibióticos', 'Protección de sus datos'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Las otras opciones son derechos del paciente.',
+  },
+  {
+    id: 'mh-ecoq-q20', topicId: 'humanistica-etica-comunicacion', type: 'multiple-choice',
+    question: 'La reacción de las personas contra su cosificación y la injusticia de la asistencia médica se llama:',
+    options: ['Paternalismo', 'Ética maximalista', 'Rol del enfermo', 'Rebelión del sujeto'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'El sujeto recupera su subjetividad mediante una ética para la vida que conlleve cambio social.',
+  },
+  {
+    id: 'mh-ecoq-q21', topicId: 'humanistica-etica-comunicacion', type: 'multiple-choice',
+    question: '¿Qué se considera el «tercero en discordia» en la relación médico-paciente?',
+    options: ['El sistema de salud', 'La familia', 'La enfermedad', 'El expediente clínico'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'Accesibilidad, recursos, tiempos de espera y organización condicionan el encuentro.',
+  },
+  {
+    id: 'mh-ecoq-q22', topicId: 'humanistica-etica-comunicacion', type: 'multiple-choice',
+    question: 'Según Enrique Dussel, la alteridad es:',
+    options: ['Cambiar la propia perspectiva por la del otro', 'Saber pensar el mundo desde la exterioridad del otro', 'La condición de ser uno mismo', 'Una forma de coexistencia'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: '★ El profesor la volvió a señalar para el examen. Cambiar la perspectiva por la del otro es de Eduardo Sousa.',
   },
   // ── Causalidad, determinantes y perfil epidemiológico ──
   {
