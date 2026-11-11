@@ -7,7 +7,7 @@ import type { Question } from '../types'
 // segunda semana e implantación; tercera semana y gastrulación. Clase 3: periodo
 // embrionario y derivados de las capas germinales. Clase 4: sangre y vasos,
 // aspecto externo del segundo mes y teratógenos. Clase 5: ejes corporales y
-// regulación molecular. Semana 3, Clase 1: tubo intestinal y cavidades corporales. Clase 2: periodo fetal.
+// regulación molecular. Semana 3, Clase 1: tubo intestinal y cavidades corporales. Clase 2: periodo fetal. Clase 3: membranas fetales y placenta.
 export const embriologiaQuestions: Question[] = [
   // ── Panorama del desarrollo temprano ──
   {
@@ -1560,5 +1560,118 @@ export const embriologiaQuestions: Question[] = [
     question: '¿En qué mes suele percibir la madre los movimientos fetales?',
     options: ['Quinto', 'Tercero', 'Séptimo', 'Segundo'], correctIndex: 0, difficulty: 'easy',
     explanation: 'Coincide con el crecimiento rápido en longitud de los meses 4 y 5.',
+  },
+  // ── Membranas fetales y placenta ──
+  {
+    id: 'emb-plq-q1', topicId: 'embriologia-placenta', type: 'multiple-choice',
+    question: 'La porción MATERNA de la placenta es:',
+    options: ['El corion frondoso', 'La decidua basal', 'El corion leve', 'La decidua capsular'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'La porción fetal es el corion frondoso.',
+  },
+  {
+    id: 'emb-plq-q2', topicId: 'embriologia-placenta', type: 'multiple-choice',
+    question: '¿Qué vellosidades llegan hasta la cápsula citotrofoblástica y fijan el saco coriónico al endometrio?',
+    options: ['De anclaje (troncales)', 'Libres', 'Primarias', 'Nudos sincitiales'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'Las libres flotan en los espacios intervellosos y hacen la mayor parte del intercambio.',
+  },
+  {
+    id: 'emb-plq-q3', topicId: 'embriologia-placenta', type: 'multiple-choice',
+    question: 'Una vellosidad TERCIARIA se distingue porque:',
+    options: ['Solo tiene citotrofoblasto', 'Tiene núcleo de mesodermo sin vasos', 'Tiene capilares fetales', 'Carece de sincitio'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: 'Primaria: citotrofoblasto con sincitio. Secundaria: se agrega mesodermo. Terciaria: aparecen capilares.',
+  },
+  {
+    id: 'emb-plq-q4', topicId: 'embriologia-placenta', type: 'multiple-choice',
+    question: 'Al invadir las arterias espirales, las células del citotrofoblasto:',
+    options: ['Las cierran', 'Las vuelven más estrechas y resistentes', 'Forman las venas endometriales', 'Sustituyen su endotelio y las vuelven anchas y de baja resistencia'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'Hacen una transición epitelio-endotelial y forman vasos híbridos.',
+  },
+  {
+    id: 'emb-plq-q5', topicId: 'embriologia-placenta', type: 'multiple-choice',
+    question: 'La preeclampsia se relaciona con una falla de:',
+    options: ['La transformación de las arterias espirales por el citotrofoblasto', 'La fusión del amnios y el corion', 'El cierre del conducto vitelino', 'La formación de los cotiledones'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'Las arterias quedan estrechas, baja la perfusión placentaria y la placenta daña el endotelio materno.',
+  },
+  {
+    id: 'emb-plq-q6', topicId: 'embriologia-placenta', type: 'multiple-choice',
+    question: 'Criterio de preeclampsia:',
+    options: ['Presión de 120/80 antes de la semana 12', 'Presión de 140/90 o más desde la semana 20, con proteinuria', 'Solo edema de piernas', 'Presión alta desde antes del embarazo'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'La presión de 160/110 o más es dato de severidad.',
+  },
+  {
+    id: 'emb-plq-q7', topicId: 'embriologia-placenta', type: 'multiple-choice',
+    question: 'Preeclampsia con crisis convulsivas se llama:',
+    options: ['Síndrome HELLP', 'Hipertensión gestacional', 'Eclampsia', 'Preeclampsia leve'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: 'El HELLP es hemólisis, enzimas hepáticas elevadas y plaquetas bajas.',
+  },
+  {
+    id: 'emb-plq-q8', topicId: 'embriologia-placenta', type: 'multiple-choice',
+    question: '¿Cuál NO es factor de riesgo de preeclampsia?',
+    options: ['Primer embarazo', 'Embarazo múltiple', 'Mola hidatiforme', 'Haber tenido varios embarazos sin preeclampsia'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'También cuentan la preeclampsia previa, obesidad, hipertensión y diabetes.',
+  },
+  {
+    id: 'emb-plq-q9', topicId: 'embriologia-placenta', type: 'multiple-choice',
+    question: 'La membrana que se rompe en el trabajo de parto («se rompe la fuente») es:',
+    options: ['La membrana amniocoriónica', 'La decidua basal', 'La placa coriónica', 'La cápsula citotrofoblástica'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'Es la fusión del amnios con el corion leve.',
+  },
+  {
+    id: 'emb-plq-q10', topicId: 'embriologia-placenta', type: 'multiple-choice',
+    question: 'La decidua que queda sobre el polo abembrionario y degenera al crecer la vesícula coriónica es la:',
+    options: ['Basal', 'Capsular', 'Parietal', 'Placa decidual'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'La parietal recubre el resto del útero y se fusiona con el corion leve.',
+  },
+  {
+    id: 'emb-plq-q11', topicId: 'embriologia-placenta', type: 'multiple-choice',
+    question: 'Desde el cuarto mes la membrana placentaria se adelgaza porque:',
+    options: ['Aparecen más capas', 'Se engruesa el sincitio', 'Desaparece el citotrofoblasto y el endotelio fetal se pega al sincitio', 'Se forman los cotiledones'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Al inicio tenía cuatro capas; al adelgazarse aumenta el intercambio. La placenta humana es hemocorial.',
+  },
+  {
+    id: 'emb-plq-q12', topicId: 'embriologia-placenta', type: 'multiple-choice',
+    question: '¿Cuánto pesa en promedio la placenta a término?',
+    options: ['100–200 g', '1 000–1 200 g', '2 000 g', '500–600 g'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'Es discoide, de ≈ 3 cm de grosor y 15–25 cm de diámetro, con 15 a 20 cotiledones.',
+  },
+  {
+    id: 'emb-plq-q13', topicId: 'embriologia-placenta', type: 'multiple-choice',
+    question: 'El cordón umbilical normal contiene:',
+    options: ['Una vena y dos arterias', 'Dos venas y una arteria', 'Una vena y una arteria', 'Dos venas y dos arterias'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'La vena lleva sangre oxigenada al feto; las arterias la regresan a la placenta.',
+  },
+  {
+    id: 'emb-plq-q14', topicId: 'embriologia-placenta', type: 'multiple-choice',
+    question: 'Sangrado vaginal INDOLORO en el tercer trimestre con la placenta sobre el orificio cervical interno sugiere:',
+    options: ['Acretismo', 'Placenta previa', 'Mola parcial', 'Preeclampsia'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'La placenta es normal; lo anormal es el sitio de implantación.',
+  },
+  {
+    id: 'emb-plq-q15', topicId: 'embriologia-placenta', type: 'multiple-choice',
+    question: 'En la placenta PERCRETA las vellosidades:',
+    options: ['Solo se adhieren al miometrio', 'Invaden el miometrio sin atravesarlo', 'Lo atraviesan hasta la serosa', 'No llegan al miometrio'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Acreta: adherida. Increta: invade. Percreta: atraviesa. Riesgo principal: cesárea previa y placenta previa.',
+  },
+  {
+    id: 'emb-plq-q16', topicId: 'embriologia-placenta', type: 'multiple-choice',
+    question: '¿Por qué se revisa la cara materna de la placenta después del alumbramiento?',
+    options: ['Para saber el sexo', 'Para medir el cordón', 'Para buscar bridas amnióticas', 'Porque un cotiledón retenido causa hemorragia posparto'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'La placenta se expulsa unos 30 minutos después del parto.',
   },
 ]

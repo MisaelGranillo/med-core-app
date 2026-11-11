@@ -520,7 +520,7 @@ export const uadMedicina: Plan = {
           name: 'Embriología I',
           code: 'EM01004',
           tags: ['anatomia'],
-          topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis', 'embriologia-espermatogenesis', 'embriologia-anomalias-numericas', 'embriologia-anomalias-estructurales', 'embriologia-ciclo-ovarico', 'embriologia-fecundacion', 'embriologia-infertilidad-reproduccion', 'embriologia-segunda-semana', 'embriologia-tercera-semana', 'embriologia-periodo-embrionario', 'embriologia-ejes-corporales', 'embriologia-regulacion-molecular', 'embriologia-cavidades-corporales', 'embriologia-periodo-fetal'],
+          topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis', 'embriologia-espermatogenesis', 'embriologia-anomalias-numericas', 'embriologia-anomalias-estructurales', 'embriologia-ciclo-ovarico', 'embriologia-fecundacion', 'embriologia-infertilidad-reproduccion', 'embriologia-segunda-semana', 'embriologia-tercera-semana', 'embriologia-periodo-embrionario', 'embriologia-ejes-corporales', 'embriologia-regulacion-molecular', 'embriologia-cavidades-corporales', 'embriologia-periodo-fetal', 'embriologia-placenta'],
           content: {
             area: 'Ciencias Básicas',
             credits: 8,
@@ -584,16 +584,18 @@ export const uadMedicina: Plan = {
               {
                 number: 3,
                 title: 'Periodo fetal, membranas fetales y placenta; cabeza y cuello',
-                topicIds: ['embriologia-cavidades-corporales', 'embriologia-periodo-fetal'],
+                topicIds: ['embriologia-cavidades-corporales', 'embriologia-periodo-fetal', 'embriologia-placenta'],
                 temas: [
                   'Clase 1 (impartida): tubo intestinal y cavidades corporales — celoma intraembrionario, somatopleura y esplacnopleura, plegamiento lateral y cefalocaudal, mesenterios, tabique transverso, cavidades pleurales y pericárdica, diafragma (C3–C5); ectopia cordis y pentalogía de Cantrell, gastrosquisis, onfalocele, extrofias y hernias diafragmáticas',
                   'Clase 2 (impartida): periodo fetal del tercer mes al nacimiento — crecimiento en longitud y peso, LCC y LVT, osificación, tubérculo genital, lanugo, surfactante y vérnix; hitos funcionales; fecha probable de parto y edad gestacional; mediciones por ultrasonido; peso bajo al nacer, PEG y RCIU, hipótesis de Barker; IGF-1, GH y enanismo tipo Laron',
+                  'Clase 3 (impartida): membranas fetales y placenta — vellosidades de anclaje y libres, invasión endovascular de las arterias espirales, maduración desde el cuarto mes, deciduas y corion, membrana amniocoriónica, placenta a término y cordón, circulación placentaria y membrana placentaria; preeclampsia, placenta previa, vasos previos, bridas amnióticas, mola parcial y acretismo',
                   '3. Características del primer, segundo y tercer trimestre; amnios y cordón umbilical; placenta: estructura, funciones y circulación prenatal',
                   '4. Arcos, bolsas y hendiduras faríngeas; regulación molecular del desarrollo facial; lengua, glándula tiroidea, cara, segmento intermaxilar, paladar secundario, fosas nasales y dientes',
                 ],
                 fuentes: [
                   { title: 'Embriología I — Semana 3, Clase 1', file: 'Embriologia I - Semana 3 - Clase 1.pdf', nota: 'El tubo intestinal y las cavidades corporales.' },
                   { title: 'Embriología I — Semana 3, Clase 2', file: 'Embriologia I - Semana 3 - Clase 2.pdf', nota: 'Del tercer mes al nacimiento: el feto.' },
+                  { title: 'Embriología I — Semana 3, Clase 3', file: 'Embriologia I - Semana 3 - Clase 3.pdf', nota: 'Membranas fetales y placenta.' },
                 ],
               },
               {
@@ -626,6 +628,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 2 · Clase 5 (b) — Regulación molecular', file: 'Embriologia I - Semana 2 - Clase 5b.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Clase 1 — Tubo intestinal y cavidades corporales', file: 'Embriologia I - Semana 3 - Clase 1.pdf', kind: 'Clase' },
               { title: 'Semana 3 · Clase 2 — Periodo fetal', file: 'Embriologia I - Semana 3 - Clase 2.pdf', kind: 'Clase' },
+              { title: 'Semana 3 · Clase 3 — Membranas fetales y placenta', file: 'Embriologia I - Semana 3 - Clase 3.pdf', kind: 'Clase' },
               { title: 'Programa Académico — Embriología I (2026-1)', file: 'Embriologia I - Programa.pdf', kind: 'Programa' },
               { title: 'Planeación didáctica — Embriología I', file: 'Embriologia I - Planeacion.pdf', kind: 'Programa' },
             ],

@@ -197,9 +197,9 @@ export const modules: Module[] = [
     id: 'embriologia-uad-s3',
     badge: 'UAD · Embriología I — Semana 3',
     title: 'Embriología: cavidades corporales y periodo fetal',
-    subtitle: 'Celoma intraembrionario, plegamiento, mesenterios, cavidades pleurales y pericárdica, diafragma; defectos de la pared ventral (gastrosquisis, onfalocele, extrofias) y hernias diafragmáticas. Periodo fetal, edad gestacional, PEG y RCIU.',
+    subtitle: 'Celoma intraembrionario, plegamiento, mesenterios, cavidades pleurales y pericárdica, diafragma; defectos de la pared ventral (gastrosquisis, onfalocele, extrofias) y hernias diafragmáticas. Periodo fetal, edad gestacional, PEG y RCIU. Placenta, membranas fetales y preeclampsia.',
     emoji: '🫁',
-    topicIds: ['embriologia-cavidades-corporales', 'embriologia-periodo-fetal'],
+    topicIds: ['embriologia-cavidades-corporales', 'embriologia-periodo-fetal', 'embriologia-placenta'],
   },
   {
     id: 'humanistica-uad-s1',

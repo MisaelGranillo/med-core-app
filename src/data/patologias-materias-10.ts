@@ -103,6 +103,7 @@ const RCIU: Patologia = {
     },
   ],
   bases: [
+    { materia: 'Embriología', topicId: 'embriologia-placenta', sectionId: 'epl-3', label: 'Invasión endovascular de las arterias espirales', porQue: 'Si las arterias espirales no se remodelan, llega menos sangre a la placenta y el feto crece menos.' },
     { materia: 'Embriología', topicId: 'embriologia-periodo-fetal', sectionId: 'epf-8', label: 'Peso bajo, PEG y restricción del crecimiento', porQue: 'Las tres definiciones no son sinónimos; la RCIU considera el potencial del feto y su edad gestacional.' },
     { materia: 'Embriología', topicId: 'embriologia-periodo-fetal', sectionId: 'epf-7', label: 'Mediciones por ultrasonido', porQue: 'La circunferencia abdominal y el peso fetal estimado son las medidas que definen la restricción.' },
     { materia: 'Embriología', topicId: 'embriologia-periodo-fetal', sectionId: 'epf-9', label: 'Regulación del crecimiento: IGF-1 y hormona del crecimiento', porQue: 'El IGF-1 es el principal factor del crecimiento fetal; mutaciones de su gen causan RCIU.' },

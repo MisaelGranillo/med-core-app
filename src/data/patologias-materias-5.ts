@@ -256,6 +256,7 @@ const MOLA: Patologia = {
     },
   ],
   bases: [
+    { materia: 'Embriología', topicId: 'embriologia-placenta', sectionId: 'epl-10', label: 'Patología placentaria: casos', porQue: 'La mola parcial se da por fecundación con dos espermatozoides (triploidía): hCG alta y útero grande.' },
     { materia: 'Embriología', topicId: 'embriologia-desarrollo-temprano', sectionId: 'edt-3', label: 'Partes del blastocisto', porQue: 'El trofoblasto, la capa que prolifera en la mola, forma la parte fetal de la placenta.' },
     { materia: 'Embriología', topicId: 'embriologia-desarrollo-temprano', sectionId: 'edt-4', label: 'Segunda semana: citotrofoblasto y sincitiotrofoblasto', porQue: 'El sincitiotrofoblasto es el que produce la hCG.' },
     { materia: 'Embriología', topicId: 'embriologia-cromosomas-division', sectionId: 'ecd-2', label: 'Número de cromosomas', porQue: 'La mola parcial es triploide: una euploidía anormal (3n = 69).' },

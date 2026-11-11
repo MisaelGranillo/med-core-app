@@ -9,7 +9,7 @@ import type { Topic } from '../types'
 // semana (gastrulación, notocorda, mapa del destino) y su clínica. Clase 3: periodo
 // embrionario (semanas 3–8) y derivados de las capas germinales. Clase 4: sangre y vasos,
 // segundo mes y teratógenos. Clase 5: ejes corporales y regulación molecular.
-// Semana 3, Clase 1: tubo intestinal y cavidades corporales. Clase 2: periodo fetal.
+// Semana 3, Clase 1: tubo intestinal y cavidades corporales. Clase 2: periodo fetal. Clase 3: membranas fetales y placenta.
 export const embriologiaTopics: Topic[] = [
   {
     id: 'embriologia-desarrollo-temprano',
@@ -4414,6 +4414,333 @@ export const embriologiaTopics: Topic[] = [
             variant: 'clinica',
             title: 'Enanismo tipo Laron',
             content: 'Mutaciones del RECEPTOR de la hormona del crecimiento: la GH está alta pero no actúa, y no se produce IGF-1. Causa talla baja intensa y, en ocasiones, escleróticas azules. Por eso dar hormona de crecimiento no sirve.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-placenta',
+    title: 'Membranas fetales y placenta',
+    subtitle: 'Componentes fetal y materno, vellosidades de anclaje y libres, invasión endovascular de las arterias espirales, maduración desde el cuarto mes, deciduas y corion, membrana amniocoriónica, placenta a término, cordón umbilical, circulación placentaria y membrana placentaria; preeclampsia, placenta previa, vasos previos, bridas amnióticas, mola parcial y acretismo',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '🩸',
+    keyPoints: [
+      'PLACENTA: órgano de intercambio de nutrientes y gases. Porción FETAL: corion frondoso (trofoblasto + mesodermo extraembrionario). Porción MATERNA: decidua basal ★',
+      'Las células del citotrofoblasto invaden las ARTERIAS ESPIRALES, reemplazan su endotelio (transición epitelio-endotelial) y las vuelven vasos anchos de baja resistencia ★',
+      'PREECLAMPSIA: falla de esa transformación. Hipertensión ≥ 140/90 desde la semana 20 con proteinuria; ≈ 5 % de los embarazos. Grave ≥ 160/110; eclampsia = convulsiones; HELLP ★',
+      'Desde el 4.º mes desaparece el citotrofoblasto y el sincitio se adelgaza: la membrana placentaria queda delgada. Placenta HEMOCORIAL.',
+      'Deciduas: BASAL (forma la placenta), CAPSULAR (sobre el polo abembrionario) y PARIETAL. Amnios + corion leve = MEMBRANA AMNIOCORIÓNICA, la que se rompe en el parto.',
+      'Placenta a término: discoide, ≈ 3 cm de grosor, 15–25 cm de diámetro, 500–600 g, 15–20 cotiledones. Cordón: 1–2 cm de diámetro, 50–60 cm, una vena y dos arterias.',
+      'Espacios intervellosos: ≈ 150 mL de sangre materna que se recambia 3 a 4 veces por minuto; superficie de vellosidades 4–14 m².',
+      'Acretismo: ACRETA (adherida al miometrio), INCRETA (lo invade), PERCRETA (lo atraviesa hasta la serosa).',
+    ],
+    sections: [
+      {
+        id: 'epl-1',
+        number: 1,
+        title: 'La placenta y sus dos componentes',
+        keyTerms: ['placenta', 'corion', 'decidua basal'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Placenta',
+            content: 'Órgano que facilita el intercambio de nutrientes y gases entre los compartimientos materno y fetal.',
+          },
+          {
+            type: 'comparison',
+            title: 'Dos orígenes',
+            left: { title: 'Componente FETAL', items: ['Corion: trofoblasto y mesodermo extraembrionario', 'En la placenta madura: el corion frondoso'] },
+            right: { title: 'Componente MATERNO', items: ['Endometrio uterino', 'En la placenta madura: la decidua basal'] },
+          },
+          {
+            type: 'paragraph',
+            content: 'Al iniciar la novena semana aumentan las demandas del feto: crece la superficie de contacto entre los componentes materno y fetal, cambia la disposición de las membranas y aumenta el líquido amniótico.',
+          },
+        ],
+      },
+      {
+        id: 'epl-2',
+        number: 2,
+        title: 'Vellosidades coriónicas',
+        keyTerms: ['vellosidades primarias', 'vellosidades secundarias', 'vellosidades terciarias', 'vellosidades de anclaje', 'cápsula citotrofoblástica'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Tres etapas',
+            data: {
+              headers: ['Vellosidad', 'Contenido'],
+              rows: [
+                ['Primaria', 'Núcleo de citotrofoblasto cubierto de sincitiotrofoblasto'],
+                ['Secundaria', 'Se agrega un núcleo de mesodermo extraembrionario'],
+                ['Terciaria', 'Aparecen capilares fetales en el mesodermo'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            items: [
+              'Al inicio del segundo mes predominan las secundarias y terciarias, que dan al trofoblasto un aspecto radial.',
+              'Vellosidades de ANCLAJE (troncales): van de la placa coriónica a la CÁPSULA CITOTROFOBLÁSTICA, que fija el saco coriónico al endometrio.',
+              'Vellosidades LIBRES: salen de las de anclaje y flotan en los espacios intervellosos; ahí ocurre la mayor parte del intercambio.',
+              'Los capilares de las vellosidades se conectan con los de la placa coriónica y el pedículo de fijación: así se forma el sistema vascular extraembrionario.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'epl-3',
+        number: 3,
+        title: 'Invasión endovascular de las arterias espirales',
+        keyTerms: ['arterias espirales', 'transición epitelio-endotelial', 'vasos híbridos'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Cómo llega más sangre materna',
+            steps: [
+              'La sangre materna llega a la placenta por las ARTERIAS ESPIRALES del útero.',
+              'Células del citotrofoblasto invaden sus paredes y sustituyen al endotelio materno: sufren una TRANSICIÓN EPITELIO-ENDOTELIAL.',
+              'Se forman vasos HÍBRIDOS, con células fetales y maternas.',
+              'Los vasos estrechos y de alta resistencia se vuelven anchos y de baja resistencia: llevan mucha más sangre a los espacios intervellosos.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Cuando la invasión falla',
+            content: 'Si el citotrofoblasto no completa su transformación, las arterias siguen estrechas y resistentes: llega menos sangre a la placenta, el feto puede restringir su crecimiento y la placenta libera señales que dañan el endotelio de la madre. Es el origen de la PREECLAMPSIA: la alteración se produce temprano, pero los signos aparecen después de la semana 20.',
+          },
+        ],
+      },
+      {
+        id: 'epl-4',
+        number: 4,
+        title: 'Maduración desde el cuarto mes y membrana placentaria',
+        keyTerms: ['nudos sincitiales', 'membrana placentaria', 'hemocorial'],
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'Desaparecen las células del citotrofoblasto y parte del tejido conectivo de las vellosidades libres.',
+              'El sincitio se adelgaza; trozos con varios núcleos se desprenden a los espacios intervellosos: NUDOS SINCITIALES.',
+              'Solo el sincitio y el endotelio de los capilares fetales separan las circulaciones.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Membrana (barrera) placentaria',
+            left: { title: 'Al inicio: 4 capas', items: ['Endotelio de los vasos fetales', 'Tejido conectivo de la vellosidad', 'Citotrofoblasto', 'Sincitiotrofoblasto'] },
+            right: { title: 'Desde el 4.º mes', items: ['El endotelio se pega al sincitio', 'La barrera se adelgaza', 'El intercambio se acelera mucho'] },
+          },
+          {
+            type: 'note',
+            content: 'La placenta humana es HEMOCORIAL: la sangre materna baña directamente al corion. La barrera es selectiva, no absoluta: muchos fármacos y algunos microorganismos la atraviesan.',
+          },
+        ],
+      },
+      {
+        id: 'epl-5',
+        number: 5,
+        title: 'Preeclampsia',
+        keyTerms: ['preeclampsia', 'eclampsia', 'síndrome HELLP', 'proteinuria'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Preeclampsia',
+            content: 'Trastorno trofoblástico ligado a una diferenciación fallida o incompleta del citotrofoblasto, que no hace la transición epitelio-endotelial normal. Se caracteriza por hipertensión y proteinuria en la madre por menor perfusión de sus órganos; ocurre en cerca del 5 % de los embarazos y aparece de forma súbita desde la semana 20 hasta el término.',
+          },
+          {
+            type: 'table',
+            title: 'Datos clave',
+            data: {
+              headers: ['Concepto', 'Criterio'],
+              rows: [
+                ['Hipertensión', '140/90 mmHg o más, de inicio después de la semana 20'],
+                ['Proteinuria', '300 mg o más en orina de 24 horas'],
+                ['Datos de severidad', 'Presión de 160/110 mmHg o más, o daño a órganos'],
+                ['Eclampsia', 'Preeclampsia con crisis convulsivas'],
+                ['Síndrome HELLP', 'Hemólisis, enzimas hepáticas elevadas y plaquetas bajas'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Factores de riesgo',
+            items: [
+              'Preeclampsia en un embarazo previo.',
+              'Primer embarazo.',
+              'Obesidad y antecedentes familiares de preeclampsia.',
+              'Embarazo múltiple.',
+              'Hipertensión crónica y diabetes.',
+              'Mola hidatiforme.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'Puede causar restricción del crecimiento, muerte fetal o muerte materna. En mujeres con factores de riesgo, el ácido acetilsalicílico a dosis bajas desde las semanas 12 a 16 reduce su incidencia. Después del parto se sigue vigilando la presión: no siempre se normaliza de inmediato.',
+          },
+        ],
+      },
+      {
+        id: 'epl-6',
+        number: 6,
+        title: 'Deciduas, corion y membrana amniocoriónica',
+        keyTerms: ['decidua basal', 'decidua capsular', 'decidua parietal', 'corion frondoso', 'corion leve', 'membrana amniocoriónica'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Las tres deciduas',
+            data: {
+              headers: ['Decidua', 'Dónde', 'Destino'],
+              rows: [
+                ['BASAL', 'Sobre el corion frondoso', 'Porción materna de la placenta; células deciduales grandes con lípidos y glucógeno. Su placa decidual se une al corion'],
+                ['CAPSULAR', 'Sobre el polo abembrionario', 'Se distiende y degenera al crecer la vesícula coriónica'],
+                ['PARIETAL', 'Resto de la cavidad uterina', 'Se fusiona con el corion leve y oblitera la cavidad uterina'],
+              ],
+            },
+          },
+          {
+            type: 'comparison',
+            title: 'Dos polos del corion',
+            left: { title: 'Corion FRONDOSO', items: ['Polo embrionario', 'Vellosidades que crecen', 'Con la decidua basal forma la placenta'] },
+            right: { title: 'Corion LEVE', items: ['Polo abembrionario', 'Liso hacia el tercer mes', 'Se fusiona con el amnios'] },
+          },
+          {
+            type: 'paragraph',
+            content: 'La fusión del amnios con el corion forma la MEMBRANA AMNIOCORIÓNICA, que oblitera la cavidad coriónica. Es la que se rompe en el trabajo de parto («se rompe la fuente»). Si se rompe antes de tiempo, se puede retrasar el nacimiento y dar esteroides a la madre para madurar el pulmón fetal.',
+          },
+        ],
+      },
+      {
+        id: 'epl-7',
+        number: 7,
+        title: 'La placenta a término',
+        keyTerms: ['cotiledones', 'alumbramiento', 'placa coriónica', 'tabiques deciduales'],
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'Hacia el final de la semana 12 se distinguen la porción fetal (placa coriónica) y la materna (decidua basal); entre ambas están los espacios intervellosos, llenos de sangre materna y revestidos por sincitio.',
+              'En los meses 4 y 5, los TABIQUES DECIDUALES dividen la placenta en 15 a 20 COTILEDONES.',
+              'Cubre del 15 al 30 % de la superficie interna del útero.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Medidas',
+            data: {
+              headers: ['Parámetro', 'Valor'],
+              rows: [
+                ['Forma', 'Discoide'],
+                ['Grosor', '≈ 3 cm'],
+                ['Diámetro', '15–25 cm'],
+                ['Peso', '500–600 g'],
+                ['Cotiledones', '15–20'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Revisar la placenta',
+            content: 'Unos 30 minutos después del parto la placenta se desprende y se expulsa con las membranas (ALUMBRAMIENTO). Se revisa que esté completa por la cara materna: un cotiledón retenido puede causar HEMORRAGIA POSPARTO.',
+          },
+        ],
+      },
+      {
+        id: 'epl-8',
+        number: 8,
+        title: 'Cordón umbilical y anomalías de las membranas',
+        keyTerms: ['cordón umbilical', 'inserción velamentosa', 'vasos previos', 'bridas amnióticas', 'nudos'],
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'Cordón: 1–2 cm de diámetro y 50–60 cm de largo; su longitud se relaciona con cuánto se mueve el feto.',
+              'Lleva una VENA umbilical (sangre oxigenada hacia el feto) y dos ARTERIAS (sangre del feto hacia la placenta).',
+              'INSERCIÓN VELAMENTOSA: el cordón se inserta en las membranas, fuera de la placenta.',
+              'Nudos FALSOS (sin importancia) y VERDADEROS (pueden cortar el flujo al feto).',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Vasos previos',
+            content: 'Vasos fetales que corren por las membranas sobre el orificio cervical interno, sin protección de la placenta ni del cordón. Si se rompen, la sangre que se pierde es del feto: hay sangrado vaginal con sufrimiento fetal.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Bridas amnióticas',
+            content: 'Desgarros del amnios forman bandas que se enredan en el feto, sobre todo en extremidades y dedos: anillos de constricción, amputaciones y, a veces, deformidades craneofaciales.',
+          },
+        ],
+      },
+      {
+        id: 'epl-9',
+        number: 9,
+        title: 'Circulación placentaria',
+        keyTerms: ['espacios intervellosos', 'venas endometriales', 'superficie de intercambio'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Del lado materno',
+            steps: [
+              'Entre 80 y 100 arterias espirales llevan sangre a la placenta.',
+              'La presión arterial empuja la sangre oxigenada hacia los espacios intervellosos, donde baña las vellosidades.',
+              'La sangre regresa a la circulación materna por las venas endometriales.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Cifras',
+            data: {
+              headers: ['Parámetro', 'Valor'],
+              rows: [
+                ['Sangre en los espacios intervellosos', '≈ 150 mL'],
+                ['Recambio', '3 a 4 veces por minuto'],
+                ['Superficie de las vellosidades', '4–14 m²'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'epl-10',
+        number: 10,
+        title: 'Patología placentaria: casos',
+        keyTerms: ['placenta previa', 'mola parcial', 'acretismo', 'placenta acreta', 'placenta percreta'],
+        blocks: [
+          {
+            type: 'table',
+            title: 'Qué falla en cada una',
+            data: {
+              headers: ['Trastorno', 'Qué falla', 'Cómo se presenta'],
+              rows: [
+                ['Preeclampsia', 'Remodelado de las arterias espirales', 'Hipertensión y proteinuria desde la semana 20; RCIU'],
+                ['Placenta previa', 'Solo el SITIO de implantación: sobre o junto al orificio cervical interno', 'Sangrado vaginal INDOLORO en el tercer trimestre'],
+                ['Vasos previos', 'Vasos fetales en las membranas sobre el orificio cervical', 'Sangrado con sufrimiento fetal'],
+                ['Mola parcial', 'Fecundación por dos espermatozoides: triploidía', 'hCG muy alta, útero más grande de lo esperado, sin embrión viable'],
+                ['Acretismo', 'Invasión excesiva: falta la decidua basal', 'La placenta no se desprende; hemorragia; puede requerir histerectomía'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Grados de acretismo',
+            data: {
+              headers: ['Tipo', 'Profundidad'],
+              rows: [
+                ['ACRETA', 'Las vellosidades se adhieren al miometrio'],
+                ['INCRETA', 'Invaden el miometrio'],
+                ['PERCRETA', 'Atraviesan el miometrio hasta la serosa (y pueden llegar a la vejiga)'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Los factores de riesgo más conocidos del acretismo son la cesárea previa y la placenta previa, porque la placenta se implanta sobre una cicatriz sin decidua adecuada.',
           },
         ],
       },

@@ -96,6 +96,7 @@ const PLACENTA_PREVIA: Patologia = {
     },
   ],
   bases: [
+    { materia: 'Embriología', topicId: 'embriologia-placenta', sectionId: 'epl-10', label: 'Patología placentaria: casos', porQue: 'La placenta es normal; lo anormal es el sitio de implantación junto al orificio cervical interno.' },
     { materia: 'Embriología', topicId: 'embriologia-segunda-semana', sectionId: 'ess-8', label: 'Implantación anómala: embarazo ectópico y placenta previa', porQue: 'La placenta previa empieza con un blastocisto que se implanta cerca del orificio cervical interno.' },
     { materia: 'Embriología', topicId: 'embriologia-segunda-semana', sectionId: 'ess-4', label: 'Días 11–12: circulación uteroplacentaria y mesodermo extraembrionario', porQue: 'El sangrado es materno: viene de los vasos uterinos que el trofoblasto abrió para formar la circulación uteroplacentaria.' },
     { materia: 'Embriología', topicId: 'embriologia-fecundacion', sectionId: 'efe-7', label: 'Implantación e inicio de la segunda semana', porQue: 'La implantación normal ocurre en la pared anterior o posterior del cuerpo del útero, lejos del cuello.' },
