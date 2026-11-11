@@ -1585,4 +1585,22 @@ export const atlasTopics: AtlasTopic[] = [
       { id: 'mhc-7', question: 'El envejecimiento activo (OMS, 2002) optimiza las oportunidades de:', options: ['Salud, participación y seguridad', 'Trabajo, ingreso y vivienda', 'Ejercicio, dieta y sueño', 'Memoria, atención y lenguaje'], correctIndex: 0, explanation: 'Los tres pilares del panel 13; lo asumió el Plan de Acción Internacional de Madrid.', difficulty: 'easy' },
     ],
   },
+  {
+    id: 'humanistica-relacion-medico-paciente',
+    title: 'La relación médico-paciente',
+    subtitle: 'Definiciones, alteridad, otredad, mismidad e ipseidad, Alter Ego y Alter Tú, motivos del médico, estructura y momentos de Laín Entralgo, Szasz-Hollender, modelos según el control, Emanuel y Emanuel, Veatch, ética, ergonomía y proxémica',
+    category: 'humanistica',
+    emoji: '🤝',
+    imagePath: '/atlas/humanistica-relacion-medico-paciente.webp',
+    colorKey: 'humanistica',
+    relatedTopicIds: ['humanistica-alteridad-rmp', 'humanistica-modelos-rmp', 'humanistica-etica-comunicacion'],
+    questions: [
+      { id: 'rmp-a1', question: '«Idea de sí mismo, entre el ser en sí y el ser para sí: cambio, inestabilidad, discontinuidad, intersubjetividad» define:', options: ['La ipseidad', 'La mismidad', 'La otredad', 'La alteridad'], correctIndex: 0, explanation: 'La mismidad es lo contrario: permanencia, estabilidad y continuidad (panel 2).', difficulty: 'medium' },
+      { id: 'rmp-a2', question: 'Cuando el otro deja de ser un no-ser y la verdad se alcanza en el encuentro, se habla de:', options: ['Alter Ego', 'Alter Tú', 'Ego fungens', 'Indiferencia'], correctIndex: 1, explanation: 'En el Alter Tú el médico es «el otro del otro»; en el Alter Ego el paciente se cosifica (panel 3).', difficulty: 'easy' },
+      { id: 'rmp-a3', question: 'En el modelo de Szasz-Hollender, la enfermedad crónica corresponde a:', options: ['Actividad-pasividad', 'Orientación-cooperación', 'Participación mutua', 'Modelo consumista'], correctIndex: 2, explanation: 'Médico y paciente forman una pareja terapéutica que negocia; actividad-pasividad es para coma o urgencia (panel 5).', difficulty: 'easy' },
+      { id: 'rmp-a4', question: 'En los modelos según el control, el médico con control alto y el paciente con control bajo forman el modelo:', options: ['Mutual', 'Consumista', 'Ausente', 'Paternalista'], correctIndex: 3, explanation: 'Ambos altos: mutual; paciente alto y médico bajo: consumista; ambos bajos: ausente (panel 5).', difficulty: 'medium' },
+      { id: 'rmp-a5', question: 'En Emanuel y Emanuel, el modelo con mayor autonomía del paciente y menor beneficencia es el:', options: ['Paternalista', 'Informativo', 'Deliberativo', 'Interpretativo'], correctIndex: 1, explanation: 'Autonomía y beneficencia van en sentido inverso; el informativo tiene un médico técnico experto (panel 6).', difficulty: 'medium' },
+      { id: 'rmp-a6', question: 'La conversación clínica ocurre normalmente en la distancia:', options: ['Íntima', 'Social', 'Personal', 'Pública'], correctIndex: 2, explanation: 'Personal, de 46 a 120 cm (Edward T. Hall); la exploración física entra en la íntima (panel 8).', difficulty: 'easy' },
+    ],
+  },
 ]
