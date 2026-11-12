@@ -7,6 +7,9 @@
 import { ArrowSquareOut, CreditCard, PaypalLogo } from '@phosphor-icons/react'
 import { APOYO, costoTotal, hayEnlaces, mxn } from '../data/apoyo'
 
+// Nombres de los procesadores configurados, para que los textos no mencionen uno que no está.
+const PROCESADORES = [APOYO.stripeUrl && 'Stripe', APOYO.paypalUrl && 'PayPal'].filter(Boolean).join(' o de ')
+
 const PREGUNTAS: { q: string; a: string }[] = [
   {
     q: '¿Tengo que aportar para seguir usando MedCore?',
@@ -14,7 +17,7 @@ const PREGUNTAS: { q: string; a: string }[] = [
   },
   {
     q: '¿MedCore ve los datos de mi tarjeta?',
-    a: 'No. El pago se hace en la página de Stripe o de PayPal; MedCore no recibe ni guarda datos de pago.',
+    a: `No. El pago se hace en la página de ${PROCESADORES || 'un procesador de pagos externo'}; MedCore no recibe ni guarda datos de pago.`,
   },
   {
     q: '¿Me dan un recibo deducible de impuestos?',
@@ -76,10 +79,13 @@ export function Apoya() {
               )}
               {APOYO.paypalUrl && (
                 <a href={APOYO.paypalUrl} target="_blank" rel="noopener noreferrer"
-                   className="inline-flex items-center justify-center gap-2 h-12 px-5 rounded-2xl bg-surface border border-zinc-200 text-zinc-800 text-[0.9375rem] font-medium hover:border-zinc-300 transition-colors">
-                  <PaypalLogo weight="regular" className="w-5 h-5 text-primary" />
+                   className={`inline-flex items-center justify-center gap-2 h-12 px-5 rounded-2xl text-[0.9375rem] font-medium transition-colors ${
+                     APOYO.stripeUrl
+                       ? 'bg-surface border border-zinc-200 text-zinc-800 hover:border-zinc-300'
+                       : 'bg-primary text-primary-fg hover:bg-primary-hover'}`}>
+                  <PaypalLogo weight="regular" className={`w-5 h-5 ${APOYO.stripeUrl ? 'text-primary' : ''}`} />
                   PayPal
-                  <ArrowSquareOut weight="regular" className="w-4 h-4 text-zinc-500" />
+                  <ArrowSquareOut weight="regular" className={`w-4 h-4 ${APOYO.stripeUrl ? 'text-zinc-500' : 'opacity-80'}`} />
                 </a>
               )}
             </div>
@@ -89,7 +95,7 @@ export function Apoya() {
             </p>
           )}
           {hayEnlaces() && (
-            <p className="text-xs text-zinc-500 -mt-2">El pago se abre en otra pestaña, en la página de Stripe o de PayPal.</p>
+            <p className="text-xs text-zinc-500 -mt-2">El pago se abre en otra pestaña, en la página de {PROCESADORES}.</p>
           )}
         </section>
 
