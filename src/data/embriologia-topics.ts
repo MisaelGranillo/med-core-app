@@ -9,7 +9,7 @@ import type { Topic } from '../types'
 // semana (gastrulación, notocorda, mapa del destino) y su clínica. Clase 3: periodo
 // embrionario (semanas 3–8) y derivados de las capas germinales. Clase 4: sangre y vasos,
 // segundo mes y teratógenos. Clase 5: ejes corporales y regulación molecular.
-// Semana 3, Clase 1: tubo intestinal y cavidades corporales. Clase 2: periodo fetal. Clase 3: membranas fetales y placenta.
+// Semana 3, Clase 1: tubo intestinal y cavidades corporales. Clase 2: periodo fetal. Clase 3: membranas fetales y placenta. Clase 4: función placentaria, líquido amniótico, gemelos y parto.
 export const embriologiaTopics: Topic[] = [
   {
     id: 'embriologia-desarrollo-temprano',
@@ -4741,6 +4741,506 @@ export const embriologiaTopics: Topic[] = [
           {
             type: 'note',
             content: 'Los factores de riesgo más conocidos del acretismo son la cesárea previa y la placenta previa, porque la placenta se implanta sobre una cicatriz sin decidua adecuada.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-funcion-placentaria',
+    title: 'Función placentaria, líquido amniótico, gemelos y parto',
+    subtitle: 'Intercambio de gases, nutrientes e IgG, qué atraviesa la placenta, hormonas placentarias, incompatibilidad ABO y Rh, ictericia neonatal y escala de Kramer, formación del cordón umbilical, rotura prematura de membranas, líquido amniótico, gemelos dicigóticos y monocigóticos y las tres fases del trabajo de parto',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '🤰',
+    keyPoints: [
+      'La placenta tiene dos funciones: INTERCAMBIO materno-fetal (gases, nutrientes, electrolitos, anticuerpos) y PRODUCCIÓN DE HORMONAS, casi todas en el sincitiotrofoblasto.',
+      'Gases por DIFUSIÓN SIMPLE: O₂ de la madre al feto y CO₂ del feto a la madre; al término el feto extrae 20–30 mL de O₂ por minuto.',
+      'La IgG materna empieza a pasar hacia la semana 14: INMUNIDAD PASIVA. El niño alcanza la IgG del adulto hacia los 3 años.',
+      'hCG mantiene el cuerpo lúteo los primeros 2 meses; luego la placenta produce progesterona suficiente. ESTRIOL es el estrógeno del embarazo. La SOMATOMAMOTROPINA (lactógeno placentario) vuelve a la madre «diabetogénica»: tamizaje de diabetes gestacional en las semanas 24–28.',
+      'Rh: madre Rh(D) negativa y feto positivo. Se previene con INMUNOGLOBULINA ANTI-D a las 28 semanas y en las 72 h tras el parto. ABO: ≈ 20 % de los recién nacidos con incompatibilidad, solo ≈ 5 % con clínica, y puede afectar al primer hijo.',
+      'Cordón definitivo: DOS ARTERIAS y UNA VENA en gelatina de Wharton. Arteria umbilical única: 1 de cada 200 neonatos, ≈ 20 % con defectos cardiacos o vasculares.',
+      'Líquido amniótico: 30 mL (semana 10), 450 mL (semana 20), 800–1 000 mL (semana 37). POLIHIDRAMNIOS 1 500–2 000 mL (atresia esofágica, diabetes); OLIGOHIDRAMNIOS < 400 mL (agenesia renal → hipoplasia pulmonar).',
+      'Gemelos MONOCIGÓTICOS: cuanto más tarde se divide el embrión, más estructuras comparten. Transfusión feto-fetal en ≈ 15 % de los monocoriónicos.',
+      'Parto en tres fases: 1) borramiento y dilatación (hasta 10 cm), 2) expulsión del feto, 3) alumbramiento (placenta y membranas).',
+    ],
+    sections: [
+      {
+        id: 'efp-1',
+        number: 1,
+        title: 'Intercambio placentario: gases, nutrientes y anticuerpos',
+        keyTerms: ['difusión simple', 'inmunidad pasiva', 'IgG', 'complemento'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La placenta tiene dos funciones principales: el INTERCAMBIO de productos metabólicos y gases entre la sangre de la madre y la del feto, y la PRODUCCIÓN DE HORMONAS.',
+          },
+          {
+            type: 'table',
+            title: 'Qué se intercambia',
+            data: {
+              headers: ['Componente', 'Cómo y hacia dónde'],
+              rows: [
+                ['Oxígeno', 'Difusión simple, de la madre al feto. Al término el feto extrae 20–30 mL de O₂ por minuto'],
+                ['Dióxido de carbono', 'Difusión simple, del feto a la madre'],
+                ['Monóxido de carbono', 'Difusión simple, de la madre al feto: en madres fumadoras el feto acumula carboxihemoglobina'],
+                ['Nutrientes y electrolitos', 'Aminoácidos, ácidos grasos libres, carbohidratos, vitaminas y electrolitos; el paso aumenta conforme avanza el embarazo'],
+                ['Anticuerpos', 'Casi todos IgG materna, desde la semana 14'],
+              ],
+            },
+          },
+          {
+            type: 'definition',
+            title: 'Inmunidad pasiva',
+            content: 'El feto recibe anticuerpos maternos YA FORMADOS (IgG) que atraviesan la placenta desde la semana 14, sin haber tenido contacto con el agente infeccioso. La competencia inmunitaria propia empieza a desarrollarse al final del primer trimestre, cuando el feto ya sintetiza todos los componentes del complemento.',
+          },
+          {
+            type: 'note',
+            content: 'El recién nacido empieza a fabricar su propia IgG, pero no alcanza la concentración del adulto sino hasta los 3 años.',
+          },
+        ],
+      },
+      {
+        id: 'efp-2',
+        number: 2,
+        title: 'Qué atraviesa la barrera placentaria',
+        keyTerms: ['dietilestilbestrol', 'progestágenos', 'teratógenos', 'AINE'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La barrera placentaria es selectiva, no absoluta: muchas sustancias y agentes la cruzan, y su efecto depende de qué son y de cuándo actúan.',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Grupo', 'Ejemplos y efecto'],
+              rows: [
+                ['Hormonas maternas', 'Esteroides de ovarios y suprarrenales (cortisol, aldosterona, andrógenos débiles) y tiroxina'],
+                ['Progestágenos sintéticos', 'Se usan para sostener algunos embarazos; ciertos progestágenos pueden MASCULINIZAR a fetos femeninos'],
+                ['Estrógeno sintético: dietilestilbestrol (DES)', 'En quien lo recibió en el útero: carcinoma de células claras de la vagina y anomalías del cuello uterino, del útero y de los testículos'],
+                ['Virus', 'Rubéola, citomegalovirus, coxsackie, viruela, varicela, sarampión y poliomielitis. Rubéola: sordera congénita; citomegalovirus: microcefalia'],
+                ['Fármacos', 'Anticonvulsivos, talidomida y antiinflamatorios no esteroideos (ibuprofeno, naproxeno, diclofenaco)'],
+                ['Drogas', 'Heroína, cocaína y alcohol'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'AINE en el embarazo',
+            content: 'Desde la semana 20, los antiinflamatorios no esteroideos pueden alterar la función renal fetal y causar OLIGOHIDRAMNIOS; desde la semana 30 se añade el riesgo de CIERRE PREMATURO DEL CONDUCTO ARTERIOSO (FDA, 2020). No incluye el ácido acetilsalicílico a dosis bajas indicado por el médico. Con el alcohol no hay dosis segura en ningún momento de la gestación.',
+          },
+          {
+            type: 'note',
+            content: 'Una infección en el primer o segundo trimestre suele afectar más la formación de órganos; en el tercero predominan las manifestaciones de la infección misma.',
+          },
+        ],
+      },
+      {
+        id: 'efp-3',
+        number: 3,
+        title: 'Hormonas placentarias',
+        keyTerms: ['hCG', 'cuerpo lúteo', 'estriol', 'somatomamotropina', 'lactógeno placentario'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Casi todas las hormonas placentarias se sintetizan en el SINCITIOTROFOBLASTO.',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Hormona', 'Función'],
+              rows: [
+                ['Gonadotropina coriónica humana (hCG)', 'Muy alta los primeros 2 meses; mantiene el CUERPO LÚTEO para que siga secretando progesterona y estrógenos'],
+                ['Progesterona', 'Al final del cuarto mes la placenta ya produce la suficiente para mantener el embarazo aunque el cuerpo lúteo falle o se retire'],
+                ['Estrógenos (predomina el ESTRIOL)', 'Suben hasta poco antes del término; estimulan el crecimiento del útero y el desarrollo de las glándulas mamarias'],
+                ['Somatomamotropina (lactógeno placentario)', 'Parecida a la hormona del crecimiento: da al feto prioridad sobre la glucosa materna, crea en la madre un estado DIABETOGÉNICO y promueve el desarrollo mamario'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Tres estrógenos, tres etapas',
+            data: {
+              headers: ['Estrógeno', 'Predomina en'],
+              rows: [
+                ['Estriol', 'Embarazo'],
+                ['Estradiol', 'Vida fértil'],
+                ['Estrona', 'Posmenopausia'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Tamizaje de diabetes gestacional',
+            content: 'El efecto diabetogénico del lactógeno placentario se hace más notable en el segundo trimestre; por eso el tamizaje de diabetes gestacional con carga de glucosa se hace entre las semanas 24 y 28.',
+          },
+          {
+            type: 'note',
+            content: 'Lactancia: la PROLACTINA estimula la producción de leche y la OXITOCINA contrae las células mioepiteliales que rodean los alvéolos mamarios, lo que expulsa la leche. Dato de fisiología: estudios de retiro del cuerpo lúteo muestran que la placenta toma el relevo de la progesterona desde las semanas 7 a 9; el «final del cuarto mes» de Langman indica cuándo su producción ya sobra.',
+          },
+        ],
+      },
+      {
+        id: 'efp-4',
+        number: 4,
+        title: 'Incompatibilidad sanguínea materno-fetal: ABO y Rh',
+        keyTerms: ['isoinmunización', 'antígeno D', 'inmunoglobulina anti-D', 'enfermedad hemolítica', 'hidropesía fetal'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Se conocen más de 400 antígenos eritrocitarios. Algunos pueden estimular en la madre anticuerpos contra los eritrocitos del feto (ISOINMUNIZACIÓN). Los de mayor importancia clínica son los del sistema ABO (antígenos A y B) y el antígeno D del sistema Rh.',
+          },
+          {
+            type: 'comparison',
+            title: 'ABO frente a Rh',
+            left: {
+              title: 'ABO',
+              items: [
+                '≈ 20 % de los recién nacidos tienen incompatibilidad ABO con la madre; solo ≈ 5 % desarrolla clínica',
+                'Caso típico: madre O con feto A o B',
+                'Puede afectar desde el PRIMER embarazo, porque la madre O ya tiene anticuerpos anti-A y anti-B de tipo IgG',
+                'Suele ser leve: ictericia',
+                'No hay profilaxis específica',
+              ],
+            },
+            right: {
+              title: 'Rh (antígeno D)',
+              items: [
+                'Madre Rh(D) negativa con feto Rh(D) positivo',
+                'Una sola exposición basta para sensibilizar; la respuesta llega antes y es más intensa en cada embarazo siguiente',
+                'Puede ser grave: enfermedad hemolítica e hidropesía fetal',
+                'Se previene con inmunoglobulina anti-D',
+              ],
+            },
+          },
+          {
+            type: 'definition',
+            title: 'Enfermedad hemolítica del feto y del recién nacido',
+            content: 'Los anticuerpos maternos destruyen los eritrocitos fetales. En su forma grave produce HIDROPESÍA FETAL: edema generalizado y líquido en las cavidades corporales, que puede causar la muerte del feto.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Inmunoglobulina anti-D (RhoGAM)',
+            content: 'No es una vacuna: es un anticuerpo anti-D ya formado que elimina los eritrocitos fetales Rh positivos que entran a la circulación materna antes de que la madre los reconozca, así que IMPIDE que se sensibilice. A la madre Rh negativa no sensibilizada se le aplica hacia la semana 28 y otra vez en las 72 horas siguientes al parto si el recién nacido es Rh positivo.',
+          },
+        ],
+      },
+      {
+        id: 'efp-5',
+        number: 5,
+        title: 'Ictericia neonatal y escala de Kramer',
+        keyTerms: ['ictericia', 'bilirrubina', 'ictericia fisiológica', 'escala de Kramer'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Al destruirse los eritrocitos se libera hemoglobina, que se degrada a BILIRRUBINA. Si se acumula aparece ICTERICIA: coloración amarilla de piel y mucosas. El momento en que aparece orienta la causa.',
+          },
+          {
+            type: 'table',
+            title: 'Cuándo aparece',
+            data: {
+              headers: ['Momento', 'Orienta a'],
+              rows: [
+                ['Primeras 24 horas', 'Se considera patológica: buscar hemólisis, como la incompatibilidad ABO o Rh'],
+                ['Días 2 a 7', 'Ictericia fisiológica: sube los primeros 3 a 4 días, porque los eritrocitos del neonato se recambian más rápido, y se resuelve en ≈ 1 semana'],
+                ['Primera semana', 'Ictericia por lactancia materna insuficiente'],
+                ['Después de los 5 a 7 días', 'Ictericia por leche materna: máxima hacia las 2 semanas, puede durar meses'],
+                ['Después de 2 semanas', 'Señal de alarma: medir bilirrubina directa para descartar colestasis, como la atresia de vías biliares'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Escala de Kramer (progresión cefalocaudal)',
+            data: {
+              headers: ['Zona', 'Región', 'Bilirrubina aproximada'],
+              rows: [
+                ['1', 'Cabeza y cuello', '5.8 mg/dL (100 µmol/L)'],
+                ['2', 'Tronco superior, hasta el ombligo', '8.8 mg/dL (150 µmol/L)'],
+                ['3', 'Tronco inferior, del ombligo a las rodillas', '11.7 mg/dL (200 µmol/L)'],
+                ['4', 'Brazos y piernas', '14.7 mg/dL (250 µmol/L)'],
+                ['5', 'Palmas y plantas', 'Más de 14.7 mg/dL (más de 250 µmol/L)'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'La vista engaña',
+            content: 'La ictericia avanza de la cabeza a los pies conforme sube la bilirrubina, pero la escala de Kramer solo orienta: la piel oscura y la luz la hacen poco fiable. Las decisiones de tratamiento se toman con la bilirrubina medida en sangre o por vía transcutánea.',
+          },
+        ],
+      },
+      {
+        id: 'efp-6',
+        number: 6,
+        title: 'Formación del cordón umbilical',
+        keyTerms: ['anillo umbilical primitivo', 'pedículo de fijación', 'pedículo vitelino', 'gelatina de Wharton', 'arteria umbilical única'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La línea oval donde el amnios se refleja sobre el ectodermo embrionario (unión amnioectodérmica) es el ANILLO UMBILICAL PRIMITIVO.',
+          },
+          {
+            type: 'list',
+            title: 'Qué pasa por el anillo al final de la quinta semana',
+            items: [
+              'PEDÍCULO DE FIJACIÓN: alantoides y vasos umbilicales (dos arterias y una vena).',
+              'PEDÍCULO VITELINO: conducto vitelino con los vasos vitelinos.',
+              'El conducto que comunica la cavidad intraembrionaria con la extraembrionaria.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'Al crecer la cavidad amniótica, el amnios envuelve estas estructuras y forma el CORDÓN UMBILICAL PRIMITIVO. Su porción distal contiene el conducto vitelino y el saco vitelino; la proximal, asas intestinales y el resto del alantoides. Entre las semanas 6 y 10 las asas intestinales se alojan en el cordón (HERNIACIÓN UMBILICAL FISIOLÓGICA) y luego regresan al abdomen. Obliterados el conducto vitelino, el alantoides y la cavidad, el cordón definitivo conserva DOS ARTERIAS y UNA VENA.',
+          },
+          {
+            type: 'definition',
+            title: 'Gelatina de Wharton',
+            content: 'Tejido rico en proteoglicanos que rodea y protege los vasos del cordón. Las paredes de las arterias umbilicales son musculares y con muchas fibras elásticas, lo que permite que se contraigan rápido cuando se pinza el cordón.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Arteria umbilical única',
+            content: 'Aparece en 1 de cada 200 neonatos y se asocia con ≈ 20 % de riesgo de defectos cardiacos y vasculares adicionales. Puede deberse a que una arteria no se formó (agenesia) o a que degeneró al inicio del desarrollo. Por eso se cuentan los vasos del cordón en el ultrasonido y al nacer.',
+          },
+        ],
+      },
+      {
+        id: 'efp-7',
+        number: 7,
+        title: 'Cambios de la placenta al final de la gestación',
+        keyTerms: ['material fibrinoide', 'infarto placentario'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Al final del embarazo varios cambios de la placenta pueden reducir el intercambio entre las dos circulaciones.',
+          },
+          {
+            type: 'list',
+            items: [
+              'Más tejido fibroso en el centro de la vellosidad.',
+              'Membranas basales de los capilares fetales más gruesas.',
+              'Cambios que obliteran los capilares de las vellosidades.',
+              'Depósito de material fibrinoide en la superficie de las vellosidades, en la zona de unión y en la placa coriónica.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'El exceso de material fibrinoide puede causar el infarto de un lago intervelloso o de todo un cotiledón, que se ve blanquecino al revisar la placenta.',
+          },
+        ],
+      },
+      {
+        id: 'efp-8',
+        number: 8,
+        title: 'Rotura prematura de membranas',
+        keyTerms: ['rotura prematura de membranas', 'RPM pretérmino', 'corioamnionitis'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Al final del tercer mes el amnios se ha expandido hasta tocar el corion y oblitera la cavidad coriónica; el saco vitelino se contrae y se oblitera poco a poco. La membrana amniocoriónica es la que se rompe en el parto. Si se rompe ANTES de que empiecen las contracciones, se habla de rotura prematura de membranas (RPM).',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Tipo', 'Definición', 'Frecuencia'],
+              rows: [
+                ['RPM a término', 'A partir de la semana 37, antes de las contracciones', '≈ 8–10 % de los embarazos'],
+                ['RPM pretérmino', 'Antes de la semana 37', '≈ 3 % de los embarazos; causa frecuente de parto pretérmino'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Factores de riesgo (la causa exacta se desconoce)',
+            items: [
+              'Embarazo previo con parto pretérmino o RPM.',
+              'Tabaquismo.',
+              'Infecciones (corioamnionitis, cervicovaginitis, infección urinaria): las prostaglandinas que liberan favorecen las contracciones.',
+              'Polihidramnios grave, que distiende las membranas.',
+              'Es más frecuente en población afroamericana (asociación epidemiológica).',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Qué se hace depende de la edad gestacional',
+            content: 'Según el ACOG (2020): antes de la semana 34 se espera con vigilancia, con antibióticos para prolongar la latencia, un ciclo de corticoesteroides para madurar el pulmón fetal y sulfato de magnesio antes de la semana 32 para proteger el cerebro fetal. Entre las semanas 34 y 36 se puede esperar o terminar el embarazo, ya sin antibióticos de latencia. Desde la semana 37 se procede al nacimiento. Si hay infección intraamniótica, se trata y se termina el embarazo. El surfactante se da al recién nacido, no a la madre.',
+          },
+        ],
+      },
+      {
+        id: 'efp-9',
+        number: 9,
+        title: 'Líquido amniótico',
+        keyTerms: ['líquido amniótico', 'polihidramnios', 'oligohidramnios', 'hipoplasia pulmonar', 'atresia esofágica'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Al principio deriva de los amniocitos y de la sangre materna. Desde el quinto mes el feto DEGLUTE su propio líquido, unos 400 mL al día, y su ORINA se le mezcla a diario; en la segunda mitad del embarazo la orina fetal es la fuente principal. Es casi todo agua porque la placenta intercambia los desechos metabólicos. Se recambia cada 3 horas.',
+          },
+          {
+            type: 'table',
+            title: 'Volumen',
+            data: {
+              headers: ['Semana', 'Volumen'],
+              rows: [
+                ['10', '30 mL'],
+                ['20', '450 mL'],
+                ['37', '800–1 000 mL'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Funciones',
+            items: [
+              'Amortigua los golpes y movimientos bruscos.',
+              'Impide que el embrión se adhiera al amnios.',
+              'Permite los movimientos fetales.',
+              'Entra al árbol traqueobronquial y ayuda a que los pulmones se expandan y se desarrollen.',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Demasiado o muy poco',
+            left: {
+              title: 'POLIHIDRAMNIOS',
+              items: [
+                '1 500–2 000 mL',
+                'Idiopático en el 35 %; diabetes materna en el 25 %',
+                'Malformaciones que impiden deglutir: del sistema nervioso central o gastrointestinales, como la ATRESIA ESOFÁGICA (el esófago termina en fondo de saco ciego)',
+              ],
+            },
+            right: {
+              title: 'OLIGOHIDRAMNIOS',
+              items: [
+                'Menos de 400 mL',
+                'AGENESIA RENAL: sin orina fetal falta la fuente principal',
+                'Comprime al feto y causa HIPOPLASIA PULMONAR, con dificultad respiratoria al nacer',
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'El ciclo del líquido explica las dos alteraciones',
+            content: 'El feto produce el líquido con la orina y lo retira al deglutirlo. Si no puede deglutir, el líquido se acumula (polihidramnios); si no produce orina, falta (oligohidramnios). Por eso un polihidramnios lleva a buscar atresia esofágica y un oligohidramnios, a revisar los riñones.',
+          },
+        ],
+      },
+      {
+        id: 'efp-10',
+        number: 10,
+        title: 'Gemelos dicigóticos y monocigóticos',
+        keyTerms: ['dicigóticos', 'monocigóticos', 'dicoriónico', 'monocoriónico', 'mosaicismo eritrocitario'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Los embarazos múltiples son más frecuentes con la edad materna, porque madura y se libera más de un folículo, y con la reproducción asistida, por la inducción de la ovulación y la transferencia de varios embriones. Hay un componente genético en la tendencia a liberar más de un ovocito.',
+          },
+          {
+            type: 'comparison',
+            left: {
+              title: 'DICIGÓTICOS (fraternos)',
+              items: [
+                'Dos ovocitos fecundados por dos espermatozoides',
+                'Mismo sexo o distinto; se parecen como cualquier par de hermanos',
+                'Cada uno se implanta por su lado: dos placentas, dos corion y dos amnios',
+                'Son la mayoría de los gemelos: ≈ 2/3 en la mayoría de las poblaciones (algunos textos citan hasta 90 %)',
+              ],
+            },
+            right: {
+              title: 'MONOCIGÓTICOS (idénticos)',
+              items: [
+                'Un ovocito y un espermatozoide: un solo cigoto que se divide',
+                'Misma información genética y mismo sexo',
+                'Comparten más estructuras cuanto más tarde se dividen',
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Momento de la división del monocigótico',
+            data: {
+              headers: ['Cuándo se divide', 'Qué comparten'],
+              rows: [
+                ['Etapa de dos blastómeras', 'Nada: dos placentas, dos sacos coriónicos y dos amnios (DICORIÓNICO-DIAMNIÓTICO)'],
+                ['Blastocisto temprano (se divide la masa celular interna)', 'Placenta y saco coriónico, cada uno con su amnios (MONOCORIÓNICO-DIAMNIÓTICO)'],
+                ['Disco germinativo bilaminar, antes de la línea primitiva', 'Placenta, corion y amnios (MONOCORIÓNICO-MONOAMNIÓTICO)'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'En los dicigóticos las dos placentas pueden fusionarse, pero siguen siendo DICORIÓNICOS: la corionicidad depende de cuántos corion se formaron, no de que las placentas se toquen. Si hay anastomosis vasculares, cada gemelo puede tener dos poblaciones de eritrocitos (mosaicismo eritrocitario).',
+          },
+        ],
+      },
+      {
+        id: 'efp-11',
+        number: 11,
+        title: 'Complicaciones de los embarazos gemelares',
+        keyTerms: ['gemelo evanescente', 'feto papiráceo', 'transfusión feto-fetal', 'gemelos unidos'],
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'PREMATUREZ y peso bajo: ≈ 60 % de los gemelos nacen antes de la semana 37, en parte por la gran distensión del útero. La morbilidad y la mortalidad son mayores que en el embarazo único.',
+              'GEMELO EVANESCENTE: uno muere en el primer trimestre o al inicio del segundo y sus tejidos se reabsorben.',
+              'FETO PAPIRÁCEO: el gemelo muerto queda comprimido y aplanado por el crecimiento del otro.',
+            ],
+          },
+          {
+            type: 'definition',
+            title: 'Síndrome de transfusión feto-fetal',
+            content: 'Ocurre en ≈ 15 % de los embarazos monocigóticos MONOCORIÓNICOS: anastomosis vasculares en la placenta compartida pasan sangre de un gemelo (donador) al otro (receptor). El desequilibrio puede ser grave para los dos.',
+          },
+          {
+            type: 'paragraph',
+            content: 'GEMELOS UNIDOS: si el nodo y la línea primitiva se dividen de forma incompleta, los gemelos quedan unidos y pueden compartir tejidos blandos u órganos vitales. Se nombran por la región de unión: TORACÓPAGOS (tórax), PIGÓPAGOS (región sacra) y CRANEÓPAGOS (cráneo).',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: '¿Se pueden separar?',
+            content: 'Depende de qué tanto comparten. Si solo los une piel y tejido blando, la separación suele ser posible; si comparten corazón o cerebro, puede no serlo.',
+          },
+        ],
+      },
+      {
+        id: 'efp-12',
+        number: 12,
+        title: 'Trabajo de parto',
+        keyTerms: ['borramiento', 'dilatación', 'expulsión', 'alumbramiento'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'En las últimas 2 a 4 semanas del embarazo el miometrio pasa por una fase de transición: se engruesa en el fondo uterino y el tercio inferior del útero y el cérvix se reblandecen y adelgazan.',
+          },
+          {
+            type: 'paragraph',
+            content: 'Las contracciones empiezan con unos 10 minutos de separación; en la segunda fase llegan con menos de un minuto entre una y otra y duran de 30 a 90 segundos. La pausa entre contracciones deja que se restablezcan el flujo y la oxigenación del feto.',
+          },
+          {
+            type: 'steps',
+            title: 'Las tres fases',
+            steps: [
+              'BORRAMIENTO Y DILATACIÓN del cérvix: el borramiento es su adelgazamiento y acortamiento (en %); la dilatación es su apertura (en cm), completa a los 10 cm. Las contracciones empujan el saco amniótico y la parte que se presenta, normalmente la cabeza, contra el conducto cervical.',
+              'EXPULSIÓN del feto: ayudan las contracciones uterinas y, sobre todo, la presión intraabdominal que genera la contracción de los músculos abdominales cuando la madre puja.',
+              'ALUMBRAMIENTO: expulsión de la placenta y las membranas, gracias a las contracciones uterinas y a la presión intraabdominal.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'mnemotecnia',
+            title: 'Cada fase termina en algo',
+            content: 'Fase 1 termina con el cérvix en 10 cm; fase 2, con el bebé fuera; fase 3, con la placenta fuera.',
           },
         ],
       },

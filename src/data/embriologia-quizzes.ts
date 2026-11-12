@@ -7,7 +7,7 @@ import type { Question } from '../types'
 // segunda semana e implantación; tercera semana y gastrulación. Clase 3: periodo
 // embrionario y derivados de las capas germinales. Clase 4: sangre y vasos,
 // aspecto externo del segundo mes y teratógenos. Clase 5: ejes corporales y
-// regulación molecular. Semana 3, Clase 1: tubo intestinal y cavidades corporales. Clase 2: periodo fetal. Clase 3: membranas fetales y placenta.
+// regulación molecular. Semana 3, Clase 1: tubo intestinal y cavidades corporales. Clase 2: periodo fetal. Clase 3: membranas fetales y placenta. Clase 4: función placentaria, gemelos y parto.
 export const embriologiaQuestions: Question[] = [
   // ── Panorama del desarrollo temprano ──
   {
@@ -1673,5 +1673,117 @@ export const embriologiaQuestions: Question[] = [
     options: ['Para saber el sexo', 'Para medir el cordón', 'Para buscar bridas amnióticas', 'Porque un cotiledón retenido causa hemorragia posparto'],
     correctIndex: 3, difficulty: 'medium',
     explanation: 'La placenta se expulsa unos 30 minutos después del parto.',
+  },
+  {
+    id: 'emb-fpq-q1', topicId: 'embriologia-funcion-placentaria', type: 'multiple-choice',
+    question: '¿Por qué mecanismo atraviesan la placenta el oxígeno y el dióxido de carbono?',
+    options: ['Difusión simple', 'Transporte activo', 'Pinocitosis', 'Difusión facilitada por la IgG'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'O₂ de la madre al feto y CO₂ del feto a la madre; al término el feto extrae 20–30 mL de O₂ por minuto.',
+  },
+  {
+    id: 'emb-fpq-q2', topicId: 'embriologia-funcion-placentaria', type: 'multiple-choice',
+    question: '¿Desde qué semana empieza a pasar la IgG materna al feto?',
+    options: ['Semana 6', 'Semana 14', 'Semana 28', 'Semana 36'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Le confiere inmunidad pasiva; el niño alcanza la IgG del adulto hacia los 3 años.',
+  },
+  {
+    id: 'emb-fpq-q3', topicId: 'embriologia-funcion-placentaria', type: 'multiple-choice',
+    question: 'Una mujer recibió dietilestilbestrol durante el embarazo. ¿Qué riesgo tiene su hija?',
+    options: ['Masculinización de genitales', 'Sordera congénita', 'Carcinoma de células claras de la vagina', 'Microcefalia'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'El DES también se asocia con anomalías del cuello uterino, del útero y de los testículos.',
+  },
+  {
+    id: 'emb-fpq-q4', topicId: 'embriologia-funcion-placentaria', type: 'multiple-choice',
+    question: '¿Desde qué semana se recomienda evitar los AINE por el riesgo de oligohidramnios?',
+    options: ['Semana 8', 'Semana 12', 'Semana 16', 'Semana 20'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'Desde la semana 20 alteran la función renal fetal; desde la 30 se suma el cierre prematuro del conducto arterioso (FDA, 2020).',
+  },
+  {
+    id: 'emb-fpq-q5', topicId: 'embriologia-funcion-placentaria', type: 'multiple-choice',
+    question: '¿Qué hormona mantiene el cuerpo lúteo durante los primeros dos meses del embarazo?',
+    options: ['Gonadotropina coriónica humana', 'Somatomamotropina', 'Estriol', 'Prolactina'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'La hCG la produce el sincitiotrofoblasto; después la placenta produce su propia progesterona.',
+  },
+  {
+    id: 'emb-fpq-q6', topicId: 'embriologia-funcion-placentaria', type: 'multiple-choice',
+    question: '¿Qué estrógeno predomina durante el embarazo?',
+    options: ['Estrona', 'Estriol', 'Estradiol', 'Etinilestradiol'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'Estriol en el embarazo, estradiol en la vida fértil y estrona en la posmenopausia.',
+  },
+  {
+    id: 'emb-fpq-q7', topicId: 'embriologia-funcion-placentaria', type: 'multiple-choice',
+    question: 'El tamizaje de diabetes gestacional se hace entre las semanas 24 y 28 porque en ese periodo:',
+    options: ['Se cierra el conducto arterioso', 'Desaparece el cuerpo lúteo', 'Aumenta el efecto diabetogénico de la somatomamotropina', 'El feto empieza a deglutir'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'El lactógeno placentario da al feto prioridad sobre la glucosa materna.',
+  },
+  {
+    id: 'emb-fpq-q8', topicId: 'embriologia-funcion-placentaria', type: 'multiple-choice',
+    question: '¿Qué combinación causa enfermedad hemolítica por Rh?',
+    options: ['Madre Rh positiva y feto Rh negativo', 'Madre O y feto O', 'Madre AB y feto O', 'Madre Rh(D) negativa y feto Rh(D) positivo'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'Basta una exposición para sensibilizar; la respuesta es más intensa en cada embarazo siguiente.',
+  },
+  {
+    id: 'emb-fpq-q9', topicId: 'embriologia-funcion-placentaria', type: 'multiple-choice',
+    question: '¿Qué es la inmunoglobulina anti-D (RhoGAM)?',
+    options: ['Un anticuerpo ya formado que impide que la madre se sensibilice', 'Una vacuna que produce anticuerpos en la madre', 'Un antiviral', 'Un anticoagulante'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'Se aplica hacia la semana 28 y en las 72 horas tras el parto si el recién nacido es Rh positivo.',
+  },
+  {
+    id: 'emb-fpq-q10', topicId: 'embriologia-funcion-placentaria', type: 'multiple-choice',
+    question: '¿Por qué la incompatibilidad ABO puede afectar desde el primer embarazo?',
+    options: ['Porque el antígeno D es muy inmunógeno', 'Porque la madre O ya tiene anticuerpos anti-A y anti-B de tipo IgG', 'Porque la placenta no deja pasar IgG', 'Porque se aplica inmunoglobulina anti-D'],
+    correctIndex: 1, difficulty: 'hard',
+    explanation: 'Afecta a ≈ 20 % de los recién nacidos, pero solo ≈ 5 % tiene clínica, casi siempre ictericia.',
+  },
+  {
+    id: 'emb-fpq-q11', topicId: 'embriologia-funcion-placentaria', type: 'multiple-choice',
+    question: 'Un recién nacido tiene ictericia en cabeza, cuello y tronco hasta el ombligo. ¿En qué zona de Kramer está?',
+    options: ['Zona 1', 'Zona 4', 'Zona 2', 'Zona 5'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Zona 2: ≈ 8.8 mg/dL. La escala orienta, pero la bilirrubina se mide.',
+  },
+  {
+    id: 'emb-fpq-q12', topicId: 'embriologia-funcion-placentaria', type: 'multiple-choice',
+    question: '¿Qué vasos tiene el cordón umbilical definitivo?',
+    options: ['Dos venas y una arteria', 'Una arteria y una vena', 'Dos arterias y dos venas', 'Dos arterias y una vena'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'Rodeados de gelatina de Wharton. La arteria umbilical única (1/200) se asocia con ≈ 20 % de defectos cardiacos o vasculares.',
+  },
+  {
+    id: 'emb-fpq-q13', topicId: 'embriologia-funcion-placentaria', type: 'multiple-choice',
+    question: 'Un feto con atresia esofágica tiende a presentar:',
+    options: ['Polihidramnios', 'Oligohidramnios', 'Hidropesía fetal', 'Arteria umbilical única'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'No puede deglutir el líquido amniótico, que se acumula (1 500–2 000 mL).',
+  },
+  {
+    id: 'emb-fpq-q14', topicId: 'embriologia-funcion-placentaria', type: 'multiple-choice',
+    question: '¿Qué complicación pulmonar causa el oligohidramnios por agenesia renal?',
+    options: ['Atelectasia', 'Hipoplasia pulmonar', 'Síndrome de aspiración de meconio', 'Neumotórax'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Sin orina fetal falta líquido: el feto se comprime y los pulmones no se expanden.',
+  },
+  {
+    id: 'emb-fpq-q15', topicId: 'embriologia-funcion-placentaria', type: 'multiple-choice',
+    question: 'Gemelos monocigóticos que comparten placenta y corion pero tienen cada uno su amnios se dividieron en la etapa de:',
+    options: ['Dos blastómeras', 'Disco bilaminar', 'Blastocisto temprano', 'Línea primitiva'],
+    correctIndex: 2, difficulty: 'hard',
+    explanation: 'Monocoriónico-diamniótico. Cuanto más tarde se dividen, más estructuras comparten.',
+  },
+  {
+    id: 'emb-fpq-q16', topicId: 'embriologia-funcion-placentaria', type: 'multiple-choice',
+    question: '¿Cuál es la tercera fase del trabajo de parto?',
+    options: ['Borramiento', 'Dilatación', 'Expulsión del feto', 'Alumbramiento'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: '1) borramiento y dilatación hasta 10 cm, 2) expulsión, 3) alumbramiento de placenta y membranas.',
   },
 ]
