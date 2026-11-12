@@ -7,7 +7,7 @@
  *   Para revisarlo fuera de campaña: cualquier ruta con ?apoyo=1.
  * - Meta de la campaña = lo invertido hasta ahora + lo que viene. `recaudado`
  *   (MXN) se actualiza a mano para la barra.
- * - Montos en MXN, de los recibos (Anthropic, PayPal) y del precio de lista de
+ * - Montos en MXN, de los recibos (herramientas de desarrollo, PayPal) y del precio de lista de
  *   ResellerClub para .icu (17.89 USD al tipo de cambio de PayPal de jun 2026). */
 
 export interface Costo {
@@ -33,14 +33,9 @@ export const APOYO = {
   /** Lo ya pagado desde que empezó MedCore. */
   invertido: [
     {
-      concepto: 'Claude Pro por la App Store',
-      detalle: 'Mayo a agosto de 2026: 4 meses de $399.',
-      mxn: 1596,
-    },
-    {
-      concepto: 'Claude Pro directo con Anthropic',
-      detalle: 'Septiembre y octubre de 2026. Es la IA que ayuda a convertir cada clase en temas, quizzes, fichas y láminas; la suscripción sigue activa ($349 al mes).',
-      mxn: 698,
+      concepto: 'Herramientas de desarrollo',
+      detalle: 'Mayo a octubre de 2026. Ayudan a convertir cada clase en temas, quizzes, fichas y láminas, y siguen activas cada mes.',
+      mxn: 1596 + 698, // App Store may–ago (4 × $399) + pago directo sep–oct (2 × $349)
     },
     {
       concepto: 'Registro de medcore.icu',
