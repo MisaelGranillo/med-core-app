@@ -23,7 +23,7 @@ export interface Campana {
 
 export const APOYO = {
   stripeUrl: '',
-  paypalUrl: '',
+  paypalUrl: 'https://paypal.me/realturquesa',
   anio: 2027,
   recaudado: 0,
   campana: null as Campana | null,
