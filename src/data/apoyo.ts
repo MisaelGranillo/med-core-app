@@ -5,13 +5,15 @@
  * - El aviso solo aparece entre `campana.inicio` y `campana.fin` (inclusive) y
  *   solo si hay al menos un enlace de pago. Con `campana: null` no aparece nunca.
  *   Para revisarlo fuera de campaña: cualquier ruta con ?apoyo=1.
- * - `recaudado` se actualiza a mano (MXN) para la barra «cubierto este año». */
+ * - Meta de la campaña = lo invertido hasta ahora + lo que viene. `recaudado`
+ *   (MXN) se actualiza a mano para la barra.
+ * - Montos en MXN, de los recibos (Anthropic, PayPal) y del precio de lista de
+ *   ResellerClub para .icu (17.89 USD al tipo de cambio de PayPal de jun 2026). */
 
 export interface Costo {
   concepto: string
   detalle: string
-  /** MXN al año; null = por confirmar (no se muestra cifra ni entra al total). */
-  mxnAnual: number | null
+  mxn: number
 }
 
 export interface Campana {
@@ -19,35 +21,52 @@ export interface Campana {
   id: string
   inicio: string // AAAA-MM-DD
   fin: string    // AAAA-MM-DD
+  /** Texto de la meta, p. ej. «Meta de diciembre de 2026». */
+  etiqueta: string
 }
 
 export const APOYO = {
   stripeUrl: 'https://donate.stripe.com/9B600i4bve189vy0xc8Vi00',
   paypalUrl: 'https://paypal.me/realturquesa',
-  anio: 2027,
   recaudado: 0,
-  campana: null as Campana | null,
-  costos: [
+  campana: { id: '2026-12', inicio: '2026-12-01', fin: '2026-12-31', etiqueta: 'Meta de diciembre de 2026' } as Campana | null,
+  /** Lo ya pagado desde que empezó MedCore. */
+  invertido: [
     {
-      concepto: 'Dominio medcore.icu',
-      detalle: 'Renovación anual; la actual vence el 3 de junio de 2027.',
-      mxnAnual: null,
+      concepto: 'Claude Pro por la App Store',
+      detalle: 'Mayo a agosto de 2026: 4 meses de $399.',
+      mxn: 1596,
+    },
+    {
+      concepto: 'Claude Pro directo con Anthropic',
+      detalle: 'Septiembre y octubre de 2026. Es la IA que ayuda a convertir cada clase en temas, quizzes, fichas y láminas; la suscripción sigue activa ($349 al mes).',
+      mxn: 698,
+    },
+    {
+      concepto: 'Registro de medcore.icu',
+      detalle: 'Junio de 2026, con precio de promoción el primer año (1 USD).',
+      mxn: 18,
+    },
+  ] as Costo[],
+  /** Lo que viene en los próximos meses. */
+  porVenir: [
+    {
+      concepto: 'Renovación de medcore.icu',
+      detalle: 'Vence el 3 de junio de 2027. Sin promoción cuesta 17.89 USD al año; la cifra en pesos es aproximada.',
+      mxn: 326,
     },
     {
       concepto: 'Cloudflare',
-      detalle: 'Hospedaje de la app, la biblioteca de PDF (2.6 GB) y el control de acceso. Hoy cabe en el plan gratuito; si el grupo crece o la biblioteca pasa de 10 GB, empieza a cobrar.',
-      mxnAnual: 0,
-    },
-    {
-      concepto: 'Herramientas para preparar el material',
-      detalle: 'Transcripción de clases, modelos 3D y la IA que ayuda a convertir cada clase en temas, quizzes y láminas.',
-      mxnAnual: null,
+      detalle: 'Hospedaje de la app y de la biblioteca de PDF (2.6 GB). Hoy cabe en el plan gratuito; si el grupo crece o la biblioteca pasa de 10 GB, empieza a cobrar.',
+      mxn: 0,
     },
   ] as Costo[],
 }
 
-export const costoTotal = () =>
-  APOYO.costos.reduce((n, c) => n + (c.mxnAnual ?? 0), 0)
+const suma = (l: Costo[]) => l.reduce((n, c) => n + c.mxn, 0)
+export const totalInvertido = () => suma(APOYO.invertido)
+export const totalPorVenir = () => suma(APOYO.porVenir)
+export const meta = () => totalInvertido() + totalPorVenir()
 
 export const hayEnlaces = () => Boolean(APOYO.stripeUrl || APOYO.paypalUrl)
 

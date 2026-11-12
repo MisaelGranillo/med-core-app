@@ -5,7 +5,7 @@
  * pago ocurre fuera (Stripe o PayPal). Configuración en src/data/apoyo.ts. */
 
 import { ArrowSquareOut, CreditCard, PaypalLogo } from '@phosphor-icons/react'
-import { APOYO, costoTotal, hayEnlaces, mxn } from '../data/apoyo'
+import { APOYO, hayEnlaces, meta as calcularMeta, mxn, totalInvertido, totalPorVenir, type Costo } from '../data/apoyo'
 
 // Nombres de los procesadores configurados, para que los textos no mencionen uno que no está.
 const PROCESADORES = [APOYO.stripeUrl && 'Stripe', APOYO.paypalUrl && 'PayPal'].filter(Boolean).join(' o de ')
@@ -26,10 +26,8 @@ const PREGUNTAS: { q: string; a: string }[] = [
 ]
 
 export function Apoya() {
-  const total = costoTotal()
-  const pendientes = APOYO.costos.some((c) => c.mxnAnual === null)
-  const meta = !pendientes && total > 0 ? total : null
-  const pct = meta ? Math.min(100, Math.round((APOYO.recaudado / meta) * 100)) : 0
+  const meta = calcularMeta()
+  const pct = Math.min(100, Math.round((APOYO.recaudado / meta) * 100))
 
   return (
     <main className="flex-1">
@@ -46,9 +44,9 @@ export function Apoya() {
 
         {/* Aportar */}
         <section className="card p-6 sm:p-7 flex flex-col gap-5" aria-labelledby="h-aportar">
-          {meta !== null && (
+          {meta > 0 && (
             <div className="flex flex-col gap-2">
-              <span className="text-sm text-zinc-500">Cubierto en {APOYO.anio}</span>
+              <span className="text-sm text-zinc-500">{APOYO.campana?.etiqueta ?? 'Meta'}: lo invertido más lo que viene</span>
               <span className="font-display font-extralight text-[2.75rem] leading-none tracking-[-0.03em] text-zinc-900 tabular-nums">
                 {mxn(APOYO.recaudado)}
                 <span className="text-lg font-light text-zinc-500 ml-2">de {mxn(meta)}</span>
@@ -100,28 +98,19 @@ export function Apoya() {
         </section>
 
         {/* En qué se usa */}
-        <section className="card p-6 sm:p-7" aria-labelledby="h-costos">
-          <h2 id="h-costos" className="font-display text-xl font-normal text-zinc-900">En qué se usa</h2>
-          <p className="text-[0.9375rem] text-zinc-500 mt-1 mb-4">Lo que cuesta mantener MedCore durante un año.</p>
-          <ul className="divide-y divide-zinc-200">
-            {APOYO.costos.map((c) => (
-              <li key={c.concepto} className="py-4 first:pt-0 last:pb-0 flex gap-4 items-baseline">
-                <span className="min-w-0 flex-1">
-                  <span className="block text-base text-zinc-900">{c.concepto}</span>
-                  <span className="block text-sm text-zinc-500 mt-0.5 leading-relaxed">{c.detalle}</span>
-                </span>
-                <span className="text-[0.9375rem] text-zinc-800 tabular-nums whitespace-nowrap">
-                  {c.mxnAnual === null ? <span className="text-zinc-500">Por confirmar</span> : c.mxnAnual === 0 ? 'Gratis' : mxn(c.mxnAnual)}
-                </span>
-              </li>
-            ))}
-          </ul>
-          {meta !== null && (
-            <p className="mt-4 pt-4 border-t border-zinc-200 flex justify-between text-base text-zinc-900">
-              <span>Total al año</span>
-              <span className="tabular-nums">{mxn(meta)}</span>
+        <section className="card p-6 sm:p-7 flex flex-col gap-6" aria-labelledby="h-costos">
+          <div>
+            <h2 id="h-costos" className="font-display text-xl font-normal text-zinc-900">En qué se usa</h2>
+            <p className="text-[0.9375rem] text-zinc-500 mt-1">
+              Lo que ha costado MedCore hasta hoy y lo que viene, en pesos.
             </p>
-          )}
+          </div>
+          <ListaCostos titulo="Invertido hasta ahora" items={APOYO.invertido} total={totalInvertido()} />
+          <ListaCostos titulo="Lo que viene" items={APOYO.porVenir} total={totalPorVenir()} />
+          <p className="pt-4 border-t border-zinc-200 flex justify-between gap-4 text-base text-zinc-900">
+            <span>Meta</span>
+            <span className="tabular-nums">{mxn(meta)}</span>
+          </p>
         </section>
 
         {/* Preguntas */}
@@ -138,5 +127,30 @@ export function Apoya() {
         </section>
       </div>
     </main>
+  )
+}
+
+function ListaCostos({ titulo, items, total }: { titulo: string; items: Costo[]; total: number }) {
+  return (
+    <div>
+      <h3 className="text-sm text-zinc-500 mb-2">{titulo}</h3>
+      <ul className="divide-y divide-zinc-200">
+        {items.map((c) => (
+          <li key={c.concepto} className="py-3 flex gap-4 items-baseline">
+            <span className="min-w-0 flex-1">
+              <span className="block text-base text-zinc-900">{c.concepto}</span>
+              <span className="block text-sm text-zinc-500 mt-0.5 leading-relaxed">{c.detalle}</span>
+            </span>
+            <span className="text-[0.9375rem] text-zinc-800 tabular-nums whitespace-nowrap">
+              {c.mxn === 0 ? 'Gratis' : mxn(c.mxn)}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <p className="flex justify-between gap-4 pt-2 text-[0.9375rem] text-zinc-700">
+        <span>Subtotal</span>
+        <span className="tabular-nums">{mxn(total)}</span>
+      </p>
+    </div>
   )
 }
