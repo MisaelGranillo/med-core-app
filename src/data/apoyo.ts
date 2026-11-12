@@ -22,7 +22,7 @@ export interface Campana {
 }
 
 export const APOYO = {
-  stripeUrl: '',
+  stripeUrl: 'https://donate.stripe.com/9B600i4bve189vy0xc8Vi00',
   paypalUrl: 'https://paypal.me/realturquesa',
   anio: 2027,
   recaudado: 0,

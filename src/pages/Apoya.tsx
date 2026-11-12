@@ -73,7 +73,7 @@ export function Apoya() {
                 <a href={APOYO.stripeUrl} target="_blank" rel="noopener noreferrer"
                    className="inline-flex items-center justify-center gap-2 h-12 px-5 rounded-2xl bg-primary text-primary-fg text-[0.9375rem] font-medium hover:bg-primary-hover transition-colors">
                   <CreditCard weight="regular" className="w-5 h-5" />
-                  Tarjeta u OXXO
+                  Tarjeta
                   <ArrowSquareOut weight="regular" className="w-4 h-4 opacity-80" />
                 </a>
               )}
