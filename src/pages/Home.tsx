@@ -3,6 +3,7 @@
  * Route: /  ·  Todo data-driven (topics/questions/plans/useProgress). Sin números
  * hardcodeados. Tema claro/oscuro por tokens (Ajustes → Tema).
  */
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {
   GraduationCap, PencilSimple, ArrowRight, Books, Translate,
@@ -14,6 +15,7 @@ import { topicIndex as topics } from '../data/generated/topicIndex'
 import { TOPIC_COLORS } from '../data/colors'
 import { getActivePlan, planContextForTopic } from '../data/plans'
 import { useProgress } from '../store/useProgress'
+import { NOMBRE_MAX, useProfile } from '../store/useProfile'
 
 /* ── Índices derivados de datos reales (nivel módulo) ─────────── */
 const topicById = Object.fromEntries(topics.map(t => [t.id, t]))
@@ -102,7 +104,7 @@ export function Home() {
   })()
   const nextRepasoCtx = nextRepaso ? planContextForTopic(nextRepaso.id) : null
 
-  const firstName = 'Misael'
+  const nombre = useProfile(s => s.nombre)
 
   return (
     <main className="flex-1">
@@ -111,11 +113,12 @@ export function Home() {
         {/* ── Saludo ────────────────────────────────────────── */}
         <header className="flex flex-col gap-1">
           <h1 className="font-display font-light text-[2.25rem] sm:text-[2.75rem] leading-[1.05] tracking-[-0.025em] text-zinc-900">
-            Hola, {firstName}
+            {nombre ? `Hola, ${nombre}` : 'Hola'}
           </h1>
           <p className="text-base text-zinc-500">
             {ACTIVE_PLAN.schoolShort} {ACTIVE_PLAN.degree} · 1.er semestre
           </p>
+          {!nombre && <NombreInline />}
         </header>
 
         {/* ── Continuar + progreso global ───────────────────── */}
@@ -224,10 +227,43 @@ export function Home() {
         </section>
 
         <footer className="text-xs text-zinc-500 text-center leading-relaxed pt-2">
-          Misael Granillo · MedCore<br />
+          Misael Granillo · MedCore · <Link to="/apoya" className="underline underline-offset-2 hover:text-zinc-800">Apoya a MedCore</Link><br />
           Terminología: MedLex (CC BY-SA 4.0) · Modelo anatómico: Open 3D Model (CC BY-SA 4.0)
         </footer>
       </div>
     </main>
+  )
+}
+
+/* Primera visita: pide el nombre ahí mismo, sin ventana modal. Se guarda solo
+ * en este dispositivo y se cambia después en Ajustes → Perfil. */
+function NombreInline() {
+  const setNombre = useProfile(s => s.setNombre)
+  const [abierto, setAbierto] = useState(false)
+  const [valor, setValor] = useState('')
+
+  if (!abierto) {
+    return (
+      <button onClick={() => setAbierto(true)}
+              className="self-start mt-2 text-[0.9375rem] font-medium text-primary hover:text-primary-hover transition-colors">
+        ¿Cómo te llamas?
+      </button>
+    )
+  }
+  return (
+    <form className="mt-3 flex flex-wrap items-center gap-2"
+          onSubmit={e => { e.preventDefault(); if (valor.trim()) setNombre(valor) }}>
+      <label htmlFor="nombre-inicio" className="sr-only">Tu nombre</label>
+      <input id="nombre-inicio" autoFocus value={valor} maxLength={NOMBRE_MAX}
+             onChange={e => setValor(e.target.value)} placeholder="Tu nombre o apodo" autoComplete="given-name"
+             className="h-11 w-56 max-w-full px-4 rounded-2xl bg-surface border border-zinc-200 text-base text-zinc-900
+                        placeholder:text-zinc-500 focus:outline-none focus:border-primary" />
+      <button type="submit" disabled={!valor.trim()}
+              className="h-11 px-5 rounded-2xl bg-primary text-primary-fg text-[0.9375rem] font-medium hover:bg-primary-hover
+                         disabled:opacity-50 transition-colors">
+        Guardar
+      </button>
+      <span className="basis-full text-xs text-zinc-500">Se guarda solo en este dispositivo.</span>
+    </form>
   )
 }

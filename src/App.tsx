@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom'
 import { Navbar } from './components/Navbar'
+import { ApoyoBanner } from './components/ApoyoBanner'
 import { paiModulos } from './data/pai'
 import { useSettings, scaleValue, useThemeSync } from './store/useSettings'
 import { lazyWithRetry } from './utils/lazyWithRetry'
@@ -21,6 +22,7 @@ const Anatomy      = named(() => import('./pages/Anatomy'),       'Anatomy')
 const Terminologia = named(() => import('./pages/Terminologia'),  'Terminologia')
 const MedEn        = named(() => import('./pages/MedEn'),         'MedEn')
 const Ajustes      = named(() => import('./pages/Ajustes'),       'Ajustes')
+const Apoya        = named(() => import('./pages/Apoya'),         'Apoya')
 const NotFound     = named(() => import('./pages/NotFound'),      'NotFound')
 const Plan         = named(() => import('./pages/Plan'),          'Plan')
 const SubjectDetail= named(() => import('./pages/SubjectDetail'), 'SubjectDetail')
@@ -137,6 +139,7 @@ export default function App() {
         {/* pb-16 md:pb-0 deja espacio para la barra de navegación inferior en móvil */}
         <div className="flex flex-col min-h-[100dvh] pb-[calc(4rem+env(safe-area-inset-bottom,0px))] md:pb-0">
           <Navbar />
+          <ApoyoBanner />
           <Suspense fallback={<RouteFallback />}>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -155,6 +158,7 @@ export default function App() {
               <Route path="/vocabulario" element={<MedEn />} />
               {/* Ajustes — preferencias (tamaño de texto) */}
               <Route path="/ajustes" element={<Ajustes />} />
+              <Route path="/apoya" element={<Apoya />} />
               {/* Taller de autoestudio estratégico */}
               <Route path="/taller" element={<TallerLayout />}>
                 <Route index element={<TallerInicio />} />
