@@ -9,7 +9,7 @@ import type { Topic } from '../types'
 // semana (gastrulación, notocorda, mapa del destino) y su clínica. Clase 3: periodo
 // embrionario (semanas 3–8) y derivados de las capas germinales. Clase 4: sangre y vasos,
 // segundo mes y teratógenos. Clase 5: ejes corporales y regulación molecular.
-// Semana 3, Clase 1: tubo intestinal y cavidades corporales. Clase 2: periodo fetal. Clase 3: membranas fetales y placenta. Clase 4: función placentaria, líquido amniótico, gemelos y parto.
+// Semana 3, Clase 1: tubo intestinal y cavidades corporales. Clase 2: periodo fetal. Clase 3: membranas fetales y placenta. Clase 4: función placentaria, líquido amniótico, gemelos y parto. Clase 5: repaso integrador e introducción a los arcos faríngeos.
 export const embriologiaTopics: Topic[] = [
   {
     id: 'embriologia-desarrollo-temprano',
@@ -5241,6 +5241,198 @@ export const embriologiaTopics: Topic[] = [
             variant: 'mnemotecnia',
             title: 'Cada fase termina en algo',
             content: 'Fase 1 termina con el cérvix en 10 cm; fase 2, con el bebé fuera; fase 3, con la placenta fuera.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-repaso-s3',
+    title: 'Repaso integrador de la Semana 3',
+    subtitle: 'Periodo fetal y crecimiento, placenta y anexos, líquido amniótico, gemelos y parto, cavidades corporales y diafragma en cronologías y comparaciones; introducción a los arcos faríngeos',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '🔁',
+    keyPoints: [
+      'Periodo fetal: semana 9 al nacimiento. La LONGITUD crece más en los meses 3 a 5; el PESO, en los últimos 2 a 2.5 meses (≈ 50 % del peso al nacer).',
+      'Semana 12: se puede ver el sexo, aparecen los centros de osificación primarios y las asas intestinales regresan al abdomen. Si no regresan: ONFALOCELE.',
+      'Fecha probable de parto: FUR + 280 días (40 semanas), o fecundación + 266 días (38 semanas).',
+      'Peso bajo al nacer: < 2 500 g sin importar la edad gestacional. PEG: < percentil 10 para la edad gestacional.',
+      'Diafragma: tabique transverso (tendón central) + membranas pleuroperitoneales + mesenterio del esófago (pilares) + reborde muscular de la pared. Músculo de C3–C5, nervio frénico.',
+      'Arcos faríngeos 1, 2, 3, 4 y 6: cada uno aporta cartílago, músculo, nervio y arteria. 1.º trigémino, 2.º facial, 3.º glosofaríngeo, 4.º y 6.º vago.',
+    ],
+    sections: [
+      {
+        id: 'ers-1',
+        number: 1,
+        title: 'Mapa de la semana',
+        keyTerms: ['periodo fetal', 'anexos embrionarios', 'cavidades corporales'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La Semana 3 tuvo dos bloques: el DESARROLLO FETAL y sus ANEXOS (crecimiento, placenta, intercambio, líquido amniótico, gemelos y parto) y la ORGANIZACIÓN DEL CUERPO EMBRIONARIO (plegamiento, pared ventral, cavidades y diafragma). Cada fila remite al tema donde está completo.',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Tema', 'Lo esencial para repasar'],
+              rows: [
+                ['Tubo intestinal y cavidades corporales', 'Plegamiento, mesenterios, cavidades pleurales y pericárdica, diafragma; gastrosquisis, onfalocele, hernias diafragmáticas'],
+                ['Periodo fetal: del tercer mes al nacimiento', 'Crecimiento por mes, fecha probable de parto, mediciones por ultrasonido, PBN, PEG y RCIU'],
+                ['Membranas fetales y placenta', 'Vellosidades, arterias espirales, deciduas, placenta a término, preeclampsia, placenta previa, acretismo'],
+                ['Función placentaria, líquido amniótico, gemelos y parto', 'Intercambio y hormonas, ABO y Rh, cordón, RPM, poli y oligohidramnios, gemelos, fases del parto'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'ers-2',
+        number: 2,
+        title: 'Cronología del periodo fetal',
+        keyTerms: ['longitud cefalocaudal', 'longitud vértice-talón', 'lanugo', 'vérnix'],
+        blocks: [
+          {
+            type: 'table',
+            data: {
+              headers: ['Momento', 'Qué pasa'],
+              rows: [
+                ['Mes 3 (semanas 9–12)', 'Se modela el rostro (ojos hacia adelante, orejas en su sitio); centros de osificación primarios en cráneo y huesos largos; genitales externos; regreso de las asas intestinales. LCC al inicio ≈ 3 cm'],
+                ['Meses 4 y 5 (hasta la semana 20)', 'La longitud crece rápido: LCC ≈ 15 cm al final de la primera mitad; peso aún < 500 g; lanugo, cejas y pelo; la madre percibe los movimientos en el mes 5'],
+                ['Mes 6', 'Piel rojiza y arrugada por falta de tejido conectivo; aparato respiratorio y sistema nervioso inmaduros: sobrevivir es muy difícil'],
+                ['Meses 6.5–7', 'LCC ≈ 25 cm y ≈ 1 100 g; si nace, ≈ 90 % sobrevive'],
+                ['Últimos 2 meses', 'Grasa subcutánea y contornos redondeados; se gana ≈ 50 % del peso del término'],
+                ['Término', '3 000–3 400 g (normal 2 500–4 000), LCC ≈ 36 cm, LVT ≈ 50 cm; el cráneo tiene la mayor circunferencia; testículos en el escroto'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Qué medir en el ultrasonido',
+            data: {
+              headers: ['Semanas', 'Medida'],
+              rows: [
+                ['7–14', 'Longitud cefalocaudal'],
+                ['16–30', 'Diámetro biparietal, circunferencias cefálica y abdominal y longitud del fémur'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'ers-3',
+        number: 3,
+        title: 'Cronología de la placenta y los anexos',
+        keyTerms: ['vellosidades primarias', 'vellosidades secundarias', 'vellosidades terciarias'],
+        blocks: [
+          {
+            type: 'table',
+            data: {
+              headers: ['Momento', 'Evento'],
+              rows: [
+                ['Final de la semana 2', 'Vellosidades PRIMARIAS: solo citotrofoblasto cubierto de sincitio'],
+                ['Semana 3', 'Vellosidades SECUNDARIAS (entra mesodermo extraembrionario) y TERCIARIAS (aparecen capilares fetales)'],
+                ['Final de la semana 5', 'Anillo umbilical primitivo: pedículo de fijación, pedículo vitelino y comunicación de cavidades'],
+                ['Semanas 6–10', 'Herniación umbilical fisiológica'],
+                ['Semana 12', 'Regresan las asas intestinales'],
+                ['Final del mes 3', 'El amnios toca el corion y oblitera la cavidad coriónica'],
+                ['Desde el mes 4', 'Desaparece el citotrofoblasto de la vellosidad: la barrera placentaria se adelgaza; tabiques deciduales y cotiledones'],
+                ['Semana 14', 'Empieza a pasar la IgG materna'],
+                ['Semana 20', 'Desde aquí se diagnostica la preeclampsia; se evitan los AINE'],
+                ['Semanas 24–28', 'Tamizaje de diabetes gestacional; anti-D a la madre Rh negativa a las 28'],
+                ['Semana 37', 'Líquido amniótico 800–1 000 mL; desde aquí la RPM es «a término»'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'ers-4',
+        number: 4,
+        title: 'Comparaciones que no hay que confundir',
+        keyTerms: ['onfalocele', 'gastrosquisis', 'PEG', 'RCIU'],
+        blocks: [
+          {
+            type: 'table',
+            data: {
+              headers: ['Par', 'La diferencia'],
+              rows: [
+                ['Onfalocele vs. gastrosquisis', 'Onfalocele: las asas no regresan y quedan en el cordón, cubiertas de amnios. Gastrosquisis: falla el cierre de la pared junto al cordón y las asas salen libres al líquido amniótico'],
+                ['Peso bajo vs. PEG vs. RCIU', 'Peso bajo: < 2 500 g sin importar la edad. PEG: < percentil 10 para su edad. RCIU: el feto no alcanza su potencial de crecimiento'],
+                ['Vena vs. arterias umbilicales', 'La vena lleva sangre OXIGENADA al feto; las dos arterias regresan sangre desoxigenada a la placenta'],
+                ['ABO vs. Rh', 'ABO: frecuente, leve, puede afectar desde el primer hijo, sin profilaxis. Rh: madre negativa y feto positivo, grave, se previene con anti-D'],
+                ['Polihidramnios vs. oligohidramnios', 'Poli (1 500–2 000 mL): el feto no deglute, como en la atresia esofágica. Oligo (< 400 mL): no hay orina, como en la agenesia renal; causa hipoplasia pulmonar'],
+                ['Dicigóticos vs. monocigóticos', 'Dicigóticos: dos cigotos, nada compartido. Monocigóticos: un cigoto; cuanto más tarde se divide, más comparten'],
+                ['Placenta previa vs. acretismo', 'Previa: se implanta sobre o junto al orificio cervical; sangrado indoloro. Acretismo: invade de más porque falta la decidua basal'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'ers-5',
+        number: 5,
+        title: 'Cavidades corporales y diafragma en un vistazo',
+        keyTerms: ['tabique transverso', 'pliegues pleuropericárdicos', 'membranas pleuroperitoneales', 'nervio frénico'],
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'El MESENTERIO DORSAL fija el tubo digestivo a la pared posterior desde el intestino anterior hasta el posterior; el MESENTERIO VENTRAL, derivado del TABIQUE TRANSVERSO, solo existe del final del esófago al inicio del duodeno.',
+              'El tabique transverso separa de forma incompleta tórax y abdomen; a sus lados quedan los conductos pericardioperitoneales.',
+              'Los PLIEGUES PLEUROPERICÁRDICOS, que llevan los nervios frénicos y las venas cardinales, se fusionan en la línea media: separan pleuras y pericardio y forman el PERICARDIO FIBROSO.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'De dónde sale cada parte del diafragma',
+            data: {
+              headers: ['Origen', 'Forma'],
+              rows: [
+                ['Tabique transverso', 'Tendón central'],
+                ['Membranas pleuroperitoneales', 'Cierran los conductos entre pleuras y peritoneo'],
+                ['Mesenterio dorsal del esófago', 'Pilares del diafragma'],
+                ['Pared corporal', 'Reborde muscular periférico'],
+                ['Somitas C3–C5', 'Músculo; por eso lo inerva el nervio FRÉNICO (C3–C5)'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Dolor referido al hombro',
+            content: 'El diafragma nace en el cuello y arrastra al nervio frénico (C3–C5) en su descenso. Por eso la irritación del diafragma, como la sangre bajo él en un embarazo ectópico roto, se siente en el hombro, que comparte esos segmentos.',
+          },
+        ],
+      },
+      {
+        id: 'ers-6',
+        number: 6,
+        title: 'Arcos faríngeos: introducción',
+        keyTerms: ['arcos faríngeos', 'cartílago de Meckel', 'cartílago de Reichert', 'bolsas faríngeas', 'hendiduras faríngeas'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Sobre el intestino faríngeo (parte del intestino anterior) se forman los ARCOS FARÍNGEOS. Son cinco, numerados 1, 2, 3, 4 y 6 (el 5 es rudimentario). Cada arco tiene su propio cartílago, músculo, nervio craneal y arteria. Por dentro forman BOLSAS faríngeas y por fuera quedan las HENDIDURAS. Es una introducción: el tema completo sigue en la Semana 4.',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Arco', 'Cartílago y hueso', 'Músculos', 'Nervio', 'Arteria'],
+              rows: [
+                ['1.º (mandibular)', 'Cartílago de Meckel → martillo y yunque; mandíbula (osificación membranosa); ligamento esfenomandibular', 'Masticación (temporal, masetero, pterigoideos), milohioideo, vientre anterior del digástrico, tensor del velo del paladar, tensor del tímpano', 'Trigémino (V2 y V3, sobre todo V3)', 'Parte de la maxilar'],
+                ['2.º (hioideo)', 'Cartílago de Reichert → estribo; apófisis estiloides; ligamento estilohioideo; asta menor y parte superior del hioides', 'Expresión facial, estapedio, estilohioideo, vientre posterior del digástrico', 'Facial (VII)', 'Estapedial (transitoria)'],
+                ['3.º', 'Asta mayor y parte inferior del hioides', 'Estilofaríngeo', 'Glosofaríngeo (IX)', 'Carótida común y parte proximal de la interna'],
+                ['4.º', 'Cartílagos laríngeos (con el 6.º)', 'Constrictores de la faringe, cricotiroideo, elevador del velo del paladar', 'Vago: laríngeo superior', 'Cayado de la aorta (izquierda) y parte proximal de la subclavia derecha'],
+                ['6.º', 'Cartílagos laríngeos (cricoides, aritenoides y otros)', 'Intrínsecos de la laringe, excepto el cricotiroideo', 'Vago: laríngeo recurrente', 'Arterias pulmonares y conducto arterioso (izquierda)'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Ronquera después de una tiroidectomía',
+            content: 'El nervio laríngeo recurrente, del 6.º arco, inerva casi todos los músculos intrínsecos de la laringe y pasa junto a la tiroides. Si se lesiona en la cirugía, la cuerda vocal de ese lado queda paralizada y la voz se vuelve ronca.',
           },
         ],
       },
