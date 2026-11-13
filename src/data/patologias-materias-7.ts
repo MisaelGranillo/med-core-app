@@ -221,11 +221,14 @@ const RH: Patologia = {
     { materia: 'Embriología', topicId: 'embriologia-segunda-semana', sectionId: 'ess-7', label: 'Rechazo inmunológico y embarazo', porQue: 'Por qué la madre normalmente tolera al feto, y qué pasa cuando sus anticuerpos sí reconocen un antígeno fetal.' },
     { materia: 'Genética', topicId: 'genetica-mendel', sectionId: 'gmen-3', label: 'Grupos sanguíneos y paternidad', porQue: 'El feto hereda del padre el antígeno D que la madre no tiene.' },
     { materia: 'Histología', topicId: 'histologia-sangre', sectionId: 'hsan-6', label: 'Eritropoyesis, EPO y grupos sanguíneos', porQue: 'La hemólisis estimula la eritropoyesis compensatoria en hígado y bazo.' },
+    { materia: 'Embriología', topicId: 'embriologia-funcion-placentaria', sectionId: 'efp-4', label: 'Incompatibilidad sanguínea materno-fetal: ABO y Rh', porQue: 'Por qué una sola exposición basta para sensibilizar y cómo la inmunoglobulina anti-D lo impide (semana 28 y 72 horas tras el parto).' },
+    { materia: 'Embriología', topicId: 'embriologia-funcion-placentaria', sectionId: 'efp-5', label: 'Ictericia neonatal y escala de Kramer', porQue: 'La hemólisis da ictericia desde las primeras 24 horas.' },
   ],
   atlas: [
     { id: 'embriologia-segunda-semana', title: 'Segunda semana e implantación' },
     { id: 'histologia-sangre', title: 'Sangre y elementos formes' },
     { id: 'genetica-mendel', title: 'Conceptos base y leyes de Mendel' },
+    { id: 'embriologia-funcion-placentaria', title: 'Función placentaria, líquido amniótico y gemelos' },
   ],
   caso: {
     titulo: 'Caso clínico',

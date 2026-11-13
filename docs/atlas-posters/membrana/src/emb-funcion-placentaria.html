@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 10px; padding-top: 12px; }
+h1 { font-size: 34px; }
+.panel { padding: 10px 12px; }
+.ph { margin: 0 0 6px; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.8px; line-height: 1.3; }
+.lst li { margin: 0 0 2px; }
+table td { font-size: 10.4px; padding: 2px 6px; line-height: 1.26; }
+table th { padding: 2px 6px; }
+.note { font-size: 10.1px; margin: 4px 0 0; }
+.fig { text-align: center; font-size: 10px; line-height: 1.26; color: var(--muted); }
+.fig img { display: block; margin: 0 auto 3px; }
+.fig b.h { display: block; color: var(--navy); font-size: 11.2px; }
+.box { border-radius: 8px; padding: 5px 8px; font-size: 10.2px; line-height: 1.28; }
+.box b.t { display: block; font-size: 11px; margin-bottom: 1px; }
+.cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.tri { display: grid; grid-template-columns: 1fr 1.25fr 1.25fr; gap: 10px; align-items: end; }
+.cards3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.cards3 .c { border: 1px solid #e6e9f0; border-radius: 8px; padding: 6px 8px; font-size: 10.2px; line-height: 1.28; }
+.cards3 .c b.t { display: block; font-size: 11.2px; color: var(--navy); margin-bottom: 2px; }
+.side { display: grid; gap: 10px; align-items: start; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Embriología</p>
+  <h1>Función placentaria, líquido amniótico y gemelos</h1>
+  <p class="tag">Qué cruza la placenta, qué hormonas produce, cómo se forma el cordón, de dónde sale el líquido amniótico y cómo se comparten las membranas.</p>
+</header>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">1</span>Intercambio placentario</div>
+    <img src="{{img:ana/func-intercambio.svg}}" style="width:100%;display:block" alt="">
+    <ul class="lst" style="margin-top:4px">
+      <li>Al término el feto extrae <b>20–30 mL de O₂ por minuto</b>. La IgG da <b>inmunidad pasiva</b>; el niño alcanza la del adulto a los 3 años.</li>
+      <li>También cruzan: <b>DES</b> (carcinoma de células claras de vagina en la hija), progestágenos (masculinizan), rubéola (sordera), citomegalovirus (microcefalia) y <b>AINE</b> (oligohidramnios desde la semana 20; cierre del conducto arterioso desde la 30).</li>
+    </ul>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">2</span>Hormonas del sincitiotrofoblasto</div>
+    <img src="{{img:ana/func-hormonas.svg}}" style="width:100%;display:block" alt="">
+    <ul class="lst" style="margin-top:4px">
+      <li><b>hCG</b> mantiene el cuerpo lúteo los primeros 2 meses. Al final del 4.º mes la placenta ya produce <b>progesterona</b> de sobra.</li>
+      <li><b>Estriol</b> en el embarazo · estradiol en la vida fértil · estrona en la posmenopausia. La <b>somatomamotropina</b> da al feto prioridad sobre la glucosa materna.</li>
+    </ul>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">3</span>Incompatibilidad ABO y Rh</div>
+    <div class="cmp">
+      <div class="box" style="background:#fdf1e3"><b class="t" style="color:#b86b12">ABO</b>≈ 20 % de los recién nacidos; solo ≈ 5 % con clínica. Madre O con feto A o B. Puede afectar desde el <b>primer</b> hijo (la madre ya tiene anti-A y anti-B IgG). Leve: ictericia. Sin profilaxis.</div>
+      <div class="box" style="background:#eaf0fb"><b class="t" style="color:#1f4f9c">Rh (antígeno D)</b>Madre Rh(D)− con feto Rh(D)+. Una exposición sensibiliza y cada embarazo responde más fuerte: enfermedad hemolítica e <b>hidropesía fetal</b>.</div>
+    </div>
+    <img src="{{img:ana/func-antid.svg}}" style="width:100%;display:block;margin-top:4px" alt="">
+    <p class="note">La <b>inmunoglobulina anti-D</b> no es una vacuna: es un anticuerpo ya formado que impide que la madre se sensibilice.</p>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">4</span>Ictericia neonatal y escala de Kramer</div>
+    <div class="side" style="grid-template-columns:150px 1fr">
+      <img src="{{img:ana/func-kramer.svg}}" style="width:150px;display:block" alt="">
+      <div>
+        <table>
+          <tr><th>Zona</th><th>Región</th><th>Bilirrubina</th></tr>
+          <tr><td class="k">1</td><td>Cabeza y cuello</td><td>≈ 5.8 mg/dL</td></tr>
+          <tr><td class="k">2</td><td>Tronco hasta el ombligo</td><td>≈ 8.8 mg/dL</td></tr>
+          <tr><td class="k">3</td><td>Ombligo a rodillas</td><td>≈ 11.7 mg/dL</td></tr>
+          <tr><td class="k">4</td><td>Brazos y piernas</td><td>≈ 14.7 mg/dL</td></tr>
+          <tr><td class="k">5</td><td>Palmas y plantas</td><td>&gt; 14.7 mg/dL</td></tr>
+        </table>
+        <ul class="lst" style="margin-top:5px">
+          <li><b>Primeras 24 h:</b> patológica (hemólisis, ABO o Rh).</li>
+          <li><b>Días 2–7:</b> fisiológica, máxima a los 3–4 días.</li>
+          <li><b>Más de 2 semanas:</b> alarma, descartar colestasis.</li>
+        </ul>
+        <p class="note">Kramer solo orienta: si hay ictericia, la bilirrubina se mide.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">5</span>Cordón umbilical <small>— corte transversal</small></div>
+    <script type="auto3d">{"img": "ana3d/emb-cordon.png", "height": 196, "cw": 456, "ch": 204, "gap": 26, "L": 128, "labels": {"amn": ["Amnios", "epitelio", [726, 151]], "wha": ["Gelatina de Wharton", "proteoglicanos", [700, 380]], "ven": ["Vena umbilical", "sangre oxigenada", [560, 298]], "art": ["Arteria umbilical", "pared muscular", [190, 528]], "art2": ["Arteria umbilical", "sangre desoxigenada", [595, 528]], "ala": ["Alantoides", "resto", [436, 687]]}, "side": {"amn": "right", "wha": "right", "ven": "right", "art": "left", "art2": "right", "ala": "left"}}</script>
+    <ul class="lst" style="margin-top:4px">
+      <li>Semana 5: por el <b>anillo umbilical primitivo</b> pasan el pedículo de fijación (alantoides y vasos umbilicales), el pedículo vitelino y la comunicación de cavidades. Herniación fisiológica: semanas 6–10.</li>
+      <li><b>Arteria umbilical única:</b> 1/200 neonatos; ≈ 20 % con defectos cardiacos o vasculares.</li>
+    </ul>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">6</span>Líquido amniótico</div>
+    <div class="side" style="grid-template-columns:1.15fr 1fr;align-items:center">
+      <img src="{{img:ana/func-liquido.svg}}" style="width:100%;display:block" alt="">
+      <img src="{{img:ana/func-ciclo.svg}}" style="width:100%;display:block" alt="">
+    </div>
+    <ul class="lst" style="margin-top:4px">
+      <li>Al inicio viene de los amniocitos y la sangre materna; se recambia cada 3 h. <b>Funciones:</b> amortigua, evita adherencias al amnios, permite moverse y expande los pulmones.</li>
+      <li><b>Polihidramnios:</b> idiopático 35 %, diabetes 25 %, malformaciones del SNC o digestivas. <b>Oligohidramnios:</b> comprime al feto y causa <b>hipoplasia pulmonar</b>.</li>
+    </ul>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">7</span>Gemelos: cuanto más tarde se divide, más comparten</div>
+  <div class="tri">
+    <div class="fig"><img src="{{img:ana3d/emb-gem-dcda.png}}" style="height:118px" alt=""><b class="h">Dicoriónico-diamniótico</b>Todos los <b>dicigóticos</b> (dos cigotos, ≈ 2/3 de los gemelos) y los monocigóticos divididos en la etapa de <b>dos blastómeras</b></div>
+    <div class="fig"><img src="{{img:ana3d/emb-gem-mcda.png}}" style="height:118px" alt=""><b class="h">Monocoriónico-diamniótico</b>Monocigóticos divididos en el <b>blastocisto temprano</b> (masa celular interna): una placenta y un corion, dos amnios</div>
+    <div class="fig"><img src="{{img:ana3d/emb-gem-mcma.png}}" style="height:118px" alt=""><b class="h">Monocoriónico-monoamniótico</b>División en el <b>disco bilaminar</b>, antes de la línea primitiva. Si es incompleta: gemelos unidos</div>
+  </div>
+  <div class="cmp" style="grid-template-columns:repeat(3,1fr);margin-top:6px">
+    <div class="box" style="background:#f2edf8"><b class="t" style="color:#6a4c9c">Transfusión feto-fetal</b>≈ 15 % de los monocoriónicos: anastomosis de la placenta compartida. Donante con oligohidramnios; receptor con polihidramnios e hidropesía.</div>
+    <div class="box" style="background:#eef2f7"><b class="t" style="color:var(--navy)">Placentas fusionadas</b>En los dicigóticos pueden tocarse, pero siguen siendo dicoriónicos. Con anastomosis: mosaicismo eritrocitario.</div>
+    <div class="box" style="background:#fdeeee"><b class="t" style="color:var(--red)">Más riesgo</b>≈ 60 % nace antes de la semana 37. Gemelo evanescente (se reabsorbe) y feto papiráceo (queda aplanado).</div>
+  </div>
+</section>
+
+<section class="clin">
+  <div class="ph"><span class="n">8</span>Trabajo de parto <small>— en las últimas 2–4 semanas el fondo uterino se engruesa y el cérvix se reblandece</small></div>
+  <div class="cards3">
+    <div class="c"><b class="t">1. Borramiento y dilatación</b>El cérvix se adelgaza (%) y se abre (cm) hasta <b>10 cm</b>. Contracciones cada ≈ 10 min al inicio.</div>
+    <div class="c"><b class="t">2. Expulsión</b>Contracciones cada &lt; 1 min, de 30–90 s, más la presión abdominal al pujar. Termina con el bebé fuera.</div>
+    <div class="c"><b class="t">3. Alumbramiento</b>Salen la placenta y las membranas. Se revisa completa: un cotiledón retenido sangra.</div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Embriología I (UAD) · Semana 3, clase 4 · Modelos 3D y esquemas propios, simplificados y no a escala</p>
+</div></body></html>

@@ -46,3 +46,4 @@ Z-Anatomy no trae órganos femeninos ni embriones. Para las láminas de Embriolo
 - Las vistas se renderizan con `python3 emb_render.py <nombre> '<json>'` (mismas claves que `za_render.py`
   más `model`); los colores van por nombre de pieza en `hl`, y en las láminas los puntos de los rótulos se
   fijan a mano sobre el recorte (las piezas huecas tienen el centroide en medio de la cavidad).
+- **Función placentaria, líquido amniótico y gemelos**: `Blender -b --python emb3d/funcion.py` genera el corte del cordón y los tres modelos de gemelos (`cordon-corte`, `gemelos-dcda`, `gemelos-mcda`, `gemelos-mcma`; vista `0,0.05,1`, pad 0.85); `python3 funcion_svg.py ana` genera los esquemas `ana/func-*.svg` (intercambio, hormonas, anti-D, Kramer, volumen y ciclo del líquido).

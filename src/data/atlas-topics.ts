@@ -1546,6 +1546,24 @@ export const atlasTopics: AtlasTopic[] = [
       { id: 'epl-a6', question: 'En el panel 5, la cara materna de la placenta a término muestra:', options: ['El cordón y los vasos coriónicos', '15 a 20 cotiledones', 'El amnios liso', 'La vena umbilical'], correctIndex: 1, explanation: 'La cara fetal es lisa, con el amnios, el cordón y los vasos coriónicos.', difficulty: 'easy' },
     ],
   },
+  {
+    id: 'embriologia-funcion-placentaria',
+    title: 'Función placentaria, líquido amniótico y gemelos',
+    subtitle: 'Intercambio materno-fetal, hormonas del sincitiotrofoblasto en el tiempo, incompatibilidad ABO y Rh con la línea del tiempo de la anti-D, escala de Kramer, corte del cordón umbilical, volumen y ciclo del líquido amniótico, disposición de membranas en gemelos y las tres fases del parto',
+    category: 'embriologia',
+    emoji: '🤰',
+    imagePath: '/atlas/embriologia-funcion-placentaria.webp',
+    colorKey: 'embriologia',
+    relatedTopicIds: ['embriologia-funcion-placentaria', 'embriologia-repaso-s3'],
+    questions: [
+      { id: 'efp-a1', question: 'En el panel 1, ¿qué es lo único que pasa del feto a la madre?', options: ['El oxígeno', 'La IgG', 'El CO₂ y los desechos', 'El monóxido de carbono'], correctIndex: 2, explanation: 'El O₂, los nutrientes, la IgG y el CO van de la madre al feto.', difficulty: 'easy' },
+      { id: 'efp-a2', question: 'En la gráfica del panel 2, ¿qué hormona tiene su máximo hacia la semana 10 y luego baja?', options: ['La hCG', 'El estriol', 'La progesterona', 'La somatomamotropina'], correctIndex: 0, explanation: 'Mantiene el cuerpo lúteo hasta que la placenta toma el relevo.', difficulty: 'easy' },
+      { id: 'efp-a3', question: 'En la línea del tiempo del panel 3, la inmunoglobulina anti-D se aplica a la madre Rh negativa:', options: ['Solo en la semana 12', 'En la semana 28 y en las 72 h tras el parto si el bebé es Rh+', 'Solo si ya está sensibilizada', 'Al nacer, al bebé'], correctIndex: 1, explanation: 'Es un anticuerpo ya formado que impide la sensibilización.', difficulty: 'medium' },
+      { id: 'efp-a4', question: 'En la silueta del panel 4, si la ictericia llega a palmas y plantas está en la zona:', options: ['2', '3', '4', '5'], correctIndex: 3, explanation: 'Más de 14.7 mg/dL aproximadamente; aun así, la bilirrubina se mide.', difficulty: 'easy' },
+      { id: 'efp-a5', question: 'En el corte del cordón del panel 5, el vaso grande de pared delgada es:', options: ['Una arteria umbilical', 'La vena umbilical, con sangre oxigenada', 'El alantoides', 'El conducto vitelino'], correctIndex: 1, explanation: 'Las dos arterias tienen pared muscular gruesa y llevan sangre desoxigenada a la placenta.', difficulty: 'medium' },
+      { id: 'efp-a6', question: 'En el panel 7, gemelos con una placenta y un corion pero dos amnios se dividieron en la etapa de:', options: ['Dos blastómeras', 'Disco bilaminar', 'Línea primitiva', 'Blastocisto temprano'], correctIndex: 3, explanation: 'Se dividió la masa celular interna: monocoriónico-diamniótico.', difficulty: 'medium' },
+    ],
+  },
 
 
 

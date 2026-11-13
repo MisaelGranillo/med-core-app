@@ -648,6 +648,7 @@ export const uadMedicina: Plan = {
               { label: 'Atlas MedCore — Tubo intestinal y cavidades corporales', url: '/atlas/embriologia-cavidades-corporales' },
               { label: 'Atlas MedCore — Periodo fetal', url: '/atlas/embriologia-periodo-fetal' },
               { label: 'Atlas MedCore — Placenta y membranas fetales', url: '/atlas/embriologia-placenta' },
+              { label: 'Atlas MedCore — Función placentaria, líquido amniótico y gemelos', url: '/atlas/embriologia-funcion-placentaria' },
               { label: 'Acland Anatomy', url: 'https://aclandanatomy.com/' },
               { label: 'Bates Visual Guide', url: 'https://batesvisualguide.com/' },
               { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },

@@ -215,6 +215,7 @@ const SDR: Patologia = {
     { materia: 'Embriología', topicId: 'embriologia-periodo-fetal', sectionId: 'epf-4', label: 'Del sexto mes al nacimiento', porQue: 'El surfactante aumenta al final del embarazo; por eso la madurez pulmonar marca la supervivencia del prematuro.' },
     { materia: 'Histología', topicId: 'histologia-epitelios-respiratorio', sectionId: 'hres-4', label: 'Alvéolo y neumocitos', porQue: 'El neumocito tipo II produce el surfactante en sus cuerpos lamelares.' },
     { materia: 'Embriología', topicId: 'embriologia-periodo-fetal', sectionId: 'epf-6', label: 'Fecha probable de parto y edad gestacional', porQue: 'A menor edad gestacional, más inmaduro el pulmón y mayor riesgo.' },
+    { materia: 'Embriología', topicId: 'embriologia-funcion-placentaria', sectionId: 'efp-8', label: 'Rotura prematura de membranas', porQue: 'En la RPM antes de la semana 34 se da un ciclo de corticoesteroide a la madre para prevenir el SDR del bebé.' },
   ],
   atlas: [
     { id: 'embriologia-periodo-fetal', title: 'Periodo fetal' },

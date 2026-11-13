@@ -90,4 +90,8 @@ export const SISTEMAS_DE: Record<string, Sistema[]> = {
   'sdr-prematuro': ['Respiratorio'],
   'preeclampsia': ['Reproductor y embarazo', 'Cardiovascular'],
   'acretismo-placentario': ['Reproductor y embarazo'],
+  'rotura-prematura-membranas': ['Reproductor y embarazo'],
+  'hiperbilirrubinemia-neonatal': ['Sangre', 'Digestivo'],
+  'transfusion-feto-fetal': ['Reproductor y embarazo', 'Cardiovascular'],
+  'atresia-esofagica': ['Digestivo', 'Respiratorio'],
 }

@@ -929,6 +929,7 @@ const HIPOTIROIDISMO: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-aminoacidos-clasificacion', sectionId: 'bac-4', label: 'Moléculas que derivan de los aminoácidos', porQue: 'Las hormonas tiroideas se forman a partir de la tirosina.' },
     { materia: 'Histología', topicId: 'histologia-hueso', sectionId: 'hhue-6', label: 'Osificación: intramembranosa vs endocondral', porQue: 'Sin hormona tiroidea se retrasa la maduración ósea.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-receptores', sectionId: 'bhr-6', label: 'Receptores nucleares', porQue: 'La levotiroxina se convierte en T₃ y actúa en el receptor nuclear de hormona tiroidea.' },
+    { materia: 'Embriología', topicId: 'embriologia-funcion-placentaria', sectionId: 'efp-5', label: 'Ictericia neonatal y escala de Kramer', porQue: 'La ictericia que dura más de 2 semanas es una señal de alarma; el hipotiroidismo congénito es una de sus causas.' },
   ],
   atlas: [
     { id: 'bioquimica-hormonas', title: 'Hormonas y receptores' },
