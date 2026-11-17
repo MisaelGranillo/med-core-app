@@ -1,7 +1,7 @@
 import type { Question } from '../types'
 
 // Medicina Humanística — Semana 1 (Clases 1–3), Semana 2 (Clase 1: cultura e interculturalidad; Clase 2: salud, enfermedad, muerte y práctica médica; Clase 3: eficacia simbólica y competencia cultural), Semana 3 (relación médico-paciente; Clases 1 a 3 impartidas del 9 al 11 nov)
-// y Semana 4 (perfiles patológicos y síndromes de filiación cultural).
+// y Semana 4 (perfiles patológicos: Clase 1 y diabetes de la Clase 2 impartidas el 17 nov; hipertensión y síndromes de filiación cultural, pendientes).
 // ★ en la explicación = tema que el profesor señaló como pregunta de examen.
 // «★ Examen Semana 1.» = pregunta tomada del examen real de la Semana 1 (respuesta verificada con la clase).
 export const humanisticaQuestions: Question[] = [
@@ -1955,10 +1955,10 @@ export const humanisticaQuestions: Question[] = [
   },
   {
     id: 'mh-cauq-q3', topicId: 'humanistica-causalidad-determinantes', type: 'multiple-choice',
-    question: 'Mycobacterium tuberculosis respecto a la tuberculosis es una causa:',
-    options: ['Suficiente y no necesaria', 'Ni necesaria ni suficiente', 'Necesaria y no suficiente', 'Un factor protector'],
+    question: 'Estrés, obesidad y sedentarismo que deben sumarse para producir hipertensión arterial sistémica ilustran una asociación causal:',
+    options: ['Directa', 'No necesaria y suficiente', 'Necesaria y no suficiente', 'No necesaria y no suficiente'],
     correctIndex: 2, difficulty: 'hard',
-    explanation: 'Sin el bacilo no hay tuberculosis, pero muchas personas infectadas no enferman.',
+    explanation: 'Las tres hacen falta (necesarias), pero ninguna basta sola (no suficientes). Es el ejemplo de la clase.',
   },
   {
     id: 'mh-cauq-q4', topicId: 'humanistica-causalidad-determinantes', type: 'multiple-choice',
@@ -2107,6 +2107,76 @@ export const humanisticaQuestions: Question[] = [
     options: ['Cáncer renal', 'Enfermedad de la vesícula', 'Diabetes mellitus', 'Evento vascular cerebral'],
     correctIndex: 2, difficulty: 'hard',
     explanation: 'Unos 2.0 de 4.2 millones de AVISA en 2021.',
+  },
+  {
+    id: 'mh-cauq-q13', topicId: 'humanistica-causalidad-determinantes', type: 'multiple-choice',
+    question: 'Tabaquismo, contaminantes ambientales o deficiencia de α₁-antitripsina: cualquiera de ellos por separado puede producir enfisema pulmonar. Es una asociación causal:',
+    options: ['No necesaria y suficiente', 'Necesaria y no suficiente', 'Directa', 'Indirecta'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'No hace falta que estén las tres; basta cualquiera.',
+  },
+  {
+    id: 'mh-cauq-q14', topicId: 'humanistica-causalidad-determinantes', type: 'multiple-choice',
+    question: 'Obesidad → hipertrigliceridemia → aterosclerosis → infarto agudo de miocardio es una asociación causal:',
+    options: ['Directa', 'Indirecta', 'No necesaria y suficiente', 'Necesaria y no suficiente'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'En cadena: cada efecto es causa del siguiente.',
+  },
+  {
+    id: 'mh-cauq-q15', topicId: 'humanistica-causalidad-determinantes', type: 'multiple-choice',
+    question: '«Práctica basada en la evidencia de asistir a individuos y familias en la adopción y mantenimiento de conductas que mejoran la salud y la calidad de vida» define a:',
+    options: ['La medicina del estilo de vida', 'La respuesta social organizada', 'La Atención Primaria a la Salud', 'La promoción de la salud de Nola Pender'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Conferencia de Alma-Ata, 1978.',
+  },
+  {
+    id: 'mh-cauq-q16', topicId: 'humanistica-causalidad-determinantes', type: 'multiple-choice',
+    question: '¿Cuál NO es un principio del modelo mexicano de atención primaria?',
+    options: ['Gratuidad', 'Cobertura universal', 'Calidad', 'Medicalización'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'Los principios son gratuidad, accesibilidad, oportunidad, cobertura universal, comunidad y calidad.',
+  },
+  {
+    id: 'mh-cauq-q17', topicId: 'humanistica-causalidad-determinantes', type: 'multiple-choice',
+    question: 'Según el modelo de Dever (1976), el componente del campo de salud que más contribuía a la mortalidad era:',
+    options: ['El estilo de vida (43 %)', 'La biología humana (27 %)', 'El medio ambiente (19 %)', 'El sistema de atención (11 %)'],
+    correctIndex: 0, difficulty: 'medium',
+    explanation: 'Y recibía una fracción mínima del gasto, mientras el sistema de atención se llevaba ≈ 90 %.',
+  },
+  {
+    id: 'mh-croq-q13', topicId: 'humanistica-estilos-vida-cronicas', type: 'multiple-choice',
+    question: '«Proceso por el cual se definen ciertas conductas o condiciones como problemas médicos (más que legales o morales), y las intervenciones médicas llegan a ser el centro de atención y del control social» define:',
+    options: ['Ambiente obesogénico', 'Medicalización', 'Carga alostática', 'Estigma'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Es parte del enfoque biomédico de la obesidad.',
+  },
+  {
+    id: 'mh-croq-q14', topicId: 'humanistica-estilos-vida-cronicas', type: 'multiple-choice',
+    question: '«Grupo de trastornos metabólicos que afectan al metabolismo de los carbohidratos, en los cuales la glucosa se utiliza de manera insuficiente y se produce en exceso por gluconeogénesis y glucogenólisis inadecuadas» define a:',
+    options: ['La obesidad', 'El síndrome metabólico', 'La diabetes mellitus', 'La resistencia a la insulina'],
+    correctIndex: 2, difficulty: 'easy',
+    explanation: '«Siempre la definición»: así la presentó el profesor.',
+  },
+  {
+    id: 'mh-croq-q15', topicId: 'humanistica-estilos-vida-cronicas', type: 'multiple-choice',
+    question: '¿Por qué conviene analizar por separado en hombres y mujeres los años de vida saludable perdidos por diabetes?',
+    options: ['Porque las mujeres no tienen complicaciones', 'Porque la diabetes solo mata hombres', 'Porque la Ensanut no reporta datos totales', 'Porque separarlos da explicaciones diferentes: la muerte prematura pesa más en los hombres (perspectiva de género)'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: '★ El profesor lo señaló como pregunta de examen.',
+  },
+  {
+    id: 'mh-croq-q16', topicId: 'humanistica-estilos-vida-cronicas', type: 'multiple-choice',
+    question: 'En la medicina del estilo de vida, la relación médico-paciente es:',
+    options: ['Horizontal, con enfoque de coach', 'Vertical, con enfoque de experto', 'Paternalista', 'Informativa'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'En la medicina convencional es vertical y el paciente es pasivo.',
+  },
+  {
+    id: 'mh-croq-q17', topicId: 'humanistica-estilos-vida-cronicas', type: 'multiple-choice',
+    question: 'Según el modelo de Nola Pender, si la demanda «deja de fumar» compite con la preferencia «fumar me calma», gana:',
+    options: ['La demanda, porque la da el médico', 'La preferencia, porque tiene más alto control', 'Ninguna', 'La que el paciente escriba primero'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'Por eso hay que preguntar qué hay detrás de la conducta.',
   },
   // ── Medicina tradicional y síndromes de filiación cultural ──
   {

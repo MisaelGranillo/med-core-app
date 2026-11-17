@@ -3830,6 +3830,7 @@ export const humanisticaTopics: Topic[] = [
     keyPoints: [
       'KOCH-HENLE (1887): modelo unicausal útil para enfermedades infecciosas · BRADFORD HILL: criterios de causalidad para enfermedades no infecciosas (fuerza, consistencia, temporalidad, gradiente, plausibilidad…).',
       'Causa SUFICIENTE: si está, la enfermedad ocurre · NECESARIA: sin ella no hay enfermedad · FACTOR DE RIESGO: aumenta la probabilidad ★',
+      'Asociaciones causales: DIRECTA (SARS-CoV-2 → COVID-19), INDIRECTA (obesidad → hipertrigliceridemia → aterosclerosis → infarto), NECESARIA Y NO SUFICIENTE, NO NECESARIA Y SUFICIENTE y NO NECESARIA Y NO SUFICIENTE.',
       'Campo de salud (Lalonde, 1974): BIOLOGÍA HUMANA, MEDIO AMBIENTE, ESTILO DE VIDA y ORGANIZACIÓN DE LA ATENCIÓN. Dever lo diagramó en 1976.',
       'Determinantes sociales de la salud: las circunstancias en que las personas nacen, crecen, trabajan, viven y envejecen. Los estructurales causan los intermedios.',
       'Carga de la enfermedad: AVISA (años de vida saludable perdidos) = años perdidos por muerte prematura + años vividos con discapacidad.',
@@ -3844,7 +3845,7 @@ export const humanisticaTopics: Topic[] = [
         blocks: [
           {
             type: 'paragraph',
-            content: 'La racionalidad causal en epidemiología pasó de teorías unívocas (miasma, germen: modelo unicausal) a teorías multicausales (red causal, ecoepidemiología). El principio de causalidad dice que todo suceso tiene una causa que lo antecede y explica, de forma determinista o probabilística.',
+            content: 'La racionalidad causal en epidemiología pasó de teorías unívocas (miasma, germen: modelo unicausal) a teorías multicausales (red causal, ecoepidemiología). El principio de causalidad dice que todo suceso tiene una causa que lo antecede y explica, de forma determinista o probabilística. Modelo DETERMINÍSTICO: los postulados de Koch-Henle (sin el microorganismo no hay infección). Modelo PROBABILÍSTICO: los criterios de Bradford Hill (un conjunto de factores de riesgo, como en la diabetes). El INDETERMINISMO CAUSAL, que toma de la física (Heisenberg) la idea de que la causalidad es una construcción mental, consolida el MODELO MULTICAUSAL.',
           },
           {
             type: 'list',
@@ -3875,20 +3876,37 @@ export const humanisticaTopics: Topic[] = [
             type: 'table',
             title: 'Tipos de causa',
             data: {
-              headers: ['Tipo', 'Definición', 'Ejemplo'],
+              headers: ['Tipo', 'Definición'],
               rows: [
-                ['Necesaria y suficiente', 'Sin ella no hay enfermedad y basta por sí sola', 'SARS-CoV-2 en la COVID-19 (asociación causal directa)'],
-                ['Necesaria y no suficiente', 'Sin ella no hay enfermedad, pero sola no basta', 'Mycobacterium tuberculosis: muchos infectados no enferman'],
-                ['No necesaria y no suficiente', 'Ninguna causa aislada basta ni es indispensable (multicausal)', 'Obesidad, sedentarismo, dieta inadecuada y estrés en la diabetes tipo 2 o la hipertensión'],
-                ['Factor de riesgo', 'Aumenta la probabilidad de enfermar', 'Tabaquismo para el enfisema'],
+                ['Causa suficiente', 'Si el factor (causa) está presente, el efecto (enfermedad) siempre ocurre'],
+                ['Causa necesaria', 'Si el factor (causa) está ausente, el efecto (enfermedad) no puede ocurrir'],
+                ['Factor de riesgo', 'Si el factor está presente y activo, aumenta la probabilidad de que el efecto (enfermedad) ocurra'],
               ],
             },
+          },
+          {
+            type: 'table',
+            title: 'Asociaciones causales (ejemplos de la clase)',
+            data: {
+              headers: ['Asociación', 'Cómo es', 'Ejemplo'],
+              rows: [
+                ['Directa', 'Una causa produce el efecto', 'Virus SARS-CoV-2 → COVID-19'],
+                ['Indirecta', 'En cadena: cada efecto es causa del siguiente', 'Obesidad → hipertrigliceridemia → aterosclerosis → infarto agudo de miocardio'],
+                ['Necesaria y no suficiente', 'Las causas deben SUMARSE: cada una hace falta, pero ninguna basta sola', 'Estrés + obesidad + sedentarismo → hipertensión arterial sistémica'],
+                ['No necesaria y suficiente', 'CUALQUIERA de las causas basta; no hace falta que estén todas', 'Tabaquismo, contaminantes ambientales (humo de leña) o deficiencia genética de α₁-antitripsina → enfisema pulmonar'],
+                ['No necesaria y no suficiente', 'Varios factores contribuyen; ninguno es indispensable ni basta solo', 'Estrés, obesidad, dieta inadecuada y sedentarismo → diabetes tipo 2'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'En la diapositiva del enfisema el título repite «necesaria y no suficiente», pero la explicación de la clase (basta cualquiera de las tres causas) corresponde a «no necesaria y suficiente». Son modelos para pensar la causalidad: en sentido estricto ni el tabaco causa enfisema en todos los fumadores ni los tres factores son indispensables para la hipertensión.',
           },
           {
             type: 'correlacion',
             variant: 'dato',
             title: 'Cadena causal indirecta',
-            content: 'Obesidad → hipertrigliceridemia → aterosclerosis → infarto agudo de miocardio. Cada eslabón es efecto del anterior y causa del siguiente. El enfisema también es multicausal: el tabaco es su principal factor de riesgo, pero la deficiencia de α₁-antitripsina puede causarlo sin tabaquismo.',
+            content: 'Obesidad → hipertrigliceridemia → aterosclerosis → infarto agudo de miocardio. Cada eslabón es efecto del anterior y causa del siguiente. Sirve para entender a la obesidad como causa indirecta del infarto.',
           },
         ],
       },
@@ -3922,9 +3940,26 @@ export const humanisticaTopics: Topic[] = [
             },
           },
           {
+            type: 'table',
+            title: 'Por qué importó el campo de salud (Dever, 1976)',
+            data: {
+              headers: ['Componente', 'Contribución a la mortalidad', 'Proporción del gasto en salud'],
+              rows: [
+                ['Estilo de vida', '43 %', '≈ 1.5 %'],
+                ['Biología humana', '27 %', '≈ 6.9 %'],
+                ['Medio ambiente', '19 %', '≈ 1.6 %'],
+                ['Sistema de atención a la salud', '11 %', '≈ 90.6 %'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'El gasto se iba casi todo al sistema de atención, que explicaba solo el 11 % de la mortalidad, mientras el estilo de vida explicaba el 43 % con una fracción mínima del gasto. En clase los porcentajes del gasto se dieron redondeados (≈ 5 % para estilo de vida, ≈ 90 % para el sistema).',
+          },
+          {
             type: 'definition',
             title: 'Determinantes sociales de la salud (OMS)',
-            content: '«Las circunstancias en que las personas nacen, crecen, trabajan, viven y envejecen», incluido el conjunto más amplio de fuerzas y sistemas que influyen en la vida cotidiana. Los ESTRUCTURALES (factores económicos y sociales, fuentes de inequidad) causan los INTERMEDIOS (empleo, vivienda, transporte, condiciones psicosociales). Las inequidades en salud son diferencias injustas y evitables.',
+            content: '«Las circunstancias en que las personas nacen, crecen, trabajan, viven y envejecen», incluido el conjunto más amplio de fuerzas y sistemas que influyen en la vida cotidiana. Los ESTRUCTURALES (factores económicos y sociales, fuentes de inequidad) causan los INTERMEDIOS (empleo, vivienda, transporte, condiciones psicosociales). Las inequidades en salud son diferencias injustas y evitables. El MODELO DE DAHLGREN Y WHITEHEAD dispone los determinantes en capas superpuestas según su proximidad a la persona y su familia; sus «redes sociales y comunitarias» son redes de apoyo, no redes sociales digitales.',
           },
           {
             type: 'paragraph',
@@ -3987,16 +4022,49 @@ export const humanisticaTopics: Topic[] = [
             },
           },
           {
+            type: 'paragraph',
+            content: 'La pirámide poblacional de México en 2024 ya no es una pirámide: hay más personas de 60 a 64 años y menos niños de 0 a 9 años (envejecimiento); 51 % son mujeres y 49 % hombres. En 2023 la diabetes tipo 2 fue la 11.ª causa de enfermedad y la COVID-19 la 12.ª.',
+          },
+          {
             type: 'formula',
             title: 'Carga de la enfermedad',
             formula: 'AVISA = años perdidos por muerte prematura + años vividos con discapacidad',
-            description: 'Mide el impacto de una enfermedad considerando mortalidad y morbilidad. Permite comparar enfermedades, factores de riesgo y poblaciones, y priorizar intervenciones y recursos.',
+            description: 'Mide el impacto de una enfermedad considerando mortalidad y morbilidad. Se expresa en AVISA (años de vida saludable perdidos) = AVMP (años de vida perdidos por muerte prematura) + AVD (años vividos con discapacidad); el equivalente internacional son los AVAD (años de vida ajustados por discapacidad). Permite comparar enfermedades, factores de riesgo y poblaciones, y priorizar intervenciones y recursos. Ejemplo de clase: con esperanza de vida de 80 años, quien muere a los 65 pierde 15 años por muerte prematura; si vivió 25 años con diabetes, suma 40 años de vida saludable perdidos.',
           },
           {
             type: 'correlacion',
             variant: 'dato',
             title: 'Desigualdad y enfermedades crónicas',
-            content: 'Las enfermedades crónicas son la principal causa de muerte y discapacidad en México y golpean más a la población con mayores desigualdades; Oaxaca, Chiapas y Guerrero son los estados más vulnerables. La obesidad, el tabaquismo, el colesterol alto y la hipertensión son sus factores de riesgo clave.',
+            content: 'Las enfermedades crónicas son la principal causa de muerte y discapacidad en México y golpean más a la población con mayores desigualdades; Oaxaca, Chiapas y Guerrero son los estados más vulnerables. En 2018, el 68 % de la población hablante de una lengua indígena tenía síndrome metabólico, un 43 % más que en 2006. La obesidad, el tabaquismo, el colesterol alto y la hipertensión son sus factores de riesgo clave.',
+          },
+        ],
+      },
+      {
+        id: 'hcd-5',
+        number: 5,
+        title: 'Respuesta social organizada y atención primaria',
+        keyTerms: ['atención primaria a la salud', 'Alma-Ata', 'niveles de atención', 'niveles de prevención'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Atención Primaria a la Salud (Alma-Ata, 1978)',
+            content: 'Práctica basada en la evidencia de asistir a individuos y familias en la adopción y el mantenimiento de conductas que mejoran la salud y la calidad de vida. El 80 % de las enfermedades crónicas no transmisibles podría evitarse con un estilo de vida saludable.',
+          },
+          {
+            type: 'paragraph',
+            content: 'El modelo mexicano de atención primaria busca más participación de las comunidades en el derecho a la protección de la salud y la beneficencia al individuo y a la comunidad: una bioética de naturaleza COMUNITARISTA. Sus principios son la GRATUIDAD, la ACCESIBILIDAD, la OPORTUNIDAD, la COBERTURA UNIVERSAL, la COMUNIDAD y la CALIDAD.',
+          },
+          {
+            type: 'comparison',
+            title: 'No es lo mismo',
+            left: { title: 'Niveles de PREVENCIÓN', items: ['Se ubican en la historia natural de la enfermedad', 'Primaria (periodo prepatogénico), secundaria y terciaria (periodo patogénico)'] },
+            right: { title: 'Niveles de ATENCIÓN', items: ['Son los servicios: primer nivel (centros de salud), segundo nivel (hospitales generales) y tercer nivel', 'Tercer nivel: centros médicos nacionales e institutos que atienden una especialidad'] },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'La familia obesogénica',
+            content: 'El riesgo por la dieta depende de patrones culturales: si toda la familia tiene sobrepeso, tratar solo al niño no sirve. La intervención es familiar y comunitaria.',
           },
         ],
       },
@@ -4013,7 +4081,9 @@ export const humanisticaTopics: Topic[] = [
       'OBESIDAD: enfermedad crónica, multifactorial y neuroconductual en la que el exceso de grasa causa disfunción del tejido adiposo con consecuencias metabólicas, biomecánicas y psicosociales.',
       'AMBIENTE OBESOGÉNICO: mucha disponibilidad de alimentos altos en grasa y calorías y pocas oportunidades de actividad física.',
       'Medicina del estilo de vida, 6 pilares: NUTRICIÓN, ACTIVIDAD FÍSICA, SUEÑO, MANEJO DEL ESTRÉS, REDES SOCIALES y evitar SUSTANCIAS ★',
-      'Remisión de la DM2: HbA1c < 6.5 % mantenida al menos 3 meses sin fármacos para bajar la glucosa.',
+      'Remisión de la DM2: HbA1c < 6.5 % mantenida al menos 3 meses sin fármacos para bajar la glucosa. Remisión no es cura.',
+      'DM2 en México: 2.ª causa de muerte (105 al día). Separar los AVISA por SEXO da explicaciones distintas: perspectiva de género ★',
+      'Medicina convencional: paciente pasivo y relación vertical (experto). Medicina del estilo de vida: paciente activo y relación horizontal (coach).',
       'Actividad física (OMS): 150–300 min/semana de intensidad moderada o 75–150 de vigorosa, más 2 sesiones de fuerza.',
       'HAS: presión ≥ 140/90 mmHg sostenida. En México ≈ 30 % de los adultos la padece y 43 % de ellos no lo sabe.',
     ],
@@ -4043,6 +4113,11 @@ export const humanisticaTopics: Topic[] = [
           },
           {
             type: 'definition',
+            title: 'Medicalización',
+            content: 'Proceso por el cual ciertas conductas o condiciones se definen como problemas médicos (más que legales o morales), y las intervenciones médicas llegan a ser el centro de atención y del control social.',
+          },
+          {
+            type: 'definition',
             title: 'Alostasis',
             content: 'Extensión del concepto de homeostasis: proceso por el que el organismo se adapta a desafíos físicos, psicosociales y ambientales. Cuando el estrés es crónico, el costo acumulado de esa adaptación (carga alostática) favorece la enfermedad.',
           },
@@ -4050,19 +4125,86 @@ export const humanisticaTopics: Topic[] = [
             type: 'correlacion',
             variant: 'dato',
             title: 'Lo que cuesta el índice de masa corporal elevado',
-            content: 'En México, en 2021, el IMC elevado causó unos 4.2 millones de años de vida saludable perdidos, la mitad por diabetes; también contribuye a la enfermedad renal crónica, la cardiopatía isquémica y la enfermedad de la vesícula biliar. Explica alrededor del 65 % de la carga por diabetes.',
+            content: 'En México, en 2021, el IMC elevado causó unos 4.2 millones de años de vida saludable perdidos, la mitad por diabetes; también contribuye a la enfermedad renal crónica, la cardiopatía isquémica y la enfermedad de la vesícula biliar. En términos relativos, el IMC elevado explica el 65.0 % de la diabetes, el 62.9 % de la cardiopatía hipertensiva, el 47.7 % de la enfermedad de la vesícula y las vías biliares y el 44.9 % del cáncer uterino.',
+          },
+        ],
+      },
+      {
+        id: 'hev-4',
+        number: 2,
+        title: 'Medicina del estilo de vida frente a la medicina convencional',
+        keyTerms: ['medicina del estilo de vida', 'enfoque del coach', 'Nola Pender', 'autoeficacia'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Medicina del estilo de vida',
+            content: '«Enfoque basado en evidencia que busca prevenir, tratar e incluso revertir enfermedades reemplazando conductas no saludables por saludables, tales como comer de forma saludable, estar físicamente activo, aliviar el estrés, evitar el abuso de sustancias peligrosas, dormir adecuadamente y tener un sólido sistema de apoyo emocional.» Sus pilares no dicen CÓMO aplicarlos, porque el cómo depende de cada paciente.',
+          },
+          {
+            type: 'comparison',
+            left: { title: 'Medicina convencional', items: ['Primero los fármacos', 'Paciente pasivo', 'Relación vertical: paternalismo y enfoque del EXPERTO', 'El médico define la agenda, se enfoca en lo que está mal y tiene las respuestas'] },
+            right: { title: 'Medicina del estilo de vida', items: ['Cambio de conductas, junto con los fármacos cuando hacen falta', 'Paciente muy activo en su cuidado', 'Relación horizontal: enfoque del COACH', 'El médico pregunta qué hay detrás de la conducta del paciente'] },
+          },
+          {
+            type: 'note',
+            content: 'Nunca se retira ni se niega el tratamiento farmacológico: se reduce poco a poco conforme se alcanzan las metas.',
+          },
+          {
+            type: 'paragraph',
+            content: 'MODELO DE PROMOCIÓN DE LA SALUD DE NOLA PENDER: parte de las características y experiencias individuales para trabajar la cognición y los afectos ligados a una conducta concreta (beneficios percibidos, BARRERAS, AUTOEFICACIA para mantenerla y afectos relacionados) y obtener un resultado conductual.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Demandas contra preferencias',
+            content: 'La DEMANDA («deja de fumar») tiene bajo control; la PREFERENCIA («fumar me ayuda a quedarme callado cuando me estreso») tiene alto control. Cuando compiten, gana la de mayor control. Por eso conviene preguntar al paciente qué hay detrás de su conducta en vez de solo indicarle el cambio.',
           },
         ],
       },
       {
         id: 'hev-2',
-        number: 2,
+        number: 3,
         title: 'Diabetes tipo 2 y medicina del estilo de vida',
         keyTerms: ['diabetes tipo 2', 'medicina del estilo de vida', 'remisión', 'ejercinas'],
         blocks: [
           {
+            type: 'definition',
+            title: 'Diabetes mellitus',
+            content: 'Grupo de trastornos metabólicos que afectan al metabolismo de los carbohidratos, en los cuales la glucosa se utiliza de manera insuficiente como fuente de energía y, al mismo tiempo, se produce en exceso debido a una gluconeogénesis y glucogenólisis inadecuadas, lo que da lugar a HIPERGLUCEMIA.',
+          },
+          {
+            type: 'definition',
+            title: 'Diabetes mellitus tipo 2',
+            content: 'Enfermedad crónica y progresiva, determinada por una compleja interacción de factores genéticos, biológicos, conductuales y sociales.',
+          },
+          {
+            type: 'list',
+            title: 'La diabetes en México',
+            items: [
+              'Segunda causa de muerte: 105 muertes al día y 38 445 al año.',
+              'En 2010 fue la 5.ª causa de años perdidos por muerte prematura en los hombres y la 1.ª en las mujeres.',
+              'En el IMSS es la 1.ª causa de AVISA y de años vividos con discapacidad (13 % de los AVISA de sus derechohabientes), la 1.ª causa de pensión por invalidez y cuesta $16 160 por paciente al año (2015).',
+              'En 2022 la tasa de mortalidad por diabetes fue la más alta en Veracruz y la más baja en Baja California Sur.',
+              'Uno de cada seis adultos tiene diabetes: Ensanut 2022 reporta 18.3 % (12.6 % ya diagnosticada y 5.8 % sin diagnóstico).',
+            ],
+          },
+          {
             type: 'paragraph',
-            content: 'La diabetes tipo 2 es una enfermedad crónica y progresiva determinada por factores genéticos, biológicos, conductuales y sociales. En México es una de las dos primeras causas de muerte y la primera causa de años de vida saludable perdidos y de pensión por invalidez en el IMSS.',
+            content: 'Al separar por SEXO los años de vida saludable perdidos por diabetes, la muerte prematura aporta la mayor parte en ambos sexos y pesa más en los hombres, que se cuidan menos y viven menos. Separar los datos por sexo da explicaciones diferentes que juntos se pierden: es la mirada de la perspectiva de género. ★',
+          },
+          {
+            type: 'table',
+            title: 'Factores de riesgo',
+            data: {
+              headers: ['No modificables', 'Modificables'],
+              rows: [
+                ['Edad, raza, antecedentes familiares de DM2, diabetes gestacional previa, síndrome de ovario poliquístico', 'Sobrepeso, obesidad y obesidad abdominal, sedentarismo, tabaquismo, patrones dietéticos (bebidas azucaradas, carnes rojas), trastornos de la regulación de la glucosa y enfermedades asociadas'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Poliuria, polidipsia y polifagia juntas: diabetes hasta demostrar lo contrario. El 2012 suele citarse con 9.2 %, pero ese dato es solo de diabetes ya diagnosticada; en 2022 la diagnosticada fue 12.6 %, así que la comparación con el 18.3 % total exagera el aumento.',
           },
           {
             type: 'definition',
@@ -4075,11 +4217,11 @@ export const humanisticaTopics: Topic[] = [
             data: {
               headers: ['Pilar', 'Recomendación'],
               rows: [
-                ['Nutrición', 'Alimentación equilibrada con restricción calórica; perder más del 10–15 % del peso; método del plato y dieta mediterránea'],
-                ['Actividad física', '150–300 min/semana moderada o 75–150 vigorosa + 2 sesiones de fuerza; equilibrio en adultos mayores'],
+                ['Nutrición', 'Alimentación equilibrada con restricción calórica; perder más del 10–15 % del peso; método del plato (mitad verduras sin almidón, un cuarto carbohidratos, un cuarto proteína, de preferencia blanca) y dieta mediterránea'],
+                ['Actividad física', '150–300 min/semana moderada o 75–150 vigorosa + 2 sesiones de fuerza; equilibrio en adultos mayores. Las «ejercinas» que produce el ejercicio mejoran el uso de la energía, la angiogénesis, la neurogénesis, la función endotelial e inmunitaria, la masa muscular y las mitocondrias'],
                 ['Sueño', 'El sueño de mala calidad (Pittsburgh ≥ 6) se asocia con HbA1c más alta y más adiposidad'],
                 ['Manejo del estrés', 'Meditación, yoga, mindfulness, tai chi, respiración lenta, relajación muscular progresiva'],
-                ['Redes sociales', 'La soledad duplica el riesgo de DM2; el apoyo social mejora HbA1c, presión y lípidos'],
+                ['Redes sociales', 'Tras la pandemia, 60 % se siente solo (44 % de adultos mayores y 80 % de adultos jóvenes). La soledad duplica el riesgo de DM2; el apoyo emocional, tangible, informativo y de compañía mejora HbA1c, presión y lípidos'],
                 ['Sustancias', 'Evitar tabaco, alcohol y drogas, que alteran el metabolismo de la glucosa y el endotelio'],
               ],
             },
@@ -4087,7 +4229,7 @@ export const humanisticaTopics: Topic[] = [
           {
             type: 'definition',
             title: 'Remisión de la diabetes tipo 2',
-            content: 'Regreso de la HbA1c a menos de 6.5 % (< 48 mmol/mol), mantenido durante al menos 3 meses sin tratamiento farmacológico para bajar la glucosa. Es el objetivo de la medicina del estilo de vida en la DM2.',
+            content: 'Regreso de la HbA1c a menos de 6.5 % (< 48 mmol/mol), mantenido durante al menos 3 meses sin tratamiento farmacológico para bajar la glucosa. Es el objetivo de la medicina del estilo de vida en la DM2. REMISIÓN NO ES CURA: el paciente sigue vigilando su glucosa y su estilo de vida.',
           },
           {
             type: 'correlacion',
@@ -4099,7 +4241,7 @@ export const humanisticaTopics: Topic[] = [
       },
       {
         id: 'hev-3',
-        number: 3,
+        number: 4,
         title: 'Hipertensión arterial sistémica',
         keyTerms: ['hipertensión arterial', 'sodio', 'factores de riesgo'],
         blocks: [
