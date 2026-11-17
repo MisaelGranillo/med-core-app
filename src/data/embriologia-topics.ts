@@ -10,6 +10,7 @@ import type { Topic } from '../types'
 // embrionario (semanas 3–8) y derivados de las capas germinales. Clase 4: sangre y vasos,
 // segundo mes y teratógenos. Clase 5: ejes corporales y regulación molecular.
 // Semana 3, Clase 1: tubo intestinal y cavidades corporales. Clase 2: periodo fetal. Clase 3: membranas fetales y placenta. Clase 4: función placentaria, líquido amniótico, gemelos y parto. Clase 5: repaso integrador e introducción a los arcos faríngeos.
+// Semana 4, Clase 1: cabeza y cuello (aparato faríngeo, lengua, tiroides, cara y paladar).
 export const embriologiaTopics: Topic[] = [
   {
     id: 'embriologia-desarrollo-temprano',
@@ -5413,7 +5414,7 @@ export const embriologiaTopics: Topic[] = [
         blocks: [
           {
             type: 'paragraph',
-            content: 'Sobre el intestino faríngeo (parte del intestino anterior) se forman los ARCOS FARÍNGEOS. Son cinco, numerados 1, 2, 3, 4 y 6 (el 5 es rudimentario). Cada arco tiene su propio cartílago, músculo, nervio craneal y arteria. Por dentro forman BOLSAS faríngeas y por fuera quedan las HENDIDURAS. Es una introducción: el tema completo sigue en la Semana 4.',
+            content: 'Sobre el intestino faríngeo (parte del intestino anterior) se forman los ARCOS FARÍNGEOS. Son cinco, numerados 1, 2, 3, 4 y 6 (el 5 es rudimentario). Cada arco tiene su propio cartílago, músculo, nervio craneal y arteria. Por dentro forman BOLSAS faríngeas y por fuera quedan las HENDIDURAS. Es una introducción: el tema completo está en «Cabeza y cuello». Las arterias de los arcos no entran en esta evaluación; se estudian con el sistema cardiovascular.',
           },
           {
             type: 'table',
@@ -5433,6 +5434,313 @@ export const embriologiaTopics: Topic[] = [
             variant: 'clinica',
             title: 'Ronquera después de una tiroidectomía',
             content: 'El nervio laríngeo recurrente, del 6.º arco, inerva casi todos los músculos intrínsecos de la laringe y pasa junto a la tiroides. Si se lesiona en la cirugía, la cuerda vocal de ese lado queda paralizada y la voz se vuelve ronca.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-cabeza-cuello',
+    title: 'Cabeza y cuello: aparato faríngeo, lengua, tiroides, cara y paladar',
+    subtitle: 'Origen de los tejidos de cabeza y cuello, arcos faríngeos y sus derivados, bolsas y hendiduras, seno cervical, casos clínicos del aparato faríngeo, desarrollo de la lengua y su inervación, descenso de la tiroides, prominencias faciales, nariz, paladar primario y secundario y secuencia de Pierre Robin',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '🗣️',
+    keyPoints: [
+      'Los ARCOS FARÍNGEOS aparecen en las semanas 4 y 5: son 1, 2, 3, 4 y 6 (el 5 es rudimentario). Por fuera ectodermo, por dentro endodermo y en medio mesénquima con cartílago (cresta neural), músculo (mesodermo paraxial), nervio y arteria.',
+      'ARCO 1: Meckel → martillo y yunque; masticación; trigémino (V3 motor). ARCO 2: Reichert → estribo; expresión facial; facial. ARCO 3: estilofaríngeo; glosofaríngeo. ARCO 4: cricotiroideo y constrictores; laríngeo superior. ARCO 6: intrínsecos de la laringe; laríngeo recurrente.',
+      'BOLSAS (endodermo): 1.ª oído medio y trompa; 2.ª amígdala palatina; 3.ª paratiroides INFERIORES y timo; 4.ª paratiroides SUPERIORES y cuerpo ultimobranquial (células C).',
+      'HENDIDURAS (ectodermo): solo la 1.ª deja derivado, el conducto auditivo externo. Las 2.ª a 4.ª forman el SENO CERVICAL; si persiste: quiste o fístula lateral, anterior al esternocleidomastoideo.',
+      'LENGUA: cuerpo del 1.er arco (sensibilidad V3, gusto por la cuerda del tímpano del VII); raíz de la eminencia hipobranquial (IX); músculos de somitas occipitales (hipogloso XII).',
+      'TIROIDES: nace en el foramen ciego, baja por el conducto tirogloso, llega delante de la tráquea en la semana 7 y funciona al final del 3.er mes. Quiste tirogloso: en la línea media.',
+      'Paladar primario del segmento intermaxilar; secundario de las crestas palatinas (oblicuas en la semana 6, horizontales y fusionadas en la 7). El foramen incisivo separa ambos.',
+    ],
+    sections: [
+      {
+        id: 'ecyc-1',
+        number: 1,
+        title: 'De dónde salen los tejidos de cabeza y cuello',
+        keyTerms: ['neurocráneo', 'viscerocráneo', 'cresta neural', 'somitómeros', 'placodas'],
+        blocks: [
+          {
+            type: 'table',
+            data: {
+              headers: ['Tejido embrionario', 'Derivados'],
+              rows: [
+                ['Mesodermo paraxial (somitómeros)', 'Partes membranosa y cartilaginosa del neurocráneo, músculos voluntarios craneofaciales, dermis de la región dorsal de la cabeza y meninges caudales al prosencéfalo'],
+                ['Mesodermo de la placa lateral', 'Cartílagos laríngeos aritenoides y cricoides, y su tejido conectivo'],
+                ['Cresta neural', 'VISCEROCRÁNEO, parte del neurocráneo, cartílago, hueso, dentina, tendones, dermis, piamadre y aracnoides, neuronas sensitivas y tejido conectivo de las glándulas'],
+                ['Placodas ectodérmicas (con la cresta neural)', 'Neuronas de los ganglios sensitivos de los nervios V, VII, IX y X'],
+              ],
+            },
+          },
+          {
+            type: 'definition',
+            title: 'Neurocráneo y viscerocráneo',
+            content: 'El NEUROCRÁNEO envuelve y protege al encéfalo; el VISCEROCRÁNEO es el esqueleto de la cara, formado sobre todo por cresta neural.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Cara y corazón van juntos',
+            content: 'La cresta neural forma gran parte de la cara y también el tabique del tracto de salida del corazón. Por eso una migración anómala de la cresta neural suele combinar defectos craneofaciales con cardiopatías del tracto de salida.',
+          },
+        ],
+      },
+      {
+        id: 'ecyc-2',
+        number: 2,
+        title: 'Arcos faríngeos: aparición y estructura',
+        keyTerms: ['arcos faríngeos', 'estomodeo', 'prominencia frontonasal', 'membrana orofaríngea'],
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'Aparecen en las semanas 4 y 5 y son la marca externa del embrión al final del primer mes: hacia el día 25 se ven los arcos 1 y 2; hacia el 28, el 3; en la semana 5, el 4.',
+              'Son cinco arcos con derivados: 1, 2, 3, 4 y 6. El 5 es rudimentario y degenera.',
+              'El ESTOMODEO (boca primitiva) queda rodeado por el primer arco, dividido en prominencias MAXILARES (dorsales) y MANDIBULARES (ventrales), y por arriba por la prominencia FRONTONASAL. La membrana orofaríngea se rompe y lo comunica con el intestino faríngeo.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Qué tiene cada arco',
+            data: {
+              headers: ['Componente', 'Origen'],
+              rows: [
+                ['Revestimiento externo', 'Ectodermo'],
+                ['Revestimiento interno', 'Endodermo'],
+                ['Cartílago y hueso', 'Cresta neural'],
+                ['Músculo', 'Mesodermo paraxial (somitómeros)'],
+                ['Nervio', 'Un nervio craneal por arco; su parte motora sale del tubo neural'],
+                ['Arteria', 'Un arco aórtico por arco'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'ecyc-3',
+        number: 3,
+        title: 'Derivados de los arcos faríngeos',
+        keyTerms: ['cartílago de Meckel', 'cartílago de Reichert', 'trigémino', 'facial', 'glosofaríngeo', 'vago'],
+        blocks: [
+          {
+            type: 'table',
+            data: {
+              headers: ['Arco', 'Cartílago y hueso', 'Músculos', 'Nervio'],
+              rows: [
+                ['1.º (mandibular)', 'Prominencia maxilar: premaxila, maxilar, cigomático y parte del temporal. Cartílago de MECKEL → MARTILLO y YUNQUE; el mesénquima que lo rodea forma la MANDÍBULA (osificación membranosa)', 'Masticación (temporal, masetero, pterigoideos), milohioideo, vientre anterior del digástrico, tensor del tímpano, tensor del velo del paladar', 'TRIGÉMINO: V3 motor; V1, V2 y V3 sensibilidad de la cara'],
+                ['2.º (hioideo)', 'Cartílago de REICHERT → ESTRIBO, apófisis estiloides, ligamento estilohioideo, asta menor y parte superior del cuerpo del hioides', 'Expresión facial, estapedio, estilohioideo, vientre posterior del digástrico, auriculares', 'FACIAL (VII)'],
+                ['3.º', 'Asta mayor y parte inferior del cuerpo del hioides', 'Estilofaríngeo', 'GLOSOFARÍNGEO (IX)'],
+                ['4.º', 'Cartílagos laríngeos (con el 6.º): tiroides, cricoides, aritenoides, corniculados y cuneiformes', 'Cricotiroideo, elevador del velo del paladar, constrictores de la faringe', 'VAGO: rama laríngea superior'],
+                ['6.º', 'Cartílagos laríngeos (con el 4.º)', 'Intrínsecos de la laringe (fonación), excepto el cricotiroideo', 'VAGO: laríngeo recurrente'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Las arterias de los arcos (maxilar, estapedial, carótidas, cayado de la aorta y subclavia derecha, pulmonares y conducto arterioso) no entran en esta evaluación: se estudian con el sistema cardiovascular.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'mnemotecnia',
+            title: 'Un nervio por arco',
+            content: '5 – 7 – 9 – 10 – 10: trigémino, facial, glosofaríngeo y vago dos veces (laríngeo superior para el 4.º, recurrente para el 6.º).',
+          },
+        ],
+      },
+      {
+        id: 'ecyc-4',
+        number: 4,
+        title: 'Bolsas faríngeas',
+        keyTerms: ['receso tubotimpánico', 'amígdala palatina', 'timo', 'paratiroides', 'cuerpo ultimobranquial', 'células C'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Las BOLSAS son las evaginaciones internas, revestidas de ENDODERMO. Se estudian cuatro; el resto de la quinta se incorpora a la cuarta.',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Bolsa', 'Derivado'],
+              rows: [
+                ['1.ª (receso tubotimpánico)', 'Porción distal: cavidad timpánica (oído medio). Porción proximal: trompa faringotimpánica (de Eustaquio). Con la 1.ª hendidura forma la membrana timpánica'],
+                ['2.ª', 'Su epitelio prolifera y forma la AMÍGDALA PALATINA (se infiltra de tejido linfático entre el 3.er y el 5.º mes); el resto de la bolsa queda como fosa amigdalina'],
+                ['3.ª', 'Ala dorsal: PARATIROIDES INFERIORES. Ala ventral: TIMO'],
+                ['4.ª', 'Ala dorsal: PARATIROIDES SUPERIORES. Ala ventral: cuerpo ULTIMOBRANQUIAL, que se incorpora a la tiroides como células parafoliculares (C), productoras de CALCITONINA'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: '¿Por qué la paratiroides de la 3.ª bolsa acaba abajo? Porque baja con el timo hacia el tórax y rebasa a la de la 4.ª bolsa, que migra menos.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Otitis en los niños',
+            content: 'La trompa de Eustaquio, de la 1.ª bolsa, es más corta y horizontal en el niño: una infección de garganta sube con facilidad al oído medio y causa otitis media.',
+          },
+        ],
+      },
+      {
+        id: 'ecyc-5',
+        number: 5,
+        title: 'Hendiduras faríngeas y seno cervical',
+        keyTerms: ['hendiduras faríngeas', 'conducto auditivo externo', 'seno cervical', 'quiste branquial'],
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'Las HENDIDURAS son las depresiones externas entre los arcos, revestidas de ECTODERMO. Hay cuatro.',
+              'Solo la 1.ª deja un derivado: el CONDUCTO AUDITIVO EXTERNO.',
+              'El 2.º arco crece hacia abajo y cubre las hendiduras 2.ª, 3.ª y 4.ª, que quedan atrapadas como SENO CERVICAL; normalmente desaparece.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Quiste y fístula cervical (branquial)',
+            content: 'Si el seno cervical persiste, queda un quiste en la cara LATERAL del cuello, ANTERIOR al esternocleidomastoideo y a menudo por debajo del ángulo de la mandíbula. Crece de forma intermitente, se infecta y puede abrirse a la piel o a la faringe como fístula.',
+          },
+        ],
+      },
+      {
+        id: 'ecyc-6',
+        number: 6,
+        title: 'Casos clínicos del aparato faríngeo',
+        keyTerms: ['síndrome de DiGeorge', 'hipocalcemia', 'aplasia tímica', 'nervio laríngeo recurrente'],
+        blocks: [
+          {
+            type: 'table',
+            data: {
+              headers: ['Cuadro', 'Estructura afectada', 'Por qué'],
+              rows: [
+                ['Recién nacido con hipocalcemia, aplasia tímica e infecciones recurrentes', 'Bolsas 3.ª y 4.ª (como en la deleción 22q11.2 o síndrome de DiGeorge)', 'Sin timo (3.ª ventral) faltan linfocitos T; sin paratiroides (3.ª y 4.ª dorsales) baja el calcio'],
+                ['Llanto débil y ronco, dificultad para deglutir, regurgitación nasal y reflejo nauseoso disminuido', 'Arcos 4.º y 6.º (vago)', 'Fallan los músculos de la faringe, del velo del paladar y de la laringe'],
+                ['Ronquera después de una cirugía de tiroides', 'Nervio laríngeo recurrente (6.º arco)', 'Inerva casi todos los músculos intrínsecos de la laringe y pasa junto a la tiroides'],
+                ['Niño con masa lateral del cuello que crece, se infecta y drena por un orificio anterior al esternocleidomastoideo', 'Seno cervical persistente (hendiduras 2.ª a 4.ª)', 'Quiste o fístula cervical'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'La hipocalcemia se debe a que faltan las PARATIROIDES, no las células C: estas producen calcitonina, que baja el calcio, así que su ausencia no lo bajaría.',
+          },
+        ],
+      },
+      {
+        id: 'ecyc-7',
+        number: 7,
+        title: 'Desarrollo de la lengua',
+        keyTerms: ['tubérculo impar', 'protuberancias linguales', 'eminencia hipobranquial', 'cuerda del tímpano', 'hipogloso'],
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'Empieza hacia la semana 4. CUERPO (dos tercios anteriores): del 1.er arco; dos protuberancias linguales laterales crecen sobre el TUBÉRCULO IMPAR y se fusionan.',
+              'RAÍZ (tercio posterior): de la CÓPULA o eminencia hipobranquial, con mesodermo de los arcos 2.º, 3.º y parte del 4.º. El surco terminal separa cuerpo y raíz.',
+              'EPIGLOTIS: de la porción posterior del 4.º arco.',
+              'MÚSCULOS: no vienen de los arcos sino de mioblastos de los SOMITAS OCCIPITALES.',
+            ],
+          },
+          {
+            type: 'table',
+            title: 'Inervación de la lengua',
+            data: {
+              headers: ['Región o función', 'Nervio'],
+              rows: [
+                ['Dos tercios anteriores: sensibilidad general', 'Trigémino (V3)'],
+                ['Dos tercios anteriores: gusto', 'Cuerda del tímpano, del facial (VII)'],
+                ['Tercio posterior: sensibilidad y gusto', 'Glosofaríngeo (IX)'],
+                ['Extremo posterior y epiglotis', 'Vago (X), laríngeo superior'],
+                ['Músculos', 'Hipogloso (XII)'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'ecyc-8',
+        number: 8,
+        title: 'Glándula tiroides',
+        keyTerms: ['foramen ciego', 'conducto tirogloso', 'quiste tirogloso'],
+        blocks: [
+          {
+            type: 'steps',
+            steps: [
+              'Nace como una proliferación del endodermo del piso del intestino faríngeo, en el FORAMEN CIEGO, entre el tubérculo impar y la cópula.',
+              'Desciende por delante del intestino faríngeo, unida a la lengua por el CONDUCTO TIROGLOSO, y pasa por delante del hioides y de los cartílagos laríngeos.',
+              'Llega a su sitio, delante de la tráquea, hacia la SEMANA 7; el conducto tirogloso desaparece y el foramen ciego queda como una pequeña fosa en la lengua.',
+              'Al final del TERCER MES aparecen los primeros folículos con coloide y empieza a funcionar (T3 y T4).',
+            ],
+          },
+          {
+            type: 'comparison',
+            title: 'Dos quistes del cuello',
+            left: { title: 'Quiste TIROGLOSO', items: ['Resto del conducto tirogloso', 'En la LÍNEA MEDIA, en el trayecto de descenso de la tiroides'] },
+            right: { title: 'Quiste CERVICAL (branquial)', items: ['Resto del seno cervical (hendiduras 2.ª a 4.ª)', 'LATERAL, anterior al esternocleidomastoideo'] },
+          },
+        ],
+      },
+      {
+        id: 'ecyc-9',
+        number: 9,
+        title: 'Desarrollo de la cara y la nariz',
+        keyTerms: ['prominencias faciales', 'placodas nasales', 'prominencias nasales mediales', 'prominencias nasales laterales'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Al final de la semana 4 aparecen las prominencias faciales, de mesénquima de cresta neural, alrededor del estomodeo: una FRONTONASAL, dos MAXILARES y dos MANDIBULARES. En la semana 5, las PLACODAS NASALES (engrosamientos del ectodermo) se hunden y forman las fosas nasales, rodeadas por prominencias nasales MEDIALES y LATERALES.',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Prominencia', 'Forma'],
+              rows: [
+                ['Frontonasal', 'Frente y puente de la nariz'],
+                ['Nasales mediales (fusionadas)', 'Dorso y punta de la nariz; con las maxilares, el labio superior; segmento intermaxilar'],
+                ['Nasales laterales', 'Alas de la nariz'],
+                ['Maxilares', 'Mejillas, parte lateral del labio superior y maxilar'],
+                ['Mandibulares', 'Labio inferior y mandíbula'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'ecyc-10',
+        number: 10,
+        title: 'Paladar primario y secundario',
+        keyTerms: ['segmento intermaxilar', 'paladar primario', 'crestas palatinas', 'foramen incisivo', 'secuencia de Pierre Robin'],
+        blocks: [
+          {
+            type: 'list',
+            title: 'Segmento intermaxilar (premaxila), de las nasales mediales',
+            items: [
+              'Componente LABIAL: filtrum del labio superior.',
+              'Componente MAXILAR: los cuatro incisivos superiores.',
+              'Componente PALATINO: el PALADAR PRIMARIO, triangular.',
+            ],
+          },
+          {
+            type: 'steps',
+            title: 'Paladar secundario',
+            steps: [
+              'Semana 6: las CRESTAS PALATINAS salen de las prominencias maxilares y bajan en dirección oblicua a cada lado de la lengua.',
+              'Semana 7: suben, se ponen HORIZONTALES por encima de la lengua y se fusionan entre sí en la línea media.',
+              'Se fusionan además con el tabique nasal y por delante con el paladar primario: quedan separadas las cavidades oral y nasal.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'El FORAMEN INCISIVO persiste en el adulto y marca el límite entre paladar primario y secundario: es la referencia para clasificar el labio y el paladar hendidos (por delante o por detrás de él).',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Secuencia de Pierre Robin',
+            content: 'Una mandíbula pequeña (MICROGNATIA) deja la lengua desplazada hacia atrás (GLOSOPTOSIS); la lengua estorba a las crestas palatinas, que no suben ni se fusionan, y queda PALADAR HENDIDO.',
           },
         ],
       },

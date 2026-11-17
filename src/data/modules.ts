@@ -202,6 +202,14 @@ export const modules: Module[] = [
     topicIds: ['embriologia-cavidades-corporales', 'embriologia-periodo-fetal', 'embriologia-placenta', 'embriologia-funcion-placentaria', 'embriologia-repaso-s3'],
   },
   {
+    id: 'embriologia-uad-s4',
+    badge: 'UAD · Embriología I — Semana 4',
+    title: 'Embriología: cabeza y cuello',
+    subtitle: 'Arcos, bolsas y hendiduras faríngeas con sus derivados, seno cervical y casos clínicos del aparato faríngeo; lengua, tiroides, cara y paladar.',
+    emoji: '🗣️',
+    topicIds: ['embriologia-cabeza-cuello'],
+  },
+  {
     id: 'humanistica-uad-s1',
     badge: 'UAD · Medicina Humanística — Semana 1',
     title: 'Medicina Humanística: introducción a las humanidades',
