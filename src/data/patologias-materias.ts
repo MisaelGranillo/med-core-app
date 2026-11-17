@@ -930,6 +930,7 @@ const HIPOTIROIDISMO: Patologia = {
     { materia: 'Histología', topicId: 'histologia-hueso', sectionId: 'hhue-6', label: 'Osificación: intramembranosa vs endocondral', porQue: 'Sin hormona tiroidea se retrasa la maduración ósea.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-receptores', sectionId: 'bhr-6', label: 'Receptores nucleares', porQue: 'La levotiroxina se convierte en T₃ y actúa en el receptor nuclear de hormona tiroidea.' },
     { materia: 'Embriología', topicId: 'embriologia-funcion-placentaria', sectionId: 'efp-5', label: 'Ictericia neonatal y escala de Kramer', porQue: 'La ictericia que dura más de 2 semanas es una señal de alarma; el hipotiroidismo congénito es una de sus causas.' },
+    { materia: 'Embriología', topicId: 'embriologia-cabeza-cuello', sectionId: 'ecyc-8', label: 'Glándula tiroides', porQue: 'La tiroides ectópica es una falla del descenso desde el foramen ciego por el conducto tirogloso.' },
   ],
   atlas: [
     { id: 'bioquimica-hormonas', title: 'Hormonas y receptores' },

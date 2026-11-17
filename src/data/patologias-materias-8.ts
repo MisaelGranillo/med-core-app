@@ -204,6 +204,7 @@ const HOLOPROSENCEFALIA: Patologia = {
     { materia: 'Embriología', topicId: 'embriologia-tercera-semana', sectionId: 'ets-6', label: 'Mapa del destino', porQue: 'Cada región del disco tiene un destino: la línea media anterior forma las estructuras craneofaciales centrales.' },
     { materia: 'Embriología', topicId: 'embriologia-tercera-semana', sectionId: 'ets-4', label: 'Membranas orofaríngea y cloacal y placa precordal', porQue: 'La placa precordal induce el prosencéfalo, la vesícula que no se divide.' },
     { materia: 'Embriología', topicId: 'embriologia-anomalias-numericas', sectionId: 'ean-4', label: 'Edwards, Patau y diagnóstico prenatal', porQue: 'La trisomía 13 es la causa cromosómica más frecuente.' },
+    { materia: 'Embriología', topicId: 'embriologia-cabeza-cuello', sectionId: 'ecyc-9', label: 'Desarrollo de la cara y la nariz', porQue: 'Las prominencias nasales mediales forman el centro del labio superior; si faltan, queda el labio hendido medio.' },
   ],
   atlas: [
     { id: 'embriologia-tercera-semana', title: 'Tercera semana y periodo embrionario' },

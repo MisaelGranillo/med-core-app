@@ -289,6 +289,8 @@ const DELECION_22Q: Patologia = {
     { materia: 'Embriología', topicId: 'embriologia-anomalias-estructurales', sectionId: 'eae-1', label: 'Estructura y nomenclatura del cromosoma', porQue: '«22q11» se lee: cromosoma 22, brazo largo, región 1, banda 1.' },
     { materia: 'Histología', topicId: 'histologia-linfoide-primarios', sectionId: 'hlp-5', label: 'Correlación clínica', porQue: 'La aplasia o hipoplasia del timo deja una inmunodeficiencia de linfocitos T desde el nacimiento.' },
     { materia: 'Genética', topicId: 'genetica-organogenesis', sectionId: 'gorg-3', label: 'Gastrulación y disco trilaminar', porQue: 'La cresta neural migra y forma parte del macizo craneofacial.' },
+    { materia: 'Embriología', topicId: 'embriologia-cabeza-cuello', sectionId: 'ecyc-4', label: 'Bolsas faríngeas', porQue: 'El timo sale de la 3.ª bolsa y las paratiroides de la 3.ª y la 4.ª: por eso hay infecciones e hipocalcemia.' },
+    { materia: 'Embriología', topicId: 'embriologia-cabeza-cuello', sectionId: 'ecyc-6', label: 'Casos clínicos del aparato faríngeo', porQue: 'Es el caso de clase: recién nacido con hipocalcemia, aplasia tímica e infecciones recurrentes.' },
   ],
   atlas: [
     { id: 'embriologia-anomalias-cromosomicas', title: 'Anomalías cromosómicas' },

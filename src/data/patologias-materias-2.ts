@@ -1606,6 +1606,7 @@ const BELL: Patologia = {
     { materia: 'Anatomía', topicId: 'musculos-cara-craneo', sectionId: 'mcara-3', label: 'Periorbitarios y de la nariz', porQue: 'El orbicular de los ojos que ya no cierra el párpado.' },
     { materia: 'Anatomía', topicId: 'musculos-cara-craneo', sectionId: 'mcara-4', label: 'Peribucales', porQue: 'La comisura que se desvía.' },
     { materia: 'Anatomía', topicId: 'musculos-masticacion', sectionId: 'mmast-1', label: 'Los cuatro músculos masticatorios', porQue: 'Inervados por V3, no por el facial.' },
+    { materia: 'Embriología', topicId: 'embriologia-cabeza-cuello', sectionId: 'ecyc-3', label: 'Derivados de los arcos faríngeos', porQue: 'Los músculos de la expresión facial vienen del 2.º arco, y por eso los inerva el facial.' },
   ],
   atlas: [
     { id: 'musculos-cabeza', title: 'Músculos de la cabeza' },

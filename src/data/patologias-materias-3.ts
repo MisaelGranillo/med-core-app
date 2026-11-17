@@ -1297,6 +1297,7 @@ const TTM: Patologia = {
     { materia: 'Anatomía', topicId: 'articulacion-temporomandibular', sectionId: 'atm-3', label: 'Movimientos y músculos', porQue: 'Rotación y traslación al abrir la boca.' },
     { materia: 'Anatomía', topicId: 'musculos-masticacion', sectionId: 'mmast-1', label: 'Los cuatro músculos masticatorios', porQue: 'El pterigoideo lateral y los músculos dolorosos.' },
     { materia: 'Histología', topicId: 'histologia-cartilago', sectionId: 'hcar-5', label: 'Los tres tipos de cartílago', porQue: 'El disco de la ATM es fibrocartílago.' },
+    { materia: 'Embriología', topicId: 'embriologia-cabeza-cuello', sectionId: 'ecyc-3', label: 'Derivados de los arcos faríngeos', porQue: 'Los músculos de la masticación vienen del 1.er arco y los inerva el trigémino (V3).' },
   ],
   atlas: [
     { id: 'articulacion-temporomandibular', title: 'Articulación temporomandibular (ATM)' },
