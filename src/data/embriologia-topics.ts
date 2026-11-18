@@ -10,7 +10,7 @@ import type { Topic } from '../types'
 // embrionario (semanas 3–8) y derivados de las capas germinales. Clase 4: sangre y vasos,
 // segundo mes y teratógenos. Clase 5: ejes corporales y regulación molecular.
 // Semana 3, Clase 1: tubo intestinal y cavidades corporales. Clase 2: periodo fetal. Clase 3: membranas fetales y placenta. Clase 4: función placentaria, líquido amniótico, gemelos y parto. Clase 5: repaso integrador e introducción a los arcos faríngeos.
-// Semana 4, Clase 1: cabeza y cuello (aparato faríngeo, lengua, tiroides, cara y paladar).
+// Semana 4, Clase 1: cabeza y cuello (aparato faríngeo, lengua, tiroides, cara y paladar). Clase 2: cavidades nasales, dientes y defectos craneofaciales.
 export const embriologiaTopics: Topic[] = [
   {
     id: 'embriologia-desarrollo-temprano',
@@ -5741,6 +5741,263 @@ export const embriologiaTopics: Topic[] = [
             variant: 'clinica',
             title: 'Secuencia de Pierre Robin',
             content: 'Una mandíbula pequeña (MICROGNATIA) deja la lengua desplazada hacia atrás (GLOSOPTOSIS); la lengua estorba a las crestas palatinas, que no suben ni se fusionan, y queda PALADAR HENDIDO.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-dientes-craneofacial',
+    title: 'Cavidades nasales, dientes y defectos craneofaciales',
+    subtitle: 'Cavidades nasales y senos paranasales, odontogénesis (lámina dentaria, yema, casquete y campana), tejidos del diente, regulación molecular de dientes y arcos faríngeos, calcio y paratiroides; quistes y fístulas del cuello, defectos de la cresta neural, Treacher Collins, Pierre Robin, microsomía hemifacial, deleción 22q11.2 y fisuras faciales',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '🦷',
+    keyPoints: [
+      'La MEMBRANA ORONASAL separa al inicio la cámara nasal de la boca; al romperse se comunican. Hacia la semana 12 ya hay cornetes y coanas que abren a la faringe. Los senos paranasales crecen por NEUMATIZACIÓN hasta la pubertad.',
+      'ODONTOGÉNESIS desde la semana 6, por interacciones epitelio-mesénquima: lámina dentaria → YEMA → CASQUETE → CAMPANA. 10 yemas en cada maxilar.',
+      'Epitelio interno del órgano del esmalte → AMELOBLASTOS (esmalte). Mesénquima de la papila dental (cresta neural) → ODONTOBLASTOS (dentina) y pulpa. Cementoblastos → cemento.',
+      'El NUDO DEL ESMALTE (FGF4, SHH, BMP2, BMP4) organiza las cúspides y muere por apoptosis al final del casquete. Los genes HOX dan el patrón de incisivos a molares.',
+      'Cresta neural de los arcos: 1.º del mesencéfalo y rombómeras 1–2 (OTX2); 2.º de la rombómera 4 (HOXA2); 3.º de la 6 (HOXA3, HOXB3); 4.º y 6.º de las 6–7.',
+      'Defectos de la CRESTA NEURAL: cara + tracto de salida del corazón (tronco arterioso, Fallot, transposición). Teratógenos: alcohol y ácido retinoico.',
+      'TREACHER COLLINS: 1.er arco hipoplásico, paladar hendido, hipoacusia conductiva y coloboma del párpado inferior; gen TCOF1 (5q32), proteína treacle.',
+      'Quiste TIROGLOSO: línea media, la mitad cerca o por debajo del hioides, sube al deglutir. Quiste CERVICAL: lateral, anterior al esternocleidomastoideo.',
+    ],
+    sections: [
+      {
+        id: 'ecf-1',
+        number: 1,
+        title: 'Cavidades nasales y senos paranasales',
+        keyTerms: ['membrana oronasal', 'cornetes', 'coanas', 'senos paranasales', 'neumatización'],
+        blocks: [
+          {
+            type: 'steps',
+            steps: [
+              'Las fosas nasales se profundizan y forman las CÁMARAS NASALES, separadas de la cavidad oral primitiva por la MEMBRANA ORONASAL.',
+              'La membrana oronasal se rompe y la cámara nasal se comunica con la boca; ambas cavidades se amplían.',
+              'De la pared del prosencéfalo crece el BULBO OLFATORIO, que lleva al sistema nervioso lo que capta el epitelio olfatorio.',
+              'Se forman el paladar primario y el secundario, que separan definitivamente nariz y boca, y los CORNETES superior, medio e inferior.',
+              'Las COANAS comunican la cavidad nasal con la faringe; la disposición está establecida hacia la semana 12.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            content: 'Los CORNETES son laminillas óseas que calientan y humedecen el aire inspirado. Los SENOS PARANASALES (maxilar, etmoidal, frontal y esfenoidal) son pequeños al nacer y crecen hacia el interior de esos huesos por NEUMATIZACIÓN durante la infancia y hasta la pubertad. Esa neumatización y el crecimiento del maxilar y la mandíbula para alojar los dientes dan la forma de la cara adulta.',
+          },
+        ],
+      },
+      {
+        id: 'ecf-2',
+        number: 2,
+        title: 'Odontogénesis: de la lámina dentaria a la campana',
+        keyTerms: ['lámina dentaria', 'yema dental', 'casquete', 'campana', 'papila dental', 'retículo estrellado'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Los dientes empiezan a formarse hacia la SEMANA 6 por INTERACCIONES EPITELIO-MESÉNQUIMA: el epitelio de la boca (ectodermo) y el mesénquima de cresta neural se inducen mutuamente.',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Estadio', 'Qué pasa'],
+              rows: [
+                ['Lámina dentaria', 'El epitelio de la boca forma una banda en forma de C en cada maxilar'],
+                ['Yema', 'De la lámina salen 10 yemas en el maxilar y 10 en la mandíbula: los dientes temporales'],
+                ['Casquete', 'El mesénquima invagina la cara profunda de la yema y forma la PAPILA DENTAL; el epitelio, ya ÓRGANO DEL ESMALTE, tiene una lámina interna y una externa, con el RETÍCULO ESTRELLADO entre ellas'],
+                ['Campana', 'Se diferencian los ameloblastos y los odontoblastos y empieza el depósito de esmalte y dentina'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Al principio el EPITELIO dirige el desarrollo; a partir de la etapa de yema el control pasa al MESÉNQUIMA.',
+          },
+        ],
+      },
+      {
+        id: 'ecf-3',
+        number: 3,
+        title: 'Tejidos del diente',
+        keyTerms: ['ameloblastos', 'odontoblastos', 'esmalte', 'dentina', 'pulpa', 'cemento', 'ligamento periodontal'],
+        blocks: [
+          {
+            type: 'table',
+            data: {
+              headers: ['Tejido', 'Lo forman', 'Origen'],
+              rows: [
+                ['ESMALTE', 'Ameloblastos (prismas sobre la dentina)', 'Epitelio INTERNO del órgano del esmalte (ectodermo)'],
+                ['DENTINA', 'Odontoblastos, que dejan una prolongación dentro de ella', 'Capa externa de la PAPILA DENTAL (mesénquima de cresta neural), junto al epitelio interno'],
+                ['PULPA', 'El resto de la papila dental', 'Mesénquima de cresta neural'],
+                ['CEMENTO', 'Cementoblastos, en la raíz', 'Mesénquima que rodea al diente'],
+                ['LIGAMENTO PERIODONTAL', 'Fija el diente al alveolo del maxilar o la mandíbula', 'Mesénquima que rodea al diente'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'En clase se dijo que la lámina interna forma odontoblastos y la externa ameloblastos. Lo correcto: el epitelio INTERNO forma los AMELOBLASTOS (esmalte) y los ODONTOBLASTOS (dentina) se diferencian del mesénquima de la papila dental, frente a él. El epitelio externo no forma esmalte.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'mnemotecnia',
+            title: 'A de afuera, O de dentro',
+            content: 'AMELOBLASTOS hacen el esmalte, la capa de afuera del diente; ODONTOBLASTOS hacen la dentina, por dentro del esmalte y alrededor de la pulpa.',
+          },
+        ],
+      },
+      {
+        id: 'ecf-4',
+        number: 4,
+        title: 'Regulación molecular del diente',
+        keyTerms: ['nudo del esmalte', 'MSX1', 'MSX2', 'genes HOX'],
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'Señales de las interacciones epitelio-mesénquima: WNT, BMP, FGF y Sonic Hedgehog.',
+              'Factores de transcripción MSX1 y MSX2 para la diferenciación de los tejidos.',
+              'Los genes HOX definen el patrón de cada pieza, de incisivos a molares.',
+              'El NUDO DEL ESMALTE, en el centro del casquete, expresa FGF4, SHH, BMP2 y BMP4, organiza las CÚSPIDES y desaparece por apoptosis al final de la etapa de casquete.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'Lo esencial es la secuencia del desarrollo dentario; la parte molecular es complementaria.',
+          },
+        ],
+      },
+      {
+        id: 'ecf-5',
+        number: 5,
+        title: 'Bases moleculares de los arcos faríngeos',
+        keyTerms: ['rombómeras', 'OTX2', 'HOXA2', 'PAX1', 'Sonic Hedgehog'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El romboencéfalo se segmenta en ROMBÓMERAS 1 a 7. La cresta neural que sale de cada una migra a un arco determinado y lleva su propio código de genes.',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Arco', 'Origen de la cresta neural', 'Gen', 'Forma'],
+              rows: [
+                ['1.º', 'Mesencéfalo y rombómeras 1–2', 'OTX2 (sin genes HOX)', 'Maxilar, mandíbula, martillo y yunque'],
+                ['2.º', 'Rombómera 4', 'HOXA2', 'Parte superior del cuerpo y astas menores del hioides, estribo'],
+                ['3.º', 'Rombómera 6', 'HOXA3, HOXB3', 'Parte inferior del cuerpo y astas mayores del hioides'],
+                ['4.º y 6.º', 'Rombómeras 6–7', 'Genes HOX', 'Cartílagos laríngeos'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Señales en las bolsas',
+            items: [
+              'BMP7 en el endodermo de la parte posterior de cada bolsa; FGF8 en la parte anterior.',
+              'PAX1 en la parte dorsal de cada bolsa.',
+              'Sonic Hedgehog en las bolsas 2.ª y 3.ª.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'Recordatorio del desarrollo: los arcos aparecen entre los días 24 y 28; el 2.º arco cubre las hendiduras 2.ª a 4.ª y el seno cervical debe desaparecer hacia la semana 7.',
+          },
+        ],
+      },
+      {
+        id: 'ecf-6',
+        number: 6,
+        title: 'Calcio: paratiroides y células C',
+        keyTerms: ['paratohormona', 'calcitonina', 'calcitriol'],
+        blocks: [
+          {
+            type: 'comparison',
+            left: { title: 'PARATOHORMONA (paratiroides, bolsas 3.ª y 4.ª)', items: ['Sube el calcio en sangre', 'Libera calcio del hueso', 'Reduce su pérdida por la orina', 'Estimula al riñón a formar calcitriol'] },
+            right: { title: 'CALCITONINA (células C, 4.ª bolsa)', items: ['Baja el calcio en sangre', 'Inhibe a los osteoclastos cuando el calcio está alto'] },
+          },
+          {
+            type: 'note',
+            content: 'Las paratiroides inferiores y el timo pueden quedar en sitios variables a lo largo de su descenso, por ejemplo cerca de la bifurcación de la carótida, casi siempre sin consecuencias.',
+          },
+        ],
+      },
+      {
+        id: 'ecf-7',
+        number: 7,
+        title: 'Quistes y fístulas del cuello',
+        keyTerms: ['quiste cervical', 'fístula branquial', 'quiste tirogloso', 'fístula tiroglosa'],
+        blocks: [
+          {
+            type: 'comparison',
+            left: {
+              title: 'Quiste y fístula CERVICAL (branquial)',
+              items: ['Seno cervical persistente', 'LATERAL, anterior al esternocleidomastoideo, sobre todo cerca del ángulo de la mandíbula', 'Fístulas EXTERNAS (a la piel) más frecuentes que las INTERNAS (a la región amigdalina)', 'Se infecta y supura; se extirpa'],
+            },
+            right: {
+              title: 'Quiste TIROGLOSO',
+              items: ['Resto del conducto tirogloso', 'En la LÍNEA MEDIA o muy cerca; la mitad cerca o por debajo del hioides; también en la base de la lengua o junto al cartílago tiroides', 'SUBE AL DEGLUTIR', 'Puede formar fístula tiroglosa, casi siempre al romperse'],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Quiste tirogloso: qué más saber',
+            items: [
+              'Puede notarse desde el nacimiento. Se estudia con ultrasonido, tomografía o resonancia según su relación con las estructuras vecinas.',
+              'Tratamiento: extirpación quirúrgica, muchas veces ambulatoria; con más cuidado si está cerca de vasos o nervios.',
+              'Es firme pero no pétreo; malignizarse es raro.',
+            ],
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'No toda masa del cuello es un quiste',
+            content: 'Ganglios inflamados con fiebre e hipertrofia amigdalina sugieren una infección de la faringe. Las leucemias y los linfomas suelen acompañarse de otros datos: petequias, sangrado o crecimiento del hígado y el bazo.',
+          },
+        ],
+      },
+      {
+        id: 'ecf-8',
+        number: 8,
+        title: 'Defectos de la cresta neural y síndromes del primer arco',
+        keyTerms: ['Treacher Collins', 'secuencia de Pierre Robin', 'microsomía hemifacial', 'síndrome de Goldenhar', 'deleción 22q11.2'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'La cresta neural forma gran parte de la cara y el tabique del tracto de salida del corazón, así que sus defectos suelen combinar alteraciones CRANEOFACIALES y CARDIOPATÍAS como el tronco arterioso persistente, la tetralogía de Fallot o la transposición de los grandes vasos. Es muy sensible al ALCOHOL y al ÁCIDO RETINOICO, que se debe evitar por completo en el embarazo.',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Cuadro', 'Características'],
+              rows: [
+                ['Síndrome de TREACHER COLLINS (disostosis mandibulofacial)', 'Hipoplasia de estructuras del 1.er arco (mandíbula, cigomáticos), paladar hendido, hipoacusia conductiva bilateral por oído medio y externo malformados, hendiduras palpebrales inclinadas hacia abajo y COLOBOMA del párpado inferior. Gen TCOF1 (5q32), proteína treacle'],
+                ['Secuencia de PIERRE ROBIN', 'Micrognatia → glosoptosis → la lengua impide la fusión de las crestas palatinas → paladar hendido. Puede ser aislada, parte de un síndrome o por compresión fetal en el OLIGOHIDRAMNIOS (< 400 mL), que empuja la mandíbula contra el tórax'],
+                ['MICROSOMÍA HEMIFACIAL (síndrome de Goldenhar)', 'Afecta al 1.er arco de UN solo lado: hipoplasia de maxilar y mandíbula, anotia o microtia, quistes dermoides oculares y hemivértebras. 1 de cada 5 600 recién nacidos; hasta el 50 % con cardiopatía (Fallot, comunicación interventricular)'],
+                ['DELECIÓN 22q11.2 (DiGeorge, velocardiofacial)', 'Cardiopatía del tracto de salida, cara dismórfica leve, infecciones por timo pequeño, hipocalcemia con convulsiones por paratiroides pequeñas; más riesgo de esquizofrenia y depresión'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'ecf-9',
+        number: 9,
+        title: 'Fisuras faciales',
+        keyTerms: ['labio hendido', 'paladar hendido', 'úvula hendida', 'foramen incisivo'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El FORAMEN INCISIVO, donde se unen el paladar primario (segmento intermaxilar, de las nasales mediales) y el secundario, divide las fisuras en anteriores y posteriores.',
+          },
+          {
+            type: 'comparison',
+            left: { title: 'ANTERIORES al foramen incisivo', items: ['Labio hendido lateral y maxilar hendido', 'Falla parcial o completa de la fusión de la prominencia maxilar con la nasal medial', 'De uno o de ambos lados'] },
+            right: { title: 'POSTERIORES al foramen incisivo', items: ['Paladar hendido y úvula hendida', 'Las crestas palatinas no se fusionan entre sí ni con el tabique nasal', 'Como en la secuencia de Pierre Robin'] },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Fisuras combinadas',
+            content: 'Hay fisuras anteriores y posteriores a la vez, que dejan comunicadas boca y nariz. Su reconstrucción puede requerir muchas cirugías a lo largo de la infancia.',
           },
         ],
       },
