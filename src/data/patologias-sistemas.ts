@@ -94,4 +94,8 @@ export const SISTEMAS_DE: Record<string, Sistema[]> = {
   'hiperbilirrubinemia-neonatal': ['Sangre', 'Digestivo'],
   'transfusion-feto-fetal': ['Reproductor y embarazo', 'Cardiovascular'],
   'atresia-esofagica': ['Digestivo', 'Respiratorio'],
+  'labio-paladar-hendido': ['Digestivo'],
+  'quiste-tirogloso': ['Endocrino y metabolismo'],
+  'quiste-branquial': ['Inmunidad e infecciones'],
+  'treacher-collins': ['Genética y cromosomas', 'Musculoesquelético'],
 }

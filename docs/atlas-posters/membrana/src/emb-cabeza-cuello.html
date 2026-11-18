@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 10px; padding-top: 12px; }
+h1 { font-size: 36px; }
+.panel { padding: 10px 12px; }
+.ph { margin: 0 0 6px; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.6px; line-height: 1.3; }
+.lst li { margin: 0 0 2px; }
+table td { font-size: 10.2px; padding: 2px 5px; line-height: 1.24; }
+table th { padding: 2px 5px; }
+.note { font-size: 10px; margin: 4px 0 0; }
+.box { border-radius: 8px; padding: 5px 8px; font-size: 10.1px; line-height: 1.28; }
+.box b.t { display: block; font-size: 11px; margin-bottom: 1px; }
+.cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.side { display: grid; gap: 10px; align-items: center; }
+.cards4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.cards4 .c { border: 1px solid #f1c9cc; background: #fff; border-radius: 8px; padding: 5px 7px; font-size: 9.9px; line-height: 1.27; }
+.cards4 .c b.t { display: block; font-size: 11px; color: var(--navy); margin-bottom: 2px; }
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 3px; vertical-align: -1px; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Embriología</p>
+  <h1>Cabeza y cuello: aparato faríngeo y cara</h1>
+  <p class="tag">Qué forma cada arco, bolsa y hendidura, cómo se arman la lengua, la tiroides, la cara, el paladar y los dientes, y qué pasa cuando fallan.</p>
+</header>
+
+<div class="row">
+  <section class="panel" style="flex:1.12">
+    <div class="ph"><span class="n">1</span>Aparato faríngeo <small>— corte frontal, un lado (semanas 4–5)</small></div>
+    <img src="{{img:ana/cc-faringeo.svg}}" style="width:100%;display:block" alt="">
+    <p class="note">Arcos: ectodermo por fuera, endodermo por dentro y mesénquima con cartílago (cresta neural), músculo (mesodermo paraxial), nervio y arteria. El 5.º arco es rudimentario.</p>
+  </section>
+  <section class="panel" style="flex:.88">
+    <div class="ph"><span class="n">2</span>Derivados de los arcos</div>
+    <table>
+      <tr><th>Arco</th><th>Cartílago y hueso</th><th>Músculos</th><th>Nervio</th></tr>
+      <tr><td class="k" style="color:#e8912e">1.º</td><td>Meckel → martillo y yunque; mandíbula, maxilar, cigomático</td><td>Masticación, milohioideo, digástrico ant., tensores</td><td>V (V3)</td></tr>
+      <tr><td class="k" style="color:#3d8b5a">2.º</td><td>Reichert → estribo, estiloides, hioides sup. y astas menores</td><td>Expresión facial, estapedio, digástrico post.</td><td>VII</td></tr>
+      <tr><td class="k" style="color:#2f6db5">3.º</td><td>Hioides inf. y astas mayores</td><td>Estilofaríngeo</td><td>IX</td></tr>
+      <tr><td class="k" style="color:#7a5ba8">4.º</td><td>Cartílagos laríngeos (con el 6.º)</td><td>Cricotiroideo, constrictores, elevador del velo</td><td>X laríngeo sup.</td></tr>
+      <tr><td class="k" style="color:#c8242c">6.º</td><td>Cartílagos laríngeos</td><td>Intrínsecos de la laringe</td><td>X recurrente</td></tr>
+    </table>
+    <p class="note">Cresta neural: 1.º arco del mesencéfalo y rombómeras 1–2 (OTX2); 2.º de R4 (HOXA2); 3.º de R6. Las arterias de los arcos se ven en cardiovascular.</p>
+    <div class="cmp" style="margin-top:8px">
+      <div class="box" style="background:#fdeeee"><b class="t" style="color:var(--red)">Paratohormona</b>Paratiroides (bolsas 3.ª y 4.ª). Sube el calcio: lo saca del hueso, evita su pérdida en la orina y activa el calcitriol.</div>
+      <div class="box" style="background:#eaf0fb"><b class="t" style="color:#2f6db5">Calcitonina</b>Células C (4.ª bolsa). Baja el calcio al inhibir a los osteoclastos.</div>
+    </div>
+    <p class="note">Las paratiroides inferiores bajan con el timo y rebasan a las superiores: por eso las de la 3.ª bolsa quedan abajo.</p>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:.9">
+    <div class="ph"><span class="n">3</span>Seno cervical y quistes del cuello</div>
+    <div class="side" style="grid-template-columns:200px 1fr">
+      <img src="{{img:ana/cc-seno.svg}}" style="width:200px;display:block" alt="">
+      <ul class="lst">
+        <li>El 2.º arco crece hacia abajo, cubre las hendiduras 2.ª a 4.ª y forma el <b>seno cervical</b>, que debe desaparecer.</li>
+      </ul>
+    </div>
+    <div class="cmp" style="margin-top:6px">
+      <div class="box" style="background:#eaf0fb"><b class="t" style="color:#2f6db5">Quiste cervical (branquial)</b>Seno cervical persistente. LATERAL, anterior al esternocleidomastoideo, cerca del ángulo de la mandíbula. Fístula externa más que interna.</div>
+      <div class="box" style="background:#fdf1e3"><b class="t" style="color:#b86b12">Quiste tirogloso</b>Conducto tirogloso persistente. LÍNEA MEDIA, la mitad junto al hioides. Sube al deglutir. Operación de Sistrunk.</div>
+    </div>
+  </section>
+  <section class="panel" style="flex:1.1">
+    <div class="ph"><span class="n">4</span>Lengua</div>
+    <div class="side" style="grid-template-columns:1fr 128px">
+      <img src="{{img:ana/cc-lengua.svg}}" style="width:100%;display:block" alt="">
+      <ul class="lst">
+        <li><b>Cuerpo</b>: 1.er arco (protuberancias linguales sobre el tubérculo impar).</li>
+        <li><b>Raíz</b>: cópula o eminencia hipobranquial (arcos 2, 3 y parte del 4).</li>
+        <li><b>Surco terminal</b> los separa; en su vértice queda el foramen ciego.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:.92">
+    <div class="ph"><span class="n">5</span>Descenso de la tiroides</div>
+    <div class="side" style="grid-template-columns:205px 1fr">
+      <img src="{{img:ana/cc-tiroides.svg}}" style="width:205px;display:block" alt="">
+      <ul class="lst">
+        <li>Nace del endodermo en el <b>foramen ciego</b> y baja por el <b>conducto tirogloso</b> por delante del hioides y de la laringe.</li>
+        <li>Semana 7: delante de la tráquea. Fin del 3.<sup>er</sup> mes: folículos con coloide, ya funciona.</li>
+        <li>Si el conducto persiste: <b>quiste tirogloso</b>. Si se detiene: tiroides <b>ectópica</b> (p. ej., lingual), a veces la única que hay.</li>
+      </ul>
+    </div>
+  </section>
+  <section class="panel" style="flex:1.08">
+    <div class="ph"><span class="n">6</span>Cara: cinco prominencias</div>
+    <div class="side" style="grid-template-columns:1fr 150px">
+      <img src="{{img:ana/cc-cara.svg}}" style="width:100%;display:block" alt="">
+      <ul class="lst" style="padding-left:0;list-style:none">
+        <li><span class="dot" style="background:#a8c66c"></span><b>Frontonasal</b>: frente y puente nasal</li>
+        <li><span class="dot" style="background:#e8912e"></span><b>Nasales mediales</b>: dorso y punta, filtrum, premaxila</li>
+        <li><span class="dot" style="background:#f2c14e"></span><b>Nasales laterales</b>: alas de la nariz</li>
+        <li><span class="dot" style="background:#5f8fc9"></span><b>Maxilares</b>: mejillas y labio superior lateral</li>
+        <li><span class="dot" style="background:#b5485d"></span><b>Mandibulares</b>: labio inferior y mandíbula</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:.85">
+    <div class="ph"><span class="n">7</span>Paladar</div>
+    <div class="side" style="grid-template-columns:200px 1fr">
+      <img src="{{img:ana/cc-paladar.svg}}" style="width:200px;display:block" alt="">
+      <ul class="lst">
+        <li><b>Primario</b>: del segmento intermaxilar (filtrum, 4 incisivos y paladar primario).</li>
+        <li><b>Secundario</b>: crestas palatinas de las maxilares; oblicuas en la semana 6, horizontales y fusionadas en la 7.</li>
+        <li><b>Pierre Robin</b>: micrognatia → glosoptosis → la lengua estorba a las crestas → paladar hendido.</li>
+      </ul>
+    </div>
+  </section>
+  <section class="panel" style="flex:1.15">
+    <div class="ph"><span class="n">8</span>Dientes <small>— desde la semana 6, interacción epitelio-mesénquima</small></div>
+    <img src="{{img:ana/cc-dientes.svg}}" style="width:100%;display:block" alt="">
+    <p class="note"><span class="dot" style="background:#2f6db5"></span><b>Ameloblastos</b> (epitelio interno) → esmalte · <span class="dot" style="background:#e8912e"></span><b>odontoblastos</b> (papila, cresta neural) → dentina · papila → pulpa · retículo estrellado entre las láminas del órgano del esmalte · el nudo del esmalte organiza las cúspides.</p>
+  </section>
+</div>
+
+<section class="clin">
+  <div class="ph"><span class="n">9</span>Correlación clínica</div>
+  <div class="cards4">
+    <div class="c"><b class="t">Deleción 22q11.2</b>Bolsas 3.ª y 4.ª: sin timo (infecciones) y sin paratiroides (hipocalcemia), con cardiopatía del tracto de salida.</div>
+    <div class="c"><b class="t">Treacher Collins</b>1.<sup>er</sup> arco bilateral: cigomáticos y mandíbula pequeños, coloboma del párpado inferior, hipoacusia. Gen TCOF1.</div>
+    <div class="c"><b class="t">Microsomía hemifacial</b>1.<sup>er</sup> arco de UN lado: microtia, dermoides oculares, hemivértebras; hasta 50 % con cardiopatía.</div>
+    <div class="c"><b class="t">Labio y paladar hendidos</b>Anteriores al foramen incisivo (labio, maxilar) o posteriores (paladar, úvula). La malformación craneofacial más común.</div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Embriología I (UAD) · Semana 4, clases 1 y 2 · Esquemas propios, simplificados y no a escala</p>
+</div></body></html>

@@ -1564,6 +1564,24 @@ export const atlasTopics: AtlasTopic[] = [
       { id: 'efp-a6', question: 'En el panel 7, gemelos con una placenta y un corion pero dos amnios se dividieron en la etapa de:', options: ['Dos blastómeras', 'Disco bilaminar', 'Línea primitiva', 'Blastocisto temprano'], correctIndex: 3, explanation: 'Se dividió la masa celular interna: monocoriónico-diamniótico.', difficulty: 'medium' },
     ],
   },
+  {
+    id: 'embriologia-cabeza-cuello',
+    title: 'Cabeza y cuello: aparato faríngeo y cara',
+    subtitle: 'Corte del aparato faríngeo con arcos, bolsas y hendiduras y sus derivados, tabla de cartílagos, músculos y nervios, seno cervical y quistes del cuello, lengua y su inervación, descenso de la tiroides, prominencias faciales, paladar, estadios del diente y síndromes craneofaciales',
+    category: 'embriologia',
+    emoji: '🗣️',
+    imagePath: '/atlas/embriologia-cabeza-cuello.webp',
+    colorKey: 'embriologia',
+    relatedTopicIds: ['embriologia-cabeza-cuello', 'embriologia-dientes-craneofacial'],
+    questions: [
+      { id: 'ecu-a1', question: 'En el corte del panel 1, la 3.ª bolsa forma:', options: ['Cavidad timpánica y trompa', 'Paratiroides inferiores y timo', 'Amígdala palatina', 'Paratiroides superiores'], correctIndex: 1, explanation: 'La 4.ª forma las paratiroides superiores y el cuerpo ultimobranquial.', difficulty: 'easy' },
+      { id: 'ecu-a2', question: 'En la tabla del panel 2, el nervio del 2.º arco es:', options: ['El facial (VII)', 'El trigémino (V)', 'El glosofaríngeo (IX)', 'El vago (X)'], correctIndex: 0, explanation: 'Inerva los músculos de la expresión facial.', difficulty: 'easy' },
+      { id: 'ecu-a3', question: 'En el panel 3, el quiste que queda en la línea media y sube al deglutir es el:', options: ['Quiste cervical', 'Seno cervical', 'Quiste tirogloso', 'Quiste dermoide'], correctIndex: 2, explanation: 'El cervical (branquial) es lateral, anterior al esternocleidomastoideo.', difficulty: 'easy' },
+      { id: 'ecu-a4', question: 'En la lengua definitiva del panel 4, el tercio posterior lo inerva el:', options: ['Trigémino (V3)', 'Hipogloso', 'Facial', 'Glosofaríngeo (IX)'], correctIndex: 3, explanation: 'Los dos tercios anteriores: V3 y gusto por la cuerda del tímpano (VII).', difficulty: 'medium' },
+      { id: 'ecu-a5', question: 'En el panel 6, el puente nasal deriva de la prominencia:', options: ['Maxilar', 'Frontonasal', 'Nasal lateral', 'Mandibular'], correctIndex: 1, explanation: 'Las nasales mediales forman el dorso y la punta; las laterales, las alas.', difficulty: 'medium' },
+      { id: 'ecu-a6', question: 'En la campana del panel 8, la capa azul oscuro (epitelio interno) forma:', options: ['Dentina', 'Pulpa', 'Esmalte, por los ameloblastos', 'Cemento'], correctIndex: 2, explanation: 'Los odontoblastos (naranja), de la papila dental, forman la dentina.', difficulty: 'medium' },
+    ],
+  },
 
 
 
