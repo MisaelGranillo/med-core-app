@@ -1013,12 +1013,13 @@ export const uadMedicina: Plan = {
                 topicIds: ['humanistica-causalidad-determinantes', 'humanistica-estilos-vida-cronicas', 'humanistica-sindromes-filiacion-cultural'],
                 temas: [
                   'Clase 1 (impartida, 17 nov): causalidad (Koch-Henle, Bradford Hill, tipos de causa y asociaciones causales, indeterminismo causal); campo de salud (Lalonde, Dever) y determinantes sociales (Dahlgren y Whitehead); estilo de vida y PEPS-I; perfil epidemiológico y carga de la enfermedad en México; atención primaria y modelo mexicano; medicina del estilo de vida frente a la convencional y modelo de Nola Pender; sobrepeso y obesidad',
-                  'Clase 2 (en curso): diabetes tipo 2 y sus seis pilares impartidos el 17 nov; hipertensión arterial el 18 nov',
-                  'Clase 3 (pendiente): síndromes de filiación cultural (Yap, DSM-IV-TR, DSM-5); mal de ojo, empacho, susto y caída de mollera',
+                  'Clase 2 (impartida, 17 y 18 nov): diabetes tipo 2 y los seis pilares de la medicina del estilo de vida; hipertensión arterial (asesino silencioso, cascada de Ensanut 2022, factores de riesgo, estilo de vida e inteligencia artificial)',
+                  'Clase 3 (impartida, 18 nov): medicina tradicional (derecho cultural, cosmovisión, terapeutas, estandarización de la herbolaria) y síndromes de filiación cultural (Yap 1962, CIE, DSM-5); mal de ojo, empacho, susto y caída de mollera; cierre del curso',
                 ],
                 fuentes: [
                   { title: 'Medicina Humanística — Semana 4, Clase 1', file: 'Medicina Humanistica - Semana 4 - Clase 1.pdf', nota: 'Causalidad, determinantes, perfil epidemiológico, estilo de vida y obesidad (presentación de la clase).' },
                   { title: 'Medicina Humanística — Semana 4, Clase 2', file: 'Medicina Humanistica - Semana 4 - Clase 2.pdf', nota: 'Diabetes tipo 2 e hipertensión arterial (presentación de la clase).' },
+                  { title: 'Medicina Humanística — Semana 4, Clase 3', file: 'Medicina Humanistica - Semana 4 - Clase 3.pdf', nota: 'Medicina tradicional y síndromes de filiación cultural (presentación de la clase).' },
                   { title: 'Medicina Humanística — Semana 4, Sesión 1', file: 'Medicina Humanistica - Semana 4 - Sesion 1.pdf', nota: 'Causalidad, determinantes y obesidad.' },
                   { title: 'Medicina Humanística — Semana 4, Sesión 2', file: 'Medicina Humanistica - Semana 4 - Sesion 2.pdf', nota: 'Diabetes, hipertensión y medicina tradicional.' },
                   { title: 'Medicina Humanística — Semana 4, Sesión 3', file: 'Medicina Humanistica - Semana 4 - Sesion 3.pdf', nota: 'Síndromes de filiación cultural.' },
@@ -1045,6 +1046,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 3 · Sesión 3 — Ética, comunicación y proxémica', file: 'Medicina Humanistica - Semana 3 - Sesion 3.pdf', kind: 'Clase' },
               { title: 'Semana 4 · Clase 1 — Causalidad, determinantes y obesidad', file: 'Medicina Humanistica - Semana 4 - Clase 1.pdf', kind: 'Clase' },
               { title: 'Semana 4 · Clase 2 — Diabetes tipo 2 e hipertensión', file: 'Medicina Humanistica - Semana 4 - Clase 2.pdf', kind: 'Clase' },
+              { title: 'Semana 4 · Clase 3 — Síndromes de filiación cultural', file: 'Medicina Humanistica - Semana 4 - Clase 3.pdf', kind: 'Clase' },
               { title: 'Semana 4 · Sesión 1 — Causalidad, determinantes y obesidad', file: 'Medicina Humanistica - Semana 4 - Sesion 1.pdf', kind: 'Clase' },
               { title: 'Semana 4 · Sesión 2 — Diabetes, hipertensión y medicina tradicional', file: 'Medicina Humanistica - Semana 4 - Sesion 2.pdf', kind: 'Clase' },
               { title: 'Semana 4 · Sesión 3 — Síndromes de filiación cultural', file: 'Medicina Humanistica - Semana 4 - Sesion 3.pdf', kind: 'Clase' },

@@ -1,7 +1,7 @@
 import type { Question } from '../types'
 
 // Medicina Humanística — Semana 1 (Clases 1–3), Semana 2 (Clase 1: cultura e interculturalidad; Clase 2: salud, enfermedad, muerte y práctica médica; Clase 3: eficacia simbólica y competencia cultural), Semana 3 (relación médico-paciente; Clases 1 a 3 impartidas del 9 al 11 nov)
-// y Semana 4 (perfiles patológicos: Clase 1 y diabetes de la Clase 2 impartidas el 17 nov; hipertensión y síndromes de filiación cultural, pendientes).
+// y Semana 4 (perfiles patológicos: Clases 1 a 3 impartidas el 17 y 18 nov).
 // ★ en la explicación = tema que el profesor señaló como pregunta de examen.
 // «★ Examen Semana 1.» = pregunta tomada del examen real de la Semana 1 (respuesta verificada con la clase).
 export const humanisticaQuestions: Question[] = [
@@ -2184,7 +2184,7 @@ export const humanisticaQuestions: Question[] = [
     question: '¿Quién acuñó el término «síndromes de filiación cultural» en 1962?',
     options: ['Pow Meng Yap', 'Laín Entralgo', 'Marc Lalonde', 'Talcott Parsons'],
     correctIndex: 0, difficulty: 'medium',
-    explanation: 'Los describió con una mirada colonial; el DSM-5 cambió el concepto.',
+    explanation: '★ Pregunta de examen señalada por el profesor. Los describió con una mirada colonial; el DSM-5 cambió el concepto.',
   },
   {
     id: 'mh-sfcq-q2', topicId: 'humanistica-sindromes-filiacion-cultural', type: 'multiple-choice',
@@ -2262,5 +2262,75 @@ export const humanisticaQuestions: Question[] = [
     options: ['Una planta medicinal', 'Un ritual funerario', 'Una fuerza interior dadora de vida, que se valoraba en la mollera', 'Un tipo de curandero'],
     correctIndex: 2, difficulty: 'hard',
     explanation: 'Su pérdida se diagnosticaba tomando el pulso y observando la mollera.',
+  },
+  {
+    id: 'mh-sfcq-q13', topicId: 'humanistica-sindromes-filiacion-cultural', type: 'multiple-choice',
+    question: '«Comportamientos raros, exóticos, impredecibles y caóticos en su núcleo, entre personas no civilizadas» es como se definió en 1962:',
+    options: ['El concepto cultural de angustia', 'El síndrome de filiación cultural', 'La medicina tradicional', 'La enfermedad folk'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: '★ Pregunta de examen. Fue la definición de Pow Meng Yap, con la mirada de su época.',
+  },
+  {
+    id: 'mh-sfcq-q14', topicId: 'humanistica-sindromes-filiacion-cultural', type: 'multiple-choice',
+    question: 'Según la clase, los sustos incurables:',
+    options: ['Se curan con un bolillo', 'Solo afectan a los adultos mayores', 'Se transmiten al niño por la leche materna', 'Desaparecen solos'],
+    correctIndex: 2, difficulty: 'hard',
+    explanation: '★ El profesor advirtió que esta pregunta puede salir. En la mujer se asocian a la locura y los ataques; en el hombre, a ataques esporádicos.',
+  },
+  {
+    id: 'mh-sfcq-q15', topicId: 'humanistica-sindromes-filiacion-cultural', type: 'multiple-choice',
+    question: '«Entidad inmaterial con la forma del cuerpo, distinta del alma, que puede salir del cuerpo sin causar la muerte» define:',
+    options: ['El tonalli', 'El teyolía', 'El ihíyotl', 'La sombra'],
+    correctIndex: 3, difficulty: 'medium',
+    explanation: 'No todo susto implica perder el alma o la sombra.',
+  },
+  {
+    id: 'mh-sfcq-q16', topicId: 'humanistica-sindromes-filiacion-cultural', type: 'multiple-choice',
+    question: 'Las tres fuerzas vitales nahuas y sus órganos son:',
+    options: ['Tonalli (cerebro), teyolía (corazón) e ihíyotl (hígado)', 'Tonalli (corazón), teyolía (hígado) e ihíyotl (cerebro)', 'Tonalli (hígado), teyolía (cerebro) e ihíyotl (corazón)', 'Las tres residen en la sangre'],
+    correctIndex: 0, difficulty: 'hard',
+    explanation: 'La pérdida del tonalli explica la caída de mollera.',
+  },
+  {
+    id: 'mh-sfcq-q17', topicId: 'humanistica-sindromes-filiacion-cultural', type: 'multiple-choice',
+    question: '¿Por qué algunas personas creen que «la diabetes da por un susto»?',
+    options: ['Porque el susto destruye el páncreas', 'Porque la adrenalina sube la glucosa y hace aparecer los síntomas de una diabetes que ya existía', 'Porque el susto contagia diabetes', 'Porque el bolillo la previene'],
+    correctIndex: 1, difficulty: 'medium',
+    explanation: 'En una persona sana, el susto no causa diabetes.',
+  },
+  {
+    id: 'mh-sfcq-q18', topicId: 'humanistica-sindromes-filiacion-cultural', type: 'multiple-choice',
+    question: 'La práctica de la medicina tradicional es un derecho cultural de los pueblos indígenas reconocido en:',
+    options: ['El artículo 4.º de la Ley General de Salud', 'La NOM-004', 'El artículo 2.º de la Constitución', 'El DSM-5'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Sus terapeutas incluyen yerberos, sobadores, hueseros, parteras, culebreros, rezanderos y graniceros.',
+  },
+  {
+    id: 'mh-sfcq-q19', topicId: 'humanistica-sindromes-filiacion-cultural', type: 'multiple-choice',
+    question: '«Enfermedad folk ampliamente extendida en las culturas mediterráneas y en el mundo» describe:',
+    options: ['El empacho', 'La caída de mollera', 'El susto', 'El mal de ojo'],
+    correctIndex: 3, difficulty: 'easy',
+    explanation: 'No tiene una definición estandarizada como la de la hipertensión.',
+  },
+  {
+    id: 'mh-sfcq-q20', topicId: 'humanistica-sindromes-filiacion-cultural', type: 'multiple-choice',
+    question: '¿Cuál es el principal problema que señaló el profesor en las recetas de herbolaria mexicana?',
+    options: ['La falta de estandarización: medidas como «un puño» o «un limón», sin dosis ni duración', 'Que usan plantas extranjeras', 'Que son muy caras', 'Que solo las preparan los médicos'],
+    correctIndex: 0, difficulty: 'easy',
+    explanation: 'La medicina tradicional china sí sistematiza preparación y dosis.',
+  },
+  {
+    id: 'mh-croq-q18', topicId: 'humanistica-estilos-vida-cronicas', type: 'multiple-choice',
+    question: '¿Por qué se le llama «asesino silencioso» a la hipertensión?',
+    options: ['Porque siempre da cefalea', 'Porque avanza años sin síntomas mientras el organismo se adapta a cifras más altas', 'Porque solo afecta a jóvenes', 'Porque no tiene tratamiento'],
+    correctIndex: 1, difficulty: 'easy',
+    explanation: 'Los síntomas (cefalea, fosfenos, acúfenos) suelen ser tardíos.',
+  },
+  {
+    id: 'mh-croq-q19', topicId: 'humanistica-estilos-vida-cronicas', type: 'multiple-choice',
+    question: 'Según Ensanut 2022, de los adultos tratados por hipertensión, ¿cuántos NO estaban controlados?',
+    options: ['≈ 10 %', '≈ 33 %', '≈ 67 %', '≈ 90 %'],
+    correctIndex: 2, difficulty: 'medium',
+    explanation: 'Además, 65.6 % de las personas con HAS no sabían que la tenían.',
   },
 ]

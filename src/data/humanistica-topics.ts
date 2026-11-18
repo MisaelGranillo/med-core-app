@@ -4185,7 +4185,7 @@ export const humanisticaTopics: Topic[] = [
               'En 2010 fue la 5.ª causa de años perdidos por muerte prematura en los hombres y la 1.ª en las mujeres.',
               'En el IMSS es la 1.ª causa de AVISA y de años vividos con discapacidad (13 % de los AVISA de sus derechohabientes), la 1.ª causa de pensión por invalidez y cuesta $16 160 por paciente al año (2015).',
               'En 2022 la tasa de mortalidad por diabetes fue la más alta en Veracruz y la más baja en Baja California Sur.',
-              'Uno de cada seis adultos tiene diabetes: Ensanut 2022 reporta 18.3 % (12.6 % ya diagnosticada y 5.8 % sin diagnóstico).',
+              'Uno de cada seis adultos tiene diabetes: Ensanut 2022 reporta 18.3 % (12.6 % ya diagnosticada y 5.8 % sin diagnóstico); según la presentación, 16.3 % en hombres y 20.1 % en mujeres.',
             ],
           },
           {
@@ -4198,7 +4198,7 @@ export const humanisticaTopics: Topic[] = [
             data: {
               headers: ['No modificables', 'Modificables'],
               rows: [
-                ['Edad, raza, antecedentes familiares de DM2, diabetes gestacional previa, síndrome de ovario poliquístico', 'Sobrepeso, obesidad y obesidad abdominal, sedentarismo, tabaquismo, patrones dietéticos (bebidas azucaradas, carnes rojas), trastornos de la regulación de la glucosa y enfermedades asociadas'],
+                ['Edad, raza, antecedentes familiares de DM2, diabetes gestacional previa o un hijo de más de 4 100 g, síndrome de ovario poliquístico', 'Sobrepeso, obesidad y obesidad abdominal, sedentarismo, tabaquismo, patrones dietéticos (bebidas azucaradas, carnes rojas), trastornos de la regulación de la glucosa y enfermedades asociadas'],
               ],
             },
           },
@@ -4255,21 +4255,51 @@ export const humanisticaTopics: Topic[] = [
             title: 'Datos clave',
             items: [
               'La OMS estima que afecta a 1 de cada 3 adultos.',
-              'En México (Ensanut 2020–2023), ≈ 30 % de los adultos tiene HAS y el 43 % de ellos no conoce su diagnóstico.',
+              'En México (2023), ≈ 30 % de los adultos tiene HAS y el 43 % de ellos no conoce su diagnóstico.',
+              'Es el factor de riesgo que más muertes explica en el mundo, seguido del tabaco y el colesterol elevado: una enfermedad también puede ser causa (factor de riesgo) de otra, como la cardiopatía isquémica.',
               'Mecanismos: inflamación persistente, estrés oxidativo, remodelado vascular y cambios estructurales del miocardio, que llevan a hipertrofia ventricular izquierda e insuficiencia cardíaca.',
               'Coexiste con obesidad, diabetes, dislipidemia y enfermedad renal crónica.',
             ],
           },
           {
+            type: 'table',
+            title: 'La cascada de la hipertensión (Ensanut 2022)',
+            data: {
+              headers: ['Paso', 'Proporción'],
+              rows: [
+                ['Prevalencia de HAS en adultos', '47.8 %'],
+                ['No sabían que tenían HAS', '65.6 %'],
+                ['Diagnosticados con tratamiento farmacológico', '82.3 %'],
+                ['Tratados NO controlados', '67.1 %'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Las cifras cambian según la fuente, el año, la población y si el dato es medido o autorreportado (por eso 30 % y 47.8 % no se contradicen). Un indicador epidemiológico se lee identificando año, población, numerador y denominador.',
+          },
+          {
+            type: 'paragraph',
+            content: 'Se le llama «ASESINO SILENCIOSO» porque avanza años sin síntomas: según la explicación de clase, los mecanismos homeostáticos se adaptan a cifras cada vez más altas y elevan el «cero biológico». Cuando aparecen síntomas suelen ser tardíos: cefalea, fosfenos (destellos de luz), acúfenos (zumbido de oídos) y derrame en el ojo. Es factor de riesgo de evento vascular cerebral e infarto.',
+          },
+          {
+            type: 'comparison',
+            title: 'Factores de riesgo',
+            left: { title: 'Modificables (conductuales y sociales)', items: ['Mucho sodio en la dieta', 'Exceso de peso', 'Inactividad física', 'Alcohol y tabaco', 'Condiciones sociales que dificultan los hábitos saludables'] },
+            right: { title: 'No modificables (biológicos y ambientales)', items: ['Edad', 'Antecedentes familiares', 'Factores ambientales'] },
+          },
+          {
             type: 'list',
             title: 'Estilo de vida saludable en la HAS',
             items: [
-              'Reducir la sal (la OMS recomienda menos de 5 g al día), las grasas saturadas y los alimentos procesados.',
+              'Reducir la sal: la presentación propone ≈ 6 g al día; la OMS recomienda hoy menos de 5 g. También menos grasas saturadas y alimentos procesados.',
               'Alimentación rica en frutas y verduras (potasio y calcio), como la dieta DASH.',
               'Actividad aeróbica constante, al menos 30–45 minutos, 4–5 veces por semana.',
               'Limitar o eliminar tabaco y alcohol.',
               'Manejar el estrés y dormir 7–9 horas de buena calidad.',
               'Apoyo familiar y grupos de autoayuda para mejorar la adherencia.',
+              'Las intervenciones de estilo de vida se evalúan a los 6 meses como mínimo: cambiar una conducta toma ese tiempo.',
+              'La inteligencia artificial ya apoya la predicción de riesgo, el monitoreo de la presión, la fenotipificación, la detección de hipertensión secundaria y la medicina de precisión multiómica.',
             ],
           },
           {
@@ -4290,7 +4320,9 @@ export const humanisticaTopics: Topic[] = [
     categoria: 'Medicina humanística',
     emoji: '🌿',
     keyPoints: [
-      'Pow Meng Yap acuñó en 1962 el término «síndromes de filiación cultural». El DSM-5 lo sustituyó por «CONCEPTOS CULTURALES DE ANGUSTIA»: síndromes, modismos de angustia y explicaciones.',
+      'Pow Meng Yap acuñó en 1962 el término «síndromes de filiación cultural»: comportamientos raros, exóticos, impredecibles y caóticos en su núcleo, entre personas «no civilizadas» ★',
+      'El DSM-5 lo sustituyó por «CONCEPTOS CULTURALES DE ANGUSTIA»: síndromes, modismos de angustia y explicaciones.',
+      'Susto: tipos curables e incurables; los incurables se transmiten al niño por la LECHE MATERNA y, en la mujer, se asocian a la locura y los ataques ★',
       'Síndrome de filiación cultural: combinación de síntomas psíquicos y somáticos reconocida solo dentro de una cultura, sin alteraciones bioquímicas o estructurales demostrables.',
       'Medicina tradicional: salud y enfermedad como equilibrio y desequilibrio entre lo FRÍO y lo CALIENTE; usa herbolaria, masajes, temazcal, limpias y ritos.',
       'MAL DE OJO: «vista fuerte» o envidia; afecta sobre todo a niños (llanto, insomnio, fiebre, diarrea) · EMPACHO: comida «pegada»; se trata con sobada y purga.',
@@ -4308,7 +4340,8 @@ export const humanisticaTopics: Topic[] = [
             type: 'steps',
             title: 'Evolución del concepto',
             steps: [
-              'Pow Meng Yap (1962) acuñó el término y los describió, con una mirada colonial, como conductas «raras, exóticas e impredecibles» de personas «no civilizadas».',
+              'Pow Meng Yap (1962) acuñó el término y los describió como comportamientos «raros, exóticos, impredecibles y caóticos en su núcleo» entre personas «no civilizadas»: una mirada colonial propia de su época. ★',
+              'La CIE (hoy en su versión 11) y el DSM los han ubicado entre los trastornos mentales.',
               'DSM-IV-TR: patrones recurrentes de conducta aberrante y experiencias perturbadoras propios de una localidad, que pueden o no corresponder a una categoría diagnóstica.',
               'DSM-5: los sustituye por «conceptos culturales de angustia», las formas en que los grupos culturales experimentan, comprenden y comunican el sufrimiento.',
             ],
@@ -4344,15 +4377,23 @@ export const humanisticaTopics: Topic[] = [
             content: 'Conjunto de prácticas terapéuticas que realizan las médicas y médicos indígenas o tradicionales, con plantas, hongos, animales y minerales, y con elementos culturales como la oralidad (oraciones, plegarias y rezos), para aliviar padecimientos que se explican dentro de un marco sociocultural propio.',
           },
           {
+            type: 'paragraph',
+            content: 'La presentación la define también como un conjunto de sistemas médicos con raíces en los conocimientos profundos sobre la salud y la enfermedad que los pueblos indígenas y rurales han acumulado en su historia; no se reduce a los pueblos originarios. Su práctica es un DERECHO CULTURAL reconocido en el artículo 2.º de la Constitución. Sus terapeutas incluyen yerberos, sobadores, hueseros, parteras tradicionales, culebreros, rezanderos y graniceros. Ya hay universidades interculturales con licenciatura en salud intercultural y cédula para ejercer.',
+          },
+          {
             type: 'list',
             title: 'Componentes del sistema',
             items: [
-              'Cosmovisión: salud y enfermedad como equilibrio y desequilibrio entre elementos fríos y calientes.',
+              'Cosmovisión: la persona como cuerpo, mente y espíritu, en equilibrio con los demás, la naturaleza, las divinidades y el cosmos; salud y enfermedad como equilibrio y desequilibrio entre elementos fríos y calientes. Alrededor de ella giran CAUSALIDAD, NOSOLOGÍA, DIAGNÓSTICO y PROCEDIMIENTOS TERAPÉUTICOS.',
               'Nosología propia: clasificación de los padecimientos.',
               'Causalidad: rupturas del equilibrio frío-calor, desórdenes alimenticios, movimientos bruscos, alteraciones de la fuerza vital.',
               'Prevención: evitar los factores que desequilibran.',
               'Terapéutica: herbolaria, productos animales y minerales; masajes, «acomodamientos» y succiones; frío con barro y calor con temazcal; limpias, ensalmos y ritos.',
             ],
+          },
+          {
+            type: 'note',
+            content: 'Aportes reconocidos: herbolaria, masaje tradicional, temazcal, estrategias para la salud mental y la partería tradicional, sobre todo por su acompañamiento cercano y empático. Su gran problema es la falta de ESTANDARIZACIÓN: recetas con medidas como «un puño» o «un limón», sin cantidad, concentración, dosis ni duración comprobadas. La medicina tradicional china sí sistematiza la preparación y las dosis.',
           },
           {
             type: 'correlacion',
@@ -4389,6 +4430,15 @@ export const humanisticaTopics: Topic[] = [
                 'Desde la biomedicina se interpreta como disminución de la motilidad intestinal',
               ],
             },
+          },
+          {
+            type: 'list',
+            title: 'Lo que agregó la clase',
+            items: [
+              'MAL DE OJO: «enfermedad folk» extendida en las culturas mediterráneas y en el mundo («evil eye»); los niños son la población de riesgo y a veces adultos, sobre todo mujeres. NO tiene una definición estandarizada como la de la hipertensión. Una explicación propuesta relaciona la envidia con las neuronas espejo (lóbulo parietal, corteza premotora) y el sistema de valoración (estriado ventral, corteza prefrontal ventromedial). Se «diagnostica» leyendo la clara del huevo en agua. Golpear al niño en la limpia es violencia infantil.',
+              'EMPACHO: trastorno digestivo con muchas causas, la más frecuente comer en exceso; desde la tradición es una parálisis de la digestión y un desequilibrio frío-calor que se corrige con plantas «calientes» (jengibre, canela, tomillo) o frescas. En 22 casos documentados en Bolivia predominaron comer en exceso, alimentos en mal estado, fríos o pesados y comer rápido; el síntoma más frecuente fue la náusea.',
+              'Ante un «empacho», primero se descarta una enfermedad biológica (intoxicación alimentaria, trastorno de la motilidad) sin ridiculizar la creencia ni alejar al paciente.',
+            ],
           },
           {
             type: 'correlacion',
@@ -4434,8 +4484,33 @@ export const humanisticaTopics: Topic[] = [
             },
           },
           {
+            type: 'definition',
+            title: 'Susto o espanto (DSM)',
+            content: 'Concepto cultural de México, Centroamérica y Sudamérica: conjunto de quejas crónicas atribuidas a la PÉRDIDA DEL ALMA por un miedo intenso, a menudo sobrenatural (agitación, anorexia, insomnio, fiebre, diarrea, confusión, apatía, depresión). Puede afectar a alguien porque el susto lo sufrió un familiar.',
+          },
+          {
+            type: 'list',
+            title: 'Susto: lo que agregó la clase',
+            items: [
+              'Hay sustos CURABLES e INCURABLES. Los incurables se transmiten al niño por la LECHE MATERNA; en el hombre dan ataques esporádicos y en la mujer se asocian a la locura y a los ataques (epilepsia). ★',
+              'La SOMBRA es una entidad inmaterial con la forma del cuerpo, distinta del alma, que puede salir del cuerpo sin causar la muerte. No todo susto implica perder el alma o la sombra.',
+              '«La diabetes da por un susto»: una emoción intensa libera adrenalina, que inhibe a la insulina y sube la glucosa. En una persona sana no causa diabetes, pero en un diabético no diagnosticado hace aparecer los síntomas y parece que el susto la provocó.',
+              'Comer un bolillo después del susto no tiene evidencia científica.',
+            ],
+          },
+          {
             type: 'paragraph',
             content: 'La fontanela anterior (mollera) se cierra en general entre los 7 y los 18 meses. Una fontanela hundida con diarrea, ojos hundidos y llanto sin lágrimas es un signo clásico de DESHIDRATACIÓN en el lactante: la tradición observó bien el signo, aunque le atribuyó otra causa. Por eso parte de los tratamientos tradicionales incluye dar líquidos.',
+          },
+          {
+            type: 'list',
+            title: 'Caída de mollera: lo que agregó la clase',
+            items: [
+              'Explicación biomédica: DESHIDRATACIÓN o un traumatismo (una caída). Explicación mesoamericana: pérdida del TONALLI.',
+              'Las tres fuerzas vitales nahuas: TONALLI (cerebro), TEYOLÍA (corazón) e IHÍYOTL (hígado).',
+              'En el estudio de Trotter, los tres síntomas principales fueron diarrea, llanto excesivo y fiebre, y el 58 % de los informantes consideró que podía ser mortal.',
+              'Prioridad clínica: valorar y corregir la deshidratación; si el bebé no tolera volúmenes grandes, suero oral en cucharaditas cada 5 minutos.',
+            ],
           },
           {
             type: 'correlacion',
