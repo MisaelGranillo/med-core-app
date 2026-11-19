@@ -1164,6 +1164,7 @@ const DESFILADERO: Patologia = {
     { materia: 'Anatomía', topicId: 'miembro-superior-oseo', sectionId: 'mso-2', label: 'Clavícula', porQue: 'Techo del espacio costoclavicular.' },
     { materia: 'Anatomía', topicId: 'columna-vertebral', sectionId: 'col-3', label: 'Vértebras cervicales', porQue: 'La costilla cervical sale de C7.' },
     { materia: 'Anatomía', topicId: 'musculos-hombro-brazo', sectionId: 'mhb-2', label: 'Región pectoral', porQue: 'El pectoral menor del espacio subpectoral.' },
+    { materia: 'Embriología', topicId: 'embriologia-esqueleto-axial', sectionId: 'eax-11', label: 'Defectos vertebrales, costales y esternales', porQue: 'La costilla cervical de C7 puede comprimir el plexo braquial o la arteria subclavia.' },
   ],
   atlas: [
     { id: 'musculos-cuello-nuca', title: 'Músculos del cuello y la nuca' },

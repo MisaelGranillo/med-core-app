@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 10px; padding-top: 12px; }
+h1 { font-size: 40px; }
+.panel { padding: 10px 12px; }
+.ph { margin: 0 0 6px; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.6px; line-height: 1.3; }
+.lst li { margin: 0 0 2px; }
+table td { font-size: 10.2px; padding: 2px 5px; line-height: 1.24; }
+table th { padding: 2px 5px; }
+.note { font-size: 10px; margin: 4px 0 0; }
+.side { display: grid; gap: 10px; align-items: center; }
+.cards4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.cards4 .c { border: 1px solid #f1c9cc; background: #fff; border-radius: 8px; padding: 5px 7px; font-size: 9.9px; line-height: 1.27; }
+.cards4 .c b.t { display: block; font-size: 11px; color: var(--navy); margin-bottom: 2px; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Embriología</p>
+  <h1>Sistema esquelético axial</h1>
+  <p class="tag">De dónde salen el cráneo, la columna, las costillas y el esternón, cómo se osifican y qué pasa cuando fallan.</p>
+</header>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">1</span>Origen <small>— corte del embrión, semana 4</small></div>
+    <img src="{{img:ana/esq-somita.svg}}" style="width:100%;display:block" alt="">
+    <p class="note">Al final de la semana 4 el esclerotoma se vuelve <b>mesénquima</b>, que da fibroblastos, condroblastos u osteoblastos.</p>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">2</span>Dos tipos de osificación</div>
+    <img src="{{img:ana/esq-osificacion.svg}}" style="width:100%;display:block" alt="">
+    <p class="note">Centros <b>primarios</b> en la diáfisis hacia la semana 12. Los <b>huesecillos</b> empiezan en el 4.º mes y son los primeros en terminar. La acondroplasia falla en la endocondral y respeta la intramembranosa.</p>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:.95">
+    <div class="ph"><span class="n">3</span>Cráneo del recién nacido</div>
+    <div class="side" style="grid-template-columns:200px 1fr">
+      <img src="{{img:ana/esq-craneo.svg}}" style="width:200px;display:block" alt="">
+      <ul class="lst">
+        <li><b>Neurocráneo membranoso</b> (bóveda): cresta neural y paraxial, intramembranosa.</li>
+        <li><b>Condrocráneo</b> (base): precordal de cresta neural; cordal de somitas occipitales; endocondral.</li>
+        <li>Fontanela anterior <b>abombada</b> con fiebre: neuroinfección. <b>Hundida</b>: deshidratación.</li>
+        <li>Cierre <b>tardío</b>: déficit nutricional; en el hipotiroidismo congénito queda <b>grande</b>.</li>
+      </ul>
+    </div>
+  </section>
+  <section class="panel" style="flex:1.05">
+    <div class="ph"><span class="n">4</span>Columna: resegmentación</div>
+    <div class="side" style="grid-template-columns:1fr 168px">
+      <img src="{{img:ana/esq-reseg.svg}}" style="width:100%;display:block" alt="">
+      <ul class="lst">
+        <li>La mitad <b>caudal</b> de un esclerotoma se une a la <b>craneal</b> del siguiente.</li>
+        <li>La <b>arteria intersegmentaria</b> queda a la mitad del cuerpo vertebral.</li>
+        <li>Disco: anillo fibroso y <b>núcleo pulposo</b>, resto de la notocorda.</li>
+        <li>Genes <b>HOX</b>: cervical, torácica, lumbar, sacra.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">5</span>Curvaturas</div>
+    <img src="{{img:ana/esq-curvas.svg}}" style="width:100%;display:block;max-width:300px;margin:0 auto" alt="">
+    <p class="note"><b>Primarias</b> (torácica y sacra) por la posición del feto; <b>secundarias</b> después de nacer.</p>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">6</span>Costillas y esternón</div>
+    <img src="{{img:ana/esq-esternon.svg}}" style="width:100%;display:block;max-width:300px;margin:0 auto" alt="">
+    <p class="note"><b>Costillas</b>: esclerotoma, desde las apófisis costales torácicas. <b>Cartílagos costales</b>: esclerotoma que cruza a la hoja parietal.</p>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">7</span>Craniosinostosis <small>— cierre prematuro de suturas: 1 de cada 2 000–2 500 recién nacidos</small></div>
+  <img src="{{img:ana/esq-sinostosis.svg}}" style="height:170px;display:block;margin:0 auto" alt="">
+  <p class="note">El cráneo no crece perpendicular a la sutura cerrada. Sagital: 40–60 %. Genes FGFR1–3, TWIST1, MSX2, EFNB1; teratógenos (retinoides, valproato, metotrexato). Se opera antes de los 12 meses. No confundir con la plagiocefalia <b>posicional</b>, con suturas abiertas.</p>
+</section>
+
+<section class="clin">
+  <div class="ph"><span class="n">8</span>Correlación clínica</div>
+  <div class="cards4">
+    <div class="c"><b class="t">Acondroplasia</b>FGFR3 hiperactivo, autosómica dominante (≈ 80 % de novo). Huesos largos cortos, macrocefalia relativa, genu varo. Vigilar el foramen magno.</div>
+    <div class="c"><b class="t">Displasia tanatofórica</b>La más grave (FGFR3). Tipo I: fémures curvos. Tipo II: fémures rectos y cráneo en trébol.</div>
+    <div class="c"><b class="t">Disostosis cleidocraneal</b>RUNX2. Clavículas pequeñas o ausentes y fontanelas que cierran tarde o nunca; anomalías dentales.</div>
+    <div class="c"><b class="t">Columna y tórax</b>Espina bífida oculta o quística, Klippel-Feil, costilla cervical (plexo braquial, subclavia), hendidura esternal, pectus.</div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Embriología I (UAD) · Semana 4, clase 3 · Esquemas propios, simplificados y no a escala</p>
+</div></body></html>

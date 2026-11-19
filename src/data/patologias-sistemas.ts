@@ -98,4 +98,7 @@ export const SISTEMAS_DE: Record<string, Sistema[]> = {
   'quiste-tirogloso': ['Endocrino y metabolismo'],
   'quiste-branquial': ['Inmunidad e infecciones'],
   'treacher-collins': ['Genética y cromosomas', 'Musculoesquelético'],
+  'acondroplasia': ['Musculoesquelético', 'Genética y cromosomas'],
+  'craniosinostosis': ['Musculoesquelético', 'Nervioso'],
+  'disostosis-cleidocraneal': ['Musculoesquelético', 'Genética y cromosomas'],
 }

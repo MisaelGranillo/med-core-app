@@ -1582,6 +1582,24 @@ export const atlasTopics: AtlasTopic[] = [
       { id: 'ecu-a6', question: 'En la campana del panel 8, la capa azul oscuro (epitelio interno) forma:', options: ['Dentina', 'Pulpa', 'Esmalte, por los ameloblastos', 'Cemento'], correctIndex: 2, explanation: 'Los odontoblastos (naranja), de la papila dental, forman la dentina.', difficulty: 'medium' },
     ],
   },
+  {
+    id: 'embriologia-esqueleto-axial',
+    title: 'Sistema esquelético axial',
+    subtitle: 'Origen del esqueleto en el somita y la placa lateral, osificación intramembranosa y endocondral, cráneo del recién nacido con suturas y fontanelas, resegmentación de la columna, curvaturas, costillas y esternón, craniosinostosis y displasias esqueléticas',
+    category: 'embriologia',
+    emoji: '🦴',
+    imagePath: '/atlas/embriologia-esqueleto-axial.webp',
+    colorKey: 'embriologia',
+    relatedTopicIds: ['embriologia-esqueleto-axial'],
+    questions: [
+      { id: 'eax-a1', question: 'En el corte del panel 1, las vértebras y las costillas derivan del:', options: ['Dermomiotoma', 'Esclerotoma', 'Hoja visceral', 'Tubo neural'], correctIndex: 1, explanation: 'La hoja parietal de la placa lateral forma el esternón, las cinturas y las extremidades.', difficulty: 'easy' },
+      { id: 'eax-a2', question: 'En el panel 2, los huesos planos de la bóveda craneal se forman por osificación:', options: ['Intramembranosa', 'Endocondral', 'Desde un molde de cartílago', 'Desde centros secundarios'], correctIndex: 0, explanation: 'El mesénquima da osteoblastos directamente; los huesos largos usan un molde de cartílago (endocondral).', difficulty: 'easy' },
+      { id: 'eax-a3', question: 'En el cráneo del panel 3, la fontanela anterior suele cerrar hacia:', options: ['Los 2 meses', 'Los 6 meses', 'Los 18 meses', 'Los 5 años'], correctIndex: 2, explanation: 'La posterior cierra antes, a los 1–2 meses.', difficulty: 'medium' },
+      { id: 'eax-a4', question: 'En el panel 4, el núcleo pulposo del disco intervertebral es un resto de:', options: ['El esclerotoma craneal', 'La arteria intersegmentaria', 'El dermomiotoma', 'La notocorda'], correctIndex: 3, explanation: 'El anillo fibroso viene del esclerotoma que queda entre los cuerpos vertebrales.', difficulty: 'easy' },
+      { id: 'eax-a5', question: 'En el panel 5, las curvaturas primarias de la columna son:', options: ['Cervical y lumbar', 'Torácica y sacra', 'Solo la cervical', 'Lumbar y sacra'], correctIndex: 1, explanation: 'Las secundarias aparecen al sostener la cabeza (cervical) y al caminar (lumbar).', difficulty: 'medium' },
+      { id: 'eax-a6', question: 'En el panel 7, el cierre prematuro de la sutura sagital produce:', options: ['Braquicefalia', 'Trigonocefalia', 'Escafocefalia', 'Plagiocefalia'], correctIndex: 2, explanation: 'El cráneo crece paralelo a la sutura cerrada y queda largo y estrecho; es la forma más frecuente.', difficulty: 'easy' },
+    ],
+  },
 
 
 

@@ -659,6 +659,8 @@ const DOWN: Patologia = {
     { materia: 'Embriología', topicId: 'embriologia-ovogenesis', sectionId: 'eov-1', label: 'Ovogénesis antes del nacimiento', porQue: 'El ovocito pasa décadas detenido en profase I: por eso el riesgo crece con la edad materna.' },
     { materia: 'Embriología', topicId: 'embriologia-anomalias-numericas', sectionId: 'ean-3', label: 'Síndrome de Down', porQue: 'Los tres mecanismos (no disyunción, translocación, mosaicismo) y el riesgo por edad materna.' },
     { materia: 'Embriología', topicId: 'embriologia-anomalias-estructurales', sectionId: 'eae-3', label: 'Translocación robertsoniana', porQue: 'El ≈ 4 % de los casos por translocación: por eso se pide cariotipo a los padres.' },
+    { materia: 'Embriología', topicId: 'embriologia-esqueleto-axial', sectionId: 'eax-4', label: 'Suturas y fontanelas del recién nacido', porQue: 'El hipotiroidismo congénito, frecuente en el síndrome de Down, deja las fontanelas amplias.' },
+    { materia: 'Embriología', topicId: 'embriologia-esqueleto-axial', sectionId: 'eax-11', label: 'Defectos vertebrales, costales y esternales', porQue: 'El manubrio puede tener varios centros de osificación.' },
   ],
   atlas: [
     { id: 'genetica-citogenetica-tamiz', title: 'Citogenética clínica y tamiz' },
@@ -931,6 +933,7 @@ const HIPOTIROIDISMO: Patologia = {
     { materia: 'Bioquímica', topicId: 'bioquimica-hormonas-receptores', sectionId: 'bhr-6', label: 'Receptores nucleares', porQue: 'La levotiroxina se convierte en T₃ y actúa en el receptor nuclear de hormona tiroidea.' },
     { materia: 'Embriología', topicId: 'embriologia-funcion-placentaria', sectionId: 'efp-5', label: 'Ictericia neonatal y escala de Kramer', porQue: 'La ictericia que dura más de 2 semanas es una señal de alarma; el hipotiroidismo congénito es una de sus causas.' },
     { materia: 'Embriología', topicId: 'embriologia-cabeza-cuello', sectionId: 'ecyc-8', label: 'Glándula tiroides', porQue: 'La tiroides ectópica es una falla del descenso desde el foramen ciego por el conducto tirogloso.' },
+    { materia: 'Embriología', topicId: 'embriologia-esqueleto-axial', sectionId: 'eax-4', label: 'Suturas y fontanelas del recién nacido', porQue: 'Sin hormona tiroidea se retrasa la osificación: fontanela anterior grande y posterior abierta.' },
   ],
   atlas: [
     { id: 'bioquimica-hormonas', title: 'Hormonas y receptores' },

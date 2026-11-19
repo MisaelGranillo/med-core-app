@@ -48,3 +48,4 @@ Z-Anatomy no trae órganos femeninos ni embriones. Para las láminas de Embriolo
   fijan a mano sobre el recorte (las piezas huecas tienen el centroide en medio de la cavidad).
 - **Función placentaria, líquido amniótico y gemelos**: `Blender -b --python emb3d/funcion.py` genera el corte del cordón y los tres modelos de gemelos (`cordon-corte`, `gemelos-dcda`, `gemelos-mcda`, `gemelos-mcma`; vista `0,0.05,1`, pad 0.85); `python3 funcion_svg.py ana` genera los esquemas `ana/func-*.svg` (intercambio, hormonas, anti-D, Kramer, volumen y ciclo del líquido).
 - **Cabeza y cuello: aparato faríngeo y cara**: solo esquemas 2D propios; `python3 cabeza_svg.py ana` genera `ana/cc-*.svg` (corte faríngeo, seno cervical, lengua, tiroides, cara, paladar y dientes).
+- **Sistema esquelético axial**: solo esquemas 2D propios; `python3 esqueleto_svg.py ana` genera `ana/esq-*.svg` (somita, osificación, cráneo del recién nacido, resegmentación, curvaturas, esternón y craniosinostosis).

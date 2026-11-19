@@ -846,6 +846,8 @@ const TUBO_NEURAL: Patologia = {
     { materia: 'Genética', topicId: 'genetica-teratogenesis', sectionId: 'gter-4', label: 'Teratógenos físicos ★', porQue: 'La hipertermia también se asocia a defectos del tubo neural.' },
     { materia: 'Bioquímica', topicId: 'bioquimica-coenzimas-minerales-p450', sectionId: 'bcm-2', label: 'Coenzimas de vitaminas y sus deficiencias', porQue: 'El folato (THF) aporta unidades de un carbono para purinas, timidina y ADN; su deficiencia da espina bífida.' },
     { materia: 'Genética', topicId: 'genetica-organogenesis', sectionId: 'gorg-6', label: 'Correlación: el período crítico', porQue: 'Los órganos son más vulnerables mientras se forman, en el periodo embrionario.' },
+    { materia: 'Embriología', topicId: 'embriologia-esqueleto-axial', sectionId: 'eax-9', label: 'Defectos del cráneo', porQue: 'Craneosquisis que termina en anencefalia, meningocele y meningoencefalocele.' },
+    { materia: 'Embriología', topicId: 'embriologia-esqueleto-axial', sectionId: 'eax-11', label: 'Defectos vertebrales, costales y esternales', porQue: 'Espina bífida oculta (arcos abiertos bajo la piel) y quística (tejido neural expuesto).' },
   ],
   atlas: [
     { id: 'embriologia-tercera-semana', title: 'Tercera semana y periodo embrionario' },
