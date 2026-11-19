@@ -10,7 +10,7 @@ import type { Topic } from '../types'
 // embrionario (semanas 3–8) y derivados de las capas germinales. Clase 4: sangre y vasos,
 // segundo mes y teratógenos. Clase 5: ejes corporales y regulación molecular.
 // Semana 3, Clase 1: tubo intestinal y cavidades corporales. Clase 2: periodo fetal. Clase 3: membranas fetales y placenta. Clase 4: función placentaria, líquido amniótico, gemelos y parto. Clase 5: repaso integrador e introducción a los arcos faríngeos.
-// Semana 4, Clase 1: cabeza y cuello (aparato faríngeo, lengua, tiroides, cara y paladar). Clase 2: cavidades nasales, dientes y defectos craneofaciales.
+// Semana 4, Clase 1: cabeza y cuello (aparato faríngeo, lengua, tiroides, cara y paladar). Clase 2: cavidades nasales, dientes y defectos craneofaciales. Clase 3: sistema esquelético axial.
 export const embriologiaTopics: Topic[] = [
   {
     id: 'embriologia-desarrollo-temprano',
@@ -5998,6 +5998,303 @@ export const embriologiaTopics: Topic[] = [
             variant: 'clinica',
             title: 'Fisuras combinadas',
             content: 'Hay fisuras anteriores y posteriores a la vez, que dejan comunicadas boca y nariz. Su reconstrucción puede requerir muchas cirugías a lo largo de la infancia.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'embriologia-esqueleto-axial',
+    title: 'Sistema esquelético: cráneo, columna, costillas y esternón',
+    subtitle: 'Origen del esqueleto axial, osificación intramembranosa y endocondral, neurocráneo y condrocráneo, suturas y fontanelas, viscerocráneo, resegmentación vertebral, discos y genes HOX, curvaturas, costillas y esternón; craneosquisis, craniosinostosis, acondroplasia y otras displasias, defectos vertebrales y esternales',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '🦴',
+    keyPoints: [
+      'Esqueleto axial: MESODERMO PARAXIAL (esclerotoma: vértebras, costillas, base del cráneo), capa PARIETAL de la placa lateral (esternón, cinturas y extremidades) y CRESTA NEURAL (cara y bóveda).',
+      'INTRAMEMBRANOSA: el mesénquima se vuelve hueso directamente (bóveda y cara). ENDOCONDRAL: primero un molde de cartílago hialino (huesos largos, base del cráneo, costillas). Centros primarios en la diáfisis hacia la semana 12.',
+      'Fontanela ANTERIOR: la más grande, cierra hacia los 18 meses; abombada en un lactante con fiebre sugiere neuroinfección; hundida, deshidratación. POSTERIOR: cierra al mes 1–2.',
+      'RESEGMENTACIÓN: la mitad caudal de cada esclerotoma se une a la mitad craneal del siguiente; la arteria intersegmentaria queda a la mitad del cuerpo vertebral. El NÚCLEO PULPOSO es resto de la notocorda.',
+      'Curvaturas PRIMARIAS (torácica y sacra) por la posición fetal; SECUNDARIAS: cervical al sostener la cabeza y lumbar al caminar.',
+      'CRANIOSINOSTOSIS (1/2 500): sagital → escafocefalia (≈ 57 %); coronal bilateral → braquicefalia; metópica → trigonocefalia; unilateral → plagiocefalia.',
+      'ACONDROPLASIA: displasia más común; FGFR3; afecta la osificación ENDOCONDRAL (huesos largos cortos) y respeta la intramembranosa (macrocefalia relativa).',
+    ],
+    sections: [
+      {
+        id: 'eax-1',
+        number: 1,
+        title: 'Origen del esqueleto axial',
+        keyTerms: ['esqueleto axial', 'esclerotoma', 'mesénquima', 'somitómeros'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'El esqueleto axial comprende el cráneo (neurocráneo y viscerocráneo), la columna vertebral, el sacro y la caja torácica. Al final de la semana 4, las células del ESCLEROTOMA se vuelven polimórficas y forman MESÉNQUIMA, que puede diferenciarse en fibroblastos, condroblastos u osteoblastos.',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Tejido', 'Forma'],
+              rows: [
+                ['Mesodermo paraxial (esclerotoma)', 'Vértebras, costillas y parte del cráneo'],
+                ['Somitómeros y somitas occipitales', 'El resto de los huesos del cráneo, incluida la base posterior'],
+                ['Cresta neural', 'Viscerocráneo (cara) y bóveda del neurocráneo'],
+                ['Capa PARIETAL de la placa lateral', 'Esternón, cintura escapular, pelvis y extremidades'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'eax-2',
+        number: 2,
+        title: 'Osificación intramembranosa y endocondral',
+        keyTerms: ['osificación intramembranosa', 'osificación endocondral', 'centros de osificación primarios'],
+        blocks: [
+          {
+            type: 'comparison',
+            left: { title: 'INTRAMEMBRANOSA', items: ['El mesénquima se diferencia directamente en hueso', 'Sin molde de cartílago', 'Huesos planos de la bóveda y de la cara'] },
+            right: { title: 'ENDOCONDRAL', items: ['Primero un molde de cartílago hialino', 'Después centros de osificación que lo sustituyen por hueso', 'Huesos largos, base del cráneo, vértebras y costillas'] },
+          },
+          {
+            type: 'note',
+            content: 'Hacia la semana 12 aparecen los centros de osificación PRIMARIOS en la diáfisis de los huesos largos, con vasos que llegan y depósito de minerales.',
+          },
+        ],
+      },
+      {
+        id: 'eax-3',
+        number: 3,
+        title: 'Neurocráneo: membranoso y condrocráneo',
+        keyTerms: ['neurocráneo membranoso', 'condrocráneo', 'precordal', 'cordal'],
+        blocks: [
+          {
+            type: 'table',
+            data: {
+              headers: ['Parte', 'Origen', 'Osificación'],
+              rows: [
+                ['Neurocráneo MEMBRANOSO (bóveda: huesos planos que rodean al encéfalo)', 'Cresta neural y mesodermo paraxial', 'Intramembranosa'],
+                ['Condrocráneo PRECORDAL (base, por delante de la notocorda)', 'Cresta neural', 'Endocondral'],
+                ['Condrocráneo CORDAL (base, junto a la notocorda)', 'Esclerotomas de los somitas occipitales', 'Endocondral'],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: 'eax-4',
+        number: 4,
+        title: 'Suturas y fontanelas del recién nacido',
+        keyTerms: ['suturas', 'fontanela anterior', 'fontanela posterior', 'sutura metópica'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Al nacer el cráneo no está del todo osificado: así puede pasar por el canal del parto y crecer junto con el encéfalo.',
+          },
+          {
+            type: 'table',
+            title: 'Suturas',
+            data: {
+              headers: ['Sutura', 'Entre'],
+              rows: [
+                ['Frontal o metópica', 'Los dos frontales'],
+                ['Coronal', 'Frontal y parietales'],
+                ['Sagital', 'Los dos parietales'],
+                ['Lambdoidea', 'Parietales y occipital'],
+              ],
+            },
+          },
+          {
+            type: 'table',
+            title: 'Fontanelas',
+            data: {
+              headers: ['Fontanela', 'Dónde', 'Cierre'],
+              rows: [
+                ['ANTERIOR (la más grande)', 'Entre frontales y parietales', 'Hacia los 18 meses'],
+                ['POSTERIOR', 'Entre parietales y occipital', 'Al mes 1–2'],
+                ['Posterolateral (mastoidea)', 'Temporal, occipital y parietal', '—'],
+                ['Anterolateral (esfenoidal)', 'Esfenoides, frontal, parietal y temporal', '—'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Lo que dice la fontanela anterior',
+            content: 'ABOMBADA en un lactante con fiebre sin foco: hipertensión intracraneal, piensa en neuroinfección. HUNDIDA («caída de mollera»): deshidratación por diarrea o vómito. Cierre RETRASADO: puede indicar un déficit nutricional; en el HIPOTIROIDISMO CONGÉNITO, frecuente en el síndrome de Down, la anterior es GRANDE y la posterior queda abierta.',
+          },
+          {
+            type: 'note',
+            content: 'En clase se dijo que en el hipotiroidismo congénito la fontanela es «más reducida». Es al revés: el hipotiroidismo retrasa la osificación y las fontanelas quedan amplias.',
+          },
+        ],
+      },
+      {
+        id: 'eax-5',
+        number: 5,
+        title: 'Viscerocráneo',
+        keyTerms: ['viscerocráneo', 'prominencia maxilar', 'prominencia mandibular', 'huesecillos'],
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'Deriva de los dos primeros arcos faríngeos, con mesénquima de cresta neural y osificación sobre todo INTRAMEMBRANOSA.',
+              'Prominencia MAXILAR: premaxila, maxilar, paladar, cigomático y parte del temporal.',
+              'Prominencia MANDIBULAR: la mandíbula se forma alrededor del cartílago de Meckel, que da el martillo y el yunque.',
+              'Segundo arco: estribo, apófisis estiloides, parte superior del cuerpo y astas menores del hioides.',
+              'Los HUESECILLOS empiezan a osificarse en el cuarto mes y son los primeros huesos en completar su osificación.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'eax-6',
+        number: 6,
+        title: 'Columna vertebral: resegmentación, discos y genes HOX',
+        keyTerms: ['resegmentación', 'arteria intersegmentaria', 'disco intervertebral', 'núcleo pulposo', 'genes HOX'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Resegmentación',
+            steps: [
+              'Las células del esclerotoma rodean al tubo neural y a la notocorda; el miotoma de cada lado forma los músculos paravertebrales.',
+              'Cada esclerotoma se divide en una mitad craneal y una caudal.',
+              'La mitad CAUDAL de un esclerotoma se fusiona con la mitad CRANEAL del siguiente: así se forma cada vértebra, y la ARTERIA INTERSEGMENTARIA queda a la mitad del cuerpo vertebral.',
+              'Entre ambas mitades queda mesénquima que forma el DISCO INTERVERTEBRAL: anillo fibroso de fibrocartílago por fuera y NÚCLEO PULPOSO, resto de la notocorda, por dentro.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'Los genes HOX dan la identidad de cada región: cervical, torácica, lumbar y sacra. Gracias a la resegmentación, los músculos de un miotoma cruzan el disco y unen dos vértebras vecinas, lo que permite mover la columna.',
+          },
+        ],
+      },
+      {
+        id: 'eax-7',
+        number: 7,
+        title: 'Curvaturas de la columna',
+        keyTerms: ['curvaturas primarias', 'curvaturas secundarias', 'lordosis', 'cifosis'],
+        blocks: [
+          {
+            type: 'comparison',
+            left: { title: 'PRIMARIAS (fetales)', items: ['Torácica y sacra', 'Por la posición flexionada del feto'] },
+            right: { title: 'SECUNDARIAS (después del nacimiento)', items: ['CERVICAL: cuando el bebé sostiene la cabeza', 'LUMBAR: cuando empieza a caminar'] },
+          },
+        ],
+      },
+      {
+        id: 'eax-8',
+        number: 8,
+        title: 'Costillas y esternón',
+        keyTerms: ['costillas', 'cartílagos costales', 'bandas esternales', 'esternón'],
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'COSTILLAS: del esclerotoma que queda en la región del somita; crecen desde las apófisis costales de las vértebras torácicas.',
+              'CARTÍLAGOS COSTALES: de células del esclerotoma que cruzan la frontera somítica lateral hacia la hoja parietal de la placa lateral.',
+              'ESTERNÓN: de la capa parietal de la placa lateral. Dos BANDAS ESTERNALES se fusionan en la línea media, junto con el preesternón y el supraesternón, y forman por osificación endocondral el manubrio, el cuerpo y el apéndice xifoides.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'eax-9',
+        number: 9,
+        title: 'Defectos del cráneo',
+        keyTerms: ['craneosquisis', 'anencefalia', 'meningoencefalocele', 'craniosinostosis', 'escafocefalia'],
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'CRANEOSQUISIS: el neuroporo anterior no se cierra y no se forma la bóveda; el encéfalo expuesto al líquido amniótico degenera y queda ANENCEFALIA, incompatible con la vida.',
+              'MENINGOCELE craneal (salen las meninges) y MENINGOENCEFALOCELE (salen meninges y tejido cerebral) por un defecto del hueso; muchos se operan y el pronóstico depende del tejido afectado.',
+              'MICROCEFALIA: el encéfalo no crece y la bóveda no se expande; discapacidad intelectual variable.',
+            ],
+          },
+          {
+            type: 'definition',
+            title: 'Craniosinostosis',
+            content: 'Cierre prematuro de una o más suturas. Ocurre en 1 de cada 2 500 recién nacidos y forma parte de más de 100 síndromes. El cráneo no puede crecer en dirección perpendicular a la sutura cerrada y se deforma.',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Sutura cerrada', 'Forma del cráneo'],
+              rows: [
+                ['Sagital (la más frecuente, hasta 57 %)', 'ESCAFOCEFALIA: largo y estrecho'],
+                ['Coronal bilateral (20–25 %)', 'BRAQUICEFALIA: corto'],
+                ['Metópica', 'TRIGONOCEFALIA: frente triangular'],
+                ['Coronal o lambdoidea de un lado', 'PLAGIOCEFALIA anterior o posterior: asimétrico'],
+              ],
+            },
+          },
+          {
+            type: 'list',
+            title: 'Causas',
+            items: [
+              'Genéticas: EFNB1 (síndrome craneofrontonasal: sinostosis coronal con hipertelorismo), MSX2 (tipo Boston), TWIST1 (Saethre-Chotzen), FGFR1–3.',
+              'Déficit de vitamina D.',
+              'Teratógenos: retinoides, ácido valproico, metotrexato, ciclofosfamida y difenilhidantoína.',
+              'Compresión: oligohidramnios y embarazo múltiple.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'La ciclopía no es una forma de craniosinostosis: se relaciona con la holoprosencefalia alobar. En clase también se habló de un líquido amniótico «más ácido» al final del embarazo; un pH cercano a 7 es prácticamente neutro.',
+          },
+        ],
+      },
+      {
+        id: 'eax-10',
+        number: 10,
+        title: 'Displasias esqueléticas',
+        keyTerms: ['acondroplasia', 'displasia tanatofórica', 'hipocondroplasia', 'disostosis cleidocraneal', 'FGFR3'],
+        blocks: [
+          {
+            type: 'table',
+            data: {
+              headers: ['Cuadro', 'Características'],
+              rows: [
+                ['ACONDROPLASIA', 'La displasia más frecuente (1 de cada 15 000 a 40 000; en clase, 1/20 000). FGFR3 hiperactivo, autosómica dominante; cerca del 80 % son variantes nuevas (en clase se dijo 90 %). Huesos largos cortos, macrocefalia relativa, cara media pequeña, lordosis y GENU VARO (el peroné crece más que la tibia). Inteligencia normal'],
+                ['HIPOCONDROPLASIA', 'Forma leve de la acondroplasia'],
+                ['DISPLASIA TANATOFÓRICA', 'La más grave: 1 de cada 20 000 a 50 000; FGFR3, casi siempre variante nueva. Tipo I: fémures cortos y curvos. Tipo II: fémures rectos y cráneo en trébol. Suele ser mortal al nacer por insuficiencia respiratoria'],
+                ['DISOSTOSIS CLEIDOCRANEAL', 'Fontanelas que cierran tarde, abombamiento craneal y clavículas ausentes o pequeñas: los hombros pueden juntarse por delante'],
+                ['ACROMEGALIA', 'Exceso de hormona del crecimiento por hiperpituitarismo: crecen la cara, las manos y los pies'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Caso de repaso: ¿por qué la cabeza se ve grande?',
+            content: 'Recién nacido con extremidades cortas, tórax estrecho, fémur corto en el ultrasonido (se mide entre las semanas 16 y 30) y cabeza grande: acondroplasia. Falla la osificación ENDOCONDRAL de los huesos largos, pero la bóveda se osifica por vía INTRAMEMBRANOSA y crece normal: de ahí la macrocefalia relativa.',
+          },
+        ],
+      },
+      {
+        id: 'eax-11',
+        number: 11,
+        title: 'Defectos vertebrales, costales y esternales',
+        keyTerms: ['escoliosis congénita', 'Klippel-Feil', 'espina bífida', 'costilla cervical', 'pectus excavatum'],
+        blocks: [
+          {
+            type: 'table',
+            data: {
+              headers: ['Defecto', 'Qué es'],
+              rows: [
+                ['Escoliosis congénita', 'Hemivértebras o fusión asimétrica de vértebras; la tratan ortopedia y neurocirugía'],
+                ['Secuencia de Klippel-Feil', 'Fusión de vértebras cervicales: cuello corto y poca movilidad'],
+                ['Espina bífida OCULTA', 'Arcos vertebrales abiertos cubiertos de piel, a menudo con un mechón de pelo; sin daño neurológico'],
+                ['Espina bífida QUÍSTICA', 'Tejido neural expuesto por falla del cierre del tubo neural; puede haber daño neurológico (≈ 1 de cada 2 500)'],
+                ['Costilla cervical (C7)', 'Puede comprimir el plexo braquial o la arteria subclavia: pérdida de sensibilidad o de irrigación del brazo'],
+                ['Hendidura esternal', 'Las bandas esternales no se fusionan; puede acompañar a la ectopia cordis'],
+                ['Pectus excavatum y carinatum', 'Esternón hundido o en quilla. En clase se explicaron por falla o fusión prematura de las bandas esternales; la causa exacta no se conoce y se relaciona sobre todo con un crecimiento anormal de los cartílagos costales'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'En el síndrome de Down el manubrio puede tener varios centros de osificación.',
           },
         ],
       },

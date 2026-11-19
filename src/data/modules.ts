@@ -204,10 +204,10 @@ export const modules: Module[] = [
   {
     id: 'embriologia-uad-s4',
     badge: 'UAD · Embriología I — Semana 4',
-    title: 'Embriología: cabeza y cuello',
-    subtitle: 'Arcos, bolsas y hendiduras faríngeas con sus derivados, seno cervical y casos clínicos del aparato faríngeo; lengua, tiroides, cara y paladar; cavidades nasales, dientes y defectos craneofaciales.',
+    title: 'Embriología: cabeza y cuello y sistema esquelético',
+    subtitle: 'Arcos, bolsas y hendiduras faríngeas con sus derivados, seno cervical y casos clínicos del aparato faríngeo; lengua, tiroides, cara y paladar; cavidades nasales, dientes y defectos craneofaciales; esqueleto axial y sus defectos.',
     emoji: '🗣️',
-    topicIds: ['embriologia-cabeza-cuello', 'embriologia-dientes-craneofacial'],
+    topicIds: ['embriologia-cabeza-cuello', 'embriologia-dientes-craneofacial', 'embriologia-esqueleto-axial'],
   },
   {
     id: 'humanistica-uad-s1',

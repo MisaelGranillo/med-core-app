@@ -520,7 +520,7 @@ export const uadMedicina: Plan = {
           name: 'Embriología I',
           code: 'EM01004',
           tags: ['anatomia'],
-          topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis', 'embriologia-espermatogenesis', 'embriologia-anomalias-numericas', 'embriologia-anomalias-estructurales', 'embriologia-ciclo-ovarico', 'embriologia-fecundacion', 'embriologia-infertilidad-reproduccion', 'embriologia-segunda-semana', 'embriologia-tercera-semana', 'embriologia-periodo-embrionario', 'embriologia-ejes-corporales', 'embriologia-regulacion-molecular', 'embriologia-cavidades-corporales', 'embriologia-periodo-fetal', 'embriologia-placenta', 'embriologia-funcion-placentaria', 'embriologia-repaso-s3', 'embriologia-cabeza-cuello', 'embriologia-dientes-craneofacial'],
+          topicIds: ['embriologia-desarrollo-temprano', 'embriologia-cromosomas-division', 'embriologia-ovogenesis', 'embriologia-espermatogenesis', 'embriologia-anomalias-numericas', 'embriologia-anomalias-estructurales', 'embriologia-ciclo-ovarico', 'embriologia-fecundacion', 'embriologia-infertilidad-reproduccion', 'embriologia-segunda-semana', 'embriologia-tercera-semana', 'embriologia-periodo-embrionario', 'embriologia-ejes-corporales', 'embriologia-regulacion-molecular', 'embriologia-cavidades-corporales', 'embriologia-periodo-fetal', 'embriologia-placenta', 'embriologia-funcion-placentaria', 'embriologia-repaso-s3', 'embriologia-cabeza-cuello', 'embriologia-dientes-craneofacial', 'embriologia-esqueleto-axial'],
           content: {
             area: 'Ciencias Básicas',
             credits: 8,
@@ -605,15 +605,17 @@ export const uadMedicina: Plan = {
               {
                 number: 4,
                 title: 'Cabeza y cuello; sistema esquelético y muscular',
-                topicIds: ['embriologia-cabeza-cuello', 'embriologia-dientes-craneofacial'],
+                topicIds: ['embriologia-cabeza-cuello', 'embriologia-dientes-craneofacial', 'embriologia-esqueleto-axial'],
                 temas: [
                   'Clase 1 (impartida): cabeza y cuello — origen de los tejidos (mesodermo paraxial y de la placa lateral, cresta neural, placodas), arcos faríngeos 1, 2, 3, 4 y 6 con su cartílago, músculo y nervio, bolsas y hendiduras, seno cervical y quiste cervical, casos clínicos (bolsas 3.ª y 4.ª, vago, laríngeo recurrente); lengua y su inervación, tiroides y quiste tirogloso, prominencias faciales, nariz, paladar primario y secundario, secuencia de Pierre Robin',
                   'Clase 2 (impartida): cavidades nasales y senos paranasales, odontogénesis (lámina dentaria, yema, casquete, campana) y tejidos del diente, regulación molecular de dientes y arcos (rombómeras, OTX2, HOX), paratohormona y calcitonina; quistes y fístulas cervicales y tiroglosas, defectos de la cresta neural, Treacher Collins, Pierre Robin, microsomía hemifacial, deleción 22q11.2 y fisuras faciales',
+                  'Clase 3 (impartida): sistema esquelético axial — origen (esclerotoma, placa lateral parietal, cresta neural), osificación intramembranosa y endocondral, neurocráneo y condrocráneo, suturas y fontanelas, viscerocráneo, resegmentación vertebral, discos, genes HOX, curvaturas, costillas y esternón; craneosquisis, craniosinostosis, acondroplasia, displasia tanatofórica, disostosis cleidocraneal, espina bífida, costilla cervical y defectos esternales',
                   '5. Origen y desarrollo; cavidades corporales, cavidad pericárdica, membranas serosas, mesenterio dorsal y ventral',
                 ],
                 fuentes: [
                   { title: 'Embriología I — Semana 4, Clase 1', file: 'Embriologia I - Semana 4 - Clase 1.pdf', nota: 'Cabeza y cuello: arcos, bolsas y hendiduras faríngeas, lengua, tiroides, cara y paladar.' },
                   { title: 'Embriología I — Semana 4, Clase 2', file: 'Embriologia I - Semana 4 - Clase 2.pdf', nota: 'Cavidades nasales, odontogénesis, bases moleculares y patologías craneofaciales.' },
+                  { title: 'Embriología I — Semana 4, Clase 3', file: 'Embriologia I - Semana 4 - Clase 3.pdf', nota: 'Sistema esquelético axial.' },
                 ],
               },
             ],
@@ -644,6 +646,7 @@ export const uadMedicina: Plan = {
               { title: 'Semana 3 · Clase 5 — Repaso de la semana', file: 'Embriologia I - Semana 3 - Clase 5.pdf', kind: 'Clase' },
               { title: 'Semana 4 · Clase 1 — Cabeza y cuello', file: 'Embriologia I - Semana 4 - Clase 1.pdf', kind: 'Clase' },
               { title: 'Semana 4 · Clase 2 — Dientes y defectos craneofaciales', file: 'Embriologia I - Semana 4 - Clase 2.pdf', kind: 'Clase' },
+              { title: 'Semana 4 · Clase 3 — Sistema esquelético', file: 'Embriologia I - Semana 4 - Clase 3.pdf', kind: 'Clase' },
               { title: 'Programa Académico — Embriología I (2026-1)', file: 'Embriologia I - Programa.pdf', kind: 'Programa' },
               { title: 'Planeación didáctica — Embriología I', file: 'Embriologia I - Planeacion.pdf', kind: 'Programa' },
             ],
