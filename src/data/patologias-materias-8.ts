@@ -298,6 +298,7 @@ const HERPES_ZOSTER: Patologia = {
   bases: [
     { materia: 'Embriología', topicId: 'embriologia-periodo-embrionario', sectionId: 'epe-6', label: 'Mesodermo paraxial: somitas', porQue: 'Cada dermatoma conserva la inervación de su segmento de origen: por eso la erupción dibuja una franja.' },
     { materia: 'Embriología', topicId: 'embriologia-periodo-embrionario', sectionId: 'epe-4', label: 'Células de la cresta neural', porQue: 'Los ganglios sensitivos, donde el virus queda latente, derivan de la cresta neural.' },
+    { materia: 'Embriología', topicId: 'embriologia-sistema-muscular', sectionId: 'emu-4', label: 'Epiaxial e hipaxial; miotomas y dermatomas', porQue: 'Qué es un dermatoma y cómo se usa para localizar una lesión; el zóster como ejemplo de clase.' },
   ],
   atlas: [
     { id: 'embriologia-tercera-semana', title: 'Tercera semana y periodo embrionario' },

@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="membrana.css">
+<style>
+svg text { font-family: 'Inter'; }
+.page { gap: 10px; padding-top: 12px; }
+h1 { font-size: 40px; }
+.panel { padding: 10px 12px; }
+.ph { margin: 0 0 6px; }
+.lst { margin: 0; padding-left: 15px; font-size: 10.6px; line-height: 1.3; }
+.lst li { margin: 0 0 2px; }
+table td { font-size: 10px; padding: 2px 5px; line-height: 1.24; }
+table th { padding: 2px 5px; }
+.note { font-size: 10px; margin: 4px 0 0; }
+.side { display: grid; gap: 10px; align-items: center; }
+.cards4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.cards4 .c { border: 1px solid #f1c9cc; background: #fff; border-radius: 8px; padding: 5px 7px; font-size: 9.9px; line-height: 1.27; }
+.cards4 .c b.t { display: block; font-size: 11px; color: var(--navy); margin-bottom: 2px; }
+</style>
+</head><body><div class="page">
+
+<header>
+  <p class="eyebrow">MedCore — Atlas de Embriología</p>
+  <h1>Sistema muscular</h1>
+  <p class="tag">De dónde viene cada músculo, cómo se reparte el somita y qué pasa cuando falla.</p>
+</header>
+
+<div class="row">
+  <section class="panel" style="flex:.9">
+    <div class="ph"><span class="n">1</span>Origen</div>
+    <img src="{{img:ana/mus-origen.svg}}" style="width:100%;max-width:360px;display:block;margin:0 auto" alt="">
+    <p class="note">Casi todo el músculo es <b>mesodermo</b>; la excepción es el músculo liso del <b>ectodermo</b>. El mioepitelio de la mama se contrae con la <b>oxitocina</b> y saca la leche.</p>
+  </section>
+  <section class="panel" style="flex:1.1">
+    <div class="ph"><span class="n">2</span>Dominios primaxial y abaxial <small>— corte, semana 4</small></div>
+    <img src="{{img:ana/mus-dominios.svg}}" style="width:100%;max-width:400px;display:block;margin:0 auto" alt="">
+    <table>
+      <tr><th>Primaxial (se quedan)</th><th>Abaxial (cruzan la frontera)</th></tr>
+      <tr><td>Espalda, escalenos, geniohioideo, prevertebrales, intercostales, romboides, elevador de la escápula, dorsal ancho</td><td>Infrahioideos, pectorales, oblicuos, transverso, recto, diafragma pélvico, músculos distales del brazo y toda la pierna</td></tr>
+    </table>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">3</span>Señales que diferencian al somita</div>
+    <img src="{{img:ana/mus-senales.svg}}" style="width:100%;max-width:340px;display:block;margin:0 auto" alt="">
+    <p class="note"><b>PAX3</b> marca el dermomiotoma (lo induce el WNT dorsal). <b>Escleraxis</b>: tendones. <b>SRF</b>: músculo liso.</p>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">4</span>Del mioblasto a la fibra</div>
+    <img src="{{img:ana/mus-fibra.svg}}" style="width:100%;max-width:400px;display:block;margin:0 auto" alt="">
+    <p class="note">Algunas células quedan como <b>células satélite</b>, la reserva que después repara la fibra. Epiaxiales (espalda): ramas <b>dorsales</b>; hipaxiales: ramas <b>ventrales</b>.</p>
+  </section>
+</div>
+
+<div class="row">
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">5</span>Yema de la extremidad superior</div>
+    <img src="{{img:ana/mus-yema.svg}}" style="width:100%;max-width:380px;display:block;margin:0 auto" alt="">
+    <p class="note">La superior aparece antes que la inferior. Las <b>células musculares</b> vienen de los somitas; su <b>patrón</b> lo da el tejido conectivo de la placa lateral (en la cabeza, de la cresta neural).</p>
+  </section>
+  <section class="panel" style="flex:1">
+    <div class="ph"><span class="n">6</span>Tres tipos de músculo</div>
+    <img src="{{img:ana/mus-tipos.svg}}" style="width:100%;max-width:350px;display:block;margin:0 auto" alt="">
+    <p class="note">Algunas células cardíacas de los ventrículos se especializan en <b>fibras de Purkinje</b>, parte del sistema de conducción.</p>
+  </section>
+</div>
+
+<section class="panel">
+  <div class="ph"><span class="n">7</span>Defectos de reducción de extremidades <small>— ≈ 1 de cada 1 850 recién nacidos</small></div>
+  <img src="{{img:ana/mus-reduccion.svg}}" style="height:126px;display:block;margin:0 auto" alt="">
+  <p class="note">La <b>talidomida</b> (1957–1962) causó focomelia y amelia en más de 10 000 niños; el periodo sensible va de los días 20 a 36 después de la fecundación, cuando se forman las yemas. En la mayoría de los casos la causa no se conoce.</p>
+</section>
+
+<section class="clin">
+  <div class="ph"><span class="n">8</span>Correlación clínica</div>
+  <div class="cards4">
+    <div class="c"><b class="t">Secuencia de Poland</b>≈ 1/20 000, más en varones, lado derecho en ≈ 75 %. Falta la porción esternal del pectoral mayor y simbraquidactilia del mismo lado. Hipótesis: flujo de la subclavia, 6.ª semana.</div>
+    <div class="c"><b class="t">Distrofia de Duchenne</b>Sin distrofina funcional; recesiva ligada al X. Inicio antes de los 5 años, signo de Gowers, CK alta. Glucocorticoides; vigilar corazón y respiración.</div>
+    <div class="c"><b class="t">Distrofia de Becker</b>Mismo gen, distrofina que funciona en parte. Inicio en la niñez tardía o la adolescencia, curso lento; muchos llegan a los 40 años o más.</div>
+    <div class="c"><b class="t">Abdomen en ciruela pasa</b>Tríada: pared abdominal deficiente, vías urinarias dilatadas y testículos intraabdominales. Casi siempre varones. El riñón decide el pronóstico.</div>
+  </div>
+</section>
+
+<p class="foot">MedCore · Embriología I (UAD) · Semana 4, clase 4 · Esquemas propios, simplificados y no a escala</p>
+</div></body></html>

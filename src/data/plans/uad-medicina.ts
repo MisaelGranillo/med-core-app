@@ -666,6 +666,7 @@ export const uadMedicina: Plan = {
               { label: 'Atlas MedCore — Función placentaria, líquido amniótico y gemelos', url: '/atlas/embriologia-funcion-placentaria' },
               { label: 'Atlas MedCore — Cabeza y cuello: aparato faríngeo y cara', url: '/atlas/embriologia-cabeza-cuello' },
               { label: 'Atlas MedCore — Sistema esquelético axial', url: '/atlas/embriologia-esqueleto-axial' },
+              { label: 'Atlas MedCore — Sistema muscular', url: '/atlas/embriologia-sistema-muscular' },
               { label: 'Acland Anatomy', url: 'https://aclandanatomy.com/' },
               { label: 'Bates Visual Guide', url: 'https://batesvisualguide.com/' },
               { label: 'LWW Health Library', url: 'https://www.lwwhealthlibrary.com' },

@@ -6591,7 +6591,7 @@ export const embriologiaTopics: Topic[] = [
             data: {
               headers: ['', 'Duchenne (DMD)', 'Becker (DMB)'],
               rows: [
-                ['Frecuencia', 'La más común: ≈ 1 de cada 3 500–5 000 varones', 'Menos frecuente'],
+                ['Frecuencia', 'La más común (juntas: ≈ 1 de cada 3 500–5 000 varones)', 'Menos frecuente'],
                 ['Distrofina', 'No se produce distrofina funcional', 'Distrofina anormal que conserva parte de su función'],
                 ['Inicio', 'Antes de los 5 años', 'Más tardío y variable: niñez tardía o adolescencia (la clase da 8 a 25 años)'],
                 ['Curso', 'Más grave y rápido', 'Más lento; muchos viven hasta los 40 años o más'],

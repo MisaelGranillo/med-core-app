@@ -100,5 +100,9 @@ export const SISTEMAS_DE: Record<string, Sistema[]> = {
   'treacher-collins': ['Genética y cromosomas', 'Musculoesquelético'],
   'acondroplasia': ['Musculoesquelético', 'Genética y cromosomas'],
   'craniosinostosis': ['Musculoesquelético', 'Nervioso'],
+  'distrofia-duchenne-becker': ['Musculoesquelético', 'Genética y cromosomas', 'Cardiovascular'],
+  'secuencia-poland': ['Musculoesquelético'],
+  'abdomen-ciruela-pasa': ['Musculoesquelético', 'Reproductor y embarazo'],
+  'defectos-reduccion-extremidades': ['Musculoesquelético', 'Reproductor y embarazo'],
   'disostosis-cleidocraneal': ['Musculoesquelético', 'Genética y cromosomas'],
 }

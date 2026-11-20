@@ -1600,6 +1600,24 @@ export const atlasTopics: AtlasTopic[] = [
       { id: 'eax-a6', question: 'En el panel 7, el cierre prematuro de la sutura sagital produce:', options: ['Braquicefalia', 'Trigonocefalia', 'Escafocefalia', 'Plagiocefalia'], correctIndex: 2, explanation: 'El cráneo crece paralelo a la sutura cerrada y queda largo y estrecho; es la forma más frecuente.', difficulty: 'easy' },
     ],
   },
+  {
+    id: 'embriologia-sistema-muscular',
+    title: 'Sistema muscular',
+    subtitle: 'Origen del músculo esquelético, cardíaco y liso, corte del somita con los dominios primaxial y abaxial y la frontera somítica lateral, señales que diferencian al somita, del mioblasto a la fibra y el tendón, yema de la extremidad superior, tres tipos de músculo, defectos de reducción de extremidades y correlación clínica',
+    category: 'embriologia',
+    emoji: '💪',
+    imagePath: '/atlas/embriologia-sistema-muscular.webp',
+    colorKey: 'embriologia',
+    relatedTopicIds: ['embriologia-sistema-muscular'],
+    questions: [
+      { id: 'emu-a1', question: 'En el panel 1, el músculo liso de la pupila y el mioepitelio de la mama derivan del:', options: ['Mesodermo paraxial', 'Ectodermo', 'Endodermo', 'Hoja visceral de la placa lateral'], correctIndex: 1, explanation: 'Son la excepción: casi todo el músculo viene del mesodermo.', difficulty: 'easy' },
+      { id: 'emu-a2', question: 'En el corte del panel 2, las células del grupo ventrolateral que cruzan la línea roja forman músculos:', options: ['Primaxiales', 'Epiaxiales', 'Abaxiales', 'Cardíacos'], correctIndex: 2, explanation: 'La línea roja es la frontera somítica lateral; los que se quedan son primaxiales.', difficulty: 'easy' },
+      { id: 'emu-a3', question: 'En el panel 3, ¿qué factor induce el WNT del tubo neural dorsal en la porción dorsomedial?', options: ['MYOD', 'PAX1', 'BMP4', 'MYF5'], correctIndex: 3, explanation: 'MYF5 da los precursores primaxiales; MYOD se induce en la porción lateral con WNT del ectodermo y BMP4.', difficulty: 'medium' },
+      { id: 'emu-a4', question: 'En el panel 4, ¿qué factor de transcripción regula el desarrollo del tendón?', options: ['Escleraxis', 'SRF', 'PAX3', 'NT-3'], correctIndex: 0, explanation: 'El tendón viene del esclerotoma vecino al miotoma.', difficulty: 'medium' },
+      { id: 'emu-a5', question: 'En el panel 5, ¿qué separa los dedos a partir de los radios digitales?', options: ['La fusión de los radios', 'La apoptosis del tejido entre los radios', 'La llegada del músculo', 'La osificación'], correctIndex: 1, explanation: 'Si falla, los dedos quedan unidos (sindactilia).', difficulty: 'easy' },
+      { id: 'emu-a6', question: 'En el panel 6, las barras entre las células cardíacas representan:', options: ['Núcleos', 'Estrías', 'Tendones', 'Discos intercalares'], correctIndex: 3, explanation: 'Los mioblastos cardíacos no se fusionan: se unen por discos intercalares.', difficulty: 'easy' },
+    ],
+  },
 
 
 
