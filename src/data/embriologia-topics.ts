@@ -6300,4 +6300,374 @@ export const embriologiaTopics: Topic[] = [
       },
     ],
   },
+  {
+    id: 'embriologia-sistema-muscular',
+    title: 'Sistema muscular',
+    subtitle: 'Origen del músculo esquelético, cardíaco y liso, somitas y dermomiotoma, dominios primaxial y abaxial, epiaxial e hipaxial, regulación molecular (SHH, PAX1, WNT, MYF5, MYOD, NT-3), del mioblasto a la fibra, tendones, músculos de extremidades y cabeza; secuencia de Poland, distrofias de Duchenne y Becker, abdomen en ciruela pasa y defectos de reducción de extremidades',
+    colorKey: 'embriologia',
+    categoria: 'Embriología',
+    emoji: '💪',
+    keyPoints: [
+      'Casi todo el músculo viene del MESODERMO: esquelético del PARAXIAL (somitas y, en la cabeza, somitómeros); cardíaco y liso visceral de la hoja ESPLÁCNICA de la placa lateral. Excepción: esfínter y dilatador de la pupila y mioepitelio de mama y glándulas sudoríparas vienen del ECTODERMO.',
+      'Dominio PRIMAXIAL: células que se quedan en el somita (espalda, cintura escapular e intercostales). Dominio ABAXIAL: células que cruzan la FRONTERA SOMÍTICA LATERAL hacia la hoja parietal de la placa lateral (infrahioideos, pared abdominal, pectorales y extremidades).',
+      'SHH + nogina (notocorda y piso del tubo neural) → esclerotoma → PAX1. WNT del tubo neural dorsal → PAX3 y MYF5 (primaxial). WNT del ectodermo + BMP4 de la placa lateral → MYOD. NT-3 → dermis.',
+      'Los mioblastos esqueléticos se FUSIONAN (fibras multinucleadas; estriaciones al final del 3.er mes). Los cardíacos NO se fusionan: se unen por DISCOS INTERCALARES. Tendones: esclerotoma, regulados por ESCLERAXIS.',
+      'Yemas de las extremidades al final de la semana 4, primero la superior; el músculo se condensa en su base en la semana 7. Las células musculares vienen de los somitas; el patrón lo da el tejido conectivo de la placa lateral.',
+      'POLAND (≈ 1/20 000): falta el pectoral menor y parte del mayor, pezón hipoplásico y sindactilia o braquidactilia del MISMO lado; se atribuye a una interrupción del flujo de la subclavia hacia la 6.ª semana.',
+      'DUCHENNE y BECKER: gen de la DISTROFINA (Xp21), recesivas ligadas al X. Duchenne: sin distrofina funcional, inicio antes de los 5 años. Becker: distrofina parcialmente funcional, inicio más tardío y curso más lento.',
+    ],
+    sections: [
+      {
+        id: 'emu-1',
+        number: 1,
+        title: 'Origen de los tres tipos de músculo',
+        keyTerms: ['mesodermo paraxial', 'mesodermo esplácnico', 'músculo liso ectodérmico', 'células mioepiteliales'],
+        blocks: [
+          {
+            type: 'table',
+            data: {
+              headers: ['Músculo', 'Origen', 'Ejemplos'],
+              rows: [
+                ['Esquelético del tronco y extremidades', 'Mesodermo paraxial: SOMITAS (de la región occipital a la sacra)', 'Espalda, pared corporal, intercostales y extremidades'],
+                ['Esquelético de la cabeza', 'Mesodermo paraxial: SOMITÓMEROS, que se incorporan a los arcos faríngeos', 'Masticación, expresión facial, faringe y laringe'],
+                ['Lengua', 'Somitas OCCIPITALES', 'Inervación motora por el hipogloso (XII)'],
+                ['Cardíaco', 'Hoja VISCERAL (esplácnica) de la placa lateral que rodea al tubo endotelial', 'Miocardio y fibras de Purkinje'],
+                ['Liso visceral', 'Hoja visceral de la placa lateral que rodea al intestino', 'Capa muscular del tubo digestivo y sus derivados'],
+                ['Liso de ectodermo', 'ECTODERMO', 'Esfínter y dilatador de la pupila; mioepitelio de mama y glándulas sudoríparas'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'dato',
+            title: 'Mioepitelio de la mama',
+            content: 'Las células MIOEPITELIALES rodean los alvéolos de la mama. La succión del pezón libera OXITOCINA de la neurohipófisis; la oxitocina contrae estas células y la leche sale hacia los conductos galactóforos (reflejo de eyección).',
+          },
+        ],
+      },
+      {
+        id: 'emu-2',
+        number: 2,
+        title: 'Somitómeros, somitas y dermomiotoma',
+        keyTerms: ['somitómeros', 'somitas', 'epitelización', 'esclerotoma', 'dermomiotoma', 'miotoma', 'dermatoma'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Del mesodermo paraxial al dermomiotoma',
+            steps: [
+              'Al inicio de la semana 3 el mesodermo paraxial se segmenta en SOMITÓMEROS, en dirección cefalocaudal. En la cabeza quedan como somitómeros (siete, rostrales a los somitas occipitales) y forman el mesénquima de la cabeza; desde la región occipital hacia caudal se organizan en SOMITAS.',
+              'Al inicio de la semana 4 el somita es una esfera EPITELIAL alrededor de una pequeña cavidad.',
+              'Las paredes VENTRAL y MEDIAL pierden su carácter epitelial, vuelven a ser mesénquima y rodean al tubo neural y a la notocorda: son el ESCLEROTOMA (vértebras y costillas).',
+              'La parte dorsal que queda es el DERMOMIOTOMA. Sus bordes dorsomedial y ventrolateral dan precursores musculares que migran por debajo y forman el MIOTOMA; el resto, el DERMATOMA, forma dermis.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'Los somitómeros de la cabeza nunca se separan en esclerotoma y dermomiotoma reconocibles antes de diferenciarse. Cada miotoma y cada dermatoma conserva su propio nervio raquídeo segmentario.',
+          },
+        ],
+      },
+      {
+        id: 'emu-3',
+        number: 3,
+        title: 'Dominios primaxial y abaxial',
+        keyTerms: ['dominio primaxial', 'dominio abaxial', 'frontera somítica lateral', 'grupo dorsomedial', 'grupo ventrolateral'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Dominio primaxial',
+            content: 'Región que rodea al tubo neural y solo contiene células que derivan del somita y se quedan en él (mesodermo paraxial). Recibe sobre todo al grupo DORSOMEDIAL de precursores musculares.',
+          },
+          {
+            type: 'definition',
+            title: 'Dominio abaxial',
+            content: 'Hoja PARIETAL (somática) del mesodermo de la placa lateral junto con las células del somita que migran y cruzan la FRONTERA SOMÍTICA LATERAL, sobre todo del grupo VENTROLATERAL.',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Región', 'Primaxiales', 'Abaxiales'],
+              rows: [
+                ['Cervical', 'Escalenos, geniohioideo y prevertebrales', 'Infrahioideos'],
+                ['Toracoabdominal', 'Intercostales', 'Pectorales mayor y menor, oblicuos externo e interno, transverso, recto del abdomen, esternal y diafragma pélvico'],
+                ['Extremidad superior', 'Romboides, elevador de la escápula y dorsal ancho', 'Músculos distales de la extremidad'],
+                ['Extremidad inferior', 'Ninguno', 'Todos los músculos de la extremidad inferior'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'La frontera somítica lateral no solo separa músculo. DERMIS: la de la espalda viene del dermatoma (primaxial); la de la pared corporal y las extremidades, de la placa lateral (abaxial). COSTILLAS: su parte ósea viene del esclerotoma que se queda (primaxial); los CARTÍLAGOS costales, de células del esclerotoma que cruzan la frontera (abaxiales).',
+          },
+          {
+            type: 'correlacion',
+            variant: 'mnemotecnia',
+            title: 'Para recordar',
+            content: 'PRIMaxial = se quedan en su PRIMER sitio (el somita). ABaxial = se van, cruzan la frontera hacia la placa lateral.',
+          },
+        ],
+      },
+      {
+        id: 'emu-4',
+        number: 4,
+        title: 'Epiaxial e hipaxial; miotomas y dermatomas',
+        keyTerms: ['epiaxial', 'hipaxial', 'ramas primarias dorsales', 'ramas primarias ventrales', 'dermatoma clínico'],
+        blocks: [
+          {
+            type: 'comparison',
+            left: { title: 'EPIAXIALES (por encima del eje)', items: ['Músculos de la espalda', 'Ramas primarias DORSALES de los nervios espinales'] },
+            right: { title: 'HIPAXIALES (por debajo del eje)', items: ['Pared corporal y extremidades', 'Ramas primarias VENTRALES'] },
+          },
+          {
+            type: 'note',
+            content: 'Esta clasificación describe la posición y la inervación del adulto. Para el ORIGEN embrionario y la migración de las células se usa la clasificación primaxial/abaxial, porque muchos músculos reciben inervación de varios segmentos.',
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Dermatomas en la exploración',
+            content: 'Un dermatoma es la franja de piel que inerva un solo nervio espinal. Explorar la sensibilidad por dermatomas permite localizar el nivel de una lesión medular o de una raíz. En el HERPES ZÓSTER el virus reactivado en un ganglio sensitivo produce dolor y vesículas que siguen un dermatoma, de un solo lado.',
+          },
+        ],
+      },
+      {
+        id: 'emu-5',
+        number: 5,
+        title: 'Regulación molecular del somita',
+        keyTerms: ['Sonic hedgehog', 'nogina', 'PAX1', 'PAX3', 'WNT', 'MYF5', 'MYOD', 'BMP4', 'neurotrofina 3'],
+        blocks: [
+          {
+            type: 'table',
+            data: {
+              headers: ['Señal', 'De dónde viene', 'Sobre qué actúa', 'Resultado'],
+              rows: [
+                ['SHH y NOGINA', 'Notocorda y piso del tubo neural', 'Porción ventromedial del somita', 'ESCLEROTOMA, que expresa PAX1 (cartílago y hueso vertebral)'],
+                ['WNT', 'Tubo neural dorsal', 'Dermomiotoma', 'Expresión de PAX3: marca el dermomiotoma'],
+                ['WNT', 'Tubo neural dorsal', 'Porción dorsomedial', 'MYF5: precursores musculares PRIMAXIALES'],
+                ['WNT + BMP4', 'Ectodermo superficial (WNT) y placa lateral parietal (BMP4)', 'Porción dorsolateral', 'MYOD: precursores musculares laterales'],
+                ['NT-3 (neurotrofina 3)', 'Tubo neural dorsal', 'Porción media del epitelio dorsal', 'DERMIS'],
+                ['Escleraxis (SCX)', 'Factor de transcripción', 'Esclerotoma vecino al miotoma', 'TENDONES'],
+                ['SRF (factor de respuesta sérica)', 'Factor de transcripción', 'Precursores de músculo liso', 'Diferenciación del músculo LISO'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'mnemotecnia',
+            title: 'Para recordar',
+            content: 'SHH «sostiene el esqueleto» (esclerotoma, PAX1). MYF5 va primero y por dentro (dorsomedial, primaxial); MYOD por fuera (lateral). NT-3: «NT» de «nueva piel», la dermis.',
+          },
+        ],
+      },
+      {
+        id: 'emu-6',
+        number: 6,
+        title: 'Del mioblasto a la fibra muscular; tendones',
+        keyTerms: ['mioblastos', 'miotubos', 'miofibrillas', 'estriaciones', 'células satélite', 'escleraxis'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Formación del músculo esquelético',
+            steps: [
+              'Los precursores miogénicos se diferencian en MIOBLASTOS.',
+              'Los mioblastos se FUSIONAN y forman MIOTUBOS PRIMARIOS; después se forman miotubos secundarios a su alrededor.',
+              'En el citoplasma aparecen MIOFIBRILLAS y se forman fibras largas MULTINUCLEADAS.',
+              'Hacia el FINAL DEL TERCER MES se distinguen las estriaciones típicas del músculo esquelético.',
+              'Algunas células quedan como CÉLULAS SATÉLITE, una reserva que después permite reparar la fibra.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'Los TENDONES que anclan el músculo al hueso derivan de células del ESCLEROTOMA situadas junto a los miotomas, en los bordes anterior y posterior de los somitas. Su desarrollo lo regula el factor de transcripción ESCLERAXIS (SCX).',
+          },
+        ],
+      },
+      {
+        id: 'emu-7',
+        number: 7,
+        title: 'Músculos de las extremidades y de la cabeza',
+        keyTerms: ['yemas de las extremidades', 'radios digitales', 'apoptosis interdigital', 'tejido conectivo', 'somitómeros'],
+        blocks: [
+          {
+            type: 'steps',
+            title: 'Yemas de las extremidades',
+            steps: [
+              'Al final de la semana 4 aparecen las yemas como salientes de la pared ventrolateral: primero la SUPERIOR (hacia el día 24) y unos días después la inferior. La superior queda frente a los segmentos cervicales inferiores y el primero torácico, de ahí el plexo braquial.',
+              'La inferior aparece por debajo del cordón umbilical, frente a los segmentos lumbares y sacros superiores.',
+              'Los extremos se aplanan en las placas de la mano y del pie y una constricción los separa del segmento proximal.',
+              'Aparecen los RADIOS digitales, primero en la mano y poco después en el pie; la APOPTOSIS del tejido entre los radios separa los dedos.',
+              'Una segunda constricción divide el segmento proximal en dos: brazo y antebrazo, muslo y pierna.',
+              'En la SEMANA 7 el mesénquima muscular se condensa en la base de la yema y crece de proximal a distal.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'Hay que distinguir dos cosas. Las CÉLULAS MUSCULARES de la extremidad vienen de los SOMITAS y migran a la yema. El PATRÓN de los músculos lo dicta el TEJIDO CONECTIVO al que llegan, que deriva de la hoja parietal de la placa lateral.',
+          },
+          {
+            type: 'paragraph',
+            content: 'CABEZA: todos los músculos voluntarios derivan del mesodermo paraxial (somitómeros y somitas), incluidos los de la lengua, los del ojo (excepto los del iris, que vienen del ectodermo de la copa óptica) y los de los arcos faríngeos. Su patrón lo controla el tejido conectivo derivado de la CRESTA NEURAL.',
+          },
+        ],
+      },
+      {
+        id: 'emu-8',
+        number: 8,
+        title: 'Músculo cardíaco',
+        keyTerms: ['mesodermo esplácnico', 'discos intercalares', 'fibras de Purkinje'],
+        blocks: [
+          {
+            type: 'comparison',
+            left: { title: 'ESQUELÉTICO', items: ['Mesodermo paraxial', 'Los mioblastos se fusionan', 'Fibras multinucleadas'] },
+            right: { title: 'CARDÍACO', items: ['Hoja esplácnica que rodea al tubo endotelial del corazón', 'Los mioblastos NO se fusionan: se adhieren por uniones que se vuelven DISCOS INTERCALARES', 'Cada célula conserva su núcleo'] },
+          },
+          {
+            type: 'note',
+            content: 'Las miofibrillas se forman igual que en el músculo esquelético. Más tarde algunos haces de células con miofibrillas irregulares se especializan en FIBRAS DE PURKINJE, parte del sistema de conducción.',
+          },
+        ],
+      },
+      {
+        id: 'emu-9',
+        number: 9,
+        title: 'Músculo liso',
+        keyTerms: ['músculo liso visceral', 'células proepicárdicas', 'cresta neural', 'factor de respuesta sérica'],
+        blocks: [
+          {
+            type: 'table',
+            data: {
+              headers: ['Músculo liso de', 'Origen'],
+              rows: [
+                ['Pared intestinal y sus derivados', 'Hoja visceral de la placa lateral que la rodea'],
+                ['Aorta dorsal y grandes arterias', 'Mesodermo de la placa lateral y células de la CRESTA NEURAL'],
+                ['Arterias coronarias', 'Células PROEPICÁRDICAS y cresta neural (segmentos proximales)'],
+                ['Esfínter y dilatador de la pupila; glándulas mamarias y sudoríparas', 'ECTODERMO'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'El FACTOR DE RESPUESTA SÉRICA (SRF) es el factor de transcripción que dirige la diferenciación del músculo liso.',
+          },
+        ],
+      },
+      {
+        id: 'emu-10',
+        number: 10,
+        title: 'Secuencia de Poland',
+        keyTerms: ['secuencia de Poland', 'pectoral mayor', 'sindactilia', 'braquidactilia', 'arteria subclavia'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Secuencia de Poland',
+            content: 'Falta del pectoral menor y de parte del pectoral mayor (sobre todo su porción esternocostal) de un lado, con alteraciones de la mano del MISMO lado. Ocurre en cerca de 1 de cada 20 000 nacimientos y es más frecuente en varones; casi siempre es esporádica.',
+          },
+          {
+            type: 'list',
+            items: [
+              'Pezón y areola ausentes, pequeños o desplazados.',
+              'Mano ipsilateral: SINDACTILIA (dedos fusionados), BRAQUIDACTILIA (dedos cortos) u OLIGODACTILIA (menos dedos).',
+              'Puede faltar parte de las costillas o del tejido subcutáneo de la pared torácica.',
+            ],
+          },
+          {
+            type: 'note',
+            content: 'Se explica como una «secuencia de interrupción de la arteria subclavia»: hacia la 6.ª semana (se cita el día 46) el flujo de la subclavia o de sus ramas se interrumpe y sufren a la vez la pared torácica y la mano del mismo lado. Es la hipótesis más aceptada, no una causa demostrada.',
+          },
+        ],
+      },
+      {
+        id: 'emu-11',
+        number: 11,
+        title: 'Distrofias musculares de Duchenne y Becker',
+        keyTerms: ['distrofina', 'herencia recesiva ligada al X', 'Duchenne', 'Becker', 'signo de Gowers'],
+        blocks: [
+          {
+            type: 'paragraph',
+            content: 'Las distrofias musculares son trastornos hereditarios con degeneración muscular progresiva y debilidad. Duchenne y Becker se deben a mutaciones del gen de la DISTROFINA, en el cromosoma X (Xp21), y se heredan de forma RECESIVA LIGADA AL X: afectan casi solo a varones. La distrofina es una proteína citoplasmática que forma parte del complejo que une el CITOESQUELETO de la fibra con la MATRIZ EXTRACELULAR; sin ella, la membrana se daña con cada contracción.',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['', 'Duchenne (DMD)', 'Becker (DMB)'],
+              rows: [
+                ['Frecuencia', 'La más común: ≈ 1 de cada 3 500–5 000 varones', 'Menos frecuente'],
+                ['Distrofina', 'No se produce distrofina funcional', 'Distrofina anormal que conserva parte de su función'],
+                ['Inicio', 'Antes de los 5 años', 'Más tardío y variable: niñez tardía o adolescencia (la clase da 8 a 25 años)'],
+                ['Curso', 'Más grave y rápido', 'Más lento; muchos viven hasta los 40 años o más'],
+              ],
+            },
+          },
+          {
+            type: 'correlacion',
+            variant: 'clinica',
+            title: 'Cómo se ve',
+            content: 'Niño de 4 años que se cae con frecuencia, camina de puntas y, para levantarse del suelo, se apoya con las manos en las piernas (signo de Gowers); las pantorrillas se ven grandes (seudohipertrofia). La creatina cinasa está muy elevada y el diagnóstico se confirma con estudio genético.',
+          },
+        ],
+      },
+      {
+        id: 'emu-12',
+        number: 12,
+        title: 'Abdomen en ciruela pasa y defectos de extremidades',
+        keyTerms: ['síndrome de abdomen en ciruela pasa', 'Eagle-Barrett', 'criptorquidia', 'amelia', 'meromelia', 'focomelia'],
+        blocks: [
+          {
+            type: 'definition',
+            title: 'Síndrome de abdomen en ciruela pasa (Eagle-Barrett)',
+            content: 'Falta parcial o total de la musculatura de la pared abdominal: la pared es tan delgada y arrugada que se ven y se palpan los órganos. Se acompaña de malformaciones de las vías urinarias y la vejiga, a menudo con obstrucción uretral. Es raro y más del 95 % de los casos son varones.',
+          },
+          {
+            type: 'list',
+            items: [
+              'TRIADA clásica: pared abdominal deficiente, vías urinarias dilatadas y CRIPTORQUIDIA bilateral (testículos intraabdominales).',
+              'Mecanismo propuesto: la obstrucción urinaria acumula líquido, distiende el abdomen y la musculatura no se desarrolla o se atrofia.',
+              'Tratamiento: reconstrucción de la pared (abdominoplastia), orquidopexia y manejo urológico; si hay insuficiencia renal, diálisis o trasplante RENAL.',
+            ],
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Defecto', 'Qué falta'],
+              rows: [
+                ['AMELIA', 'Toda la extremidad'],
+                ['MEROMELIA', 'Parte de la extremidad'],
+                ['FOCOMELIA (forma de meromelia)', 'Los segmentos proximales o intermedios: la mano o el pie, rudimentarios, quedan pegados al tronco'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'La TALIDOMIDA, tomada durante la formación de las extremidades, causó miles de casos de focomelia y amelia entre 1957 y 1962.',
+          },
+        ],
+      },
+      {
+        id: 'emu-13',
+        number: 13,
+        title: 'Repaso integrador: capas germinales de cabeza, cuello y esqueleto',
+        keyTerms: ['bolsas faríngeas', 'arcos faríngeos', 'cresta neural', 'placa lateral'],
+        blocks: [
+          {
+            type: 'table',
+            data: {
+              headers: ['Capa', 'Forma'],
+              rows: [
+                ['ENDODERMO', 'Bolsas faríngeas: I cavidad timpánica y trompa; II amígdala palatina; III paratiroides inferiores (dorsal) y timo (ventral); IV paratiroides superiores (dorsal) y cuerpo ultimobranquial con células C (ventral)'],
+                ['Mesodermo PARAXIAL', 'Somitas: músculos de extremidades, pared corporal y espalda, vértebras y costillas. Somitómeros: músculos de la masticación (1.er arco), de la expresión facial (2.º) y de faringe y laringe (4.º y 6.º)'],
+                ['Placa lateral PARIETAL', 'Huesos y tejido conectivo de las extremidades, esternón, pared corporal y serosa parietal'],
+                ['Placa lateral VISCERAL', 'Corazón, vasos, músculo liso visceral y serosa visceral'],
+                ['CRESTA NEURAL', 'Viscerocráneo (hueso, cartílago y tejido conectivo de la cara), bóveda y condrocráneo precordal, dermis facial, músculo liso de arcos aórticos'],
+                ['ECTODERMO', 'Músculos de la pupila y mioepitelio de mama y glándulas sudoríparas; hendiduras faríngeas (la 1.ª forma el conducto auditivo externo; 2.ª a 4.ª, el seno cervical)'],
+              ],
+            },
+          },
+          {
+            type: 'note',
+            content: 'Los detalles de este repaso están en los temas «Cabeza y cuello», «Dientes y defectos craneofaciales» y «Sistema esquelético».',
+          },
+        ],
+      },
+    ],
+  },
 ]
