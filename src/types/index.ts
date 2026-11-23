@@ -146,6 +146,8 @@ export interface Question {
   correctIndex: number
   explanation: string
   difficulty: 'easy' | 'medium' | 'hard'
+  // Pregunta tomada de un examen semanal real (scripts/examenes/importar.py).
+  examen?: { materia: string; semana: number }
 }
 
 export interface QuizAttempt {

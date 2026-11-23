@@ -18,6 +18,7 @@ import { useProgress } from '../store/useProgress'
 import { FlashCard } from '../components/FlashCard'
 import { QuizQuestion } from '../components/QuizQuestion'
 import type { Question } from '../types'
+import { examDecks, parseExamDeckId } from '../data/generated/topicIndex'
 
 type Mode = 'select' | 'flashcard' | 'quiz' | 'results'
 
@@ -36,8 +37,21 @@ export function Quiz() {
 function QuizSession({ content }: { content: Content }) {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
-  const topic = content.topics.find((t) => t.id === id)
-  const topicQuestions = content.questions.filter((q) => q.topicId === id)
+  // Un mazo es un tema o un examen semanal (examen-<materia>[-s<semana>]).
+  const exam = id ? parseExamDeckId(id) : null
+  const examDeck = exam ? examDecks.find((d) => d.materia === exam.materia) : undefined
+  const topicFound = content.topics.find((t) => t.id === id)
+  const topic = examDeck && id
+    ? {
+        id,
+        title: exam?.semana ? `Examen de la Semana ${exam.semana} · ${examDeck.nombre}` : `Exámenes del semestre · ${examDeck.nombre}`,
+        colorKey: examDeck.colorKey,
+      }
+    : topicFound && { id: topicFound.id, title: topicFound.title, colorKey: topicFound.colorKey }
+  const topicQuestions = exam
+    ? content.questions.filter((q) => q.examen?.materia === exam.materia && (exam.semana === null || q.examen.semana === exam.semana))
+    : content.questions.filter((q) => q.topicId === id)
+  const backTo = exam ? '/quiz#examenes' : `/topic/${id}`
   const colors = topic ? TOPIC_COLORS[topic.colorKey] : TOPIC_COLORS.digestivo
   const { addQuizAttempt, getBestScore } = useProgress()
 
@@ -110,7 +124,7 @@ function QuizSession({ content }: { content: Content }) {
       <div className="border-b border-zinc-200 bg-surface">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-4">
           <Link
-            to={`/topic/${topic.id}`}
+            to={backTo}
             className="inline-flex items-center gap-1.5 min-w-0 text-zinc-600 hover:text-zinc-900 text-sm transition-colors"
           >
             <ArrowLeft weight="regular" className="w-4 h-4 flex-shrink-0" />
@@ -177,7 +191,7 @@ function QuizSession({ content }: { content: Content }) {
                 </button>
               </div>
 
-              <div className="card p-4 bg-zinc-50">
+              {!exam && <div className="card p-4 bg-zinc-50">
                 <p className="text-xs font-bold text-zinc-400 mb-3">
                   Distribución de dificultad
                 </p>
@@ -197,7 +211,7 @@ function QuizSession({ content }: { content: Content }) {
                     )
                   })}
                 </div>
-              </div>
+              </div>}
             </motion.div>
           )}
 
@@ -293,6 +307,24 @@ function QuizSession({ content }: { content: Content }) {
                    'Continúa estudiando. Revisa los paneles del tema.'}
                 </p>
 
+                {exam && wrongIds.length > 0 && (
+                  <div className="text-left mb-6">
+                    <p className="text-xs font-bold text-zinc-400 mb-2">Temas para repasar</p>
+                    <ul className="space-y-1.5">
+                      {[...new Set(deck.filter((q) => wrongIds.includes(q.id)).map((q) => q.topicId))].map((tid) => {
+                        const t = content.topics.find((x) => x.id === tid)
+                        return t ? (
+                          <li key={tid}>
+                            <Link to={`/topic/${tid}`} className="inline-flex items-center gap-1.5 text-sm text-zinc-700 hover:text-zinc-900 underline-offset-2 hover:underline">
+                              <span>{t.emoji}</span> {t.title}
+                            </Link>
+                          </li>
+                        ) : null
+                      })}
+                    </ul>
+                  </div>
+                )}
+
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <button
                     onClick={() => setMode('select')}
@@ -302,10 +334,10 @@ function QuizSession({ content }: { content: Content }) {
                     Intentar de nuevo
                   </button>
                   <Link
-                    to={`/topic/${topic.id}`}
+                    to={backTo}
                     className={`btn-primary ${colors.button} px-5 py-2.5`}
                   >
-                    Volver al tema
+                    {exam ? 'Volver a los exámenes' : 'Volver al tema'}
                     <ArrowRight weight="bold" className="w-4 h-4" />
                   </Link>
                 </div>

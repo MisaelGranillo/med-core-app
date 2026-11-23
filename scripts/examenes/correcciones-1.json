@@ -1,0 +1,109 @@
+{
+  "anatomia-humana-diseccion-1:1:2": {
+    "nota": "Respuesta del examen de la Semana 1. La cifosis es la curvatura de convexidad posterior aumentada, típica de la región torácica (la persona se encorva hacia adelante); la región cervical normalmente tiene lordosis."
+  },
+  "anatomia-humana-diseccion-1:4:11": {
+    "nota": "Respuesta del examen de la Semana 4. Con más precisión, el abductor largo del pulgar se inserta en la base del 1.er metacarpiano."
+  },
+  "anatomia-humana-diseccion-1:4:16": {
+    "nota": "Respuesta del examen de la Semana 4. El serrato anterior nace de las 8 o 9 primeras costillas; según el autor se describen de 8 a 10 digitaciones."
+  },
+  "anatomia-humana-diseccion-1:4:25": {
+    "nota": "Respuesta del examen de la Semana 4. El cuadrado lumbar recibe ramos anteriores de T12 (nervio subcostal) a L4."
+  },
+  "bioquimica-1:1:9": {
+    "nota": "Respuesta del examen de la Semana 1. En sentido estricto, las pérdidas insensibles son la evaporación por la piel y la respiración; el sudor visible y las heces suelen contarse como pérdidas sensibles."
+  },
+  "bioquimica-1:1:11": {
+    "stem": "El almidón está integrado por dos fracciones llamadas amilosa y amilopectina. La amilosa se caracteriza por ser:",
+    "opts": ["Glucosas unidas por enlaces alfa 1-4 en una cadena lineal que se enrolla en hélice", "N-acetilglucosamina unida por enlaces beta 1-4", "N-acetilgalactosamina unida por enlaces alfa 1-4", "Ácido D-glucurónico en cadenas rígidas"],
+    "ci": 0,
+    "nota": "★ Clave corregida. El examen marcaba «N-acetilglucosamina unidas por enlaces beta 1-4», que describe a la quitina. La amilosa es un polímero lineal de glucosa con enlaces α1→4; la amilopectina agrega ramificaciones α1→6."
+  },
+  "bioquimica-1:1:14": {
+    "stem": "¿Cuál de los siguientes grupos son monosacáridos con grupo aldehído (aldosas)?",
+    "opts": ["Glucosa, galactosa y manosa", "Fructosa, ribulosa y dihidroxiacetona", "Glutaraldehído, benzaldehído y manosa", "Testosterona, benzaldehído y glutaraldehído"],
+    "ci": 0,
+    "nota": "★ Clave corregida. El examen marcaba «glutaraldehído, benzaldehído, manosa», pero el glutaraldehído y el benzaldehído son aldehídos que no son azúcares. Fructosa, ribulosa y dihidroxiacetona son cetosas."
+  },
+  "bioquimica-1:1:27": {
+    "opts": ["El pH es igual a 14", "La solución se encuentra a 0 °C", "El pH de la solución es igual al pKa del ácido débil", "La concentración de ácido débil es 10 veces mayor que la de la base conjugada"]
+  },
+  "bioquimica-1:3:19": {
+    "stem": "¿Qué tipo de enzima cataliza la isomerización (el reordenamiento dentro de una misma molécula)?",
+    "nota": "Respuesta del examen de la Semana 3. El enunciado original decía «isomerización o unión de múltiples unidades»; unir moléculas es función de las ligasas."
+  },
+  "bioquimica-1:4:1": {
+    "stem": "¿En qué parte de la célula se lleva a cabo la síntesis de las hormonas esteroideas?",
+    "opts": ["Golgi y núcleo", "Núcleo", "Golgi y nucléolo", "Mitocondria y retículo endoplásmico liso"],
+    "ci": 3,
+    "nota": "★ Clave corregida. El examen marcaba «Golgi, núcleo». La esteroidogénesis empieza en la mitocondria (el colesterol se convierte en pregnenolona) y continúa en el retículo endoplásmico liso."
+  },
+  "bioquimica-1:4:29": {
+    "stem": "¿Cuáles son ejemplos de moléculas fosforiladas que aportan energía?",
+    "opts": ["ADP, AMP, UAD", "ATP, ADP, AMP", "IPN, UAM, UAD", "GMC, ATP, ADP"]
+  },
+  "embriologia-1:1:2": {
+    "stem": "Una característica del síndrome de Edwards es:"
+  },
+  "embriologia-1:4:3": {
+    "ci": 0,
+    "nota": "★ Clave corregida. El examen marcaba «Cervical y lumbar», que son las curvaturas SECUNDARIAS (aparecen al sostener la cabeza y al caminar). Las primarias, por la posición fetal, son la torácica y la sacra."
+  },
+  "embriologia-1:4:18": {
+    "stem": "¿Alrededor de qué estructuras se forman las prominencias nasales?"
+  },
+  "embriologia-1:4:23": {
+    "opts": ["Nervio vago (X)", "Nervio trigémino (V)", "Nervio facial (VII)", "Nervio glosofaríngeo (IX)"]
+  },
+  "genetica-basica:3:12": {
+    "stem": "Aproximadamente, ¿cuánto dura la interfase en una célula humana?"
+  },
+  "genetica-basica:4:12": {
+    "nota": "Respuesta del examen de la Semana 4. En México la muestra del tamiz se toma de preferencia entre el 3.er y el 5.º día de vida."
+  },
+  "ingles-medico-1:1:23": {
+    "ci": 2,
+    "nota": "★ Clave corregida. El examen marcaba «Verb», pero en «Medical research» la palabra medical describe al sustantivo research: es un adjetivo."
+  },
+  "ingles-medico-1:2:1": {
+    "nota": "Respuesta del examen de la Semana 2. El nombre formal de la especialidad es gastroenterology."
+  },
+  "ingles-medico-1:2:26": {
+    "opts": ["Ot/o", "Dermat/o", "Path/o", "Hemat/o"]
+  },
+  "ingles-medico-1:3:4": {
+    "ci": 3,
+    "nota": "★ Clave corregida. El examen marcaba «Until», pero en una oración afirmativa la cirugía empieza after (después de que) la enfermera acomoda el instrumental; until funciona en negativo: «The surgery can't begin until…»."
+  },
+  "ingles-medico-1:4:2": {
+    "nota": "Respuesta del examen de la Semana 4. En textos clínicos también se usa la forma Fx."
+  },
+  "ingles-medico-1:4:20": {
+    "stem": "It’s the abbreviation of “Activated Partial Thromboplastin Time”",
+    "ci": 1,
+    "nota": "★ Clave corregida. El examen marcaba «aPtT»; la abreviatura estándar del tiempo de tromboplastina parcial activada es aPTT."
+  },
+  "ingles-medico-1:4:25": {
+    "nota": "Respuesta del examen de la Semana 4. En textos clínicos también se usa HA."
+  },
+  "ingles-medico-1:4:29": {
+    "nota": "Respuesta del examen de la Semana 4. En textos clínicos también se usa Hct."
+  },
+  "medicina-humanistica:1:16": {
+    "opts": ["Las viejas humanidades", "Humanidades éticas", "Humanidades contemporáneas", "Humanidades médicas"]
+  },
+  "medicina-humanistica:1:23": {
+    "stem": "El experimento realizado por Stanley Miller (publicado en 1953) apoyó el origen de la vida por:",
+    "nota": "Respuesta del examen de la Semana 1. El enunciado original decía 1950; el experimento de Miller y Urey se publicó en 1953. Produjo aminoácidos, no vida."
+  },
+  "medicina-humanistica:3:22": {
+    "stem": "Son modos en los que puede operar terapéuticamente el médico cuando considera la eficacia sanadora de su relación directa con el paciente, EXCEPTO:"
+  },
+  "medicina-humanistica:3:28": {
+    "opts": ["Tekhne", "Physis", "Logos", "Tykhe"]
+  },
+  "medicina-humanistica:4:16": {
+    "opts": ["Enfermedades infecciosas", "Enfermedades no infecciosas", "Enfermedades raras"]
+  }
+}

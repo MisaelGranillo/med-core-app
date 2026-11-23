@@ -6,9 +6,9 @@
 
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Lightning, ArrowRight, Trophy, BookOpen } from '@phosphor-icons/react'
+import { Lightning, ArrowRight, Trophy, BookOpen, Exam } from '@phosphor-icons/react'
 import { modules } from '../data/modules'
-import { topicIndex as topics, totalQuestionCount } from '../data/generated/topicIndex'
+import { topicIndex as topics, totalQuestionCount, examDecks, examQuestionCount } from '../data/generated/topicIndex'
 import { TOPIC_COLORS } from '../data/colors'
 import { useProgress } from '../store/useProgress'
 
@@ -43,6 +43,65 @@ export function QuizCatalog() {
           </p>
         </div>
       </section>
+
+      {/* Exámenes semanales reales */}
+      {examDecks.length > 0 && (
+        <section id="examenes" className="max-w-7xl mx-auto px-4 sm:px-6 pt-2 pb-4 scroll-mt-20">
+          <div className="flex items-center gap-2 mb-1">
+            <Exam weight="duotone" className="w-5 h-5 text-zinc-500" />
+            <h2 className="font-display font-normal text-zinc-900 text-xl">Exámenes del {examDecks[0].periodoLabel.toLowerCase()}</h2>
+            <span className="text-xs font-semibold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded-full">
+              {examQuestionCount} preguntas
+            </span>
+          </div>
+          <p className="text-sm text-zinc-500 mb-4 max-w-[70ch]">
+            Los exámenes semanales tal como se aplicaron, con las claves revisadas. Cada pregunta también aparece en el quiz de su tema.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {examDecks.map((d) => {
+              const colors = TOPIC_COLORS[d.colorKey]
+              const bestAll = getBestScore(`examen-${d.materia}`)
+              return (
+                <div key={d.materia} className="card p-4 flex flex-col gap-3 h-full">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <span className="text-2xl flex-shrink-0">{d.emoji}</span>
+                      <h3 className="font-bold text-sm leading-snug text-zinc-900">{d.nombre}</h3>
+                    </div>
+                    {bestAll !== null && (
+                      <span className="flex items-center gap-1 text-xs font-bold text-amber-700 dark:text-amber-300 bg-amber-100 dark:bg-amber-500/20 px-1.5 py-0.5 rounded-full flex-shrink-0">
+                        <Trophy weight="fill" className="w-3 h-3" />{bestAll}%
+                      </span>
+                    )}
+                  </div>
+                  <div className="grid grid-cols-4 gap-1.5">
+                    {d.semanas.map((w) => {
+                      const best = getBestScore(`examen-${d.materia}-s${w.n}`)
+                      return (
+                        <Link
+                          key={w.n}
+                          to={`/quiz/examen-${d.materia}-s${w.n}`}
+                          title={`${w.count} preguntas`}
+                          className={`flex flex-col items-center rounded-xl py-1.5 text-xs font-semibold ${colors.badge} hover:opacity-80 transition-opacity`}
+                        >
+                          <span>Sem. {w.n}</span>
+                          <span className="text-[0.625rem] font-medium opacity-75">{best !== null ? `${best}%` : `${w.count} p.`}</span>
+                        </Link>
+                      )
+                    })}
+                  </div>
+                  <Link
+                    to={`/quiz/examen-${d.materia}`}
+                    className="mt-auto flex items-center justify-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-primary text-primary-fg hover:bg-primary-hover transition-colors"
+                  >
+                    Todo el semestre · {d.total} <ArrowRight weight="bold" className="w-3 h-3" />
+                  </Link>
+                </div>
+              )
+            })}
+          </div>
+        </section>
+      )}
 
       {/* Grupos por módulo */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-8">
