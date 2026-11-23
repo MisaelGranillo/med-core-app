@@ -32,6 +32,24 @@ const { topics, questions, uadMedicina } = await import(pathToFileURL(tmp).href)
 const qCount = {}
 for (const q of questions) qCount[q.topicId] = (qCount[q.topicId] ?? 0) + 1
 
+// Materia, semana y periodo de cada tema según el plan UAD (la materia es el eje
+// de Temas, Quizzes y Búsqueda).
+const ubic = {}
+const materias = []
+for (const p of uadMedicina.periods) for (const s of p.subjects) {
+  const ids = new Set(s.topicIds ?? [])
+  for (const w of s.content?.semanas ?? []) for (const id of w.topicIds ?? []) { ids.add(id); ubic[id] ??= { materia: s.id, periodo: p.index, semana: w.number } }
+  for (const id of ids) ubic[id] ??= { materia: s.id, periodo: p.index }
+  if (ids.size) materias.push({ id: s.id, nombre: s.name, periodo: p.index, periodoLabel: p.label, semanas: (s.content?.semanas ?? []).map((w) => ({ n: w.number, titulo: w.title })), topicIds: [...ids] })
+}
+for (const m of materias) {
+  const ts = m.topicIds.map((id) => topics.find((t) => t.id === id)).filter(Boolean)
+  const freq = {}; for (const t of ts) freq[t.colorKey] = (freq[t.colorKey] ?? 0) + 1
+  m.colorKey = Object.entries(freq).sort((a, b) => b[1] - a[1])[0]?.[0]
+  m.emoji = ts[0]?.emoji
+  delete m.topicIds
+}
+
 const index = topics.map((t) => ({
   id: t.id,
   title: t.title,
@@ -39,6 +57,7 @@ const index = topics.map((t) => ({
   emoji: t.emoji,
   colorKey: t.colorKey,
   ...(t.categoria ? { categoria: t.categoria } : {}),
+  ...(ubic[t.id] ?? {}),
   sectionCount: t.sections.length,
   questionCount: qCount[t.id] ?? 0,
 }))
@@ -64,9 +83,25 @@ writeFileSync(out, `/* Generado por scripts/gen-topic-index.mjs — no editar. *
 import type { Topic } from '../../types'
 
 export type TopicSummary = Pick<Topic, 'id' | 'title' | 'subtitle' | 'emoji' | 'colorKey' | 'categoria'> & {
+  materia?: string   // id de la materia en el plan
+  periodo?: number   // semestre
+  semana?: number    // semana del plan semanal (si la tiene)
   sectionCount: number
   questionCount: number
 }
+
+export type MateriaSummary = {
+  id: string
+  nombre: string
+  periodo: number
+  periodoLabel: string
+  colorKey: TopicSummary['colorKey']
+  emoji: string
+  semanas: { n: number; titulo: string }[]
+}
+
+/* Materias con contenido, en el orden del plan. */
+export const materias: MateriaSummary[] = ${JSON.stringify(materias, null, 1)}
 
 export const topicIndex: TopicSummary[] = ${JSON.stringify(index, null, 1)}
 

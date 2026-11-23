@@ -1,33 +1,30 @@
 /* Catálogo de Quizzes — ruta /quiz
  *
- * Sección núcleo, agnóstica a la escuela: lista todos los temas con quiz
- * disponible y permite elegir uno. Funciona sin ningún plan cargado.
- * Los temas se agrupan por módulo (data/modules.ts). */
+ * Arriba, los exámenes semanales reales; abajo, los quizzes de cada tema
+ * agrupados como el plan: materia → semana. */
 
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Lightning, ArrowRight, Trophy, BookOpen, Exam } from '@phosphor-icons/react'
-import { modules } from '../data/modules'
+import { agruparPorMateria, nombreCorto } from '../data/agrupar'
 import { topicIndex as topics, totalQuestionCount, examDecks, examQuestionCount } from '../data/generated/topicIndex'
 import { TOPIC_COLORS } from '../data/colors'
 import { useProgress } from '../store/useProgress'
 
 export function QuizCatalog() {
   const { getBestScore } = useProgress()
+  const { hash } = useLocation()
+  // Al llegar con /quiz#examenes o /quiz#<materia>, baja a esa sección.
+  useEffect(() => {
+    if (hash) document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView()
+  }, [hash])
 
-  const topicById = Object.fromEntries(topics.map(t => [t.id, t]))
-  const countFor = (id: string) => topicById[id]?.questionCount ?? 0
+  const countFor = (id: string) => topics.find(t => t.id === id)?.questionCount ?? 0
   const totalQuestions = totalQuestionCount
 
-  // Agrupa por módulo, solo temas con quiz disponible.
-  const groups = modules
-    .map(m => ({
-      module: m,
-      temas: m.topicIds
-        .map(id => topicById[id])
-        .filter((t): t is (typeof topics)[number] => Boolean(t) && countFor(t!.id) > 0),
-    }))
-    .filter(g => g.temas.length > 0)
+  // Agrupa por materia y semana, solo temas con quiz disponible.
+  const groups = agruparPorMateria(topics.filter(t => t.questionCount > 0))
 
   return (
     <main className="flex-1 pb-20 md:pb-0">
@@ -38,9 +35,17 @@ export function QuizCatalog() {
             Catálogo de Quizzes
           </h1>
           <p className="text-zinc-500 text-base max-w-[60ch]">
-            {totalQuestions} preguntas en {groups.reduce((n, g) => n + g.temas.length, 0)} temas.
-            Elige un tema para practicar con flashcards o quiz de opción múltiple.
+            {totalQuestions} preguntas en {groups.reduce((n, g) => n + g.total, 0)} temas.
+            Practica con los exámenes reales o elige un tema para repasar con flashcards o quiz de opción múltiple.
           </p>
+          <nav className="flex flex-wrap gap-1.5 mt-5" aria-label="Ir a una materia">
+            <a href="#examenes" className="text-xs font-semibold px-3 py-1.5 rounded-full bg-zinc-100 text-zinc-600 hover:bg-zinc-200">Exámenes</a>
+            {groups.map(({ materia: m }) => (
+              <a key={m.id} href={`#${m.id}`} className="text-xs font-semibold px-3 py-1.5 rounded-full bg-zinc-100 text-zinc-600 hover:bg-zinc-200 inline-flex items-center gap-1.5">
+                <span>{m.emoji}</span>{nombreCorto(m.nombre)}
+              </a>
+            ))}
+          </nav>
         </div>
       </section>
 
@@ -103,19 +108,23 @@ export function QuizCatalog() {
         </section>
       )}
 
-      {/* Grupos por módulo */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-8">
-        {groups.map(({ module, temas }) => (
-          <section key={module.id}>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-xl">{module.emoji}</span>
-              <h2 className="font-display font-normal text-zinc-900 text-xl">{module.title}</h2>
+      {/* Quizzes por materia y semana */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-10">
+        {groups.map(({ materia: m, semanas, total }) => (
+          <section key={m.id} id={m.id} className="scroll-mt-20">
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+              <span className="text-xl">{m.emoji}</span>
+              <h2 className="font-display font-normal text-zinc-900 text-xl">{m.nombre}</h2>
               <span className="text-xs font-semibold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded-full">
-                {temas.length} temas
+                {total} temas
               </span>
             </div>
+            <div className="space-y-5">
+            {semanas.map((w) => (
+            <div key={w.n ?? 'repasos'}>
+            <h3 className="text-xs font-bold text-zinc-400 mb-2">{w.n !== null ? `Semana ${w.n}` : w.titulo}</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {temas.map((t, i) => {
+              {w.temas.map((t, i) => {
                 const colors = TOPIC_COLORS[t.colorKey]
                 const qCount = countFor(t.id)
                 const best = getBestScore(t.id)
@@ -166,6 +175,9 @@ export function QuizCatalog() {
                   </motion.div>
                 )
               })}
+            </div>
+            </div>
+            ))}
             </div>
           </section>
         ))}

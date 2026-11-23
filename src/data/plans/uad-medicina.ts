@@ -47,7 +47,7 @@ export const uadMedicina: Plan = {
           code: 'AN01001',
           hasLab: true,
           tags: ['anatomia'],
-          topicIds: ['anatomia-generalidades', 'huesos-craneo', 'huesos-cara-hioides', 'columna-vertebral'],
+          topicIds: ['anatomia-generalidades', 'huesos-craneo', 'huesos-cara-hioides', 'columna-vertebral', 'repaso-2p', 'repaso-3p', 'repaso-4'],
           content: {
             area: 'Ciencias Básicas',
             credits: 13,
@@ -831,7 +831,7 @@ export const uadMedicina: Plan = {
           code: 'HS01006',
           hasLab: true,
           tags: ['celular'],
-          topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica', 'histologia-celula', 'histologia-epitelial', 'histologia-epitelial-polaridad', 'histologia-glandulas', 'histologia-epitelios-urinario', 'histologia-epitelios-respiratorio', 'histologia-piel', 'histologia-conectivo-matriz', 'histologia-conectivo-celulas', 'histologia-conectivo-variedades', 'histologia-tejido-adiposo', 'histologia-cartilago', 'histologia-hueso', 'histologia-sangre', 'histologia-leucocitos', 'histologia-linfocitos', 'histologia-medula-hematopoyesis', 'histologia-linfoide-primarios', 'histologia-linfoide-secundarios', 'histologia-biometria-hematica'],
+          topicIds: ['histologia-introduccion', 'histologia-microscopia-tecnica', 'histologia-celula', 'histologia-epitelial', 'histologia-epitelial-polaridad', 'histologia-glandulas', 'histologia-epitelios-urinario', 'histologia-epitelios-respiratorio', 'histologia-piel', 'histologia-conectivo-matriz', 'histologia-conectivo-celulas', 'histologia-conectivo-variedades', 'histologia-tejido-adiposo', 'histologia-cartilago', 'histologia-hueso', 'histologia-sangre', 'histologia-leucocitos', 'histologia-linfocitos', 'histologia-medula-hematopoyesis', 'histologia-linfoide-primarios', 'histologia-linfoide-secundarios', 'histologia-biometria-hematica', 'histologia-repaso-s1'],
           content: {
             area: 'Ciencias Básicas',
             credits: 8,

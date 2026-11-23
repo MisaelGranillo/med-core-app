@@ -1,184 +1,163 @@
 /* Índice de Temas — ruta /estudio
  *
- * Índice de guías de estudio agrupado por CATEGORÍA temática (Osteología,
- * Artrología, Terminología médica…), no por módulo. Barra de filtro por
- * categoría arriba. Cada tarjeta muestra un tag de materia · semana derivado del
- * plan (o del módulo, si el tema no está en ninguna semana). Doble acción
- * Estudiar / Quiz sin cambios. */
+ * Guías de estudio agrupadas como en el plan: semestre → materia → semana.
+ * Filtros: semestre (si hay más de uno), materia (?materia=<id>) y texto.
+ * Doble acción por tema: Estudiar / Quiz. */
 
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { GraduationCap, ArrowRight, BookOpen, Archive } from '@phosphor-icons/react'
-import { modules } from '../data/modules'
+import { useMemo, useState } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
+import { ArrowRight, BookOpen, MagnifyingGlass, X } from '@phosphor-icons/react'
 import { topicIndex as topics, type TopicSummary } from '../data/generated/topicIndex'
 import { TOPIC_COLORS } from '../data/colors'
-import { CATEGORIA_ORDER, CATEGORIA_META } from '../data/categorias'
-import { planContextForTopic } from '../data/plans'
+import { agruparPorMateria, nombreCorto, periodos, normalizar } from '../data/agrupar'
 import { useProgress } from '../store/useProgress'
-import type { Topic, TopicCategoria } from '../types'
 
-function subjectShort(name: string): string {
-  if (name.startsWith('Anatomía')) return 'Anatomía'
-  if (name.startsWith('Inglés')) return 'Inglés'
-  if (name.startsWith('Epidemiología') || name.includes('Bioestadística')) return 'Bioestadística'
-  return name.split(' ')[0]
+function TemaCard({ t }: { t: TopicSummary }) {
+  const { getSectionsRead } = useProgress()
+  const colors = TOPIC_COLORS[t.colorKey]
+  const read = getSectionsRead(t.id).length
+  const pct = t.sectionCount > 0 ? Math.round((read / t.sectionCount) * 100) : 0
+  return (
+    <div className="card p-4 flex flex-col gap-3 h-full">
+      <div className="flex items-start gap-2 min-w-0">
+        <span className="text-2xl flex-shrink-0">{t.emoji}</span>
+        <div className="min-w-0">
+          <h3 className="font-bold text-sm leading-snug text-zinc-900">{t.title}</h3>
+          <p className="text-xs text-zinc-400 leading-relaxed line-clamp-2 mt-0.5">{t.subtitle}</p>
+        </div>
+      </div>
+      <div className="flex items-center gap-2">
+        <div className="flex-1 h-1.5 bg-zinc-100 rounded-full overflow-hidden">
+          <div className={`h-full ${colors.dot} rounded-full transition-all`} style={{ width: `${pct}%` }} />
+        </div>
+        <span className="text-xs font-semibold text-zinc-400 flex-shrink-0">{read}/{t.sectionCount}</span>
+      </div>
+      <div className="flex items-center gap-2 mt-auto">
+        <Link
+          to={`/topic/${t.id}`}
+          className="flex-1 flex items-center justify-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-primary text-primary-fg hover:bg-primary-hover transition-colors"
+        >
+          <BookOpen weight="bold" className="w-3.5 h-3.5" /> Estudiar
+        </Link>
+        {t.questionCount > 0 && (
+          <Link
+            to={`/quiz/${t.id}`}
+            className={`flex items-center justify-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl ${colors.badge} transition-colors`}
+          >
+            Quiz · {t.questionCount} <ArrowRight weight="bold" className="w-3 h-3" />
+          </Link>
+        )}
+      </div>
+    </div>
+  )
 }
 
 export function Temas() {
-  const { getSectionsRead } = useProgress()
-  const [filter, setFilter] = useState<TopicCategoria | 'Todas'>('Todas')
+  const [params, setParams] = useSearchParams()
+  const [texto, setTexto] = useState('')
+  const todos = useMemo(() => agruparPorMateria(topics), [])
+  const sems = periodos(todos)
+  const periodo = Number(params.get('semestre')) || sems[sems.length - 1]?.n
+  const materia = params.get('materia') ?? ''
 
-  const countFor = (id: string) => topics.find(t => t.id === id)?.questionCount ?? 0
-
-  // módulo que contiene cada tema (fallback del tag cuando no está en el plan)
-  const moduleByTopic: Record<string, (typeof modules)[number]> = {}
-  for (const m of modules) for (const id of m.topicIds) if (!moduleByTopic[id]) moduleByTopic[id] = m
-
-  const contextTag = (t: TopicSummary): string => {
-    const ctx = planContextForTopic(t.id)
-    if (ctx) return `${subjectShort(ctx.subjectName)}${ctx.semana ? ` · Sem ${ctx.semana}` : ''}`
-    const mod = moduleByTopic[t.id]
-    return mod ? mod.title : 'General'
+  const setParam = (k: string, v: string) => {
+    const p = new URLSearchParams(params)
+    if (v) p.set(k, v); else p.delete(k)
+    if (k === 'semestre') p.delete('materia')
+    setParams(p, { replace: true })
   }
 
-  // agrupar por categoría, en orden
-  const byCat = CATEGORIA_ORDER
-    .map(cat => ({ cat, temas: topics.filter(t => t.categoria === cat) }))
-    .filter(g => g.temas.length > 0)
-
-  const visible = filter === 'Todas' ? byCat : byCat.filter(g => g.cat === filter)
+  const q = normalizar(texto.trim())
+  const delPeriodo = todos.filter((g) => g.materia.periodo === periodo)
+  const visibles = agruparPorMateria(
+    topics.filter((t) => t.periodo === periodo && (!materia || t.materia === materia)
+      && (!q || normalizar(`${t.title} ${t.subtitle}`).includes(q))),
+  )
+  const totalVisibles = visibles.reduce((n, g) => n + g.total, 0)
 
   return (
     <main className="flex-1 pb-20 md:pb-0">
-      {/* Hero */}
       <section>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
           <h1 className="font-display font-light text-[2.25rem] sm:text-[2.75rem] leading-[1.05] tracking-[-0.025em] text-zinc-900 mb-2">
             Guías de estudio
           </h1>
           <p className="text-zinc-500 text-base max-w-[60ch]">
-            {topics.length} temas en {byCat.length} categorías. Lee la guía y ponte a prueba con el quiz.
+            {topics.length} temas, ordenados como el plan: materia y semana. Lee la guía y ponte a prueba con el quiz.
           </p>
 
-          {/* Barra de filtro por categoría */}
-          <div className="flex flex-wrap gap-1.5 mt-5">
-            <button
-              onClick={() => setFilter('Todas')}
-              className={`text-xs font-semibold px-3 py-1.5 rounded-full transition-colors ${
-                filter === 'Todas' ? 'bg-primary text-primary-fg' : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
-              }`}
-            >
+          {sems.length > 1 && (
+            <div className="flex flex-wrap gap-1.5 mt-5">
+              {sems.map((s) => (
+                <button key={s.n} onClick={() => setParam('semestre', String(s.n))}
+                  className={`text-xs font-semibold px-3 py-1.5 rounded-full transition-colors ${periodo === s.n ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900' : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'}`}>
+                  {s.label}
+                </button>
+              ))}
+            </div>
+          )}
+
+          <div className="flex flex-wrap items-center gap-1.5 mt-4">
+            <button onClick={() => setParam('materia', '')}
+              className={`text-xs font-semibold px-3 py-1.5 rounded-full transition-colors ${!materia ? 'bg-primary text-primary-fg' : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'}`}>
               Todas
             </button>
-            {byCat.map(({ cat, temas }) => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`text-xs font-semibold px-3 py-1.5 rounded-full transition-colors inline-flex items-center gap-1.5 ${
-                  filter === cat ? 'bg-primary text-primary-fg' : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
-                }`}
-              >
-                <span>{CATEGORIA_META[cat].emoji}</span>
-                {cat}
-                <span className="opacity-60">{temas.length}</span>
+            {delPeriodo.map(({ materia: m, total }) => (
+              <button key={m.id} onClick={() => setParam('materia', m.id)}
+                className={`text-xs font-semibold px-3 py-1.5 rounded-full transition-colors inline-flex items-center gap-1.5 ${materia === m.id ? 'bg-primary text-primary-fg' : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'}`}>
+                <span>{m.emoji}</span>{nombreCorto(m.nombre)}<span className="opacity-60">{total}</span>
               </button>
             ))}
           </div>
+
+          <label className="relative block mt-4 max-w-md">
+            <MagnifyingGlass className="w-4 h-4 text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2" />
+            <input
+              value={texto}
+              onChange={(e) => setTexto(e.target.value)}
+              placeholder="Filtrar temas por nombre…"
+              className="w-full bg-surface border border-zinc-200 rounded-xl pl-9 pr-9 py-2 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-primary/30"
+            />
+            {texto && (
+              <button onClick={() => setTexto('')} aria-label="Borrar filtro" className="absolute right-2.5 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-700">
+                <X className="w-4 h-4" />
+              </button>
+            )}
+          </label>
         </div>
       </section>
 
-      {/* Grupos por categoría */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-8">
-        {visible.map(({ cat, temas }) => {
-          const meta = CATEGORIA_META[cat]
-          const accent = TOPIC_COLORS[meta.colorKey]
-          return (
-            <section key={cat}>
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-xl">{meta.emoji}</span>
-                <h2 className="font-display font-normal text-zinc-900 text-xl">{cat}</h2>
-                <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${accent.badge}`}>
-                  {temas.length} temas
-                </span>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {temas.map((t, i) => {
-                  const colors = TOPIC_COLORS[t.colorKey]
-                  const qCount = countFor(t.id)
-                  const read = getSectionsRead(t.id).length
-                  const total = t.sectionCount
-                  const pct = total > 0 ? Math.round((read / total) * 100) : 0
-                  return (
-                    <motion.div
-                      key={t.id}
-                      initial={{ opacity: 1, y: 6 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.03, duration: 0.25 }}
-                      className="card p-4 flex flex-col gap-3 h-full"
-                    >
-                      <div className="flex items-start gap-2 min-w-0">
-                        <span className="text-2xl flex-shrink-0">{t.emoji}</span>
-                        <div className="min-w-0">
-                          <h3 className="font-bold text-sm leading-snug text-zinc-900">{t.title}</h3>
-                          <p className="text-xs text-zinc-400 leading-relaxed line-clamp-2 mt-0.5">{t.subtitle}</p>
-                        </div>
-                      </div>
-
-                      {/* tag de materia · semana */}
-                      <span className="text-xs font-semibold text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded-full self-start">
-                        {contextTag(t)}
-                      </span>
-
-                      {/* progreso de lectura */}
-                      <div className="flex items-center gap-2">
-                        <div className="flex-1 h-1.5 bg-zinc-100 rounded-full overflow-hidden">
-                          <div className={`h-full ${colors.dot} rounded-full transition-all`} style={{ width: `${pct}%` }} />
-                        </div>
-                        <span className="text-xs font-semibold text-zinc-400 flex-shrink-0">{read}/{total}</span>
-                      </div>
-
-                      <div className="flex items-center gap-2 mt-auto pt-1">
-                        <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${colors.badge}`}>
-                          {total} secciones{qCount > 0 ? ` · ${qCount} reactivos` : ''}
-                        </span>
-                      </div>
-
-                      {/* doble acción — Estudiar primero (leer antes de examinarse) */}
-                      <div className="flex items-center gap-2">
-                        <Link
-                          to={`/topic/${t.id}`}
-                          className="flex-1 flex items-center justify-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-primary text-primary-fg hover:bg-primary-hover transition-colors"
-                        >
-                          <BookOpen weight="bold" className="w-3.5 h-3.5" /> Estudiar
-                        </Link>
-                        {qCount > 0 && (
-                          <Link
-                            to={`/quiz/${t.id}`}
-                            className={`flex items-center justify-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl ${colors.badge} transition-colors`}
-                          >
-                            Quiz <ArrowRight weight="bold" className="w-3 h-3" />
-                          </Link>
-                        )}
-                      </div>
-                    </motion.div>
-                  )
-                })}
-              </div>
-            </section>
-          )
-        })}
-
-        {/* Archivo PAI — sigue siendo útil, ya no ocupa el camino principal */}
-        <div className="pt-4 border-t border-zinc-100">
-          <Link
-            to="/estudio/archivo"
-            className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-primary-700 transition-colors"
-          >
-            <Archive weight="regular" className="w-4 h-4" />
-            Guías de admisión (archivo)
-          </Link>
-        </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-10">
+        {totalVisibles === 0 && (
+          <p className="text-sm text-zinc-500">
+            Ningún tema coincide. Prueba el <Link to={`/search?q=${encodeURIComponent(texto)}`} className="underline">buscador</Link>, que también revisa el contenido de cada guía.
+          </p>
+        )}
+        {visibles.map(({ materia: m, semanas, total }) => (
+          <section key={m.id}>
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+              <span className="text-xl">{m.emoji}</span>
+              <h2 className="font-display font-normal text-zinc-900 text-xl">{m.nombre}</h2>
+              <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${TOPIC_COLORS[m.colorKey].badge}`}>{total} temas</span>
+              <Link to={`/plan/${m.id}`} className="ml-auto text-xs font-semibold text-zinc-500 hover:text-zinc-900 inline-flex items-center gap-1">
+                Ver materia <ArrowRight weight="bold" className="w-3 h-3" />
+              </Link>
+            </div>
+            <div className="space-y-5">
+              {semanas.map((w) => (
+                <div key={w.n ?? 'repasos'}>
+                  <h3 className="text-xs font-bold text-zinc-400 mb-2">
+                    {w.n !== null ? `Semana ${w.n}` : w.titulo}
+                    {w.n !== null && w.titulo && <span className="font-medium"> · {w.titulo}</span>}
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {w.temas.map((t) => <TemaCard key={t.id} t={t} />)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        ))}
       </div>
     </main>
   )
