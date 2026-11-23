@@ -13,7 +13,6 @@ export const CATEGORIA_ORDER: TopicCategoria[] = [
   'Miología',
   'Esplacnología',
   'Neuroanatomía',
-  'Aparatos y sistemas',
   'Genética',
   'Histología',
   'Bioquímica',
@@ -22,8 +21,6 @@ export const CATEGORIA_ORDER: TopicCategoria[] = [
   'Terminología médica',
   'Gramática médica',
   'Comunicación clínica',
-  'Probabilidad',
-  'Estadística',
 ]
 
 export const CATEGORIA_META: Record<TopicCategoria, { emoji: string; colorKey: TopicColorKey }> = {
@@ -33,7 +30,6 @@ export const CATEGORIA_META: Record<TopicCategoria, { emoji: string; colorKey: T
   'Miología': { emoji: '💪', colorKey: 'locomotor' },
   'Esplacnología': { emoji: '🫀', colorKey: 'digestivo' },
   'Neuroanatomía': { emoji: '🧠', colorKey: 'nervioso' },
-  'Aparatos y sistemas': { emoji: '🫁', colorKey: 'respiratorio' },
   'Genética': { emoji: '🧬', colorKey: 'genetica' },
   'Histología': { emoji: '🔬', colorKey: 'histologia' },
   'Bioquímica': { emoji: '🧪', colorKey: 'bioquimica' },
@@ -42,6 +38,4 @@ export const CATEGORIA_META: Record<TopicCategoria, { emoji: string; colorKey: T
   'Terminología médica': { emoji: '🔤', colorKey: 'gramatica' },
   'Gramática médica': { emoji: '✍️', colorKey: 'redaccion' },
   'Comunicación clínica': { emoji: '🩺', colorKey: 'comunicacion' },
-  'Probabilidad': { emoji: '🎲', colorKey: 'probabilidad' },
-  'Estadística': { emoji: '📊', colorKey: 'estadDesc' },
 }

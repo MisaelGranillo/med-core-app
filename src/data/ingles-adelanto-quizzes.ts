@@ -1,9 +1,8 @@
 /*
- * Inglés Médico I (UAD · IN01005) — Banco de ADELANTO. 68 reactivos.
- *
- * SEPARADO del banco de Semana 1 (ingles-uad-quizzes.ts): cubre las unidades
- * II a VI, tomadas del libro de texto y aún no impartidas. Se agrega a
- * quizzes.ts como array propio.
+ * Inglés Médico I (UAD · IN01005) — banco complementario de word parts y
+ * false friends, escrito como adelanto del libro de texto; ambos temas se
+ * impartieron en las Semanas 2 y 4. (La parte de lectura científica, que no
+ * entró en el semestre, se retiró en 2026-11.)
  *
  * `question` y `options` en inglés; `explanation` en español. En
  * ingles-false-friends la regla del cognado se invierte y se vuelve el
@@ -188,63 +187,5 @@ export const inglesAdelantoQuestions: Question[] = [
     options: ['attend (be present at) the surgery', 'help the surgeon', 'replace the surgeon', 'watch the surgery'],
     correctIndex: 1, difficulty: 'medium',
     explanation: 'Falso cognado: to assist = ayudar, NO "asistir a un lugar" (to attend).',
-  },
-
-  // ─── SCIENTIFIC LITERATURE (isl) ─────────────────────────────────────
-  {
-    id: 'isl-q1', topicId: 'ingles-scientific-literature', type: 'multiple-choice',
-    question: 'IMRaD stands for:',
-    options: ['Introduction, Methods, Results and Discussion', 'Index, Materials, Review and Data', 'Introduction, Materials, Research and Design', 'Information, Methods, Records and Diagnosis'],
-    correctIndex: 0, difficulty: 'easy',
-    explanation: 'IMRaD = Introduction, Methods, Results and Discussion, la estructura estándar de un artículo de investigación.',
-  },
-  {
-    id: 'isl-q2', topicId: 'ingles-scientific-literature', type: 'multiple-choice',
-    question: 'Which section answers "how was the study done"?',
-    options: ['Introduction', 'Methods', 'Results', 'Discussion'],
-    correctIndex: 1, difficulty: 'easy',
-    explanation: 'La sección Methods describe el diseño, los sujetos y los procedimientos: cómo se hizo.',
-  },
-  {
-    id: 'isl-q3', topicId: 'ingles-scientific-literature', type: 'multiple-choice',
-    question: 'Which section interprets the findings and states the conclusion?',
-    options: ['Methods', 'Results', 'Discussion', 'Abstract'],
-    correctIndex: 2, difficulty: 'medium',
-    explanation: 'La Discussion interpreta los resultados, señala limitaciones y concluye qué significan.',
-  },
-  {
-    id: 'isl-q4', topicId: 'ingles-scientific-literature', type: 'multiple-choice',
-    question: 'What should you read first to decide if a paper is relevant?',
-    options: ['the references', 'the abstract', 'the methods', 'the acknowledgements'],
-    correctIndex: 1, difficulty: 'easy',
-    explanation: 'El abstract es un resumen de todo el artículo; se lee primero para decidir si vale la pena seguir.',
-  },
-  {
-    id: 'isl-q5', topicId: 'ingles-scientific-literature', type: 'multiple-choice',
-    question: 'Today, the lingua franca of medical science is:',
-    options: ['German', 'French', 'Latin', 'English'],
-    correctIndex: 3, difficulty: 'easy',
-    explanation: 'El inglés es hoy la lengua vehicular de la ciencia médica: la mayor parte de la literatura actual está en inglés.',
-  },
-  {
-    id: 'isl-q6', topicId: 'ingles-scientific-literature', type: 'multiple-choice',
-    question: 'According to The Language of Medicine, the share of German references fell from 80–90% in 1920 to about:',
-    options: ['50–60% in 1995', '10–20% in 1995', '0% in 1995', '30–40% in 1995'],
-    correctIndex: 1, difficulty: 'hard',
-    explanation: 'La proporción de referencias en alemán cayó de un 80–90 % (1920) a un 10–20 % (1995), mientras el inglés se volvía dominante.',
-  },
-  {
-    id: 'isl-q7', topicId: 'ingles-scientific-literature', type: 'multiple-choice',
-    question: 'The key numbers and data of a study are found in the:',
-    options: ['Introduction', 'Results', 'Discussion', 'References'],
-    correctIndex: 1, difficulty: 'medium',
-    explanation: 'Los datos, figuras y tablas —lo que se encontró— están en la sección Results.',
-  },
-  {
-    id: 'isl-q8', topicId: 'ingles-scientific-literature', type: 'multiple-choice',
-    question: 'The record-keeping principle "if it is not written down, ___":',
-    options: ['it did not happen', 'it is confidential', 'it is optional', 'it must be repeated'],
-    correctIndex: 0, difficulty: 'medium',
-    explanation: 'Principio legal del expediente: "if it is not written down, it did not happen" — lo no documentado, a efectos legales, no ocurrió.',
   },
 ]

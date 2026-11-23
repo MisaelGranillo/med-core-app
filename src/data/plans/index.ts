@@ -14,11 +14,10 @@
 
 import type { Plan } from './types'
 import { uadMedicina } from './uad-medicina'
-import { unisaLmgc } from './unisa-lmgc'
 
 export type { Plan, Period, Subject } from './types'
 
-export const plans: Plan[] = [uadMedicina, unisaLmgc]
+export const plans: Plan[] = [uadMedicina]
 
 export const activePlanId = 'uad-medicina'
 

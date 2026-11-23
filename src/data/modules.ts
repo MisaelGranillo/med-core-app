@@ -98,14 +98,6 @@ export const modules: Module[] = [
     topicIds: ['ingles-abbreviations', 'ingles-false-friends', 'ingles-clinical-communication', 'ingles-symptoms'],
   },
   {
-    id: 'anatomia',
-    badge: 'Módulo — Anatomía',
-    title: 'Anatomía y Medicina',
-    subtitle: 'Sistemas del cuerpo humano: digestivo, urinario, reproductor, circulatorio, respiratorio, locomotor y nervioso.',
-    emoji: '🫀',
-    topicIds: ['digestivo', 'urinario', 'reproductor', 'circulatorio', 'respiratorio', 'locomotor', 'nervioso'],
-  },
-  {
     id: 'genetica-uad-s1',
     badge: 'UAD · Genética Básica — Semana 1',
     title: 'Genética: conceptos y leyes de Mendel',
@@ -288,23 +280,5 @@ export const modules: Module[] = [
     subtitle: 'Epitelio, polaridad y uniones; glándulas y regeneración; epitelios de órganos (urinario y respiratorio) y piel.',
     emoji: '🔬',
     topicIds: ['histologia-epitelial', 'histologia-epitelial-polaridad', 'histologia-glandulas', 'histologia-epitelios-urinario', 'histologia-epitelios-respiratorio', 'histologia-piel'],
-  },
-  {
-    id: 'bioestadistica',
-    badge: 'UAD · Epidemiología y Bioestadística',
-    title: 'Bioestadística',
-    subtitle: 'Probabilidad, estadística descriptiva e inferencial aplicadas a las ciencias de la salud.',
-    emoji: '📊',
-    topicIds: ['probabilidad', 'estadDesc', 'estadInf'],
-  },
-  {
-    // Adelanto: contenido tomado del libro de texto, aún no impartido. Va al
-    // FINAL del índice a propósito: lo impartido tiene prioridad de orden.
-    id: 'ingles-medico-adelanto',
-    badge: 'UAD · Inglés Médico I — Adelanto',
-    title: 'Inglés Médico · Unidad VI',
-    subtitle: 'Contenido tomado del libro de texto, aún no impartido en clase. Unidad VI del programa (bibliografía científica).',
-    emoji: '📚',
-    topicIds: ['ingles-scientific-literature'],
   },
 ]

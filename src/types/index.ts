@@ -65,7 +65,6 @@ export type TopicCategoria =
   | 'Miología'
   | 'Esplacnología'
   | 'Neuroanatomía'
-  | 'Aparatos y sistemas'
   | 'Genética'
   | 'Histología'
   | 'Bioquímica'
@@ -74,8 +73,6 @@ export type TopicCategoria =
   | 'Terminología médica'
   | 'Gramática médica'
   | 'Comunicación clínica'
-  | 'Probabilidad'
-  | 'Estadística'
 
 export interface Topic {
   id: string

@@ -152,7 +152,7 @@ export function Plan() {
               </p>
             </div>
             <div className="flex flex-col items-start md:items-end gap-3">
-              <PlanSelector plan={plan} onChange={handlePlanChange} />
+              {plans.length > 1 && <PlanSelector plan={plan} onChange={handlePlanChange} />}
               <div className="flex gap-3 text-center flex-shrink-0">
                 <div><p className="text-2xl font-extrabold text-zinc-900">{plan.periods.length}</p><p className="text-[0.6875rem] text-zinc-400">{plan.periodLabel.toLowerCase()}s</p></div>
                 <div><p className="text-2xl font-extrabold text-primary-600">{totalSubjects}</p><p className="text-[0.6875rem] text-zinc-400">materias</p></div>
