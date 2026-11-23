@@ -11,9 +11,9 @@ import {
 } from '@phosphor-icons/react'
 import type { Icon } from '@phosphor-icons/react'
 import type { TopicColorKey } from '../types'
-import { topicIndex as topics } from '../data/generated/topicIndex'
+import { topicIndex as topics, examDecks, examQuestionCount } from '../data/generated/topicIndex'
 import { TOPIC_COLORS } from '../data/colors'
-import { getActivePlan, planContextForTopic } from '../data/plans'
+import { getActivePlan, planContextForTopic, faseDelCalendario } from '../data/plans'
 import { useProgress } from '../store/useProgress'
 import { NOMBRE_MAX, useProfile } from '../store/useProfile'
 
@@ -22,6 +22,9 @@ const topicById = Object.fromEntries(topics.map(t => [t.id, t]))
 const QUESTIONS_BY_TOPIC = Object.fromEntries(topics.map(t => [t.id, t.questionCount]))
 
 const ACTIVE_PLAN = getActivePlan()
+// Semestre en curso o, en receso, el último terminado: es el que se muestra.
+const FASE = faseDelCalendario(ACTIVE_PLAN)
+const PERIODO = FASE.tipo === 'curso' ? FASE.periodo : (FASE.anterior ?? ACTIVE_PLAN.periods[0])
 
 // Materias del plan activo que YA tienen temas cargados (topicIds de la materia
 // o de cualquiera de sus semanas). Deriva color/temario/preguntas de los datos.
@@ -36,7 +39,7 @@ type SubjectCard = {
 }
 const SUBJECT_CARDS: SubjectCard[] = (() => {
   const out: SubjectCard[] = []
-  for (const period of ACTIVE_PLAN.periods) {
+  for (const period of ACTIVE_PLAN.periods.filter(p => p.index === PERIODO.index)) {
     for (const subject of period.subjects) {
       const ids = new Set<string>()
       for (const id of subject.topicIds ?? []) ids.add(id)
@@ -60,7 +63,12 @@ const SUBJECT_CARDS: SubjectCard[] = (() => {
 
 const ALL_STUDY_TOPIC_IDS = [...new Set(SUBJECT_CARDS.flatMap(s => s.topicIds))]
 const TOTAL_SECTIONS = ALL_STUDY_TOPIC_IDS.reduce((n, id) => n + (topicById[id]?.sectionCount ?? 0), 0)
-const REPASO_TOPICS = topics.filter(t => t.id.startsWith('repaso'))
+const EXAMENES = examDecks.filter(d => d.periodo === PERIODO.index)
+const N_EXAMENES = EXAMENES.reduce((n, d) => n + d.semanas.length, 0)
+const N_PREG_EXAMEN = EXAMENES.reduce((n, d) => n + d.total, 0) || examQuestionCount
+
+const fechaLarga = (iso: string) =>
+  new Date(`${iso}T00:00:00`).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' })
 
 const TOOLS: { name: string; route: string; icon: Icon }[] = [
   { name: 'Temas',       route: '/estudio',      icon: GraduationCap },
@@ -75,8 +83,9 @@ const TOOLS: { name: string; route: string; icon: Icon }[] = [
 
 export function Home() {
   const navigate = useNavigate()
-  const { getSectionsRead, getTotalSectionsRead } = useProgress()
-  const sectionsRead = getTotalSectionsRead()
+  const { getSectionsRead } = useProgress()
+  // Solo cuenta las materias del semestre que se muestra.
+  const sectionsRead = ALL_STUDY_TOPIC_IDS.reduce((n, id) => n + getSectionsRead(id).length, 0)
   const globalPct = TOTAL_SECTIONS ? Math.round((sectionsRead / TOTAL_SECTIONS) * 100) : 0
 
   // Primer tema con lectura incompleta (recorriendo las materias en orden); si
@@ -92,17 +101,6 @@ export function Home() {
     : 0
   const continueCtx = continueTopic ? planContextForTopic(continueTopic.id) : null
 
-  // Próximo examen: un tema de repaso —preferimos el de la misma materia que
-  // "continuar", si no el primero sin terminar, si no el primero que exista.
-  const nextRepaso = (() => {
-    if (REPASO_TOPICS.length === 0) return null
-    const sameSubject = continueCtx
-      ? REPASO_TOPICS.find(t => planContextForTopic(t.id)?.subjectId === continueCtx.subjectId)
-      : null
-    const unfinished = REPASO_TOPICS.find(t => getSectionsRead(t.id).length < t.sectionCount)
-    return sameSubject ?? unfinished ?? REPASO_TOPICS[0]
-  })()
-  const nextRepasoCtx = nextRepaso ? planContextForTopic(nextRepaso.id) : null
 
   const nombre = useProfile(s => s.nombre)
 
@@ -116,8 +114,14 @@ export function Home() {
             {nombre ? `Hola, ${nombre}` : 'Hola'}
           </h1>
           <p className="text-base text-zinc-500">
-            {ACTIVE_PLAN.schoolShort} {ACTIVE_PLAN.degree} · 1.er semestre
+            {ACTIVE_PLAN.schoolShort} {ACTIVE_PLAN.degree} · {PERIODO.label}{FASE.tipo === 'receso' ? ' (terminado)' : ''}
           </p>
+          {FASE.tipo === 'receso' && FASE.siguiente && (
+            <p className="text-sm text-zinc-500">
+              El {FASE.siguiente.label.toLowerCase()} empieza el {fechaLarga(FASE.siguiente.calendario!.inicio)}
+              {FASE.dias !== null && FASE.dias > 0 ? ` · faltan ${FASE.dias} ${FASE.dias === 1 ? 'día' : 'días'}` : ''}.
+            </p>
+          )}
           {!nombre && <NombreInline />}
         </header>
 
@@ -144,7 +148,7 @@ export function Home() {
           )}
 
           <div className="card p-6 sm:p-7 flex flex-col gap-2">
-            <span className="text-sm text-zinc-500">Progreso del semestre</span>
+            <span className="text-sm text-zinc-500">Lectura del {PERIODO.label.toLowerCase()}</span>
             <span className="font-display font-extralight text-[3.5rem] leading-none tracking-[-0.03em] text-zinc-900 tabular-nums">
               {globalPct}<span className="text-2xl font-light text-zinc-500 ml-1">%</span>
             </span>
@@ -156,18 +160,31 @@ export function Home() {
           </div>
         </section>
 
-        {/* ── Próximo examen ────────────────────────────────── */}
-        {nextRepaso ? (
-          <Link to={`/topic/${nextRepaso.id}`} className="card card-interactive p-5 sm:p-6 flex items-center gap-4">
+        {/* ── Repaso (receso) o práctica de la materia (en curso) ── */}
+        {FASE.tipo === 'receso' && N_EXAMENES > 0 ? (
+          <Link to="/quiz#examenes" className="card card-interactive p-5 sm:p-6 flex items-center gap-4">
             <span className="w-11 h-11 rounded-2xl bg-primary-tint text-primary flex items-center justify-center flex-shrink-0">
               <Exam weight="regular" className="w-5 h-5" />
             </span>
             <span className="min-w-0 flex-1">
-              <span className="block text-sm text-zinc-500">Próximo examen{nextRepasoCtx ? ` · ${nextRepasoCtx.subjectName}` : ''}</span>
-              <span className="block text-base text-zinc-900 mt-0.5">{nextRepaso.title}</span>
+              <span className="block text-sm text-zinc-500">Repaso del {PERIODO.label.toLowerCase()}</span>
+              <span className="block text-base text-zinc-900 mt-0.5">{N_EXAMENES} exámenes reales · {N_PREG_EXAMEN} preguntas con las claves revisadas</span>
             </span>
             <span className="hidden sm:inline-flex items-center gap-1.5 text-[0.9375rem] font-medium text-primary whitespace-nowrap">
               Repasar <ArrowRight weight="regular" className="w-4 h-4" />
+            </span>
+          </Link>
+        ) : continueCtx ? (
+          <Link to={`/plan/${continueCtx.subjectId}?tab=practicar`} className="card card-interactive p-5 sm:p-6 flex items-center gap-4">
+            <span className="w-11 h-11 rounded-2xl bg-primary-tint text-primary flex items-center justify-center flex-shrink-0">
+              <PencilSimple weight="regular" className="w-5 h-5" />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-sm text-zinc-500">Práctica · {continueCtx.subjectName}</span>
+              <span className="block text-base text-zinc-900 mt-0.5">Quizzes y exámenes de la materia</span>
+            </span>
+            <span className="hidden sm:inline-flex items-center gap-1.5 text-[0.9375rem] font-medium text-primary whitespace-nowrap">
+              Practicar <ArrowRight weight="regular" className="w-4 h-4" />
             </span>
           </Link>
         ) : (

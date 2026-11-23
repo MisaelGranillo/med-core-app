@@ -12,7 +12,7 @@
  *   3. (Opcional) cambia `activePlanId` si debe ser el plan por defecto.
  */
 
-import type { Plan } from './types'
+import type { Plan, Period } from './types'
 import { uadMedicina } from './uad-medicina'
 
 export type { Plan, Period, Subject } from './types'
@@ -193,3 +193,33 @@ export const SISTEMAS_CORPORALES = [
  */
 export const sistemasDeMateria = (tags?: string[]): string[] =>
   (tags ?? []).filter(t => (SISTEMAS_CORPORALES as readonly string[]).includes(t))
+
+/*
+ * Fase del calendario: «curso» si hoy cae dentro de un periodo con fechas;
+ * si no, «receso» con el último periodo terminado y el siguiente por empezar
+ * (y los días que faltan). Sin fechas en el plan, se asume «curso» del 1.º.
+ */
+export type FaseCalendario =
+  | { tipo: 'curso'; periodo: Period }
+  | { tipo: 'receso'; anterior: Period | null; siguiente: Period | null; dias: number | null }
+
+export const faseDelCalendario = (plan: Plan, hoy: Date = new Date()): FaseCalendario => {
+  const dia = (s: string) => new Date(`${s}T00:00:00`)
+  const t = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate()).getTime()
+  const conFechas = plan.periods.filter(p => p.calendario)
+  if (conFechas.length === 0) return { tipo: 'curso', periodo: plan.periods[0] }
+  for (const p of conFechas) {
+    const ini = dia(p.calendario!.inicio).getTime()
+    const fin = p.calendario!.fin ? dia(p.calendario!.fin).getTime() : Infinity
+    if (t >= ini && t <= fin) return { tipo: 'curso', periodo: p }
+  }
+  const anteriores = conFechas.filter(p => p.calendario!.fin && dia(p.calendario!.fin).getTime() < t)
+  const siguientes = conFechas.filter(p => dia(p.calendario!.inicio).getTime() > t)
+  const siguiente = siguientes[0] ?? null
+  return {
+    tipo: 'receso',
+    anterior: anteriores[anteriores.length - 1] ?? null,
+    siguiente,
+    dias: siguiente ? Math.round((dia(siguiente.calendario!.inicio).getTime() - t) / 86_400_000) : null,
+  }
+}

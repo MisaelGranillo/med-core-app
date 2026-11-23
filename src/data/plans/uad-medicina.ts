@@ -40,6 +40,7 @@ export const uadMedicina: Plan = {
     {
       index: 1,
       label: 'Primer Semestre',
+      calendario: { inicio: '2026-08-03', fin: '2026-11-21' },
       subjects: [
         {
           id: 'anatomia-humana-diseccion-1',
@@ -1112,6 +1113,7 @@ export const uadMedicina: Plan = {
     {
       index: 2,
       label: 'Segundo Semestre',
+      calendario: { inicio: '2027-02-02' },
       subjects: [
         { id: 'anatomia-humana-diseccion-2', name: 'Anatomía Humana y Disección II', code: 'AN02008', hasLab: true, tags: ['anatomia'] },
         { id: 'bioquimica-2', name: 'Bioquímica II y su laboratorio', code: 'BQ02009', hasLab: true, tags: ['bioquimica'] },

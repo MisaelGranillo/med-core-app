@@ -23,6 +23,9 @@ export type Period = {
   index: number
   label: string         // etiqueta oficial, verbatim
   subjects: Subject[]
+  // Fechas del periodo (AAAA-MM-DD). Inicio usa esto para saber si hay clases
+  // o si es receso entre semestres. `fin` puede faltar mientras no se conozca.
+  calendario?: { inicio: string; fin?: string }
 }
 
 export type Subject = {
