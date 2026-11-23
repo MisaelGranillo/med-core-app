@@ -17,7 +17,7 @@ const tmp = path.join(os.tmpdir(), `medcore-index-${process.pid}.mjs`)
 
 await build({
   stdin: {
-    contents: "export { topics } from './src/data/topics'; export { questions } from './src/data/quizzes'; export { uadMedicina } from './src/data/plans/uad-medicina';",
+    contents: "export { topics } from './src/data/topics'; export { questions } from './src/data/quizzes'; export { uadMedicina } from './src/data/plans/uad-medicina'; export { atlasTopics } from './src/data/atlas-topics';",
     resolveDir: ROOT,
     loader: 'ts',
   },
@@ -28,7 +28,7 @@ await build({
   logLevel: 'error',
 })
 
-const { topics, questions, uadMedicina } = await import(pathToFileURL(tmp).href)
+const { topics, questions, uadMedicina, atlasTopics } = await import(pathToFileURL(tmp).href)
 const qCount = {}
 for (const q of questions) qCount[q.topicId] = (qCount[q.topicId] ?? 0) + 1
 
@@ -122,6 +122,9 @@ export type ExamDeck = {
 export const examDecks: ExamDeck[] = ${JSON.stringify(examDecks, null, 1)}
 
 export const examQuestionCount = ${examQuestionCount}
+
+/* Láminas del atlas (solo id y título) para la imagen del Inicio. */
+export const atlasIndex: { id: string; title: string }[] = ${JSON.stringify(atlasTopics.filter((a) => a.category !== 'panorama').map((a) => ({ id: a.id, title: a.title })))}
 
 /* Ids de mazo: examen-<materia> (todo) o examen-<materia>-s<semana>. */
 export function parseExamDeckId(id: string): { materia: string; semana: number | null } | null {

@@ -5,7 +5,7 @@
  * (UAD, LMGC). Las materias enlazan a /plan/:subjectId. */
 
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   ArrowRight, Cube, BookOpenText, Flask, CaretDown,
@@ -119,7 +119,9 @@ function PlanSelector({ plan, onChange }: { plan: PlanType; onChange: (id: strin
 export function Plan() {
   const { selectedPlanId, setPlan } = usePlanStore()
   const plan = plans.find(p => p.id === selectedPlanId) ?? plans[0]
-  const [activeIdx, setActiveIdx] = useState<number>(plan.periods[0]?.index ?? 1)
+  const [params] = useSearchParams()
+  const pedido = Number(params.get('semestre'))
+  const [activeIdx, setActiveIdx] = useState<number>(plan.periods.some(p => p.index === pedido) ? pedido : (plan.periods[0]?.index ?? 1))
 
   const activePeriod = plan.periods.find(p => p.index === activeIdx) ?? plan.periods[0]
   const totalSubjects = plan.periods.reduce((n, p) => n + p.subjects.length, 0)

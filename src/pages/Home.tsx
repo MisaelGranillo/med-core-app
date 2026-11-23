@@ -8,10 +8,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import {
   GraduationCap, PencilSimple, ArrowRight, Books, Translate,
   BookOpen, MapTrifold, Cube, Exam, ChalkboardTeacher,
+  MagnifyingGlass, Stethoscope, ChartBar, Books as Libros,
 } from '@phosphor-icons/react'
 import type { Icon } from '@phosphor-icons/react'
 import type { TopicColorKey } from '../types'
-import { topicIndex as topics, examDecks, examQuestionCount } from '../data/generated/topicIndex'
+import { topicIndex as topics, examDecks, examQuestionCount, atlasIndex } from '../data/generated/topicIndex'
 import { TOPIC_COLORS } from '../data/colors'
 import { getActivePlan, planContextForTopic, faseDelCalendario } from '../data/plans'
 import { useProgress } from '../store/useProgress'
@@ -70,16 +71,35 @@ const N_PREG_EXAMEN = EXAMENES.reduce((n, d) => n + d.total, 0) || examQuestionC
 const fechaLarga = (iso: string) =>
   new Date(`${iso}T00:00:00`).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' })
 
-const TOOLS: { name: string; route: string; icon: Icon }[] = [
-  { name: 'Temas',       route: '/estudio',      icon: GraduationCap },
-  { name: 'Quizzes',     route: '/quiz',         icon: PencilSimple },
-  { name: 'Atlas',       route: '/atlas',        icon: MapTrifold },
-  { name: 'EnLex',       route: '/vocabulario',  icon: Translate },
-  { name: 'MedLex',      route: '/terminologia', icon: BookOpen },
-  { name: 'Plan',        route: '/plan',         icon: Books },
-  { name: 'Anatomía 3D', route: '/anatomia',     icon: Cube },
-  { name: 'Taller',      route: '/taller',       icon: ChalkboardTeacher },
+const TOOLS: { name: string; hint: string; route: string; icon: Icon }[] = [
+  { name: 'Temas',       hint: 'Guías por materia y semana', route: '/estudio',      icon: GraduationCap },
+  { name: 'Quizzes',     hint: 'Exámenes reales y por tema', route: '/quiz',         icon: PencilSimple },
+  { name: 'Atlas',       hint: 'Láminas para repasar',       route: '/atlas',        icon: MapTrifold },
+  { name: 'Patologías',  hint: 'Fichas clínicas',            route: '/patologias',   icon: Stethoscope },
+  { name: 'Anatomía 3D', hint: 'Visor interactivo',          route: '/anatomia',     icon: Cube },
+  { name: 'MedLex',      hint: 'Raíces y afijos',            route: '/terminologia', icon: BookOpen },
+  { name: 'EnLex',       hint: 'Vocabulario en inglés',      route: '/vocabulario',  icon: Translate },
+  { name: 'Librería',    hint: 'Libros y PDFs',              route: '/libreria',     icon: Libros },
+  { name: 'Plan',        hint: 'Los 14 semestres',           route: '/plan',         icon: Books },
+  { name: 'Progreso',    hint: 'Lo leído y tus puntajes',    route: '/progress',     icon: ChartBar },
+  { name: 'Taller',      hint: 'Estudio estratégico',        route: '/taller',       icon: ChalkboardTeacher },
 ]
+
+/* Lámina del día: cambia cada día, la misma para todo el día. */
+const LAMINA = (() => {
+  if (atlasIndex.length === 0) return null
+  const hoy = new Date()
+  const dia = Math.floor((hoy.getTime() - new Date(hoy.getFullYear(), 0, 0).getTime()) / 86_400_000)
+  return atlasIndex[dia % atlasIndex.length]
+})()
+
+/* Estado de cada semestre según el calendario del plan. */
+function estadoSemestre(index: number): string {
+  if (FASE.tipo === 'curso' && FASE.periodo.index === index) return 'En curso'
+  if (FASE.tipo === 'receso' && FASE.anterior?.index === index) return 'Terminado'
+  if (FASE.tipo === 'receso' && FASE.siguiente?.index === index && FASE.siguiente.calendario) return `Empieza ${new Date(`${FASE.siguiente.calendario.inicio}T00:00:00`).toLocaleDateString('es-MX', { day: 'numeric', month: 'short' })}`
+  return index < PERIODO.index ? 'Terminado' : ''
+}
 
 export function Home() {
   const navigate = useNavigate()
@@ -108,22 +128,8 @@ export function Home() {
     <main className="flex-1">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-8 pb-12 flex flex-col gap-8">
 
-        {/* ── Saludo ────────────────────────────────────────── */}
-        <header className="flex flex-col gap-1">
-          <h1 className="font-display font-light text-[2.25rem] sm:text-[2.75rem] leading-[1.05] tracking-[-0.025em] text-zinc-900">
-            {nombre ? `Hola, ${nombre}` : 'Hola'}
-          </h1>
-          <p className="text-base text-zinc-500">
-            {ACTIVE_PLAN.schoolShort} {ACTIVE_PLAN.degree} · {PERIODO.label}{FASE.tipo === 'receso' ? ' (terminado)' : ''}
-          </p>
-          {FASE.tipo === 'receso' && FASE.siguiente && (
-            <p className="text-sm text-zinc-500">
-              El {FASE.siguiente.label.toLowerCase()} empieza el {fechaLarga(FASE.siguiente.calendario!.inicio)}
-              {FASE.dias !== null && FASE.dias > 0 ? ` · faltan ${FASE.dias} ${FASE.dias === 1 ? 'día' : 'días'}` : ''}.
-            </p>
-          )}
-          {!nombre && <NombreInline />}
-        </header>
+        {/* ── Hero: saludo, buscador y los tres caminos ───────── */}
+        <Hero nombre={nombre} getSectionsRead={getSectionsRead} />
 
         {/* ── Continuar + progreso global ───────────────────── */}
         <section className="grid gap-4 md:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]" aria-label="Continuar estudiando">
@@ -199,50 +205,6 @@ export function Home() {
           </button>
         )}
 
-        {/* ── Mis materias: lista con progreso, no rejilla de tarjetas ── */}
-        <section className="flex flex-col gap-3" aria-labelledby="h-materias">
-          <h2 id="h-materias" className="font-display text-xl font-normal text-zinc-900 px-1">Mis materias</h2>
-          <div className="card divide-y divide-zinc-200 overflow-hidden">
-            {SUBJECT_CARDS.map(s => {
-              const c = TOPIC_COLORS[s.colorKey]
-              const read = s.topicIds.reduce((n, id) => n + getSectionsRead(id).length, 0)
-              const pct = s.totalSections ? Math.round((read / s.totalSections) * 100) : 0
-              return (
-                <Link key={s.id} to={`/plan/${s.id}`}
-                      className="flex items-center gap-4 px-5 sm:px-6 py-4 hover:bg-zinc-50 transition-colors">
-                  <span className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${c?.dot ?? 'bg-primary'}`} aria-hidden="true" />
-                  <span className="min-w-0 flex-1">
-                    <span className="block text-base text-zinc-900 truncate">{s.name}</span>
-                    <span className="block text-sm text-zinc-500">{s.temas} {s.temas === 1 ? 'tema' : 'temas'} · {s.preguntas} preguntas</span>
-                  </span>
-                  <span className="hidden sm:block w-32 h-1.5 rounded-full bg-zinc-100 overflow-hidden flex-shrink-0">
-                    <span className="block h-full rounded-full bg-primary" style={{ width: `${pct}%` }} />
-                  </span>
-                  <span className="w-12 text-right text-sm text-zinc-500 tabular-nums flex-shrink-0">{pct}%</span>
-                </Link>
-              )
-            })}
-          </div>
-        </section>
-
-        {/* ── Herramientas ──────────────────────────────────── */}
-        <section className="flex flex-col gap-3" aria-labelledby="h-herr">
-          <h2 id="h-herr" className="font-display text-xl font-normal text-zinc-900 px-1">Herramientas</h2>
-          <div className="flex flex-wrap gap-2">
-            {TOOLS.map(t => {
-              const Ic = t.icon
-              return (
-                <button key={t.name} onClick={() => navigate(t.route)}
-                        className="inline-flex items-center gap-2 h-11 px-4 rounded-2xl bg-surface border border-zinc-200
-                                   text-[0.9375rem] text-zinc-800 hover:border-zinc-300 transition-colors">
-                  <Ic weight="regular" className="w-[18px] h-[18px] text-primary" />
-                  {t.name}
-                </button>
-              )
-            })}
-          </div>
-        </section>
-
         <footer className="text-xs text-zinc-500 text-center leading-relaxed pt-2">
           Misael Granillo · MedCore · <Link to="/apoya" className="underline underline-offset-2 hover:text-zinc-800">Apoya a MedCore</Link><br />
           Terminología: MedLex (CC BY-SA 4.0) · Modelo anatómico: Open 3D Model (CC BY-SA 4.0)
@@ -282,5 +244,131 @@ function NombreInline() {
       </button>
       <span className="basis-full text-xs text-zinc-500">Se guarda solo en este dispositivo.</span>
     </form>
+  )
+}
+
+/* ── Hero del Inicio ──────────────────────────────────────────────────────
+ * Saludo, buscador y tres caminos para llegar: por materia (las del semestre
+ * que se muestra), por semestre (los 14 del plan) o por herramienta. A la
+ * derecha, la lámina del día. */
+type Via = 'materia' | 'semestre' | 'herramienta'
+const VIAS: { id: Via; label: string }[] = [
+  { id: 'materia', label: 'Por materia' },
+  { id: 'semestre', label: 'Por semestre' },
+  { id: 'herramienta', label: 'Herramientas' },
+]
+
+function Hero({ nombre, getSectionsRead }: { nombre: string; getSectionsRead: (id: string) => string[] }) {
+  const navigate = useNavigate()
+  const [via, setVia] = useState<Via>(() => {
+    try { return (localStorage.getItem('medcore-inicio-via') as Via) || 'materia' } catch { return 'materia' }
+  })
+  const [q, setQ] = useState('')
+  const elegir = (v: Via) => { setVia(v); try { localStorage.setItem('medcore-inicio-via', v) } catch { /* sin almacenamiento */ } }
+
+  return (
+    <section className="card p-6 sm:p-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_240px]" aria-labelledby="h-hola">
+      <div className="flex flex-col gap-5 min-w-0">
+        <header className="flex flex-col gap-1">
+          <h1 id="h-hola" className="font-display font-light text-[2.25rem] sm:text-[2.75rem] leading-[1.05] tracking-[-0.025em] text-zinc-900">
+            {nombre ? `Hola, ${nombre}` : 'Hola'}
+          </h1>
+          <p className="text-base text-zinc-500">
+            {ACTIVE_PLAN.schoolShort} {ACTIVE_PLAN.degree} · {PERIODO.label}{FASE.tipo === 'receso' ? ' (terminado)' : ''}
+            {FASE.tipo === 'receso' && FASE.siguiente?.calendario && FASE.dias !== null && FASE.dias > 0
+              ? ` · el ${FASE.siguiente.label.toLowerCase()} empieza en ${FASE.dias} ${FASE.dias === 1 ? 'día' : 'días'}`
+              : ''}
+          </p>
+          {!nombre && <NombreInline />}
+        </header>
+
+        <form role="search" onSubmit={e => { e.preventDefault(); if (q.trim()) navigate(`/search?q=${encodeURIComponent(q.trim())}`) }} className="relative">
+          <label htmlFor="buscar-inicio" className="sr-only">Buscar en MedCore</label>
+          <MagnifyingGlass className="w-5 h-5 text-zinc-400 absolute left-4 top-1/2 -translate-y-1/2" aria-hidden="true" />
+          <input id="buscar-inicio" value={q} onChange={e => setQ(e.target.value)}
+            placeholder="¿Qué quieres estudiar hoy?"
+            className="w-full h-12 bg-surface border border-zinc-200 rounded-2xl pl-12 pr-4 text-base text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:border-primary" />
+        </form>
+
+        <div>
+          <div role="tablist" aria-label="Cómo quieres llegar" className="grid grid-cols-3 sm:flex gap-1 mb-4">
+            {VIAS.map(v => (
+              <button key={v.id} role="tab" aria-selected={via === v.id} onClick={() => elegir(v.id)}
+                className={`text-[0.8125rem] sm:text-sm px-2 sm:px-4 py-2 rounded-xl transition-colors ${via === v.id ? 'bg-primary text-primary-fg' : 'text-zinc-600 hover:bg-zinc-100'}`}>
+                {v.label}
+              </button>
+            ))}
+          </div>
+
+          {via === 'materia' && (
+            <ul className="grid gap-2 sm:grid-cols-2" role="tabpanel">
+              {SUBJECT_CARDS.map(s => {
+                const c = TOPIC_COLORS[s.colorKey]
+                const read = s.topicIds.reduce((n, id) => n + getSectionsRead(id).length, 0)
+                const pct = s.totalSections ? Math.round((read / s.totalSections) * 100) : 0
+                return (
+                  <li key={s.id}>
+                    <Link to={`/plan/${s.id}`} className="flex items-center gap-3 h-full rounded-xl border border-zinc-200 px-4 py-3 hover:border-zinc-300 hover:bg-zinc-50 transition-colors">
+                      <span className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${c?.dot ?? 'bg-primary'}`} aria-hidden="true" />
+                      <span className="min-w-0 flex-1">
+                        <span className="block text-[0.9375rem] text-zinc-900 leading-snug">{s.name}</span>
+                        <span className="block text-xs text-zinc-500">{s.temas} temas · {s.preguntas} preguntas</span>
+                      </span>
+                      <span className="text-xs text-zinc-500 tabular-nums">{pct}%</span>
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+          )}
+
+          {via === 'semestre' && (
+            <ul className="grid gap-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4" role="tabpanel">
+              {ACTIVE_PLAN.periods.map(p => {
+                const estado = estadoSemestre(p.index)
+                const actual = p.index === PERIODO.index || (FASE.tipo === 'receso' && FASE.siguiente?.index === p.index)
+                return (
+                  <li key={p.index}>
+                    <Link to={`/plan?semestre=${p.index}`}
+                      className={`flex flex-col rounded-xl border px-3 py-2.5 h-full transition-colors ${actual ? 'border-primary bg-primary-tint' : 'border-zinc-200 hover:border-zinc-300 hover:bg-zinc-50'}`}>
+                      <span className={`text-[0.9375rem] leading-snug ${actual ? 'text-primary-ink' : 'text-zinc-900'}`}>{p.label}</span>
+                      <span className={`text-xs ${actual ? 'text-primary-ink' : 'text-zinc-500'}`}>{estado || `${p.subjects.length} materias`}</span>
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+          )}
+
+          {via === 'herramienta' && (
+            <ul className="grid gap-2 grid-cols-2 sm:grid-cols-3" role="tabpanel">
+              {TOOLS.map(t => {
+                const Ic = t.icon
+                return (
+                  <li key={t.name}>
+                    <Link to={t.route} className="flex items-start gap-3 h-full rounded-xl border border-zinc-200 px-3 py-3 hover:border-zinc-300 hover:bg-zinc-50 transition-colors">
+                      <Ic weight="regular" className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      <span className="min-w-0">
+                        <span className="block text-[0.9375rem] text-zinc-900 leading-snug">{t.name}</span>
+                        <span className="block text-xs text-zinc-500">{t.hint}</span>
+                      </span>
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+          )}
+        </div>
+      </div>
+
+      {LAMINA && (
+        <Link to={`/atlas/${LAMINA.id}`} className="hidden lg:flex flex-col gap-2 group self-start">
+          <img src={`/atlas/thumbs/${LAMINA.id}.webp`} alt={`Lámina: ${LAMINA.title}`} width={240} height={360}
+            className="w-full aspect-[2/3] object-cover object-top rounded-xl border border-zinc-200 bg-zinc-100" />
+          <span className="text-xs text-zinc-500">Lámina del día</span>
+          <span className="text-sm text-zinc-900 leading-snug group-hover:text-primary transition-colors">{LAMINA.title}</span>
+        </Link>
+      )}
+    </section>
   )
 }
