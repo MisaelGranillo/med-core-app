@@ -4,12 +4,19 @@
  * Normal · Grande) y respaldo del progreso. Todo se guarda en este dispositivo;
  * tema y tamaño también se cambian desde el botón de Apariencia de la barra. */
 
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Check, Desktop, DownloadSimple, HandHeart, Moon, Sun, UploadSimple } from '@phosphor-icons/react'
-import { useSettings, type FontScale, type Theme } from '../store/useSettings'
+import { useSettings, cargarFuente, type Estilo, type FontScale, type Theme } from '../store/useSettings'
 import { NOMBRE_MAX, useProfile } from '../store/useProfile'
 import { aplicarRespaldo, descargarRespaldo, leerRespaldo, type Respaldo } from '../utils/respaldo'
+
+/* Vista previa fija de cada estilo (sus colores oscuros), para comparar sin aplicarlo. */
+const ESTILOS: { value: Estilo; label: string; hint: string; bg: string; ink: string; acento: string; linea: string; fuente: string }[] = [
+  { value: 'sereno', label: 'Sereno', hint: 'El diseño de siempre: azul y mucho aire.', bg: '#0F1115', ink: '#ECEFF4', acento: '#6D9EFF', linea: '#262A32', fuente: "'Urbanist', system-ui, sans-serif" },
+  { value: 'deco', label: 'Art Deco', hint: 'Negro, dorado y marfil; marcos dobles y ornamentos.', bg: '#0A0A0B', ink: '#F2EAD6', acento: '#D4AF37', linea: '#8A7238', fuente: "'Poiret One', 'Urbanist', sans-serif" },
+  { value: 'arcade', label: 'Arcade 80s', hint: 'Cian, magenta y amarillo; letra de píxel y bloques.', bg: '#100D24', ink: '#F3F1FF', acento: '#3FD0FF', linea: '#3A3470', fuente: "'Pixelify Sans', 'Urbanist', sans-serif" },
+]
 
 const THEMES: { value: Theme; label: string; hint: string; icon: typeof Sun }[] = [
   { value: 'sistema', label: 'Sistema', hint: 'Sigue al dispositivo', icon: Desktop },
@@ -26,7 +33,8 @@ const SIZES: { value: FontScale; label: string; hint: string; preview: string }[
 ]
 
 export function Ajustes() {
-  const { theme, setTheme, fontScale, setFontScale } = useSettings()
+  const { theme, setTheme, fontScale, setFontScale, estilo, setEstilo } = useSettings()
+  useEffect(() => { cargarFuente('deco'); cargarFuente('arcade') }, [])
 
   return (
     <main className="flex-1">
@@ -65,6 +73,46 @@ export function Ajustes() {
                   <Icon weight={active ? 'fill' : 'regular'} className="w-6 h-6" />
                   <span className="text-[0.9375rem]">{label}</span>
                   <span className={`text-xs text-center ${active ? 'text-primary-ink' : 'text-zinc-500'}`}>{hint}</span>
+                </button>
+              )
+            })}
+          </div>
+        </section>
+
+        {/* Estilo */}
+        <section className="card p-6 sm:p-7" aria-labelledby="h-estilo">
+          <h2 id="h-estilo" className="font-display text-xl font-normal text-zinc-900">Estilo</h2>
+          <p className="text-[0.9375rem] text-zinc-500 mt-1 mb-5">La temática de toda la app. El texto de los temas se queda igual de legible en los tres.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {ESTILOS.map((e) => {
+              const active = estilo === e.value
+              return (
+                <button
+                  key={e.value}
+                  onClick={() => setEstilo(e.value)}
+                  aria-pressed={active}
+                  className={`relative text-left rounded-2xl border overflow-hidden transition-colors duration-150 ${active ? 'border-primary ring-2 ring-primary/30' : 'border-zinc-200 hover:border-zinc-300'}`}
+                >
+                  <span className="block px-4 pt-4 pb-3" style={{ background: e.bg, color: e.ink }} aria-hidden="true">
+                    <span className="block text-2xl leading-tight" style={{ fontFamily: e.fuente }}>Hola, Misael</span>
+                    <span className="mt-3 flex items-center gap-2">
+                      <span className="flex-1 h-1.5" style={{ background: e.linea }}>
+                        <span className="block h-full" style={{ width: '45%', background: e.acento }} />
+                      </span>
+                      <span className="text-xs" style={{ color: e.acento, fontFamily: e.fuente }}>45%</span>
+                    </span>
+                  </span>
+                  <span className="block px-4 py-3 bg-surface">
+                    <span className="flex items-center justify-between gap-2">
+                      <span className="text-[0.9375rem] text-zinc-900">{e.label}</span>
+                      {active && (
+                        <span className="w-5 h-5 rounded-full bg-primary flex items-center justify-center">
+                          <Check weight="bold" className="w-3 h-3 text-primary-fg" />
+                        </span>
+                      )}
+                    </span>
+                    <span className="block text-xs text-zinc-500 mt-0.5">{e.hint}</span>
+                  </span>
                 </button>
               )
             })}

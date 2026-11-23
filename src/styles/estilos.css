@@ -1,0 +1,177 @@
+/* ============================================================================
+ * estilos.css — temáticas seleccionables en Ajustes → Estilo.
+ *
+ * <html data-estilo="sereno|deco|arcade">. «sereno» es el diseño base
+ * (tokens.css) y no necesita reglas. Cada estilo redefine los tokens base en
+ * claro (:not(.dark)) y oscuro (.dark), cambia la tipografía display y añade
+ * adornos a las piezas compartidas (tarjetas, títulos, botones, etiquetas).
+ * El texto de lectura conserva la fuente y el contraste del diseño base.
+ * ========================================================================== */
+
+/* ── Art Deco: negro, dorado y marfil ─────────────────────────────────── */
+:root[data-estilo="deco"]:not(.dark) {
+  --color-page-bg:        #EFE8D8;
+  --color-surface:        #FBF7EE;
+  --color-surface-subtle: #EDE4CF;
+  --color-border:         #D9CBA6;
+  --color-border-strong:  #B89B5E;
+  --color-text-primary:   #15130F;
+  --color-text-secondary: #4E4637;
+  --color-text-muted:     #5E5543;
+  --color-accent:         #8E6B1E;
+  --color-accent-light:   #F1E6C8;
+  --color-accent-text:    #6E5214;
+  --color-on-accent:      #FFFDF6;
+  --color-badge-ok-bg:    #F1E6C8;
+  --color-badge-ok-text:  #6E5214;
+  --color-tool-icon-bg:   #F1E6C8;
+  --color-tool-icon:      #6E5214;
+  --c-primary-300: #D6BE85;
+  --c-primary-400: #B08A3A;
+  --deco-linea: #B89B5E;
+}
+:root.dark[data-estilo="deco"] {
+  --color-page-bg:        #0A0A0B;
+  --color-surface:        #141311;
+  --color-surface-subtle: #1D1B17;
+  --color-border:         #3A3222;
+  --color-border-strong:  #6B5A33;
+  --color-text-primary:   #F2EAD6;
+  --color-text-secondary: #C3B79C;
+  --color-text-muted:     #A89C80;
+  --color-accent:         #D4AF37;
+  --color-accent-light:   #2A2312;
+  --color-accent-text:    #E9CC6E;
+  --color-on-accent:      #0A0A0B;
+  --color-badge-ok-bg:    #2A2312;
+  --color-badge-ok-text:  #E9CC6E;
+  --color-badge-wip-bg:   #1D1B17;
+  --color-tool-icon-bg:   #2A2312;
+  --color-tool-icon:      #E9CC6E;
+  --c-primary-50:  #1A160C;
+  --c-primary-100: #2A2312;
+  --c-primary-200: #3D331A;
+  --c-primary-300: #6B5A33;
+  --c-primary-400: #B8952F;
+  --c-primary-700: #EDD58A;
+  --c-primary-900: #F6E7B8;
+  --deco-linea: #8A7238;
+}
+:root[data-estilo="deco"] {
+  --font-display: 'Poiret One', 'Urbanist', system-ui, sans-serif;
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 3px;
+  --shadow-card: none;
+  --shadow-card-hover: none;
+}
+:root[data-estilo="deco"] .font-display { font-weight: 400; letter-spacing: 0.04em; }
+/* Marco doble escalonado en las tarjetas */
+:root[data-estilo="deco"] .card {
+  border-color: var(--deco-linea);
+  outline: 1px solid var(--color-border);
+  outline-offset: 3px;
+}
+:root[data-estilo="deco"] .card-interactive:hover { transform: none; outline-color: var(--deco-linea); }
+:root[data-estilo="deco"] :is(.rounded-xl, .rounded-2xl, .rounded-3xl) { border-radius: 3px; }
+/* Ornamento bajo los títulos principales: líneas y un rombo */
+:root[data-estilo="deco"] h1.font-display::after {
+  content: '';
+  display: block;
+  width: 132px;
+  height: 12px;
+  margin-top: 12px;
+  background: var(--color-accent);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='132' height='12'%3E%3Cg fill='none' stroke='%23000'%3E%3Cpath d='M0 3.5H54M0 8.5H54M78 3.5H132M78 8.5H132'/%3E%3C/g%3E%3Cpath d='M66 0L72 6L66 12L60 6Z' fill='%23000'/%3E%3C/svg%3E") no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='132' height='12'%3E%3Cg fill='none' stroke='%23000'%3E%3Cpath d='M0 3.5H54M0 8.5H54M78 3.5H132M78 8.5H132'/%3E%3C/g%3E%3Cpath d='M66 0L72 6L66 12L60 6Z' fill='%23000'/%3E%3C/svg%3E") no-repeat;
+}
+:root[data-estilo="deco"] .text-center > h1.font-display::after,
+:root[data-estilo="deco"] h1.font-display.text-center::after { margin-left: auto; margin-right: auto; }
+:root[data-estilo="deco"] .section-number { border-radius: 0; width: 32px; height: 32px; clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+:root[data-estilo="deco"] :is(.eyebrow, .label-mono) { letter-spacing: 0.14em; text-transform: uppercase; }
+
+/* ── Arcade de los 80: cian, magenta y amarillo sobre índigo ──────────── */
+:root[data-estilo="arcade"]:not(.dark) {
+  --color-page-bg:        #E9E6FA;
+  --color-surface:        #FBFAFF;
+  --color-surface-subtle: #DEDAF6;
+  --color-border:         #B7B0E6;
+  --color-border-strong:  #6E64C4;
+  --color-text-primary:   #1A1640;
+  --color-text-secondary: #463F86;
+  --color-text-muted:     #534C93;
+  --color-accent:         #0B67C2;
+  --color-accent-light:   #DCEBFF;
+  --color-accent-text:    #0A4F96;
+  --color-on-accent:      #FFFFFF;
+  --c-primary-300: #8DBEF5;
+  --c-primary-400: #3D8EE0;
+  --arcade-2: #C2187A;
+  --arcade-3: #9A6A00;
+}
+:root.dark[data-estilo="arcade"] {
+  --color-page-bg:        #100D24;
+  --color-surface:        #1A1636;
+  --color-surface-subtle: #241F48;
+  --color-border:         #3A3470;
+  --color-border-strong:  #5A51A6;
+  --color-text-primary:   #F3F1FF;
+  --color-text-secondary: #C3BDF0;
+  --color-text-muted:     #ABA4DD;
+  --color-accent:         #3FD0FF;
+  --color-accent-light:   #0F2C47;
+  --color-accent-text:    #8BE6FF;
+  --color-on-accent:      #0B0A1A;
+  --color-badge-ok-bg:    #0F2C47;
+  --color-badge-ok-text:  #8BE6FF;
+  --color-badge-wip-bg:   #241F48;
+  --color-tool-icon-bg:   #0F2C47;
+  --color-tool-icon:      #8BE6FF;
+  --c-primary-50:  #0D2238;
+  --c-primary-100: #0F2C47;
+  --c-primary-200: #16406A;
+  --c-primary-300: #1E5F99;
+  --c-primary-400: #33B4E6;
+  --c-primary-700: #A6EDFF;
+  --c-primary-900: #D2F6FF;
+  --arcade-2: #FF4FA3;
+  --arcade-3: #FFD23F;
+}
+:root[data-estilo="arcade"] {
+  --font-display: 'Pixelify Sans', 'Urbanist', system-ui, sans-serif;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --shadow-card: none;
+  --shadow-card-hover: none;
+}
+:root[data-estilo="arcade"] .font-display { font-weight: 500; letter-spacing: 0; }
+:root[data-estilo="arcade"] .card { border-width: 2px; }
+:root[data-estilo="arcade"] .card-interactive:hover { transform: translate(-2px, -2px); border-color: var(--color-accent); }
+:root[data-estilo="arcade"] :is(.rounded-lg, .rounded-xl, .rounded-2xl, .rounded-3xl) { border-radius: 0; }
+:root[data-estilo="arcade"] .rounded-full:not(:empty) { border-radius: 2px; }
+/* Fila de píxeles bajo los títulos principales */
+:root[data-estilo="arcade"] h1.font-display::after {
+  content: '';
+  display: block;
+  width: 96px;
+  height: 8px;
+  margin-top: 12px;
+  background:
+    linear-gradient(var(--color-accent), var(--color-accent)) 0 0 / 24px 8px no-repeat,
+    linear-gradient(var(--arcade-2), var(--arcade-2)) 32px 0 / 24px 8px no-repeat,
+    linear-gradient(var(--arcade-3), var(--arcade-3)) 64px 0 / 24px 8px no-repeat;
+}
+:root[data-estilo="arcade"] .text-center > h1.font-display::after,
+:root[data-estilo="arcade"] h1.font-display.text-center::after { margin-left: auto; margin-right: auto; }
+:root[data-estilo="arcade"] :is(.eyebrow, .label-mono, .badge) { font-family: var(--font-display); letter-spacing: 0.02em; }
+:root[data-estilo="arcade"] .section-number { border-radius: 0; font-family: var(--font-display); }
+/* Barras de progreso en bloques (la barra de relleno usa bg-primary) */
+:root[data-estilo="arcade"] :is(.h-1, .h-1\.5, .h-2) > .bg-primary,
+:root[data-estilo="arcade"] :is(.h-1, .h-1\.5, .h-2) > span > .bg-primary {
+  -webkit-mask: repeating-linear-gradient(90deg, #000 0 8px, transparent 8px 10px);
+          mask: repeating-linear-gradient(90deg, #000 0 8px, transparent 8px 10px);
+}
+@media (prefers-reduced-motion: reduce) {
+  :root[data-estilo="arcade"] .card-interactive:hover { transform: none; }
+}

@@ -24,6 +24,9 @@ El color favorito del usuario es el azul: el acento es azul.
 
 ## Anti-references
 
+Aplican al estilo base «Sereno». Desde noviembre de 2026 hay dos estilos más en Ajustes → Estilo, elegidos por el usuario: **Art Deco** (aquí sí se permiten negro y dorado) y **Arcade 80s** (letra de píxel solo en títulos y etiquetas). En los tres, el texto de lectura conserva la fuente y el contraste del diseño base.
+
+
 - Tipografía monoespaciada.
 - Negro con dorado.
 - Banners con degradado pesado, vidrio esmerilado decorativo, franjas laterales de color.

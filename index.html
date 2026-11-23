@@ -29,10 +29,11 @@
          almacenamiento de useSettings y pone .dark en <html>. -->
     <script>
       (function () {
-        var t = 'sistema';
-        try { t = (JSON.parse(localStorage.getItem('medcore-settings') || '{}').state || {}).theme || 'sistema'; } catch (e) {}
+        var t = 'sistema', e = 'sereno';
+        try { var s = JSON.parse(localStorage.getItem('medcore-settings') || '{}').state || {}; t = s.theme || 'sistema'; e = s.estilo || 'sereno'; } catch (x) {}
         var dark = t === 'oscuro' || (t !== 'claro' && window.matchMedia('(prefers-color-scheme: dark)').matches);
         if (dark) document.documentElement.classList.add('dark');
+        document.documentElement.setAttribute('data-estilo', e);
       })();
     </script>
   </head>
