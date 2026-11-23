@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useRef } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
@@ -18,6 +18,7 @@ import { useProgress } from '../store/useProgress'
 import { FlashCard } from '../components/FlashCard'
 import { QuizQuestion } from '../components/QuizQuestion'
 import type { Question } from '../types'
+import { useJuego, APROBAR_JEFE } from '../utils/juego'
 import { examDecks, parseExamDeckId } from '../data/generated/topicIndex'
 
 type Mode = 'select' | 'flashcard' | 'quiz' | 'results'
@@ -60,13 +61,19 @@ function QuizSession({ content }: { content: Content }) {
   const [current, setCurrent] = useState(0)
   const [score, setScore] = useState(0)
   const [wrongIds, setWrongIds] = useState<string[]>([])
+  // El puntaje final se lee de una ref: el estado del último acierto aún no
+  // se ha aplicado cuando termina la sesión.
+  const scoreRef = useRef(0)
+  const juego = useJuego()
+  const [antes, setAntes] = useState<{ xp: number; nivel: number } | null>(null)
 
   if (!topic) { navigate('/'); return null }
 
   const startFlashcard = () => {
     setDeck(shuffle(topicQuestions))
     setCurrent(0)
-    setScore(0)
+    setScore(0); scoreRef.current = 0
+    setAntes(juego ? { xp: juego.xp, nivel: juego.nivel } : null)
     setWrongIds([])
     setMode('flashcard')
   }
@@ -74,12 +81,14 @@ function QuizSession({ content }: { content: Content }) {
   const startQuiz = () => {
     setDeck(shuffle(topicQuestions))
     setCurrent(0)
-    setScore(0)
+    setScore(0); scoreRef.current = 0
+    setAntes(juego ? { xp: juego.xp, nivel: juego.nivel } : null)
     setWrongIds([])
     setMode('quiz')
   }
 
   const handleFlashCorrect = () => {
+    scoreRef.current += 1
     setScore((s) => s + 1)
     advanceCard()
   }
@@ -91,7 +100,7 @@ function QuizSession({ content }: { content: Content }) {
 
   const handleQuizAnswer = useCallback(
     (isCorrect: boolean) => {
-      if (isCorrect) setScore((s) => s + 1)
+      if (isCorrect) { scoreRef.current += 1; setScore((s) => s + 1) }
       else setWrongIds((w) => [...w, deck[current].id])
       setTimeout(() => advanceCard(), 1400)
     },
@@ -109,7 +118,7 @@ function QuizSession({ content }: { content: Content }) {
   const finishSession = () => {
     addQuizAttempt(topic.id, {
       date: new Date().toISOString(),
-      score,
+      score: scoreRef.current,
       total: deck.length,
     })
     setMode('results')
@@ -300,6 +309,23 @@ function QuizSession({ content }: { content: Content }) {
                     <p className="text-xs text-zinc-400 font-medium">Total</p>
                   </div>
                 </div>
+
+                {juego && antes && (
+                  <div className="mb-6 flex flex-col items-center gap-1.5">
+                    {exam && exam.semana !== null && (
+                      <p className={`font-display text-lg ${pct >= APROBAR_JEFE ? 'text-primary' : 'text-zinc-700'}`}>
+                        {pct >= APROBAR_JEFE ? '¡Jefe vencido!' : `Game over · necesitas ${APROBAR_JEFE} % para vencer al jefe`}
+                      </p>
+                    )}
+                    <p className="font-display text-base text-zinc-900">+{Math.max(0, juego.xp - antes.xp)} XP</p>
+                    {juego.nivel > antes.nivel && (
+                      <p className="font-display text-base text-primary">¡Subiste al nivel {juego.nivel}!</p>
+                    )}
+                    {juego.xp === antes.xp && (
+                      <p className="text-xs text-zinc-500">Solo suma XP cuando mejoras tu mejor intento.</p>
+                    )}
+                  </div>
+                )}
 
                 <p className="text-sm font-semibold text-zinc-600 mb-6">
                   {pct >= 90 ? 'Excelente dominio del tema.' :

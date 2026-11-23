@@ -11,9 +11,12 @@ import { agruparPorMateria, nombreCorto } from '../data/agrupar'
 import { topicIndex as topics, totalQuestionCount, examDecks, examQuestionCount } from '../data/generated/topicIndex'
 import { TOPIC_COLORS } from '../data/colors'
 import { useProgress } from '../store/useProgress'
+import { useSettings } from '../store/useSettings'
+import { APROBAR_JEFE } from '../utils/juego'
 
 export function QuizCatalog() {
   const { getBestScore } = useProgress()
+  const arcade = useSettings(s => s.estilo === 'arcade')
   const { hash } = useLocation()
   // Al llegar con /quiz#examenes o /quiz#<materia>, baja a esa sección.
   useEffect(() => {
@@ -54,13 +57,15 @@ export function QuizCatalog() {
         <section id="examenes" className="max-w-7xl mx-auto px-4 sm:px-6 pt-2 pb-4 scroll-mt-20">
           <div className="flex items-center gap-2 mb-1">
             <Exam weight="duotone" className="w-5 h-5 text-zinc-500" />
-            <h2 className="font-display font-normal text-zinc-900 text-xl">Exámenes del {examDecks[0].periodoLabel.toLowerCase()}</h2>
+            <h2 className="font-display font-normal text-zinc-900 text-xl">{arcade ? 'Jefes' : 'Exámenes'} del {examDecks[0].periodoLabel.toLowerCase()}</h2>
             <span className="text-xs font-semibold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded-full">
               {examQuestionCount} preguntas
             </span>
           </div>
           <p className="text-sm text-zinc-500 mb-4 max-w-[70ch]">
-            Los exámenes semanales tal como se aplicaron, con las claves revisadas. Cada pregunta también aparece en el quiz de su tema.
+            {arcade
+              ? `Cada examen semanal es un jefe: lo vences con ${APROBAR_JEFE} % o más y ganas 150 XP.`
+              : 'Los exámenes semanales tal como se aplicaron, con las claves revisadas. Cada pregunta también aparece en el quiz de su tema.'}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {examDecks.map((d) => {
@@ -90,7 +95,7 @@ export function QuizCatalog() {
                           className={`flex flex-col items-center rounded-xl py-1.5 text-xs font-semibold ${colors.badge} hover:opacity-80 transition-opacity`}
                         >
                           <span>Sem. {w.n}</span>
-                          <span className="text-[0.625rem] font-medium opacity-75">{best !== null ? `${best}%` : `${w.count} p.`}</span>
+                          <span className="text-[0.625rem] font-medium opacity-75">{best !== null ? `${arcade && best >= APROBAR_JEFE ? '✓ ' : ''}${best}%` : `${w.count} p.`}</span>
                         </Link>
                       )
                     })}

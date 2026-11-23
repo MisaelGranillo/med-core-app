@@ -17,6 +17,8 @@ import { TOPIC_COLORS } from '../data/colors'
 import { getActivePlan, planContextForTopic, faseDelCalendario } from '../data/plans'
 import { useProgress } from '../store/useProgress'
 import { NOMBRE_MAX, useProfile } from '../store/useProfile'
+import { useJuego } from '../utils/juego'
+import { ArcadeHud } from '../components/ArcadeHud'
 
 /* ── Índices derivados de datos reales (nivel módulo) ─────────── */
 const topicById = Object.fromEntries(topics.map(t => [t.id, t]))
@@ -123,6 +125,7 @@ export function Home() {
 
 
   const nombre = useProfile(s => s.nombre)
+  const juego = useJuego()
 
   return (
     <main className="flex-1">
@@ -130,6 +133,9 @@ export function Home() {
 
         {/* ── Hero: saludo, buscador y los tres caminos ───────── */}
         <Hero nombre={nombre} getSectionsRead={getSectionsRead} />
+
+        {/* ── Marcador (solo estilo Arcade) ─────────────────── */}
+        {juego && <ArcadeHud juego={juego} nombre={nombre} />}
 
         {/* ── Continuar + progreso global ───────────────────── */}
         <section className="grid gap-4 md:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]" aria-label="Continuar estudiando">
@@ -260,6 +266,7 @@ const VIAS: { id: Via; label: string }[] = [
 
 function Hero({ nombre, getSectionsRead }: { nombre: string; getSectionsRead: (id: string) => string[] }) {
   const navigate = useNavigate()
+  const juego = useJuego()
   const [via, setVia] = useState<Via>(() => {
     try { return (localStorage.getItem('medcore-inicio-via') as Via) || 'materia' } catch { return 'materia' }
   })
@@ -314,7 +321,7 @@ function Hero({ nombre, getSectionsRead }: { nombre: string; getSectionsRead: (i
                         <span className="block text-[0.9375rem] text-zinc-900 leading-snug">{s.name}</span>
                         <span className="block text-xs text-zinc-500">{s.temas} temas · {s.preguntas} preguntas</span>
                       </span>
-                      <span className="text-xs text-zinc-500 tabular-nums">{pct}%</span>
+                      <span className={`text-xs tabular-nums ${juego ? 'font-display text-primary' : 'text-zinc-500'}`}>{juego ? `LV ${juego.lv[s.id] ?? 0}` : `${pct}%`}</span>
                     </Link>
                   </li>
                 )
