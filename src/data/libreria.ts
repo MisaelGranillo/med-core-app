@@ -20,6 +20,7 @@ export const NLM_CLASSES = [
   { code: 'QV', label: 'Farmacología', hint: 'Farmacología y terapéutica' },
   { code: 'QY', label: 'Patología clínica', hint: 'Laboratorio clínico' },
   { code: 'W', label: 'Profesiones de la salud', hint: 'Terminología médica' },
+  { code: 'WB', label: 'Práctica médica', hint: 'Semiología, exploración física e historia clínica' },
   { code: 'WG', label: 'Sistema cardiovascular', hint: 'Electrocardiografía y reanimación' },
   { code: 'WL', label: 'Sistema nervioso', hint: 'Neuroanatomía y neurología' },
   { code: 'WN', label: 'Radiología', hint: 'Radiología e imagenología diagnóstica' },
@@ -224,6 +225,22 @@ export const LIBROS: LibroCatalogo[] = [
     edicion: '3rd ed.', editorial: 'A & C Black', anio: '2006', paginas: 65, idioma: 'Inglés',
     formato: 'Cuaderno de ejercicios', clase: 'W', numero: '15', materias: ['ingles-medico-1'],
     archivo: { subjectId: 'ingles-medico-1', file: 'Check Your English Vocabulary for Medicine.pdf' },
+  },
+
+  // ── WB · Práctica médica (semiología y exploración física) ───────
+  {
+    id: 'bickley-bates', titulo: 'Bates. Guía de exploración física e historia clínica',
+    autores: ['Bickley, Lynn S.', 'Szilagyi, Peter G.', 'Hoffman, Richard M.'], asiento: 'Bickley',
+    edicion: '12.ª ed.', editorial: 'Wolters Kluwer', anio: '2018', paginas: 1065, idioma: 'Español',
+    formato: 'Libro', clase: 'WB', numero: '205', materias: ['introduccion-clinica-1', 'introduccion-clinica-2'],
+    archivo: { subjectId: 'libreria', file: 'Bickley - Bates Guia de exploracion fisica e historia clinica 12a ed.pdf' },
+  },
+  {
+    id: 'suros-semiologia', titulo: 'Semiología médica y técnica exploratoria',
+    autores: ['Surós Batlló, Antonio', 'Surós Batlló, Juan'], asiento: 'Surós',
+    edicion: '8.ª ed.', editorial: 'Masson', anio: '2001', paginas: 1163, idioma: 'Español',
+    formato: 'Libro', clase: 'WB', numero: '200', materias: ['introduccion-clinica-1', 'introduccion-clinica-2'],
+    archivo: { subjectId: 'libreria', file: 'Suros - Semiologia medica y tecnica exploratoria 8a ed.pdf' },
   },
 
   // ── WG · Sistema cardiovascular ──────────────────────────────────

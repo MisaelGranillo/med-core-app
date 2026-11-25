@@ -96,6 +96,8 @@ export const LIBRARY_PRIVATE = new Set<string>([
   'libreria/Dudek - Embriologia 6a ed.pdf',
   'libreria/Gould - Neuroanatomia 5a ed.pdf',
   'libreria/Costanzo - Fisiologia 7a ed.pdf',
+  'libreria/Bickley - Bates Guia de exploracion fisica e historia clinica 12a ed.pdf',
+  'libreria/Suros - Semiologia medica y tecnica exploratoria 8a ed.pdf',
   'libreria/Rosenfeld - Farmacologia 6a ed.pdf',
   'libreria/Whalen - Farmacologia LIR 7a ed.pdf',
   'libreria/Brunton - Goodman y Gilman Bases farmacologicas 13a ed.pdf',
